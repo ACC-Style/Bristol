@@ -1,0 +1,96 @@
+@import "helpers/flex";
+$tab-color: grey(10);
+$tab-hover-color: grey(15);
+$tab-selected-color:fontcolor($secondary-color,'loud');
+$tab-selected-hover-color:scale-color($secondary-color, $lightness:-15%);
+$tab-darktext:$dark-text-default;
+$tab-lighttext:$light-text-default;
+
+.tabs{
+	font-size: 16px;
+	border-bottom: 2px solid grey(30);
+	margin-bottom: .5rem;
+	margin-left: auto;
+	width:100%;
+	background-color: grey(5);
+	li{	
+		border-top-left-radius: 7px;
+		border-top-right-radius: 7px;
+		display: inline-block;
+		margin:.5rem 2px 0;
+		background-color: $tab-color;
+		a{
+			display: inline-block;
+			padding: .45em .3em .3em;
+			text-align: center;
+			white-space: nowrap;
+			vertical-align: top;
+			margin: 0 auto;
+			width: 100%;
+			color:color-contrast($tab-color,$tab-darktext,$tab-lighttext);
+			@include bp(md){
+				padding-left:1em;
+				padding-right:1em;
+			}			
+		}
+
+		&:hover{
+			background-color:$tab-hover-color;
+			a{
+				color:color-contrast($tab-hover-color,$tab-darktext,$tab-lighttext);
+			}
+		}
+
+		&.selected{
+			background-color:$tab-selected-color;
+			padding-left: 0;
+			padding-right: 0;
+			cursor:initial;
+			a{
+				color:color-contrast($tab-selected-color,$tab-darktext,$tab-lighttext);cursor:initial;
+			}
+		}
+		&.icon{
+			a{
+				padding-left: .15em !important;
+				padding-right: .15em !important;
+			}
+			width:2em;
+			&.selected{
+				background-color: $tab-selected-color;
+				a{
+					color:color-contrast($tab-selected-color,$tab-darktext,$tab-lighttext);
+					&:hover{color:fontcolor($black);}
+					}
+
+				&:hover{
+					background-color: $tab-selected-hover-color;
+					a{
+						color:color-contrast($tab-selected-hover-color,$tab-darktext,$tab-lighttext);
+					}
+				}
+			}
+
+		} 
+	}
+	a{
+		font-size:.75em;
+		@include font-slab-bold();
+	}
+
+@include bp(sm-down){
+		width:100%;
+		clear:both;
+		@include flexbox();
+		flex-direction:row;
+		flex-wrap:nowrap;
+		align-items:stretch;
+		align-content: stretch;
+		li{@include flex(10);
+		&.icon{@include flex(0 0 2em);}
+		}
+}
+
+
+
+}

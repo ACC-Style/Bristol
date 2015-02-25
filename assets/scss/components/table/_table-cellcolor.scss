@@ -1,0 +1,18 @@
+//@import "vendor/font-awesome/_variables";
+@mixin cellcolor($selector,$varible,$background-color,$color:#fff){
+
+	td#{$selector}{
+		background-color: $background-color;
+		color:$color;
+		text-align: center;
+		vertical-align: middle;
+		i{margin: 0 auto;}
+		.fa-holder:before{content:$varible;}
+	}
+
+}
+
+@include cellcolor('.grey-check',$fa-var-check,grey(30));
+@include cellcolor('.green-check',$fa-var-check,fontcolor($success-color,'quiet'));
+@include cellcolor('.error',$fa-var-exclamation-circle,fontcolor($error-red,'quiet'));
+@include cellcolor('.alert',$fa-var-exclamation-triangle,fontcolor($warning-orange,'quiet'));

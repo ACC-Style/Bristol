@@ -1,0 +1,50 @@
+.nav-list{
+	@extend .h4;
+	a{
+		display: block;
+		$icon:$fa-var-arrow-circle-right;
+		@include fa-holder($icon);
+		text-align: right;
+		color:fontcolor($black,'quiet');
+		&:hover{color:fontcolor($black,'loud');}
+		.text{position: absolute;display: block;text-align: left;}
+		i{}
+	}
+	li{
+		padding:.25rem 1rem;
+		
+		&:hover{
+			background-color: grey(10);
+			
+		}
+		&.selected{background-color: color($secondary-color,10);a,a:hover{cursor:pointer;color:fontcolor($real-black);} }
+	}
+	ul{
+		margin: 0;
+		width:100%;
+		display: relative;
+		list-style-type: none;
+	}
+}
+h1+.nav-list{
+	@extend %h1-nextspacing;
+	li{@extend .h3;}
+}
+h2+.nav-list{
+	@extend %h2-nextspacing;
+	padding-top:.5rem;
+	margin-top:-.5rem;
+	border-top:2px solid grey(30);
+	li{@extend .h5;}
+}
+h3+.nav-list{
+	@extend %h3-nextspacing;
+	li{
+		@extend %normal;
+		border:1px solid grey(20);
+		border-left-width: 0;
+		border-right-width:0;
+		margin-bottom: 0;
+		margin-top: -1px;
+		}
+}

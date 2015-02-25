@@ -1,0 +1,39 @@
+.table.banded tbody tr:nth-child(even){background-color:grey(10);}
+
+.table.stripped{
+	tbody{
+		
+		%greyed-row{
+			background-color:grey(10);
+		}
+		%greyed-column{
+			background-color:scale-color($secondary-color,$lightness:90%);
+		}
+
+		%overlapped-grey{
+			background-color:grey(20);
+		}
+	}
+	tr:nth-child(even){@extend %greyed-row;}
+	th:nth-child(odd),td:nth-child(odd){@extend %greyed-column;}
+	tr:nth-child(even) td:nth-child(odd){ @extend %overlapped-grey;}
+}
+
+.table.stripped, .table.banded{
+	th,td{padding:.25rem .25rem .25rem .55rem;}
+	.seperator td,.seperator:nth-child(even) td:nth-child(odd){
+		@include rem-fallback(padding-top,.1375);
+		@include rem-fallback(padding-bottom,.1375);
+		$blue:scale-color($secondary-color,$lightness:10%);
+		$darkblue:scale-color($secondary-color,$lightness:-10%);
+		background-color:scale-color($secondary-color,$lightness:10%);
+		border-top:$darkblue 1px solid;
+		border-bottom:$darkblue 1px solid; 
+		color:#fff;
+	}
+	tfoot{
+		background-color: grey(20);
+		td{color:$black;
+			border-top:1px solid $secondary-color;}
+	}
+}

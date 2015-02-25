@@ -1,0 +1,43 @@
+/*  Button Group */
+.button-group a.button{
+	margin-bottom: 0;
+	white-space: nowrap;
+		@include bp("md-down"){
+			padding-left: .25rem;
+			padding-right: .25rem;
+	}
+	@include bp("sm-down"){
+			padding-left: .15rem;
+			padding-right: .15rem;
+			font-size: .9rem;
+			padding-bottom: 1rem;
+			padding-top: 1rem;
+	}
+}
+
+.selectable{
+	margin: 0 0 1.14286rem;
+	a{background-color:fontcolor($secondary-color);transition: none;
+		&:hover{background-color: fontcolor($secondary-color,'loud');}}
+	i.fa{
+		font-size: 1rem;
+		height: 1rem;
+		width: 1rem;
+		margin: 0 7px 0 0;
+		display:none;}
+	&.selected-btn1,&.selected-btn2,&.selected-btn3,&.selected-btn4,&.selected-btn5,{
+		a{
+				background-color: grey(30);
+				&:hover{background-color:grey(50);}
+			}
+	} 
+	&.selected-btn1 .btn1,&.selected-btn2 .btn2,&.selected-btn3 .btn3,&.selected-btn4 .btn4,&.selected-btn5 .btn5{
+		 a{
+				background-color:fontcolor($success-color,'loud');
+					&:hover{background-color:mix($success-color, $real-black,80%);}
+				i.fa{display: inline-block;} 
+		}
+	}
+
+		
+}

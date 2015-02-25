@@ -1,0 +1,47 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content = "user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+		<title>Foundation 5</title>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,500italic,300,500,700|Roboto+Slab:400,700|Raleway:300' rel='stylesheet' type='text/css'>
+		{{"assets/css/style.css" | asset_url | stylesheet_tag }}
+  		<script src="{{ "modernizr.js" | asset_url }}"></script>
+	</head>
+	<body>
+		
+		
+		<div data-bind="page: {id:'content', role: 'start'}">
+			{% include "header" %}
+			<div data-bind="page: {id: 'home', role:'start'}">
+					<div class="row">
+						{% include "navigation/nav-list" %}
+					</div>
+			</div>
+			<div data-bind="page: {id: 'evaluate', title:'Evaluate'}">
+				<ul id="evalutor-tab"class="nav small-block-grid-2">
+					<li class="selected columns small-6"><a href="#!/content/evaluate/calculator/">Calculator</a><a href="" class="button secondary tiny round">clear</a></li>
+					<li class="columns small-6"><a href="#!/content/evaluate/recomendation/">Recommendation</a></li>
+				</ul>
+				<div data-bind="page: {id: 'calculator'}">
+					{% block calculate %}{% endblock %}
+					
+
+				</div>
+				<div data-bind="page: {id: 'recomendation'}">
+					{% block recomend %}{% endblock %}
+					
+				</div>
+			</div>
+			{% include "footer" %}	
+		</div>
+		<div data-bind="page: {id:'subpages'}">
+			{% include "header-subpage" %}
+			<divdata-bind="page: {id:'labs'}">
+				lab page
+			</div>
+		</div>
+		
+  		{% include "scripts" %}
+	</body>
+</html>

@@ -1,0 +1,49 @@
+{% block calculate %} 
+<div class="row">
+    <div class="column small-12">
+       <h1>Baseline</h1>
+    </div>
+    <div class="column small-12">
+      {% include "components/question-buttongroup" with title:"Were tests run to elimnate secondary causes?", state:"required",selectedbutton:'btn3' %}
+    </div>
+    <div class="column small-6 large-4">
+     {% include "components/question-dropdown" with title:"Age", state:"required" %}
+    </div>
+    <div class="column small-6 large-4">
+     {% include "components/question-dropdown" with title:"Race", state:"warning" %}
+    </div>
+    <div class="column small-6 large-4">
+      {% include "components/question-dropdown" with title:"Name", state:"error" %}
+    </div>
+    <div class="column small-6 large-4">
+      {% include "components/question-dropdown" with title:"Name", state:"validated" %}
+    </div>
+    <div class="column small-12">
+     <h2 class="group-divid">Statin Perscription</h2>
+  </div>
+  <div class="column small-12"> {% include 'components/table' %}</div>
+ 
+  <div class="column small-12">
+    {% include "repeater" %} 
+  </div>
+  <div class="column small-12">
+    {% include "components/question-radiogroup" with title:"Number", state:"required" %}
+  </div>
+  <h1>This is an H1</h1>
+  <h2>This is an H2</h2>
+  <h3>This is an H3</h3>
+  <h4>This is and H4</h4>
+  <h5>this is H5</h5>
+  <h6>H6 tags</h6>
+
+</div>
+
+
+ 
+{% endblock %}
+
+
+{% block recomend %} 
+<h1>Recomendation</h1>
+  
+{% endblock %}
