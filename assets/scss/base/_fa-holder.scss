@@ -6,9 +6,13 @@
 		>i.fa-holder:before,&.fa:before{ content: $varible;}
 	}
 	@else{
-		i.fa-holder-dynamic:before{ content: $varible;}
+		i.fa-holder-dynamic:before,&.dynamic i.fa-holder:before{ content: $varible;}
 	}
 }
+/** TODO: refactor this 
+there are two to three needs for icons icons in containers, icons on icons and then icons that are dynamic to a parent container.**/
+// dynamics are used in the .question, .nav-checklist
+
 .fa-holder{text-decoration: none;
 	>i.fa-holder:before,>i.fa-holder-dynamic:before{text-decoration: none;}
 	:after{content:' ';}

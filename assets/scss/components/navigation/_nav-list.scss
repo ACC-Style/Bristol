@@ -1,18 +1,20 @@
 .nav-list{
-	@extend .h4;
+	
 	a{
-		display: block;
+		display: table;
+		width:100%;
 		$icon:$fa-var-arrow-circle-right;
 		@include fa-holder($icon);
 		text-align: right;
 		color:fontcolor($black,'quiet');
 		&:hover{color:fontcolor($black,'loud');}
-		.text{position: absolute;display: block;text-align: left;}
-		i{}
+		.text,i{display:table-cell;}
+		.text{text-align: left;}
+		i{width: 2em;}
 	}
 	li{
+		@extend %normal;
 		padding:.25rem 1rem;
-		
 		&:hover{
 			background-color: grey(10);
 			
@@ -35,12 +37,12 @@ h2+.nav-list{
 	padding-top:.5rem;
 	margin-top:-.5rem;
 	border-top:2px solid grey(30);
-	li{@extend .h5;}
+	li{@extend .h4;}
 }
 h3+.nav-list{
-	@extend %h3-nextspacing;
+	@extend %h3-nextspacing;@extend %normal;
 	li{
-		@extend %normal;
+		@extend %bold;
 		border:1px solid grey(20);
 		border-left-width: 0;
 		border-right-width:0;
