@@ -1,0 +1,93 @@
+.repeater{
+	@include grid-row($behavior:collapse);
+	.render,.question-group,.repeater-action{
+		@include grid-column(12,$collapse:true);	
+	}
+
+	.edit,.clear,.delete,.add{
+		font-size: 1rem;
+		line-height: 1rem;
+		padding: .5rem;
+		text-decoration: none;		
+		height: 2rem;
+		.text{text-transform: capitalize;}
+		.fa + .text{padding-left:.25rem;}
+	}
+	.edit,.clear,.delete{
+		color:fontcolor($real-black,'quiet');
+		&:hover{ color:fontcolor($real-black,'loud');text-decoration: underline; }
+	}
+	.render,.question-group{
+		padding-left: .75rem;
+		padding-right:.75rem;
+	}
+	.render{
+		position: relative;
+		display: block;
+		min-height: 2rem;
+		border-bottom: 1px solid grey(30);
+		.render-holder{@extend %inline-list;margin: .5rem 0;}
+		.strong{@extend %bold;}
+		.italic{@extend %italic;}
+		.render-actions{
+			position: absolute;
+			display: inline-block;
+			height: 2rem;
+			top:0;
+			right:0;
+		}
+		.edit{}
+		.delete{}
+	}
+	.question-group{
+		padding-top:.75rem; 
+		padding-bottom:.5rem;
+	}
+	
+	.repeater-action{
+		border-top:$secondary-color 2px solid;
+		display:block;
+		width:100%;
+		height:2rem;
+		.add{
+			background-color:$secondary-color;
+			display: inline-block;
+			float: right;
+			position: relative;
+			.triangle{
+				width: 0;
+				height: 0;
+				border-top: 1rem solid transparent;
+				border-right: 1.5rem solid $secondary-color;
+				border-bottom: 1rem solid transparent;
+				display: block;
+				position: absolute;
+				top: 0rem;
+				left:-1.5rem;
+
+			}
+			.text,.fa-holder{color:white;}
+			&:hover{ background-color:$success-color;
+				.triangle{ border-right-color:$success-color;}
+				}
+
+		}
+		.clear{float:left;}
+	}
+}
+
+.question-group,.render{
+	.message-holder{
+		.warning,.error{display:none;
+		&small, &span{margin-bottom: .65rem;}
+		}
+	}
+	&.warning{
+		@include fa-holder($fa-var-exclamation-triangle,'-dynamic');
+		.message-holder .warning{display: block;}
+	}
+	&.error{
+		@include fa-holder($fa-var-times-circle,'-dynamic');
+		.message-holder .error{display: block;}
+	}
+}

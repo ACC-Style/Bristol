@@ -1,0 +1,81 @@
+.page-wrapper > .split-layout{
+	margin: -2rem -1rem;
+}
+
+.split-layout{
+	@include grid-row($behavior: collapse);
+	overflow: hidden;
+	.split-sidebar,.split-content{margin-bottom:-1000px;padding-bottom:1020px;}
+	.split-sidebar{ display: none; border:grey(30) solid 0; border-right-width:1px;}
+	.split-content{
+		@include grid-column(12, $collapse:true);		
+		}
+	&.xlarge,&.large,&.medium,&.small{
+		&.reverse{ 
+			.split-sidebar,.split-content{
+				@include grid-column($float:right);
+			}
+			.split-sidebar{
+				border-right-width:0; 
+				border-left-width:1px;
+			}
+		}
+	}
+	&.small{
+		@media #{$small-up} {
+			.split-sidebar{
+				display: block;
+				@include grid-column(5 , $collapse:true);
+			}
+			.split-content{
+				display: block;
+				@include grid-column(7, $collapse:true);
+				padding-left:.5rem;
+				padding-right:.5rem;
+			}
+
+		}
+	}
+	&.medium,&.small{
+		@media #{$medium-up}{
+			.split-sidebar{
+				display: block;
+				@include grid-column(4, $collapse:true);
+			}
+			.split-content{
+				display: block;
+				@include grid-column(8, $collapse:true);
+				padding-left:.5rem;
+				padding-right:.5rem;
+			}
+		}
+	}
+	&.large,&.medium,&.small{
+		@media #{$large-up}{
+			.split-sidebar{
+				display: block;
+				@include grid-column(3, $collapse:true);
+			}
+			.split-content{
+				display: block;
+				@include grid-column(9, $collapse:true);
+				padding-left:1rem;
+				padding-right:1rem;
+			}
+		}
+	}
+	&.xlarge,&.large,&.medium,&.small{
+		@media #{$xlarge-up}{
+			.split-sidebar{
+				display: block;
+				@include grid-column(2, $collapse:true);
+			}
+			.split-content{
+				display: block;
+				@include grid-column(10, $collapse:true);
+				padding-left:1rem;
+				padding-right:1rem;
+			}
+		}
+	}
+}

@@ -13,22 +13,25 @@
 		
 		<div data-bind="page: {id:'content', role: 'start'}">
 			{% include "header" %}
-			<div data-bind="page: {id: 'home', role:'start'}">
-					<div class="row">
-						{% include "navigation/nav-list" %}
-					</div>
+			<div data-bind="page: {id: 'home', role:'start'}"  class="page-wrapper">
+				<div class="row">
+					{% include "navigation/nav-list" %}
+				</div>
 			</div>
 			<div data-bind="page: {id: 'evaluate', title:'Evaluate'}">
-				<ul id="evalutor-tab"class="nav small-block-grid-2">
-					<li class="selected columns small-6"><a href="#!/content/evaluate/calculator/">Calculator</a><a href="" class="button secondary tiny round">clear</a></li>
-					<li class="columns small-6"><a href="#!/content/evaluate/recomendation/">Recommendation</a></li>
+				<ul id="evalutor-tab"class="nav tabs overlap">
+					<li class="selected">
+						<a href="#!/content/evaluate/calculator/">Calculator</a>
+					</li>
+					<li class=""><a href="#!/content/evaluate/recomendation/">Recommendation</a></li>
+					<li class=""><a href="" class="clear"> <i class="fa fa-holder"></i> clear</a></li>
 				</ul>
-				<div data-bind="page: {id: 'calculator'}">
+				<div data-bind="page: {id: 'calculator'}" class="page-wrapper">
 					{% block calculate %}{% endblock %}
 					
 
 				</div>
-				<div data-bind="page: {id: 'recomendation'}">
+				<div data-bind="page: {id: 'recomendation'}" class="page-wrapper">
 					{% block recomend %}{% endblock %}
 					
 				</div>
@@ -40,7 +43,7 @@
 		</div>
 		<div data-bind="page: {id:'subpages'}">
 			{% include "header-subpage" %}
-			<divdata-bind="page: {id:'labs'}">
+			<div data-bind="page: {id:'labs'}"  class="page-wrapper">
 				lab page
 			</div>
 		</div>
