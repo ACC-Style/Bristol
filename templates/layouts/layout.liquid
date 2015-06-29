@@ -4,49 +4,14 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content = "user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
 		<title>Foundation 5</title>
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,500italic,300,500,700|Roboto+Slab:400,700|Raleway:300' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400,700|Roboto+Slab:400,700|Raleway:300' rel='stylesheet' type='text/css'>
+		{{"assets/css/foundation.css" | asset_url | stylesheet_tag }}
 		{{"assets/css/style.css" | asset_url | stylesheet_tag }}
   		<script src="{{ "modernizr.js" | asset_url }}"></script>
 	</head>
 	<body>
 		
 		
-		<div data-bind="page: {id:'content', role: 'start'}">
-			{% include "header" %}
-			<div data-bind="page: {id: 'home', role:'start'}"  class="page-wrapper">
-				<div class="row">
-					{% include "navigation/nav-list" %}
-				</div>
-			</div>
-			<div data-bind="page: {id: 'evaluate', title:'Evaluate'}">
-				<ul id="evalutor-tab"class="nav tabs overlap">
-					<li class="selected">
-						<a href="#!/content/evaluate/calculator/">Calculator</a>
-					</li>
-					<li class=""><a href="#!/content/evaluate/recomendation/">Recommendation</a></li>
-					<li class=""><a href="" class="clear"> <i class="fa fa-holder"></i> clear</a></li>
-				</ul>
-				<div data-bind="page: {id: 'calculator'}" class="page-wrapper">
-					{% block calculate %}{% endblock %}
-					
-
-				</div>
-				<div data-bind="page: {id: 'recomendation'}" class="page-wrapper">
-					{% block recomend %}{% endblock %}
-					
-				</div>
-			</div>
-			<div data-bind="page: {id: 'followUp', title:'Follow Up'}">
-				{% include 'navigation/section-nav'%}
-			</div>
-			{% include "footer" %}	
-		</div>
-		<div data-bind="page: {id:'subpages'}">
-			{% include "header-subpage" %}
-			<div data-bind="page: {id:'labs'}"  class="page-wrapper">
-				lab page
-			</div>
-		</div>
 		
   		{% include "scripts" %}
 	</body>

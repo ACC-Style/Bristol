@@ -1,8 +1,52 @@
-{{ "jquery.js" | asset_url | script_tag }}
-{{ "/assets/js/knockout-3.2.0.js" | asset_url | script_tag }}
-{{ "/assets/js/pager.min.js" | asset_url | script_tag }}
-{{ "/assets/js/foundation.js" | asset_url | script_tag }}
+<script src="../assets/js/zebra_datepicker.js"></script>
+<script src="../assets/js/typeahead.bundle.js"></script>
+<script src="../assets/js/foundation.js"></script>
+<script src="../assets/js/selectonic.js"></script>
+
 <script>
 $(document).foundation();
 </script>
-{{ "/assets/js/AppViewModel.js" | asset_url | script_tag }}
+
+<script type="text/javascript">
+$(document).ready(function() {
+	var view =  viewHeight();
+		function viewHeight(){
+		var viewportwidth;
+		var viewportheight;
+
+		// the more standards compliant browsers (mozilla/netscape/opera/IE7) use window.innerWidth and window.innerHeight
+		if (typeof window.innerWidth != 'undefined')
+		{
+		  viewportwidth = window.innerWidth,
+		  viewportheight = window.innerHeight
+		}
+
+		// IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
+		else if (typeof document.documentElement != 'undefined'
+		 && typeof document.documentElement.clientWidth !=
+		 'undefined' && document.documentElement.clientWidth != 0)
+		{
+		   viewportwidth = document.documentElement.clientWidth,
+		   viewportheight = document.documentElement.clientHeight
+		}
+
+		// older versions of IE
+		else
+		{
+		   viewportwidth = document.getElementsByTagName('body')[0].clientWidth,
+		   viewportheight = document.getElementsByTagName('body')[0].clientHeight
+		}
+		return  viewportheight;
+
+	};
+ 	vph = ( view - 147 )+"px";
+ 	$( "#fullscreen-spacer" ).css("min-height", vph);
+	$(window).resize(function(){
+		vph = ( viewHeight() - 147 )+"px"
+		$( "#fullscreen-spacer" ).css("min-height", vph);
+	});
+});
+
+
+</script>
+
