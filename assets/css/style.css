@@ -7,6 +7,58 @@
 *	<a  class="button" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
 */
 /**
+* Brand Level:
+* `var $brand-level` - this variable has the ablity to over take the standard acc coloring with a branded product color.  Standard values are:
+*  0 - Pure ACC Color;
+*  1 - Header Bar and Primaary Nav Selects;
+*  2 - Lines, Selects, and Header Bar:
+*  3 - Full Color OVer Take, Typography, Selects, Header Bar, and Lines
+* 
+*   @example
+*	<table class="table">
+*		<thead>
+*			<tr>
+*				<th>Variable</th>
+*				<th>Color</th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td>$brand-color</td>
+*				<td class="brand-color">&nbsp;</td>
+*			</tr>
+*			<tr>
+*				<td>$product-brand-color</td>
+*				<td class="product-brand-color">&nbsp;</td>
+*			</tr>
+*			<tr>
+*				<td>$primary-color</td>
+*				<td class="primary-color">&nbsp;</td>
+*			</tr>
+*			<tr>
+*				<td>$secondary-color</td>
+*				<td class="secondary-color">&nbsp;</td>
+*			</tr>
+*			<tr>
+*				<td>$select-color</td>
+*				<td class="select-color">&nbsp;</td>
+*			</tr>
+*			<tr>
+*				<td>$success-color</td>
+*				<td class="success-color">&nbsp;</td>
+*			</tr>
+*			<tr>
+*				<td>$alert-color</td>
+*				<td class="alert-color">&nbsp;</td>
+*			</tr>
+*			<tr>
+*				<td>$error-color</td>
+*				<td class="error-color">&nbsp;</td>
+*			</tr>
+*		</tbody>
+*	</table>
+*/
+/**
 *	Kitchen Sink:
 *	`Kitchen sink` - includes every single Foundation element so that we can make sure things work together smoothly. 
 *
@@ -4094,161 +4146,92 @@ th.sortable {
   .col10 .sortable.col10 .sort i, .col9 .sortable.col9 .sort i, .col8 .sortable.col8 .sort i, .col7 .sortable.col7 .sort i, .col6 .sortable.col6 .sort i, .col5 .sortable.col5 .sort i, .col4 .sortable.col4 .sort i, .col3 .sortable.col3 .sort i, .col2 .sortable.col2 .sort i, .col1 .sortable.col1 .sort i {
     color: #d07600; }
 
-td.grey-check, td.green-check, td.error, td.alert {
+.table td.note, .table td.data, .table td.success, .table td.error, .table td.alert {
   padding: .25rem .25rem .25rem .25rem;
   text-align: center;
-  vertical-align: top; }
-  td.grey-check i, td.green-check i, td.error i, td.alert i {
+  vertical-align: middle; }
+  .table td.note i, .table td.data i, .table td.success i, .table td.error i, .table td.alert i {
     margin: 0 auto; }
 
-td.grey-check {
-  background-color: #d9d9d9;
-  color: #fff; }
-  .highlight td.grey-check {
-    background-color: #bfbfbf; }
-  td.grey-check .fa-holder:before {
+.table td.note {
+  background-color: rgba(25, 141, 174, 0.35);
+  color: #333333; }
+  .table td.note .fa-holder:before {
+    content: ""; }
+  tr.disabled .table td.note {
+    background-color: #b3b3b3;
+    color: #f2f2f2; }
+
+tr:nth-child(even) td.note {
+  background-color: rgba(25, 141, 174, 0.5); }
+
+tr.disabled:nth-child(even) td.note {
+  background-color: #a6a6a6;
+  color: #f2f2f2; }
+
+.table td.data {
+  background-color: rgba(128, 128, 128, 0.35);
+  color: #333333; }
+  .table td.data .fa-holder:before {
+    content: ""; }
+  tr.disabled .table td.data {
+    background-color: #b3b3b3;
+    color: #f2f2f2; }
+
+tr:nth-child(even) td.data {
+  background-color: rgba(128, 128, 128, 0.5); }
+
+tr.disabled:nth-child(even) td.data {
+  background-color: #a6a6a6;
+  color: #f2f2f2; }
+
+.table td.success {
+  background-color: rgba(25, 187, 155, 0.35);
+  color: #333333; }
+  .table td.success .fa-holder:before {
     content: ""; }
+  tr.disabled .table td.success {
+    background-color: #b3b3b3;
+    color: #f2f2f2; }
 
-tr:nth-child(even) td.grey-check {
-  background-color: #bfbfbf; }
+tr:nth-child(even) td.success {
+  background-color: rgba(25, 187, 155, 0.5); }
 
-tr.highlight:nth-child(even) td.grey-check {
-  background-color: #b3b3b3; }
+tr.disabled:nth-child(even) td.success {
+  background-color: #a6a6a6;
+  color: #f2f2f2; }
 
-td.green-check {
-  background-color: #d9d9d9;
-  color: #fff; }
-  .highlight td.green-check {
-    background-color: #7cedd7; }
-  td.green-check .fa-holder:before {
-    content: ""; }
-
-tr:nth-child(even) td.green-check {
-  background-color: #bfbfbf; }
-
-tr.highlight:nth-child(even) td.green-check {
-  background-color: #61eacf; }
-
-td.error {
-  background-color: #d9d9d9;
-  color: #fff; }
-  .highlight td.error {
-    background-color: #ea8791; }
-  td.error .fa-holder:before {
+.table td.error {
+  background-color: rgba(195, 34, 49, 0.35);
+  color: #333333; }
+  .table td.error .fa-holder:before {
     content: ""; }
+  tr.disabled .table td.error {
+    background-color: #b3b3b3;
+    color: #f2f2f2; }
 
 tr:nth-child(even) td.error {
-  background-color: #bfbfbf; }
+  background-color: rgba(195, 34, 49, 0.5); }
 
-tr.highlight:nth-child(even) td.error {
-  background-color: #e66f7a; }
+tr.disabled:nth-child(even) td.error {
+  background-color: #a6a6a6;
+  color: #f2f2f2; }
 
-td.alert {
-  background-color: #d9d9d9;
-  color: #fff; }
-  .highlight td.alert {
-    background-color: #ffbe68; }
-  td.alert .fa-holder:before {
+.table td.alert {
+  background-color: rgba(208, 118, 0, 0.35);
+  color: #333333; }
+  .table td.alert .fa-holder:before {
     content: ""; }
+  tr.disabled .table td.alert {
+    background-color: #b3b3b3;
+    color: #f2f2f2; }
 
 tr:nth-child(even) td.alert {
-  background-color: #bfbfbf; }
+  background-color: rgba(208, 118, 0, 0.5); }
 
-tr.highlight:nth-child(even) td.alert {
-  background-color: #ffb14a; }
-
-recommendationTable {
-  border-collapse: collapse;
-  border-spacing: 0;
-  line-height: 1.47em; }
-
-.recommendationTable td {
-  border: 0px none;
-  padding: .5em; }
-
-.recommendationTable .recommendationLevel1, .recommendationTable .recommendationLevel1 {
-  font-family: 'Roboto Bold',Helvetica, Arial, sans-serif;
-  text-shadow: 0px 0px 0px transparent;
-  font-weight: normal; }
-
-.recommendationTable .recommendationLevel2 {
-  padding-left: 3%; }
-
-.recommendationTable .recommendationLevel3 {
-  padding-left: 6%; }
-
-.recommendationTable .recommendationLevel4 {
-  padding-left: 9%;
-  font-family: 'Roboto Condensed Light',Helvetica, Arial, sans-serif;
-  text-shadow: 0px 0px 0px transparent;
-  font-weight: normal; }
-
-.recommendationTable .CORI, .recommendationTable .CORIIa, .recommendationTable .CORIIb, .recommendationTable .LOE-A, .recommendationTable .LOE-B, .recommendationTable .LOE-C {
-  text-align: center;
-  font-family: 'Roboto Bold',Helvetica, Arial, sans-serif;
-  text-shadow: 0px 0px 0px transparent;
-  font-weight: normal; }
-
-.recommendationTable .CORI {
-  background-color: #9BBB59; }
-
-.recommendationTable .CORIIa {
-  background-color: #FFFF00; }
-
-.recommendationTable .CORIIb {
-  background-color: #FFC000; }
-
-.recommendationTable .LOE-A {
-  background-color: #548DD4; }
-
-.recommendationTable .LOE-B {
-  background-color: #8DB3E2; }
-
-.recommendationTable .LOE-C {
-  background-color: #C6D9F1; }
-
-.recommendationTable tr:nth-child(odd) {
-  background: #f5f5f5; }
-
-.recommendationTable thead tr.recommendationTableHeaders {
-  background-color: #ccc; }
-
-.recommendationTable thead th {
-  padding: 5px; }
-
-.recommendationTable thead small, .recommendationTable thead strong {
-  display: block;
-  margin: 0 auto; }
-
-.recommendationTable thead small {
-  font-family: 'Roboto Condensed Light',Helvetica, Arial, sans-serif;
-  text-shadow: 0px 0px 0px transparent;
-  font-weight: normal;
-  font-size: 10px; }
-
-.recommendationTable thead strong {
-  font-family: 'Roboto Bold',Helvetica, Arial, sans-serif;
-  text-shadow: 0px 0px 0px transparent;
-  font-weight: normal;
-  margin-top: -6px; }
-
-.recommendationTable thead strong.left {
-  margin-left: 0;
-  text-align: left;
-  font-size: 1.3em;
-  margin: 0.2em 0.2em 0.2em 5PX; }
-
-.recommendationTable small.left {
-  margin-left: 0;
-  text-align: left;
-  font-size: 11px;
-  margin-left: 5PX; }
-
-.recommendationTable tr > td + td, .recommendationTable tr > th + th {
-  border-left: 2px solid white; }
-
-.recommendationTable tr > td, .recommendationTable tr > th {
-  border-bottom: 2px solid white; }
+tr.disabled:nth-child(even) td.alert {
+  background-color: #a6a6a6;
+  color: #f2f2f2; }
 
 /**
 * Collapsable Panel:
@@ -4710,6 +4693,238 @@ table + div > .collapsable-panel {
   .button-group li.j-selected a.button .text, .button-group li.j-selected a.button .fa, .button-group li.j-selected a.button .ui-icon, .button-group li.j-selected a.button .ui-datepicker-header .ui-datepicker-prev, .ui-datepicker-header .button-group li.j-selected a.button .ui-datepicker-prev, .button-group li.j-selected a.button .ui-datepicker-header .ui-datepicker-next, .ui-datepicker-header .button-group li.j-selected a.button .ui-datepicker-next, .button-group li.selected a.button .text, .button-group li.selected a.button .fa, .button-group li.selected a.button .ui-icon, .button-group li.selected a.button .ui-datepicker-header .ui-datepicker-prev, .ui-datepicker-header .button-group li.selected a.button .ui-datepicker-prev, .button-group li.selected a.button .ui-datepicker-header .ui-datepicker-next, .ui-datepicker-header .button-group li.selected a.button .ui-datepicker-next {
     color: #fff; }
 
+.branding .oma {
+  font-size: 0;
+  color: #fff;
+  width: 100%;
+  height: 4.5rem;
+  background-origin: padding-box;
+  background-size: contain;
+  padding: 0.5rem 0.5rem 0.5rem; }
+.branding .logo, .branding .title {
+  margin-bottom: 0; }
+.branding .logo {
+  background: url("../img/oma-01.svg") no-repeat top left;
+  background-origin: content-box;
+  background-size: contain; }
+.branding .title {
+  background: url("../img/oma-02.svg") no-repeat top right;
+  background-origin: content-box;
+  background-size: contain; }
+
+.blue-bar {
+  padding: .25rem 1rem;
+  background-color: #00386b; }
+  .blue-bar .link {
+    font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 1rem; }
+
+/**
+* User ID Block:
+* `.user-id-block` - OMA User Id Container.
+* 
+*   @example
+*	<div class="user-id-block row collapse">
+*		<img class='user-pic' src="assets/img/profile-pic-default.jpg" alt="Avatar of Members Name">
+*		<ul class="no-bullet user-info">
+*			<li class="user-name" ><span class="fullName">Jeff Morris</span> <span class="userDesignation">MD, PHD</span></li>
+*			<li class="user-profession"><span class="loud">Professional Type:</span> Clinician</li>
+*			<li class="user-application "><span class="loud">Application Type:</span> FACC</li>
+*			<li class="user-application-switch"><a href="" class="link">Change Application Type</a></li>
+*		</ul>
+*	</div>
+*/
+.user-id-block {
+  margin: 2px;
+  border: 1px solid #e6e6e6;
+  padding-top: .5rem;
+  padding-bottom: 1rem;
+  position: relative; }
+  .user-id-block .user-pic {
+    float: left;
+    -webkit-clip-path: circle(40px at center);
+    -webkit-moz-path: circle(40px, 40px, 40px);
+    clip-path: circle(40px, 40px, 40px); }
+  .user-id-block .user-pic {
+    margin: .5rem 5px .5rem 5px; }
+  .user-id-block .user-info {
+    margin: .5rem .5rem .5rem -100px;
+    padding-left: 105px;
+    float: right;
+    display: block;
+    box-sizing: border-box;
+    width: 100%; }
+    .user-id-block .user-info .user-name,
+    .user-id-block .user-info .user-designation,
+    .user-id-block .user-info .user-profession,
+    .user-id-block .user-info .user-application {
+      line-height: 1.25rem; }
+    .user-id-block .user-info .user-name {
+      font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+      font-weight: 400;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #333333;
+      line-height: 2rem; }
+    .user-id-block .user-info .user-application-switch {
+      font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+      font-weight: 100;
+      font-size: .75rem;
+      line-height: 1.25rem; }
+  @media only screen and (max-width: 1024px) {
+    .user-id-block .user-pic, .user-id-block .user-info {
+      float: none;
+      position: relative; }
+    .user-id-block .user-pic {
+      margin: 0 auto;
+      display: block; }
+    .user-id-block .user-info {
+      margin: 0;
+      padding: 0 1rem;
+      text-align: center; } }
+
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear; }
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg); } }
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg); } }
+.autosave-block {
+  display: inline-block;
+  text-align: left;
+  color: #fff;
+  background-color: #198dae;
+  width: 100%;
+  padding: .25rem;
+  position: fixed;
+  top: 0;
+  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 700; }
+
+/**
+* (OMA) Membership Selection Table:
+* `.membership-table` - A table card that shows the details for membership selections.
+* 
+*   @example
+*   <ul class="membership-table">
+*   <li class="membership-table_title">Affilliate</li>
+*   <li class="membership-table_price">$75.00 <br><small>Membership Dues Per Year</small></li>
+*   <li class="membership-table_description">Fellowship is one of the most distinguished designations the College offers its members, and is the ultimate recognition of professional achievement.</li>
+*   <li class="membership-table_listitem">Have completed cardiovascular training <br><small class="italic">(FITs may apply within six months of completing training)</small></li>
+*   <li class="membership-table_listitem">Have a full-time academic and/or cardiovascular or cardiovascular-related position</li>
+*   <li class="membership-table_listitem">Dedicate at least 75% of their professional time/activities to cardiology</li>
+*   <li class="membership-table_cta">
+*   <div class="button-group" data-grouptype="or">
+*   <button href="#" class="small button radius">Learn More</button>
+*   <button href="#" class="small button radius">Select</button>
+*   </div>
+*   </li>
+*   </ul>
+*/
+.membership-table {
+  border: solid 1px #DDDDDD;
+  margin-left: 0;
+  margin-bottom: 1.42857rem; }
+  .membership-table * {
+    list-style: none;
+    line-height: 1; }
+  .membership-table small {
+    font-size: 80%; }
+  .membership-table .membership-table_title {
+    background-color: #333333;
+    padding: 1.07143rem 1.42857rem;
+    text-align: center;
+    color: #EEEEEE;
+    font-weight: normal;
+    font-size: 1.14286rem;
+    font-family: "Open Sans", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #00386b;
+    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+    font-weight: 400;
+    color: #fff; }
+  .membership-table .membership-table_price {
+    background-color: #F6F6F6;
+    padding: 1.07143rem 1.42857rem;
+    text-align: center;
+    color: #333333;
+    font-weight: normal;
+    font-size: 2.28571rem;
+    font-family: "Open Sans", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    .membership-table .membership-table_price small {
+      font-size: 50%; }
+  .membership-table .membership-table_description {
+    background-color: #FFFFFF;
+    padding: 1.07143rem;
+    text-align: center;
+    color: #777777;
+    font-size: 0.85714rem;
+    font-weight: normal;
+    line-height: 1.4;
+    border-bottom: dotted 1px #DDDDDD; }
+  .membership-table .membership-table_listitem {
+    background-color: #FFFFFF;
+    padding: 1.07143rem;
+    text-align: center;
+    color: #333333;
+    font-size: 1rem;
+    font-weight: normal;
+    border-bottom: dotted 1px #DDDDDD;
+    line-height: 1.4; }
+  .membership-table .membership-table_cta {
+    background-color: #FFFFFF;
+    text-align: center;
+    padding: 1.42857rem 1.42857rem 0; }
+  .membership-table .button-group {
+    position: relative;
+    display: inline-block;
+    margin: 1rem 0;
+    width: 100%; }
+    .membership-table .button-group:before {
+      content: attr(data-grouptype);
+      z-index: 99999;
+      color: #999;
+      display: block;
+      font-size: 1rem;
+      padding: 1rem;
+      border-radius: 50%;
+      background: #FFF;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: auto;
+      margin-left: -1.5rem; }
+    .membership-table .button-group button, .membership-table .button-group .button {
+      width: 45%;
+      background-color: #b3b3b3;
+      border-color: #8f8f8f;
+      color: #FFFFFF; }
+      .membership-table .button-group button:hover, .membership-table .button-group button:focus, .membership-table .button-group .button:hover, .membership-table .button-group .button:focus {
+        background-color: #8f8f8f; }
+      .membership-table .button-group button:hover, .membership-table .button-group button:focus, .membership-table .button-group .button:hover, .membership-table .button-group .button:focus {
+        color: #FFFFFF; }
+    .membership-table .button-group button + button, .membership-table .button-group .button + .button {
+      margin-left: 5px;
+      background-color: #19BB9B;
+      border-color: #14967c;
+      color: #FFFFFF; }
+      .membership-table .button-group button + button:hover, .membership-table .button-group button + button:focus, .membership-table .button-group .button + .button:hover, .membership-table .button-group .button + .button:focus {
+        background-color: #14967c; }
+      .membership-table .button-group button + button:hover, .membership-table .button-group button + button:focus, .membership-table .button-group .button + .button:hover, .membership-table .button-group .button + .button:focus {
+        color: #FFFFFF; }
+
 nav.top-bar {
   background-color: #00386b; }
   nav.top-bar .top-bar-section ul li, nav.top-bar .top-bar.expanded .title-area {
@@ -5052,518 +5267,84 @@ div.reveal-modal, dialog {
   white-space: normal;
   display: table-cell; }
 
-.branding .oma {
-  font-size: 0;
-  color: #fff;
-  width: 100%;
-  height: 4.5rem;
-  background-origin: padding-box;
-  background-size: contain;
-  padding: 0.5rem 0.5rem 0.5rem; }
-.branding .logo, .branding .title {
-  margin-bottom: 0; }
-.branding .logo {
-  background: url("../img/oma-01.svg") no-repeat top left;
-  background-origin: content-box;
-  background-size: contain; }
-.branding .title {
-  background: url("../img/oma-02.svg") no-repeat top right;
-  background-origin: content-box;
-  background-size: contain; }
-
-.blue-bar {
-  padding: .25rem 1rem;
-  background-color: #00386b; }
-  .blue-bar .link {
-    font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-    font-weight: 100;
-    font-size: 1rem; }
-
 /**
-* User ID Block:
-* `.user-id-block` - OMA User Id Container.
+* Twitter Typeahead:
+* `.twitter-typeahead` - Type ahead javascript
 * 
 *   @example
-*	<div class="user-id-block row collapse">
-*		<img class='user-pic' src="assets/img/profile-pic-default.jpg" alt="Avatar of Members Name">
-*		<ul class="no-bullet user-info">
-*			<li class="user-name" ><span class="fullName">Jeff Morris</span> <span class="userDesignation">MD, PHD</span></li>
-*			<li class="user-profession"><span class="loud">Professional Type:</span> Clinician</li>
-*			<li class="user-application "><span class="loud">Application Type:</span> FACC</li>
-*			<li class="user-application-switch"><a href="" class="link">Change Application Type</a></li>
-*		</ul>
-*	</div>
-*/
-.user-id-block {
-  margin: 2px;
-  border: 1px solid #e6e6e6;
-  padding-top: .5rem;
-  padding-bottom: 1rem;
-  position: relative; }
-  .user-id-block .user-pic {
-    float: left;
-    -webkit-clip-path: circle(40px at center);
-    -webkit-moz-path: circle(40px, 40px, 40px);
-    clip-path: circle(40px, 40px, 40px); }
-  .user-id-block .user-pic {
-    margin: .5rem 5px .5rem 5px; }
-  .user-id-block .user-info {
-    margin: .5rem .5rem .5rem -100px;
-    padding-left: 105px;
-    float: right;
-    display: block;
-    box-sizing: border-box;
-    width: 100%; }
-    .user-id-block .user-info .user-name,
-    .user-id-block .user-info .user-designation,
-    .user-id-block .user-info .user-profession,
-    .user-id-block .user-info .user-application {
-      line-height: 1.25rem; }
-    .user-id-block .user-info .user-name {
-      font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-      font-weight: 400;
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: #333333;
-      line-height: 2rem; }
-    .user-id-block .user-info .user-application-switch {
-      font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-      font-weight: 100;
-      font-size: .75rem;
-      line-height: 1.25rem; }
-  @media only screen and (max-width: 1024px) {
-    .user-id-block .user-pic, .user-id-block .user-info {
-      float: none;
-      position: relative; }
-    .user-id-block .user-pic {
-      margin: 0 auto;
-      display: block; }
-    .user-id-block .user-info {
-      margin: 0;
-      padding: 0 1rem;
-      text-align: center; } }
-
-.fa-spin {
-  -webkit-animation: fa-spin 2s infinite linear;
-  animation: fa-spin 2s infinite linear; }
-
-@-webkit-keyframes fa-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg); } }
-@keyframes fa-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg); } }
-.autosave-block {
-  display: inline-block;
-  text-align: left;
-  color: #fff;
-  background-color: #198dae;
-  width: 100%;
-  padding: .25rem;
-  position: fixed;
-  top: 0;
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 700; }
-
-/**
-* (OMA) Membership Selection Table:
-* `.membership-table` - A table card that shows the details for membership selections.
-* 
-*   @example
-*   <ul class="membership-table">
-*   <li class="membership-table_title">Affilliate</li>
-*   <li class="membership-table_price">$75.00 <br><small>Membership Dues Per Year</small></li>
-*   <li class="membership-table_description">Fellowship is one of the most distinguished designations the College offers its members, and is the ultimate recognition of professional achievement.</li>
-*   <li class="membership-table_listitem">Have completed cardiovascular training <br><small class="italic">(FITs may apply within six months of completing training)</small></li>
-*   <li class="membership-table_listitem">Have a full-time academic and/or cardiovascular or cardiovascular-related position</li>
-*   <li class="membership-table_listitem">Dedicate at least 75% of their professional time/activities to cardiology</li>
-*   <li class="membership-table_cta">
-*   <div class="button-group" data-grouptype="or">
-*   <button href="#" class="small button radius">Learn More</button>
-*   <button href="#" class="small button radius">Select</button>
-*   </div>
-*   </li>
-*   </ul>
-*/
-.membership-table {
-  border: solid 1px #DDDDDD;
-  margin-left: 0;
-  margin-bottom: 1.42857rem; }
-  .membership-table * {
-    list-style: none;
-    line-height: 1; }
-  .membership-table small {
-    font-size: 80%; }
-  .membership-table .membership-table_title {
-    background-color: #333333;
-    padding: 1.07143rem 1.42857rem;
-    text-align: center;
-    color: #EEEEEE;
-    font-weight: normal;
-    font-size: 1.14286rem;
-    font-family: "Open Sans", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #00386b;
-    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-    font-weight: 400;
-    color: #fff; }
-  .membership-table .membership-table_price {
-    background-color: #F6F6F6;
-    padding: 1.07143rem 1.42857rem;
-    text-align: center;
-    color: #333333;
-    font-weight: normal;
-    font-size: 2.28571rem;
-    font-family: "Open Sans", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; }
-    .membership-table .membership-table_price small {
-      font-size: 50%; }
-  .membership-table .membership-table_description {
-    background-color: #FFFFFF;
-    padding: 1.07143rem;
-    text-align: center;
-    color: #777777;
-    font-size: 0.85714rem;
-    font-weight: normal;
-    line-height: 1.4;
-    border-bottom: dotted 1px #DDDDDD; }
-  .membership-table .membership-table_listitem {
-    background-color: #FFFFFF;
-    padding: 1.07143rem;
-    text-align: center;
-    color: #333333;
-    font-size: 1rem;
-    font-weight: normal;
-    border-bottom: dotted 1px #DDDDDD;
-    line-height: 1.4; }
-  .membership-table .membership-table_cta {
-    background-color: #FFFFFF;
-    text-align: center;
-    padding: 1.42857rem 1.42857rem 0; }
-  .membership-table .button-group {
-    position: relative;
-    display: inline-block;
-    margin: 1rem 0;
-    width: 100%; }
-    .membership-table .button-group:before {
-      content: attr(data-grouptype);
-      z-index: 99999;
-      color: #999;
-      display: block;
-      font-size: 1rem;
-      padding: 1rem;
-      border-radius: 50%;
-      background: #FFF;
-      position: absolute;
-      left: 50%;
-      top: 0;
-      width: auto;
-      margin-left: -1.5rem; }
-    .membership-table .button-group button, .membership-table .button-group .button {
-      width: 45%;
-      background-color: #b3b3b3;
-      border-color: #8f8f8f;
-      color: #FFFFFF; }
-      .membership-table .button-group button:hover, .membership-table .button-group button:focus, .membership-table .button-group .button:hover, .membership-table .button-group .button:focus {
-        background-color: #8f8f8f; }
-      .membership-table .button-group button:hover, .membership-table .button-group button:focus, .membership-table .button-group .button:hover, .membership-table .button-group .button:focus {
-        color: #FFFFFF; }
-    .membership-table .button-group button + button, .membership-table .button-group .button + .button {
-      margin-left: 5px;
-      background-color: #19BB9B;
-      border-color: #14967c;
-      color: #FFFFFF; }
-      .membership-table .button-group button + button:hover, .membership-table .button-group button + button:focus, .membership-table .button-group .button + .button:hover, .membership-table .button-group .button + .button:focus {
-        background-color: #14967c; }
-      .membership-table .button-group button + button:hover, .membership-table .button-group button + button:focus, .membership-table .button-group .button + .button:hover, .membership-table .button-group .button + .button:focus {
-        color: #FFFFFF; }
-
-.page-wrapper {
-  padding: 1rem .5rem;
-  max-width: 1200px;
-  margin: 0 auto; }
-  @media only screen and (min-width: 768px) {
-    .page-wrapper {
-      padding: 1.5rem .75rem; } }
-  @media only screen and (min-width: 1024px) {
-    .page-wrapper {
-      padding: 2rem 1rem 3rem; } }
-
-.content-padding {
-  padding: 0 .5rem;
-  max-width: 1200px;
-  margin: 0 auto; }
-  @media only screen and (min-width: 768px) {
-    .content-padding {
-      padding: 0 .75rem; } }
-  @media only screen and (min-width: 1024px) {
-    .content-padding {
-      padding: 0 1rem; } }
-
-/**
-* Split Layout With Off Canvas Reveal:
-* `.mobile-offcanvas-wrapper` - This is a structural container that has the ablity to change from content and sidebar to just content and the sidebar being off canvas. Trigger the off canvas reveal by adding `.navOn` to the div.split-layout. Change the switch point by adding `.large`,`.medium`, or `.small`. <br>!!! must include _layout-split.scss !!! <br>!!! requires javascripts !!!
-* 
-*   @example
-*	<div class="mobile-offcanvas-wrapper">
-*	<section class="split-layout medium navOn">
-*	<aside class="split-sidebar">
-*	<h2>Sidebar</h2>
-*	<p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
-*	</aside>
-*	<article class="split-content">
-*	<div class="page-wrapper">
-*	<h1>Content</h1>
-*	<p>Some extra content in the content area</p><p> It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
-*	</div>
-*	</article>
-*	</section>
-*	</div>
-*/
-.mobile-offcanvas-wrapper {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  -webkit-transition: 300ms ease all;
-  transition: 300ms ease all; }
-  .mobile-offcanvas-wrapper .split-layout {
-    -webkit-transition: 300ms ease all;
-    transition: 300ms ease all;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    overflow: visible; }
-    .mobile-offcanvas-wrapper .split-layout.navOn {
-      -webkit-transform: translateX(83.33333%);
-      transform: translateX(83.33333%);
-      transform: translate3d(83.33333%, 0, 0);
-      -webkit-transform: translate3d(83.33333%, 0, 0); }
-    .mobile-offcanvas-wrapper .split-layout .split-sidebar {
-      display: block;
-      padding-left: 0;
-      padding-right: 0;
-      width: 83.33333%;
-      float: left;
-      position: absolute;
-      left: -83.33333%;
-      right: auto; }
-    .mobile-offcanvas-wrapper .split-layout.reverse.navOn {
-      -webkit-transform: translateX(-83.33333%);
-      transform: translateX(-83.33333%);
-      transform: translate3d(-83.33333%, 0, 0);
-      -webkit-transform: translate3d(-83.33333%, 0, 0); }
-    .mobile-offcanvas-wrapper .split-layout.reverse .split-sidebar {
-      position: absolute;
-      right: -83.33333%;
-      left: auto; }
-    @media only screen {
-      .mobile-offcanvas-wrapper .split-layout.small, .mobile-offcanvas-wrapper .split-layout.small.navOn {
-        -webkit-transform: translateX(0);
-        transform: translateX(0); } }
-    @media only screen and (min-width: 40.063em) {
-      .mobile-offcanvas-wrapper .split-layout.medium, .mobile-offcanvas-wrapper .split-layout.medium.navOn, .mobile-offcanvas-wrapper .split-layout.small, .mobile-offcanvas-wrapper .split-layout.small.navOn {
-        -webkit-transform: translateX(0);
-        transform: translateX(0); } }
-
-/**
- title: Responsive Sidebar	
- section: Layout
- description: A side bar that hides and shows in certain screen sizes
-example : |
-		<div class="split-layout medium reverse">
-			<div class="split-sidebar"></div>
-			<div class="split-content"></div>
-		</div>
-
+* <span class="twitter-typeahead" style="position: relative; display: inline-block; direction: ltr;">
+*  <input class="typeahead tt-hint" type="text" readonly="" autocomplete="off" spellcheck="false" tabindex="-1" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);"><input id="StateTypeAhead" class="typeahead tt-input" type="text" placeholder="States of USA" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: 'Open Sans', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;">ala</pre>
+*  <span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: block; right: auto;">
+*    <div class="tt-dataset-states">
+*      <span class="tt-suggestions" style="display: block;">
+*        <div class="tt-suggestion"><p style="white-space: normal;"><strong class="tt-highlight">Al</strong>abama</p></div>
+*        <div class="tt-suggestion tt-cursor"><p style="white-space: normal;"><strong class="tt-highlight">Al</strong>aska</p></div>
+*        <div class="tt-suggestion"><p style="white-space: normal;">C<strong class="tt-highlight">al</strong>ifornia</p></div>
+*      </span>
+*      </div>
+*    </span>
+*  </span><br/><br/><br/><br/><br/><a href="https://twitter.github.io/">Documentation</a>
+*
 **/
-.page-wrapper > .split-layout {
-  margin: -2rem -1rem; }
+.twitter-typeahead {
+  width: 100%; }
 
-.split-layout {
-  width: 100%;
-  margin: 0;
-  max-width: 114.28571rem;
-  max-width: 100%;
-  position: relative;
-  overflow: hidden;
-  clear: both; }
-  .split-layout:before, .split-layout:after {
-    content: " ";
-    display: table; }
-  .split-layout:after {
-    clear: both; }
-  .split-layout .split-sidebar, .split-layout .split-content {
-    margin-bottom: -1000px;
-    padding-bottom: 1001px; }
-  .split-layout .split-sidebar {
-    display: none;
-    padding-left: 0;
-    padding-right: 0;
-    width: 100%;
-    float: left;
-    left: -83.33333%;
-    border: #b3b3b3 solid 0;
-    border-right-width: 1px; }
-  .split-layout .split-content {
-    padding-left: 0;
-    padding-right: 0;
-    width: 100%;
-    float: left; }
-  .split-layout.xlarge.reverse .split-sidebar, .split-layout.xlarge.reverse .split-content, .split-layout.xlarge.reverse.navOn .split-sidebar, .split-layout.xlarge.reverse.navOn .split-content, .split-layout.large.reverse .split-sidebar, .split-layout.large.reverse .split-content, .split-layout.large.reverse.navOn .split-sidebar, .split-layout.large.reverse.navOn .split-content, .split-layout.medium.reverse .split-sidebar, .split-layout.medium.reverse .split-content, .split-layout.medium.reverse.navOn .split-sidebar, .split-layout.medium.reverse.navOn .split-content, .split-layout.small.reverse .split-sidebar, .split-layout.small.reverse .split-content, .split-layout.small.reverse.navOn .split-sidebar, .split-layout.small.reverse.navOn .split-content {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    float: right;
-    float: right !important; }
-  .split-layout.xlarge.reverse .split-sidebar, .split-layout.xlarge.reverse.navOn .split-sidebar, .split-layout.large.reverse .split-sidebar, .split-layout.large.reverse.navOn .split-sidebar, .split-layout.medium.reverse .split-sidebar, .split-layout.medium.reverse.navOn .split-sidebar, .split-layout.small.reverse .split-sidebar, .split-layout.small.reverse.navOn .split-sidebar {
-    border-right-width: 0;
-    border-left-width: 1px;
-    padding-left: 0;
-    padding-right: 0; }
-  .split-layout.xlarge.reverse .split-content, .split-layout.xlarge.reverse.navOn .split-content, .split-layout.large.reverse .split-content, .split-layout.large.reverse.navOn .split-content, .split-layout.medium.reverse .split-content, .split-layout.medium.reverse.navOn .split-content, .split-layout.small.reverse .split-content, .split-layout.small.reverse.navOn .split-content {
-    padding-left: 0;
-    padding-right: 0; }
-  @media only screen {
-    .split-layout.small .split-sidebar {
-      display: block;
-      padding-left: 0;
-      padding-right: 0;
-      width: 41.66667%;
-      float: left;
-      padding-left: 0;
-      padding-right: 0; }
-    .split-layout.small .split-content {
-      display: block;
-      padding-left: 0;
-      padding-right: 0;
-      width: 58.33333%;
-      float: left;
-      padding-left: 0;
-      padding-right: 0; } }
-  @media only screen and (min-width: 40.063em) {
-    .split-layout.medium .split-sidebar, .split-layout.medium.reverse .split-sidebar, .split-layout.small .split-sidebar, .split-layout.small.reverse .split-sidebar {
-      position: relative;
-      left: 0;
-      right: 0;
-      display: block;
-      padding-left: 0;
-      padding-right: 0;
-      width: 33.33333%;
-      float: left;
-      padding-left: 0;
-      padding-right: 0; }
-    .split-layout.medium .split-content, .split-layout.small .split-content {
-      display: block;
-      padding-left: 0;
-      padding-right: 0;
-      width: 66.66667%;
-      float: left;
-      padding-left: 0;
-      padding-right: 0; } }
-  @media only screen and (min-width: 64.063em) {
-    .split-layout.large .split-sidebar, .split-layout.large.reverse .split-sidebar, .split-layout.medium .split-sidebar, .split-layout.medium.reverse .split-sidebar, .split-layout.small .split-sidebar, .split-layout.small.reverse .split-sidebar {
-      display: block;
-      padding-left: 0;
-      padding-right: 0;
-      width: 25%;
-      float: left;
-      padding-left: 0;
-      padding-right: 0; }
-    .split-layout.large .split-content, .split-layout.medium .split-content, .split-layout.small .split-content {
-      display: block;
-      padding-left: 0;
-      padding-right: 0;
-      width: 75%;
-      float: left;
-      padding-left: 0;
-      padding-right: 0; } }
-  @media only screen and (min-width: 90.063em) {
-    .split-layout.xlarge .split-sidebar, .split-layout.xlarge.reverse .split-sidebar, .split-layout.large .split-sidebar, .split-layout.large.reverse .split-sidebar, .split-layout.medium .split-sidebar, .split-layout.medium.reverse .split-sidebar, .split-layout.small .split-sidebar, .split-layout.small.reverse .split-sidebar {
-      display: block;
-      padding-left: 0;
-      padding-right: 0;
-      width: 25%;
-      float: left;
-      padding-left: 0;
-      padding-right: 0; }
-    .split-layout.xlarge .split-content, .split-layout.large .split-content, .split-layout.medium .split-content, .split-layout.small .split-content {
-      display: block;
-      padding-left: 0;
-      padding-right: 0;
-      width: 75%;
-      float: left;
-      padding-left: 0;
-      padding-right: 0; } }
+.typeahead,
+.tt-query,
+.tt-hint {
+  height: 30px;
+  padding: .25rem .5rem;
+  font-size: 1rem;
+  line-height: 1;
+  border: 2px solid #b3b3b3;
+  outline: none; }
 
-/**
-* Mobile Header:
-* `.header.pagel` - there is a basic layout of short tabbed header of apps
-* 
-*   @example
-*	<div class="row"><header class="header page">
-*		<a href="#!/content/calculator/">
-*			<img class="logo" src="assets/img/logo.png" alt="ACC Statin Intolerance Guidelines">
-*		</a>
-*		<ul class="nav tabs primary condensable small">
-*			<li id="calculator-Tab selected"><a href="#!/content/calculator/">Eval<span class="condense">uate</span></a></li>
-*			<li id="recommendation-Tab" class=""><a href="#!/content/recommendation/prescribinginfo/">Recommend<span class="condense">ation</span></a></li>
-*		</ul>
-*	</header></div>
-*/
-.page.header {
-  border-bottom: #00386b 4px solid;
-  padding: 2px 2px 6px;
+.typeahead {
   background-color: #fff; }
-  .page.header .tabs {
-    margin-right: .35rem; }
-  .page.header img.logo {
-    display: none;
-    height: 38px; }
-  @media only screen and (min-width: 768px) {
-    .page.header {
-      text-align: right; }
-      .page.header img.logo {
-        display: inline-block;
-        clear: none;
-        float: left;
-        margin: .25rem 1rem; }
-      .page.header .tabs {
-        clear: none;
-        display: inline-block;
-        width: auto;
-        margin: 0 0 .4rem; } }
-  @media only screen and (max-width: 768px) {
-    .page.header .tabs {
-      width: 95%;
-      margin: 0 2.5% .3rem; } }
 
-.footer {
-  border-top: #b3b3b3 2px solid; }
-  .footer img.logo {
-    margin: .25rem 1rem; }
-  .footer .tabs {
-    margin-right: .35rem; }
-  .footer .tabs li {
-    margin-bottom: .5rem; }
-  @media only screen and (min-width: 768px) {
-    .footer {
-      text-align: right; }
-      .footer img.logo {
-        display: none; } }
-  @media only screen and (max-width: 768px) {
-    .footer .tabs {
-      margin: 0; }
-    .footer img.logo {
-      max-width: 95%;
-      margin: .25rem 2.5%; } }
+.typeahead:focus {
+  border: 2px solid #198dae; }
+
+.tt-query {
+  -webkit-box-shadow: inset 0 1px 1px rgba(102, 102, 102, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
+
+.tt-hint {
+  color: #999; }
+
+.tt-dropdown-menu {
+  width: inherit;
+  margin-top: .25rem;
+  padding: .25rem .25rem;
+  background-color: #fff;
+  border: 1px solid #b3b3b3;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+
+.tt-suggestion {
+  padding: 3px 20px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 400; }
+  .tt-suggestion strong {
+    color: #19BB9B;
+    font-size: 1.10em;
+    margin: 0 2px 0 1px;
+    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+    font-weight: 700; }
+  .tt-suggestion.tt-cursor {
+    color: #e8f4f7;
+    background-color: #198dae; }
+    .tt-suggestion.tt-cursor strong {
+      color: #fff; }
+  .tt-suggestion p {
+    margin: 0; }
 
 /* Component containers
 ----------------------------------*/
@@ -5841,84 +5622,224 @@ example : |
     border-top: 2px solid #25b6e0;
     border-bottom: 2px solid #666666; }
 
+.page-wrapper {
+  padding: 1rem .5rem;
+  max-width: 1200px;
+  margin: 0 auto; }
+  @media only screen and (min-width: 768px) {
+    .page-wrapper {
+      padding: 1.5rem .75rem; } }
+  @media only screen and (min-width: 1024px) {
+    .page-wrapper {
+      padding: 2rem 1rem 3rem; } }
+
+.content-padding {
+  padding: 0 .5rem;
+  max-width: 1200px;
+  margin: 0 auto; }
+  @media only screen and (min-width: 768px) {
+    .content-padding {
+      padding: 0 .75rem; } }
+  @media only screen and (min-width: 1024px) {
+    .content-padding {
+      padding: 0 1rem; } }
+
 /**
-* Twitter Typeahead:
-* `.twitter-typeahead` - Type ahead javascript
+* Split Layout With Off Canvas Reveal:
+* `.mobile-offcanvas-wrapper` - This is a structural container that has the ablity to change from content and sidebar to just content and the sidebar being off canvas. Trigger the off canvas reveal by adding `.navOn` to the div.split-layout. Change the switch point by adding `.large`,`.medium`, or `.small`. <br>!!! must include _layout-split.scss !!! <br>!!! requires javascripts !!!
 * 
 *   @example
-* <span class="twitter-typeahead" style="position: relative; display: inline-block; direction: ltr;">
-*  <input class="typeahead tt-hint" type="text" readonly="" autocomplete="off" spellcheck="false" tabindex="-1" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);"><input id="StateTypeAhead" class="typeahead tt-input" type="text" placeholder="States of USA" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: 'Open Sans', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;">ala</pre>
-*  <span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: block; right: auto;">
-*    <div class="tt-dataset-states">
-*      <span class="tt-suggestions" style="display: block;">
-*        <div class="tt-suggestion"><p style="white-space: normal;"><strong class="tt-highlight">Al</strong>abama</p></div>
-*        <div class="tt-suggestion tt-cursor"><p style="white-space: normal;"><strong class="tt-highlight">Al</strong>aska</p></div>
-*        <div class="tt-suggestion"><p style="white-space: normal;">C<strong class="tt-highlight">al</strong>ifornia</p></div>
-*      </span>
-*      </div>
-*    </span>
-*  </span><br/><br/><br/><br/><br/><a href="https://twitter.github.io/">Documentation</a>
-*
+*	<div class="mobile-offcanvas-wrapper">
+*	<section class="split-layout medium navOn">
+*	<aside class="split-sidebar">
+*	<h2>Sidebar</h2>
+*	<p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+*	</aside>
+*	<article class="split-content">
+*	<div class="page-wrapper">
+*	<h1>Content</h1>
+*	<p>Some extra content in the content area</p><p> It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+*	</div>
+*	</article>
+*	</section>
+*	</div>
+*/
+.mobile-offcanvas-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  -webkit-transition: 300ms ease all;
+  transition: 300ms ease all; }
+  .mobile-offcanvas-wrapper .split-layout {
+    -webkit-transition: 300ms ease all;
+    transition: 300ms ease all;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: visible; }
+    .mobile-offcanvas-wrapper .split-layout.navOn {
+      -webkit-transform: translateX(83.33333%);
+      transform: translateX(83.33333%);
+      transform: translate3d(83.33333%, 0, 0);
+      -webkit-transform: translate3d(83.33333%, 0, 0); }
+    .mobile-offcanvas-wrapper .split-layout .split-sidebar {
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      width: 83.33333%;
+      float: left;
+      position: absolute;
+      left: -83.33333%;
+      right: auto; }
+    .mobile-offcanvas-wrapper .split-layout.reverse.navOn {
+      -webkit-transform: translateX(-83.33333%);
+      transform: translateX(-83.33333%);
+      transform: translate3d(-83.33333%, 0, 0);
+      -webkit-transform: translate3d(-83.33333%, 0, 0); }
+    .mobile-offcanvas-wrapper .split-layout.reverse .split-sidebar {
+      position: absolute;
+      right: -83.33333%;
+      left: auto; }
+    @media only screen {
+      .mobile-offcanvas-wrapper .split-layout.small, .mobile-offcanvas-wrapper .split-layout.small.navOn {
+        -webkit-transform: translateX(0);
+        transform: translateX(0); } }
+    @media only screen and (min-width: 40.063em) {
+      .mobile-offcanvas-wrapper .split-layout.medium, .mobile-offcanvas-wrapper .split-layout.medium.navOn, .mobile-offcanvas-wrapper .split-layout.small, .mobile-offcanvas-wrapper .split-layout.small.navOn {
+        -webkit-transform: translateX(0);
+        transform: translateX(0); } }
+
+/**
+ title: Responsive Sidebar	
+ section: Layout
+ description: A side bar that hides and shows in certain screen sizes
+example : |
+		<div class="split-layout medium reverse">
+			<div class="split-sidebar"></div>
+			<div class="split-content"></div>
+		</div>
+
 **/
-.twitter-typeahead {
-  width: 100%; }
+.page-wrapper > .split-layout {
+  margin: -2rem -1rem; }
 
-.typeahead,
-.tt-query,
-.tt-hint {
-  height: 30px;
-  padding: .25rem .5rem;
-  font-size: 1rem;
-  line-height: 1;
-  border: 2px solid #b3b3b3;
-  outline: none; }
-
-.typeahead {
-  background-color: #fff; }
-
-.typeahead:focus {
-  border: 2px solid #198dae; }
-
-.tt-query {
-  -webkit-box-shadow: inset 0 1px 1px rgba(102, 102, 102, 0.075);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
-
-.tt-hint {
-  color: #999; }
-
-.tt-dropdown-menu {
-  width: inherit;
-  margin-top: .25rem;
-  padding: .25rem .25rem;
-  background-color: #fff;
-  border: 1px solid #b3b3b3;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
-
-.tt-suggestion {
-  padding: 3px 20px;
-  font-size: 1.5rem;
-  line-height: 1.75rem;
-  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-  font-weight: 400; }
-  .tt-suggestion strong {
-    color: #19BB9B;
-    font-size: 1.10em;
-    margin: 0 2px 0 1px;
-    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-    font-weight: 700; }
-  .tt-suggestion.tt-cursor {
-    color: #e8f4f7;
-    background-color: #198dae; }
-    .tt-suggestion.tt-cursor strong {
-      color: #fff; }
-  .tt-suggestion p {
-    margin: 0; }
+.split-layout {
+  width: 100%;
+  margin: 0;
+  max-width: 114.28571rem;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  clear: both; }
+  .split-layout:before, .split-layout:after {
+    content: " ";
+    display: table; }
+  .split-layout:after {
+    clear: both; }
+  .split-layout .split-sidebar, .split-layout .split-content {
+    margin-bottom: -1000px;
+    padding-bottom: 1001px; }
+  .split-layout .split-sidebar {
+    display: none;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    float: left;
+    left: -83.33333%;
+    border: #b3b3b3 solid 0;
+    border-right-width: 1px; }
+  .split-layout .split-content {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    float: left; }
+  .split-layout.xlarge.reverse .split-sidebar, .split-layout.xlarge.reverse .split-content, .split-layout.xlarge.reverse.navOn .split-sidebar, .split-layout.xlarge.reverse.navOn .split-content, .split-layout.large.reverse .split-sidebar, .split-layout.large.reverse .split-content, .split-layout.large.reverse.navOn .split-sidebar, .split-layout.large.reverse.navOn .split-content, .split-layout.medium.reverse .split-sidebar, .split-layout.medium.reverse .split-content, .split-layout.medium.reverse.navOn .split-sidebar, .split-layout.medium.reverse.navOn .split-content, .split-layout.small.reverse .split-sidebar, .split-layout.small.reverse .split-content, .split-layout.small.reverse.navOn .split-sidebar, .split-layout.small.reverse.navOn .split-content {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    float: right;
+    float: right !important; }
+  .split-layout.xlarge.reverse .split-sidebar, .split-layout.xlarge.reverse.navOn .split-sidebar, .split-layout.large.reverse .split-sidebar, .split-layout.large.reverse.navOn .split-sidebar, .split-layout.medium.reverse .split-sidebar, .split-layout.medium.reverse.navOn .split-sidebar, .split-layout.small.reverse .split-sidebar, .split-layout.small.reverse.navOn .split-sidebar {
+    border-right-width: 0;
+    border-left-width: 1px;
+    padding-left: 0;
+    padding-right: 0; }
+  .split-layout.xlarge.reverse .split-content, .split-layout.xlarge.reverse.navOn .split-content, .split-layout.large.reverse .split-content, .split-layout.large.reverse.navOn .split-content, .split-layout.medium.reverse .split-content, .split-layout.medium.reverse.navOn .split-content, .split-layout.small.reverse .split-content, .split-layout.small.reverse.navOn .split-content {
+    padding-left: 0;
+    padding-right: 0; }
+  @media only screen {
+    .split-layout.small .split-sidebar {
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      width: 41.66667%;
+      float: left;
+      padding-left: 0;
+      padding-right: 0; }
+    .split-layout.small .split-content {
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      width: 58.33333%;
+      float: left;
+      padding-left: 0;
+      padding-right: 0; } }
+  @media only screen and (min-width: 40.063em) {
+    .split-layout.medium .split-sidebar, .split-layout.medium.reverse .split-sidebar, .split-layout.small .split-sidebar, .split-layout.small.reverse .split-sidebar {
+      position: relative;
+      left: 0;
+      right: 0;
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      width: 33.33333%;
+      float: left;
+      padding-left: 0;
+      padding-right: 0; }
+    .split-layout.medium .split-content, .split-layout.small .split-content {
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      width: 66.66667%;
+      float: left;
+      padding-left: 0;
+      padding-right: 0; } }
+  @media only screen and (min-width: 64.063em) {
+    .split-layout.large .split-sidebar, .split-layout.large.reverse .split-sidebar, .split-layout.medium .split-sidebar, .split-layout.medium.reverse .split-sidebar, .split-layout.small .split-sidebar, .split-layout.small.reverse .split-sidebar {
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      width: 25%;
+      float: left;
+      padding-left: 0;
+      padding-right: 0; }
+    .split-layout.large .split-content, .split-layout.medium .split-content, .split-layout.small .split-content {
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      width: 75%;
+      float: left;
+      padding-left: 0;
+      padding-right: 0; } }
+  @media only screen and (min-width: 90.063em) {
+    .split-layout.xlarge .split-sidebar, .split-layout.xlarge.reverse .split-sidebar, .split-layout.large .split-sidebar, .split-layout.large.reverse .split-sidebar, .split-layout.medium .split-sidebar, .split-layout.medium.reverse .split-sidebar, .split-layout.small .split-sidebar, .split-layout.small.reverse .split-sidebar {
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      width: 25%;
+      float: left;
+      padding-left: 0;
+      padding-right: 0; }
+    .split-layout.xlarge .split-content, .split-layout.large .split-content, .split-layout.medium .split-content, .split-layout.small .split-content {
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      width: 75%;
+      float: left;
+      padding-left: 0;
+      padding-right: 0; } }
 
 h1.with-underline {
   border-bottom: #25b6e0 2px solid;
@@ -6182,5 +6103,9 @@ h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-
       -moz-column-count: 3;
       /* Firefox */
       column-count: 3; } }
+
+/**
+* Take me to [top](#top):
+*/
 
 /*# sourceMappingURL=style.css.map */
