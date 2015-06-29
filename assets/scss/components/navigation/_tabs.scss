@@ -1,37 +1,49 @@
+/**
+* Tabs (Basic):
+* `.tabs` - Group of nav that is build for a vertical space
+* 
+*   @example
+*	<ul class="nav tabs">
+*		<li class="icon"><a class="home"><i class="fa fa-holder"></i></a></li>
+*		<li class=""><a>Tab 2</li>
+*		<li class=" selected "><a >Tab 3</a></li>
+*		<li class=""><a >Tab 4</a></li>
+*	</ul>
+*/
+
 @import "../../helpers/flex";
-$tab-color: grey(10);
-$tab-hover-color: grey(15);
-$tab-selected-color:fontcolor($secondary-color,'loud');
+$tab-color: grey(20);
+$tab-hover-color: grey(25);
+$tab-selected-color:#fff;
 $tab-selected-hover-color:scale-color($secondary-color, $lightness:-15%);
-$tab-darktext:$dark-text-default;
-$tab-lighttext:$light-text-default;
+$tab-darktext:$global-default-dark-text;
+$tab-lighttext:$global-default-light-text;
 
 .tabs{
+	div.row{  max-width: 1200px;}
 	font-size: 16px;
-	border-bottom: 2px solid grey(30);
 	margin-bottom: .5rem;
-	margin-left: auto;
+	margin-left: 0;
 	width:100%;
-	background-color: grey(5);
+	background: grey(10);
 	li{	
-		border-top-left-radius: 7px;
-		border-top-right-radius: 7px;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
 		display: inline-block;
-		margin:.5rem 2px 0;
+		margin:.2rem 2px 0;
 		background-color: $tab-color;
+		
+		
 		a{
 			display: inline-block;
-			padding: .45em .3em .3em;
+			padding: .55em 1em .5em;
 			text-align: center;
 			white-space: nowrap;
 			vertical-align: top;
 			margin: 0 auto;
 			width: 100%;
 			color:color-contrast($tab-color,$tab-darktext,$tab-lighttext);
-			@include bp(md){
-				padding-left:1em;
-				padding-right:1em;
-			}			
+			@include bp(md){padding: .5em 1em .45em;}			
 		}
 
 		&:hover{
@@ -45,9 +57,9 @@ $tab-lighttext:$light-text-default;
 			background-color:$tab-selected-color;
 			padding-left: 0;
 			padding-right: 0;
-			cursor:initial;
+			cursor:context-menu;
 			a{
-				color:color-contrast($tab-selected-color,$tab-darktext,$tab-lighttext);cursor:initial;
+				color:color-contrast($tab-selected-color,$tab-darktext,$tab-lighttext);cursor:context-menu;
 			}
 		}
 		&.icon{
@@ -72,10 +84,25 @@ $tab-lighttext:$light-text-default;
 			}
 
 		} 
+		&.secondary{
+			background-color: color($secondary-color, 60);
+			a{
+				color:color-contrast(color($secondary-color, 60),$tab-darktext,$tab-lighttext);
+			}
+			&:hover{background-color: color($secondary-color, 100);
+				a{color:color-contrast(color($secondary-color,100),$tab-darktext,#fff);}
+			}
+
+		}
 	}
 	a{
 		font-size:.75em;
+
 		@include font-slab-bold();
+		@include bp(md){
+			font-size: .85em;
+			
+		}
 	}
 
 @include bp(sm-down){
@@ -86,9 +113,13 @@ $tab-lighttext:$light-text-default;
 		flex-wrap:nowrap;
 		align-items:stretch;
 		align-content: stretch;
-		li{@include flex(10);
+		margin:.2em 0;
+		li{@include flex(1 1 auto);
 		&.icon{@include flex(0 0 2em);}
 		}
+@include bp(xs-down){
+		flex-wrap:wrap;
+	}
 }
 
 

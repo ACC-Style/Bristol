@@ -1,0 +1,48 @@
+/**
+* HELPER - Condensable (Condense):
+* `.condensable` - a pattern to hide and show elements inside of a an element to shortend the text to respond to the space. You can set the break points of the condensings with `.small`, `.medium`, or `.large`
+* 
+*   @example
+*	<h2 class="condensable large">
+*		<span class="condense">Large Screens See This</span> Title
+*	</h2>
+*/
+/**
+* HELPER - Condensable (short-text long-text):
+* `.condensable` - a pattern to hide and show elements long and short text to respond to the space. You can set the break points of the condensings with `.small`, `.medium`, or `.large`
+* 
+*   @example
+*	<h2 class="condensable meduim">
+*		<span class="short-text">Short Title</span>
+*		<span class="long-text">Long TItle Seen on Medium Screens and Up</span>
+*	</h2>
+*/
+.condensable{
+	.condense,.long-text{ display:inline;}
+	.short-text{ display: none;}
+	@include bp(xs-down){
+		.short-text{ display: inline;}
+		.condense,.long-text{ display:none;}
+	}
+
+	&.small{
+		@include bp(sm-down){
+			.short-text{ display: inline;}
+			.condense,.long-text{ display:none;}
+		}
+	}
+
+	&.medium{
+		@include bp(md-down){
+			.short-text{ display: inline;}
+			.condense,.long-text{ display:none;}
+		}
+	}
+
+	&.large{
+		@include bp(lg-down){
+			.short-text{ display: inline;}
+			.condense,.long-text{ display:none;}
+		}
+	}
+}

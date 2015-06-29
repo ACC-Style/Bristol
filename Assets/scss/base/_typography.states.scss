@@ -1,0 +1,56 @@
+// This code is just for dependency this is to help maintain the project but doesn't produce any css.
+$required-SCSS_states: "false" !default;
+$required_data:(
+	'bool' :$required-SCSS_states,
+	'required':'__states.required.scss',
+	'path':'scss/base/__states.required.scss',
+	'file':'_typography.state.scss'
+	);
+@include required-check($required_data...);
+// End of required check
+/**
+* Typography States:
+* `.repeater` - This is form elements repeater. This Module is broken into 3 major containers the `renders`,`question-group`, and `repeater actions`.
+* 
+*   @example
+*  
+*/
+
+%htmlContentTagsState{
+	font-weight: 900;
+}
+h1,h2,h3,h4,h5,h6,p,a,li,blockquote{
+	@each $State in $states{
+		&#{map-get($State,'Selector')}{
+			color:map-get($State,'Color');
+			@extend %htmlContentTagsState;
+			}
+
+		}
+}
+h1,h2,h3,h4,h5,h6{
+		&.with-underline{
+		@each $State in $states{
+			&#{map-get($State,'Selector')}{
+				border-color:map-get($State,'Color');
+			}
+		}
+	}
+}	
+
+// #{$htmlContainerTags}{
+// 	@each $state,$selector, $color, $icon in $states{
+// 		&#{$selector}{
+// 			background-color:color($color,60);
+// 			border-color:$color;
+// 		}
+
+// 	}
+// }
+// @each $state,$selector, $color, $icon in $states{
+// 	#{$selector}{
+// 		color:$color;
+// 		@extend %htmlContentTagsState;
+// 		}
+// 	}
+

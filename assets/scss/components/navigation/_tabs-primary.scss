@@ -1,18 +1,39 @@
-$primary-tab-color:grey(20);
+/**
+* Tabs Primary:
+* `.tabs.primary` -  Priamary is used for top level nav for mobile porjects
+* 
+*   @example
+*	<ul class="nav tabs primary">
+*		<li class="icon  "><a class="home"><i class="fa fa-holder"></i></a></li>
+*		<li class=""><a>Tab 2</li>
+*		<li class="selected"><a >Tab 3</a></li>
+*		<li class=""><a >Tab 4</a></li>
+*	</ul>
+*/
+
+
+
+
+$primary-tab-color:grey(40);
 $primary-tab-hover-color:grey(30);
-$primary-tab-selected-color:fontcolor($success-color,'loud');
-$primary-tab-selected-hover-color:scale-color($success-color, $lightness:-15%);
-$primary-tab-darktext:$primary-color;
-$primary-tab-lighttext:#fff;
+$primary-tab-selected-color:rebrand-color($select-color,1);
+$primary-tab-darktext:$global-default-dark-text;
+$primary-tab-lighttext:$global-default-light-text;
 
 .tabs.primary{
+	font-size: 18px;
 	border:0;
-	background-color: transparent;
+	background: transparent none;
+	@include bp(md-down){
+		margin:.25em;
+	}
 	li{
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
 		background-color: $primary-tab-color ;
-		a{color:color-contrast($primary-tab-color,$primary-tab-darktext,$primary-tab-lighttext);}
+		a{color:color-contrast($primary-tab-color,$primary-tab-darktext,$primary-tab-lighttext);
+			@include bp(xs-down){ white-space: normal;}
+		}
 		&:hover{
 			background-color: $primary-tab-hover-color;
 			a{color:color-contrast($primary-tab-hover-color,$primary-tab-darktext,$primary-tab-lighttext);}

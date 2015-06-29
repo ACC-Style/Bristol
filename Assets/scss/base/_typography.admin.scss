@@ -1,0 +1,116 @@
+$typography-highlight-color:rebrand-color(color($primary-color,80) , 3);
+$typography-line-colors:rebrand-color(color($primary-color,80) , 3);
+
+$h1-spacing:1.25rem;
+$h2-spacing:1rem;
+$h3-spacing:.85em;
+$h4-spacing:.35rem;
+$h5-spacing:.25rem;
+$h6-spacing:.5rem;
+%h1,%h2,%h3,%h4,%h5,%h6{ margin-top:0; clear:both;}
+%h1{
+	@include font-display();
+	font-weight: 400;
+}
+
+%h2,%h3,%h4{
+	@include font-bold();
+}
+%h5, %h6 { @include font-bold-cond(); }
+%h1 { line-height: 1.1; }
+%h2 { line-height: 1.2; }
+%h3, %h4,%h5, %h6{ line-height: 1.3;}
+%h1-nextspacing{margin-bottom:$h1-spacing; }
+%h2-nextspacing{margin-bottom:$h2-spacing; }
+%h3-nextspacing{margin-bottom:$h3-spacing; }
+%h4-nextspacing{margin-bottom:$h4-spacing; }
+%h5-nextspacing{margin-bottom:$h5-spacing; }
+%h6-nextspacing{margin-bottom:$h6-spacing; }
+
+%h1 { font-size: 1.75rem;  letter-spacing: 1px;  font-weight: 600;}
+%h2 { font-size: 1.25rem; letter-spacing: -1px;}
+%h3 { font-size: 1.10rem;}
+%h4 { font-size: 1rem;}
+%h5 { font-size: .9rem;}
+%h6 { font-size: .8rem;}
+
+
+.h1{@extend %h1;@extend %h1-nextspacing;}
+.h2{@extend %h2;@extend %h2-nextspacing;}
+.h3{@extend %h3;@extend %h3-nextspacing;}
+.h4{@extend %h4;@extend %h4-nextspacing;}
+.h5{@extend %h5;@extend %h5-nextspacing; }
+.h6{@extend %h6;@extend %h6-nextspacing;}
+@include bp(md-down){
+
+.h1{font-size:1.75rem;}
+.h2{font-size:1.25rem;}
+.h3{font-size:1.10rem;}
+.h4{font-size:1rem;}
+.h5{font-size:.9rem; }
+.h6{font-size:.8rem;}
+
+}
+
+%normal { font-size: 100%; margin-bottom: .5rem; line-height: 1.5rem;@include font; color:fontcolor($real-black);}
+%loud  { color:fontcolor($real-black); }
+%emphasis{ color:fontcolor($real-black,'loud'); }
+%quiet { color: fontcolor($real-black,'quiet'); }
+%italic { @include font-italic; @extend %quiet;}
+%bold   { @include font-bold; @extend %loud; }
+%subtle{ @include font-light; @extend %quiet;}
+.block-margins { margin: 1em 0; }
+
+%unordered-list { list-style-type: disc; }
+%ordered-list { list-style: decimal; }
+%inline-list{ list-style: none; display:block;margin:0; >li{display:inline-block;margin-left: .25rem;} }
+
+/**
+ * Header Tags:
+ * `Typography` - basic styling for headers. 
+ *  You can also us `.h1`,`.h2`,`.h3`,`.h4`,`.h5`, or `.h6` 
+ *  to make any text elements style like the associated header tag 
+ *
+ *     @example
+ *     h1 Header 1 Tag
+ *		small subheader
+ *     h2 Header 2 Tag
+ *     h3 Header 3 Tag
+ *     h4 Header 4 Tag
+ *     h5 Header 5 Tag 
+ *     h6 Header 6 Tag
+ *     h1.with-underline Header 1 Tag
+ *		small subheader
+ *     h2.with-underline Header 2 Tag
+ *     h3.with-underline Header 3 Tag
+ *     h4.with-underline Header 4 Tag
+ *     h5.with-underline Header 5 Tag 
+ *     h6.with-underline Header 6 Tag
+ */
+
+
+h1{
+	
+	@extend .h1;
+}
+h2{
+
+	@extend .h2;
+	color:fontcolor($real-black, 'loud');
+}
+h3{
+	@extend .h3;
+	color:fontcolor($real-black);
+}
+h4{
+	@extend .h4;
+	color:fontcolor($real-black,'quiet');
+}
+h5{
+	@extend .h5;
+	color:fontcolor($real-black);
+}
+h6{
+	@extend .h6;
+	color:fontcolor(#666);
+}

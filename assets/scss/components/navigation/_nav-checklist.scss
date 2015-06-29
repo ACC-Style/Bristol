@@ -1,3 +1,29 @@
+/**
+* Nav List (Checklist):
+* `.nav-checklist` - add class to the nav to change the .nav-list from forward links to a list with states of `.selected`, `.completed`, `.warning`, `.error`
+* 
+*   @example
+*	<nav class="nav-list nav-checklist">
+*	<ul>
+*	<li class="">
+*	<a><span class="text">Nav List Item 1(blank)</span><i class="fa fa-holder-dynamic"></i></a>
+*	<li  class="selected">
+*	<a><span class="text">Nav List Item 2(selected)</span><i class="fa fa-holder-dynamic"></i></a>
+*	</li>
+*	<li  class="completed">
+*	<a><span class="text">Nav List Item 3(completed)</span><i class="fa fa-holder-dynamic"></i></a>
+*	</li>
+*	<li  class="warning">
+*	<a><span class="text">Nav List Item 4(warning)</span><i class="fa fa-holder-dynamic"></i></a>
+*	</li>
+*	<li class="error">
+*	<a><span class="text">Nav List Item 5(error)</span><i class="fa fa-holder-dynamic"></i></a>
+*	</li  class="">
+*	</ul>
+*	</nav>
+*/
+
+
 .nav-list.nav-checklist{
 	//@extend .nav-list;
 	li{
@@ -7,14 +33,32 @@
 		margin-bottom: 0;
 		margin-top: -1px;
 		@include fa-holder('','dynamic');
-		&.selected{@include fa-holder($fa-var-check,'dynamic'); i{color:grey(40);};}
+		background-image: url(../img/empty_stripe.png);
+		&:hover{background-image: none;}
+		&.selected{
+			@include fa-holder($fa-var-check,'dynamic'); 
+			border-bottom-width: 1px;
+			border-color: color(rebrand-color($success-color,3), 40);
+			background-image: none;
+			i{color:grey(40);};
+		}
 		&.completed{ @include fa-holder($fa-var-check,'dynamic'); i{color:$success-color;}}
-		&.warning{ @include fa-holder($fa-var-exclamation-triangle,'dynamic'); i{color:$alert-color;}}
-		&.error{ background-color: color($warning-color,10);
+		&.warning{ 
+			background-color: color($alert-color,40);
+			border-color: color($alert-color,40);
+			border-bottom-width: 1;
+			@include fa-holder($fa-var-exclamation-triangle,'dynamic');
+			i{color:$alert-color;}
+			&:hover{background-color:  color($alert-color,15);}
+			}
+		&.error{ background-color: color($warning-color,40);
+			border-color: color($warning-color,40);
+			border-bottom-width: 1;
 			@include fa-holder($fa-var-times-circle,'dynamic');
 			i{color:$warning-color;}
-			&:hover{background-color:  color($warning-color,20);}
+			&:hover{background-color:color($warning-color,15);}
 		}
+		&.selected,&.error,&.warning{ color:fontcolor($real-black);}
 
 	}
 	a{

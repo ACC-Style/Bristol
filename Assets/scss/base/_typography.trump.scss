@@ -1,0 +1,104 @@
+h1.with-underline{border-bottom: $typography-highlight-color 2px solid; padding-bottom:$h1-spacing*.25;}
+h2.with-underline{border-bottom: grey(60) 2px solid; padding-bottom:$h2-spacing*.25;}
+h3.with-underline{border-bottom: color($typography-highlight-color,60) 1px dotted; padding-bottom:$h3-spacing*.25;}
+h4.with-underline{border-bottom: grey(40) 1px solid; padding-bottom:$h4-spacing*.25;}
+h5.with-underline{border-bottom: grey(30) 1px solid; padding-bottom:$h5-spacing*.25;}
+h6.with-underline{border-bottom: grey(30) 1px dotted; padding-bottom:$h6-spacing*.25;}
+
+/**
+ * Sub Content in Header Tags:
+ * `headline > blockquote` - basic styling for sub content in headers. 
+ *
+ *     @example
+ *     h1.with-underline Header 1 Tag
+ *		blockquote sub content in a blockquote
+ *     h2.with-underline Header 2 Tag
+ *		blockquote sub content in a blockquote
+ *     h3.with-underline Header 3 Tag
+ *		blockquote sub content in a blockquote
+ *     h4.with-underline Header 4 Tag
+ *		blockquote sub content in a blockquote
+ *     h5.with-underline Header 5 Tag 
+ *		blockquote sub content in a blockquote
+ *     h6.with-underline Header 6 Tag
+ */
+
+
+blockquote{
+	h1 &,h2 &,h3 &,h4 &,h5 &,h6 &{
+		display: block;
+		line-height: 1.1;
+		font-size: .55em;
+		margin: 0;
+		padding: 0;
+		@include font();
+		border:0 none transparent;
+	}
+	h1 &{}
+	h2 &{font-size: .70em;}
+	h3 &{font-size: .80em;}
+	h4 &{font-size: .90em;}
+	h5 &{font-size: .90em;}
+	h6 &{font-size: .90em;}
+
+}
+.text-highlight-color{color:$typography-highlight-color!important;}
+/**
+ * Group-divid:
+ * `.group-divide` - a line above or below the container elemtent
+ *
+ *     @example
+ *	div
+ *		p this paragraph with line after.
+ *     .group-divide
+ *    	 p this should be a paragraph a grey line before it. 
+ */
+
+.group-divide{
+	border-top:$typography-highlight-color 1px dotted;
+	margin-top:.5rem;
+	padding-top: 1rem;
+
+}
+.group-divide-bottom{	
+	border-bottom:$typography-highlight-color 1px dotted;
+	margin-bottom:.5rem;}
+/**
+*  A tag and .link:
+*  `.link` - a tags have a basic style  but links are a styled with `.link`
+*
+*     @example
+*     a 	
+* 	  span this is a plan link
+*	a.link
+* 	  span this is a link with ".link"
+*		
+*/
+
+.link{
+	color:$typography-highlight-color;
+	text-decoration: underline;
+	&.icon{text-decoration: none}
+	&:hover{
+		color:color($typography-highlight-color,80);
+		text-decoration: underline;
+	}
+	&.reverse{color:#fff;}
+}
+/**
+*
+*  bold, italic or subtle:
+*  `.bold` - make text bold, `.italic` - make text italic, or `.subtle` - make text subtle
+*
+*     @example
+*     div.bold this is `bold` content
+*     div.italic this is `italic` content
+*     div.subtle this is `subtle` content
+*
+*/
+.loud{@extend %loud;}
+.quiet{@extend %quiet;}
+.normal{@extend %normal;}
+.bold{@extend %bold;}
+.italic{@extend %italic;}
+.subtle{@extend %subtle;}

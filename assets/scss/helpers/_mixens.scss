@@ -43,3 +43,10 @@
     width:100%;
   }
 }
+
+@mixin required-check($bool, $required, $path,$file){
+ @if($bool == "false" ){
+    @warn "You seem to missing a required include '#{$required}'. The include '#{$file}' is dependent scss '#{$required}'.  The path to '#{$required}' is ' #{$path} ' ";
+  }
+
+}

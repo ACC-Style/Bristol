@@ -1,0 +1,46 @@
+/**
+* Switch (Foundation Override):
+* `.switch` - Switches are a more visible and more touchable checkbox or radio buttons 
+* 
+*   @example
+*	<div class="switch-input-space with-underline row">
+*		<div class="switch">
+*			<input type="checkbox" id="hb-check0" value="[object Object]">
+*			<label  for="hb-check0"></label>
+*		</div>
+*		<label  class="switch-value" for="hb-check0">Question to say yes to</label>		
+*	</div>
+*   <a class="link" href="http://foundation.zurb.com/docs/components/switch.html">Foundation Documentation</a>
+*/
+
+$switch-active-color:rebrand-color($select-color, 2);
+.switch-input-space{
+	@extend .input-space;
+	white-space: nowrap;
+	display:table;
+	padding-bottom: .5rem;
+	padding-top: .5rem;
+	.with-underline{border-bottom: 1px dotted color( rebrand-color($black,3), 20);}
+	}
+.switch {
+  @include switch-base($switch-paddle-transition-speed, $switch-paddle-transition-ease);
+  @include switch-size($switch-height-sml);
+  @include switch-style($switch-paddle-bg, $switch-active-color, true);
+  display:inline-block;
+  display:table-cell;
+  width: 1%;
+}
+
+.switch-value{
+	@extend .h4;
+	display: inline-block;
+	height: 2rem;
+	vertical-align: top;
+	padding: 0 0 0 .25rem;
+	margin: 0;
+	position: relative;
+	background-color:transparent;
+	color:fontcolor($black);
+	white-space: normal;
+	display:table-cell;
+}

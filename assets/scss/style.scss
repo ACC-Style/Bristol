@@ -1,21 +1,41 @@
+/**
+* Base Framework:
+* `zurb foundation` - This style is base off of a reduced build of zurb foundation all of the grid, columns, base typography, and form elements can be used from zurb.  All functions can be turned back on but to reduce build size many of the design features have been disabled.
+* 
+*   @example
+*	<a  class="button" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
+*/
+@import "helpers/mixens";
+@import 'base/brandVar';
+$brand-level:0;
+
+@import "vendor/foundation/foundation-kitchensink";
+@import "vendor/font-awesome/_font-awesome_kitchensink";
+@import "vendor/jquery-ui/jquery-ui-kitchensink";
+$product-brand-color: #5b1ed4;
 @import "base/colors";
+
+
 @import "base/fonts";
 @import "helpers/breakpoints";
-@import "helpers/mixens";
-//vendor files
 
-//@import "vendor/font-awesome";
-@import "vendor/font-awesome/_variables";
-@import "vendor/font-awesome/mixins";
-@import "vendor/font-awesome/path";
-@import "vendor/font-awesome/core";
+
+//vendor files
+@import "vendor/font-awesome/font-awesome";
+
+// @import "vendor/font-awesome/mixins";
+// @import "vendor/font-awesome/path";
+// @import "vendor/font-awesome/core";
+
+@import "base/__states.required";
+
+// dynamic usage of font awesome.
 @import "base/fa-holder";
-@import "../../bower_components/foundation/scss/foundation";
+@import "../../bower_components/foundation/scss/foundation-features";
+@import "base/typography";
+@import "base/typography.states";
 
 //branding and typography
-@import "base/typography";
-
-
 
 //Components that live inside of Layouts.
 @import "components/elements/buttons";
@@ -25,28 +45,57 @@
 @import "components/navigation/nav-list";
 @import "components/navigation/nav-checklist";
 @import "components/navigation/circle-button-section-nav";
-@import "components/question/question";
-@import "components/question/question-buttongroup";
-@import "components/question/question-radiogroup";
+@import "components/answer_question/__answer_question.required";
+@import "components/answer_question/question";
+@import "components/answer_question/question-buttongroup";
+@import "components/answer_question/question-radiogroup";
+@import "components/answer_question/form-repeater";
 @import "components/table/table";
 @import "components/table/table-stripped";
 @import "components/table/table-sortable";
-@import "components/table/table-cellcolor";
+@import "components/table/si.table-cellcolor";
+@import "components/table/si.recommendationTable";
 
-//Modules A collection of components brought together into a larger moduals
-@import "modules/form-repeater";
+// Modules A collection of components brought together into a larger moduals
 
+@import "components/collapsable-panel";
+@import "components/collapsable-panel.states";
+@import "components/accordion";
+@import "components/panel-selector";
+
+// Vendor Overrides 
+
+@import "vendor/foundation/override.topbar";
+@import "vendor/foundation/override.pagination";
+@import "vendor/foundation/override.reveal";
+@import "vendor/foundation/override.slider";
+@import "vendor/foundation/override.switch";
+
+// Anticoag
+//@import "components/_anticoag/data-display";
+// OMA Modules
+@import "components/_oma/branding";
+@import "components/_oma/user-id-block";
+@import "components/_oma/member-selection-table";
 
 //Structures and Layouts
 @import "structures/layout";
+@import "structures/layout-split-off-canvas";  // this style must come before 'lyout-split'
 @import "structures/layout-split";
+
 @import "structures/mobileApps/layout_header";
 @import "structures/mobileApps/layout_footer";
+@import "vendor/jquery-ui/theme-custom";
+@import "vendor/typeahead/typeahead";
 
 
 // Template specific views 
-//@import "views/si/index";
+
+//trumps the dreaded importants show up in the files below.
+@import "base/typography.trump";
+@import "base/typography.states.scss";
 
 //Utitlity Styles that Override other things
 @import "helpers/utilities";
-
+@import "helpers/condensable";
+@import "helpers/css3";

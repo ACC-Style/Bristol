@@ -1,14 +1,46 @@
-.header{
-	border-bottom: grey(30) 2px solid;
-	padding:2px;
+/**
+* Mobile Header:
+* `.header.pagel` - there is a basic layout of short tabbed header of apps
+* 
+*   @example
+*	<div class="row"><header class="header page">
+*		<a href="#!/content/calculator/">
+*			<img class="logo" src="assets/img/logo.png" alt="ACC Statin Intolerance Guidelines">
+*		</a>
+*		<ul class="nav tabs primary condensable small">
+*			<li id="calculator-Tab selected"><a href="#!/content/calculator/">Eval<span class="condense">uate</span></a></li>
+*			<li id="recommendation-Tab" class=""><a href="#!/content/recommendation/prescribinginfo/">Recommend<span class="condense">ation</span></a></li>
+*		</ul>
+*	</header></div>
+*/
+
+
+
+.page.header{
+	border-bottom: rebrand-color($brand-color, 1) 4px solid;
+	padding:2px 2px 6px;
+	background-color: #fff;
 	.tabs {margin-right: .35rem;}
-	img.logo{display: none;}
+	img.logo{display: none; height: 38px;}
 	@include bp(md){
 		text-align: right;
-			img.logo{display: inline-block;clear:none;float:left;margin: .25rem 1rem;}
-			ul.nav.tabs{clear:none;display: inline-block; font-size: 18px;width:auto;
-				li a{@include font-slab();}
-			}
-
+		img.logo{
+			display: inline-block;
+			clear:none;
+			float:left;
+			margin: .25rem 1rem;
 		}
+		.tabs{
+			clear:none;
+			display: inline-block;
+			width:auto;
+			margin: 0 0 .4rem;
+		}
+	}
+	@include bp(sm-down){
+		.tabs{
+			width:95%;
+			margin: 0 2.5% .3rem;
+		}
+	}
 }

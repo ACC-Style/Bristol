@@ -1,0 +1,56 @@
+/**
+*  Tables:
+*  `table` - plan tables are clean with barely any styles.
+* 
+*   @example
+*	<table class="table">
+*		<thead>
+*			<tr>
+*				<th>table header</th>
+*				<th>table header</th>
+*				<th>table header</th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td>table row 1 table cell A<br><small>this is small text</small></td>
+*				<td>table row 1 table cell B<br><small class="blue">this is small text with blue</small></td>
+*				<td>table row 1 table cell C</td>
+*			</tr>
+*			<tr>
+*				<td>table row 2 table cell A</td>
+*				<td>table row 2 table cell B</td>
+*				<td>table row 2 table cell C</td>
+*			</tr>
+*		</tbody>
+*		<tfoot>
+*			<tr>
+*				<td colspan="3">footer cell</td>
+*			</tr>
+*		</tfoot>
+*	</table>
+ */
+ .table{
+	width:100%;
+	border-collapse: collapse;
+	border:0;
+	margin-bottom: 1rem;
+	@extend %normal;
+	tbody tr + tr td{ border-top:grey(10) 1px solid;}
+	td,th{
+		text-align: left;
+		padding:.25rem;
+		&.color-highlighted{color:rebrand-color(fontcolor($primary-color),2);}
+		}
+	small{font-size: 80%; color:fontcolor($black, 'quiet'); }
+
+	thead {
+		th,td{@extend %loud; @extend %h5;border:0;vertical-align: bottom;}
+		th.with-underline,td.with-underline{border-bottom: 1px dotted grey(10);}
+		tr:last-child th,tr:last-child td{ border-bottom:2px solid rebrand-color($primary-color,2); }
+	}
+	tbody td{vertical-align: middle;}
+	tfoot td{@extend %italic;border:0;border-top:1px solid grey(30); font-size: .9rem;}
+	a.button, button,.inline-list,.nobutton{margin:0;}
+
+}

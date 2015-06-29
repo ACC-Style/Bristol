@@ -55,6 +55,7 @@
  $rem-base: $base-font-size;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
+
 @import "../../../../bower_components/foundation/scss/foundation/functions";
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
@@ -69,7 +70,7 @@
 // $base-line-height: 150%;
 
 // We use this to control whether or not CSS classes come through in the gem files.
-$include-html-classes: true;
+$include-html-classes: false;
 // $include-print-styles: true;
 $include-html-global-classes: $include-html-classes;
 
@@ -256,8 +257,8 @@ $header-line-height: 1.4;
 // We use these to style anchors
 // $anchor-text-decoration: none;
 // $anchor-text-decoration-hover: none;
-// $anchor-font-color: $primary-color;
-// $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
+$anchor-font-color: fontcolor( $black);
+$anchor-font-color-hover: fontcolor($black,'loud');
 
 // We use these to style the <hr> element
 // $hr-border-width: 1px;
@@ -419,12 +420,12 @@ $header-line-height: 1.4;
 // 05. Buttons
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-button-classes: $include-html-classes;
+$include-html-button-classes: true;
 
 // We use these to build padding for buttons.
-$button-tny: rem-calc(4);
-$button-sml: rem-calc(14);
-$button-med: rem-calc(16);
+$button-tny: rem-calc(8);
+$button-sml: rem-calc(11);
+$button-med: rem-calc(14);
 $button-lrg: rem-calc(18);
 
 // We use this to control the display property.
@@ -448,7 +449,7 @@ $button-font-family: $font-family-serif;
 // We use these to control button border and hover styles.
 // $button-border-width: 0px;
 // $button-border-style: solid;
-// $button-bg-color: $primary-color;
+$button-bg-color: $primary-color;
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
@@ -469,7 +470,7 @@ $button-font-family: $font-family-serif;
 // 06. Button Groups
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
- $include-html-button-classes: false;
+ $include-html-button-classes: true;
 
 // Sets the margin for the right side by default, and the left margin if right-to-left direction is used
 // $button-bar-margin-opposite: rem-calc(10);
@@ -716,7 +717,7 @@ $button-font-family: $font-family-serif;
 // $inline-list-display: block;
 
 // We use this to control any elements within list items
-// $inline-list-children-display: block;
+$inline-list-children-display: inline-block;
 
 // 14. Joyride
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -974,7 +975,7 @@ $button-font-family: $font-family-serif;
 // 22. Pricing Tables
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-pricing-classes: $include-html-classes;
+$include-html-pricing-classes: false;
 
 // We use this to control the border color
 // $price-table-border: solid 1px $gainsboro;
@@ -983,13 +984,13 @@ $button-font-family: $font-family-serif;
 // $price-table-margin-bottom: rem-calc(20);
 
 // We use these to control the title styles
-// $price-title-bg: $oil;
+//	$price-title-bg: rebrand-color($brand-color, 2);
 // $price-title-padding: rem-calc(15 20);
 // $price-title-align: center;
 // $price-title-color: $smoke;
-// $price-title-weight: $font-weight-normal;
+//	$price-title-weight: 900;
 // $price-title-size: rem-calc(16);
-// $price-title-font-family: $body-font-family;
+//	$price-title-font-family: font-slab();
 
 // We use these to control the price styles
 // $price-money-bg: $vapor  ;
@@ -1051,7 +1052,7 @@ $button-font-family: $font-family-serif;
 // 24. Range Slider
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-range-slider-classes: $include-html-classes;
+$include-html-range-slider-classes: false;
 
 // These variables define the slider bar styles
 // $range-slider-bar-width: 100%;
@@ -1362,7 +1363,7 @@ $button-font-family: $font-family-serif;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: $oil;
+// $topbar-bg-color:rebrand-color($brand-color, 1);
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin

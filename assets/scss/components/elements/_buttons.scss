@@ -1,5 +1,25 @@
-.button{
-	@include button();
+/**
+* Buttons:
+* `.nobutton .button or .button.secondary` - sample buttons from `.button` you can modifiers
+* 
+*   @example
+*	<a class="nobutton">no button</a>
+*	<a class="button">button</a>
+*	<a class="button secondary">secondary button</a>
+*	<a class="button disabled">disabled button </a>
+*/
 
+.nobutton{
+	@include button($bg:#fff);
+	margin-bottom: 0;
+}
+
+.button.disabled,.button.disabled:hover{
+	&,&.success,&.alert,&.secondary{
+		background-color: grey(20);
+		color:fontcolor($black,'quiet');
+		cursor:default;
+		
+	}
 
 }

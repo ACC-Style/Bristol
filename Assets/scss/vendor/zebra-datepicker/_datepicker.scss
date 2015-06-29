@@ -1,0 +1,189 @@
+/**
+* Zebra_DatePicker:
+* `.Zebra_DatePicker` - a lightweight jQuery date picker plugin
+* 
+*   @example
+*	<div class="row"><div style="padding:1rem; position:relative; height:275px;width:30%;float:left;"><h3>Normal Date Picker</h3>
+*	<div class="Zebra_DatePicker" style=" display: block; z-index:0"><table class="dp_header" style="width: 218px;"><tbody><tr><td class="dp_previous">&laquo;</td><td class="dp_caption">April, 2015</td><td class="dp_next">&raquo;</td></tr></tbody></table><table class="dp_daypicker"><tbody><tr><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th></tr><tr><td class="dp_not_in_month">30</td><td class="dp_not_in_month">31</td><td class="dp_disabled">1</td><td class="dp_disabled">2</td><td class="dp_disabled">3</td><td class="dp_weekend_disabled">4</td><td class="dp_weekend_disabled">5</td></tr><tr><td class="dp_disabled">6</td><td class="dp_disabled">7</td><td class="dp_disabled">8</td><td class="dp_disabled">9</td><td class="dp_disabled">10</td><td class="dp_weekend_disabled">11</td><td class="dp_weekend_disabled">12</td></tr><tr><td class="dp_disabled">13</td><td class="dp_disabled">14</td><td class="dp_disabled dp_disabled_current">15</td><td>16</td><td>17</td><td class="dp_weekend">18</td><td class="dp_weekend">19</td></tr><tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td class="dp_weekend">25</td><td class="dp_weekend">26</td></tr><tr><td>27</td><td>28</td><td class="dp_selected">29</td><td>30</td><td class="dp_not_in_month">1</td><td class="dp_not_in_month">2</td><td class="dp_not_in_month">3</td></tr><tr><td class="dp_not_in_month">4</td><td class="dp_not_in_month">5</td><td class="dp_not_in_month">6</td><td class="dp_not_in_month">7</td><td class="dp_not_in_month">8</td><td class="dp_not_in_month">9</td><td class="dp_not_in_month">10</td></tr></tbody></table><table class="dp_monthpicker" style="width: 218px; height: 183px; display: none;"></table><table class="dp_yearpicker" style="width: 218px; height: 183px; display: none;"></table><table class="dp_footer" style="width: 218px; display: none;"><tbody><tr><td class="dp_today" style="width:50%">false</td><td class="dp_clear" style="display: none;">Clear date</td></tr></tbody></table></div>
+*	</div><div style="padding:1rem; position:relative; height:275px;width:30%;float:left;"><h3>Year Only Date Picker</h3>
+*	<div class="Zebra_DatePicker" style=" display: block; z-index:0"><table class="dp_header" style="width: 218px;"><tbody><tr><td class="dp_previous">&laquo;</td><td class="dp_caption">2008 - 2019</td><td class="dp_next">&raquo;</td></tr></tbody></table><table class="dp_daypicker" style="display: none;"><tbody><tr><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th></tr><tr><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td class="dp_weekend">NaN</td><td class="dp_weekend">NaN</td></tr><tr><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td class="dp_weekend">NaN</td><td class="dp_weekend">NaN</td></tr><tr><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td class="dp_weekend">NaN</td><td class="dp_weekend">NaN</td></tr><tr><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td class="dp_weekend">NaN</td><td class="dp_weekend">NaN</td></tr><tr><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td class="dp_weekend">NaN</td><td class="dp_weekend">NaN</td></tr><tr><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td class="dp_weekend">NaN</td><td class="dp_weekend">NaN</td></tr></tbody></table><table class="dp_monthpicker" style="width: 218px; height: 183px; display: none;"></table><table class="dp_yearpicker" style="width: 218px; height: 183px; display: table;"><tbody><tr><td class="">2008</td><td class="">2009</td><td class="">2010</td></tr><tr><td class="">2011</td><td class="">2012</td><td class="dp_selected">2013</td></tr><tr><td class="">2014</td><td class="dp_current">2015</td><td>2016</td></tr><tr><td class="">2017</td><td class="">2018</td><td>2019</td></tr></tbody></table><table class="dp_footer" style="width: 218px;"><tbody><tr><td class="dp_today" style="width: 100%;">Today</td><td class="dp_clear" style="width: 50%; display: none;">Clear date</td></tr></tbody></table></div>
+*	</div><div style="padding:1rem; position:relative; height:275px;width:30%;float:left;"><h3>Month and Year Date Picker</h3>
+*	<div class="Zebra_DatePicker" style="display:block; z-index:0"><table class="dp_header" style="width: 218px;"><tbody><tr><td class="dp_previous">&laquo;</td><td class="dp_caption">2015</td><td class="dp_next">&raquo;</td></tr></tbody></table><table class="dp_daypicker" style="display: none;"><tbody><tr><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th></tr><tr><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td class="dp_weekend">NaN</td><td class="dp_weekend">NaN</td></tr><tr><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td class="dp_weekend">NaN</td><td class="dp_weekend">NaN</td></tr><tr><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td class="dp_weekend">NaN</td><td class="dp_weekend">NaN</td></tr><tr><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td class="dp_weekend">NaN</td><td class="dp_weekend">NaN</td></tr><tr><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td class="dp_weekend">NaN</td><td class="dp_weekend">NaN</td></tr><tr><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td>NaN</td><td class="dp_weekend">NaN</td><td class="dp_weekend">NaN</td></tr></tbody></table><table class="dp_monthpicker" style="width: 218px; height: 183px; display: table;"><tbody><tr><td class="dp_month_0">Jan</td><td class="dp_month_1">Feb</td><td class="dp_month_2">Mar</td></tr><tr><td class="dp_month_3 dp_current">Apr</td><td class="dp_month_4">May</td><td class="dp_month_5 dp_selected">Jun</td></tr><tr><td class="dp_month_6">Jul</td><td class="dp_month_7">Aug</td><td class="dp_month_8">Sep</td></tr><tr><td class="dp_month_9">Oct</td><td class="dp_month_10">Nov</td><td class="dp_month_11">Dec</td></tr></tbody></table><table class="dp_yearpicker" style="width: 218px; height: 183px; display: none;"></table><table class="dp_footer" style="width: 218px; display: none;"><tbody><tr><td class="dp_today" style="width:50%">false</td><td class="dp_clear" style="display: none;">Clear date</td></tr></tbody></table></div></div>
+*	</div>
+*	<a  class="link" href="http://stefangabos.ro/jquery/zebra-datepicker/" class="">Documentation</a>
+*/
+
+$debug: true !default;
+$datepicker-color: grey(30);
+$datepicker-lines-color: grey(5);
+$datepicker-hover:$brand-color;
+$date-hover-color: $primary-color;
+$date-selected-color:rebrand-color($success-color,2);
+$date-darktext:$global-default-dark-text;
+$date-lighttext:$global-default-light-text;
+$datepicker-dayname-color:$primary-color;
+$date-picker-radius:$global-radius !default;
+
+.Zebra_DatePicker {
+  * {
+    -moz-box-sizing: content-box !important;
+    -webkit-box-sizing: content-box !important;
+    box-sizing: content-box !important;
+    &:after, &:before {
+      -moz-box-sizing: content-box !important;
+      -webkit-box-sizing: content-box !important;
+      box-sizing: content-box !important;
+    }
+    margin: 0;
+    padding: 0;
+    color: #000;
+    background: transparent;
+    border: none;
+  }
+  position: absolute;
+  background: $datepicker-color;
+  border: 3px solid $datepicker-color;
+  z-index: 1200;
+  @include font();
+  font-size: 13px;
+  top: 0;
+  .dp_hover{transition: background-color 300ms ease-out;}
+}
+/* = GLOBALS
+----------------------------------------------------------------------------------------------------------------------*/
+.Zebra_DatePicker {
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: auto;
+    table-layout: auto;
+  }
+  td, th {
+    text-align: center;
+    padding: 5px 0;
+  }
+  td {
+    cursor: pointer;
+  }
+  .dp_daypicker, .dp_monthpicker, .dp_yearpicker {
+    margin-top: 3px;
+  }
+  .dp_daypicker {
+    td, th {
+      background: #E8E8E8;
+      width: 30px;
+      border: 1px solid $datepicker-lines-color;
+    }
+  }
+  .dp_monthpicker td, .dp_yearpicker td {
+    background: #E8E8E8;
+    width: 30px;
+    border: 3px solid $datepicker-lines-color;
+  }
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  .dp_header .dp_hover, .dp_footer .dp_hover {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+}
+/* = VISIBLE/HIDDEN STATES (USE TRANSITIONS FOR EFFECTS)
+----------------------------------------------------------------------------------------------------------------------*/
+.Zebra_DatePicker {
+  &.dp_visible {
+    visibility: visible;
+    filter: alpha(opacity = 100);
+    -khtml-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+  }
+  &.dp_hidden {
+    visibility: hidden;
+    filter: alpha(opacity = 0);
+    -khtml-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+  }
+}
+/* = HEADER
+----------------------------------------------------------------------------------------------------------------------*/
+.Zebra_DatePicker .dp_header {
+  td {
+    color: #FFF;
+    border:2px solid $datepicker-color;
+
+  }
+  .dp_previous, .dp_next {
+    width: 30px;
+  }
+  .dp_caption {
+    font-weight: bold;
+    background-color:scale-color($datepicker-color,$lightness:-20%);
+    border-radius: $date-picker-radius;
+  }
+  .dp_hover {
+    background: $datepicker-hover;
+    color: #FFF;
+  }
+  @if $debug{
+	td:hover  {  background: $datepicker-hover; color: #FFF;}
+	}
+}
+/* = DATEPICKER
+----------------------------------------------------------------------------------------------------------------------*/
+.Zebra_DatePicker .dp_daypicker th              { background: $datepicker-dayname-color; color:color-contrast($datepicker-dayname-color,$date-darktext,$date-lighttext); }
+.Zebra_DatePicker td.dp_not_in_month            { background: #F3F3F3; color: #CDCDCD; cursor: default }
+.Zebra_DatePicker td.dp_not_in_month_selectable { background: #F3F3F3; color: #CDCDCD; cursor: pointer }
+.Zebra_DatePicker td.dp_weekend                 { background: #D8D8D8 }
+.Zebra_DatePicker td.dp_weekend_disabled        { color: #CCC; cursor: default }
+.Zebra_DatePicker td.dp_selected                { background: $date-selected-color; color: #FFF !important }
+.Zebra_DatePicker td.dp_week_number             { background: #FFCC33; color: #555; cursor: text; font-style: italic }
+@if $debug {
+.Zebra_DatePicker td.dp_weekend_disabled:hover        { color: #CCC; cursor: default }
+}
+
+/* = MONTHPICKER
+----------------------------------------------------------------------------------------------------------------------*/
+.Zebra_DatePicker .dp_monthpicker td    { width: 33% }
+
+/* = YEARPICKER
+----------------------------------------------------------------------------------------------------------------------*/
+.Zebra_DatePicker .dp_yearpicker td     { width: 33% }
+
+/* = FOOTER
+----------------------------------------------------------------------------------------------------------------------*/
+.Zebra_DatePicker .dp_footer            { margin-top: 3px }
+.Zebra_DatePicker .dp_footer .dp_hover{ background:$datepicker-hover; color: #FFF }
+@if $debug {
+.Zebra_DatePicker .dp_footer td:hover{ background: $datepicker-hover; color: #FFF }	
+}
+/* = SELECT CURRENT DAY
+----------------------------------------------------------------------------------------------------------------------*/
+.Zebra_DatePicker .dp_today { color: #FFF; padding: 3px }
+
+/* = CLEAR DATE
+----------------------------------------------------------------------------------------------------------------------*/
+.Zebra_DatePicker .dp_clear { color: #FFF; padding: 3px }
+
+/* = SOME MORE GLOBALS (MUST BE LAST IN ORDER TO OVERWRITE PREVIOUS PROPERTIES)
+----------------------------------------------------------------------------------------------------------------------*/
+.Zebra_DatePicker td.dp_current             { @include font-bold(); }
+.Zebra_DatePicker td.dp_disabled_current    { color: #E38585 }
+.Zebra_DatePicker td.dp_disabled            { background: #F3F3F3; color: #CDCDCD; cursor: default }
+.Zebra_DatePicker td.dp_hover               { background: $date-hover-color; color: #FFF }
+@if $debug{
+.Zebra_DatePicker td:hover               { background:$date-hover-color; color: #FFF }
+.Zebra_DatePicker td.dp_disabled:hover  { background: #F3F3F3; color: #CDCDCD; cursor: default }
+
+}
+/* = ICON
+----------------------------------------------------------------------------------------------------------------------*/
+button.Zebra_DatePicker_Icon                { display: block; position: absolute; width: 27px; height: 27px; border: none; cursor: pointer; padding: 0; vertical-align: top;border-radius: $global-radius; }
+button.Zebra_DatePicker_Icon_Disabled       { background-color: grey(40); color:grey(20);}
+
+/* don't set vertical margins! */
+button.Zebra_DatePicker_Icon                { margin: 0 0 0 4px }
+button.Zebra_DatePicker_Icon_Inside         { margin: 0 4px 0 0 }

@@ -1,0 +1,77 @@
+/**
+* (OMA) Membership Selection Table:
+* `.membership-table` - A table card that shows the details for membership selections.
+* 
+*   @example
+*   <ul class="membership-table">
+*   <li class="membership-table_title">Affilliate</li>
+*   <li class="membership-table_price">$75.00 <br><small>Membership Dues Per Year</small></li>
+*   <li class="membership-table_description">Fellowship is one of the most distinguished designations the College offers its members, and is the ultimate recognition of professional achievement.</li>
+*   <li class="membership-table_listitem">Have completed cardiovascular training <br><small class="italic">(FITs may apply within six months of completing training)</small></li>
+*   <li class="membership-table_listitem">Have a full-time academic and/or cardiovascular or cardiovascular-related position</li>
+*   <li class="membership-table_listitem">Dedicate at least 75% of their professional time/activities to cardiology</li>
+*   <li class="membership-table_cta">
+*   <div class="button-group" data-grouptype="or">
+*   <button href="#" class="small button radius">Learn More</button>
+*   <button href="#" class="small button radius">Select</button>
+*   </div>
+*   </li>
+*   </ul>
+*/
+
+
+.membership-table  {
+  @include pricing-table-container;
+
+  small{font-size: 80%;}
+  .membership-table_title  {
+    @include pricing-table-title;
+    background-color: rebrand-color($brand-color, 2);
+    @include font-slab();
+    color:color-contrast(rebrand-color($brand-color, 2));
+  }
+  .membership-table_price  {
+    @include pricing-table-price;
+    small{font-size: 50%;}
+  }
+  .membership-table_description   {
+    @include pricing-table-description;
+  }
+  .membership-table_listitem {
+    @include pricing-table-bullet;
+    line-height: 1.4;
+  }
+  .membership-table_cta    {
+    @include pricing-table-cta;
+  }
+  .button-group {
+    position: relative;
+    display: inline-block;
+    margin: 1rem 0;
+    width:100%;
+
+    &:before {
+      content: attr(data-grouptype);
+      z-index: 99999;
+      color: #999;
+      display: block;
+      font-size: 1rem;
+      padding: 1rem;
+      border-radius: 50%;
+      background: #FFF;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: auto;
+      margin-left: -1.5rem;
+    }
+    button, .button{
+      width:45%;
+      @include button-style(grey(30));
+    }
+    button + button,.button + .button {
+      margin-left: 5px;
+      @include button-style(rebrand-color($success-color, 3));
+    }
+  }
+}

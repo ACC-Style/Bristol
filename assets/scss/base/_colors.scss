@@ -14,14 +14,6 @@ $error-red:#c32231;
 $warning-orange:#d07600;
 
 
-/// Color transistion to zurb naming convetion
-$primary-color: $acc-blue;
-$secondary-color: $scrub-blue;
-$alert-color: $warning-orange;
-$success-color: $scrub-green;
-$warning-color: $error-red;
-$info-color: #a0d3e8;
-
 /// fontcolor() is a color converter for colors that are passed into it
 /// @group helper
 /// @access public
@@ -42,7 +34,7 @@ $info-color: #a0d3e8;
 		$color:scale-color($value, $lightness:shift(50));
 	}
 	@elseif $option == "light"{
-		$color:scale-color($value, $lightness:shift(10));
+		$color:scale-color($value, $lightness:shift(30));
 	}
 	@elseif $option == "normal"{
 		$color:scale-color($value, $lightness:shift(80));
@@ -79,14 +71,6 @@ $info-color: #a0d3e8;
 }
 
 
-$font-strong-black:fontcolor($black,'loud');
-$font-black:fontcolor($black);
-$link-color:fontcolor($scrub-blue);
-$font-light:fontcolor($black,'light');
-
-
-$dark-text-default: $font-black !default;
-$light-text-default:$font-light !default;
 
 // Calculeate brightness of a given color.
 @function brightness($color) {
@@ -94,7 +78,7 @@ $light-text-default:$font-light !default;
 }
 
 // Compares contrast of a given color to the light/dark arguments and returns whichever is most "contrasty"
-@function color-contrast($color, $dark: $dark-text-default, $light: $light-text-default) {
+@function color-contrast($color, $dark: $global-default-dark-text, $light: $global-default-light-text) {
   @if $color == null {
     @return null;
   }
@@ -106,3 +90,38 @@ $light-text-default:$font-light !default;
     @return if(abs($color-brightness - $light-text-brightness) > abs($color-brightness - $dark-text-brightness), $light, $dark);  
   }
 }
+
+$font-strong-black:fontcolor($real-black,'loud');
+$font-black:fontcolor($real-black);
+$link-color:fontcolor($scrub-blue);
+$font-light:fontcolor($real-black,'light');
+
+
+$global-default-dark-text: $font-black !default;
+$global-default-light-text:#fff !default;
+/// Color transistion to zurb naming convetion
+$product-brand-color:#008080 !default;
+$brand-color:$acc-blue;
+$primary-color: $scrub-blue;
+$secondary-color: grey(30);
+$alert-color: $warning-orange;
+$select-color: $scrub-green;
+$success-color: $scrub-green;
+$warning-color: $error-red;
+$error-color: $error-red;
+$info-color: #a0d3e8;
+
+
+
+
+
+td.product-brand-color{background-color: $product-brand-color}
+td.brand-color{background-color: $brand-color}
+td.primary-color{background-color: $primary-color}
+td.secondary-color{background-color: $secondary-color}
+td.alert-color{background-color: $alert-color}
+td.success-color{background-color: $success-color}
+td.select-color{background-color: $select-color}
+td.error-color{background-color: $error-color}
+
+
