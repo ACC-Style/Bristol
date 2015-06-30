@@ -169,11 +169,13 @@
 /* states and images */
 
 .ui-icon {
-  // width: 16px;
-  // height: 16px;
-  // background-image: url("images/ui-icons_222222_256x240.png");
- background: none repeat scroll 0 0 transparent;
-   @extend .fa;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome; // shortening font declaration
+  font-size: inherit; // can't have font-size inherit on line above, so need to override
+  text-rendering: auto; // optimizelegibility throws things off #1094
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: none repeat scroll 0 0 transparent;
    text-align: center;
    :before{
       font-size: 1em;
@@ -1015,7 +1017,12 @@
 .ui-datepicker-header{
 .ui-datepicker-prev,.ui-datepicker-next{
 
-    @extend .fa; 
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome; // shortening font declaration
+  font-size: inherit; // can't have font-size inherit on line above, so need to override
+  text-rendering: auto; // optimizelegibility throws things off #1094
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
     margin: .1em;
     border-radius: $global-radius;
     &:before{ 

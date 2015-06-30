@@ -12,20 +12,25 @@
 @mixin fa($varible){
 	&:before{ content: $varible;}
 }
+
+@mixin fa-var($var){
+	 .fa-holder-dynamic:before,.findme,&.fa:before, >.fa-holder:before{ content: $var;}
+
+}
 /* TODO: refactor this 
 there are two to three needs for icons icons in containers, icons on icons and then icons that are dynamic to a parent container.**/
 // dynamics are used in the .question, .nav-checklist
 
 .fa-holder{text-decoration: none;
-	>i.fa-holder:before,>i.fa-holder-dynamic:before{text-decoration: none;}
+	>i.fa-holder:before, * i.fa-holder-dynamic:before{text-decoration: none;}
 	:after{content:' ';}
 }
-.error,.delete,.cancel,.close,.close-reveal-modal{ @include fa-holder($fa-var-times);}
-.warning{@include fa-holder($fa-var-exclamation-triangle);}
+.delete,.cancel,.close,.close-reveal-modal{ @include fa-holder($fa-var-times);}
+//.warning{@include fa-holder($fa-var-exclamation-triangle);}
 .validated,.selected{@include fa-holder($fa-var-check);}
 .data{@include fa-holder($fa-var-info-circle);}
 .edit{@include fa-holder($fa-var-pencil);}
-.required{@include fa-holder($fa-var-asterisk);}
+.required{@include fa-var($fa-var-asterisk);}
 .clear,.refresh{@include fa-holder($fa-var-refresh);}
 .starred{@include fa-holder($fa-var-star);}
 .add{@include fa-holder($fa-var-plus-circle);}

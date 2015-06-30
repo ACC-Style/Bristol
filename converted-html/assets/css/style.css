@@ -437,7 +437,7 @@ td.error-color {
   src: url("../font/fontawesome-webfont.eot?#iefix&v=4.2.0") format("embedded-opentype"), url("../font/fontawesome-webfont.woff?v=4.2.0") format("woff"), url("../font/fontawesome-webfont.ttf?v=4.2.0") format("truetype"), url("../font/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
-.fa, .ui-icon, .ui-datepicker-header .ui-datepicker-prev, .ui-datepicker-header .ui-datepicker-next {
+.fa {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -494,9 +494,9 @@ td.error-color {
 .pull-left {
   float: left; }
 
-.fa.pull-left, .pull-left.ui-icon, .ui-datepicker-header .pull-left.ui-datepicker-prev, .ui-datepicker-header .pull-left.ui-datepicker-next {
+.fa.pull-left {
   margin-right: .3em; }
-.fa.pull-right, .pull-right.ui-icon, .ui-datepicker-header .pull-right.ui-datepicker-prev, .ui-datepicker-header .pull-right.ui-datepicker-next {
+.fa.pull-right {
   margin-left: .3em; }
 
 .fa-spin {
@@ -1958,58 +1958,73 @@ td.error-color {
 .fa-meanpath:before {
   content: ""; }
 
+    /*  
+    (
+	"State":"alert",
+	"Selector":".alert",
+    "Color": $alert-color,
+    "Icon": $fa-var-exclamation-triangle, ),
+    (
+    "State":"success",
+	"Selector":".success",
+    "Color": $success-color,
+    "Icon": $fa-var-check,),
+
+    (
+    "State":"highlighted",
+    "Selector":".highlighted",
+    "Color": rebrand-color($info-color,2),
+    "Icon": $fa-var-exclamation ,),
+    */
 /* TODO: refactor this 
 there are two to three needs for icons icons in containers, icons on icons and then icons that are dynamic to a parent container.**/
 .fa-holder {
   text-decoration: none; }
-  .fa-holder > i.fa-holder:before, .fa-holder > i.fa-holder-dynamic:before {
+  .fa-holder > i.fa-holder:before, .fa-holder * i.fa-holder-dynamic:before {
     text-decoration: none; }
   .fa-holder :after {
     content: ' '; }
 
-.error > i.fa-holder:before, .error.fa:before, .error.ui-icon:before, .ui-datepicker-header .error.ui-datepicker-prev:before, .ui-datepicker-header .error.ui-datepicker-next:before, .delete > i.fa-holder:before, .delete.fa:before, .delete.ui-icon:before, .ui-datepicker-header .delete.ui-datepicker-prev:before, .ui-datepicker-header .delete.ui-datepicker-next:before, .cancel > i.fa-holder:before, .cancel.fa:before, .cancel.ui-icon:before, .ui-datepicker-header .cancel.ui-datepicker-prev:before, .ui-datepicker-header .cancel.ui-datepicker-next:before, .close > i.fa-holder:before, .close.fa:before, .close.ui-icon:before, .ui-datepicker-header .close.ui-datepicker-prev:before, .ui-datepicker-header .close.ui-datepicker-next:before, .close-reveal-modal > i.fa-holder:before, .close-reveal-modal.fa:before, .close-reveal-modal.ui-icon:before, .ui-datepicker-header .close-reveal-modal.ui-datepicker-prev:before, .ui-datepicker-header .close-reveal-modal.ui-datepicker-next:before {
+.delete > i.fa-holder:before, .delete.fa:before, .cancel > i.fa-holder:before, .cancel.fa:before, .close > i.fa-holder:before, .close.fa:before, .close-reveal-modal > i.fa-holder:before, .close-reveal-modal.fa:before {
   content: ""; }
 
-.warning > i.fa-holder:before, .warning.fa:before, .warning.ui-icon:before, .ui-datepicker-header .warning.ui-datepicker-prev:before, .ui-datepicker-header .warning.ui-datepicker-next:before {
-  content: ""; }
-
-.validated > i.fa-holder:before, .validated.fa:before, .validated.ui-icon:before, .ui-datepicker-header .validated.ui-datepicker-prev:before, .ui-datepicker-header .validated.ui-datepicker-next:before, .selected > i.fa-holder:before, .selected.fa:before, .selected.ui-icon:before, .ui-datepicker-header .selected.ui-datepicker-prev:before, .ui-datepicker-header .selected.ui-datepicker-next:before {
+.validated > i.fa-holder:before, .validated.fa:before, .selected > i.fa-holder:before, .selected.fa:before {
   content: ""; }
 
-.data > i.fa-holder:before, .data.fa:before, .data.ui-icon:before, .ui-datepicker-header .data.ui-datepicker-prev:before, .ui-datepicker-header .data.ui-datepicker-next:before {
+.data > i.fa-holder:before, .data.fa:before {
   content: ""; }
 
-.edit > i.fa-holder:before, .edit.fa:before, .edit.ui-icon:before, .ui-datepicker-header .edit.ui-datepicker-prev:before, .ui-datepicker-header .edit.ui-datepicker-next:before {
+.edit > i.fa-holder:before, .edit.fa:before {
   content: ""; }
 
-.required > i.fa-holder:before, .required.fa:before, .required.ui-icon:before, .ui-datepicker-header .required.ui-datepicker-prev:before, .ui-datepicker-header .required.ui-datepicker-next:before {
+.required .fa-holder-dynamic:before, .required .findme, .required.fa:before, .required > .fa-holder:before {
   content: ""; }
 
-.clear > i.fa-holder:before, .clear.fa:before, .clear.ui-icon:before, .ui-datepicker-header .clear.ui-datepicker-prev:before, .ui-datepicker-header .clear.ui-datepicker-next:before, .refresh > i.fa-holder:before, .refresh.fa:before, .refresh.ui-icon:before, .ui-datepicker-header .refresh.ui-datepicker-prev:before, .ui-datepicker-header .refresh.ui-datepicker-next:before {
+.clear > i.fa-holder:before, .clear.fa:before, .refresh > i.fa-holder:before, .refresh.fa:before {
   content: ""; }
 
-.starred > i.fa-holder:before, .starred.fa:before, .starred.ui-icon:before, .ui-datepicker-header .starred.ui-datepicker-prev:before, .ui-datepicker-header .starred.ui-datepicker-next:before {
+.starred > i.fa-holder:before, .starred.fa:before {
   content: ""; }
 
-.add > i.fa-holder:before, .add.fa:before, .add.ui-icon:before, .ui-datepicker-header .add.ui-datepicker-prev:before, .ui-datepicker-header .add.ui-datepicker-next:before {
+.add > i.fa-holder:before, .add.fa:before {
   content: ""; }
 
-.home > i.fa-holder:before, .home.fa:before, .home.ui-icon:before, .ui-datepicker-header .home.ui-datepicker-prev:before, .ui-datepicker-header .home.ui-datepicker-next:before {
+.home > i.fa-holder:before, .home.fa:before {
   content: ""; }
 
-.top > i.fa-holder:before, .top.fa:before, .top.ui-icon:before, .ui-datepicker-header .top.ui-datepicker-prev:before, .ui-datepicker-header .top.ui-datepicker-next:before {
+.top > i.fa-holder:before, .top.fa:before {
   content: ""; }
 
 .fa-check:before {
   content: ""; }
 
-.back > i.fa-holder:before, .back.fa:before, .back.ui-icon:before, .ui-datepicker-header .back.ui-datepicker-prev:before, .ui-datepicker-header .back.ui-datepicker-next:before {
+.back > i.fa-holder:before, .back.fa:before {
   content: ""; }
 
-.set > i.fa-holder:before, .set.fa:before, .set.ui-icon:before, .ui-datepicker-header .set.ui-datepicker-prev:before, .ui-datepicker-header .set.ui-datepicker-next:before {
+.set > i.fa-holder:before, .set.fa:before {
   content: ""; }
 
-.save > i.fa-holder:before, .save.fa:before, .save.ui-icon:before, .ui-datepicker-header .save.ui-datepicker-prev:before, .ui-datepicker-header .save.ui-datepicker-next:before {
+.save > i.fa-holder:before, .save.fa:before {
   content: ""; }
 
 .fa-check:before {
@@ -2027,8 +2042,20 @@ there are two to three needs for icons icons in containers, icons on icons and t
 .fa-exclamation-circle:before {
   content: ""; }
 
-i.fa.fa-question-circle, i.fa-question-circle.ui-icon, .ui-datepicker-header i.fa-question-circle.ui-datepicker-prev, .ui-datepicker-header i.fa-question-circle.ui-datepicker-next {
+i.fa.fa-question-circle {
   font-size: 1.35em; }
+
+.error .fa-holder-dynamic:before, .error .findme, .error.fa:before, .error > .fa-holder:before {
+  content: ""; }
+
+.warning .fa-holder-dynamic:before, .warning .findme, .warning.fa:before, .warning > .fa-holder:before {
+  content: ""; }
+
+.validated .fa-holder-dynamic:before, .validated .findme, .validated.fa:before, .validated > .fa-holder:before {
+  content: ""; }
+
+.info .fa-holder-dynamic:before, .info .findme, .info.fa:before, .info > .fa-holder:before {
+  content: ""; }
 
 td.product-brand-color {
   background-color: #5b1ed4; }
@@ -2144,11 +2171,11 @@ button, .button {
     button.warning:hover, button.warning:focus, .button.warning:hover, .button.warning:focus {
       color: #FFFFFF; }
   button.info, .button.info {
-    background-color: #a0d3e8;
-    border-color: #61b6d9;
+    background-color: #B7E8FC;
+    border-color: #63cdf9;
     color: #333333; }
     button.info:hover, button.info:focus, .button.info:hover, .button.info:focus {
-      background-color: #61b6d9; }
+      background-color: #63cdf9; }
     button.info:hover, button.info:focus, .button.info:hover, .button.info:focus {
       color: #FFFFFF; }
   button.large, .button.large {
@@ -2249,18 +2276,18 @@ button, .button {
       button.disabled.warning:hover, button.disabled.warning:focus, button[disabled].warning:hover, button[disabled].warning:focus, .button.disabled.warning:hover, .button.disabled.warning:focus, .button[disabled].warning:hover, .button[disabled].warning:focus {
         background-color: #c32231; }
     button.disabled.info, button[disabled].info, .button.disabled.info, .button[disabled].info {
-      background-color: #a0d3e8;
-      border-color: #61b6d9;
+      background-color: #B7E8FC;
+      border-color: #63cdf9;
       color: #333333;
       cursor: default;
       opacity: 0.7;
       box-shadow: none; }
       button.disabled.info:hover, button.disabled.info:focus, button[disabled].info:hover, button[disabled].info:focus, .button.disabled.info:hover, .button.disabled.info:focus, .button[disabled].info:hover, .button[disabled].info:focus {
-        background-color: #61b6d9; }
+        background-color: #63cdf9; }
       button.disabled.info:hover, button.disabled.info:focus, button[disabled].info:hover, button[disabled].info:focus, .button.disabled.info:hover, .button.disabled.info:focus, .button[disabled].info:hover, .button[disabled].info:focus {
         color: #FFFFFF; }
       button.disabled.info:hover, button.disabled.info:focus, button[disabled].info:hover, button[disabled].info:focus, .button.disabled.info:hover, .button.disabled.info:focus, .button[disabled].info:hover, .button[disabled].info:focus {
-        background-color: #a0d3e8; }
+        background-color: #B7E8FC; }
 
 button::-moz-focus-inner {
   border: 0;
@@ -2443,38 +2470,26 @@ h6 {
 *   @example
 *  
 */
-h1.error, h2.error, h3.error, h4.error, .error.label-holder, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, .warning.label-holder, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.alert, h2.alert, h3.alert, h4.alert, .alert.label-holder, h5.alert, h6.alert, p.alert, a.alert, li.alert, blockquote.alert, h1.complete, h2.complete, h3.complete, h4.complete, .complete.label-holder, h5.complete, h6.complete, p.complete, a.complete, li.complete, blockquote.complete, h1.success, h2.success, h3.success, h4.success, .success.label-holder, h5.success, h6.success, p.success, a.success, li.success, blockquote.success, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, .highlighted.label-holder, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted, h1.info, h2.info, h3.info, h4.info, .info.label-holder, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
+h1.error, h2.error, h3.error, h4.error, .error.label-holder, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, .warning.label-holder, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.validated, h2.validated, h3.validated, h4.validated, .validated.label-holder, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated, h1.info, h2.info, h3.info, h4.info, .info.label-holder, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
   font-weight: 900; }
 
 h1.error, h2.error, h3.error, h4.error, .error.label-holder, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
   color: #c32231; }
 h1.warning, h2.warning, h3.warning, h4.warning, .warning.label-holder, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning {
   color: #d07600; }
-h1.alert, h2.alert, h3.alert, h4.alert, .alert.label-holder, h5.alert, h6.alert, p.alert, a.alert, li.alert, blockquote.alert {
-  color: #d07600; }
-h1.complete, h2.complete, h3.complete, h4.complete, .complete.label-holder, h5.complete, h6.complete, p.complete, a.complete, li.complete, blockquote.complete {
+h1.validated, h2.validated, h3.validated, h4.validated, .validated.label-holder, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated {
   color: #19BB9B; }
-h1.success, h2.success, h3.success, h4.success, .success.label-holder, h5.success, h6.success, p.success, a.success, li.success, blockquote.success {
-  color: #19BB9B; }
-h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, .highlighted.label-holder, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
-  color: #a0d3e8; }
 h1.info, h2.info, h3.info, h4.info, .info.label-holder, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
-  color: #a0d3e8; }
+  color: #B7E8FC; }
 
 h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, .with-underline.error.label-holder, h5.with-underline.error, h6.with-underline.error {
   border-color: #c32231; }
 h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, .with-underline.warning.label-holder, h5.with-underline.warning, h6.with-underline.warning {
   border-color: #d07600; }
-h1.with-underline.alert, h2.with-underline.alert, h3.with-underline.alert, h4.with-underline.alert, .with-underline.alert.label-holder, h5.with-underline.alert, h6.with-underline.alert {
-  border-color: #d07600; }
-h1.with-underline.complete, h2.with-underline.complete, h3.with-underline.complete, h4.with-underline.complete, .with-underline.complete.label-holder, h5.with-underline.complete, h6.with-underline.complete {
+h1.with-underline.validated, h2.with-underline.validated, h3.with-underline.validated, h4.with-underline.validated, .with-underline.validated.label-holder, h5.with-underline.validated, h6.with-underline.validated {
   border-color: #19BB9B; }
-h1.with-underline.success, h2.with-underline.success, h3.with-underline.success, h4.with-underline.success, .with-underline.success.label-holder, h5.with-underline.success, h6.with-underline.success {
-  border-color: #19BB9B; }
-h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, .with-underline.highlighted.label-holder, h5.with-underline.highlighted, h6.with-underline.highlighted {
-  border-color: #a0d3e8; }
 h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, .with-underline.info.label-holder, h5.with-underline.info, h6.with-underline.info {
-  border-color: #a0d3e8; }
+  border-color: #B7E8FC; }
 
 /**
 * Buttons:
@@ -2515,7 +2530,15 @@ h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-
   .nobutton:hover, .nobutton:focus {
     color: #333333; }
 
-.button.disabled, .button.disabled.success, .button.disabled.alert, .button.disabled.secondary, .button.disabled:hover, .button.disabled:hover.success, .button.disabled:hover.alert, .button.disabled:hover.secondary {
+button[disabled], button[disabled].success, button[disabled].alert, button[disabled].secondary,
+.button.disabled,
+.button.disabled.success,
+.button.disabled.alert,
+.button.disabled.secondary,
+.button.disabled:hover,
+.button.disabled.success:hover,
+.button.disabled.alert:hover,
+.button.disabled.secondary:hover {
   background-color: #cccccc;
   color: #999999;
   cursor: default; }
@@ -2749,7 +2772,7 @@ h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-
     width: 2em; }
 .nav-list li, .panel-selector li {
   padding: .25rem 1rem; }
-  .nav-list li .text + .fa, .panel-selector li .text + .fa, .nav-list li .text + .ui-icon, .panel-selector li .text + .ui-icon, .nav-list li .ui-datepicker-header .text + .ui-datepicker-prev, .ui-datepicker-header .nav-list li .text + .ui-datepicker-prev, .panel-selector li .ui-datepicker-header .text + .ui-datepicker-prev, .ui-datepicker-header .panel-selector li .text + .ui-datepicker-prev, .nav-list li .ui-datepicker-header .text + .ui-datepicker-next, .ui-datepicker-header .nav-list li .text + .ui-datepicker-next, .panel-selector li .ui-datepicker-header .text + .ui-datepicker-next, .ui-datepicker-header .panel-selector li .text + .ui-datepicker-next, .nav-list li .fa + .text, .panel-selector li .fa + .text, .nav-list li .ui-icon + .text, .panel-selector li .ui-icon + .text, .nav-list li .ui-datepicker-header .ui-datepicker-prev + .text, .ui-datepicker-header .nav-list li .ui-datepicker-prev + .text, .panel-selector li .ui-datepicker-header .ui-datepicker-prev + .text, .ui-datepicker-header .panel-selector li .ui-datepicker-prev + .text, .nav-list li .ui-datepicker-header .ui-datepicker-next + .text, .ui-datepicker-header .nav-list li .ui-datepicker-next + .text, .panel-selector li .ui-datepicker-header .ui-datepicker-next + .text, .ui-datepicker-header .panel-selector li .ui-datepicker-next + .text {
+  .nav-list li .text + .fa, .panel-selector li .text + .fa, .nav-list li .fa + .text, .panel-selector li .fa + .text {
     padding-left: .5em; }
   .nav-list li i.fa-holder-dynamic:before, .panel-selector li i.fa-holder-dynamic:before, .nav-list li.dynamic i.fa-holder:before, .panel-selector li.dynamic i.fa-holder:before {
     content: ""; }
@@ -3076,22 +3099,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   margin-bottom: .5rem; }
   .answer .data, .answer .error, .answer .warning, .answer .alert, .answer .validated, .answer .required, .question .data, .question .error, .question .warning, .question .alert, .question .validated, .question .required {
     display: none; }
-  .answer.data .data, .question.data .data {
-    display: inline-block;
-    width: 100%; }
-  .answer.error .error, .question.error .error {
-    display: inline-block;
-    width: 100%; }
-  .answer.warning .warning, .question.warning .warning {
-    display: inline-block;
-    width: 100%; }
-  .answer.alert .alert, .question.alert .alert {
-    display: inline-block;
-    width: 100%; }
   .answer.required .required, .question.required .required {
-    display: inline-block;
-    width: 100%; }
-  .answer.validated .validated, .question.validated .validated {
     display: inline-block;
     width: 100%; }
   .answer .unit, .question .unit {
@@ -3156,52 +3164,20 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   width: 1rem;
   position: relative;
   margin-left: -1rem;
-  margin-right: -1rem; }
+  margin-right: -1rem;
+  color: #333333; }
   .required-holder i.fa-holder-dynamic {
     position: absolute;
     top: 0;
     left: 0;
     font-size: .75rem; }
-  .answer.required .required-holder, .question.required .required-holder {
-    background-color: transparent;
-    color: #ff960d;
-    display: inline-block; }
-    .answer.required .required-holder i.fa-holder-dynamic:before, .answer.required .required-holder.dynamic i.fa-holder:before, .question.required .required-holder i.fa-holder-dynamic:before, .question.required .required-holder.dynamic i.fa-holder:before {
-      content: ""; }
-  .answer.error .required-holder, .question.error .required-holder {
-    background-color: transparent;
-    color: #de404e;
-    display: inline-block; }
-    .answer.error .required-holder i.fa-holder-dynamic:before, .answer.error .required-holder.dynamic i.fa-holder:before, .question.error .required-holder i.fa-holder-dynamic:before, .question.error .required-holder.dynamic i.fa-holder:before {
-      content: ""; }
-  .answer.validated .required-holder, .question.validated .required-holder {
-    background-color: transparent;
-    color: #2de3bf;
-    display: inline-block; }
-    .answer.validated .required-holder i.fa-holder-dynamic:before, .answer.validated .required-holder.dynamic i.fa-holder:before, .question.validated .required-holder i.fa-holder-dynamic:before, .question.validated .required-holder.dynamic i.fa-holder:before {
-      content: ""; }
 
-div.questionSelector .error, div.answerSelector .error {
+.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder {
   background-color: transparent;
-  border: 0px none transparent; }
-div.questionSelector .warning, div.answerSelector .warning {
-  background-color: transparent;
-  border: 0px none transparent; }
-div.questionSelector .alert, div.answerSelector .alert {
-  background-color: transparent;
-  border: 0px none transparent; }
-div.questionSelector .complete, div.answerSelector .complete {
-  background-color: transparent;
-  border: 0px none transparent; }
-div.questionSelector .success, div.answerSelector .success {
-  background-color: transparent;
-  border: 0px none transparent; }
-div.questionSelector .highlighted, div.answerSelector .highlighted {
-  background-color: transparent;
-  border: 0px none transparent; }
-div.questionSelector .info, div.answerSelector .info {
-  background-color: transparent;
-  border: 0px none transparent; }
+  display: inline-block; }
+
+.answer.required .required-holder i.fa-holder-dynamic:before, .answer.required .required-holder.dynamic i.fa-holder:before, .question.required .required-holder i.fa-holder-dynamic:before, .question.required .required-holder.dynamic i.fa-holder:before {
+  content: ""; }
 
 .input-holder, .value-holder {
   width: 100%;
@@ -3230,58 +3206,48 @@ div.questionSelector .info, div.answerSelector .info {
   background: #d07600;
   clear: both;
   color: #FFF; }
-.message-holder span i, .message-holder small i {
-  margin-right: .5rem; }
-.message-holder span.error, .message-holder small.error {
-  background-color: #c32231; }
-.message-holder span.alert, .message-holder span.warning, .message-holder small.alert, .message-holder small.warning {
-  background-color: #d07600; }
-.message-holder span.data, .message-holder small.data {
-  background-color: #cccccc; }
-  .message-holder span.data, .message-holder span.data .fa, .message-holder span.data .ui-icon, .message-holder span.data .ui-datepicker-header .ui-datepicker-prev, .ui-datepicker-header .message-holder span.data .ui-datepicker-prev, .message-holder span.data .ui-datepicker-header .ui-datepicker-next, .ui-datepicker-header .message-holder span.data .ui-datepicker-next, .message-holder small.data, .message-holder small.data .fa, .message-holder small.data .ui-icon, .message-holder small.data .ui-datepicker-header .ui-datepicker-prev, .ui-datepicker-header .message-holder small.data .ui-datepicker-prev, .message-holder small.data .ui-datepicker-header .ui-datepicker-next, .ui-datepicker-header .message-holder small.data .ui-datepicker-next {
-    color: #333333; }
+  .message-holder small i, .message-holder span i {
+    margin-right: .5rem; }
 
 .hint {
   margin-top: -.75rem;
   font-size: .75rem;
   line-height: 1rem; }
 
-.question input[type="text"],
-.question input[type="password"],
-.question input[type="date"],
-.question input[type="datetime"],
-.question input[type="datetime-local"],
-.question input[type="month"],
-.question input[type="week"],
-.question input[type="email"],
-.question input[type="number"],
-.question input[type="search"],
-.question input[type="tel"],
-.question input[type="time"],
-.question input[type="url"],
-.question input[type="color"],
-.question textarea,
-.question select,
-.question button,
-.question .button, .question-group input[type="text"],
-.question-group input[type="password"],
-.question-group input[type="date"],
-.question-group input[type="datetime"],
-.question-group input[type="datetime-local"],
-.question-group input[type="month"],
-.question-group input[type="week"],
-.question-group input[type="email"],
-.question-group input[type="number"],
-.question-group input[type="search"],
-.question-group input[type="tel"],
-.question-group input[type="time"],
-.question-group input[type="url"],
-.question-group input[type="color"],
-.question-group textarea,
-.question-group select,
-.question-group button,
-.question-group .button {
-  margin-bottom: 0; }
+.answer.error .error, .question.error .error {
+  display: inline-block;
+  width: 100%; }
+.answer.warning .warning, .question.warning .warning {
+  display: inline-block;
+  width: 100%; }
+.answer.validated .validated, .question.validated .validated {
+  display: inline-block;
+  width: 100%; }
+.answer.info .info, .question.info .info {
+  display: inline-block;
+  width: 100%; }
+
+.answer.error .required-holder, .question.error .required-holder {
+  color: #de404e; }
+.answer.warning .required-holder, .question.warning .required-holder {
+  color: #ff960d; }
+.answer.validated .required-holder, .question.validated .required-holder {
+  color: #2de3bf; }
+.answer.info .required-holder, .question.info .required-holder {
+  color: #c5edfd; }
+
+.message-holder small.error, .message-holder .span.error {
+  background-color: #c32231;
+  color: #fff; }
+.message-holder small.warning, .message-holder .span.warning {
+  background-color: #d07600;
+  color: #fff; }
+.message-holder small.validated, .message-holder .span.validated {
+  background-color: #19BB9B;
+  color: #fff; }
+.message-holder small.info, .message-holder .span.info {
+  background-color: #B7E8FC;
+  color: #333333; }
 
 .label-holder {
   margin-bottom: .5rem; }
@@ -3322,30 +3288,6 @@ label, .label {
 .alert textarea, .warning textarea, .alert select, .warning select, .alert input, .warning input {
   border-color: #d07600; }
 
-.message-holder small, .message-holder span {
-  display: none;
-  padding: .375rem .5625rem .5625rem;
-  margin-top: -1px;
-  margin-bottom: 1rem;
-  background: #d07600;
-  clear: both;
-  color: #FFF; }
-.message-holder span i, .message-holder small i {
-  margin-right: .5rem; }
-.message-holder span.error, .message-holder small.error {
-  background-color: #c32231; }
-.message-holder span.alert, .message-holder span.warning, .message-holder small.alert, .message-holder small.warning {
-  background-color: #d07600; }
-.message-holder span.data, .message-holder small.data {
-  background-color: #cccccc; }
-  .message-holder span.data, .message-holder span.data .fa, .message-holder span.data .ui-icon, .message-holder span.data .ui-datepicker-header .ui-datepicker-prev, .ui-datepicker-header .message-holder span.data .ui-datepicker-prev, .message-holder span.data .ui-datepicker-header .ui-datepicker-next, .ui-datepicker-header .message-holder span.data .ui-datepicker-next, .message-holder small.data, .message-holder small.data .fa, .message-holder small.data .ui-icon, .message-holder small.data .ui-datepicker-header .ui-datepicker-prev, .ui-datepicker-header .message-holder small.data .ui-datepicker-prev, .message-holder small.data .ui-datepicker-header .ui-datepicker-next, .ui-datepicker-header .message-holder small.data .ui-datepicker-next {
-    color: #333333; }
-
-.hint {
-  margin-top: -.75rem;
-  font-size: .75rem;
-  line-height: 1rem; }
-
 input[type="checkbox"], input[type="radio"] {
   margin: .55em .5em;
   text-align: center;
@@ -3359,7 +3301,7 @@ input[type="checkbox"], input[type="radio"] {
     padding-bottom: .5em; }
 
 /**
-* Questions:
+* Questions -Required:
 * `.questions` - standard format for an input question. 
 *  Modify with `.required` and change the states with `warning`, 'error', and 'data'
 * 
@@ -3388,7 +3330,12 @@ input[type="checkbox"], input[type="radio"] {
 *		</div>
 *		<div class="hint">This is some hint text</div>
 *	</div>
-*	<br>
+*/
+/**
+* Questions - States:
+* `.questions + .warning + error +...` - input questions can be modified with the states like `.required` and change the states with `warning`, `error`, and `data`
+* 
+*   @example
 *	<div class="question warning">
 *		<div class="label-holder">
 *			<label for="">
@@ -3400,13 +3347,7 @@ input[type="checkbox"], input[type="radio"] {
 *		</div>
 *		<div class="input-holder">
 *			 <div class="input-space column small-6 large-9">
-*				<select name="" id="" class="input">
-*					<option value="">20-50</option>
-*					<option value="">50-60</option>
-*					<option value="">60-70</option>
-*					<option value="">70-80</option>
-*					<option value="">80-Up</option>
-*				</select>
+*				<input type="text"/>
 *			</div>
 *			<div class="column small-6 large-3">
 *				<small class="value">Years</small>
@@ -3415,47 +3356,7 @@ input[type="checkbox"], input[type="radio"] {
 *		<div class="message-holder">
 *				<small class="error"><i class="fa fa-holder"></i> Error message</small>
 *				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
-*				<small class="data"><i class="fa fa-holder"></i> Data message</small>
-*		</div>
-*	</div>
-*	<br>
-*	<div class="question error">
-*		<div class="label-holder">
-*			<label for="">
-*				<span class="text">Question RadioGroup Title (Error)</span>
-*				<span class="required-holder">
-*					<i class="fa fa-holder-dynamic"></i>
-*				</span>
-*			</label>
-*		</div>
-*		<div class="input-holder radio-group-holder row">
-*			<div class="column input-space small-6">
-*				<label for="radio1" class="radio-group">
-*					<div class="radio">
-*						<input id='radio1'  type="radio" name="number" value="#">
-*					</div>
-*					<div class="radio-content">
-*						<h4>Title One</h4>
-*						<p>Sub Content</p>
-*					</div>
-*				</label>
-*			</div>
-*			<div class="column input-space small-6">
-*				<label for="radio2" class="radio-group">
-*					<div class="radio">
-*						<input id='radio2'  type="radio" name="number" value="#">
-*					</div>
-*					<div class="radio-content">
-*						<h4>Title 2</h4>
-*						<p>Sub Content</p>
-*					</div>
-*				</label>
-*			</div>
-*		</div>
-*		<div class="message-holder">
-*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
-*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
-*				<small class="data"><i class="fa fa-holder"></i> Data message</small>
+*				<small class="info"><i class="fa fa-holder"></i> Data message</small>
 *		</div>
 *		<div class="hint">This is some hint text</div>
 *	</div>
@@ -3528,7 +3429,7 @@ input[type="checkbox"], input[type="radio"] {
     transition: none; }
     .selectable a:hover {
       background-color: #198dae; }
-  .selectable i.fa, .selectable i.ui-icon, .selectable .ui-datepicker-header i.ui-datepicker-prev, .ui-datepicker-header .selectable i.ui-datepicker-prev, .selectable .ui-datepicker-header i.ui-datepicker-next, .ui-datepicker-header .selectable i.ui-datepicker-next {
+  .selectable i.fa {
     font-size: 1rem;
     height: 1rem;
     width: 1rem;
@@ -3550,7 +3451,7 @@ input[type="checkbox"], input[type="radio"] {
       background-color: #14967c; }
     .selectable.selected-btn1 .btn1 a:hover, .selectable.selected-btn1 .btn1 a:focus, .selectable.selected-btn2 .btn2 a:hover, .selectable.selected-btn2 .btn2 a:focus, .selectable.selected-btn3 .btn3 a:hover, .selectable.selected-btn3 .btn3 a:focus, .selectable.selected-btn4 .btn4 a:hover, .selectable.selected-btn4 .btn4 a:focus, .selectable.selected-btn5 .btn5 a:hover, .selectable.selected-btn5 .btn5 a:focus {
       color: #FFFFFF; }
-    .selectable.selected-btn1 .btn1 a i.fa, .selectable.selected-btn1 .btn1 a i.ui-icon, .selectable.selected-btn1 .btn1 a .ui-datepicker-header i.ui-datepicker-prev, .ui-datepicker-header .selectable.selected-btn1 .btn1 a i.ui-datepicker-prev, .selectable.selected-btn1 .btn1 a .ui-datepicker-header i.ui-datepicker-next, .ui-datepicker-header .selectable.selected-btn1 .btn1 a i.ui-datepicker-next, .selectable.selected-btn2 .btn2 a i.fa, .selectable.selected-btn2 .btn2 a i.ui-icon, .selectable.selected-btn2 .btn2 a .ui-datepicker-header i.ui-datepicker-prev, .ui-datepicker-header .selectable.selected-btn2 .btn2 a i.ui-datepicker-prev, .selectable.selected-btn2 .btn2 a .ui-datepicker-header i.ui-datepicker-next, .ui-datepicker-header .selectable.selected-btn2 .btn2 a i.ui-datepicker-next, .selectable.selected-btn3 .btn3 a i.fa, .selectable.selected-btn3 .btn3 a i.ui-icon, .selectable.selected-btn3 .btn3 a .ui-datepicker-header i.ui-datepicker-prev, .ui-datepicker-header .selectable.selected-btn3 .btn3 a i.ui-datepicker-prev, .selectable.selected-btn3 .btn3 a .ui-datepicker-header i.ui-datepicker-next, .ui-datepicker-header .selectable.selected-btn3 .btn3 a i.ui-datepicker-next, .selectable.selected-btn4 .btn4 a i.fa, .selectable.selected-btn4 .btn4 a i.ui-icon, .selectable.selected-btn4 .btn4 a .ui-datepicker-header i.ui-datepicker-prev, .ui-datepicker-header .selectable.selected-btn4 .btn4 a i.ui-datepicker-prev, .selectable.selected-btn4 .btn4 a .ui-datepicker-header i.ui-datepicker-next, .ui-datepicker-header .selectable.selected-btn4 .btn4 a i.ui-datepicker-next, .selectable.selected-btn5 .btn5 a i.fa, .selectable.selected-btn5 .btn5 a i.ui-icon, .selectable.selected-btn5 .btn5 a .ui-datepicker-header i.ui-datepicker-prev, .ui-datepicker-header .selectable.selected-btn5 .btn5 a i.ui-datepicker-prev, .selectable.selected-btn5 .btn5 a .ui-datepicker-header i.ui-datepicker-next, .ui-datepicker-header .selectable.selected-btn5 .btn5 a i.ui-datepicker-next {
+    .selectable.selected-btn1 .btn1 a i.fa, .selectable.selected-btn2 .btn2 a i.fa, .selectable.selected-btn3 .btn3 a i.fa, .selectable.selected-btn4 .btn4 a i.fa, .selectable.selected-btn5 .btn5 a i.fa {
       display: inline-block; }
 
 .button-group.expand {
@@ -3706,7 +3607,7 @@ input[type="checkbox"], input[type="radio"] {
     height: 1.8rem; }
     .repeater .edit .text, .repeater .clear .text, .repeater .delete .text, .repeater .add .text, .repeater .set .text, .repeater .save .text {
       text-transform: capitalize; }
-    .repeater .edit .fa + .text, .repeater .edit .ui-icon + .text, .repeater .edit .ui-datepicker-header .ui-datepicker-prev + .text, .ui-datepicker-header .repeater .edit .ui-datepicker-prev + .text, .repeater .edit .ui-datepicker-header .ui-datepicker-next + .text, .ui-datepicker-header .repeater .edit .ui-datepicker-next + .text, .repeater .clear .fa + .text, .repeater .clear .ui-icon + .text, .repeater .clear .ui-datepicker-header .ui-datepicker-prev + .text, .ui-datepicker-header .repeater .clear .ui-datepicker-prev + .text, .repeater .clear .ui-datepicker-header .ui-datepicker-next + .text, .ui-datepicker-header .repeater .clear .ui-datepicker-next + .text, .repeater .delete .fa + .text, .repeater .delete .ui-icon + .text, .repeater .delete .ui-datepicker-header .ui-datepicker-prev + .text, .ui-datepicker-header .repeater .delete .ui-datepicker-prev + .text, .repeater .delete .ui-datepicker-header .ui-datepicker-next + .text, .ui-datepicker-header .repeater .delete .ui-datepicker-next + .text, .repeater .add .fa + .text, .repeater .add .ui-icon + .text, .repeater .add .ui-datepicker-header .ui-datepicker-prev + .text, .ui-datepicker-header .repeater .add .ui-datepicker-prev + .text, .repeater .add .ui-datepicker-header .ui-datepicker-next + .text, .ui-datepicker-header .repeater .add .ui-datepicker-next + .text, .repeater .set .fa + .text, .repeater .set .ui-icon + .text, .repeater .set .ui-datepicker-header .ui-datepicker-prev + .text, .ui-datepicker-header .repeater .set .ui-datepicker-prev + .text, .repeater .set .ui-datepicker-header .ui-datepicker-next + .text, .ui-datepicker-header .repeater .set .ui-datepicker-next + .text, .repeater .save .fa + .text, .repeater .save .ui-icon + .text, .repeater .save .ui-datepicker-header .ui-datepicker-prev + .text, .ui-datepicker-header .repeater .save .ui-datepicker-prev + .text, .repeater .save .ui-datepicker-header .ui-datepicker-next + .text, .ui-datepicker-header .repeater .save .ui-datepicker-next + .text {
+    .repeater .edit .fa + .text, .repeater .clear .fa + .text, .repeater .delete .fa + .text, .repeater .add .fa + .text, .repeater .set .fa + .text, .repeater .save .fa + .text {
       padding-left: .25rem; }
   .repeater .edit, .repeater .clear, .repeater .delete, .repeater .set, .repeater .save {
     color: gray; }
@@ -4147,35 +4048,60 @@ th.sortable {
     color: #d07600; }
 
 /**
-* Table States:
-* `td.state or tr.state` - quickly color table cells or rows with the states then need to have. 
+* Table States Cells:
+* `td.state-name` - quickly color table cells. 
 * 
 *   @example
 *	<table class="table">
 *		<tr>
 *			<td class="error icon"><i class="fa fa-holder"></i></td>
+*			<td class=""><i class="fa fa-holder"></i></td>
+*			<td class="">Text</td>
+*			<td class=""><i class="fa fa-holder"></i>&nbsp;Warning</td>
+*		</tr>
+*		<tr>
+*			<td class=""><i class="fa fa-holder"></i></td>
+*			<td class="info icon"><i class="fa fa-holder"></i></td>
+*			<td class="">Text</td>
+*			<td class="info"><i class="fa fa-holder"></i>&nbsp;Info</td>
+*		</tr>
+*		<tr>
+*			<td class=""><i class="fa fa-holder"></i></td>
+*			<td class="warning icon"><i class="fa fa-holder"></i></td>
 *			<td class="error">Error</td>
-*			<td class="warning"><i class="fa fa-holder"></i> Warning</td>
+*			<td class=""><i class="fa fa-holder"></i>&nbsp;Text</td>
 *		</tr>
 *		<tr>
-*			<td class="error icon"><i class="fa fa-holder"></i></td>
-*			<td class="error">Error</td>
-*			<td class="alert">alert</td>
+*			<td class="validated icon"><i class="fa fa-holder"></i></td>
+*			<td class="info icon"><i class="fa fa-holder"></i></td>
+*			<td class="validated">Validated</td>
+*			<td class=""><i class="fa fa-holder"></i>&nbsp;text</td>
 *		</tr>
-*		<tr>
-*			<td class="error icon"><i class="fa fa-holder"></i></td>
-*			<td class="success">Success</td>
-*			<td class="highlighted"><i class="fa fa-holder"></i> Info</td>
-*		</tr>
-*		<tr>
-*			<td class="error icon"><i class="fa fa-holder"></i></td>
-*			<td class="complete"><i class="fa fa-holder"></i> Complete</td>
-*			<td class="info"><i class="fa fa-holder"></i> Highlighted</td>
+*	</table>
+*/
+/**
+* Table States - Rows:
+* `tr.state` - quickly color table rows with the states. 
+* 
+*   @example
+*	<table class="table">
+*		<tr class="validated">
+*			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
+*			<td class=""></td>
+*			<td class="">Cell Data in validated Row</td>
+*			<td class="">Icon is Dynamic</td>
 *		</tr>
 *		<tr class="error">
-*			<td class="error icon"><i class="fa fa-holder"></i></td>
+*			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
+*			<td class=""></td>
 *			<td class="">Cell Data in Error Row</td>
-*			<td class="">Cell Data</td>
+*			<td class="">Icon is Dynamic</td>
+*		</tr>
+*		<tr class="error">
+*			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
+*			<td class=""></td>
+*			<td class="">Cell Data in Error Row</td>
+*			<td class="">Icon is Dynamic</td>
 *		</tr>
 *	</table>
 */
@@ -4187,60 +4113,68 @@ td.icon {
   td.icon i {
     margin: 0 auto; }
 
+td.error, tr.error td, td.warning, tr.warning td, td.validated, tr.validated td, td.info, tr.info td {
+  background-image: url(../img/empty_stripe.png);
+  font-weight: 900; }
+
+td.error, td.warning, td.validated, td.info {
+  border: 1px solid;
+  margin: -1px; }
+
+tr.error td, tr.warning td, tr.validated td, tr.info td {
+  border-top: 1px solid;
+  border-bottom: 1px solid; }
+
 td.error, tr.error td {
-  background-color: #c32231;
-  color: #fff; }
+  background-color: #e19198;
+  color: #333333;
+  border-color: #c32231; }
 
-tr:nth-child(even) td.error, tr:nth-child(even).error td {
-  background-color: #c32231;
-  color: #fff; }
-
-td.warning, tr.warning td {
-  background-color: #d07600;
-  color: #fff; }
-
-tr:nth-child(even) td.warning, tr:nth-child(even).warning td {
-  background-color: #d07600;
-  color: #fff; }
-
-td.alert, tr.alert td {
-  background-color: #d07600;
-  color: #fff; }
-
-tr:nth-child(even) td.alert, tr:nth-child(even).alert td {
-  background-color: #d07600;
-  color: #fff; }
-
-td.complete, tr.complete td {
-  background-color: #19BB9B;
-  color: #fff; }
-
-tr:nth-child(even) td.complete, tr:nth-child(even).complete td {
-  background-color: #19BB9B;
-  color: #fff; }
-
-td.success, tr.success td {
-  background-color: #19BB9B;
-  color: #fff; }
-
-tr:nth-child(even) td.success, tr:nth-child(even).success td {
-  background-color: #19BB9B;
-  color: #fff; }
-
-td.highlighted, tr.highlighted td {
-  background-color: #a0d3e8;
+tr:nth-child(even) td.error {
+  background-color: #edbdc1;
   color: #333333; }
 
-tr:nth-child(even) td.highlighted, tr:nth-child(even).highlighted td {
-  background-color: #a0d3e8;
+tr:nth-child(even).error td {
+  background-color: #edbdc1;
+  color: #333333; }
+
+td.warning, tr.warning td {
+  background-color: #e8bb80;
+  color: #333333;
+  border-color: #d07600; }
+
+tr:nth-child(even) td.warning {
+  background-color: #f1d6b3;
+  color: #333333; }
+
+tr:nth-child(even).warning td {
+  background-color: #f1d6b3;
+  color: #333333; }
+
+td.validated, tr.validated td {
+  background-color: #8cddcd;
+  color: #333333;
+  border-color: #19BB9B; }
+
+tr:nth-child(even) td.validated {
+  background-color: #baebe1;
+  color: #333333; }
+
+tr:nth-child(even).validated td {
+  background-color: #baebe1;
   color: #333333; }
 
 td.info, tr.info td {
-  background-color: #a0d3e8;
+  background-color: #dbf4fe;
+  color: #333333;
+  border-color: #B7E8FC; }
+
+tr:nth-child(even) td.info {
+  background-color: #e9f8fe;
   color: #333333; }
 
-tr:nth-child(even) td.info, tr:nth-child(even).info td {
-  background-color: #a0d3e8;
+tr:nth-child(even).info td {
+  background-color: #e9f8fe;
   color: #333333; }
 
 /**
@@ -4440,65 +4374,29 @@ table + div > .collapsable-panel {
     .collapsable-panel.warning.inset .bar.close .action-btn {
       background-color: #d07600;
       color: #fff; }
-.collapsable-panel.alert {
+.collapsable-panel.validated {
   background-color: transparent;
   border: 0 none transparent; }
-  .collapsable-panel.alert .bar.close, .collapsable-panel.alert.inset .bar.close {
-    border-color: #d07600; }
-  .collapsable-panel.alert .bar.close .action-btn {
-    color: #d07600; }
-  .collapsable-panel.alert.inset {
-    background-color: #fff2e1; }
-    .collapsable-panel.alert.inset .bar.close .action-btn {
-      background-color: #d07600;
-      color: #fff; }
-.collapsable-panel.complete {
-  background-color: transparent;
-  border: 0 none transparent; }
-  .collapsable-panel.complete .bar.close, .collapsable-panel.complete.inset .bar.close {
+  .collapsable-panel.validated .bar.close, .collapsable-panel.validated.inset .bar.close {
     border-color: #19BB9B; }
-  .collapsable-panel.complete .bar.close .action-btn {
+  .collapsable-panel.validated .bar.close .action-btn {
     color: #19BB9B; }
-  .collapsable-panel.complete.inset {
+  .collapsable-panel.validated.inset {
     background-color: #e5fbf7; }
-    .collapsable-panel.complete.inset .bar.close .action-btn {
+    .collapsable-panel.validated.inset .bar.close .action-btn {
       background-color: #19BB9B;
       color: #fff; }
-.collapsable-panel.success {
-  background-color: transparent;
-  border: 0 none transparent; }
-  .collapsable-panel.success .bar.close, .collapsable-panel.success.inset .bar.close {
-    border-color: #19BB9B; }
-  .collapsable-panel.success .bar.close .action-btn {
-    color: #19BB9B; }
-  .collapsable-panel.success.inset {
-    background-color: #e5fbf7; }
-    .collapsable-panel.success.inset .bar.close .action-btn {
-      background-color: #19BB9B;
-      color: #fff; }
-.collapsable-panel.highlighted {
-  background-color: transparent;
-  border: 0 none transparent; }
-  .collapsable-panel.highlighted .bar.close, .collapsable-panel.highlighted.inset .bar.close {
-    border-color: #a0d3e8; }
-  .collapsable-panel.highlighted .bar.close .action-btn {
-    color: #a0d3e8; }
-  .collapsable-panel.highlighted.inset {
-    background-color: #f6fbfd; }
-    .collapsable-panel.highlighted.inset .bar.close .action-btn {
-      background-color: #a0d3e8;
-      color: #333333; }
 .collapsable-panel.info {
   background-color: transparent;
   border: 0 none transparent; }
   .collapsable-panel.info .bar.close, .collapsable-panel.info.inset .bar.close {
-    border-color: #a0d3e8; }
+    border-color: #B7E8FC; }
   .collapsable-panel.info .bar.close .action-btn {
-    color: #a0d3e8; }
+    color: #B7E8FC; }
   .collapsable-panel.info.inset {
-    background-color: #f6fbfd; }
+    background-color: #f8fdff; }
     .collapsable-panel.info.inset .bar.close .action-btn {
-      background-color: #a0d3e8;
+      background-color: #B7E8FC;
       color: #333333; }
 
 /**
@@ -4571,7 +4469,7 @@ table + div > .collapsable-panel {
 
 .accordion .collapsable-panel {
   display: block; }
-.accordion .toggle .fa, .accordion .toggle .ui-icon, .accordion .toggle .ui-datepicker-header .ui-datepicker-prev, .ui-datepicker-header .accordion .toggle .ui-datepicker-prev, .accordion .toggle .ui-datepicker-header .ui-datepicker-next, .ui-datepicker-header .accordion .toggle .ui-datepicker-next {
+.accordion .toggle .fa {
   color: #25b6e0;
   -webkit-transition: .25s ease-in-out;
   -moz-transition: .25s ease-in-out;
@@ -4581,16 +4479,16 @@ table + div > .collapsable-panel {
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg); }
-  .accordion .toggle .fa.fa-holder:before, .accordion .toggle .fa-holder.ui-icon:before, .accordion .toggle .ui-datepicker-header .fa-holder.ui-datepicker-prev:before, .ui-datepicker-header .accordion .toggle .fa-holder.ui-datepicker-prev:before, .accordion .toggle .ui-datepicker-header .fa-holder.ui-datepicker-next:before, .ui-datepicker-header .accordion .toggle .fa-holder.ui-datepicker-next:before {
+  .accordion .toggle .fa.fa-holder:before {
     content: ""; }
 .accordion .toggle .text {
   color: #5c5c5c;
   padding-left: .5rem; }
-.accordion .toggle:hover .fa, .accordion .toggle:hover .ui-icon, .accordion .toggle:hover .ui-datepicker-header .ui-datepicker-prev, .ui-datepicker-header .accordion .toggle:hover .ui-datepicker-prev, .accordion .toggle:hover .ui-datepicker-header .ui-datepicker-next, .ui-datepicker-header .accordion .toggle:hover .ui-datepicker-next {
+.accordion .toggle:hover .fa {
   color: #198dae; }
 .accordion .toggle:hover .text {
   color: #333333; }
-.accordion .selected .toggle .fa, .accordion .selected .toggle .ui-icon, .accordion .selected .toggle .ui-datepicker-header .ui-datepicker-prev, .ui-datepicker-header .accordion .selected .toggle .ui-datepicker-prev, .accordion .selected .toggle .ui-datepicker-header .ui-datepicker-next, .ui-datepicker-header .accordion .selected .toggle .ui-datepicker-next {
+.accordion .selected .toggle .fa {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
@@ -4671,9 +4569,9 @@ table + div > .collapsable-panel {
       background-color: #e6e6e6; }
     .panel-selector li.j-selected, .panel-selector li.selected {
       background-color: #19BB9B; }
-      .panel-selector li.j-selected > i.fa-holder:before, .panel-selector li.j-selected.fa:before, .panel-selector li.j-selected.ui-icon:before, .panel-selector .ui-datepicker-header li.j-selected.ui-datepicker-prev:before, .ui-datepicker-header .panel-selector li.j-selected.ui-datepicker-prev:before, .panel-selector .ui-datepicker-header li.j-selected.ui-datepicker-next:before, .ui-datepicker-header .panel-selector li.j-selected.ui-datepicker-next:before, .panel-selector li.selected > i.fa-holder:before, .panel-selector li.selected.fa:before, .panel-selector li.selected.ui-icon:before, .panel-selector .ui-datepicker-header li.selected.ui-datepicker-prev:before, .ui-datepicker-header .panel-selector li.selected.ui-datepicker-prev:before, .panel-selector .ui-datepicker-header li.selected.ui-datepicker-next:before, .ui-datepicker-header .panel-selector li.selected.ui-datepicker-next:before {
+      .panel-selector li.j-selected > i.fa-holder:before, .panel-selector li.j-selected.fa:before, .panel-selector li.selected > i.fa-holder:before, .panel-selector li.selected.fa:before {
         content: ""; }
-      .panel-selector li.j-selected .text, .panel-selector li.j-selected .fa, .panel-selector li.j-selected .ui-icon, .panel-selector li.j-selected .ui-datepicker-header .ui-datepicker-prev, .ui-datepicker-header .panel-selector li.j-selected .ui-datepicker-prev, .panel-selector li.j-selected .ui-datepicker-header .ui-datepicker-next, .ui-datepicker-header .panel-selector li.j-selected .ui-datepicker-next, .panel-selector li.selected .text, .panel-selector li.selected .fa, .panel-selector li.selected .ui-icon, .panel-selector li.selected .ui-datepicker-header .ui-datepicker-prev, .ui-datepicker-header .panel-selector li.selected .ui-datepicker-prev, .panel-selector li.selected .ui-datepicker-header .ui-datepicker-next, .ui-datepicker-header .panel-selector li.selected .ui-datepicker-next {
+      .panel-selector li.j-selected .text, .panel-selector li.j-selected .fa, .panel-selector li.selected .text, .panel-selector li.selected .fa {
         color: #fff; }
 
 /**
@@ -4698,9 +4596,9 @@ table + div > .collapsable-panel {
   background-color: #198dae; }
 .button-group li.j-selected a.button, .button-group li.selected a.button {
   background-color: #19BB9B; }
-  .button-group li.j-selected a.button > i.fa-holder:before, .button-group li.j-selected a.button.fa:before, .button-group li.j-selected a.button.ui-icon:before, .button-group li.j-selected .ui-datepicker-header a.button.ui-datepicker-prev:before, .ui-datepicker-header .button-group li.j-selected a.button.ui-datepicker-prev:before, .button-group li.j-selected .ui-datepicker-header a.button.ui-datepicker-next:before, .ui-datepicker-header .button-group li.j-selected a.button.ui-datepicker-next:before, .button-group li.selected a.button > i.fa-holder:before, .button-group li.selected a.button.fa:before, .button-group li.selected a.button.ui-icon:before, .button-group li.selected .ui-datepicker-header a.button.ui-datepicker-prev:before, .ui-datepicker-header .button-group li.selected a.button.ui-datepicker-prev:before, .button-group li.selected .ui-datepicker-header a.button.ui-datepicker-next:before, .ui-datepicker-header .button-group li.selected a.button.ui-datepicker-next:before {
+  .button-group li.j-selected a.button > i.fa-holder:before, .button-group li.j-selected a.button.fa:before, .button-group li.selected a.button > i.fa-holder:before, .button-group li.selected a.button.fa:before {
     content: ""; }
-  .button-group li.j-selected a.button .text, .button-group li.j-selected a.button .fa, .button-group li.j-selected a.button .ui-icon, .button-group li.j-selected a.button .ui-datepicker-header .ui-datepicker-prev, .ui-datepicker-header .button-group li.j-selected a.button .ui-datepicker-prev, .button-group li.j-selected a.button .ui-datepicker-header .ui-datepicker-next, .ui-datepicker-header .button-group li.j-selected a.button .ui-datepicker-next, .button-group li.selected a.button .text, .button-group li.selected a.button .fa, .button-group li.selected a.button .ui-icon, .button-group li.selected a.button .ui-datepicker-header .ui-datepicker-prev, .ui-datepicker-header .button-group li.selected a.button .ui-datepicker-prev, .button-group li.selected a.button .ui-datepicker-header .ui-datepicker-next, .ui-datepicker-header .button-group li.selected a.button .ui-datepicker-next {
+  .button-group li.j-selected a.button .text, .button-group li.j-selected a.button .fa, .button-group li.selected a.button .text, .button-group li.selected a.button .fa {
     color: #fff; }
 
 .branding .oma {
@@ -5481,6 +5379,12 @@ div.reveal-modal, dialog {
 ----------------------------------*/
 /* states and images */
 .ui-icon {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background: none repeat scroll 0 0 transparent;
   text-align: center; }
   .ui-icon :before {
@@ -5568,6 +5472,12 @@ div.reveal-modal, dialog {
   border-radius: 8px; }
 
 .ui-datepicker-header .ui-datepicker-prev, .ui-datepicker-header .ui-datepicker-next {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   margin: .1em;
   border-radius: 5px; }
   .ui-datepicker-header .ui-datepicker-prev:before, .ui-datepicker-header .ui-datepicker-next:before {
@@ -5975,38 +5885,26 @@ h6 blockquote {
 *   @example
 *  
 */
-h1.error, h2.error, h3.error, h4.error, .error.label-holder, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, .warning.label-holder, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.alert, h2.alert, h3.alert, h4.alert, .alert.label-holder, h5.alert, h6.alert, p.alert, a.alert, li.alert, blockquote.alert, h1.complete, h2.complete, h3.complete, h4.complete, .complete.label-holder, h5.complete, h6.complete, p.complete, a.complete, li.complete, blockquote.complete, h1.success, h2.success, h3.success, h4.success, .success.label-holder, h5.success, h6.success, p.success, a.success, li.success, blockquote.success, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, .highlighted.label-holder, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted, h1.info, h2.info, h3.info, h4.info, .info.label-holder, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
+h1.error, h2.error, h3.error, h4.error, .error.label-holder, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, .warning.label-holder, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.validated, h2.validated, h3.validated, h4.validated, .validated.label-holder, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated, h1.info, h2.info, h3.info, h4.info, .info.label-holder, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
   font-weight: 900; }
 
 h1.error, h2.error, h3.error, h4.error, .error.label-holder, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
   color: #c32231; }
 h1.warning, h2.warning, h3.warning, h4.warning, .warning.label-holder, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning {
   color: #d07600; }
-h1.alert, h2.alert, h3.alert, h4.alert, .alert.label-holder, h5.alert, h6.alert, p.alert, a.alert, li.alert, blockquote.alert {
-  color: #d07600; }
-h1.complete, h2.complete, h3.complete, h4.complete, .complete.label-holder, h5.complete, h6.complete, p.complete, a.complete, li.complete, blockquote.complete {
+h1.validated, h2.validated, h3.validated, h4.validated, .validated.label-holder, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated {
   color: #19BB9B; }
-h1.success, h2.success, h3.success, h4.success, .success.label-holder, h5.success, h6.success, p.success, a.success, li.success, blockquote.success {
-  color: #19BB9B; }
-h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, .highlighted.label-holder, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
-  color: #a0d3e8; }
 h1.info, h2.info, h3.info, h4.info, .info.label-holder, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
-  color: #a0d3e8; }
+  color: #B7E8FC; }
 
 h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, .with-underline.error.label-holder, h5.with-underline.error, h6.with-underline.error {
   border-color: #c32231; }
 h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, .with-underline.warning.label-holder, h5.with-underline.warning, h6.with-underline.warning {
   border-color: #d07600; }
-h1.with-underline.alert, h2.with-underline.alert, h3.with-underline.alert, h4.with-underline.alert, .with-underline.alert.label-holder, h5.with-underline.alert, h6.with-underline.alert {
-  border-color: #d07600; }
-h1.with-underline.complete, h2.with-underline.complete, h3.with-underline.complete, h4.with-underline.complete, .with-underline.complete.label-holder, h5.with-underline.complete, h6.with-underline.complete {
+h1.with-underline.validated, h2.with-underline.validated, h3.with-underline.validated, h4.with-underline.validated, .with-underline.validated.label-holder, h5.with-underline.validated, h6.with-underline.validated {
   border-color: #19BB9B; }
-h1.with-underline.success, h2.with-underline.success, h3.with-underline.success, h4.with-underline.success, .with-underline.success.label-holder, h5.with-underline.success, h6.with-underline.success {
-  border-color: #19BB9B; }
-h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, .with-underline.highlighted.label-holder, h5.with-underline.highlighted, h6.with-underline.highlighted {
-  border-color: #a0d3e8; }
 h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, .with-underline.info.label-holder, h5.with-underline.info, h6.with-underline.info {
-  border-color: #a0d3e8; }
+  border-color: #B7E8FC; }
 
 .phone-only {
   display: none; }

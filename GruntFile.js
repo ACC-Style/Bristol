@@ -97,7 +97,7 @@ module.exports = function(grunt){
 		    },
 		  },
 		copy:{ 
-			STYLE: {
+			STYLES: {
 			files: [{
 				expand: true,
 				cwd: 'styleguide/',
@@ -254,7 +254,7 @@ module.exports = function(grunt){
 
 	]);
 	grunt.registerTask('convert', ['sass-convert:lib']);
-	grunt.registerTask('stylecopy', ['copy:STYLE']);
+	grunt.registerTask('movetoserver', ['copy:STYLES']);
 	grunt.registerTask('uicopy',['copy:UI','copy:TFS']);
 	grunt.registerTask('tfscopy',[
 		'clean',

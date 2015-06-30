@@ -9,3 +9,10 @@ $required_data:(
 @include required-check($required_data...);
 // End of required check
 
+@each $State in $states{
+	$selector:map-get($State,"Selector");
+	$icon-var: map-get($State,"Icon");
+	#{$selector}{
+		@include fa-var($icon-var);
+	}
+}

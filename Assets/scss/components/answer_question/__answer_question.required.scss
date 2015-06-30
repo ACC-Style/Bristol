@@ -34,12 +34,7 @@
 .answer,.question{
 	margin-bottom: .5rem;
 	.data,.error,.warning,.alert,.validated, .required{display:none;}
-	@include match-display(".data");
-	@include match-display(".error");
-	@include match-display(".warning");
-	@include match-display(".alert");
 	@include match-display(".required");
-	@include match-display(".validated");
 	
 	.unit{
 		@include grid-row();
@@ -68,6 +63,7 @@
 	.warning &{color:fontcolor($alert-color);}
 }
 
+
 .required-holder {
 	display: none;
 	height: 1rem;
@@ -75,34 +71,16 @@
 	position: relative;
 	margin-left:-1rem;
 	margin-right:-1rem;
+	color:grey(80);
 	i.fa-holder-dynamic{ position: absolute;top:0;left:0;font-size: .75rem;}
-	.answer.required &,.question.required &{
-		background-color: transparent;
-		color:fontcolor($alert-color);
-		display: inline-block;
-		@include fa-holder($fa-var-asterisk,'dynamic');
-	}
-	.answer.error &,.question.error &{
-		background-color: transparent;
-		color:fontcolor($warning-color);
-		display: inline-block;
-		@include fa-holder($fa-var-times,'dynamic');
-	}
-	.answer.validated &,.question.validated &{
-		background-color: transparent;
-		color:fontcolor($success-color);
-		display: inline-block;
-		@include fa-holder($fa-var-check,'dynamic');
-	}
 }
-div.question,div.answer{
-	@each $state,$selector, $color, $icon in $states{
-		&#{$selector}{
-			background-color: transparent;
-			border: 0px none transparent;
-			}
-		}
-	
+%visible-required-icon{
+	background-color: transparent;
+	display: inline-block;
+}
+.answer.required .required-holder,.question.required .required-holder{
+	@extend %visible-required-icon;
+	@include fa-holder($fa-var-asterisk,'dynamic');
 }
 
 .input-holder,.value-holder{
@@ -124,15 +102,8 @@ div.question,div.answer{
 		background: #d07600;
 		clear:both;
 		color: #FFF;
-	}	
-	span, small{
 		i{margin-right: .5rem;}
-		&.error{background-color: $warning-color;}
-		&.alert,&.warning{background-color:$alert-color;}
-		&.data{  background-color: grey(20);
-  				&,.fa{color:$font-black;}}
-	}
-
+	}	
 }
 .hint{
 	@extend .row;
@@ -140,4 +111,44 @@ div.question,div.answer{
 	font-size: .75rem;
 	line-height: 1rem;
 	@extend %italic;
+}
+
+// State Modifications
+// This code is just for dependency this is to help maintain the project but doesn't produce any css.
+$required-SCSS_states: "false" !default;
+$required_data:(
+	'bool' :$required-SCSS_states,
+	'required':'__states.required.scss',
+	'path':'scss/base/__states.required.scss',
+	'file':'_answer_quesiton.required.scss'
+	);
+@include required-check($required_data...);
+
+
+// End of required check
+
+.answer,.question{
+	@each $State in $states{
+		@include match-display( map-get($State, "Selector") );
+	}
+}
+.required-holder {
+	@each $State in $states{
+		$selector:map-get($State,"Selector");
+		.answer#{$selector} &,.question#{$selector} &{
+			@extend %visible-required-icon;
+			color:fontcolor(map-get($State, 'Color'));
+		}
+
+	}
+}
+.message-holder{
+	@each $State in $states{
+		$selector:map-get($State,"Selector");
+		$color: map-get($State, 'Color');
+		small#{$selector},.span#{$selector}{
+			background-color: $color;
+			color:color-contrast($color);
+		}
+	}
 }

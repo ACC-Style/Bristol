@@ -13,12 +13,16 @@
 	@include button($bg:#fff);
 	margin-bottom: 0;
 }
-
-.button.disabled,.button.disabled:hover{
+%buttondisabled{
+	background-color: grey(20);
+	color:fontcolor($black,'quiet');
+	cursor:default;
+}
+ button[disabled],
+.button.disabled,
+.button.disabled:hover{
 	&,&.success,&.alert,&.secondary{
-		background-color: grey(20);
-		color:fontcolor($black,'quiet');
-		cursor:default;
+		@extend %buttondisabled;
 		
 	}
 

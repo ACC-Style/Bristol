@@ -1780,9 +1780,9 @@
       </div>
     </section>
 
-    <section class="sg-block sg-section-questions">
+    <section class="sg-block sg-section-questions-required">
       <div class="sg-text">
-        <h3 id="questions" class="sg">Questions</h3>
+        <h3 id="questions-required" class="sg">Questions -Required</h3>
         <p class="sg">
           <code class="sg">.questions</code>- standard format for an input question. Modify with
           <code class="sg">.required</code>and change the states with
@@ -1805,83 +1805,6 @@
               </div>
               <div class="column small-6 large-3">
                 <small class="value">Years</small>
-              </div>
-            </div>
-            <div class="message-holder">
-              <small class="error">
-                <i class="fa fa-holder"></i>Error message</small>
-              <small class="warning">
-                <i class="fa fa-holder"></i>Warning message</small>
-              <small class="data">
-                <i class="fa fa-holder"></i>Data message</small>
-            </div>
-            <div class="hint">This is some hint text</div>
-          </div>
-          <br>
-          <div class="question warning">
-            <div class="label-holder">
-              <label for="">
-                <span class="text">Question Dropdown Title (Warning)</span>
-                <span class="required-holder">
-                  <i class="fa fa-holder-dynamic"></i>
-                </span>
-              </label>
-            </div>
-            <div class="input-holder">
-              <div class="input-space column small-6 large-9">
-                <select name="" id="" class="input">
-                  <option value="">20-50</option>
-                  <option value="">50-60</option>
-                  <option value="">60-70</option>
-                  <option value="">70-80</option>
-                  <option value="">80-Up</option>
-                </select>
-              </div>
-              <div class="column small-6 large-3">
-                <small class="value">Years</small>
-              </div>
-            </div>
-            <div class="message-holder">
-              <small class="error">
-                <i class="fa fa-holder"></i>Error message</small>
-              <small class="warning">
-                <i class="fa fa-holder"></i>Warning message</small>
-              <small class="data">
-                <i class="fa fa-holder"></i>Data message</small>
-            </div>
-          </div>
-          <br>
-          <div class="question error">
-            <div class="label-holder">
-              <label for="">
-                <span class="text">Question RadioGroup Title (Error)</span>
-                <span class="required-holder">
-                  <i class="fa fa-holder-dynamic"></i>
-                </span>
-              </label>
-            </div>
-            <div class="input-holder radio-group-holder row">
-              <div class="column input-space small-6">
-                <label for="radio1" class="radio-group">
-                  <div class="radio">
-                    <input id="radio1" type="radio" name="number" value="#">
-                  </div>
-                  <div class="radio-content">
-                    <h4>Title One</h4>
-                    <p>Sub Content</p>
-                  </div>
-                </label>
-              </div>
-              <div class="column input-space small-6">
-                <label for="radio2" class="radio-group">
-                  <div class="radio">
-                    <input id="radio2" type="radio" name="number" value="#">
-                  </div>
-                  <div class="radio-content">
-                    <h4>Title 2</h4>
-                    <p>Sub Content</p>
-                  </div>
-                </label>
               </div>
             </div>
             <div class="message-holder">
@@ -1920,9 +1843,51 @@
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Data message<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;hint&quot;</span>&gt;</span>This is some hint text<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;question warning&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+      </div>
+    </section>
+
+    <section class="sg-block sg-section-questions-states">
+      <div class="sg-text">
+        <h3 id="questions-states" class="sg">Questions - States</h3>
+        <p class="sg">
+          <code class="sg">.questions + .warning + error +...</code>- input questions can be modified with the states like
+          <code class="sg">.required</code>and change the states with
+          <code class="sg">warning</code>,
+          <code class="sg">error</code>, and
+          <code class="sg">data</code>
+        </p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <div class="question warning">
+            <div class="label-holder">
+              <label for="">
+                <span class="text">Question Dropdown Title (Warning)</span>
+                <span class="required-holder">
+                  <i class="fa fa-holder-dynamic"></i>
+                </span>
+              </label>
+            </div>
+            <div class="input-holder">
+              <div class="input-space column small-6 large-9">
+                <input type="text">
+              </div>
+              <div class="column small-6 large-3">
+                <small class="value">Years</small>
+              </div>
+            </div>
+            <div class="message-holder">
+              <small class="error">
+                <i class="fa fa-holder"></i>Error message</small>
+              <small class="warning">
+                <i class="fa fa-holder"></i>Warning message</small>
+              <small class="info">
+                <i class="fa fa-holder"></i>Data message</small>
+            </div>
+            <div class="hint">This is some hint text</div>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;question warning&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;label-holder&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Question Dropdown Title (Warning)<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
@@ -1933,13 +1898,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;input-holder&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;input-space column small-6 large-9&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;input&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>20-50<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>50-60<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>60-70<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>70-80<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>80-Up<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> /&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 large-3&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;value&quot;</span>&gt;</span>Years<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
@@ -1950,50 +1909,7 @@
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Error message<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;warning&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Warning message<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;data&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Data message<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;question error&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;label-holder&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Question RadioGroup Title (Error)<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;required-holder&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;input-holder radio-group-holder row&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column input-space small-6&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;radio1&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;radio-group&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;radio&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&apos;radio1&apos;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;radio&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;number&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;radio-content&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>Title One<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Sub Content<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column input-space small-6&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;radio2&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;radio-group&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;radio&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&apos;radio2&apos;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;radio&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;number&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;radio-content&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>Title 2<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Sub Content<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;message-holder&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;error&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Error message<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;warning&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Warning message<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;data&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;info&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Data message<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;hint&quot;</span>&gt;</span>This is some hint text<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
@@ -2674,11 +2590,11 @@
       </div>
     </section>
 
-    <section class="sg-block sg-section-table-states">
+    <section class="sg-block sg-section-table-states-cells">
       <div class="sg-text">
-        <h3 id="table-states" class="sg">Table States</h3>
+        <h3 id="table-states-cells" class="sg">Table States Cells</h3>
         <p class="sg">
-          <code class="sg">td.state or tr.state</code>- quickly color table cells or rows with the states then need to have.</p>
+          <code class="sg">td.state-name</code>- quickly color table cells.</p>
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
@@ -2687,40 +2603,45 @@
               <td class="error icon">
                 <i class="fa fa-holder"></i>
               </td>
-              <td class="error">Error</td>
-              <td class="warning">
-                <i class="fa fa-holder"></i>Warning</td>
-            </tr>
-            <tr>
-              <td class="error icon">
+              <td class="">
                 <i class="fa fa-holder"></i>
               </td>
-              <td class="error">Error</td>
-              <td class="alert">alert</td>
+              <td class="">Text</td>
+              <td class="">
+                <i class="fa fa-holder"></i>&#xA0;Warning</td>
             </tr>
             <tr>
-              <td class="error icon">
+              <td class="">
                 <i class="fa fa-holder"></i>
               </td>
-              <td class="success">Success</td>
-              <td class="highlighted">
-                <i class="fa fa-holder"></i>Info</td>
-            </tr>
-            <tr>
-              <td class="error icon">
+              <td class="info icon">
                 <i class="fa fa-holder"></i>
               </td>
-              <td class="complete">
-                <i class="fa fa-holder"></i>Complete</td>
+              <td class="">Text</td>
               <td class="info">
-                <i class="fa fa-holder"></i>Highlighted</td>
+                <i class="fa fa-holder"></i>&#xA0;Info</td>
             </tr>
-            <tr class="error">
-              <td class="error icon">
+            <tr>
+              <td class="">
                 <i class="fa fa-holder"></i>
               </td>
-              <td class="">Cell Data in Error Row</td>
-              <td class="">Cell Data</td>
+              <td class="warning icon">
+                <i class="fa fa-holder"></i>
+              </td>
+              <td class="error">Error</td>
+              <td class="">
+                <i class="fa fa-holder"></i>&#xA0;Text</td>
+            </tr>
+            <tr>
+              <td class="validated icon">
+                <i class="fa fa-holder"></i>
+              </td>
+              <td class="info icon">
+                <i class="fa fa-holder"></i>
+              </td>
+              <td class="validated">Validated</td>
+              <td class="">
+                <i class="fa fa-holder"></i>&#xA0;text</td>
             </tr>
           </table>
         </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;table&quot;</span>&gt;</span>
@@ -2728,40 +2649,108 @@
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;error icon&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;error&quot;</span>&gt;</span>Error<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;warning&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Warning<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;error icon&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;error&quot;</span>&gt;</span>Error<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;alert&quot;</span>&gt;</span>alert<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Text<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp;Warning<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;error icon&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;success&quot;</span>&gt;</span>Success<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;highlighted&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Info<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;error icon&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;info icon&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;complete&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Complete<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Text<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;info&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Highlighted<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp;Info<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;warning icon&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;error&quot;</span>&gt;</span>Error<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp;Text<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;validated icon&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;info icon&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;validated&quot;</span>&gt;</span>Validated<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp;text<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></pre>
+      </div>
+    </section>
+
+    <section class="sg-block sg-section-table-states-rows">
+      <div class="sg-text">
+        <h3 id="table-states-rows" class="sg">Table States - Rows</h3>
+        <p class="sg">
+          <code class="sg">tr.state</code>- quickly color table rows with the states.</p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <table class="table">
+            <tr class="validated">
+              <td class="icon">
+                <i class="fa fa-holder-dynamic"></i>
+              </td>
+              <td class=""></td>
+              <td class="">Cell Data in validated Row</td>
+              <td class="">Icon is Dynamic</td>
+            </tr>
+            <tr class="error">
+              <td class="icon">
+                <i class="fa fa-holder-dynamic"></i>
+              </td>
+              <td class=""></td>
+              <td class="">Cell Data in Error Row</td>
+              <td class="">Icon is Dynamic</td>
+            </tr>
+            <tr class="error">
+              <td class="icon">
+                <i class="fa fa-holder-dynamic"></i>
+              </td>
+              <td class=""></td>
+              <td class="">Cell Data in Error Row</td>
+              <td class="">Icon is Dynamic</td>
+            </tr>
+          </table>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;table&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;validated&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Cell Data in validated Row<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Icon is Dynamic<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;error&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;error icon&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Cell Data in Error Row<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Cell Data<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Icon is Dynamic<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;error&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Cell Data in Error Row<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Icon is Dynamic<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></pre>
       </div>
