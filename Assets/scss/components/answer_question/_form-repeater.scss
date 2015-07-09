@@ -185,18 +185,16 @@ $repeater-color: rebrand-color($primary-color,2);
 	}
 }
 
-.question-group,.render{
+.question-group .render{
 	.message-holder{
 		.warning,.error{display:none;
 		&small, &span{margin-bottom: .65rem;}
 		}
 	}
 	&.warning{
-		@include fa-holder($fa-var-exclamation-triangle,'-dynamic');
-		.message-holder .warning{display: block;}
+			.message-holder .warning{display: block;}
 	}
 	&.error{
-		@include fa-holder($fa-var-times-circle,'-dynamic');
 		.message-holder .error{display: block;}
 	}
 }

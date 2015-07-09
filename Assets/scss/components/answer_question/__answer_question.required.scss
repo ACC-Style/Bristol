@@ -74,6 +74,7 @@
 	color:grey(80);
 	i.fa-holder-dynamic{ position: absolute;top:0;left:0;font-size: .75rem;}
 }
+
 %visible-required-icon{
 	background-color: transparent;
 	display: inline-block;
@@ -81,10 +82,12 @@
 .answer.required .required-holder,.question.required .required-holder{
 	@extend %visible-required-icon;
 	@include fa-holder($fa-var-asterisk,'dynamic');
+	color:$alert-color;
 }
 
 .input-holder,.value-holder{
-	@include grid-row();margin-bottom: .75rem;
+	@include grid-row();
+	margin-bottom: .75rem;
 	>.input-space{  padding-left: 0;
 
 	}
