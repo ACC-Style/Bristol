@@ -17,7 +17,6 @@ $product-brand-color: #5b1ed4;
 @import "base/colors";
 
 @import "base/fonts";
-//@import "base/fonts.admin";
 @import "helpers/breakpoints";
 
 
@@ -35,14 +34,14 @@ $product-brand-color: #5b1ed4;
 @import "base/fa-holder";
 @import "base/fa-holder.states";
 @import "../../bower_components/foundation/scss/foundation-features";
-@import "vendor/modular-scale";
+
+//branding and typography
+  @import "vendor/modular-scale";
 @import "base/modular-scale-typography";
 @import "base/typography";
 @import "base/typography.states";
 
 
-//branding and typography
-//@import "base/typography.admin";
 
 
 //Components that live inside of Layouts.
@@ -64,27 +63,59 @@ $product-brand-color: #5b1ed4;
 @import "components/table/table-sortable";
 @import "components/table/table-icon-cell";
 @import "components/table/table-cell.states";
-
-// Modules A collection of components brought together into a larger moduals
 @import "components/collapsable-panel";
 @import "components/collapsable-panel.states";
 @import "components/accordion";
 @import "components/panel-selector";
 
+/*
+
+Non-Core Components Styles
+
+*/
+
 // Anticoag
-//@import "components/_anticoag/data-display";
+//@import "_non-core/components/_anticoag/data-display";
 // OMA Modules
-@import "components/_oma/branding";
-@import "components/_oma/user-id-block";
-@import "components/_oma/member-selection-table";
+@import "_non-core/components/_oma/branding";
+@import "_non-core/components/_oma/user-id-block";
+@import "_non-core/components/_oma/member-selection-table";
 // OMA Admin Modules
-//@import "components/_oma-admin/table-history";
-//@import "components/_oma-admin/branding";
-//@import "components/_oma-admin/user-id-block";
-//@import "components/_oma-admin/admin.collapsable-panel";
+// @import "_non-core/components/_oma-admin/table-history";
+// @import "_non-core/components/_oma-admin/branding";
+// @import "_non-core/components/_oma-admin/user-id-block";
+// @import "_non-core/components/_oma-admin/admin.collapsable-panel";
 // SI Modules
-//@import "components/table/si.table-cellcolor";
-//@import "components/table/si.recommendationTable";
+//@import "_non-core/components/_si/si.table-cellcolor";
+//@import "_non-core/components/_si/si.recommendationTable";
+
+
+// Vendor Overrides 
+@import "vendor/foundation/override.topbar";
+@import "vendor/foundation/override.pagination";
+@import "vendor/foundation/override.reveal";
+@import "vendor/foundation/override.slider";
+@import "vendor/foundation/override.switch";
+@import "vendor/typeahead/typeahead";
+@import "vendor/jquery-ui/theme-custom";
+
+
+//Structures and Layouts
+@import "structures/layout";
+@import "structures/layout-split-off-canvas";  // this style must come before 'lyout-split'
+@import "structures/layout-split";
+
+
+// Template or Project specific views & Structures
+@import "_non-core/structures/_oma-admin/override.layout-split";
+//@import "structures/mobileApps/layout_header";
+//@import "structures/mobileApps/layout_footer";
+
+
+
+//trumps the dreaded importants show up in the files below.
+@import "base/typography.trump";
+@import "base/typography.states.scss";
 
 // Vendor Overrides 
 @import "vendor/foundation/override.topbar";
@@ -111,10 +142,7 @@ $product-brand-color: #5b1ed4;
 @import "base/typography.states.scss";
 
 //Utitlity Styles that Override other things
-@import "helpers/utilities";
-@import "helpers/condensable";
-@import "helpers/css3";
+@import "trumps/utilities";
+@import "trumps/condensable";
+@import "trumps/css3";
 
-/**
-* Take me to [top](#top):
-*/
