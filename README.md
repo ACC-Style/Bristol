@@ -18,14 +18,16 @@ As you travel down the structure of the main document the included stylesheets s
 
 ### Expansion
 Most alteration to the code can be done through "non-core" inclusion of styles. Please use the mirrored folder structure to allow of review and understanding of what level of specificty should be used in the document. 
-Path and File Naming: _non-core/{type of style}/{product name}/{overide name or new UI name}.scss  
+
+### Path and File Naming:
+_non-core/{type of style}/{product name}/{overide name or new UI name}.scss  
 
 #### Usage
 coming soon
 
 
 #### Products that Use the Design
-http://stage.tools.acc.org/AntiCoag/#!/content/calculator/
+http://tools.acc.org/StatinIntolerance/#!/
 
 
 #### Style Guide w/ HTML Examples
