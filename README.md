@@ -19,6 +19,10 @@ As you travel down the structure of the main document the included stylesheets s
 ### Expansion
 Most alteration to the code can be done through "non-core" inclusion of styles. Please use the mirrored folder structure to allow of review and understanding of what level of specificty should be used in the document. 
 
+#### Product Color and Branding
+In the main style sheet there are some exposed variables to alter the skin of the style.  One of th most cosmetic is product color and branding. The variable "$product-brand-color" takes a hex color and will change elements of the ui to this color away from the ACC blues. "$brand-level" throttles the amount of color.   0 min-value  will not include and product color and 3 the max will bring in the most. 
+
+
 ### Path and File Naming:
 _non-core/{type of style}/{product name}/{overide name or new UI name}.scss  
 
