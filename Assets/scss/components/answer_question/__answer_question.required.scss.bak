@@ -51,16 +51,13 @@
 	@include grid-row(collapse);
 }
 .label-holder{
-	label, .label{@include font-slab-bold();}
-	@include baseline-font(0,.5,.25);
-	
+	margin-bottom: .5rem;
+	padding: 0 .5rem 0 0;
+	@extend h4;
 	position: relative;
 	background-color:transparent;
 	color:fontcolor($black);
-	white-space: nowrap;
-	@include bp(sm){
-		white-space:normal;
-	}
+	white-space: normal;
 	.text{padding-right:1rem; line-height: 1.2em;}
 	.error &{color:fontcolor($warning-color);}
 	.warning &{color:fontcolor($alert-color);}

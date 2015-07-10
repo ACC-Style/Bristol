@@ -1,6 +1,3 @@
-$ms-base: 14px;
-$ms-ratio: 1.25;
-
 $typography-highlight-color:rebrand-color(color($primary-color,80) , 2);
 $typography-line-colors:rebrand-color(color($primary-color,80) , 2);
 
@@ -12,49 +9,54 @@ $h5-spacing:.5rem;
 $h6-spacing:.75rem;
 %h1,%h2,%h3,%h4,%h5,%h6{ margin-top:0; clear:both;}
 %h1{
-	@include font-display();
-	font-weight: 600;
+letter-spacing: -1px;
+@include font-display();
 }
-%h2{@include font-slab();}
-%h4{@include font-slab-bold();}
-%h3,%h5, %h6 { @include font-bold(); }
-%h1 { line-height: 1.1; }
-%h2 { line-height: 1.3; }
-%h3, %h4,%h5, %h6{ line-height: 1.5rem; }
-
-%h1 { font-size: 2.5rem; letter-spacing: -1px;}
-%h2 { font-size: 1.5rem; letter-spacing: -1px;}
-%h3 { font-size: 1.25rem;}
-%h4 { font-size: 1rem;}
-%h5 { font-size: 1rem;}
-%h6 { font-size: .8rem;}
-
-
-.h1{@extend %h1;margin-bottom:$h1-spacing;}
-.h2{@extend %h2;margin-bottom:$h2-spacing;}
-.h3{@extend %h3;margin-bottom:$h3-spacing;color: fontcolor($typography-highlight-color);}
-.h4{@extend %h4;margin-bottom:$h4-spacing;}
-.h5{@extend %h5;margin-bottom:$h5-spacing; }
-.h6{@extend %h6;margin-bottom:$h6-spacing;}
-@include bp(md-down){
-
-.h1{font-size:2rem;}
-.h2{font-size:1.4rem;}
-.h3{font-size:1.15rem;color: fontcolor($typography-highlight-color);}
-.h4{font-size:1rem;}
-.h5{font-size:1rem; }
-.h6{font-size:.8rem;}
-
+%h2{
+@include font-slab();
+}
+%h4{
+@include font-slab-bold();
+}
+%h3,%h5,%h6 { 
+	@include font-bold();
 }
 
-%normal { font-size: 100%; margin-bottom: .5rem; line-height: 1.5rem;@include font; color:fontcolor($real-black);}
-%loud  { color:fontcolor($real-black); }
+.h1{
+	@extend %h1;
+	font-weight: normal;
+	@include baseline-font(5,1,1);
+
+}
+.h2{
+	@extend %h2;
+	@include baseline-font(3,0,1);
+
+}
+.h3{
+	@extend %h3;
+	@include baseline-font(2,.25,.75);
+
+}
+.h4{
+	@extend %h4;
+	@include baseline-font(1,.5,.5);
+}
+.h5{@extend %h5;@include baseline-font(0); }
+.h6{@extend %h6;@include baseline-font(0);}
+
+%normal {
+	@include font; 
+	color:fontcolor($real-black);
+	@include baseline-font(0);
+}
+%loud  { color:fontcolor($real-black,'loud');font-weight: 900; }
 %emphasis{ color:fontcolor($real-black,'loud'); }
 %quiet { color: fontcolor($real-black,'quiet'); }
 %italic { @include font-italic; @extend %quiet;}
 %bold   { @include font-bold; @extend %loud; }
 %subtle{ @include font-light;color: mix(rebrand-color($primary-color, 2),fontcolor($real-black,'light'));}
-.block-margins { margin: 1em 0; }
+.block-margins { margin: 0 em($base-line) 0; }
 
 %unordered-list { list-style-type: disc; }
 %ordered-list { list-style: decimal; }

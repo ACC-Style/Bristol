@@ -1,3 +1,16 @@
+.label-holder{margin-bottom: .5rem;}
+label,.label{
+	@extend %h4;
+	position: relative;
+	background-color:transparent;
+	color:fontcolor($black);
+	white-space: normal;
+	padding: 0 .5rem 0 0;
+	.text{padding-right:1rem; line-height: 1.2em;}
+	.error &{color:fontcolor($warning-color);}
+	.warning &{color:fontcolor($alert-color);}
+}
+
 .input-holder{
 	margin-bottom: .75rem;
 	.input-space{  
