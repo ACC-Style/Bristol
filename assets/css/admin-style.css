@@ -3144,6 +3144,9 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
     box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
     background-color: #bfbfbf; }
 
+.section-nav + .page-wrapper {
+  padding-top: 0 !important; }
+
 .inline-group {
   list-style: none;
   display: block; }
@@ -3707,57 +3710,6 @@ input[type="checkbox"], input[type="radio"] {
     .radio-group:hover .radio {
       background-color: #cccccc; }
 
-/**
-* Form Repeater:
-* `.repeater` - This is form elements repeater. This Module is broken into 3 major containers the `renders`,`question-group`, and `repeater actions`.
-* 
-*   @example
-*	<div class="repeater required">
-*		<div class="label-holder">
-*			<label for="">
-*				<span class="text">Email</span>
-*				<span class="required-holder">
-*					<i class="fa fa-holder-dynamic"></i>
-*				</span>
-*			</label>
-*		</div>
-*		<div class="render">
-*		<div class="render-actions">
-*			<a href="" class="edit"><i class="fa fa-holder"></i><span class="text">edit</span></a>
-*			<a href="" class="delete"><i class="fa fa-holder"></i><span class="text">delete</span></a>
-*		</div>
-*		<ul class="render-holder">
-*			<li class="italic starred"><i class="fa fa-holder"></i> </li>
-*			<li class="strong break">Jeff Morris</li>
-*			<li>jmorris@acc.org</li>
-*			<li class="validated"><i class="fa fa-holder"></i></li>
-*		</ul>
-*		<div class="message-holder">
-*			<small class="warning">
-*				<i class="fa fa-holder-dynamic"></i>
-*				This is a dynamic render message.
-*			</small>
-*		</div>
-*	</div>
-*		<div class="question-group">
-*			<div class="required-message">All inputs marked with the * are required to submit and save</div>
-*			<div class="row">
-*				<div class="column small-4"><img src=" http://placehold.it/150x100&text=question+block" alt="" width="100%"></div>
-*				<div class="column small-4"><img src=" http://placehold.it/150x100&text=replace+me" alt="" width="100%"></div>
-*				<div class="column small-4"><img src=" http://placehold.it/150x100&text=question+block" alt="" width="100%"></div>
-*			</div>
-*			<div class="message-holder">
-*				<small class="warning"><i class="fa fa-holder"></i>
-*					This is a dynmic message for the question group.
-*				</small>
-*			</div>
-*		</div>
-*		<div class="repeater-action">
-*			<a href="" class="clear"><i class="fa fa-holder"></i><span class="text">clear</span></a>
-*			<a href="" class="save"><i class="fa fa-holder"></i> <span class="text">save</span></a>
-*		</div>
-*	</div>		
-*/
 .repeater {
   width: 100%;
   margin: 0;
@@ -3833,8 +3785,8 @@ input[type="checkbox"], input[type="radio"] {
     border: 2px dotted #c9edf7;
     margin-top: .5em;
     border-radius: .5em;
-    border-top: 2px solid #198dae;
-    border-bottom: 2px solid #198dae;
+    border-top: 2px solid #5cc9e8;
+    border-bottom: 2px solid #5cc9e8;
     position: relative; }
     .repeater .question-group .required-message {
       font-size: 11px;
@@ -3842,8 +3794,8 @@ input[type="checkbox"], input[type="radio"] {
       position: absolute;
       top: -2px;
       right: -2px;
-      background-color: #198dae;
-      color: #fff; }
+      background-color: #5cc9e8;
+      color: #333333; }
   .repeater .repeater-action {
     position: relative;
     display: block;
@@ -3885,9 +3837,11 @@ input[type="checkbox"], input[type="radio"] {
       float: left;
       background-color: white;
       border-radius: 4px;
-      margin-left: 1em; }
+      margin-left: 1em;
+      border-color: #5cc9e8; }
       .repeater .repeater-action .clear:hover {
-        background-color: #e6e6e6; }
+        background-color: #e6e6e6;
+        border-color: #198dae; }
 
 .question-group .render .message-holder .warning, .question-group .render .message-holder .error {
   display: none; }
@@ -3898,6 +3852,57 @@ input[type="checkbox"], input[type="radio"] {
 .question-group .render.error .message-holder .error {
   display: block; }
 
+/**
+* Form Repeater:
+* `.repeater` - This is form elements repeater. This Module is broken into 3 major containers the `renders`,`question-group`, and `repeater actions`.
+* 
+*   @example
+*	<div class="repeater required">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Email</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder-dynamic"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="render">
+*		<div class="render-actions">
+*			<a href="" class="edit"><i class="fa fa-holder"></i><span class="text">edit</span></a>
+*			<a href="" class="delete"><i class="fa fa-holder"></i><span class="text">delete</span></a>
+*		</div>
+*		<ul class="render-holder">
+*			<li class="italic starred"><i class="fa fa-holder"></i> </li>
+*			<li class="strong break">Jeff Morris</li>
+*			<li>jmorris@acc.org</li>
+*			<li class="validated"><i class="fa fa-holder"></i></li>
+*		</ul>
+*		<div class="message-holder">
+*			<small class="warning">
+*				<i class="fa fa-holder-dynamic"></i>
+*				This is a dynamic render message.
+*			</small>
+*		</div>
+*	</div>
+*		<div class="question-group">
+*			<div class="required-message">All inputs marked with the * are required to submit and save</div>
+*			<div class="row">
+*				<div class="column small-4"><img src=" http://placehold.it/150x100&text=question+block" alt="" width="100%"></div>
+*				<div class="column small-4"><img src=" http://placehold.it/150x100&text=replace+me" alt="" width="100%"></div>
+*				<div class="column small-4"><img src=" http://placehold.it/150x100&text=question+block" alt="" width="100%"></div>
+*			</div>
+*			<div class="message-holder">
+*				<small class="warning"><i class="fa fa-holder"></i>
+*					This is a dynmic message for the question group.
+*				</small>
+*			</div>
+*		</div>
+*		<div class="repeater-action">
+*			<a href="" class="clear"><i class="fa fa-holder"></i><span class="text">clear</span></a>
+*			<a href="" class="save"><i class="fa fa-holder"></i> <span class="text">save</span></a>
+*		</div>
+*	</div>		
+*/
 .answer .label-holder {
   border-bottom: 1px dotted #cccccc; }
 .answer label, .answer .label, .answer .text {

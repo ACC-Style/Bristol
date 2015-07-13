@@ -1,19 +1,27 @@
 .info-text{
 	@include baseline-font(0,.25,.25);
 	font-weight:normal;
-	color:font-color(#000);
+	color: fontcolor(#000);
+	padding:.5rem;
+	position:relative;
+	.fa-holder{@include baseline-font(3);position:absolute;}
+	p{margin-bottom:0;padding-left:4rem;
+		br{height:0;padding:0;margin:0;}
+	}
 
 	@each $State in $states{
 		&#{map-get($State,'Selector')}{
-			color:map-get($State,'Color');
-			font-weight:900;
+			background-color:map-get($State,'Color');
+			color:color-contrast(map-get($State,'Color'));
+			@include font-slab-bold();
 			@include baseline-font(1,.25,.25);
+			min-height:ms(3);
 			}
 
 		}
 
 }
 
-.sidebar .nav-list.nav-checklist{background-color:#fff;}
+.split-sidebar .nav-list.nav-checklist{background-color:#fff;}
 
 

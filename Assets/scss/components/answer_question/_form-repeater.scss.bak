@@ -1,3 +1,4 @@
+
 /**
 * Form Repeater:
 * `.repeater` - This is form elements repeater. This Module is broken into 3 major containers the `renders`,`question-group`, and `repeater actions`.
@@ -119,16 +120,28 @@ $repeater-color: rebrand-color($primary-color,2);
 
 	}
 	.question-group{
-		padding-top:.75em; 
+		padding-top:1.5em; 
 		padding-bottom:1.85em;
 		border:2px dotted color($repeater-color,20);
 		margin-top:.5em;
 		border-radius:.5em;
-		border-top:2px solid  $repeater-color;
-		border-bottom:2px solid  $repeater-color;
+		border-top:2px solid color($repeater-color,60);
+		border-bottom:2px solid  color($repeater-color,60);
+		position: relative;
+		.required-message{
+			font-size: ms(-1);
+			padding:.25em .5em;
+			position: absolute;
+			top:-2px;
+			right:-2px;
+			background-color: color($repeater-color,60);
+			color:color-contrast(color($repeater-color,60));
+		}
+
 	}
 	
 	.repeater-action{
+		position: relative;
 		display:block;
 		width:100%;
 		height:2rem;
@@ -172,7 +185,8 @@ $repeater-color: rebrand-color($primary-color,2);
 			background-color: white;
 			border-radius: 4px;
 			margin-left: 1em;
-			&:hover{background-color:grey(10);}
+			border-color: color($repeater-color,60);
+			&:hover{background-color:grey(10);border-color: color($repeater-color,100)}
 
 		}
 	}
