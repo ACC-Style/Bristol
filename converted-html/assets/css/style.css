@@ -3267,9 +3267,27 @@ input[type="checkbox"], input[type="radio"] {
     padding-top: .5em;
     padding-bottom: .5em; }
 
+.question.question-inline {
+  display: block; }
+  .question.question-inline .label-holder, .question.question-inline .input-holder {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+    float: left; }
+  .question.question-inline .label-holder * {
+    white-space: nowrap;
+    padding-right: 1rem; }
+  .question.question-inline .message-holder, .question.question-inline .hint {
+    display: block;
+    clear: left; }
+  .question.question-inline .hint {
+    border-top: 1px solid #e6e6e6;
+    padding: .25rem;
+    background-color: #e4f6fb; }
+
 /**
 * Questions -Required:
-* `.questions` - standard format for an input question. 
+* `.question` - standard format for an input question. 
 *  Modify with `.required` and change the states with `warning`, 'error', and 'data'
 * 
 *   @example
@@ -3300,7 +3318,7 @@ input[type="checkbox"], input[type="radio"] {
 */
 /**
 * Questions - States:
-* `.questions + .warning + error +...` - input questions can be modified with the states like `.required` and change the states with `warning`, `error`, and `data`
+* `.question + .warning + error +...` - input questions can be modified with the states like `.required` and change the states with `warning`, `error`, and `data`
 * 
 *   @example
 *	<div class="question warning">
@@ -3324,6 +3342,37 @@ input[type="checkbox"], input[type="radio"] {
 *				<small class="error"><i class="fa fa-holder"></i> Error message</small>
 *				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
 *				<small class="info"><i class="fa fa-holder"></i> Data message</small>
+*		</div>
+*		<div class="hint">This is some hint text</div>
+*	</div>
+*/
+/**
+* Questions - Inline:
+* `.question-inline` - questions when there is a need can be made to be inline so the text box will follow the label. These questions will revert to the base question style when on smaller phones. 
+*  Modify any `.question` with the added class of  `.question-inline`
+* 
+*   @example
+*	<div class="question question-inline">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Question Dropdown Title (Required)</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder-dynamic"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="input-holder">
+*			 <div class="input-space column small-6 large-9">
+*				<input type="text"/>
+*			</div>
+*			<div class="column small-6 large-3">
+*				<small class="value">Years</small>
+*			</div>
+*		</div>
+*		<div class="message-holder">
+*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
+*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*				<small class="data"><i class="fa fa-holder"></i> Data message</small>
 *		</div>
 *		<div class="hint">This is some hint text</div>
 *	</div>
@@ -3622,8 +3671,12 @@ input[type="checkbox"], input[type="radio"] {
         margin-right: 5rem;
         font-size: .9rem; } }
   .repeater .question-group {
-    padding-top: .75rem;
-    padding-bottom: .85rem; }
+    padding-top: .75em;
+    padding-bottom: .85em;
+    border: 2px dotted #c9edf7;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    border-radius: .5em; }
   .repeater .repeater-action {
     border-top: #198dae 2px solid;
     display: block;
@@ -4783,6 +4836,42 @@ Non-Core Components Styles
         background-color: #14967c; }
       .membership-table .button-group button + button:hover, .membership-table .button-group button + button:focus, .membership-table .button-group .button + .button:hover, .membership-table .button-group .button + .button:focus {
         color: #FFFFFF; }
+
+.info-text {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 0.375em;
+  margin-bottom: 0.375em;
+  font-weight: normal;
+  color: font-color(#000); }
+  .info-text.error {
+    color: #c32231;
+    font-weight: 900;
+    font-size: 1.28571em;
+    line-height: 1.16667em;
+    margin-top: 0.29167em;
+    margin-bottom: 0.29167em; }
+  .info-text.warning {
+    color: #d07600;
+    font-weight: 900;
+    font-size: 1.28571em;
+    line-height: 1.16667em;
+    margin-top: 0.29167em;
+    margin-bottom: 0.29167em; }
+  .info-text.validated {
+    color: #19BB9B;
+    font-weight: 900;
+    font-size: 1.28571em;
+    line-height: 1.16667em;
+    margin-top: 0.29167em;
+    margin-bottom: 0.29167em; }
+  .info-text.info {
+    color: #B7E8FC;
+    font-weight: 900;
+    font-size: 1.28571em;
+    line-height: 1.16667em;
+    margin-top: 0.29167em;
+    margin-bottom: 0.29167em; }
 
 nav.top-bar {
   background-color: #00386b; }
