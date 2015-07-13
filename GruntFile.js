@@ -13,12 +13,12 @@ module.exports = function(grunt){
 		},
 		 uglify: {
             js: {
-                files: {'Assets/js/app.min.js': 'Assets/js/app.js'}
+                files: {'assets/js/app.min.js': 'assets/js/app.js'}
                 }
         },
         autoprefixer: {
 			main: {
-				src: 'Assets/css/style.min.css',
+				src: 'assets/css/style.min.css',
 			},
 		},
 		cssmin: {
@@ -29,9 +29,9 @@ module.exports = function(grunt){
 			  target: {
 			    files: [{
 			      expand: true,
-			      cwd: 'Assets/css',
+			      cwd: 'assets/css',
 			      src: ['*.css', '!*.min.css'],
-			      dest: 'Assets/css',
+			      dest: 'assets/css',
 			      ext: '.min.css'
 			    }]
 			  }
@@ -50,9 +50,9 @@ module.exports = function(grunt){
 			dist:{			
 				files:[{
 					expand: true,
-					cwd: './Assets/scss',
+					cwd: './assets/scss',
 					src: ['*.scss'],
-					dest: './Assets/css',
+					dest: './assets/css',
 					ext: '.css'	
 				}]
 			},
@@ -61,7 +61,7 @@ module.exports = function(grunt){
 					expand: true,
 					cwd: './bower_components/foundation/scss',
 					src: ['*.scss'],
-					dest: './Assets/css',
+					dest: './assets/css',
 					ext: '.css'	
 			}]
 		}
@@ -70,29 +70,29 @@ module.exports = function(grunt){
 		styledown: {
 		    base: {
 		      files: {
-		       	'styleguide/base.html': ['Assets/css/style.css']
+		       	'styleguide/base.html': ['assets/css/style.css']
 		      },
 		      options: {
-		        css: [ "Assets/css/normalize.min.css",'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,600,400,300|Roboto+Slab:400,700|Raleway:300','Assets/css/jquery-ui.css','Assets/css/jquery-ui.structure.css',"Assets/css/foundation.min.css",'Assets/css/style.css'],
-		        js: ['Assets/js/jquery-2.1.3.min.js','Assets/js/selectonic.min.js','Assets/js/jquery-ui.js','Assets/js/foundation.min.js','Assets/js/knockout.js','Assets/js/app.js'],
+		        css: [ "assets/css/normalize.min.css",'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,600,400,300|Roboto+Slab:400,700|Raleway:300','assets/css/jquery-ui.css','assets/css/jquery-ui.structure.css',"assets/css/foundation.min.css",'assets/css/style.css'],
+		        js: ['assets/js/jquery-2.1.3.min.js','assets/js/selectonic.min.js','assets/js/jquery-ui.js','assets/js/foundation.min.js','assets/js/knockout.js','assets/js/app.js'],
 		        title: 'My Style Guide',
-		        sg_css: 'Assets/css/styledown.css',
+		        sg_css: 'assets/css/styledown.css',
 		        sg_js: 'https://cdn.rawgit.com/styledown/styledown/v1.0.2/data/styledown.js',
-		        //config: 'Assets/css/config.md'
+		        //config: 'assets/css/config.md'
 		      }
 		    },
 		    admin: {
 		      files: {
-		       	'styleguide/admin.html': ['Assets/css/admin-style.css']
+		       	'styleguide/admin.html': ['assets/css/admin-style.css']
 		      },
 		      options: {
-		               css: [ "Assets/css/normalize.min.css",'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,600,400,300|Roboto+Slab:400,700|Raleway:300','Assets/css/jquery-ui.css','Assets/css/jquery-ui.structure.css',"Assets/css/foundation.min.css",'Assets/css/admin-style.css'],
-		        js: ['Assets/js/jquery-2.1.3.min.js','Assets/js/selectonic.min.js','Assets/js/jquery-ui.js','Assets/js/foundation.min.js','Assets/js/knockout.js','Assets/js/app.js'],
+		               css: [ "assets/css/normalize.min.css",'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,600,400,300|Roboto+Slab:400,700|Raleway:300','assets/css/jquery-ui.css','assets/css/jquery-ui.structure.css',"assets/css/foundation.min.css",'assets/css/admin-style.css'],
+		        js: ['assets/js/jquery-2.1.3.min.js','assets/js/selectonic.min.js','assets/js/jquery-ui.js','assets/js/foundation.min.js','assets/js/knockout.js','assets/js/app.js'],
 		        
 		        title: 'My Style Guide',
-		        sg_css: 'Assets/css/styledown.css',
+		        sg_css: 'assets/css/styledown.css',
 		        sg_js: 'https://cdn.rawgit.com/styledown/styledown/v1.0.2/data/styledown.js',
-		        //config: 'Assets/css/config.md'
+		        //config: 'assets/css/config.md'
 		      }
 		    },
 		  },
@@ -135,9 +135,9 @@ module.exports = function(grunt){
 				files:[
 				{
 					expand:true,
-					cwd:'Assets/js',
+					cwd:'assets/js',
 					src:'**',
-					dest:'converted-html/Assets/js',
+					dest:'converted-html/assets/js',
 				},
 				{
 					expand:true,
@@ -151,24 +151,24 @@ module.exports = function(grunt){
 			INTERNAL:{
 				files:[{
 					expand:true,
-					cwd:'Assets/js',
+					cwd:'assets/js',
 					src:'**',
-					dest:'converted-html/Assets/js',
+					dest:'converted-html/assets/js',
 				},{
 					expand:true,
-					cwd:'Assets/css',
+					cwd:'assets/css',
 					src:'**',
-					dest:'converted-html/Assets/css',
+					dest:'converted-html/assets/css',
 				},{
 					expand:true,
-					cwd:'Assets/js',
+					cwd:'assets/js',
 					src:'**',
-					dest:'styleguide/Assets/js',
+					dest:'styleguide/assets/js',
 				},{
 					expand:true,
-					cwd:'Assets/css',
+					cwd:'assets/css',
 					src:'**',
-					dest:'styleguide/Assets/css',
+					dest:'styleguide/assets/css',
 				}
 				]
 			}
@@ -184,21 +184,21 @@ module.exports = function(grunt){
 			    livereload: true,
 			  },
 			js: {
-				files: [ 'Assets/js/*.js','templates/includes/scripts.liquid' ],
+				files: [ 'assets/js/*.js','templates/includes/scripts.liquid' ],
 				tasks: [ 'uglify:js','liquid','copy:INTERNAL' ],
 				options: {
 					livereload: true,
 				}
 			},
 			scss: {
-				files: [ 'Assets/scss/*.scss','Assets/scss/*/*.scss','Assets/scss/*/*/*.scss' ],
+				files: [ 'assets/scss/*.scss','assets/scss/*/*.scss','assets/scss/*/*/*.scss' ],
 				tasks: [ 'clean:sassCasheFolder','sass:dist'],
 				options: {
 					livereload: true,
 				}
 			},
 			css:{
-				files: ['Assets/css/style.css','Assets/css/style-admin.css',],
+				files: ['assets/css/style.css','assets/css/style-admin.css',],
 				tasks: ['styledown:base','styledown:admin','cssmin', 'copy:INTERNAL'],
 				options: {
 					livereload:true,
@@ -215,7 +215,7 @@ module.exports = function(grunt){
 				files: [ 
 					'templates/*.liquid', 
 					'templates/includes/**', 
-					'Assets/model/*.json' 
+					'assets/model/*.json' 
 				],
 				tasks: [ 'liquid'],
 				options: {
