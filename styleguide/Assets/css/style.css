@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /**
 * Base Framework:
-* `zurb foundation` - This style is base off of a reduced build of zurb foundation all of the grid, columns, base typography, and form elements can be used from zurb.  All functions can be turned back on but to reduce build size many of the design features have been disabled.
+* `zurb foundation` - The ACC App Mobile Framework is based off of a reduced build of zurb foundation all of the grid, columns, base typography, and form elements can be used from zurb.  All functions can be turned back on, but to reduce build size many of the design features have been disabled.
 * 
 *   @example
 *	<a  class="button" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
@@ -9,10 +9,7 @@
 /**
 * Brand Level:
 * `var $brand-level` - this variable has the ablity to over take the standard acc coloring with a branded product color.  Standard values are:
-*  0 - Pure ACC Color;
-*  1 - Header Bar and Primaary Nav Selects;
-*  2 - Lines, Selects, and Header Bar:
-*  3 - Full Color OVer Take, Typography, Selects, Header Bar, and Lines
+*  <ol start="0"><li>Pure ACC Color</li><li>Header Bar and Primaary Nav Selects</li><li>Lines, Selects, and Header Bar</li><li>Full Color OVer Take, Typography, Selects, Header Bar, and Lines</li></ol>
 * 
 *   @example
 *	<table class="table">
@@ -59,8 +56,8 @@
 *	</table>
 */
 /**
-*	Kitchen Sink:
-*	`Kitchen sink` - includes every single Foundation element so that we can make sure things work together smoothly. 
+*	Zurb Foundation - Kitchen Sink:
+*	This is a visual representation of UI elements that come from the base framework from ZURB. This does not includes every single element from Foundation to view a full list go to the documentation. <a class="button tiny" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
 *
 *		@example 
 *		<h4 id="alert-boxes">Alert Boxes</h4><div data-alert="" class="alert-box radius">This is a standard alert (div.alert-box.radius).  <a href="" class="close">x</a></div><div data-alert="" class="alert-box success">  This is a success alert (div.alert-box.success).  <a href="" class="close">x</a></div><div data-alert="" class="alert-box alert round">  This is an alert (div.alert-box.alert.round).  <a href="" class="close">x</a></div><div data-alert="" class="alert-box secondary">  This is a secondary alert (div.alert-box.secondary).  <a href="" class="close">x</a></div><hr>
@@ -238,10 +235,12 @@
 *	</dl>
 */
 /**
-* JQUERY UI:
-* `JQUERY UI 1.11.4` - This style is base of the more complicated ui elements
+* JQUERY UI - Kitchen Sink:
+* `JQUERY UI 1.11.4` - This style is base for more complicated ui elements
+*	<nav class="nav-list small"><ul><li><a href="http://jqueryui.com/accordion/"><span class="text">Accordion</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/autocomplete/"><span class="text">Autocomplete</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/datepicker/"><span class="text">Datepicker</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/progressbar/"><span class="text">Progressbar</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/slider/"><span class="text">Slider</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/spinner/"><span class="text">Spinner </span><i class="fa fa-holder-dynamic"></i></a></li></ul></nav>
 * 
 *   @example
+*	<h5>Accordion</h5>
 *	<div id="accordion">
 *	  <h3>Section 1</h3>
 *	  <div>
@@ -338,6 +337,7 @@
 *	    </p>
 *	  </div>
 *	</div>
+*	<h5>Auto Complete</h5>
 *	<div class="question required">
 *	  <div class="label-holder">
 *	    <label for="">
@@ -357,6 +357,7 @@
 *	  </div>
 *	   <div class="hint">Code tags like 'ASP'</div>
 *	</div>
+*	<h5>Slider</h5>
 *	<div class="question">
 *		<div class="label-holder">
 *	  		<label for="amount">Donation amount ($50 increments):</label>
@@ -370,6 +371,7 @@
 *	    </div>			
 *		</div>
 *	</div>
+*	<h5>Datepicker</h5>
 *	<div class="question">
 *		<div class="label-holder">
 *	  		<label for="amount">
@@ -382,23 +384,11 @@
 *	   		 </div>
 *		</div>
 *	</div>
+*	<h5>Spinner</h5>
 *	<p>
 *	  <label for="spinner">Select a value:</label>
 *	  <input id="spinner" name="value">
 *	</p>
-*	<h2>Highlight / Error</h2>
-*	<div class="ui-widget">
-*		<div class="ui-state-highlight ui-corner-all" style="">
-*			<p>
-*			<strong>Hey!</strong> Sample ui-state-highlight style.</p>
-*		</div>
-*	</div>
-*	<div class="ui-widget">
-*		<div class="ui-state-error ui-corner-all" style="">
-*			<p>
-*			<strong>Alert:</strong> Sample ui-state-error style.</p>
-*		</div>
-*	</div>
 *	
 **/
 td.product-brand-color {
@@ -1970,11 +1960,7 @@ td.error-color {
     "Color": $success-color,
     "Icon": $fa-var-check,),
 
-    (
-    "State":"highlighted",
-    "Selector":".highlighted",
-    "Color": rebrand-color($info-color,2),
-    "Icon": $fa-var-exclamation ,),
+
     */
 /* TODO: refactor this 
 there are two to three needs for icons icons in containers, icons on icons and then icons that are dynamic to a parent container.**/
@@ -2056,6 +2042,9 @@ i.fa.fa-question-circle {
 
 .info .fa-holder-dynamic:before, .info .findme, .info.fa:before, .info > .fa-holder:before {
   content: ""; }
+
+.highlighted .fa-holder-dynamic:before, .highlighted .findme, .highlighted.fa:before, .highlighted > .fa-holder:before {
+  content: ""; }
 
 td.product-brand-color {
   background-color: #5b1ed4; }
@@ -2171,11 +2160,11 @@ button, .button {
     button.warning:hover, button.warning:focus, .button.warning:hover, .button.warning:focus {
       color: #FFFFFF; }
   button.info, .button.info {
-    background-color: #B7E8FC;
-    border-color: #63cdf9;
-    color: #333333; }
+    background-color: #22AFD7;
+    border-color: #1b8cac;
+    color: #FFFFFF; }
     button.info:hover, button.info:focus, .button.info:hover, .button.info:focus {
-      background-color: #63cdf9; }
+      background-color: #1b8cac; }
     button.info:hover, button.info:focus, .button.info:hover, .button.info:focus {
       color: #FFFFFF; }
   button.large, .button.large {
@@ -2276,18 +2265,18 @@ button, .button {
       button.disabled.warning:hover, button.disabled.warning:focus, button[disabled].warning:hover, button[disabled].warning:focus, .button.disabled.warning:hover, .button.disabled.warning:focus, .button[disabled].warning:hover, .button[disabled].warning:focus {
         background-color: #c32231; }
     button.disabled.info, button[disabled].info, .button.disabled.info, .button[disabled].info {
-      background-color: #B7E8FC;
-      border-color: #63cdf9;
-      color: #333333;
+      background-color: #22AFD7;
+      border-color: #1b8cac;
+      color: #FFFFFF;
       cursor: default;
       opacity: 0.7;
       box-shadow: none; }
       button.disabled.info:hover, button.disabled.info:focus, button[disabled].info:hover, button[disabled].info:focus, .button.disabled.info:hover, .button.disabled.info:focus, .button[disabled].info:hover, .button[disabled].info:focus {
-        background-color: #63cdf9; }
+        background-color: #1b8cac; }
       button.disabled.info:hover, button.disabled.info:focus, button[disabled].info:hover, button[disabled].info:focus, .button.disabled.info:hover, .button.disabled.info:focus, .button[disabled].info:hover, .button[disabled].info:focus {
         color: #FFFFFF; }
       button.disabled.info:hover, button.disabled.info:focus, button[disabled].info:hover, button[disabled].info:focus, .button.disabled.info:hover, .button.disabled.info:focus, .button[disabled].info:hover, .button[disabled].info:focus {
-        background-color: #B7E8FC; }
+        background-color: #22AFD7; }
 
 button::-moz-focus-inner {
   border: 0;
@@ -2432,34 +2421,6 @@ h5 {
 
 h6 {
   color: #858585; }
-
-/**
-* Typography States:
-* `.repeater` - This is form elements repeater. This Module is broken into 3 major containers the `renders`,`question-group`, and `repeater actions`.
-* 
-*   @example
-*  
-*/
-h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
-  font-weight: 900; }
-
-h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
-  color: #c32231; }
-h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning {
-  color: #d07600; }
-h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated {
-  color: #19BB9B; }
-h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
-  color: #B7E8FC; }
-
-h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
-  border-color: #c32231; }
-h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
-  border-color: #d07600; }
-h1.with-underline.validated, h2.with-underline.validated, h3.with-underline.validated, h4.with-underline.validated, h5.with-underline.validated, h6.with-underline.validated {
-  border-color: #19BB9B; }
-h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
-  border-color: #B7E8FC; }
 
 /**
 * Buttons:
@@ -3157,7 +3118,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
     left: 0;
     font-size: .75rem; }
 
-.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder {
+.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder {
   background-color: transparent;
   display: inline-block; }
 
@@ -3213,6 +3174,9 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 .answer.info .info, .question.info .info {
   display: inline-block;
   width: 100%; }
+.answer.highlighted .highlighted, .question.highlighted .highlighted {
+  display: inline-block;
+  width: 100%; }
 
 .answer.error .required-holder, .question.error .required-holder {
   color: #de404e; }
@@ -3221,7 +3185,9 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 .answer.validated .required-holder, .question.validated .required-holder {
   color: #2de3bf; }
 .answer.info .required-holder, .question.info .required-holder {
-  color: #c5edfd; }
+  color: #4bc1e2; }
+.answer.highlighted .required-holder, .question.highlighted .required-holder {
+  color: #4bc1e2; }
 
 .message-holder small.error, .message-holder .span.error {
   background-color: #c32231;
@@ -3233,8 +3199,11 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   background-color: #19BB9B;
   color: #fff; }
 .message-holder small.info, .message-holder .span.info {
-  background-color: #B7E8FC;
-  color: #333333; }
+  background-color: #22AFD7;
+  color: #fff; }
+.message-holder small.highlighted, .message-holder .span.highlighted {
+  background-color: #22AFD7;
+  color: #fff; }
 
 .input-holder {
   margin-bottom: .75rem; }
@@ -4130,14 +4099,14 @@ td.icon {
   td.icon i {
     margin: 0 auto; }
 
-td.error, tr.error td, td.warning, tr.warning td, td.validated, tr.validated td, td.info, tr.info td {
+td.error, tr.error td, td.warning, tr.warning td, td.validated, tr.validated td, td.info, tr.info td, td.highlighted, tr.highlighted td {
   background-image: url(../img/empty_stripe.png);
   font-weight: 900; }
 
-td.error, td.warning, td.validated, td.info {
+td.error, td.warning, td.validated, td.info, td.highlighted {
   border: 1px solid; }
 
-tr.error td, tr.warning td, tr.validated td, tr.info td {
+tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td {
   border-top: 1px solid;
   border-bottom: 1px solid; }
 
@@ -4181,16 +4150,29 @@ tr:nth-child(even).validated td {
   color: #333333; }
 
 td.info, tr.info td {
-  background-color: #dbf4fe;
+  background-color: #91d7eb;
   color: #333333;
-  border-color: #B7E8FC; }
+  border-color: #22AFD7; }
 
 tr:nth-child(even) td.info {
-  background-color: #e9f8fe;
+  background-color: #bde7f3;
   color: #333333; }
 
 tr:nth-child(even).info td {
-  background-color: #e9f8fe;
+  background-color: #bde7f3;
+  color: #333333; }
+
+td.highlighted, tr.highlighted td {
+  background-color: #91d7eb;
+  color: #333333;
+  border-color: #22AFD7; }
+
+tr:nth-child(even) td.highlighted {
+  background-color: #bde7f3;
+  color: #333333; }
+
+tr:nth-child(even).highlighted td {
+  background-color: #bde7f3;
   color: #333333; }
 
 /**
@@ -4408,14 +4390,26 @@ table + div > .collapsable-panel {
   background-color: transparent;
   border: 0 none transparent; }
   .collapsable-panel.info .bar.close, .collapsable-panel.info.inset .bar.close {
-    border-color: #B7E8FC; }
+    border-color: #22AFD7; }
   .collapsable-panel.info .bar.close .action-btn {
-    color: #B7E8FC; }
+    color: #22AFD7; }
   .collapsable-panel.info.inset {
-    background-color: #f8fdff; }
+    background-color: #e8f7fb; }
     .collapsable-panel.info.inset .bar.close .action-btn {
-      background-color: #B7E8FC;
-      color: #333333; }
+      background-color: #22AFD7;
+      color: #fff; }
+.collapsable-panel.highlighted {
+  background-color: transparent;
+  border: 0 none transparent; }
+  .collapsable-panel.highlighted .bar.close, .collapsable-panel.highlighted.inset .bar.close {
+    border-color: #22AFD7; }
+  .collapsable-panel.highlighted .bar.close .action-btn {
+    color: #22AFD7; }
+  .collapsable-panel.highlighted.inset {
+    background-color: #e8f7fb; }
+    .collapsable-panel.highlighted.inset .bar.close .action-btn {
+      background-color: #22AFD7;
+      color: #fff; }
 
 /**
 * Accordion (requires Collapsable Panel):
@@ -4594,7 +4588,7 @@ table + div > .collapsable-panel {
 
 /**
 * Button Selectors:
-* `.panel-selector-holder` - the panel selector is a multi tree level selector allowing a user to select from the left coloum or parent and then select the filtered child elements.  !! Requires Javascript!!
+* `.button-group` -  !! Requires Javascript!!
 * 
 *   @example
 *	<div class="row"><ul id="ButtonGroup" class="button-group">
@@ -4894,8 +4888,18 @@ Non-Core Components Styles
     margin-bottom: 0.29167em;
     min-height: 31px; }
   .info-text.info {
-    background-color: #B7E8FC;
-    color: #333333;
+    background-color: #22AFD7;
+    color: #fff;
+    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+    font-weight: 700;
+    font-size: 1.28571em;
+    line-height: 1.16667em;
+    margin-top: 0.29167em;
+    margin-bottom: 0.29167em;
+    min-height: 31px; }
+  .info-text.highlighted {
+    background-color: #22AFD7;
+    color: #fff;
     font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
     font-weight: 700;
     font-size: 1.28571em;
@@ -5835,25 +5839,44 @@ example : |
       padding-left: 0;
       padding-right: 0; } }
 
-.split-sidebar {
-  background-color: #f4f4f4; }
-  .split-sidebar .section + .section {
-    padding-top: 1rem; }
-  .split-sidebar .section .header {
-    display: block;
-    margin: 0 -.5rem 1rem;
-    padding: .5rem 1rem;
-    color: #000;
-    letter-spacing: 1px;
-    background: url("../img/squared_metal_trans.png") repeat top left, url("../img/top-shade.png") repeat-x top right, url("../img/bottom-shade.png") repeat-x bottom right; }
-    @media only screen and (min-width: 768px) {
-      .split-sidebar .section .header {
-        margin: 0 -.75rem 1rem;
-        padding: .75rem .75rem; } }
-    @media only screen and (min-width: 1024px) {
-      .split-sidebar .section .header {
-        margin: 0 -1rem 1rem;
-        padding: 1rem 1rem; } }
+/**
+* Typography States:
+* `.repeater` - This is form elements repeater. This Module is broken into 3 major containers the `renders`,`question-group`, and `repeater actions`.
+* 
+*   @example
+*	<h1 class="with-underline info">Header 1 Tag
+*	  <small>Info State</small>
+*	</h1>
+*	<h2 class="with-underline error">Header 2 Tag <small>Error State</small></h2>
+*	<h3 class="with-underline warning">Header 3 Tag<small>Warning State</small></h3>
+*	<h4 class="with-underline validated">Header 4 Tag<small>Validated/success State</small></h4>
+*	<h5 class="with-underline highlighted">Header 5 Tag<small>Highlighted State</small></h5>
+*  	<p class="highlighted"><strong>Paragraph that is a highlighted State.</strong>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+*/
+h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
+  font-weight: 900; }
+
+h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
+  color: #c32231; }
+h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning {
+  color: #d07600; }
+h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated {
+  color: #19BB9B; }
+h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
+  color: #22AFD7; }
+h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
+  color: #22AFD7; }
+
+h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
+  border-color: #c32231; }
+h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
+  border-color: #d07600; }
+h1.with-underline.validated, h2.with-underline.validated, h3.with-underline.validated, h4.with-underline.validated, h5.with-underline.validated, h6.with-underline.validated {
+  border-color: #19BB9B; }
+h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
+  border-color: #22AFD7; }
+h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
+  border-color: #22AFD7; }
 
 h1.with-underline {
   border-bottom: #25b6e0 2px solid; }
@@ -6002,1137 +6025,6 @@ h6 blockquote {
 *     div.subtle this is `subtle` content
 *
 */
-/**
-* Typography States:
-* `.repeater` - This is form elements repeater. This Module is broken into 3 major containers the `renders`,`question-group`, and `repeater actions`.
-* 
-*   @example
-*  
-*/
-h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
-  font-weight: 900; }
-
-h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
-  color: #c32231; }
-h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning {
-  color: #d07600; }
-h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated {
-  color: #19BB9B; }
-h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
-  color: #B7E8FC; }
-
-h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
-  border-color: #c32231; }
-h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
-  border-color: #d07600; }
-h1.with-underline.validated, h2.with-underline.validated, h3.with-underline.validated, h4.with-underline.validated, h5.with-underline.validated, h6.with-underline.validated {
-  border-color: #19BB9B; }
-h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
-  border-color: #B7E8FC; }
-
-nav.top-bar {
-  background-color: #00386b; }
-  nav.top-bar .top-bar-section ul li, nav.top-bar .top-bar.expanded .title-area {
-    background-color: #00386b; }
-
-.top-bar .name h1 {
-  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-  font-weight: 700; }
-
-.top-bar-section ul li > a {
-  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-  font-weight: 400; }
-
-.top-bar-section li.hover > a:not(.button) {
-  background-color: #1a364f;
-  background: #29343e;
-  color: #FFF; }
-
-.top-bar-section li:not(.has-form) a:not(.button) {
-  background: #00386b; }
-
-.top-bar-section li:not(.has-form) a:not(.button):hover {
-  background-color: #1a364f;
-  background: #29343e; }
-
-.top-bar-section li.active:not(.has-form) a:not(.button) {
-  color: #FFF;
-  background: #00386b; }
-
-.top-bar-section li.active:not(.has-form) a:not(.button):hover {
-  background: #00386b;
-  color: #FFF; }
-
-/**
-* Pagination:
-* `.pagination-holder` - used often with a result pagination or page of content pagination. !! requires 
-* 
-*   @example
-*	<div class="pagination-holder top"><ul class="pagination right">
-*		<li class="arrow unavailable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*		<li class="current"><a href="">1</a></li>
-*		<li><a href="">2</a></li>
-*		<li><a href="">3</a></li>
-*		<li><a href="">4</a></li>
-*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*	</ul></div><br>
-*	<div class="pagination-holder"><ul class="pagination right">
-*		<li class="arrow unavailable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*		<li class="current"><a href="">1</a></li>
-*		<li><a href="">2</a></li>
-*		<li><a href="">3</a></li>
-*		<li><a href="">4</a></li>
-*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*	</ul></div>
-*	<div class="pagination-holder"><ul class="pagination pagination--compact right">
-*		<li class="arrow unavailable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*		<li class="current"><a href="">1</a></li>
-*		<li><a href="">2</a></li>
-*		<li><a href="">3</a></li>
-*		<li><a href="">4</a></li>
-*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*	</ul></div>
-*/
-.pagination-holder {
-  border-top: 2px solid #198dae;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-  max-width: 114.28571rem; }
-  .pagination-holder:before, .pagination-holder:after {
-    content: " ";
-    display: table; }
-  .pagination-holder:after {
-    clear: both; }
-
-ul.pagination li a, ul.pagination li button {
-  border-radius: 0px 0px 0px 0px;
-  color: #999999; }
-ul.pagination li i {
-  margin: 0 .25rem; }
-ul.pagination li.current a, ul.pagination li.current a:hover, ul.pagination li.current button, ul.pagination li.current button:hover {
-  background-color: #198dae;
-  color: #fff; }
-ul.pagination li.arrow a, ul.pagination li.arrow button {
-  background-color: #e6e6e6;
-  border-radius: 0px 0px 0px 5px;
-  color: #5c5c5c;
-  font-weight: 700; }
-  ul.pagination li.arrow a:hover, ul.pagination li.arrow button:hover {
-    background-color: #b3b3b3;
-    color: #333333; }
-ul.pagination li.arrow ~ .arrow a, ul.pagination li.arrow ~ .arrow button {
-  border-radius: 0px 0px 5px 0px; }
-
-.pagination-holder.top {
-  border-top: 0 none;
-  border-bottom: 2px solid #198dae;
-  margin-bottom: 1.42857rem;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-  max-width: 114.28571rem; }
-  .pagination-holder.top ul.pagination {
-    margin-bottom: 0; }
-  .pagination-holder.top:before, .pagination-holder.top:after {
-    content: " ";
-    display: table; }
-  .pagination-holder.top:after {
-    clear: both; }
-  .pagination-holder.top ul.pagination li.arrow a, .pagination-holder.top ul.pagination li.arrow button {
-    border-radius: 5px 0 0 0; }
-  .pagination-holder.top ul.pagination li.arrow ~ .arrow a, .pagination-holder.top ul.pagination li.arrow ~ .arrow button {
-    border-radius: 0 5px 0 0; }
-
-@media only screen and (max-width: 1024px) {
-  .pagination a > .text {
-    display: none; } }
-.pagination--compact a > .text {
-  display: none; }
-
-/**
-* Modals( Foundation Reveal):
-* `.reveal-modal` - Popup, modal, reveal - a design pattern to show and hide a part of content when you want the user to focus on the single task. 
-* 
-*   @example
-*	<a href="#" class="button" data-reveal-id="myModal">Click Me For A Modal</a>
-*	<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-*	  <h2 id="modalTitle" class="with-underline">Awesome. I have it.</h2>
-*	  <p class="lead">Your couch.  It is mine.</p>
-*	  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-*	  <a class="close-reveal-modal" aria-label="Close"><i class="fa fa-holder"></i></a>
-*	</div>
-*/
-div.reveal-modal, dialog {
-  border-top: 6px solid #198dae; }
-  div.reveal-modal .close-reveal-modal, dialog .close-reveal-modal {
-    background-color: #198dae;
-    color: #fff;
-    font-size: 1rem;
-    padding: .25em .5em .5em .5em;
-    top: 0;
-    right: 0; }
-
-/**
-* Slider (Foundation Override):
-* `.range-slider .vertical-range` - Sliders are a great peice of UI for mobile and range of numbers !!REQUIRES JAVASCRIPT OF FOUNDATION!!!
-* 
-*   @example
-*   <div class="range-slider round" id="slider-weight" data-slider="187" data-options="start: 75; end: 300;">
-*    <span class="range-slider-handle" role="slider" tabindex="0" aria-valuemin="75" aria-valuemax="300" aria-valuenow="187" style="-webkit-transform: translateX(207.071111111111px); transform: translateX(207.071111111111px);"></span>
-*    <span class="range-slider-active-segment" style="width: 49.7777777777778%;"></span>
-*    <input type="hidden" value="187">
-*   </div>
-*   <a class="link" href="http://foundation.zurb.com/docs/components/range_slider.html">Foundation Documentation</a>
-*/
-.range-slider {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 1.14286rem;
-  border: 1px solid #DDDDDD;
-  margin: 1.42857rem 0;
-  -ms-touch-action: none;
-  touch-action: none;
-  background: whitesmoke; }
-  .range-slider.vertical-range {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 1.14286rem;
-    border: 1px solid #DDDDDD;
-    margin: 1.42857rem 0;
-    -ms-touch-action: none;
-    touch-action: none;
-    display: inline-block;
-    width: 1.14286rem;
-    height: 14.28571rem; }
-    .range-slider.vertical-range .range-slider-handle {
-      margin-top: 0;
-      margin-left: -0.57143rem;
-      position: absolute;
-      bottom: -12rem; }
-    .range-slider.vertical-range .range-slider-active-segment {
-      width: 1rem;
-      height: auto;
-      bottom: 0; }
-  .range-slider.radius {
-    background: whitesmoke;
-    border-radius: 5px; }
-    .range-slider.radius .range-slider-handle {
-      background: #198dae;
-      border-radius: 5px; }
-      .range-slider.radius .range-slider-handle:hover {
-        background: #167c99; }
-  .range-slider.round {
-    background: whitesmoke;
-    border-radius: 1000px; }
-    .range-slider.round .range-slider-handle {
-      background: #198dae;
-      border-radius: 1000px; }
-      .range-slider.round .range-slider-handle:hover {
-        background: #167c99; }
-  .range-slider.disabled, .range-slider[disabled] {
-    background: whitesmoke;
-    cursor: default;
-    opacity: 0.7; }
-    .range-slider.disabled .range-slider-handle, .range-slider[disabled] .range-slider-handle {
-      background: #198dae;
-      cursor: default;
-      opacity: 0.7; }
-      .range-slider.disabled .range-slider-handle:hover, .range-slider[disabled] .range-slider-handle:hover {
-        background: #167c99; }
-
-.range-slider-active-segment {
-  display: inline-block;
-  position: absolute;
-  height: 1rem;
-  background: #b1b1b1; }
-
-.range-slider-handle {
-  display: inline-block;
-  position: absolute;
-  z-index: 1;
-  top: -0.35714rem;
-  width: 2.28571rem;
-  height: 1.57143rem;
-  border: 1px solid none;
-  cursor: pointer;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  background: #198dae; }
-  .range-slider-handle:hover {
-    background: #167c99; }
-
-/**
-* Switch (Foundation Override):
-* `.switch` - Switches are a more visible and more touchable checkbox or radio buttons 
-* 
-*   @example
-*	<div class="switch-input-space with-underline row">
-*		<div class="switch">
-*			<input type="checkbox" id="hb-check0" value="[object Object]">
-*			<label  for="hb-check0"></label>
-*		</div>
-*		<label  class="switch-value" for="hb-check0">Question to say yes to</label>		
-*	</div>
-*   <a class="link" href="http://foundation.zurb.com/docs/components/switch.html">Foundation Documentation</a>
-*/
-.switch-input-space {
-  white-space: nowrap;
-  display: table;
-  padding-bottom: .5rem;
-  padding-top: .5rem; }
-  .switch-input-space .with-underline {
-    border-bottom: 1px dotted #d6d6d6; }
-
-.switch {
-  padding: 0;
-  border: none;
-  position: relative;
-  outline: 0;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-  display: inline-block;
-  display: table-cell;
-  width: 1%; }
-  .switch label {
-    display: block;
-    margin-bottom: 1rem;
-    position: relative;
-    color: transparent;
-    background: #DDDDDD;
-    text-indent: 100%;
-    width: 4rem;
-    height: 2rem;
-    cursor: pointer;
-    transition: left 0.15s ease-out; }
-  .switch input {
-    opacity: 0;
-    position: absolute;
-    top: 9px;
-    left: 10px;
-    padding: 0; }
-    .switch input + label {
-      margin-left: 0;
-      margin-right: 0; }
-  .switch label:after {
-    content: "";
-    display: block;
-    background: #FFFFFF;
-    position: absolute;
-    top: .25rem;
-    left: .25rem;
-    width: 1.5rem;
-    height: 1.5rem;
-    -webkit-transition: left 0.15s ease-out;
-    -moz-transition: left 0.15s ease-out;
-    transition: left 0.15s ease-out;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0); }
-  .switch input:checked + label {
-    background: #19BB9B; }
-  .switch input:checked + label:after {
-    left: 2.25rem; }
-  .switch label {
-    width: 3.5rem;
-    height: 1.75rem; }
-  .switch label:after {
-    width: 1.25rem;
-    height: 1.25rem; }
-  .switch input:checked + label:after {
-    left: 2rem; }
-  .switch label {
-    color: transparent;
-    background: #DDDDDD; }
-  .switch label:after {
-    background: #FFFFFF; }
-  .switch input:checked + label {
-    background: #19BB9B; }
-  .switch label {
-    border-radius: #19BB9B; }
-  .switch label:after {
-    border-radius: #19BB9B; }
-
-.switch-value {
-  display: inline-block;
-  height: 2rem;
-  vertical-align: top;
-  padding: 0 0 0 .25rem;
-  margin: 0;
-  position: relative;
-  background-color: transparent;
-  color: #5c5c5c;
-  white-space: normal;
-  display: table-cell; }
-
-/**
-* Twitter Typeahead:
-* `.twitter-typeahead` - Type ahead javascript
-* 
-*   @example
-* <span class="twitter-typeahead" style="position: relative; display: inline-block; direction: ltr;">
-*  <input class="typeahead tt-hint" type="text" readonly="" autocomplete="off" spellcheck="false" tabindex="-1" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);"><input id="StateTypeAhead" class="typeahead tt-input" type="text" placeholder="States of USA" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: 'Open Sans', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;">ala</pre>
-*  <span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: block; right: auto;">
-*    <div class="tt-dataset-states">
-*      <span class="tt-suggestions" style="display: block;">
-*        <div class="tt-suggestion"><p style="white-space: normal;"><strong class="tt-highlight">Al</strong>abama</p></div>
-*        <div class="tt-suggestion tt-cursor"><p style="white-space: normal;"><strong class="tt-highlight">Al</strong>aska</p></div>
-*        <div class="tt-suggestion"><p style="white-space: normal;">C<strong class="tt-highlight">al</strong>ifornia</p></div>
-*      </span>
-*      </div>
-*    </span>
-*  </span><br/><br/><br/><br/><br/><a href="https://twitter.github.io/">Documentation</a>
-*
-**/
-.twitter-typeahead {
-  width: 100%; }
-
-.typeahead,
-.tt-query,
-.tt-hint {
-  height: 30px;
-  padding: .25rem .5rem;
-  font-size: 1rem;
-  line-height: 1;
-  border: 2px solid #b3b3b3;
-  outline: none; }
-
-.typeahead {
-  background-color: #fff; }
-
-.typeahead:focus {
-  border: 2px solid #198dae; }
-
-.tt-query {
-  -webkit-box-shadow: inset 0 1px 1px rgba(102, 102, 102, 0.075);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
-
-.tt-hint {
-  color: #999; }
-
-.tt-dropdown-menu {
-  width: inherit;
-  margin-top: .25rem;
-  padding: .25rem .25rem;
-  background-color: #fff;
-  border: 1px solid #b3b3b3;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
-
-.tt-suggestion {
-  padding: 3px 20px;
-  font-size: 1.5rem;
-  line-height: 1.75rem;
-  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-  font-weight: 400; }
-  .tt-suggestion strong {
-    color: #19BB9B;
-    font-size: 1.10em;
-    margin: 0 2px 0 1px;
-    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-    font-weight: 700; }
-  .tt-suggestion.tt-cursor {
-    color: #e8f4f7;
-    background-color: #198dae; }
-    .tt-suggestion.tt-cursor strong {
-      color: #fff; }
-  .tt-suggestion p {
-    margin: 0; }
-
-/* Component containers
-----------------------------------*/
-.ui-widget {
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  letter-spacing: .01em; }
-  .ui-widget .ui-widget {
-    font-size: 1em; }
-  .ui-widget input, .ui-widget select, .ui-widget textarea {
-    font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    letter-spacing: .01em; }
-  .ui-widget button {
-    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-    font-weight: 400;
-    font-size: 1em; }
-
-.ui-widget-content {
-  border: 1px solid #b3b3b3;
-  background-image: none;
-  background-color: white;
-  color: #333333; }
-  .ui-widget-content a {
-    color: #333333; }
-
-.ui-widget-header {
-  border: 1px solid #aaaaaa;
-  background-image: none;
-  background-color: #cccccc;
-  color: #1a1a1a;
-  font-weight: bold; }
-  .ui-widget-header a {
-    color: #1a1a1a; }
-
-/* Interaction states
-----------------------------------*/
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-  border: 1px solid #cccccc;
-  background-image: none;
-  background: #e6e6e6;
-  font-weight: normal;
-  color: #4d4d4d; }
-
-.ui-state-default a {
-  color: #4d4d4d;
-  text-decoration: none; }
-  .ui-state-default a:link, .ui-state-default a:visited {
-    color: #4d4d4d;
-    text-decoration: none; }
-
-.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
-  border: 1px solid #198dae;
-  background-image: none;
-  background: #25b6e0;
-  font-weight: normal;
-  color: #ffffff; }
-
-.ui-state-hover a {
-  color: #ffffff;
-  text-decoration: none; }
-  .ui-state-hover a:hover, .ui-state-hover a:link, .ui-state-hover a:visited {
-    color: #ffffff;
-    text-decoration: none; }
-
-.ui-state-focus a {
-  color: #ffffff;
-  text-decoration: none; }
-  .ui-state-focus a:hover, .ui-state-focus a:link, .ui-state-focus a:visited {
-    color: #ffffff;
-    text-decoration: none; }
-
-.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
-  border: 1px solid #19BB9B;
-  background: #19bb9b;
-  font-weight: normal;
-  color: #fff; }
-
-.ui-state-active a {
-  color: #fff;
-  text-decoration: none; }
-  .ui-state-active a:link, .ui-state-active a:visited {
-    color: #fff;
-    text-decoration: none; }
-
-/* Interaction Cues
-----------------------------------*/
-.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
-  border: 1px solid #d07600;
-  background: #fff2e1;
-  color: font-color(#d07600, "loud"); }
-
-.ui-state-highlight a, .ui-widget-content .ui-state-highlight a, .ui-widget-header .ui-state-highlight a {
-  color: font-color(#d07600, "loud"); }
-
-.ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {
-  border: 1px solid #c32231;
-  background: #fbe7e9;
-  color: font-color(#c32231, "loud"); }
-
-.ui-state-error a, .ui-widget-content .ui-state-error a, .ui-widget-header .ui-state-error a, .ui-state-error-text, .ui-widget-content .ui-state-error-text, .ui-widget-header .ui-state-error-text {
-  color: font-color(#c32231, "loud"); }
-
-.ui-priority-primary, .ui-widget-content .ui-priority-primary, .ui-widget-header .ui-priority-primary {
-  font-weight: bold; }
-
-.ui-priority-secondary, .ui-widget-content .ui-priority-secondary, .ui-widget-header .ui-priority-secondary {
-  opacity: .7;
-  filter: Alpha(Opacity=70);
-  /* support: IE8 */
-  font-weight: normal; }
-
-.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
-  opacity: .35;
-  filter: Alpha(Opacity=35);
-  /* support: IE8 */
-  background-image: none; }
-
-.ui-state-disabled .ui-icon {
-  filter: Alpha(Opacity=35);
-  /* support: IE8 - See #6059 */ }
-
-/* Icons
-----------------------------------*/
-/* states and images */
-.ui-icon {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: none repeat scroll 0 0 transparent;
-  text-align: center; }
-  .ui-icon :before {
-    font-size: 1em;
-    margin: .25em .5em;
-    display: inline-block; }
-
-.ui-widget-content .ui-icon, .ui-widget-header .ui-icon {
-  background: none repeat scroll 0 0 transparent; }
-
-.ui-state-default .ui-icon {
-  background: none repeat scroll 0 0 transparent; }
-
-.ui-state-hover .ui-icon, .ui-state-focus .ui-icon, .ui-state-active .ui-icon {
-  background: none repeat scroll 0 0 transparent; }
-
-.ui-state-highlight .ui-icon {
-  background: none repeat scroll 0 0 transparent; }
-
-.ui-state-error .ui-icon, .ui-state-error-text .ui-icon {
-  background: none repeat scroll 0 0 transparent; }
-
-/* Font Awesome Override
------------------------------------------------- */
-/* Allow Font Awesome Icons in lieu of jQuery UI and only apply when using a FA icon */
-.ui-icon[class*=" ui-icon-"] {
-  /* Remove the jQuery UI Icon */
-  background: none repeat scroll 0 0 transparent;
-  /* Remove the jQuery UI Text Indent */
-  text-indent: 0;
-  /* Bump it up - jQuery UI is -8px */
-  margin-top: -0.5em; }
-
-.ui-button-icon-only .ui-icon[class*=" ui-icon-"] {
-  /* Bump it - jQuery UI is -8px */
-  margin-left: -7px; }
-
-/* Allow use of icon-large to be properly aligned */
-.ui-icon.icon-large {
-  margin-top: -0.75em; }
-
-/* positioning */
-.ui-icon-carat-2-n-s {
-  background-position: -128px 0; }
-
-.ui-icon-carat-2-e-w {
-  background-position: -144px 0; }
-
-.ui-icon-triangle-2-n-s {
-  background-position: -128px -16px; }
-
-.ui-icon-triangle-2-e-w {
-  background-position: -144px -16px; }
-
-/* ui-icon-seek-first is deprecated, use ui-icon-seek-start instead */
-/* Misc visuals
-----------------------------------*/
-/* Corner radius */
-.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
-  border-top-left-radius: 5px; }
-
-.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
-  border-top-right-radius: 5px; }
-
-.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
-  border-bottom-left-radius: 5px; }
-
-.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
-  border-bottom-right-radius: 5px; }
-
-/* Overlays */
-.ui-widget-overlay {
-  background: #6a6a6a url("images/ui-bg_flat_0_6a6a6a_40x100.png") 50% 50% repeat-x;
-  opacity: .3;
-  filter: Alpha(Opacity=30);
-  /* support: IE8 */ }
-
-.ui-widget-shadow {
-  margin: -8px 0 0 -8px;
-  padding: 8px;
-  background: #aaaaaa url("images/ui-bg_flat_0_aaaaaa_40x100.png") 50% 50% repeat-x;
-  opacity: .3;
-  filter: Alpha(Opacity=30);
-  /* support: IE8 */
-  border-radius: 8px; }
-
-.ui-datepicker-header .ui-datepicker-prev, .ui-datepicker-header .ui-datepicker-next {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin: .1em;
-  border-radius: 5px; }
-  .ui-datepicker-header .ui-datepicker-prev:before, .ui-datepicker-header .ui-datepicker-next:before {
-    font-size: 1em;
-    margin: .35em .45em;
-    display: inline-block; }
-  .ui-datepicker-header .ui-datepicker-prev .ui-icon, .ui-datepicker-header .ui-datepicker-next .ui-icon {
-    text-indent: -9999px; }
-
-/* AutoComplete */
-.ui-autocomplete {
-  max-height: 15em;
-  overflow-y: auto;
-  /* prevent horizontal scrollbar */
-  overflow-x: hidden;
-  font-size: 1.25rem;
-  line-height: 1; }
-  .ui-autocomplete span {
-    padding: 0 .25rem 0 0;
-    font-size: .8em; }
-  .ui-autocomplete .headline {
-    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-    font-weight: 700;
-    display: block;
-    color: #5c5c5c;
-    font-size: 1em; }
-  .ui-autocomplete .description {
-    font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-    font-weight: 100;
-    font-style: italic;
-    color: #999999;
-    font-size: .75em; }
-  .ui-autocomplete .ui-state-focus .headline, .ui-autocomplete .ui-state-focus .description {
-    color: white; }
-
-.ui-accordion-override .ui-accordion-header .ui-accordion-header-icon {
-  height: 2em;
-  width: 1.5em;
-  left: 0;
-  top: 0;
-  margin-top: 0;
-  font-size: 1.5rem;
-  padding: 1rem 0 1rem .75rem;
-  display: block; }
-.ui-accordion-override .ui-icon-triangle-1-e:before {
-  content: "\f138";
-  color: #25b6e0; }
-.ui-accordion-override .ui-icon-triangle-1-s:before {
-  content: "\f13a";
-  color: #19BB9B; }
-.ui-accordion-override .ui-accordion-header, .ui-accordion-override .ui-accordion-header:hover {
-  background: none;
-  border: 0px none;
-  margin-bottom: 0;
-  padding-left: 1.75em;
-  color: #333333;
-  margin-bottom: 0; }
-.ui-accordion-override .ui-accordion-content {
-  border: 0;
-  border-radius: 0; }
-  .ui-accordion-override .ui-accordion-content.ui-accordion-content-active {
-    border-top: 2px solid #25b6e0;
-    border-bottom: 2px solid #666666; }
-
-.page-wrapper {
-  padding: 1rem .5rem;
-  max-width: 1200px;
-  margin: 0 auto; }
-  @media only screen and (min-width: 768px) {
-    .page-wrapper {
-      padding: 1.5rem .75rem; } }
-  @media only screen and (min-width: 1024px) {
-    .page-wrapper {
-      padding: 2rem 1rem 3rem; } }
-
-.content-padding {
-  padding: 0 .5rem;
-  max-width: 1200px;
-  margin: 0 auto; }
-  @media only screen and (min-width: 768px) {
-    .content-padding {
-      padding: 0 .75rem; } }
-  @media only screen and (min-width: 1024px) {
-    .content-padding {
-      padding: 0 1rem; } }
-
-/**
-* Split Layout With Off Canvas Reveal:
-* `.mobile-offcanvas-wrapper` - This is a structural container that has the ablity to change from content and sidebar to just content and the sidebar being off canvas. Trigger the off canvas reveal by adding `.navOn` to the div.split-layout. Change the switch point by adding `.large`,`.medium`, or `.small`. <br>!!! must include _layout-split.scss !!! <br>!!! requires javascripts !!!
-* 
-*   @example
-*	<div class="mobile-offcanvas-wrapper">
-*	<section class="split-layout medium navOn">
-*	<aside class="split-sidebar">
-*	<h2>Sidebar</h2>
-*	<p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
-*	</aside>
-*	<article class="split-content">
-*	<div class="page-wrapper">
-*	<h1>Content</h1>
-*	<p>Some extra content in the content area</p><p> It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
-*	</div>
-*	</article>
-*	</section>
-*	</div>
-*/
-.mobile-offcanvas-wrapper {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  -webkit-transition: 300ms ease all;
-  transition: 300ms ease all; }
-  .mobile-offcanvas-wrapper .split-layout {
-    -webkit-transition: 300ms ease all;
-    transition: 300ms ease all;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    overflow: visible; }
-    .mobile-offcanvas-wrapper .split-layout.navOn {
-      -webkit-transform: translateX(83.33333%);
-      transform: translateX(83.33333%);
-      transform: translate3d(83.33333%, 0, 0);
-      -webkit-transform: translate3d(83.33333%, 0, 0); }
-    .mobile-offcanvas-wrapper .split-layout .split-sidebar {
-      display: block;
-      padding-left: 0;
-      padding-right: 0;
-      width: 83.33333%;
-      float: left;
-      position: absolute;
-      left: -83.33333%;
-      right: auto; }
-    .mobile-offcanvas-wrapper .split-layout.reverse.navOn {
-      -webkit-transform: translateX(-83.33333%);
-      transform: translateX(-83.33333%);
-      transform: translate3d(-83.33333%, 0, 0);
-      -webkit-transform: translate3d(-83.33333%, 0, 0); }
-    .mobile-offcanvas-wrapper .split-layout.reverse .split-sidebar {
-      position: absolute;
-      right: -83.33333%;
-      left: auto; }
-    @media only screen {
-      .mobile-offcanvas-wrapper .split-layout.small, .mobile-offcanvas-wrapper .split-layout.small.navOn {
-        -webkit-transform: translateX(0);
-        transform: translateX(0); } }
-    @media only screen and (min-width: 40.063em) {
-      .mobile-offcanvas-wrapper .split-layout.medium, .mobile-offcanvas-wrapper .split-layout.medium.navOn, .mobile-offcanvas-wrapper .split-layout.small, .mobile-offcanvas-wrapper .split-layout.small.navOn {
-        -webkit-transform: translateX(0);
-        transform: translateX(0); } }
-
-/**
- title: Responsive Sidebar	
- section: Layout
- description: A side bar that hides and shows in certain screen sizes
-example : |
-		<div class="split-layout medium reverse">
-			<div class="split-sidebar"></div>
-			<div class="split-content"></div>
-		</div>
-
-**/
-.page-wrapper > .split-layout {
-  margin: -2rem -1rem; }
-
-.split-layout {
-  width: 100%;
-  margin: 0;
-  max-width: 114.28571rem;
-  max-width: 100%;
-  position: relative;
-  overflow: hidden;
-  clear: both; }
-  .split-layout:before, .split-layout:after {
-    content: " ";
-    display: table; }
-  .split-layout:after {
-    clear: both; }
-  .split-layout .split-sidebar, .split-layout .split-content {
-    margin-bottom: -1000px;
-    padding-bottom: 1001px; }
-  .split-layout .split-sidebar {
-    display: none;
-    padding-left: 0;
-    padding-right: 0;
-    width: 100%;
-    float: left;
-    left: -83.33333%;
-    border: #b3b3b3 solid 0;
-    border-right-width: 1px; }
-  .split-layout .split-content {
-    padding-left: 0;
-    padding-right: 0;
-    width: 100%;
-    float: left; }
-  .split-layout.xlarge.reverse .split-sidebar, .split-layout.xlarge.reverse .split-content, .split-layout.xlarge.reverse.navOn .split-sidebar, .split-layout.xlarge.reverse.navOn .split-content, .split-layout.large.reverse .split-sidebar, .split-layout.large.reverse .split-content, .split-layout.large.reverse.navOn .split-sidebar, .split-layout.large.reverse.navOn .split-content, .split-layout.medium.reverse .split-sidebar, .split-layout.medium.reverse .split-content, .split-layout.medium.reverse.navOn .split-sidebar, .split-layout.medium.reverse.navOn .split-content, .split-layout.small.reverse .split-sidebar, .split-layout.small.reverse .split-content, .split-layout.small.reverse.navOn .split-sidebar, .split-layout.small.reverse.navOn .split-content {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    float: right;
-    float: right !important; }
-  .split-layout.xlarge.reverse .split-sidebar, .split-layout.xlarge.reverse.navOn .split-sidebar, .split-layout.large.reverse .split-sidebar, .split-layout.large.reverse.navOn .split-sidebar, .split-layout.medium.reverse .split-sidebar, .split-layout.medium.reverse.navOn .split-sidebar, .split-layout.small.reverse .split-sidebar, .split-layout.small.reverse.navOn .split-sidebar {
-    border-right-width: 0;
-    border-left-width: 1px;
-    padding-left: 0;
-    padding-right: 0; }
-  .split-layout.xlarge.reverse .split-content, .split-layout.xlarge.reverse.navOn .split-content, .split-layout.large.reverse .split-content, .split-layout.large.reverse.navOn .split-content, .split-layout.medium.reverse .split-content, .split-layout.medium.reverse.navOn .split-content, .split-layout.small.reverse .split-content, .split-layout.small.reverse.navOn .split-content {
-    padding-left: 0;
-    padding-right: 0; }
-  @media only screen {
-    .split-layout.small .split-sidebar {
-      display: block;
-      padding-left: 0;
-      padding-right: 0;
-      width: 41.66667%;
-      float: left;
-      padding-left: 0;
-      padding-right: 0; }
-    .split-layout.small .split-content {
-      display: block;
-      padding-left: 0;
-      padding-right: 0;
-      width: 58.33333%;
-      float: left;
-      padding-left: 0;
-      padding-right: 0; } }
-  @media only screen and (min-width: 40.063em) {
-    .split-layout.medium .split-sidebar, .split-layout.medium.reverse .split-sidebar, .split-layout.small .split-sidebar, .split-layout.small.reverse .split-sidebar {
-      position: relative;
-      left: 0;
-      right: 0;
-      display: block;
-      padding-left: 0;
-      padding-right: 0;
-      width: 33.33333%;
-      float: left;
-      padding-left: 0;
-      padding-right: 0; }
-    .split-layout.medium .split-content, .split-layout.small .split-content {
-      display: block;
-      padding-left: 0;
-      padding-right: 0;
-      width: 66.66667%;
-      float: left;
-      padding-left: 0;
-      padding-right: 0; } }
-  @media only screen and (min-width: 64.063em) {
-    .split-layout.large .split-sidebar, .split-layout.large.reverse .split-sidebar, .split-layout.medium .split-sidebar, .split-layout.medium.reverse .split-sidebar, .split-layout.small .split-sidebar, .split-layout.small.reverse .split-sidebar {
-      display: block;
-      padding-left: 0;
-      padding-right: 0;
-      width: 25%;
-      float: left;
-      padding-left: 0;
-      padding-right: 0; }
-    .split-layout.large .split-content, .split-layout.medium .split-content, .split-layout.small .split-content {
-      display: block;
-      padding-left: 0;
-      padding-right: 0;
-      width: 75%;
-      float: left;
-      padding-left: 0;
-      padding-right: 0; } }
-  @media only screen and (min-width: 90.063em) {
-    .split-layout.xlarge .split-sidebar, .split-layout.xlarge.reverse .split-sidebar, .split-layout.large .split-sidebar, .split-layout.large.reverse .split-sidebar, .split-layout.medium .split-sidebar, .split-layout.medium.reverse .split-sidebar, .split-layout.small .split-sidebar, .split-layout.small.reverse .split-sidebar {
-      display: block;
-      padding-left: 0;
-      padding-right: 0;
-      width: 25%;
-      float: left;
-      padding-left: 0;
-      padding-right: 0; }
-    .split-layout.xlarge .split-content, .split-layout.large .split-content, .split-layout.medium .split-content, .split-layout.small .split-content {
-      display: block;
-      padding-left: 0;
-      padding-right: 0;
-      width: 75%;
-      float: left;
-      padding-left: 0;
-      padding-right: 0; } }
-
-h1.with-underline {
-  border-bottom: #25b6e0 2px solid; }
-
-h2.with-underline {
-  border-bottom: #666666 2px solid; }
-
-h3.with-underline {
-  border-bottom: #7cd3ec 1px dotted; }
-
-h4.with-underline {
-  border-bottom: #999999 1px solid; }
-
-h5.with-underline {
-  border-bottom: #b3b3b3 1px solid; }
-
-h6.with-underline {
-  border-bottom: #b3b3b3 1px dotted; }
-
-/**
- * Sub Content in Header Tags:
- * `headline > blockquote` - basic styling for sub content in headers. 
- *
- *     @example
- *     h1.with-underline Header 1 Tag
- *		blockquote sub content in a blockquote
- *     h2.with-underline Header 2 Tag
- *		blockquote sub content in a blockquote
- *     h3.with-underline Header 3 Tag
- *		blockquote sub content in a blockquote
- *     h4.with-underline Header 4 Tag
- *		blockquote sub content in a blockquote
- *     h5.with-underline Header 5 Tag 
- *		blockquote sub content in a blockquote
- *     h6.with-underline Header 6 Tag
- *		blockquote sub content in a blockquote
- */
-h1 blockquote, h2 blockquote, h3 blockquote, h4 blockquote, h5 blockquote, h6 blockquote {
-  display: block;
-  line-height: 1.1;
-  font-size: .55em;
-  margin: 0;
-  padding: 0;
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  letter-spacing: .01em;
-  border: 0 none transparent; }
-h1 blockquote {
-  font-size: 0.46154em;
-  line-height: 0.875em;
-  margin-top: 0em;
-  margin-bottom: 0em; }
-h1.with-underline blockquote {
-  font-size: 0.46154em;
-  line-height: 0.875em;
-  margin-top: 0em;
-  margin-bottom: 0.4375em; }
-h2 blockquote {
-  font-size: 0.58065em;
-  line-height: 1.16667em;
-  margin-top: 0em;
-  margin-bottom: 0em; }
-h2.with-underline blockquote {
-  font-size: 0.58065em;
-  line-height: 1.16667em;
-  margin-top: 0.29167em;
-  margin-bottom: 0.29167em; }
-h3 blockquote {
-  font-size: 0.75em;
-  line-height: 1.16667em;
-  margin-top: 0em;
-  margin-bottom: 0em; }
-h3.with-underline blockquote {
-  font-size: 0.46154em;
-  line-height: 0.875em;
-  margin-top: 0.21875em;
-  margin-bottom: 0.21875em; }
-h4 blockquote {
-  font-size: 0.77778em;
-  line-height: 1.5em;
-  margin-top: 0em;
-  margin-bottom: 0em; }
-h5 blockquote {
-  font-size: 0.78571em;
-  line-height: 1.90909em;
-  margin-top: 0em;
-  margin-bottom: 0em; }
-h6 blockquote {
-  font-size: 0.57143em;
-  line-height: 2.625em;
-  margin-top: 0em;
-  margin-bottom: 0em; }
-
-.text-highlight-color {
-  color: #25b6e0 !important; }
-
-/**
- * Group-divid:
- * `.group-divide` - a line above or below the container elemtent
- *
- *     @example
- *	div.group-divide
- *    	 p this should be a paragraph a line before it. 
- *	div.group-divide-bottom
- *		p this paragraph with line after.
- */
-.group-divide {
-  border-top: #25b6e0 1px dotted;
-  margin-top: .5rem;
-  padding-top: 1rem; }
-
-.group-divide-bottom {
-  border-bottom: #25b6e0 1px dotted;
-  margin-bottom: .5rem; }
-
-/**
-*  A tag and .link:
-*  `.link` - a tags have a basic style  but links are a styled with `.link`
-*
-*     @example
-*     a 	
-* 	  span this is a plan link
-*	a.link
-* 	  span this is a link with ".link"
-*		
-*/
-.link {
-  color: #25b6e0;
-  text-decoration: underline; }
-  .link.icon {
-    text-decoration: none; }
-  .link:hover {
-    color: #51c5e6;
-    text-decoration: underline; }
-  .link.reverse {
-    color: #fff; }
-
-/**
-*
-*  bold, italic or subtle:
-*  `.bold` - make text bold, `.italic` - make text italic, or `.subtle` - make text subtle
-*
-*     @example
-*     div.bold this is `bold` content
-*     div.italic this is `italic` content
-*     div.subtle this is `subtle` content
-*
-*/
-/**
-* Typography States:
-* `.repeater` - This is form elements repeater. This Module is broken into 3 major containers the `renders`,`question-group`, and `repeater actions`.
-* 
-*   @example
-*  
-*/
-h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
-  font-weight: 900; }
-
-h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
-  color: #c32231; }
-h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning {
-  color: #d07600; }
-h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated {
-  color: #19BB9B; }
-h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
-  color: #B7E8FC; }
-
-h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
-  border-color: #c32231; }
-h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
-  border-color: #d07600; }
-h1.with-underline.validated, h2.with-underline.validated, h3.with-underline.validated, h4.with-underline.validated, h5.with-underline.validated, h6.with-underline.validated {
-  border-color: #19BB9B; }
-h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
-  border-color: #B7E8FC; }
-
 .phone-only {
   display: none; }
   @media only screen and (max-width: 767px) {

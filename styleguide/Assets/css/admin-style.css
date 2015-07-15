@@ -9,10 +9,7 @@
 /**
 * Brand Level:
 * `var $brand-level` - this variable has the ablity to over take the standard acc coloring with a branded product color.  Standard values are:
-*  0 - Pure ACC Color;
-*  1 - Header Bar and Primaary Nav Selects;
-*  2 - Lines, Selects, and Header Bar:
-*  3 - Full Color OVer Take, Typography, Selects, Header Bar, and Lines
+*  <ol start="0"><li>Pure ACC Color</li><li>Header Bar and Primaary Nav Selects</li><li>Lines, Selects, and Header Bar</li><li>Full Color OVer Take, Typography, Selects, Header Bar, and Lines</li></ol>
 * 
 *   @example
 *	<table class="table">
@@ -59,8 +56,8 @@
 *	</table>
 */
 /**
-*	Kitchen Sink:
-*	`Kitchen sink` - includes every single Foundation element so that we can make sure things work together smoothly. 
+*	Zurb Foundation - Kitchen Sink:
+*	This is a visual representation of UI elements that come from the base framework from ZURB. This does not includes every single element from Foundation to view a full list go to the documentation. <a class="button tiny" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
 *
 *		@example 
 *		<h4 id="alert-boxes">Alert Boxes</h4><div data-alert="" class="alert-box radius">This is a standard alert (div.alert-box.radius).  <a href="" class="close">x</a></div><div data-alert="" class="alert-box success">  This is a success alert (div.alert-box.success).  <a href="" class="close">x</a></div><div data-alert="" class="alert-box alert round">  This is an alert (div.alert-box.alert.round).  <a href="" class="close">x</a></div><div data-alert="" class="alert-box secondary">  This is a secondary alert (div.alert-box.secondary).  <a href="" class="close">x</a></div><hr>
@@ -238,10 +235,12 @@
 *	</dl>
 */
 /**
-* JQUERY UI:
-* `JQUERY UI 1.11.4` - This style is base of the more complicated ui elements
+* JQUERY UI - Kitchen Sink:
+* `JQUERY UI 1.11.4` - This style is base for more complicated ui elements
+*	<nav class="nav-list small"><ul><li><a href="http://jqueryui.com/accordion/"><span class="text">Accordion</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/autocomplete/"><span class="text">Autocomplete</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/datepicker/"><span class="text">Datepicker</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/progressbar/"><span class="text">Progressbar</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/slider/"><span class="text">Slider</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/spinner/"><span class="text">Spinner </span><i class="fa fa-holder-dynamic"></i></a></li></ul></nav>
 * 
 *   @example
+*	<h5>Accordion</h5>
 *	<div id="accordion">
 *	  <h3>Section 1</h3>
 *	  <div>
@@ -338,6 +337,7 @@
 *	    </p>
 *	  </div>
 *	</div>
+*	<h5>Auto Complete</h5>
 *	<div class="question required">
 *	  <div class="label-holder">
 *	    <label for="">
@@ -357,6 +357,7 @@
 *	  </div>
 *	   <div class="hint">Code tags like 'ASP'</div>
 *	</div>
+*	<h5>Slider</h5>
 *	<div class="question">
 *		<div class="label-holder">
 *	  		<label for="amount">Donation amount ($50 increments):</label>
@@ -370,6 +371,7 @@
 *	    </div>			
 *		</div>
 *	</div>
+*	<h5>Datepicker</h5>
 *	<div class="question">
 *		<div class="label-holder">
 *	  		<label for="amount">
@@ -382,23 +384,11 @@
 *	   		 </div>
 *		</div>
 *	</div>
+*	<h5>Spinner</h5>
 *	<p>
 *	  <label for="spinner">Select a value:</label>
 *	  <input id="spinner" name="value">
 *	</p>
-*	<h2>Highlight / Error</h2>
-*	<div class="ui-widget">
-*		<div class="ui-state-highlight ui-corner-all" style="">
-*			<p>
-*			<strong>Hey!</strong> Sample ui-state-highlight style.</p>
-*		</div>
-*	</div>
-*	<div class="ui-widget">
-*		<div class="ui-state-error ui-corner-all" style="">
-*			<p>
-*			<strong>Alert:</strong> Sample ui-state-error style.</p>
-*		</div>
-*	</div>
 *	
 **/
 td.product-brand-color {
@@ -2117,11 +2107,7 @@ td.error-color {
     "Color": $success-color,
     "Icon": $fa-var-check,),
 
-    (
-    "State":"highlighted",
-    "Selector":".highlighted",
-    "Color": rebrand-color($info-color,2),
-    "Icon": $fa-var-exclamation ,),
+
     */
 /* TODO: refactor this 
 there are two to three needs for icons icons in containers, icons on icons and then icons that are dynamic to a parent container.**/
@@ -2306,11 +2292,11 @@ button, .button {
     button.warning:hover, button.warning:focus, .button.warning:hover, .button.warning:focus {
       color: #FFFFFF; }
   button.info, .button.info {
-    background-color: #B7E8FC;
-    border-color: #63cdf9;
-    color: #333333; }
+    background-color: #22AFD7;
+    border-color: #1b8cac;
+    color: #FFFFFF; }
     button.info:hover, button.info:focus, .button.info:hover, .button.info:focus {
-      background-color: #63cdf9; }
+      background-color: #1b8cac; }
     button.info:hover, button.info:focus, .button.info:hover, .button.info:focus {
       color: #FFFFFF; }
   button.large, .button.large {
@@ -2411,18 +2397,18 @@ button, .button {
       button.disabled.warning:hover, button.disabled.warning:focus, button[disabled].warning:hover, button[disabled].warning:focus, .button.disabled.warning:hover, .button.disabled.warning:focus, .button[disabled].warning:hover, .button[disabled].warning:focus {
         background-color: #c32231; }
     button.disabled.info, button[disabled].info, .button.disabled.info, .button[disabled].info {
-      background-color: #B7E8FC;
-      border-color: #63cdf9;
-      color: #333333;
+      background-color: #22AFD7;
+      border-color: #1b8cac;
+      color: #FFFFFF;
       cursor: default;
       opacity: 0.7;
       box-shadow: none; }
       button.disabled.info:hover, button.disabled.info:focus, button[disabled].info:hover, button[disabled].info:focus, .button.disabled.info:hover, .button.disabled.info:focus, .button[disabled].info:hover, .button[disabled].info:focus {
-        background-color: #63cdf9; }
+        background-color: #1b8cac; }
       button.disabled.info:hover, button.disabled.info:focus, button[disabled].info:hover, button[disabled].info:focus, .button.disabled.info:hover, .button.disabled.info:focus, .button[disabled].info:hover, .button[disabled].info:focus {
         color: #FFFFFF; }
       button.disabled.info:hover, button.disabled.info:focus, button[disabled].info:hover, button[disabled].info:focus, .button.disabled.info:hover, .button.disabled.info:focus, .button[disabled].info:hover, .button[disabled].info:focus {
-        background-color: #B7E8FC; }
+        background-color: #22AFD7; }
 
 button::-moz-focus-inner {
   border: 0;
@@ -2595,9 +2581,16 @@ h6 {
 * `.repeater` - This is form elements repeater. This Module is broken into 3 major containers the `renders`,`question-group`, and `repeater actions`.
 * 
 *   @example
-*  
+*	<h1 class="with-underline info">Header 1 Tag
+*	  <small>Info State</small>
+*	</h1>
+*	<h2 class="with-underline error">Header 2 Tag <small>Error State</small></h2>
+*	<h3 class="with-underline warning">Header 3 Tag<small>Warning State</small></h3>
+*	<h4 class="with-underline validated">Header 4 Tag<small>Validated/success State</small></h4>
+*	<h5 class="with-underline highlighted">Header 5 Tag<small>Highlighted State</small></h5>
+*  	<p class="highlighted"><strong>Paragraph that is a highlighted State.</strong>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
 */
-h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
+h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
   font-weight: 900; }
 
 h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
@@ -2607,7 +2600,9 @@ h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warnin
 h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated {
   color: #19BB9B; }
 h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
-  color: #B7E8FC; }
+  color: #22AFD7; }
+h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
+  color: #22AFD7; }
 
 h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
   border-color: #c32231; }
@@ -2616,7 +2611,9 @@ h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning,
 h1.with-underline.validated, h2.with-underline.validated, h3.with-underline.validated, h4.with-underline.validated, h5.with-underline.validated, h6.with-underline.validated {
   border-color: #19BB9B; }
 h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
-  border-color: #B7E8FC; }
+  border-color: #22AFD7; }
+h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
+  border-color: #22AFD7; }
 
 /**
 * Buttons:
@@ -3314,7 +3311,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
     left: 0;
     font-size: .75rem; }
 
-.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder {
+.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder {
   background-color: transparent;
   display: inline-block; }
 
@@ -3370,6 +3367,9 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 .answer.info .info, .question.info .info {
   display: inline-block;
   width: 100%; }
+.answer.highlighted .highlighted, .question.highlighted .highlighted {
+  display: inline-block;
+  width: 100%; }
 
 .answer.error .required-holder, .question.error .required-holder {
   color: #de404e; }
@@ -3378,7 +3378,9 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 .answer.validated .required-holder, .question.validated .required-holder {
   color: #2de3bf; }
 .answer.info .required-holder, .question.info .required-holder {
-  color: #c5edfd; }
+  color: #4bc1e2; }
+.answer.highlighted .required-holder, .question.highlighted .required-holder {
+  color: #4bc1e2; }
 
 .message-holder small.error, .message-holder .span.error {
   background-color: #c32231;
@@ -3390,8 +3392,11 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   background-color: #19BB9B;
   color: #fff; }
 .message-holder small.info, .message-holder .span.info {
-  background-color: #B7E8FC;
-  color: #333333; }
+  background-color: #22AFD7;
+  color: #fff; }
+.message-holder small.highlighted, .message-holder .span.highlighted {
+  background-color: #22AFD7;
+  color: #fff; }
 
 .input-holder {
   margin-bottom: .75rem; }
@@ -4519,14 +4524,26 @@ table + div > .collapsable-panel {
   background-color: transparent;
   border: 0 none transparent; }
   .collapsable-panel.info .bar.close, .collapsable-panel.info.inset .bar.close {
-    border-color: #B7E8FC; }
+    border-color: #22AFD7; }
   .collapsable-panel.info .bar.close .action-btn {
-    color: #B7E8FC; }
+    color: #22AFD7; }
   .collapsable-panel.info.inset {
-    background-color: #f8fdff; }
+    background-color: #e8f7fb; }
     .collapsable-panel.info.inset .bar.close .action-btn {
-      background-color: #B7E8FC;
-      color: #333333; }
+      background-color: #22AFD7;
+      color: #fff; }
+.collapsable-panel.highlighted {
+  background-color: transparent;
+  border: 0 none transparent; }
+  .collapsable-panel.highlighted .bar.close, .collapsable-panel.highlighted.inset .bar.close {
+    border-color: #22AFD7; }
+  .collapsable-panel.highlighted .bar.close .action-btn {
+    color: #22AFD7; }
+  .collapsable-panel.highlighted.inset {
+    background-color: #e8f7fb; }
+    .collapsable-panel.highlighted.inset .bar.close .action-btn {
+      background-color: #22AFD7;
+      color: #fff; }
 
 /**
 * Accordion (requires Collapsable Panel):
@@ -4705,7 +4722,7 @@ table + div > .collapsable-panel {
 
 /**
 * Button Selectors:
-* `.panel-selector-holder` - the panel selector is a multi tree level selector allowing a user to select from the left coloum or parent and then select the filtered child elements.  !! Requires Javascript!!
+* `.button-group` -  !! Requires Javascript!!
 * 
 *   @example
 *	<div class="row"><ul id="ButtonGroup" class="button-group">
@@ -5886,9 +5903,16 @@ h6 blockquote {
 * `.repeater` - This is form elements repeater. This Module is broken into 3 major containers the `renders`,`question-group`, and `repeater actions`.
 * 
 *   @example
-*  
+*	<h1 class="with-underline info">Header 1 Tag
+*	  <small>Info State</small>
+*	</h1>
+*	<h2 class="with-underline error">Header 2 Tag <small>Error State</small></h2>
+*	<h3 class="with-underline warning">Header 3 Tag<small>Warning State</small></h3>
+*	<h4 class="with-underline validated">Header 4 Tag<small>Validated/success State</small></h4>
+*	<h5 class="with-underline highlighted">Header 5 Tag<small>Highlighted State</small></h5>
+*  	<p class="highlighted"><strong>Paragraph that is a highlighted State.</strong>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
 */
-h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
+h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
   font-weight: 900; }
 
 h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
@@ -5898,7 +5922,9 @@ h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warnin
 h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated {
   color: #19BB9B; }
 h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
-  color: #B7E8FC; }
+  color: #22AFD7; }
+h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
+  color: #22AFD7; }
 
 h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
   border-color: #c32231; }
@@ -5907,7 +5933,9 @@ h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning,
 h1.with-underline.validated, h2.with-underline.validated, h3.with-underline.validated, h4.with-underline.validated, h5.with-underline.validated, h6.with-underline.validated {
   border-color: #19BB9B; }
 h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
-  border-color: #B7E8FC; }
+  border-color: #22AFD7; }
+h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
+  border-color: #22AFD7; }
 
 .phone-only {
   display: none; }
