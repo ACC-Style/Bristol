@@ -5642,26 +5642,6 @@ div.reveal-modal, dialog {
     .content-padding {
       padding: 0 1rem; } }
 
-/**
-* Split Layout With Off Canvas Reveal:
-* `.mobile-offcanvas-wrapper` - This is a structural container that has the ablity to change from content and sidebar to just content and the sidebar being off canvas. Trigger the off canvas reveal by adding `.navOn` to the div.split-layout. Change the switch point by adding `.large`,`.medium`, or `.small`. <br>!!! must include _layout-split.scss !!! <br>!!! requires javascripts !!!
-* 
-*   @example
-*	<div class="mobile-offcanvas-wrapper">
-*	<section class="split-layout medium navOn">
-*	<aside class="split-sidebar">
-*	<h2>Sidebar</h2>
-*	<p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
-*	</aside>
-*	<article class="split-content">
-*	<div class="page-wrapper">
-*	<h1>Content</h1>
-*	<p>Some extra content in the content area</p><p> It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
-*	</div>
-*	</article>
-*	</section>
-*	</div>
-*/
 .mobile-offcanvas-wrapper {
   position: relative;
   overflow: hidden;
@@ -5711,16 +5691,25 @@ div.reveal-modal, dialog {
         transform: translateX(0); } }
 
 /**
- title: Responsive Sidebar	
- section: Layout
- description: A side bar that hides and shows in certain screen sizes
-example : |
-		<div class="split-layout medium reverse">
-			<div class="split-sidebar"></div>
-			<div class="split-content"></div>
-		</div>
-
-**/
+* Split Layout With Off Canvas Reveal:
+* `.mobile-offcanvas-wrapper` - This is a structural container that has the ablity to change from content and sidebar to just content and the sidebar being off canvas. Trigger the off canvas reveal by adding `.navOn` to the div.split-layout. Change the switch point by adding `.large`,`.medium`, or `.small`. <br>!!! must include _layout-split.scss !!! <br>!!! requires javascripts foundation equzlizer will remove the sidebar collapse !!!
+* 
+*   @example
+*	<div class="mobile-offcanvas-wrapper">
+*	<section class="split-layout fill-page-height medium navOn">
+*	<aside class="split-sidebar">
+*	<h2>Sidebar</h2>
+*	<p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+*	</aside>
+*	<article class="split-content">
+*	<div class="page-wrapper">
+*	<h1>Content</h1>
+*	<p>Some extra content in the content area</p><p> It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+*	</div>
+*	</article>
+*	</section>
+*	</div>
+*/
 .page-wrapper > .split-layout {
   margin: -2rem -1rem; }
 
@@ -5740,6 +5729,27 @@ example : |
   .split-layout .split-sidebar, .split-layout .split-content {
     margin-bottom: -1000px;
     padding-bottom: 1001px; }
+  .split-layout.fill-page-height .split-content {
+    margin-bottom: 0px;
+    padding-bottom: 1em; }
+    @media (min-device-height: 320px) {
+      .split-layout.fill-page-height .split-content {
+        min-height: 320px; } }
+    @media (min-device-height: 480px) {
+      .split-layout.fill-page-height .split-content {
+        min-height: 480px; } }
+    @media (min-device-height: 640px) {
+      .split-layout.fill-page-height .split-content {
+        min-height: 640px; } }
+    @media (min-device-height: 768px) {
+      .split-layout.fill-page-height .split-content {
+        min-height: 768px; } }
+    @media (min-device-height: 960px) {
+      .split-layout.fill-page-height .split-content {
+        min-height: 960px; } }
+    @media (min-device-height: 1024px) {
+      .split-layout.fill-page-height .split-content {
+        min-height: 1024px; } }
   .split-layout .split-sidebar {
     display: none;
     padding-left: 0;
