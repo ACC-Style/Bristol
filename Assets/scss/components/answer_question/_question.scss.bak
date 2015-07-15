@@ -33,6 +33,33 @@ input[type="checkbox"], input[type="radio"]{
 		padding-bottom: .5em;}
 }
 
+	.file-upload {
+		position: relative;
+		overflow: hidden;
+		margin: 10px;
+	}
+
+		.file-upload input.upload {
+			position: absolute;
+			top: 0;
+			right: 0;
+			margin: 0;
+			padding: 0;
+			font-size: 20px;
+			cursor: pointer;
+			opacity: 0;
+			filter: alpha(opacity=0);
+		}
+/**
+* File Input:
+*
+*	@example
+*	<div class="button file-upload">
+*		<i class="fa fa-upload"></i>
+*		<span class="text">Upload</span>
+*		<input type="file" class="upload" data-bind="file: { data: document, name: documentname, allowed: allowedTypes }">
+*	</div>
+**/	
 
 .question.question-inline{
 	display: block;
@@ -78,7 +105,6 @@ input[type="checkbox"], input[type="radio"]{
 *			</div>
 *			<div class="column small-6 large-3">
 *				<small class="value">Years</small>
-
 *			</div>
 *		</div>
 *		<div class="message-holder">
