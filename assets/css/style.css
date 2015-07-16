@@ -2308,28 +2308,34 @@ button::-moz-focus-inner {
 
 .h1, h1 {
   font-weight: normal;
-  font-size: 3.71429em;
-  line-height: 1.21154em;
-  margin-top: 0.40385em;
-  margin-bottom: 0.40385em; }
+  font-size: 1.42857em;
+  line-height: 1.05em;
+  margin-top: 1.05em;
+  margin-bottom: 1.05em; }
+  @media only screen and (min-width: 768px) {
+    .h1, h1 {
+      font-size: 1.64286em;
+      line-height: 1.82609em;
+      margin-top: 0.91304em;
+      margin-bottom: 0.91304em; } }
 
 .h2, h2, .ui-accordion-override .ui-accordion-header, .ui-accordion-override .ui-accordion-header:hover {
-  font-size: 2.21429em;
-  line-height: 1.35484em;
-  margin-top: 0.33871em;
-  margin-bottom: 0.33871em; }
+  font-size: 1.35714em;
+  line-height: 1.10526em;
+  margin-top: 0.55263em;
+  margin-bottom: 0.55263em; }
 
 .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li {
-  font-size: 1.71429em;
-  line-height: 1.75em;
-  margin-top: 0.21875em;
-  margin-bottom: 0.65625em; }
+  font-size: 1.21429em;
+  line-height: 1.23529em;
+  margin-top: 0.30882em;
+  margin-bottom: 0.92647em; }
 
 .h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .switch-value {
-  font-size: 1.28571em;
-  line-height: 1.16667em;
-  margin-top: 0.58333em;
-  margin-bottom: 0.58333em; }
+  font-size: 1.07143em;
+  line-height: 1.4em;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em; }
 
 .h5, h5 {
   font-size: 1em;
@@ -3146,6 +3152,15 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 [class*="input-space"] + [class*="input-space"]:last-child, [class*="value-space"] + [class*="value-space"]:last-child {
   padding-right: 0; }
 
+.answer .value, .question .value {
+  padding: 7px;
+  vertical-align: top;
+  display: inline-block;
+  margin-top: 0;
+  color: #666666;
+  font-size: 1.28571em;
+  line-height: 1.16667em; }
+
 .message-holder small, .message-holder span {
   display: none;
   padding: .375rem .5625rem .5625rem;
@@ -3210,10 +3225,11 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   .input-holder .input-space, .input-holder .switch-input-space {
     padding-left: 0; }
 
-.input-space a.button, .switch-input-space a.button, .input-space button, .switch-input-space button {
+.input-space a.button, .switch-input-space a.button, .input-space button, .switch-input-space button, .input-space .button, .switch-input-space .button {
+  margin: 0;
   padding-top: 8px;
   padding-bottom: 8px; }
-  .input-space a.button i, .switch-input-space a.button i, .input-space button i, .switch-input-space button i {
+  .input-space a.button i, .switch-input-space a.button i, .input-space button i, .switch-input-space button i, .input-space .button i, .switch-input-space .button i {
     margin-right: .2rem; }
 
 [class*="input-space"] + [class*="input-space"]:last-child {
@@ -3239,6 +3255,32 @@ input[type="checkbox"], input[type="radio"] {
     padding-top: .5em;
     padding-bottom: .5em; }
 
+.file-upload {
+  position: relative;
+  overflow: hidden;
+  margin: 10px; }
+
+.file-upload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0); }
+
+/**
+* File Input:
+*
+*	@example
+*	<div class="button file-upload">
+*		<i class="fa fa-upload"></i>
+*		<span class="text">Upload</span>
+*		<input type="file" class="upload" data-bind="file: { data: document, name: documentname, allowed: allowedTypes }">
+*	</div>
+**/
 .question.question-inline {
   display: block; }
   .question.question-inline .label-holder, .question.question-inline .input-holder {
@@ -3522,6 +3564,52 @@ input[type="checkbox"], input[type="radio"] {
     .radio-group:hover .radio {
       background-color: #cccccc; }
 
+/**
+* Radio Button with Grouped Content:
+* `.radio-group` - This is a structural container for radio buttons that have an extended amount of content that goes with the radio button.
+* 
+*   @example
+*	<div class="question">
+*	<div class="label-holder">
+*		<label for="">
+*			<span class="text">The Title of the Radio Group</span>
+*			<span class="required-holder">
+*				<i class="fa fa-holder-dynamic"></i>
+*			</span>
+*		</label>
+*	</div>
+*	<div class="input-holder radio-group-holder row">
+*		<div class="column input-space small-6">
+*		  <label for="radio1" class="radio-group">
+*		    <span class="radio">
+*		      <input id='radio1' name="number" value="#" type="radio">
+*		    </span>
+*		    <span class="radio-content">
+*		      <span class="h4">Title One</span>
+*		      <span class="normal">Sub Content</span>
+*		    </span>
+*		  </label>
+*		</div>
+*		<div class="column input-space small-6">
+*		  <label for="radio2" class="radio-group">
+*		    <span class="radio">
+*		      <input id='radio2' name="number" value="#" type="radio">
+*		    </span>
+*		    <span class="radio-content">
+*		      <span class="h4">Title Two</span>
+*		      <span class="normal">Sub Content</span>
+*		    </span>
+*		  </label>
+*		</div>
+*	</div>
+*	<div class="message-holder">
+*		<small class="error"><i class="fa fa-holder"></i> Error message</small>
+*		<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*		<small class="data"><i class="fa fa-holder"></i> Data message</small>
+*	</div>
+*	<div class="hint">This is some hint text</div>
+*	</div>
+**/
 .repeater {
   width: 100%;
   margin: 0;
@@ -3601,7 +3689,7 @@ input[type="checkbox"], input[type="radio"] {
     border-bottom: 2px solid #5cc9e8;
     position: relative; }
     .repeater .question-group .required-message {
-      font-size: 11px;
+      font-size: 13px;
       padding: .25em .5em;
       position: absolute;
       top: -2px;
@@ -4845,8 +4933,8 @@ Non-Core Components Styles
   padding: .5rem;
   position: relative; }
   .info-text .fa-holder {
-    font-size: 2.21429em;
-    line-height: 1.35484em;
+    font-size: 1.35714em;
+    line-height: 1.10526em;
     margin-top: 0em;
     margin-bottom: 0em;
     position: absolute; }
@@ -4862,51 +4950,51 @@ Non-Core Components Styles
     color: #fff;
     font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
     font-weight: 700;
-    font-size: 1.28571em;
-    line-height: 1.16667em;
-    margin-top: 0.29167em;
-    margin-bottom: 0.29167em;
-    min-height: 31px; }
+    font-size: 1.07143em;
+    line-height: 1.4em;
+    margin-top: 0.35em;
+    margin-bottom: 0.35em;
+    min-height: 19px; }
   .info-text.warning {
     background-color: #d07600;
     color: #fff;
     font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
     font-weight: 700;
-    font-size: 1.28571em;
-    line-height: 1.16667em;
-    margin-top: 0.29167em;
-    margin-bottom: 0.29167em;
-    min-height: 31px; }
+    font-size: 1.07143em;
+    line-height: 1.4em;
+    margin-top: 0.35em;
+    margin-bottom: 0.35em;
+    min-height: 19px; }
   .info-text.validated {
     background-color: #19BB9B;
     color: #fff;
     font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
     font-weight: 700;
-    font-size: 1.28571em;
-    line-height: 1.16667em;
-    margin-top: 0.29167em;
-    margin-bottom: 0.29167em;
-    min-height: 31px; }
+    font-size: 1.07143em;
+    line-height: 1.4em;
+    margin-top: 0.35em;
+    margin-bottom: 0.35em;
+    min-height: 19px; }
   .info-text.info {
     background-color: #22AFD7;
     color: #fff;
     font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
     font-weight: 700;
-    font-size: 1.28571em;
-    line-height: 1.16667em;
-    margin-top: 0.29167em;
-    margin-bottom: 0.29167em;
-    min-height: 31px; }
+    font-size: 1.07143em;
+    line-height: 1.4em;
+    margin-top: 0.35em;
+    margin-bottom: 0.35em;
+    min-height: 19px; }
   .info-text.highlighted {
     background-color: #22AFD7;
     color: #fff;
     font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
     font-weight: 700;
-    font-size: 1.28571em;
-    line-height: 1.16667em;
-    margin-top: 0.29167em;
-    margin-bottom: 0.29167em;
-    min-height: 31px; }
+    font-size: 1.07143em;
+    line-height: 1.4em;
+    margin-top: 0.35em;
+    margin-bottom: 0.35em;
+    min-height: 19px; }
 
 .split-sidebar .nav-list.nav-checklist, .split-sidebar .nav-checklist.panel-selector {
   background-color: #fff; }
@@ -5421,18 +5509,18 @@ div.reveal-modal, dialog {
 .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
   border: 1px solid #d07600;
   background: #fff2e1;
-  color: font-color(#d07600, "loud"); }
+  color: #d07600; }
 
 .ui-state-highlight a, .ui-widget-content .ui-state-highlight a, .ui-widget-header .ui-state-highlight a {
-  color: font-color(#d07600, "loud"); }
+  color: #d07600; }
 
 .ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {
   border: 1px solid #c32231;
   background: #fbe7e9;
-  color: font-color(#c32231, "loud"); }
+  color: #c32231; }
 
 .ui-state-error a, .ui-widget-content .ui-state-error a, .ui-widget-header .ui-state-error a, .ui-state-error-text, .ui-widget-content .ui-state-error-text, .ui-widget-header .ui-state-error-text {
-  color: font-color(#c32231, "loud"); }
+  color: #c32231; }
 
 .ui-priority-primary, .ui-widget-content .ui-priority-primary, .ui-widget-header .ui-priority-primary {
   font-weight: bold; }
@@ -5642,6 +5730,26 @@ div.reveal-modal, dialog {
     .content-padding {
       padding: 0 1rem; } }
 
+/**
+* Split Layout With Off Canvas Reveal:
+* `.mobile-offcanvas-wrapper` - This is a structural container that has the ablity to change from content and sidebar to just content and the sidebar being off canvas. Trigger the off canvas reveal by adding `.navOn` to the div.split-layout. Change the switch point by adding `.large`,`.medium`, or `.small`. <br>!!! must include _layout-split.scss !!! <br>!!! requires javascripts !!!
+* 
+*   @example
+*	<div class="mobile-offcanvas-wrapper">
+*	<section class="split-layout medium navOn">
+*	<aside class="split-sidebar">
+*	<h2>Sidebar</h2>
+*	<p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+*	</aside>
+*	<article class="split-content">
+*	<div class="page-wrapper">
+*	<h1>Content</h1>
+*	<p>Some extra content in the content area</p><p> It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+*	</div>
+*	</article>
+*	</section>
+*	</div>
+*/
 .mobile-offcanvas-wrapper {
   position: relative;
   overflow: hidden;
@@ -5935,48 +6043,48 @@ h1 blockquote, h2 blockquote, h3 blockquote, h4 blockquote, h5 blockquote, h6 bl
   letter-spacing: .01em;
   border: 0 none transparent; }
 h1 blockquote {
-  font-size: 0.46154em;
-  line-height: 0.875em;
+  font-size: 0.73913em;
+  line-height: 1.23529em;
   margin-top: 0em;
   margin-bottom: 0em; }
 h1.with-underline blockquote {
-  font-size: 0.46154em;
-  line-height: 0.875em;
+  font-size: 0.73913em;
+  line-height: 1.23529em;
   margin-top: 0em;
-  margin-bottom: 0.4375em; }
+  margin-bottom: 0.61765em; }
 h2 blockquote {
-  font-size: 0.58065em;
-  line-height: 1.16667em;
+  font-size: 0.78947em;
+  line-height: 1.4em;
   margin-top: 0em;
   margin-bottom: 0em; }
 h2.with-underline blockquote {
-  font-size: 0.58065em;
-  line-height: 1.16667em;
-  margin-top: 0.29167em;
-  margin-bottom: 0.29167em; }
+  font-size: 0.78947em;
+  line-height: 1.4em;
+  margin-top: 0.35em;
+  margin-bottom: 0.35em; }
 h3 blockquote {
-  font-size: 0.75em;
-  line-height: 1.16667em;
+  font-size: 0.88235em;
+  line-height: 1.4em;
   margin-top: 0em;
   margin-bottom: 0em; }
 h3.with-underline blockquote {
-  font-size: 0.46154em;
-  line-height: 0.875em;
-  margin-top: 0.21875em;
-  margin-bottom: 0.21875em; }
+  font-size: 0.73913em;
+  line-height: 1.23529em;
+  margin-top: 0.30882em;
+  margin-bottom: 0.30882em; }
 h4 blockquote {
-  font-size: 0.77778em;
+  font-size: 0.93333em;
   line-height: 1.5em;
   margin-top: 0em;
   margin-bottom: 0em; }
 h5 blockquote {
-  font-size: 0.78571em;
-  line-height: 1.90909em;
+  font-size: 0.92857em;
+  line-height: 1.61538em;
   margin-top: 0em;
   margin-bottom: 0em; }
 h6 blockquote {
-  font-size: 0.57143em;
-  line-height: 2.625em;
+  font-size: 0.85714em;
+  line-height: 1.75em;
   margin-top: 0em;
   margin-bottom: 0em; }
 

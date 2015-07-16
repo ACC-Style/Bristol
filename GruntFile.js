@@ -202,14 +202,7 @@ module.exports = function(grunt){
 				tasks: ['styledown:base','styledown:admin','cssmin', 'copy:INTERNAL'],
 				options: {
 					livereload:true,
-				}
-			},
-			html:{
-				files:['converted-html/*.html','styleguide/styleguide.html'],
-				task:['default'],
-				options:{
-					livereload:true,
-				}
+					}
 			},
 			data: {
 				files: [ 
@@ -246,6 +239,7 @@ module.exports = function(grunt){
 		'styledown:base',
 		'styledown:admin',
 		'clean:sassCasheFolder',
+		'liquid',
 		'connect',
 		'uglify:js',
 		'cssmin',
@@ -260,6 +254,5 @@ module.exports = function(grunt){
 		'clean',
 		'sass:dist',
 		'liquid',
-		"copy:UI",
 		'copy:TFS']);
 }

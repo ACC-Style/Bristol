@@ -1798,6 +1798,16 @@
       </div>
     </section>
 
+    <section class="sg-block sg-section-file-input">
+      <h3 id="file-input" class="sg">File Input</h3>
+      <p class="sg">@example</p>
+      <div class="button file-upload sg">
+        <i class="fa fa-upload sg"></i>
+        <span class="text sg">Upload</span>
+        <input type="file" class="upload sg" data-bind="file: { data: document, name: documentname, allowed: allowedTypes }">
+      </div>
+    </section>
+
     <section class="sg-block sg-section-questions-required">
       <div class="sg-text">
         <h3 id="questions-required" class="sg">Questions -Required</h3>
@@ -2128,6 +2138,103 @@
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&apos;hint&apos;</span>&gt;</span>This is helper text for this question<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+      </div>
+    </section>
+
+    <section class="sg-block sg-section-radio-button-with-grouped-content">
+      <div class="sg-text">
+        <h3 id="radio-button-with-grouped-content" class="sg">Radio Button with Grouped Content</h3>
+        <p class="sg">
+          <code class="sg">.radio-group</code>- This is a structural container for radio buttons that have an extended amount of content that goes with the radio button.</p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <div class="question">
+            <div class="label-holder">
+              <label for="">
+                <span class="text">The Title of the Radio Group</span>
+                <span class="required-holder">
+                  <i class="fa fa-holder-dynamic"></i>
+                </span>
+              </label>
+            </div>
+            <div class="input-holder radio-group-holder row">
+              <div class="column input-space small-6">
+                <label for="radio1" class="radio-group">
+                  <span class="radio">
+                    <input id="radio1" name="number" value="#" type="radio">
+                  </span>
+                  <span class="radio-content">
+                    <span class="h4">Title One</span>
+                    <span class="normal">Sub Content</span>
+                  </span>
+                </label>
+              </div>
+              <div class="column input-space small-6">
+                <label for="radio2" class="radio-group">
+                  <span class="radio">
+                    <input id="radio2" name="number" value="#" type="radio">
+                  </span>
+                  <span class="radio-content">
+                    <span class="h4">Title Two</span>
+                    <span class="normal">Sub Content</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+            <div class="message-holder">
+              <small class="error">
+                <i class="fa fa-holder"></i>Error message</small>
+              <small class="warning">
+                <i class="fa fa-holder"></i>Warning message</small>
+              <small class="data">
+                <i class="fa fa-holder"></i>Data message</small>
+            </div>
+            <div class="hint">This is some hint text</div>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;question&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;label-holder&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>The Title of the Radio Group<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;required-holder&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;input-holder radio-group-holder row&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column input-space small-6&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;radio1&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;radio-group&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;radio&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&apos;radio1&apos;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;number&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;radio&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;radio-content&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;h4&quot;</span>&gt;</span>Title One<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;normal&quot;</span>&gt;</span>Sub Content<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column input-space small-6&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;radio2&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;radio-group&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;radio&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&apos;radio2&apos;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;number&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;radio&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;radio-content&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;h4&quot;</span>&gt;</span>Title Two<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;normal&quot;</span>&gt;</span>Sub Content<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;message-holder&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;error&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Error message<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;warning&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Warning message<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;data&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Data message<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;hint&quot;</span>&gt;</span>This is some hint text<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
       </div>
     </section>
@@ -3796,6 +3903,57 @@
 <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;https://twitter.github.io/&quot;</span>&gt;</span>Documentation<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></pre>
+      </div>
+    </section>
+
+    <section class="sg-block sg-section-split-layout-with-off-canvas-reveal">
+      <div class="sg-text">
+        <h3 id="split-layout-with-off-canvas-reveal" class="sg">Split Layout With Off Canvas Reveal</h3>
+        <p class="sg">
+          <code class="sg">.mobile-offcanvas-wrapper</code>- This is a structural container that has the ablity to change from content and sidebar to just content and the sidebar being off canvas. Trigger the off canvas reveal by adding
+          <code class="sg">.navOn</code>to the div.split-layout. Change the switch point by adding
+          <code class="sg">.large</code>,
+          <code class="sg">.medium</code>, or
+          <code class="sg">.small</code>.
+          <br class="sg">!!! must include _layout-split.scss !!!
+          <br class="sg">!!! requires javascripts !!!</p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <div class="mobile-offcanvas-wrapper">
+            <section class="split-layout medium navOn">
+              <aside class="split-sidebar">
+                <h2>Sidebar</h2>
+                <p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+              </aside>
+              <article class="split-content">
+                <div class="page-wrapper">
+                  <h1>Content</h1>
+                  <p>Some extra content in the content area</p>
+                  <p>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+                </div>
+              </article>
+            </section>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;mobile-offcanvas-wrapper&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;split-layout medium navOn&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">aside</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;split-sidebar&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Sidebar<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Contrary to popular belief, Lorem Ipsum is not simply random text.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">aside</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;split-content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Content<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Some extra content in the content area<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
+          a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur,
+          from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable
+          source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of
+          Good and Evil) by Cicero, written in 45 BC.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
       </div>
     </section>
 
