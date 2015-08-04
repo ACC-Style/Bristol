@@ -1,0 +1,88 @@
+/**
+* Toggle Select:
+* `.toggle .miniized` - small multi position toggle.  there is not animation like the switches and are not driven by an imput.
+* 
+*   @example
+*	<ul class="toggle">
+*	    <li class="toggle-position "><a href="javascript:void(0)" onclick=" setPageSize(10) ">10</a></li>
+*	    <li class="toggle-position selected"><a href="javascript:void(0)" onclick=" setPageSize(20) ">20</a></li>
+*	    <li class="toggle-position "><a href="javascript:void(0)" onclick=" setPageSize(50) ">50</a></li>
+*	</ul>
+*	<ul id="Toggle" class="toggle minimized">
+*	    <li class="toggle-position "><a href="javascript:void(0)" onclick=" setPageSize(10) ">10</a></li>
+*	    <li class="toggle-position selected"><a href="javascript:void(0)" onclick=" setPageSize(20) ">20</a></li>
+*	    <li class="toggle-position "><a href="javascript:void(0)" onclick=" setPageSize(50) ">50</a></li>
+*	</ul>
+*/
+
+$toggle-background-color:grey(10);
+$toggle-border-color:grey(20);
+$position-background-color:grey(10);
+$position-background-hover-color:color( rebrand-color($primary-color,2), 30);
+$selected-position-background-color:color( rebrand-color($primary-color,2), 20);
+$selected-position-border-color:color( rebrand-color($primary-color,2), 80);;
+
+
+
+ul.toggle{
+	background:$toggle-background-color url('../img/billie-holiday.png') repeat top right;
+	border:2px solid $toggle-border-color;
+	list-style:none;
+	display:inline-block;
+	margin:0;
+	padding:0;
+	border-radius:10px;
+	font-size: 1rem;
+	a,a:link{
+		text-decoration:none;
+		line-height:1em;
+	} 
+	.toggle-position{
+		display:inline-block;
+		padding: .25em .375em;
+		border:1px solid transparent;
+		border-radius:5px;
+		background-color:$position-background-color;
+		opacity:.5;
+		color:#fff;
+		&:hover{
+			background-color:$position-background-hover-color;
+			opacity: .8;
+			color:$black
+		}
+		
+		a{
+			box-sizing:border-box;
+			padding:.25em .5em;
+			display:block;
+		}
+		&.selected{
+			opacity: 1;
+			border:color($selected-position-border-color,80) .2em solid;
+			background-color:$selected-position-background-color;
+			margin: -.25em 0px;
+			border-radius:5px;
+			font-weight: 900;
+			padding: .45em .375em;
+			&:hover{
+				background-color:$selected-position-background-color;
+				border-color:$selected-position-border-color;
+				a{color:$black;}
+			}
+			a{
+				color:$black;
+				&:hover{
+					color:$black;
+
+				}
+			}
+		}
+	}
+	&.three{
+	}
+	&.minimized{
+	 font-size:.75rem;
+	 border-radius:0;
+	 .selected{border-radius: 2px; border-width:2px;margin:-3px;}
+	}
+}

@@ -3483,6 +3483,61 @@
       </div>
     </section>
 
+    <section class="sg-block sg-section-toggle-select">
+      <div class="sg-text">
+        <h3 id="toggle-select" class="sg">Toggle Select</h3>
+        <p class="sg">
+          <code class="sg">.toggle .miniized</code>- small multi position toggle. there is not animation like the switches and are not driven by an imput.</p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <ul class="toggle">
+            <li class="toggle-position ">
+              <a href="javascript:void(0)" onclick=" setPageSize(10) ">10</a>
+            </li>
+            <li class="toggle-position selected">
+              <a href="javascript:void(0)" onclick=" setPageSize(20) ">20</a>
+            </li>
+            <li class="toggle-position ">
+              <a href="javascript:void(0)" onclick=" setPageSize(50) ">50</a>
+            </li>
+          </ul>
+          <ul id="Toggle" class="toggle minimized">
+            <li class="toggle-position ">
+              <a href="javascript:void(0)" onclick=" setPageSize(10) ">10</a>
+            </li>
+            <li class="toggle-position selected">
+              <a href="javascript:void(0)" onclick=" setPageSize(20) ">20</a>
+            </li>
+            <li class="toggle-position ">
+              <a href="javascript:void(0)" onclick=" setPageSize(50) ">50</a>
+            </li>
+          </ul>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;toggle&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;toggle-position &quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;javascript:void(0)&quot;</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">&quot; setPageSize(10) &quot;</span>&gt;</span>10<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;toggle-position selected&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;javascript:void(0)&quot;</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">&quot; setPageSize(20) &quot;</span>&gt;</span>20<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;toggle-position &quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;javascript:void(0)&quot;</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">&quot; setPageSize(50) &quot;</span>&gt;</span>50<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;Toggle&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;toggle minimized&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;toggle-position &quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;javascript:void(0)&quot;</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">&quot; setPageSize(10) &quot;</span>&gt;</span>10<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;toggle-position selected&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;javascript:void(0)&quot;</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">&quot; setPageSize(20) &quot;</span>&gt;</span>20<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;toggle-position &quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;javascript:void(0)&quot;</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">&quot; setPageSize(50) &quot;</span>&gt;</span>50<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></pre>
+      </div>
+    </section>
+
     <section class="sg-block sg-section-user-id-block">
       <div class="sg-text">
         <h3 id="user-id-block" class="sg">User ID Block</h3>

@@ -7,7 +7,9 @@ module.exports = function(grunt){
 					port: 8000,
 					open:{
 						target: 'http://localhost:8000', // target url to open
-					}
+					},
+					keepalive:true,
+
 				}
 			}
 		},
@@ -181,8 +183,8 @@ module.exports = function(grunt){
 		},
 		watch: { 
 			options: {
-			    livereload: true,
-			  },
+					livereload: true,
+				},	
 			js: {
 				files: [ 'assets/js/*.js','templates/includes/scripts.liquid' ],
 				tasks: [ 'uglify:js','liquid','copy:INTERNAL' ],
@@ -220,7 +222,6 @@ module.exports = function(grunt){
 	});
 	// These plugins provide necessary tasks.
 	grunt.loadNpmTasks('grunt-contrib-connect');
-	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-uglify');	
 	grunt.loadNpmTasks('grunt-contrib-copy');	
 	grunt.loadNpmTasks('grunt-contrib-sass');
@@ -230,7 +231,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-sass-convert');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
-
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	// Default task.
 	grunt.registerTask('serve', [
 		'clean:sassCasheFolder',
@@ -240,19 +241,13 @@ module.exports = function(grunt){
 		'styledown:admin',
 		'clean:sassCasheFolder',
 		'liquid',
-		'connect',
-		'uglify:js',
-		'cssmin',
 		'copy:INTERNAL',
-		'watch'
+		'watch',
 
 	]);
-	grunt.registerTask('convert', ['sass-convert:lib']);
+	grunt.registerTask('connect', [
+		'connect'
+	]);
 	grunt.registerTask('movetoserver', ['copy:STYLES']);
 	grunt.registerTask('uicopy',['copy:UI','copy:TFS']);
-	grunt.registerTask('tfscopy',[
-		'clean',
-		'sass:dist',
-		'liquid',
-		'copy:TFS']);
 }

@@ -76,6 +76,16 @@ $( "#tags" ).autocomplete({
         focusOnHover:true,
       }
     );
+    $("#Toggle").selectonic(
+      {
+              multi:false,
+      mouseMode: "standard",
+        keyboard: false,
+        focusBlur: true,
+        keyboardMode:"toggle",
+        focusOnHover:true,
+      }
+    );
     var $holder = $("#PanelSelector"),panels = $holder.find('.panel-selector'), parent_panel = $holder.find('.parent ul'), child_panel = $holder.find('.child ul');
     parent_panel.selectonic({
       multi:false,
