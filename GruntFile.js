@@ -242,6 +242,7 @@ module.exports = function(grunt){
 		'clean:sassCasheFolder',
 		'liquid',
 		'copy:INTERNAL',
+		'connect',
 		'watch',
 
 	]);

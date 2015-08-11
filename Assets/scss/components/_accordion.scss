@@ -37,7 +37,7 @@
 	.collapsable-panel{display:block;}
 	.toggle{
 		.fa{ 
-			color:fontcolor($primary-color);
+			color:fontcolor(rebrand-color($primary-color,3));
 			-webkit-transition: .25s ease-in-out;
 			-moz-transition: .25s ease-in-out;
 			-o-transition: .25s ease-in-out;
@@ -46,11 +46,11 @@
 			&.fa-holder:before{ content: $fa-var-chevron-circle-right;}
 		}
 		.text{ color:fontcolor($black);padding-left: .5rem;}
-		&:hover {.fa{color:fontcolor($primary-color,"loud");}
+		&:hover {
+		.fa{color:fontcolor(rebrand-color($primary-color,3),"loud");}
 		.text{color:fontcolor($black,"loud");}}
 	}
-
-	 .selected .toggle .fa{ @include fa-icon-rotate(90deg, 1); color:fontcolor($success-color,"loud");}
+	.selected .toggle .fa{ @include fa-icon-rotate(90deg, 1); color:fontcolor(rebrand-color($success-color,2),"loud");}
 }
 
 
