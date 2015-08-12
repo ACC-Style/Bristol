@@ -70,11 +70,11 @@ $repeater-color: rebrand-color($primary-color,2);
 	.question-group{
 		padding-top:1.5em; 
 		padding-bottom:1.85em;
-		border:2px dotted color($repeater-color,20);
+		border:2px dotted desaturate( color($repeater-color,20), 40% );
 		margin-top:.5em;
 		border-radius:.5em;
-		border-top:2px solid color($repeater-color,60);
-		border-bottom:2px solid  color($repeater-color,60);
+		border-top:2px soliddesaturate( color($repeater-color,80), 40% );
+		border-bottom:2px solid  desaturate( color($repeater-color,80), 40% );
 		position: relative;
 		.required-message{
 			font-size: ms(-1);
@@ -82,8 +82,8 @@ $repeater-color: rebrand-color($primary-color,2);
 			position: absolute;
 			top:-2px;
 			right:-2px;
-			background-color: color($repeater-color,60);
-			color:color-contrast(color($repeater-color,60));
+			background-color: desaturate( color($repeater-color,80), 40% );
+			color:color-contrast(color($repeater-color,80));
 		}
 
 	}
@@ -113,7 +113,7 @@ $repeater-color: rebrand-color($primary-color,2);
 			padding: .35rem .75rem .45rem;
 			border-radius: 4px;
 			height:auto;
-			border:2px solid $repeater-color;
+			border:2px solid rebrand-color($primary-color,3);
 			font-weight: 900;
 		}
 		.save{
@@ -121,7 +121,7 @@ $repeater-color: rebrand-color($primary-color,2);
 			position: relative;
 			text-align: right;
 			float:right;
-			background-color:$repeater-color;
+			background-color:rebrand-color($primary-color,3);
 			color:white;
 			text-decoration: none;
 			margin-right: 1em;
@@ -133,7 +133,7 @@ $repeater-color: rebrand-color($primary-color,2);
 			background-color: white;
 			border-radius: 4px;
 			margin-left: 1em;
-			border-color: color($repeater-color,60);
+			border-color: color($repeater-color,80);
 			&:hover{background-color:grey(10);border-color: color($repeater-color,100)}
 
 		}

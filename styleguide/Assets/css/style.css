@@ -2520,8 +2520,12 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
 *	</ul>
 */
 .tabs {
-  font-size: 16px;
-  margin-bottom: .5rem;
+  font-size: 1.28571em;
+  line-height: 1.16667em;
+  margin-top: 0.29167em;
+  margin-bottom: 0.875em;
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 700;
   margin-left: 0;
   width: 100%;
   background: #e6e6e6; }
@@ -2580,13 +2584,6 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
         background-color: #b3b3b3; }
         .tabs li.secondary:hover a {
           color: #333333; }
-  .tabs a {
-    font-size: .75em;
-    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-    font-weight: 700; }
-    @media only screen and (min-width: 768px) {
-      .tabs a {
-        font-size: .85em; } }
   @media only screen and (max-width: 768px) {
     .tabs {
       width: 100%;
@@ -2627,39 +2624,60 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
 *		<li class=""><a>Tab 2</li>
 *		<li class="selected"><a >Tab 3</a></li>
 *		<li class=""><a >Tab 4</a></li>
+*		<li class=""><a >Tab 5</a></li>
+*		<li class=""><a >Tab 6</a></li>
 *	</ul>
 */
 .tabs.primary {
-  font-size: 18px;
+  font-size: 1.57143em;
+  line-height: 1.90909em;
+  margin-top: 0.23864em;
+  margin-bottom: 0.71591em;
   border: 0;
   background: transparent none; }
   @media only screen and (max-width: 1024px) {
     .tabs.primary {
       margin: .25em; } }
   .tabs.primary li {
+    position: relative;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    background-color: #999999; }
+    background-color: #fff;
+    border-top: 1px #999999 solid;
+    border-bottom: 0.45em #999999 solid;
+    border-left: 2px #999999 solid;
+    border-right: 2px #999999 solid;
+    margin: 0 -3px; }
     .tabs.primary li a {
       color: #333333; }
       @media only screen and (max-width: 320px) {
         .tabs.primary li a {
           white-space: normal; } }
     .tabs.primary li:hover {
-      background-color: #b3b3b3; }
+      background-color: #fff;
+      border-color: #00827F; }
       .tabs.primary li:hover a {
-        color: #333333; }
+        color: #00827F; }
     .tabs.primary li.selected {
-      background-color: #fff; }
+      background-color: #00827F;
+      border-color: #00386b; }
       .tabs.primary li.selected a {
-        color: #333333;
-        border-bottom: 3px solid #00827F;
-        padding-bottom: .15em;
-        margin-bottom: -3px; }
+        color: #fff; }
+        .tabs.primary li.selected a:after {
+          content: "";
+          position: absolute;
+          bottom: -1px;
+          left: 50%;
+          /* width: 10%; */
+          margin-left: -10px;
+          border-style: solid;
+          border-color: transparent;
+          border-width: 0px 10px;
+          border-bottom: 10px solid #00386b; }
     .tabs.primary li.selected:hover {
-      background-color: #fff; }
+      background-color: #00827F; }
       .tabs.primary li.selected:hover a {
-        color: #333333; }
+        color: #fff; }
     .tabs.primary li.icon.selected {
       background-color: #00827F; }
       .tabs.primary li.icon.selected a {
@@ -3706,11 +3724,11 @@ input[type="checkbox"], input[type="radio"] {
   .repeater .question-group {
     padding-top: 1.5em;
     padding-bottom: 1.85em;
-    border: 2px dotted #b3fffd;
+    border: 2px dotted #c2f0ef;
     margin-top: .5em;
     border-radius: .5em;
-    border-top: 2px solid #1bfffa;
-    border-bottom: 2px solid #1bfffa;
+    border-top: 2px soliddesaturate(#00cec9, 40%);
+    border-bottom: 2px solid #29a5a2;
     position: relative; }
     .repeater .question-group .required-message {
       font-size: 11px;
@@ -3718,8 +3736,8 @@ input[type="checkbox"], input[type="radio"] {
       position: absolute;
       top: -2px;
       right: -2px;
-      background-color: #1bfffa;
-      color: #333333; }
+      background-color: #29a5a2;
+      color: #fff; }
   .repeater .repeater-action {
     position: relative;
     display: block;
@@ -3743,14 +3761,14 @@ input[type="checkbox"], input[type="radio"] {
       padding: .35rem .75rem .45rem;
       border-radius: 4px;
       height: auto;
-      border: 2px solid #00827F;
+      border: 2px solid #198dae;
       font-weight: 900; }
     .repeater .repeater-action .save {
       display: inline-block;
       position: relative;
       text-align: right;
       float: right;
-      background-color: #00827F;
+      background-color: #198dae;
       color: white;
       text-decoration: none;
       margin-right: 1em; }
@@ -3762,7 +3780,7 @@ input[type="checkbox"], input[type="radio"] {
       background-color: white;
       border-radius: 4px;
       margin-left: 1em;
-      border-color: #1bfffa; }
+      border-color: #00cec9; }
       .repeater .repeater-action .clear:hover {
         background-color: #e6e6e6;
         border-color: #00827f; }
@@ -4749,8 +4767,8 @@ ul.toggle {
   list-style: none;
   display: inline-block;
   margin: 0;
-  padding: 0;
-  border-radius: 10px;
+  padding: 0px 2px;
+  border-radius: 6px;
   font-size: 1rem; }
   ul.toggle a, ul.toggle a:link {
     text-decoration: none;
@@ -4761,36 +4779,37 @@ ul.toggle {
     border: 1px solid transparent;
     border-radius: 5px;
     background-color: #e6e6e6;
-    opacity: .5;
-    color: #fff; }
+    opacity: .75;
+    font-weight: 700; }
+    ul.toggle .toggle-position a {
+      color: #333333; }
     ul.toggle .toggle-position:hover {
-      background-color: #ade4f3;
-      opacity: .8;
-      color: #333; }
+      background-color: #198dae;
+      opacity: 1; }
+      ul.toggle .toggle-position:hover a {
+        color: #fff; }
     ul.toggle .toggle-position a {
       box-sizing: border-box;
       padding: .25em .5em;
       display: block; }
     ul.toggle .toggle-position.selected {
       opacity: 1;
-      border: #0cfff9 0.2em solid;
-      background-color: #00cec9;
+      border: #00a8a4 0.2em solid;
+      background-color: #00a8a4;
       margin: -.25em 0px;
       border-radius: 5px;
       font-weight: 900;
       padding: .45em .375em; }
       ul.toggle .toggle-position.selected:hover {
-        background-color: #00cec9;
-        border-color: #00cec9; }
-        ul.toggle .toggle-position.selected:hover a {
-          color: #333; }
+        background-color: #00a8a4;
+        border-color: #00827F; }
       ul.toggle .toggle-position.selected a {
-        color: #333; }
-        ul.toggle .toggle-position.selected a:hover {
-          color: #333; }
+        color: #fff; }
   ul.toggle.minimized {
     font-size: .75rem;
-    border-radius: 0; }
+    border-radius: 1px; }
+    ul.toggle.minimized .toggle-position {
+      border-radius: 2px; }
     ul.toggle.minimized .selected {
       border-radius: 2px;
       border-width: 2px;

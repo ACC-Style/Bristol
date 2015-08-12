@@ -2680,8 +2680,12 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
 *	</ul>
 */
 .tabs {
-  font-size: 16px;
-  margin-bottom: .5rem;
+  font-size: 1.07143em;
+  line-height: 1.4em;
+  margin-top: 0.35em;
+  margin-bottom: 1.05em;
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 700;
   margin-left: 0;
   width: 100%;
   background: #e6e6e6; }
@@ -2740,13 +2744,6 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
         background-color: #b3b3b3; }
         .tabs li.secondary:hover a {
           color: #333333; }
-  .tabs a {
-    font-size: .75em;
-    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-    font-weight: 700; }
-    @media only screen and (min-width: 768px) {
-      .tabs a {
-        font-size: .85em; } }
   @media only screen and (max-width: 768px) {
     .tabs {
       width: 100%;
@@ -2787,39 +2784,60 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
 *		<li class=""><a>Tab 2</li>
 *		<li class="selected"><a >Tab 3</a></li>
 *		<li class=""><a >Tab 4</a></li>
+*		<li class=""><a >Tab 5</a></li>
+*		<li class=""><a >Tab 6</a></li>
 *	</ul>
 */
 .tabs.primary {
-  font-size: 18px;
+  font-size: 1.21429em;
+  line-height: 1.23529em;
+  margin-top: 0.30882em;
+  margin-bottom: 0.92647em;
   border: 0;
   background: transparent none; }
   @media only screen and (max-width: 1024px) {
     .tabs.primary {
       margin: .25em; } }
   .tabs.primary li {
+    position: relative;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    background-color: #999999; }
+    background-color: #fff;
+    border-top: 1px #999999 solid;
+    border-bottom: 0.45em #999999 solid;
+    border-left: 2px #999999 solid;
+    border-right: 2px #999999 solid;
+    margin: 0 -3px; }
     .tabs.primary li a {
       color: #333333; }
       @media only screen and (max-width: 320px) {
         .tabs.primary li a {
           white-space: normal; } }
     .tabs.primary li:hover {
-      background-color: #b3b3b3; }
+      background-color: #fff;
+      border-color: #19BB9B; }
       .tabs.primary li:hover a {
-        color: #333333; }
+        color: #19BB9B; }
     .tabs.primary li.selected {
-      background-color: #fff; }
+      background-color: #19BB9B;
+      border-color: #00386b; }
       .tabs.primary li.selected a {
-        color: #333333;
-        border-bottom: 3px solid #19BB9B;
-        padding-bottom: .15em;
-        margin-bottom: -3px; }
+        color: #fff; }
+        .tabs.primary li.selected a:after {
+          content: "";
+          position: absolute;
+          bottom: -1px;
+          left: 50%;
+          /* width: 10%; */
+          margin-left: -10px;
+          border-style: solid;
+          border-color: transparent;
+          border-width: 0px 10px;
+          border-bottom: 10px solid #00386b; }
     .tabs.primary li.selected:hover {
-      background-color: #fff; }
+      background-color: #19BB9B; }
       .tabs.primary li.selected:hover a {
-        color: #333333; }
+        color: #fff; }
     .tabs.primary li.icon.selected {
       background-color: #19BB9B; }
       .tabs.primary li.icon.selected a {
@@ -3866,11 +3884,11 @@ input[type="checkbox"], input[type="radio"] {
   .repeater .question-group {
     padding-top: 1.5em;
     padding-bottom: 1.85em;
-    border: 2px dotted #c9edf7;
+    border: 2px dotted #d5e6eb;
     margin-top: .5em;
     border-radius: .5em;
-    border-top: 2px solid #5cc9e8;
-    border-bottom: 2px solid #5cc9e8;
+    border-top: 2px soliddesaturate(#25b6e0, 40%);
+    border-bottom: 2px solid #579bae;
     position: relative; }
     .repeater .question-group .required-message {
       font-size: 13px;
@@ -3878,8 +3896,8 @@ input[type="checkbox"], input[type="radio"] {
       position: absolute;
       top: -2px;
       right: -2px;
-      background-color: #5cc9e8;
-      color: #333333; }
+      background-color: #579bae;
+      color: #fff; }
   .repeater .repeater-action {
     position: relative;
     display: block;
@@ -3922,7 +3940,7 @@ input[type="checkbox"], input[type="radio"] {
       background-color: white;
       border-radius: 4px;
       margin-left: 1em;
-      border-color: #5cc9e8; }
+      border-color: #25b6e0; }
       .repeater .repeater-action .clear:hover {
         background-color: #e6e6e6;
         border-color: #198dae; }

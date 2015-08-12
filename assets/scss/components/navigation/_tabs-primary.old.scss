@@ -8,8 +8,6 @@
 *		<li class=""><a>Tab 2</li>
 *		<li class="selected"><a >Tab 3</a></li>
 *		<li class=""><a >Tab 4</a></li>
-*		<li class=""><a >Tab 5</a></li>
-*		<li class=""><a >Tab 6</a></li>
 *	</ul>
 */
 
@@ -23,58 +21,37 @@ $primary-tab-darktext:$global-default-dark-text;
 $primary-tab-lighttext:$global-default-light-text;
 
 .tabs.primary{
-	@include baseline-font(2,.25,.75);
+	font-size: 18px;
 	border:0;
 	background: transparent none;
 	@include bp(md-down){
 		margin:.25em;
 	}
 	li{
-		position: relative;
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
-		background-color:#fff;
-		border-top: 1px $primary-tab-color solid;
-		border-bottom:.45em $primary-tab-color solid; 
-		border-left: 2px $primary-tab-color solid;
-		border-right:2px $primary-tab-color solid;
-		margin:0 -3px;
-		a{
-			color:color-contrast($primary-tab-color,$primary-tab-darktext,$primary-tab-lighttext);
+		background-color: $primary-tab-color ;
+		a{color:color-contrast($primary-tab-color,$primary-tab-darktext,$primary-tab-lighttext);
 			@include bp(xs-down){ white-space: normal;}
 		}
 		&:hover{
-			background-color: #fff;
-			border-color: $primary-tab-selected-color;
-			// border-bottom-width: .85em;
-			a{color:$primary-tab-selected-color;
-				// padding-bottom: 0;
-			}
+			background-color: $primary-tab-hover-color;
+			a{color:color-contrast($primary-tab-hover-color,$primary-tab-darktext,$primary-tab-lighttext);}
 		}
 		&.selected{
-			background-color:$primary-tab-selected-color;
-			border-color:$acc-blue;
+			background-color:#fff;
 			a{
-				color:color-contrast($primary-tab-selected-color,$primary-tab-darktext,$primary-tab-lighttext);
-				&:after{
-					content: "";
-					position: absolute;
-					bottom: -1px;
-					left: 50%;
-					/* width: 10%; */
-					margin-left: -10px;
-					border-style: solid;
-					border-color: transparent;
-					border-width: 0px 10px;
-					border-bottom: 10px solid $acc-blue;
-				}
+				color:color-contrast(#fff,$primary-tab-darktext,$primary-tab-lighttext);
+				border-bottom: 3px solid $primary-tab-selected-color;
+				padding-bottom: .15em;
+				margin-bottom: -3px;
 			}
 			
 			
 		}
 		&.selected:hover{
-			background-color:$primary-tab-selected-color;
-			a{color:color-contrast($primary-tab-selected-color,$primary-tab-darktext,$primary-tab-lighttext);}
+			background-color: #fff;
+			a{color:color-contrast(#fff,$primary-tab-darktext,$primary-tab-lighttext);}
 		}
 		&.icon.selected{
 			background-color: $primary-tab-selected-color;
