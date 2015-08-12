@@ -1014,87 +1014,9 @@
   border-radius: 8px;
 }
 
-.ui-datepicker-header{
-.ui-datepicker-prev,.ui-datepicker-next{
-
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome; // shortening font declaration
-  font-size: inherit; // can't have font-size inherit on line above, so need to override
-  text-rendering: auto; // optimizelegibility throws things off #1094
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; 
-    margin: .1em;
-    border-radius: $global-radius;
-    &:before{ 
-      font-size: 1em;
-      margin: .35em .45em;
-      display: inline-block;
-    }
-    .ui-icon{text-indent: -9999px;}
-  }
-  .ui-datepicker-prev{@extend .fa-chevron-circle-left;
-  }
-  .ui-datepicker-next{@extend .fa-chevron-circle-right;
-  } 
-}
-
-/* AutoComplete */
-  .ui-autocomplete {
-    max-height: 15em;
-    overflow-y: auto;
-    /* prevent horizontal scrollbar */
-    overflow-x: hidden;
-    font-size: 1.25rem;
-    line-height: 1;
-    span{padding:0 .25rem 0 0;   font-size: .8em;}
-    .headline{ @include font-slab-bold;display:block;color:fontcolor($black); font-size: 1em;}
-    .description{@include font-italic;color:fontcolor($black,'quiet');font-size: .75em;}
-    .ui-state-focus{
-      .headline,.description{
-          color:white;
-      }} 
-
-  }
 
 
-.ui-accordion-override{
-  
-  .ui-accordion-header .ui-accordion-header-icon {
-          height: 2em;
-          width: 1.5em;
-          left: 0;
-          top: 0;
-          margin-top: 0;
-          font-size: 1.5rem;
-          padding: 1rem 0 1rem .75rem;
-          display: block;
-    }
-    .ui-icon-triangle-1-e:before{ 
-        content:"\f138";
-        color:rebrand-color(color($primary-color,80),3);
-       
-      }
-     .ui-icon-triangle-1-s:before{ 
-        content:"\f13a";
-         color:rebrand-color($select-color,2);
-      }
-  .ui-accordion-header,.ui-accordion-header:hover{
-    background:none;
-    border:0px none;
-    margin-bottom: 0;
-    padding-left: 1.75em;
-    @extend .h2;
-    color:$font-black;
-    margin-bottom: 0;
-    
-  }
-  .ui-accordion-content{
-    border:0;
-    border-radius: 0;
-     &.ui-accordion-content-active{
-      border-top:2px solid rebrand-color(color($primary-color,80),2);
-      border-bottom:2px solid grey(60);
-    }
-  }
 
-}
+
+
+

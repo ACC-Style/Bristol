@@ -1,29 +1,18 @@
 module.exports = function(grunt){
 	//Project Config
 	grunt.initConfig({
-		connect:{
-			server:{
-				options:{
-					port: 8000,
-					open:{
-						target: 'http://localhost:8000', // target url to open
-					},
-					keepalive:true,
-
-				}
-			}
-		},
-		 uglify: {
-            js: {
-                files: {'assets/js/app.min.js': 'assets/js/app.js'}
-                }
-        },
-        autoprefixer: {
-			main: {
-				src: 'assets/css/style.min.css',
-			},
-		},
-		cssmin: {
+		 connect:{
+      server:{
+        options:{
+          port: 8000,
+          open:{
+            target: 'http://localhost:8000', // target url to open
+          },
+          keepalive:true,
+        }
+      }
+    },
+    		cssmin: {
 			  options: {
 			    shorthandCompacting: false,
 			    roundingPrecision: -1
@@ -100,54 +89,17 @@ module.exports = function(grunt){
 		  },
 		copy:{ 
 			STYLES: {
-			files: [{
-				expand: true,
-				cwd: 'styleguide/',
-				src: '**',
-				dest: '//rdstgweb5/stage.tools.acc.org/BaseStyle'
-			},
-			{
-				expand: true,
-				cwd: 'styleguide/',
-				src: '**',
-				dest: '//rdstgweb6/stage.tools.acc.org/BaseStyle'
-			}]
-
-			},
-			// remoteFolder:{
-			// 	expand: true,
-			// 	cwd: 'assets/scss',
-			// 	src: '**',
-			// 	dest:"C:/Users/mwatier/Dropbox/ACC-Markus&Matt/AnticoagBuild/04_Build/AntiCoag/assets/scss"
-			// },
-			UI:{
-				files:[{
+				files: [{
 					expand: true,
-					dot:true,
-					cwd:'templates',
-					dest:'converted-html/',
-					src:['{,**/}*.liquid'],
-					rename: function(dest,src){
-						return dest + src.replace('.liquid','.html');
-					}
-				}]
-
-			},
-			TFS:{
-				files:[
-				{
-					expand:true,
-					cwd:'assets/js',
-					src:'**',
-					dest:'converted-html/assets/js',
+					cwd: 'styleguide/',
+					src: '**',
+					dest: '//rdstgweb5/stage.tools.acc.org/BaseStyle'
 				},
 				{
-					expand:true,
-					cwd:'converted-html/',
-					src:'**',
-					dest:'C:\tfsonline\ACCApps\Trunk\MembershipApplication\MembershipApplication\UIComponents',
-
-
+					expand: true,
+					cwd: 'styleguide/',
+					src: '**',
+					dest: '//rdstgweb6/stage.tools.acc.org/BaseStyle'
 				}]
 			},
 			INTERNAL:{
@@ -176,56 +128,28 @@ module.exports = function(grunt){
 			}
 
 		},
+	    watch: {
+			js: {
+			files: [ 'Assets/js/*.js','templates/includes/scripts.liquid' ],
+			tasks: [ 'liquid','copy:assets' ],
+
+			},
+			scss: {
+			files: [ 'Assets/scss/*.scss','Assets/scss/*/*.scss','Assets/scss/*/*/*.scss' ],
+			tasks: [ 'sass:dist','copy:assets'],
+
+			},
+	    },
 		clean: {
 			localFolder:["converted-html/**"],
 			sassCasheFolder:[".sass-cache/**"]
 
 		},
-		watch: { 
-			options: {
-					livereload: true,
-				},	
-			js: {
-				files: [ 'assets/js/*.js','templates/includes/scripts.liquid' ],
-				tasks: [ 'uglify:js','liquid','copy:INTERNAL' ],
-				options: {
-					livereload: true,
-				}
-			},
-			scss: {
-				files: [ 'assets/scss/*.scss','assets/scss/*/*.scss','assets/scss/*/*/*.scss' ],
-				tasks: [ 'clean:sassCasheFolder','sass:dist'],
-				options: {
-					livereload: true,
-				}
-			},
-			css:{
-				files: ['assets/css/style.css','assets/css/style-admin.css',],
-				tasks: ['styledown:base','styledown:admin','cssmin', 'copy:INTERNAL'],
-				options: {
-					livereload:true,
-					}
-			},
-			data: {
-				files: [ 
-					'templates/*.liquid', 
-					'templates/includes/**', 
-					'assets/model/*.json' 
-				],
-				tasks: [ 'liquid'],
-				options: {
-					livereload: true,
-				}				
-			}
-
-		}
 	});
 	// These plugins provide necessary tasks.
 	grunt.loadNpmTasks('grunt-contrib-connect');
-	grunt.loadNpmTasks('grunt-contrib-uglify');	
 	grunt.loadNpmTasks('grunt-contrib-copy');	
 	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-liquid');
 	grunt.loadNpmTasks('grunt-styledown');
 	grunt.loadNpmTasks('grunt-contrib-clean');
@@ -233,22 +157,17 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	// Default task.
-	grunt.registerTask('serve', [
+	grunt.registerTask('build', [
 		'clean:sassCasheFolder',
 		'sass:foundation',
+		'clean:sassCasheFolder',
 		'sass:dist',
 		'styledown:base',
 		'styledown:admin',
-		'clean:sassCasheFolder',
-		'liquid',
 		'copy:INTERNAL',
-		'connect',
+		'liquid',
 		'watch',
-
 	]);
-	grunt.registerTask('connect', [
-		'connect'
-	]);
-	grunt.registerTask('movetoserver', ['copy:STYLES']);
-	grunt.registerTask('uicopy',['copy:UI','copy:TFS']);
+	grunt.registerTask('serve', [
+		'connect',]);
 }
