@@ -31,7 +31,7 @@ $primary-tab-darktext:$global-default-dark-text;
 $primary-tab-lighttext:$global-default-light-text;
 
 .tabs.primary{
-	@include baseline-font(2,.25,.75);
+	@include baseline-font(3,0,0);
 	border:0;
 	background:none;
 	margin:0;
@@ -40,7 +40,6 @@ $primary-tab-lighttext:$global-default-light-text;
 	    content:"";
 	    display:table;
 	    clear:both;
-
 	}
 	li{
 		position: relative;
@@ -53,7 +52,7 @@ $primary-tab-lighttext:$global-default-light-text;
 		border-right:1px $primary-tab-color solid;
 		margin:0;
 		display: block;
-		float:left;
+		float:left;	
 		a{
 			color:color-contrast($primary-tab-color,$primary-tab-darktext,$primary-tab-lighttext);
 			@include bp(xs-down){ white-space: normal;}
@@ -84,7 +83,7 @@ $primary-tab-lighttext:$global-default-light-text;
 					margin-left: -10px;
 					border-style: solid;
 					border-color: transparent;
-					border-width: 0px 10px;
+					border-width: 0px 8px;
 					border-bottom: 10px solid $primary-tab-Selected-tick-color;
 				}
 			}
@@ -111,8 +110,9 @@ $primary-tab-lighttext:$global-default-light-text;
 			}
 		}
 	}
+
 	@include bp(sm-down){
-		@include baseline-font(1,.25,.5);
+		@include baseline-font(1,0,0);
 		width:100%;
 		clear:both;
 		@include flexbox();
@@ -149,16 +149,18 @@ $primary-tab-lighttext:$global-default-light-text;
 					margin-left: -10px;
 					border-style: solid;
 					border-color: transparent;
-					border-width: 0px 10px;
-					border-top: 10px solid color-contrast($primary-tab-Selected-tick-color);
+					border-width: 0px 8px;
+					border-top: 10px solid  $primary-tab-Selected-tick-color;
 					border-bottom: 0 none;
 				}
 		}
 		@include bp(sm-down){
-			@include baseline-font(0,.25,.5);
+			@include baseline-font(0,0,0);
+			margin: 0;
 		}
 		@include bp(xs-down){
-			@include baseline-font(-1,.25,.25);
+			@include baseline-font(-1,0,0);
 		}
+
 	}
 }

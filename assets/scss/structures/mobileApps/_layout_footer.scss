@@ -40,16 +40,24 @@
 		border-top-color:rebrand-color($acc-blue,3);
 		a:after{border-top-color:rebrand-color($acc-blue,3);}
 	}
-	@include bp(md-down){
-		text-align: right;
-		.logo {display: block;}
-		.logo img{display: block; width:320px;}
-		.tabs{width:100%;}
-	}
 	@include bp(sm-down){
-		.tabs{margin: 0;}
-		.logo{ border-bottom:rebrand-color($acc-blue,3) 4px solid;&:after{content:"";display: table;clear:both;}}
+		text-align: right;
+		
+		.logo img{display: block; width:320px;}
+		.tabs{width:100%; margin: 0;}
+		.logo{display: block; border-bottom:rebrand-color($acc-blue,3) 4px solid;&:after{content:"";display: table;clear:both;}}
 		.logo img{max-width:95%;margin:.25rem 2.5%;}
+	}
+	
+		@include bp(lg){
+			.tabs.primary.reverse{
+				&, li{
+					background-color: transparent;
+					border:0;
+				a{text-decoration: underline;color: #fff;}
+				}
+				li.selected a:after{border-top-color:#fff;}
+		}
 	}
 
 }
