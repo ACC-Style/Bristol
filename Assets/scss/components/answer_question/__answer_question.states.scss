@@ -1,0 +1,94 @@
+// State Modifications
+// This code is just for dependency this is to help maintain the project but doesn't produce any css.
+$required-SCSS_states: "false" !default;
+$required_data:(
+	'bool' :$required-SCSS_states,
+	'required':'__states.required.scss',
+	'path':'scss/base/__states.required.scss',
+	'file':'_answer_quesiton.required.scss'
+	);
+@include required-check($required_data...);
+
+
+// End of required check
+.answer,.question{
+	.required{display:none;}
+	@include match-display(".required");
+	@each $State in $states{
+		#{map-get($State, "Selector")}{display: none;}
+		@include match-display( map-get($State, "Selector") );
+	}
+}
+.required-holder {
+	@each $State in $states{
+		$selector:map-get($State,"Selector");
+		.answer#{$selector} &,.question#{$selector} &{
+			@extend %visible-required-icon;
+			color:fontcolor(map-get($State, 'Color'));
+		}
+
+	}
+}
+.label-holder{
+	@each $State in $states{
+		$selector:map-get($State,"Selector");
+		$color: map-get($State, 'Color');
+		#{$selector} &{
+			color:fontcolor($color);
+		}
+	}
+}
+.input-holder input,.input-holder select,.input-holder textarea{
+	@each $State in $states{
+		$selector:map-get($State,"Selector");
+		$color: map-get($State, 'Color');
+		#{$selector} &{
+			border-color:fontcolor($color);
+		}
+	}
+}
+.input-holder .postfix,.input-holder .prefix,.input-holder .value{
+	@each $State in $states{
+		$selector:map-get($State,"Selector");
+		$color: map-get($State, 'Color');
+		$backgroundcolor:mix(color($color,20),grey(20));
+		#{$selector} &{
+			color:fontcolor($color);
+		}
+	}
+}
+.input-holder .postfix,.input-holder .prefix{
+	@each $State in $states{
+		$selector:map-get($State,"Selector");
+		$color: map-get($State, 'Color');
+		$background-color:mix(color($color,20),grey(20));
+		#{$selector} &{
+			border-color:fontcolor($color);
+			background-color:$background-color;
+		}
+	}
+}
+
+textarea,select,input,datalist{ 
+@each $State in $states{
+		$selector:map-get($State,"Selector");
+		#{$selector} &{
+			margin-bottom: 0;
+		}
+	}
+} 
+
+textarea,select,input{
+	.error &{border-color:$warning-color;}
+	.alert &,.warning &{border-color:$alert-color;}
+} 
+.message-holder{
+	@each $State in $states{
+		$selector:map-get($State,"Selector");
+		$color: map-get($State, 'Color');
+		small#{$selector},.span#{$selector}{
+			background-color: $color;
+			color:color-contrast($color);
+		}
+	}
+}

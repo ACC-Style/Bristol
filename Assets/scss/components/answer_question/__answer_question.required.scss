@@ -33,18 +33,10 @@
 }
 .answer,.question{
 	margin-bottom: .5rem;
-	.data,.error,.warning,.alert,.validated, .required{display:none;}
-	@include match-display(".required");
-	
-	.unit{
-		@include grid-row();
-		@include prefix-postfix-base();
-		@extend %h6;
+	.prefix,.postfix,.value{
+		@include baseline-font(-1,.5,.25);
+		@include font-bold();
 		color:grey(50);
-		border-color:grey(0);
-		text-align: left;
-		padding-left: .5rem;
-		line-height: 1;
 	}
 }
 .label-holder,.input-holder,.message-holder,.value-holder{
@@ -53,7 +45,6 @@
 .label-holder{
 	label, .label{@include font-slab-bold();}
 	@include baseline-font(0,.5,.25);
-	
 	position: relative;
 	background-color:transparent;
 	color:fontcolor($black);
@@ -62,8 +53,6 @@
 		white-space:normal;
 	}
 	.text{padding-right:1rem; line-height: 1.2em;}
-	.error &{color:fontcolor($warning-color);}
-	.warning &{color:fontcolor($alert-color);}
 }
 
 
@@ -109,7 +98,7 @@ line-height: 1.16667em;
 }}
 .message-holder{
 	small, span{
-		@extend %h6;
+		@include baseline-font(-1);
 		display: none;
 		padding: .375rem .5625rem .5625rem;
 		margin-top: -1px;
@@ -122,48 +111,7 @@ line-height: 1.16667em;
 }
 .hint{
 	@extend .row;
-	margin-top: -.75rem;
-	font-size: .75rem;
-	line-height: 1rem;
+	@include baseline-font(-2);
 	@extend %italic;
 }
 
-// State Modifications
-// This code is just for dependency this is to help maintain the project but doesn't produce any css.
-$required-SCSS_states: "false" !default;
-$required_data:(
-	'bool' :$required-SCSS_states,
-	'required':'__states.required.scss',
-	'path':'scss/base/__states.required.scss',
-	'file':'_answer_quesiton.required.scss'
-	);
-@include required-check($required_data...);
-
-
-// End of required check
-
-.answer,.question{
-	@each $State in $states{
-		@include match-display( map-get($State, "Selector") );
-	}
-}
-.required-holder {
-	@each $State in $states{
-		$selector:map-get($State,"Selector");
-		.answer#{$selector} &,.question#{$selector} &{
-			@extend %visible-required-icon;
-			color:fontcolor(map-get($State, 'Color'));
-		}
-
-	}
-}
-.message-holder{
-	@each $State in $states{
-		$selector:map-get($State,"Selector");
-		$color: map-get($State, 'Color');
-		small#{$selector},.span#{$selector}{
-			background-color: $color;
-			color:color-contrast($color);
-		}
-	}
-}

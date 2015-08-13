@@ -2285,7 +2285,7 @@ button::-moz-focus-inner {
 @media only screen and (min-width: 40.063em) {
   button, .button {
     display: inline-block; } }
-.h1, h1, .h2, h2, .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .switch-value, .section-nav .text, .h5, h5, .table thead th, .table thead td, .h6, h6, .answer .unit, .question .unit, .message-holder small, .message-holder span {
+.h1, h1, .h2, h2, .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .switch-value, .section-nav .text, .h5, h5, .table thead th, .table thead td, .h6, h6 {
   margin-top: 0;
   clear: both; }
 
@@ -2302,7 +2302,7 @@ button::-moz-focus-inner {
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
   font-weight: 700; }
 
-.h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .h5, h5, .table thead th, .table thead td, .h6, h6, .answer .unit, .question .unit, .message-holder small, .message-holder span {
+.h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .h5, h5, .table thead th, .table thead td, .h6, h6 {
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700; }
 
@@ -2620,12 +2620,12 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
 * 
 *   @example
 *	<ul class="nav tabs primary">
-*		<li class="icon  "><a class="home"><i class="fa fa-holder"></i></a></li>
-*		<li class=""><a>Tab 2</li>
-*		<li class="selected"><a >Tab 3</a></li>
-*		<li class=""><a >Tab 4</a></li>
-*		<li class=""><a >Tab 5</a></li>
-*		<li class=""><a >Tab 6</a></li>
+*		<li class="icon  "><a class="home" href="#"><i class="fa fa-holder"></i></a></li>
+*		<li class=""><a href="#">Tab 2</a></li>
+*		<li class="selected"><a  href="#">Tab 3</a></li>
+*		<li class=""><a  href="#">Tab 4</a></li>
+*		<li class=""><a  href="#">Tab 5</a></li>
+*		<li class="disabled"><a  href="#">Tab 6</a></li>
 *	</ul>
 */
 .tabs.primary {
@@ -2634,10 +2634,13 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
   margin-top: 0.23864em;
   margin-bottom: 0.71591em;
   border: 0;
-  background: transparent none; }
-  @media only screen and (max-width: 1024px) {
-    .tabs.primary {
-      margin: .25em; } }
+  background: none;
+  margin: 0;
+  display: block; }
+  .tabs.primary:after {
+    content: "";
+    display: table;
+    clear: both; }
   .tabs.primary li {
     position: relative;
     border-top-left-radius: 0;
@@ -2645,9 +2648,11 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
     background-color: #fff;
     border-top: 1px #999999 solid;
     border-bottom: 0.45em #999999 solid;
-    border-left: 2px #999999 solid;
-    border-right: 2px #999999 solid;
-    margin: 0 -3px; }
+    border-left: 1px #999999 solid;
+    border-right: 1px #999999 solid;
+    margin: 0;
+    display: block;
+    float: left; }
     .tabs.primary li a {
       color: #333333; }
       @media only screen and (max-width: 320px) {
@@ -2678,19 +2683,37 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
       background-color: #00827F; }
       .tabs.primary li.selected:hover a {
         color: #fff; }
+    .tabs.primary li.disabled, .tabs.primary li.disabled:hover {
+      border-color: #b3b3b3;
+      background: url("../img/subtlenet2.png") repeat; }
+      .tabs.primary li.disabled a, .tabs.primary li.disabled, .tabs.primary li.disabled:hover a, .tabs.primary li.disabled:hover {
+        color: #999999;
+        cursor: not-allowed; }
     .tabs.primary li.icon.selected {
       background-color: #00827F; }
       .tabs.primary li.icon.selected a {
-        border-bottom: 0 none;
-        margin-bottom: 0;
-        padding-bottom: .3em;
         color: #fff; }
-  .tabs.primary.reverse li.selected a {
-    border-top: 3px solid #00827F;
-    border-bottom: 0; }
-  .tabs.primary.reverse li.selected.icon a {
-    border-bottom: 0 none;
-    border-top: 0 none; }
+  .tabs.primary.reverse {
+    font-size: 1.57143em;
+    line-height: 1.90909em;
+    margin-top: 0em;
+    margin-bottom: 0em; }
+    .tabs.primary.reverse li {
+      border-top-width: .45em;
+      border-bottom-width: 1px; }
+    .tabs.primary.reverse li.selected a:after {
+      content: "";
+      position: absolute;
+      top: -1px;
+      bottom: auto;
+      left: 50%;
+      /* width: 10%; */
+      margin-left: -10px;
+      border-style: solid;
+      border-color: transparent;
+      border-width: 0px 10px;
+      border-top: 10px solid #00386b;
+      border-bottom: 0 none; }
 
 /**
 * Tabs Overlap:
@@ -3083,41 +3106,14 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 
 .answer, .question {
   margin-bottom: .5rem; }
-  .answer .data, .answer .error, .answer .warning, .answer .alert, .answer .validated, .answer .required, .question .data, .question .error, .question .warning, .question .alert, .question .validated, .question .required {
-    display: none; }
-  .answer.required .required, .question.required .required {
-    display: inline-block;
-    width: 100%; }
-  .answer .unit, .question .unit {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0;
-    margin-bottom: 0;
-    max-width: 114.28571rem;
-    display: block;
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    width: 100%;
-    padding-top: 0;
-    padding-bottom: 0;
-    border-style: solid;
-    border-width: 1px;
-    overflow: hidden;
-    font-size: 1rem;
-    height: 2.64286rem;
-    line-height: 2.64286rem;
-    color: gray;
-    border-color: white;
-    text-align: left;
-    padding-left: .5rem;
-    line-height: 1; }
-    .answer .unit:before, .answer .unit:after, .question .unit:before, .question .unit:after {
-      content: " ";
-      display: table; }
-    .answer .unit:after, .question .unit:after {
-      clear: both; }
+  .answer .prefix, .answer .postfix, .answer .value, .question .prefix, .question .postfix, .question .value {
+    font-size: 0.78571em;
+    line-height: 1.90909em;
+    margin-top: 0.95455em;
+    margin-bottom: 0.47727em;
+    font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    color: gray; }
 
 .label-holder, .input-holder, .message-holder, .value-holder {
   width: 100%;
@@ -3147,10 +3143,6 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   .label-holder .text {
     padding-right: 1rem;
     line-height: 1.2em; }
-  .error .label-holder {
-    color: #de404e; }
-  .warning .label-holder {
-    color: #ff960d; }
 
 .required-holder {
   display: none;
@@ -3204,6 +3196,10 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   line-height: 1.16667em; }
 
 .message-holder small, .message-holder span {
+  font-size: 0.78571em;
+  line-height: 1.90909em;
+  margin-top: 0em;
+  margin-bottom: 0em;
   display: none;
   padding: .375rem .5625rem .5625rem;
   margin-top: -1px;
@@ -3215,22 +3211,38 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
     margin-right: .5rem; }
 
 .hint {
-  margin-top: -.75rem;
-  font-size: .75rem;
-  line-height: 1rem; }
+  font-size: 0.64286em;
+  line-height: 2.33333em;
+  margin-top: 0em;
+  margin-bottom: 0em; }
 
+.answer .required, .question .required {
+  display: none; }
+.answer.required .required, .question.required .required {
+  display: inline-block;
+  width: 100%; }
+.answer .error, .question .error {
+  display: none; }
 .answer.error .error, .question.error .error {
   display: inline-block;
   width: 100%; }
+.answer .warning, .question .warning {
+  display: none; }
 .answer.warning .warning, .question.warning .warning {
   display: inline-block;
   width: 100%; }
+.answer .validated, .question .validated {
+  display: none; }
 .answer.validated .validated, .question.validated .validated {
   display: inline-block;
   width: 100%; }
+.answer .info, .question .info {
+  display: none; }
 .answer.info .info, .question.info .info {
   display: inline-block;
   width: 100%; }
+.answer .highlighted, .question .highlighted {
+  display: none; }
 .answer.highlighted .highlighted, .question.highlighted .highlighted {
   display: inline-block;
   width: 100%; }
@@ -3245,6 +3257,71 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   color: #00cec9; }
 .answer.highlighted .required-holder, .question.highlighted .required-holder {
   color: #00cec9; }
+
+.error .label-holder {
+  color: #de404e; }
+.warning .label-holder {
+  color: #ff960d; }
+.validated .label-holder {
+  color: #2de3bf; }
+.info .label-holder {
+  color: #00cec9; }
+.highlighted .label-holder {
+  color: #00cec9; }
+
+.error .input-holder input, .error .input-holder select, .error .input-holder textarea {
+  border-color: #de404e; }
+.warning .input-holder input, .warning .input-holder select, .warning .input-holder textarea {
+  border-color: #ff960d; }
+.validated .input-holder input, .validated .input-holder select, .validated .input-holder textarea {
+  border-color: #2de3bf; }
+.info .input-holder input, .info .input-holder select, .info .input-holder textarea {
+  border-color: #00cec9; }
+.highlighted .input-holder input, .highlighted .input-holder select, .highlighted .input-holder textarea {
+  border-color: #00cec9; }
+
+.error .input-holder .postfix, .error .input-holder .prefix, .error .input-holder .value {
+  color: #de404e; }
+.warning .input-holder .postfix, .warning .input-holder .prefix, .warning .input-holder .value {
+  color: #ff960d; }
+.validated .input-holder .postfix, .validated .input-holder .prefix, .validated .input-holder .value {
+  color: #2de3bf; }
+.info .input-holder .postfix, .info .input-holder .prefix, .info .input-holder .value {
+  color: #00cec9; }
+.highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted .input-holder .value {
+  color: #00cec9; }
+
+.error .input-holder .postfix, .error .input-holder .prefix {
+  border-color: #de404e;
+  background-color: #e2ced0; }
+.warning .input-holder .postfix, .warning .input-holder .prefix {
+  border-color: #ff960d;
+  background-color: #e6d9c8; }
+.validated .input-holder .postfix, .validated .input-holder .prefix {
+  border-color: #2de3bf;
+  background-color: #cbe2de; }
+.info .input-holder .postfix, .info .input-holder .prefix {
+  border-color: #00cec9;
+  background-color: #c0e6e5; }
+.highlighted .input-holder .postfix, .highlighted .input-holder .prefix {
+  border-color: #00cec9;
+  background-color: #c0e6e5; }
+
+.error textarea, .error select, .error input, .error datalist {
+  margin-bottom: 0; }
+.warning textarea, .warning select, .warning input, .warning datalist {
+  margin-bottom: 0; }
+.validated textarea, .validated select, .validated input, .validated datalist {
+  margin-bottom: 0; }
+.info textarea, .info select, .info input, .info datalist {
+  margin-bottom: 0; }
+.highlighted textarea, .highlighted select, .highlighted input, .highlighted datalist {
+  margin-bottom: 0; }
+
+.error textarea, .error select, .error input {
+  border-color: #c32231; }
+.alert textarea, .warning textarea, .alert select, .warning select, .alert input, .warning input {
+  border-color: #d07600; }
 
 .message-holder small.error, .message-holder .span.error {
   background-color: #c32231;
@@ -3276,14 +3353,6 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 
 [class*="input-space"] + [class*="input-space"]:last-child {
   padding-right: 0; }
-
-.error textarea, .error select, .error input, .data textarea, .data select, .data input, .alert textarea, .alert select, .alert input, .warning textarea, .warning select, .warning input {
-  margin-bottom: 0; }
-
-.error textarea, .error select, .error input {
-  border-color: #c32231; }
-.alert textarea, .warning textarea, .alert select, .warning select, .alert input, .warning input {
-  border-color: #d07600; }
 
 input[type="checkbox"], input[type="radio"] {
   margin: .55em .5em;
@@ -3392,6 +3461,30 @@ input[type="checkbox"], input[type="radio"] {
 *			</div>
 *			<div class="column small-6 large-3">
 *				<small class="value">Years</small>
+*			</div>
+*		</div>
+*		<div class="message-holder">
+*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
+*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*				<small class="info"><i class="fa fa-holder"></i> Data message</small>
+*		</div>
+*		<div class="hint">This is some hint text</div>
+*	</div>
+*	<div class="question error">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Question Dropdown Title (Error)</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder-dynamic"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="input-holder">
+*			 <div class="input-space column small-6 large-9">
+*				<input type="text"/>
+*			</div>
+*			<div class="column small-6 large-3">
+*				<small class="postfix">Years</small>
 *			</div>
 *		</div>
 *		<div class="message-holder">
@@ -5489,7 +5582,14 @@ div.reveal-modal, dialog {
 *			<input type="checkbox" id="hb-check2" value="[object Object]">
 *			<label  for="hb-check2"></label>
 *		</div>
-*		<label  class="switch-value" for="hb-check0">When yes you should see a check mark</label>		
+*		<label  class="switch-value" for="hb-check2">When yes you should see a check mark</label>		
+*	</div>
+*	<div class="switch-input-space with-underline row">
+*		<div class="switch check-visible round">
+*			<input type="checkbox" id="hb-checkround" value="[object Object]">
+*			<label  for="hb-checkround"></label>
+*		</div>
+*		<label  class="switch-value" for="hb-checkround">When yes you should see a check mark</label>		
 *	</div>
 *   <a class="link" href="http://foundation.zurb.com/docs/components/switch.html">Foundation Documentation</a>
 */
@@ -5583,16 +5683,19 @@ div.reveal-modal, dialog {
   white-space: normal;
   display: table-cell; }
 
+.switch.check-visible input + label:after {
+  z-index: 100; }
+
 .switch.check-visible input + label:before {
   content: "\f00d";
   position: absolute;
-  left: -3.05em;
+  left: -1.35em;
   top: .40em;
   color: #999999;
   display: block;
   height: 1.5em;
   width: 1.5em;
-  z-index: 10000;
+  z-index: 1;
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -6258,38 +6361,43 @@ div.reveal-modal, dialog {
 *		<a href="#!/content/calculator/">
 *			<img class="logo" src="assets/img/logo.png" alt="ACC Statin Intolerance Guidelines">
 *		</a>
-*		<ul class="nav tabs primary condensable small">
-*			<li id="calculator-Tab selected"><a href="#!/content/calculator/">Eval<span class="condense">uate</span></a></li>
+*		<ul class="nav tabs primary">
+*			<li id="calculator-Tab" class="selected"><a href="#!/content/calculator/">Eval<span class="condense">uate</span></a></li>
 *			<li id="recommendation-Tab" class=""><a href="#!/content/recommendation/prescribinginfo/">Recommend<span class="condense">ation</span></a></li>
 *		</ul>
 *	</header></div>
 */
 .page.header {
   border-bottom: #00827F 4px solid;
-  padding: 2px 2px 6px;
-  background-color: #fff; }
-  .page.header .tabs {
-    margin-right: .35rem; }
+  padding: 0;
+  background-color: #fff;
+  display: block;
+  clear: both;
+  width: 100%; }
+  .page.header:after {
+    content: "";
+    display: table;
+    clear: both; }
   .page.header img.logo {
     display: none;
-    height: 38px; }
+    min-height: 38px;
+    max-width: 40%; }
   @media only screen and (min-width: 768px) {
     .page.header {
       text-align: right; }
       .page.header img.logo {
-        display: inline-block;
+        display: block;
         clear: none;
         float: left;
         margin: .25rem 1rem; }
       .page.header .tabs {
         clear: none;
-        display: inline-block;
+        display: block;
         width: auto;
-        margin: 0 0 .4rem; } }
+        float: right; } }
   @media only screen and (max-width: 768px) {
     .page.header .tabs {
-      width: 95%;
-      margin: 0 2.5% .3rem; } }
+      width: 95%; } }
 
 .footer {
   border-top: #00827F 2px solid; }
@@ -6557,30 +6665,32 @@ h6 blockquote {
 *		<span class="long-text">Long TItle Seen on Medium Screens and Up</span>
 *	</h2>
 */
-.condensable .condense, .condensable .long-text {
-  display: inline; }
-.condensable .short-text {
-  display: none; }
-@media only screen and (max-width: 320px) {
-  .condensable .short-text {
-    display: inline; }
+.condensable {
+  word-spacing: -4px; }
   .condensable .condense, .condensable .long-text {
-    display: none; } }
-@media only screen and (max-width: 768px) {
-  .condensable.small .short-text {
     display: inline; }
-  .condensable.small .condense, .condensable.small .long-text {
-    display: none; } }
-@media only screen and (max-width: 1024px) {
-  .condensable.medium .short-text {
-    display: inline; }
-  .condensable.medium .condense, .condensable.medium .long-text {
-    display: none; } }
-@media only screen and (max-width: 1200px) {
-  .condensable.large .short-text {
-    display: inline; }
-  .condensable.large .condense, .condensable.large .long-text {
-    display: none; } }
+  .condensable .short-text {
+    display: none; }
+  @media only screen and (max-width: 320px) {
+    .condensable .short-text {
+      display: inline; }
+    .condensable .condense, .condensable .long-text {
+      display: none; } }
+  @media only screen and (max-width: 768px) {
+    .condensable.small .short-text {
+      display: inline; }
+    .condensable.small .condense, .condensable.small .long-text {
+      display: none; } }
+  @media only screen and (max-width: 1024px) {
+    .condensable.medium .short-text {
+      display: inline; }
+    .condensable.medium .condense, .condensable.medium .long-text {
+      display: none; } }
+  @media only screen and (max-width: 1200px) {
+    .condensable.large .short-text {
+      display: inline; }
+    .condensable.large .condense, .condensable.large .long-text {
+      display: none; } }
 
 .css3columns {
   -webkit-column-count: 1;

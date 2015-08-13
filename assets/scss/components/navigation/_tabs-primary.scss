@@ -4,15 +4,14 @@
 * 
 *   @example
 *	<ul class="nav tabs primary">
-*		<li class="icon  "><a class="home"><i class="fa fa-holder"></i></a></li>
-*		<li class=""><a>Tab 2</li>
-*		<li class="selected"><a >Tab 3</a></li>
-*		<li class=""><a >Tab 4</a></li>
-*		<li class=""><a >Tab 5</a></li>
-*		<li class=""><a >Tab 6</a></li>
+*		<li class="icon  "><a class="home" href="#"><i class="fa fa-holder"></i></a></li>
+*		<li class=""><a href="#">Tab 2</a></li>
+*		<li class="selected"><a  href="#">Tab 3</a></li>
+*		<li class=""><a  href="#">Tab 4</a></li>
+*		<li class=""><a  href="#">Tab 5</a></li>
+*		<li class="disabled"><a  href="#">Tab 6</a></li>
 *	</ul>
 */
-
 
 
 
@@ -25,9 +24,14 @@ $primary-tab-lighttext:$global-default-light-text;
 .tabs.primary{
 	@include baseline-font(2,.25,.75);
 	border:0;
-	background: transparent none;
-	@include bp(md-down){
-		margin:.25em;
+	background:none;
+	margin:0;
+	display: block;
+	&:after {
+	    content:"";
+	    display:table;
+	    clear:both;
+
 	}
 	li{
 		position: relative;
@@ -36,9 +40,11 @@ $primary-tab-lighttext:$global-default-light-text;
 		background-color:#fff;
 		border-top: 1px $primary-tab-color solid;
 		border-bottom:.45em $primary-tab-color solid; 
-		border-left: 2px $primary-tab-color solid;
-		border-right:2px $primary-tab-color solid;
-		margin:0 -3px;
+		border-left: 1px $primary-tab-color solid;
+		border-right:1px $primary-tab-color solid;
+		margin:0;
+		display: block;
+		float:left;
 		a{
 			color:color-contrast($primary-tab-color,$primary-tab-darktext,$primary-tab-lighttext);
 			@include bp(xs-down){ white-space: normal;}
@@ -76,24 +82,43 @@ $primary-tab-lighttext:$global-default-light-text;
 			background-color:$primary-tab-selected-color;
 			a{color:color-contrast($primary-tab-selected-color,$primary-tab-darktext,$primary-tab-lighttext);}
 		}
+		&.disabled, &.disabled:hover{
+			border-color: grey(30);
+			background: url("../img/subtlenet2.png") repeat;
+			a, &{
+				color: grey(40);
+				cursor: not-allowed;
+			}
+
+		}
 		&.icon.selected{
 			background-color: $primary-tab-selected-color;
 			a{
-				border-bottom: 0 none;
-				margin-bottom:0;
-				padding-bottom: .3em;
 				color:color-contrast($primary-tab-selected-color,$primary-tab-darktext,$primary-tab-lighttext);
 			}
 		}
 	}
 	&.reverse{
-		li.selected a{		
-			border-top: 3px solid $primary-tab-selected-color;
-			border-bottom: 0;
+		@include baseline-font(2);
+		li{
+			border-top-width:.45em;
+			border-bottom-width:1px; 
 		}
-		li.selected.icon a{
-			border-bottom: 0 none;
-			border-top: 0 none;
+		li.selected a{		
+			&:after{
+					content: "";
+					position: absolute;
+					top: -1px;
+					bottom: auto;
+					left: 50%;
+					/* width: 10%; */
+					margin-left: -10px;
+					border-style: solid;
+					border-color: transparent;
+					border-width: 0px 10px;
+					border-top: 10px solid $acc-blue;
+					border-bottom: 0 none;
+				}
 		}
 	}
 }

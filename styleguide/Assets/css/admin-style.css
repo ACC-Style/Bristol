@@ -2417,7 +2417,7 @@ button::-moz-focus-inner {
 @media only screen and (min-width: 40.063em) {
   button, .button {
     display: inline-block; } }
-.h1, h1, .h2, h2, .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .switch-value, .section-nav .text, .h5, h5, .table thead th, .table thead td, .h6, h6, .answer .unit, .question .unit, .message-holder small, .message-holder span {
+.h1, h1, .h2, h2, .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .switch-value, .section-nav .text, .h5, h5, .table thead th, .table thead td, .h6, h6 {
   margin-top: 0;
   clear: both; }
 
@@ -2430,7 +2430,7 @@ button::-moz-focus-inner {
   font-family: 'Roboto', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700; }
 
-.h5, h5, .table thead th, .table thead td, .h6, h6, .answer .unit, .question .unit, .message-holder small, .message-holder span {
+.h5, h5, .table thead th, .table thead td, .h6, h6 {
   font-family: 'Roboto Condensed', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700; }
 
@@ -2440,7 +2440,7 @@ button::-moz-focus-inner {
 .h2, h2 {
   line-height: 1.2; }
 
-.h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .switch-value, .section-nav .text, .h5, h5, .table thead th, .table thead td, .h6, h6, .answer .unit, .question .unit, .message-holder small, .message-holder span {
+.h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .switch-value, .section-nav .text, .h5, h5, .table thead th, .table thead td, .h6, h6 {
   line-height: 1.3; }
 
 .h1, h1 {
@@ -2479,7 +2479,7 @@ button::-moz-focus-inner {
 .h5, h5, .table thead th, .table thead td {
   font-size: .9rem; }
 
-.h6, h6, .answer .unit, .question .unit, .message-holder small, .message-holder span {
+.h6, h6 {
   font-size: .8rem; }
 
 @media only screen and (max-width: 1024px) {
@@ -2780,12 +2780,12 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
 * 
 *   @example
 *	<ul class="nav tabs primary">
-*		<li class="icon  "><a class="home"><i class="fa fa-holder"></i></a></li>
-*		<li class=""><a>Tab 2</li>
-*		<li class="selected"><a >Tab 3</a></li>
-*		<li class=""><a >Tab 4</a></li>
-*		<li class=""><a >Tab 5</a></li>
-*		<li class=""><a >Tab 6</a></li>
+*		<li class="icon  "><a class="home" href="#"><i class="fa fa-holder"></i></a></li>
+*		<li class=""><a href="#">Tab 2</a></li>
+*		<li class="selected"><a  href="#">Tab 3</a></li>
+*		<li class=""><a  href="#">Tab 4</a></li>
+*		<li class=""><a  href="#">Tab 5</a></li>
+*		<li class="disabled"><a  href="#">Tab 6</a></li>
 *	</ul>
 */
 .tabs.primary {
@@ -2794,10 +2794,13 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
   margin-top: 0.30882em;
   margin-bottom: 0.92647em;
   border: 0;
-  background: transparent none; }
-  @media only screen and (max-width: 1024px) {
-    .tabs.primary {
-      margin: .25em; } }
+  background: none;
+  margin: 0;
+  display: block; }
+  .tabs.primary:after {
+    content: "";
+    display: table;
+    clear: both; }
   .tabs.primary li {
     position: relative;
     border-top-left-radius: 0;
@@ -2805,9 +2808,11 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
     background-color: #fff;
     border-top: 1px #999999 solid;
     border-bottom: 0.45em #999999 solid;
-    border-left: 2px #999999 solid;
-    border-right: 2px #999999 solid;
-    margin: 0 -3px; }
+    border-left: 1px #999999 solid;
+    border-right: 1px #999999 solid;
+    margin: 0;
+    display: block;
+    float: left; }
     .tabs.primary li a {
       color: #333333; }
       @media only screen and (max-width: 320px) {
@@ -2838,19 +2843,37 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
       background-color: #19BB9B; }
       .tabs.primary li.selected:hover a {
         color: #fff; }
+    .tabs.primary li.disabled, .tabs.primary li.disabled:hover {
+      border-color: #b3b3b3;
+      background: url("../img/subtlenet2.png") repeat; }
+      .tabs.primary li.disabled a, .tabs.primary li.disabled, .tabs.primary li.disabled:hover a, .tabs.primary li.disabled:hover {
+        color: #999999;
+        cursor: not-allowed; }
     .tabs.primary li.icon.selected {
       background-color: #19BB9B; }
       .tabs.primary li.icon.selected a {
-        border-bottom: 0 none;
-        margin-bottom: 0;
-        padding-bottom: .3em;
         color: #fff; }
-  .tabs.primary.reverse li.selected a {
-    border-top: 3px solid #19BB9B;
-    border-bottom: 0; }
-  .tabs.primary.reverse li.selected.icon a {
-    border-bottom: 0 none;
-    border-top: 0 none; }
+  .tabs.primary.reverse {
+    font-size: 1.21429em;
+    line-height: 1.23529em;
+    margin-top: 0em;
+    margin-bottom: 0em; }
+    .tabs.primary.reverse li {
+      border-top-width: .45em;
+      border-bottom-width: 1px; }
+    .tabs.primary.reverse li.selected a:after {
+      content: "";
+      position: absolute;
+      top: -1px;
+      bottom: auto;
+      left: 50%;
+      /* width: 10%; */
+      margin-left: -10px;
+      border-style: solid;
+      border-color: transparent;
+      border-width: 0px 10px;
+      border-top: 10px solid #00386b;
+      border-bottom: 0 none; }
 
 /**
 * Tabs Overlap:
@@ -3243,41 +3266,14 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 
 .answer, .question {
   margin-bottom: .5rem; }
-  .answer .data, .answer .error, .answer .warning, .answer .alert, .answer .validated, .answer .required, .question .data, .question .error, .question .warning, .question .alert, .question .validated, .question .required {
-    display: none; }
-  .answer.required .required, .question.required .required {
-    display: inline-block;
-    width: 100%; }
-  .answer .unit, .question .unit {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0;
-    margin-bottom: 0;
-    max-width: 114.28571rem;
-    display: block;
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    width: 100%;
-    padding-top: 0;
-    padding-bottom: 0;
-    border-style: solid;
-    border-width: 1px;
-    overflow: hidden;
-    font-size: 1rem;
-    height: 2.64286rem;
-    line-height: 2.64286rem;
-    color: gray;
-    border-color: white;
-    text-align: left;
-    padding-left: .5rem;
-    line-height: 1; }
-    .answer .unit:before, .answer .unit:after, .question .unit:before, .question .unit:after {
-      content: " ";
-      display: table; }
-    .answer .unit:after, .question .unit:after {
-      clear: both; }
+  .answer .prefix, .answer .postfix, .answer .value, .question .prefix, .question .postfix, .question .value {
+    font-size: 0.92857em;
+    line-height: 1.61538em;
+    margin-top: 0.80769em;
+    margin-bottom: 0.40385em;
+    font-family: 'Roboto', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    color: gray; }
 
 .label-holder, .input-holder, .message-holder, .value-holder {
   width: 100%;
@@ -3307,10 +3303,6 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   .label-holder .text {
     padding-right: 1rem;
     line-height: 1.2em; }
-  .error .label-holder {
-    color: #de404e; }
-  .warning .label-holder {
-    color: #ff960d; }
 
 .required-holder {
   display: none;
@@ -3326,7 +3318,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
     left: 0;
     font-size: .75rem; }
 
-.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder {
+.answer.required .required-holder, .question.required .required-holder {
   background-color: transparent;
   display: inline-block; }
 
@@ -3364,6 +3356,10 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   line-height: 1.16667em; }
 
 .message-holder small, .message-holder span {
+  font-size: 0.92857em;
+  line-height: 1.61538em;
+  margin-top: 0em;
+  margin-bottom: 0em;
   display: none;
   padding: .375rem .5625rem .5625rem;
   margin-top: -1px;
@@ -3375,52 +3371,10 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
     margin-right: .5rem; }
 
 .hint {
-  margin-top: -.75rem;
-  font-size: .75rem;
-  line-height: 1rem; }
-
-.answer.error .error, .question.error .error {
-  display: inline-block;
-  width: 100%; }
-.answer.warning .warning, .question.warning .warning {
-  display: inline-block;
-  width: 100%; }
-.answer.validated .validated, .question.validated .validated {
-  display: inline-block;
-  width: 100%; }
-.answer.info .info, .question.info .info {
-  display: inline-block;
-  width: 100%; }
-.answer.highlighted .highlighted, .question.highlighted .highlighted {
-  display: inline-block;
-  width: 100%; }
-
-.answer.error .required-holder, .question.error .required-holder {
-  color: #de404e; }
-.answer.warning .required-holder, .question.warning .required-holder {
-  color: #ff960d; }
-.answer.validated .required-holder, .question.validated .required-holder {
-  color: #2de3bf; }
-.answer.info .required-holder, .question.info .required-holder {
-  color: #4bc1e2; }
-.answer.highlighted .required-holder, .question.highlighted .required-holder {
-  color: #4bc1e2; }
-
-.message-holder small.error, .message-holder .span.error {
-  background-color: #c32231;
-  color: #fff; }
-.message-holder small.warning, .message-holder .span.warning {
-  background-color: #d07600;
-  color: #fff; }
-.message-holder small.validated, .message-holder .span.validated {
-  background-color: #19BB9B;
-  color: #fff; }
-.message-holder small.info, .message-holder .span.info {
-  background-color: #22AFD7;
-  color: #fff; }
-.message-holder small.highlighted, .message-holder .span.highlighted {
-  background-color: #22AFD7;
-  color: #fff; }
+  font-size: 0.85714em;
+  line-height: 1.75em;
+  margin-top: 0em;
+  margin-bottom: 0em; }
 
 .input-holder {
   margin-bottom: .75rem; }
@@ -3436,14 +3390,6 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 
 [class*="input-space"] + [class*="input-space"]:last-child {
   padding-right: 0; }
-
-.error textarea, .error select, .error input, .data textarea, .data select, .data input, .alert textarea, .alert select, .alert input, .warning textarea, .warning select, .warning input {
-  margin-bottom: 0; }
-
-.error textarea, .error select, .error input {
-  border-color: #c32231; }
-.alert textarea, .warning textarea, .alert select, .warning select, .alert input, .warning input {
-  border-color: #d07600; }
 
 input[type="checkbox"], input[type="radio"] {
   margin: .55em .5em;
@@ -3552,6 +3498,30 @@ input[type="checkbox"], input[type="radio"] {
 *			</div>
 *			<div class="column small-6 large-3">
 *				<small class="value">Years</small>
+*			</div>
+*		</div>
+*		<div class="message-holder">
+*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
+*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*				<small class="info"><i class="fa fa-holder"></i> Data message</small>
+*		</div>
+*		<div class="hint">This is some hint text</div>
+*	</div>
+*	<div class="question error">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Question Dropdown Title (Error)</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder-dynamic"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="input-holder">
+*			 <div class="input-space column small-6 large-9">
+*				<input type="text"/>
+*			</div>
+*			<div class="column small-6 large-3">
+*				<small class="postfix">Years</small>
 *			</div>
 *		</div>
 *		<div class="message-holder">
@@ -5155,7 +5125,14 @@ div.reveal-modal, dialog {
 *			<input type="checkbox" id="hb-check2" value="[object Object]">
 *			<label  for="hb-check2"></label>
 *		</div>
-*		<label  class="switch-value" for="hb-check0">When yes you should see a check mark</label>		
+*		<label  class="switch-value" for="hb-check2">When yes you should see a check mark</label>		
+*	</div>
+*	<div class="switch-input-space with-underline row">
+*		<div class="switch check-visible round">
+*			<input type="checkbox" id="hb-checkround" value="[object Object]">
+*			<label  for="hb-checkround"></label>
+*		</div>
+*		<label  class="switch-value" for="hb-checkround">When yes you should see a check mark</label>		
 *	</div>
 *   <a class="link" href="http://foundation.zurb.com/docs/components/switch.html">Foundation Documentation</a>
 */
@@ -5249,16 +5226,19 @@ div.reveal-modal, dialog {
   white-space: normal;
   display: table-cell; }
 
+.switch.check-visible input + label:after {
+  z-index: 100; }
+
 .switch.check-visible input + label:before {
   content: "\f00d";
   position: absolute;
-  left: -3.05em;
+  left: -1.35em;
   top: .40em;
   color: #999999;
   display: block;
   height: 1.5em;
   width: 1.5em;
-  z-index: 10000;
+  z-index: 1;
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -6102,30 +6082,32 @@ h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.
 *		<span class="long-text">Long TItle Seen on Medium Screens and Up</span>
 *	</h2>
 */
-.condensable .condense, .condensable .long-text {
-  display: inline; }
-.condensable .short-text {
-  display: none; }
-@media only screen and (max-width: 320px) {
-  .condensable .short-text {
-    display: inline; }
+.condensable {
+  word-spacing: -4px; }
   .condensable .condense, .condensable .long-text {
-    display: none; } }
-@media only screen and (max-width: 768px) {
-  .condensable.small .short-text {
     display: inline; }
-  .condensable.small .condense, .condensable.small .long-text {
-    display: none; } }
-@media only screen and (max-width: 1024px) {
-  .condensable.medium .short-text {
-    display: inline; }
-  .condensable.medium .condense, .condensable.medium .long-text {
-    display: none; } }
-@media only screen and (max-width: 1200px) {
-  .condensable.large .short-text {
-    display: inline; }
-  .condensable.large .condense, .condensable.large .long-text {
-    display: none; } }
+  .condensable .short-text {
+    display: none; }
+  @media only screen and (max-width: 320px) {
+    .condensable .short-text {
+      display: inline; }
+    .condensable .condense, .condensable .long-text {
+      display: none; } }
+  @media only screen and (max-width: 768px) {
+    .condensable.small .short-text {
+      display: inline; }
+    .condensable.small .condense, .condensable.small .long-text {
+      display: none; } }
+  @media only screen and (max-width: 1024px) {
+    .condensable.medium .short-text {
+      display: inline; }
+    .condensable.medium .condense, .condensable.medium .long-text {
+      display: none; } }
+  @media only screen and (max-width: 1200px) {
+    .condensable.large .short-text {
+      display: inline; }
+    .condensable.large .condense, .condensable.large .long-text {
+      display: none; } }
 
 .css3columns {
   -webkit-column-count: 1;

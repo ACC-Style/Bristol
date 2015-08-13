@@ -61,7 +61,7 @@ module.exports = function(grunt){
 		styledown: {
 		    base: {
 		      files: {
-		       	'styleguide/base.html': ['assets/css/style.css']
+		       	'styleguide/index.html': ['assets/css/style.css']
 		      },
 		      options: {
 		        css: [ "assets/css/normalize.min.css",'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,600,400,300|Roboto+Slab:400,700|Raleway:300','assets/css/jquery-ui.css','assets/css/jquery-ui.structure.css',"assets/css/foundation.min.css",'assets/css/style.css'],
