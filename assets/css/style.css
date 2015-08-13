@@ -5474,7 +5474,7 @@ div.reveal-modal, dialog {
 
 /**
 * Switch (Foundation Override):
-* `.switch` - Switches are a more visible and more touchable checkbox or radio buttons 
+* `.switch` - Switches are a more visible and more touchable versions of checkbox or radio buttons. ADD `.check-visible` to a switch to make a check appear in the selected state.
 * 
 *   @example
 *	<div class="switch-input-space with-underline row">
@@ -5583,12 +5583,12 @@ div.reveal-modal, dialog {
   white-space: normal;
   display: table-cell; }
 
-.switch.check-visible input:checked + label:before {
-  content: "\f00c";
+.switch.check-visible input + label:before {
+  content: "\f00d";
   position: absolute;
   left: -3.05em;
   top: .40em;
-  color: #fff;
+  color: #999999;
   display: block;
   height: 1.5em;
   width: 1.5em;
@@ -5600,6 +5600,12 @@ div.reveal-modal, dialog {
   -webkit-font-smoothing: antialiased;
   text-align: center;
   vertical-align: middle; }
+
+.switch.check-visible input:checked + label:before {
+  content: "\f00c";
+  left: -3.05em;
+  top: .40em;
+  color: #fff; }
 
 /**
 * Twitter Typeahead:

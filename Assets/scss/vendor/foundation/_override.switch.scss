@@ -51,16 +51,19 @@ $switch-active-color:rebrand-color($select-color, 2);
 	white-space: normal;
 	display:table-cell;
 }
-.switch.check-visible input:checked + label:before {
-	    content: "\f00c";
+.switch.check-visible input + label:after {
+	z-index: 100;
+}
+.switch.check-visible input + label:before {
+	    content: "\f00d";
 	    position: absolute;
-	    left: -3.05em;
+	    left: -1.35em;
 	    top: .40em;
-	    color: #fff;
+	    color: grey(40);
 	    display: block;
 	    height: 1.5em;
 	    width: 1.5em;
-	    z-index: 10000;
+	    z-index: 1;
 	    display: inline-block;
 	    font: normal normal normal 14px/1 FontAwesome;
 	    font-size: inherit;
@@ -68,5 +71,13 @@ $switch-active-color:rebrand-color($select-color, 2);
 	    -webkit-font-smoothing: antialiased;
 	    text-align: center;
 	    vertical-align: middle;
+
+}
+.switch.check-visible input:checked + label:before {
+	    content: "\f00c";
+	    left: -3.05em;
+	    top: .40em;
+	    color: #fff;
+
 
 }
