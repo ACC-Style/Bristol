@@ -4,7 +4,7 @@
 * 
 *   @example
 *	<div class="mobile-offcanvas-wrapper">
-*	<section class="split-layout fill-page-height medium navOn">
+*	<section class="split-layout-full medium navOn">
 *	<aside class="split-sidebar">
 *	<h2>Sidebar</h2>
 *	<p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
@@ -18,28 +18,16 @@
 *	</section>
 *	</div>
 */
+.full-row, .full-col { overflow: hidden; position: absolute; }
+.full-row { left: 0; right: 0; }
+.full-col { top: 0; bottom: 0; }
+.scroll-x { overflow-x: auto; }
+.scroll-y { overflow-y: auto; }
 
-.page-wrapper > .split-layout{
-	margin: -2rem -1rem;
-}
-
-.split-layout{
-	@include grid-row($behavior: collapse );
-	max-width: 100%;
-	position: relative;
-	overflow: hidden;
-	clear:both;
-	.split-sidebar,.split-content{margin-bottom:-1000px;padding-bottom:1001px;}
-	&.fill-page-height .split-content{
-		@media (min-device-height: 320px){ min-height: 320px;}
-		@media (min-device-height: 480px){ min-height: 480px;}
-		@media (min-device-height: 640px){ min-height: 640px;}
-		@media (min-device-height: 768px){ min-height: 768px;}
-		@media (min-device-height: 960px){ min-height: 960px;}
-		@media (min-device-height: 1024px){ min-height: 1024px;}
-		margin-bottom:0px;padding-bottom:1em;
-	}
-
+.split-layout-full{
+	@extend .full-row;
+	@extend .fulll-col;
+	.split-sidebar, .split-content{.}
 	
 	.split-sidebar{ display:none;	@include grid-column(12 , $collapse:true); left:grid-calc(-10,12); border:grey(30) solid 0; border-right-width:1px;}
 	.split-content{

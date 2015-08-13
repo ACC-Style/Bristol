@@ -4008,7 +4008,7 @@ input[type="checkbox"], input[type="radio"] {
 .answer .label-holder {
   border-bottom: 1px dotted #cccccc; }
 .answer label, .answer .label, .answer .text {
-  color: #95c2cf;
+  color: #95c3cf;
   font-family: 'Roboto Condensed', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 400; }
 
@@ -4229,7 +4229,7 @@ table a.button, table button, table .inline-list, table .nobutton {
 .stripped tbody th:nth-child(odd), .stripped tbody td:nth-child(odd) {
   background-color: #e4f6fb; }
 .stripped tbody tr:nth-child(even) td:nth-child(odd), .stripped tr:nth-child(even) tbody td:nth-child(odd) {
-  background-color: #d7e5e9; }
+  background-color: #d8e5e9; }
 
 /**
 * Tables Row(Seperator):
@@ -4402,7 +4402,7 @@ th.sortable {
   content: "\f0dd"; }
 
 .col10 .sortable.col10 .sort, .col9 .sortable.col9 .sort, .col8 .sortable.col8 .sort, .col7 .sortable.col7 .sort, .col6 .sortable.col6 .sort, .col5 .sortable.col5 .sort, .col4 .sortable.col4 .sort, .col3 .sortable.col3 .sort, .col2 .sortable.col2 .sort, .col1 .sortable.col1 .sort {
-  background-color: #4c4c4c; }
+  background-color: #4d4d4d; }
   .col10 .sortable.col10 .sort i, .col9 .sortable.col9 .sort i, .col8 .sortable.col8 .sort i, .col7 .sortable.col7 .sort i, .col6 .sortable.col6 .sort i, .col5 .sortable.col5 .sort i, .col4 .sortable.col4 .sort i, .col3 .sortable.col3 .sort i, .col2 .sortable.col2 .sort i, .col1 .sortable.col1 .sort i {
     color: #d07600; }
 
@@ -4914,16 +4914,16 @@ nav.top-bar {
   font-weight: 400; }
 
 .top-bar-section li.hover > a:not(.button) {
-  background-color: #19354f;
-  background: #28343e;
+  background-color: #1a364f;
+  background: #29343e;
   color: #FFF; }
 
 .top-bar-section li:not(.has-form) a:not(.button) {
   background: #00386b; }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
-  background-color: #19354f;
-  background: #28343e; }
+  background-color: #1a364f;
+  background: #29343e; }
 
 .top-bar-section li.active:not(.has-form) a:not(.button) {
   color: #FFF;
@@ -5068,7 +5068,7 @@ div.reveal-modal, dialog {
   margin: 1.42857rem 0;
   -ms-touch-action: none;
   touch-action: none;
-  background: #f4f4f4; }
+  background: whitesmoke; }
   .range-slider.vertical-range {
     display: block;
     position: relative;
@@ -5091,7 +5091,7 @@ div.reveal-modal, dialog {
       height: auto;
       bottom: 0; }
   .range-slider.radius {
-    background: #f4f4f4;
+    background: whitesmoke;
     border-radius: 5px; }
     .range-slider.radius .range-slider-handle {
       background: #198dae;
@@ -5099,7 +5099,7 @@ div.reveal-modal, dialog {
       .range-slider.radius .range-slider-handle:hover {
         background: #167c99; }
   .range-slider.round {
-    background: #f4f4f4;
+    background: whitesmoke;
     border-radius: 1000px; }
     .range-slider.round .range-slider-handle {
       background: #198dae;
@@ -5107,7 +5107,7 @@ div.reveal-modal, dialog {
       .range-slider.round .range-slider-handle:hover {
         background: #167c99; }
   .range-slider.disabled, .range-slider[disabled] {
-    background: #f4f4f4;
+    background: whitesmoke;
     cursor: default;
     opacity: 0.7; }
     .range-slider.disabled .range-slider-handle, .range-slider[disabled] .range-slider-handle {
@@ -5149,6 +5149,13 @@ div.reveal-modal, dialog {
 *			<label  for="hb-check0"></label>
 *		</div>
 *		<label  class="switch-value" for="hb-check0">Question to say yes to</label>		
+*	</div>
+*	<div class="switch-input-space with-underline row">
+*		<div class="switch check-visible">
+*			<input type="checkbox" id="hb-check2" value="[object Object]">
+*			<label  for="hb-check2"></label>
+*		</div>
+*		<label  class="switch-value" for="hb-check0">When yes you should see a check mark</label>		
 *	</div>
 *   <a class="link" href="http://foundation.zurb.com/docs/components/switch.html">Foundation Documentation</a>
 */
@@ -5242,6 +5249,24 @@ div.reveal-modal, dialog {
   white-space: normal;
   display: table-cell; }
 
+.switch.check-visible input:checked + label:before {
+  content: "\f00c";
+  position: absolute;
+  left: -3.05em;
+  top: .40em;
+  color: #fff;
+  display: block;
+  height: 1.5em;
+  width: 1.5em;
+  z-index: 10000;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  vertical-align: middle; }
+
 /**
 * Twitter Typeahead:
 * `.twitter-typeahead` - Type ahead javascript
@@ -5314,7 +5339,7 @@ div.reveal-modal, dialog {
     font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
     font-weight: 700; }
   .tt-suggestion.tt-cursor {
-    color: #e8f3f6;
+    color: #e8f4f7;
     background-color: #198dae; }
     .tt-suggestion.tt-cursor strong {
       color: #fff; }
@@ -5580,6 +5605,24 @@ div.reveal-modal, dialog {
 *	</section>
 *	</div>
 */
+.full-row, .full-col {
+  overflow: hidden;
+  position: absolute; }
+
+.full-row {
+  left: 0;
+  right: 0; }
+
+.full-col {
+  top: 0;
+  bottom: 0; }
+
+.scroll-x {
+  overflow-x: auto; }
+
+.scroll-y {
+  overflow-y: auto; }
+
 .mobile-offcanvas-wrapper {
   position: relative;
   overflow: hidden;

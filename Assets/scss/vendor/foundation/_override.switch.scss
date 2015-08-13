@@ -1,6 +1,6 @@
 /**
 * Switch (Foundation Override):
-* `.switch` - Switches are a more visible and more touchable checkbox or radio buttons 
+* `.switch` - Switches are a more visible and more touchable versions of checkbox or radio buttons. ADD `.check-visible` to a switch to make a check appear in the selected state.
 * 
 *   @example
 *	<div class="switch-input-space with-underline row">
@@ -9,6 +9,13 @@
 *			<label  for="hb-check0"></label>
 *		</div>
 *		<label  class="switch-value" for="hb-check0">Question to say yes to</label>		
+*	</div>
+*	<div class="switch-input-space with-underline row">
+*		<div class="switch check-visible">
+*			<input type="checkbox" id="hb-check2" value="[object Object]">
+*			<label  for="hb-check2"></label>
+*		</div>
+*		<label  class="switch-value" for="hb-check0">When yes you should see a check mark</label>		
 *	</div>
 *   <a class="link" href="http://foundation.zurb.com/docs/components/switch.html">Foundation Documentation</a>
 */
@@ -43,4 +50,23 @@ $switch-active-color:rebrand-color($select-color, 2);
 	color:fontcolor($black);
 	white-space: normal;
 	display:table-cell;
+}
+.switch.check-visible input:checked + label:before {
+	    content: "\f00c";
+	    position: absolute;
+	    left: -3.05em;
+	    top: .40em;
+	    color: #fff;
+	    display: block;
+	    height: 1.5em;
+	    width: 1.5em;
+	    z-index: 10000;
+	    display: inline-block;
+	    font: normal normal normal 14px/1 FontAwesome;
+	    font-size: inherit;
+	    text-rendering: auto;
+	    -webkit-font-smoothing: antialiased;
+	    text-align: center;
+	    vertical-align: middle;
+
 }
