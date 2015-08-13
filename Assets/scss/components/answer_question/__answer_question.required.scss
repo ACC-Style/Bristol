@@ -34,11 +34,18 @@
 .answer,.question{
 	margin-bottom: .5rem;
 	.prefix,.postfix,.value{
-		@include baseline-font(-1,.5,.25);
+		@include baseline-font(0,0);
 		@include font-bold();
-		color:grey(50);
+		padding: .5em;
+		margin-top: 0;
+		color:grey(60);
 	}
 }
+.answer,.question{.value{
+
+
+}}
+
 .label-holder,.input-holder,.message-holder,.value-holder{
 	@include grid-row(collapse);
 }
@@ -87,15 +94,7 @@
 [class*="input-space"] + [class*="input-space"]:last-child,[class*="value-space"] + [class*="value-space"]:last-child{
 	padding-right:0;
 }
-.answer,.question{.value{
-padding: 7px;
-vertical-align: top;
-display: inline-block;
-margin-top: 0;
-color:grey(60);
-font-size: 1.28571em;
-line-height: 1.16667em;
-}}
+
 .message-holder{
 	small, span{
 		@include baseline-font(-1);
