@@ -4,12 +4,12 @@
 * 
 *   @example
 *	<div class="row"><header class="header page">
-*		<a href="#!/content/calculator/">
-*			<img class="logo" src="assets/img/logo.png" alt="ACC Statin Intolerance Guidelines">
+*		<a href="#!/content/calculator/" class="logo">
+*			<img  src="assets/img/headerlogo.svg" alt="ACC Statin Intolerance Guidelines">
 *		</a>
 *		<ul class="nav tabs primary">
-*			<li id="calculator-Tab" class="selected"><a href="#!/content/calculator/">Eval<span class="condense">uate</span></a></li>
-*			<li id="recommendation-Tab" class=""><a href="#!/content/recommendation/prescribinginfo/">Recommend<span class="condense">ation</span></a></li>
+*			<li id="calculator-Tab" class="selected"><a href="#!/content/calculator/"  class="condensable small">Eval<span class="condense">uate</span></a></li>
+*			<li id="recommendation-Tab" class=""><a href="#!/content/recommendation/prescribinginfo/"  class="condensable small">Recommend<span class="condense">ation</span></a></li>
 *		</ul>
 *	</header></div>
 */
@@ -17,17 +17,18 @@
 
 
 .page.header{
-	border-bottom: rebrand-color($brand-color, 1) 4px solid;
+	border-bottom: rebrand-color($brand-color, 3) 6px solid;
 	padding:0;
 	background-color: #fff;
 	display: block;
 	clear:both;
 	width:100%;
 	&:after{content:"";display: table;clear:both;}
-	img.logo{display: none; min-height: 38px;max-width: 40%;}
+	.logo img{display: none; width: 284px; height: 65px; float:left;}
 	@include bp(md){
 		text-align: right;
-		img.logo{
+		.logo{display: block;} 
+		.logo img{
 			display: block;
 			clear:none;
 			float:left;
@@ -39,11 +40,6 @@
 			width:auto;
 			float: right;
 
-			}
-	}
-	@include bp(sm-down){
-		.tabs{
-			width:95%;
 			}
 	}
 }
