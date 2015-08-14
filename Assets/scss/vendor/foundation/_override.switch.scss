@@ -1,25 +1,25 @@
 /**
 * Switch (Foundation Override):
-* `.switch` - Switches are a more visible and more touchable versions of checkbox or radio buttons. ADD `.check-visible` to a switch to make a check appear in the selected state.
+* `.switch` - Switches are a more visible and more touchable versions of checkbox or radio buttons. ADD `.check-visible` to a switch to make a check appear in the selected state of `.x-visible` to show the x when it is shut off
 * 
 *   @example
 *	<div class="switch-input-space with-underline row">
 *		<div class="switch">
-*			<input type="checkbox" id="hb-check0" value="[object Object]">
+*			<input type="checkbox" id="hb-check0>
 *			<label  for="hb-check0"></label>
 *		</div>
 *		<label  class="switch-value" for="hb-check0">Question to say yes to</label>		
 *	</div>
 *	<div class="switch-input-space with-underline row">
 *		<div class="switch check-visible">
-*			<input type="checkbox" id="hb-check2" value="[object Object]">
+*			<input type="checkbox" id="hb-check2>
 *			<label  for="hb-check2"></label>
 *		</div>
 *		<label  class="switch-value" for="hb-check2">When yes you should see a check mark</label>		
 *	</div>
 *	<div class="switch-input-space with-underline row">
-*		<div class="switch check-visible round">
-*			<input type="checkbox" id="hb-checkround" value="[object Object]">
+*		<div class="switch x-visible round">
+*			<input type="checkbox" id="hb-checkround>
 *			<label  for="hb-checkround"></label>
 *		</div>
 *		<label  class="switch-value" for="hb-checkround">When yes you should see a check mark</label>		
@@ -61,30 +61,29 @@ $switch-active-color:rebrand-color($select-color, 2);
 .switch.check-visible input + label:after {
 	z-index: 100;
 }
-.switch.check-visible input + label:before {
+.switch.check-visible input + label:before,.switch.x-visible input + label:before{
+	position: absolute; 
+	display: block;
+	height: 1.5em;
+	width: 1.5em; 
+	z-index: 1;
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	text-align: center;
+	vertical-align: middle;
+}
+.switch.x-visible input + label:before {
 	    content: "\f00d";
-	    position: absolute;
-	    left: -1.35em;
+   	    left: -1.35em;
 	    top: .40em;
-	    color: grey(40);
-	    display: block;
-	    height: 1.5em;
-	    width: 1.5em;
-	    z-index: 1;
-	    display: inline-block;
-	    font: normal normal normal 14px/1 FontAwesome;
-	    font-size: inherit;
-	    text-rendering: auto;
-	    -webkit-font-smoothing: antialiased;
-	    text-align: center;
-	    vertical-align: middle;
-
+	    color: grey(10);
 }
 .switch.check-visible input:checked + label:before {
 	    content: "\f00c";
 	    left: -3.05em;
 	    top: .40em;
 	    color: #fff;
-
-
 }
