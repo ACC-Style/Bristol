@@ -31,7 +31,7 @@ $primary-tab-darktext:$global-default-dark-text;
 $primary-tab-lighttext:$global-default-light-text;
 
 .tabs.primary{
-	@include baseline-font(3,0,0);
+	font-size: 21px;
 	border:0;
 	background:none;
 	margin:0;
@@ -42,6 +42,8 @@ $primary-tab-lighttext:$global-default-light-text;
 	    clear:both;
 	}
 	li{
+			
+		
 		position: relative;
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
@@ -54,6 +56,7 @@ $primary-tab-lighttext:$global-default-light-text;
 		display: block;
 		float:left;	
 		a{
+			padding:1.25em .75em;
 			color:color-contrast($primary-tab-color,$primary-tab-darktext,$primary-tab-lighttext);
 			@include bp(xs-down){ white-space: normal;}
 		}
@@ -110,9 +113,15 @@ $primary-tab-lighttext:$global-default-light-text;
 			}
 		}
 	}
-
+	@include bp(md-down){
+		font-size: 17px;
+		li a{padding:1em .5em;}
+	}
 	@include bp(sm-down){
-		@include baseline-font(1,0,0);
+		font-size: 14px;
+		li a{padding: .55em .5em .5em;
+			&:after{border-bottom: 8px solid $primary-tab-Selected-tick-color;}
+		}
 		width:100%;
 		clear:both;
 		@include flexbox();
@@ -157,6 +166,7 @@ $primary-tab-lighttext:$global-default-light-text;
 		@include bp(sm-down){
 			@include baseline-font(0,0,0);
 			margin: 0;
+			li.selected a:after{border-top: 8px solid  $primary-tab-Selected-tick-color;}
 		}
 		@include bp(xs-down){
 			@include baseline-font(-1,0,0);

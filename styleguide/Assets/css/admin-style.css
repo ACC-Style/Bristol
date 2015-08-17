@@ -2812,10 +2812,7 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
 *	</ul>
 */
 .tabs.primary {
-  font-size: 1.35714em;
-  line-height: 1.10526em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 21px;
   border: 0;
   background: none;
   margin: 0;
@@ -2837,6 +2834,7 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
     display: block;
     float: left; }
     .tabs.primary li a {
+      padding: 1.25em .75em;
       color: #333333; }
       @media only screen and (max-width: 320px) {
         .tabs.primary li a {
@@ -2879,12 +2877,14 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
       background-color: #198dae; }
       .tabs.primary li.icon.selected a {
         color: #fff; }
+  @media only screen and (max-width: 1024px) {
+    .tabs.primary {
+      font-size: 17px; }
+      .tabs.primary li a {
+        padding: 1em .5em; } }
   @media only screen and (max-width: 768px) {
     .tabs.primary {
-      font-size: 1.07143em;
-      line-height: 1.4em;
-      margin-top: 0em;
-      margin-bottom: 0em;
+      font-size: 14px;
       width: 100%;
       clear: both;
       display: -webkit-box;
@@ -2897,6 +2897,10 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
       align-items: stretch;
       align-content: stretch;
       margin: 0; }
+      .tabs.primary li a {
+        padding: .55em .5em .5em; }
+        .tabs.primary li a:after {
+          border-bottom: 8px solid #00386b; }
       .tabs.primary li {
         -webkit-box-flex: 1 1 auto;
         -moz-box-flex: 1 1 auto;
@@ -2941,7 +2945,9 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
         line-height: 1.5em;
         margin-top: 0em;
         margin-bottom: 0em;
-        margin: 0; } }
+        margin: 0; }
+        .tabs.primary.reverse li.selected a:after {
+          border-top: 8px solid #00386b; } }
     @media only screen and (max-width: 320px) {
       .tabs.primary.reverse {
         font-size: 0.92857em;
@@ -3520,19 +3526,19 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 
 .error .input-holder .postfix, .error .input-holder .prefix {
   border-color: #de404e;
-  background-color: #e2ced0; }
+  background-color: #e1cdcf; }
 .warning .input-holder .postfix, .warning .input-holder .prefix {
   border-color: #ff960d;
-  background-color: #e6d9c8; }
+  background-color: #e5d8c7; }
 .validated .input-holder .postfix, .validated .input-holder .prefix {
   border-color: #2de3bf;
-  background-color: #cbe2de; }
+  background-color: #cbe2dd; }
 .info .input-holder .postfix, .info .input-holder .prefix {
   border-color: #4bc1e2;
-  background-color: #cfdee2; }
+  background-color: #cfdde2; }
 .highlighted .input-holder .postfix, .highlighted .input-holder .prefix {
   border-color: #4bc1e2;
-  background-color: #cfdee2; }
+  background-color: #cfdde2; }
 
 .error textarea, .error select, .error input, .error datalist {
   margin-bottom: 0; }
@@ -4168,7 +4174,7 @@ input[type="checkbox"], input[type="radio"] {
 .answer .label-holder {
   border-bottom: 1px dotted #cccccc; }
 .answer label, .answer .label, .answer .text {
-  color: #95c3cf;
+  color: #95c2cf;
   font-family: 'Roboto Condensed', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 400; }
 
@@ -4389,7 +4395,7 @@ table a.button, table button, table .inline-list, table .nobutton {
 .stripped tbody th:nth-child(odd), .stripped tbody td:nth-child(odd) {
   background-color: #e4f6fb; }
 .stripped tbody tr:nth-child(even) td:nth-child(odd), .stripped tr:nth-child(even) tbody td:nth-child(odd) {
-  background-color: #d8e5e9; }
+  background-color: #d7e5e9; }
 
 /**
 * Tables Row(Seperator):
@@ -4562,7 +4568,7 @@ th.sortable {
   content: "\f0dd"; }
 
 .col10 .sortable.col10 .sort, .col9 .sortable.col9 .sort, .col8 .sortable.col8 .sort, .col7 .sortable.col7 .sort, .col6 .sortable.col6 .sort, .col5 .sortable.col5 .sort, .col4 .sortable.col4 .sort, .col3 .sortable.col3 .sort, .col2 .sortable.col2 .sort, .col1 .sortable.col1 .sort {
-  background-color: #4d4d4d; }
+  background-color: #4c4c4c; }
   .col10 .sortable.col10 .sort i, .col9 .sortable.col9 .sort i, .col8 .sortable.col8 .sort i, .col7 .sortable.col7 .sort i, .col6 .sortable.col6 .sort i, .col5 .sortable.col5 .sort i, .col4 .sortable.col4 .sort i, .col3 .sortable.col3 .sort i, .col2 .sortable.col2 .sort i, .col1 .sortable.col1 .sort i {
     color: #d07600; }
 
@@ -4644,29 +4650,29 @@ tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td {
   border-bottom: 1px solid; }
 
 td.error, tr.error td {
-  background-color: #e19198;
+  background-color: #e19098;
   color: #333333;
   border-color: #c32231; }
 
 tr:nth-child(even) td.error {
-  background-color: #edbdc1;
+  background-color: #edbcc1;
   color: #333333; }
 
 tr:nth-child(even).error td {
-  background-color: #edbdc1;
+  background-color: #edbcc1;
   color: #333333; }
 
 td.warning, tr.warning td {
-  background-color: #e8bb80;
+  background-color: #e7ba7f;
   color: #333333;
   border-color: #d07600; }
 
 tr:nth-child(even) td.warning {
-  background-color: #f1d6b3;
+  background-color: #f0d5b2;
   color: #333333; }
 
 tr:nth-child(even).warning td {
-  background-color: #f1d6b3;
+  background-color: #f0d5b2;
   color: #333333; }
 
 td.validated, tr.validated td {
@@ -4675,37 +4681,37 @@ td.validated, tr.validated td {
   border-color: #19BB9B; }
 
 tr:nth-child(even) td.validated {
-  background-color: #baebe1;
+  background-color: #baeae1;
   color: #333333; }
 
 tr:nth-child(even).validated td {
-  background-color: #baebe1;
+  background-color: #baeae1;
   color: #333333; }
 
 td.info, tr.info td {
-  background-color: #91d7eb;
+  background-color: #90d7eb;
   color: #333333;
   border-color: #22AFD7; }
 
 tr:nth-child(even) td.info {
-  background-color: #bde7f3;
+  background-color: #bce7f3;
   color: #333333; }
 
 tr:nth-child(even).info td {
-  background-color: #bde7f3;
+  background-color: #bce7f3;
   color: #333333; }
 
 td.highlighted, tr.highlighted td {
-  background-color: #91d7eb;
+  background-color: #90d7eb;
   color: #333333;
   border-color: #22AFD7; }
 
 tr:nth-child(even) td.highlighted {
-  background-color: #bde7f3;
+  background-color: #bce7f3;
   color: #333333; }
 
 tr:nth-child(even).highlighted td {
-  background-color: #bde7f3;
+  background-color: #bce7f3;
   color: #333333; }
 
 /**
@@ -5288,16 +5294,16 @@ nav.top-bar {
   font-weight: 400; }
 
 .top-bar-section li.hover > a:not(.button) {
-  background-color: #1a364f;
-  background: #29343e;
+  background-color: #19354f;
+  background: #28343e;
   color: #FFF; }
 
 .top-bar-section li:not(.has-form) a:not(.button) {
   background: #00386b; }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
-  background-color: #1a364f;
-  background: #29343e; }
+  background-color: #19354f;
+  background: #28343e; }
 
 .top-bar-section li.active:not(.has-form) a:not(.button) {
   color: #FFF;
@@ -5500,7 +5506,7 @@ div.reveal-modal, dialog {
   margin: 1.42857rem 0;
   -ms-touch-action: none;
   touch-action: none;
-  background: whitesmoke; }
+  background: #f4f4f4; }
   .range-slider.vertical-range {
     display: block;
     position: relative;
@@ -5523,7 +5529,7 @@ div.reveal-modal, dialog {
       height: auto;
       bottom: 0; }
   .range-slider.radius {
-    background: whitesmoke;
+    background: #f4f4f4;
     border-radius: 5px; }
     .range-slider.radius .range-slider-handle {
       background: #198dae;
@@ -5531,7 +5537,7 @@ div.reveal-modal, dialog {
       .range-slider.radius .range-slider-handle:hover {
         background: #167c99; }
   .range-slider.round {
-    background: whitesmoke;
+    background: #f4f4f4;
     border-radius: 1000px; }
     .range-slider.round .range-slider-handle {
       background: #198dae;
@@ -5539,7 +5545,7 @@ div.reveal-modal, dialog {
       .range-slider.round .range-slider-handle:hover {
         background: #167c99; }
   .range-slider.disabled, .range-slider[disabled] {
-    background: whitesmoke;
+    background: #f4f4f4;
     cursor: default;
     opacity: 0.7; }
     .range-slider.disabled .range-slider-handle, .range-slider[disabled] .range-slider-handle {
@@ -5572,26 +5578,26 @@ div.reveal-modal, dialog {
 
 /**
 * Switch (Foundation Override):
-* `.switch` - Switches are a more visible and more touchable versions of checkbox or radio buttons. ADD `.check-visible` to a switch to make a check appear in the selected state.
+* `.switch` - Switches are a more visible and more touchable versions of checkbox or radio buttons. ADD `.check-visible` to a switch to make a check appear in the selected state of `.x-visible` to show the x when it is shut off
 * 
 *   @example
 *	<div class="switch-input-space with-underline row">
 *		<div class="switch">
-*			<input type="checkbox" id="hb-check0" value="[object Object]">
+*			<input type="checkbox" id="hb-check0>
 *			<label  for="hb-check0"></label>
 *		</div>
 *		<label  class="switch-value" for="hb-check0">Question to say yes to</label>		
 *	</div>
 *	<div class="switch-input-space with-underline row">
 *		<div class="switch check-visible">
-*			<input type="checkbox" id="hb-check2" value="[object Object]">
+*			<input type="checkbox" id="hb-check2>
 *			<label  for="hb-check2"></label>
 *		</div>
 *		<label  class="switch-value" for="hb-check2">When yes you should see a check mark</label>		
 *	</div>
 *	<div class="switch-input-space with-underline row">
-*		<div class="switch check-visible round">
-*			<input type="checkbox" id="hb-checkround" value="[object Object]">
+*		<div class="switch x-visible round">
+*			<input type="checkbox" id="hb-checkround>
 *			<label  for="hb-checkround"></label>
 *		</div>
 *		<label  class="switch-value" for="hb-checkround">When yes you should see a check mark</label>		
@@ -5691,12 +5697,8 @@ div.reveal-modal, dialog {
 .switch.check-visible input + label:after {
   z-index: 100; }
 
-.switch.check-visible input + label:before {
-  content: "\f00d";
+.switch.check-visible input + label:before, .switch.x-visible input + label:before {
   position: absolute;
-  left: -1.35em;
-  top: .40em;
-  color: #999999;
   display: block;
   height: 1.5em;
   width: 1.5em;
@@ -5708,6 +5710,12 @@ div.reveal-modal, dialog {
   -webkit-font-smoothing: antialiased;
   text-align: center;
   vertical-align: middle; }
+
+.switch.x-visible input + label:before {
+  content: "\f00d";
+  left: -1.35em;
+  top: .40em;
+  color: #e6e6e6; }
 
 .switch.check-visible input:checked + label:before {
   content: "\f00c";
@@ -5787,7 +5795,7 @@ div.reveal-modal, dialog {
     font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
     font-weight: 700; }
   .tt-suggestion.tt-cursor {
-    color: #e8f4f7;
+    color: #e8f3f6;
     background-color: #198dae; }
     .tt-suggestion.tt-cursor strong {
       color: #fff; }

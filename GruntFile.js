@@ -4,11 +4,12 @@ module.exports = function(grunt){
 		 connect:{
       server:{
         options:{
-          port: 8000,
-          open:{
+			livereload:true,
+          	port: 8000,
+          	open:{
             target: 'http://localhost:8000', // target url to open
           },
-          keepalive:true,
+        //keepalive:true,
         }
       }
     },
@@ -44,6 +45,15 @@ module.exports = function(grunt){
 					cwd: './assets/scss',
 					src: ['*.scss'],
 					dest: './assets/css',
+					ext: '.css'	
+				}]
+			},
+			styleguide:{			
+				files:[{
+					expand: true,
+					cwd: './assets/scss',
+					src: ['*.scss'],
+					dest: './styleguide/Assets/css',
 					ext: '.css'	
 				}]
 			},
@@ -103,42 +113,42 @@ module.exports = function(grunt){
 				}]
 			},
 			INTERNAL:{
-				files:[{
-					expand:true,
-					cwd:'assets/js',
-					src:'**',
-					dest:'converted-html/assets/js',
-				},{
-					expand:true,
-					cwd:'assets/css',
-					src:'**',
-					dest:'converted-html/assets/css',
-				},{
+				files:[
+				{
 					expand:true,
 					cwd:'assets/js',
 					src:'**',
 					dest:'styleguide/assets/js',
-				},{
+				}
+				,{
 					expand:true,
 					cwd:'assets/css',
 					src:'**',
 					dest:'styleguide/assets/css',
+				},{
+					expand:true,
+					cwd:'assets/img',
+					src:'**',
+					dest:'styleguide/assets/img',
 				}
 				]
 			}
 
 		},
 	    watch: {
+	    	options: {
+			      livereload: true,
+			    },
 			js: {
 			files: [ 'Assets/js/*.js','templates/includes/scripts.liquid' ],
-			tasks: [ 'liquid','copy:assets' ],
+			tasks: [ 'liquid','copy:INTERNAL' ],
 
 			},
 			scss: {
 			files: [ 'Assets/scss/*.scss','Assets/scss/*/*.scss','Assets/scss/*/*/*.scss' ],
-			tasks: [ 'sass:dist','copy:assets'],
+			tasks: [ 'sass:dist','styledown:base','copy:INTERNAL'],
 
-			},
+			}
 	    },
 		clean: {
 			localFolder:["converted-html/**"],
@@ -158,15 +168,13 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	// Default task.
 	grunt.registerTask('build', [
-		'clean:sassCasheFolder',
+		'connect',
 		'sass:foundation',
-		'clean:sassCasheFolder',
 		'sass:dist',
-		'styledown:base',
-		'styledown:admin',
 		'copy:INTERNAL',
-		'liquid',
+		'styledown:base',
 		'watch',
+		
 	]);
 	grunt.registerTask('serve', [
 		'connect',]);

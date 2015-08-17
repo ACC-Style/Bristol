@@ -42,21 +42,29 @@
 	}
 	@include bp(sm-down){
 		text-align: right;
-		
 		.logo img{display: block; width:320px;}
 		.tabs{width:100%; margin: 0;}
 		.logo{display: block; border-bottom:rebrand-color($acc-blue,3) 4px solid;&:after{content:"";display: table;clear:both;}}
 		.logo img{max-width:95%;margin:.25rem 2.5%;}
 	}
 	
-		@include bp(lg){
-			.tabs.primary.reverse{
-				&, li{
-					background-color: transparent;
-					border:0;
-				a{text-decoration: underline;color: #fff;}
+	@include bp(lg){
+		text-align: center;
+		.tabs.primary.reverse{
+			float:none;display: inline-block;
+			li{float: none;display: inline-block;}
+			&, li{
+				background-color: transparent;
+				border:0;
+				a{color: #fff;
+					&:after{
+						top:auto;
+						bottom: -1px;
+						border-width: 0px 8px;
+						border-bottom: 10px solid #fff;}
+					&:hover{text-decoration: underline;}
 				}
-				li.selected a:after{border-top-color:#fff;}
+			}
 		}
 	}
 
