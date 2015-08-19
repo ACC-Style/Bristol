@@ -21,7 +21,13 @@ $tab-lighttext:$global-default-light-text;
 
 .tabs{
 	div.row{  max-width: 1200px;}
-	@include baseline-font(1,.25,.75);
+	font-size: ms(-1);
+	@include bp(md){
+		font-size: ms(0);
+	}
+	@include bp(lg){
+		font-size: ms(1);
+	}
 	@include font-slab-bold();
 	margin-left: 0;
 	width:100%;

@@ -146,7 +146,7 @@ module.exports = function(grunt){
 			},
 			scss: {
 			files: [ 'Assets/scss/*.scss','Assets/scss/*/*.scss','Assets/scss/*/*/*.scss' ],
-			tasks: [ 'sass:dist','styledown:base','copy:INTERNAL'],
+			tasks: [ 'sass:dist','cssmin','styledown:base','copy:INTERNAL'],
 
 			}
 	    },
@@ -171,6 +171,7 @@ module.exports = function(grunt){
 		'connect',
 		'sass:foundation',
 		'sass:dist',
+		'cssmin',
 		'copy:INTERNAL',
 		'styledown:base',
 		'watch',
