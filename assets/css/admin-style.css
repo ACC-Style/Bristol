@@ -3116,12 +3116,6 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 *	<li  class="completed">
 *	<a><span class="text">Nav List Item 3(completed)</span><i class="fa fa-holder-dynamic"></i></a>
 *	</li>
-*	<li  class="warning">
-*	<a><span class="text">Nav List Item 4(warning)</span><i class="fa fa-holder-dynamic"></i></a>
-*	</li>
-*	<li class="error">
-*	<a><span class="text">Nav List Item 5(error)</span><i class="fa fa-holder-dynamic"></i></a>
-*	</li  class="">
 *	</ul>
 *	</nav>
 */
@@ -3139,7 +3133,10 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   .nav-list.nav-checklist li.selected, .nav-checklist.panel-selector li.selected {
     border-bottom-width: 1px;
     border-color: #96f1df;
-    background-image: none; }
+    background-image: none;
+    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+    font-weight: 700;
+    color: #333333; }
     .nav-list.nav-checklist li.selected i.fa-holder-dynamic:before, .nav-checklist.panel-selector li.selected i.fa-holder-dynamic:before, .nav-list.nav-checklist li.selected.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.selected.dynamic i.fa-holder:before {
       content: ""; }
     .nav-list.nav-checklist li.selected i, .nav-checklist.panel-selector li.selected i {
@@ -3148,28 +3145,6 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
     content: ""; }
   .nav-list.nav-checklist li.completed i, .nav-checklist.panel-selector li.completed i {
     color: #19BB9B; }
-  .nav-list.nav-checklist li.warning, .nav-checklist.panel-selector li.warning {
-    background-color: #ffcb86;
-    border-color: #ffcb86;
-    border-bottom-width: 1; }
-    .nav-list.nav-checklist li.warning i.fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning i.fa-holder-dynamic:before, .nav-list.nav-checklist li.warning.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.warning.dynamic i.fa-holder:before {
-      content: ""; }
-    .nav-list.nav-checklist li.warning i, .nav-checklist.panel-selector li.warning i {
-      color: #d07600; }
-    .nav-list.nav-checklist li.warning:hover, .nav-checklist.panel-selector li.warning:hover {
-      background-color: #ffebd2; }
-  .nav-list.nav-checklist li.error, .nav-checklist.panel-selector li.error {
-    background-color: #ee9fa7;
-    border-color: #ee9fa7;
-    border-bottom-width: 1; }
-    .nav-list.nav-checklist li.error i.fa-holder-dynamic:before, .nav-checklist.panel-selector li.error i.fa-holder-dynamic:before, .nav-list.nav-checklist li.error.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.error.dynamic i.fa-holder:before {
-      content: ""; }
-    .nav-list.nav-checklist li.error i, .nav-checklist.panel-selector li.error i {
-      color: #c32231; }
-    .nav-list.nav-checklist li.error:hover, .nav-checklist.panel-selector li.error:hover {
-      background-color: #f9dbde; }
-  .nav-list.nav-checklist li.selected, .nav-checklist.panel-selector li.selected, .nav-list.nav-checklist li.error, .nav-checklist.panel-selector li.error, .nav-list.nav-checklist li.warning, .nav-checklist.panel-selector li.warning {
-    color: #333333; }
 
 /**
 * Section Nav (forward & back):
@@ -4572,6 +4547,94 @@ th.sortable {
   .col10 .sortable.col10 .sort i, .col9 .sortable.col9 .sort i, .col8 .sortable.col8 .sort i, .col7 .sortable.col7 .sort i, .col6 .sortable.col6 .sort i, .col5 .sortable.col5 .sort i, .col4 .sortable.col4 .sort i, .col3 .sortable.col3 .sort i, .col2 .sortable.col2 .sort i, .col1 .sortable.col1 .sort i {
     color: #d07600; }
 
+td.icon {
+  padding: .25rem .25rem .25rem .25rem;
+  text-align: center;
+  vertical-align: middle;
+  width: 1%; }
+  td.icon i {
+    margin: 0 auto; }
+
+tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td {
+  background-image: url(../img/empty_stripe@2x.png);
+  font-weight: 900; }
+
+td.error, .table tbody tr + tr td.error, td.warning, .table tbody tr + tr td.warning, td.validated, .table tbody tr + tr td.validated, td.info, .table tbody tr + tr td.info, td.highlighted, .table tbody tr + tr td.highlighted {
+  background-image: url(../img/empty_diamond@2x.png);
+  font-weight: 900; }
+
+td.error, td.warning, td.validated, td.info, td.highlighted {
+  border: 1px solid; }
+
+tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td {
+  border-top: 1px solid;
+  border-bottom: 1px solid; }
+
+td.error, .table tbody tr + tr td.error, tr.error td {
+  background-color: #f9e8ea;
+  color: #333333;
+  border-color: #f2b7bd; }
+
+tr:nth-child(even) td.error {
+  background-color: #f3d2d5;
+  color: #333333; }
+
+tr:nth-child(even).error td {
+  background-color: #f3d2d5;
+  color: #333333; }
+
+td.warning, .table tbody tr + tr td.warning, tr.warning td {
+  background-color: #faf1e5;
+  color: #333333;
+  border-color: #ffd8a4; }
+
+tr:nth-child(even) td.warning {
+  background-color: #f5e3cc;
+  color: #333333; }
+
+tr:nth-child(even).warning td {
+  background-color: #f5e3cc;
+  color: #333333; }
+
+td.validated, .table tbody tr + tr td.validated, tr.validated td {
+  background-color: #e8f8f5;
+  color: #333333;
+  border-color: #b0f4e7; }
+
+tr:nth-child(even) td.validated {
+  background-color: #d1f1eb;
+  color: #333333; }
+
+tr:nth-child(even).validated td {
+  background-color: #d1f1eb;
+  color: #333333; }
+
+td.info, .table tbody tr + tr td.info, tr.info td {
+  background-color: #e8f7fb;
+  color: #333333;
+  border-color: #bbe8f4; }
+
+tr:nth-child(even) td.info {
+  background-color: #d2eff7;
+  color: #333333; }
+
+tr:nth-child(even).info td {
+  background-color: #d2eff7;
+  color: #333333; }
+
+td.highlighted, .table tbody tr + tr td.highlighted, tr.highlighted td {
+  background-color: #e8f7fb;
+  color: #333333;
+  border-color: #bbe8f4; }
+
+tr:nth-child(even) td.highlighted {
+  background-color: #d2eff7;
+  color: #333333; }
+
+tr:nth-child(even).highlighted td {
+  background-color: #d2eff7;
+  color: #333333; }
+
 /**
 * Table States Cells:
 * `td.state-name` - quickly color table cells. 
@@ -4616,104 +4679,20 @@ th.sortable {
 *			<td class="">Cell Data in validated Row</td>
 *			<td class="">Icon is Dynamic</td>
 *		</tr>
-*		<tr class="error">
+*		<tr class="warning">
 *			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
 *			<td class=""></td>
-*			<td class="">Cell Data in Error Row</td>
-*			<td class="">Icon is Dynamic</td>
+*			<td class="">Cell Data in Warning Row</td>
+*			<td class="error">I am an error cell</td>
 *		</tr>
 *		<tr class="error">
 *			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
-*			<td class=""></td>
-*			<td class="">Cell Data in Error Row</td>
 *			<td class="">Icon is Dynamic</td>
+*			<td class="">Cell Data in Error Row</td>
+*			<td class="">Cell Data</td>
 *		</tr>
 *	</table>
 */
-td.icon {
-  padding: .25rem .25rem .25rem .25rem;
-  text-align: center;
-  vertical-align: middle;
-  width: 1%; }
-  td.icon i {
-    margin: 0 auto; }
-
-td.error, tr.error td, td.warning, tr.warning td, td.validated, tr.validated td, td.info, tr.info td, td.highlighted, tr.highlighted td {
-  background-image: url(../img/empty_stripe.png);
-  font-weight: 900; }
-
-td.error, td.warning, td.validated, td.info, td.highlighted {
-  border: 1px solid; }
-
-tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td {
-  border-top: 1px solid;
-  border-bottom: 1px solid; }
-
-td.error, tr.error td {
-  background-color: #e19098;
-  color: #333333;
-  border-color: #c32231; }
-
-tr:nth-child(even) td.error {
-  background-color: #edbcc1;
-  color: #333333; }
-
-tr:nth-child(even).error td {
-  background-color: #edbcc1;
-  color: #333333; }
-
-td.warning, tr.warning td {
-  background-color: #e7ba7f;
-  color: #333333;
-  border-color: #d07600; }
-
-tr:nth-child(even) td.warning {
-  background-color: #f0d5b2;
-  color: #333333; }
-
-tr:nth-child(even).warning td {
-  background-color: #f0d5b2;
-  color: #333333; }
-
-td.validated, tr.validated td {
-  background-color: #8cddcd;
-  color: #333333;
-  border-color: #19BB9B; }
-
-tr:nth-child(even) td.validated {
-  background-color: #baeae1;
-  color: #333333; }
-
-tr:nth-child(even).validated td {
-  background-color: #baeae1;
-  color: #333333; }
-
-td.info, tr.info td {
-  background-color: #90d7eb;
-  color: #333333;
-  border-color: #22AFD7; }
-
-tr:nth-child(even) td.info {
-  background-color: #bce7f3;
-  color: #333333; }
-
-tr:nth-child(even).info td {
-  background-color: #bce7f3;
-  color: #333333; }
-
-td.highlighted, tr.highlighted td {
-  background-color: #90d7eb;
-  color: #333333;
-  border-color: #22AFD7; }
-
-tr:nth-child(even) td.highlighted {
-  background-color: #bce7f3;
-  color: #333333; }
-
-tr:nth-child(even).highlighted td {
-  background-color: #bce7f3;
-  color: #333333; }
-
 /**
 * Collapsable Panel:
 * `.collapsable-panel` - a container element which naturaly is hiden and reveals when it is prompted.<br><br> !!  Requires Javascript to Function  !!

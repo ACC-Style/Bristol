@@ -5,6 +5,7 @@ $(function() {
   $( "#accordion" ).accordion();
   $( "#accordion2" ).accordion();
   $("#chosen").chosen({width: "100%"});
+   $("#chosenSingle").chosen({width: "100%"});
 
 // to render html in an auto complete you must extend it. 
 // https://api.jqueryui.com/autocomplete/#method-_renderItem
