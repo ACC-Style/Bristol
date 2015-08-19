@@ -4571,68 +4571,68 @@ tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td {
   border-bottom: 1px solid; }
 
 td.error, .table tbody tr + tr td.error, tr.error td {
-  background-color: #f9e8ea;
+  background-color: #f6dde0;
   color: #333333;
   border-color: #f2b7bd; }
 
 tr:nth-child(even) td.error {
-  background-color: #f3d2d5;
+  background-color: #f0c7cb;
   color: #333333; }
 
 tr:nth-child(even).error td {
-  background-color: #f3d2d5;
+  background-color: #f0c7cb;
   color: #333333; }
 
 td.warning, .table tbody tr + tr td.warning, tr.warning td {
-  background-color: #faf1e5;
+  background-color: #f7ead8;
   color: #333333;
   border-color: #ffd8a4; }
 
 tr:nth-child(even) td.warning {
-  background-color: #f5e3cc;
+  background-color: #f3dcbf;
   color: #333333; }
 
 tr:nth-child(even).warning td {
-  background-color: #f5e3cc;
+  background-color: #f3dcbf;
   color: #333333; }
 
 td.validated, .table tbody tr + tr td.validated, tr.validated td {
-  background-color: #e8f8f5;
+  background-color: #dcf4f0;
   color: #333333;
   border-color: #b0f4e7; }
 
 tr:nth-child(even) td.validated {
-  background-color: #d1f1eb;
+  background-color: #c5eee6;
   color: #333333; }
 
 tr:nth-child(even).validated td {
-  background-color: #d1f1eb;
+  background-color: #c5eee6;
   color: #333333; }
 
 td.info, .table tbody tr + tr td.info, tr.info td {
-  background-color: #e8f7fb;
+  background-color: #ddf3f9;
   color: #333333;
   border-color: #bbe8f4; }
 
 tr:nth-child(even) td.info {
-  background-color: #d2eff7;
+  background-color: #c7ebf5;
   color: #333333; }
 
 tr:nth-child(even).info td {
-  background-color: #d2eff7;
+  background-color: #c7ebf5;
   color: #333333; }
 
 td.highlighted, .table tbody tr + tr td.highlighted, tr.highlighted td {
-  background-color: #e8f7fb;
+  background-color: #ddf3f9;
   color: #333333;
   border-color: #bbe8f4; }
 
 tr:nth-child(even) td.highlighted {
-  background-color: #d2eff7;
+  background-color: #c7ebf5;
   color: #333333; }
 
 tr:nth-child(even).highlighted td {
-  background-color: #d2eff7;
+  background-color: #c7ebf5;
   color: #333333; }
 
 /**
@@ -5566,34 +5566,6 @@ div.reveal-modal, dialog {
   .range-slider-handle:hover {
     background: #167c99; }
 
-/**
-* Switch (Foundation Override):
-* `.switch` - Switches are a more visible and more touchable versions of checkbox or radio buttons. ADD `.check-visible` to a switch to make a check appear in the selected state of `.x-visible` to show the x when it is shut off
-* 
-*   @example
-*	<div class="switch-input-space with-underline row">
-*		<div class="switch">
-*			<input type="checkbox" id="hb-check0>
-*			<label  for="hb-check0"></label>
-*		</div>
-*		<label  class="switch-value" for="hb-check0">Question to say yes to</label>		
-*	</div>
-*	<div class="switch-input-space with-underline row">
-*		<div class="switch check-visible">
-*			<input type="checkbox" id="hb-check2>
-*			<label  for="hb-check2"></label>
-*		</div>
-*		<label  class="switch-value" for="hb-check2">When yes you should see a check mark</label>		
-*	</div>
-*	<div class="switch-input-space with-underline row">
-*		<div class="switch x-visible round">
-*			<input type="checkbox" id="hb-checkround>
-*			<label  for="hb-checkround"></label>
-*		</div>
-*		<label  class="switch-value" for="hb-checkround">When yes you should see a check mark</label>		
-*	</div>
-*   <a class="link" href="http://foundation.zurb.com/docs/components/switch.html">Foundation Documentation</a>
-*/
 .switch-input-space {
   white-space: nowrap;
   display: table;
@@ -5705,7 +5677,7 @@ div.reveal-modal, dialog {
   content: "\f00d";
   left: -1.35em;
   top: .40em;
-  color: #e6e6e6; }
+  color: #fff; }
 
 .switch.check-visible input:checked + label:before {
   content: "\f00c";
@@ -5713,6 +5685,34 @@ div.reveal-modal, dialog {
   top: .40em;
   color: #fff; }
 
+/**
+* Switch (Foundation Override):
+* `.switch` - Switches are a more visible and more touchable versions of checkbox or radio buttons. ADD `.check-visible` to a switch to make a check appear in the selected state of `.x-visible` to show the x when it is shut off
+* 
+*   @example
+*	<div class="switch-input-space group-divide row">
+*		<div class="switch">
+*			<input type="radio" id="hb-check0">
+*			<label  for="hb-check0"onclick=""></label>
+*		</div>
+*		<label  class="switch-value" for="hb-check0">Question to say yes to</label>		
+*	</div>
+*	<div class="switch-input-space group-divide row">
+*		<div class="switch check-visible">
+*			<input type="checkbox" id="hb-check2">
+*			<label  for="hb-check2"></label>
+*		</div>
+*		<label  class="switch-value" for="hb-check2">When yes is selected you should see a checkmark</label>		
+*	</div>
+*	<div class="switch-input-space group-divide row">
+*		<div class="switch x-visible round">
+*			<input type="checkbox" id="hb-checkround">
+*			<label  for="hb-checkround"></label>
+*		</div>
+*		<label  class="switch-value" for="hb-checkround">"x-visible" When No is selected you should show an X</label>		
+*	</div>
+*   <a class="link" href="http://foundation.zurb.com/docs/components/switch.html">Foundation Documentation</a>
+*/
 /**
 * Twitter Typeahead:
 * `.twitter-typeahead` - Type ahead javascript

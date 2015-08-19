@@ -1,31 +1,3 @@
-/**
-* Switch (Foundation Override):
-* `.switch` - Switches are a more visible and more touchable versions of checkbox or radio buttons. ADD `.check-visible` to a switch to make a check appear in the selected state of `.x-visible` to show the x when it is shut off
-* 
-*   @example
-*	<div class="switch-input-space with-underline row">
-*		<div class="switch">
-*			<input type="checkbox" id="hb-check0>
-*			<label  for="hb-check0"></label>
-*		</div>
-*		<label  class="switch-value" for="hb-check0">Question to say yes to</label>		
-*	</div>
-*	<div class="switch-input-space with-underline row">
-*		<div class="switch check-visible">
-*			<input type="checkbox" id="hb-check2>
-*			<label  for="hb-check2"></label>
-*		</div>
-*		<label  class="switch-value" for="hb-check2">When yes you should see a check mark</label>		
-*	</div>
-*	<div class="switch-input-space with-underline row">
-*		<div class="switch x-visible round">
-*			<input type="checkbox" id="hb-checkround>
-*			<label  for="hb-checkround"></label>
-*		</div>
-*		<label  class="switch-value" for="hb-checkround">When yes you should see a check mark</label>		
-*	</div>
-*   <a class="link" href="http://foundation.zurb.com/docs/components/switch.html">Foundation Documentation</a>
-*/
 
 $switch-active-color:rebrand-color($select-color, 2);
 .switch-input-space{
@@ -79,7 +51,7 @@ $switch-active-color:rebrand-color($select-color, 2);
 	    content: "\f00d";
    	    left: -1.35em;
 	    top: .40em;
-	    color: grey(10);
+	    color: #fff;
 }
 .switch.check-visible input:checked + label:before {
 	    content: "\f00c";
@@ -87,3 +59,32 @@ $switch-active-color:rebrand-color($select-color, 2);
 	    top: .40em;
 	    color: #fff;
 }
+
+/**
+* Switch (Foundation Override):
+* `.switch` - Switches are a more visible and more touchable versions of checkbox or radio buttons. ADD `.check-visible` to a switch to make a check appear in the selected state of `.x-visible` to show the x when it is shut off
+* 
+*   @example
+*	<div class="switch-input-space group-divide row">
+*		<div class="switch">
+*			<input type="radio" id="hb-check0">
+*			<label  for="hb-check0"onclick=""></label>
+*		</div>
+*		<label  class="switch-value" for="hb-check0">Question to say yes to</label>		
+*	</div>
+*	<div class="switch-input-space group-divide row">
+*		<div class="switch check-visible">
+*			<input type="checkbox" id="hb-check2">
+*			<label  for="hb-check2"></label>
+*		</div>
+*		<label  class="switch-value" for="hb-check2">When yes is selected you should see a checkmark</label>		
+*	</div>
+*	<div class="switch-input-space group-divide row">
+*		<div class="switch x-visible round">
+*			<input type="checkbox" id="hb-checkround">
+*			<label  for="hb-checkround"></label>
+*		</div>
+*		<label  class="switch-value" for="hb-checkround">"x-visible" When No is selected you should show an X</label>		
+*	</div>
+*   <a class="link" href="http://foundation.zurb.com/docs/components/switch.html">Foundation Documentation</a>
+*/
