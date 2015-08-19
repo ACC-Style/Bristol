@@ -9,7 +9,7 @@
 @import 'base/brandVar.styledown';
 @import 'base/brandVar';
 $brand-level:0; // Any Number between 0 and 3.   
-$product-brand-color: #860647;
+$product-brand-color: #008080;
 $ms-base: 14px;
 $ms-ratio: 1.2;
 $baseline-modifier:1.4;
@@ -19,7 +19,9 @@ $baseline-modifier:1.4;
 @import "vendor/jquery-ui/jquery-ui-kitchensink";
 @import "base/colors";
 
+
 @import "base/fonts";
+//@import "_non-core/base/_oma-admin/fonts";
 @import "helpers/breakpoints";
 
 
@@ -77,7 +79,8 @@ Non-Core Components Styles
 
 */
 
-
+// Anticoag
+//@import "_non-core/components/_anticoag/data-display";
 // OMA Modules
 @import "_non-core/components/_oma/branding";
 @import "_non-core/components/_oma/user-id-block";
@@ -91,6 +94,7 @@ Non-Core Components Styles
 // SI Modules
 //@import "_non-core/components/_si/si.table-cellcolor";
 //@import "_non-core/components/_si/si.recommendationTable";
+
 
 // Vendor Overrides 
 @import "vendor/foundation/override.topbar";
@@ -111,11 +115,13 @@ Non-Core Components Styles
 @import "structures/layout-split";
 //@import "structures/_oma-admin/override.layout-split";
 
-@import "structures/mobileApps/layout_header";
-@import "structures/mobileApps/layout_footer";
+
+// Template or Project specific views & Structures
+@import "_non-core/structures/_oma-admin/override.layout-split";
+//@import "structures/mobileApps/layout_header";
+//@import "structures/mobileApps/layout_footer";
 
 
-// Template specific views 
 //trumps the dreaded importants show up in the files below.
 @import "base/typography.states.scss";
 @import "base/typography.trump";
@@ -124,5 +130,4 @@ Non-Core Components Styles
 @import "trumps/utilities";
 @import "trumps/condensable";
 @import "trumps/css3";
-
 
