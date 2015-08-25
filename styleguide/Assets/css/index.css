@@ -2507,7 +2507,12 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
 .button.disabled.secondary:hover {
   background-color: #cccccc;
   color: #999999;
-  cursor: default; }
+  cursor: not-allowed; }
+
+.link.disabled, .link.disabled:hover {
+  background-color: #cccccc;
+  color: #999999;
+  font-style: italic; }
 
 /**
 * Tabs (Basic):
@@ -3265,7 +3270,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   .label-holder label, .label-holder .label {
     font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
     font-weight: 700; }
-  @media only screen and (min-width: 320px) {
+  @media only screen and (max-width: 768px) {
     .label-holder {
       white-space: normal; } }
   .label-holder .text {
@@ -7588,6 +7593,234 @@ div.reveal-modal, dialog {
             .page.footer .tabs.primary.reverse a:hover, .page.footer .tabs.primary.reverse li a:hover {
               text-decoration: underline; } }
 
+.page-footer {
+  border-top: #666666 4px solid;
+  background-color: #b3b3b3;
+  padding: 1rem 1rem 1rem 1rem; }
+  .page-footer .logo {
+    height: 50px; }
+  .page-footer h3 {
+    font-size: 1.5rem;
+    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+    font-weight: 400; }
+  .page-footer h4 {
+    margin-left: 0;
+    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+    font-weight: 400; }
+  .page-footer ul {
+    margin-left: 0;
+    list-style: none; }
+  .page-footer * {
+    color: #666666; }
+  .page-footer .language-picker {
+    display: none; }
+
+.footer-darker {
+  background-color: #666666;
+  margin: 1rem -1rem;
+  padding: 30px 40px;
+  margin-bottom: 20px;
+  background: url("../img/crossed_stripes.png"); }
+  @media only screen and (max-width: 767px) {
+    .footer-darker {
+      margin-right: -3rem; } }
+  .footer-darker * {
+    color: #fff; }
+  .footer-darker section + section, .footer-darker .section + .section {
+    margin-top: 1rem; }
+
+.address ul {
+  display: inline-block;
+  width: auto;
+  float: left;
+  padding-right: 1.67rem; }
+.address li {
+  font-size: 1rem;
+  line-height: 1.67rem; }
+
+.acc-websites .nav-list.small li, .acc-websites .small.panel-selector li {
+  border-color: #4d4d4d; }
+  .acc-websites .nav-list.small li:hover, .acc-websites .small.panel-selector li:hover {
+    background-color: #595959; }
+
+.icon-only {
+  display: inline-block;
+  text-decoration: none;
+  color: #333; }
+  .icon-only .text {
+    display: none; }
+
+button.twitter, .button.twitter {
+  background-color: #00aced;
+  border-color: #008abe;
+  color: #FFFFFF; }
+  button.twitter:hover, button.twitter:focus, .button.twitter:hover, .button.twitter:focus {
+    background-color: #008abe; }
+  button.twitter:hover, button.twitter:focus, .button.twitter:hover, .button.twitter:focus {
+    color: #FFFFFF; }
+button.facebook, .button.facebook {
+  background-color: #3b5998;
+  border-color: #2f477a;
+  color: #FFFFFF; }
+  button.facebook:hover, button.facebook:focus, .button.facebook:hover, .button.facebook:focus {
+    background-color: #2f477a; }
+  button.facebook:hover, button.facebook:focus, .button.facebook:hover, .button.facebook:focus {
+    color: #FFFFFF; }
+button.linkedin, .button.linkedin {
+  background-color: #007bb6;
+  border-color: #006292;
+  color: #FFFFFF; }
+  button.linkedin:hover, button.linkedin:focus, .button.linkedin:hover, .button.linkedin:focus {
+    background-color: #006292; }
+  button.linkedin:hover, button.linkedin:focus, .button.linkedin:hover, .button.linkedin:focus {
+    color: #FFFFFF; }
+button.googleplus, .button.googleplus {
+  background-color: #dd4b39;
+  border-color: #be3221;
+  color: #FFFFFF; }
+  button.googleplus:hover, button.googleplus:focus, .button.googleplus:hover, .button.googleplus:focus {
+    background-color: #be3221; }
+  button.googleplus:hover, button.googleplus:focus, .button.googleplus:hover, .button.googleplus:focus {
+    color: #FFFFFF; }
+button.youtube, .button.youtube {
+  background-color: #bb0000;
+  border-color: #960000;
+  color: #FFFFFF; }
+  button.youtube:hover, button.youtube:focus, .button.youtube:hover, .button.youtube:focus {
+    background-color: #960000; }
+  button.youtube:hover, button.youtube:focus, .button.youtube:hover, .button.youtube:focus {
+    color: #FFFFFF; }
+button.block, .button.block {
+  width: 100%;
+  text-align: left;
+  min-width: 16px;
+  min-width: 1rem; }
+  button.block i, .button.block i {
+    float: right; }
+
+.social-buttons ul {
+  display: block;
+  list-style: none;
+  width: 100%;
+  max-width: 500px; }
+.social-buttons li {
+  float: left;
+  display: inline-block;
+  padding: 0 1% 5px 0;
+  width: 20%; }
+.social-buttons a {
+  font-size: 1.25rem; }
+
+.language-picker {
+  margin-bottom: 0; }
+  .language-picker li {
+    display: inline-block; }
+  .language-picker label, .language-picker h4 {
+    height: 1.3rem;
+    font-size: 1rem;
+    padding: .15rem;
+    margin: 0; }
+  .language-picker input {
+    margin: 0 .15rem 0 .3rem; }
+
+cite {
+  height: 1.3rem;
+  font-size: 1rem;
+  padding: .15rem; }
+
+@media only screen and (max-width: 768px) {
+  .page-footer {
+    padding-right: 2rem; }
+    .page-footer ul {
+      width: 100%;
+      position: relative; } }
+/**
+* Website Footer (Lite):
+* `footer` - the ACC.org footer is very large and has many moving parts this is the shorter lighter version for applications
+* 
+* 
+*   @example
+*	<footer class="page-footer">
+*		<div class="row">
+*			<a href="/"><img class="logo" src="~/Assets/img/oma-01.svg" alt="Home"></a>
+*		</div>
+*		<div class="footer-darker">
+*			<div class="row">
+*				<div class="columns large-8">
+*					<section class="address row">
+*						<h3>American College of Cardiology</h3>
+*						<address>
+*							<!-- http://microformats.org/wiki/hcard -->
+*							<h4>Heart House</h4>
+*							<ul>
+*								<li> <span class="street-address">2400 N. St. NW</span></li>
+*								<li> <span class="locality">Washington</span>, <span class="country-name"><abbr title="District of Colombia">DC</abbr></span> <span class="postal-code">20037</span></li>
+*								<li> <a href="mailto:resource@acc.org" class="email"><strong>Email:</strong> resource@acc.org</a></li>
+*							</ul>
+*							<ul>
+*								<li><span tel="+12023756000" class="tel"><strong>Phone:</strong> (202) 375-6000, ext. 5603</span></li>
+*								<li><span tel="+18002574737" class="tel"><strong>Toll Free:</strong> (800) 253-4636, ext. 5603</span></li>
+*								<li> <span fax="+12023757000" class="fax"><strong>Fax:</strong>(202) 375-7000</span></li>
+*							</ul>
+*						</address>
+*					</section>
+*					<section class="social-buttons row">
+*						<h4>Stay Connected</h4>
+*						<ul>
+*							<li>
+*								<a class="button twitter icon-only block" href="https://twitter.com/accintouch" target="_blank">
+*									<i class="fa fa-twitter"></i>
+*									<span class="text">Twitter</span>
+*								</a>
+*							</li>
+*							<li>
+*								<a class="button facebook icon-only block" href="https://www.facebook.com/AmericanCollegeofCardiology" target="_blank">
+*									<span class="text">Facebook</span><i class="fa fa-facebook"></i>
+*								</a>
+*							</li>
+*							<li>
+*								<a class="button linkedin icon-only block" href="http://www.linkedin.com/groups/American-College-Cardiology-732607?trk=myg_ugrp_ovr" target="_blank">
+*									<span class="text">LinkedIn</span><i class="fa fa-linkedin"></i>
+*								</a>
+*							</li>
+*							<li>
+*								<a class="button googleplus icon-only block" href="https://plus.google.com/118164094874227618578/about" target="_blank">
+*									<span class="text">Google+</span><i class="fa fa-google-plus"></i>
+*								</a>
+*							</li>
+*							<li>
+*								<a class="button youtube icon-only block" href="http://www.youtube.com/user/ACCinTouch" target="_blank">
+*									<span class="text">Youtube</span><i class="fa fa-youtube-play"></i>
+*								</a>
+*							</li>
+*						</ul>
+*					</section>
+*				</div>
+*				<div class="columns large-4">
+*					<section class="acc-websites row ">
+*						<h4>Powered By the ACC</h4>
+*						<nav class="nav-list small">
+*						<ul class="">
+*							<li><a target="_blank" class="" href="http://www.acc.org"><span class="text">Acc.org </span><i class="fa fa-external-link-square"></i></a></li>
+*							<li><a target="_blank" class="" href="http://cvquality.acc.org/"><span class="text">ACC Quality Improvement for Institutions</span> <i class="fa fa-external-link-square"></i></a></li>
+*							<li><a target="_blank" class="" href="http://www.ncdr.com"><span class="text">NCDR.com </span><i class="fa fa-external-link-square"></i></a></li>
+*							<li><a target="_blank" class="" href="http://www.cardiosmart.org"><span class="text">CardioSmart.org </span><i class="fa fa-external-link-square"></i></a></li>
+*							<li><a target="_blank" class="" href="http://blog.cardiosource.org"><span class="text">ACCinTouch.com </span><i class="fa fa-external-link-square"></i></a></li>
+*						</ul>
+*						</nav>
+*					</section>
+*				</div>
+*			</div>
+*		</div>
+*		<div class="row">
+*			<div class="large-4 columns">
+*				<h5><cite>┬⌐2015 American College of Cardiology</cite></h5>
+*			</div>
+*			<div class="large-8 columns">
+*			</div>
+*		</div>
+*	</footer>
+**/
 /**
 * Typography States:
 * `.repeater` - This is form elements repeater. This Module is broken into 3 major containers the `renders`,`question-group`, and `repeater actions`.
@@ -7838,6 +8071,8 @@ h6 blockquote {
   word-spacing: -4px; }
   .condensable .condense {
     display: inline; }
+  .condensable * {
+    word-spacing: 0; }
   @media only screen and (max-width: 320px) {
     .condensable .condense {
       display: none; } }

@@ -2507,7 +2507,12 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
 .button.disabled.secondary:hover {
   background-color: #cccccc;
   color: #999999;
-  cursor: default; }
+  cursor: not-allowed; }
+
+.link.disabled, .link.disabled:hover {
+  background-color: #cccccc;
+  color: #999999;
+  font-style: italic; }
 
 /**
 * Tabs (Basic):
@@ -3265,7 +3270,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   .label-holder label, .label-holder .label {
     font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
     font-weight: 700; }
-  @media only screen and (min-width: 320px) {
+  @media only screen and (max-width: 768px) {
     .label-holder {
       white-space: normal; } }
   .label-holder .text {
@@ -7838,6 +7843,8 @@ h6 blockquote {
   word-spacing: -4px; }
   .condensable .condense {
     display: inline; }
+  .condensable * {
+    word-spacing: 0; }
   @media only screen and (max-width: 320px) {
     .condensable .condense {
       display: none; } }

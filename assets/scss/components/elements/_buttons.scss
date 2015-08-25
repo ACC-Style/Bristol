@@ -16,14 +16,19 @@
 %buttondisabled{
 	background-color: grey(20);
 	color:fontcolor($black,'quiet');
-	cursor:default;
+	cursor:not-allowed;
 }
  button[disabled],
 .button.disabled,
-.button.disabled:hover{
+.button.disabled:hover,{
 	&,&.success,&.alert,&.secondary{
 		@extend %buttondisabled;
 		
 	}
 
+}
+.link.disabled,.link.disabled:hover{
+		background-color: grey(20);
+	color:fontcolor($black,'quiet');
+	font-style: italic;
 }
