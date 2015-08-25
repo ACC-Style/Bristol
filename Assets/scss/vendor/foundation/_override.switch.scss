@@ -22,11 +22,12 @@ $switch-active-color:rebrand-color($select-color, 2);
 	display: inline-block;
 	height: 2rem;
 	vertical-align: top;
-	padding: 0 0 0 .25rem;
+	padding: 0 0 0 .75rem;
 	margin: 0;
 	position: relative;
 	background-color:transparent;
 	color:fontcolor($black);
+	@include font-slab;
 	white-space: normal;
 	display:table-cell;
 }
@@ -47,12 +48,16 @@ $switch-active-color:rebrand-color($select-color, 2);
 	text-align: center;
 	vertical-align: middle;
 }
+.tiny.switch input + label:before{font-size: 84%;}
+.large.switch input + label:before{font-size: 140%;}
 .switch.x-visible input + label:before {
 	    content: "\f00d";
    	    left: -1.35em;
 	    top: .40em;
 	    color: #fff;
+
 }
+
 .switch.check-visible input:checked + label:before {
 	    content: "\f00c";
 	    left: -3.05em;

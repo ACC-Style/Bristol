@@ -10,25 +10,25 @@
 *				<th class="col1 sortable">
 *                        <div class="relative firefoxfix">
 *                        	<span class="sort">
-*                        	<i class="fa fa-sort"></i>
+*                        	<a class="fa fa-sort"></a>
 *                        	</span>
-*                        	<a>Table Header </a>
+*                        	<a class="text">Table Header </a>
 *                        </div>
 *                 </th>
 *				<th class="col2 sortable">
 *                        <div class="relative firefoxfix">
 *                        	<span class="sort">
-*                        	<i class="fa fa-sort"></i>
+*                        	<a class="fa fa-sort"></a>
 *                        	</span>
-*                        	<a>Table Header </a>
+*                        	<a  class="text">Table Header </a>
 *                        </div>
 *                 </th>
-*				<th class="col3 sortable">
+*				<th class="col3 sortable selected">
 *                        <div class="relative firefoxfix">
-*                        	<span class="sort">
-*                        	<i class="fa fa-sort"></i>
+*                        	<span class="sort sorttwoways">
+*                        	<a class="fa fa-sort selected"></a><a class="fa fa-sort"></a>
 *                        	</span>
-*                        	<a>Table Header </a>
+*                        	<a  class="text">Long Table<br>Header </a>
 *                        </div>
 *                 </th>
 *			</tr>
@@ -54,48 +54,87 @@
 */
 
 .fa-sort:before{content:$fa-var-sort;}
-.firefoxfix{ position: relative; height: inherit;}
+.firefoxfix{ position: initial; height: 100%;}
 $dark-grey:#666;
-th.sortable{
-	font-size: 1rem;
-	height:3rem;
+.sortableheader{background-color:grey(50);}
+th.sortable,td.sortable{
+	font-size: ms(0);
+	font-weight: 500;
 	padding:0;
 	position:relative;
 	overflow:hidden;
 	border-bottom: 0px none transparent;
 	background-color:grey(50) !important;
-	vertical-align: top;
+	top:1px;
+	select{
+		font-size: ms(-1);
+		margin: 0 0 0 .5em;
+	    margin-left: 1em;
+	    border: 0 none rgba(0, 0, 0, 0);
+	    background-color: grey(55);
+		height: 100%;
+		top: 0;
+		bottom: 0;
+		position: absolute;
+		left: 0em;
+	    border-right: 2px solid  grey(40);
+	    color: grey(30);
+	    &:hover{
+	    	background-color:mix($dark-grey, $black,50%);
+	    };
+		}
+	.table thead &, .table thead &{vertical-align: top;}
 	&:hover{ background-color: grey(55) !important;}
-	>div>*{width:auto;height:inherit;float:left;}
+	//>div>*{width:auto;height:inherit;float:left;}	
+	&.selected .sort{background-color:mix($dark-grey, $black,50%); .fa-sort{color:grey(40);}}
 	.sort{
 		
 		position:absolute;
 		top:0;
 		left:0;
-		height:7em;
+		bottom:0;
 		display:inline-block;
 		background-color:grey(60);
 		padding:0 3px;
 		vertical-align:middle;
-		i{
+
+		.fa-sort{
 			color:grey(20);
-			top: .85rem;
+			top: .5rem;
 			position: relative;
-			vertical-align: top;
+			vertical-align: middle;
+			width: 1em;
+			height: 1em;
+			text-align: center;
 			&:before{content:"\f0dc";}
+			&.selected{color:$alert-color;}
+		}
+		&.sorttwoways{
+			.fa-sort{position: relative;}
+			.fa-sort:before{ content:"\f0de";}
+			.fa-sort + .fa-sort:before{ content:"\f0dd";}
+			.fa-sort + .fa-sort{
+				position: absolute;
+				top:auto;
+				bottom: 0.5rem;
+			}
 		}
 	}
 	
 	
 	
-	>div>a{
+	.text{
+		
 		color:white;
-		padding: .25rem .5rem .0rem 1.25rem; 
+		padding: .25rem .5rem 0rem 1.25rem; 
+		//margin-bottom: -3em;
 		white-space:normal;
-		&:hover{color:grey(10)}
-		@include bp(lg){padding: 0.5rem 0.625rem 1.25rem 2rem;}
-		}
-		.has-tip{border:none 0;}
+		display: block;
+		line-height: 1.25;
+		@include bp(lg){padding: 0.5rem 0.625rem 0.25rem 2rem;}
+	}
+	&:hover.text{color:grey(10);}
+	.has-tip{border:none 0;}
 }
 $column-names:
 			".col1"

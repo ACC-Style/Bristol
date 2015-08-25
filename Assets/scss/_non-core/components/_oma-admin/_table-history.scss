@@ -16,3 +16,28 @@
 		width: 1%;
 	}
 }
+.user-table{
+	td{
+		@include baseline-font(0); 
+		@include font();
+	}
+	ul.access-list{
+		list-style: none;
+		display: inline;
+		margin-left: 0;
+		li{
+			display: inline;
+			@include baseline-font(-1);
+			@include font-cond;
+			color:fontcolor($black,"quiet");
+			white-space: nowrap;
+			}
+		li+li{
+			&:before{ content: ",";padding-right:.5em;}
+		}
+		li > *{display: inline-block;}
+	}
+	.user-name-cell{max-width: 30%}
+	.action-cell{white-space: nowrap;}
+}
+

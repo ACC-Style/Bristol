@@ -33,6 +33,7 @@ $pagination-color:rebrand-color($primary-color,2);
 .pagination-holder{
 	border-top:2px solid $pagination-color;
 	@include grid-row();
+	max-width: none;
 }
 ul.pagination li{
 	a,button{
@@ -63,6 +64,12 @@ ul.pagination li{
 	~ .arrow{ a, button{
 				border-radius: 0px 0px 5px 0px; 
 			}}
+	}
+	&.unavailable a, &.unavailable a:hover{
+	    border-color: grey(30);
+	    background: url("../img/subtlenet2.png") repeat;
+	    color: grey(40);
+	    cursor: not-allowed;
 	}
 }
 

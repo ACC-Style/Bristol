@@ -2012,6 +2012,9 @@ there are two to three needs for icons icons in containers, icons on icons and t
 .save > i.fa-holder:before, .save.fa:before {
   content: ""; }
 
+.search > i.fa-holder:before, .search.fa:before {
+  content: ""; }
+
 .fa-check:before {
   content: ""; }
 
@@ -3358,6 +3361,8 @@ input[type="checkbox"], input[type="radio"] {
   position: absolute;
   display: inline-block;
   vertical-align: middle; }
+  table input[type="checkbox"], table input[type="radio"] {
+    position: relative; }
   input[type="checkbox"] + .text, input[type="radio"] + .text {
     padding-left: 2em;
     display: inline-block; }
@@ -3780,7 +3785,8 @@ table a.button, table button, table .inline-list, table .nobutton {
   width: 100%;
   border-collapse: collapse;
   border: 0;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  font-size: 14px; }
   .table tbody tr + tr td {
     border-top: #e6e6e6 1px solid; }
   .table small {
@@ -4019,6 +4025,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   margin-top: 0;
   margin-bottom: 0;
   max-width: 114.28571rem;
+  max-width: none;
   margin-bottom: 1rem;
   display: none; }
   .collapsable-panel:before, .collapsable-panel:after {
@@ -4672,11 +4679,13 @@ div.reveal-modal, dialog {
   display: inline-block;
   height: 2rem;
   vertical-align: top;
-  padding: 0 0 0 .25rem;
+  padding: 0 0 0 .75rem;
   margin: 0;
   position: relative;
   background-color: transparent;
   color: #5c5c5c;
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 400;
   white-space: normal;
   display: table-cell; }
 
@@ -4696,6 +4705,12 @@ div.reveal-modal, dialog {
   -webkit-font-smoothing: antialiased;
   text-align: center;
   vertical-align: middle; }
+
+.tiny.switch input + label:before {
+  font-size: 84%; }
+
+.large.switch input + label:before {
+  font-size: 140%; }
 
 .switch.x-visible input + label:before {
   content: "\f00d";
@@ -4747,6 +4762,9 @@ div.reveal-modal, dialog {
   @media only screen and (min-width: 1024px) {
     .page-wrapper {
       padding: 2rem 1rem 3rem; } }
+
+.section-nav.back ~ .page-wrapper {
+  padding-top: 0; }
 
 .content-padding {
   padding: 0 .5rem;
@@ -4882,8 +4900,8 @@ div.reveal-modal, dialog {
   .split-layout:after {
     clear: both; }
   .split-layout .split-sidebar, .split-layout .split-content {
-    margin-bottom: -1000px;
-    padding-bottom: 1001px; }
+    margin-bottom: -9998px;
+    padding-bottom: 9998px; }
   .split-layout.fill-page-height .split-content {
     margin-bottom: 0px;
     padding-bottom: 1em; }

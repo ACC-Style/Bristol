@@ -2160,6 +2160,9 @@ there are two to three needs for icons icons in containers, icons on icons and t
 .save > i.fa-holder:before, .save.fa:before {
   content: ""; }
 
+.search > i.fa-holder:before, .search.fa:before {
+  content: ""; }
+
 .fa-check:before {
   content: ""; }
 
@@ -2438,7 +2441,7 @@ button::-moz-focus-inner {
 
 .h1, h1 {
   letter-spacing: -1px;
-  font-family: 'Raleway', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300; }
 
 .h2, h2 {
@@ -3639,6 +3642,8 @@ input[type="checkbox"], input[type="radio"] {
   position: absolute;
   display: inline-block;
   vertical-align: middle; }
+  table input[type="checkbox"], table input[type="radio"] {
+    position: relative; }
   input[type="checkbox"] + .text, input[type="radio"] + .text {
     padding-left: 2em;
     display: inline-block; }
@@ -4337,7 +4342,8 @@ table a.button, table button, table .inline-list, table .nobutton {
   width: 100%;
   border-collapse: collapse;
   border: 0;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  font-size: 14px; }
   .table tbody tr + tr td {
     border-top: #e6e6e6 1px solid; }
   .table small {
@@ -4513,25 +4519,25 @@ table a.button, table button, table .inline-list, table .nobutton {
 *				<th class="col1 sortable">
 *                        <div class="relative firefoxfix">
 *                        	<span class="sort">
-*                        	<i class="fa fa-sort"></i>
+*                        	<a class="fa fa-sort"></a>
 *                        	</span>
-*                        	<a>Table Header </a>
+*                        	<a class="text">Table Header </a>
 *                        </div>
 *                 </th>
 *				<th class="col2 sortable">
 *                        <div class="relative firefoxfix">
 *                        	<span class="sort">
-*                        	<i class="fa fa-sort"></i>
+*                        	<a class="fa fa-sort"></a>
 *                        	</span>
-*                        	<a>Table Header </a>
+*                        	<a  class="text">Table Header </a>
 *                        </div>
 *                 </th>
-*				<th class="col3 sortable">
+*				<th class="col3 sortable selected">
 *                        <div class="relative firefoxfix">
-*                        	<span class="sort">
-*                        	<i class="fa fa-sort"></i>
+*                        	<span class="sort sorttwoways">
+*                        	<a class="fa fa-sort selected"></a><a class="fa fa-sort"></a>
 *                        	</span>
-*                        	<a>Table Header </a>
+*                        	<a  class="text">Long Table<br>Header </a>
 *                        </div>
 *                 </th>
 *			</tr>
@@ -4559,50 +4565,87 @@ table a.button, table button, table .inline-list, table .nobutton {
   content: ""; }
 
 .firefoxfix {
-  position: relative;
-  height: inherit; }
+  position: initial;
+  height: 100%; }
 
-th.sortable {
-  font-size: 1rem;
-  height: 3rem;
+.sortableheader {
+  background-color: gray; }
+
+th.sortable, td.sortable {
+  font-size: 14px;
+  font-weight: 500;
   padding: 0;
   position: relative;
   overflow: hidden;
   border-bottom: 0px none transparent;
   background-color: gray !important;
-  vertical-align: top; }
-  th.sortable:hover {
+  top: 1px; }
+  th.sortable select, td.sortable select {
+    font-size: 13px;
+    margin: 0 0 0 .5em;
+    margin-left: 1em;
+    border: 0 none transparent;
+    background-color: #737373;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    left: 0em;
+    border-right: 2px solid #999999;
+    color: #b3b3b3; }
+    th.sortable select:hover, td.sortable select:hover {
+      background-color: #4d4d4d; }
+  .table thead th.sortable, .table thead th.sortable, .table thead td.sortable, .table thead td.sortable {
+    vertical-align: top; }
+  th.sortable:hover, td.sortable:hover {
     background-color: #737373 !important; }
-  th.sortable > div > * {
-    width: auto;
-    height: inherit;
-    float: left; }
-  th.sortable .sort {
+  th.sortable.selected .sort, td.sortable.selected .sort {
+    background-color: #4d4d4d; }
+    th.sortable.selected .sort .fa-sort, td.sortable.selected .sort .fa-sort {
+      color: #999999; }
+  th.sortable .sort, td.sortable .sort {
     position: absolute;
     top: 0;
     left: 0;
-    height: 7em;
+    bottom: 0;
     display: inline-block;
     background-color: #666666;
     padding: 0 3px;
     vertical-align: middle; }
-    th.sortable .sort i {
+    th.sortable .sort .fa-sort, td.sortable .sort .fa-sort {
       color: #cccccc;
-      top: .85rem;
+      top: .5rem;
       position: relative;
-      vertical-align: top; }
-      th.sortable .sort i:before {
+      vertical-align: middle;
+      width: 1em;
+      height: 1em;
+      text-align: center; }
+      th.sortable .sort .fa-sort:before, td.sortable .sort .fa-sort:before {
         content: "\f0dc"; }
-  th.sortable > div > a {
+      th.sortable .sort .fa-sort.selected, td.sortable .sort .fa-sort.selected {
+        color: #d07600; }
+    th.sortable .sort.sorttwoways .fa-sort, td.sortable .sort.sorttwoways .fa-sort {
+      position: relative; }
+    th.sortable .sort.sorttwoways .fa-sort:before, td.sortable .sort.sorttwoways .fa-sort:before {
+      content: "\f0de"; }
+    th.sortable .sort.sorttwoways .fa-sort + .fa-sort:before, td.sortable .sort.sorttwoways .fa-sort + .fa-sort:before {
+      content: "\f0dd"; }
+    th.sortable .sort.sorttwoways .fa-sort + .fa-sort, td.sortable .sort.sorttwoways .fa-sort + .fa-sort {
+      position: absolute;
+      top: auto;
+      bottom: 0.5rem; }
+  th.sortable .text, td.sortable .text {
     color: white;
-    padding: .25rem .5rem .0rem 1.25rem;
-    white-space: normal; }
-    th.sortable > div > a:hover {
-      color: #e6e6e6; }
+    padding: .25rem .5rem 0rem 1.25rem;
+    white-space: normal;
+    display: block;
+    line-height: 1.25; }
     @media only screen and (min-width: 1024px) {
-      th.sortable > div > a {
-        padding: 0.5rem 0.625rem 1.25rem 2rem; } }
-  th.sortable .has-tip {
+      th.sortable .text, td.sortable .text {
+        padding: 0.5rem 0.625rem 0.25rem 2rem; } }
+  th.sortable:hover.text, td.sortable:hover.text {
+    color: #e6e6e6; }
+  th.sortable .has-tip, td.sortable .has-tip {
     border: none 0; }
 
 .sort-asc.col10 .sortable.col10 .sort i:before, .sort-asc.col9 .sortable.col9 .sort i:before, .sort-asc.col8 .sortable.col8 .sort i:before, .sort-asc.col7 .sortable.col7 .sort i:before, .sort-asc.col6 .sortable.col6 .sort i:before, .sort-asc.col5 .sortable.col5 .sort i:before, .sort-asc.col4 .sortable.col4 .sort i:before, .sort-asc.col3 .sortable.col3 .sort i:before, .sort-asc.col2 .sortable.col2 .sort i:before, .sort-asc.col1 .sortable.col1 .sort i:before {
@@ -4837,6 +4880,7 @@ tr:nth-child(even).highlighted td {
   margin-top: 0;
   margin-bottom: 0;
   max-width: 114.28571rem;
+  max-width: none;
   margin-bottom: 1rem;
   display: none; }
   .collapsable-panel:before, .collapsable-panel:after {
@@ -5336,6 +5380,38 @@ Non-Core Components Styles
   font-size: .75rem;
   width: 1%; }
 
+.user-table td {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family: 'Roboto', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  letter-spacing: .01em; }
+.user-table ul.access-list {
+  list-style: none;
+  display: inline;
+  margin-left: 0; }
+  .user-table ul.access-list li {
+    display: inline;
+    font-size: 0.92857em;
+    line-height: 1.61538em;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    font-family: 'Roboto Condensed', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    color: #999999;
+    white-space: nowrap; }
+  .user-table ul.access-list li + li:before {
+    content: ",";
+    padding-right: .5em; }
+  .user-table ul.access-list li > * {
+    display: inline-block; }
+.user-table .user-name-cell {
+  max-width: 30%; }
+.user-table .action-cell {
+  white-space: nowrap; }
+
 .header.application-frame {
   border-bottom: #00386b 5px solid;
   height: 65px;
@@ -5365,6 +5441,14 @@ Non-Core Components Styles
   padding: 1.25rem .75rem .5rem; }
 .collapsable-panel.inset .content {
   padding: 1.25rem .75rem .5rem; }
+
+.table thead th, .table thead td {
+  font-family: 'Roboto Condensed', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 700; }
+
+.table th, .table td {
+  font-family: 'Roboto Condensed', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 400; }
 
 /*!
 Chosen, a Select Box Enhancer for jQuery and Prototype
@@ -6351,18 +6435,19 @@ nav.top-bar {
 *		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
 *	</ul></div>
 */
-.pagination-holder {
+.pagination-holder, .result-selector-holder {
   border-top: 2px solid #198dae;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 114.28571rem; }
-  .pagination-holder:before, .pagination-holder:after {
+  max-width: 114.28571rem;
+  max-width: none; }
+  .pagination-holder:before, .result-selector-holder:before, .pagination-holder:after, .result-selector-holder:after {
     content: " ";
     display: table; }
-  .pagination-holder:after {
+  .pagination-holder:after, .result-selector-holder:after {
     clear: both; }
 
 ul.pagination li a, ul.pagination li button {
@@ -6383,8 +6468,13 @@ ul.pagination li.arrow a, ul.pagination li.arrow button {
     color: #333333; }
 ul.pagination li.arrow ~ .arrow a, ul.pagination li.arrow ~ .arrow button {
   border-radius: 0px 0px 5px 0px; }
+ul.pagination li.unavailable a, ul.pagination li.unavailable a:hover {
+  border-color: #b3b3b3;
+  background: url("../img/subtlenet2.png") repeat;
+  color: #999999;
+  cursor: not-allowed; }
 
-.pagination-holder.top {
+.pagination-holder.top, .top.result-selector-holder {
   border-top: 0 none;
   border-bottom: 2px solid #198dae;
   margin-bottom: 1.42857rem;
@@ -6394,16 +6484,16 @@ ul.pagination li.arrow ~ .arrow a, ul.pagination li.arrow ~ .arrow button {
   margin-top: 0;
   margin-bottom: 0;
   max-width: 114.28571rem; }
-  .pagination-holder.top ul.pagination {
+  .pagination-holder.top ul.pagination, .top.result-selector-holder ul.pagination {
     margin-bottom: 0; }
-  .pagination-holder.top:before, .pagination-holder.top:after {
+  .pagination-holder.top:before, .top.result-selector-holder:before, .pagination-holder.top:after, .top.result-selector-holder:after {
     content: " ";
     display: table; }
-  .pagination-holder.top:after {
+  .pagination-holder.top:after, .top.result-selector-holder:after {
     clear: both; }
-  .pagination-holder.top ul.pagination li.arrow a, .pagination-holder.top ul.pagination li.arrow button {
+  .pagination-holder.top ul.pagination li.arrow a, .top.result-selector-holder ul.pagination li.arrow a, .pagination-holder.top ul.pagination li.arrow button, .top.result-selector-holder ul.pagination li.arrow button {
     border-radius: 5px 0 0 0; }
-  .pagination-holder.top ul.pagination li.arrow ~ .arrow a, .pagination-holder.top ul.pagination li.arrow ~ .arrow button {
+  .pagination-holder.top ul.pagination li.arrow ~ .arrow a, .top.result-selector-holder ul.pagination li.arrow ~ .arrow a, .pagination-holder.top ul.pagination li.arrow ~ .arrow button, .top.result-selector-holder ul.pagination li.arrow ~ .arrow button {
     border-radius: 0 5px 0 0; }
 
 @media only screen and (max-width: 1024px) {
@@ -6418,15 +6508,13 @@ ul.pagination li.arrow ~ .arrow a, ul.pagination li.arrow ~ .arrow button {
 * 
 *   @example
 *	<div class="pagination-holder top">
-*		<div class="result-selector-holder left">
-*		<ul class="pagination result-selector ">
+*		<ul class="pagination result-selector left">
 *			<li class="label">Show</li>
 *			<li class="current"><a href="">10</a></li>
 *			<li><a href="">20</a></li>
 *			<li><a href="">50</a></li>
 *			<li class="value">Results</li>
 *		</ul>
-*		</div>
 *	<ul class="pagination right">
 *		<li class="arrow unavailable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
 *		<li class="current"><a href="">1</a></li>
@@ -6436,15 +6524,13 @@ ul.pagination li.arrow ~ .arrow a, ul.pagination li.arrow ~ .arrow button {
 *		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
 *	</ul></div><br>
 *	<div class="pagination-holder bottom">
-*		<div class="result-selector-holder left">
-*		<ul class="pagination result-selector ">
+*		<ul class="pagination result-selector left">
 *			<li class="label">Show</li>
 *			<li class="current"><a href="">10</a></li>
 *			<li><a href="">20</a></li>
 *			<li><a href="">50</a></li>
 *			<li class="value">Results</li>
 *		</ul>
-*		</div>
 *	<ul class="pagination right">
 *		<li class="arrow unavailable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
 *		<li class="current"><a href="">1</a></li>
@@ -6455,9 +6541,6 @@ ul.pagination li.arrow ~ .arrow a, ul.pagination li.arrow ~ .arrow button {
 *	</ul></div>
 *
 */
-.result-selector-holder {
-  display: inline-block; }
-
 .pagination.result-selector li.label, .pagination.result-selector li.value {
   color: #5c5c5c;
   font-weight: 700; }
@@ -6666,11 +6749,13 @@ div.reveal-modal, dialog {
   display: inline-block;
   height: 2rem;
   vertical-align: top;
-  padding: 0 0 0 .25rem;
+  padding: 0 0 0 .75rem;
   margin: 0;
   position: relative;
   background-color: transparent;
   color: #5c5c5c;
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 400;
   white-space: normal;
   display: table-cell; }
 
@@ -6690,6 +6775,12 @@ div.reveal-modal, dialog {
   -webkit-font-smoothing: antialiased;
   text-align: center;
   vertical-align: middle; }
+
+.tiny.switch input + label:before {
+  font-size: 84%; }
+
+.large.switch input + label:before {
+  font-size: 140%; }
 
 .switch.x-visible input + label:before {
   content: "\f00d";
@@ -7126,6 +7217,9 @@ div.reveal-modal, dialog {
     .page-wrapper {
       padding: 2rem 1rem 3rem; } }
 
+.section-nav.back ~ .page-wrapper {
+  padding-top: 0; }
+
 .content-padding {
   padding: 0 .5rem;
   max-width: 1200px;
@@ -7260,8 +7354,8 @@ div.reveal-modal, dialog {
   .split-layout:after {
     clear: both; }
   .split-layout .split-sidebar, .split-layout .split-content {
-    margin-bottom: -1000px;
-    padding-bottom: 1001px; }
+    margin-bottom: -9998px;
+    padding-bottom: 9998px; }
   .split-layout.fill-page-height .split-content {
     margin-bottom: 0px;
     padding-bottom: 1em; }
@@ -7714,5 +7808,7 @@ h6 blockquote {
 /**
 * Take me to [top](#top):
 */
+.row, .hint, .page-wrapper {
+  max-width: none; }
 
 /*# sourceMappingURL=style-omaAdmin.css.map */

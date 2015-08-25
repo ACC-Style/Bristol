@@ -19,7 +19,7 @@ $baseline-modifier:1.4;
 @import "vendor/font-awesome/_font-awesome_kitchensink";
 @import "vendor/jquery-ui/jquery-ui-kitchensink";
 @import "base/colors";
-@import "base/fonts";
+// @import "base/fonts";
 @import "_non-core/base/_oma-admin/fonts";
 @import "helpers/breakpoints";
 @import "vendor/font-awesome/font-awesome";
@@ -28,6 +28,9 @@ $baseline-modifier:1.4;
 // @import "vendor/font-awesome/path";
 // @import "vendor/font-awesome/core";
 @import "base/__states.required";
+
+//clearing the max-width to make full screen above 1200px.
+
 
 // dynamic usage of font awesome.
 @import "base/fa-holder";
@@ -82,12 +85,14 @@ Non-Core Components Styles
 // OMA Admin Modules
 @import "_non-core/components/_oma-admin/table-history";
 @import "_non-core/components/_oma-admin/branding";
+
 @import "_non-core/components/_oma-admin/user-id-block";
 @import "_non-core/components/_oma-admin/admin.collapsable-panel";
+.table thead th,.table thead td {@include font-bold-cond ;}
+.table th,.table td {@include font-cond ;}
 // SI Modules
 //@import "_non-core/components/_si/si.table-cellcolor";
 //@import "_non-core/components/_si/si.recommendationTable";
-
 
 // Vendor Overrides and Styles 
 @import "vendor/chosen/chosen";
@@ -125,3 +130,5 @@ Non-Core Components Styles
 @import "trumps/condensable";
 @import "trumps/css3";
 
+
+.row,.page-wrapper{max-width: none;}

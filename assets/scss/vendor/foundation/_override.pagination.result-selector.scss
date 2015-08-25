@@ -13,15 +13,13 @@ $required_data:(
 * 
 *   @example
 *	<div class="pagination-holder top">
-*		<div class="result-selector-holder left">
-*		<ul class="pagination result-selector ">
+*		<ul class="pagination result-selector left">
 *			<li class="label">Show</li>
 *			<li class="current"><a href="">10</a></li>
 *			<li><a href="">20</a></li>
 *			<li><a href="">50</a></li>
 *			<li class="value">Results</li>
 *		</ul>
-*		</div>
 *	<ul class="pagination right">
 *		<li class="arrow unavailable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
 *		<li class="current"><a href="">1</a></li>
@@ -31,15 +29,13 @@ $required_data:(
 *		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
 *	</ul></div><br>
 *	<div class="pagination-holder bottom">
-*		<div class="result-selector-holder left">
-*		<ul class="pagination result-selector ">
+*		<ul class="pagination result-selector left">
 *			<li class="label">Show</li>
 *			<li class="current"><a href="">10</a></li>
 *			<li><a href="">20</a></li>
 *			<li><a href="">50</a></li>
 *			<li class="value">Results</li>
 *		</ul>
-*		</div>
 *	<ul class="pagination right">
 *		<li class="arrow unavailable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
 *		<li class="current"><a href="">1</a></li>
@@ -51,7 +47,7 @@ $required_data:(
 *
 */
 .result-selector-holder{
-	display: inline-block;
+	@extend .pagination-holder;
 }
 .pagination.result-selector{
 		li.label,li.value{ 
@@ -67,5 +63,3 @@ $required_data:(
 		}
 
 }
-.pagination-holder{}
-ul.result-selector{}
