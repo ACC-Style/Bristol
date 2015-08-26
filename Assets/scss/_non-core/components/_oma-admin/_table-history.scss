@@ -15,6 +15,8 @@
 		font-size: .75rem;
 		width: 1%;
 	}
+	tr .note{display: none;}
+	tr.note .note{display:inline-block;}
 }
 .user-table{
 	td{
@@ -38,6 +40,116 @@
 		li > *{display: inline-block;}
 	}
 	.user-name-cell{max-width: 30%}
+
 	.action-cell{white-space: nowrap;}
 }
 
+$workflow-status:  (
+	"Status":"draft",
+	"Selector":".draft",
+    "Color": $secondary-color,
+    "Icon": $fa-var-pencil-square-o, 
+    "ColorRow": true, 
+    ), (
+	"Status":"pendingpayment",
+	"Selector":".pendingpayment",
+    "Color": $secondary-color,
+    "Icon": $fa-var-usd, 
+    "ColorRow": true, 
+    ),(
+	"Status":"submitted",
+	"Selector":".submitted",
+    "Color": $success-color,
+    "Icon": $fa-var-check-circle-o, 
+    "ColorRow": false, 
+    ),(
+	"Status":"submitted",
+	"Selector":".submitted",
+    "Color": $success-color,
+    "Icon": $fa-var-check-circle-o, 
+    "ColorRow": false, 
+    )
+    ,(
+	"Status":"incomplete",
+	"Selector":".incomplete",
+    "Color": $alert-color,
+    "Icon": $fa-var-adjust, 
+    "ColorRow": true, 
+    ) ,(
+	"Status":"approved",
+	"Selector":".approved",
+    "Color": $alert-color,
+    "Icon": $fa-var-check-circle, 
+    "ColorRow": false, 
+    ),(
+	"Status":"pendingelection",
+	"Selector":".pendingelection",
+    "Color": $secondary-color,
+    "Icon": $fa-var-clock-o, 
+    "ColorRow": false, 
+    ),(
+	"Status":"completed",
+	"Selector":".completed",
+    "Color": $success-color,
+    "Icon": $fa-var-check, 
+    "ColorRow": true, 
+    ),(
+	"Status":"hold",
+	"Selector":".hold",
+    "Color": $secondary-color,
+    "Icon": $fa-var-hand-paper-o, 
+    "ColorRow": true, 
+    )
+    ;
+
+.history{
+	%tr-td-status{  
+		background-image: url(../img/empty_stripe@2x.png);
+		font-weight: 900;
+		border-top:1px solid transparent;
+		border-bottom:1px solid transparent;
+	}	
+	%td-status{  
+		background-image: url(../img/empty_diamond@2x.png);
+		font-weight: 900;
+	}
+	@each $Status in $workflow-status{
+		 
+		$cell-color:mix(map-get($Status,"Color"),white,20%);
+		$cell-color-shift:mix(map-get($Status,"Color"),white,25%);
+		$selector:map-get($Status,"Selector");
+		$icon:map-get($Status, "Icon");
+		tr#{$selector}{
+			@include fa-holder($icon, "dynamic");
+			td i{color:map-get($Status,"Color");}
+		}
+
+		@if map-get($Status, "ColorRow") == true {
+			tr#{$selector} td{
+				@extend %tr-td-status;
+				background-color:$cell-color;
+				color:color-contrast($cell-color);
+				border-color:map-get($Status,"Color");
+			}
+			tr:nth-child(even){
+				&#{$selector} td{
+					background-color:$cell-color-shift;
+					color:color-contrast($cell-color-shift);
+				}
+			}
+		}
+	}
+}
+// draft
+// pendingpayment
+// submitted
+// incomplete
+// approved
+// committeereview
+// committeeapprove
+// committeereject
+// pendingelection
+// completed
+// hold
+// withdraw
+// rejected
