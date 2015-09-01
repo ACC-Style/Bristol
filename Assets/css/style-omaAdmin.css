@@ -3567,7 +3567,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
     left: 0;
     font-size: .75rem; }
 
-.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .repeater.required > .required-holder {
+.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .repeater.required > .label-holder .required-holder {
   background-color: transparent;
   display: inline-block; }
 
@@ -3595,7 +3595,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 [class*="input-space"] + [class*="input-space"]:last-child, [class*="value-space"] + [class*="value-space"]:last-child {
   padding-right: 0; }
 
-.message-holder small, .message-holder span {
+.message-holder > small, .message-holder > span {
   font-size: 0.92857em;
   line-height: 1.61538em;
   margin-top: 0em;
@@ -3607,7 +3607,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   background: #d07600;
   clear: both;
   color: #FFF; }
-  .message-holder small i, .message-holder span i {
+  .message-holder > small i, .message-holder > span i {
     margin-right: .5rem; }
 
 .hint {
@@ -3619,31 +3619,6 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 .answer .required, .question .required {
   display: none; }
 .answer.required .required, .question.required .required {
-  display: inline-block;
-  width: 100%; }
-.answer .error, .question .error {
-  display: none; }
-.answer.error .error, .question.error .error {
-  display: inline-block;
-  width: 100%; }
-.answer .warning, .question .warning {
-  display: none; }
-.answer.warning .warning, .question.warning .warning {
-  display: inline-block;
-  width: 100%; }
-.answer .validated, .question .validated {
-  display: none; }
-.answer.validated .validated, .question.validated .validated {
-  display: inline-block;
-  width: 100%; }
-.answer .info, .question .info {
-  display: none; }
-.answer.info .info, .question.info .info {
-  display: inline-block;
-  width: 100%; }
-.answer .highlighted, .question .highlighted {
-  display: none; }
-.answer.highlighted .highlighted, .question.highlighted .highlighted {
   display: inline-block;
   width: 100%; }
 
@@ -3707,15 +3682,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   border-color: #4bc1e2;
   background-color: #cfdee2; }
 
-.error textarea, .error select, .error input, .error datalist {
-  margin-bottom: 0; }
-.warning textarea, .warning select, .warning input, .warning datalist {
-  margin-bottom: 0; }
-.validated textarea, .validated select, .validated input, .validated datalist {
-  margin-bottom: 0; }
-.info textarea, .info select, .info input, .info datalist {
-  margin-bottom: 0; }
-.highlighted textarea, .highlighted select, .highlighted input, .highlighted datalist {
+.error textarea, .error select, .error input, .error datalist, .warning textarea, .warning select, .warning input, .warning datalist, .validated textarea, .validated select, .validated input, .validated datalist, .info textarea, .info select, .info input, .info datalist, .highlighted textarea, .highlighted select, .highlighted input, .highlighted datalist {
   margin-bottom: 0; }
 
 .error textarea, .error select, .error input {
@@ -3723,31 +3690,50 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 .alert textarea, .warning textarea, .alert select, .warning select, .alert input, .warning input {
   border-color: #d07600; }
 
-.message-holder small.error, .message-holder span.error {
+.message-holder > .error {
   background-color: #c32231;
-  color: #fff; }
-  .error .message-holder small.error, .error .message-holder span.error {
-    display: block; }
-.message-holder small.warning, .message-holder span.warning {
+  color: #fff;
+  display: none; }
+.message-holder > .warning {
   background-color: #d07600;
-  color: #fff; }
-  .warning .message-holder small.warning, .warning .message-holder span.warning {
-    display: block; }
-.message-holder small.validated, .message-holder span.validated {
+  color: #fff;
+  display: none; }
+.message-holder > .validated {
   background-color: #19BB9B;
-  color: #fff; }
-  .validated .message-holder small.validated, .validated .message-holder span.validated {
-    display: block; }
-.message-holder small.info, .message-holder span.info {
+  color: #fff;
+  display: none; }
+.message-holder > .info {
   background-color: #22AFD7;
-  color: #fff; }
-  .info .message-holder small.info, .info .message-holder span.info {
-    display: block; }
-.message-holder small.highlighted, .message-holder span.highlighted {
+  color: #fff;
+  display: none; }
+.message-holder > .highlighted {
   background-color: #22AFD7;
-  color: #fff; }
-  .highlighted .message-holder small.highlighted, .highlighted .message-holder span.highlighted {
-    display: block; }
+  color: #fff;
+  display: none; }
+
+.error .message-holder > .error, .message-holder > .error.make-visible, .warning .message-holder > .warning, .message-holder > .warning.make-visible, .validated .message-holder > .validated, .message-holder > .validated.make-visible, .info .message-holder > .info, .message-holder > .info.make-visible, .highlighted .message-holder > .highlighted, .message-holder > .highlighted.make-visible {
+  display: block; }
+
+.hint .error {
+  background-color: #c32231;
+  color: #fff;
+  padding: .25em .5em; }
+.hint .warning {
+  background-color: #d07600;
+  color: #fff;
+  padding: .25em .5em; }
+.hint .validated {
+  background-color: #19BB9B;
+  color: #fff;
+  padding: .25em .5em; }
+.hint .info {
+  background-color: #22AFD7;
+  color: #fff;
+  padding: .25em .5em; }
+.hint .highlighted {
+  background-color: #22AFD7;
+  color: #fff;
+  padding: .25em .5em; }
 
 .input-holder {
   margin-bottom: .75rem; }
@@ -4178,9 +4164,9 @@ input[type="checkbox"], input[type="radio"] {
     padding-right: 0;
     width: 100%;
     float: left; }
-  .repeater.required > .required-holder {
+  .repeater.required > .label-holder .required-holder {
     color: #d07600; }
-    .repeater.required > .required-holder i.fa-holder-dynamic:before, .repeater.required > .required-holder.dynamic i.fa-holder:before {
+    .repeater.required > .label-holder .required-holder i.fa-holder-dynamic:before, .repeater.required > .label-holder .required-holder.dynamic i.fa-holder:before {
       content: ""; }
   .repeater .edit, .repeater .clear, .repeater .delete, .repeater .add, .repeater .set, .repeater .save {
     font-size: .8rem;

@@ -14,10 +14,10 @@ $required_data:(
 .answer,.question{
 	.required{display:none;}
 	@include match-display(".required");
-	@each $State in $states{
-		#{map-get($State, "Selector")}{display: none;}
-		@include match-display( map-get($State, "Selector") );
-	}
+	// @each $State in $states{
+	// 	#{map-get($State, "Selector")}{display: none;}
+	// 	@include match-display( map-get($State, "Selector") );
+	// }
 }
 .required-holder {
 	@each $State in $states{
@@ -68,12 +68,14 @@ $required_data:(
 		}
 	}
 }
-
+%removeMarginBottom{
+	margin-bottom: 0;
+}
 textarea,select,input,datalist{ 
 @each $State in $states{
 		$selector:map-get($State,"Selector");
 		#{$selector} &{
-			margin-bottom: 0;
+			@extend %removeMarginBottom;
 		}
 	}
 } 
@@ -82,16 +84,32 @@ textarea,select,input{
 	.error &{border-color:$warning-color;}
 	.alert &,.warning &{border-color:$alert-color;}
 } 
+
 .message-holder{
 	@each $State in $states{
 		$selector:map-get($State,"Selector");
 		$color: map-get($State, 'Color');
-		small#{$selector}, span#{$selector}{
+		> #{$selector}{
 			background-color: $color;
 			color:color-contrast($color);
-			#{$selector} &{
-				display: block;
+			display: none;
+			#{$selector} &, &.make-visible{
+				@extend %visibleDisplayBlock;
 			}
+		}
+	}
+}
+%visibleDisplayBlock{
+	display: block;
+}
+.hint{
+	@each $State in $states{
+		$selector:map-get($State,"Selector");
+		$color: map-get($State, 'Color');
+		#{$selector}{
+			background-color: $color;
+			color:color-contrast($color);
+			padding:.25em .5em;
 		}
 	}
 }
