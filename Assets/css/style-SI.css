@@ -2630,7 +2630,7 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
   cursor: not-allowed; }
 
 .link.disabled, .link.disabled:hover {
-  background-color: #cccccc;
+  background-image: url("../img/subtlenet2.png");
   color: #999999;
   font-style: italic; }
 
@@ -3442,30 +3442,30 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 .alert textarea, .warning textarea, .alert select, .warning select, .alert input, .warning input {
   border-color: #d07600; }
 
-.message-holder small.error, .message-holder .span.error {
+.message-holder small.error, .message-holder span.error {
   background-color: #c32231;
   color: #fff; }
-  .error .message-holder small.error, .error .message-holder .span.error {
+  .error .message-holder small.error, .error .message-holder span.error {
     display: block; }
-.message-holder small.warning, .message-holder .span.warning {
+.message-holder small.warning, .message-holder span.warning {
   background-color: #d07600;
   color: #fff; }
-  .warning .message-holder small.warning, .warning .message-holder .span.warning {
+  .warning .message-holder small.warning, .warning .message-holder span.warning {
     display: block; }
-.message-holder small.validated, .message-holder .span.validated {
+.message-holder small.validated, .message-holder span.validated {
   background-color: #19BB9B;
   color: #fff; }
-  .validated .message-holder small.validated, .validated .message-holder .span.validated {
+  .validated .message-holder small.validated, .validated .message-holder span.validated {
     display: block; }
-.message-holder small.info, .message-holder .span.info {
+.message-holder small.info, .message-holder span.info {
   background-color: #860647;
   color: #fff; }
-  .info .message-holder small.info, .info .message-holder .span.info {
+  .info .message-holder small.info, .info .message-holder span.info {
     display: block; }
-.message-holder small.highlighted, .message-holder .span.highlighted {
+.message-holder small.highlighted, .message-holder span.highlighted {
   background-color: #860647;
   color: #fff; }
-  .highlighted .message-holder small.highlighted, .highlighted .message-holder .span.highlighted {
+  .highlighted .message-holder small.highlighted, .highlighted .message-holder span.highlighted {
     display: block; }
 
 .input-holder {
@@ -4858,6 +4858,11 @@ div.reveal-modal, dialog {
   top: .40em;
   color: #fff; }
 
+.switch.disabled label {
+  background: #b3b3b3 url("../img/subtlenet2.png") repeat; }
+  .switch.disabled label:after {
+    background-color: #e6e6e6; }
+
 /**
 * Switch (Foundation Override):
 * `.switch` - Switches are a more visible and more touchable versions of checkbox or radio buttons. ADD `.check-visible` to a switch to make a check appear in the selected state of `.x-visible` to show the x when it is shut off
@@ -5018,7 +5023,13 @@ div.reveal-modal, dialog {
 *	</div>
 */
 .page-wrapper > .split-layout {
-  margin: -2rem -1rem; }
+  margin: -1rem -.5rem; }
+  @media only screen and (min-width: 768px) {
+    .page-wrapper > .split-layout {
+      margin: -1.5rem -.75rem; } }
+  @media only screen and (min-width: 1024px) {
+    .page-wrapper > .split-layout {
+      margin: -2rem -1rem -3rem; } }
 
 .split-layout {
   width: 100%;
