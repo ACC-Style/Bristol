@@ -3567,7 +3567,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
     left: 0;
     font-size: .75rem; }
 
-.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder {
+.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .repeater.required > .required-holder {
   background-color: transparent;
   display: inline-block; }
 
@@ -4178,6 +4178,10 @@ input[type="checkbox"], input[type="radio"] {
     padding-right: 0;
     width: 100%;
     float: left; }
+  .repeater.required > .required-holder {
+    color: #d07600; }
+    .repeater.required > .required-holder i.fa-holder-dynamic:before, .repeater.required > .required-holder.dynamic i.fa-holder:before {
+      content: ""; }
   .repeater .edit, .repeater .clear, .repeater .delete, .repeater .add, .repeater .set, .repeater .save {
     font-size: .8rem;
     line-height: 1rem;

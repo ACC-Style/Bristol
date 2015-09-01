@@ -1,11 +1,17 @@
 
 $repeater-color: rebrand-color($primary-color,2);
+
+
 .repeater{
 	@include grid-row($behavior:collapse);
 	.render,.question-group,.repeater-action{
 		@include grid-column(12,$collapse:true);	
 	}
-
+	&.required > .label-holder .required-holder{
+		@extend %visible-required-icon;
+		@include fa-holder($fa-var-asterisk,'dynamic');
+		color:$alert-color;
+	}
 	.edit,.clear,.delete,.add,.set, .save{
 		font-size: .8rem;
 		line-height: 1rem;
