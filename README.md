@@ -35,4 +35,4 @@ http://tools.acc.org/StatinIntolerance/#!/
 
 
 #### Style Guide w/ HTML Examples
-http://stage.tools.acc.org/BaseStyle/base.html
+http://stage.tools.acc.org/BaseStyle
