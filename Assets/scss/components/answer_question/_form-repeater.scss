@@ -7,6 +7,7 @@ $repeater-color: rebrand-color($primary-color,2);
 	.render,.question-group,.repeater-action{
 		@include grid-column(12,$collapse:true);	
 	}
+
 	&.required > .label-holder .required-holder{
 		@extend %visible-required-icon;
 		@include fa-holder($fa-var-asterisk,'dynamic');
@@ -34,7 +35,6 @@ $repeater-color: rebrand-color($primary-color,2);
 	.render{
 		position: relative;
 		display: block;
-		min-height: 2rem;
 		border-top: 1px dotted grey(10);
 		border-bottom: 1px dotted grey(10);
 		a.button, button{margin-bottom:0;}
@@ -73,6 +73,20 @@ $repeater-color: rebrand-color($primary-color,2);
 		}
 
 	}
+	.render{
+		max-height: 1000px;
+		-webkit-transition: max-height 0.8s;
+		-moz-transition: max-height 0.8s;
+		transition: max-height 0.8s;
+		overflow: hidden;
+	}
+	.edit-mode--show{display: none;}
+	&.edit-mode{ 
+		.render{ max-height: 0;}
+		.edit-mode--show{display:initial}
+		.edit-mode--hide{display:none;}
+
+	}
 	.question-group{
 		padding-top:1.5em; 
 		padding-bottom:1.85em;
@@ -90,10 +104,20 @@ $repeater-color: rebrand-color($primary-color,2);
 			right:-2px;
 			background-color: desaturate( color($repeater-color,80), 40% );
 			color:color-contrast(color($repeater-color,80));
+			-webkit-transition: background-color 0.8s;
+			-moz-transition: background-color 0.8s;
+			transition: background-color 0.8s;
 		}
 
 	}
-	
+	&.edit-mode .question-group{
+		border:2px dotted desaturate( color($alert-color,20), 40% );
+		margin-top:.5em;
+		border-radius:.5em;
+		border-top:2px soliddesaturate( color($alert-color,80), 40% );
+		border-bottom:2px solid  desaturate( color($alert-color,80), 40% );
+		.required-message{background-color: grey(40);}
+	}
 	.repeater-action{
 		position: relative;
 		display:block;
@@ -164,7 +188,7 @@ $repeater-color: rebrand-color($primary-color,2);
 
 /**
 * Form Repeater:
-* `.repeater` - This is form elements repeater. This Module is broken into 3 major containers the `renders`,`question-group`, and `repeater actions`.
+* `.repeater` - This is form elements repeater. This Module is broken into 3 major containers the `renders`,`question-group`, and `repeater actions`. The repeater also has an `edit-mode` that can hide the renders and hide and show elements with tags of `edit-mode--hide` and `edit-mode--show`
 * 
 *   @example
 *	<div class="repeater required">

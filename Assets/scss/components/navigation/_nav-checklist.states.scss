@@ -14,9 +14,15 @@ $required_data:(
 .nav-list.nav-checklist li{
 	@each $State in $states{
 		&#{map-get($State,'Selector')}{
-			background-color: color(map-get($State,'Color'),30);
-			border-color: color(map-get($State,'Color'),35);
-			border-bottom-width: 1;
+			@if map-get($State, 'State') == "completed"{
+				background-color: #fff;
+			}@else{
+				background-color: color(map-get($State,'Color'),30);
+				border-color: color(map-get($State,'Color'),35);
+				border-bottom-width: 1;
+			}
+			
+			
 			color:fontcolor($real-black);
 			@include fa-holder(map-get($State,'Icon'),'dynamic');
 			i{color:map-get($State,'Color');}

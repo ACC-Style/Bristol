@@ -2325,7 +2325,7 @@ i.fa.fa-question-circle {
 .highlighted .fa-holder-dynamic:before, .highlighted .findme, .highlighted.fa:before, .highlighted > .fa-holder:before {
   content: ""; }
 
-.success .fa-holder-dynamic:before, .success .findme, .success.fa:before, .success > .fa-holder:before {
+.completed .fa-holder-dynamic:before, .completed .findme, .completed.fa:before, .completed > .fa-holder:before {
   content: ""; }
 
 td.product-brand-color {
@@ -3067,9 +3067,9 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
     font-weight: 700;
     color: #333333; }
     .nav-list.nav-checklist li.selected i.fa-holder-dynamic:before, .nav-checklist.panel-selector li.selected i.fa-holder-dynamic:before, .nav-list.nav-checklist li.selected.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.selected.dynamic i.fa-holder:before {
-      content: ""; }
+      content: ""; }
     .nav-list.nav-checklist li.selected i, .nav-checklist.panel-selector li.selected i {
-      color: #999999; }
+      color: white; }
   .nav-list.nav-checklist li.completed i.fa-holder-dynamic:before, .nav-checklist.panel-selector li.completed i.fa-holder-dynamic:before, .nav-list.nav-checklist li.completed.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.completed.dynamic i.fa-holder:before {
     content: ""; }
   .nav-list.nav-checklist li.completed i, .nav-checklist.panel-selector li.completed i {
@@ -3130,16 +3130,14 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
     color: #22AFD7; }
   .nav-list.nav-checklist li.highlighted:hover, .nav-checklist.panel-selector li.highlighted:hover {
     background-color: #d2eff8; }
-.nav-list.nav-checklist li.success, .nav-checklist.panel-selector li.success {
-  background-color: #b0f4e7;
-  border-color: #a3f3e3;
-  border-bottom-width: 1;
+.nav-list.nav-checklist li.completed, .nav-checklist.panel-selector li.completed {
+  background-color: #fff;
   color: #333333; }
-  .nav-list.nav-checklist li.success i.fa-holder-dynamic:before, .nav-checklist.panel-selector li.success i.fa-holder-dynamic:before, .nav-list.nav-checklist li.success.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.success.dynamic i.fa-holder:before {
+  .nav-list.nav-checklist li.completed i.fa-holder-dynamic:before, .nav-checklist.panel-selector li.completed i.fa-holder-dynamic:before, .nav-list.nav-checklist li.completed.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.completed.dynamic i.fa-holder:before {
     content: ""; }
-  .nav-list.nav-checklist li.success i, .nav-checklist.panel-selector li.success i {
+  .nav-list.nav-checklist li.completed i, .nav-checklist.panel-selector li.completed i {
     color: #19BB9B; }
-  .nav-list.nav-checklist li.success:hover, .nav-checklist.panel-selector li.success:hover {
+  .nav-list.nav-checklist li.completed:hover, .nav-checklist.panel-selector li.completed:hover {
     background-color: #caf8ef; }
 
 /**
@@ -3396,7 +3394,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
     left: 0;
     font-size: .75rem; }
 
-.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .answer.success .required-holder, .question.success .required-holder, .repeater.required > .label-holder .required-holder {
+.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .answer.completed .required-holder, .question.completed .required-holder, .repeater.required > .label-holder .required-holder {
   background-color: transparent;
   display: inline-block; }
 
@@ -3461,7 +3459,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   color: #c9ecf6; }
 .answer.highlighted .required-holder, .question.highlighted .required-holder {
   color: #4bc1e2; }
-.answer.success .required-holder, .question.success .required-holder {
+.answer.completed .required-holder, .question.completed .required-holder {
   color: #2de3bf; }
 
 .error .label-holder {
@@ -3474,7 +3472,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   color: #c9ecf6; }
 .highlighted .label-holder {
   color: #4bc1e2; }
-.success .label-holder {
+.completed .label-holder {
   color: #2de3bf; }
 
 .error .input-holder input, .error .input-holder select, .error .input-holder textarea {
@@ -3487,7 +3485,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   border-color: #c9ecf6; }
 .highlighted .input-holder input, .highlighted .input-holder select, .highlighted .input-holder textarea {
   border-color: #4bc1e2; }
-.success .input-holder input, .success .input-holder select, .success .input-holder textarea {
+.completed .input-holder input, .completed .input-holder select, .completed .input-holder textarea {
   border-color: #2de3bf; }
 
 .error .input-holder .postfix, .error .input-holder .prefix, .error .input-holder .value {
@@ -3500,7 +3498,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   color: #c9ecf6; }
 .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted .input-holder .value {
   color: #4bc1e2; }
-.success .input-holder .postfix, .success .input-holder .prefix, .success .input-holder .value {
+.completed .input-holder .postfix, .completed .input-holder .prefix, .completed .input-holder .value {
   color: #2de3bf; }
 
 .error .input-holder .postfix, .error .input-holder .prefix {
@@ -3518,11 +3516,11 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 .highlighted .input-holder .postfix, .highlighted .input-holder .prefix {
   border-color: #4bc1e2;
   background-color: #cfdee2; }
-.success .input-holder .postfix, .success .input-holder .prefix {
+.completed .input-holder .postfix, .completed .input-holder .prefix {
   border-color: #2de3bf;
   background-color: #cbe2de; }
 
-.error textarea, .error select, .error input, .error datalist, .warning textarea, .warning select, .warning input, .warning datalist, .validated textarea, .validated select, .validated input, .validated datalist, .info textarea, .info select, .info input, .info datalist, .highlighted textarea, .highlighted select, .highlighted input, .highlighted datalist, .success textarea, .success select, .success input, .success datalist {
+.error textarea, .error select, .error input, .error datalist, .warning textarea, .warning select, .warning input, .warning datalist, .validated textarea, .validated select, .validated input, .validated datalist, .info textarea, .info select, .info input, .info datalist, .highlighted textarea, .highlighted select, .highlighted input, .highlighted datalist, .completed textarea, .completed select, .completed input, .completed datalist {
   margin-bottom: 0; }
 
 .error textarea, .error select, .error input {
@@ -3550,12 +3548,12 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   background-color: #22AFD7;
   color: #fff;
   display: none; }
-.message-holder > .success {
+.message-holder > .completed {
   background-color: #19BB9B;
   color: #fff;
   display: none; }
 
-.error .message-holder > .error, .message-holder > .error.make-visible, .warning .message-holder > .warning, .message-holder > .warning.make-visible, .validated .message-holder > .validated, .message-holder > .validated.make-visible, .info .message-holder > .info, .message-holder > .info.make-visible, .highlighted .message-holder > .highlighted, .message-holder > .highlighted.make-visible, .success .message-holder > .success, .message-holder > .success.make-visible {
+.error .message-holder > .error, .message-holder > .error.make-visible, .warning .message-holder > .warning, .message-holder > .warning.make-visible, .validated .message-holder > .validated, .message-holder > .validated.make-visible, .info .message-holder > .info, .message-holder > .info.make-visible, .highlighted .message-holder > .highlighted, .message-holder > .highlighted.make-visible, .completed .message-holder > .completed, .message-holder > .completed.make-visible {
   display: block; }
 
 .hint .error {
@@ -3578,7 +3576,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   background-color: #22AFD7;
   color: #fff;
   padding: .25em .5em; }
-.hint .success {
+.hint .completed {
   background-color: #19BB9B;
   color: #fff;
   padding: .25em .5em; }
@@ -4038,7 +4036,6 @@ input[type="checkbox"], input[type="radio"] {
   .repeater .render {
     position: relative;
     display: block;
-    min-height: 2rem;
     border-top: 1px dotted #e6e6e6;
     border-bottom: 1px dotted #e6e6e6; }
     .repeater .render a.button, .repeater .render button {
@@ -4071,6 +4068,20 @@ input[type="checkbox"], input[type="radio"] {
       .repeater .render .render-holder {
         margin-right: 5rem;
         font-size: .9rem; } }
+  .repeater .render {
+    max-height: 1000px;
+    -webkit-transition: max-height 0.8s;
+    -moz-transition: max-height 0.8s;
+    transition: max-height 0.8s;
+    overflow: hidden; }
+  .repeater .edit-mode--show {
+    display: none; }
+  .repeater.edit-mode .render {
+    max-height: 0; }
+  .repeater.edit-mode .edit-mode--show {
+    display: initial; }
+  .repeater.edit-mode .edit-mode--hide {
+    display: none; }
   .repeater .question-group {
     padding-top: 1.5em;
     padding-bottom: 1.85em;
@@ -4087,7 +4098,18 @@ input[type="checkbox"], input[type="radio"] {
       top: -2px;
       right: -2px;
       background-color: #579bae;
-      color: #fff; }
+      color: #fff;
+      -webkit-transition: background-color 0.8s;
+      -moz-transition: background-color 0.8s;
+      transition: background-color 0.8s; }
+  .repeater.edit-mode .question-group {
+    border: 2px dotted #f3e3cf;
+    margin-top: .5em;
+    border-radius: .5em;
+    border-top: 2px soliddesaturate(#ff960d, 40%);
+    border-bottom: 2px solid #cf903e; }
+    .repeater.edit-mode .question-group .required-message {
+      background-color: #999999; }
   .repeater .repeater-action {
     position: relative;
     display: block;
@@ -4146,7 +4168,7 @@ input[type="checkbox"], input[type="radio"] {
 
 /**
 * Form Repeater:
-* `.repeater` - This is form elements repeater. This Module is broken into 3 major containers the `renders`,`question-group`, and `repeater actions`.
+* `.repeater` - This is form elements repeater. This Module is broken into 3 major containers the `renders`,`question-group`, and `repeater actions`. The repeater also has an `edit-mode` that can hide the renders and hide and show elements with tags of `edit-mode--hide` and `edit-mode--show`
 * 
 *   @example
 *	<div class="repeater required">
@@ -4318,7 +4340,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   border-collapse: collapse;
   border: 0;
   margin-bottom: 1rem;
-  font-size: 14px; }
+  font-size: 1rem; }
   .table tbody tr + tr td {
     border-top: #e6e6e6 1px solid; }
   .table small {
@@ -4642,18 +4664,18 @@ td.icon {
   td.icon i {
     margin: 0 auto; }
 
-tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.success td {
+tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.completed td {
   background-image: url(../img/empty_stripe@2x.png);
   font-weight: 900; }
 
-td.error, .table tbody tr + tr td.error, td.warning, .table tbody tr + tr td.warning, td.validated, .table tbody tr + tr td.validated, td.info, .table tbody tr + tr td.info, td.highlighted, .table tbody tr + tr td.highlighted, td.success, .table tbody tr + tr td.success {
+td.error, .table tbody tr + tr td.error, td.warning, .table tbody tr + tr td.warning, td.validated, .table tbody tr + tr td.validated, td.info, .table tbody tr + tr td.info, td.highlighted, .table tbody tr + tr td.highlighted, td.completed, .table tbody tr + tr td.completed {
   background-image: url(../img/empty_diamond@2x.png);
   font-weight: 900; }
 
-td.error, td.warning, td.validated, td.info, td.highlighted, td.success {
+td.error, td.warning, td.validated, td.info, td.highlighted, td.completed {
   border: 1px solid; }
 
-tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.success td {
+tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.completed td {
   border-top: 1px solid;
   border-bottom: 1px solid; }
 
@@ -4722,16 +4744,16 @@ tr:nth-child(even).highlighted td {
   background-color: #c8ebf5;
   color: #333333; }
 
-td.success, .table tbody tr + tr td.success, tr.success td {
+td.completed, .table tbody tr + tr td.completed, tr.completed td {
   background-color: #ddf5f0;
   color: #333333;
   border-color: #b0f4e7; }
 
-tr:nth-child(even) td.success {
+tr:nth-child(even) td.completed {
   background-color: #c6eee6;
   color: #333333; }
 
-tr:nth-child(even).success td {
+tr:nth-child(even).completed td {
   background-color: #c6eee6;
   color: #333333; }
 
@@ -5029,16 +5051,16 @@ table + div > .collapsable-panel {
     .collapsable-panel.highlighted.inset .bar.close .action-btn {
       background-color: #22AFD7;
       color: #fff; }
-.collapsable-panel.success {
+.collapsable-panel.completed {
   background-color: transparent;
   border: 0 none transparent; }
-  .collapsable-panel.success .bar.close, .collapsable-panel.success.inset .bar.close {
+  .collapsable-panel.completed .bar.close, .collapsable-panel.completed.inset .bar.close {
     border-color: #19BB9B; }
-  .collapsable-panel.success .bar.close .action-btn {
+  .collapsable-panel.completed .bar.close .action-btn {
     color: #19BB9B; }
-  .collapsable-panel.success.inset {
+  .collapsable-panel.completed.inset {
     background-color: #e5fbf7; }
-    .collapsable-panel.success.inset .bar.close .action-btn {
+    .collapsable-panel.completed.inset .bar.close .action-btn {
       background-color: #19BB9B;
       color: #fff; }
 
@@ -5542,7 +5564,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  font-size: 14px;
+  font-size: 1rem;
   zoom: 1;
   *display: inline;
   -webkit-user-select: none;
@@ -7874,7 +7896,7 @@ cite {
 *	<h5 class="with-underline highlighted">Header 5 Tag<small>Highlighted State</small></h5>
 *  	<p class="highlighted"><strong>Paragraph that is a highlighted State.</strong>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
 */
-h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted, h1.success, h2.success, h3.success, h4.success, h5.success, h6.success, p.success, a.success, li.success, blockquote.success {
+h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted, h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed {
   font-weight: 900; }
 
 h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
@@ -7887,7 +7909,7 @@ h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, b
   color: #bbe8f4; }
 h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
   color: #22AFD7; }
-h1.success, h2.success, h3.success, h4.success, h5.success, h6.success, p.success, a.success, li.success, blockquote.success {
+h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed {
   color: #19BB9B; }
 
 h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
@@ -7900,7 +7922,7 @@ h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-
   border-color: #bbe8f4; }
 h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
   border-color: #22AFD7; }
-h1.with-underline.success, h2.with-underline.success, h3.with-underline.success, h4.with-underline.success, h5.with-underline.success, h6.with-underline.success {
+h1.with-underline.completed, h2.with-underline.completed, h3.with-underline.completed, h4.with-underline.completed, h5.with-underline.completed, h6.with-underline.completed {
   border-color: #19BB9B; }
 
 h1.with-underline {
