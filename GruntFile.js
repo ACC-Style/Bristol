@@ -78,7 +78,7 @@ module.exports = function(grunt){
 		        js: ['assets/js/jquery-2.1.3.min.js','assets/js/selectonic.min.js','assets/js/chosen/chosen.jquery.min.js','assets/js/jquery-ui.js','assets/js/foundation.min.js','assets/js/knockout.js','assets/js/app.js'],
 		        title: 'My Style Guide',
 		        sg_css: 'assets/css/styledown.css',
-		        sg_js: 'https://cdn.rawgit.com/styledown/styledown/v1.0.2/data/styledown.js',
+		        sg_js: 'assets/js//styledown.js',
 		        //config: 'assets/css/config.md'
 		      }
 		    }
