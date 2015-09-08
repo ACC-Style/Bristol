@@ -33,13 +33,35 @@
         <h3 id="brand-level" class="sg">Brand Level</h3>
         <p class="sg">
           <code class="sg">var $brand-level</code>- this variable has the ablity to over take the standard acc coloring with a branded product color. Standard values are:
-          <ol start="0" class="sg">
-            <li class="sg">Pure ACC Color</li>
-            <li class="sg">Header Bar and Primaary Nav Selects</li>
-            <li class="sg">Lines, Selects, and Header Bar</li>
-            <li class="sg">Full Color OVer Take, Typography, Selects, Header Bar, and Lines</li>
-          </ol>
-        </p>
+          <nav class="nav-list small sg">
+            <ul class="sg">
+              <li class="sg">
+                <a href="index.html" class="sg">
+                  <span class="text sg">0 - Pure ACC Color</span>
+                  <i class="fa fa-holder-dynamic sg"></i>
+                </a>
+              </li>
+              <li class="sg">
+                <a href="brand1.html" class="sg">
+                  <span class="text sg">1 - Header Bar and Primaary Nav Selects</span>
+                  <i class="fa fa-holder-dynamic sg"></i>
+                </a>
+              </li>
+              <li class="sg">
+                <a href="brand2.html" class="sg">
+                  <span class="text sg">2 - Lines, Selects, and Header Bar (Most Apps)</span>
+                  <i class="fa fa-holder-dynamic sg"></i>
+                </a>
+              </li>
+              <li class="sg">
+                <a href="brand3.html" class="sg">
+                  <span class="text sg">3 - Full Color Takeover, Typography, Selects, Header Bar, and Lines</span>
+                  <i class="fa fa-holder-dynamic sg"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          !! if you use brand level 3 you must include an new build of foundation found in assets/scss/vendor/foundation/_foundaiton-override !!</p>
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
@@ -3394,21 +3416,6 @@
                 <i class="fa fa-holder"></i>
                 <span class="text">Header and Toggle Area (Closed)</span>
               </h2>
-              <div class="bar close">
-                <a class="action-btn close" data-bind="click:panelHide">
-                  <i class="fa fa-holder"></i>close</a>
-              </div>
-              <div class="content">
-                <div class="row">
-                  <div class="column small-12">
-                    <p>Content</p>
-                  </div>
-                </div>
-              </div>
-              <div class="bar jumpToTop">
-                <a class="action-btn top" data-bind="click:panelScrollTop">
-                  <i class="fa fa-holder"></i>top</a>
-              </div>
             </div>
           </div>
         </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;accordion&quot;</span>&gt;</span>
@@ -3440,21 +3447,6 @@
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Header and Toggle Area (Closed)<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;bar close&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;action-btn close&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;click:panelHide&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>close<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;content&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-12&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Content<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;bar jumpToTop&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;action-btn top&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;click:panelScrollTop&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>top<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
       </div>
@@ -5557,35 +5549,49 @@
       <div class="sg-example">
         <div class="sg-canvas">
           <div class="mobile-offcanvas-wrapper">
-            <section class="split-layout fill-page-height medium navOn">
+            <section class="split-layout medium navOn">
               <aside class="split-sidebar">
                 <h2>Sidebar</h2>
                 <p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
               </aside>
-              <article class="split-content">
+              <article class="split-content page with-group-sections">
                 <div class="page-wrapper">
-                  <h1>Content</h1>
-                  <p>Some extra content in the content area</p>
-                  <p>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+                  <div class="content-padding">
+                    <h1>Outside of the Group Section
+                      <blockquote>I need to be wrapped by a div.content-padding to line up</blockquote>
+                    </h1>
+                  </div>
+                  <div class="group-section">
+                    <h3>Inside of a Group Section</h3>
+                    <p>Some extra content in the content area</p>
+                    <p>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+                  </div>
                 </div>
               </article>
             </section>
           </div>
         </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;mobile-offcanvas-wrapper&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;split-layout fill-page-height medium navOn&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;split-layout medium navOn&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">aside</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;split-sidebar&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Sidebar<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Contrary to popular belief, Lorem Ipsum is not simply random text.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">aside</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;split-content&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;split-content page with-group-sections&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Content<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Some extra content in the content area<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
-          a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur,
-          from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable
-          source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of
-          Good and Evil) by Cicero, written in 45 BC.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;content-padding&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Outside of the Group Section
+            <span class="hljs-tag">&lt;<span class="hljs-title">blockquote</span>&gt;</span>I need to be wrapped by a div.content-padding to line up<span class="hljs-tag">&lt;/<span class="hljs-title">blockquote</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;group-section&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Inside of a Group Section<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Some extra content in the content area<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
+            a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur,
+            from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable
+            source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes
+            of Good and Evil) by Cicero, written in 45 BC.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>

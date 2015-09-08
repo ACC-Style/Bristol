@@ -9,7 +9,8 @@
 /**
 * Brand Level:
 * `var $brand-level` - this variable has the ablity to over take the standard acc coloring with a branded product color.  Standard values are:
-*  <ol start="0"><li>Pure ACC Color</li><li>Header Bar and Primaary Nav Selects</li><li>Lines, Selects, and Header Bar</li><li>Full Color OVer Take, Typography, Selects, Header Bar, and Lines</li></ol>
+*  <nav class="nav-list small"><ul><li><a href="index.html"><span class="text">0 - Pure ACC Color</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="brand1.html"><span class="text">1 - Header Bar and Primaary Nav Selects </span><i class="fa fa-holder-dynamic"></i></a></li><li><a href="brand2.html"><span class="text">2 - Lines, Selects, and Header Bar (Most Apps)</span><i class="fa fa-holder-dynamic"></i></a></li><li><a href="brand3.html"><span class="text">3 - Full Color Takeover, Typography, Selects, Header Bar, and Lines </span><i class="fa fa-holder-dynamic"></i></a></li></ul></nav>
+* 	!! if you use brand level 3 you must include an new build of foundation found in assets/scss/vendor/foundation/_foundaiton-override !!
 * 
 *   @example
 *	<table class="table">
@@ -4876,19 +4877,6 @@ table + div > .collapsable-panel {
 *		</div>
 *		<div class="">
 *			<h2 class="toggle" data-bind="click:panelShow"><i class="fa fa-holder"></i><span class="text">Header and Toggle Area (Closed)</span></h2>
-*				<div class="bar close">
-*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> close</a>
-*				</div>
-*				<div class="content">
-*					<div class="row">
-*						<div class="column small-12">
-*							<p>Content</p>
-*						</div>
-*					</div>
-*				</div>
-*				<div class="bar jumpToTop">
-*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> top</a>
-*				</div>
 *		</div>
 *	</div>
 */
@@ -7389,16 +7377,20 @@ div.reveal-modal, dialog {
 * 
 *   @example
 *	<div class="mobile-offcanvas-wrapper">
-*	<section class="split-layout fill-page-height medium navOn">
+*	<section class="split-layout medium navOn">
 *	<aside class="split-sidebar">
 *	<h2>Sidebar</h2>
 *	<p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
 *	</aside>
-*	<article class="split-content">
+*	<article class="split-content page with-group-sections">
 *	<div class="page-wrapper">
-*	<h1>Content</h1>
-*	<p>Some extra content in the content area</p><p> It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
-*	</div>
+*	<div class="content-padding"><h1>Outside of the Group Section<blockquote>I need to be wrapped by a div.content-padding to line up</blockquote>
+*	</h1></div>
+*	<div class="group-section">
+*		<h3>Inside of a Group Section</h3>
+*			<p>Some extra content in the content area</p>
+*			<p>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+*	</div></div>
 *	</article>
 *	</section>
 *	</div>
