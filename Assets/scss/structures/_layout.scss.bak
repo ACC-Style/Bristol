@@ -1,17 +1,43 @@
-
-
 .page-wrapper{
-	padding:1rem .5rem;
 	max-width: 1200px;
 	margin:0 auto;
-	
+	padding:1rem .5rem;
 	@include bp(md){
 		padding:1.5rem .75rem;
-	};
+	}
 	@include bp(lg){
 		padding:2rem 1rem 3rem;	
-	};
+	}
 }
+%shadedbackground{
+	background-color: grey(5);
+}
+%dropshoadowedbox{
+	border:1px solid grey(20);
+	background-color: white;
+	-webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.61);
+	-moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.61);
+	box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.61); 
+}
+
+.page.with-group-sections{
+	@extend %shadedbackground;
+	.page-wrapper{
+		padding:0 !important;
+	}
+	> .section, > section, >.row{	
+		padding:.5rem .5rem;
+		width:auto;	
+	}
+	.group-section{
+		@extend %dropshoadowedbox;
+		margin:1rem .25rem 0;
+		padding:.5rem .25rem;
+		width:auto;
+
+	}
+}
+
 .content-padding{
 	padding:0 .5rem;
 	max-width: 1200px;
@@ -24,3 +50,21 @@
 		padding:0 1rem;	
 	};
 }
+.section-nav.back ~ .page-wrapper{padding-top: 0;}
+
+/**
+* page layouts:
+* `page-wrapper` - inside all layout divs the page-wrapper is used to make a unified amount of spacing from the content and the vewport edges.
+* 
+*   @example
+*	<div class="page-wrapper"><div class="section">Hello this is content </div></div>
+**/
+
+/**
+* page layouts modified:
+* `page-wrapper group-section-holder` - by default pages are white but when the need arises to have grouped section 'cards' are introduced and the background turns off white.
+* 
+*   @example
+*	<div class="page"><div class="page-wrapper group-section-holder"><section class="section group-section">Hello this is content </section></div></div>
+*
+**/

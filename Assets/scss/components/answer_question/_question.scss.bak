@@ -4,7 +4,8 @@
 		padding-left: 0;
 	}
 }
-.input-space a.button, .input-space button{
+.input-space a.button, .input-space button, .input-space .button{
+	margin:0;
 	padding-top: 8px;
   	padding-bottom: 8px;
   	i{margin-right: .2rem;}
@@ -12,31 +13,32 @@
 [class*="input-space"] + [class*="input-space"]:last-child{
 	padding-right:0;
 }
-.error,.data,.alert,.warning{
-	textarea,select,input{ margin-bottom: 0} 
-}
-textarea,select,input{
-	.error &{border-color:$warning-color;}
-	.alert &,.warning &{border-color:$alert-color;}
-} 
 
+.input-space > .text{ 
+	padding-top: .5em;
+	padding-bottom: .5em;
+	padding-left: .5em;
+}
 input[type="checkbox"], input[type="radio"]{
 	margin:.55em .5em;
+	height: 1.5em;
 	text-align: center;
 	position: absolute;
 	display: inline-block;
 	vertical-align: middle;
+	table &{position: relative;}
 	+.text{
 		padding-left: 2em;
 		display: inline-block;
-		padding-top: .5em;
-		padding-bottom: .5em;}
+	// 	padding-top: .5em;
+	// 	padding-bottom: .5em;
+	}
 }
-
+	.file-upload-holder{height:37px;}
 	.file-upload {
 		position: relative;
 		overflow: hidden;
-		margin: 10px;
+		margin: 0 10px;
 	}
 
 		.file-upload input.upload {
@@ -135,6 +137,30 @@ input[type="checkbox"], input[type="radio"]{
 *			</div>
 *			<div class="column small-6 large-3">
 *				<small class="value">Years</small>
+*			</div>
+*		</div>
+*		<div class="message-holder">
+*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
+*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*				<small class="info"><i class="fa fa-holder"></i> Data message</small>
+*		</div>
+*		<div class="hint">This is some hint text</div>
+*	</div>
+*	<div class="question error">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Question Dropdown Title (Error)</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder-dynamic"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="input-holder row collapse">
+*			 <div class="input-space column small-6 large-9">
+*				<input type="text"/>
+*			</div>
+*			<div class="column small-6 large-3">
+*				<small class="postfix">Years</small>
 *			</div>
 *		</div>
 *		<div class="message-holder">
