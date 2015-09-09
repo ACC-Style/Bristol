@@ -32,7 +32,7 @@
 	.button{margin-bottom: 0;}
 }
 .answer,.question{
-	margin-bottom: .5rem;
+	margin-bottom: rem-calc(ms(0));
 	.prefix,.postfix,.value{
 		@include baseline-font(0,0);
 		@include font-bold();
@@ -87,7 +87,7 @@
 
 .input-holder,.value-holder{
 	@include grid-row();
-	margin-bottom: .25rem;
+	margin-bottom: 0;
 	>.input-space{  padding-left: 0;
 
 	}
@@ -102,7 +102,7 @@
 		display: none;
 		padding: .375rem .5625rem .5625rem;
 		margin-top: -1px;
-		margin-bottom: 1rem;
+		margin-bottom: .25rem;
 		background: #d07600;
 		clear:both;
 		color: #FFF;
@@ -111,7 +111,7 @@
 }
 .hint{
 	@extend .row;
-	@include baseline-font(-2);
+	@include baseline-font(-1);
 	@extend %italic;
 }
 

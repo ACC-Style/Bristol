@@ -36,14 +36,14 @@ blockquote{
 		border:0 none transparent;
 	}
 	h1 &{ @include baseline-font(0,0,0,5);}
-	h1.with-underline &{ @include baseline-font(0,0,.5,5);}
+	h1.with-underline &{ @include baseline-font(0,.25,0,5);}
 	h2 &{ @include baseline-font(-1,0,0,3);}
-	h2.with-underline &{ @include baseline-font(-1,.25,.25,3);}
+	h2.with-underline &{ @include baseline-font(-1,.25,0,3);}
 	h3 &{@include baseline-font(0,0,0,2);}
-	h3.with-underline &{ @include baseline-font(0,.25,.25,2);}
-	h4 &{@include baseline-font(0,0,0,1);}
-	h5 &{@include baseline-font(-1,0,0,0);}
-	h6 &{@include baseline-font(-1,0,0,0);}
+	h3.with-underline &{ @include baseline-font(0,.25,0,2);}
+	h4 &{@include baseline-font(-1,0,0,1);}
+	h5 &{@include baseline-font(-2,0,0,0);}
+	h6 &{@include baseline-font(-2,0,0,0);}
 
 }
 .text-highlight-color{color:$typography-highlight-color!important;}
@@ -73,9 +73,10 @@ blockquote{
 *
 *     @example
 *     a 	
-* 	  span this is a plan link
+* 	  span this is a plain "a" tag
+*	br
 *	a.link
-* 	  span this is a link with ".link"
+* 	  span this is an "a" tag with the ".link" class
 *		
 */
 
@@ -91,13 +92,17 @@ blockquote{
 }
 /**
 *
-*  bold, italic or subtle:
-*  `.bold` - make text bold, `.italic` - make text italic, or `.subtle` - make text subtle
+*  Type Modifiers:
+*  `bold, italic or subtle,etc...` - `.bold` - make text bold, `.italic` - make text italic, or `.subtle` - make text subtle
 *
 *     @example
-*     div.bold this is `bold` content
-*     div.italic this is `italic` content
-*     div.subtle this is `subtle` content
+*     div.bold this has the `.bold` class added to the container which increases font weight and darkens the color.
+*     div.emphasis this has the `.emphasis` class added to the container which darkens the color and makes the font italic and bold
+*     div.loud this has the `.loud` class added to the container which darkens the color.
+*     div.quiet this has the `.quiet` class added to the container which lightens the color.
+*     div.subtle this has the `.subtle` class added to the container which decreases font weight and lightens the color.
+*     div.italic this has the `.italic` class added to the container which makes it lighter and makes it italic.
+*     div.text-highlight-color this has the `.text-highlight-color` class added to the container which changes the color to the product color
 *
 */
 .loud{@extend %loud;}
@@ -106,3 +111,4 @@ blockquote{
 .bold{@extend %bold;}
 .italic{@extend %italic;}
 .subtle{@extend %subtle;}
+.emphasis{@extend %emphasis;}

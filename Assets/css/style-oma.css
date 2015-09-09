@@ -9,7 +9,7 @@
 /**
 * Brand Level:
 * `var $brand-level` - this variable has the ablity to over take the standard acc coloring with a branded product color.  Standard values are:
-*  <nav class="nav-list small"><ul><li><a href="index.html"><span class="text">0 - Pure ACC Color</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="brand1.html"><span class="text">1 - Header Bar and Primaary Nav Selects </span><i class="fa fa-holder-dynamic"></i></a></li><li><a href="brand2.html"><span class="text">2 - Lines, Selects, and Header Bar (Most Apps)</span><i class="fa fa-holder-dynamic"></i></a></li><li><a href="brand3.html"><span class="text">3 - Full Color Takeover, Typography, Selects, Header Bar, and Lines </span><i class="fa fa-holder-dynamic"></i></a></li></ul></nav>
+*  <nav class="nav-list small"><ul><li><a href="index.html"><span class="text">0 - Pure ACC Color</span> <i class="fa fa-eye"></i></a></li><li><a href="brand1.html"><span class="text">1 - Header Bar and Primary Nav Selects </span><i class="fa fa-eye"></i></a></li><li><a href="brand2.html"><span class="text">2 - Lines, Selects, and Header Bar (Most Apps)</span><i class="fa fa-eye"></i></a></li><li><a href="brand3.html"><span class="text">3 - Full Color Takeover, Typography, Selects, Header Bar, and Lines </span><i class="fa fa-eye"></i></a></li></ul></nav>
 * 	!! if you use brand level 3 you must include an new build of foundation found in assets/scss/vendor/foundation/_foundaiton-override !!
 * 
 *   @example
@@ -2334,7 +2334,14 @@ meta.foundation-data-attribute-namespace {
   margin-bottom: 0em; }
 
 h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-selector li, .repeater .render .strong, .bold, .table thead th, .table thead td, .loud {
+  color: black; }
+
+.emphasis {
   color: black;
+  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-style: italic;
+  font-style: italic;
   font-weight: 900; }
 
 .hint, .repeater .render .italic, .table tfoot td, .italic, .quiet {
@@ -2343,6 +2350,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 .hint, .repeater .render .italic, .table tfoot td, .italic {
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 100;
+  font-style: italic;
   font-style: italic; }
 
 h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-selector li, .repeater .render .strong, .bold {
@@ -2542,6 +2550,12 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
         background-color: #b3b3b3; }
         .tabs li.secondary:hover a {
           color: #333333; }
+    .tabs li.disabled, .tabs li.disabled:hover {
+      background: url("../img/subtlenet2.png") repeat; }
+      .tabs li.disabled a, .tabs li.disabled, .tabs li.disabled:hover a, .tabs li.disabled:hover {
+        color: #999999;
+        cursor: not-allowed;
+        opacity: .5; }
   @media only screen and (max-width: 768px) {
     .tabs {
       width: 100%;
@@ -3197,7 +3211,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   margin-bottom: 0; }
 
 .answer, .question {
-  margin-bottom: .5rem; }
+  margin-bottom: 1rem; }
   .answer .prefix, .answer .postfix, .answer .value, .question .prefix, .question .postfix, .question .value {
     font-size: 1em;
     line-height: 1.5em;
@@ -3269,7 +3283,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   margin-top: 0;
   margin-bottom: 0;
   max-width: 114.28571rem;
-  margin-bottom: .25rem; }
+  margin-bottom: 0; }
   .input-holder:before, .input-holder:after, .value-holder:before, .value-holder:after {
     content: " ";
     display: table; }
@@ -3289,7 +3303,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   display: none;
   padding: .375rem .5625rem .5625rem;
   margin-top: -1px;
-  margin-bottom: 1rem;
+  margin-bottom: .25rem;
   background: #d07600;
   clear: both;
   color: #FFF; }
@@ -3297,8 +3311,8 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
     margin-right: .5rem; }
 
 .hint {
-  font-size: 0.71429em;
-  line-height: 2.1em;
+  font-size: 0.85714em;
+  line-height: 1.75em;
   margin-top: 0em;
   margin-bottom: 0em; }
 
@@ -3440,10 +3454,15 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   color: #fff;
   padding: .25em .5em; }
 
-.input-holder {
+.question.question-inline {
   margin-bottom: .75rem; }
-  .input-holder .input-space, .input-holder .switch-input-space {
-    padding-left: 0; }
+  .question.question-inline .input-holder {
+    margin-bottom: .25rem; }
+    .question.question-inline .input-holder .input-space, .question.question-inline .input-holder .switch-input-space {
+      padding-left: 0; }
+
+.input-holder .input-space, .input-holder .switch-input-space {
+  padding-left: 0; }
 
 .input-space a.button, .switch-input-space a.button, .input-space button, .switch-input-space button, .input-space .button, .switch-input-space .button {
   margin: 0;
@@ -7696,7 +7715,7 @@ cite {
 *   @example
 *   <footer class="page-footer">
 *		<div class="row">
-*			<a href="/"><img class="logo" src="/Assets/img/oma-01.svg" alt="Home"></a>
+*			<a href="/"><img class="logo" src="Assets/img/oma-01.svg" alt="Home"></a>
 *		</div>
 *		<div class="footer-darker">
 *			<div class="row">
@@ -7768,7 +7787,7 @@ cite {
 *		</div>
 *		<div class="row">
 *			<div class="large-4 columns">
-*				<h5><cite>┬⌐2015 American College of Cardiology</cite></h5>
+*				<h5><cite>&copy; 2015 American College of Cardiology</cite></h5>
 *			</div>
 *			<div class="large-8 columns">
 *			</div>
@@ -7777,7 +7796,7 @@ cite {
 **/
 /**
 * Typography States:
-* `.repeater` - This is form elements repeater. This Module is broken into 3 major containers the `renders`,`question-group`, and `repeater actions`.
+* `.error, .warning, .etc...` - headers and `p` tags can be fully manipulated to respond to states by adding the modifiying state like error, warning, info, highlighted, validated, and completed.
 * 
 *   @example
 *	<h1 class="with-underline info">Header 1 Tag
@@ -7785,7 +7804,7 @@ cite {
 *	</h1>
 *	<h2 class="with-underline error">Header 2 Tag <small>Error State</small></h2>
 *	<h3 class="with-underline warning">Header 3 Tag<small>Warning State</small></h3>
-*	<h4 class="with-underline validated">Header 4 Tag<small>Validated/success State</small></h4>
+*	<h4 class="with-underline validated">Header 4 Tag<blockquote>Validated/success State</blockquote></h4>
 *	<h5 class="with-underline highlighted">Header 5 Tag<small>Highlighted State</small></h5>
 *  	<p class="highlighted"><strong>Paragraph that is a highlighted State.</strong>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
 */
@@ -7872,8 +7891,8 @@ h1 blockquote {
 h1.with-underline blockquote {
   font-size: 0.4em;
   line-height: 1.5em;
-  margin-top: 0em;
-  margin-bottom: 0.75em; }
+  margin-top: 0.375em;
+  margin-bottom: 0em; }
 h2 blockquote {
   font-size: 0.5em;
   line-height: 1.75em;
@@ -7883,7 +7902,7 @@ h2.with-underline blockquote {
   font-size: 0.5em;
   line-height: 1.75em;
   margin-top: 0.4375em;
-  margin-bottom: 0.4375em; }
+  margin-bottom: 0em; }
 h3 blockquote {
   font-size: 0.7em;
   line-height: 1.5em;
@@ -7893,20 +7912,20 @@ h3.with-underline blockquote {
   font-size: 0.7em;
   line-height: 1.5em;
   margin-top: 0.375em;
-  margin-bottom: 0.375em; }
+  margin-bottom: 0em; }
 h4 blockquote {
-  font-size: 0.82353em;
-  line-height: 1.5em;
+  font-size: 0.70588em;
+  line-height: 1.75em;
   margin-top: 0em;
   margin-bottom: 0em; }
 h5 blockquote {
-  font-size: 0.85714em;
-  line-height: 1.75em;
+  font-size: 0.71429em;
+  line-height: 2.1em;
   margin-top: 0em;
   margin-bottom: 0em; }
 h6 blockquote {
-  font-size: 0.85714em;
-  line-height: 1.75em;
+  font-size: 0.71429em;
+  line-height: 2.1em;
   margin-top: 0em;
   margin-bottom: 0em; }
 
@@ -7938,9 +7957,10 @@ h6 blockquote {
 *
 *     @example
 *     a 	
-* 	  span this is a plan link
+* 	  span this is a plain "a" tag
+*	br
 *	a.link
-* 	  span this is a link with ".link"
+* 	  span this is an "a" tag with the ".link" class
 *		
 */
 .link {
@@ -7956,13 +7976,17 @@ h6 blockquote {
 
 /**
 *
-*  bold, italic or subtle:
-*  `.bold` - make text bold, `.italic` - make text italic, or `.subtle` - make text subtle
+*  Type Modifiers:
+*  `bold, italic or subtle,etc...` - `.bold` - make text bold, `.italic` - make text italic, or `.subtle` - make text subtle
 *
 *     @example
-*     div.bold this is `bold` content
-*     div.italic this is `italic` content
-*     div.subtle this is `subtle` content
+*     div.bold this has the `.bold` class added to the container which increases font weight and darkens the color.
+*     div.emphasis this has the `.emphasis` class added to the container which darkens the color and makes the font italic and bold
+*     div.loud this has the `.loud` class added to the container which darkens the color.
+*     div.quiet this has the `.quiet` class added to the container which lightens the color.
+*     div.subtle this has the `.subtle` class added to the container which decreases font weight and lightens the color.
+*     div.italic this has the `.italic` class added to the container which makes it lighter and makes it italic.
+*     div.text-highlight-color this has the `.text-highlight-color` class added to the container which changes the color to the product color
 *
 */
 .phone-only {
@@ -8012,7 +8036,7 @@ h6 blockquote {
 * 
 *   @example
 *	<h2 class="condensable large">
-*		<span class="condense">Large Screens See This</span> Title
+*		Super<span class="condense">califragilisticexpialidocious the full word is only seen on large screens</span> 
 *	</h2>
 */
 /**
