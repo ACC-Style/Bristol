@@ -63,11 +63,11 @@ $panel-selector-color:rebrand-color($success-color,2);
 	flex-flow: column;
 	align-content:strech;
 	align-items:strech;
-	@include bp(md){
-		display: table;
-		height: 15em;
+	// @include bp(md){
+	// 	display: table;
+	// 	height: 15em;
 		
-	}
+	// }
 
 }
 .panel-selector{
@@ -77,28 +77,38 @@ $panel-selector-color:rebrand-color($success-color,2);
 	position: relative;
 	clear:both;
 	width: 100%;
-	overflow: auto;
+	overflow:auto;
 	border:1px solid grey(30);
 	margin-left: -1px;
 	@include flex(felx-start 1 auto);
-	@include bp(md){
-		display: table-cell;
-		vertical-align: top;
-		height: 15em;
-	}
+	// @include bp(md){
+	// 	display: table-cell;
+	// 	vertical-align: top;
+	// 	height: 15em;
+	// }
 
 	&.active-focus{
 		-moz-box-shadow:    inset 0 0 10px $primary-color;
 		-webkit-box-shadow: inset 0 0 10px $primary-color;
 		box-shadow:         inset 0 0 10px $primary-color;
 	}
-	ul{
-		
-		
-		@include bp(md){
-			height: inherit;
-		}	
+	.paenl-selector-group-title{
+		font-size:ms(1);
+		padding: .5em .75em;
+    	@include font-bold();
+	    background-color:rebrand-color($primary-color, 2);
+	    color: color-contrast(rebrand-color($primary-color, 2));
 	}
+
+	ul{
+		overflow-x: visible;
+		
+		// @include bp(md){
+		// 	height: inherit;
+		// 	overflow-x: auto;
+		// }	
+	}
+	.group-title
 	li{
 		margin:3px;
 		white-space: nowrap;

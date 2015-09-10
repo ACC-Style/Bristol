@@ -86,6 +86,7 @@ $repeater-color: rebrand-color($primary-color,2);
 		.edit-mode--show{display:initial}
 		.edit-mode--hide{display:none;}
 
+
 	}
 	.question-group{
 		padding-top:1.5em; 
@@ -116,6 +117,8 @@ $repeater-color: rebrand-color($primary-color,2);
 		border-radius:.5em;
 		border-top:2px soliddesaturate( color($alert-color,80), 40% );
 		border-bottom:2px solid  desaturate( color($alert-color,80), 40% );
+		background-image: url(../img/empty_stripe@2x.png);
+		background-color: color($alert-color,12);
 		.required-message{background-color: grey(40);}
 	}
 	.repeater-action{
@@ -165,8 +168,20 @@ $repeater-color: rebrand-color($primary-color,2);
 			margin-left: 1em;
 			border-color: color($repeater-color,80);
 			&:hover{background-color:grey(10);border-color: color($repeater-color,100)}
+			
+
 
 		}
+	}
+}
+.edit-mode.repeater .repeater-action .clear{
+	background-color: grey(60);
+	border-color:grey(70);
+	color:#fff;
+	&:hover{
+		background-color: grey(75);
+		border-color:grey(80);
+		color:#fff;
 	}
 }
 

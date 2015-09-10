@@ -67,6 +67,11 @@ blockquote{
 .group-divide-bottom{	
 	border-bottom:$typography-highlight-color 1px dotted;
 	margin-bottom:.5rem;}
+.group-divide-auto + .group-divide-auto{	
+		border-top:$typography-highlight-color 1px dotted;
+		margin-top:1rem;
+		padding-top:.5rem;
+}
 /**
 *  A tag and .link:
 *  `.link` - a tags have a basic style  but links are a styled with `.link`
@@ -108,7 +113,7 @@ blockquote{
 .loud{@extend %loud;}
 .quiet{@extend %quiet;}
 .normal{@extend %normal;}
-.bold{@extend %bold;}
+strong,.bold{@extend %bold;}
 .italic{@extend %italic;}
 .subtle{@extend %subtle;}
-.emphasis{@extend %emphasis;}
+em,.emphasis{@extend %emphasis;}
