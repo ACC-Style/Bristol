@@ -4453,7 +4453,8 @@ th.sortable, td.sortable {
     padding: .25rem .5rem 0rem 1.25rem;
     white-space: normal;
     display: block;
-    line-height: 1.25; }
+    line-height: 1.25;
+    min-height: 3em; }
     @media only screen and (min-width: 1024px) {
       th.sortable .text, td.sortable .text {
         padding: 0.5rem 0.625rem 0.25rem 2rem; } }
@@ -7289,7 +7290,8 @@ div.reveal-modal, dialog {
   .page.with-group-sections .page-wrapper > .group-section {
     margin: 0 .65rem 1rem .5rem;
     padding: .5rem .5rem;
-    width: auto; }
+    width: auto;
+    position: relative; }
     @media only screen and (min-width: 768px) {
       .page.with-group-sections .page-wrapper > .group-section {
         padding: .5rem .75rem; } }
@@ -7326,6 +7328,25 @@ div.reveal-modal, dialog {
 *	<div class="page with-group-sections"><div class="page-wrapper"><section class="section group-section">Hello this is content </section></div></div>
 *
 **/
+.group-section-tab-holder {
+  margin: -.5rem -1.5rem 0; }
+  .group-section-tab-holder .nav.tabs {
+    padding: 2px 10px 0;
+    background-color: #9a1267; }
+    .group-section-tab-holder .nav.tabs li {
+      border-radius: 8px;
+      display: inline-block;
+      margin: .4rem 1px .4rem;
+      background-color: #CCC;
+      background-color: #f8c2e4; }
+    .group-section-tab-holder .nav.tabs li.selected {
+      border-bottom-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      margin-bottom: 0;
+      vertical-align: bottom;
+      padding: .4rem;
+      background-color: #fff; }
+
 /**
 * Split Layout With Off Canvas Reveal:
 * `.mobile-offcanvas-wrapper` - This is a structural container that has the ablity to change from content and sidebar to just content and the sidebar being off canvas. Trigger the off canvas reveal by adding `.navOn` to the div.split-layout. Change the switch point by adding `.large`,`.medium`, or `.small`. <br>!!! must include _layout-split.scss !!! <br>!!! requires javascripts !!!
