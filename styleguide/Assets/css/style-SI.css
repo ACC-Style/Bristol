@@ -2181,6 +2181,9 @@ i.fa.fa-question-circle {
 .completed .fa-holder-dynamic:before, .completed .findme, .completed.fa:before, .completed > .fa-holder:before {
   content: ""; }
 
+.disabled .fa-holder-dynamic:before, .disabled .findme, .disabled.fa:before, .disabled > .fa-holder:before {
+  content: ""; }
+
 td.product-brand-color {
   background-color: #860647; }
 
@@ -2418,7 +2421,7 @@ h6 {
   border-style: solid;
   border-width: 0px;
   cursor: pointer;
-  font-family: "Roboto Slab" Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "Roboto Slab", Georgia, Cambria, "Times New Roman", Times, serif;
   font-weight: normal;
   line-height: normal;
   margin: 0 0 1.42857rem;
@@ -2442,6 +2445,10 @@ h6 {
     background-color: #cccccc; }
   .nobutton:hover, .nobutton:focus {
     color: #333333; }
+  .nobutton.disabled, .nobutton.disabled:hover, .nobutton[disabled], .nobutton[disabled]:hover {
+    color: #999999;
+    cursor: not-allowed;
+    background-color: #fff; }
 
 button[disabled], button[disabled].success, button[disabled].alert, button[disabled].secondary,
 .button.disabled,
@@ -2796,16 +2803,16 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
 *	</ul>
 *	</nav>
 */
-.nav-list a, .panel-selector a {
+.nav-list a, .panel-selector a, .nav-list .list-item-wrapper, .panel-selector .list-item-wrapper {
   display: table;
   width: 100%;
   text-align: right;
   color: #5c5c5c; }
-  .nav-list a .text, .panel-selector a .text, .nav-list a i, .panel-selector a i {
+  .nav-list a .text, .panel-selector a .text, .nav-list a i, .panel-selector a i, .nav-list .list-item-wrapper .text, .panel-selector .list-item-wrapper .text, .nav-list .list-item-wrapper i, .panel-selector .list-item-wrapper i {
     display: table-cell; }
-  .nav-list a .text, .panel-selector a .text {
+  .nav-list a .text, .panel-selector a .text, .nav-list .list-item-wrapper .text, .panel-selector .list-item-wrapper .text {
     text-align: left; }
-  .nav-list a i, .panel-selector a i {
+  .nav-list a i, .panel-selector a i, .nav-list .list-item-wrapper i, .panel-selector .list-item-wrapper i {
     width: 2em; }
 .nav-list li, .panel-selector li {
   padding: .25rem 1rem; }
@@ -2976,14 +2983,15 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
     box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.45); }
     .section-nav:hover .circle i {
       color: #fff; }
-  .section-nav.disabled a {
-    color: #999999;
+  .section-nav.disabled {
     cursor: context-menu; }
-  .section-nav.disabled .circle, .section-nav.disabled.hover.circle {
-    -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
-    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
-    background-color: #bfbfbf; }
+    .section-nav.disabled .text {
+      color: #999999; }
+    .section-nav.disabled .circle, .section-nav.disabled.hover.circle {
+      -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+      background-color: #bfbfbf; }
 
 .inline-group {
   list-style: none;
@@ -3124,7 +3132,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
     left: 0;
     font-size: .75rem; }
 
-.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .answer.completed .required-holder, .question.completed .required-holder {
+.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .answer.completed .required-holder, .question.completed .required-holder, .answer.disabled .required-holder, .question.disabled .required-holder {
   background-color: transparent;
   display: inline-block; }
 
@@ -3191,6 +3199,8 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   color: #cd096d; }
 .answer.completed .required-holder, .question.completed .required-holder {
   color: #2de3bf; }
+.answer.disabled .required-holder, .question.disabled .required-holder {
+  color: #c2c2c2; }
 
 .error .label-holder {
   color: #de404e; }
@@ -3204,6 +3214,8 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   color: #cd096d; }
 .completed .label-holder {
   color: #2de3bf; }
+.disabled .label-holder {
+  color: #c2c2c2; }
 
 .error .input-holder input, .error .input-holder select, .error .input-holder textarea {
   border-color: #de404e; }
@@ -3217,6 +3229,8 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   border-color: #cd096d; }
 .completed .input-holder input, .completed .input-holder select, .completed .input-holder textarea {
   border-color: #2de3bf; }
+.disabled .input-holder input, .disabled .input-holder select, .disabled .input-holder textarea {
+  border-color: #c2c2c2; }
 
 .error .input-holder .postfix, .error .input-holder .prefix, .error .input-holder .value {
   color: #de404e; }
@@ -3230,6 +3244,8 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   color: #cd096d; }
 .completed .input-holder .postfix, .completed .input-holder .prefix, .completed .input-holder .value {
   color: #2de3bf; }
+.disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .input-holder .value {
+  color: #c2c2c2; }
 
 .error .input-holder .postfix, .error .input-holder .prefix {
   border-color: #de404e;
@@ -3249,8 +3265,11 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 .completed .input-holder .postfix, .completed .input-holder .prefix {
   border-color: #2de3bf;
   background-color: #cbe2de; }
+.disabled .input-holder .postfix, .disabled .input-holder .prefix {
+  border-color: #c2c2c2;
+  background-color: #dedede; }
 
-.error textarea, .error select, .error input, .error datalist, .warning textarea, .warning select, .warning input, .warning datalist, .validated textarea, .validated select, .validated input, .validated datalist, .info textarea, .info select, .info input, .info datalist, .highlighted textarea, .highlighted select, .highlighted input, .highlighted datalist, .completed textarea, .completed select, .completed input, .completed datalist {
+.error textarea, .error select, .error input, .error datalist, .warning textarea, .warning select, .warning input, .warning datalist, .validated textarea, .validated select, .validated input, .validated datalist, .info textarea, .info select, .info input, .info datalist, .highlighted textarea, .highlighted select, .highlighted input, .highlighted datalist, .completed textarea, .completed select, .completed input, .completed datalist, .disabled textarea, .disabled select, .disabled input, .disabled datalist {
   margin-bottom: 0; }
 
 .error textarea, .error select, .error input {
@@ -3282,8 +3301,12 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   background-color: #19BB9B;
   color: #fff;
   display: none; }
+.message-holder > .disabled {
+  background-color: #b3b3b3;
+  color: #333333;
+  display: none; }
 
-.error .message-holder > .error, .message-holder > .error.make-visible, .warning .message-holder > .warning, .message-holder > .warning.make-visible, .validated .message-holder > .validated, .message-holder > .validated.make-visible, .info .message-holder > .info, .message-holder > .info.make-visible, .highlighted .message-holder > .highlighted, .message-holder > .highlighted.make-visible, .completed .message-holder > .completed, .message-holder > .completed.make-visible {
+.error .message-holder > .error, .message-holder > .error.make-visible, .warning .message-holder > .warning, .message-holder > .warning.make-visible, .validated .message-holder > .validated, .message-holder > .validated.make-visible, .info .message-holder > .info, .message-holder > .info.make-visible, .highlighted .message-holder > .highlighted, .message-holder > .highlighted.make-visible, .completed .message-holder > .completed, .message-holder > .completed.make-visible, .disabled .message-holder > .disabled, .message-holder > .disabled.make-visible {
   display: block; }
 
 .hint .error {
@@ -3309,6 +3332,10 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 .hint .completed {
   background-color: #19BB9B;
   color: #fff;
+  padding: .25em .5em; }
+.hint .disabled {
+  background-color: #b3b3b3;
+  color: #333333;
   padding: .25em .5em; }
 
 .question.question-inline {

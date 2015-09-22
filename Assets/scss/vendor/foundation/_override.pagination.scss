@@ -4,7 +4,7 @@
 * 
 *   @example
 *	<div class="pagination-holder top"><ul class="pagination right">
-*		<li class="arrow unavailable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
+*		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
 *		<li class="current"><a href="">1</a></li>
 *		<li><a href="">2</a></li>
 *		<li><a href="">3</a></li>
@@ -12,7 +12,7 @@
 *		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
 *	</ul></div><br>
 *	<div class="pagination-holder"><ul class="pagination right">
-*		<li class="arrow unavailable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
+*		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
 *		<li class="current"><a href="">1</a></li>
 *		<li><a href="">2</a></li>
 *		<li><a href="">3</a></li>
@@ -20,7 +20,7 @@
 *		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
 *	</ul></div>
 *	<div class="pagination-holder"><ul class="pagination pagination--compact right">
-*		<li class="arrow unavailable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
+*		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
 *		<li class="current"><a href="">1</a></li>
 *		<li><a href="">2</a></li>
 *		<li><a href="">3</a></li>
@@ -53,7 +53,7 @@ ul.pagination li{
 
 		a,button{
 			background-color: grey(10);
-			border-radius: 0px 0px 0px 5px; 
+			
 			color: fontcolor($black);
 			font-weight: 700;
 			&:hover{ 
@@ -61,11 +61,12 @@ ul.pagination li{
 				color: fontcolor($black,'loud');
 			}
 		}
-	~ .arrow{ a, button{
+	&.left{a, button{border-radius: 0px 0px 0px 5px;}}	 
+	&.right{ a, button{
 				border-radius: 0px 0px 5px 0px; 
 			}}
 	}
-	&.unavailable a, &.unavailable a:hover{
+	&.disable a, &.disable a:hover{
 	    border-color: grey(30);
 	    background: url("../img/subtlenet2.png") repeat;
 	    color: grey(40);
@@ -82,8 +83,9 @@ ul.pagination li{
 	}
 	@include grid-row();
 	ul.pagination li.arrow{
-		a,button{border-radius: 5px 0 0 0;}
-		~.arrow{
+		&.left{a,button{border-radius: 5px 0 0 0;}}
+		
+		&.right{
 			a,button{border-radius: 0 5px 0 0;}
 		}
 	} 

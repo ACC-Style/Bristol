@@ -22,8 +22,11 @@ $required_data:(
 				border-bottom-width: 1;
 			}
 			
-			
-			color:fontcolor($real-black);
+			@if map-get($State, 'State') == "disabled"{
+				color:fontcolor($real-black,'light');
+			}@else{
+				color:fontcolor($real-black);
+			}
 			@include fa-holder(map-get($State,'Icon'),'dynamic');
 			i{color:map-get($State,'Color');}
 			&:hover{

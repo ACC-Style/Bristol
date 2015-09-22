@@ -9,10 +9,7 @@
 *	<a class="button disabled">disabled button </a>
 */
 
-.nobutton{
-	@include button($bg:#fff);
-	margin-bottom: 0;
-}
+
 %buttondisabled{
 	background-color: grey(20);
 	color:fontcolor($black,'quiet');
@@ -23,12 +20,21 @@
 .button.disabled:hover,{
 	&,&.success,&.alert,&.secondary{
 		@extend %buttondisabled;
-		
 	}
-
 }
 .link.disabled,.link.disabled:hover{
 	background-image: url("../img/subtlenet2.png");
 	color:fontcolor($black,'quiet');
 	font-style: italic;
+}
+.nobutton{
+	@include button($bg:#fff);
+	margin-bottom: 0;
+	&.disabled,&[disabled]{
+		&,&:hover{
+		color:fontcolor($black,'quiet');
+		cursor:not-allowed;
+		background-color: #fff;
+		}
+	}
 }
