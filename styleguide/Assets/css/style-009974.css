@@ -2078,13 +2078,7 @@ td.error-color {
 .fa-meanpath:before {
   content: ""; }
 
-    /*  
-    (
-	"State":"alert",
-	"Selector":".alert",
-    "Color": $alert-color,
-    "Icon": $fa-var-exclamation-triangle, ),
-    (
+    /*  (
     "State":"success",
 	"Selector":".success",
     "Color": $success-color,
@@ -2184,6 +2178,9 @@ i.fa.fa-question-circle {
 
 .disabled .fa-holder-dynamic:before, .disabled .findme, .disabled.fa:before, .disabled > .fa-holder:before {
   content: ""; }
+
+.alert .fa-holder-dynamic:before, .alert .findme, .alert.fa:before, .alert > .fa-holder:before {
+  content: ""; }
 
 td.product-brand-color {
   background-color: #009974; }
@@ -2426,6 +2423,24 @@ h6 {
 *	<a class="button secondary">secondary button</a>
 *	<a class="button disabled">disabled button </a>
 */
+button[disabled], button[disabled].success, button[disabled].alert, button[disabled].secondary,
+.button.disabled,
+.button.disabled.success,
+.button.disabled.alert,
+.button.disabled.secondary,
+.button.disabled:hover,
+.button.disabled.success:hover,
+.button.disabled.alert:hover,
+.button.disabled.secondary:hover {
+  background-color: #cccccc;
+  color: #999999;
+  cursor: not-allowed; }
+
+.link.disabled, .link.disabled:hover {
+  background-image: url("../img/subtlenet2.png");
+  color: #999999;
+  font-style: italic; }
+
 .nobutton {
   border-style: solid;
   border-width: 0px;
@@ -2458,24 +2473,6 @@ h6 {
     color: #999999;
     cursor: not-allowed;
     background-color: #fff; }
-
-button[disabled], button[disabled].success, button[disabled].alert, button[disabled].secondary,
-.button.disabled,
-.button.disabled.success,
-.button.disabled.alert,
-.button.disabled.secondary,
-.button.disabled:hover,
-.button.disabled.success:hover,
-.button.disabled.alert:hover,
-.button.disabled.secondary:hover {
-  background-color: #cccccc;
-  color: #999999;
-  cursor: not-allowed; }
-
-.link.disabled, .link.disabled:hover {
-  background-image: url("../img/subtlenet2.png");
-  color: #999999;
-  font-style: italic; }
 
 /**
 * Tabs (Basic):
@@ -3029,6 +3026,17 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
     color: #b3b3b3; }
   .nav-list.nav-checklist li.disabled:hover, .nav-checklist.panel-selector li.disabled:hover {
     background-color: #f0f0f0; }
+.nav-list.nav-checklist li.alert, .nav-checklist.panel-selector li.alert {
+  background-color: #ffd8a4;
+  border-color: #ffd195;
+  border-bottom-width: 1;
+  color: #333333; }
+  .nav-list.nav-checklist li.alert i.fa-holder-dynamic:before, .nav-checklist.panel-selector li.alert i.fa-holder-dynamic:before, .nav-list.nav-checklist li.alert.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.alert.dynamic i.fa-holder:before {
+    content: ""; }
+  .nav-list.nav-checklist li.alert i, .nav-checklist.panel-selector li.alert i {
+    color: #d07600; }
+  .nav-list.nav-checklist li.alert:hover, .nav-checklist.panel-selector li.alert:hover {
+    background-color: #ffe5c3; }
 
 /**
 * Nav List (Checklist w/ States):
@@ -3286,7 +3294,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
     left: 0;
     font-size: .75rem; }
 
-.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .answer.completed .required-holder, .question.completed .required-holder, .answer.disabled .required-holder, .question.disabled .required-holder, .repeater.required > .label-holder .required-holder {
+.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .answer.completed .required-holder, .question.completed .required-holder, .answer.disabled .required-holder, .question.disabled .required-holder, .answer.alert .required-holder, .question.alert .required-holder, .repeater.required > .label-holder .required-holder {
   background-color: transparent;
   display: inline-block; }
 
@@ -3355,6 +3363,8 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   color: #2de3bf; }
 .answer.disabled .required-holder, .question.disabled .required-holder {
   color: #c2c2c2; }
+.answer.alert .required-holder, .question.alert .required-holder {
+  color: #ff960d; }
 
 .error .label-holder {
   color: #de404e; }
@@ -3370,6 +3380,8 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   color: #2de3bf; }
 .disabled .label-holder {
   color: #c2c2c2; }
+.alert .label-holder {
+  color: #ff960d; }
 
 .error .input-holder input, .error .input-holder select, .error .input-holder textarea {
   border-color: #de404e; }
@@ -3385,6 +3397,8 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   border-color: #2de3bf; }
 .disabled .input-holder input, .disabled .input-holder select, .disabled .input-holder textarea {
   border-color: #c2c2c2; }
+.alert .input-holder input, .alert .input-holder select, .alert .input-holder textarea {
+  border-color: #ff960d; }
 
 .error .input-holder .postfix, .error .input-holder .prefix, .error .input-holder .value {
   color: #de404e; }
@@ -3400,6 +3414,8 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   color: #2de3bf; }
 .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .input-holder .value {
   color: #c2c2c2; }
+.alert .input-holder .postfix, .alert .input-holder .prefix, .alert .input-holder .value {
+  color: #ff960d; }
 
 .error .input-holder .postfix, .error .input-holder .prefix {
   border-color: #de404e;
@@ -3422,8 +3438,11 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 .disabled .input-holder .postfix, .disabled .input-holder .prefix {
   border-color: #c2c2c2;
   background-color: #dedede; }
+.alert .input-holder .postfix, .alert .input-holder .prefix {
+  border-color: #ff960d;
+  background-color: #e6d9c8; }
 
-.error textarea, .error select, .error input, .error datalist, .warning textarea, .warning select, .warning input, .warning datalist, .validated textarea, .validated select, .validated input, .validated datalist, .info textarea, .info select, .info input, .info datalist, .highlighted textarea, .highlighted select, .highlighted input, .highlighted datalist, .completed textarea, .completed select, .completed input, .completed datalist, .disabled textarea, .disabled select, .disabled input, .disabled datalist {
+.error textarea, .error select, .error input, .error datalist, .warning textarea, .warning select, .warning input, .warning datalist, .validated textarea, .validated select, .validated input, .validated datalist, .info textarea, .info select, .info input, .info datalist, .highlighted textarea, .highlighted select, .highlighted input, .highlighted datalist, .completed textarea, .completed select, .completed input, .completed datalist, .disabled textarea, .disabled select, .disabled input, .disabled datalist, .alert textarea, .alert select, .alert input, .alert datalist {
   margin-bottom: 0; }
 
 .error textarea, .error select, .error input {
@@ -3459,8 +3478,12 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   background-color: #b3b3b3;
   color: #333333;
   display: none; }
+.message-holder > .alert {
+  background-color: #d07600;
+  color: #fff;
+  display: none; }
 
-.error .message-holder > .error, .message-holder > .error.make-visible, .warning .message-holder > .warning, .message-holder > .warning.make-visible, .validated .message-holder > .validated, .message-holder > .validated.make-visible, .info .message-holder > .info, .message-holder > .info.make-visible, .highlighted .message-holder > .highlighted, .message-holder > .highlighted.make-visible, .completed .message-holder > .completed, .message-holder > .completed.make-visible, .disabled .message-holder > .disabled, .message-holder > .disabled.make-visible {
+.error .message-holder > .error, .message-holder > .error.make-visible, .warning .message-holder > .warning, .message-holder > .warning.make-visible, .validated .message-holder > .validated, .message-holder > .validated.make-visible, .info .message-holder > .info, .message-holder > .info.make-visible, .highlighted .message-holder > .highlighted, .message-holder > .highlighted.make-visible, .completed .message-holder > .completed, .message-holder > .completed.make-visible, .disabled .message-holder > .disabled, .message-holder > .disabled.make-visible, .alert .message-holder > .alert, .message-holder > .alert.make-visible {
   display: block; }
 
 .hint .error {
@@ -3490,6 +3513,10 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 .hint .disabled {
   background-color: #b3b3b3;
   color: #333333;
+  padding: .25em .5em; }
+.hint .alert {
+  background-color: #d07600;
+  color: #fff;
   padding: .25em .5em; }
 
 .question.question-inline {
@@ -3982,6 +4009,10 @@ input[type="checkbox"], input[type="radio"] {
       border-left: 2px solid #b3b3b3;
       padding-left: .5rem;
       margin-left: .25rem; }
+    .repeater .render .error {
+      color: #c32231; }
+    .repeater .render .warning {
+      color: #d07600; }
     @media only screen and (max-width: 767px) {
       .repeater .render .edit, .repeater .render .delete, .repeater .render .set {
         display: inline-block;
@@ -4000,6 +4031,7 @@ input[type="checkbox"], input[type="radio"] {
   .repeater.edit-mode .render {
     max-height: 0; }
   .repeater.edit-mode .edit-mode--show {
+    display: inline;
     display: initial; }
   .repeater.edit-mode .edit-mode--hide {
     display: none; }
@@ -4524,22 +4556,26 @@ td.icon {
   td.icon i {
     margin: 0 auto; }
 
-tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.completed td, tr.disabled td {
+tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.completed td, tr.disabled td, tr.alert td {
   background-image: url(../img/empty_stripe@2x.png);
   font-weight: 900; }
 
-td.error, .table tbody tr + tr td.error, td.warning, .table tbody tr + tr td.warning, td.validated, .table tbody tr + tr td.validated, td.info, .table tbody tr + tr td.info, td.highlighted, .table tbody tr + tr td.highlighted, td.completed, .table tbody tr + tr td.completed, td.disabled, .table tbody tr + tr td.disabled {
-  background-image: url(../img/empty_diamond@2x.png);
+.stripped tr.error td:nth-child(odd), .stripped tr.warning td:nth-child(odd), .stripped tr.validated td:nth-child(odd), .stripped tr.info td:nth-child(odd), .stripped tr.highlighted td:nth-child(odd), .stripped tr.completed td:nth-child(odd), .stripped tr.disabled td:nth-child(odd), .stripped tr.alert td:nth-child(odd) {
+  background-image: url(../img/empty_stripe-alt@2x.png);
   font-weight: 900; }
 
-td.error, td.warning, td.validated, td.info, td.highlighted, td.completed, td.disabled {
+td.error, .table tbody tr + tr td.error, td.warning, .table tbody tr + tr td.warning, td.validated, .table tbody tr + tr td.validated, td.info, .table tbody tr + tr td.info, td.highlighted, .table tbody tr + tr td.highlighted, td.completed, .table tbody tr + tr td.completed, td.disabled, .table tbody tr + tr td.disabled, td.alert, .table tbody tr + tr td.alert {
+  background-image: url(../img/empty_diamond@2x.png) !important;
+  font-weight: 900; }
+
+td.error, td.warning, td.validated, td.info, td.highlighted, td.completed, td.disabled, td.alert {
   border: 1px solid; }
 
-tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.completed td, tr.disabled td {
+tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.completed td, tr.disabled td, tr.alert td {
   border-top: 1px solid;
   border-bottom: 1px solid; }
 
-td.error, .table tbody tr + tr td.error, tr.error td {
+td.error, .table tbody tr + tr td.error, tr.error td, .stripped tr.error:nth-child(even) td:nth-child(odd) {
   background-color: #f5d9dc;
   color: #333333;
   border-color: #f2b7bd; }
@@ -4552,7 +4588,10 @@ tr:nth-child(even).error td {
   background-color: #f2ced2;
   color: #333333; }
 
-td.warning, .table tbody tr + tr td.warning, tr.warning td {
+.stripped tbody tr.error td:nth-child(odd) {
+  background-color: #f5d9dc; }
+
+td.warning, .table tbody tr + tr td.warning, tr.warning td, .stripped tr.warning:nth-child(even) td:nth-child(odd) {
   background-color: #f7e8d4;
   color: #333333;
   border-color: #ffd8a4; }
@@ -4565,7 +4604,10 @@ tr:nth-child(even).warning td {
   background-color: #f5e1c7;
   color: #333333; }
 
-td.validated, .table tbody tr + tr td.validated, tr.validated td {
+.stripped tbody tr.warning td:nth-child(odd) {
+  background-color: #f7e8d4; }
+
+td.validated, .table tbody tr + tr td.validated, tr.validated td, .stripped tr.validated:nth-child(even) td:nth-child(odd) {
   background-color: #d8f3ee;
   color: #333333;
   border-color: #b0f4e7; }
@@ -4578,7 +4620,10 @@ tr:nth-child(even).validated td {
   background-color: #ccf0e9;
   color: #333333; }
 
-td.info, .table tbody tr + tr td.info, tr.info td {
+.stripped tbody tr.validated td:nth-child(odd) {
+  background-color: #d8f3ee; }
+
+td.info, .table tbody tr + tr td.info, tr.info td, .stripped tr.info:nth-child(even) td:nth-child(odd) {
   background-color: #edfffb;
   color: #333333;
   border-color: #dffff7; }
@@ -4591,7 +4636,10 @@ tr:nth-child(even).info td {
   background-color: #e7fff9;
   color: #333333; }
 
-td.highlighted, .table tbody tr + tr td.highlighted, tr.highlighted td {
+.stripped tbody tr.info td:nth-child(odd) {
+  background-color: #edfffb; }
+
+td.highlighted, .table tbody tr + tr td.highlighted, tr.highlighted td, .stripped tr.highlighted:nth-child(even) td:nth-child(odd) {
   background-color: #d4eee7;
   color: #333333;
   border-color: #94ffe5; }
@@ -4604,7 +4652,10 @@ tr:nth-child(even).highlighted td {
   background-color: #c7e9e0;
   color: #333333; }
 
-td.completed, .table tbody tr + tr td.completed, tr.completed td {
+.stripped tbody tr.highlighted td:nth-child(odd) {
+  background-color: #d4eee7; }
+
+td.completed, .table tbody tr + tr td.completed, tr.completed td, .stripped tr.completed:nth-child(even) td:nth-child(odd) {
   background-color: #d8f3ee;
   color: #333333;
   border-color: #b0f4e7; }
@@ -4617,7 +4668,10 @@ tr:nth-child(even).completed td {
   background-color: #ccf0e9;
   color: #333333; }
 
-td.disabled, .table tbody tr + tr td.disabled, tr.disabled td {
+.stripped tbody tr.completed td:nth-child(odd) {
+  background-color: #d8f3ee; }
+
+td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .stripped tr.disabled:nth-child(even) td:nth-child(odd) {
   background-color: #f2f2f2;
   color: #333333;
   border-color: #e8e8e8; }
@@ -4629,6 +4683,25 @@ tr:nth-child(even) td.disabled {
 tr:nth-child(even).disabled td {
   background-color: #eeeeee;
   color: #333333; }
+
+.stripped tbody tr.disabled td:nth-child(odd) {
+  background-color: #f2f2f2; }
+
+td.alert, .table tbody tr + tr td.alert, tr.alert td, .stripped tr.alert:nth-child(even) td:nth-child(odd) {
+  background-color: #f7e8d4;
+  color: #333333;
+  border-color: #ffd8a4; }
+
+tr:nth-child(even) td.alert {
+  background-color: #f5e1c7;
+  color: #333333; }
+
+tr:nth-child(even).alert td {
+  background-color: #f5e1c7;
+  color: #333333; }
+
+.stripped tbody tr.alert td:nth-child(odd) {
+  background-color: #f7e8d4; }
 
 /**
 * Table States Cells:
@@ -4667,7 +4740,7 @@ tr:nth-child(even).disabled td {
 * `tr.state` - quickly color table rows with the states. 
 * 
 *   @example
-*	<table class="table">
+*	<table class="table stripped">
 *		<tr class="validated">
 *			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
 *			<td class=""></td>
@@ -4948,6 +5021,18 @@ table + div > .collapsable-panel {
     .collapsable-panel.disabled.inset .bar.close .action-btn {
       background-color: #b3b3b3;
       color: #333333; }
+.collapsable-panel.alert {
+  background-color: transparent;
+  border: 0 none transparent; }
+  .collapsable-panel.alert .bar.close, .collapsable-panel.alert.inset .bar.close {
+    border-color: #d07600; }
+  .collapsable-panel.alert .bar.close .action-btn {
+    color: #d07600; }
+  .collapsable-panel.alert.inset {
+    background-color: #fff2e1; }
+    .collapsable-panel.alert.inset .bar.close .action-btn {
+      background-color: #d07600;
+      color: #fff; }
 
 /**
 * Accordion (requires Collapsable Panel):
@@ -5309,7 +5394,8 @@ ul.toggle {
     float: left; }
     .header.application-frame .logo img {
       margin: 5px 3px 0;
-      height: 75px; }
+      height: 75px;
+      max-width: none; }
   .header.application-frame .nav.tabs.primary {
     float: right;
     display: inline-block;
@@ -5662,6 +5748,16 @@ ul.toggle {
   .info-text.disabled {
     background-color: #b3b3b3;
     color: #333333;
+    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+    font-weight: 700;
+    font-size: 1.21429em;
+    line-height: 1.23529em;
+    margin-top: 0.30882em;
+    margin-bottom: 0.30882em;
+    min-height: 24px; }
+  .info-text.alert {
+    background-color: #d07600;
+    color: #fff;
     font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
     font-weight: 700;
     font-size: 1.21429em;
@@ -7931,7 +8027,7 @@ div.reveal-modal, dialog {
 *	<h5 class="with-underline highlighted">Header 5 Tag<small>Highlighted State</small></h5>
 *  	<p class="highlighted"><strong>Paragraph that is a highlighted State.</strong>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
 */
-h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted, h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
+h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted, h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled, h1.alert, h2.alert, h3.alert, h4.alert, h5.alert, h6.alert, p.alert, a.alert, li.alert, blockquote.alert {
   font-weight: 900; }
 
 h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
@@ -7948,6 +8044,8 @@ h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.complet
   color: #19BB9B; }
 h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
   color: #b3b3b3; }
+h1.alert, h2.alert, h3.alert, h4.alert, h5.alert, h6.alert, p.alert, a.alert, li.alert, blockquote.alert {
+  color: #d07600; }
 
 h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
   border-color: #c32231; }
@@ -7963,6 +8061,8 @@ h1.with-underline.completed, h2.with-underline.completed, h3.with-underline.comp
   border-color: #19BB9B; }
 h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
   border-color: #b3b3b3; }
+h1.with-underline.alert, h2.with-underline.alert, h3.with-underline.alert, h4.with-underline.alert, h5.with-underline.alert, h6.with-underline.alert {
+  border-color: #d07600; }
 
 h1.with-underline {
   border-bottom: #009974 2px solid; }

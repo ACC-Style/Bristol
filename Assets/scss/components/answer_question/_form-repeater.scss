@@ -61,6 +61,8 @@ $repeater-color: rebrand-color($primary-color,2);
 		}
 		.starred{color:$success-color;}
 		.break{ border-left: 2px solid grey(30); padding-left: .5rem; margin-left: .25rem;}
+		.error{color:$error-color;}
+		.warning{color:$alert-color;}
 		.edit{}
 		.delete{}
 		.set{}
@@ -88,11 +90,9 @@ $repeater-color: rebrand-color($primary-color,2);
 	}
 	.edit-mode--show{display: none;}
 	&.edit-mode{ 
-		.render{ max-height: 0;}
-		.edit-mode--show{display:initial}
+		.render{max-height: 0;}
+		.edit-mode--show{display:inline; display:initial;}
 		.edit-mode--hide{display:none;}
-
-
 	}
 	.question-group{
 		padding-top:1.5em; 

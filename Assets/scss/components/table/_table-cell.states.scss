@@ -21,8 +21,12 @@ td.icon{
 	background-image: url(../img/empty_stripe@2x.png);
 	font-weight: 900;
 }	
+%tr-td-state-alt{  
+	background-image: url(../img/empty_stripe-alt@2x.png);
+	font-weight: 900;
+}
 %td-state{  
-	background-image: url(../img/empty_diamond@2x.png);
+	background-image: url(../img/empty_diamond@2x.png) !important;
 	font-weight: 900;
 }
 %cell-color{border:1px solid;}
@@ -39,11 +43,16 @@ td.icon{
 		@extend %tr-td-state;
 
 	}
+	.stripped tr#{$selector} td:nth-child(odd){
+		@extend %tr-td-state-alt;
+
+
+	}
 	td#{$selector},.table tbody tr + tr td#{$selector}{
 		@extend %td-state;
 
 	}
-	td#{$selector},.table tbody tr + tr td#{$selector},tr#{$selector} td{
+	td#{$selector},.table tbody tr + tr td#{$selector},tr#{$selector} td,.stripped tr#{$selector}:nth-child(even) td:nth-child(odd){
 		
 		background-color:$cell-color;
 		color:color-contrast($cell-color);
@@ -62,10 +71,12 @@ td.icon{
 	}
 	tr:nth-child(even){
 		&#{$selector} td{
-		
 			background-color:$cell-color-shift;
 			color:color-contrast($cell-color-shift);
 		}
+	} 
+	.stripped tbody tr#{$selector} td:nth-child(odd){
+		background-color:$cell-color;
 	}
 }
 
@@ -109,7 +120,7 @@ td.icon{
 * `tr.state` - quickly color table rows with the states. 
 * 
 *   @example
-*	<table class="table">
+*	<table class="table stripped">
 *		<tr class="validated">
 *			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
 *			<td class=""></td>
