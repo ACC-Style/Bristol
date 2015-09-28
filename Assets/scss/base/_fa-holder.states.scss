@@ -8,11 +8,21 @@ $required_data:(
 	);
 @include required-check($required_data...);
 // End of required check
+@mixin fa-var($var){
+	 .fa-holder-dynamic:before, &.fa:before, >.fa-holder:before{ content: $var;}
+
+}
 
 @each $State in $states{
 	$selector:map-get($State,"Selector");
 	$icon-var: map-get($State,"Icon");
 	#{$selector}{
 		@include fa-var($icon-var);
+		&.fa:before{ color:map-get($State,"Color"); }
 	}
+}
+
+.required{
+	@include fa-var($fa-var-asterisk);
+	&.fa:before{ color:$alert-color; }
 }

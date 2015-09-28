@@ -1,0 +1,138 @@
+
+
+//colors
+$unit-switch-color:$rebrand-color($primary-color, 2);
+
+
+//fonts
+$font_0: Roboto;
+$font_1: Helvetica Neue;
+$font_2: Helvetica;
+$font_3: Arial;
+$font_4: sans-serif;
+
+.switch-on {
+	position: absolute;
+	left: -38px;
+	top: 5px;
+	color: $white;
+	font-weight: bold;
+	font-size: 11px;
+	.fa {
+		display: inline;
+	}
+}
+.switch-off {
+	position: absolute;
+	left: -19px;
+	top: 4px;
+	color: $white;
+	font-weight: bold;
+	font-size: 11px;
+	.fa {
+		display: inline;
+	}
+}
+.switch {
+	input {
+		+ label.units
+		&:checked + label {
+			background-color: $unit-switch-color;
+		}
+		&:checked + label.units {
+			&:after {
+				left: 4.3rem !important;
+				//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+				border-radius: 0 2rem 2rem 0;
+			}
+			.switch-on {
+				color: $white !important;
+				.fa-holder:before {
+					content: "\f00c";
+				}
+			}
+			.switch-off {
+				color: fontcolor($black) !important;
+				.fa-holder:before {
+					content: "";
+				}
+			}
+		}
+	}
+	label.units {
+		&:after {
+			width: 4.3rem;
+			height: 1.8rem;
+		}
+		.switch-off {
+			left: -47px;
+			top: 6px;
+			z-index: 1;
+			font-size: 14px;
+			font-weight: normal;
+			i {
+				// font-size: 11px;
+				// span {
+				// 	font-family: $font_0, $font_1, $font_2, $font_3, $font_4;
+				// 	font-size: 14px;
+				// }
+			}
+		}
+		.switch-on {
+			left: -110px;
+			top: 6px;
+			position: absolute;
+			color: $white;
+			font-weight: bold;
+			font-size: 14px;
+			z-index: 1;
+			color: fontcolor($black);
+			font-weight: normal;
+			i {
+				font-size: 11px;
+			}
+		}
+	}
+	&.round label.units:after {
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 2rem 0 0 2rem;
+	}
+	&.select label {
+		background-color: $unit-switch-color;
+	}
+}
+.units-outer {
+	label {
+		padding-top: 4px;
+	}
+	.switch-value {
+		padding-left: 0;
+	}
+}
+label.units {
+	width: 125px;
+	height: 31px;
+}
+.select .switch-on .fa-check:before {
+	content: "";
+}
+
+
+
+/**
+* Unit Switch (Foundation Override):
+* `.switch` - A special case for switches that need labels inside of the switches.
+* 
+*   @example
+*	<div class="switch-input-space group-divide row">
+*	<div class="switch round select">
+*		<input id="cv2-select" name="creatinineSIUnit" type="checkbox" data-bind="checked: creatinineSIUnit">
+*		<label class="units" for="cv2-select">
+*			<span class="switch-on"><i class="fa fa-holder"></i>&nbsp;SI</span>
+*			<span class="switch-off"><i class="fa fa-holder"></i>&nbsp;US</span>
+*		</label>
+*	</div>
+*		<label  class="switch-value" for="hb-check0">Question to say yes to</label>		
+*	</div>
+*   <a class="link" href="http://foundation.zurb.com/docs/components/switch.html">Foundation Documentation</a>
+*/
