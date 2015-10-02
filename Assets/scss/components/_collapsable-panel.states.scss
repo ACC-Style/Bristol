@@ -54,25 +54,22 @@ $required_data:(
 */
 .collapsable-panel{
 	@each $State in $states{
-
-		&#{map-get($State,"Selector")}{
+		$state-selector:map-get($State,'Selector');
+		$state-name:map-get($State,'State');
+		&#{$state-selector}{
 			background-color: transparent;
 			border:0 none transparent;
-			.bar.close ,&.inset .bar.close{
-				border-color:map-get($State,"Color");
-			}
-			.bar.close .action-btn{color:map-get($State,"Color")}
+			@include setTrump('border-color',$state-name,'#{$state-selector} .bar.close,#{$state-selector}.inset .bar.close');
+			@include setTrump('color',$state-name,'#{$state-selector} .bar.close .action-btn');
+			
 			&.inset{
 				background-color:color(map-get($State,"Color"),10); 
 				.bar.close .action-btn{
-					background-color: map-get($State,"Color"); 
+					@include setTrump('background-color', $state-name,'#{$state-selector}.inset .bar.close .action-btn');
 					color:color-contrast(map-get($State,"Color"));
 				}
+			}
 		}
-
-		}
-
-
 	}
 
 
