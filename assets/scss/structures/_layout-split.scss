@@ -32,7 +32,12 @@
 		margin:-2rem -1rem -3rem;	
 	};
 }
-
+%row-layout{
+	display: block;
+      padding-left: 0;
+      padding-right: 0;
+      float:left;
+}
 .split-layout{
 	@include grid-row($behavior: collapse );
 	max-width: 100%;
@@ -51,37 +56,37 @@
 	}
 
 	
-	.split-sidebar{ display:none;	@include grid-column(12 , $collapse:true); left:grid-calc(-10,12); border:grey(30) solid 0; border-right-width:1px;}
+	.split-sidebar{ 
+		display:none;
+		width:100%;
+		left:grid-calc(-10,12);
+		border:grey(30) solid 0;
+		border-right-width:1px;}
 	.split-content{
-		@include grid-column(12, $collapse:true);	
+		@extend %row-layout;
+		width:100%;	
 		}
 	&.xlarge,&.large,&.medium,&.small{
 		&.reverse,&.reverse.navOn{ 
 			.split-sidebar,.split-content{
 				@include grid-column($float:right);
-				float:right !important;
 			}
+			.split-sidebar,.split-content{padding-left: 0;padding-right: 0;}
 			.split-sidebar{
 				border-right-width:0; 
 				border-left-width:1px;
-				padding-left: 0;padding-right: 0;
+				
 			}
-			.split-content{padding-left: 0;padding-right: 0;}
 		}
 			
 	}
 	&.small{
 		@media #{$small-up} {
 			.split-sidebar{
-				display: block;
-				@include grid-column(5 , $collapse:true);
-				padding-left: 0;padding-right: 0;
+				width: 41.66667%;
 			}
 			.split-content{
-				display: block;
-				@include grid-column(7, $collapse:true);
-				padding-left:0;
-				padding-right:0;
+				width: 58.33333%;
 			}
 
 		}
@@ -90,47 +95,30 @@
 	&.medium,&.small{
 		@media #{$medium-up}{
 			.split-sidebar, &.reverse .split-sidebar{
-				position: relative;
-				left:0;right:0;
-				display: block;
-				@include grid-column(4, $collapse:true);
-				padding-left: 0;padding-right: 0;
+				 width: 33.33333%;
 			}
 			.split-content{
-				display: block;
-				@include grid-column(8, $collapse:true);
-				padding-left:0;
-				padding-right:0;
+				width: 66.66667%;
 			}
 		}
 	}
 	&.large,&.medium,&.small{
 		@media #{$large-up}{
 			.split-sidebar, &.reverse .split-sidebar{
-				display: block;
-				@include grid-column(3, $collapse:true);
-				padding-left: 0;padding-right: 0;
+				 width: 25%;
 			}
 			.split-content{
-				display: block;
-				@include grid-column(9, $collapse:true);
-				padding-left:0;
-				padding-right:0;
+				 width: 75%;
 			}
 		}
 	}
 	&.xlarge,&.large,&.medium,&.small{
 		@media #{$xlarge-up}{
 			.split-sidebar, &.reverse .split-sidebar{
-				display: block;
-				@include grid-column(3, $collapse:true);
-				padding-left: 0;padding-right: 0;
+				 width: 25%;
 			}
 			.split-content{
-				display: block;
-				@include grid-column(9, $collapse:true);
-				padding-left:0;
-				padding-right:0;
+				 width: 75%;
 			}
 		}
 	}

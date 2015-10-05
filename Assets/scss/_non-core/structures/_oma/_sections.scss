@@ -8,16 +8,21 @@
 	p{margin-bottom:0;padding-left:4rem;
 		br{height:0;padding:0;margin:0;}
 	}
-
+	$list:();
 	@each $State in $states{
-		&#{map-get($State,'Selector')}{
-			background-color:map-get($State,'Color');
+		$list : append($list,unquote(map-get($State,'Selector')),'comma');
+		$state-name:map-get($State,'State');
+		$state-selector:map-get($State,'Selector');
+		&#{$state-selector}{
+			//background-color:map-get($State,'Color');
+			@include setTrump('background-color',$state-name,'.info-text#{$state-selector}');
 			color:color-contrast(map-get($State,'Color'));
+			}
+		}
+		#{$list}{
 			@include font-slab-bold();
 			@include baseline-font(1,.25,.25);
 			min-height:ms(3);
-			}
-
 		}
 
 }
