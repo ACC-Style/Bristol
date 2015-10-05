@@ -18,8 +18,9 @@ $required_data:(
 	$icon-var: map-get($State,"Icon");
 	#{$selector}{
 		@include fa-var($icon-var);
-		&.fa:before{ color:map-get($State,"Color"); }
+		//&.fa:before{ color:map-get($State,"Color"); }
 	}
+	@include setTrump('color',map-get($State,'State'),'#{$selector}.fa:before');
 }
 
 .required{
