@@ -2316,7 +2316,7 @@
                 </td>
                 <td>table row 1 table cell B
                   <br>
-                  <small class="blue">this is small text with blue</small>
+                  <small class="color-highlighted">this is small text with blue</small>
                 </td>
                 <td>table row 1 table cell C</td>
               </tr>
@@ -2348,7 +2348,7 @@
       <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>table row 1 table cell B
         <span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;blue&quot;</span>&gt;</span>this is small text with blue<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;color-highlighted&quot;</span>&gt;</span>this is small text with blue<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>table row 1 table cell C<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
@@ -2470,6 +2470,11 @@
                 <td>row 2 cell B</td>
                 <td>row 2 cell C</td>
               </tr>
+              <tr>
+                <td>row 2 cell A</td>
+                <td>row 2 cell B</td>
+                <td>row 2 cell C</td>
+              </tr>
             </tbody>
             <tfoot>
               <tr>
@@ -2490,6 +2495,11 @@
       <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 1 cell A<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 1 cell B<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 1 cell C<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 2 cell A<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 2 cell B<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 2 cell C<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 2 cell A<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
@@ -2578,25 +2588,25 @@
       <div class="sg-example">
         <div class="sg-canvas">
           <table class="table stripped  sort-asc col1">
-            <thead>
+            <thead class="sortableheader">
               <tr>
                 <th class="col1 sortable">
                   <div class="relative firefoxfix">
-                    <span class="sort">
+                    <span class="sort sorttoggle">
                       <a class="fa fa-sort"></a>
                     </span>
                     <a class="text">Table Header</a>
                   </div>
                 </th>
-                <th class="col2 sortable">
+                <th class="col2 sortable selected asc">
                   <div class="relative firefoxfix">
-                    <span class="sort">
+                    <span class="sort sorttoggle">
                       <a class="fa fa-sort"></a>
                     </span>
-                    <a class="text">Table Header</a>
+                    <a class="text">Toggle Sorter</a>
                   </div>
                 </th>
-                <th class="col3 sortable selected">
+                <th class="col3 sortable selected asc">
                   <div class="relative firefoxfix">
                     <span class="sort sorttwoways">
                       <a class="fa fa-sort selected"></a>
@@ -2627,25 +2637,25 @@
             </tfoot>
           </table>
         </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;table stripped  sort-asc col1&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">thead</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sortableheader&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col1 sortable&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;relative firefoxfix&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sort&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sort sorttoggle&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-sort&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
           <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Table Header<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col2 sortable&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col2 sortable selected asc&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;relative firefoxfix&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sort&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sort sorttoggle&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-sort&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
           <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Table Header<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Toggle Sorter<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col3 sortable selected&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col3 sortable selected asc&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;relative firefoxfix&quot;</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sort sorttwoways&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-sort selected&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>

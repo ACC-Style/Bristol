@@ -39,14 +39,7 @@
 
 
 
-// .banded tbody tr{
-// .col-red{ background-color:scale-color($primary-color,$lightness:85%);}
-// .col-green{ background-color:scale-color($primary-color,$lightness:90%);}
-// }
-.banded tbody tr:nth-child(even){background-color:grey(10);}
-// .col-red{ background-color:mix(scale-color($primary-color,$lightness:85%),grey(15));}
-// .col-green{ background-color:mix(scale-color($primary-color,$lightness:90%),grey(15));}
- 
+
 
 /**
 * Tables (Stripped):
@@ -72,6 +65,11 @@
 *				<td> row 2  cell B</td>
 *				<td> row 2  cell C</td>
 *			</tr>
+*			<tr>
+*				<td> row 2  cell A</td>
+*				<td> row 2  cell B</td>
+*				<td> row 2  cell C</td>
+*			</tr>
 *		</tbody>
 *		<tfoot>
 *			<tr>
@@ -81,86 +79,36 @@
 *	</table>
 */
 $table-cell-color:rebrand-color($primary-color,3);
-.stripped{
-	tbody{
-		
-		%greyed-row{
-			background-color:grey(10);
-		}
-		%greyed-column{
-			background-color:scale-color($table-cell-color,$lightness:90%);
-		}
-
-		%overlapped-grey{
-
-			background-color:mix(scale-color($table-cell-color,$lightness:85%),grey(15));
-		}
+%colored-row{
+		background-color:scale-color($table-cell-color,$lightness:90%);
 	}
-	tr:nth-child(even){@extend %greyed-row;}
+%greyed-column{
+		background-color:grey(10);
+	}
+%overlapped-grey{
+	background-color:mix(scale-color($table-cell-color,$lightness:85%),grey(15));
+	}
+.stripped{
 	th:nth-child(odd),td:nth-child(odd){@extend %greyed-column;}
+}
+.banded{
+	tr:nth-child(even){@extend %colored-row;}
+	}
+.stripped tbody{
+	tr:nth-child(even){@extend %colored-row;}
 	tr:nth-child(even) td:nth-child(odd){ @extend %overlapped-grey;}
 }
 
-/**
-* Tables Row(Seperator):
-* ` .seperator` - Table with the class`.stripped`.
-* 
-*   @example
-*	<table class="table stripped">
-*		<thead>
-*			<tr>
-*				<th>table header</th>
-*				<th>table header</th>
-*				<th>table header</th>
-*			</tr>
-*		</thead>
-*		<tbody>
-*			<tr>
-*				<td> row 1  cell A</td>
-*				<td> row 1  cell B</td>
-*				<td> row 1  cell C</td>
-*			</tr>
-*			<tr class="seperator">
-*				<td colspan='3'> Separator</td>
-*			</tr>
-*		</tbody>
-*		<tfoot>
-*			<tr>
-*				<td colspan="3">footer cell</td>
-*			</tr>
-*		</tfoot>
-*	</table>
-*/
 .stripped, .banded{
 	tbody tr + tr td{border-top:0px solid;}
 	th,td{padding:.25rem .25rem .25rem .55rem;}
-	
 	tfoot{
-		background-color: grey(20);
-		td{color:$black;
-			border-top:1px solid rebrand-color($primary-color,2);}
+		
+		td,td:nth-child(odd) {	color:$black;
+			border-top:1px solid rebrand-color($primary-color,2);
+			background-color: grey(20);
+		}
 	}
 }
-		$sep-color-base:rebrand-color($primary-color,2);
-		$sep-color:scale-color($sep-color-base,$lightness:15%);
-		$sep-darkcolor:scale-color($sep-color,$lightness:-10%);
-		$sep-lightcolor:scale-color($sep-color,$lightness:10%);
-.table{
-	.seperator td,.seperator:nth-child(even) td:nth-child(odd){
-		@include rem-fallback(padding-top,.1375);
-		@include rem-fallback(padding-bottom,.1375);
-		/* can be treated like a fallback */
-		background-color: $sep-color;
-		/* will be "on top", if browser supports it */
-		background-image: linear-gradient(to left ,$sep-lightcolor  ,$sep-darkcolor);
-		/* these will reset other properties, like background-position, but it does know what you mean */
-		background: $sep-color;
-		background: linear-gradient(to left ,$sep-lightcolor  ,$sep-darkcolor);
 
-		border-top:$sep-darkcolor 1px solid;
-		border-bottom:$sep-darkcolor 2px solid; 
-		color:color-contrast($sep-color);
-		@include font-italic();
-		font-size: .75rem;
-	}
-}
+
