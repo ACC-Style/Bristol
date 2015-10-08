@@ -6,392 +6,6 @@
 *   @example
 *	<a  class="button" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
 */
-/**
-* Brand Level:
-* `var $brand-level` - this variable has the ablity to over take the standard acc coloring with a branded product color.  Standard values are:
-*  <nav class="nav-list small"><ul><li><a href="index.html"><span class="text">0 - Pure ACC Color</span> <i class="fa fa-eye"></i></a></li><li><a href="brand1.html"><span class="text">1 - Header Bar and Primary Nav Selects </span><i class="fa fa-eye"></i></a></li><li><a href="brand2.html"><span class="text">2 - Lines, Selects, and Header Bar (Most Apps)</span><i class="fa fa-eye"></i></a></li><li><a href="brand3.html"><span class="text">3 - Full Color Takeover, Typography, Selects, Header Bar, and Lines </span><i class="fa fa-eye"></i></a></li></ul></nav>
-* 	!! if you use brand level 3 you must include an new build of foundation found in assets/scss/vendor/foundation/_foundaiton-override !!
-* 
-*   @example
-*	<table class="table">
-*		<thead>
-*			<tr>
-*				<th>Variable</th>
-*				<th>Color</th>
-*			</tr>
-*		</thead>
-*		<tbody>
-*			<tr>
-*				<td>$brand-color</td>
-*				<td class="brand-color">&nbsp;</td>
-*			</tr>
-*			<tr>
-*				<td>$product-brand-color</td>
-*				<td class="product-brand-color">&nbsp;</td>
-*			</tr>
-*			<tr>
-*				<td>$primary-color</td>
-*				<td class="primary-color">&nbsp;</td>
-*			</tr>
-*			<tr>
-*				<td>$secondary-color</td>
-*				<td class="secondary-color">&nbsp;</td>
-*			</tr>
-*			<tr>
-*				<td>$select-color</td>
-*				<td class="select-color">&nbsp;</td>
-*			</tr>
-*			<tr>
-*				<td>$success-color</td>
-*				<td class="success-color">&nbsp;</td>
-*			</tr>
-*			<tr>
-*				<td>$alert-color</td>
-*				<td class="alert-color">&nbsp;</td>
-*			</tr>
-*			<tr>
-*				<td>$error-color</td>
-*				<td class="error-color">&nbsp;</td>
-*			</tr>
-*		</tbody>
-*	</table>
-*/
-/**
-*	Zurb Foundation - Kitchen Sink:
-*	This is a visual representation of UI elements that come from the base framework from ZURB. This does not includes every single element from Foundation to view a full list go to the documentation. <a class="button tiny" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
-*
-*		@example 
-*		<h4 id="alert-boxes">Alert Boxes</h4><div data-alert="" class="alert-box radius">This is a standard alert (div.alert-box.radius).  <a href="" class="close">x</a></div><div data-alert="" class="alert-box success">  This is a success alert (div.alert-box.success).  <a href="" class="close">x</a></div><div data-alert="" class="alert-box alert round">  This is an alert (div.alert-box.alert.round).  <a href="" class="close">x</a></div><div data-alert="" class="alert-box secondary">  This is a secondary alert (div.alert-box.secondary).  <a href="" class="close">x</a></div><hr>
-*		<h4 id="breadcrumbs">Breadcrumbs</h4>
-*		<ul class="breadcrumbs">
-*		<li><a href="#">Home</a></li>
-*		<li><a href="#">Features</a></li>
-*		<li class="unavailable"><a href="#">Gene Splicing</a></li>
-*		<li class="current"><a href="#">Cloning</a></li>
-*		</ul>
-*		<h4 id="buttons">Buttons</h4>
-*		<div class="row">
-*			<div class="small-6 large-6 columns">
-*				<a href="#" class="tiny button">.tiny.button</a><br>
-*				<a href="#" class="small button">.small.button</a><br>
-*				<a href="#" class="button">.button</a><br>
-*				<a href="#" class="button expand">.expand</a><br>
-*			</div>
-*			<div class="small-6 large-6 columns">
-*				<a href="#" class="tiny button secondary">.tiny.secondary</a><br>
-*				<a href="#" class="small button success radius">.small.success.radius</a><br>
-*				<a href="#" class="button alert round disabled">.round.disabled</a><br>
-*			</div>
-*		</div>
-*		<div class="row">
-*			<h4 id="switches">switches</h4>
-*		<div class="small-6 column"><div class="switch tiny">
-*			<input id="a" name="switch-a" type="radio" checked="">
-*			<label for="a" onclick="">Off</label>
-*			<input id="a1" name="switch-a" type="radio">
-*			<label for="a1" onclick="">On</label>
-*			<span class="inline label">Power</span>
-*		</div></div>
-*		<div class="small-6 column"><div class="switch tiny">
-*			<span class="inline label">off</span>
-*			<input id="c1" name="switch-c" type="check">
-*			<label for="c1" onclick="">On</label>
-*			<span class="inline label">on</span>
-*		</div></div>
-*		</div><br>
-*		<nav class="top-bar" data-topbar="">
-*			<ul class="title-area">
-*			<!-- Title Area -->
-*				<li class="name">
-*					<h1>
-*					<a href="#">
-*					Top Bar Title
-*					</a>
-*					</h1>
-*				</li>
-*				<li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
-*			</ul>
-*			<section class="top-bar-section">
-*				<!-- Right Nav Section -->
-*				<ul class="right">
-*					<li class="divider"></li>
-*					<li class="has-dropdown not-click">
-*					<a href="#">Main Item 1</a>
-*					<ul class="dropdown">
-*						<li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li><li class="parent-link hide-for-large-up"><a class="parent-link js-generated" href="#">Main Item 1</a></li>
-*						<li><label>Section Name</label></li>
-*						<li class="has-dropdown not-click">
-*						<a href="#" class="">Has Dropdown, Level 1</a>
-*						<ul class="dropdown">
-*							<li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
-*							<li class="parent-link hide-for-large-up"><a class="parent-link js-generated" href="#">Has Dropdown, Level 1</a>
-*							</li>
-*							<li><a href="#">Dropdown Options</a></li>
-*							<li><a href="#">Dropdown Options</a></li>
-*							<li><a href="#">Level 2</a></li>
-*							<li><a href="#">Subdropdown Option</a></li>
-*							<li><a href="#">Subdropdown Option</a></li>
-*							<li><a href="#">Subdropdown Option</a></li>
-*							</ul>
-*							</li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li class="divider"></li>
-*							<li><label>Section Name</label></li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li class="divider"></li>
-*							<li><a href="#">See all ΓåÆ</a></li>
-*						</ul>
-*						</li>
-*						<li class="divider"></li>
-*						<li class="has-dropdown not-click">
-*						<a href="#">Main Item 2</a>
-*						<ul class="dropdown">
-*							<li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li><li class="parent-link hide-for-large-up"><a class="parent-link js-generated" href="#">Main Item 2</a></li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li class="divider"></li>
-*								<li><a href="#">See all ΓåÆ</a></li>
-*						</ul>
-*					</li>
-*				</ul>
-*			</section>
-*		</nav><br>
-*		<h4>Grid</H4>
-*		<div class="row display">
-*	 		 <div class="small-2 large-4 columns">small 2 | large 4 </div>
-*	  		<div class="small-4 large-4 columns">small 4 | large 4 </div>
-*	 		 <div class="small-6 large-4 columns">small 6 | large 4</div>
-*		</div>
-*/
-/**
-* Base Framework:
-* `fa-xxx` - fully css styling icons for all iconography. 
-* 
-*   @example
-*	<div id="web-application">
-*		<h2 class="page-header">Font Awesome</h2>
-*		<div class="row fontawesome-icon-list">
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/arrows"><i class="fa fa-arrows"></i> arrows</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/arrows-h"><i class="fa fa-arrows-h"></i> arrows-h</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/arrows-v"><i class="fa fa-arrows-v"></i> arrows-v</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/asterisk"><i class="fa fa-asterisk"></i> asterisk</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/at"><i class="fa fa-at"></i> at</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/bookmark"><i class="fa fa-bookmark"></i> bookmark</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/bookmark-o"><i class="fa fa-bookmark-o"></i> bookmark-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/briefcase"><i class="fa fa-briefcase"></i> briefcase</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/bug"><i class="fa fa-bug"></i> bug</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/building"><i class="fa fa-building"></i> building</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/calculator"><i class="fa fa-calculator"></i> calculator</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/calendar"><i class="fa fa-calendar"></i> calendar</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/calendar-o"><i class="fa fa-calendar-o"></i> calendar-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/camera"><i class="fa fa-camera"></i> camera</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/camera-retro"><i class="fa fa-camera-retro"></i> camera-retro</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-down"><i class="fa fa-caret-square-o-down"></i> caret-square-o-down</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-left"><i class="fa fa-caret-square-o-left"></i> caret-square-o-left</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-right"><i class="fa fa-caret-square-o-right"></i> caret-square-o-right</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-up"><i class="fa fa-caret-square-o-up"></i> caret-square-o-up</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cart-arrow-down"><i class="fa fa-cart-arrow-down"></i> cart-arrow-down</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check"><i class="fa fa-check"></i> check</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check-circle"><i class="fa fa-check-circle"></i> check-circle</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check-circle-o"><i class="fa fa-check-circle-o"></i> check-circle-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check-square"><i class="fa fa-check-square"></i> check-square</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check-square-o"><i class="fa fa-check-square-o"></i> check-square-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/circle"><i class="fa fa-circle"></i> circle</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/circle-o"><i class="fa fa-circle-o"></i> circle-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/circle-o-notch"><i class="fa fa-circle-o-notch"></i> circle-o-notch</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/circle-thin"><i class="fa fa-circle-thin"></i> circle-thin</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/clock-o"><i class="fa fa-clock-o"></i> clock-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/times"><i class="fa fa-close"></i> close <span class="text-muted">(alias)</span></a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cloud"><i class="fa fa-cloud"></i> cloud</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cloud-download"><i class="fa fa-cloud-download"></i> cloud-download</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cloud-upload"><i class="fa fa-cloud-upload"></i> cloud-upload</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/code"><i class="fa fa-code"></i> code</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/coffee"><i class="fa fa-coffee"></i> coffee</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cog"><i class="fa fa-cog"></i> cog</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cogs"><i class="fa fa-cogs"></i> cogs</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/comment"><i class="fa fa-comment"></i> comment</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/comment-o"><i class="fa fa-comment-o"></i> comment-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/pencil-square-o"><i class="fa fa-edit"></i> edit <span class="text-muted">(alias)</span></a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/envelope"><i class="fa fa-envelope"></i> envelope</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/envelope-o"><i class="fa fa-envelope-o"></i> envelope-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/exclamation"><i class="fa fa-exclamation"></i> exclamation</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/exclamation-circle"><i class="fa fa-exclamation-circle"></i> exclamation-circle</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/exclamation-triangle"><i class="fa fa-exclamation-triangle"></i> exclamation-triangle</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/external-link"><i class="fa fa-external-link"></i> external-link</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/wifi"><i class="fa fa-wifi"></i> wifi</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/wrench"><i class="fa fa-wrench"></i> wrench</a></div>
-*			<div class="column small-12"><a href="http://fortawesome.github.io/Font-Awesome/icons/">full list of icons</a></div>
-*		</div>
-*	</div>
-*	<dl class="sub-nav">
-*	  <dt>Filter:</dt>
-*	  <dd class="active"><a href="#">All</a></dd>
-*	  <dd><a href="#">Active</a></dd>
-*	  <dd><a href="#">Pending</a></dd>
-*	  <dd class="hide-for-small-only"><a href="#">Suspended</a></dd>
-*	</dl>
-*/
-/**
-* JQUERY UI - Kitchen Sink:
-* `JQUERY UI 1.11.4` - This style is base for more complicated ui elements
-*	<nav class="nav-list small"><ul><li><a href="http://jqueryui.com/accordion/"><span class="text">Accordion</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/autocomplete/"><span class="text">Autocomplete</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/datepicker/"><span class="text">Datepicker</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/progressbar/"><span class="text">Progressbar</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/slider/"><span class="text">Slider</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/spinner/"><span class="text">Spinner </span><i class="fa fa-holder-dynamic"></i></a></li></ul></nav>
-* 
-*   @example
-*	<h5>Accordion</h5>
-*	<div id="accordion">
-*	  <h3>Section 1</h3>
-*	  <div>
-*	    <p>
-*	    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-*	    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-*	    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-*	    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-*	    </p>
-*	  </div>
-*	  <h3>Section 2</h3>
-*	  <div>
-*	    <p>
-*	    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-*	    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-*	    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-*	    suscipit faucibus urna.
-*	    </p>
-*	  </div>
-*	  <h3>Section 3</h3>
-*	  <div>
-*	    <p>
-*	    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-*	    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-*	    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-*	    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-*	    </p>
-*	    <ul>
-*	      <li>List item one</li>
-*	      <li>List item two</li>
-*	      <li>List item three</li>
-*	    </ul>
-*	  </div>
-*	  <h3>Section 4</h3>
-*	  <div>
-*	    <p>
-*	    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-*	    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-*	    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-*	    mauris vel est.
-*	    </p>
-*	    <p>
-*	    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-*	    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-*	    inceptos himenaeos.
-*	    </p>
-*	  </div>
-*	</div>
-*	<div id="accordion2" class="ui-accordion-override">
-*	  <h3>Section 1</h3>
-*	  <div>
-*	    <p>
-*	    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-*	    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-*	    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-*	    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-*	    </p>
-*	  </div>
-*	  <h3>Section 2</h3>
-*	  <div>
-*	    <p>
-*	    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-*	    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-*	    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-*	    suscipit faucibus urna.
-*	    </p>
-*	  </div>
-*	  <h3>Section 3</h3>
-*	  <div>
-*	    <p>
-*	    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-*	    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-*	    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-*	    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-*	    </p>
-*	    <ul>
-*	      <li>List item one</li>
-*	      <li>List item two</li>
-*	      <li>List item three</li>
-*	    </ul>
-*	  </div>
-*	  <h3>Section 4</h3>
-*	  <div>
-*	    <p>
-*	    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-*	    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-*	    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-*	    mauris vel est.
-*	    </p>
-*	    <p>
-*	    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-*	    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-*	    inceptos himenaeos.
-*	    </p>
-*	  </div>
-*	</div>
-*	<h5>Auto Complete</h5>
-*	<div class="question required">
-*	  <div class="label-holder">
-*	    <label for="">
-*	      <span class="text">Auto Complete</span>
-*	      <span class="required-holder">
-*	        <i class="fa fa-holder-dynamic"></i>
-*	      </span>
-*	    </label>
-*	  </div>
-*	  <div class="input-holder">
-*	    <div class="input-space column small-6 large-9">
-*	      <input type="text" id="tags">
-*	    </div>
-*	    <div class="column small-6 large-3">
-*	      <small class="value">Tags</small>
-*	    </div>
-*	  </div>
-*	   <div class="hint">Code tags like 'ASP'</div>
-*	</div>
-*	<h5>Slider</h5>
-*	<div class="question">
-*		<div class="label-holder">
-*	  		<label for="amount">Donation amount ($50 increments):</label>
-*	 	</div>
-*		<div class="input-holder">
-*	    <div class="input-space column small-9 large-10">
-*	      <div id="slider"></div>
-*	    </div>
-*	    <div class="input-space column small-3 large-2">
-*	      <input type="text" id="amount" readonly>
-*	    </div>			
-*		</div>
-*	</div>
-*	<h5>Datepicker</h5>
-*	<div class="question">
-*		<div class="label-holder">
-*	  		<label for="amount">
-*				 <span class="text">Date</span>
-*	  		</label>
-*	 	</div>
-*		<div class="input-holder">
-*			 <div class="input-space column small-6 large-9">
-*	     		<input type="text" id="datepicker">
-*	   		 </div>
-*		</div>
-*	</div>
-*	<h5>Spinner</h5>
-*	<p>
-*	  <label for="spinner">Select a value:</label>
-*	  <input id="spinner" name="value">
-*	</p>
-*	
-**/
 td.product-brand-color {
   background-color: #860647; }
 
@@ -404,7 +18,10 @@ td.primary-color {
 td.secondary-color {
   background-color: #b3b3b3; }
 
-td.alert-color {
+td.attention-color {
+  background-color: #d07600; }
+
+td.warning-color {
   background-color: #d07600; }
 
 td.success-color {
@@ -414,6 +31,9 @@ td.select-color {
   background-color: #19BB9B; }
 
 td.error-color {
+  background-color: #c32231; }
+
+td.alert-color {
   background-color: #c32231; }
 
 /*!
@@ -570,20 +190,11 @@ td.error-color {
 
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
    readers do not read off random characters that represent icons */
-.fa-glass:before {
-  content: ""; }
-
-.fa-music:before {
-  content: ""; }
-
 .fa-search:before {
   content: ""; }
 
 .fa-envelope-o:before {
   content: ""; }
-
-.fa-heart:before {
-  content: ""; }
 
 .fa-star:before {
   content: ""; }
@@ -593,18 +204,6 @@ td.error-color {
 
 .fa-user:before {
   content: ""; }
-
-.fa-film:before {
-  content: ""; }
-
-.fa-th-large:before {
-  content: ""; }
-
-.fa-th:before {
-  content: ""; }
-
-.fa-th-list:before {
-  content: ""; }
 
 .fa-check:before {
   content: ""; }
@@ -621,30 +220,15 @@ td.error-color {
 .fa-search-minus:before, .ui-icon-circle-zoomout:before {
   content: ""; }
 
-.fa-power-off:before {
-  content: ""; }
-
-.fa-signal:before {
-  content: ""; }
-
 .fa-gear:before,
 .fa-cog:before {
   content: ""; }
-
-.fa-trash-o:before {
-  content: ""; }
 
 .fa-home:before {
   content: ""; }
 
 .fa-file-o:before {
   content: ""; }
-
-.fa-clock-o:before {
-  content: ""; }
-
-.fa-road:before {
-  content: ""; }
 
 .fa-download:before {
   content: ""; }
@@ -677,86 +261,14 @@ td.error-color {
 .fa-flag:before {
   content: ""; }
 
-.fa-headphones:before {
-  content: ""; }
-
-.fa-volume-off:before {
-  content: ""; }
-
-.fa-volume-down:before {
-  content: ""; }
-
-.fa-volume-up:before {
-  content: ""; }
-
-.fa-qrcode:before {
-  content: ""; }
-
-.fa-barcode:before {
-  content: ""; }
-
 .fa-tag:before {
   content: ""; }
 
 .fa-tags:before {
   content: ""; }
 
-.fa-book:before {
-  content: ""; }
-
-.fa-bookmark:before {
-  content: ""; }
-
 .fa-print:before {
   content: ""; }
-
-.fa-camera:before {
-  content: ""; }
-
-.fa-font:before {
-  content: ""; }
-
-.fa-bold:before {
-  content: ""; }
-
-.fa-italic:before {
-  content: ""; }
-
-.fa-text-height:before {
-  content: ""; }
-
-.fa-text-width:before {
-  content: ""; }
-
-.fa-align-left:before {
-  content: ""; }
-
-.fa-align-center:before {
-  content: ""; }
-
-.fa-align-right:before {
-  content: ""; }
-
-.fa-align-justify:before {
-  content: ""; }
-
-.fa-list:before {
-  content: ""; }
-
-.fa-dedent:before,
-.fa-outdent:before {
-  content: ""; }
-
-.fa-indent:before {
-  content: ""; }
-
-.fa-video-camera:before {
-  content: ""; }
-
-.fa-photo:before,
-.fa-image:before,
-.fa-picture-o:before {
-  content: ""; }
 
 .fa-pencil:before {
   content: ""; }
@@ -883,15 +395,6 @@ td.error-color {
 .fa-exclamation-circle:before {
   content: ""; }
 
-.fa-gift:before {
-  content: ""; }
-
-.fa-leaf:before {
-  content: ""; }
-
-.fa-fire:before {
-  content: ""; }
-
 .fa-eye:before {
   content: ""; }
 
@@ -913,9 +416,6 @@ td.error-color {
 
 .fa-comment:before {
   content: ""; }
-
-.fa-magnet:before {
-  content: ""; }
 
 .fa-chevron-up:before {
   content: ""; }
@@ -950,9 +450,6 @@ td.error-color {
 
 .fa-facebook-square:before {
   content: ""; }
-
-.fa-camera-retro:before {
-  content: ""; }
 
 .fa-key:before {
   content: ""; }
@@ -1210,16 +707,6 @@ td.error-color {
 
 .fa-comments-o:before {
   content: ""; }
-
-.fa-flash:before,
-.fa-bolt:before {
-  content: ""; }
-
-.fa-sitemap:before {
-  content: ""; }
-
-.fa-umbrella:before {
-  content: ""; }
 
 .fa-paste:before,
 .fa-clipboard:before {
@@ -2157,43 +1644,27 @@ i.fa.fa-question-circle {
 
 .error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before {
   content: ""; }
-.error.fa:before {
-  color: #c32231; }
 
 .warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before {
   content: ""; }
-.warning.fa:before {
-  color: #d07600; }
 
 .validated .fa-holder-dynamic:before, .validated.fa:before, .validated > .fa-holder:before {
   content: ""; }
-.validated.fa:before {
-  color: #19BB9B; }
 
 .info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before {
   content: ""; }
-.info.fa:before {
-  color: #bbe8f4; }
 
 .highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before {
   content: ""; }
-.highlighted.fa:before {
-  color: #22AFD7; }
 
 .completed .fa-holder-dynamic:before, .completed.fa:before, .completed > .fa-holder:before {
   content: ""; }
-.completed.fa:before {
-  color: #19BB9B; }
 
 .disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before {
   content: ""; }
-.disabled.fa:before {
-  color: #b3b3b3; }
 
-.alert .fa-holder-dynamic:before, .alert.fa:before, .alert > .fa-holder:before {
+.attention .fa-holder-dynamic:before, .attention.fa:before, .attention > .fa-holder:before {
   content: ""; }
-.alert.fa:before {
-  color: #d07600; }
 
 .required .fa-holder-dynamic:before, .required.fa:before, .required > .fa-holder:before {
   content: ""; }
@@ -2212,7 +1683,10 @@ td.primary-color {
 td.secondary-color {
   background-color: #b3b3b3; }
 
-td.alert-color {
+td.attention-color {
+  background-color: #d07600; }
+
+td.warning-color {
   background-color: #d07600; }
 
 td.success-color {
@@ -2222,6 +1696,9 @@ td.select-color {
   background-color: #19BB9B; }
 
 td.error-color {
+  background-color: #c32231; }
+
+td.alert-color {
   background-color: #c32231; }
 
 meta.foundation-version {
@@ -2778,44 +2255,6 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
 *	</ul>
 */
 /**
-* Tabs Overlap:
-* `.tabs.overlap` -  Overlap gives shallow space and more rendered verstion of tabs
-* 
-*   @example
-*	<ul class="nav tabs overlap">
-*		<li class="icon  "><a class="home"><i class="fa fa-holder"></i></a></li>
-*		<li class=""><a>Tab 2</li>
-*		<li class=" selected "><a >Tab 3</a></li>
-*		<li class=""><a >Tab 4</a></li>
-*	</ul>
-*/
-.tabs.overlap {
-  background-color: white;
-  background: url("../img/billie-holiday.png") repeat top right, url("../img/bottom-shade.png") repeat-x bottom right, url("../img/top-shade.png") repeat-x right -1px;
-  border-bottom: 2px solid #999999;
-  padding-top: .25em; }
-  .tabs.overlap li {
-    border: 2px solid #b3b3b3;
-    border-bottom: 0;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px; }
-    .tabs.overlap li.selected {
-      margin-bottom: -2px;
-      padding-bottom: 3px;
-      background-color: white;
-      z-index: 1000;
-      border-color: #999999;
-      vertical-align: bottom; }
-      .with-group-sections .tabs.overlap li.selected {
-        background-color: #f2f2f2; }
-      .with-group-sections .group-section .tabs.overlap li.selected {
-        background-color: #fff; }
-      .tabs.overlap li.selected a {
-        color: #333; }
-    .tabs.overlap li.secondary {
-      border-color: #b3b3b3; }
-
-/**
 * Nav List (Basic):
 * `.nav-list ul li` - styling of a list of links perfect for a side nav or a collection of jump off points. Add `.selected` to the `li` to highlight the nav link. The nav list changes styles depending on the headline tag in front of the nav-list.  
 * 
@@ -2977,10 +2416,6 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   border-color: #f0abb2;
   border-bottom-width: 1;
   color: #333333; }
-  .nav-list.nav-checklist li.error i.fa-holder-dynamic:before, .nav-checklist.panel-selector li.error i.fa-holder-dynamic:before, .nav-list.nav-checklist li.error.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.error.dynamic i.fa-holder:before {
-    content: ""; }
-  .nav-list.nav-checklist li.error i, .nav-checklist.panel-selector li.error i {
-    color: #c32231; }
   .nav-list.nav-checklist li.error:hover, .nav-checklist.panel-selector li.error:hover {
     background-color: #f7cfd3; }
 .nav-list.nav-checklist li.warning, .nav-checklist.panel-selector li.warning {
@@ -2988,10 +2423,6 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   border-color: #ffd195;
   border-bottom-width: 1;
   color: #333333; }
-  .nav-list.nav-checklist li.warning i.fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning i.fa-holder-dynamic:before, .nav-list.nav-checklist li.warning.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.warning.dynamic i.fa-holder:before {
-    content: ""; }
-  .nav-list.nav-checklist li.warning i, .nav-checklist.panel-selector li.warning i {
-    color: #d07600; }
   .nav-list.nav-checklist li.warning:hover, .nav-checklist.panel-selector li.warning:hover {
     background-color: #ffe5c3; }
 .nav-list.nav-checklist li.validated, .nav-checklist.panel-selector li.validated {
@@ -2999,10 +2430,6 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   border-color: #a3f3e3;
   border-bottom-width: 1;
   color: #333333; }
-  .nav-list.nav-checklist li.validated i.fa-holder-dynamic:before, .nav-checklist.panel-selector li.validated i.fa-holder-dynamic:before, .nav-list.nav-checklist li.validated.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.validated.dynamic i.fa-holder:before {
-    content: ""; }
-  .nav-list.nav-checklist li.validated i, .nav-checklist.panel-selector li.validated i {
-    color: #19BB9B; }
   .nav-list.nav-checklist li.validated:hover, .nav-checklist.panel-selector li.validated:hover {
     background-color: #caf8ef; }
 .nav-list.nav-checklist li.info, .nav-checklist.panel-selector li.info {
@@ -3010,10 +2437,6 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   border-color: #e7f7fb;
   border-bottom-width: 1;
   color: #333333; }
-  .nav-list.nav-checklist li.info i.fa-holder-dynamic:before, .nav-checklist.panel-selector li.info i.fa-holder-dynamic:before, .nav-list.nav-checklist li.info.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.info.dynamic i.fa-holder:before {
-    content: ""; }
-  .nav-list.nav-checklist li.info i, .nav-checklist.panel-selector li.info i {
-    color: #bbe8f4; }
   .nav-list.nav-checklist li.info:hover, .nav-checklist.panel-selector li.info:hover {
     background-color: #f1fafd; }
 .nav-list.nav-checklist li.highlighted, .nav-checklist.panel-selector li.highlighted {
@@ -3021,19 +2444,11 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   border-color: #b0e4f3;
   border-bottom-width: 1;
   color: #333333; }
-  .nav-list.nav-checklist li.highlighted i.fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted i.fa-holder-dynamic:before, .nav-list.nav-checklist li.highlighted.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.highlighted.dynamic i.fa-holder:before {
-    content: ""; }
-  .nav-list.nav-checklist li.highlighted i, .nav-checklist.panel-selector li.highlighted i {
-    color: #22AFD7; }
   .nav-list.nav-checklist li.highlighted:hover, .nav-checklist.panel-selector li.highlighted:hover {
     background-color: #d2eff8; }
 .nav-list.nav-checklist li.completed, .nav-checklist.panel-selector li.completed {
   background-color: #fff;
   color: #333333; }
-  .nav-list.nav-checklist li.completed i.fa-holder-dynamic:before, .nav-checklist.panel-selector li.completed i.fa-holder-dynamic:before, .nav-list.nav-checklist li.completed.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.completed.dynamic i.fa-holder:before {
-    content: ""; }
-  .nav-list.nav-checklist li.completed i, .nav-checklist.panel-selector li.completed i {
-    color: #19BB9B; }
   .nav-list.nav-checklist li.completed:hover, .nav-checklist.panel-selector li.completed:hover {
     background-color: #caf8ef; }
 .nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled {
@@ -3041,22 +2456,14 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   border-color: #e4e4e4;
   border-bottom-width: 1;
   color: #b3b3b3; }
-  .nav-list.nav-checklist li.disabled i.fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled i.fa-holder-dynamic:before, .nav-list.nav-checklist li.disabled.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.disabled.dynamic i.fa-holder:before {
-    content: ""; }
-  .nav-list.nav-checklist li.disabled i, .nav-checklist.panel-selector li.disabled i {
-    color: #b3b3b3; }
   .nav-list.nav-checklist li.disabled:hover, .nav-checklist.panel-selector li.disabled:hover {
     background-color: #f0f0f0; }
-.nav-list.nav-checklist li.alert, .nav-checklist.panel-selector li.alert {
+.nav-list.nav-checklist li.attention, .nav-checklist.panel-selector li.attention {
   background-color: #ffd8a4;
   border-color: #ffd195;
   border-bottom-width: 1;
   color: #333333; }
-  .nav-list.nav-checklist li.alert i.fa-holder-dynamic:before, .nav-checklist.panel-selector li.alert i.fa-holder-dynamic:before, .nav-list.nav-checklist li.alert.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.alert.dynamic i.fa-holder:before {
-    content: ""; }
-  .nav-list.nav-checklist li.alert i, .nav-checklist.panel-selector li.alert i {
-    color: #d07600; }
-  .nav-list.nav-checklist li.alert:hover, .nav-checklist.panel-selector li.alert:hover {
+  .nav-list.nav-checklist li.attention:hover, .nav-checklist.panel-selector li.attention:hover {
     background-color: #ffe5c3; }
 
 /**
@@ -3315,7 +2722,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
     left: 0;
     font-size: .75rem; }
 
-.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .answer.completed .required-holder, .question.completed .required-holder, .answer.disabled .required-holder, .question.disabled .required-holder, .answer.alert .required-holder, .question.alert .required-holder, .repeater.required > .label-holder .required-holder {
+.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .answer.completed .required-holder, .question.completed .required-holder, .answer.disabled .required-holder, .question.disabled .required-holder, .answer.attention .required-holder, .question.attention .required-holder, .repeater.required > .label-holder .required-holder {
   background-color: transparent;
   display: inline-block; }
 
@@ -3352,7 +2759,6 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   padding: .375rem .5625rem .5625rem;
   margin-top: -1px;
   margin-bottom: .25rem;
-  background: #d07600;
   clear: both;
   color: #FFF; }
   .message-holder > small i, .message-holder > span i {
@@ -3370,142 +2776,47 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   display: inline-block;
   width: 100%; }
 
-.answer.error .required-holder, .question.error .required-holder {
-  color: #de404e; }
-.answer.warning .required-holder, .question.warning .required-holder {
-  color: #ff960d; }
-.answer.validated .required-holder, .question.validated .required-holder {
-  color: #2de3bf; }
-.answer.info .required-holder, .question.info .required-holder {
-  color: #c9ecf6; }
-.answer.highlighted .required-holder, .question.highlighted .required-holder {
-  color: #4bc1e2; }
-.answer.completed .required-holder, .question.completed .required-holder {
-  color: #2de3bf; }
-.answer.disabled .required-holder, .question.disabled .required-holder {
-  color: #c2c2c2; }
-.answer.alert .required-holder, .question.alert .required-holder {
-  color: #ff960d; }
-
-.error .label-holder {
-  color: #de404e; }
-.warning .label-holder {
-  color: #ff960d; }
-.validated .label-holder {
-  color: #2de3bf; }
-.info .label-holder {
-  color: #c9ecf6; }
-.highlighted .label-holder {
-  color: #4bc1e2; }
-.completed .label-holder {
-  color: #2de3bf; }
-.disabled .label-holder {
-  color: #c2c2c2; }
-.alert .label-holder {
-  color: #ff960d; }
-
-.error .input-holder input, .error .input-holder select, .error .input-holder textarea {
-  border-color: #de404e; }
-.warning .input-holder input, .warning .input-holder select, .warning .input-holder textarea {
-  border-color: #ff960d; }
-.validated .input-holder input, .validated .input-holder select, .validated .input-holder textarea {
-  border-color: #2de3bf; }
-.info .input-holder input, .info .input-holder select, .info .input-holder textarea {
-  border-color: #c9ecf6; }
-.highlighted .input-holder input, .highlighted .input-holder select, .highlighted .input-holder textarea {
-  border-color: #4bc1e2; }
-.completed .input-holder input, .completed .input-holder select, .completed .input-holder textarea {
-  border-color: #2de3bf; }
-.disabled .input-holder input, .disabled .input-holder select, .disabled .input-holder textarea {
-  border-color: #c2c2c2; }
-.alert .input-holder input, .alert .input-holder select, .alert .input-holder textarea {
-  border-color: #ff960d; }
-
-.error .input-holder .postfix, .error .input-holder .prefix, .error .input-holder .value {
-  color: #de404e; }
-.warning .input-holder .postfix, .warning .input-holder .prefix, .warning .input-holder .value {
-  color: #ff960d; }
-.validated .input-holder .postfix, .validated .input-holder .prefix, .validated .input-holder .value {
-  color: #2de3bf; }
-.info .input-holder .postfix, .info .input-holder .prefix, .info .input-holder .value {
-  color: #c9ecf6; }
-.highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted .input-holder .value {
-  color: #4bc1e2; }
-.completed .input-holder .postfix, .completed .input-holder .prefix, .completed .input-holder .value {
-  color: #2de3bf; }
-.disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .input-holder .value {
-  color: #c2c2c2; }
-.alert .input-holder .postfix, .alert .input-holder .prefix, .alert .input-holder .value {
-  color: #ff960d; }
-
 .error .input-holder .postfix, .error .input-holder .prefix {
-  border-color: #de404e;
   background-color: #e2ced0; }
 .warning .input-holder .postfix, .warning .input-holder .prefix {
-  border-color: #ff960d;
   background-color: #e6d9c8; }
 .validated .input-holder .postfix, .validated .input-holder .prefix {
-  border-color: #2de3bf;
   background-color: #cbe2de; }
 .info .input-holder .postfix, .info .input-holder .prefix {
-  border-color: #c9ecf6;
   background-color: #dfe3e5; }
 .highlighted .input-holder .postfix, .highlighted .input-holder .prefix {
-  border-color: #4bc1e2;
   background-color: #cfdee2; }
 .completed .input-holder .postfix, .completed .input-holder .prefix {
-  border-color: #2de3bf;
   background-color: #cbe2de; }
 .disabled .input-holder .postfix, .disabled .input-holder .prefix {
-  border-color: #c2c2c2;
   background-color: #dedede; }
-.alert .input-holder .postfix, .alert .input-holder .prefix {
-  border-color: #ff960d;
+.attention .input-holder .postfix, .attention .input-holder .prefix {
   background-color: #e6d9c8; }
-
-.error textarea, .error select, .error input, .error datalist, .warning textarea, .warning select, .warning input, .warning datalist, .validated textarea, .validated select, .validated input, .validated datalist, .info textarea, .info select, .info input, .info datalist, .highlighted textarea, .highlighted select, .highlighted input, .highlighted datalist, .completed textarea, .completed select, .completed input, .completed datalist, .disabled textarea, .disabled select, .disabled input, .disabled datalist, .alert textarea, .alert select, .alert input, .alert datalist {
-  margin-bottom: 0; }
-
-.error textarea, .error select, .error input {
-  border-color: #c32231; }
-.alert textarea, .warning textarea, .alert select, .warning select, .alert input, .warning input {
-  border-color: #d07600; }
 
 .message-holder > .error {
   background-color: #c32231;
-  color: #fff;
-  display: none; }
+  color: #fff; }
 .message-holder > .warning {
   background-color: #d07600;
-  color: #fff;
-  display: none; }
+  color: #fff; }
 .message-holder > .validated {
   background-color: #19BB9B;
-  color: #fff;
-  display: none; }
+  color: #fff; }
 .message-holder > .info {
   background-color: #bbe8f4;
-  color: #333333;
-  display: none; }
+  color: #333333; }
 .message-holder > .highlighted {
   background-color: #22AFD7;
-  color: #fff;
-  display: none; }
+  color: #fff; }
 .message-holder > .completed {
   background-color: #19BB9B;
-  color: #fff;
-  display: none; }
+  color: #fff; }
 .message-holder > .disabled {
   background-color: #b3b3b3;
-  color: #333333;
-  display: none; }
-.message-holder > .alert {
+  color: #333333; }
+.message-holder > .attention {
   background-color: #d07600;
-  color: #fff;
-  display: none; }
-
-.error .message-holder > .error, .message-holder > .error.make-visible, .warning .message-holder > .warning, .message-holder > .warning.make-visible, .validated .message-holder > .validated, .message-holder > .validated.make-visible, .info .message-holder > .info, .message-holder > .info.make-visible, .highlighted .message-holder > .highlighted, .message-holder > .highlighted.make-visible, .completed .message-holder > .completed, .message-holder > .completed.make-visible, .disabled .message-holder > .disabled, .message-holder > .disabled.make-visible, .alert .message-holder > .alert, .message-holder > .alert.make-visible {
-  display: block; }
+  color: #fff; }
 
 .hint .error {
   background-color: #c32231;
@@ -3535,10 +2846,19 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   background-color: #b3b3b3;
   color: #333333;
   padding: .25em .5em; }
-.hint .alert {
+.hint .attention {
   background-color: #d07600;
   color: #fff;
   padding: .25em .5em; }
+
+.error textarea, .error select, .error input, .error datalist, .warning textarea, .warning select, .warning input, .warning datalist, .validated textarea, .validated select, .validated input, .validated datalist, .info textarea, .info select, .info input, .info datalist, .highlighted textarea, .highlighted select, .highlighted input, .highlighted datalist, .completed textarea, .completed select, .completed input, .completed datalist, .disabled textarea, .disabled select, .disabled input, .disabled datalist, .attention textarea, .attention select, .attention input, .attention datalist {
+  margin-bottom: 0; }
+
+.message-holder > .error, .message-holder > .warning, .message-holder > .validated, .message-holder > .info, .message-holder > .highlighted, .message-holder > .completed, .message-holder > .disabled, .message-holder > .attention {
+  display: none; }
+
+.error .message-holder > .error, .message-holder > .error.make-visible, .warning .message-holder > .warning, .message-holder > .warning.make-visible, .validated .message-holder > .validated, .message-holder > .validated.make-visible, .info .message-holder > .info, .message-holder > .info.make-visible, .highlighted .message-holder > .highlighted, .message-holder > .highlighted.make-visible, .completed .message-holder > .completed, .message-holder > .completed.make-visible, .disabled .message-holder > .disabled, .message-holder > .disabled.make-visible, .attention .message-holder > .attention, .message-holder > .attention.make-visible {
+  display: block; }
 
 .question.question-inline {
   margin-bottom: .75rem; }
@@ -3742,135 +3062,6 @@ input[type="checkbox"], input[type="radio"] {
 *		<div class="hint">This is some hint text</div>
 *	</div>
 */
-/**
-* Selectable Button Group (Depreciate this):
-* `.selectable.button-group` - this is a toggle-able button group that changes colors when items are selected.  Add .selected-{btn class name} to the group to change colors and add the check.
-* 
-*   @example
-*	<div class="question required">  
-*	  <div class="label-holder">
-*	    <label for="">
-*	      <span class="text">Selectable Group Buttons</span>
-*	      <span class="required-holder">
-*	        <i class="fa fa-holder-dynamic"></i>
-*	      </span>
-*	    </label>
-*	  </div>
-*	  <div class="input-holder row collapse">
-*	    <div class="column small-12">
-*	      <ul class="button-group even-3 selectable selected-btn1">
-*	        <li class="btn1"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
-*	        <li class="btn2"><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
-*	        <li class="btn3"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
-*	      </ul>
-*	    </div>
-*	  </div>
-*	<div class="input-holder row collapse">
-*	    <div class="column small-12">
-*	      <ul class="button-group even-3 selectable">
-*	        <li class="btn1"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
-*	        <li class="btn2"><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
-*	        <li class="btn3"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
-*	      </ul>
-*	    </div>
-*	  </div>
-*	  <div class='hint'>This is helper text for this question</div>
-*	</div>
-*
-*/
-/*  Button Group */
-.button-group {
-  padding-left: 0;
-  list-style: none;
-  margin: 0;
-  left: 0;
-  display: inline-block; }
-  .button-group:before, .button-group:after {
-    content: " ";
-    display: table; }
-  .button-group:after {
-    clear: both; }
-  .button-group > li {
-    margin: 0;
-    float: left;
-    display: list-item; }
-    .button-group > li > button, .button-group > li .button {
-      border-left: 1px solid;
-      border-color: rgba(255, 255, 255, 0.5); }
-    .button-group > li:first-child button, .button-group > li:first-child .button {
-      border-left: 0; }
-    .button-group > li:first-child {
-      margin-left: 0; }
-
-/*Need to Kill this function Badly produced to answer for the view from SI App. Should Consider a better reposnsive answer*/
-.selectable {
-  margin: 0; }
-  .selectable a {
-    background-color: #25b6e0;
-    transition: none; }
-    .selectable a:hover {
-      background-color: #198dae; }
-  .selectable i.fa {
-    font-size: 1rem;
-    height: 1rem;
-    width: 1rem;
-    margin: 0 7px 0 0;
-    display: none; }
-  .selectable.selected-btn1 a, .selectable.selected-btn2 a, .selectable.selected-btn3 a, .selectable.selected-btn4 a, .selectable.selected-btn5 a {
-    background-color: #b3b3b3;
-    border-color: #8f8f8f;
-    color: #FFFFFF; }
-    .selectable.selected-btn1 a:hover, .selectable.selected-btn1 a:focus, .selectable.selected-btn2 a:hover, .selectable.selected-btn2 a:focus, .selectable.selected-btn3 a:hover, .selectable.selected-btn3 a:focus, .selectable.selected-btn4 a:hover, .selectable.selected-btn4 a:focus, .selectable.selected-btn5 a:hover, .selectable.selected-btn5 a:focus {
-      background-color: #8f8f8f; }
-    .selectable.selected-btn1 a:hover, .selectable.selected-btn1 a:focus, .selectable.selected-btn2 a:hover, .selectable.selected-btn2 a:focus, .selectable.selected-btn3 a:hover, .selectable.selected-btn3 a:focus, .selectable.selected-btn4 a:hover, .selectable.selected-btn4 a:focus, .selectable.selected-btn5 a:hover, .selectable.selected-btn5 a:focus {
-      color: #FFFFFF; }
-  .selectable.selected-btn1 .btn1 a, .selectable.selected-btn2 .btn2 a, .selectable.selected-btn3 .btn3 a, .selectable.selected-btn4 .btn4 a, .selectable.selected-btn5 .btn5 a {
-    background-color: #19BB9B;
-    border-color: #14967c;
-    color: #FFFFFF; }
-    .selectable.selected-btn1 .btn1 a:hover, .selectable.selected-btn1 .btn1 a:focus, .selectable.selected-btn2 .btn2 a:hover, .selectable.selected-btn2 .btn2 a:focus, .selectable.selected-btn3 .btn3 a:hover, .selectable.selected-btn3 .btn3 a:focus, .selectable.selected-btn4 .btn4 a:hover, .selectable.selected-btn4 .btn4 a:focus, .selectable.selected-btn5 .btn5 a:hover, .selectable.selected-btn5 .btn5 a:focus {
-      background-color: #14967c; }
-    .selectable.selected-btn1 .btn1 a:hover, .selectable.selected-btn1 .btn1 a:focus, .selectable.selected-btn2 .btn2 a:hover, .selectable.selected-btn2 .btn2 a:focus, .selectable.selected-btn3 .btn3 a:hover, .selectable.selected-btn3 .btn3 a:focus, .selectable.selected-btn4 .btn4 a:hover, .selectable.selected-btn4 .btn4 a:focus, .selectable.selected-btn5 .btn5 a:hover, .selectable.selected-btn5 .btn5 a:focus {
-      color: #FFFFFF; }
-    .selectable.selected-btn1 .btn1 a i.fa, .selectable.selected-btn2 .btn2 a i.fa, .selectable.selected-btn3 .btn3 a i.fa, .selectable.selected-btn4 .btn4 a i.fa, .selectable.selected-btn5 .btn5 a i.fa {
-      display: inline-block; }
-
-.button-group.expand {
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start; }
-  @media only screen and (max-width: 1024px) {
-    .button-group.expand {
-      -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap; } }
-  .button-group.expand li {
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto; }
-    .button-group.expand li a.button, .button-group.expand li button {
-      padding-right: 0;
-      padding-left: 0;
-      width: 100%; }
-
 .radio, .radio-content {
   vertical-align: middle; }
 
@@ -3885,7 +3076,7 @@ input[type="checkbox"], input[type="radio"] {
   min-height: 3rem;
   clear: none; }
   .warning .radio-group {
-    border-color: #ff960d; }
+    border-color: #de404e; }
   .error .radio-group {
     border-color: #de404e; }
   .radio-group .radio {
@@ -4033,7 +3224,7 @@ input[type="checkbox"], input[type="radio"] {
     .repeater .render .error {
       color: #c32231; }
     .repeater .render .warning {
-      color: #d07600; }
+      color: #c32231; }
     @media only screen and (max-width: 767px) {
       .repeater .render .edit, .repeater .render .delete, .repeater .render .set {
         display: inline-block;
@@ -4077,13 +3268,13 @@ input[type="checkbox"], input[type="radio"] {
       -moz-transition: background-color 0.8s;
       transition: background-color 0.8s; }
   .repeater.edit-mode .question-group {
-    border: 2px dotted #f3e3cf;
+    border: 2px dotted #ebdadc;
     margin-top: .5em;
     border-radius: .5em;
-    border-top: 2px soliddesaturate(#ff960d, 40%);
-    border-bottom: 2px solid #cf903e;
+    border-top: 2px soliddesaturate(#de404e, 40%);
+    border-bottom: 2px solid #b16d73;
     background-image: url(../img/empty_stripe@2x.png);
-    background-color: #ffefdb; }
+    background-color: #fae2e4; }
     .repeater.edit-mode .question-group .required-message {
       background-color: #999999; }
   .repeater .repeater-action {
@@ -4416,159 +3607,6 @@ table a.button, table button, table .inline-list, table .nobutton {
   font-style: italic;
   font-size: .75rem; }
 
-/**
-* Tables (Sortable):
-* `.banded or .stripped` - tables witha soratable table header. 
-*  Just add the class of the column to the table `.col1` and the sort direction `.sort-asc` or `.sort-desc`.
-* 
-*   @example
-*	<table class="table stripped  sort-asc col1">
-*		<thead>
-*			<tr>
-*				<th class="col1 sortable">
-*                        <div class="relative firefoxfix">
-*                        	<span class="sort">
-*                        	<a class="fa fa-sort"></a>
-*                        	</span>
-*                        	<a class="text">Table Header </a>
-*                        </div>
-*                 </th>
-*				<th class="col2 sortable">
-*                        <div class="relative firefoxfix">
-*                        	<span class="sort">
-*                        	<a class="fa fa-sort"></a>
-*                        	</span>
-*                        	<a  class="text">Table Header </a>
-*                        </div>
-*                 </th>
-*				<th class="col3 sortable selected">
-*                        <div class="relative firefoxfix">
-*                        	<span class="sort sorttwoways">
-*                        	<a class="fa fa-sort selected"></a><a class="fa fa-sort"></a>
-*                        	</span>
-*                        	<a  class="text">Long Table<br>Header </a>
-*                        </div>
-*                 </th>
-*			</tr>
-*		</thead>
-*		<tbody>
-*			<tr>
-*				<td> row 1  cell A</td>
-*				<td> row 1  cell B</td>
-*				<td> row 1  cell C</td>
-*			</tr>
-*			<tr>
-*				<td> row 2  cell A</td>
-*				<td> row 2  cell B</td>
-*				<td> row 2  cell C</td>
-*			</tr>
-*		</tbody>
-*		<tfoot>
-*			<tr>
-*				<td colspan="3">footer cell</td>
-*			</tr>
-*		</tfoot>
-*	</table>
-*/
-.fa-sort:before {
-  content: ""; }
-
-.firefoxfix {
-  position: initial;
-  height: 100%; }
-
-.sortableheader {
-  background-color: gray; }
-
-th.sortable, td.sortable {
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 0;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 0px none transparent;
-  background-color: gray !important;
-  top: 1px; }
-  th.sortable select, td.sortable select {
-    font-size: 0.85714rem;
-    margin: 0 0 0 .5em;
-    margin-left: 1em;
-    border: 0 none transparent;
-    background-color: #737373;
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    position: absolute;
-    left: 0em;
-    border-right: 2px solid #999999;
-    color: #b3b3b3; }
-    th.sortable select:hover, td.sortable select:hover {
-      background-color: #4d4d4d; }
-  .table thead th.sortable, .table thead th.sortable, .table thead td.sortable, .table thead td.sortable {
-    vertical-align: top; }
-  th.sortable:hover, td.sortable:hover {
-    background-color: #737373 !important; }
-  th.sortable.selected .sort, td.sortable.selected .sort {
-    background-color: #4d4d4d; }
-    th.sortable.selected .sort .fa-sort, td.sortable.selected .sort .fa-sort {
-      color: #999999; }
-  th.sortable .sort, td.sortable .sort {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    display: inline-block;
-    background-color: #666666;
-    padding: 0 3px;
-    vertical-align: middle; }
-    th.sortable .sort .fa-sort, td.sortable .sort .fa-sort {
-      color: #cccccc;
-      top: .5rem;
-      position: relative;
-      vertical-align: middle;
-      width: 1em;
-      height: 1em;
-      text-align: center; }
-      th.sortable .sort .fa-sort:before, td.sortable .sort .fa-sort:before {
-        content: "\f0dc"; }
-      th.sortable .sort .fa-sort.selected, td.sortable .sort .fa-sort.selected {
-        color: #d07600; }
-    th.sortable .sort.sorttwoways .fa-sort, td.sortable .sort.sorttwoways .fa-sort {
-      position: relative; }
-    th.sortable .sort.sorttwoways .fa-sort:before, td.sortable .sort.sorttwoways .fa-sort:before {
-      content: "\f0de"; }
-    th.sortable .sort.sorttwoways .fa-sort + .fa-sort:before, td.sortable .sort.sorttwoways .fa-sort + .fa-sort:before {
-      content: "\f0dd"; }
-    th.sortable .sort.sorttwoways .fa-sort + .fa-sort, td.sortable .sort.sorttwoways .fa-sort + .fa-sort {
-      position: absolute;
-      top: auto;
-      bottom: 0.5rem; }
-  th.sortable .text, td.sortable .text {
-    color: white;
-    padding: .25rem .5rem 0rem 1.25rem;
-    white-space: normal;
-    display: block;
-    line-height: 1.25;
-    min-height: 3em; }
-    @media only screen and (min-width: 1024px) {
-      th.sortable .text, td.sortable .text {
-        padding: 0.5rem 0.625rem 0.25rem 2rem; } }
-  th.sortable:hover.text, td.sortable:hover.text {
-    color: #e6e6e6; }
-  th.sortable .has-tip, td.sortable .has-tip {
-    border: none 0; }
-
-.sort-asc.col10 .sortable.col10 .sort i:before, .sort-asc.col9 .sortable.col9 .sort i:before, .sort-asc.col8 .sortable.col8 .sort i:before, .sort-asc.col7 .sortable.col7 .sort i:before, .sort-asc.col6 .sortable.col6 .sort i:before, .sort-asc.col5 .sortable.col5 .sort i:before, .sort-asc.col4 .sortable.col4 .sort i:before, .sort-asc.col3 .sortable.col3 .sort i:before, .sort-asc.col2 .sortable.col2 .sort i:before, .sort-asc.col1 .sortable.col1 .sort i:before {
-  content: "\f0de"; }
-
-.sort-desc.col10 .sortable.col10 .sort i:before, .sort-desc.col9 .sortable.col9 .sort i:before, .sort-desc.col8 .sortable.col8 .sort i:before, .sort-desc.col7 .sortable.col7 .sort i:before, .sort-desc.col6 .sortable.col6 .sort i:before, .sort-desc.col5 .sortable.col5 .sort i:before, .sort-desc.col4 .sortable.col4 .sort i:before, .sort-desc.col3 .sortable.col3 .sort i:before, .sort-desc.col2 .sortable.col2 .sort i:before, .sort-desc.col1 .sortable.col1 .sort i:before {
-  content: "\f0dd"; }
-
-.col10 .sortable.col10 .sort, .col9 .sortable.col9 .sort, .col8 .sortable.col8 .sort, .col7 .sortable.col7 .sort, .col6 .sortable.col6 .sort, .col5 .sortable.col5 .sort, .col4 .sortable.col4 .sort, .col3 .sortable.col3 .sort, .col2 .sortable.col2 .sort, .col1 .sortable.col1 .sort {
-  background-color: #4d4d4d; }
-  .col10 .sortable.col10 .sort i, .col9 .sortable.col9 .sort i, .col8 .sortable.col8 .sort i, .col7 .sortable.col7 .sort i, .col6 .sortable.col6 .sort i, .col5 .sortable.col5 .sort i, .col4 .sortable.col4 .sort i, .col3 .sortable.col3 .sort i, .col2 .sortable.col2 .sort i, .col1 .sortable.col1 .sort i {
-    color: #d07600; }
-
 td.icon {
   padding: .25rem .25rem .25rem .25rem;
   text-align: center;
@@ -4577,22 +3615,22 @@ td.icon {
   td.icon i {
     margin: 0 auto; }
 
-tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.completed td, tr.disabled td, tr.alert td {
+tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.completed td, tr.disabled td, tr.attention td {
   background-image: url(../img/empty_stripe@2x.png);
   font-weight: 900; }
 
-.stripped tr.error td:nth-child(odd), .stripped tr.warning td:nth-child(odd), .stripped tr.validated td:nth-child(odd), .stripped tr.info td:nth-child(odd), .stripped tr.highlighted td:nth-child(odd), .stripped tr.completed td:nth-child(odd), .stripped tr.disabled td:nth-child(odd), .stripped tr.alert td:nth-child(odd) {
+.stripped tr.error td:nth-child(odd), .stripped tr.warning td:nth-child(odd), .stripped tr.validated td:nth-child(odd), .stripped tr.info td:nth-child(odd), .stripped tr.highlighted td:nth-child(odd), .stripped tr.completed td:nth-child(odd), .stripped tr.disabled td:nth-child(odd), .stripped tr.attention td:nth-child(odd) {
   background-image: url(../img/empty_stripe-alt@2x.png);
   font-weight: 900; }
 
-td.error, .table tbody tr + tr td.error, td.warning, .table tbody tr + tr td.warning, td.validated, .table tbody tr + tr td.validated, td.info, .table tbody tr + tr td.info, td.highlighted, .table tbody tr + tr td.highlighted, td.completed, .table tbody tr + tr td.completed, td.disabled, .table tbody tr + tr td.disabled, td.alert, .table tbody tr + tr td.alert {
+td.error, .table tbody tr + tr td.error, td.warning, .table tbody tr + tr td.warning, td.validated, .table tbody tr + tr td.validated, td.info, .table tbody tr + tr td.info, td.highlighted, .table tbody tr + tr td.highlighted, td.completed, .table tbody tr + tr td.completed, td.disabled, .table tbody tr + tr td.disabled, td.attention, .table tbody tr + tr td.attention {
   background-image: url(../img/empty_diamond@2x.png) !important;
   font-weight: 900; }
 
-td.error, td.warning, td.validated, td.info, td.highlighted, td.completed, td.disabled, td.alert {
+td.error, td.warning, td.validated, td.info, td.highlighted, td.completed, td.disabled, td.attention {
   border: 1px solid; }
 
-tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.completed td, tr.disabled td, tr.alert td {
+tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.completed td, tr.disabled td, tr.attention td {
   border-top: 1px solid;
   border-bottom: 1px solid; }
 
@@ -4708,20 +3746,20 @@ tr:nth-child(even).disabled td {
 .stripped tbody tr.disabled td:nth-child(odd) {
   background-color: #f2f2f2; }
 
-td.alert, .table tbody tr + tr td.alert, tr.alert td, .stripped tr.alert:nth-child(even) td:nth-child(odd) {
+td.attention, .table tbody tr + tr td.attention, tr.attention td, .stripped tr.attention:nth-child(even) td:nth-child(odd) {
   background-color: #f7e8d4;
   color: #333333;
   border-color: #ffd8a4; }
 
-tr:nth-child(even) td.alert {
+tr:nth-child(even) td.attention {
   background-color: #f5e1c7;
   color: #333333; }
 
-tr:nth-child(even).alert td {
+tr:nth-child(even).attention td {
   background-color: #f5e1c7;
   color: #333333; }
 
-.stripped tbody tr.alert td:nth-child(odd) {
+.stripped tbody tr.attention td:nth-child(odd) {
   background-color: #f7e8d4; }
 
 /**
@@ -4782,373 +3820,6 @@ tr:nth-child(even).alert td {
 *		</tr>
 *	</table>
 */
-/**
-* Collapsable Panel:
-* `.collapsable-panel` - a container element which naturaly is hiden and reveals when it is prompted.<br><br> !!  Requires Javascript to Function  !!
-* 
-*   @example
-*	<div class="row">
-*		<div class="column small-12 medium-6">
-*			<div class="collapsable-panel" style="display: block;">
-*				<div class="bar close">
-*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> <span class="text">close</span></a>
-*				</div>
-*				<div class="content">
-*					<div class="row">
-*						<div class="column small-12">
-*							<h2>H2 in Panel</h2>
-*			              <p>All basic html content can be placed in the panel</p>
-*						</div>
-*					</div>
-*				</div>
-*					<div class="bar jumpToTop">
-*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> <span class="text">top</span></a>
-*				</div>
-*			</div>
-*		</div>
-*		<div class="column small-12 medium-6">
-*			<div class="collapsable-panel inset" style="display: block;">
-*				<div class="bar close">
-*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> <span class="text">close</span></a>
-*				</div>
-*				<div class="content">
-*					<div class="row">
-*						<div class="column small-12">
-*							<h2>H2 in Inset Panel</h2>
-*			              <p>All basic html content can be placed in the panel</p>
-*						</div>
-*					</div>
-*				</div>
-*					<div class="bar jumpToTop">
-*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> <span class="text">top</span></a>
-*				</div>
-*			</div>
-*		</div>
-*	</div>
-*/
-.bar {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  z-index: 10; }
-  .bar .action-btn {
-    text-transform: lowercase;
-    padding: .2rem .4rem .2rem .5rem;
-    font-size: 1rem;
-    right: 0;
-    position: absolute;
-    display: inline-block; }
-  .bar.close {
-    top: -2px; }
-    .bar.close .action-btn {
-      top: -1.1rem;
-      color: #198dae; }
-  .bar.jumpToTop {
-    bottom: -2px; }
-    .bar.jumpToTop .action-btn {
-      bottom: -1rem;
-      color: #666666; }
-
-.collapsable-panel {
-  position: relative;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-  max-width: 114.28571rem;
-  max-width: none;
-  margin-bottom: 1rem;
-  display: none; }
-  .collapsable-panel:before, .collapsable-panel:after {
-    content: " ";
-    display: table; }
-  .collapsable-panel:after {
-    clear: both; }
-  .collapsable-panel .bar.close {
-    border-top: 2px solid #198dae; }
-    .collapsable-panel .bar.close .action-btn {
-      background-color: white; }
-  .collapsable-panel .bar.jumpToTop {
-    border-bottom: 2px solid #666666; }
-    .collapsable-panel .bar.jumpToTop .action-btn {
-      background-color: white; }
-  .collapsable-panel .content {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    width: 100%;
-    float: left;
-    padding: 2rem 1rem;
-    z-index: 0; }
-  .collapsable-panel.inset {
-    background-color: white;
-    background: url("../img/billie-holiday.png") repeat top right;
-    border: 0 none; }
-    .collapsable-panel.inset .content {
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-      width: 100%;
-      float: left;
-      padding: 3.5rem 1.5rem;
-      z-index: 0; }
-    .collapsable-panel.inset .bar.close {
-      border-top: 7px solid #198dae;
-      top: -2px; }
-      .collapsable-panel.inset .bar.close .action-btn {
-        top: 0;
-        color: white;
-        background-color: #198dae; }
-    .collapsable-panel.inset .bar.jumpToTop {
-      bottom: -2px;
-      border-bottom: 7px solid #9a9a9a; }
-      .collapsable-panel.inset .bar.jumpToTop .action-btn {
-        bottom: 0;
-        color: white;
-        background-color: #9a9a9a; }
-
-h1 + div > .collapsable-panel {
-  margin-bottom: 1.5rem;
-  margin-top: -1.5rem; }
-
-table + div > .collapsable-panel {
-  margin-top: -1rem;
-  margin-bottom: 0.7rem; }
-
-/**
-* Collapsable Panel:
-* `.collapsable-panel` - a container element which naturaly is hiden and reveals when it is prompted.<br><br> !!  Requires Javascript to Function  !!
-* 
-*   @example
-*	<div class="row">
-*		<div class="column small-12 medium-6">
-*			<div class="collapsable-panel warning" style="display: block;">
-*				<div class="bar close">
-*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> <span class="text">close</span></a>
-*				</div>
-*				<div class="content">
-*					<div class="row">
-*						<div class="column small-12">
-*							<h2>H2 in Panel</h2>
-*			              <p>All basic html content can be placed in the panel</p>
-*						</div>
-*					</div>
-*				</div>
-*					<div class="bar jumpToTop">
-*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> <span class="text">top</span></a>
-*				</div>
-*			</div>
-*		</div>
-*		<div class="column small-12 medium-6">
-*			<div class="collapsable-panel error inset" style="display: block;">
-*				<div class="bar close">
-*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> <span class="text">close</span></a>
-*				</div>
-*				<div class="content">
-*					<div class="row">
-*						<div class="column small-12">
-*							<h2>H2 in Inset Panel</h2>
-*			              <p>All basic html content can be placed in the panel</p>
-*						</div>
-*					</div>
-*				</div>
-*					<div class="bar jumpToTop">
-*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> <span class="text">top</span></a>
-*				</div>
-*			</div>
-*		</div>
-*	</div>
-*/
-.collapsable-panel.error {
-  background-color: transparent;
-  border: 0 none transparent; }
-  .collapsable-panel.error .bar.close, .collapsable-panel.error.inset .bar.close {
-    border-color: #c32231; }
-  .collapsable-panel.error .bar.close .action-btn {
-    color: #c32231; }
-  .collapsable-panel.error.inset {
-    background-color: #fbe7e9; }
-    .collapsable-panel.error.inset .bar.close .action-btn {
-      background-color: #c32231;
-      color: #fff; }
-.collapsable-panel.warning {
-  background-color: transparent;
-  border: 0 none transparent; }
-  .collapsable-panel.warning .bar.close, .collapsable-panel.warning.inset .bar.close {
-    border-color: #d07600; }
-  .collapsable-panel.warning .bar.close .action-btn {
-    color: #d07600; }
-  .collapsable-panel.warning.inset {
-    background-color: #fff2e1; }
-    .collapsable-panel.warning.inset .bar.close .action-btn {
-      background-color: #d07600;
-      color: #fff; }
-.collapsable-panel.validated {
-  background-color: transparent;
-  border: 0 none transparent; }
-  .collapsable-panel.validated .bar.close, .collapsable-panel.validated.inset .bar.close {
-    border-color: #19BB9B; }
-  .collapsable-panel.validated .bar.close .action-btn {
-    color: #19BB9B; }
-  .collapsable-panel.validated.inset {
-    background-color: #e5fbf7; }
-    .collapsable-panel.validated.inset .bar.close .action-btn {
-      background-color: #19BB9B;
-      color: #fff; }
-.collapsable-panel.info {
-  background-color: transparent;
-  border: 0 none transparent; }
-  .collapsable-panel.info .bar.close, .collapsable-panel.info.inset .bar.close {
-    border-color: #bbe8f4; }
-  .collapsable-panel.info .bar.close .action-btn {
-    color: #bbe8f4; }
-  .collapsable-panel.info.inset {
-    background-color: #f8fdfe; }
-    .collapsable-panel.info.inset .bar.close .action-btn {
-      background-color: #bbe8f4;
-      color: #333333; }
-.collapsable-panel.highlighted {
-  background-color: transparent;
-  border: 0 none transparent; }
-  .collapsable-panel.highlighted .bar.close, .collapsable-panel.highlighted.inset .bar.close {
-    border-color: #22AFD7; }
-  .collapsable-panel.highlighted .bar.close .action-btn {
-    color: #22AFD7; }
-  .collapsable-panel.highlighted.inset {
-    background-color: #e8f7fb; }
-    .collapsable-panel.highlighted.inset .bar.close .action-btn {
-      background-color: #22AFD7;
-      color: #fff; }
-.collapsable-panel.completed {
-  background-color: transparent;
-  border: 0 none transparent; }
-  .collapsable-panel.completed .bar.close, .collapsable-panel.completed.inset .bar.close {
-    border-color: #19BB9B; }
-  .collapsable-panel.completed .bar.close .action-btn {
-    color: #19BB9B; }
-  .collapsable-panel.completed.inset {
-    background-color: #e5fbf7; }
-    .collapsable-panel.completed.inset .bar.close .action-btn {
-      background-color: #19BB9B;
-      color: #fff; }
-.collapsable-panel.disabled {
-  background-color: transparent;
-  border: 0 none transparent; }
-  .collapsable-panel.disabled .bar.close, .collapsable-panel.disabled.inset .bar.close {
-    border-color: #b3b3b3; }
-  .collapsable-panel.disabled .bar.close .action-btn {
-    color: #b3b3b3; }
-  .collapsable-panel.disabled.inset {
-    background-color: #f7f7f7; }
-    .collapsable-panel.disabled.inset .bar.close .action-btn {
-      background-color: #b3b3b3;
-      color: #333333; }
-.collapsable-panel.alert {
-  background-color: transparent;
-  border: 0 none transparent; }
-  .collapsable-panel.alert .bar.close, .collapsable-panel.alert.inset .bar.close {
-    border-color: #d07600; }
-  .collapsable-panel.alert .bar.close .action-btn {
-    color: #d07600; }
-  .collapsable-panel.alert.inset {
-    background-color: #fff2e1; }
-    .collapsable-panel.alert.inset .bar.close .action-btn {
-      background-color: #d07600;
-      color: #fff; }
-
-/**
-* Accordion (requires Collapsable Panel):
-* `.accordion` - An extend DOM of Collapsable Paenel which allows it to be chained together and only have one open at a time.<br><br> !!  Requires Javascript to Function  !!
-* 
-*   @example
-*	<div class="accordion">
-*		<div class="selected">
-*			<h2 class="toggle" data-bind="click:panelShow"><i class="fa fa-holder"></i><span class="text">Header and Toggle Area (Open)</span></h2>
-*			<div class="collapsable-panel ">
-*				<div class="bar close">
-*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> close</a>
-*				</div>
-*				<div class="content">
-*					<div class="row">
-*						<div class="column small-12">
-*							<p>Content</p>
-*						</div>
-*					</div>
-*				</div>
-*				<div class="bar jumpToTop">
-*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> top</a>
-*				</div>
-*			</div>
-*		</div>
-*		<div class="">
-*			<h2 class="toggle" data-bind="click:panelShow"><i class="fa fa-holder"></i><span class="text">Header and Toggle Area (Closed)</span></h2>
-*		</div>
-*	</div>
-*/
-.fa-rotate-90 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg); }
-
-.fa-rotate-180 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg); }
-
-.fa-rotate-270 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-  -webkit-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  transform: rotate(270deg); }
-
-.fa-flip-horizontal {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
-  -webkit-transform: scale(-1, 1);
-  -ms-transform: scale(-1, 1);
-  transform: scale(-1, 1); }
-
-.fa-flip-vertical {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
-  -webkit-transform: scale(1, -1);
-  -ms-transform: scale(1, -1);
-  transform: scale(1, -1); }
-
-:root .fa-rotate-90,
-:root .fa-rotate-180,
-:root .fa-rotate-270,
-:root .fa-flip-horizontal,
-:root .fa-flip-vertical {
-  filter: none; }
-
-.accordion .collapsable-panel {
-  display: block; }
-.accordion .toggle .fa {
-  color: #25b6e0;
-  -webkit-transition: .25s ease-in-out;
-  -moz-transition: .25s ease-in-out;
-  -o-transition: .25s ease-in-out;
-  transition: .25s ease-in-out;
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg); }
-  .accordion .toggle .fa.fa-holder:before {
-    content: ""; }
-.accordion .toggle .text {
-  color: #5c5c5c;
-  padding-left: .5rem; }
-.accordion .toggle:hover .fa {
-  color: #198dae; }
-.accordion .toggle:hover .text {
-  color: #333333; }
-.accordion .selected .toggle .fa {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-  color: #19bb9b; }
-
 /**
 * Panel Selector:
 * `.panel-selector-holder` - the panel selector is a multi tree level selector allowing a user to select from the left coloum or parent and then select the filtered child elements.  !! Requires Javascript!!
@@ -5712,78 +4383,22 @@ Non-Core Components Styles
       padding: 0;
       margin: 0; }
   .info-text.error {
-    background-color: #c32231;
-    color: #fff;
-    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-    font-weight: 700;
-    font-size: 1.21429em;
-    line-height: 1.23529em;
-    margin-top: 0.30882em;
-    margin-bottom: 0.30882em;
-    min-height: 24px; }
+    color: #fff; }
   .info-text.warning {
-    background-color: #d07600;
-    color: #fff;
-    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-    font-weight: 700;
-    font-size: 1.21429em;
-    line-height: 1.23529em;
-    margin-top: 0.30882em;
-    margin-bottom: 0.30882em;
-    min-height: 24px; }
+    color: #fff; }
   .info-text.validated {
-    background-color: #19BB9B;
-    color: #fff;
-    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-    font-weight: 700;
-    font-size: 1.21429em;
-    line-height: 1.23529em;
-    margin-top: 0.30882em;
-    margin-bottom: 0.30882em;
-    min-height: 24px; }
+    color: #fff; }
   .info-text.info {
-    background-color: #bbe8f4;
-    color: #333333;
-    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-    font-weight: 700;
-    font-size: 1.21429em;
-    line-height: 1.23529em;
-    margin-top: 0.30882em;
-    margin-bottom: 0.30882em;
-    min-height: 24px; }
+    color: #333333; }
   .info-text.highlighted {
-    background-color: #22AFD7;
-    color: #fff;
-    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-    font-weight: 700;
-    font-size: 1.21429em;
-    line-height: 1.23529em;
-    margin-top: 0.30882em;
-    margin-bottom: 0.30882em;
-    min-height: 24px; }
+    color: #fff; }
   .info-text.completed {
-    background-color: #19BB9B;
-    color: #fff;
-    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-    font-weight: 700;
-    font-size: 1.21429em;
-    line-height: 1.23529em;
-    margin-top: 0.30882em;
-    margin-bottom: 0.30882em;
-    min-height: 24px; }
+    color: #fff; }
   .info-text.disabled {
-    background-color: #b3b3b3;
-    color: #333333;
-    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-    font-weight: 700;
-    font-size: 1.21429em;
-    line-height: 1.23529em;
-    margin-top: 0.30882em;
-    margin-bottom: 0.30882em;
-    min-height: 24px; }
-  .info-text.alert {
-    background-color: #d07600;
-    color: #fff;
+    color: #333333; }
+  .info-text.attention {
+    color: #fff; }
+  .info-text .error, .info-text .warning, .info-text .validated, .info-text .info, .info-text .highlighted, .info-text .completed, .info-text .disabled, .info-text .attention {
     font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
     font-weight: 700;
     font-size: 1.21429em;
@@ -6922,97 +5537,6 @@ div.reveal-modal, dialog {
     top: 0;
     right: 0; }
 
-/**
-* Slider (Foundation Override):
-* `.range-slider .vertical-range` - Sliders are a great peice of UI for mobile and range of numbers !!REQUIRES JAVASCRIPT OF FOUNDATION!!!
-* 
-*   @example
-*   <div class="range-slider round" id="slider-weight" data-slider="187" data-options="start: 75; end: 300;">
-*    <span class="range-slider-handle" role="slider" tabindex="0" aria-valuemin="75" aria-valuemax="300" aria-valuenow="187" style="-webkit-transform: translateX(207.071111111111px); transform: translateX(207.071111111111px);"></span>
-*    <span class="range-slider-active-segment" style="width: 49.7777777777778%;"></span>
-*    <input type="hidden" value="187">
-*   </div>
-*   <a class="link" href="http://foundation.zurb.com/docs/components/range_slider.html">Foundation Documentation</a>
-*/
-.range-slider {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 1.14286rem;
-  border: 1px solid #DDDDDD;
-  margin: 1.42857rem 0;
-  -ms-touch-action: none;
-  touch-action: none;
-  background: whitesmoke; }
-  .range-slider.vertical-range {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 1.14286rem;
-    border: 1px solid #DDDDDD;
-    margin: 1.42857rem 0;
-    -ms-touch-action: none;
-    touch-action: none;
-    display: inline-block;
-    width: 1.14286rem;
-    height: 14.28571rem; }
-    .range-slider.vertical-range .range-slider-handle {
-      margin-top: 0;
-      margin-left: -0.57143rem;
-      position: absolute;
-      bottom: -12rem; }
-    .range-slider.vertical-range .range-slider-active-segment {
-      width: 1rem;
-      height: auto;
-      bottom: 0; }
-  .range-slider.radius {
-    background: whitesmoke;
-    border-radius: 5px; }
-    .range-slider.radius .range-slider-handle {
-      background: #198dae;
-      border-radius: 5px; }
-      .range-slider.radius .range-slider-handle:hover {
-        background: #167c99; }
-  .range-slider.round {
-    background: whitesmoke;
-    border-radius: 1000px; }
-    .range-slider.round .range-slider-handle {
-      background: #198dae;
-      border-radius: 1000px; }
-      .range-slider.round .range-slider-handle:hover {
-        background: #167c99; }
-  .range-slider.disabled, .range-slider[disabled] {
-    background: whitesmoke;
-    cursor: default;
-    opacity: 0.7; }
-    .range-slider.disabled .range-slider-handle, .range-slider[disabled] .range-slider-handle {
-      background: #198dae;
-      cursor: default;
-      opacity: 0.7; }
-      .range-slider.disabled .range-slider-handle:hover, .range-slider[disabled] .range-slider-handle:hover {
-        background: #167c99; }
-
-.range-slider-active-segment {
-  display: inline-block;
-  position: absolute;
-  height: 1rem;
-  background: #b1b1b1; }
-
-.range-slider-handle {
-  display: inline-block;
-  position: absolute;
-  z-index: 1;
-  top: -0.35714rem;
-  width: 2.28571rem;
-  height: 1.57143rem;
-  border: 1px solid none;
-  cursor: pointer;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  background: #198dae; }
-  .range-slider-handle:hover {
-    background: #167c99; }
-
 .switch-input-space {
   white-space: nowrap;
   display: table;
@@ -7339,12 +5863,12 @@ div.reveal-modal, dialog {
 /* Interaction Cues
 ----------------------------------*/
 .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
-  border: 1px solid #d07600;
-  background: #fff2e1;
-  color: #d07600; }
+  border: 1px solid #c32231;
+  background: #fbe7e9;
+  color: #c32231; }
 
 .ui-state-highlight a, .ui-widget-content .ui-state-highlight a, .ui-widget-header .ui-state-highlight a {
-  color: #d07600; }
+  color: #c32231; }
 
 .ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {
   border: 1px solid #c32231;
@@ -8141,42 +6665,8 @@ cite {
 *	<h5 class="with-underline highlighted">Header 5 Tag<small>Highlighted State</small></h5>
 *  	<p class="highlighted"><strong>Paragraph that is a highlighted State.</strong>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
 */
-h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted, h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled, h1.alert, h2.alert, h3.alert, h4.alert, h5.alert, h6.alert, p.alert, a.alert, li.alert, blockquote.alert {
+h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted, h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled, h1.attention, h2.attention, h3.attention, h4.attention, h5.attention, h6.attention, p.attention, a.attention, li.attention, blockquote.attention {
   font-weight: 900; }
-
-h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
-  color: #c32231; }
-h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning {
-  color: #d07600; }
-h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated {
-  color: #19BB9B; }
-h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
-  color: #bbe8f4; }
-h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
-  color: #22AFD7; }
-h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed {
-  color: #19BB9B; }
-h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
-  color: #b3b3b3; }
-h1.alert, h2.alert, h3.alert, h4.alert, h5.alert, h6.alert, p.alert, a.alert, li.alert, blockquote.alert {
-  color: #d07600; }
-
-h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
-  border-color: #c32231; }
-h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
-  border-color: #d07600; }
-h1.with-underline.validated, h2.with-underline.validated, h3.with-underline.validated, h4.with-underline.validated, h5.with-underline.validated, h6.with-underline.validated {
-  border-color: #19BB9B; }
-h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
-  border-color: #bbe8f4; }
-h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
-  border-color: #22AFD7; }
-h1.with-underline.completed, h2.with-underline.completed, h3.with-underline.completed, h4.with-underline.completed, h5.with-underline.completed, h6.with-underline.completed {
-  border-color: #19BB9B; }
-h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
-  border-color: #b3b3b3; }
-h1.with-underline.alert, h2.with-underline.alert, h3.with-underline.alert, h4.with-underline.alert, h5.with-underline.alert, h6.with-underline.alert {
-  border-color: #d07600; }
 
 h1.with-underline {
   border-bottom: #25b6e0 2px solid; }
@@ -8463,5 +6953,103 @@ h6 blockquote {
 /**
 * Take me to [top](#top):
 */
+/*
+STATE TRUMPING CODE
+*/
+.error .input-holder input, .error .input-holder textarea, .error .input-holder select, .error .input-holder .postfix, .error .input-holder .prefix, h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
+  border-color: #c32231; }
+
+.error.fa:before, .nav-list.nav-checklist li.error i, .nav-checklist.panel-selector li.error i, .answer.error .required-holder, .question.error .required-holder, .error .label-holder, .error, .error .input-holder .postfix, .error .input-holder .prefix, .error .input-holder .value, .message-holder > .error, h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
+  color: #c32231; }
+
+.hint .error, .info-text.error {
+  background-color: #c32231; }
+
+.nav-list.nav-checklist li.error .fa-holder-dynamic:before, .nav-checklist.panel-selector li.error .fa-holder-dynamic:before {
+  content: ""; }
+
+.warning .input-holder input, .warning .input-holder textarea, .warning .input-holder select, .warning .input-holder .postfix, .warning .input-holder .prefix, h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
+  border-color: #d07600; }
+
+.warning.fa:before, .nav-list.nav-checklist li.warning i, .nav-checklist.panel-selector li.warning i, .answer.warning .required-holder, .question.warning .required-holder, .warning .label-holder, .warning, .warning .input-holder .postfix, .warning .input-holder .prefix, .warning .input-holder .value, .message-holder > .warning, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning {
+  color: #d07600; }
+
+.hint .warning, .info-text.warning {
+  background-color: #d07600; }
+
+.nav-list.nav-checklist li.warning .fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning .fa-holder-dynamic:before {
+  content: ""; }
+
+.validated .input-holder input, .validated .input-holder textarea, .validated .input-holder select, .validated .input-holder .postfix, .validated .input-holder .prefix, h1.with-underline.validated, h2.with-underline.validated, h3.with-underline.validated, h4.with-underline.validated, h5.with-underline.validated, h6.with-underline.validated {
+  border-color: #19BB9B; }
+
+.validated.fa:before, .nav-list.nav-checklist li.validated i, .nav-checklist.panel-selector li.validated i, .answer.validated .required-holder, .question.validated .required-holder, .validated .label-holder, .validated, .validated .input-holder .postfix, .validated .input-holder .prefix, .validated .input-holder .value, .message-holder > .validated, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated {
+  color: #19BB9B; }
+
+.hint .validated, .info-text.validated {
+  background-color: #19BB9B; }
+
+.nav-list.nav-checklist li.validated .fa-holder-dynamic:before, .nav-checklist.panel-selector li.validated .fa-holder-dynamic:before {
+  content: ""; }
+
+.info .input-holder input, .info .input-holder textarea, .info .input-holder select, .info .input-holder .postfix, .info .input-holder .prefix, h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
+  border-color: #bbe8f4; }
+
+.info.fa:before, .nav-list.nav-checklist li.info i, .nav-checklist.panel-selector li.info i, .answer.info .required-holder, .question.info .required-holder, .info .label-holder, .info, .info .input-holder .postfix, .info .input-holder .prefix, .info .input-holder .value, .message-holder > .info, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
+  color: #bbe8f4; }
+
+.hint .info, .info-text.info {
+  background-color: #bbe8f4; }
+
+.nav-list.nav-checklist li.info .fa-holder-dynamic:before, .nav-checklist.panel-selector li.info .fa-holder-dynamic:before {
+  content: ""; }
+
+.highlighted .input-holder input, .highlighted .input-holder textarea, .highlighted .input-holder select, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
+  border-color: #22AFD7; }
+
+.highlighted.fa:before, .nav-list.nav-checklist li.highlighted i, .nav-checklist.panel-selector li.highlighted i, .answer.highlighted .required-holder, .question.highlighted .required-holder, .highlighted .label-holder, .highlighted, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted .input-holder .value, .message-holder > .highlighted, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
+  color: #22AFD7; }
+
+.hint .highlighted, .info-text.highlighted {
+  background-color: #22AFD7; }
+
+.nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before {
+  content: ""; }
+
+.completed .input-holder input, .completed .input-holder textarea, .completed .input-holder select, .completed .input-holder .postfix, .completed .input-holder .prefix, h1.with-underline.completed, h2.with-underline.completed, h3.with-underline.completed, h4.with-underline.completed, h5.with-underline.completed, h6.with-underline.completed {
+  border-color: #19BB9B; }
+
+.completed.fa:before, .nav-list.nav-checklist li.completed i, .nav-checklist.panel-selector li.completed i, .answer.completed .required-holder, .question.completed .required-holder, .completed .label-holder, .completed, .completed .input-holder .postfix, .completed .input-holder .prefix, .completed .input-holder .value, .message-holder > .completed, h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed {
+  color: #19BB9B; }
+
+.hint .completed, .info-text.completed {
+  background-color: #19BB9B; }
+
+.nav-list.nav-checklist li.completed .fa-holder-dynamic:before, .nav-checklist.panel-selector li.completed .fa-holder-dynamic:before {
+  content: ""; }
+
+.disabled .input-holder input, .disabled .input-holder textarea, .disabled .input-holder select, .disabled .input-holder .postfix, .disabled .input-holder .prefix, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
+  border-color: #b3b3b3; }
+
+.disabled.fa:before, .nav-list.nav-checklist li.disabled i, .nav-checklist.panel-selector li.disabled i, .answer.disabled .required-holder, .question.disabled .required-holder, .disabled .label-holder, .disabled, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .input-holder .value, .message-holder > .disabled, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
+  color: #b3b3b3; }
+
+.hint .disabled, .info-text.disabled {
+  background-color: #b3b3b3; }
+
+.nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before {
+  content: ""; }
+
+.attention .input-holder input, .attention .input-holder textarea, .attention .input-holder select, .attention .input-holder .postfix, .attention .input-holder .prefix, h1.with-underline.attention, h2.with-underline.attention, h3.with-underline.attention, h4.with-underline.attention, h5.with-underline.attention, h6.with-underline.attention {
+  border-color: #d07600; }
+
+.attention.fa:before, .nav-list.nav-checklist li.attention i, .nav-checklist.panel-selector li.attention i, .answer.attention .required-holder, .question.attention .required-holder, .attention .label-holder, .attention, .attention .input-holder .postfix, .attention .input-holder .prefix, .attention .input-holder .value, .message-holder > .attention, h1.attention, h2.attention, h3.attention, h4.attention, h5.attention, h6.attention, p.attention, a.attention, li.attention, blockquote.attention {
+  color: #d07600; }
+
+.hint .attention, .info-text.attention {
+  background-color: #d07600; }
+
+.nav-list.nav-checklist li.attention .fa-holder-dynamic:before, .nav-checklist.panel-selector li.attention .fa-holder-dynamic:before {
+  content: ""; }
 
 /*# sourceMappingURL=style-oma.css.map */
