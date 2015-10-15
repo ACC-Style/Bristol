@@ -23,37 +23,6 @@ $required_data:(
 *  	<p class="highlighted"><strong>Paragraph that is a highlighted State.</strong>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
 */
 
-// %htmlContentTagsState{
-// 	font-weight: 900;
-// }
-// h1,h2,h3,h4,h5,h6,p,a,li,blockquote{
-// 	@each $State in $states{
-// 		&#{map-get($State,'Selector')}{
-// 			color:map-get($State,'Color');
-// 			@extend %htmlContentTagsState;
-// 			}
-
-// 		}
-// }
-// $typography-selectors:"h1","h2","h3","h4","h5","h6","p","a","li","blockquote";	
-// @each $State in $states{
-// 	$state-selector:map-get($State,'Selector');
-// 	$list:getFontcolorTrump( map-get($State,'State') );
-// 	@each $selector in $$underline-selectors{
-// 		$list: append($list, unquote('#{$selector}#{$state-selector}'),'comma');
-// 		#{$selector}#{$state-selector}{@extend %htmlContentTagsState;}
-// 	}
-// }
-
-// $underline-selectors: "h1.with-underline","h2.with-underline", "h3.with-underline", "h4.with-underline", "h5.with-underline", "h6.with-underline";
-// @each $State in $states{
-// 	$state-selector:map-get($State,'Selector');
-// 	$list:getBorderTrump( map-get($State,'State') );
-// 	@each $selector in $$underline-selectors{
-// 		$list: append($list, unquote('#{$selector}#{$state-selector}'),'comma');
-// 	}
-// }
-
 
 	%htmlContentTagsState{
 		font-weight: 900;

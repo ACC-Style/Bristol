@@ -42,9 +42,6 @@ $required_data:(
 		$background-color:mix(color($color,20),grey(20)); // Background is non standard
 		@include setTrump('color',$state-name,'#{$selector} .input-holder .postfix, #{$selector} .input-holder .prefix, #{$selector} .input-holder .value');
 		@include setTrump('border-color',$state-name,'#{$selector} .input-holder .postfix, #{$selector} .input-holder .prefix');
-		#{$selector} &{
-			background-color:$background-color;
-		}
 	}
 }
 
@@ -63,10 +60,10 @@ textarea,select,input,datalist{
 		$selector:map-get($State,"Selector");
 		$state-name:map-get($State,"State");
 		$color: map-get($State, 'Color');
+		
 		> #{$selector}{
-			background-color: $color;
-			color:color-contrast($color);
-			@include setTrump('color',$state-name,'.message-holder > #{$selector}');
+			@include setContrastTrump( $color, '.message-holder > #{$selector}');
+			@include setTrump('background-color',$state-name, '.message-holder > #{$selector}');
 			@extend %visibleDisplayNone;
 			#{$selector} &, &.make-visible{
 				@extend %visibleDisplayBlock;
@@ -74,17 +71,16 @@ textarea,select,input,datalist{
 		}
 	}
 }
-
+%hint-state-padding{padding:.25em .5em;}
 .hint{
 	@each $State in $states{
 		$selector:map-get($State,"Selector");
 		$state-name:map-get($State,"State");
 		$color: map-get($State, 'Color');
 		#{$selector}{
-			background-color: $color;
 			@include setTrump('background-color',$state-name,'.hint #{$selector}');
-			color:color-contrast($color);
-			padding:.25em .5em;
+			@include setContrastTrump( $color, '.hint #{$selector}');
+			@extend %hint-state-padding;
 		}
 	}
 }

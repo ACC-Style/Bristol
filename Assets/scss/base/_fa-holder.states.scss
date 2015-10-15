@@ -15,15 +15,11 @@ $required_data:(
 
 @each $State in $states{
 	$selector:map-get($State,"Selector");
-	$icon-var: map-get($State,"Icon");
-	#{$selector}{
-		@include fa-var($icon-var);
-		//&.fa:before{ color:map-get($State,"Color"); }
-	}
-	@include setTrump('color',map-get($State,'State'),'#{$selector}.fa:before');
+	@include setTrump('icon',map-get($State,'State'),'#{$selector} .fa-holder-dynamic:before, #{$selector}.fa:before,#{$selector} >.fa-holder:before');
+	@include setTrump('color',map-get($State,'Icon'),'#{$selector}.fa');
 }
 
 .required{
 	@include fa-var($fa-var-asterisk);
-	&.fa:before{ color:$warning-color; }
+	&.fa{ color:$warning-color; }
 }
