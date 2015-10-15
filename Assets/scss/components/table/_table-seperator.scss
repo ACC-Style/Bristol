@@ -1,7 +1,7 @@
-		$sep-color-base:rebrand-color($primary-color,2);
-		$sep-color:scale-color($sep-color-base,$lightness:15%);
-		$sep-darkcolor:scale-color($sep-color,$lightness:-10%);
-		$sep-lightcolor:scale-color($sep-color,$lightness:10%);
+$sep-color-base:rebrand-color($primary-color,2);
+$sep-color:scale-color($sep-color-base,$lightness:15%);
+$sep-darkcolor:scale-color($sep-color,$lightness:-10%);
+$sep-lightcolor:scale-color($sep-color,$lightness:10%);
 .table{
 	.seperator td,.seperator:nth-child(even) td:nth-child(odd){
 		@include rem-fallback(padding-top,.1375);
@@ -21,3 +21,34 @@
 		font-size: .75rem;
 	}
 }
+
+/**
+* Tables Row(Seperator):
+* ` .seperator` - Table with the class`.stripped`.
+* 
+*   @example
+*	<table class="table stripped">
+*		<thead>
+*			<tr>
+*				<th>table header</th>
+*				<th>table header</th>
+*				<th>table header</th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr class="seperator">
+*				<td colspan='3'> Separator</td>
+*			</tr>
+*		</tbody>
+*		<tfoot>
+*			<tr>
+*				<td colspan="3">footer cell</td>
+*			</tr>
+*		</tfoot>
+*	</table>
+*/
