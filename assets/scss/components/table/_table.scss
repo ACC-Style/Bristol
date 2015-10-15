@@ -14,7 +14,7 @@
 *		<tbody>
 *			<tr>
 *				<td>table row 1 table cell A<br><small>this is small text</small></td>
-*				<td>table row 1 table cell B<br><small class="blue">this is small text with blue</small></td>
+*				<td>table row 1 table cell B<br><small class="color-highlighted">this is small text with blue</small></td>
 *				<td>table row 1 table cell C</td>
 *			</tr>
 *			<tr>
@@ -41,30 +41,42 @@ table{
 	margin-bottom: 1rem;
 	font-size:  rem-calc(ms(0));
 	@extend %normal;
-	tbody tr + tr td{ border-top:grey(10) 1px solid;}
-	small{font-size: 80%; color:fontcolor($black, 'quiet'); }
+	tr + tr td,tr + tr th{ border-top:grey(10) 1px solid;}
+	thead {
+		tr:last-child th{ border-bottom:2px solid rebrand-color($primary-color,2); }
+	}
+	
 	td,th{
 		text-align: left;
 		padding:.25rem;
-		*.color-highlighted{color:rebrand-color(fontcolor($primary-color),2);}
+		 .color-highlighted{color:rebrand-color(fontcolor($primary-color),2);}
+		 small{font-size: 80%; color:fontcolor($black, 'quiet'); }
 		}
-
-	thead {
-
-		th,td{@extend %loud;@include baseline-font(0);@include font-bold();border:0;vertical-align: bottom;
-			&.h1{@extend .h1;}
-			&.h2{@extend .h2;}
-			&.h3{@extend .h3;}
-			&.h4{@extend .h4;}
-			&.h1,&h2,&h3,&h4{
-				 margin-top:0; clear:both;margin-bottom: -.15em;
-			}
+	th{
+		@extend %loud;
+		@include baseline-font(0);
+		@include font-bold();
+		border:0;
+		vertical-align: bottom;
+		&.h1{@extend .h1;}
+		&.h2{@extend .h2;}
+		&.h3{@extend .h3;}
+		&.h4{@extend .h4;}
+		&.h1,&h2,&h3,&h4{
+			 margin-top:0; clear:both;margin-bottom: -.15em;
 		}
-		th.with-underline,td.with-underline{border-bottom: 1px dotted grey(10);}
-		tr:last-child th,tr:last-child td{ border-bottom:2px solid rebrand-color($primary-color,2); }
+		.with-underline{border-bottom: 1px dotted grey(10);}
 	}
-	tbody td{vertical-align: middle;}
-	tfoot td{@extend %italic;border:0;border-top:1px solid grey(30); font-size: .9rem;}
+	td{vertical-align: middle;}
+	tfoot tr td{
+		@extend %footstyle;
+	}
+}
 
+%footstyle{
+	@extend %italic;
+	border:0;
+	border-top:1px solid grey(30);
+	font-size: .9rem;
 
 }

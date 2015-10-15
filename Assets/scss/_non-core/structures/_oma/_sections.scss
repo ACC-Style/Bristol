@@ -14,9 +14,9 @@
 		$state-name:map-get($State,'State');
 		$state-selector:map-get($State,'Selector');
 		&#{$state-selector}{
-			//background-color:map-get($State,'Color');
 			@include setTrump('background-color',$state-name,'.info-text#{$state-selector}');
-			color:color-contrast(map-get($State,'Color'));
+			@include setContrastTrump(map-get($State,'Color'),'.info-text#{$state-selector}');
+			@include setContrastTrump(map-get($State,'Color'),'.info-text#{$state-selector} .required.fa');
 			}
 		}
 		#{$list}{
