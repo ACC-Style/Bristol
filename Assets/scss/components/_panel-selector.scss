@@ -60,9 +60,13 @@ $panel-selector-color:rebrand-color($success-color,2);
 	width: 100%;
 	
 	@include flexbox(); 
-	flex-flow: column;
-	align-content:strech;
-	align-items:strech;
+	@include flex-flow(column,nowrap);
+	@include flex-align-content(strech);
+	@include flex-align-items(strech);
+	// flex-flow: column;
+	// align-content:strech;
+	// align-items:strech;
+
 	// @include bp(md){
 	// 	display: table;
 	// 	height: 15em;

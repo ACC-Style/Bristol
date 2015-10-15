@@ -2064,9 +2064,9 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
       clear: both;
       display: -webkit-box;
       display: -moz-box;
-      display: -ms-flexbox;
       display: -webkit-flex;
-      display: flex;
+      display: -ms-flexbox;
+      display: flex !important;
       flex-direction: row;
       flex-wrap: nowrap;
       align-items: stretch;
@@ -2166,9 +2166,9 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
       clear: both;
       display: -webkit-box;
       display: -moz-box;
-      display: -ms-flexbox;
       display: -webkit-flex;
-      display: flex;
+      display: -ms-flexbox;
+      display: flex !important;
       flex-direction: row;
       flex-wrap: wrap;
       align-items: stretch;
@@ -3875,11 +3875,20 @@ tr:nth-child(even).attention td {
   width: 100%;
   display: -webkit-box;
   display: -moz-box;
-  display: -ms-flexbox;
   display: -webkit-flex;
-  display: flex;
-  flex-flow: column;
+  display: -ms-flexbox;
+  display: flex !important;
+  -webkit-flex-flow: column nowrap;
+  -moz-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -webkit-align-content: strech;
+  -moz-align-content: strech;
+  -ms-align-content: strech;
   align-content: strech;
+  -webkit-align-items: strech;
+  -moz-align-items: strech;
+  -ms-align-items: strech;
   align-items: strech; }
 
 .panel-selector {
