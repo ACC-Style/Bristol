@@ -171,6 +171,11 @@ module.exports = function(grunt){
 			tasks: [ 'liquid','copy:INTERNAL' ],
 
 			},
+			data: {
+			files: [ '**.liquid' ],
+			tasks: [ 'liquid'],
+
+			},
 			scss: {
 			files: [ 'Assets/scss/*.scss','Assets/scss/*/*.scss','Assets/scss/*/*/*.scss' ],
 			tasks: [ 'sass:dist','cssmin','styledown:base','copy:INTERNAL'],

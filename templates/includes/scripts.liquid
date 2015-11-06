@@ -1,52 +1,22 @@
-<script src="assets/js/zebra_datepicker.js"></script>
-<script src="assets/js/typeahead.bundle.js"></script>
-<script src="assets/js/foundation.js"></script>
-<script src="assets/js/selectonic.js"></script>
+<script src="assets/js/styledown.js"></script>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-ui.js"></script>
+<script type="text/javascript" src="assets/js/chosen/chosen.jquery.js"></script>
+<script type="text/javascript" src="assets/js/selectonic.js"></script>
+<script type="text/javascript" src="assets/js/knockout-3.2.0.js"></script>
+<script type="text/javascript" src="assets/js/underscore.js"></script>
+<script type="text/javascript" src="assets/js/foundation.js"></script>
+<script type="text/javascript" src="assets/js/koui.js"></script>
+<script type="text/javascript" src="assets/js/waypoints.js"></script>
+<script type="text/javascript" src="assets/js/waypoints.sticky.js"></script>
+<script type="text/javascript" src="assets/js/pager.min.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/appdata.js"></script>
+<script type="text/javascript" src="assets/js/formdata.js"></script>
+<script type="text/javascript" src="assets/js/appviewmodel.js"></script>
+
 
 <script>
 $(document).foundation();
-</script>
-
-<script type="text/javascript">
-$(document).ready(function() {
-	var view =  viewHeight();
-		function viewHeight(){
-		var viewportwidth;
-		var viewportheight;
-
-		// the more standards compliant browsers (mozilla/netscape/opera/IE7) use window.innerWidth and window.innerHeight
-		if (typeof window.innerWidth != 'undefined')
-		{
-		  viewportwidth = window.innerWidth,
-		  viewportheight = window.innerHeight
-		}
-
-		// IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
-		else if (typeof document.documentElement != 'undefined'
-		 && typeof document.documentElement.clientWidth !=
-		 'undefined' && document.documentElement.clientWidth != 0)
-		{
-		   viewportwidth = document.documentElement.clientWidth,
-		   viewportheight = document.documentElement.clientHeight
-		}
-
-		// older versions of IE
-		else
-		{
-		   viewportwidth = document.getElementsByTagName('body')[0].clientWidth,
-		   viewportheight = document.getElementsByTagName('body')[0].clientHeight
-		}
-		return  viewportheight;
-
-	};
- 	vph = ( view - 147 )+"px";
- 	$( "#fullscreen-spacer" ).css("min-height", vph);
-	$(window).resize(function(){
-		vph = ( viewHeight() - 147 )+"px"
-		$( "#fullscreen-spacer" ).css("min-height", vph);
-	});
-});
-
-
 </script>
 

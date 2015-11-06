@@ -1,64 +1,83 @@
-.page-wrapper{
-	max-width: 1200px;
-	margin:0 auto;
-	padding:1rem .5rem;
-	@include bp(md){
-		padding:1.5rem .75rem;
-	}
-	@include bp(lg){
-		padding:2rem 1rem 3rem;	
-	}
-}
-%shadedbackground{
-	background-color: grey(5);
-}
-%dropshoadowedbox{
-	border:1px solid grey(15);
-	background-color: white;
-	-webkit-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
-	-moz-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
-	box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2); 
+.page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem .5rem;
+
+    @include bp(md) {
+        padding: 1.5rem .75rem;
+    }
+
+
+    @include bp(lg) {
+        padding: 2rem 1rem 3rem;
+    }
 }
 
-.page.with-group-sections{
-	@extend %shadedbackground;
-	.page-wrapper{
-		padding:1rem 0 !important;
-		> .section, > section, >.row{	
-			padding:0 .75rem;
-			
-		}
-		> .group-section{
-		@extend %dropshoadowedbox;
-		margin:0 .65rem 1rem .5rem;
-		padding:.5rem .5rem;
-		width:auto;
-		position: relative;
-			@include bp(md){
-		padding:.5rem .75rem;
-	}
-	@include bp(lg){
-		padding:.5rem 1.5rem 1rem;	
-	}
-		}
-	}
-	
-
+%shadedbackground {
+    background-color: grey(5);
 }
 
-.content-padding{
-	padding:0 .5rem;
-	max-width: 1200px;
-	margin:0 auto;
-	
-	@include bp(md){
-		padding:0 .75rem;
-	};
-	@include bp(lg){
-		padding:0 1rem;	
-	};
+%dropshoadowedbox {
+    border: 1px solid grey(15);
+    background-color: white;
+    -webkit-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
 }
-.section-nav.back ~ .page-wrapper{padding-top: 0;}
+
+.page.with-group-sections {
+    @extend %shadedbackground;
+
+    .page-wrapper {
+        padding: 1rem 0 !important;
+
+        > .section, > section, > .row {
+            padding: 0 .75rem;
+        }
+
+        > .group-section {
+            @extend %dropshoadowedbox;
+
+            margin: 0 .65rem 1rem .5rem;
+            padding: .5rem .5rem;
+            width: auto;
+            position: relative;
+
+            &.content-padding {
+                margin: 0 auto 1rem auto;
+                max-width: 1200px;
+            }
+
+            @include bp(md) {
+                padding: .5rem .75rem;
+            }
+
+
+            @include bp(lg) {
+                padding: .5rem 1.5rem 1rem;
+            }
+        }
+    }
+}
+
+.content-padding {
+    padding: 0 .5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include bp(md) {
+        padding: 0 .75rem;
+    }
+
+
+    @include bp(lg) {
+        padding: 0 1rem;
+    }
+}
+
+.section-nav.back ~ .page-wrapper {
+    padding-top: 0;
+}
 
 /**
 * page layouts:
@@ -77,25 +96,28 @@
 *
 **/
 
-.group-section-tab-holder{
-	margin: -.5rem -1.5rem 0;
-	.nav.tabs{
-		padding: 2px 10px 0;
-		background-color: rebrand-color($primary-color,1);
-		li{
-			border-radius: 8px;
-		    display: inline-block;
-		    margin: .4rem 1px .4rem;
-		    background-color: #CCC;
-		    background-color: color(rebrand-color($primary-color,1),20)
-		}
-		li.selected{
-			border-bottom-right-radius: 0px;
-			border-bottom-left-radius: 0px;
-			margin-bottom: 0;
-			vertical-align: bottom;
-			padding:.4rem;
-			background-color: #fff;
-		}
-	}
+.group-section-tab-holder {
+    margin: -.5rem -1.5rem 0;
+
+    .nav.tabs {
+        padding: 2px 10px 0;
+        background-color: rebrand-color($primary-color, 1);
+
+        li {
+            border-radius: 8px;
+            display: inline-block;
+            margin: .4rem 1px .4rem;
+            background-color: #CCC;
+            background-color: color(rebrand-color($primary-color, 1), 20);
+        }
+
+        li.selected {
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            margin-bottom: 0;
+            vertical-align: bottom;
+            padding: .4rem;
+            background-color: #fff;
+        }
+    }
 }

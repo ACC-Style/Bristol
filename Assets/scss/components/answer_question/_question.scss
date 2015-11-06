@@ -9,11 +9,13 @@
 } 
 .input-holder .input-space{  
 		padding-left: 0;
+		position: relative;
 }
 .input-space a.button, .input-space button, .input-space .button{
 	margin:0;
 	padding-top: 8px;
   	padding-bottom: 8px;
+  	line-height: 21px;
   	i{margin-right: .2rem;}
 }
 [class*="input-space"] + [class*="input-space"]:last-child{
@@ -24,6 +26,19 @@
 	padding-top: .5em;
 	padding-bottom: .5em;
 	padding-left: .5em;
+}
+.input-space {
+	.input-lock{ 
+		top: 0;
+	    right: 0;
+	    padding: 0.57143rem;
+	    font-size: 1.5rem;
+	    line-height: 1;
+		.lock-symbol{
+			color:grey(50);
+			&:hover{color:$link-color;}
+		}
+	}
 }
 input[type="checkbox"], input[type="radio"]{
 	margin:.55em .5em;
@@ -40,24 +55,25 @@ input[type="checkbox"], input[type="radio"]{
 	// 	padding-bottom: .5em;
 	}
 }
-	.file-upload-holder{height:37px;}
-	.file-upload {
-		position: relative;
-		overflow: hidden;
-		margin: 0 10px;
-	}
+.file-upload-holder{height:37px;}
+.file-upload {
+	position: relative;
+	overflow: hidden;
+	margin: 0 10px;
+}
 
-		.file-upload input.upload {
-			position: absolute;
-			top: 0;
-			right: 0;
-			margin: 0;
-			padding: 0;
-			font-size: 20px;
-			cursor: pointer;
-			opacity: 0;
-			filter: alpha(opacity=0);
-		}
+.file-upload input.upload {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
 /**
 * 	Questions - File Upload:
 * `.file-upload`  - File uploads are a modified from the standard input-spacer to allow for correct labels to show up when the file is attached 

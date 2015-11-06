@@ -2777,7 +2777,8 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 .input-space a.button, .switch-input-space a.button, .input-space button, .switch-input-space button, .input-space .button, .switch-input-space .button {
   margin: 0;
   padding-top: 8px;
-  padding-bottom: 8px; }
+  padding-bottom: 8px;
+  line-height: 21px; }
   .input-space a.button i, .switch-input-space a.button i, .input-space button i, .switch-input-space button i, .input-space .button i, .switch-input-space .button i {
     margin-right: .2rem; }
 
@@ -3103,8 +3104,8 @@ input[type="checkbox"], input[type="radio"] {
     .repeater .render + .render {
       border-top: 0px none; }
     .repeater .render .render-holder {
-      margin: 0 12rem 0  0;
-      padding: .5rem 0; }
+      margin: 0 17rem 0  0;
+      padding: 0.5rem 0; }
     .repeater .render .comma-after:after {
       content: ",";
       padding-left: .25em;
@@ -4287,8 +4288,13 @@ Non-Core Components Styles
   margin-bottom: 0.375em;
   font-weight: normal;
   color: #333333;
-  padding: .5rem;
-  position: relative; }
+  padding: .5rem 1rem .65rem;
+  position: relative;
+  background-image: url(../img/empty_stripe.png);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: transparent; }
   .info-text .fa-holder {
     font-size: 1.71429em;
     line-height: 1.75em;
@@ -6015,6 +6021,9 @@ div.reveal-modal, dialog {
     padding: .5rem .5rem;
     width: auto;
     position: relative; }
+    .page.with-group-sections .page-wrapper > .group-section.content-padding {
+      margin: 0 auto 1rem auto;
+      max-width: 1200px; }
     @media only screen and (min-width: 767px) {
       .page.with-group-sections .page-wrapper > .group-section {
         padding: .5rem .75rem; } }
@@ -6729,6 +6738,9 @@ h6 blockquote {
 *     div.text-highlight-color this has the `.text-highlight-color` class added to the container which changes the color to the product color
 *
 */
+.allwayswrap {
+  white-space: normal; }
+
 .phone-only {
   display: none; }
   @media only screen and (max-width: 767px) {
@@ -6860,7 +6872,7 @@ h6 blockquote {
 /*
 STATE TRUMPING CODE
 */
-.error .input-holder input, .error .input-holder textarea, .error .input-holder select, .error .input-holder .postfix, .error .input-holder .prefix, h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
+.error .input-holder input, .error .input-holder textarea, .error .input-holder select, .error .input-holder .postfix, .error .input-holder .prefix, .info-text.error, h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
   border-color: #c32231; }
 
 .nav-list.nav-checklist li.error i, .nav-checklist.panel-selector li.error i, .answer.error .required-holder, .question.error .required-holder, .error .label-holder, .error, .error .input-holder .postfix, .error .input-holder .prefix, .error .input-holder .value, h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
@@ -6872,7 +6884,7 @@ STATE TRUMPING CODE
 .error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .nav-list.nav-checklist li.error .fa-holder-dynamic:before, .nav-checklist.panel-selector li.error .fa-holder-dynamic:before {
   content: ""; }
 
-.warning .input-holder input, .warning .input-holder textarea, .warning .input-holder select, .warning .input-holder .postfix, .warning .input-holder .prefix, h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
+.warning .input-holder input, .warning .input-holder textarea, .warning .input-holder select, .warning .input-holder .postfix, .warning .input-holder .prefix, .info-text.warning, h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
   border-color: #E08514; }
 
 .nav-list.nav-checklist li.warning i, .nav-checklist.panel-selector li.warning i, .answer.warning .required-holder, .question.warning .required-holder, .warning .label-holder, .warning, .warning .input-holder .postfix, .warning .input-holder .prefix, .warning .input-holder .value, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning {
@@ -6884,7 +6896,7 @@ STATE TRUMPING CODE
 .warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .nav-list.nav-checklist li.warning .fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning .fa-holder-dynamic:before {
   content: ""; }
 
-.validated .input-holder input, .validated .input-holder textarea, .validated .input-holder select, .validated .input-holder .postfix, .validated .input-holder .prefix, h1.with-underline.validated, h2.with-underline.validated, h3.with-underline.validated, h4.with-underline.validated, h5.with-underline.validated, h6.with-underline.validated {
+.validated .input-holder input, .validated .input-holder textarea, .validated .input-holder select, .validated .input-holder .postfix, .validated .input-holder .prefix, .info-text.validated, h1.with-underline.validated, h2.with-underline.validated, h3.with-underline.validated, h4.with-underline.validated, h5.with-underline.validated, h6.with-underline.validated {
   border-color: #19BB9B; }
 
 .nav-list.nav-checklist li.validated i, .nav-checklist.panel-selector li.validated i, .answer.validated .required-holder, .question.validated .required-holder, .validated .label-holder, .validated, .validated .input-holder .postfix, .validated .input-holder .prefix, .validated .input-holder .value, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated {
@@ -6896,7 +6908,7 @@ STATE TRUMPING CODE
 .validated .fa-holder-dynamic:before, .validated.fa:before, .validated > .fa-holder:before, .nav-list.nav-checklist li.validated .fa-holder-dynamic:before, .nav-checklist.panel-selector li.validated .fa-holder-dynamic:before {
   content: ""; }
 
-.info .input-holder input, .info .input-holder textarea, .info .input-holder select, .info .input-holder .postfix, .info .input-holder .prefix, h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
+.info .input-holder input, .info .input-holder textarea, .info .input-holder select, .info .input-holder .postfix, .info .input-holder .prefix, .info-text.info, h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
   border-color: #bbe8f4; }
 
 .nav-list.nav-checklist li.info i, .nav-checklist.panel-selector li.info i, .answer.info .required-holder, .question.info .required-holder, .info .label-holder, .info, .info .input-holder .postfix, .info .input-holder .prefix, .info .input-holder .value, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
@@ -6908,7 +6920,7 @@ STATE TRUMPING CODE
 .info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder-dynamic:before, .nav-checklist.panel-selector li.info .fa-holder-dynamic:before {
   content: ""; }
 
-.highlighted .input-holder input, .highlighted .input-holder textarea, .highlighted .input-holder select, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
+.highlighted .input-holder input, .highlighted .input-holder textarea, .highlighted .input-holder select, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .info-text.highlighted, h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
   border-color: #22AFD7; }
 
 .nav-list.nav-checklist li.highlighted i, .nav-checklist.panel-selector li.highlighted i, .answer.highlighted .required-holder, .question.highlighted .required-holder, .highlighted .label-holder, .highlighted, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted .input-holder .value, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
@@ -6920,7 +6932,7 @@ STATE TRUMPING CODE
 .highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before {
   content: ""; }
 
-.completed .input-holder input, .completed .input-holder textarea, .completed .input-holder select, .completed .input-holder .postfix, .completed .input-holder .prefix, h1.with-underline.completed, h2.with-underline.completed, h3.with-underline.completed, h4.with-underline.completed, h5.with-underline.completed, h6.with-underline.completed {
+.completed .input-holder input, .completed .input-holder textarea, .completed .input-holder select, .completed .input-holder .postfix, .completed .input-holder .prefix, .info-text.completed, h1.with-underline.completed, h2.with-underline.completed, h3.with-underline.completed, h4.with-underline.completed, h5.with-underline.completed, h6.with-underline.completed {
   border-color: #19BB9B; }
 
 .nav-list.nav-checklist li.completed i, .nav-checklist.panel-selector li.completed i, .answer.completed .required-holder, .question.completed .required-holder, .completed .label-holder, .completed, .completed .input-holder .postfix, .completed .input-holder .prefix, .completed .input-holder .value, h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed {
@@ -6932,7 +6944,7 @@ STATE TRUMPING CODE
 .completed .fa-holder-dynamic:before, .completed.fa:before, .completed > .fa-holder:before, .nav-list.nav-checklist li.completed .fa-holder-dynamic:before, .nav-checklist.panel-selector li.completed .fa-holder-dynamic:before {
   content: ""; }
 
-.disabled .input-holder input, .disabled .input-holder textarea, .disabled .input-holder select, .disabled .input-holder .postfix, .disabled .input-holder .prefix, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
+.disabled .input-holder input, .disabled .input-holder textarea, .disabled .input-holder select, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .info-text.disabled, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
   border-color: #b3b3b3; }
 
 .nav-list.nav-checklist li.disabled i, .nav-checklist.panel-selector li.disabled i, .answer.disabled .required-holder, .question.disabled .required-holder, .disabled .label-holder, .disabled, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .input-holder .value, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
@@ -6944,7 +6956,7 @@ STATE TRUMPING CODE
 .disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before {
   content: ""; }
 
-.attention .input-holder input, .attention .input-holder textarea, .attention .input-holder select, .attention .input-holder .postfix, .attention .input-holder .prefix, h1.with-underline.attention, h2.with-underline.attention, h3.with-underline.attention, h4.with-underline.attention, h5.with-underline.attention, h6.with-underline.attention {
+.attention .input-holder input, .attention .input-holder textarea, .attention .input-holder select, .attention .input-holder .postfix, .attention .input-holder .prefix, .info-text.attention, h1.with-underline.attention, h2.with-underline.attention, h3.with-underline.attention, h4.with-underline.attention, h5.with-underline.attention, h6.with-underline.attention {
   border-color: #E08514; }
 
 .nav-list.nav-checklist li.attention i, .nav-checklist.panel-selector li.attention i, .answer.attention .required-holder, .question.attention .required-holder, .attention .label-holder, .attention, .attention .input-holder .postfix, .attention .input-holder .prefix, .attention .input-holder .value, h1.attention, h2.attention, h3.attention, h4.attention, h5.attention, h6.attention, p.attention, a.attention, li.attention, blockquote.attention {
@@ -6956,10 +6968,13 @@ STATE TRUMPING CODE
 .attention .fa-holder-dynamic:before, .attention.fa:before, .attention > .fa-holder:before, .nav-list.nav-checklist li.attention .fa-holder-dynamic:before, .nav-checklist.panel-selector li.attention .fa-holder-dynamic:before {
   content: ""; }
 
-.dark-color-text, .message-holder > .info, .message-holder > .disabled, .hint .info, .hint .disabled, .info-text.info, .info-text.info .required.fa, .info-text.disabled, .info-text.disabled .required.fa {
+.error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .nav-list.nav-checklist li.error .fa-holder-dynamic:before, .nav-checklist.panel-selector li.error .fa-holder-dynamic:before, .warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .nav-list.nav-checklist li.warning .fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning .fa-holder-dynamic:before, .validated .fa-holder-dynamic:before, .validated.fa:before, .validated > .fa-holder:before, .nav-list.nav-checklist li.validated .fa-holder-dynamic:before, .nav-checklist.panel-selector li.validated .fa-holder-dynamic:before, .info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder-dynamic:before, .nav-checklist.panel-selector li.info .fa-holder-dynamic:before, .highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before, .completed .fa-holder-dynamic:before, .completed.fa:before, .completed > .fa-holder:before, .nav-list.nav-checklist li.completed .fa-holder-dynamic:before, .nav-checklist.panel-selector li.completed .fa-holder-dynamic:before, .disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before, .attention .fa-holder-dynamic:before, .attention.fa:before, .attention > .fa-holder:before, .nav-list.nav-checklist li.attention .fa-holder-dynamic:before, .nav-checklist.panel-selector li.attention .fa-holder-dynamic:before {
+  font-family: FontAwesome; }
+
+.dark-color-text, .message-holder > .info, .message-holder > .disabled, .hint .info, .hint .disabled, .info-text.error, .info-text.error .required.fa, .info-text.warning, .info-text.warning .required.fa, .info-text.validated, .info-text.validated .required.fa, .info-text.info, .info-text.info .required.fa, .info-text.highlighted, .info-text.highlighted .required.fa, .info-text.completed, .info-text.completed .required.fa, .info-text.disabled, .info-text.disabled .required.fa, .info-text.attention, .info-text.attention .required.fa {
   color: #333333; }
 
-.light-color-text, .message-holder > .error, .message-holder > .warning, .message-holder > .validated, .message-holder > .highlighted, .message-holder > .completed, .message-holder > .attention, .hint .error, .hint .warning, .hint .validated, .hint .highlighted, .hint .completed, .hint .attention, .info-text.error, .info-text.error .required.fa, .info-text.warning, .info-text.warning .required.fa, .info-text.validated, .info-text.validated .required.fa, .info-text.highlighted, .info-text.highlighted .required.fa, .info-text.completed, .info-text.completed .required.fa, .info-text.attention, .info-text.attention .required.fa {
+.light-color-text, .message-holder > .error, .message-holder > .warning, .message-holder > .validated, .message-holder > .highlighted, .message-holder > .completed, .message-holder > .attention, .hint .error, .hint .warning, .hint .validated, .hint .highlighted, .hint .completed, .hint .attention {
   color: #fff; }
 
 /*# sourceMappingURL=style-oma.css.map */
