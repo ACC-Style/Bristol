@@ -2127,6 +2127,10 @@ h6 {
 *	<a class="button disabled">disabled button </a>
 */
 button[disabled], button[disabled].success, button[disabled].alert, button[disabled].secondary,
+button:disabled,
+button.success:disabled,
+button.alert:disabled,
+button.secondary:disabled,
 .button.disabled,
 .button.disabled.success,
 .button.disabled.alert,
@@ -2135,7 +2139,8 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
 .button.disabled.success:hover,
 .button.disabled.alert:hover,
 .button.disabled.secondary:hover {
-  background-color: #cccccc;
+  background-color: #b3b3b3;
+  background-image: url(../img/empty_diamond@2x.png);
   color: #999999;
   cursor: not-allowed; }
 
@@ -3013,6 +3018,11 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   margin-top: 0em;
   margin-bottom: 0em; }
 
+.answer input:disabled, .answer input[disabled], .answer textarea:disabled, .answer textarea[disabled], .answer option:disabled, .answer option[disabled], .question input:disabled, .question input[disabled], .question textarea:disabled, .question textarea[disabled], .question option:disabled, .question option[disabled], .answer .chosen-disabled.chosen-container .chosen-choices, .question .chosen-disabled.chosen-container .chosen-choices {
+  background-color: #b3b3b3;
+  background-image: url(../img/empty_stripe.png);
+  color: #999999; }
+
 .answer .required, .question .required {
   display: none; }
 .answer.required .required, .question.required .required {
@@ -3039,7 +3049,8 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
       padding-left: 0; }
 
 .input-holder .input-space, .input-holder .switch-input-space {
-  padding-left: 0; }
+  padding-left: 0;
+  position: relative; }
 
 .input-space a.button, .switch-input-space a.button, .input-space button, .switch-input-space button, .input-space .button, .switch-input-space .button {
   margin: 0;
@@ -3056,6 +3067,18 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   padding-top: .5em;
   padding-bottom: .5em;
   padding-left: .5em; }
+
+.input-space .input-lock, .switch-input-space .input-lock {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.57143rem;
+  font-size: 1.5rem;
+  line-height: 1; }
+  .input-space .input-lock .lock-symbol, .switch-input-space .input-lock .lock-symbol {
+    color: gray; }
+    .input-space .input-lock .lock-symbol:hover, .switch-input-space .input-lock .lock-symbol:hover {
+      color: #25b6e0; }
 
 input[type="checkbox"], input[type="radio"] {
   margin: .55em .5em;

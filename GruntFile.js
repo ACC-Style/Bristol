@@ -172,7 +172,7 @@ module.exports = function(grunt){
 
 			},
 			data: {
-			files: [ '**.liquid' ],
+			files: [ 'templates/**' ],
 			tasks: [ 'liquid'],
 
 			},

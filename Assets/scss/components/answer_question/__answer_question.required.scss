@@ -114,3 +114,19 @@
 	@extend %italic;
 }
 
+%disabledinput{
+	background-color: grey(30);
+	background-image: url(../img/empty_stripe.png);
+	color:fontcolor($black,'quiet');
+}
+
+.answer,.question{
+input, textarea, option{
+	&:disabled,&[disabled]{
+		@extend %disabledinput;
+	}
+}
+.chosen-disabled.chosen-container .chosen-choices{@extend %disabledinput;}	
+}
+
+
