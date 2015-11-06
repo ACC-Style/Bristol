@@ -1,0 +1,37 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <title>My Style Guide</title>
+  <link rel="stylesheet" href="assets/css/styledown.css">
+  <link rel="stylesheet" href="assets/css/normalize.min.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,600,400,300|Roboto+Slab:400,700|Raleway:300">
+  <link rel="stylesheet" href="assets/css/jquery-ui.css">
+  <link rel="stylesheet" href="assets/css/jquery-ui.structure.css">
+  <link rel="stylesheet" href="assets/css/foundation.min.css">
+  <link rel="stylesheet" href="assets/css/index.css">
+</head>
+	<body>
+    <div class="mobile-offcanvas-wrapper">
+      <section class="split-layout fill-page-height medium navOn">
+        <aside class="split-sidebar">
+         {% include "sidebar" %}
+        </aside>
+        <article class="split-content"  data-bind="page: {id:'content', role: 'start'}">
+          <div class="page-wrapper">
+            {% include "pages/introduction" %}
+            {% include "pages/framework" %}
+            {% include "pages/branding" %}
+            {% include "pages/typography" %}
+          </div>
+        </article>
+      </section>
+    </div>
+
+
+
+		
+		
+		
+  	{% include "scripts" %}
+	</body>
+</html>
