@@ -81,45 +81,6 @@ module.exports = function(grunt){
 		        sg_js: 'assets/js//styledown.js',
 		        //config: 'assets/css/config.md'
 		      }
-		    }, 
-		    brand1: {
-		      files: {
-		       	'styleguide/brand1.html': 'assets/css/brand1.css',
-		      },
-		      options: {
-		        css: [ "assets/css/normalize.min.css",'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,600,400,300|Roboto+Slab:400,700|Raleway:300','assets/css/jquery-ui.css','assets/css/jquery-ui.structure.css',"assets/css/foundation.min.css",'assets/css/brand1.css'],
-		        js: ['assets/js/jquery-2.1.3.min.js','assets/js/selectonic.min.js','assets/js/chosen/chosen.jquery.min.js','assets/js/jquery-ui.js','assets/js/foundation.min.js','assets/js/knockout.js','assets/js/app.js'],
-		        title: 'My Style Guide',
-		        sg_css: 'assets/css/styledown.css',
-		        sg_js: 'assets/js//styledown.js',
-		        //config: 'assets/css/config.md'
-		      }
-		    }, 
-		    brand2: {
-		      files: {
-		       	'styleguide/brand2.html': 'assets/css/brand2.css'
-		      },
-		      options: {
-		        css: [ "assets/css/normalize.min.css",'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,600,400,300|Roboto+Slab:400,700|Raleway:300','assets/css/jquery-ui.css','assets/css/jquery-ui.structure.css',"assets/css/foundation.min.css",'assets/css/brand2.css'],
-		        js: ['assets/js/jquery-2.1.3.min.js','assets/js/selectonic.min.js','assets/js/chosen/chosen.jquery.min.js','assets/js/jquery-ui.js','assets/js/foundation.min.js','assets/js/knockout.js','assets/js/app.js'],
-		        title: 'My Style Guide',
-		        sg_css: 'assets/css/styledown.css',
-		        sg_js: 'assets/js//styledown.js',
-		        //config: 'assets/css/config.md'
-		      }
-		    },
-		    brand3: {
-		      files: {
-		       	'styleguide/brand3.html': 'assets/css/brand3.css',
-		      },
-		      options: {
-		        css: [ "assets/css/normalize.min.css",'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,600,400,300|Roboto+Slab:400,700|Raleway:300','assets/css/jquery-ui.css','assets/css/jquery-ui.structure.css',"assets/css/_foundation-override/brand3-foundation.css",'assets/css/brand3.css'],
-		        js: ['assets/js/jquery-2.1.3.min.js','assets/js/selectonic.min.js','assets/js/chosen/chosen.jquery.min.js','assets/js/jquery-ui.js','assets/js/foundation.min.js','assets/js/knockout.js','assets/js/app.js'],
-		        title: 'My Style Guide',
-		        sg_css: 'assets/css/styledown.css',
-		        sg_js: 'assets/js//styledown.js',
-		        //config: 'assets/css/config.md'
-		      }
 		    }
 
 

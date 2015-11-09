@@ -1,0 +1,68 @@
+/**
+* Fonts:
+* `OpenSans & Roboto Slab` - OpenSans is the major font family used in all digital text accross properties at the ACC. Roboto Slab and Roboto are used in highlighted cases like labels, Primary Navs, and some Header Tags.
+*
+*   @example
+*	<div class="font row font-display">
+*	<h2 class="group-divide-bottom font--name small-12">OpenSans<blockquote>font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif;</blockquote></h2>
+*	<div class="ms12 column medium-2 small-3 font--dropcase_2x">Os</div>
+*	<div class="column medium-10 small-9">
+*   <h3>Display Fonts & Headers</h3>
+*	<div class="font--lowercase ms6">abcdefghijklmnopqrstuvwxyz</div>
+*	<div class="font--uppercase ms6">abcdefghijklmnopqrstuvwxyz</div>
+*	<div class="font--numbers ms6">0123456789</div>
+*	<div class="font--lowercase ms4">abcdefghijklmnopqrstuvwxyz</div>
+*	<div class="font--uppercase ms4">abcdefghijklmnopqrstuvwxyz</div>
+*	<div class="font--numbers ms4">0123456789</div>
+*	</div>
+*	</div>
+*	<div class="font row font-slab">
+*	<h2 class="group-divide-bottom font--name small-12">Roboto Slab<blockquote>font-family: 'Roboto Slab', 'Times New Roman', 'Lucida Bright', Georgia, serif; </blockquote></h2>
+*	<div class="ms12 column medium-2 small-3 font--dropcase_2x">Rb</div>
+*	<div class="column medium-10 small-9">
+*   <h3>Primary Navigation, Headers & Labels</h3>
+*	<div class="font--lowercase ms4">abcdefghijklmnopqrstuvwxyz</div>
+*	<div class="font--uppercase ms4">abcdefghijklmnopqrstuvwxyz</div>
+*	<div class="font--numbers ms4">0123456789</div>
+*	<div class="font--lowercase ms2">abcdefghijklmnopqrstuvwxyz</div>
+*	<div class="font--uppercase ms2">abcdefghijklmnopqrstuvwxyz</div>
+*	<div class="font--numbers ms2">0123456789</div>
+*	</div>
+*	</div>
+*	<div class="font row font">
+*	<h2 class="group-divide-bottom font--name small-12">Open Sans<blockquote>font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif;</blockquote></h2>
+*	<div class="ms12 column medium-2 small-3 font--dropcase_2x">Os</div>
+*	<div class="column medium-10 small-9">
+*   <h3>Body Copy, Lists & Tables</h3>
+*	<div class="font--lowercase ms1">abcdefghijklmnopqrstuvwxyz</div>
+*	<div class="font--uppercase ms1">abcdefghijklmnopqrstuvwxyz</div>
+*	<div class="font--numbers ms1">0123456789</div>
+*	<div class="font--lowercase ms">abcdefghijklmnopqrstuvwxyz</div>
+*	<div class="font--uppercase ms">abcdefghijklmnopqrstuvwxyz</div>
+*	<div class="font--numbers ms">0123456789</div>
+*	</div>
+*	</div>
+*/
+
+
+
+
+.font{
+	color:grey(80);
+	&.font-display{@include font-display(); }
+	&.font-slab{@include font-slab(); }
+	&.font-normal{@include font(); }
+	&.font-light{@include font-light(); }
+	.font--name{color:$brand-color}
+	.font--dropcase_2x{color:$primary-color}
+	.font--lowercase,.font--uppercase,.font--numbers{white-space: normal;}
+	.font--lowercase{ text-transform: lowercase;}
+	.font--uppercase{ text-transform: uppercase;}
+	.font--numbers + .font--lowercase{ border-top: 1px dashed grey(20);}
+	.ms12{@include baseline-font(10);}
+	.ms6{font-size: ms(6);}
+	.ms4{font-size: ms(4);}
+	.ms2{font-size: ms(2);}
+	.ms1{font-size: ms(1);}  
+	.ms{font-size: ms(0);}           
+}

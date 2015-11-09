@@ -12,8 +12,9 @@
 
 %buttondisabled{
 	background-color: grey(30);
-	background-image: url(../img/empty_diamond@2x.png);
+	background-image: url(../img/empty_diamond.png);
 	color:fontcolor($black,'quiet');
+	border:1px solid grey(50);
 	cursor:not-allowed;
 }
  button[disabled],
@@ -22,6 +23,7 @@
 .button.disabled:hover,{
 	&,&.success,&.alert,&.secondary{
 		@extend %buttondisabled;
+		.input-space &{ padding-top: 7px; padding-bottom:7px;}
 	}
 }
 .link.disabled,.link.disabled:hover{
