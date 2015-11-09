@@ -9,8 +9,7 @@
 /**
 * Brand Level:
 * `var $brand-level` - this variable has the ablity to over take the standard acc coloring with a branded product color.  Standard values are:
-*  <nav class="nav-list small"><ul><li><a href="index.html"><span class="text">0 - Pure ACC Color</span> <i class="fa fa-eye"></i></a></li><li><a href="brand1.html"><span class="text">1 - Header Bar and Primary Nav Selects </span><i class="fa fa-eye"></i></a></li><li><a href="brand2.html"><span class="text">2 - Lines, Selects, and Header Bar (Most Apps)</span><i class="fa fa-eye"></i></a></li><li><a href="brand3.html"><span class="text">3 - Full Color Takeover, Typography, Selects, Header Bar, and Lines </span><i class="fa fa-eye"></i></a></li></ul></nav>
-* 	!! if you use brand level 3 you must include an new build of foundation found in assets/scss/vendor/foundation/_foundaiton-override !!
+*  <ol start="0"><li>Pure ACC Color</li><li>Header Bar and Primaary Nav Selects</li><li>Lines, Selects, and Header Bar</li><li>Full Color OVer Take, Typography, Selects, Header Bar, and Lines</li></ol>
 * 
 *   @example
 *	<table class="table">
@@ -46,8 +45,8 @@
 *				<td class="success-color">&nbsp;</td>
 *			</tr>
 *			<tr>
-*				<td>$warning-color</td>
-*				<td class="warning-color">&nbsp;</td>
+*				<td>$alert-color</td>
+*				<td class="alert-color">&nbsp;</td>
 *			</tr>
 *			<tr>
 *				<td>$error-color</td>
@@ -142,7 +141,7 @@
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li class="divider"></li>
-*							<li><a href="#">See all ΓåÆ</a></li>
+*							<li><a href="#">See all →</a></li>
 *						</ul>
 *						</li>
 *						<li class="divider"></li>
@@ -154,7 +153,7 @@
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li class="divider"></li>
-*								<li><a href="#">See all ΓåÆ</a></li>
+*								<li><a href="#">See all →</a></li>
 *						</ul>
 *					</li>
 *				</ul>
@@ -265,6 +264,54 @@ td.error-color {
 td.alert-color {
   background-color: #c32231; }
 
+/**
+* Colors:
+* `ACC's Colors` - The ACC has a set of standard colors which include the +ACC Blue+, +Scrub Colors+, and +Intent Colors+. The colors that change depending the product are the +Scrub Colors+
+* 
+*   @example
+*	<table class="table">
+*		<thead>
+*			<tr>
+*				<th>Color Name</th>
+*				<th>Hex Color</th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td>ACC Blue</td>
+*				<td class="brand-color" style="background-color:#00386b;color:white">#00386b</td>
+*			</tr>
+*			<tr>
+*				<td>Product Color</td>
+*				<td class="product-brand-color" style="background-color:#9a1267;color:white">#9a1267</td>
+*			</tr>
+*			<tr>
+*				<td>Primary Color</td>
+*				<td  style="background-color:#198dae;color:white">#198dae</td>
+*			</tr>
+*			<tr>
+*				<td>Secondary Color</td>
+*				<td style="background-color:#b3b3b3;color:white">#b3b3b3</td>
+*			</tr>
+*			<tr>
+*				<td>Tertiary Color</td>
+*				<td style="background-color:#944DE0;color:white">#944DE0</td>
+*			</tr>
+*			<tr>
+*				<td>Success Color</td>
+*				<td style="background-color:#19BB9B;color:white">#19BB9B</td>
+*			</tr>
+*			<tr>
+*				<td>Warning Color</td>
+*				<td style="background-color:#E08514;color:white">#E08514</td>
+*			</tr>
+*			<tr>
+*				<td>Error Color</td>
+*				<td style="background-color:#c32231;color:white">#c32231</td>
+*			</tr>
+*		</tbody>
+*	</table>
+*/
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -2054,7 +2101,7 @@ strong, .strong {
   color: #25b6e0; }
 
 em, .emphasis {
-  color: #0d4757;
+  color: #0c4657;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 100;
   font-style: italic;
@@ -2063,7 +2110,7 @@ em, .emphasis {
 .subtle {
   font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 100;
-  color: #66a0b1; }
+  color: #66a0b0; }
 
 .block-margins {
   margin: 0 em(21px) 0; }
@@ -3948,7 +3995,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   background-color: #e6e6e6; }
 
 .stripped tbody tr:nth-child(even) td:nth-child(odd) {
-  background-color: #d8e5e9; }
+  background-color: #d7e5e9; }
 
 .stripped tbody tr + tr td, .banded tbody tr + tr td {
   border-top: 0px solid; }
@@ -4096,7 +4143,7 @@ th.sortable {
     border-right: 2px solid #999999;
     color: #b3b3b3; }
     th.sortable select:hover {
-      background-color: #4d4d4d; }
+      background-color: #4c4c4c; }
   th.sortable .sort {
     position: absolute;
     top: 0;
@@ -4129,7 +4176,7 @@ th.sortable {
       top: auto;
       bottom: 0.5rem; }
   th.sortable.selected .sort {
-    background-color: #4d4d4d; }
+    background-color: #4c4c4c; }
   th.sortable.selected .sorttoggle .fa-sort {
     color: #E08514; }
   th.sortable.selected.asc .sorttoggle .fa-sort:before {
@@ -4186,20 +4233,20 @@ tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.c
   border-bottom: 1px solid; }
 
 td.error, .table tbody tr + tr td.error, tr.error td, .stripped tr.error:nth-child(even) td:nth-child(odd) {
-  background-color: #f5d9dc;
+  background-color: #f4d9db;
   border-color: #f2b7bd; }
 
 tr:nth-child(even) td.error {
-  background-color: #f2ced2; }
+  background-color: #f1ced1; }
 
 tr:nth-child(even).error td {
-  background-color: #f2ced2; }
+  background-color: #f1ced1; }
 
 .stripped tbody tr.error td:nth-child(odd) {
-  background-color: #f5d9dc; }
+  background-color: #f4d9db; }
 
 td.warning, .table tbody tr + tr td.warning, tr.warning td, .stripped tr.warning:nth-child(even) td:nth-child(odd) {
-  background-color: #faead7;
+  background-color: #f9ead7;
   border-color: #f8dbb6; }
 
 tr:nth-child(even) td.warning {
@@ -4209,10 +4256,10 @@ tr:nth-child(even).warning td {
   background-color: #f8e4cb; }
 
 .stripped tbody tr.warning td:nth-child(odd) {
-  background-color: #faead7; }
+  background-color: #f9ead7; }
 
 td.validated, .table tbody tr + tr td.validated, tr.validated td, .stripped tr.validated:nth-child(even) td:nth-child(odd) {
-  background-color: #d8f3ee;
+  background-color: #d7f3ed;
   border-color: #b0f4e7; }
 
 tr:nth-child(even) td.validated {
@@ -4222,17 +4269,17 @@ tr:nth-child(even).validated td {
   background-color: #ccf0e9; }
 
 .stripped tbody tr.validated td:nth-child(odd) {
-  background-color: #d8f3ee; }
+  background-color: #d7f3ed; }
 
 td.info, .table tbody tr + tr td.info, tr.info td, .stripped tr.info:nth-child(even) td:nth-child(odd) {
   background-color: #f3fbfd;
   border-color: #ebf8fc; }
 
 tr:nth-child(even) td.info {
-  background-color: #f0fafd; }
+  background-color: #f0f9fc; }
 
 tr:nth-child(even).info td {
-  background-color: #f0fafd; }
+  background-color: #f0f9fc; }
 
 .stripped tbody tr.info td:nth-child(odd) {
   background-color: #f3fbfd; }
@@ -4251,7 +4298,7 @@ tr:nth-child(even).highlighted td {
   background-color: #d9f1f8; }
 
 td.completed, .table tbody tr + tr td.completed, tr.completed td, .stripped tr.completed:nth-child(even) td:nth-child(odd) {
-  background-color: #d8f3ee;
+  background-color: #d7f3ed;
   border-color: #b0f4e7; }
 
 tr:nth-child(even) td.completed {
@@ -4261,7 +4308,7 @@ tr:nth-child(even).completed td {
   background-color: #ccf0e9; }
 
 .stripped tbody tr.completed td:nth-child(odd) {
-  background-color: #d8f3ee; }
+  background-color: #d7f3ed; }
 
 td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .stripped tr.disabled:nth-child(even) td:nth-child(odd) {
   background-color: #f2f2f2;
@@ -4277,7 +4324,7 @@ tr:nth-child(even).disabled td {
   background-color: #f2f2f2; }
 
 td.attention, .table tbody tr + tr td.attention, tr.attention td, .stripped tr.attention:nth-child(even) td:nth-child(odd) {
-  background-color: #faead7;
+  background-color: #f9ead7;
   border-color: #f8dbb6; }
 
 tr:nth-child(even) td.attention {
@@ -4287,7 +4334,7 @@ tr:nth-child(even).attention td {
   background-color: #f8e4cb; }
 
 .stripped tbody tr.attention td:nth-child(odd) {
-  background-color: #faead7; }
+  background-color: #f9ead7; }
 
 /**
 * Table States Cells:
@@ -6193,16 +6240,16 @@ nav.top-bar {
   font-weight: 400; }
 
 .top-bar-section li.hover > a:not(.button) {
-  background-color: #1a364f;
-  background: #29343e;
+  background-color: #19354f;
+  background: #28343e;
   color: #FFF; }
 
 .top-bar-section li:not(.has-form) a:not(.button) {
   background: #00386b; }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
-  background-color: #1a364f;
-  background: #29343e; }
+  background-color: #19354f;
+  background: #28343e; }
 
 .top-bar-section li.active:not(.has-form) a:not(.button) {
   color: #FFF;
@@ -6405,7 +6452,7 @@ div.reveal-modal, dialog {
   margin: 1.42857rem 0;
   -ms-touch-action: none;
   touch-action: none;
-  background: whitesmoke; }
+  background: #f4f4f4; }
   .range-slider.vertical-range {
     display: block;
     position: relative;
@@ -6428,7 +6475,7 @@ div.reveal-modal, dialog {
       height: auto;
       bottom: 0; }
   .range-slider.radius {
-    background: whitesmoke;
+    background: #f4f4f4;
     border-radius: 5px; }
     .range-slider.radius .range-slider-handle {
       background: #198dae;
@@ -6436,7 +6483,7 @@ div.reveal-modal, dialog {
       .range-slider.radius .range-slider-handle:hover {
         background: #167c99; }
   .range-slider.round {
-    background: whitesmoke;
+    background: #f4f4f4;
     border-radius: 1000px; }
     .range-slider.round .range-slider-handle {
       background: #198dae;
@@ -6444,7 +6491,7 @@ div.reveal-modal, dialog {
       .range-slider.round .range-slider-handle:hover {
         background: #167c99; }
   .range-slider.disabled, .range-slider[disabled] {
-    background: whitesmoke;
+    background: #f4f4f4;
     cursor: default;
     opacity: 0.7; }
     .range-slider.disabled .range-slider-handle, .range-slider[disabled] .range-slider-handle {
@@ -6707,7 +6754,7 @@ div.reveal-modal, dialog {
     font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
     font-weight: 700; }
   .tt-suggestion.tt-cursor {
-    color: #e8f4f7;
+    color: #e8f3f6;
     background-color: #198dae; }
     .tt-suggestion.tt-cursor strong {
       color: #fff; }

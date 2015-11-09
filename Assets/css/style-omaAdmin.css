@@ -6,392 +6,6 @@
 *   @example
 *	<a  class="button" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
 */
-/**
-* Brand Level:
-* `var $brand-level` - this variable has the ablity to over take the standard acc coloring with a branded product color.  Standard values are:
-*  <nav class="nav-list small"><ul><li><a href="index.html"><span class="text">0 - Pure ACC Color</span> <i class="fa fa-eye"></i></a></li><li><a href="brand1.html"><span class="text">1 - Header Bar and Primary Nav Selects </span><i class="fa fa-eye"></i></a></li><li><a href="brand2.html"><span class="text">2 - Lines, Selects, and Header Bar (Most Apps)</span><i class="fa fa-eye"></i></a></li><li><a href="brand3.html"><span class="text">3 - Full Color Takeover, Typography, Selects, Header Bar, and Lines </span><i class="fa fa-eye"></i></a></li></ul></nav>
-* 	!! if you use brand level 3 you must include an new build of foundation found in assets/scss/vendor/foundation/_foundaiton-override !!
-* 
-*   @example
-*	<table class="table">
-*		<thead>
-*			<tr>
-*				<th>Variable</th>
-*				<th>Color</th>
-*			</tr>
-*		</thead>
-*		<tbody>
-*			<tr>
-*				<td>$brand-color</td>
-*				<td class="brand-color">&nbsp;</td>
-*			</tr>
-*			<tr>
-*				<td>$product-brand-color</td>
-*				<td class="product-brand-color">&nbsp;</td>
-*			</tr>
-*			<tr>
-*				<td>$primary-color</td>
-*				<td class="primary-color">&nbsp;</td>
-*			</tr>
-*			<tr>
-*				<td>$secondary-color</td>
-*				<td class="secondary-color">&nbsp;</td>
-*			</tr>
-*			<tr>
-*				<td>$select-color</td>
-*				<td class="select-color">&nbsp;</td>
-*			</tr>
-*			<tr>
-*				<td>$success-color</td>
-*				<td class="success-color">&nbsp;</td>
-*			</tr>
-*			<tr>
-*				<td>$warning-color</td>
-*				<td class="warning-color">&nbsp;</td>
-*			</tr>
-*			<tr>
-*				<td>$error-color</td>
-*				<td class="error-color">&nbsp;</td>
-*			</tr>
-*		</tbody>
-*	</table>
-*/
-/**
-*	Zurb Foundation - Kitchen Sink:
-*	This is a visual representation of UI elements that come from the base framework from ZURB. This does not includes every single element from Foundation to view a full list go to the documentation. <a class="button tiny" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
-*
-*		@example 
-*		<h4 id="alert-boxes">Alert Boxes</h4><div data-alert="" class="alert-box radius">This is a standard alert (div.alert-box.radius).  <a href="" class="close">x</a></div><div data-alert="" class="alert-box success">  This is a success alert (div.alert-box.success).  <a href="" class="close">x</a></div><div data-alert="" class="alert-box alert round">  This is an alert (div.alert-box.alert.round).  <a href="" class="close">x</a></div><div data-alert="" class="alert-box secondary">  This is a secondary alert (div.alert-box.secondary).  <a href="" class="close">x</a></div><hr>
-*		<h4 id="breadcrumbs">Breadcrumbs</h4>
-*		<ul class="breadcrumbs">
-*		<li><a href="#">Home</a></li>
-*		<li><a href="#">Features</a></li>
-*		<li class="unavailable"><a href="#">Gene Splicing</a></li>
-*		<li class="current"><a href="#">Cloning</a></li>
-*		</ul>
-*		<h4 id="buttons">Buttons</h4>
-*		<div class="row">
-*			<div class="small-6 large-6 columns">
-*				<a href="#" class="tiny button">.tiny.button</a><br>
-*				<a href="#" class="small button">.small.button</a><br>
-*				<a href="#" class="button">.button</a><br>
-*				<a href="#" class="button expand">.expand</a><br>
-*			</div>
-*			<div class="small-6 large-6 columns">
-*				<a href="#" class="tiny button secondary">.tiny.secondary</a><br>
-*				<a href="#" class="small button success radius">.small.success.radius</a><br>
-*				<a href="#" class="button alert round disabled">.round.disabled</a><br>
-*			</div>
-*		</div>
-*		<div class="row">
-*			<h4 id="switches">switches</h4>
-*		<div class="small-6 column"><div class="switch tiny">
-*			<input id="a" name="switch-a" type="radio" checked="">
-*			<label for="a" onclick="">Off</label>
-*			<input id="a1" name="switch-a" type="radio">
-*			<label for="a1" onclick="">On</label>
-*			<span class="inline label">Power</span>
-*		</div></div>
-*		<div class="small-6 column"><div class="switch tiny">
-*			<span class="inline label">off</span>
-*			<input id="c1" name="switch-c" type="check">
-*			<label for="c1" onclick="">On</label>
-*			<span class="inline label">on</span>
-*		</div></div>
-*		</div><br>
-*		<nav class="top-bar" data-topbar="">
-*			<ul class="title-area">
-*			<!-- Title Area -->
-*				<li class="name">
-*					<h1>
-*					<a href="#">
-*					Top Bar Title
-*					</a>
-*					</h1>
-*				</li>
-*				<li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
-*			</ul>
-*			<section class="top-bar-section">
-*				<!-- Right Nav Section -->
-*				<ul class="right">
-*					<li class="divider"></li>
-*					<li class="has-dropdown not-click">
-*					<a href="#">Main Item 1</a>
-*					<ul class="dropdown">
-*						<li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li><li class="parent-link hide-for-large-up"><a class="parent-link js-generated" href="#">Main Item 1</a></li>
-*						<li><label>Section Name</label></li>
-*						<li class="has-dropdown not-click">
-*						<a href="#" class="">Has Dropdown, Level 1</a>
-*						<ul class="dropdown">
-*							<li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
-*							<li class="parent-link hide-for-large-up"><a class="parent-link js-generated" href="#">Has Dropdown, Level 1</a>
-*							</li>
-*							<li><a href="#">Dropdown Options</a></li>
-*							<li><a href="#">Dropdown Options</a></li>
-*							<li><a href="#">Level 2</a></li>
-*							<li><a href="#">Subdropdown Option</a></li>
-*							<li><a href="#">Subdropdown Option</a></li>
-*							<li><a href="#">Subdropdown Option</a></li>
-*							</ul>
-*							</li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li class="divider"></li>
-*							<li><label>Section Name</label></li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li class="divider"></li>
-*							<li><a href="#">See all ΓåÆ</a></li>
-*						</ul>
-*						</li>
-*						<li class="divider"></li>
-*						<li class="has-dropdown not-click">
-*						<a href="#">Main Item 2</a>
-*						<ul class="dropdown">
-*							<li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li><li class="parent-link hide-for-large-up"><a class="parent-link js-generated" href="#">Main Item 2</a></li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li class="divider"></li>
-*								<li><a href="#">See all ΓåÆ</a></li>
-*						</ul>
-*					</li>
-*				</ul>
-*			</section>
-*		</nav><br>
-*		<h4>Grid</H4>
-*		<div class="row display">
-*	 		 <div class="small-2 large-4 columns">small 2 | large 4 </div>
-*	  		<div class="small-4 large-4 columns">small 4 | large 4 </div>
-*	 		 <div class="small-6 large-4 columns">small 6 | large 4</div>
-*		</div>
-*/
-/**
-* Base Framework:
-* `fa-xxx` - fully css styling icons for all iconography. 
-* 
-*   @example
-*	<div id="web-application">
-*		<h2 class="page-header">Font Awesome</h2>
-*		<div class="row fontawesome-icon-list">
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/arrows"><i class="fa fa-arrows"></i> arrows</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/arrows-h"><i class="fa fa-arrows-h"></i> arrows-h</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/arrows-v"><i class="fa fa-arrows-v"></i> arrows-v</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/asterisk"><i class="fa fa-asterisk"></i> asterisk</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/at"><i class="fa fa-at"></i> at</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/bookmark"><i class="fa fa-bookmark"></i> bookmark</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/bookmark-o"><i class="fa fa-bookmark-o"></i> bookmark-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/briefcase"><i class="fa fa-briefcase"></i> briefcase</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/bug"><i class="fa fa-bug"></i> bug</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/building"><i class="fa fa-building"></i> building</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/calculator"><i class="fa fa-calculator"></i> calculator</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/calendar"><i class="fa fa-calendar"></i> calendar</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/calendar-o"><i class="fa fa-calendar-o"></i> calendar-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/camera"><i class="fa fa-camera"></i> camera</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/camera-retro"><i class="fa fa-camera-retro"></i> camera-retro</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-down"><i class="fa fa-caret-square-o-down"></i> caret-square-o-down</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-left"><i class="fa fa-caret-square-o-left"></i> caret-square-o-left</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-right"><i class="fa fa-caret-square-o-right"></i> caret-square-o-right</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-up"><i class="fa fa-caret-square-o-up"></i> caret-square-o-up</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cart-arrow-down"><i class="fa fa-cart-arrow-down"></i> cart-arrow-down</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check"><i class="fa fa-check"></i> check</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check-circle"><i class="fa fa-check-circle"></i> check-circle</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check-circle-o"><i class="fa fa-check-circle-o"></i> check-circle-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check-square"><i class="fa fa-check-square"></i> check-square</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check-square-o"><i class="fa fa-check-square-o"></i> check-square-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/circle"><i class="fa fa-circle"></i> circle</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/circle-o"><i class="fa fa-circle-o"></i> circle-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/circle-o-notch"><i class="fa fa-circle-o-notch"></i> circle-o-notch</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/circle-thin"><i class="fa fa-circle-thin"></i> circle-thin</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/clock-o"><i class="fa fa-clock-o"></i> clock-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/times"><i class="fa fa-close"></i> close <span class="text-muted">(alias)</span></a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cloud"><i class="fa fa-cloud"></i> cloud</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cloud-download"><i class="fa fa-cloud-download"></i> cloud-download</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cloud-upload"><i class="fa fa-cloud-upload"></i> cloud-upload</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/code"><i class="fa fa-code"></i> code</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/coffee"><i class="fa fa-coffee"></i> coffee</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cog"><i class="fa fa-cog"></i> cog</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cogs"><i class="fa fa-cogs"></i> cogs</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/comment"><i class="fa fa-comment"></i> comment</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/comment-o"><i class="fa fa-comment-o"></i> comment-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/pencil-square-o"><i class="fa fa-edit"></i> edit <span class="text-muted">(alias)</span></a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/envelope"><i class="fa fa-envelope"></i> envelope</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/envelope-o"><i class="fa fa-envelope-o"></i> envelope-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/exclamation"><i class="fa fa-exclamation"></i> exclamation</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/exclamation-circle"><i class="fa fa-exclamation-circle"></i> exclamation-circle</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/exclamation-triangle"><i class="fa fa-exclamation-triangle"></i> exclamation-triangle</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/external-link"><i class="fa fa-external-link"></i> external-link</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/wifi"><i class="fa fa-wifi"></i> wifi</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/wrench"><i class="fa fa-wrench"></i> wrench</a></div>
-*			<div class="column small-12"><a href="http://fortawesome.github.io/Font-Awesome/icons/">full list of icons</a></div>
-*		</div>
-*	</div>
-*	<dl class="sub-nav">
-*	  <dt>Filter:</dt>
-*	  <dd class="active"><a href="#">All</a></dd>
-*	  <dd><a href="#">Active</a></dd>
-*	  <dd><a href="#">Pending</a></dd>
-*	  <dd class="hide-for-small-only"><a href="#">Suspended</a></dd>
-*	</dl>
-*/
-/**
-* JQUERY UI - Kitchen Sink:
-* `JQUERY UI 1.11.4` - This style is base for more complicated ui elements
-*	<nav class="nav-list small"><ul><li><a href="http://jqueryui.com/accordion/"><span class="text">Accordion</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/autocomplete/"><span class="text">Autocomplete</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/datepicker/"><span class="text">Datepicker</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/progressbar/"><span class="text">Progressbar</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/slider/"><span class="text">Slider</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/spinner/"><span class="text">Spinner </span><i class="fa fa-holder-dynamic"></i></a></li></ul></nav>
-* 
-*   @example
-*	<h5>Accordion</h5>
-*	<div id="accordion">
-*	  <h3>Section 1</h3>
-*	  <div>
-*	    <p>
-*	    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-*	    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-*	    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-*	    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-*	    </p>
-*	  </div>
-*	  <h3>Section 2</h3>
-*	  <div>
-*	    <p>
-*	    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-*	    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-*	    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-*	    suscipit faucibus urna.
-*	    </p>
-*	  </div>
-*	  <h3>Section 3</h3>
-*	  <div>
-*	    <p>
-*	    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-*	    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-*	    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-*	    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-*	    </p>
-*	    <ul>
-*	      <li>List item one</li>
-*	      <li>List item two</li>
-*	      <li>List item three</li>
-*	    </ul>
-*	  </div>
-*	  <h3>Section 4</h3>
-*	  <div>
-*	    <p>
-*	    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-*	    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-*	    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-*	    mauris vel est.
-*	    </p>
-*	    <p>
-*	    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-*	    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-*	    inceptos himenaeos.
-*	    </p>
-*	  </div>
-*	</div>
-*	<div id="accordion2" class="ui-accordion-override">
-*	  <h3>Section 1</h3>
-*	  <div>
-*	    <p>
-*	    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-*	    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-*	    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-*	    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-*	    </p>
-*	  </div>
-*	  <h3>Section 2</h3>
-*	  <div>
-*	    <p>
-*	    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-*	    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-*	    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-*	    suscipit faucibus urna.
-*	    </p>
-*	  </div>
-*	  <h3>Section 3</h3>
-*	  <div>
-*	    <p>
-*	    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-*	    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-*	    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-*	    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-*	    </p>
-*	    <ul>
-*	      <li>List item one</li>
-*	      <li>List item two</li>
-*	      <li>List item three</li>
-*	    </ul>
-*	  </div>
-*	  <h3>Section 4</h3>
-*	  <div>
-*	    <p>
-*	    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-*	    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-*	    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-*	    mauris vel est.
-*	    </p>
-*	    <p>
-*	    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-*	    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-*	    inceptos himenaeos.
-*	    </p>
-*	  </div>
-*	</div>
-*	<h5>Auto Complete</h5>
-*	<div class="question required">
-*	  <div class="label-holder">
-*	    <label for="">
-*	      <span class="text">Auto Complete</span>
-*	      <span class="required-holder">
-*	        <i class="fa fa-holder-dynamic"></i>
-*	      </span>
-*	    </label>
-*	  </div>
-*	  <div class="input-holder">
-*	    <div class="input-space column small-6 large-9">
-*	      <input type="text" id="tags">
-*	    </div>
-*	    <div class="column small-6 large-3">
-*	      <small class="value">Tags</small>
-*	    </div>
-*	  </div>
-*	   <div class="hint">Code tags like 'ASP'</div>
-*	</div>
-*	<h5>Slider</h5>
-*	<div class="question">
-*		<div class="label-holder">
-*	  		<label for="amount">Donation amount ($50 increments):</label>
-*	 	</div>
-*		<div class="input-holder">
-*	    <div class="input-space column small-9 large-10">
-*	      <div id="slider"></div>
-*	    </div>
-*	    <div class="input-space column small-3 large-2">
-*	      <input type="text" id="amount" readonly>
-*	    </div>			
-*		</div>
-*	</div>
-*	<h5>Datepicker</h5>
-*	<div class="question">
-*		<div class="label-holder">
-*	  		<label for="amount">
-*				 <span class="text">Date</span>
-*	  		</label>
-*	 	</div>
-*		<div class="input-holder">
-*			 <div class="input-space column small-6 large-9">
-*	     		<input type="text" id="datepicker">
-*	   		 </div>
-*		</div>
-*	</div>
-*	<h5>Spinner</h5>
-*	<p>
-*	  <label for="spinner">Select a value:</label>
-*	  <input id="spinner" name="value">
-*	</p>
-*	
-**/
 td.product-brand-color {
   background-color: #008080; }
 
@@ -2358,7 +1972,7 @@ strong, .strong {
   color: #25b6e0; }
 
 em, .emphasis {
-  color: #0d4757;
+  color: #0c4657;
   font-family: 'Roboto', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 100;
   font-style: italic;
@@ -2367,7 +1981,7 @@ em, .emphasis {
 .subtle {
   font-family: 'Roboto',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 100;
-  color: #66a0b1; }
+  color: #66a0b0; }
 
 .block-margins {
   margin: 0 em(21px) 0; }
@@ -4008,7 +3622,7 @@ input[type="checkbox"], input[type="radio"] {
 .answer .label-holder {
   border-bottom: 1px dotted #cccccc; }
 .answer label, .answer .label, .answer .text {
-  color: #95c3cf;
+  color: #95c2cf;
   font-family: 'Roboto Condensed', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 400; }
 
@@ -4245,7 +3859,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   background-color: #e6e6e6; }
 
 .stripped tbody tr:nth-child(even) td:nth-child(odd) {
-  background-color: #d8e5e9; }
+  background-color: #d7e5e9; }
 
 .stripped tbody tr + tr td, .banded tbody tr + tr td {
   border-top: 0px solid; }
@@ -4343,7 +3957,7 @@ th.sortable {
     border-right: 2px solid #999999;
     color: #b3b3b3; }
     th.sortable select:hover {
-      background-color: #4d4d4d; }
+      background-color: #4c4c4c; }
   th.sortable .sort {
     position: absolute;
     top: 0;
@@ -4376,7 +3990,7 @@ th.sortable {
       top: auto;
       bottom: 0.5rem; }
   th.sortable.selected .sort {
-    background-color: #4d4d4d; }
+    background-color: #4c4c4c; }
   th.sortable.selected .sorttoggle .fa-sort {
     color: #E08514; }
   th.sortable.selected.asc .sorttoggle .fa-sort:before {
@@ -4433,20 +4047,20 @@ tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.c
   border-bottom: 1px solid; }
 
 td.error, .table tbody tr + tr td.error, tr.error td, .stripped tr.error:nth-child(even) td:nth-child(odd) {
-  background-color: #f5d9dc;
+  background-color: #f4d9db;
   border-color: #f2b7bd; }
 
 tr:nth-child(even) td.error {
-  background-color: #f2ced2; }
+  background-color: #f1ced1; }
 
 tr:nth-child(even).error td {
-  background-color: #f2ced2; }
+  background-color: #f1ced1; }
 
 .stripped tbody tr.error td:nth-child(odd) {
-  background-color: #f5d9dc; }
+  background-color: #f4d9db; }
 
 td.warning, .table tbody tr + tr td.warning, tr.warning td, .stripped tr.warning:nth-child(even) td:nth-child(odd) {
-  background-color: #faead7;
+  background-color: #f9ead7;
   border-color: #f8dbb6; }
 
 tr:nth-child(even) td.warning {
@@ -4456,10 +4070,10 @@ tr:nth-child(even).warning td {
   background-color: #f8e4cb; }
 
 .stripped tbody tr.warning td:nth-child(odd) {
-  background-color: #faead7; }
+  background-color: #f9ead7; }
 
 td.validated, .table tbody tr + tr td.validated, tr.validated td, .stripped tr.validated:nth-child(even) td:nth-child(odd) {
-  background-color: #d8f3ee;
+  background-color: #d7f3ed;
   border-color: #b0f4e7; }
 
 tr:nth-child(even) td.validated {
@@ -4469,17 +4083,17 @@ tr:nth-child(even).validated td {
   background-color: #ccf0e9; }
 
 .stripped tbody tr.validated td:nth-child(odd) {
-  background-color: #d8f3ee; }
+  background-color: #d7f3ed; }
 
 td.info, .table tbody tr + tr td.info, tr.info td, .stripped tr.info:nth-child(even) td:nth-child(odd) {
   background-color: #f3fbfd;
   border-color: #ebf8fc; }
 
 tr:nth-child(even) td.info {
-  background-color: #f0fafd; }
+  background-color: #f0f9fc; }
 
 tr:nth-child(even).info td {
-  background-color: #f0fafd; }
+  background-color: #f0f9fc; }
 
 .stripped tbody tr.info td:nth-child(odd) {
   background-color: #f3fbfd; }
@@ -4498,7 +4112,7 @@ tr:nth-child(even).highlighted td {
   background-color: #d9f1f8; }
 
 td.completed, .table tbody tr + tr td.completed, tr.completed td, .stripped tr.completed:nth-child(even) td:nth-child(odd) {
-  background-color: #d8f3ee;
+  background-color: #d7f3ed;
   border-color: #b0f4e7; }
 
 tr:nth-child(even) td.completed {
@@ -4508,7 +4122,7 @@ tr:nth-child(even).completed td {
   background-color: #ccf0e9; }
 
 .stripped tbody tr.completed td:nth-child(odd) {
-  background-color: #d8f3ee; }
+  background-color: #d7f3ed; }
 
 td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .stripped tr.disabled:nth-child(even) td:nth-child(odd) {
   background-color: #f2f2f2;
@@ -4524,7 +4138,7 @@ tr:nth-child(even).disabled td {
   background-color: #f2f2f2; }
 
 td.attention, .table tbody tr + tr td.attention, tr.attention td, .stripped tr.attention:nth-child(even) td:nth-child(odd) {
-  background-color: #faead7;
+  background-color: #f9ead7;
   border-color: #f8dbb6; }
 
 tr:nth-child(even) td.attention {
@@ -4534,7 +4148,7 @@ tr:nth-child(even).attention td {
   background-color: #f8e4cb; }
 
 .stripped tbody tr.attention td:nth-child(odd) {
-  background-color: #faead7; }
+  background-color: #f9ead7; }
 
 /**
 * Table States Cells:
@@ -5220,7 +4834,7 @@ Non-Core Components Styles
 .history tr.draft td i {
   color: #b3b3b3; }
 .history tr.draft td {
-  background-color: #f0f0f0;
+  background-color: #efefef;
   color: #333333;
   border-color: #b3b3b3; }
 .history tr:nth-child(even).draft td {
@@ -5231,7 +4845,7 @@ Non-Core Components Styles
 .history tr.pendingpayment td i {
   color: #b3b3b3; }
 .history tr.pendingpayment td {
-  background-color: #f0f0f0;
+  background-color: #efefef;
   color: #333333;
   border-color: #b3b3b3; }
 .history tr:nth-child(even).pendingpayment td {
@@ -5250,11 +4864,11 @@ Non-Core Components Styles
 .history tr.incomplete td i {
   color: #c32231; }
 .history tr.incomplete td {
-  background-color: #f3d3d6;
+  background-color: #f3d2d5;
   color: #333333;
   border-color: #c32231; }
 .history tr:nth-child(even).incomplete td {
-  background-color: #f0c8cc;
+  background-color: #f0c7cb;
   color: #333333; }
 .history tr.approved i.fa-holder-dynamic:before, .history tr.approved.dynamic i.fa-holder:before {
   content: ""; }
@@ -5273,14 +4887,14 @@ Non-Core Components Styles
   color: #333333;
   border-color: #19BB9B; }
 .history tr:nth-child(even).completed td {
-  background-color: #c6eee6;
+  background-color: #c5eee6;
   color: #333333; }
 .history tr.hold i.fa-holder-dynamic:before, .history tr.hold.dynamic i.fa-holder:before {
   content: ""; }
 .history tr.hold td i {
   color: #b3b3b3; }
 .history tr.hold td {
-  background-color: #f0f0f0;
+  background-color: #efefef;
   color: #333333;
   border-color: #b3b3b3; }
 .history tr:nth-child(even).hold td {
@@ -6266,16 +5880,16 @@ nav.top-bar {
   font-weight: 400; }
 
 .top-bar-section li.hover > a:not(.button) {
-  background-color: #1a364f;
-  background: #29343e;
+  background-color: #19354f;
+  background: #28343e;
   color: #FFF; }
 
 .top-bar-section li:not(.has-form) a:not(.button) {
   background: #00386b; }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
-  background-color: #1a364f;
-  background: #29343e; }
+  background-color: #19354f;
+  background: #28343e; }
 
 .top-bar-section li.active:not(.has-form) a:not(.button) {
   color: #FFF;
@@ -6478,7 +6092,7 @@ div.reveal-modal, dialog {
   margin: 1.42857rem 0;
   -ms-touch-action: none;
   touch-action: none;
-  background: whitesmoke; }
+  background: #f4f4f4; }
   .range-slider.vertical-range {
     display: block;
     position: relative;
@@ -6501,7 +6115,7 @@ div.reveal-modal, dialog {
       height: auto;
       bottom: 0; }
   .range-slider.radius {
-    background: whitesmoke;
+    background: #f4f4f4;
     border-radius: 5px; }
     .range-slider.radius .range-slider-handle {
       background: #198dae;
@@ -6509,7 +6123,7 @@ div.reveal-modal, dialog {
       .range-slider.radius .range-slider-handle:hover {
         background: #167c99; }
   .range-slider.round {
-    background: whitesmoke;
+    background: #f4f4f4;
     border-radius: 1000px; }
     .range-slider.round .range-slider-handle {
       background: #198dae;
@@ -6517,7 +6131,7 @@ div.reveal-modal, dialog {
       .range-slider.round .range-slider-handle:hover {
         background: #167c99; }
   .range-slider.disabled, .range-slider[disabled] {
-    background: whitesmoke;
+    background: #f4f4f4;
     cursor: default;
     opacity: 0.7; }
     .range-slider.disabled .range-slider-handle, .range-slider[disabled] .range-slider-handle {
@@ -6780,7 +6394,7 @@ div.reveal-modal, dialog {
     font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
     font-weight: 700; }
   .tt-suggestion.tt-cursor {
-    color: #e8f4f7;
+    color: #e8f3f6;
     background-color: #198dae; }
     .tt-suggestion.tt-cursor strong {
       color: #fff; }
