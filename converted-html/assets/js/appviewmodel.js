@@ -27,6 +27,6 @@ pager.extendWithPage(appmodel);
 ko.applyBindings(appmodel);
 // run this method - listening to hashchange
 pager.start();
-var path = "#!/content/framework/";
+var path = "#!/";
 pager.navigate(path);
 

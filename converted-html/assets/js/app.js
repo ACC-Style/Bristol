@@ -2,10 +2,10 @@ $(document).foundation();
 
 
 $(function() {
-  $( "#accordion" ).accordion();
-  $( "#accordion2" ).accordion();
-  $("#chosen").chosen({width: "100%"});
-   $("#chosenSingle").chosen({width: "100%"});
+  // $( "#accordion" ).accordion();
+  // $( "#accordion2" ).accordion();
+  // $("#chosen").chosen({width: "100%"});
+  //  $("#chosenSingle").chosen({width: "100%"});
 
 // to render html in an auto complete you must extend it. 
 // https://api.jqueryui.com/autocomplete/#method-_renderItem
@@ -215,8 +215,8 @@ $( "#tags" ).autocomplete({
 
   var listchange = function(data, event){
     var hash = location.hash;
-    $('#followUpList li,#guidelineList li, #compareTabs li,#evalutorTabs li').removeClass('selected');
-    $('#followUpList li,#guidelineList li, #compareTabs li,#evalutorTabs li').each(function(){
+    $('#sidebar li').removeClass('selected');
+    $('#sidebar li').each(function(){
       var that = $(this);
       that[ $('a', this).attr( 'href' ) === hash ? 'addClass' : 'removeClass' ]( 'selected' );
       }

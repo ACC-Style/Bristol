@@ -2123,10 +2123,10 @@ h6 {
 * `OpenSans & Roboto Slab` - OpenSans is the major font family used in all digital text accross properties at the ACC. Roboto Slab and Roboto are used in highlighted cases like labels, Primary Navs, and some Header Tags.
 *
 *   @example
-*	<div class="font row font-display">
 *	<h2 class="group-divide-bottom font--name small-12">OpenSans<blockquote>font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif;</blockquote></h2>
+*	<div class="font row font-display">
 *	<div class="ms12 column medium-2 small-3 font--dropcase_2x">Os</div>
-*	<div class="column medium-10 small-9">
+*	<div class="column medium-10 small-9 font--example">
 *   <h3>Display Fonts & Headers</h3>
 *	<div class="font--lowercase ms6">abcdefghijklmnopqrstuvwxyz</div>
 *	<div class="font--uppercase ms6">abcdefghijklmnopqrstuvwxyz</div>
@@ -2136,10 +2136,10 @@ h6 {
 *	<div class="font--numbers ms4">0123456789</div>
 *	</div>
 *	</div>
-*	<div class="font row font-slab">
 *	<h2 class="group-divide-bottom font--name small-12">Roboto Slab<blockquote>font-family: 'Roboto Slab', 'Times New Roman', 'Lucida Bright', Georgia, serif; </blockquote></h2>
+*	<div class="font row font-slab">
 *	<div class="ms12 column medium-2 small-3 font--dropcase_2x">Rb</div>
-*	<div class="column medium-10 small-9">
+*	<div class="column medium-10 small-9 font--example">
 *   <h3>Primary Navigation, Headers & Labels</h3>
 *	<div class="font--lowercase ms4">abcdefghijklmnopqrstuvwxyz</div>
 *	<div class="font--uppercase ms4">abcdefghijklmnopqrstuvwxyz</div>
@@ -2149,10 +2149,10 @@ h6 {
 *	<div class="font--numbers ms2">0123456789</div>
 *	</div>
 *	</div>
-*	<div class="font row font">
 *	<h2 class="group-divide-bottom font--name small-12">Open Sans<blockquote>font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif;</blockquote></h2>
+*	<div class="font row font">
 *	<div class="ms12 column medium-2 small-3 font--dropcase_2x">Os</div>
-*	<div class="column medium-10 small-9">
+*	<div class="column medium-10 small-9 font--example">
 *   <h3>Body Copy, Lists & Tables</h3>
 *	<div class="font--lowercase ms1">abcdefghijklmnopqrstuvwxyz</div>
 *	<div class="font--uppercase ms1">abcdefghijklmnopqrstuvwxyz</div>
@@ -2165,6 +2165,8 @@ h6 {
 */
 .font {
   color: #333333; }
+  .font .font--example {
+    background-image: url(http://basehold.it/i/21); }
   .font.font-display {
     font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
     font-weight: 100; }
@@ -2188,23 +2190,90 @@ h6 {
     text-transform: lowercase; }
   .font .font--uppercase {
     text-transform: uppercase; }
-  .font .font--numbers + .font--lowercase {
-    border-top: 1px dashed #cccccc; }
   .font .ms12 {
     font-size: 6.21429em;
     line-height: 1.2069em;
     margin-top: 0em;
     margin-bottom: 0em; }
   .font .ms6 {
-    font-size: 42px; }
+    font-size: 3em;
+    line-height: 1em;
+    margin-top: 0em;
+    margin-bottom: 0em; }
   .font .ms4 {
-    font-size: 29px; }
+    font-size: 2.07143em;
+    line-height: 1.44828em;
+    margin-top: 0em;
+    margin-bottom: 0em; }
   .font .ms2 {
-    font-size: 20px; }
+    font-size: 1.42857em;
+    line-height: 1.05em;
+    margin-top: 0em;
+    margin-bottom: 0em; }
   .font .ms1 {
-    font-size: 17px; }
+    font-size: 1.21429em;
+    line-height: 1.23529em;
+    margin-top: 0em;
+    margin-bottom: 0em; }
   .font .ms {
-    font-size: 14px; }
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-top: 0em;
+    margin-bottom: 0em; }
+
+/**
+* Textures:
+* `Textures` - Subtle textures.
+*
+*   @example
+*	<h2>Textures</h2>
+*	<div class="row">
+*	<div class="texture column small-6 medium-3 large-4">
+*		<div class="content-padding">
+*			<h3 class="texture--name">Construction Paper</h3>
+*			<div class="texture--thumb">
+*				<div class="texture--holder" style="background-image:url(Assets/img/billie-holiday.png)"></div>
+*			</div>
+*			<ul class="no-bullet texture--cite">
+*				<li><strong>File Name: </strong><span class="text">bille-holiday.png</span></li>
+*				<li><strong>Usage: </strong><span class="text">Soft paper used in the background of groupings and overlaps.</span></li>	
+*			</ul>
+*		</div>
+*	</div>
+*	<div class="texture column small-6 medium-3 large-4">
+*		<div class="content-padding">
+*			<h3 class="texture--name">Carbon Paper</h3>
+*			<div class="texture--thumb">
+*				<div class="texture--holder" style="background-image:url(Assets/img/crossed_stripes.png)"></div>
+*			</div>
+*			<ul class="no-bullet texture--cite">
+*				<li><strong>File Name: </strong><span class="text">crossed_stripes.png</span></li>
+*				<li><strong>Usage: </strong><span class="text">Footer background with a lux quality.</span></li>	
+*			</ul>
+*		</div>
+*	</div>
+*	</div>	
+*/
+.texture .texture--name {
+  color: #00386b; }
+.texture .texture--thumb {
+  width: auto;
+  border: 1px solid #b3b3b3;
+  display: inline-block;
+  padding: 5px;
+  width: 162px;
+  height: 162px; }
+.texture .texture--holder {
+  width: 150px;
+  height: 150px; }
+.texture .texture--uppercase {
+  text-transform: uppercase; }
+.texture .texture--cite {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  color: font-color(#333); }
 
 /**
 * Headline with Counters:
