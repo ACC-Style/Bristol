@@ -80,23 +80,23 @@
 */
 $table-cell-color:rebrand-color($primary-color,3);
 %colored-row{
-		background-color:scale-color($table-cell-color,$lightness:90%);
-	}
-%greyed-column{
 		background-color:grey(10);
 	}
-%overlapped-grey{
-	background-color:mix(scale-color($table-cell-color,$lightness:85%),grey(15));
+%colored-column{
+		background-color:scale-color($table-cell-color,$lightness:90%);
+	}
+%overlapped-column-row{
+	background-color:mix(scale-color($table-cell-color,$lightness:87%),grey(12));
 	}
 .stripped{
-	th:nth-child(odd),td:nth-child(odd){@extend %greyed-column;}
+	th:nth-child(odd),td:nth-child(odd){@extend %colored-column;}
 }
 .banded{
 	tr:nth-child(even){@extend %colored-row;}
 	}
 .stripped tbody{
 	tr:nth-child(even){@extend %colored-row;}
-	tr:nth-child(even) td:nth-child(odd){ @extend %overlapped-grey;}
+	tr:nth-child(even) td:nth-child(odd){ @extend %overlapped-column-row;}
 }
 
 .stripped, .banded{

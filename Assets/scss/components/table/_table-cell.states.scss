@@ -25,6 +25,7 @@ td.icon{
 %tr-td-state-alt{  
 	background-image: url(../img/empty_stripe-alt@2x.png);
 	font-weight: 900;
+
 }
 %td-state{  
 	background-image: url(../img/empty_diamond@2x.png) !important;
@@ -36,7 +37,6 @@ td.icon{
 	border-bottom:1px solid;
 }
 @each $State in $states{
-	 
 	$cell-color:mix(map-get($State,"Color"),white,17%);
 	$cell-color-shift:mix(map-get($State,"Color"),white,22%);
 	$selector:map-get($State,"Selector");
@@ -46,6 +46,7 @@ td.icon{
 	}
 	.stripped tr#{$selector} td:nth-child(odd){
 		@extend %tr-td-state-alt;
+		
 
 
 	}
@@ -134,6 +135,13 @@ td.icon{
 *			<td class="">Cell Data in Warning Row</td>
 *			<td class="error">I am an error cell</td>
 *		</tr>
+*		<tr class="warning">
+*			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
+*			<td class=""></td>
+*			<td class="">Cell Data in Warning Row</td>
+*			<td>data</td>
+*		</tr>
+
 *		<tr class="error">
 *			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
 *			<td class="">Icon is Dynamic</td>
