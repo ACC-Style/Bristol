@@ -4373,35 +4373,6 @@ div.reveal-modal, dialog {
     .page-wrapper {
       padding: 2rem 1rem 3rem; } }
 
-.page.with-group-sections {
-  background-color: #f2f2f2; }
-
-.page.with-group-sections .page-wrapper > .group-section {
-  border: 1px solid #d9d9d9;
-  background-color: white;
-  -webkit-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2); }
-
-.page.with-group-sections .page-wrapper {
-  padding: 1rem 0 !important; }
-  .page.with-group-sections .page-wrapper > .section, .page.with-group-sections .page-wrapper > section, .page.with-group-sections .page-wrapper > .row, .page.with-group-sections .page-wrapper > .hint {
-    padding: 0 .75rem; }
-  .page.with-group-sections .page-wrapper > .group-section {
-    margin: 0 .65rem 1rem .5rem;
-    padding: .5rem .5rem;
-    width: auto;
-    position: relative; }
-    .page.with-group-sections .page-wrapper > .group-section.content-padding {
-      margin: 0 auto 1rem auto;
-      max-width: 1200px; }
-    @media only screen and (min-width: 767px) {
-      .page.with-group-sections .page-wrapper > .group-section {
-        padding: .5rem .75rem; } }
-    @media only screen and (min-width: 1024px) {
-      .page.with-group-sections .page-wrapper > .group-section {
-        padding: .5rem 1.5rem 1rem; } }
-
 .content-padding {
   padding: 0 .5rem;
   max-width: 1200px;
@@ -4423,33 +4394,6 @@ div.reveal-modal, dialog {
 *   @example
 *	<div class="page-wrapper" style="border:red 1px solid"><div class="section">Hello this is content </div></div>
 **/
-/**
-* page layouts modified:
-* `page-wrapper group-section-holder` - by default pages are white but when the need arises to have grouped section 'cards' are introduced and the background turns off white.
-* 
-*   @example
-*	<div class="page with-group-sections"><div class="page-wrapper"><section class="section group-section">Hello this is content </section></div></div>
-*
-**/
-.group-section-tab-holder {
-  margin: -.5rem -1.5rem 0; }
-  .group-section-tab-holder .nav.tabs {
-    padding: 2px 10px 0;
-    background-color: #860647; }
-    .group-section-tab-holder .nav.tabs li {
-      border-radius: 8px;
-      display: inline-block;
-      margin: .4rem 1px .4rem;
-      background-color: #CCC;
-      background-color: #fcb8db; }
-    .group-section-tab-holder .nav.tabs li.selected {
-      border-bottom-right-radius: 0px;
-      border-bottom-left-radius: 0px;
-      margin-bottom: 0;
-      vertical-align: bottom;
-      padding: .4rem;
-      background-color: #fff; }
-
 /**
 * Split Layout With Off Canvas Reveal:
 * `.mobile-offcanvas-wrapper` - This is a structural container that has the ablity to change from content and sidebar to just content and the sidebar being off canvas. Trigger the off canvas reveal by adding `.navOn` to the div.split-layout. Change the switch point by adding `.large`,`.medium`, or `.small`. <br>!!! must include _layout-split.scss !!! <br>!!! requires javascripts !!!
