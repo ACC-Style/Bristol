@@ -29,7 +29,7 @@ $required_data:(
 @each $State in $states{
 	$selector:map-get($State,"Selector");
 	$state-name:map-get($State,"State");
-	@include setTrump('color',$state-name,'#{$selector} .label-holder,#{$selector}');
+	@include setTrump('color',$state-name,'#{$selector} .label-holder label');
 	@include setTrump('border-color',$state-name,'#{$selector} .input-holder input,#{$selector} .input-holder textarea, #{$selector} .input-holder select');
 }
 
@@ -63,7 +63,7 @@ textarea,select,input,datalist{
 		
 		> #{$selector}{
 			@include setContrastTrump( $color, '.message-holder > #{$selector}');
-			@include setTrump('background-color',$state-name, '.message-holder > #{$selector}');
+			@include setTrump('background-color',$state-name, '#{$selector} .message-holder > #{$selector}');
 			@extend %visibleDisplayNone;
 			#{$selector} &, &.make-visible{
 				@extend %visibleDisplayBlock;

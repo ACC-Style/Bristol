@@ -2138,9 +2138,7 @@
       <div class="sg-text">
         <h3 id="questions-required" class="sg">Questions -Required</h3>
         <p class="sg">
-          <code class="sg">.question</code>- standard format for an input question. Modify with
-          <code class="sg">.required</code>and change the states with
-          <code class="sg">warning</code>, &apos;error&apos;, and &apos;data&apos;</p>
+          <code class="sg">.question</code>- This is a standard formating for an input question.</p>
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
@@ -2205,19 +2203,16 @@
       <div class="sg-text">
         <h3 id="questions-states" class="sg">Questions - States</h3>
         <p class="sg">
-          <code class="sg">.question + .warning + error +...</code>- input questions can be modified with the states like
-          <code class="sg">.required</code>and change the states with
-          <code class="sg">warning</code>,
-          <code class="sg">error</code>, and
-          <code class="sg">data</code>
-        </p>
+          <code class="sg">.question + .warning + error +...</code>- Modify the container with
+          <code class="sg">.required</code>,
+          <code class="sg">.warning</code>, &apos;.error&apos;, and other states. Modifiers change the icons and control the visiblity of the message holder.</p>
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
-          <div class="question warning">
+          <div class="question warning wildcard">
             <div class="label-holder">
               <label for="">
-                <span class="text">Question Dropdown Title (Warning)</span>
+                <span class="text">Question</span>
                 <span class="required-holder">
                   <i class="fa fa-holder-dynamic"></i>
                 </span>
@@ -2241,37 +2236,10 @@
             </div>
             <div class="hint">This is some hint text</div>
           </div>
-          <div class="question error">
-            <div class="label-holder">
-              <label for="">
-                <span class="text">Question Dropdown Title (Error)</span>
-                <span class="required-holder">
-                  <i class="fa fa-holder-dynamic"></i>
-                </span>
-              </label>
-            </div>
-            <div class="input-holder row collapse">
-              <div class="input-space column small-6 large-9">
-                <input type="text">
-              </div>
-              <div class="column small-6 large-3">
-                <small class="postfix">Years</small>
-              </div>
-            </div>
-            <div class="message-holder">
-              <small class="error">
-                <i class="fa fa-holder"></i>Error message</small>
-              <small class="warning">
-                <i class="fa fa-holder"></i>Warning message</small>
-              <small class="info">
-                <i class="fa fa-holder"></i>Data message</small>
-            </div>
-            <div class="hint">This is some hint text</div>
-          </div>
-        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;question warning&quot;</span>&gt;</span>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;question warning wildcard&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;label-holder&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Question Dropdown Title (Warning)<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Question<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;required-holder&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
@@ -2283,33 +2251,6 @@
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 large-3&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;value&quot;</span>&gt;</span>Years<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;message-holder&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;error&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Error message<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;warning&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Warning message<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;info&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Data message<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;hint&quot;</span>&gt;</span>This is some hint text<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;question error&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;label-holder&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Question Dropdown Title (Error)<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;required-holder&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;input-holder row collapse&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;input-space column small-6 large-9&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> /&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 large-3&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;postfix&quot;</span>&gt;</span>Years<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;message-holder&quot;</span>&gt;</span>
