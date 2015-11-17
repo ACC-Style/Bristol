@@ -81,7 +81,7 @@
 *		</div></div>
 *		<div class="small-6 column"><div class="switch tiny">
 *			<span class="inline label">off</span>
-*			<input id="c1" name="switch-c" type="check">
+*			<input id="c1" name="switch-c" type="checkbox">
 *			<label for="c1" onclick="">On</label>
 *			<span class="inline label">on</span>
 *		</div></div>
@@ -855,7 +855,7 @@ h6 {
 *				<div class="texture--holder" style="background-image:url(Assets/img/billie-holiday.png)"></div>
 *			</div>
 *			<ul class="no-bullet texture--cite">
-*				<li><strong>File Name: </strong><span class="text">billie-holiday.png/span></li>
+*				<li><strong>File Name: </strong><span class="text">billie-holiday.png</span></li>
 *				<li><strong>Usage: </strong><span class="text">Soft paper used in the background of groupings and overlaps.</span></li>	
 *			</ul>
 *		</div>
@@ -1097,7 +1097,7 @@ button:disabled.secondary, .input-space
 *   @example
 *	<ul class="nav tabs">
 *		<li class="icon"><a class="home"><i class="fa fa-holder"></i></a></li>
-*		<li class=""><a>Tab 2</li>
+*		<li class=""><a>Tab 2</a></li>
 *		<li class=" selected "><a >Tab 3</a></li>
 *		<li class=""><a >Tab 4</a></li>
 *	</ul>
@@ -6135,11 +6135,40 @@ div.reveal-modal, dialog {
       background-color: #fff; }
 
 /**
-* Layer Grouping:
-* `page-wrapper group-section-holder` - by default pages are white but when the need arises to have grouped section 'cards' are introduced and the background area becomes a layer of soft off white paper.
+* Paper Card Grouping:
+* `page-wrapper group-section-holder` - by default pages are white but when the need arises to have grouped section 'cards' are introduced and the background area becomes a layer of soft off white construction paper.
 * 
 *   @example
-*   <div class="page with-group-sections"><div class="page-wrapper"><section class="section group-section">Hello this is content </section></div></div>
+*   <div class="page with-group-sections">
+*    <div class="page-wrapper">
+*    <section class="section group-section">
+*    <h1>Hello</h1> <p>This is content  that is showing up in a section group</section>
+*    </div>
+*    </div>
+*
+**/
+/**
+* Tabs for Paper Cards:
+* `.group-section-tab-holder` - Special tabs holders are introduced to the cards so they can fill the full frame of the card.
+* 
+*   @example
+*   <div class="page with-group-sections">
+*       <div class="page-wrapper">
+*            <section class="section group-section">
+*                <div class="group-section-tab-holder">
+*                    <ul class="nav tabs">
+*                        <li class="">
+*                       <a>Tab 1</a>
+*                       </li>
+*                        <li class=" selected "> <a>Tab 2</a> </li>
+*                        <li class=""> <a>Tab 3</a> </li>
+*                    </ul>
+*                </div>
+*                <h1>Hello</h1> 
+*                  <p>This is content  that is showing up in a section group
+*            </section>
+*        </div>
+*    </div>
 *
 **/
 /**
