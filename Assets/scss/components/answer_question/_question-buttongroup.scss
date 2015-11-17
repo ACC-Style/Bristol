@@ -3,34 +3,54 @@
 * `.selectable.button-group` - this is a toggle-able button group that changes colors when items are selected.  Add .selected-{btn class name} to the group to change colors and add the check.
 * 
 *   @example
+*	<h4>Basic</h4>
 *	<div class="question required">  
-*	  <div class="label-holder">
-*	    <label for="">
-*	      <span class="text">Selectable Group Buttons</span>
-*	      <span class="required-holder">
-*	        <i class="fa fa-holder-dynamic"></i>
-*	      </span>
-*	    </label>
-*	  </div>
 *	  <div class="input-holder row collapse">
-*	    <div class="column small-12">
-*	      <ul class="button-group even-3 selectable selected-btn1">
-*	        <li class="btn1"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
-*	        <li class="btn2"><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
-*	        <li class="btn3"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
+*	    <div class="column small-12 input-space">
+*	      <ul class="button-group selectable">
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
 *	      </ul>
 *	    </div>
 *	  </div>
+*	</div>
+*	<h4>Modified with an item having the class `.selected`</h4>
+*	<div class="question required">  
+*	  <div class="input-holder row collapse">
+*	    <div class="column small-12 input-space">
+*	      <ul class="button-group selectable">
+*	        <li class="selected"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
+*	      </ul>
+*	    </div>
+*	  </div>
+*	</div>
+*	<h4>Modified with the `.expand`</h4>
+*	<div class="question">  
 *	<div class="input-holder row collapse">
-*	    <div class="column small-12">
-*	      <ul class="button-group even-3 selectable">
+*	    <div class="column small-12 input-space">
+*	      <ul class="button-group expand selectable">
 *	        <li class="btn1"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
 *	        <li class="btn2"><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
 *	        <li class="btn3"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
 *	      </ul>
 *	    </div>
 *	  </div>
-*	  <div class='hint'>This is helper text for this question</div>
+*	</div>
+*	<h4>The container `.question` has an error state.<blockquote> NOTE: if button groups have states it is best for them to have been expanded.</blockquote></h4>
+*	<div class="question error">  
+*	<div class="input-holder row collapse">
+*	    <div class="column small-12 input-space">
+*	      <ul class="button-group selectable">
+*	        <li class="btn1"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
+*	        <li class="btn2"><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
+*	        <li class="btn3"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
+*	      </ul>
+*	    </div>
+*	  </div>
+*	  <div class="message-holder"><small class="error">Error</small></div>
 *	</div>
 *
 */
@@ -38,7 +58,9 @@
 /*  Button Group */
 
 .button-group {
-padding-left: 0;
+	padding-left: 0;
+	border:2px solid transparent;
+	margin:-2px;
  @include button-group-container();
  display: inline-block;
   & > li {
@@ -49,8 +71,39 @@ padding-left: 0;
       $even:false,
       // Controls how the buttons in the group float set to left or right. Default: $default-float.
       $float:left
+
     );
+    .button{ .input-space &{
+      	padding-top: .57143rem;
+      	padding-bottom: .57143rem;
+      }
+
+  	}
   }
+  &.selectable{
+	margin-bottom: -1px;
+	.button{
+		@include button-style($bg:grey(30));
+	}
+	i.fa{
+		font-size: 1rem;
+		height: 1rem;
+		width: 1rem;
+		margin: 0 7px 0 0;
+		display:none;
+	}
+	&.selected-btn1 .btn1,&.selected-btn2 .btn2,&.selected-btn3 .btn3,&.selected-btn4 .btn4,&.selected-btn5 .btn5, li.selected{
+		 a{
+			@include button-style($bg:rebrand-color($success-color,2));
+			// background-color:fontcolor($success-color,'loud');
+			// &:hover{background-color:mix($success-color, $real-black,80%);}
+			i.fa{display: inline-block;} 
+		}
+	}
+
+
+		
+}
 }
 /*Need to Kill this function Badly produced to answer for the view from SI App. Should Consider a better reposnsive answer*/
 // .button-group a.button{
@@ -86,7 +139,7 @@ padding-left: 0;
 			// &:hover{background-color:grey(50);}
 		}
 	} 
-	&.selected-btn1 .btn1,&.selected-btn2 .btn2,&.selected-btn3 .btn3,&.selected-btn4 .btn4,&.selected-btn5 .btn5{
+	&.selected-btn1 .btn1,&.selected-btn2 .btn2,&.selected-btn3 .btn3,&.selected-btn4 .btn4,&.selected-btn5 .btn5,.selected{
 		 a{
 			@include button-style($bg:rebrand-color($success-color,2));
 			// background-color:fontcolor($success-color,'loud');
@@ -95,11 +148,14 @@ padding-left: 0;
 		}
 	}
 
+
 		
 }
 
 
 .button-group.expand {
+	width:100%;
+	display: table;//fall back
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -124,14 +180,28 @@ padding-left: 0;
  	  flex-wrap: wrap;
 	}
 	 li {
+	 	display: table-cell;//fallback
 	    -webkit-flex: 1 1 auto;
 	    -ms-flex: 1 1 auto;
 	    flex: 1 1 auto;
 	    -webkit-align-self: auto;
 	    -ms-flex-item-align: auto;
 	    align-self: auto;
-		    a.button,button{ @include button-size($padding:null,$full-width:true); }
+		    .button,button{
+		    	@include button-size($full-width:true); 
+		    	.input-space &{
+					padding-top: .57143rem;
+					padding-bottom: .57143rem;
+		    	}
+
+		    }
+
 	    }
     }
 
-
+@each $State in $states{
+	$selector:map-get($State,"Selector");
+	$state-name:map-get($State,"State");
+	$color:map-get($State,"Color");
+	@include setTrump('border-color',$state-name,'#{$selector}.question .button-group');
+}

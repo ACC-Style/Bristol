@@ -129,7 +129,7 @@
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li class="divider"></li>
-*							<li><a href="#">See all →</a></li>
+*							<li><a href="#">See all ΓåÆ</a></li>
 *						</ul>
 *						</li>
 *						<li class="divider"></li>
@@ -141,7 +141,7 @@
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li class="divider"></li>
-*								<li><a href="#">See all →</a></li>
+*								<li><a href="#">See all ΓåÆ</a></li>
 *						</ul>
 *					</li>
 *				</ul>
@@ -682,7 +682,7 @@ strong, .strong {
   color: #25b6e0; }
 
 em, .emphasis {
-  color: #0c4657;
+  color: #0d4757;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 100;
   font-style: italic;
@@ -691,7 +691,7 @@ em, .emphasis {
 .subtle {
   font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 100;
-  color: #66a0b0; }
+  color: #66a0b1; }
 
 .block-margins {
   margin: 0 em(21px) 0; }
@@ -706,7 +706,7 @@ em, .emphasis {
 
 /**
  * Header Tags:
- * `Typography` - basic styling for headers. 
+ * `Headers` - Headers are used to separate and organize blocks of text. 
  *  You can also us `.h1`,`.h2`,`.h3`,`.h4`,`.h5`, or `.h6` 
  *  to make any text elements style like the associated header tag 
  *
@@ -1411,17 +1411,14 @@ button:disabled.secondary, .input-space
       border-color: #b3b3b3; }
 
 /**
-* Nav List (Basic):
-* `.nav-list ul li` - styling of a list of links perfect for a side nav or a collection of jump off points. Add `.selected` to the `li` to highlight the nav link. The nav list changes styles depending on the headline tag in front of the nav-list.  
+* Navigation List:
+* `.nav-list ul li` - A collection of navigation links perfect for side navigation or a collection of external links. Add `.selected` to the `li` to highlight the nav link.
 * 
 *   @example
 *	<nav class="nav-list">
 *	<ul>
-*	<li>
-*	<a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	<li class="selected">
-*	<a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	</li>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
 *	</ul>
 *	</nav>
 */
@@ -1468,33 +1465,24 @@ button:disabled.secondary, .input-space
 *	<h1>H1 header tag</h1>
 *	<nav class="nav-list">
 *	<ul>
-*	<li>
-*	<a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	<li class="selected">
-*	<a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	</li>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
 *	</ul>
 *	</nav>
 *	<br>
 *	<div>This list has the medium class</div>
 *	<nav class="nav-list medium">
 *	<ul>
-*	<li>
-*	<a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	<li class="selected">
-*	<a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	</li>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
 *	</ul>
 *	</nav>
 *	<br>
 *	<h3>H3 header tag</h3>
 *	<nav class="nav-list">
 *	<ul>
-*	<li>
-*	<a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	<li class="selected">
-*	<a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	</li>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
 *	</ul>
 *	</nav>
 */
@@ -1901,7 +1889,8 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   .input-holder:after, .value-holder:after {
     clear: both; }
   .input-holder > .input-space, .input-holder > .switch-input-space, .value-holder > .input-space, .value-holder > .switch-input-space {
-    padding-left: 0; }
+    padding-left: 0;
+    line-height: 1; }
 
 [class*="input-space"] + [class*="input-space"]:last-child, [class*="value-space"] + [class*="value-space"]:last-child {
   padding-right: 0; }
@@ -2145,40 +2134,62 @@ input[type="checkbox"], input[type="radio"] {
 * `.selectable.button-group` - this is a toggle-able button group that changes colors when items are selected.  Add .selected-{btn class name} to the group to change colors and add the check.
 * 
 *   @example
+*	<h4>Basic</h4>
 *	<div class="question required">  
-*	  <div class="label-holder">
-*	    <label for="">
-*	      <span class="text">Selectable Group Buttons</span>
-*	      <span class="required-holder">
-*	        <i class="fa fa-holder-dynamic"></i>
-*	      </span>
-*	    </label>
-*	  </div>
 *	  <div class="input-holder row collapse">
-*	    <div class="column small-12">
-*	      <ul class="button-group even-3 selectable selected-btn1">
-*	        <li class="btn1"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
-*	        <li class="btn2"><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
-*	        <li class="btn3"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
+*	    <div class="column small-12 input-space">
+*	      <ul class="button-group selectable">
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
 *	      </ul>
 *	    </div>
 *	  </div>
+*	</div>
+*	<h4>Modified with an item having the class `.selected`</h4>
+*	<div class="question required">  
+*	  <div class="input-holder row collapse">
+*	    <div class="column small-12 input-space">
+*	      <ul class="button-group selectable">
+*	        <li class="selected"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
+*	      </ul>
+*	    </div>
+*	  </div>
+*	</div>
+*	<h4>Modified with the `.expand`</h4>
+*	<div class="question">  
 *	<div class="input-holder row collapse">
-*	    <div class="column small-12">
-*	      <ul class="button-group even-3 selectable">
+*	    <div class="column small-12 input-space">
+*	      <ul class="button-group expand selectable">
 *	        <li class="btn1"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
 *	        <li class="btn2"><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
 *	        <li class="btn3"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
 *	      </ul>
 *	    </div>
 *	  </div>
-*	  <div class='hint'>This is helper text for this question</div>
+*	</div>
+*	<h4>The container `.question` has an error state.<blockquote> NOTE: if button groups have states it is best for them to have been expanded.</blockquote></h4>
+*	<div class="question error">  
+*	<div class="input-holder row collapse">
+*	    <div class="column small-12 input-space">
+*	      <ul class="button-group selectable">
+*	        <li class="btn1"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
+*	        <li class="btn2"><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
+*	        <li class="btn3"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
+*	      </ul>
+*	    </div>
+*	  </div>
+*	  <div class="message-holder"><small class="error">Error</small></div>
 *	</div>
 *
 */
 /*  Button Group */
 .button-group {
   padding-left: 0;
+  border: 2px solid transparent;
+  margin: -2px;
   list-style: none;
   margin: 0;
   left: 0;
@@ -2199,6 +2210,35 @@ input[type="checkbox"], input[type="radio"] {
       border-left: 0; }
     .button-group > li:first-child {
       margin-left: 0; }
+    .input-space .button-group > li .button, .switch-input-space .button-group > li .button {
+      padding-top: .57143rem;
+      padding-bottom: .57143rem; }
+  .button-group.selectable {
+    margin-bottom: -1px; }
+    .button-group.selectable .button {
+      background-color: #b3b3b3;
+      border-color: #8f8f8f;
+      color: #FFFFFF; }
+      .button-group.selectable .button:hover, .button-group.selectable .button:focus {
+        background-color: #8f8f8f; }
+      .button-group.selectable .button:hover, .button-group.selectable .button:focus {
+        color: #FFFFFF; }
+    .button-group.selectable i.fa {
+      font-size: 1rem;
+      height: 1rem;
+      width: 1rem;
+      margin: 0 7px 0 0;
+      display: none; }
+    .button-group.selectable.selected-btn1 .btn1 a, .button-group.selectable.selected-btn2 .btn2 a, .button-group.selectable.selected-btn3 .btn3 a, .button-group.selectable.selected-btn4 .btn4 a, .button-group.selectable.selected-btn5 .btn5 a, .button-group.selectable li.selected a {
+      background-color: #14B057;
+      border-color: #108d46;
+      color: #FFFFFF; }
+      .button-group.selectable.selected-btn1 .btn1 a:hover, .button-group.selectable.selected-btn1 .btn1 a:focus, .button-group.selectable.selected-btn2 .btn2 a:hover, .button-group.selectable.selected-btn2 .btn2 a:focus, .button-group.selectable.selected-btn3 .btn3 a:hover, .button-group.selectable.selected-btn3 .btn3 a:focus, .button-group.selectable.selected-btn4 .btn4 a:hover, .button-group.selectable.selected-btn4 .btn4 a:focus, .button-group.selectable.selected-btn5 .btn5 a:hover, .button-group.selectable.selected-btn5 .btn5 a:focus, .button-group.selectable li.selected a:hover, .button-group.selectable li.selected a:focus {
+        background-color: #108d46; }
+      .button-group.selectable.selected-btn1 .btn1 a:hover, .button-group.selectable.selected-btn1 .btn1 a:focus, .button-group.selectable.selected-btn2 .btn2 a:hover, .button-group.selectable.selected-btn2 .btn2 a:focus, .button-group.selectable.selected-btn3 .btn3 a:hover, .button-group.selectable.selected-btn3 .btn3 a:focus, .button-group.selectable.selected-btn4 .btn4 a:hover, .button-group.selectable.selected-btn4 .btn4 a:focus, .button-group.selectable.selected-btn5 .btn5 a:hover, .button-group.selectable.selected-btn5 .btn5 a:focus, .button-group.selectable li.selected a:hover, .button-group.selectable li.selected a:focus {
+        color: #FFFFFF; }
+      .button-group.selectable.selected-btn1 .btn1 a i.fa, .button-group.selectable.selected-btn2 .btn2 a i.fa, .button-group.selectable.selected-btn3 .btn3 a i.fa, .button-group.selectable.selected-btn4 .btn4 a i.fa, .button-group.selectable.selected-btn5 .btn5 a i.fa, .button-group.selectable li.selected a i.fa {
+        display: inline-block; }
 
 /*Need to Kill this function Badly produced to answer for the view from SI App. Should Consider a better reposnsive answer*/
 .selectable {
@@ -2222,18 +2262,20 @@ input[type="checkbox"], input[type="radio"] {
       background-color: #8f8f8f; }
     .selectable.selected-btn1 a:hover, .selectable.selected-btn1 a:focus, .selectable.selected-btn2 a:hover, .selectable.selected-btn2 a:focus, .selectable.selected-btn3 a:hover, .selectable.selected-btn3 a:focus, .selectable.selected-btn4 a:hover, .selectable.selected-btn4 a:focus, .selectable.selected-btn5 a:hover, .selectable.selected-btn5 a:focus {
       color: #FFFFFF; }
-  .selectable.selected-btn1 .btn1 a, .selectable.selected-btn2 .btn2 a, .selectable.selected-btn3 .btn3 a, .selectable.selected-btn4 .btn4 a, .selectable.selected-btn5 .btn5 a {
+  .selectable.selected-btn1 .btn1 a, .selectable.selected-btn2 .btn2 a, .selectable.selected-btn3 .btn3 a, .selectable.selected-btn4 .btn4 a, .selectable.selected-btn5 .btn5 a, .selectable .selected a {
     background-color: #14B057;
     border-color: #108d46;
     color: #FFFFFF; }
-    .selectable.selected-btn1 .btn1 a:hover, .selectable.selected-btn1 .btn1 a:focus, .selectable.selected-btn2 .btn2 a:hover, .selectable.selected-btn2 .btn2 a:focus, .selectable.selected-btn3 .btn3 a:hover, .selectable.selected-btn3 .btn3 a:focus, .selectable.selected-btn4 .btn4 a:hover, .selectable.selected-btn4 .btn4 a:focus, .selectable.selected-btn5 .btn5 a:hover, .selectable.selected-btn5 .btn5 a:focus {
+    .selectable.selected-btn1 .btn1 a:hover, .selectable.selected-btn1 .btn1 a:focus, .selectable.selected-btn2 .btn2 a:hover, .selectable.selected-btn2 .btn2 a:focus, .selectable.selected-btn3 .btn3 a:hover, .selectable.selected-btn3 .btn3 a:focus, .selectable.selected-btn4 .btn4 a:hover, .selectable.selected-btn4 .btn4 a:focus, .selectable.selected-btn5 .btn5 a:hover, .selectable.selected-btn5 .btn5 a:focus, .selectable .selected a:hover, .selectable .selected a:focus {
       background-color: #108d46; }
-    .selectable.selected-btn1 .btn1 a:hover, .selectable.selected-btn1 .btn1 a:focus, .selectable.selected-btn2 .btn2 a:hover, .selectable.selected-btn2 .btn2 a:focus, .selectable.selected-btn3 .btn3 a:hover, .selectable.selected-btn3 .btn3 a:focus, .selectable.selected-btn4 .btn4 a:hover, .selectable.selected-btn4 .btn4 a:focus, .selectable.selected-btn5 .btn5 a:hover, .selectable.selected-btn5 .btn5 a:focus {
+    .selectable.selected-btn1 .btn1 a:hover, .selectable.selected-btn1 .btn1 a:focus, .selectable.selected-btn2 .btn2 a:hover, .selectable.selected-btn2 .btn2 a:focus, .selectable.selected-btn3 .btn3 a:hover, .selectable.selected-btn3 .btn3 a:focus, .selectable.selected-btn4 .btn4 a:hover, .selectable.selected-btn4 .btn4 a:focus, .selectable.selected-btn5 .btn5 a:hover, .selectable.selected-btn5 .btn5 a:focus, .selectable .selected a:hover, .selectable .selected a:focus {
       color: #FFFFFF; }
-    .selectable.selected-btn1 .btn1 a i.fa, .selectable.selected-btn2 .btn2 a i.fa, .selectable.selected-btn3 .btn3 a i.fa, .selectable.selected-btn4 .btn4 a i.fa, .selectable.selected-btn5 .btn5 a i.fa {
+    .selectable.selected-btn1 .btn1 a i.fa, .selectable.selected-btn2 .btn2 a i.fa, .selectable.selected-btn3 .btn3 a i.fa, .selectable.selected-btn4 .btn4 a i.fa, .selectable.selected-btn5 .btn5 a i.fa, .selectable .selected a i.fa {
       display: inline-block; }
 
 .button-group.expand {
+  width: 100%;
+  display: table;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
@@ -2258,16 +2300,27 @@ input[type="checkbox"], input[type="radio"] {
       -ms-flex-wrap: wrap;
       flex-wrap: wrap; } }
   .button-group.expand li {
+    display: table-cell;
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto; }
-    .button-group.expand li a.button, .button-group.expand li button {
+    .button-group.expand li .button, .button-group.expand li button {
+      padding-top: 1rem;
+      padding-right: 2rem;
+      padding-bottom: 1.07143rem;
+      padding-left: 2rem;
+      font-size: 1.14286rem;
+      padding-top: 1rem;
+      padding-bottom: 1.07143rem;
       padding-right: 0;
       padding-left: 0;
       width: 100%; }
+      .input-space .button-group.expand li .button, .switch-input-space .button-group.expand li .button, .input-space .button-group.expand li button, .switch-input-space .button-group.expand li button {
+        padding-top: .57143rem;
+        padding-bottom: .57143rem; }
 
 .radio, .radio-content {
   vertical-align: middle; }
@@ -2831,7 +2884,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   background-color: #e4f6fb; }
 
 .stripped tbody tr:nth-child(even) td:nth-child(odd) {
-  background-color: #dee9ed; }
+  background-color: #deeaed; }
 
 .stripped tbody tr + tr td, .banded tbody tr + tr td {
   border-top: 0px solid; }
@@ -2979,7 +3032,7 @@ th.sortable {
     border-right: 2px solid #999999;
     color: #b3b3b3; }
     th.sortable select:hover {
-      background-color: #4c4c4c; }
+      background-color: #4d4d4d; }
   th.sortable .sort {
     position: absolute;
     top: 0;
@@ -3012,7 +3065,7 @@ th.sortable {
       top: auto;
       bottom: 0.5rem; }
   th.sortable.selected .sort {
-    background-color: #4c4c4c; }
+    background-color: #4d4d4d; }
   th.sortable.selected .sorttoggle .fa-sort {
     color: #E08514; }
   th.sortable.selected.asc .sorttoggle .fa-sort:before {
@@ -3069,20 +3122,20 @@ tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.c
   border-bottom: 1px solid; }
 
 td.error, .table tbody tr + tr td.error, tr.error td, .stripped tr.error:nth-child(even) td:nth-child(odd) {
-  background-color: #f4d9db;
+  background-color: #f5d9dc;
   border-color: #f2b7bd; }
 
 tr:nth-child(even) td.error {
-  background-color: #f1ced1; }
+  background-color: #f2ced2; }
 
 tr:nth-child(even).error td {
-  background-color: #f1ced1; }
+  background-color: #f2ced2; }
 
 .stripped tbody tr.error td:nth-child(odd) {
-  background-color: #f4d9db; }
+  background-color: #f5d9dc; }
 
 td.warning, .table tbody tr + tr td.warning, tr.warning td, .stripped tr.warning:nth-child(even) td:nth-child(odd) {
-  background-color: #f9ead7;
+  background-color: #faead7;
   border-color: #f8dbb6; }
 
 tr:nth-child(even) td.warning {
@@ -3092,30 +3145,30 @@ tr:nth-child(even).warning td {
   background-color: #f8e4cb; }
 
 .stripped tbody tr.warning td:nth-child(odd) {
-  background-color: #f9ead7; }
+  background-color: #faead7; }
 
 td.validated, .table tbody tr + tr td.validated, tr.validated td, .stripped tr.validated:nth-child(even) td:nth-child(odd) {
-  background-color: #d7f1e2;
+  background-color: #d7f2e2;
   border-color: #aaf5cb; }
 
 tr:nth-child(even) td.validated {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 tr:nth-child(even).validated td {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 .stripped tbody tr.validated td:nth-child(odd) {
-  background-color: #d7f1e2; }
+  background-color: #d7f2e2; }
 
 td.info, .table tbody tr + tr td.info, tr.info td, .stripped tr.info:nth-child(even) td:nth-child(odd) {
   background-color: #f3fbfd;
   border-color: #ebf8fc; }
 
 tr:nth-child(even) td.info {
-  background-color: #f0f9fc; }
+  background-color: #f0fafd; }
 
 tr:nth-child(even).info td {
-  background-color: #f0f9fc; }
+  background-color: #f0fafd; }
 
 .stripped tbody tr.info td:nth-child(odd) {
   background-color: #f3fbfd; }
@@ -3134,17 +3187,17 @@ tr:nth-child(even).highlighted td {
   background-color: #d9f1f8; }
 
 td.completed, .table tbody tr + tr td.completed, tr.completed td, .stripped tr.completed:nth-child(even) td:nth-child(odd) {
-  background-color: #d7f1e2;
+  background-color: #d7f2e2;
   border-color: #aaf5cb; }
 
 tr:nth-child(even) td.completed {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 tr:nth-child(even).completed td {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 .stripped tbody tr.completed td:nth-child(odd) {
-  background-color: #d7f1e2; }
+  background-color: #d7f2e2; }
 
 td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .stripped tr.disabled:nth-child(even) td:nth-child(odd) {
   background-color: #f2f2f2;
@@ -3160,7 +3213,7 @@ tr:nth-child(even).disabled td {
   background-color: #f2f2f2; }
 
 td.attention, .table tbody tr + tr td.attention, tr.attention td, .stripped tr.attention:nth-child(even) td:nth-child(odd) {
-  background-color: #f9ead7;
+  background-color: #faead7;
   border-color: #f8dbb6; }
 
 tr:nth-child(even) td.attention {
@@ -3170,7 +3223,7 @@ tr:nth-child(even).attention td {
   background-color: #f8e4cb; }
 
 .stripped tbody tr.attention td:nth-child(odd) {
-  background-color: #f9ead7; }
+  background-color: #faead7; }
 
 /**
 * Table States Cells:
@@ -5083,16 +5136,16 @@ nav.top-bar {
   font-weight: 400; }
 
 .top-bar-section li.hover > a:not(.button) {
-  background-color: #19354f;
-  background: #28343e;
+  background-color: #1a364f;
+  background: #29343e;
   color: #FFF; }
 
 .top-bar-section li:not(.has-form) a:not(.button) {
   background: #00386b; }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
-  background-color: #19354f;
-  background: #28343e; }
+  background-color: #1a364f;
+  background: #29343e; }
 
 .top-bar-section li.active:not(.has-form) a:not(.button) {
   color: #FFF;
@@ -5295,7 +5348,7 @@ div.reveal-modal, dialog {
   margin: 1.42857rem 0;
   -ms-touch-action: none;
   touch-action: none;
-  background: #f4f4f4; }
+  background: whitesmoke; }
   .range-slider.vertical-range {
     display: block;
     position: relative;
@@ -5318,7 +5371,7 @@ div.reveal-modal, dialog {
       height: auto;
       bottom: 0; }
   .range-slider.radius {
-    background: #f4f4f4;
+    background: whitesmoke;
     border-radius: 5px; }
     .range-slider.radius .range-slider-handle {
       background: #198dae;
@@ -5326,7 +5379,7 @@ div.reveal-modal, dialog {
       .range-slider.radius .range-slider-handle:hover {
         background: #167c99; }
   .range-slider.round {
-    background: #f4f4f4;
+    background: whitesmoke;
     border-radius: 1000px; }
     .range-slider.round .range-slider-handle {
       background: #198dae;
@@ -5334,7 +5387,7 @@ div.reveal-modal, dialog {
       .range-slider.round .range-slider-handle:hover {
         background: #167c99; }
   .range-slider.disabled, .range-slider[disabled] {
-    background: #f4f4f4;
+    background: whitesmoke;
     cursor: default;
     opacity: 0.7; }
     .range-slider.disabled .range-slider-handle, .range-slider[disabled] .range-slider-handle {
@@ -5597,7 +5650,7 @@ div.reveal-modal, dialog {
     font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
     font-weight: 700; }
   .tt-suggestion.tt-cursor {
-    color: #e8f3f6;
+    color: #e8f4f7;
     background-color: #198dae; }
     .tt-suggestion.tt-cursor strong {
       color: #fff; }
@@ -7105,7 +7158,7 @@ h6 blockquote {
 /*
 STATE TRUMPING CODE
 */
-.error .input-holder input, .error .input-holder textarea, .error .input-holder select, .error .input-holder .postfix, .error .input-holder .prefix, .error .bar.close, .error.inset .bar.close, .info-text.error, h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
+.error .input-holder input, .error .input-holder textarea, .error .input-holder select, .error .input-holder .postfix, .error .input-holder .prefix, .error.question .button-group, .error .bar.close, .error.inset .bar.close, .info-text.error, h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
   border-color: #c32231; }
 
 .nav-list.nav-checklist li.error i, .nav-checklist.panel-selector li.error i, .answer.error .required-holder, .question.error .required-holder, .error .label-holder label, .error .input-holder .postfix, .error .input-holder .prefix, .error .input-holder .value, .error .bar.close .action-btn, h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
@@ -7117,7 +7170,7 @@ STATE TRUMPING CODE
 .error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .nav-list.nav-checklist li.error .fa-holder-dynamic:before, .nav-checklist.panel-selector li.error .fa-holder-dynamic:before {
   content: ""; }
 
-.warning .input-holder input, .warning .input-holder textarea, .warning .input-holder select, .warning .input-holder .postfix, .warning .input-holder .prefix, .warning .bar.close, .warning.inset .bar.close, .info-text.warning, h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
+.warning .input-holder input, .warning .input-holder textarea, .warning .input-holder select, .warning .input-holder .postfix, .warning .input-holder .prefix, .warning.question .button-group, .warning .bar.close, .warning.inset .bar.close, .info-text.warning, h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
   border-color: #E08514; }
 
 .nav-list.nav-checklist li.warning i, .nav-checklist.panel-selector li.warning i, .answer.warning .required-holder, .question.warning .required-holder, .warning .label-holder label, .warning .input-holder .postfix, .warning .input-holder .prefix, .warning .input-holder .value, .warning .bar.close .action-btn, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning {
@@ -7129,7 +7182,7 @@ STATE TRUMPING CODE
 .warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .nav-list.nav-checklist li.warning .fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning .fa-holder-dynamic:before {
   content: ""; }
 
-.validated .input-holder input, .validated .input-holder textarea, .validated .input-holder select, .validated .input-holder .postfix, .validated .input-holder .prefix, .validated .bar.close, .validated.inset .bar.close, .info-text.validated, h1.with-underline.validated, h2.with-underline.validated, h3.with-underline.validated, h4.with-underline.validated, h5.with-underline.validated, h6.with-underline.validated {
+.validated .input-holder input, .validated .input-holder textarea, .validated .input-holder select, .validated .input-holder .postfix, .validated .input-holder .prefix, .validated.question .button-group, .validated .bar.close, .validated.inset .bar.close, .info-text.validated, h1.with-underline.validated, h2.with-underline.validated, h3.with-underline.validated, h4.with-underline.validated, h5.with-underline.validated, h6.with-underline.validated {
   border-color: #14B057; }
 
 .nav-list.nav-checklist li.validated i, .nav-checklist.panel-selector li.validated i, .answer.validated .required-holder, .question.validated .required-holder, .validated .label-holder label, .validated .input-holder .postfix, .validated .input-holder .prefix, .validated .input-holder .value, .validated .bar.close .action-btn, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated {
@@ -7141,7 +7194,7 @@ STATE TRUMPING CODE
 .validated .fa-holder-dynamic:before, .validated.fa:before, .validated > .fa-holder:before, .nav-list.nav-checklist li.validated .fa-holder-dynamic:before, .nav-checklist.panel-selector li.validated .fa-holder-dynamic:before {
   content: ""; }
 
-.info .input-holder input, .info .input-holder textarea, .info .input-holder select, .info .input-holder .postfix, .info .input-holder .prefix, .info .bar.close, .info.inset .bar.close, .info-text.info, h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
+.info .input-holder input, .info .input-holder textarea, .info .input-holder select, .info .input-holder .postfix, .info .input-holder .prefix, .info.question .button-group, .info .bar.close, .info.inset .bar.close, .info-text.info, h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
   border-color: #bbe8f4; }
 
 .nav-list.nav-checklist li.info i, .nav-checklist.panel-selector li.info i, .answer.info .required-holder, .question.info .required-holder, .info .label-holder label, .info .input-holder .postfix, .info .input-holder .prefix, .info .input-holder .value, .info .bar.close .action-btn, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
@@ -7153,7 +7206,7 @@ STATE TRUMPING CODE
 .info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder-dynamic:before, .nav-checklist.panel-selector li.info .fa-holder-dynamic:before {
   content: ""; }
 
-.highlighted .input-holder input, .highlighted .input-holder textarea, .highlighted .input-holder select, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted .bar.close, .highlighted.inset .bar.close, .info-text.highlighted, h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
+.highlighted .input-holder input, .highlighted .input-holder textarea, .highlighted .input-holder select, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted.question .button-group, .highlighted .bar.close, .highlighted.inset .bar.close, .info-text.highlighted, h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
   border-color: #22AFD7; }
 
 .nav-list.nav-checklist li.highlighted i, .nav-checklist.panel-selector li.highlighted i, .answer.highlighted .required-holder, .question.highlighted .required-holder, .highlighted .label-holder label, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted .input-holder .value, .highlighted .bar.close .action-btn, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
@@ -7165,7 +7218,7 @@ STATE TRUMPING CODE
 .highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before {
   content: ""; }
 
-.completed .input-holder input, .completed .input-holder textarea, .completed .input-holder select, .completed .input-holder .postfix, .completed .input-holder .prefix, .completed .bar.close, .completed.inset .bar.close, .info-text.completed, h1.with-underline.completed, h2.with-underline.completed, h3.with-underline.completed, h4.with-underline.completed, h5.with-underline.completed, h6.with-underline.completed {
+.completed .input-holder input, .completed .input-holder textarea, .completed .input-holder select, .completed .input-holder .postfix, .completed .input-holder .prefix, .completed.question .button-group, .completed .bar.close, .completed.inset .bar.close, .info-text.completed, h1.with-underline.completed, h2.with-underline.completed, h3.with-underline.completed, h4.with-underline.completed, h5.with-underline.completed, h6.with-underline.completed {
   border-color: #14B057; }
 
 .nav-list.nav-checklist li.completed i, .nav-checklist.panel-selector li.completed i, .answer.completed .required-holder, .question.completed .required-holder, .completed .label-holder label, .completed .input-holder .postfix, .completed .input-holder .prefix, .completed .input-holder .value, .completed .bar.close .action-btn, h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed {
@@ -7177,7 +7230,7 @@ STATE TRUMPING CODE
 .completed .fa-holder-dynamic:before, .completed.fa:before, .completed > .fa-holder:before, .nav-list.nav-checklist li.completed .fa-holder-dynamic:before, .nav-checklist.panel-selector li.completed .fa-holder-dynamic:before {
   content: ""; }
 
-.disabled .input-holder input, .disabled .input-holder textarea, .disabled .input-holder select, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .bar.close, .disabled.inset .bar.close, .info-text.disabled, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
+.disabled .input-holder input, .disabled .input-holder textarea, .disabled .input-holder select, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled.question .button-group, .disabled .bar.close, .disabled.inset .bar.close, .info-text.disabled, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
   border-color: #b3b3b3; }
 
 .nav-list.nav-checklist li.disabled i, .nav-checklist.panel-selector li.disabled i, .answer.disabled .required-holder, .question.disabled .required-holder, .disabled .label-holder label, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .input-holder .value, .disabled .bar.close .action-btn, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
@@ -7189,7 +7242,7 @@ STATE TRUMPING CODE
 .disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before {
   content: ""; }
 
-.attention .input-holder input, .attention .input-holder textarea, .attention .input-holder select, .attention .input-holder .postfix, .attention .input-holder .prefix, .attention .bar.close, .attention.inset .bar.close, .info-text.attention, h1.with-underline.attention, h2.with-underline.attention, h3.with-underline.attention, h4.with-underline.attention, h5.with-underline.attention, h6.with-underline.attention {
+.attention .input-holder input, .attention .input-holder textarea, .attention .input-holder select, .attention .input-holder .postfix, .attention .input-holder .prefix, .attention.question .button-group, .attention .bar.close, .attention.inset .bar.close, .info-text.attention, h1.with-underline.attention, h2.with-underline.attention, h3.with-underline.attention, h4.with-underline.attention, h5.with-underline.attention, h6.with-underline.attention {
   border-color: #E08514; }
 
 .nav-list.nav-checklist li.attention i, .nav-checklist.panel-selector li.attention i, .answer.attention .required-holder, .question.attention .required-holder, .attention .label-holder label, .attention .input-holder .postfix, .attention .input-holder .prefix, .attention .input-holder .value, .attention .bar.close .action-btn, h1.attention, h2.attention, h3.attention, h4.attention, h5.attention, h6.attention, p.attention, a.attention, li.attention, blockquote.attention {

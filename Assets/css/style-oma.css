@@ -1764,7 +1764,7 @@ strong, .strong {
   color: #25b6e0; }
 
 em, .emphasis {
-  color: #0c4657;
+  color: #0d4757;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 100;
   font-style: italic;
@@ -1773,7 +1773,7 @@ em, .emphasis {
 .subtle {
   font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 100;
-  color: #66a0b0; }
+  color: #66a0b1; }
 
 .block-margins {
   margin: 0 em(21px) 0; }
@@ -1788,7 +1788,7 @@ em, .emphasis {
 
 /**
  * Header Tags:
- * `Typography` - basic styling for headers. 
+ * `Headers` - Headers are used to separate and organize blocks of text. 
  *  You can also us `.h1`,`.h2`,`.h3`,`.h4`,`.h5`, or `.h6` 
  *  to make any text elements style like the associated header tag 
  *
@@ -2197,17 +2197,14 @@ button:disabled.secondary, .input-space
 *	</ul>
 */
 /**
-* Nav List (Basic):
-* `.nav-list ul li` - styling of a list of links perfect for a side nav or a collection of jump off points. Add `.selected` to the `li` to highlight the nav link. The nav list changes styles depending on the headline tag in front of the nav-list.  
+* Navigation List:
+* `.nav-list ul li` - A collection of navigation links perfect for side navigation or a collection of external links. Add `.selected` to the `li` to highlight the nav link.
 * 
 *   @example
 *	<nav class="nav-list">
 *	<ul>
-*	<li>
-*	<a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	<li class="selected">
-*	<a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	</li>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
 *	</ul>
 *	</nav>
 */
@@ -2254,33 +2251,24 @@ button:disabled.secondary, .input-space
 *	<h1>H1 header tag</h1>
 *	<nav class="nav-list">
 *	<ul>
-*	<li>
-*	<a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	<li class="selected">
-*	<a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	</li>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
 *	</ul>
 *	</nav>
 *	<br>
 *	<div>This list has the medium class</div>
 *	<nav class="nav-list medium">
 *	<ul>
-*	<li>
-*	<a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	<li class="selected">
-*	<a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	</li>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
 *	</ul>
 *	</nav>
 *	<br>
 *	<h3>H3 header tag</h3>
 *	<nav class="nav-list">
 *	<ul>
-*	<li>
-*	<a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	<li class="selected">
-*	<a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	</li>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
 *	</ul>
 *	</nav>
 */
@@ -2687,7 +2675,8 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   .input-holder:after, .value-holder:after {
     clear: both; }
   .input-holder > .input-space, .input-holder > .switch-input-space, .value-holder > .input-space, .value-holder > .switch-input-space {
-    padding-left: 0; }
+    padding-left: 0;
+    line-height: 1; }
 
 [class*="input-space"] + [class*="input-space"]:last-child, [class*="value-space"] + [class*="value-space"]:last-child {
   padding-right: 0; }
@@ -3488,7 +3477,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   background-color: #e4f6fb; }
 
 .stripped tbody tr:nth-child(even) td:nth-child(odd) {
-  background-color: #dee9ed; }
+  background-color: #deeaed; }
 
 .stripped tbody tr + tr td, .banded tbody tr + tr td {
   border-top: 0px solid; }
@@ -3530,20 +3519,20 @@ tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.c
   border-bottom: 1px solid; }
 
 td.error, .table tbody tr + tr td.error, tr.error td, .stripped tr.error:nth-child(even) td:nth-child(odd) {
-  background-color: #f4d9db;
+  background-color: #f5d9dc;
   border-color: #f2b7bd; }
 
 tr:nth-child(even) td.error {
-  background-color: #f1ced1; }
+  background-color: #f2ced2; }
 
 tr:nth-child(even).error td {
-  background-color: #f1ced1; }
+  background-color: #f2ced2; }
 
 .stripped tbody tr.error td:nth-child(odd) {
-  background-color: #f4d9db; }
+  background-color: #f5d9dc; }
 
 td.warning, .table tbody tr + tr td.warning, tr.warning td, .stripped tr.warning:nth-child(even) td:nth-child(odd) {
-  background-color: #f9ead7;
+  background-color: #faead7;
   border-color: #f8dbb6; }
 
 tr:nth-child(even) td.warning {
@@ -3553,30 +3542,30 @@ tr:nth-child(even).warning td {
   background-color: #f8e4cb; }
 
 .stripped tbody tr.warning td:nth-child(odd) {
-  background-color: #f9ead7; }
+  background-color: #faead7; }
 
 td.validated, .table tbody tr + tr td.validated, tr.validated td, .stripped tr.validated:nth-child(even) td:nth-child(odd) {
-  background-color: #d7f1e2;
+  background-color: #d7f2e2;
   border-color: #aaf5cb; }
 
 tr:nth-child(even) td.validated {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 tr:nth-child(even).validated td {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 .stripped tbody tr.validated td:nth-child(odd) {
-  background-color: #d7f1e2; }
+  background-color: #d7f2e2; }
 
 td.info, .table tbody tr + tr td.info, tr.info td, .stripped tr.info:nth-child(even) td:nth-child(odd) {
   background-color: #f3fbfd;
   border-color: #ebf8fc; }
 
 tr:nth-child(even) td.info {
-  background-color: #f0f9fc; }
+  background-color: #f0fafd; }
 
 tr:nth-child(even).info td {
-  background-color: #f0f9fc; }
+  background-color: #f0fafd; }
 
 .stripped tbody tr.info td:nth-child(odd) {
   background-color: #f3fbfd; }
@@ -3595,17 +3584,17 @@ tr:nth-child(even).highlighted td {
   background-color: #d9f1f8; }
 
 td.completed, .table tbody tr + tr td.completed, tr.completed td, .stripped tr.completed:nth-child(even) td:nth-child(odd) {
-  background-color: #d7f1e2;
+  background-color: #d7f2e2;
   border-color: #aaf5cb; }
 
 tr:nth-child(even) td.completed {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 tr:nth-child(even).completed td {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 .stripped tbody tr.completed td:nth-child(odd) {
-  background-color: #d7f1e2; }
+  background-color: #d7f2e2; }
 
 td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .stripped tr.disabled:nth-child(even) td:nth-child(odd) {
   background-color: #f2f2f2;
@@ -3621,7 +3610,7 @@ tr:nth-child(even).disabled td {
   background-color: #f2f2f2; }
 
 td.attention, .table tbody tr + tr td.attention, tr.attention td, .stripped tr.attention:nth-child(even) td:nth-child(odd) {
-  background-color: #f9ead7;
+  background-color: #faead7;
   border-color: #f8dbb6; }
 
 tr:nth-child(even) td.attention {
@@ -3631,7 +3620,7 @@ tr:nth-child(even).attention td {
   background-color: #f8e4cb; }
 
 .stripped tbody tr.attention td:nth-child(odd) {
-  background-color: #f9ead7; }
+  background-color: #faead7; }
 
 /**
 * Table States Cells:
@@ -5222,16 +5211,16 @@ nav.top-bar {
   font-weight: 400; }
 
 .top-bar-section li.hover > a:not(.button) {
-  background-color: #19354f;
-  background: #28343e;
+  background-color: #1a364f;
+  background: #29343e;
   color: #FFF; }
 
 .top-bar-section li:not(.has-form) a:not(.button) {
   background: #00386b; }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
-  background-color: #19354f;
-  background: #28343e; }
+  background-color: #1a364f;
+  background: #29343e; }
 
 .top-bar-section li.active:not(.has-form) a:not(.button) {
   color: #FFF;
@@ -5645,7 +5634,7 @@ div.reveal-modal, dialog {
     font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
     font-weight: 700; }
   .tt-suggestion.tt-cursor {
-    color: #e8f3f6;
+    color: #e8f4f7;
     background-color: #198dae; }
     .tt-suggestion.tt-cursor strong {
       color: #fff; }

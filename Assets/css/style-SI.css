@@ -92,7 +92,7 @@
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li class="divider"></li>
-*							<li><a href="#">See all →</a></li>
+*							<li><a href="#">See all ΓåÆ</a></li>
 *						</ul>
 *						</li>
 *						<li class="divider"></li>
@@ -104,7 +104,7 @@
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li class="divider"></li>
-*								<li><a href="#">See all →</a></li>
+*								<li><a href="#">See all ΓåÆ</a></li>
 *						</ul>
 *					</li>
 *				</ul>
@@ -2093,7 +2093,7 @@ strong, .strong {
   color: #cd096d; }
 
 em, .emphasis {
-  color: #430323;
+  color: #430324;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 100;
   font-style: italic;
@@ -2102,14 +2102,14 @@ em, .emphasis {
 .subtle {
   font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 100;
-  color: #9c5c7d; }
+  color: #9d5d7d; }
 
 .block-margins {
   margin: 0 em(21px) 0; }
 
 /**
  * Header Tags:
- * `Typography` - basic styling for headers. 
+ * `Headers` - Headers are used to separate and organize blocks of text. 
  *  You can also us `.h1`,`.h2`,`.h3`,`.h4`,`.h5`, or `.h6` 
  *  to make any text elements style like the associated header tag 
  *
@@ -2556,17 +2556,14 @@ button:disabled.secondary, .input-space
       border-color: #b3b3b3; }
 
 /**
-* Nav List (Basic):
-* `.nav-list ul li` - styling of a list of links perfect for a side nav or a collection of jump off points. Add `.selected` to the `li` to highlight the nav link. The nav list changes styles depending on the headline tag in front of the nav-list.  
+* Navigation List:
+* `.nav-list ul li` - A collection of navigation links perfect for side navigation or a collection of external links. Add `.selected` to the `li` to highlight the nav link.
 * 
 *   @example
 *	<nav class="nav-list">
 *	<ul>
-*	<li>
-*	<a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	<li class="selected">
-*	<a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	</li>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
 *	</ul>
 *	</nav>
 */
@@ -2613,33 +2610,24 @@ button:disabled.secondary, .input-space
 *	<h1>H1 header tag</h1>
 *	<nav class="nav-list">
 *	<ul>
-*	<li>
-*	<a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	<li class="selected">
-*	<a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	</li>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
 *	</ul>
 *	</nav>
 *	<br>
 *	<div>This list has the medium class</div>
 *	<nav class="nav-list medium">
 *	<ul>
-*	<li>
-*	<a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	<li class="selected">
-*	<a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	</li>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
 *	</ul>
 *	</nav>
 *	<br>
 *	<h3>H3 header tag</h3>
 *	<nav class="nav-list">
 *	<ul>
-*	<li>
-*	<a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	<li class="selected">
-*	<a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	</li>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
 *	</ul>
 *	</nav>
 */
@@ -2922,7 +2910,8 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   .input-holder:after, .value-holder:after {
     clear: both; }
   .input-holder > .input-space, .input-holder > .switch-input-space, .value-holder > .input-space, .value-holder > .switch-input-space {
-    padding-left: 0; }
+    padding-left: 0;
+    line-height: 1; }
 
 [class*="input-space"] + [class*="input-space"]:last-child, [class*="value-space"] + [class*="value-space"]:last-child {
   padding-right: 0; }
@@ -3166,40 +3155,62 @@ input[type="checkbox"], input[type="radio"] {
 * `.selectable.button-group` - this is a toggle-able button group that changes colors when items are selected.  Add .selected-{btn class name} to the group to change colors and add the check.
 * 
 *   @example
+*	<h4>Basic</h4>
 *	<div class="question required">  
-*	  <div class="label-holder">
-*	    <label for="">
-*	      <span class="text">Selectable Group Buttons</span>
-*	      <span class="required-holder">
-*	        <i class="fa fa-holder-dynamic"></i>
-*	      </span>
-*	    </label>
-*	  </div>
 *	  <div class="input-holder row collapse">
-*	    <div class="column small-12">
-*	      <ul class="button-group even-3 selectable selected-btn1">
-*	        <li class="btn1"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
-*	        <li class="btn2"><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
-*	        <li class="btn3"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
+*	    <div class="column small-12 input-space">
+*	      <ul class="button-group selectable">
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
 *	      </ul>
 *	    </div>
 *	  </div>
+*	</div>
+*	<h4>Modified with an item having the class `.selected`</h4>
+*	<div class="question required">  
+*	  <div class="input-holder row collapse">
+*	    <div class="column small-12 input-space">
+*	      <ul class="button-group selectable">
+*	        <li class="selected"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
+*	      </ul>
+*	    </div>
+*	  </div>
+*	</div>
+*	<h4>Modified with the `.expand`</h4>
+*	<div class="question">  
 *	<div class="input-holder row collapse">
-*	    <div class="column small-12">
-*	      <ul class="button-group even-3 selectable">
+*	    <div class="column small-12 input-space">
+*	      <ul class="button-group expand selectable">
 *	        <li class="btn1"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
 *	        <li class="btn2"><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
 *	        <li class="btn3"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
 *	      </ul>
 *	    </div>
 *	  </div>
-*	  <div class='hint'>This is helper text for this question</div>
+*	</div>
+*	<h4>The container `.question` has an error state.<blockquote> NOTE: if button groups have states it is best for them to have been expanded.</blockquote></h4>
+*	<div class="question error">  
+*	<div class="input-holder row collapse">
+*	    <div class="column small-12 input-space">
+*	      <ul class="button-group selectable">
+*	        <li class="btn1"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
+*	        <li class="btn2"><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
+*	        <li class="btn3"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
+*	      </ul>
+*	    </div>
+*	  </div>
+*	  <div class="message-holder"><small class="error">Error</small></div>
 *	</div>
 *
 */
 /*  Button Group */
 .button-group {
   padding-left: 0;
+  border: 2px solid transparent;
+  margin: -2px;
   list-style: none;
   margin: 0;
   left: 0;
@@ -3220,6 +3231,35 @@ input[type="checkbox"], input[type="radio"] {
       border-left: 0; }
     .button-group > li:first-child {
       margin-left: 0; }
+    .input-space .button-group > li .button, .switch-input-space .button-group > li .button {
+      padding-top: .57143rem;
+      padding-bottom: .57143rem; }
+  .button-group.selectable {
+    margin-bottom: -1px; }
+    .button-group.selectable .button {
+      background-color: #b3b3b3;
+      border-color: #8f8f8f;
+      color: #FFFFFF; }
+      .button-group.selectable .button:hover, .button-group.selectable .button:focus {
+        background-color: #8f8f8f; }
+      .button-group.selectable .button:hover, .button-group.selectable .button:focus {
+        color: #FFFFFF; }
+    .button-group.selectable i.fa {
+      font-size: 1rem;
+      height: 1rem;
+      width: 1rem;
+      margin: 0 7px 0 0;
+      display: none; }
+    .button-group.selectable.selected-btn1 .btn1 a, .button-group.selectable.selected-btn2 .btn2 a, .button-group.selectable.selected-btn3 .btn3 a, .button-group.selectable.selected-btn4 .btn4 a, .button-group.selectable.selected-btn5 .btn5 a, .button-group.selectable li.selected a {
+      background-color: #860647;
+      border-color: #6b0539;
+      color: #FFFFFF; }
+      .button-group.selectable.selected-btn1 .btn1 a:hover, .button-group.selectable.selected-btn1 .btn1 a:focus, .button-group.selectable.selected-btn2 .btn2 a:hover, .button-group.selectable.selected-btn2 .btn2 a:focus, .button-group.selectable.selected-btn3 .btn3 a:hover, .button-group.selectable.selected-btn3 .btn3 a:focus, .button-group.selectable.selected-btn4 .btn4 a:hover, .button-group.selectable.selected-btn4 .btn4 a:focus, .button-group.selectable.selected-btn5 .btn5 a:hover, .button-group.selectable.selected-btn5 .btn5 a:focus, .button-group.selectable li.selected a:hover, .button-group.selectable li.selected a:focus {
+        background-color: #6b0539; }
+      .button-group.selectable.selected-btn1 .btn1 a:hover, .button-group.selectable.selected-btn1 .btn1 a:focus, .button-group.selectable.selected-btn2 .btn2 a:hover, .button-group.selectable.selected-btn2 .btn2 a:focus, .button-group.selectable.selected-btn3 .btn3 a:hover, .button-group.selectable.selected-btn3 .btn3 a:focus, .button-group.selectable.selected-btn4 .btn4 a:hover, .button-group.selectable.selected-btn4 .btn4 a:focus, .button-group.selectable.selected-btn5 .btn5 a:hover, .button-group.selectable.selected-btn5 .btn5 a:focus, .button-group.selectable li.selected a:hover, .button-group.selectable li.selected a:focus {
+        color: #FFFFFF; }
+      .button-group.selectable.selected-btn1 .btn1 a i.fa, .button-group.selectable.selected-btn2 .btn2 a i.fa, .button-group.selectable.selected-btn3 .btn3 a i.fa, .button-group.selectable.selected-btn4 .btn4 a i.fa, .button-group.selectable.selected-btn5 .btn5 a i.fa, .button-group.selectable li.selected a i.fa {
+        display: inline-block; }
 
 /*Need to Kill this function Badly produced to answer for the view from SI App. Should Consider a better reposnsive answer*/
 .selectable {
@@ -3243,18 +3283,20 @@ input[type="checkbox"], input[type="radio"] {
       background-color: #8f8f8f; }
     .selectable.selected-btn1 a:hover, .selectable.selected-btn1 a:focus, .selectable.selected-btn2 a:hover, .selectable.selected-btn2 a:focus, .selectable.selected-btn3 a:hover, .selectable.selected-btn3 a:focus, .selectable.selected-btn4 a:hover, .selectable.selected-btn4 a:focus, .selectable.selected-btn5 a:hover, .selectable.selected-btn5 a:focus {
       color: #FFFFFF; }
-  .selectable.selected-btn1 .btn1 a, .selectable.selected-btn2 .btn2 a, .selectable.selected-btn3 .btn3 a, .selectable.selected-btn4 .btn4 a, .selectable.selected-btn5 .btn5 a {
+  .selectable.selected-btn1 .btn1 a, .selectable.selected-btn2 .btn2 a, .selectable.selected-btn3 .btn3 a, .selectable.selected-btn4 .btn4 a, .selectable.selected-btn5 .btn5 a, .selectable .selected a {
     background-color: #860647;
     border-color: #6b0539;
     color: #FFFFFF; }
-    .selectable.selected-btn1 .btn1 a:hover, .selectable.selected-btn1 .btn1 a:focus, .selectable.selected-btn2 .btn2 a:hover, .selectable.selected-btn2 .btn2 a:focus, .selectable.selected-btn3 .btn3 a:hover, .selectable.selected-btn3 .btn3 a:focus, .selectable.selected-btn4 .btn4 a:hover, .selectable.selected-btn4 .btn4 a:focus, .selectable.selected-btn5 .btn5 a:hover, .selectable.selected-btn5 .btn5 a:focus {
+    .selectable.selected-btn1 .btn1 a:hover, .selectable.selected-btn1 .btn1 a:focus, .selectable.selected-btn2 .btn2 a:hover, .selectable.selected-btn2 .btn2 a:focus, .selectable.selected-btn3 .btn3 a:hover, .selectable.selected-btn3 .btn3 a:focus, .selectable.selected-btn4 .btn4 a:hover, .selectable.selected-btn4 .btn4 a:focus, .selectable.selected-btn5 .btn5 a:hover, .selectable.selected-btn5 .btn5 a:focus, .selectable .selected a:hover, .selectable .selected a:focus {
       background-color: #6b0539; }
-    .selectable.selected-btn1 .btn1 a:hover, .selectable.selected-btn1 .btn1 a:focus, .selectable.selected-btn2 .btn2 a:hover, .selectable.selected-btn2 .btn2 a:focus, .selectable.selected-btn3 .btn3 a:hover, .selectable.selected-btn3 .btn3 a:focus, .selectable.selected-btn4 .btn4 a:hover, .selectable.selected-btn4 .btn4 a:focus, .selectable.selected-btn5 .btn5 a:hover, .selectable.selected-btn5 .btn5 a:focus {
+    .selectable.selected-btn1 .btn1 a:hover, .selectable.selected-btn1 .btn1 a:focus, .selectable.selected-btn2 .btn2 a:hover, .selectable.selected-btn2 .btn2 a:focus, .selectable.selected-btn3 .btn3 a:hover, .selectable.selected-btn3 .btn3 a:focus, .selectable.selected-btn4 .btn4 a:hover, .selectable.selected-btn4 .btn4 a:focus, .selectable.selected-btn5 .btn5 a:hover, .selectable.selected-btn5 .btn5 a:focus, .selectable .selected a:hover, .selectable .selected a:focus {
       color: #FFFFFF; }
-    .selectable.selected-btn1 .btn1 a i.fa, .selectable.selected-btn2 .btn2 a i.fa, .selectable.selected-btn3 .btn3 a i.fa, .selectable.selected-btn4 .btn4 a i.fa, .selectable.selected-btn5 .btn5 a i.fa {
+    .selectable.selected-btn1 .btn1 a i.fa, .selectable.selected-btn2 .btn2 a i.fa, .selectable.selected-btn3 .btn3 a i.fa, .selectable.selected-btn4 .btn4 a i.fa, .selectable.selected-btn5 .btn5 a i.fa, .selectable .selected a i.fa {
       display: inline-block; }
 
 .button-group.expand {
+  width: 100%;
+  display: table;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
@@ -3279,16 +3321,27 @@ input[type="checkbox"], input[type="radio"] {
       -ms-flex-wrap: wrap;
       flex-wrap: wrap; } }
   .button-group.expand li {
+    display: table-cell;
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto; }
-    .button-group.expand li a.button, .button-group.expand li button {
+    .button-group.expand li .button, .button-group.expand li button {
+      padding-top: 1rem;
+      padding-right: 2rem;
+      padding-bottom: 1.07143rem;
+      padding-left: 2rem;
+      font-size: 1.14286rem;
+      padding-top: 1rem;
+      padding-bottom: 1.07143rem;
       padding-right: 0;
       padding-left: 0;
       width: 100%; }
+      .input-space .button-group.expand li .button, .switch-input-space .button-group.expand li .button, .input-space .button-group.expand li button, .switch-input-space .button-group.expand li button {
+        padding-top: .57143rem;
+        padding-bottom: .57143rem; }
 
 .radio, .radio-content {
   vertical-align: middle; }
@@ -3537,7 +3590,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   background-color: #e4f6fb; }
 
 .stripped tbody tr:nth-child(even) td:nth-child(odd) {
-  background-color: #dee9ed; }
+  background-color: #deeaed; }
 
 .stripped tbody tr + tr td, .banded tbody tr + tr td {
   border-top: 0px solid; }
@@ -4132,7 +4185,7 @@ div.reveal-modal, dialog {
   margin: 1.42857rem 0;
   -ms-touch-action: none;
   touch-action: none;
-  background: #f4f4f4; }
+  background: whitesmoke; }
   .range-slider.vertical-range {
     display: block;
     position: relative;
@@ -4155,7 +4208,7 @@ div.reveal-modal, dialog {
       height: auto;
       bottom: 0; }
   .range-slider.radius {
-    background: #f4f4f4;
+    background: whitesmoke;
     border-radius: 5px; }
     .range-slider.radius .range-slider-handle {
       background: #860647;
@@ -4163,7 +4216,7 @@ div.reveal-modal, dialog {
       .range-slider.radius .range-slider-handle:hover {
         background: #76053e; }
   .range-slider.round {
-    background: #f4f4f4;
+    background: whitesmoke;
     border-radius: 1000px; }
     .range-slider.round .range-slider-handle {
       background: #860647;
@@ -4171,7 +4224,7 @@ div.reveal-modal, dialog {
       .range-slider.round .range-slider-handle:hover {
         background: #76053e; }
   .range-slider.disabled, .range-slider[disabled] {
-    background: #f4f4f4;
+    background: whitesmoke;
     cursor: default;
     opacity: 0.7; }
     .range-slider.disabled .range-slider-handle, .range-slider[disabled] .range-slider-handle {
