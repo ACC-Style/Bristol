@@ -3151,8 +3151,27 @@ input[type="checkbox"], input[type="radio"] {
 *	</div>
 */
 /**
-* Selectable Button Group (Depreciate this):
-* `.selectable.button-group` - this is a toggle-able button group that changes colors when items are selected.  Add .selected-{btn class name} to the group to change colors and add the check.
+* Selectable Button Group (Depreciate Selected Button Group):
+* `.selectable.button-group selected-btn[x]` - this is a toggle-able button group that is using an older combination classes `ul.selectable selected-btn1 > li > a.btn1`.
+* 
+*   @example
+*	<h4>Basic</h4>
+*	<div class="question required">  
+*	  <div class="input-holder row collapse">
+*	    <div class="column small-12 input-space">
+*	      <ul class="button-group selectable selected-btn1">
+*	        <li class="btn1"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
+*	        <li class="btn2"><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
+*	        <li class="btn3"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
+*	      </ul>
+*	    </div>
+*	  </div>
+*	</div>
+*
+*/
+/**
+* Selectable Button Group:
+* `.selectable.button-group` - this is a toggle-able button group that changes colors when items are selected.  Add .selected to the `li`  to change colors and add the check to the button.
 * 
 *   @example
 *	<h4>Basic</h4>
@@ -3184,9 +3203,9 @@ input[type="checkbox"], input[type="radio"] {
 *	<div class="input-holder row collapse">
 *	    <div class="column small-12 input-space">
 *	      <ul class="button-group expand selectable">
-*	        <li class="btn1"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
-*	        <li class="btn2"><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
-*	        <li class="btn3"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
 *	      </ul>
 *	    </div>
 *	  </div>
@@ -3195,10 +3214,10 @@ input[type="checkbox"], input[type="radio"] {
 *	<div class="question error">  
 *	<div class="input-holder row collapse">
 *	    <div class="column small-12 input-space">
-*	      <ul class="button-group selectable">
-*	        <li class="btn1"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
-*	        <li class="btn2"><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
-*	        <li class="btn3"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
+*	      <ul class="button-group selectable expand">
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
+*	        <li class="selected"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
 *	      </ul>
 *	    </div>
 *	  </div>
@@ -3250,15 +3269,15 @@ input[type="checkbox"], input[type="radio"] {
       width: 1rem;
       margin: 0 7px 0 0;
       display: none; }
-    .button-group.selectable.selected-btn1 .btn1 a, .button-group.selectable.selected-btn2 .btn2 a, .button-group.selectable.selected-btn3 .btn3 a, .button-group.selectable.selected-btn4 .btn4 a, .button-group.selectable.selected-btn5 .btn5 a, .button-group.selectable li.selected a {
+    .button-group.selectable li.selected a {
       background-color: #860647;
       border-color: #6b0539;
       color: #FFFFFF; }
-      .button-group.selectable.selected-btn1 .btn1 a:hover, .button-group.selectable.selected-btn1 .btn1 a:focus, .button-group.selectable.selected-btn2 .btn2 a:hover, .button-group.selectable.selected-btn2 .btn2 a:focus, .button-group.selectable.selected-btn3 .btn3 a:hover, .button-group.selectable.selected-btn3 .btn3 a:focus, .button-group.selectable.selected-btn4 .btn4 a:hover, .button-group.selectable.selected-btn4 .btn4 a:focus, .button-group.selectable.selected-btn5 .btn5 a:hover, .button-group.selectable.selected-btn5 .btn5 a:focus, .button-group.selectable li.selected a:hover, .button-group.selectable li.selected a:focus {
+      .button-group.selectable li.selected a:hover, .button-group.selectable li.selected a:focus {
         background-color: #6b0539; }
-      .button-group.selectable.selected-btn1 .btn1 a:hover, .button-group.selectable.selected-btn1 .btn1 a:focus, .button-group.selectable.selected-btn2 .btn2 a:hover, .button-group.selectable.selected-btn2 .btn2 a:focus, .button-group.selectable.selected-btn3 .btn3 a:hover, .button-group.selectable.selected-btn3 .btn3 a:focus, .button-group.selectable.selected-btn4 .btn4 a:hover, .button-group.selectable.selected-btn4 .btn4 a:focus, .button-group.selectable.selected-btn5 .btn5 a:hover, .button-group.selectable.selected-btn5 .btn5 a:focus, .button-group.selectable li.selected a:hover, .button-group.selectable li.selected a:focus {
+      .button-group.selectable li.selected a:hover, .button-group.selectable li.selected a:focus {
         color: #FFFFFF; }
-      .button-group.selectable.selected-btn1 .btn1 a i.fa, .button-group.selectable.selected-btn2 .btn2 a i.fa, .button-group.selectable.selected-btn3 .btn3 a i.fa, .button-group.selectable.selected-btn4 .btn4 a i.fa, .button-group.selectable.selected-btn5 .btn5 a i.fa, .button-group.selectable li.selected a i.fa {
+      .button-group.selectable li.selected a i.fa {
         display: inline-block; }
 
 /*Need to Kill this function Badly produced to answer for the view from SI App. Should Consider a better reposnsive answer*/

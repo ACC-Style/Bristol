@@ -1,6 +1,26 @@
 /**
-* Selectable Button Group (Depreciate this):
-* `.selectable.button-group` - this is a toggle-able button group that changes colors when items are selected.  Add .selected-{btn class name} to the group to change colors and add the check.
+* Selectable Button Group (Depreciate Selected Button Group):
+* `.selectable.button-group selected-btn[x]` - this is a toggle-able button group that is using an older combination classes `ul.selectable selected-btn1 > li > a.btn1`.
+* 
+*   @example
+*	<h4>Basic</h4>
+*	<div class="question required">  
+*	  <div class="input-holder row collapse">
+*	    <div class="column small-12 input-space">
+*	      <ul class="button-group selectable selected-btn1">
+*	        <li class="btn1"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
+*	        <li class="btn2"><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
+*	        <li class="btn3"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
+*	      </ul>
+*	    </div>
+*	  </div>
+*	</div>
+*
+*/
+
+/**
+* Selectable Button Group:
+* `.selectable.button-group` - this is a toggle-able button group that changes colors when items are selected.  Add .selected to the `li`  to change colors and add the check to the button.
 * 
 *   @example
 *	<h4>Basic</h4>
@@ -32,9 +52,9 @@
 *	<div class="input-holder row collapse">
 *	    <div class="column small-12 input-space">
 *	      <ul class="button-group expand selectable">
-*	        <li class="btn1"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
-*	        <li class="btn2"><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
-*	        <li class="btn3"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
 *	      </ul>
 *	    </div>
 *	  </div>
@@ -43,10 +63,10 @@
 *	<div class="question error">  
 *	<div class="input-holder row collapse">
 *	    <div class="column small-12 input-space">
-*	      <ul class="button-group selectable">
-*	        <li class="btn1"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
-*	        <li class="btn2"><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
-*	        <li class="btn3"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
+*	      <ul class="button-group selectable expand">
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
+*	        <li class="selected"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
 *	      </ul>
 *	    </div>
 *	  </div>
@@ -92,11 +112,9 @@
 		margin: 0 7px 0 0;
 		display:none;
 	}
-	&.selected-btn1 .btn1,&.selected-btn2 .btn2,&.selected-btn3 .btn3,&.selected-btn4 .btn4,&.selected-btn5 .btn5, li.selected{
+	li.selected{
 		 a{
 			@include button-style($bg:rebrand-color($success-color,2));
-			// background-color:fontcolor($success-color,'loud');
-			// &:hover{background-color:mix($success-color, $real-black,80%);}
 			i.fa{display: inline-block;} 
 		}
 	}
@@ -119,10 +137,12 @@
 // 		@include button-size($padding:$button-tny)
 // 	}
 // }
-
+// NEED to depreciate this.
 .selectable{
 	margin: 0;
-	a{background-color:color($primary-color,80);transition: none;
+	a{
+		background-color:color($primary-color,80);
+		transition: none;
 		&:hover{background-color: color($primary-color,100);}
 	}
 	i.fa{
@@ -135,21 +155,14 @@
 	&.selected-btn1,&.selected-btn2,&.selected-btn3,&.selected-btn4,&.selected-btn5,{
 		a{
 			@include button-style($bg:grey(30));
-			// background-color: grey(30);
-			// &:hover{background-color:grey(50);}
 		}
 	} 
 	&.selected-btn1 .btn1,&.selected-btn2 .btn2,&.selected-btn3 .btn3,&.selected-btn4 .btn4,&.selected-btn5 .btn5,.selected{
 		 a{
 			@include button-style($bg:rebrand-color($success-color,2));
-			// background-color:fontcolor($success-color,'loud');
-			// &:hover{background-color:mix($success-color, $real-black,80%);}
 			i.fa{display: inline-block;} 
 		}
 	}
-
-
-		
 }
 
 
