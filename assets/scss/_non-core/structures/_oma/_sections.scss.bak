@@ -1,0 +1,19 @@
+.info-text{
+	@include baseline-font(0,.25,.25);
+	font-weight:normal;
+	color:font-color(#000);
+
+	@each $State in $states{
+		&#{map-get($State,'Selector')}{
+			color:map-get($State,'Color');
+			font-weight:900;
+			@include baseline-font(1,.25,.25);
+			}
+
+		}
+
+}
+
+.sidebar .nav-list.nav-checklist{background-color:#fff;}
+
+

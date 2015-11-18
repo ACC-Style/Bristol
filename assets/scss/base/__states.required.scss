@@ -1,0 +1,241 @@
+// implement required varible
+$required-SCSS_states:true;
+
+
+$states:  
+    (
+	"State":"error",
+	"Selector":".error",
+    "Color": $error-color,
+    "Icon": $fa-var-times,
+    "Trump-Background":"",
+    "Trump-Color":"",
+    "Trump-Border":"",
+    "Trump-Icon":""
+    ),
+    (
+	"State":"warning",
+	"Selector":".warning",
+    "Color": $warning-orange,
+    "Icon": $fa-var-exclamation-triangle,
+    "Trump-Background":"",
+    "Trump-Color":"",
+    "Trump-Border":"",
+    "Trump-Icon":"" ),
+    (
+    "State":"validated",
+    "Selector":".validated",
+    "Color": $success-color,
+    "Icon": $fa-var-check,
+    "Trump-Color":"",
+    "Trump-Border":"",
+    "Trump-Icon":""),
+    (
+    "State":"info",
+    "Selector":".info",
+    "Color":color(rebrand-color($info-color,2),30),
+    "Icon": $fa-var-info-circle,
+    "Trump-Background":"",
+    "Trump-Color":"",
+    "Trump-Border":"",
+    "Trump-Icon":"" ),
+    (
+    "State":"highlighted",
+    "Selector":".highlighted",
+    "Color": rebrand-color($info-color,2),
+    "Icon": $fa-var-exclamation ,
+    "Trump-Background":"",
+    "Trump-Color":"",
+    "Trump-Border":"",
+    "Trump-Icon":""),    
+    (
+    "State":"completed",
+    "Selector":".completed",
+    "Color": $success-color,
+    "Icon": $fa-var-check,
+    "Trump-Background":"",
+    "Trump-Color":"",
+    "Trump-Border":"",
+    "Trump-Icon":""),    
+    (
+    "State":"disabled",
+    "Selector":".disabled",
+    "Color": grey(30),
+    "Icon": $fa-var-ban,
+    "Trump-Background":"",
+    "Trump-Color":"",
+    "Trump-Border":"",
+    "Trump-Icon":""),    
+    (
+    "State":"attention",
+    "Selector":".attention",
+    "Color": $attention-color,
+    "Icon": $fa-var-exclamation-circle,
+    "Trump-Background":"",
+    "Trump-Color":"",
+    "Trump-Border":"",
+    "Trump-Icon":"" );
+    
+    /*  (asterisk
+    "State":"success",
+	"Selector":".success",
+    "Color": $success-color,
+    "Icon": $fa-var-check,),
+
+
+    */
+// Trumplists these store repeated calls to background, color, icon, or border-color which is then rendered in the _states.trump.scss
+
+$error-background-trump:();
+$warning-background-trump:();
+$validated-background-trump:();
+$info-background-trump:();
+$completed-background-trump:();
+$highlighted-background-trump:();
+$disabled-background-trump:();
+$attention-background-trump:();
+
+$error-border-trump:();
+$warning-border-trump:();
+$validated-border-trump:();
+$info-border-trump:();
+$completed-border-trump:();
+$highlighted-border-trump:();
+$disabled-border-trump:();
+$attention-border-trump:();
+
+$error-fontcolor-trump:();
+$warning-fontcolor-trump:();
+$validated-fontcolor-trump:();
+$info-fontcolor-trump:();
+$completed-fontcolor-trump:();
+$highlighted-fontcolor-trump:();
+$disabled-fontcolor-trump:();
+$attention-fontcolor-trump:();
+
+$error-icon-trump:();
+$warning-icon-trump:();
+$validated-icon-trump:();
+$info-icon-trump:();
+$completed-icon-trump:();
+$highlighted-icon-trump:();
+$disabled-icon-trump:();
+$attention-icon-trump:();
+
+//Font Text Trump
+$text-LightFont-Trump:(".light-color-text");
+$text-DarkFont-Trump:(".dark-color-text");
+
+@function getTrump($TrumpList,$State){
+    @if $State == "error"{
+      @if $TrumpList == "background-color"{@return $error-background-trump;}
+      @if $TrumpList == "border-color"{ @return $error-border-trump;}
+      @if $TrumpList == "color"{ @return $error-fontcolor-trump;}
+      @if $TrumpList == "icon"{ @return $error-icon-trump;}
+    }
+    @if $State == "warning"{
+      @if $TrumpList == "background-color"{@return $warning-background-trump;}
+      @if $TrumpList == "border-color"{ @return $warning-border-trump;}
+      @if $TrumpList == "color"{ @return $warning-fontcolor-trump;}
+      @if $TrumpList == "icon"{ @return $warning-icon-trump;}
+    }
+    @if $State == "validated"{
+      @if $TrumpList == "background-color"{@return $validated-background-trump;}
+      @if $TrumpList == "border-color"{ @return $validated-border-trump;}
+      @if $TrumpList == "color"{ @return $validated-fontcolor-trump;}
+      @if $TrumpList == "icon"{ @return $validated-icon-trump;}
+    }
+    @if $State == "completed"{
+      @if $TrumpList == "background-color"{@return $completed-background-trump;}
+      @if $TrumpList == "border-color"{ @return $completed-border-trump;}
+      @if $TrumpList == "color"{ @return $completed-fontcolor-trump;}
+      @if $TrumpList == "icon"{ @return $completed-icon-trump;}
+    }    
+    @if $State == "disabled"{
+      @if $TrumpList == "background-color"{@return $disabled-background-trump;}
+      @if $TrumpList == "border-color"{ @return $disabled-border-trump;}
+      @if $TrumpList == "color"{ @return $disabled-fontcolor-trump;}
+      @if $TrumpList == "icon"{ @return $disabled-icon-trump;}
+    } 
+    @if $State == "info"{
+      @if $TrumpList == "background-color"{@return $info-background-trump;}
+      @if $TrumpList == "border-color"{ @return $info-border-trump;}
+      @if $TrumpList == "color"{ @return $info-fontcolor-trump;}
+      @if $TrumpList == "icon"{ @return $info-icon-trump;}
+    } 
+    @if $State == "highlighted"{
+      @if $TrumpList == "background-color"{@return $highlighted-background-trump;}
+      @if $TrumpList == "border-color"{ @return $highlighted-border-trump;}
+      @if $TrumpList == "color"{ @return $highlighted-fontcolor-trump;}
+      @if $TrumpList == "icon"{ @return $highlighted-icon-trump;}
+    } 
+    @if $State == "attention"{
+      @if $TrumpList == "background-color"{@return $attention-background-trump;}
+      @if $TrumpList == "border-color"{ @return $attention-border-trump;}
+      @if $TrumpList == "color"{ @return $attention-fontcolor-trump;}
+      @if $TrumpList == "icon"{ @return $attention-icon-trump;}
+    } 
+     @warn "#{$State} - Miss matched call no reference to this getTrump";
+    @return ();
+}
+@mixin setContrastTrump($ContrastQuery, $Selector){
+   $contrastResult :color-contrast($ContrastQuery);
+   @if $contrastResult == $global-default-dark-text{
+    $text-DarkFont-Trump: append($text-DarkFont-Trump,unquote($Selector),"comma")!global;
+   }
+   @if $contrastResult == $global-default-light-text{
+    $text-LightFont-Trump: append($text-LightFont-Trump,unquote($Selector),"comma")!global;
+    }   
+
+}
+
+@mixin setTrump($TrumpList, $State, $Selector){
+    @if $State == "error"{
+        @if $TrumpList == "background-color"{$error-background-trump:append($error-background-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "border-color"{$error-border-trump:append($error-border-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "color"{$error-fontcolor-trump:append($error-fontcolor-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "icon"{$error-icon-trump:append($error-icon-trump,unquote($Selector),"comma")!global;}
+    }
+    @if $State == "warning"{
+        @if $TrumpList == "background-color"{$warning-background-trump:append($warning-background-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "border-color"{$warning-border-trump:append($warning-border-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "color"{$warning-fontcolor-trump:append($warning-fontcolor-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "icon"{$warning-icon-trump:append($warning-icon-trump,unquote($Selector),"comma")!global;}
+    }
+    @if $State == "validated"{
+        @if $TrumpList == "background-color"{$validated-background-trump:append($validated-background-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "border-color"{$validated-border-trump:append($validated-border-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "color"{$validated-fontcolor-trump:append($validated-fontcolor-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "icon"{$validated-icon-trump:append($validated-icon-trump,unquote($Selector),"comma")!global;}
+    }
+    @if $State == "completed"{
+        @if $TrumpList == "background-color"{$completed-background-trump:append($completed-background-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "border-color"{$completed-border-trump:append($completed-border-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "color"{$completed-fontcolor-trump:append($completed-fontcolor-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "icon"{$completed-icon-trump:append($completed-icon-trump,unquote($Selector),"comma")!global;}
+    }    
+    @if $State == "disabled"{
+        @if $TrumpList == "background-color"{$disabled-background-trump:append($disabled-background-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "border-color"{$disabled-border-trump:append($disabled-border-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "color"{$disabled-fontcolor-trump:append($disabled-fontcolor-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "icon"{$disabled-icon-trump:append($disabled-icon-trump,unquote($Selector),"comma")!global;}
+    }
+    @if $State == "attention"{
+        @if $TrumpList == "background-color"{$attention-background-trump:append($attention-background-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "border-color"{$attention-border-trump:append($attention-border-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "color"{$attention-fontcolor-trump:append($attention-fontcolor-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "icon"{$attention-icon-trump:append($attention-icon-trump,unquote($Selector),"comma")!global;}
+    }
+     @if $State == "info"{
+        @if $TrumpList == "background-color"{$info-background-trump:append($info-background-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "border-color"{$info-border-trump:append($info-border-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "color"{$info-fontcolor-trump:append($info-fontcolor-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "icon"{$info-icon-trump:append($info-icon-trump,unquote($Selector),"comma")!global;}
+    }
+    @if $State == "highlighted"{
+        @if $TrumpList == "background-color"{$highlighted-background-trump:append($highlighted-background-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "border-color"{$highlighted-border-trump:append($highlighted-border-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "color"{$highlighted-fontcolor-trump:append($highlighted-fontcolor-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "icon"{$highlighted-icon-trump:append($highlighted-icon-trump,unquote($Selector),"comma")!global;}
+    }
+}

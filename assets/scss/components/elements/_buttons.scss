@@ -1,0 +1,44 @@
+/**
+* Buttons:
+* `.nobutton .button or .button.secondary` - sample buttons from `.button` you can modifiers
+* 
+*   @example
+*	<a class="nobutton">no button</a>
+*	<a class="button">button</a>
+*	<a class="button secondary">secondary button</a>
+*	<a class="button disabled">disabled button </a>
+*/
+
+
+%buttondisabled{
+	background-color: grey(30);
+	background-image: url(../img/empty_diamond.png);
+	color:fontcolor($black,'quiet');
+	border:1px solid grey(50);
+	cursor:not-allowed;
+}
+ button[disabled],
+ button:disabled,
+.button.disabled,
+.button.disabled:hover,{
+	&,&.success,&.alert,&.secondary{
+		@extend %buttondisabled;
+		.input-space &{ padding-top: 7px; padding-bottom:7px;}
+	}
+}
+.link.disabled,.link.disabled:hover{
+	background-image: url("../img/subtlenet2.png");
+	color:fontcolor($black,'quiet');
+	font-style: italic;
+}
+.nobutton{
+	@include button($bg:#fff);
+	margin-bottom: 0;
+	&.disabled,&[disabled]{
+		&,&:hover{
+		color:fontcolor($black,'quiet');
+		cursor:not-allowed;
+		background-color: #fff;
+		}
+	}
+}

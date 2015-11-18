@@ -1,0 +1,76 @@
+/**
+* HELPER - Condensable (Condense):
+* `.condensable` - a pattern to hide and show elements inside of a an element to shortend the text to respond to the space. You can set the break points of the condensings with `.small`, `.medium`, or `.large`
+* 
+*   @example
+*	<h2 class="condensable large">
+*		Super<span class="condense">califragilisticexpialidocious the full word is only seen on large screens</span> 
+*	</h2>
+*/
+/**
+* HELPER - Swappable (short-text long-text):
+* `.swappable` - a pattern to hide and show elements long and short text to respond to the space. You can set the break points of the condensings with `.small`, `.medium`, or `.large`
+* 
+*   @example
+*	<h2 class="swappable meduim">
+*		<span class="short-text">Short Title</span>
+*		<span class="long-text">Long TItle Seen on Medium Screens and Up</span>
+*	</h2>
+*/
+
+
+.condensable{
+	.condense{ display:inline;}
+	word-spacing: -4px;
+	*{ word-spacing: 0;}
+	@include bp(xs-down){
+		.condense{ display:none;}
+	}
+
+	&.small{
+		@include bp(sm-down){
+			.condense{ display:none;}
+		}
+	}
+
+	&.medium{
+		@include bp(md-down){
+			.condense{ display:none;}
+		}
+	}
+
+	&.large{
+		@include bp(lg-down){
+			.condense{ display:none;}
+		}
+	}
+}
+.swappable{
+	.long-text{ display:inline;}
+	.short-text{ display: none;}
+	@include bp(xs-down){
+		.short-text{ display: inline;}
+		.long-text{ display:none;}
+	}
+
+	&.small{
+		@include bp(sm-down){
+			.short-text{ display: inline;}
+			.long-text{ display:none;}
+		}
+	}
+
+	&.medium{
+		@include bp(md-down){
+			.short-text{ display: inline;}
+			.long-text{ display:none;}
+		}
+	}
+
+	&.large{
+		@include bp(lg-down){
+			.short-text{ display: inline;}
+			.long-text{ display:none;}
+		}
+	}
+}

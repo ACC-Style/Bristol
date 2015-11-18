@@ -53,7 +53,7 @@ module.exports = function(grunt){
 					expand: true,
 					cwd: './assets/scss',
 					src: ['*.scss'],
-					dest: './styleguide/Assets/css',
+					dest: './styleguide/assets/css',
 					ext: '.css'	
 				}]
 			},
@@ -144,7 +144,7 @@ module.exports = function(grunt){
 			      livereload: true,
 			    },
 			js: {
-			files: [ 'Assets/js/*.js','templates/includes/scripts.liquid' ],
+			files: [ 'assets/js/*.js','templates/includes/scripts.liquid' ],
 			tasks: [ 'liquid','copy:INTERNAL' ],
 
 			},
@@ -154,7 +154,7 @@ module.exports = function(grunt){
 
 			},
 			scss: {
-			files: [ 'Assets/scss/*.scss','Assets/scss/*/*.scss','Assets/scss/*/*/*.scss' ],
+			files: [ 'assets/scss/*.scss','assets/scss/*/*.scss','assets/scss/*/*/*.scss' ],
 			tasks: [ 'sass:dist','cssmin','styledown:base','copy:INTERNAL'],
 
 			}

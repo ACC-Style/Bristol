@@ -1,0 +1,184 @@
+/**
+* (OMA) Membership Selection Table:
+* `.membership-table` - A table card that shows the details for membership selections.
+* 
+*   @example
+*   <ul class="membership-table">
+*   <li class="membership-table_title">Affilliate</li>
+*   <li class="membership-table_price"><div class="price-holder"><div class="price">$75.00</div><div class="price-alt">Membership Dues Per Year</div></div></li>
+*   <li class="membership-table_description">Fellowship is one of the most distinguished designations the College offers its members, and is the ultimate recognition of professional achievement.</li>
+*   <li class="membership-table_listitem">Have completed cardiovascular training <br><small class="italic">(FITs may apply within six months of completing training)</small></li>
+*   <li class="membership-table_listitem">Have a full-time academic and/or cardiovascular or cardiovascular-related position</li>
+*   <li class="membership-table_listitem">Dedicate at least 75% of their professional time/activities to cardiology</li>
+*   <li class="membership-table_cta">
+*   <button href="#" class="small button expand radius">Select</button>
+*   </li>
+*    <li class="membership-table_description" data-bind="html: Requirements"><p>To Apply You Need</p><ul>
+*      <li>To Currently Hold a Full-Time Academic and/or Cardiovascular or CV-Related Position </li>
+*      <li>To Present Two Letters of Sponsorship From Current FACCs</li>
+*    <li>Your List of Publications (if not Board certified)</li>
+*    </ul>
+*    <p><a href="http://www.acc.org/membership/about-membership/the-facc-designation" target="_blank">View full requirements here</a></p></li>
+*   </ul>
+*/
+
+.membership-table  {
+  display: block;
+  list-style: none;
+ 
+  color:fontcolor($black);
+ 
+  .membership-table_title,.membership-table_price,.membership-table_listitem,.membership-table_description, .membership-table_cta{
+    display: block;
+    border:1px solid grey(10);
+    padding:.75em 1.5em 1.25em; 
+    font-size: ms(0);
+    line-height: $base-line;
+    + li {border-top:0;}
+  }
+  ul, ul li{list-style-type:disk;}
+  small{
+    color:rebrand-color($brand-color, 1);
+     @include baseline-font(-1,0,0,0);
+  }
+  .membership-table_title{
+    background-color: rebrand-color($brand-color, 2);
+    @include font-slab();
+    color:color-contrast(rebrand-color($brand-color, 2));
+    font-size: ms(3);
+    padding: .15em 1em .2em;
+    line-height: 1.2;
+    display: inline-block;
+    width: 100%;
+    min-height: 3em;
+    vertical-align: middle;
+    text-align: center;
+}
+
+  .membership-table_price{
+    @include font-display();
+    background-color: grey(5);
+    text-align: center;
+    line-height: 1.2;  
+    padding:.75em 1.5em .8em; 
+    .price-holder{
+      display:inline-block;
+      margin:0 auto;
+    }
+    .price{
+      @include baseline-font(6);
+      small{
+        @include baseline-font(0,0,0,6);
+        color: fontcolor($black ,"quiet");
+        @include font-slab-bold();
+      } 
+    }
+    .price-alt{
+      @include baseline-font(-1);
+        @include font-slab-bold();
+      color: rebrand-color($brand-color, 2);
+
+    }
+  }
+  .membership-table_description{
+    font-size: ms(0);
+    line-height: 1.65;
+    font-weight: bold;
+    color: rebrand-color($brand-color, 2);
+    line-height: 1.5;
+  }
+  .membership-table_cta{
+    button,.button{
+      margin-bottom: 0;
+    }
+  }
+  .button-group {
+    position: relative;
+    display: inline-block;
+    margin: 1rem 0;
+    width:100%;
+
+    &:before {
+      content: attr(data-grouptype);
+      z-index: 99999;
+      color: #999;
+      display: block;
+      font-size: 1rem;
+      padding: 1rem;
+      border-radius: 50%;
+      background: #FFF;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: auto;
+      margin-left: -1.5rem;
+    }
+    button, .button{
+      width:45%;
+      @include button-style(grey(30));
+    }
+    button + button,.button + .button {
+      margin-left: 5px;
+      @include button-style(rebrand-color($success-color, 3));
+    }
+  }
+}
+
+/*
+
+.membership-table  {
+  @include pricing-table-container;
+
+  small{font-size: 80%;}
+  .membership-table_title  {
+    @include pricing-table-title;
+    background-color: rebrand-color($brand-color, 2);
+    @include font-slab();
+    color:color-contrast(rebrand-color($brand-color, 2));
+  }
+  .membership-table_price  {
+    @include pricing-table-price;
+    small{font-size: 50%;}
+  }
+  .membership-table_description   {
+    @include pricing-table-description;
+  }
+  .membership-table_listitem {
+    @include pricing-table-bullet;
+    line-height: 1.4;
+  }
+  .membership-table_cta    {
+    @include pricing-table-cta;
+  }
+  .button-group {
+    position: relative;
+    display: inline-block;
+    margin: 1rem 0;
+    width:100%;
+
+    &:before {
+      content: attr(data-grouptype);
+      z-index: 99999;
+      color: #999;
+      display: block;
+      font-size: 1rem;
+      padding: 1rem;
+      border-radius: 50%;
+      background: #FFF;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: auto;
+      margin-left: -1.5rem;
+    }
+    button, .button{
+      width:45%;
+      @include button-style(grey(30));
+    }
+    button + button,.button + .button {
+      margin-left: 5px;
+      @include button-style(rebrand-color($success-color, 3));
+    }
+  }
+}
+*/

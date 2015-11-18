@@ -1,0 +1,116 @@
+$typography-highlight-color:rebrand-color(color($primary-color,80) , 2);
+$typography-line-colors:rebrand-color(color($primary-color,80) , 2);
+
+$h1-spacing:1.5rem;
+$h2-spacing:1rem;
+$h3-spacing:.7rem;
+$h4-spacing:.5rem;
+$h5-spacing:.5rem;
+$h6-spacing:.75rem;
+%h1,%h2,%h3,%h4,%h5,%h6{ margin-top:0; clear:both;}
+%h1{
+letter-spacing: -1px;
+@include font-display();
+}
+%h2{
+@include font-slab();
+}
+%h4{
+@include font-slab-bold();
+}
+%h3,%h5,%h6 { 
+	@include font-bold();
+}
+
+.h1{
+	@extend %h1;
+	font-weight: normal;
+	@include baseline-font(4,1,1);
+	@include bp(md){
+		@include baseline-font(5,1,1);	
+		}
+
+}
+.h2{
+	@extend %h2;
+	@include baseline-font(3,.5,.5);
+
+}
+.h3{
+	@extend %h3;
+	@include baseline-font(2,.25,.75);
+
+}
+.h4{
+	@extend %h4;
+	@include baseline-font(1,.5,.5);
+}
+.h5{@extend %h5;@include baseline-font(0); }
+.h6{@extend %h6;@include baseline-font(0);}
+
+%normal {
+	@include font; 
+	color:fontcolor($real-black);
+	@include baseline-font(0);
+}
+%loud  { color:fontcolor($real-black,'loud');font-weight: 900; }
+%emphasis{ color:fontcolor($real-black,'loud'); }
+%quiet { color: fontcolor($real-black,'quiet'); }
+%italic { @include font-italic; @extend %quiet;}
+%bold   { @include font-bold; @extend %loud; }
+%subtle{ @include font-light;color: mix(rebrand-color($primary-color, 2),fontcolor($real-black,'light'));}
+.block-margins { margin: 0 em($base-line) 0; }
+
+%unordered-list { list-style-type: disc; }
+%ordered-list { list-style: decimal; }
+%inline-list{ list-style: none; display:block;margin:0; >li{display:inline-block;margin-left: .25rem;} }
+
+/**
+ * Header Tags:
+ * `Typography` - basic styling for headers. 
+ *  You can also us `.h1`,`.h2`,`.h3`,`.h4`,`.h5`, or `.h6` 
+ *  to make any text elements style like the associated header tag 
+ *
+ *     @example
+ *     h1 Header 1 Tag
+ *		small subheader
+ *     h2 Header 2 Tag
+ *     h3 Header 3 Tag
+ *     h4 Header 4 Tag
+ *     h5 Header 5 Tag 
+ *     h6 Header 6 Tag
+ *     h1.with-underline Header 1 Tag
+ *		small subheader
+ *     h2.with-underline Header 2 Tag
+ *     h3.with-underline Header 3 Tag
+ *     h4.with-underline Header 4 Tag
+ *     h5.with-underline Header 5 Tag 
+ *     h6.with-underline Header 6 Tag
+ */
+
+
+h1{
+	
+	@extend .h1;
+}
+h2{
+
+	@extend .h2;
+	color:fontcolor($real-black);
+}
+h3{
+	@extend .h3;
+	color: fontcolor($typography-highlight-color);
+}
+h4{
+	@extend .h4;
+	color:fontcolor($real-black);
+}
+h5{
+	@extend .h5;
+	color:fontcolor($real-black);
+}
+h6{
+	@extend .h6;
+	color:fontcolor(#666);
+}

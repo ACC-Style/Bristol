@@ -1,0 +1,152 @@
+// This code is just for dependency this is to help maintain the project but doesn't produce any css.
+$required-SCSS_states: "false" !default;
+$required_data:(
+	'bool' :$required-SCSS_states,
+	'required':'__states.required.scss',
+	'path':'scss/base/__states.required.scss',
+	'file':'_collapsable-panel.states.scss'
+	);
+@include required-check($required_data...);
+// End of required check
+%darkfont{color:$global-default-dark-text}
+%lightfont{color:$global-default-light-text;}
+td.icon{
+		padding: .25rem .25rem .25rem .25rem;
+		text-align: center;
+		vertical-align: middle;
+		width:1%;
+		
+		i{margin: 0 auto;}
+	}
+%tr-td-state{  
+	background-image: url(../img/empty_stripe@2x.png);
+	font-weight: 900;
+}	
+%tr-td-state-alt{  
+	background-image: url(../img/empty_stripe-alt@2x.png);
+	font-weight: 900;
+
+}
+%td-state{  
+	background-image: url(../img/empty_diamond@2x.png) !important;
+	font-weight: 900;
+}
+%cell-color{border:1px solid;}
+%tr-state{
+	border-top:1px solid;
+	border-bottom:1px solid;
+}
+@each $State in $states{
+	$cell-color:mix(map-get($State,"Color"),white,17%);
+	$cell-color-shift:mix(map-get($State,"Color"),white,22%);
+	$selector:map-get($State,"Selector");
+	tr#{$selector} td{
+		@extend %tr-td-state;
+
+	}
+	.stripped tr#{$selector} td:nth-child(odd){
+		@extend %tr-td-state-alt;
+		
+
+
+	}
+	td#{$selector},.table tbody tr + tr td#{$selector}{
+		@extend %td-state;
+
+	}
+	td#{$selector},.table tbody tr + tr td#{$selector},tr#{$selector} td,.stripped tr#{$selector}:nth-child(even) td:nth-child(odd){
+		
+		background-color:$cell-color;
+		@extend %darkfont;
+		border-color: color(map-get($State, "Color"),30);
+	}
+	td#{$selector}{
+		@extend %cell-color;
+	}
+	tr#{$selector} td{
+		@extend %tr-state;
+		
+	}
+	tr:nth-child(even) td#{$selector}{
+		background-color:$cell-color-shift;
+		@extend %darkfont;
+	}
+	tr:nth-child(even){
+		&#{$selector} td{
+			background-color:$cell-color-shift;
+			@extend %darkfont;
+		}
+	} 
+	.stripped tbody tr#{$selector} td:nth-child(odd){
+		background-color:$cell-color;
+	}
+}
+
+// Documentation of Table Cells
+/**
+* Table States Cells:
+* `td.state-name` - quickly color table cells. 
+* 
+*   @example
+*	<table class="table">
+*		<tr>
+*			<td class="error icon"><i class="fa fa-holder"></i></td>
+*			<td class=""><i class="fa fa-holder"></i></td>
+*			<td class="">Text</td>
+*			<td class=""><i class="fa fa-holder"></i>&nbsp;Warning</td>
+*		</tr>
+*		<tr>
+*			<td class=""><i class="fa fa-holder"></i></td>
+*			<td class="info icon"><i class="fa fa-holder"></i></td>
+*			<td class="">Text</td>
+*			<td class="info"><i class="fa fa-holder"></i>&nbsp;Info</td>
+*		</tr>
+*		<tr>
+*			<td class=""><i class="fa fa-holder"></i></td>
+*			<td class="warning icon"><i class="fa fa-holder"></i></td>
+*			<td class="error">Error</td>
+*			<td class=""><i class="fa fa-holder"></i>&nbsp;Text</td>
+*		</tr>
+*		<tr>
+*			<td class="validated icon"><i class="fa fa-holder"></i></td>
+*			<td class="info icon"><i class="fa fa-holder"></i></td>
+*			<td class="validated">Validated</td>
+*			<td class=""><i class="fa fa-holder"></i>&nbsp;text</td>
+*		</tr>
+*	</table>
+*/
+
+// Documentation of Table Rows
+/**
+* Table States - Rows:
+* `tr.state` - quickly color table rows with the states. 
+* 
+*   @example
+*	<table class="table stripped">
+*		<tr class="validated">
+*			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
+*			<td class=""></td>
+*			<td class="">Cell Data in validated Row</td>
+*			<td class="">Icon is Dynamic</td>
+*		</tr>
+*		<tr class="warning">
+*			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
+*			<td class=""></td>
+*			<td class="">Cell Data in Warning Row</td>
+*			<td class="error">I am an error cell</td>
+*		</tr>
+*		<tr class="warning">
+*			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
+*			<td class=""></td>
+*			<td class="">Cell Data in Warning Row</td>
+*			<td>data</td>
+*		</tr>
+
+*		<tr class="error">
+*			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
+*			<td class="">Icon is Dynamic</td>
+*			<td class="">Cell Data in Error Row</td>
+*			<td class="">Cell Data</td>
+*		</tr>
+*	</table>
+*/

@@ -1,0 +1,82 @@
+/**
+* Slider (Foundation Override):
+* `.range-slider .vertical-range` - Sliders are a great peice of UI for mobile and range of numbers !!REQUIRES JAVASCRIPT OF FOUNDATION!!!
+* 
+*   @example
+*   <div class="range-slider round" id="slider-weight" data-slider="187" data-options="start: 75; end: 300;">
+*    <span class="range-slider-handle" role="slider" tabindex="0" aria-valuemin="75" aria-valuemax="300" aria-valuenow="187" style="-webkit-transform: translateX(207.071111111111px); transform: translateX(207.071111111111px);"></span>
+*    <span class="range-slider-active-segment" style="width: 49.7777777777778%;"></span>
+*    <input type="hidden" value="187">
+*   </div>
+*   <a class="link" href="http://foundation.zurb.com/docs/components/range_slider.html">Foundation Documentation</a>
+*/
+
+
+// These variables define the slider bar styles
+// $range-slider-bar-width: 100%;
+// $range-slider-bar-height: rem-calc(16);
+
+// $range-slider-bar-border-width: 1px;
+// $range-slider-bar-border-style: solid;
+// $range-slider-bar-border-color: $gainsboro;
+// $range-slider-radius: $global-radius;
+// $range-slider-round: $global-rounded;
+$range-slider-bar-bg-color:mix( rebrand-color($black,3), #fff, 5%);
+
+// Vertical bar styles
+// $range-slider-vertical-bar-width: rem-calc(16);
+// $range-slider-vertical-bar-height: rem-calc(200);
+
+// These variables define the slider handle styles
+// $range-slider-handle-width: rem-calc(32);
+// $range-slider-handle-height: rem-calc(22);
+// $range-slider-handle-position-top: rem-calc(-5);
+$range-slider-handle-bg-color: rebrand-color($primary-color,2);
+// $range-slider-handle-border-width: 1px;
+// $range-slider-handle-border-style: solid;
+// $range-slider-handle-border-color: none;
+// $range-slider-handle-radius: $global-radius;
+// $range-slider-handle-round: $global-rounded;
+$range-slider-handle-bg-hover-color: scale-color($range-slider-handle-bg-color, $lightness: -12%);
+// $range-slider-handle-cursor: pointer;
+
+  .range-slider {
+      @include range-slider-bar-base;
+      @include range-slider-bar-style($bg:true, $radius:false);
+      &.vertical-range {
+        @include range-slider-bar-base($vertical: true);
+        .range-slider-handle {
+          margin-top: 0;
+          margin-#{$default-float}: -($range-slider-handle-width / 4);
+          position: absolute;
+          bottom: -($range-slider-vertical-bar-height - $range-slider-handle-width);
+        }
+        .range-slider-active-segment {
+          width: $range-slider-bar-height - rem-calc((strip-unit($range-slider-bar-border-width) * 2));
+          height: auto;
+          bottom: 0;
+        }
+      }
+      &.radius {
+        @include range-slider-bar-style($radius:true);
+        .range-slider-handle { @include range-slider-handle-style($radius: true); }
+      }
+      &.round {
+        @include range-slider-bar-style($round:true);
+        .range-slider-handle { @include range-slider-handle-style($round: true); }
+      }
+      &.disabled, &[disabled] {
+        @include range-slider-bar-style($disabled:true);
+        .range-slider-handle { @include range-slider-handle-style($disabled: true); }
+      }
+    }
+    .range-slider-active-segment {
+      display: inline-block;
+      position: absolute;
+      height: $range-slider-bar-height - rem-calc((strip-unit($range-slider-bar-border-width) * 2));
+      background: $range-slider-active-segment-bg-color;
+    }
+    .range-slider-handle {
+      @include range-slider-handle-base;
+      @include range-slider-handle-style($bg:true, $radius: false);
+    }

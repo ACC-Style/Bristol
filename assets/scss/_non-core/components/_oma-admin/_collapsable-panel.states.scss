@@ -1,0 +1,75 @@
+// This code is just for dependency this is to help maintain the project but doesn't produce any css.
+$required-SCSS_states: "false" !default;
+$required_data:(
+	'bool' :$required-SCSS_states,
+	'required':'__states.required.scss',
+	'path':'scss/base/__states.required.scss',
+	'file':'_collapsable-panel.states.scss'
+	);
+@include required-check($required_data...);
+// End of required check
+/**
+* Collapsable Panel:
+* `.collapsable-panel` - a container element which naturaly is hiden and reveals when it is prompted.<br><br> !!  Requires Javascript to Function  !!
+* 
+*   @example
+*	<div class="row">
+*		<div class="column small-12 medium-6">
+*			<div class="collapsable-panel warning" style="display: block;">
+*				<div class="bar close">
+*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> <span class="text">close</span></a>
+*				</div>
+*				<div class="content">
+*					<div class="row">
+*						<div class="column small-12">
+*							<h2>H2 in Panel</h2>
+*			              <p>All basic html content can be placed in the panel</p>
+*						</div>
+*					</div>
+*				</div>
+*					<div class="bar jumpToTop">
+*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> <span class="text">top</span></a>
+*				</div>
+*			</div>
+*		</div>
+*		<div class="column small-12 medium-6">
+*			<div class="collapsable-panel error inset" style="display: block;">
+*				<div class="bar close">
+*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> <span class="text">close</span></a>
+*				</div>
+*				<div class="content">
+*					<div class="row">
+*						<div class="column small-12">
+*							<h2>H2 in Inset Panel</h2>
+*			              <p>All basic html content can be placed in the panel</p>
+*						</div>
+*					</div>
+*				</div>
+*					<div class="bar jumpToTop">
+*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> <span class="text">top</span></a>
+*				</div>
+*			</div>
+*		</div>
+*	</div>
+*/
+.collapsable-panel{
+	@each $State in $states{
+		&#{map-get($State,"Selector")}{
+			background-color: transparent;
+			border:0 none transparent;
+			.bar.close ,&.inset .bar.close{
+				border-color:map-get($State,"Color");
+			}
+			.bar.close .action-btn{color:map-get($State,"Color")}
+			&.inset{
+				background-color:color(map-get($State,"Color"),10); 
+				.bar.close .action-btn{
+					background-color: map-get($State,"Color"); 
+					color:color-contrast(map-get($State,"Color"));
+				}
+			}
+
+		}
+	}
+}
+

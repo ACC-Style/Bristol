@@ -1,0 +1,45 @@
+/**
+* Nav List (Checklist):
+* `.nav-checklist` - add class to the nav to change the .nav-list from forward links to a list with states of `.selected`, `.completed`, `.warning`, `.error`
+* 
+*   @example
+*	<nav class="nav-list nav-checklist">
+*	<ul>
+*	<li class="">
+*	<a><span class="text">Nav List Item 1(blank)</span><i class="fa fa-holder-dynamic"></i></a>
+*	<li  class="selected">
+*	<a><span class="text">Nav List Item 2(selected)</span><i class="fa fa-holder-dynamic"></i></a>
+*	</li>
+*	<li  class="completed">
+*	<a><span class="text">Nav List Item 3(completed)</span><i class="fa fa-holder-dynamic"></i></a>
+*	</li>
+*	</ul>
+*	</nav>
+*/
+
+.nav-list.nav-checklist{
+	//@extend .nav-list;
+	li{
+		border:1px solid grey(10);
+		border-left-width: 0;
+		border-right-width:0;
+		margin-bottom: 0;
+		margin-top: -1px;
+		@include fa-holder('','dynamic');
+		background-image: url(../img/empty_stripe.png);
+		&:hover{background-image: none;}
+		&.selected{
+			@include fa-holder($fa-var-chevron-left,'dynamic'); 
+			border-bottom-width: 1px;
+			border-color: color(rebrand-color($success-color,3), 40);
+			background-image: none;
+			@include font-slab-bold();
+			color:fontcolor($real-black);
+			i{color:grey(0);};
+		}
+		&.completed{ 
+			@include fa-holder($fa-var-check,'dynamic');
+			i{color:$success-color;}
+		}
+	}
+}

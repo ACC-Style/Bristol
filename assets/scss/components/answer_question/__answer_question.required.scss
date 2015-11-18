@@ -1,0 +1,132 @@
+.inline-group{
+	list-style: none;
+	display:block;
+	&>*{
+		display: inline-block;
+		list-style: none;
+		}
+	&:after{
+		content:'';
+		display:block;
+		clear:both;
+	}
+}
+.answer,.answer-group,.question,.question-group{
+	input[type="text"],
+	input[type="password"],
+	input[type="date"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="month"],
+	input[type="week"],
+	input[type="email"],
+	input[type="number"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="time"],
+	input[type="url"],
+	input[type="color"],
+	textarea,
+	select,
+	button,
+	.button{margin-bottom: 0;}
+}
+.answer,.question{
+	margin-bottom: rem-calc(ms(0));
+	.prefix,.postfix,.value{
+		@include baseline-font(0,0);
+		@include font-bold();
+		padding: .5em;
+		margin-top: 0;
+		color:grey(60);
+		display: block;
+	}
+}
+.answer,.question{.value{
+
+
+}}
+
+.label-holder,.input-holder,.message-holder,.value-holder{
+	@include grid-row(collapse);
+}
+.label-holder{
+	label, .label{@include font-bold();}
+	@include baseline-font(0,.5,.25);
+	position: relative;
+	background-color:transparent;
+	color:fontcolor($black);
+	white-space: nowrap;
+	@include bp(sm-down){
+		white-space:normal;
+	}
+	.text{padding-right:1rem; line-height: 1.2em;}
+}
+
+
+.required-holder {
+	display: none;
+	height: 1rem;
+	width:1rem;
+	position: relative;
+	margin-left:-1rem;
+	margin-right:-1rem;
+	color:grey(80);
+	i.fa-holder-dynamic{ position: absolute;top:0;left:0;font-size: .75rem;}
+}
+
+%visible-required-icon{
+	background-color: transparent;
+	display: inline-block;
+}
+.answer.required .required-holder,.question.required .required-holder{
+	@extend %visible-required-icon;
+	@include fa-holder($fa-var-asterisk,'dynamic');
+	color:$warning-color;
+}
+
+.input-holder,.value-holder{
+	@include grid-row();
+	margin-bottom: 0;
+	>.input-space{  padding-left: 0;line-height: 1;
+
+	}
+}
+[class*="input-space"] + [class*="input-space"]:last-child,[class*="value-space"] + [class*="value-space"]:last-child{
+	padding-right:0;
+}
+
+.message-holder{
+	> small, > span{
+		@include baseline-font(-1);
+		display: none;
+		padding: .375rem .5625rem .5625rem;
+		margin-top: -1px;
+		margin-bottom: .25rem;
+		clear:both;
+		color: #FFF;
+		i{margin-right: .5rem;}
+	}	
+}
+.hint{
+	@extend .row;
+	@include baseline-font(-1);
+	@extend %italic;
+}
+
+%disabledinput{
+	background-color: grey(30);
+	background-image: url(../img/empty_stripe.png);
+	color:fontcolor($black,'quiet');
+}
+
+.answer,.question{
+input, textarea, option{
+	&:disabled,&[disabled]{
+		@extend %disabledinput;
+	}
+}
+.chosen-disabled.chosen-container .chosen-choices{@extend %disabledinput;}	
+}
+
+

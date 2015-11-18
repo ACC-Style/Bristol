@@ -1,0 +1,51 @@
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex !important;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;  
+  -moz-box-ordinal-group: $val;     
+  -ms-flex-order: $val;     
+  -webkit-order: $val;  
+  order: $val;
+}
+// flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+
+@mixin flex-flow($direction, $wrap){
+  -webkit-flex-flow: $direction $wrap;
+  -moz-flex-flow: $direction $wrap;
+  -ms-flex-flow: $direction $wrap;
+  flex-flow: $direction $wrap;
+}
+@mixin flex-justify-content($val){
+   -webkit-justify-content: $val;
+  -moz-justify-content: $val;
+  -ms-justify-content: $val;
+  justify-content: $val;
+}
+@mixin flex-align-items($val){
+   -webkit-align-items: $val;
+  -moz-align-items: $val;
+  -ms-align-items: $val;
+  align-items: $val;
+}
+
+@mixin flex-align-content($val){
+   -webkit-align-content: $val;
+  -moz-align-content: $val;
+  -ms-align-content: $val;
+  align-content: $val;
+}

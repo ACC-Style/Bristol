@@ -1,0 +1,5065 @@
+@charset "UTF-8";
+/**
+* Base Framework:
+* `zurb foundation` - The ACC App Mobile Framework is based off of a reduced build of zurb foundation all of the grid, columns, base typography, and form elements can be used from zurb.  All functions can be turned back on, but to reduce build size many of the design features have been disabled.
+* 
+*   @example
+*	<a  class="button" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
+*/
+@font-face {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/opensans_300/OpenSans-Light-webfont.eot");
+  src: url("../fonts/opensans_300/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans_300/OpenSans-Light-webfont.woff") format("woff"), url("../fonts/opensans_300/OpenSans-Light-webfont.ttf") format("truetype"), url("../fonts/opensans_300/OpenSans-Light-webfont.svg#open_sanslight") format("svg"); }
+@font-face {
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: 300;
+  src: url("../fonts/opensans_300-italic/OpenSans-LightItalic-webfont.eot");
+  src: url("../fonts/opensans_300-italic/OpenSans-LightItalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans_300-italic/OpenSans-LightItalic-webfont.woff") format("woff"), url("../fonts/opensans_300-italic/OpenSans-LightItalic-webfont.ttf") format("truetype"), url("../fonts/opensans_300-italic/OpenSans-LightItalic-webfont.svg#open_sanslight") format("svg"); }
+@font-face {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/opensans_400/OpenSans-Regular-webfont.eot");
+  src: url("../fonts/opensans_400/OpenSans-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans_400/OpenSans-Regular-webfont.woff") format("woff"), url("../fonts/opensans_400/OpenSans-Regular-webfont.ttf") format("truetype"), url("../fonts/opensans_400/OpenSans-Regular-webfont.svg#open_sanslight") format("svg"); }
+@font-face {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/opensans_700/OpenSans-Bold-webfont.eot");
+  src: url("../fonts/opensans_700/OpenSans-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans_700/OpenSans-Bold-webfont.woff") format("woff"), url("../fonts/opensans_700/OpenSans-Bold-webfont.ttf") format("truetype"), url("../fonts/opensans_700/OpenSans-Bold-webfont.svg#open_sanslight") format("svg"); }
+@font-face {
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: 700;
+  src: url("../fonts/opensans_700-italic/OpenSans-BoldItalic-webfont.eot");
+  src: url("../fonts/opensans_700-italic/OpenSans-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans_700-italic/OpenSans-BoldItalic-webfont.woff") format("woff"), url("../fonts/opensans_700-italic/OpenSans-BoldItalic-webfont.ttf") format("truetype"), url("../fonts/opensans_700-italic/OpenSans-BoldItalic-webfont.svg#open_sanslight") format("svg"); }
+@font-face {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/robotoslab_300/RobotoSlab-Regular-webfont.eot");
+  src: url("../fonts/robotoslab_300/RobotoSlab-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/robotoslab_300/RobotoSlab-Regular-webfont.woff") format("woff"), url("../fonts/robotoslab_300/RobotoSlab-Regular-webfont.ttf") format("truetype"), url("../fonts/robotoslab_300/RobotoSlab-Regular-webfont.svg#open_sanslight") format("svg"); }
+@font-face {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/robotoslab_700/RobotoSlab-Bold-webfont.eot");
+  src: url("../fonts/robotoslab_700/RobotoSlab-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/robotoslab_700/RobotoSlab-Bold-webfont.woff") format("woff"), url("../fonts/robotoslab_700/RobotoSlab-Bold-webfont.ttf") format("truetype"), url("../fonts/robotoslab_700/RobotoSlab-Bold-webfont.svg#open_sanslight") format("svg"); }
+/*!
+ *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+/* FONT PATH
+ * -------------------------- */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../fonts/fontawesome-webfont.eot?v=4.4.0");
+  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.4.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff?v=4.4.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.4.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/* makes the font 33% larger relative to the icon container */
+.fa-lg {
+  font-size: 1.33333em;
+  line-height: 0.75em;
+  vertical-align: -15%; }
+
+.fa-2x {
+  font-size: 2em; }
+
+.fa-3x {
+  font-size: 3em; }
+
+.fa-4x {
+  font-size: 4em; }
+
+.fa-5x {
+  font-size: 5em; }
+
+.fa-fw {
+  width: 1.28571em;
+  text-align: center; }
+
+.fa-ul {
+  padding-left: 0;
+  margin-left: 2.14286em;
+  list-style-type: none; }
+  .fa-ul > li {
+    position: relative; }
+
+.fa-li {
+  position: absolute;
+  left: -2.14286em;
+  width: 2.14286em;
+  top: 0.14286em;
+  text-align: center; }
+  .fa-li.fa-lg {
+    left: -1.85714em; }
+
+.fa-border {
+  padding: .2em .25em .15em;
+  border: solid 0.08em #eee;
+  border-radius: .1em; }
+
+.pull-right {
+  float: right; }
+
+.pull-left {
+  float: left; }
+
+.fa.pull-left {
+  margin-right: .3em; }
+.fa.pull-right {
+  margin-left: .3em; }
+
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear; }
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg); } }
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg); } }
+.fa-rotate-90 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg); }
+
+.fa-rotate-180 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+.fa-rotate-270 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg); }
+
+.fa-flip-horizontal {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1); }
+
+.fa-flip-vertical {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1, -1); }
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical {
+  filter: none; }
+
+.fa-stack {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: middle; }
+
+.fa-stack-1x, .fa-stack-2x {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center; }
+
+.fa-stack-1x {
+  line-height: inherit; }
+
+.fa-stack-2x {
+  font-size: 2em; }
+
+.fa-inverse {
+  color: #fff; }
+
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+.fa-search:before {
+  content: ""; }
+
+.fa-envelope-o:before {
+  content: ""; }
+
+.fa-star:before {
+  content: ""; }
+
+.fa-star-o:before {
+  content: ""; }
+
+.fa-user:before {
+  content: ""; }
+
+.fa-check:before {
+  content: ""; }
+
+.fa-remove:before,
+.fa-close:before,
+.fa-times:before {
+  content: ""; }
+
+.fa-search-plus:before {
+  content: ""; }
+
+.fa-search-minus:before {
+  content: ""; }
+
+.fa-gear:before,
+.fa-cog:before {
+  content: ""; }
+
+.fa-home:before {
+  content: ""; }
+
+.fa-file-o:before {
+  content: ""; }
+
+.fa-download:before {
+  content: ""; }
+
+.fa-arrow-circle-o-down:before {
+  content: ""; }
+
+.fa-arrow-circle-o-up:before {
+  content: ""; }
+
+.fa-inbox:before {
+  content: ""; }
+
+.fa-play-circle-o:before {
+  content: ""; }
+
+.fa-rotate-right:before,
+.fa-repeat:before {
+  content: ""; }
+
+.fa-refresh:before {
+  content: ""; }
+
+.fa-list-alt:before {
+  content: ""; }
+
+.fa-lock:before {
+  content: ""; }
+
+.fa-flag:before {
+  content: ""; }
+
+.fa-tag:before {
+  content: ""; }
+
+.fa-tags:before {
+  content: ""; }
+
+.fa-print:before {
+  content: ""; }
+
+.fa-pencil:before {
+  content: ""; }
+
+.fa-map-marker:before {
+  content: ""; }
+
+.fa-adjust:before {
+  content: ""; }
+
+.fa-tint:before {
+  content: ""; }
+
+.fa-edit:before,
+.fa-pencil-square-o:before {
+  content: ""; }
+
+.fa-share-square-o:before {
+  content: ""; }
+
+.fa-check-square-o:before {
+  content: ""; }
+
+.fa-arrows:before {
+  content: ""; }
+
+.fa-step-backward:before {
+  content: ""; }
+
+.fa-fast-backward:before {
+  content: ""; }
+
+.fa-backward:before {
+  content: ""; }
+
+.fa-play:before {
+  content: ""; }
+
+.fa-pause:before {
+  content: ""; }
+
+.fa-stop:before {
+  content: ""; }
+
+.fa-forward:before {
+  content: ""; }
+
+.fa-fast-forward:before {
+  content: ""; }
+
+.fa-step-forward:before {
+  content: ""; }
+
+.fa-eject:before {
+  content: ""; }
+
+.fa-chevron-left:before {
+  content: ""; }
+
+.fa-chevron-right:before {
+  content: ""; }
+
+.fa-plus-circle:before {
+  content: ""; }
+
+.fa-minus-circle:before {
+  content: ""; }
+
+.fa-times-circle:before {
+  content: ""; }
+
+.fa-check-circle:before {
+  content: ""; }
+
+.fa-question-circle:before {
+  content: ""; }
+
+.fa-info-circle:before {
+  content: ""; }
+
+.fa-crosshairs:before {
+  content: ""; }
+
+.fa-times-circle-o:before {
+  content: ""; }
+
+.fa-check-circle-o:before {
+  content: ""; }
+
+.fa-ban:before {
+  content: ""; }
+
+.fa-arrow-left:before {
+  content: ""; }
+
+.fa-arrow-right:before {
+  content: ""; }
+
+.fa-arrow-up:before {
+  content: ""; }
+
+.fa-arrow-down:before {
+  content: ""; }
+
+.fa-mail-forward:before,
+.fa-share:before {
+  content: ""; }
+
+.fa-expand:before {
+  content: ""; }
+
+.fa-compress:before {
+  content: ""; }
+
+.fa-plus:before {
+  content: ""; }
+
+.fa-minus:before {
+  content: ""; }
+
+.fa-asterisk:before {
+  content: ""; }
+
+.fa-exclamation-circle:before {
+  content: ""; }
+
+.fa-eye:before {
+  content: ""; }
+
+.fa-eye-slash:before {
+  content: ""; }
+
+.fa-warning:before,
+.fa-exclamation-triangle:before {
+  content: ""; }
+
+.fa-plane:before {
+  content: ""; }
+
+.fa-calendar:before {
+  content: ""; }
+
+.fa-random:before {
+  content: ""; }
+
+.fa-comment:before {
+  content: ""; }
+
+.fa-chevron-up:before {
+  content: ""; }
+
+.fa-chevron-down:before {
+  content: ""; }
+
+.fa-retweet:before {
+  content: ""; }
+
+.fa-shopping-cart:before {
+  content: ""; }
+
+.fa-folder:before {
+  content: ""; }
+
+.fa-folder-open:before {
+  content: ""; }
+
+.fa-arrows-v:before {
+  content: ""; }
+
+.fa-arrows-h:before {
+  content: ""; }
+
+.fa-bar-chart-o:before,
+.fa-bar-chart:before {
+  content: ""; }
+
+.fa-twitter-square:before {
+  content: ""; }
+
+.fa-facebook-square:before {
+  content: ""; }
+
+.fa-key:before {
+  content: ""; }
+
+.fa-gears:before,
+.fa-cogs:before {
+  content: ""; }
+
+.fa-comments:before {
+  content: ""; }
+
+.fa-thumbs-o-up:before {
+  content: ""; }
+
+.fa-thumbs-o-down:before {
+  content: ""; }
+
+.fa-star-half:before {
+  content: ""; }
+
+.fa-heart-o:before {
+  content: ""; }
+
+.fa-sign-out:before {
+  content: ""; }
+
+.fa-linkedin-square:before {
+  content: ""; }
+
+.fa-thumb-tack:before {
+  content: ""; }
+
+.fa-external-link:before {
+  content: ""; }
+
+.fa-sign-in:before {
+  content: ""; }
+
+.fa-trophy:before {
+  content: ""; }
+
+.fa-github-square:before {
+  content: ""; }
+
+.fa-upload:before {
+  content: ""; }
+
+.fa-lemon-o:before {
+  content: ""; }
+
+.fa-phone:before {
+  content: ""; }
+
+.fa-square-o:before {
+  content: ""; }
+
+.fa-bookmark-o:before {
+  content: ""; }
+
+.fa-phone-square:before {
+  content: ""; }
+
+.fa-twitter:before {
+  content: ""; }
+
+.fa-facebook:before {
+  content: ""; }
+
+.fa-github:before {
+  content: ""; }
+
+.fa-unlock:before {
+  content: ""; }
+
+.fa-credit-card:before {
+  content: ""; }
+
+.fa-rss:before {
+  content: ""; }
+
+.fa-hdd-o:before {
+  content: ""; }
+
+.fa-bullhorn:before {
+  content: ""; }
+
+.fa-bell:before {
+  content: ""; }
+
+.fa-certificate:before {
+  content: ""; }
+
+.fa-hand-o-right:before {
+  content: ""; }
+
+.fa-hand-o-left:before {
+  content: ""; }
+
+.fa-hand-o-up:before {
+  content: ""; }
+
+.fa-hand-o-down:before {
+  content: ""; }
+
+.fa-arrow-circle-left:before {
+  content: ""; }
+
+.fa-arrow-circle-right:before {
+  content: ""; }
+
+.fa-arrow-circle-up:before {
+  content: ""; }
+
+.fa-arrow-circle-down:before {
+  content: ""; }
+
+.fa-globe:before {
+  content: ""; }
+
+.fa-wrench:before {
+  content: ""; }
+
+.fa-tasks:before {
+  content: ""; }
+
+.fa-filter:before {
+  content: ""; }
+
+.fa-briefcase:before {
+  content: ""; }
+
+.fa-arrows-alt:before {
+  content: ""; }
+
+.fa-group:before,
+.fa-users:before {
+  content: ""; }
+
+.fa-chain:before,
+.fa-link:before {
+  content: ""; }
+
+.fa-cloud:before {
+  content: ""; }
+
+.fa-flask:before {
+  content: ""; }
+
+.fa-cut:before,
+.fa-scissors:before {
+  content: ""; }
+
+.fa-copy:before,
+.fa-files-o:before {
+  content: ""; }
+
+.fa-paperclip:before {
+  content: ""; }
+
+.fa-save:before,
+.fa-floppy-o:before {
+  content: ""; }
+
+.fa-square:before {
+  content: ""; }
+
+.fa-navicon:before,
+.fa-reorder:before,
+.fa-bars:before {
+  content: ""; }
+
+.fa-list-ul:before {
+  content: ""; }
+
+.fa-list-ol:before {
+  content: ""; }
+
+.fa-strikethrough:before {
+  content: ""; }
+
+.fa-underline:before {
+  content: ""; }
+
+.fa-table:before {
+  content: ""; }
+
+.fa-magic:before {
+  content: ""; }
+
+.fa-truck:before {
+  content: ""; }
+
+.fa-pinterest:before {
+  content: ""; }
+
+.fa-pinterest-square:before {
+  content: ""; }
+
+.fa-google-plus-square:before {
+  content: ""; }
+
+.fa-google-plus:before {
+  content: ""; }
+
+.fa-money:before {
+  content: ""; }
+
+.fa-caret-down:before {
+  content: ""; }
+
+.fa-caret-up:before {
+  content: ""; }
+
+.fa-caret-left:before {
+  content: ""; }
+
+.fa-caret-right:before {
+  content: ""; }
+
+.fa-columns:before {
+  content: ""; }
+
+.fa-unsorted:before,
+.fa-sort:before {
+  content: ""; }
+
+.fa-sort-down:before,
+.fa-sort-desc:before {
+  content: ""; }
+
+.fa-sort-up:before,
+.fa-sort-asc:before {
+  content: ""; }
+
+.fa-envelope:before {
+  content: ""; }
+
+.fa-linkedin:before {
+  content: ""; }
+
+.fa-rotate-left:before,
+.fa-undo:before {
+  content: ""; }
+
+.fa-legal:before,
+.fa-gavel:before {
+  content: ""; }
+
+.fa-dashboard:before,
+.fa-tachometer:before {
+  content: ""; }
+
+.fa-comment-o:before {
+  content: ""; }
+
+.fa-comments-o:before {
+  content: ""; }
+
+.fa-paste:before,
+.fa-clipboard:before {
+  content: ""; }
+
+.fa-lightbulb-o:before {
+  content: ""; }
+
+.fa-exchange:before {
+  content: ""; }
+
+.fa-cloud-download:before {
+  content: ""; }
+
+.fa-cloud-upload:before {
+  content: ""; }
+
+.fa-user-md:before {
+  content: ""; }
+
+.fa-stethoscope:before {
+  content: ""; }
+
+.fa-suitcase:before {
+  content: ""; }
+
+.fa-bell-o:before {
+  content: ""; }
+
+.fa-coffee:before {
+  content: ""; }
+
+.fa-cutlery:before {
+  content: ""; }
+
+.fa-file-text-o:before {
+  content: ""; }
+
+.fa-building-o:before {
+  content: ""; }
+
+.fa-hospital-o:before {
+  content: ""; }
+
+.fa-ambulance:before {
+  content: ""; }
+
+.fa-medkit:before {
+  content: ""; }
+
+.fa-fighter-jet:before {
+  content: ""; }
+
+.fa-beer:before {
+  content: ""; }
+
+.fa-h-square:before {
+  content: ""; }
+
+.fa-plus-square:before {
+  content: ""; }
+
+.fa-angle-double-left:before {
+  content: ""; }
+
+.fa-angle-double-right:before {
+  content: ""; }
+
+.fa-angle-double-up:before {
+  content: ""; }
+
+.fa-angle-double-down:before {
+  content: ""; }
+
+.fa-angle-left:before {
+  content: ""; }
+
+.fa-angle-right:before {
+  content: ""; }
+
+.fa-angle-up:before {
+  content: ""; }
+
+.fa-angle-down:before {
+  content: ""; }
+
+.fa-desktop:before {
+  content: ""; }
+
+.fa-laptop:before {
+  content: ""; }
+
+.fa-tablet:before {
+  content: ""; }
+
+.fa-mobile-phone:before,
+.fa-mobile:before {
+  content: ""; }
+
+.fa-circle-o:before {
+  content: ""; }
+
+.fa-quote-left:before {
+  content: ""; }
+
+.fa-quote-right:before {
+  content: ""; }
+
+.fa-spinner:before {
+  content: ""; }
+
+.fa-circle:before {
+  content: ""; }
+
+.fa-mail-reply:before,
+.fa-reply:before {
+  content: ""; }
+
+.fa-github-alt:before {
+  content: ""; }
+
+.fa-folder-o:before {
+  content: ""; }
+
+.fa-folder-open-o:before {
+  content: ""; }
+
+.fa-smile-o:before {
+  content: ""; }
+
+.fa-frown-o:before {
+  content: ""; }
+
+.fa-meh-o:before {
+  content: ""; }
+
+.fa-gamepad:before {
+  content: ""; }
+
+.fa-keyboard-o:before {
+  content: ""; }
+
+.fa-flag-o:before {
+  content: ""; }
+
+.fa-flag-checkered:before {
+  content: ""; }
+
+.fa-terminal:before {
+  content: ""; }
+
+.fa-code:before {
+  content: ""; }
+
+.fa-mail-reply-all:before,
+.fa-reply-all:before {
+  content: ""; }
+
+.fa-star-half-empty:before,
+.fa-star-half-full:before,
+.fa-star-half-o:before {
+  content: ""; }
+
+.fa-location-arrow:before {
+  content: ""; }
+
+.fa-crop:before {
+  content: ""; }
+
+.fa-code-fork:before {
+  content: ""; }
+
+.fa-unlink:before,
+.fa-chain-broken:before {
+  content: ""; }
+
+.fa-question:before {
+  content: ""; }
+
+.fa-info:before {
+  content: ""; }
+
+.fa-exclamation:before {
+  content: ""; }
+
+.fa-superscript:before {
+  content: ""; }
+
+.fa-subscript:before {
+  content: ""; }
+
+.fa-eraser:before {
+  content: ""; }
+
+.fa-puzzle-piece:before {
+  content: ""; }
+
+.fa-microphone:before {
+  content: ""; }
+
+.fa-microphone-slash:before {
+  content: ""; }
+
+.fa-shield:before {
+  content: ""; }
+
+.fa-calendar-o:before {
+  content: ""; }
+
+.fa-fire-extinguisher:before {
+  content: ""; }
+
+.fa-rocket:before {
+  content: ""; }
+
+.fa-maxcdn:before {
+  content: ""; }
+
+.fa-chevron-circle-left:before {
+  content: ""; }
+
+.fa-chevron-circle-right:before {
+  content: ""; }
+
+.fa-chevron-circle-up:before {
+  content: ""; }
+
+.fa-chevron-circle-down:before {
+  content: ""; }
+
+.fa-html5:before {
+  content: ""; }
+
+.fa-css3:before {
+  content: ""; }
+
+.fa-anchor:before {
+  content: ""; }
+
+.fa-unlock-alt:before {
+  content: ""; }
+
+.fa-bullseye:before {
+  content: ""; }
+
+.fa-ellipsis-h:before {
+  content: ""; }
+
+.fa-ellipsis-v:before {
+  content: ""; }
+
+.fa-rss-square:before {
+  content: ""; }
+
+.fa-play-circle:before {
+  content: ""; }
+
+.fa-ticket:before {
+  content: ""; }
+
+.fa-minus-square:before {
+  content: ""; }
+
+.fa-minus-square-o:before {
+  content: ""; }
+
+.fa-level-up:before {
+  content: ""; }
+
+.fa-level-down:before {
+  content: ""; }
+
+.fa-check-square:before {
+  content: ""; }
+
+.fa-pencil-square:before {
+  content: ""; }
+
+.fa-external-link-square:before {
+  content: ""; }
+
+.fa-share-square:before {
+  content: ""; }
+
+.fa-compass:before {
+  content: ""; }
+
+.fa-toggle-down:before,
+.fa-caret-square-o-down:before {
+  content: ""; }
+
+.fa-toggle-up:before,
+.fa-caret-square-o-up:before {
+  content: ""; }
+
+.fa-toggle-right:before,
+.fa-caret-square-o-right:before {
+  content: ""; }
+
+.fa-euro:before,
+.fa-eur:before {
+  content: ""; }
+
+.fa-gbp:before {
+  content: ""; }
+
+.fa-dollar:before,
+.fa-usd:before {
+  content: ""; }
+
+.fa-rupee:before,
+.fa-inr:before {
+  content: ""; }
+
+.fa-cny:before,
+.fa-rmb:before,
+.fa-yen:before,
+.fa-jpy:before {
+  content: ""; }
+
+.fa-ruble:before,
+.fa-rouble:before,
+.fa-rub:before {
+  content: ""; }
+
+.fa-won:before,
+.fa-krw:before {
+  content: ""; }
+
+.fa-bitcoin:before,
+.fa-btc:before {
+  content: ""; }
+
+.fa-file:before {
+  content: ""; }
+
+.fa-file-text:before {
+  content: ""; }
+
+.fa-sort-alpha-asc:before {
+  content: ""; }
+
+.fa-sort-alpha-desc:before {
+  content: ""; }
+
+.fa-sort-amount-asc:before {
+  content: ""; }
+
+.fa-sort-amount-desc:before {
+  content: ""; }
+
+.fa-sort-numeric-asc:before {
+  content: ""; }
+
+.fa-sort-numeric-desc:before {
+  content: ""; }
+
+.fa-thumbs-up:before {
+  content: ""; }
+
+.fa-thumbs-down:before {
+  content: ""; }
+
+.fa-youtube-square:before {
+  content: ""; }
+
+.fa-youtube:before {
+  content: ""; }
+
+.fa-xing:before {
+  content: ""; }
+
+.fa-xing-square:before {
+  content: ""; }
+
+.fa-youtube-play:before {
+  content: ""; }
+
+.fa-dropbox:before {
+  content: ""; }
+
+.fa-stack-overflow:before {
+  content: ""; }
+
+.fa-instagram:before {
+  content: ""; }
+
+.fa-flickr:before {
+  content: ""; }
+
+.fa-adn:before {
+  content: ""; }
+
+.fa-bitbucket:before {
+  content: ""; }
+
+.fa-bitbucket-square:before {
+  content: ""; }
+
+.fa-tumblr:before {
+  content: ""; }
+
+.fa-tumblr-square:before {
+  content: ""; }
+
+.fa-long-arrow-down:before {
+  content: ""; }
+
+.fa-long-arrow-up:before {
+  content: ""; }
+
+.fa-long-arrow-left:before {
+  content: ""; }
+
+.fa-long-arrow-right:before {
+  content: ""; }
+
+.fa-apple:before {
+  content: ""; }
+
+.fa-windows:before {
+  content: ""; }
+
+.fa-android:before {
+  content: ""; }
+
+.fa-linux:before {
+  content: ""; }
+
+.fa-dribbble:before {
+  content: ""; }
+
+.fa-skype:before {
+  content: ""; }
+
+.fa-foursquare:before {
+  content: ""; }
+
+.fa-trello:before {
+  content: ""; }
+
+.fa-female:before {
+  content: ""; }
+
+.fa-male:before {
+  content: ""; }
+
+.fa-gittip:before {
+  content: ""; }
+
+.fa-sun-o:before {
+  content: ""; }
+
+.fa-moon-o:before {
+  content: ""; }
+
+.fa-archive:before {
+  content: ""; }
+
+.fa-bug:before {
+  content: ""; }
+
+.fa-vk:before {
+  content: ""; }
+
+.fa-weibo:before {
+  content: ""; }
+
+.fa-renren:before {
+  content: ""; }
+
+.fa-pagelines:before {
+  content: ""; }
+
+.fa-stack-exchange:before {
+  content: ""; }
+
+.fa-arrow-circle-o-right:before {
+  content: ""; }
+
+.fa-arrow-circle-o-left:before {
+  content: ""; }
+
+.fa-toggle-left:before,
+.fa-caret-square-o-left:before {
+  content: ""; }
+
+.fa-dot-circle-o:before {
+  content: ""; }
+
+.fa-wheelchair:before {
+  content: ""; }
+
+.fa-vimeo-square:before {
+  content: ""; }
+
+.fa-turkish-lira:before,
+.fa-try:before {
+  content: ""; }
+
+.fa-plus-square-o:before {
+  content: ""; }
+
+.fa-space-shuttle:before {
+  content: ""; }
+
+.fa-slack:before {
+  content: ""; }
+
+.fa-envelope-square:before {
+  content: ""; }
+
+.fa-wordpress:before {
+  content: ""; }
+
+.fa-openid:before {
+  content: ""; }
+
+.fa-institution:before,
+.fa-bank:before,
+.fa-university:before {
+  content: ""; }
+
+.fa-mortar-board:before,
+.fa-graduation-cap:before {
+  content: ""; }
+
+.fa-yahoo:before {
+  content: ""; }
+
+.fa-google:before {
+  content: ""; }
+
+.fa-reddit:before {
+  content: ""; }
+
+.fa-reddit-square:before {
+  content: ""; }
+
+.fa-stumbleupon-circle:before {
+  content: ""; }
+
+.fa-stumbleupon:before {
+  content: ""; }
+
+.fa-delicious:before {
+  content: ""; }
+
+.fa-digg:before {
+  content: ""; }
+
+.fa-pied-piper:before {
+  content: ""; }
+
+.fa-pied-piper-alt:before {
+  content: ""; }
+
+.fa-drupal:before {
+  content: ""; }
+
+.fa-joomla:before {
+  content: ""; }
+
+.fa-language:before {
+  content: ""; }
+
+.fa-fax:before {
+  content: ""; }
+
+.fa-building:before {
+  content: ""; }
+
+.fa-child:before {
+  content: ""; }
+
+.fa-paw:before {
+  content: ""; }
+
+.fa-spoon:before {
+  content: ""; }
+
+.fa-cube:before {
+  content: ""; }
+
+.fa-cubes:before {
+  content: ""; }
+
+.fa-behance:before {
+  content: ""; }
+
+.fa-behance-square:before {
+  content: ""; }
+
+.fa-steam:before {
+  content: ""; }
+
+.fa-steam-square:before {
+  content: ""; }
+
+.fa-recycle:before {
+  content: ""; }
+
+.fa-automobile:before,
+.fa-car:before {
+  content: ""; }
+
+.fa-cab:before,
+.fa-taxi:before {
+  content: ""; }
+
+.fa-tree:before {
+  content: ""; }
+
+.fa-spotify:before {
+  content: ""; }
+
+.fa-deviantart:before {
+  content: ""; }
+
+.fa-soundcloud:before {
+  content: ""; }
+
+.fa-database:before {
+  content: ""; }
+
+.fa-file-pdf-o:before {
+  content: ""; }
+
+.fa-file-word-o:before {
+  content: ""; }
+
+.fa-file-excel-o:before {
+  content: ""; }
+
+.fa-file-powerpoint-o:before {
+  content: ""; }
+
+.fa-file-photo-o:before,
+.fa-file-picture-o:before,
+.fa-file-image-o:before {
+  content: ""; }
+
+.fa-file-zip-o:before,
+.fa-file-archive-o:before {
+  content: ""; }
+
+.fa-file-sound-o:before,
+.fa-file-audio-o:before {
+  content: ""; }
+
+.fa-file-movie-o:before,
+.fa-file-video-o:before {
+  content: ""; }
+
+.fa-file-code-o:before {
+  content: ""; }
+
+.fa-vine:before {
+  content: ""; }
+
+.fa-codepen:before {
+  content: ""; }
+
+.fa-jsfiddle:before {
+  content: ""; }
+
+.fa-life-bouy:before,
+.fa-life-buoy:before,
+.fa-life-saver:before,
+.fa-support:before,
+.fa-life-ring:before {
+  content: ""; }
+
+.fa-circle-o-notch:before {
+  content: ""; }
+
+.fa-ra:before,
+.fa-rebel:before {
+  content: ""; }
+
+.fa-ge:before,
+.fa-empire:before {
+  content: ""; }
+
+.fa-git-square:before {
+  content: ""; }
+
+.fa-git:before {
+  content: ""; }
+
+.fa-hacker-news:before {
+  content: ""; }
+
+.fa-tencent-weibo:before {
+  content: ""; }
+
+.fa-qq:before {
+  content: ""; }
+
+.fa-wechat:before,
+.fa-weixin:before {
+  content: ""; }
+
+.fa-send:before,
+.fa-paper-plane:before {
+  content: ""; }
+
+.fa-send-o:before,
+.fa-paper-plane-o:before {
+  content: ""; }
+
+.fa-history:before {
+  content: ""; }
+
+.fa-circle-thin:before {
+  content: ""; }
+
+.fa-header:before {
+  content: ""; }
+
+.fa-paragraph:before {
+  content: ""; }
+
+.fa-sliders:before {
+  content: ""; }
+
+.fa-share-alt:before {
+  content: ""; }
+
+.fa-share-alt-square:before {
+  content: ""; }
+
+.fa-bomb:before {
+  content: ""; }
+
+.fa-soccer-ball-o:before,
+.fa-futbol-o:before {
+  content: ""; }
+
+.fa-tty:before {
+  content: ""; }
+
+.fa-binoculars:before {
+  content: ""; }
+
+.fa-plug:before {
+  content: ""; }
+
+.fa-slideshare:before {
+  content: ""; }
+
+.fa-twitch:before {
+  content: ""; }
+
+.fa-yelp:before {
+  content: ""; }
+
+.fa-newspaper-o:before {
+  content: ""; }
+
+.fa-wifi:before {
+  content: ""; }
+
+.fa-calculator:before {
+  content: ""; }
+
+.fa-paypal:before {
+  content: ""; }
+
+.fa-google-wallet:before {
+  content: ""; }
+
+.fa-cc-visa:before {
+  content: ""; }
+
+.fa-cc-mastercard:before {
+  content: ""; }
+
+.fa-cc-discover:before {
+  content: ""; }
+
+.fa-cc-amex:before {
+  content: ""; }
+
+.fa-cc-paypal:before {
+  content: ""; }
+
+.fa-cc-stripe:before {
+  content: ""; }
+
+.fa-bell-slash:before {
+  content: ""; }
+
+.fa-bell-slash-o:before {
+  content: ""; }
+
+.fa-trash:before {
+  content: ""; }
+
+.fa-copyright:before {
+  content: ""; }
+
+.fa-at:before {
+  content: ""; }
+
+.fa-eyedropper:before {
+  content: ""; }
+
+.fa-paint-brush:before {
+  content: ""; }
+
+.fa-birthday-cake:before {
+  content: ""; }
+
+.fa-area-chart:before {
+  content: ""; }
+
+.fa-pie-chart:before {
+  content: ""; }
+
+.fa-line-chart:before {
+  content: ""; }
+
+.fa-lastfm:before {
+  content: ""; }
+
+.fa-lastfm-square:before {
+  content: ""; }
+
+.fa-toggle-off:before {
+  content: ""; }
+
+.fa-toggle-on:before {
+  content: ""; }
+
+.fa-bicycle:before {
+  content: ""; }
+
+.fa-bus:before {
+  content: ""; }
+
+.fa-ioxhost:before {
+  content: ""; }
+
+.fa-angellist:before {
+  content: ""; }
+
+.fa-cc:before {
+  content: ""; }
+
+.fa-shekel:before,
+.fa-sheqel:before,
+.fa-ils:before {
+  content: ""; }
+
+.fa-meanpath:before {
+  content: ""; }
+
+    /*  (asterisk
+    "State":"success",
+	"Selector":".success",
+    "Color": $success-color,
+    "Icon": $fa-var-check,),
+
+
+    */
+/* TODO: refactor this 
+there are two to three needs for icons icons in containers, icons on icons and then icons that are dynamic to a parent container.**/
+.fa-holder {
+  text-decoration: none; }
+  .fa-holder > i.fa-holder:before, .fa-holder * i.fa-holder-dynamic:before {
+    text-decoration: none; }
+  .fa-holder :after {
+    content: ' '; }
+
+.delete > i.fa-holder:before, .delete.fa:before, .cancel > i.fa-holder:before, .cancel.fa:before, .close > i.fa-holder:before, .close.fa:before, .close-reveal-modal > i.fa-holder:before, .close-reveal-modal.fa:before {
+  content: ""; }
+
+.validated > i.fa-holder:before, .validated.fa:before, .selected > i.fa-holder:before, .selected.fa:before {
+  content: ""; }
+
+.data > i.fa-holder:before, .data.fa:before {
+  content: ""; }
+
+.edit > i.fa-holder:before, .edit.fa:before {
+  content: ""; }
+
+.clear > i.fa-holder:before, .clear.fa:before, .refresh > i.fa-holder:before, .refresh.fa:before {
+  content: ""; }
+
+.starred > i.fa-holder:before, .starred.fa:before {
+  content: ""; }
+
+.add > i.fa-holder:before, .add.fa:before {
+  content: ""; }
+
+.home > i.fa-holder:before, .home.fa:before {
+  content: ""; }
+
+.top > i.fa-holder:before, .top.fa:before {
+  content: ""; }
+
+.fa-check:before {
+  content: ""; }
+
+.back > i.fa-holder:before, .back.fa:before {
+  content: ""; }
+
+.set > i.fa-holder:before, .set.fa:before {
+  content: ""; }
+
+.save > i.fa-holder:before, .save.fa:before {
+  content: ""; }
+
+.search > i.fa-holder:before, .search.fa:before {
+  content: ""; }
+
+.fa-check:before {
+  content: ""; }
+
+.fa-question-circle:before {
+  content: ""; }
+
+.fa-arrow-circle-right:before {
+  content: ""; }
+
+.fa-exclamation-triangle:before {
+  content: ""; }
+
+.fa-exclamation-circle:before {
+  content: ""; }
+
+i.fa.fa-question-circle {
+  font-size: 1.35em; }
+
+.required .fa-holder-dynamic:before, .required.fa:before, .required > .fa-holder:before {
+  content: ""; }
+.required.fa {
+  color: #E08514; }
+
+meta.foundation-version {
+  font-family: "/5.4.7/"; }
+
+meta.foundation-mq-small {
+  font-family: "/only screen/";
+  width: 0em; }
+
+meta.foundation-mq-medium {
+  font-family: "/only screen and (min-width:40.063em)/";
+  width: 40.063em; }
+
+meta.foundation-mq-large {
+  font-family: "/only screen and (min-width:64.063em)/";
+  width: 64.063em; }
+
+meta.foundation-mq-xlarge {
+  font-family: "/only screen and (min-width:90.063em)/";
+  width: 90.063em; }
+
+meta.foundation-mq-xxlarge {
+  font-family: "/only screen and (min-width:120.063em)/";
+  width: 120.063em; }
+
+meta.foundation-data-attribute-namespace {
+  font-family: false; }
+
+/* Accessibility - hides the forward slash */
+[aria-label="breadcrumbs"] [aria-hidden="true"]:after {
+  content: "/"; }
+
+.h1, h1, .table th.h1, .h2, h2, .table th.h2, .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3, .h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .table th.h4, .switch-value, .section-nav .text, .h5, h5, .h6, h6 {
+  margin-top: 0;
+  clear: both; }
+
+.h1, h1, .table th.h1 {
+  letter-spacing: -1px;
+  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 300; }
+
+.h2, h2, .table th.h2 {
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 400; }
+
+.h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .table th.h4, .switch-value, .section-nav .text {
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 700; }
+
+.h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3, .h5, h5, .h6, h6 {
+  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 700; }
+
+.h1, h1, .table th.h1 {
+  font-size: 2.07143em;
+  line-height: 1.44828em;
+  margin-top: 0.72414em;
+  margin-bottom: 0.72414em; }
+  @media only screen and (min-width: 767px) {
+    .h1, h1, .table th.h1 {
+      font-size: 2.5em;
+      line-height: 1.2em;
+      margin-top: 0.6em;
+      margin-bottom: 0.6em; } }
+  @media only screen and (min-width: 1024px) {
+    .h1, h1, .table th.h1 {
+      font-size: 3em;
+      line-height: 1em;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em; } }
+
+.h2, h2, .table th.h2 {
+  font-size: 1.42857em;
+  line-height: 1.54em;
+  margin-top: 0.5775em;
+  margin-bottom: 0.1925em; }
+  @media only screen and (min-width: 767px) {
+    .h2, h2, .table th.h2 {
+      font-size: 1.71429em;
+      line-height: 1.75em;
+      margin-top: 0.65625em;
+      margin-bottom: 0.21875em; } }
+  @media only screen and (min-width: 1024px) {
+    .h2, h2, .table th.h2 {
+      font-size: 2.07143em;
+      line-height: 1.44828em;
+      margin-top: 0.5431em;
+      margin-bottom: 0.18103em; } }
+
+.h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3 {
+  font-size: 1.42857em;
+  line-height: 1.54em;
+  margin-top: 0.5775em;
+  margin-bottom: 0.1925em; }
+  @media only screen and (min-width: 767px) {
+    .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3 {
+      font-size: 1.42857em;
+      line-height: 1.05em;
+      margin-top: 0.2625em;
+      margin-bottom: 0.7875em; } }
+
+.h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .table th.h4, .switch-value {
+  font-size: 1.21429em;
+  line-height: 1.23529em;
+  margin-top: 0.61765em;
+  margin-bottom: 0.61765em; }
+
+.h5, h5 {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 0em;
+  margin-bottom: 0em; }
+
+.h6, h6 {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 0em;
+  margin-bottom: 0em; }
+
+.nav-list li, .panel-selector li, h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector, .table, .normal {
+  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: .01em;
+  color: #333333;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 0em;
+  margin-bottom: 0em; }
+
+h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-selector li, .bold, b {
+  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 700; }
+
+.table th, .loud {
+  color: black; }
+
+.quiet {
+  color: gray; }
+
+.hint, .table tfoot tr td, .italic {
+  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-style: italic; }
+
+strong, .strong {
+  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  color: #6959b4; }
+
+em, .emphasis {
+  color: #282148;
+  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-weight: 900; }
+
+.subtle {
+  font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: #817aa2; }
+
+.block-margins {
+  margin: 0 em(21px) 0; }
+
+/**
+ * Header Tags:
+ * `Headers` - Headers are used to separate and organize blocks of text. 
+ *  You can also us `.h1`,`.h2`,`.h3`,`.h4`,`.h5`, or `.h6` 
+ *  to make any text elements style like the associated header tag 
+ *
+ *     @example
+ *     h1 Header 1 Tag
+ *		small subheader
+ *     h2 Header 2 Tag
+ *     h3 Header 3 Tag
+ *     h4 Header 4 Tag
+ *     h5 Header 5 Tag 
+ *     h6 Header 6 Tag
+ */
+h1 {
+  color: #5c5c5c; }
+
+h2 {
+  color: #333333; }
+
+h3 {
+  color: #5c5c5c; }
+
+h4 {
+  color: #5c5c5c; }
+
+h5 {
+  color: #5c5c5c; }
+
+h6 {
+  color: #999999; }
+
+/**
+* Buttons:
+* `.nobutton .button or .button.secondary` - sample buttons from `.button` you can modifiers
+* 
+*   @example
+*	<a class="nobutton">no button</a>
+*	<a class="button">button</a>
+*	<a class="button secondary">secondary button</a>
+*	<a class="button disabled">disabled button </a>
+*/
+button[disabled], button[disabled].success, button[disabled].alert, button[disabled].secondary,
+button:disabled,
+button.success:disabled,
+button.alert:disabled,
+button.secondary:disabled,
+.button.disabled,
+.button.disabled.success,
+.button.disabled.alert,
+.button.disabled.secondary,
+.button.disabled:hover,
+.button.disabled.success:hover,
+.button.disabled.alert:hover,
+.button.disabled.secondary:hover {
+  background-color: #b3b3b3;
+  background-image: url(../img/empty_diamond.png);
+  color: #999999;
+  border: 1px solid gray;
+  cursor: not-allowed; }
+
+.input-space button[disabled], .switch-input-space button[disabled], .input-space button[disabled].success, .switch-input-space button[disabled].success, .input-space button[disabled].alert, .switch-input-space button[disabled].alert, .input-space button[disabled].secondary, .switch-input-space button[disabled].secondary, .input-space
+button:disabled, .switch-input-space
+button:disabled, .input-space
+button:disabled.success, .switch-input-space
+button:disabled.success, .input-space
+button:disabled.alert, .switch-input-space
+button:disabled.alert, .input-space
+button:disabled.secondary, .switch-input-space
+button:disabled.secondary, .input-space
+.button.disabled, .switch-input-space
+.button.disabled, .input-space
+.button.disabled.success, .switch-input-space
+.button.disabled.success, .input-space
+.button.disabled.alert, .switch-input-space
+.button.disabled.alert, .input-space
+.button.disabled.secondary, .switch-input-space
+.button.disabled.secondary, .input-space
+.button.disabled:hover, .switch-input-space
+.button.disabled:hover, .input-space
+.button.disabled:hover.success, .switch-input-space
+.button.disabled:hover.success, .input-space
+.button.disabled:hover.alert, .switch-input-space
+.button.disabled:hover.alert, .input-space
+.button.disabled:hover.secondary, .switch-input-space
+.button.disabled:hover.secondary {
+  padding-top: 7px;
+  padding-bottom: 7px; }
+
+.link.disabled, .link.disabled:hover {
+  background-image: url("../img/subtlenet2.png");
+  color: #999999;
+  font-style: italic; }
+
+.nobutton {
+  border-style: solid;
+  border-width: 0px;
+  cursor: pointer;
+  font-family: "Roboto Slab", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0 0 1.42857rem;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  display: inline-block;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  padding-bottom: 1.07143rem;
+  padding-left: 2rem;
+  font-size: 1.14286rem;
+  background-color: #fff;
+  border-color: #cccccc;
+  color: #333333;
+  transition: background-color 300ms ease-out;
+  margin-bottom: 0; }
+  .nobutton:hover, .nobutton:focus {
+    background-color: #cccccc; }
+  .nobutton:hover, .nobutton:focus {
+    color: #333333; }
+  .nobutton.disabled, .nobutton.disabled:hover, .nobutton[disabled], .nobutton[disabled]:hover {
+    color: #999999;
+    cursor: not-allowed;
+    background-color: #fff; }
+
+/**
+* Tabs (Basic):
+* `.tabs` - Group of nav that is build for a vertical space
+* 
+*   @example
+*	<ul class="nav tabs">
+*		<li class="icon"><a class="home"><i class="fa fa-holder"></i></a></li>
+*		<li class=""><a>Tab 2</a></li>
+*		<li class=" selected "><a >Tab 3</a></li>
+*		<li class=""><a >Tab 4</a></li>
+*	</ul>
+*/
+.tabs {
+  font-size: 0.85714rem;
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 700;
+  margin-left: 0;
+  width: 100%;
+  background: #e6e6e6; }
+  .tabs div.row, .tabs div.hint {
+    max-width: 1200px; }
+  @media only screen and (min-width: 767px) {
+    .tabs {
+      font-size: 1rem; } }
+  @media only screen and (min-width: 1024px) {
+    .tabs {
+      font-size: 1.21429rem; } }
+  .tabs li {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    display: inline-block;
+    margin: .2rem 2px 0;
+    background-color: #cccccc; }
+    .tabs li a {
+      display: inline-block;
+      padding: .55em 1em .5em;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: top;
+      margin: 0 auto;
+      width: 100%;
+      color: #333333; }
+      @media only screen and (min-width: 767px) {
+        .tabs li a {
+          padding: .5em 1em .45em; } }
+    .tabs li:hover {
+      background-color: #bfbfbf; }
+      .tabs li:hover a {
+        color: #333333; }
+    .tabs li.selected {
+      background-color: #fff;
+      padding-left: 0;
+      padding-right: 0;
+      cursor: context-menu; }
+      .tabs li.selected a {
+        color: #333333;
+        cursor: context-menu; }
+    .tabs li.icon {
+      width: 3em; }
+      .tabs li.icon a {
+        padding-left: .5em !important;
+        padding-right: .5em !important; }
+      .tabs li.icon.selected {
+        background-color: #fff; }
+        .tabs li.icon.selected a {
+          color: #333333; }
+          .tabs li.icon.selected a:hover {
+            color: #5c5c5c; }
+        .tabs li.icon.selected:hover {
+          background-color: #989898; }
+          .tabs li.icon.selected:hover a {
+            color: #fff; }
+    .tabs li.secondary {
+      background-color: #d1d1d1; }
+      .tabs li.secondary a {
+        color: #333333; }
+      .tabs li.secondary:hover {
+        background-color: #b3b3b3; }
+        .tabs li.secondary:hover a {
+          color: #333333; }
+    .tabs li.disabled, .tabs li.disabled:hover {
+      background: url("../img/subtlenet2.png") repeat; }
+      .tabs li.disabled a, .tabs li.disabled, .tabs li.disabled:hover a, .tabs li.disabled:hover {
+        color: #999999;
+        cursor: not-allowed;
+        opacity: .5; }
+  @media only screen and (max-width: 767px) {
+    .tabs {
+      width: 100%;
+      clear: both;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex !important;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      align-content: stretch;
+      margin: .2em 0; }
+      .tabs li {
+        -webkit-box-flex: 1 1 auto;
+        -moz-box-flex: 1 1 auto;
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto; }
+        .tabs li.icon {
+          -webkit-box-flex: 0 0 2em;
+          -moz-box-flex: 0 0 2em;
+          -webkit-flex: 0 0 2em;
+          -ms-flex: 0 0 2em;
+          flex: 0 0 2em; } }
+  @media only screen and (max-width: 767px) and (max-width: 320px) {
+    .tabs {
+      flex-wrap: wrap; } }
+
+.tabs.primary {
+  font-size: 21px;
+  border: 0;
+  background: none;
+  margin: 0;
+  display: block; }
+  .tabs.primary:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .tabs.primary li {
+    position: relative;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+    border-top: 1px #999999 solid;
+    border-bottom: 0.45em #999999 solid;
+    border-left: 1px #999999 solid;
+    border-right: 1px #999999 solid;
+    margin: 0;
+    display: block;
+    float: left; }
+    .tabs.primary li a {
+      padding: 1.25em .75em;
+      color: #333333; }
+      @media only screen and (max-width: 320px) {
+        .tabs.primary li a {
+          white-space: normal; } }
+    .tabs.primary li:hover {
+      background-color: #fff;
+      border-color: #4F4190; }
+      .tabs.primary li:hover a {
+        color: #4F4190; }
+    .tabs.primary li.selected {
+      background-color: #4F4190;
+      border-color: #4F4190;
+      border-bottom-color: #00386b;
+      border-right: 0 none;
+      border-left: 0 none; }
+      .tabs.primary li.selected a {
+        color: #fff; }
+        .tabs.primary li.selected a:after {
+          content: "";
+          position: absolute;
+          bottom: -1px;
+          left: 50%;
+          /* width: 10%; */
+          margin-left: -10px;
+          border-style: solid;
+          border-color: transparent;
+          border-width: 0px 8px;
+          border-bottom: 10px solid #00386b; }
+    .tabs.primary li.selected:hover {
+      background-color: #4F4190; }
+      .tabs.primary li.selected:hover a {
+        color: #fff; }
+    .tabs.primary li.disabled, .tabs.primary li.disabled:hover {
+      border-color: #b3b3b3;
+      background: url("../img/subtlenet2.png") repeat; }
+      .tabs.primary li.disabled a, .tabs.primary li.disabled, .tabs.primary li.disabled:hover a, .tabs.primary li.disabled:hover {
+        color: #999999;
+        cursor: not-allowed; }
+    .tabs.primary li.icon.selected {
+      background-color: #4F4190; }
+      .tabs.primary li.icon.selected a {
+        color: #fff; }
+  @media only screen and (max-width: 1024px) {
+    .tabs.primary {
+      font-size: 17px; }
+      .tabs.primary li a {
+        padding: 1em .5em; } }
+  @media only screen and (max-width: 767px) {
+    .tabs.primary {
+      font-size: 15px;
+      width: 100%;
+      clear: both;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex !important;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: stretch;
+      align-content: stretch;
+      margin: 0; }
+      .tabs.primary li a {
+        padding: .55em .25em .75em; }
+        .tabs.primary li a:after {
+          border-bottom: 8px solid #00386b; }
+      .tabs.primary li {
+        -webkit-box-flex: 1 1 auto;
+        -moz-box-flex: 1 1 auto;
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto; }
+        .tabs.primary li.icon {
+          -webkit-box-flex: 0 0 2em;
+          -moz-box-flex: 0 0 2em;
+          -webkit-flex: 0 0 2em;
+          -ms-flex: 0 0 2em;
+          flex: 0 0 2em; } }
+  @media only screen and (max-width: 320px) {
+    .tabs.primary {
+      flex-wrap: wrap; } }
+  .tabs.primary.reverse {
+    font-size: 1.21429em;
+    line-height: 1.23529em;
+    margin-top: 0em;
+    margin-bottom: 0em; }
+    .tabs.primary.reverse li {
+      border-top-width: .45em;
+      border-bottom-width: 1px; }
+    .tabs.primary.reverse li.selected {
+      border-color: #4F4190;
+      border-top-color: #00386b; }
+    .tabs.primary.reverse li.selected a:after {
+      content: "";
+      position: absolute;
+      top: -1px;
+      bottom: auto;
+      left: 50%;
+      margin-left: -10px;
+      border-style: solid;
+      border-color: transparent;
+      border-width: 0px 8px;
+      border-top: 10px solid #00386b;
+      border-bottom: 0 none; }
+    @media only screen and (max-width: 767px) {
+      .tabs.primary.reverse {
+        font-size: 1em;
+        line-height: 1.5em;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        margin: 0; }
+        .tabs.primary.reverse li.selected a:after {
+          border-top: 8px solid #00386b; } }
+    @media only screen and (max-width: 320px) {
+      .tabs.primary.reverse {
+        font-size: 0.85714em;
+        line-height: 1.75em;
+        margin-top: 0em;
+        margin-bottom: 0em; } }
+
+/**
+* Tabs Primary:
+* `.tabs.primary` -  Priamary is used for top level nav for mobile porjects
+* 
+*   @example
+*	<ul class="nav tabs primary">
+*		<li class="icon  "><a class="home" href="#"><i class="fa fa-holder"></i></a></li>
+*		<li class=""><a href="#">Tab 2</a></li>
+*		<li class="selected"><a  href="#">Tab 3</a></li>
+*		<li class=""><a  href="#">Tab 4</a></li>
+*		<li class=""><a  href="#">Tab 5</a></li>
+*		<li class="disabled"><a  href="#">Tab 6</a></li>
+*	</ul>
+*	<ul class="nav tabs primary reverse">
+*		<li class="icon  "><a class="home" href="#"><i class="fa fa-holder"></i></a></li>
+*		<li class=""><a href="#">Tab 2</a></li>
+*		<li class="selected"><a  href="#">Tab 3</a></li>
+*		<li class=""><a  href="#">Tab 4</a></li>
+*		<li class=""><a  href="#">Tab 5</a></li>
+*		<li class="disabled"><a  href="#">Tab 6</a></li>
+*	</ul>
+*/
+/**
+* Tabs Overlap:
+* `.tabs.overlap` -  Overlap gives shallow space and more rendered verstion of tabs
+* 
+*   @example
+*	<ul class="nav tabs overlap">
+*		<li class="icon  "><a class="home"><i class="fa fa-holder"></i></a></li>
+*		<li class=""><a>Tab 2</li>
+*		<li class=" selected "><a >Tab 3</a></li>
+*		<li class=""><a >Tab 4</a></li>
+*	</ul>
+*/
+.tabs.overlap {
+  background-color: white;
+  background: url("../img/billie-holiday.png") repeat top right, url("../img/bottom-shade.png") repeat-x bottom right, url("../img/top-shade.png") repeat-x right -1px;
+  border-bottom: 2px solid #999999;
+  padding-top: .25em; }
+  .tabs.overlap li {
+    border: 2px solid #b3b3b3;
+    border-bottom: 0;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px; }
+    .tabs.overlap li.selected {
+      margin-bottom: -2px;
+      padding-bottom: 3px;
+      background-color: white;
+      z-index: 1000;
+      border-color: #999999;
+      vertical-align: bottom; }
+      .with-group-sections .tabs.overlap li.selected {
+        background-color: #f2f2f2; }
+      .with-group-sections .group-section .tabs.overlap li.selected {
+        background-color: #fff; }
+      .tabs.overlap li.selected a {
+        color: #333; }
+    .tabs.overlap li.secondary {
+      border-color: #b3b3b3; }
+
+/**
+* Navigation List:
+* `.nav-list ul li` - A collection of navigation links perfect for side navigation or a collection of external links. Add `.selected` to the `li` to highlight the nav link.
+* 
+*   @example
+*	<nav class="nav-list">
+*	<ul>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	</ul>
+*	</nav>
+*/
+.nav-list a, .panel-selector a, .nav-list .list-item-wrapper, .panel-selector .list-item-wrapper {
+  display: table;
+  width: 100%;
+  text-align: right;
+  color: #5c5c5c; }
+  .nav-list a .text, .panel-selector a .text, .nav-list a i, .panel-selector a i, .nav-list .list-item-wrapper .text, .panel-selector .list-item-wrapper .text, .nav-list .list-item-wrapper i, .panel-selector .list-item-wrapper i {
+    display: table-cell; }
+  .nav-list a .text, .panel-selector a .text, .nav-list .list-item-wrapper .text, .panel-selector .list-item-wrapper .text {
+    text-align: left; }
+  .nav-list a i, .panel-selector a i, .nav-list .list-item-wrapper i, .panel-selector .list-item-wrapper i {
+    width: 2em; }
+.nav-list li, .panel-selector li {
+  padding: .25rem 1rem; }
+  .nav-list li .text + .fa, .panel-selector li .text + .fa, .nav-list li .fa + .text, .panel-selector li .fa + .text {
+    padding-left: .5em; }
+  .nav-list li i.fa-holder-dynamic:before, .panel-selector li i.fa-holder-dynamic:before, .nav-list li.dynamic i.fa-holder:before, .panel-selector li.dynamic i.fa-holder:before {
+    content: ""; }
+  .nav-list li:hover, .panel-selector li:hover {
+    background-color: #e6e6e6; }
+    .nav-list li:hover a, .panel-selector li:hover a {
+      color: #333333; }
+  .nav-list li.selected, .panel-selector li.selected {
+    background-color: #c9edf7; }
+    .nav-list li.selected, .panel-selector li.selected, .nav-list li.selected:hover a, .panel-selector li.selected:hover a {
+      color: #333333; }
+    .nav-list li.selected a, .panel-selector li.selected a, .nav-list li.selected a:hover, .panel-selector li.selected a:hover {
+      cursor: pointer;
+      cursor: context-menu; }
+.nav-list ul, .panel-selector ul {
+  margin: 0;
+  width: 100%;
+  display: block;
+  position: relative;
+  list-style-type: none; }
+
+/**
+* Nav List (With Headlines):
+* `.nav-list ul li` - The nav list changes styles depending on the headline tag in front of the nav-list. or simply add the class `large`, `medium`, or `small`  
+* 
+*   @example
+*	<h1>H1 header tag</h1>
+*	<nav class="nav-list">
+*	<ul>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	</ul>
+*	</nav>
+*	<br>
+*	<div>This list has the medium class</div>
+*	<nav class="nav-list medium">
+*	<ul>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	</ul>
+*	</nav>
+*	<br>
+*	<h3>H3 header tag</h3>
+*	<nav class="nav-list">
+*	<ul>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	</ul>
+*	</nav>
+*/
+h1 + .nav-list, h1 + .panel-selector, .large.nav-list, .large.panel-selector {
+  border-top: #4F4190 2px solid;
+  margin-top: -0.75rem;
+  padding-top: 0.7rem;
+  margin-bottom: 1.5rem; }
+
+h2 + .nav-list, h2 + .panel-selector, .medium.nav-list, .medium.panel-selector {
+  margin-bottom: 1rem;
+  padding-top: .5rem;
+  margin-top: -.5rem;
+  border-top: 2px solid #b3b3b3; }
+
+h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
+  margin-bottom: 0.7rem; }
+  h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-selector li {
+    border: 1px solid #cccccc;
+    border-left-width: 0;
+    border-right-width: 0;
+    margin-bottom: 0;
+    margin-top: -1px; }
+
+.nav-list.large, .large.panel-selector, .nav-list.medium, .medium.panel-selector, .nav-list.small, .small.panel-selector {
+  margin-top: 0; }
+
+/**
+* Section Nav (forward & back):
+* `.section-nav with .forward or .back` - wizard nav like section nav. 
+*  alter the position of the circle button by adding  `.forward` or `.back`.
+* 
+*   @example
+*	<div class="page with-group-sections"><div class="section-nav back">
+*		<a onclick="goBack()">
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Back</div>
+*		</a>
+*	</div><div class="page-wrapper">
+*	<div class="row">hello I am some content in a row </div>
+*	<div class="row group-section">hello I am some content in a row with class group-section</div></div>
+*	<div class="section-nav forward">
+*		<a onclick="goBack()">
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Forward</div>
+*		</a>
+*	</div></div>
+*/
+.section-nav {
+  width: 100%;
+  display: block;
+  position: relative;
+  border: 0px solid #b3b3b3; }
+  .section-nav .text {
+    padding-top: 6.25px;
+    padding-bottom: 6.25px; }
+  .section-nav .circle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #25b6e0;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    border: 4px solid #fff;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.61);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.61);
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.61); }
+    .section-nav .circle i {
+      font-size: 25px;
+      line-height: 1em;
+      margin: 10.5px;
+      color: #fff; }
+      .section-nav .circle i:before {
+        vertical-align: bottom; }
+  .section-nav.forward {
+    border-top-width: 1px;
+    background: url("../img/billie-holiday.png") repeat top right, url("../img/top-shade.png") repeat-x top right;
+    margin-top: 37.5px;
+    border-top-width: 2px; }
+    .section-nav.forward i.fa-holder-dynamic:before, .section-nav.forward.dynamic i.fa-holder:before {
+      content: ""; }
+    .section-nav.forward .circle {
+      right: 12.5px;
+      bottom: 8.33333px; }
+      .section-nav.forward .circle i {
+        margin: 10.5px 13px; }
+    .section-nav.forward .text {
+      padding-right: 75px;
+      text-align: right; }
+  .section-nav.back {
+    background: url("../img/billie-holiday.png") repeat top right, url("../img/bottom-shade.png") repeat-x bottom right;
+    margin-bottom: 37.5px;
+    border-bottom-width: 2px; }
+    .section-nav.back i.fa-holder-dynamic:before, .section-nav.back.dynamic i.fa-holder:before {
+      content: ""; }
+    .section-nav.back .text {
+      padding-left: 75px;
+      text-align: left; }
+    .section-nav.back .circle {
+      left: 12.5px;
+      top: 8.33333px; }
+  .section-nav:hover .circle {
+    background: #198dae;
+    border: 4px solid #fff;
+    -webkit-box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.45);
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.45); }
+    .section-nav:hover .circle i {
+      color: #fff; }
+  .section-nav.disabled {
+    cursor: context-menu; }
+    .section-nav.disabled .text {
+      color: #999999; }
+    .section-nav.disabled .circle, .section-nav.disabled.hover.circle {
+      -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+      background-color: #bfbfbf; }
+
+.inline-group {
+  list-style: none;
+  display: block; }
+  .inline-group > * {
+    display: inline-block;
+    list-style: none; }
+  .inline-group:after {
+    content: '';
+    display: block;
+    clear: both; }
+
+.answer input[type="text"],
+.answer input[type="password"],
+.answer input[type="date"],
+.answer input[type="datetime"],
+.answer input[type="datetime-local"],
+.answer input[type="month"],
+.answer input[type="week"],
+.answer input[type="email"],
+.answer input[type="number"],
+.answer input[type="search"],
+.answer input[type="tel"],
+.answer input[type="time"],
+.answer input[type="url"],
+.answer input[type="color"],
+.answer textarea,
+.answer select,
+.answer button,
+.answer .button, .answer-group input[type="text"],
+.answer-group input[type="password"],
+.answer-group input[type="date"],
+.answer-group input[type="datetime"],
+.answer-group input[type="datetime-local"],
+.answer-group input[type="month"],
+.answer-group input[type="week"],
+.answer-group input[type="email"],
+.answer-group input[type="number"],
+.answer-group input[type="search"],
+.answer-group input[type="tel"],
+.answer-group input[type="time"],
+.answer-group input[type="url"],
+.answer-group input[type="color"],
+.answer-group textarea,
+.answer-group select,
+.answer-group button,
+.answer-group .button, .question input[type="text"],
+.question input[type="password"],
+.question input[type="date"],
+.question input[type="datetime"],
+.question input[type="datetime-local"],
+.question input[type="month"],
+.question input[type="week"],
+.question input[type="email"],
+.question input[type="number"],
+.question input[type="search"],
+.question input[type="tel"],
+.question input[type="time"],
+.question input[type="url"],
+.question input[type="color"],
+.question textarea,
+.question select,
+.question button,
+.question .button, .question-group input[type="text"],
+.question-group input[type="password"],
+.question-group input[type="date"],
+.question-group input[type="datetime"],
+.question-group input[type="datetime-local"],
+.question-group input[type="month"],
+.question-group input[type="week"],
+.question-group input[type="email"],
+.question-group input[type="number"],
+.question-group input[type="search"],
+.question-group input[type="tel"],
+.question-group input[type="time"],
+.question-group input[type="url"],
+.question-group input[type="color"],
+.question-group textarea,
+.question-group select,
+.question-group button,
+.question-group .button {
+  margin-bottom: 0; }
+
+.answer, .question {
+  margin-bottom: 1rem; }
+  .answer .prefix, .answer .postfix, .answer .value, .question .prefix, .question .postfix, .question .value {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    padding: .5em;
+    margin-top: 0;
+    color: #666666;
+    display: block; }
+
+.label-holder, .input-holder, .message-holder, .value-holder {
+  width: 100%;
+  margin: 0;
+  max-width: 114.28571rem; }
+  .label-holder:before, .label-holder:after, .input-holder:before, .input-holder:after, .message-holder:before, .message-holder:after, .value-holder:before, .value-holder:after {
+    content: " ";
+    display: table; }
+  .label-holder:after, .input-holder:after, .message-holder:after, .value-holder:after {
+    clear: both; }
+
+.label-holder {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 0.75em;
+  margin-bottom: 0.375em;
+  position: relative;
+  background-color: transparent;
+  color: #5c5c5c;
+  white-space: nowrap; }
+  .label-holder label, .label-holder .label {
+    font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-weight: 700; }
+  @media only screen and (max-width: 767px) {
+    .label-holder {
+      white-space: normal; } }
+  .label-holder .text {
+    padding-right: 1rem;
+    line-height: 1.2em; }
+
+.required-holder {
+  display: none;
+  height: 1rem;
+  width: 1rem;
+  position: relative;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  color: #333333; }
+  .required-holder i.fa-holder-dynamic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: .75rem; }
+
+.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .answer.completed .required-holder, .question.completed .required-holder, .answer.disabled .required-holder, .question.disabled .required-holder, .answer.attention .required-holder, .question.attention .required-holder {
+  background-color: transparent;
+  display: inline-block; }
+
+.answer.required .required-holder, .question.required .required-holder {
+  color: #E08514; }
+  .answer.required .required-holder i.fa-holder-dynamic:before, .answer.required .required-holder.dynamic i.fa-holder:before, .question.required .required-holder i.fa-holder-dynamic:before, .question.required .required-holder.dynamic i.fa-holder:before {
+    content: ""; }
+
+.input-holder, .value-holder {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 114.28571rem;
+  margin-bottom: 0; }
+  .input-holder:before, .input-holder:after, .value-holder:before, .value-holder:after {
+    content: " ";
+    display: table; }
+  .input-holder:after, .value-holder:after {
+    clear: both; }
+  .input-holder > .input-space, .input-holder > .switch-input-space, .value-holder > .input-space, .value-holder > .switch-input-space {
+    padding-left: 0;
+    line-height: 1; }
+
+[class*="input-space"] + [class*="input-space"]:last-child, [class*="value-space"] + [class*="value-space"]:last-child {
+  padding-right: 0; }
+
+.message-holder > small, .message-holder > span {
+  font-size: 0.85714em;
+  line-height: 1.75em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  display: none;
+  padding: .375rem .5625rem .5625rem;
+  margin-top: -1px;
+  margin-bottom: .25rem;
+  clear: both;
+  color: #FFF; }
+  .message-holder > small i, .message-holder > span i {
+    margin-right: .5rem; }
+
+.hint {
+  font-size: 0.85714em;
+  line-height: 1.75em;
+  margin-top: 0em;
+  margin-bottom: 0em; }
+
+.answer input:disabled, .answer input[disabled], .answer textarea:disabled, .answer textarea[disabled], .answer option:disabled, .answer option[disabled], .question input:disabled, .question input[disabled], .question textarea:disabled, .question textarea[disabled], .question option:disabled, .question option[disabled], .answer .chosen-disabled.chosen-container .chosen-choices, .question .chosen-disabled.chosen-container .chosen-choices {
+  background-color: #b3b3b3;
+  background-image: url(../img/empty_stripe.png);
+  color: #999999; }
+
+.answer .required, .question .required {
+  display: none; }
+.answer.required .required, .question.required .required {
+  display: inline-block;
+  width: 100%; }
+
+.hint .error, .hint .warning, .hint .validated, .hint .info, .hint .highlighted, .hint .completed, .hint .disabled, .hint .attention {
+  padding: .25em .5em; }
+
+.error textarea, .error select, .error input, .error datalist, .warning textarea, .warning select, .warning input, .warning datalist, .validated textarea, .validated select, .validated input, .validated datalist, .info textarea, .info select, .info input, .info datalist, .highlighted textarea, .highlighted select, .highlighted input, .highlighted datalist, .completed textarea, .completed select, .completed input, .completed datalist, .disabled textarea, .disabled select, .disabled input, .disabled datalist, .attention textarea, .attention select, .attention input, .attention datalist {
+  margin-bottom: 0; }
+
+.message-holder > .error, .message-holder > .warning, .message-holder > .validated, .message-holder > .info, .message-holder > .highlighted, .message-holder > .completed, .message-holder > .disabled, .message-holder > .attention {
+  display: none; }
+
+.error .message-holder > .error, .message-holder > .error.make-visible, .warning .message-holder > .warning, .message-holder > .warning.make-visible, .validated .message-holder > .validated, .message-holder > .validated.make-visible, .info .message-holder > .info, .message-holder > .info.make-visible, .highlighted .message-holder > .highlighted, .message-holder > .highlighted.make-visible, .completed .message-holder > .completed, .message-holder > .completed.make-visible, .disabled .message-holder > .disabled, .message-holder > .disabled.make-visible, .attention .message-holder > .attention, .message-holder > .attention.make-visible {
+  display: block; }
+
+.question.question-inline {
+  margin-bottom: .75rem; }
+  .question.question-inline .input-holder {
+    margin-bottom: .25rem; }
+    .question.question-inline .input-holder .input-space, .question.question-inline .input-holder .switch-input-space {
+      padding-left: 0; }
+
+.input-holder .input-space, .input-holder .switch-input-space {
+  padding-left: 0;
+  position: relative; }
+
+.input-space a.button, .switch-input-space a.button, .input-space button, .switch-input-space button, .input-space .button, .switch-input-space .button {
+  margin: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 21px; }
+  .input-space a.button i, .switch-input-space a.button i, .input-space button i, .switch-input-space button i, .input-space .button i, .switch-input-space .button i {
+    margin-right: .2rem; }
+
+[class*="input-space"] + [class*="input-space"]:last-child {
+  padding-right: 0; }
+
+.input-space > .text, .switch-input-space > .text {
+  padding-top: .5em;
+  padding-bottom: .5em;
+  padding-left: .5em; }
+
+.input-space .input-lock, .switch-input-space .input-lock {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.57143rem;
+  font-size: 1.5rem;
+  line-height: 1; }
+  .input-space .input-lock .lock-symbol, .switch-input-space .input-lock .lock-symbol {
+    color: gray; }
+    .input-space .input-lock .lock-symbol:hover, .switch-input-space .input-lock .lock-symbol:hover {
+      color: #25b6e0; }
+
+input[type="checkbox"], input[type="radio"] {
+  margin: .55em .5em;
+  height: 1.5em;
+  text-align: center;
+  position: absolute;
+  display: inline-block;
+  vertical-align: middle; }
+  table input[type="checkbox"], table input[type="radio"] {
+    position: relative; }
+  input[type="checkbox"] + .text, input[type="radio"] + .text {
+    padding-left: 2em;
+    display: inline-block; }
+
+.file-upload-holder {
+  height: 37px; }
+
+.file-upload {
+  position: relative;
+  overflow: hidden;
+  margin: 0 10px; }
+
+.file-upload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0); }
+
+/**
+* 	Questions - File Upload:
+* `.file-upload`  - File uploads are a modified from the standard input-spacer to allow for correct labels to show up when the file is attached 
+*
+*	@example
+*	<div class="button file-upload">
+*		<i class="fa fa-upload"></i>
+*		<span class="text">Upload</span>
+*		<input type="file" class="upload" data-bind="file: { data: document, name: documentname, allowed: allowedTypes }">
+*	</div>
+**/
+.question.question-inline {
+  display: block; }
+  .question.question-inline .label-holder, .question.question-inline .input-holder {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+    float: left; }
+  .question.question-inline .label-holder * {
+    white-space: nowrap;
+    padding-right: 1rem; }
+  .question.question-inline .message-holder, .question.question-inline .hint {
+    display: block;
+    clear: left; }
+  .question.question-inline .hint {
+    border-top: 1px solid #e6e6e6;
+    padding: .25rem;
+    background-color: #e4f6fb; }
+
+/**
+* Questions -Required:
+* `.question` - This is a standard formating for an input question. 
+* 
+*   @example
+*	<div class="question required">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Question Dropdown Title (Required)</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder-dynamic"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="input-holder">
+*			 <div class="input-space column small-6 large-9">
+*				<input type="text"/>
+*			</div>
+*			<div class="column small-6 large-3">
+*				<small class="value">Years</small>
+*			</div>
+*		</div>
+*		<div class="message-holder">
+*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
+*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*				<small class="data"><i class="fa fa-holder"></i> Data message</small>
+*		</div>
+*		<div class="hint">This is some hint text</div>
+*	</div>
+*/
+/**
+* Questions - States:
+* `.question + .warning + error +...` - Modify the container with `.required`, `.warning`, '.error', and other states. Modifiers change the icons and control the visiblity of the message holder.
+* 
+*   @example
+*	<div class="question warning wildcard">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Question</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder-dynamic"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="input-holder">
+*			 <div class="input-space column small-6 large-9">
+*				<input type="text"/>
+*			</div>
+*			<div class="column small-6 large-3">
+*				<small class="value">Years</small>
+*			</div>
+*		</div>
+*		<div class="message-holder">
+*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
+*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*				<small class="info"><i class="fa fa-holder"></i> Data message</small>
+*		</div>
+*		<div class="hint">This is some hint text</div>
+*	</div>
+**/
+/**
+* Questions - Inline:
+* `.question-inline` - questions when there is a need can be made to be inline so the text box will follow the label. These questions will revert to the base question style when on smaller phones. 
+*  Modify any `.question` with the added class of  `.question-inline`
+* 
+*   @example
+*	<div class="question question-inline">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Question Dropdown Title (Required)</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder-dynamic"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="input-holder">
+*			 <div class="input-space column small-6 large-9">
+*				<input type="text"/>
+*			</div>
+*			<div class="column small-6 large-3">
+*				<small class="value">Years</small>
+*			</div>
+*		</div>
+*		<div class="message-holder">
+*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
+*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*				<small class="data"><i class="fa fa-holder"></i> Data message</small>
+*		</div>
+*		<div class="hint">This is some hint text</div>
+*	</div>
+*/
+/**
+* Selectable Button Group (Depreciate Selected Button Group):
+* `.selectable.button-group selected-btn[x]` - this is a toggle-able button group that is using an older combination classes `ul.selectable selected-btn1 > li > a.btn1`.
+* 
+*   @example
+*	<h4>Basic</h4>
+*	<div class="question required">  
+*	  <div class="input-holder row collapse">
+*	    <div class="column small-12 input-space">
+*	      <ul class="button-group selectable selected-btn1">
+*	        <li class="btn1"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
+*	        <li class="btn2"><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
+*	        <li class="btn3"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
+*	      </ul>
+*	    </div>
+*	  </div>
+*	</div>
+*
+*/
+/**
+* Selectable Button Group:
+* `.selectable.button-group` - this is a toggle-able button group that changes colors when items are selected.  Add .selected to the `li`  to change colors and add the check to the button.
+* 
+*   @example
+*	<h4>Basic</h4>
+*	<div class="question required">  
+*	  <div class="input-holder row collapse">
+*	    <div class="column small-12 input-space">
+*	      <ul class="button-group selectable">
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
+*	      </ul>
+*	    </div>
+*	  </div>
+*	</div>
+*	<h4>Modified with an item having the class `.selected`</h4>
+*	<div class="question required">  
+*	  <div class="input-holder row collapse">
+*	    <div class="column small-12 input-space">
+*	      <ul class="button-group selectable">
+*	        <li class="selected"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
+*	      </ul>
+*	    </div>
+*	  </div>
+*	</div>
+*	<h4>Modified with the `.expand`</h4>
+*	<div class="question">  
+*	<div class="input-holder row collapse">
+*	    <div class="column small-12 input-space">
+*	      <ul class="button-group expand selectable">
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
+*	      </ul>
+*	    </div>
+*	  </div>
+*	</div>
+*	<h4>The container `.question` has an error state.<blockquote> NOTE: if button groups have states it is best for them to have been expanded.</blockquote></h4>
+*	<div class="question error">  
+*	<div class="input-holder row collapse">
+*	    <div class="column small-12 input-space">
+*	      <ul class="button-group selectable expand">
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
+*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
+*	        <li class="selected"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
+*	      </ul>
+*	    </div>
+*	  </div>
+*	  <div class="message-holder"><small class="error">Error</small></div>
+*	</div>
+*
+*/
+/*  Button Group */
+.button-group {
+  padding-left: 0;
+  border: 2px solid transparent;
+  margin: -2px;
+  list-style: none;
+  margin: 0;
+  left: 0;
+  display: inline-block; }
+  .button-group:before, .button-group:after {
+    content: " ";
+    display: table; }
+  .button-group:after {
+    clear: both; }
+  .button-group > li {
+    margin: 0;
+    float: left;
+    display: list-item; }
+    .button-group > li > button, .button-group > li .button {
+      border-left: 1px solid;
+      border-color: rgba(255, 255, 255, 0.5); }
+    .button-group > li:first-child button, .button-group > li:first-child .button {
+      border-left: 0; }
+    .button-group > li:first-child {
+      margin-left: 0; }
+    .input-space .button-group > li .button, .switch-input-space .button-group > li .button {
+      padding-top: .57143rem;
+      padding-bottom: .57143rem; }
+  .button-group.selectable {
+    margin-bottom: -1px; }
+    .button-group.selectable .button {
+      background-color: #b3b3b3;
+      border-color: #8f8f8f;
+      color: #FFFFFF; }
+      .button-group.selectable .button:hover, .button-group.selectable .button:focus {
+        background-color: #8f8f8f; }
+      .button-group.selectable .button:hover, .button-group.selectable .button:focus {
+        color: #FFFFFF; }
+    .button-group.selectable i.fa {
+      font-size: 1rem;
+      height: 1rem;
+      width: 1rem;
+      margin: 0 7px 0 0;
+      display: none; }
+    .button-group.selectable li.selected a {
+      background-color: #4F4190;
+      border-color: #3f3473;
+      color: #FFFFFF; }
+      .button-group.selectable li.selected a:hover, .button-group.selectable li.selected a:focus {
+        background-color: #3f3473; }
+      .button-group.selectable li.selected a:hover, .button-group.selectable li.selected a:focus {
+        color: #FFFFFF; }
+      .button-group.selectable li.selected a i.fa {
+        display: inline-block; }
+
+/*Need to Kill this function Badly produced to answer for the view from SI App. Should Consider a better reposnsive answer*/
+.selectable {
+  margin: 0; }
+  .selectable a {
+    background-color: #25b6e0;
+    transition: none; }
+    .selectable a:hover {
+      background-color: #198dae; }
+  .selectable i.fa {
+    font-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+    margin: 0 7px 0 0;
+    display: none; }
+  .selectable.selected-btn1 a, .selectable.selected-btn2 a, .selectable.selected-btn3 a, .selectable.selected-btn4 a, .selectable.selected-btn5 a {
+    background-color: #b3b3b3;
+    border-color: #8f8f8f;
+    color: #FFFFFF; }
+    .selectable.selected-btn1 a:hover, .selectable.selected-btn1 a:focus, .selectable.selected-btn2 a:hover, .selectable.selected-btn2 a:focus, .selectable.selected-btn3 a:hover, .selectable.selected-btn3 a:focus, .selectable.selected-btn4 a:hover, .selectable.selected-btn4 a:focus, .selectable.selected-btn5 a:hover, .selectable.selected-btn5 a:focus {
+      background-color: #8f8f8f; }
+    .selectable.selected-btn1 a:hover, .selectable.selected-btn1 a:focus, .selectable.selected-btn2 a:hover, .selectable.selected-btn2 a:focus, .selectable.selected-btn3 a:hover, .selectable.selected-btn3 a:focus, .selectable.selected-btn4 a:hover, .selectable.selected-btn4 a:focus, .selectable.selected-btn5 a:hover, .selectable.selected-btn5 a:focus {
+      color: #FFFFFF; }
+  .selectable.selected-btn1 .btn1 a, .selectable.selected-btn2 .btn2 a, .selectable.selected-btn3 .btn3 a, .selectable.selected-btn4 .btn4 a, .selectable.selected-btn5 .btn5 a, .selectable .selected a {
+    background-color: #4F4190;
+    border-color: #3f3473;
+    color: #FFFFFF; }
+    .selectable.selected-btn1 .btn1 a:hover, .selectable.selected-btn1 .btn1 a:focus, .selectable.selected-btn2 .btn2 a:hover, .selectable.selected-btn2 .btn2 a:focus, .selectable.selected-btn3 .btn3 a:hover, .selectable.selected-btn3 .btn3 a:focus, .selectable.selected-btn4 .btn4 a:hover, .selectable.selected-btn4 .btn4 a:focus, .selectable.selected-btn5 .btn5 a:hover, .selectable.selected-btn5 .btn5 a:focus, .selectable .selected a:hover, .selectable .selected a:focus {
+      background-color: #3f3473; }
+    .selectable.selected-btn1 .btn1 a:hover, .selectable.selected-btn1 .btn1 a:focus, .selectable.selected-btn2 .btn2 a:hover, .selectable.selected-btn2 .btn2 a:focus, .selectable.selected-btn3 .btn3 a:hover, .selectable.selected-btn3 .btn3 a:focus, .selectable.selected-btn4 .btn4 a:hover, .selectable.selected-btn4 .btn4 a:focus, .selectable.selected-btn5 .btn5 a:hover, .selectable.selected-btn5 .btn5 a:focus, .selectable .selected a:hover, .selectable .selected a:focus {
+      color: #FFFFFF; }
+    .selectable.selected-btn1 .btn1 a i.fa, .selectable.selected-btn2 .btn2 a i.fa, .selectable.selected-btn3 .btn3 a i.fa, .selectable.selected-btn4 .btn4 a i.fa, .selectable.selected-btn5 .btn5 a i.fa, .selectable .selected a i.fa {
+      display: inline-block; }
+
+.button-group.expand {
+  width: 100%;
+  display: table;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start; }
+  @media only screen and (max-width: 1024px) {
+    .button-group.expand {
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; } }
+  .button-group.expand li {
+    display: table-cell;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto; }
+    .button-group.expand li .button, .button-group.expand li button {
+      padding-top: 1rem;
+      padding-right: 2rem;
+      padding-bottom: 1.07143rem;
+      padding-left: 2rem;
+      font-size: 1.14286rem;
+      padding-top: 1rem;
+      padding-bottom: 1.07143rem;
+      padding-right: 0;
+      padding-left: 0;
+      width: 100%; }
+      .input-space .button-group.expand li .button, .switch-input-space .button-group.expand li .button, .input-space .button-group.expand li button, .switch-input-space .button-group.expand li button {
+        padding-top: .57143rem;
+        padding-bottom: .57143rem; }
+
+/**
+*  Tables:
+*  `table` - plan tables are clean with barely any styles.
+* 
+*   @example
+*	<table class="table">
+*		<thead>
+*			<tr>
+*				<th>table header</th>
+*				<th>table header</th>
+*				<th>table header</th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td>table row 1 table cell A<br><small>this is small text</small></td>
+*				<td>table row 1 table cell B<br><small class="color-highlighted">this is small text with blue</small></td>
+*				<td>table row 1 table cell C</td>
+*			</tr>
+*			<tr>
+*				<td>table row 2 table cell A</td>
+*				<td>table row 2 table cell B</td>
+*				<td>table row 2 table cell C</td>
+*			</tr>
+*		</tbody>
+*		<tfoot>
+*			<tr>
+*				<td colspan="3">footer cell</td>
+*			</tr>
+*		</tfoot>
+*	</table>
+ */
+table a.button, table button, table .inline-list, table .nobutton {
+  margin: 0; }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 0;
+  margin-bottom: 1rem;
+  font-size: 1rem; }
+  .table tr + tr td, .table tr + tr th {
+    border-top: #e6e6e6 1px solid; }
+  .table thead tr:last-child th {
+    border-bottom: 2px solid #4F4190; }
+  .table td, .table th {
+    text-align: left;
+    padding: .25rem; }
+    .table td .color-highlighted, .table th .color-highlighted {
+      color: #4F4190; }
+    .table td small, .table th small {
+      font-size: 80%;
+      color: #999999; }
+  .table th {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    border: 0;
+    vertical-align: bottom; }
+    .table th.h1, .table thh2, .table thh3, .table thh4 {
+      margin-top: 0;
+      clear: both;
+      margin-bottom: -.15em; }
+    .table th .with-underline {
+      border-bottom: 1px dotted #e6e6e6; }
+  .table td {
+    vertical-align: middle; }
+
+.table tfoot tr td {
+  border: 0;
+  border-top: 1px solid #b3b3b3;
+  font-size: .9rem; }
+
+/**
+* Tables (Banded):
+* `.banded` - There are two high styled tables `.banded` or `.stripped`.
+* 
+*   @example
+*	<table class="table banded">
+*		<thead>
+*			<tr>
+*				<th>table header</th>
+*				<th>table header</th>
+*				<th>table header</th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr>
+*				<td> row 2  cell A</td>
+*				<td> row 2  cell B</td>
+*				<td> row 2  cell C</td>
+*			</tr>
+*			<tr>
+*				<td> row 3  cell A</td>
+*				<td> row 3  cell B</td>
+*				<td> row 3  cell C</td>
+*			</tr>
+*		</tbody>
+*		<tfoot>
+*			<tr>
+*				<td colspan="3">footer cell</td>
+*			</tr>
+*		</tfoot>
+*	</table>
+*/
+/**
+* Tables (Stripped):
+* ` .stripped` - Table with the class`.stripped`.
+* 
+*   @example
+*	<table class="table stripped">
+*		<thead>
+*			<tr>
+*				<th>table header</th>
+*				<th>table header</th>
+*				<th>table header</th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr>
+*				<td> row 2  cell A</td>
+*				<td> row 2  cell B</td>
+*				<td> row 2  cell C</td>
+*			</tr>
+*			<tr>
+*				<td> row 2  cell A</td>
+*				<td> row 2  cell B</td>
+*				<td> row 2  cell C</td>
+*			</tr>
+*		</tbody>
+*		<tfoot>
+*			<tr>
+*				<td colspan="3">footer cell</td>
+*			</tr>
+*		</tfoot>
+*	</table>
+*/
+.banded tr:nth-child(even), .stripped tbody tr:nth-child(even) {
+  background-color: #e6e6e6; }
+
+.stripped th:nth-child(odd), .stripped td:nth-child(odd) {
+  background-color: #e4f6fb; }
+
+.stripped tbody tr:nth-child(even) td:nth-child(odd) {
+  background-color: #deeaed; }
+
+.stripped tbody tr + tr td, .banded tbody tr + tr td {
+  border-top: 0px solid; }
+.stripped th, .stripped td, .banded th, .banded td {
+  padding: .25rem .25rem .25rem .55rem; }
+.stripped tfoot td, .stripped tfoot td:nth-child(odd), .banded tfoot td, .banded tfoot td:nth-child(odd) {
+  color: #333;
+  border-top: 1px solid #4F4190;
+  background-color: #cccccc; }
+
+.table .seperator td, .table .seperator:nth-child(even) td:nth-child(odd) {
+  padding-top: 2.2px;
+  padding-top: 0.1375rem;
+  padding-bottom: 2.2px;
+  padding-bottom: 0.1375rem;
+  /* can be treated like a fallback */
+  background-color: #604faf;
+  /* will be "on top", if browser supports it */
+  background-image: linear-gradient(to left, #7060b7, #56479e);
+  /* these will reset other properties, like background-position, but it does know what you mean */
+  background: #604faf;
+  background: linear-gradient(to left, #7060b7, #56479e);
+  border-top: #56479e 1px solid;
+  border-bottom: #56479e 2px solid;
+  color: #fff;
+  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: .75rem; }
+
+/**
+* Tables Row(Seperator):
+* ` .seperator` - Table with the class`.stripped`.
+* 
+*   @example
+*	<table class="table stripped">
+*		<thead>
+*			<tr>
+*				<th>table header</th>
+*				<th>table header</th>
+*				<th>table header</th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr class="seperator">
+*				<td colspan='3'> Separator</td>
+*			</tr>
+*		</tbody>
+*		<tfoot>
+*			<tr>
+*				<td colspan="3">footer cell</td>
+*			</tr>
+*		</tfoot>
+*	</table>
+*/
+td.error, .table tbody tr + tr td.error, tr.error td, .stripped tr.error:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.error, tr:nth-child(even).error td, td.warning, .table tbody tr + tr td.warning, tr.warning td, .stripped tr.warning:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.warning, tr:nth-child(even).warning td, td.validated, .table tbody tr + tr td.validated, tr.validated td, .stripped tr.validated:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.validated, tr:nth-child(even).validated td, td.info, .table tbody tr + tr td.info, tr.info td, .stripped tr.info:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.info, tr:nth-child(even).info td, td.highlighted, .table tbody tr + tr td.highlighted, tr.highlighted td, .stripped tr.highlighted:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.highlighted, tr:nth-child(even).highlighted td, td.completed, .table tbody tr + tr td.completed, tr.completed td, .stripped tr.completed:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.completed, tr:nth-child(even).completed td, td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .stripped tr.disabled:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.disabled, tr:nth-child(even).disabled td, td.attention, .table tbody tr + tr td.attention, tr.attention td, .stripped tr.attention:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.attention, tr:nth-child(even).attention td {
+  color: #333333; }
+
+td.icon {
+  padding: .25rem .25rem .25rem .25rem;
+  text-align: center;
+  vertical-align: middle;
+  width: 1%; }
+  td.icon i {
+    margin: 0 auto; }
+
+tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.completed td, tr.disabled td, tr.attention td {
+  background-image: url(../img/empty_stripe@2x.png);
+  font-weight: 900; }
+
+.stripped tr.error td:nth-child(odd), .stripped tr.warning td:nth-child(odd), .stripped tr.validated td:nth-child(odd), .stripped tr.info td:nth-child(odd), .stripped tr.highlighted td:nth-child(odd), .stripped tr.completed td:nth-child(odd), .stripped tr.disabled td:nth-child(odd), .stripped tr.attention td:nth-child(odd) {
+  background-image: url(../img/empty_stripe-alt@2x.png);
+  font-weight: 900; }
+
+td.error, .table tbody tr + tr td.error, td.warning, .table tbody tr + tr td.warning, td.validated, .table tbody tr + tr td.validated, td.info, .table tbody tr + tr td.info, td.highlighted, .table tbody tr + tr td.highlighted, td.completed, .table tbody tr + tr td.completed, td.disabled, .table tbody tr + tr td.disabled, td.attention, .table tbody tr + tr td.attention {
+  background-image: url(../img/empty_diamond@2x.png) !important;
+  font-weight: 900; }
+
+td.error, td.warning, td.validated, td.info, td.highlighted, td.completed, td.disabled, td.attention {
+  border: 1px solid; }
+
+tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.completed td, tr.disabled td, tr.attention td {
+  border-top: 1px solid;
+  border-bottom: 1px solid; }
+
+td.error, .table tbody tr + tr td.error, tr.error td, .stripped tr.error:nth-child(even) td:nth-child(odd) {
+  background-color: #f5d9dc;
+  border-color: #f2b7bd; }
+
+tr:nth-child(even) td.error {
+  background-color: #f2ced2; }
+
+tr:nth-child(even).error td {
+  background-color: #f2ced2; }
+
+.stripped tbody tr.error td:nth-child(odd) {
+  background-color: #f5d9dc; }
+
+td.warning, .table tbody tr + tr td.warning, tr.warning td, .stripped tr.warning:nth-child(even) td:nth-child(odd) {
+  background-color: #faead7;
+  border-color: #f8dbb6; }
+
+tr:nth-child(even) td.warning {
+  background-color: #f8e4cb; }
+
+tr:nth-child(even).warning td {
+  background-color: #f8e4cb; }
+
+.stripped tbody tr.warning td:nth-child(odd) {
+  background-color: #faead7; }
+
+td.validated, .table tbody tr + tr td.validated, tr.validated td, .stripped tr.validated:nth-child(even) td:nth-child(odd) {
+  background-color: #d7f2e2;
+  border-color: #aaf5cb; }
+
+tr:nth-child(even) td.validated {
+  background-color: #cbeeda; }
+
+tr:nth-child(even).validated td {
+  background-color: #cbeeda; }
+
+.stripped tbody tr.validated td:nth-child(odd) {
+  background-color: #d7f2e2; }
+
+td.info, .table tbody tr + tr td.info, tr.info td, .stripped tr.info:nth-child(even) td:nth-child(odd) {
+  background-color: #f5f4fa;
+  border-color: #eeecf7; }
+
+tr:nth-child(even) td.info {
+  background-color: #f3f1f9; }
+
+tr:nth-child(even).info td {
+  background-color: #f3f1f9; }
+
+.stripped tbody tr.info td:nth-child(odd) {
+  background-color: #f5f4fa; }
+
+td.highlighted, .table tbody tr + tr td.highlighted, tr.highlighted td, .stripped tr.highlighted:nth-child(even) td:nth-child(odd) {
+  background-color: #e1dfec;
+  border-color: #c7c1e3; }
+
+tr:nth-child(even) td.highlighted {
+  background-color: #d8d5e7; }
+
+tr:nth-child(even).highlighted td {
+  background-color: #d8d5e7; }
+
+.stripped tbody tr.highlighted td:nth-child(odd) {
+  background-color: #e1dfec; }
+
+td.completed, .table tbody tr + tr td.completed, tr.completed td, .stripped tr.completed:nth-child(even) td:nth-child(odd) {
+  background-color: #d7f2e2;
+  border-color: #aaf5cb; }
+
+tr:nth-child(even) td.completed {
+  background-color: #cbeeda; }
+
+tr:nth-child(even).completed td {
+  background-color: #cbeeda; }
+
+.stripped tbody tr.completed td:nth-child(odd) {
+  background-color: #d7f2e2; }
+
+td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .stripped tr.disabled:nth-child(even) td:nth-child(odd) {
+  background-color: #f2f2f2;
+  border-color: #e8e8e8; }
+
+tr:nth-child(even) td.disabled {
+  background-color: #eeeeee; }
+
+tr:nth-child(even).disabled td {
+  background-color: #eeeeee; }
+
+.stripped tbody tr.disabled td:nth-child(odd) {
+  background-color: #f2f2f2; }
+
+td.attention, .table tbody tr + tr td.attention, tr.attention td, .stripped tr.attention:nth-child(even) td:nth-child(odd) {
+  background-color: #faead7;
+  border-color: #f8dbb6; }
+
+tr:nth-child(even) td.attention {
+  background-color: #f8e4cb; }
+
+tr:nth-child(even).attention td {
+  background-color: #f8e4cb; }
+
+.stripped tbody tr.attention td:nth-child(odd) {
+  background-color: #faead7; }
+
+/**
+* Table States Cells:
+* `td.state-name` - quickly color table cells. 
+* 
+*   @example
+*	<table class="table">
+*		<tr>
+*			<td class="error icon"><i class="fa fa-holder"></i></td>
+*			<td class=""><i class="fa fa-holder"></i></td>
+*			<td class="">Text</td>
+*			<td class=""><i class="fa fa-holder"></i>&nbsp;Warning</td>
+*		</tr>
+*		<tr>
+*			<td class=""><i class="fa fa-holder"></i></td>
+*			<td class="info icon"><i class="fa fa-holder"></i></td>
+*			<td class="">Text</td>
+*			<td class="info"><i class="fa fa-holder"></i>&nbsp;Info</td>
+*		</tr>
+*		<tr>
+*			<td class=""><i class="fa fa-holder"></i></td>
+*			<td class="warning icon"><i class="fa fa-holder"></i></td>
+*			<td class="error">Error</td>
+*			<td class=""><i class="fa fa-holder"></i>&nbsp;Text</td>
+*		</tr>
+*		<tr>
+*			<td class="validated icon"><i class="fa fa-holder"></i></td>
+*			<td class="info icon"><i class="fa fa-holder"></i></td>
+*			<td class="validated">Validated</td>
+*			<td class=""><i class="fa fa-holder"></i>&nbsp;text</td>
+*		</tr>
+*	</table>
+*/
+/**
+* Table States - Rows:
+* `tr.state` - quickly color table rows with the states. 
+* 
+*   @example
+*	<table class="table stripped">
+*		<tr class="validated">
+*			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
+*			<td class=""></td>
+*			<td class="">Cell Data in validated Row</td>
+*			<td class="">Icon is Dynamic</td>
+*		</tr>
+*		<tr class="warning">
+*			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
+*			<td class=""></td>
+*			<td class="">Cell Data in Warning Row</td>
+*			<td class="error">I am an error cell</td>
+*		</tr>
+*		<tr class="warning">
+*			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
+*			<td class=""></td>
+*			<td class="">Cell Data in Warning Row</td>
+*			<td>data</td>
+*		</tr>
+
+*		<tr class="error">
+*			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
+*			<td class="">Icon is Dynamic</td>
+*			<td class="">Cell Data in Error Row</td>
+*			<td class="">Cell Data</td>
+*		</tr>
+*	</table>
+*/
+/**
+* Collapsable Panel:
+* `.collapsable-panel` - a container element which naturaly is hiden and reveals when it is prompted.<br><br> !!  Requires Javascript to Function  !!
+* 
+*   @example
+*	<div class="row">
+*		<div class="column small-12 medium-6">
+*			<div class="collapsable-panel" style="display: block;">
+*				<div class="bar close">
+*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> <span class="text">close</span></a>
+*				</div>
+*				<div class="content">
+*					<div class="row">
+*						<div class="column small-12">
+*							<h2>H2 in Panel</h2>
+*			              <p>All basic html content can be placed in the panel</p>
+*						</div>
+*					</div>
+*				</div>
+*					<div class="bar jumpToTop">
+*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> <span class="text">top</span></a>
+*				</div>
+*			</div>
+*		</div>
+*		<div class="column small-12 medium-6">
+*			<div class="collapsable-panel inset" style="display: block;">
+*				<div class="bar close">
+*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> <span class="text">close</span></a>
+*				</div>
+*				<div class="content">
+*					<div class="row">
+*						<div class="column small-12">
+*							<h2>H2 in Inset Panel</h2>
+*			              <p>All basic html content can be placed in the panel</p>
+*						</div>
+*					</div>
+*				</div>
+*					<div class="bar jumpToTop">
+*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> <span class="text">top</span></a>
+*				</div>
+*			</div>
+*		</div>
+*	</div>
+*/
+.bar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 10; }
+  .bar .action-btn {
+    text-transform: lowercase;
+    padding: .2rem .4rem .2rem .5rem;
+    font-size: 1rem;
+    right: 0;
+    position: absolute;
+    display: inline-block; }
+  .bar.close {
+    top: -2px; }
+    .bar.close .action-btn {
+      top: -1.1rem;
+      color: #4F4190; }
+  .bar.jumpToTop {
+    bottom: -2px; }
+    .bar.jumpToTop .action-btn {
+      bottom: -1rem;
+      color: #666666; }
+
+.collapsable-panel {
+  position: relative;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 114.28571rem;
+  max-width: none;
+  margin-bottom: 1rem;
+  display: none; }
+  .collapsable-panel:before, .collapsable-panel:after {
+    content: " ";
+    display: table; }
+  .collapsable-panel:after {
+    clear: both; }
+  .collapsable-panel .bar.close {
+    border-top: 2px solid #4F4190; }
+    .collapsable-panel .bar.close .action-btn {
+      background-color: white; }
+  .collapsable-panel .bar.jumpToTop {
+    border-bottom: 2px solid #666666; }
+    .collapsable-panel .bar.jumpToTop .action-btn {
+      background-color: white; }
+  .collapsable-panel .content {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    width: 100%;
+    float: left;
+    padding: 2rem 1rem;
+    z-index: 0; }
+  .collapsable-panel.inset {
+    background-color: white;
+    background: url("../img/billie-holiday.png") repeat top right;
+    border: 0 none; }
+    .collapsable-panel.inset .content {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      width: 100%;
+      float: left;
+      padding: 3.5rem 1.5rem;
+      z-index: 0; }
+    .collapsable-panel.inset .bar.close {
+      border-top: 7px solid #4F4190;
+      top: -2px; }
+      .collapsable-panel.inset .bar.close .action-btn {
+        top: 0;
+        color: white;
+        background-color: #4F4190; }
+    .collapsable-panel.inset .bar.jumpToTop {
+      bottom: -2px;
+      border-bottom: 7px solid #9a9a9a; }
+      .collapsable-panel.inset .bar.jumpToTop .action-btn {
+        bottom: 0;
+        color: white;
+        background-color: #9a9a9a; }
+
+h1 + div > .collapsable-panel {
+  margin-bottom: 1.5rem;
+  margin-top: -1.5rem; }
+
+table + div > .collapsable-panel {
+  margin-top: -1rem;
+  margin-bottom: 0.7rem; }
+
+/**
+* Accordion (requires Collapsable Panel):
+* `.accordion` - An extend DOM of Collapsable Paenel which allows it to be chained together and only have one open at a time.<br><br> !!  Requires Javascript to Function  !!
+* 
+*   @example
+*	<div class="accordion">
+*		<div class="selected">
+*			<h2 class="toggle" data-bind="click:panelShow"><i class="fa fa-holder"></i><span class="text">Header and Toggle Area (Open)</span></h2>
+*			<div class="collapsable-panel ">
+*				<div class="bar close">
+*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> close</a>
+*				</div>
+*				<div class="content">
+*					<div class="row">
+*						<div class="column small-12">
+*							<p>Content</p>
+*						</div>
+*					</div>
+*				</div>
+*				<div class="bar jumpToTop">
+*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> top</a>
+*				</div>
+*			</div>
+*		</div>
+*		<div class="">
+*			<h2 class="toggle" data-bind="click:panelShow"><i class="fa fa-holder"></i><span class="text">Header and Toggle Area (Closed)</span></h2>
+*		</div>
+*	</div>
+*/
+.fa-rotate-90 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg); }
+
+.fa-rotate-180 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+.fa-rotate-270 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg); }
+
+.fa-flip-horizontal {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1); }
+
+.fa-flip-vertical {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1, -1); }
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical {
+  filter: none; }
+
+.accordion .collapsable-panel {
+  display: block; }
+.accordion .toggle .fa {
+  color: #25b6e0;
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg); }
+  .accordion .toggle .fa.fa-holder:before {
+    content: ""; }
+.accordion .toggle .text {
+  color: #5c5c5c;
+  padding-left: .5rem; }
+.accordion .toggle:hover .fa {
+  color: #198dae; }
+.accordion .toggle:hover .text {
+  color: #333333; }
+.accordion .selected .toggle .fa {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  color: #4f4190; }
+
+/**
+* Panel Selector:
+* `.panel-selector-holder` - the panel selector is a multi tree level selector allowing a user to select from the left coloum or parent and then select the filtered child elements.  !! Requires Javascript!!
+* 
+*   @example
+*	<section id="PanelSelector" class="panel-selector-holder">
+*		<div class="panel-selector parent">
+*			<ul>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Parent</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Parent</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Parent</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Parent</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Parent</span></li>
+*			</ul>
+*		</div>								
+*		<div class="panel-selector child">
+*			<ul>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Child</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Child</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Child</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Child</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Child</span></li>
+*			</ul>
+*		</div>
+*	</section>
+*	<a class="link" href="http://anovi.github.io/selectonic/">Javascript API Documentaion</a> 
+*/
+/**
+* Knockout Panel Selector:
+* `.panel-selector-holder` - the panel selector is a multi tree level selector allowing a user to select from the left coloum or parent and then select the filtered child elements.  !! Requires Javascript!!
+* 
+*   @example
+*	<section id="Knockout" class="panel-selector-holder row collapse">
+*	  <div class="panel-selector">
+*	    <ul  data-bind="foreach:$root.repeatedItems">
+*	      <li data-bind="css: {selected: selected},toggle:selected">
+*	        <i class="fa fa-holder"></i>
+*	        <span class="text" data-bind="text:name">List Item Parent</span>
+*	      </li>
+*	    </ul>
+*	  </div><div class="panel-selector">
+*	    <ul  data-bind="foreach:$root.repeatedItems2">
+*	      <li data-bind="css: {selected: selected},toggle:selected">
+*	        <i class="fa fa-holder"></i>
+*	        <span class="text" data-bind="text:name">List Item Parent</span>
+*	      </li>
+*	    </ul></div>
+*	 </section>
+*/
+.panel-selector-holder {
+  display: block;
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex !important;
+  -webkit-flex-flow: column nowrap;
+  -moz-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -webkit-align-content: strech;
+  -moz-align-content: strech;
+  -ms-align-content: strech;
+  align-content: strech;
+  -webkit-align-items: strech;
+  -moz-align-items: strech;
+  -ms-align-items: strech;
+  align-items: strech; }
+
+.panel-selector {
+  max-height: 15em;
+  display: block;
+  position: relative;
+  clear: both;
+  width: 100%;
+  overflow: auto;
+  border: 1px solid #b3b3b3;
+  margin-left: -1px;
+  -webkit-box-flex: felx-start 1 auto;
+  -moz-box-flex: felx-start 1 auto;
+  -webkit-flex: felx-start 1 auto;
+  -ms-flex: felx-start 1 auto;
+  flex: felx-start 1 auto; }
+  .panel-selector.active-focus {
+    -moz-box-shadow: inset 0 0 10px #198dae;
+    -webkit-box-shadow: inset 0 0 10px #198dae;
+    box-shadow: inset 0 0 10px #198dae; }
+  .panel-selector .paenl-selector-group-title {
+    font-size: 17px;
+    padding: .5em .75em;
+    font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    background-color: #4F4190;
+    color: #fff; }
+  .panel-selector ul {
+    overflow-x: visible; }
+  .panel-selector .group-title
+  li {
+    margin: 3px;
+    white-space: nowrap; }
+    .panel-selector .group-title
+    li + li {
+      margin-top: 0; }
+    .panel-selector .group-title
+    li.j-focused, .panel-selector .group-title
+    li.focused {
+      background-color: #e6e6e6; }
+    .panel-selector .group-title
+    li.j-selected, .panel-selector .group-title
+    li.selected {
+      background-color: #4F4190; }
+      .panel-selector .group-title
+      li.j-selected > i.fa-holder:before, .panel-selector .group-title
+      li.j-selected.fa:before, .panel-selector .group-title
+      li.selected > i.fa-holder:before, .panel-selector .group-title
+      li.selected.fa:before {
+        content: ""; }
+      .panel-selector .group-title
+      li.j-selected .text, .panel-selector .group-title
+      li.j-selected .fa, .panel-selector .group-title
+      li.selected .text, .panel-selector .group-title
+      li.selected .fa {
+        color: #fff; }
+
+/**
+* Button Selectors:
+* `.button-group` -  !! Requires Javascript!!
+* 
+*   @example
+*	<div class="row"><ul id="ButtonGroup" class="button-group">
+*		<li><a class="button"><i class="fa fa-holder"></i><span class="text">button</span></a></li>
+*		<li><a class="button"><i class="fa fa-holder"></i><span class="text">button</span></a></li>
+*		<li><a class="button"><i class="fa fa-holder"></i><span class="text">button</span></a></li>
+*		<li><a class="button"><i class="fa fa-holder"></i><span class="text">button</span></a></li>
+*		<li><a class="button"><i class="fa fa-holder"></i><span class="text">button</span></a></li>
+*	</ul></div>
+*	<a class="link" href="http://anovi.github.io/selectonic/">Javascript API Documentaion</a> 
+*/
+.button-group li a.button {
+  background-color: #b3b3b3; }
+.button-group li + li {
+  margin-top: 0; }
+.button-group li.j-focused a.button, .button-group li.focused a.button {
+  background-color: #198dae; }
+.button-group li.j-selected a.button, .button-group li.selected a.button {
+  background-color: #4F4190; }
+  .button-group li.j-selected a.button > i.fa-holder:before, .button-group li.j-selected a.button.fa:before, .button-group li.selected a.button > i.fa-holder:before, .button-group li.selected a.button.fa:before {
+    content: ""; }
+  .button-group li.j-selected a.button .text, .button-group li.j-selected a.button .fa, .button-group li.selected a.button .text, .button-group li.selected a.button .fa {
+    color: #fff; }
+
+/**
+* Toggle Select:
+* `.toggle .miniized` - small multi position toggle.  there is not animation like the switches and are not driven by an imput.
+* 
+*   @example
+*	<ul class="toggle">
+*	    <li class="toggle-position "><a href="javascript:void(0)">10</a></li>
+*	    <li class="toggle-position selected"><a href="javascript:void(0)">20</a></li>
+*	    <li class="toggle-position "><a href="javascript:void(0)">50</a></li>
+*	</ul>
+*	<ul id="Toggle" class="toggle minimized">
+*	    <li class="toggle-position "><a href="javascript:void(0)">10</a></li>
+*	    <li class="toggle-position selected"><a href="javascript:void(0)">20</a></li>
+*	    <li class="toggle-position "><a href="javascript:void(0)">50</a></li>
+*	    <li class="toggle-position "><a href="javascript:void(0)">75</a></li>
+*	    <li class="toggle-position "><a href="javascript:void(0)">100</a></li>
+*	</ul>
+*/
+ul.toggle {
+  background: #e6e6e6 url("../img/billie-holiday.png") repeat top right;
+  border: 2px solid #cccccc;
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0px 2px;
+  border-radius: 6px;
+  font-size: 1rem; }
+  ul.toggle a, ul.toggle a:link {
+    text-decoration: none;
+    line-height: 1em; }
+  ul.toggle .toggle-position {
+    display: inline-block;
+    padding: .25em .375em;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: #e6e6e6;
+    opacity: .75;
+    font-weight: 700; }
+    ul.toggle .toggle-position a {
+      color: #333333; }
+    ul.toggle .toggle-position:hover {
+      background-color: #198dae;
+      opacity: 1; }
+      ul.toggle .toggle-position:hover a {
+        color: #fff; }
+    ul.toggle .toggle-position a {
+      box-sizing: border-box;
+      padding: .25em .5em;
+      display: block; }
+    ul.toggle .toggle-position.selected {
+      opacity: 1;
+      border: #5a4aa5 0.2em solid;
+      background-color: #5a4aa5;
+      margin: -.25em 0px;
+      border-radius: 5px;
+      font-weight: 900;
+      padding: .45em .375em; }
+      ul.toggle .toggle-position.selected:hover {
+        background-color: #5a4aa5;
+        border-color: #4F4190; }
+      ul.toggle .toggle-position.selected a {
+        color: #fff; }
+  ul.toggle.minimized {
+    font-size: .75rem;
+    border-radius: 1px; }
+    ul.toggle.minimized .toggle-position {
+      border-radius: 2px; }
+    ul.toggle.minimized .selected {
+      border-radius: 2px;
+      border-width: 2px;
+      margin: -3px; }
+
+/**
+* Modals( Foundation Reveal):
+* `.reveal-modal` - Popup, modal, reveal - a design pattern to show and hide a part of content when you want the user to focus on the single task. 
+* 
+*   @example
+*	<a href="#" class="button" data-reveal-id="myModal">Click Me For A Modal</a>
+*	<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+*	  <h2 id="modalTitle" class="with-underline">Awesome. I have it.</h2>
+*	  <p class="lead">Your couch.  It is mine.</p>
+*	  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+*	  <a class="close-reveal-modal" aria-label="Close"><i class="fa fa-holder"></i></a>
+*	</div>
+*/
+div.reveal-modal, dialog {
+  border-top: 6px solid #4F4190; }
+  div.reveal-modal .close-reveal-modal, dialog .close-reveal-modal {
+    background-color: #4F4190;
+    color: #fff;
+    font-size: 1rem;
+    padding: .25em .5em .5em .5em;
+    top: 0;
+    right: 0; }
+
+.switch-input-space {
+  white-space: nowrap;
+  display: table;
+  padding-bottom: .5rem;
+  padding-top: .5rem; }
+  .switch-input-space .with-underline {
+    border-bottom: 1px dotted #d6d6d6; }
+
+.switch {
+  padding: 0;
+  border: none;
+  position: relative;
+  outline: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  display: inline-block;
+  display: table-cell;
+  width: 1%; }
+  .switch label {
+    display: block;
+    margin-bottom: 1rem;
+    position: relative;
+    color: transparent;
+    background: #DDDDDD;
+    text-indent: 100%;
+    width: 4rem;
+    height: 2rem;
+    cursor: pointer;
+    transition: left 0.15s ease-out; }
+  .switch input {
+    opacity: 0;
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    padding: 0; }
+    .switch input + label {
+      margin-left: 0;
+      margin-right: 0; }
+  .switch label:after {
+    content: "";
+    display: block;
+    background: #FFFFFF;
+    position: absolute;
+    top: .25rem;
+    left: .25rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    -webkit-transition: left 0.15s ease-out;
+    -moz-transition: left 0.15s ease-out;
+    transition: left 0.15s ease-out;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+  .switch input:checked + label {
+    background: #4F4190; }
+  .switch input:checked + label:after {
+    left: 2.25rem; }
+  .switch label {
+    width: 3.5rem;
+    height: 1.75rem; }
+  .switch label:after {
+    width: 1.25rem;
+    height: 1.25rem; }
+  .switch input:checked + label:after {
+    left: 2rem; }
+  .switch label {
+    color: transparent;
+    background: #DDDDDD; }
+  .switch label:after {
+    background: #FFFFFF; }
+  .switch input:checked + label {
+    background: #4F4190; }
+  .switch label {
+    border-radius: #4F4190; }
+  .switch label:after {
+    border-radius: #4F4190; }
+
+.switch-value {
+  display: inline-block;
+  height: 2rem;
+  vertical-align: top;
+  padding: 0 0 0 .75rem;
+  margin: 0;
+  position: relative;
+  background-color: transparent;
+  color: #5c5c5c;
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 400;
+  white-space: normal;
+  display: table-cell; }
+
+.switch.check-visible input + label:after {
+  z-index: 100; }
+
+.switch.check-visible input + label:before, .switch.x-visible input + label:before {
+  position: absolute;
+  display: block;
+  height: 1.5em;
+  width: 1.5em;
+  z-index: 1;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  vertical-align: middle; }
+
+.tiny.switch input + label:before {
+  font-size: 84%; }
+
+.large.switch input + label:before {
+  font-size: 140%; }
+
+.switch.x-visible input + label:before {
+  content: "\f00d";
+  left: -1.35em;
+  top: .40em;
+  color: #fff; }
+
+.switch.check-visible input:checked + label:before {
+  content: "\f00c";
+  left: -3.05em;
+  top: .40em;
+  color: #fff; }
+
+.switch.disabled label {
+  background: #b3b3b3 url("../img/subtlenet2.png") repeat; }
+  .switch.disabled label:after {
+    background-color: #e6e6e6; }
+
+/**
+* Switch (Foundation Override):
+* `.switch` - Switches are a more visible and more touchable versions of checkbox or radio buttons. ADD `.check-visible` to a switch to make a check appear in the selected state of `.x-visible` to show the x when it is shut off
+* 
+*   @example
+*	<div class="switch-input-space group-divide row">
+*		<div class="switch">
+*			<input type="radio" id="hb-check0">
+*			<label  for="hb-check0"onclick=""></label>
+*		</div>
+*		<label  class="switch-value" for="hb-check0">Question to say yes to</label>		
+*	</div>
+*	<div class="switch-input-space group-divide row">
+*		<div class="switch check-visible">
+*			<input type="checkbox" id="hb-check2">
+*			<label  for="hb-check2"></label>
+*		</div>
+*		<label  class="switch-value" for="hb-check2">When yes is selected you should see a checkmark</label>		
+*	</div>
+*	<div class="switch-input-space group-divide row">
+*		<div class="switch x-visible round">
+*			<input type="checkbox" id="hb-checkround">
+*			<label  for="hb-checkround"></label>
+*		</div>
+*		<label  class="switch-value" for="hb-checkround">"x-visible" When No is selected you should show an X</label>		
+*	</div>
+*   <a class="link" href="http://foundation.zurb.com/docs/components/switch.html">Foundation Documentation</a>
+*/
+.tooltip {
+  background-color: #413a62; }
+
+.tooltip.tip-top > .nub {
+  border-color: #413a62 transparent transparent; }
+
+.page-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem .5rem; }
+  @media only screen and (min-width: 767px) {
+    .page-wrapper {
+      padding: 1.5rem .75rem; } }
+  @media only screen and (min-width: 1024px) {
+    .page-wrapper {
+      padding: 2rem 1rem 3rem; } }
+
+.content-padding {
+  padding: 0 .5rem;
+  max-width: 1200px;
+  margin: 0 auto; }
+  @media only screen and (min-width: 767px) {
+    .content-padding {
+      padding: 0 .75rem; } }
+  @media only screen and (min-width: 1024px) {
+    .content-padding {
+      padding: 0 1rem; } }
+
+.section-nav.back ~ .page-wrapper {
+  padding-top: 0; }
+
+/**
+* page layouts:
+* `page-wrapper` - inside all layout divs the page-wrapper is used to make a unified amount of spacing from the content and the vewport edges.
+* 
+*   @example
+*	<div class="page-wrapper" style="border:red 1px solid"><div class="section">Hello this is content </div></div>
+**/
+.page.with-group-sections {
+  background-color: #f2f2f2; }
+
+.page.with-group-sections .page-wrapper > .group-section {
+  border: 1px solid #d9d9d9;
+  background-color: white;
+  -webkit-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2); }
+
+.page.with-group-sections .page-wrapper {
+  padding: 1rem 0 !important; }
+  .page.with-group-sections .page-wrapper > .section, .page.with-group-sections .page-wrapper > section, .page.with-group-sections .page-wrapper > .row, .page.with-group-sections .page-wrapper > .hint {
+    padding: 0 .75rem; }
+  .page.with-group-sections .page-wrapper > .group-section {
+    margin: 0 .65rem 1rem .5rem;
+    padding: .5rem .5rem;
+    width: auto;
+    position: relative; }
+    .page.with-group-sections .page-wrapper > .group-section.content-padding {
+      margin: 0 auto 1rem auto;
+      max-width: 1200px; }
+    @media only screen and (min-width: 767px) {
+      .page.with-group-sections .page-wrapper > .group-section {
+        padding: .5rem .75rem; } }
+    @media only screen and (min-width: 1024px) {
+      .page.with-group-sections .page-wrapper > .group-section {
+        padding: .5rem 1.5rem 1rem; } }
+
+.group-section-tab-holder {
+  margin: -.5rem -1.5rem 0; }
+  .group-section-tab-holder .nav.tabs {
+    padding: 2px 10px 0;
+    background-color: #4F4190; }
+    .group-section-tab-holder .nav.tabs li {
+      border-radius: 8px;
+      display: inline-block;
+      margin: .4rem 1px .4rem;
+      background-color: #CCC;
+      background-color: #dad6ec; }
+    .group-section-tab-holder .nav.tabs li.selected {
+      border-bottom-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      margin-bottom: 0;
+      vertical-align: bottom;
+      padding: .4rem;
+      background-color: #fff; }
+
+/**
+* Paper Card Grouping:
+* `page-wrapper group-section-holder` - by default pages are white but when the need arises to have grouped section 'cards' are introduced and the background area becomes a layer of soft off white construction paper.
+* 
+*   @example
+*   <div class="page with-group-sections">
+*    <div class="page-wrapper">
+*    <section class="section group-section">
+*    <h1>Hello</h1> <p>This is content  that is showing up in a section group</section>
+*    </div>
+*    </div>
+*
+**/
+/**
+* Tabs for Paper Cards:
+* `.group-section-tab-holder` - Special tabs holders are introduced to the cards so they can fill the full frame of the card.
+* 
+*   @example
+*   <div class="page with-group-sections">
+*       <div class="page-wrapper">
+*            <section class="section group-section">
+*                <div class="group-section-tab-holder">
+*                    <ul class="nav tabs">
+*                        <li class="">
+*                       <a>Tab 1</a>
+*                       </li>
+*                        <li class=" selected "> <a>Tab 2</a> </li>
+*                        <li class=""> <a>Tab 3</a> </li>
+*                    </ul>
+*                </div>
+*                <h1>Hello</h1> 
+*                  <p>This is content  that is showing up in a section group
+*            </section>
+*        </div>
+*    </div>
+*
+**/
+/**
+* Split Layout With Off Canvas Reveal:
+* `.mobile-offcanvas-wrapper` - This is a structural container that has the ablity to change from content and sidebar to just content and the sidebar being off canvas. Trigger the off canvas reveal by adding `.navOn` to the div.split-layout. Change the switch point by adding `.large`,`.medium`, or `.small`. <br>!!! must include _layout-split.scss !!! <br>!!! requires javascripts !!!
+* 
+*   @example
+*	<div class="mobile-offcanvas-wrapper">
+*	<section class="split-layout medium navOn">
+*	<aside class="split-sidebar">
+*	<h2>Sidebar</h2>
+*	<p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+*	</aside>
+*	<article class="split-content">
+*	<div class="page-wrapper">
+*	<h1>Content</h1>
+*	<p>Some extra content in the content area</p><p> It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+*	</div>
+*	</article>
+*	</section>
+*	</div>
+*/
+.full-row, .full-col {
+  overflow: hidden;
+  position: absolute; }
+
+.full-row {
+  left: 0;
+  right: 0; }
+
+.full-col {
+  top: 0;
+  bottom: 0; }
+
+.scroll-x {
+  overflow-x: auto; }
+
+.scroll-y {
+  overflow-y: auto; }
+
+.mobile-offcanvas-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  -webkit-transition: 300ms ease all;
+  transition: 300ms ease all; }
+  .mobile-offcanvas-wrapper .split-layout {
+    -webkit-transition: 300ms ease all;
+    transition: 300ms ease all;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: visible; }
+    .mobile-offcanvas-wrapper .split-layout.navOn {
+      -webkit-transform: translateX(83.33333%);
+      transform: translateX(83.33333%);
+      transform: translate3d(83.33333%, 0, 0);
+      -webkit-transform: translate3d(83.33333%, 0, 0); }
+    .mobile-offcanvas-wrapper .split-layout .split-sidebar {
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      width: 83.33333%;
+      float: left;
+      position: absolute;
+      left: -83.33333%;
+      right: auto; }
+    .mobile-offcanvas-wrapper .split-layout.reverse.navOn {
+      -webkit-transform: translateX(-83.33333%);
+      transform: translateX(-83.33333%);
+      transform: translate3d(-83.33333%, 0, 0);
+      -webkit-transform: translate3d(-83.33333%, 0, 0); }
+    .mobile-offcanvas-wrapper .split-layout.reverse .split-sidebar {
+      position: absolute;
+      right: -83.33333%;
+      left: auto; }
+    @media only screen {
+      .mobile-offcanvas-wrapper .split-layout.small, .mobile-offcanvas-wrapper .split-layout.small.navOn {
+        -webkit-transform: translateX(0);
+        transform: translateX(0); } }
+    @media only screen and (min-width: 40.063em) {
+      .mobile-offcanvas-wrapper .split-layout.medium, .mobile-offcanvas-wrapper .split-layout.medium.navOn, .mobile-offcanvas-wrapper .split-layout.small, .mobile-offcanvas-wrapper .split-layout.small.navOn {
+        -webkit-transform: translateX(0);
+        transform: translateX(0); } }
+
+/**
+* Split Layout With Off Canvas Reveal:
+* `.mobile-offcanvas-wrapper` - This is a structural container that has the ablity to change from content and sidebar to just content and the sidebar being off canvas. Trigger the off canvas reveal by adding `.navOn` to the div.split-layout. Change the switch point by adding `.large`,`.medium`, or `.small`. <br>!!! must include _layout-split.scss !!! <br>!!! requires javascripts foundation equzlizer will remove the sidebar collapse !!!
+* 
+*   @example
+*	<div class="mobile-offcanvas-wrapper">
+*	<section class="split-layout medium navOn">
+*	<aside class="split-sidebar">
+*	<h2>Sidebar</h2>
+*	<p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+*	</aside>
+*	<article class="split-content page with-group-sections">
+*	<div class="page-wrapper">
+*	<div class="content-padding"><h1>Outside of the Group Section<blockquote>I need to be wrapped by a div.content-padding to line up</blockquote>
+*	</h1></div>
+*	<div class="group-section">
+*		<h3>Inside of a Group Section</h3>
+*			<p>Some extra content in the content area</p>
+*			<p>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+*	</div></div>
+*	</article>
+*	</section>
+*	</div>
+*/
+.page-wrapper > .split-layout {
+  margin: -1rem -.5rem; }
+  @media only screen and (min-width: 767px) {
+    .page-wrapper > .split-layout {
+      margin: -1.5rem -.75rem; } }
+  @media only screen and (min-width: 1024px) {
+    .page-wrapper > .split-layout {
+      margin: -2rem -1rem -3rem; } }
+
+.split-layout {
+  width: 100%;
+  margin: 0;
+  max-width: 114.28571rem;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  clear: both; }
+  .split-layout:before, .split-layout:after {
+    content: " ";
+    display: table; }
+  .split-layout:after {
+    clear: both; }
+  .split-layout .split-sidebar, .split-layout .split-content {
+    margin-bottom: -9998px;
+    padding-bottom: 9998px; }
+  .split-layout.fill-page-height .split-content {
+    margin-bottom: 0px;
+    padding-bottom: 1em; }
+    @media (min-device-height: 320px) {
+      .split-layout.fill-page-height .split-content {
+        min-height: 320px; } }
+    @media (min-device-height: 480px) {
+      .split-layout.fill-page-height .split-content {
+        min-height: 480px; } }
+    @media (min-device-height: 640px) {
+      .split-layout.fill-page-height .split-content {
+        min-height: 640px; } }
+    @media (min-device-height: 768px) {
+      .split-layout.fill-page-height .split-content {
+        min-height: 768px; } }
+    @media (min-device-height: 960px) {
+      .split-layout.fill-page-height .split-content {
+        min-height: 960px; } }
+    @media (min-device-height: 1024px) {
+      .split-layout.fill-page-height .split-content {
+        min-height: 1024px; } }
+  .split-layout .split-sidebar {
+    display: none;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    float: left;
+    left: -83.33333%;
+    border: #b3b3b3 solid 0;
+    border-right-width: 1px; }
+  .split-layout .split-content {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    float: left; }
+  .split-layout.xlarge.reverse .split-sidebar, .split-layout.xlarge.reverse .split-content, .split-layout.xlarge.reverse.navOn .split-sidebar, .split-layout.xlarge.reverse.navOn .split-content, .split-layout.large.reverse .split-sidebar, .split-layout.large.reverse .split-content, .split-layout.large.reverse.navOn .split-sidebar, .split-layout.large.reverse.navOn .split-content, .split-layout.medium.reverse .split-sidebar, .split-layout.medium.reverse .split-content, .split-layout.medium.reverse.navOn .split-sidebar, .split-layout.medium.reverse.navOn .split-content, .split-layout.small.reverse .split-sidebar, .split-layout.small.reverse .split-content, .split-layout.small.reverse.navOn .split-sidebar, .split-layout.small.reverse.navOn .split-content {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    float: right;
+    float: right !important; }
+  .split-layout.xlarge.reverse .split-sidebar, .split-layout.xlarge.reverse.navOn .split-sidebar, .split-layout.large.reverse .split-sidebar, .split-layout.large.reverse.navOn .split-sidebar, .split-layout.medium.reverse .split-sidebar, .split-layout.medium.reverse.navOn .split-sidebar, .split-layout.small.reverse .split-sidebar, .split-layout.small.reverse.navOn .split-sidebar {
+    border-right-width: 0;
+    border-left-width: 1px;
+    padding-left: 0;
+    padding-right: 0; }
+  .split-layout.xlarge.reverse .split-content, .split-layout.xlarge.reverse.navOn .split-content, .split-layout.large.reverse .split-content, .split-layout.large.reverse.navOn .split-content, .split-layout.medium.reverse .split-content, .split-layout.medium.reverse.navOn .split-content, .split-layout.small.reverse .split-content, .split-layout.small.reverse.navOn .split-content {
+    padding-left: 0;
+    padding-right: 0; }
+  @media only screen {
+    .split-layout.small .split-sidebar {
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      width: 41.66667%;
+      float: left;
+      padding-left: 0;
+      padding-right: 0; }
+    .split-layout.small .split-content {
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      width: 58.33333%;
+      float: left;
+      padding-left: 0;
+      padding-right: 0; } }
+  @media only screen and (min-width: 40.063em) {
+    .split-layout.medium .split-sidebar, .split-layout.medium.reverse .split-sidebar, .split-layout.small .split-sidebar, .split-layout.small.reverse .split-sidebar {
+      position: relative;
+      left: 0;
+      right: 0;
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      width: 33.33333%;
+      float: left;
+      padding-left: 0;
+      padding-right: 0; }
+    .split-layout.medium .split-content, .split-layout.small .split-content {
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      width: 66.66667%;
+      float: left;
+      padding-left: 0;
+      padding-right: 0; } }
+  @media only screen and (min-width: 64.063em) {
+    .split-layout.large .split-sidebar, .split-layout.large.reverse .split-sidebar, .split-layout.medium .split-sidebar, .split-layout.medium.reverse .split-sidebar, .split-layout.small .split-sidebar, .split-layout.small.reverse .split-sidebar {
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      width: 25%;
+      float: left;
+      padding-left: 0;
+      padding-right: 0; }
+    .split-layout.large .split-content, .split-layout.medium .split-content, .split-layout.small .split-content {
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      width: 75%;
+      float: left;
+      padding-left: 0;
+      padding-right: 0; } }
+  @media only screen and (min-width: 90.063em) {
+    .split-layout.xlarge .split-sidebar, .split-layout.xlarge.reverse .split-sidebar, .split-layout.large .split-sidebar, .split-layout.large.reverse .split-sidebar, .split-layout.medium .split-sidebar, .split-layout.medium.reverse .split-sidebar, .split-layout.small .split-sidebar, .split-layout.small.reverse .split-sidebar {
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      width: 25%;
+      float: left;
+      padding-left: 0;
+      padding-right: 0; }
+    .split-layout.xlarge .split-content, .split-layout.large .split-content, .split-layout.medium .split-content, .split-layout.small .split-content {
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      width: 75%;
+      float: left;
+      padding-left: 0;
+      padding-right: 0; } }
+
+.with-group-sections .split-sidebar {
+  background-color: #fff; }
+
+/**
+* Mobile Header:
+* `.header.pagel` - there is a basic layout of short tabbed header of apps
+* 
+*   @example
+*	<div class="row"><header class="header page">
+*		<a href="#!/content/calculator/" class="logo">
+*			<img  src="assets/img/headerlogo.svg" alt="ACC Statin Intolerance Guidelines">
+*		</a>
+*		<ul class="nav tabs primary">
+*			<li class="icon"><a class="home"><i class="fa fa-holder"></i></a></li>
+*			<li id="calculator-Tab" class="selected"><a href="#!/content/calculator/"  class="condensable small">Eval<span class="condense">uate</span></a></li>
+*			<li id="recommendation-Tab" class=""><a href="#!/content/recommendation/prescribinginfo/"  class="condensable small">Recommend<span class="condense">ation</span></a></li>
+*		</ul>
+*	</header></div>
+*/
+.page.header {
+  border-bottom: #00386b 6px solid;
+  padding: 0;
+  background-color: #fff;
+  display: block;
+  clear: both;
+  width: 100%; }
+  .page.header:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .page.header .logo img {
+    display: none;
+    height: 60px;
+    float: left; }
+  @media only screen and (min-width: 767px) {
+    .page.header {
+      text-align: right; }
+      .page.header .logo {
+        display: block; }
+      .page.header .logo img {
+        display: block;
+        clear: none;
+        float: left;
+        margin: .25rem 1rem; }
+      .page.header .tabs {
+        clear: none;
+        display: block;
+        width: auto;
+        float: right; } }
+  @media only screen and (min-width: 1024px) {
+    .page.header .logo img {
+      height: 86px; } }
+
+/**
+* Mobile Footer:
+* `.footer.page` - there is a basic layout of short tabbed footer for mobile apps
+* 
+*   @example
+*	<footer class="page footer">
+*		<a href="#!/content/home/" class="logo" >
+*			<img style="border:none 0; " src="assets/img/footerlogo.svg" alt="ACC Statin Intolerance Guidelines">
+*		</a>
+*		<ul class="nav tabs primary reverse swappable small">
+*			<li id="guideline-Tab" class="">
+*				<a href="#!/content/guideline/home">
+*					<span class="short-text">Resources</span>
+*					<span class="long-text">Resources</span>
+*				</a>
+*			</li>
+*			<li id="legal-Tab" class="selected">
+*				<a href="#!/content/legal">
+*				<span class="short-text">Disclaimer</span>
+*				<span class="long-text">Disclaimer</span>
+*				</a>
+*			</li>
+*			<li id="about-Tab" class="">
+*				<a href="#!/content/about">
+*				<span class="short-text">About</span>
+*				<span class="long-text">About the App</span>
+*				</a>
+*			</li>
+*		</ul>
+*	</footer>
+*/
+.page.footer {
+  border-top: #00386b 4px solid;
+  background: url("../img/crossed_stripes.png"); }
+  .page.footer:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .page.footer .tabs {
+    float: right;
+    width: auto; }
+  .page.footer .logo img {
+    margin: .25rem 1rem;
+    display: none; }
+  .page.footer .tabs.primary li.selected {
+    border-top-color: #00386b; }
+    .page.footer .tabs.primary li.selected a:after {
+      border-top-color: #00386b; }
+  @media only screen and (max-width: 767px) {
+    .page.footer {
+      text-align: right; }
+      .page.footer .logo img {
+        display: block;
+        width: 320px; }
+      .page.footer .tabs {
+        width: 100%;
+        margin: 0; }
+      .page.footer .logo {
+        display: block;
+        border-bottom: #00386b 4px solid; }
+        .page.footer .logo:after {
+          content: "";
+          display: table;
+          clear: both; }
+      .page.footer .logo img {
+        max-width: 95%;
+        margin: .25rem 2.5%; } }
+  @media only screen and (max-width: 1024px) {
+    .page.footer .tabs {
+      font-weight: 500; } }
+  @media only screen and (min-width: 1024px) {
+    .page.footer {
+      text-align: center; }
+      .page.footer .tabs.primary.reverse {
+        float: none;
+        display: inline-block; }
+        .page.footer .tabs.primary.reverse li {
+          float: none;
+          display: inline-block; }
+        .page.footer .tabs.primary.reverse, .page.footer .tabs.primary.reverse li {
+          background-color: transparent;
+          border: 0; }
+          .page.footer .tabs.primary.reverse a, .page.footer .tabs.primary.reverse li a {
+            color: #fff; }
+            .page.footer .tabs.primary.reverse a:after, .page.footer .tabs.primary.reverse li a:after {
+              top: auto;
+              bottom: -1px;
+              border-width: 0px 8px;
+              border-bottom: 10px solid #fff; }
+            .page.footer .tabs.primary.reverse a:hover, .page.footer .tabs.primary.reverse li a:hover {
+              text-decoration: underline; } }
+
+/**
+* Header Tags and other Typography States:
+* `.error, .warning, .etc...` - headers `p` `li` `blockquote` `a` and `p` tags can be fully manipulated to respond to states by adding the modifiying state like `.error`, `.warning`, `.info` etc....
+* 
+*   @example
+*	<h1 class="with-underline info">Header 1 Tag
+*	  <small>Info State</small>
+*	</h1>
+*	<h2 class="with-underline error">Header 2 Tag <small>Error State</small></h2>
+*	<h3 class="with-underline warning">Header 3 Tag<small>Warning State</small></h3>
+*	<h4 class="with-underline validated">Header 4 Tag<blockquote>Validated/success State</blockquote></h4>
+*	<h5 class="with-underline highlighted">Header 5 Tag<small>Highlighted State</small></h5>
+*  	<p class="highlighted"><strong>Paragraph that is a highlighted State.</strong>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+*/
+h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted, h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled, h1.attention, h2.attention, h3.attention, h4.attention, h5.attention, h6.attention, p.attention, a.attention, li.attention, blockquote.attention {
+  font-weight: 900; }
+
+h1.with-underline {
+  border-bottom: #4F4190 2px solid; }
+
+h2.with-underline {
+  border-bottom: #666666 2px solid; }
+
+h3.with-underline {
+  border-bottom: #8f83c7 1px dotted; }
+
+h4.with-underline {
+  border-bottom: #999999 1px solid; }
+
+h5.with-underline {
+  border-bottom: #b3b3b3 1px solid; }
+
+h6.with-underline {
+  border-bottom: #b3b3b3 1px dotted; }
+
+/**
+ * Sub Content in Header Tags:
+ * `headline > blockquote` - basic styling for sub content in headers. 
+ *
+ *     @example
+ *     h1.with-underline Header 1 Tag
+ *		blockquote sub content in a blockquote
+ *     h2.with-underline Header 2 Tag
+ *		blockquote sub content in a blockquote
+ *     h3.with-underline Header 3 Tag
+ *		blockquote sub content in a blockquote
+ *     h4.with-underline Header 4 Tag
+ *		blockquote sub content in a blockquote
+ *     h5.with-underline Header 5 Tag 
+ *		blockquote sub content in a blockquote
+ *     h6.with-underline Header 6 Tag
+ *		blockquote sub content in a blockquote
+ */
+h1 blockquote, h2 blockquote, h3 blockquote, h4 blockquote, h5 blockquote, h6 blockquote {
+  display: block;
+  line-height: 1.1;
+  font-size: .55em;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: .01em;
+  border: 0 none transparent; }
+h1 blockquote {
+  font-size: 0.4em;
+  line-height: 1.5em;
+  margin-top: 0em;
+  margin-bottom: 0em; }
+h1.with-underline blockquote {
+  font-size: 0.4em;
+  line-height: 1.5em;
+  margin-top: 0.375em;
+  margin-bottom: 0em; }
+h2 blockquote {
+  font-size: 0.5em;
+  line-height: 1.75em;
+  margin-top: 0em;
+  margin-bottom: 0em; }
+h2.with-underline blockquote {
+  font-size: 0.5em;
+  line-height: 1.75em;
+  margin-top: 0.4375em;
+  margin-bottom: 0em; }
+h3 blockquote {
+  font-size: 0.7em;
+  line-height: 1.5em;
+  margin-top: 0em;
+  margin-bottom: 0em; }
+h3.with-underline blockquote {
+  font-size: 0.7em;
+  line-height: 1.5em;
+  margin-top: 0.375em;
+  margin-bottom: 0em; }
+h4 blockquote {
+  font-size: 0.70588em;
+  line-height: 1.75em;
+  margin-top: 0em;
+  margin-bottom: 0em; }
+h5 blockquote {
+  font-size: 0.71429em;
+  line-height: 2.1em;
+  margin-top: 0em;
+  margin-bottom: 0em; }
+h6 blockquote {
+  font-size: 0.71429em;
+  line-height: 2.1em;
+  margin-top: 0em;
+  margin-bottom: 0em; }
+
+.text-highlight-color {
+  color: #4F4190 !important; }
+
+/**
+ * Group-divid:
+ * `.group-divide` - a line above or below the container elemtent
+ *
+ *     @example
+ *	div.group-divide
+ *    	 p this should be a paragraph a line before it. 
+ *	div.group-divide-bottom
+ *		p this paragraph with line after.
+ */
+.group-divide {
+  border-top: #4F4190 1px dotted;
+  margin-top: .5rem;
+  padding-top: 1rem; }
+
+.group-divide-bottom {
+  border-bottom: #4F4190 1px dotted;
+  margin-bottom: .5rem; }
+
+.group-divide-auto + .group-divide-auto {
+  border-top: #4F4190 1px dotted;
+  margin-top: 1rem;
+  padding-top: .5rem; }
+
+/**
+*  A tag and .link:
+*  `.link` - a tags have a basic style  but links are a styled with `.link`
+*
+*     @example
+*     a 	
+* 	  span this is a plain "a" tag
+*	br
+*	a.link
+* 	  span this is an "a" tag with the ".link" class
+*		
+*/
+.link {
+  color: #4F4190;
+  text-decoration: underline; }
+  .link.icon {
+    text-decoration: none; }
+  .link:hover {
+    color: #6959b4;
+    text-decoration: underline; }
+  .link.reverse {
+    color: #fff; }
+
+/**
+*
+*  Type Modifiers:
+*  `bold, italic or subtle,etc...` - `.bold` - make text bold, `.italic` - make text italic, or `.subtle` - make text subtle
+*
+*     @example
+*     div.bold this has the `.bold` class added to the container which increases font weight and darkens the color.
+*     div.emphasis this has the `.emphasis` class added to the container which darkens the color and makes the font italic and bold
+*     div.loud this has the `.loud` class added to the container which darkens the color.
+*     div.quiet this has the `.quiet` class added to the container which lightens the color.
+*     div.subtle this has the `.subtle` class added to the container which decreases font weight and lightens the color.
+*     div.italic this has the `.italic` class added to the container which makes it lighter and makes it italic.
+*     div.text-highlight-color this has the `.text-highlight-color` class added to the container which changes the color to the product color
+*
+*/
+.allwayswrap {
+  white-space: normal; }
+
+.phone-only {
+  display: none; }
+  @media only screen and (max-width: 767px) {
+    .phone-only {
+      display: block;
+      display: initial; } }
+
+.desktop-hide {
+  display: none; }
+  @media only screen and (max-width: 1024px) {
+    .desktop-hide {
+      display: block;
+      display: initial; } }
+
+.desktop-show {
+  display: initial; }
+  @media only screen and (max-width: 1024px) {
+    .desktop-show {
+      display: none; } }
+
+.relative-position {
+  position: relative; }
+
+.hide {
+  display: none; }
+
+.absolute-topright {
+  position: absolute !important;
+  top: 0;
+  right: 0; }
+
+.absolute-topleft {
+  position: absolute !important;
+  top: 0;
+  left: 0; }
+
+.clearboth:after {
+  content: ' ';
+  display: table;
+  clear: both; }
+
+/**
+* HELPER - Condensable (Condense):
+* `.condensable` - a pattern to hide and show elements inside of a an element to shortend the text to respond to the space. You can set the break points of the condensings with `.small`, `.medium`, or `.large`
+* 
+*   @example
+*	<h2 class="condensable large">
+*		Super<span class="condense">califragilisticexpialidocious the full word is only seen on large screens</span> 
+*	</h2>
+*/
+/**
+* HELPER - Swappable (short-text long-text):
+* `.swappable` - a pattern to hide and show elements long and short text to respond to the space. You can set the break points of the condensings with `.small`, `.medium`, or `.large`
+* 
+*   @example
+*	<h2 class="swappable meduim">
+*		<span class="short-text">Short Title</span>
+*		<span class="long-text">Long TItle Seen on Medium Screens and Up</span>
+*	</h2>
+*/
+.condensable {
+  word-spacing: -4px; }
+  .condensable .condense {
+    display: inline; }
+  .condensable * {
+    word-spacing: 0; }
+  @media only screen and (max-width: 320px) {
+    .condensable .condense {
+      display: none; } }
+  @media only screen and (max-width: 767px) {
+    .condensable.small .condense {
+      display: none; } }
+  @media only screen and (max-width: 1024px) {
+    .condensable.medium .condense {
+      display: none; } }
+  @media only screen and (max-width: 1200px) {
+    .condensable.large .condense {
+      display: none; } }
+
+.swappable .long-text {
+  display: inline; }
+.swappable .short-text {
+  display: none; }
+@media only screen and (max-width: 320px) {
+  .swappable .short-text {
+    display: inline; }
+  .swappable .long-text {
+    display: none; } }
+@media only screen and (max-width: 767px) {
+  .swappable.small .short-text {
+    display: inline; }
+  .swappable.small .long-text {
+    display: none; } }
+@media only screen and (max-width: 1024px) {
+  .swappable.medium .short-text {
+    display: inline; }
+  .swappable.medium .long-text {
+    display: none; } }
+@media only screen and (max-width: 1200px) {
+  .swappable.large .short-text {
+    display: inline; }
+  .swappable.large .long-text {
+    display: none; } }
+
+.css3columns {
+  -webkit-column-count: 1;
+  /* Chrome, Safari, Opera */
+  -moz-column-count: 1;
+  /* Firefox */
+  column-count: 1; }
+  @media only screen and (min-width: 767px) {
+    .css3columns {
+      -webkit-column-count: 2;
+      /* Chrome, Safari, Opera */
+      -moz-column-count: 2;
+      /* Firefox */
+      column-count: 2; } }
+  @media only screen and (min-width: 1024px) {
+    .css3columns {
+      -webkit-column-count: 3;
+      /* Chrome, Safari, Opera */
+      -moz-column-count: 3;
+      /* Firefox */
+      column-count: 3; } }
+
+/**
+* Take me to [top](#top):
+*/
+/*
+STATE TRUMPING CODE
+*/
+.error .input-holder input, .error .input-holder textarea, .error .input-holder select, .error .input-holder .postfix, .error .input-holder .prefix, .error.question .button-group, h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
+  border-color: #c32231; }
+
+.answer.error .required-holder, .question.error .required-holder, .error .label-holder label, .error .input-holder .postfix, .error .input-holder .prefix, .error .input-holder .value, h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
+  color: #c32231; }
+
+.error .message-holder > .error, .hint .error {
+  background-color: #c32231; }
+
+.error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before {
+  content: ""; }
+
+.warning .input-holder input, .warning .input-holder textarea, .warning .input-holder select, .warning .input-holder .postfix, .warning .input-holder .prefix, .warning.question .button-group, h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
+  border-color: #E08514; }
+
+.answer.warning .required-holder, .question.warning .required-holder, .warning .label-holder label, .warning .input-holder .postfix, .warning .input-holder .prefix, .warning .input-holder .value, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning {
+  color: #E08514; }
+
+.warning .message-holder > .warning, .hint .warning {
+  background-color: #E08514; }
+
+.warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before {
+  content: ""; }
+
+.validated .input-holder input, .validated .input-holder textarea, .validated .input-holder select, .validated .input-holder .postfix, .validated .input-holder .prefix, .validated.question .button-group, h1.with-underline.validated, h2.with-underline.validated, h3.with-underline.validated, h4.with-underline.validated, h5.with-underline.validated, h6.with-underline.validated {
+  border-color: #14B057; }
+
+.answer.validated .required-holder, .question.validated .required-holder, .validated .label-holder label, .validated .input-holder .postfix, .validated .input-holder .prefix, .validated .input-holder .value, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated {
+  color: #14B057; }
+
+.validated .message-holder > .validated, .hint .validated {
+  background-color: #14B057; }
+
+.validated .fa-holder-dynamic:before, .validated.fa:before, .validated > .fa-holder:before {
+  content: ""; }
+
+.info .input-holder input, .info .input-holder textarea, .info .input-holder select, .info .input-holder .postfix, .info .input-holder .prefix, .info.question .button-group, h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
+  border-color: #c7c1e3; }
+
+.answer.info .required-holder, .question.info .required-holder, .info .label-holder label, .info .input-holder .postfix, .info .input-holder .prefix, .info .input-holder .value, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
+  color: #c7c1e3; }
+
+.info .message-holder > .info, .hint .info {
+  background-color: #c7c1e3; }
+
+.info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before {
+  content: ""; }
+
+.highlighted .input-holder input, .highlighted .input-holder textarea, .highlighted .input-holder select, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted.question .button-group, h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
+  border-color: #4F4190; }
+
+.answer.highlighted .required-holder, .question.highlighted .required-holder, .highlighted .label-holder label, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted .input-holder .value, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
+  color: #4F4190; }
+
+.highlighted .message-holder > .highlighted, .hint .highlighted {
+  background-color: #4F4190; }
+
+.highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before {
+  content: ""; }
+
+.completed .input-holder input, .completed .input-holder textarea, .completed .input-holder select, .completed .input-holder .postfix, .completed .input-holder .prefix, .completed.question .button-group, h1.with-underline.completed, h2.with-underline.completed, h3.with-underline.completed, h4.with-underline.completed, h5.with-underline.completed, h6.with-underline.completed {
+  border-color: #14B057; }
+
+.answer.completed .required-holder, .question.completed .required-holder, .completed .label-holder label, .completed .input-holder .postfix, .completed .input-holder .prefix, .completed .input-holder .value, h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed {
+  color: #14B057; }
+
+.completed .message-holder > .completed, .hint .completed {
+  background-color: #14B057; }
+
+.completed .fa-holder-dynamic:before, .completed.fa:before, .completed > .fa-holder:before {
+  content: ""; }
+
+.disabled .input-holder input, .disabled .input-holder textarea, .disabled .input-holder select, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled.question .button-group, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
+  border-color: #b3b3b3; }
+
+.answer.disabled .required-holder, .question.disabled .required-holder, .disabled .label-holder label, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .input-holder .value, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
+  color: #b3b3b3; }
+
+.disabled .message-holder > .disabled, .hint .disabled {
+  background-color: #b3b3b3; }
+
+.disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before {
+  content: ""; }
+
+.attention .input-holder input, .attention .input-holder textarea, .attention .input-holder select, .attention .input-holder .postfix, .attention .input-holder .prefix, .attention.question .button-group, h1.with-underline.attention, h2.with-underline.attention, h3.with-underline.attention, h4.with-underline.attention, h5.with-underline.attention, h6.with-underline.attention {
+  border-color: #E08514; }
+
+.answer.attention .required-holder, .question.attention .required-holder, .attention .label-holder label, .attention .input-holder .postfix, .attention .input-holder .prefix, .attention .input-holder .value, h1.attention, h2.attention, h3.attention, h4.attention, h5.attention, h6.attention, p.attention, a.attention, li.attention, blockquote.attention {
+  color: #E08514; }
+
+.attention .message-holder > .attention, .hint .attention {
+  background-color: #E08514; }
+
+.attention .fa-holder-dynamic:before, .attention.fa:before, .attention > .fa-holder:before {
+  content: ""; }
+
+.error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .validated .fa-holder-dynamic:before, .validated.fa:before, .validated > .fa-holder:before, .info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .completed .fa-holder-dynamic:before, .completed.fa:before, .completed > .fa-holder:before, .disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .attention .fa-holder-dynamic:before, .attention.fa:before, .attention > .fa-holder:before {
+  font-family: FontAwesome; }
+
+.dark-color-text, .message-holder > .info, .message-holder > .disabled, .hint .info, .hint .disabled {
+  color: #333333; }
+
+.light-color-text, .message-holder > .error, .message-holder > .warning, .message-holder > .validated, .message-holder > .highlighted, .message-holder > .completed, .message-holder > .attention, .hint .error, .hint .warning, .hint .validated, .hint .highlighted, .hint .completed, .hint .attention {
+  color: #fff; }
+
+/*# sourceMappingURL=style-4F4190.css.map */

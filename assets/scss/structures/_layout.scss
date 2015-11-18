@@ -1,0 +1,44 @@
+.page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem .5rem;
+
+    @include bp(md) {
+        padding: 1.5rem .75rem;
+    }
+
+
+    @include bp(lg) {
+        padding: 2rem 1rem 3rem;
+    }
+}
+
+
+
+.content-padding {
+    padding: 0 .5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include bp(md) {
+        padding: 0 .75rem;
+    }
+
+
+    @include bp(lg) {
+        padding: 0 1rem;
+    }
+}
+
+.section-nav.back ~ .page-wrapper {
+    padding-top: 0;
+}
+
+/**
+* page layouts:
+* `page-wrapper` - inside all layout divs the page-wrapper is used to make a unified amount of spacing from the content and the vewport edges.
+* 
+*   @example
+*	<div class="page-wrapper" style="border:red 1px solid"><div class="section">Hello this is content </div></div>
+**/
+

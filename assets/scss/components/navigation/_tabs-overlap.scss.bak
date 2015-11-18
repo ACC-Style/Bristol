@@ -1,0 +1,39 @@
+/**
+* Tabs Overlap:
+* `.tabs.overlap` -  Overlap gives shallow space and more rendered verstion of tabs
+* 
+*   @example
+*	<ul class="nav tabs overlap">
+*		<li class="icon  "><a class="home"><i class="fa fa-holder"></i></a></li>
+*		<li class=""><a>Tab 2</li>
+*		<li class=" selected "><a >Tab 3</a></li>
+*		<li class=""><a >Tab 4</a></li>
+*	</ul>
+*/
+.tabs.overlap {
+	background-color: color(rebrand-color(#fff,3),20); 
+		background:url('../img/billie-holiday.png') repeat top right,url('../img/bottom-shade.png') repeat-x bottom right,url('../img/top-shade.png') repeat-x right -1px;
+		border-bottom: 2px solid grey(40);
+		padding-top:.25em;
+	li{ 
+		border: 2px solid grey(30);
+		border-bottom: 0;
+		border-top-left-radius: 7px;
+		border-top-right-radius: 7px;
+		&.selected{
+			margin-bottom: -2px;
+			padding-bottom: 3px;
+			background-color: white;
+			z-index: 1000;
+			border-color:grey(40);
+			vertical-align: bottom;
+			.with-group-sections &{background-color: grey(5);}
+			.with-group-sections .group-section &{background-color: #fff;}
+			a{color:$black;}
+		}
+		&.secondary{
+			border-color:mix(grey(30),color($secondary-color,100));
+			
+		}
+	}
+}

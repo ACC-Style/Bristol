@@ -1,0 +1,99 @@
+/**
+* Pagination:
+* `.pagination-holder` - used often with a result pagination or page of content pagination. !! requires 
+* 
+*   @example
+*	<div class="pagination-holder top"><ul class="pagination right">
+*		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
+*		<li class="current"><a href="">1</a></li>
+*		<li><a href="">2</a></li>
+*		<li><a href="">3</a></li>
+*		<li><a href="">4</a></li>
+*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
+*	</ul></div><br>
+*	<div class="pagination-holder"><ul class="pagination right">
+*		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
+*		<li class="current"><a href="">1</a></li>
+*		<li><a href="">2</a></li>
+*		<li><a href="">3</a></li>
+*		<li><a href="">4</a></li>
+*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
+*	</ul></div>
+*	<div class="pagination-holder"><ul class="pagination pagination--compact right">
+*		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
+*		<li class="current"><a href="">1</a></li>
+*		<li><a href="">2</a></li>
+*		<li><a href="">3</a></li>
+*		<li><a href="">4</a></li>
+*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
+*	</ul></div>
+*/
+$required-SCSS_pagination:true;
+$pagination-color:rebrand-color($primary-color,2);
+.pagination-holder{
+	border-top:2px solid $pagination-color;
+	@include grid-row();
+	max-width: none;
+}
+ul.pagination li{
+	a,button{
+		border-radius: 0px 0px 0px 0px; 
+		color: fontcolor($black, 'quiet');
+	}
+	i{margin:  0 .25rem;}
+	&.current{
+		a,button{
+			&,&:hover{
+				background-color: $pagination-color;
+				color:color-contrast($pagination-color);
+			}
+		}
+	}
+	&.arrow{
+
+		a,button{
+			background-color: grey(10);
+			
+			color: fontcolor($black);
+			font-weight: 700;
+			&:hover{ 
+				background-color:  grey(30);
+				color: fontcolor($black,'loud');
+			}
+		}
+	&.left{a, button{border-radius: 0px 0px 0px 5px;}}	 
+	&.right{ a, button{
+				border-radius: 0px 0px 5px 0px; 
+			}}
+	}
+	&.disable a, &.disable a:hover{
+	    border-color: grey(30);
+	    background: url("../img/subtlenet2.png") repeat;
+	    color: grey(40);
+	    cursor: not-allowed;
+	}
+}
+
+.pagination-holder.top{
+		border-top:0 none;
+		border-bottom:2px solid $pagination-color;
+		margin-bottom: 1.42857rem;
+	ul.pagination{
+		margin-bottom: 0;
+	}
+	@include grid-row();
+	ul.pagination li.arrow{
+		&.left{a,button{border-radius: 5px 0 0 0;}}
+		
+		&.right{
+			a,button{border-radius: 0 5px 0 0;}
+		}
+	} 
+
+
+}
+@include bp(md-down){
+	.pagination a > .text{display:none;}
+}
+.pagination--compact a > .text{display:none;}
+
