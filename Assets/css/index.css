@@ -6,6 +6,48 @@
 *   @example
 *	<a  class="button" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
 */
+@font-face {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/opensans_300/OpenSans-Light-webfont.eot");
+  src: url("../fonts/opensans_300/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans_300/OpenSans-Light-webfont.woff") format("woff"), url("../fonts/opensans_300/OpenSans-Light-webfont.ttf") format("truetype"), url("../fonts/opensans_300/OpenSans-Light-webfont.svg#open_sanslight") format("svg"); }
+@font-face {
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: 300;
+  src: url("../fonts/opensans_300-italic/OpenSans-LightItalic-webfont.eot");
+  src: url("../fonts/opensans_300-italic/OpenSans-LightItalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans_300-italic/OpenSans-LightItalic-webfont.woff") format("woff"), url("../fonts/opensans_300-italic/OpenSans-LightItalic-webfont.ttf") format("truetype"), url("../fonts/opensans_300-italic/OpenSans-LightItalic-webfont.svg#open_sanslight") format("svg"); }
+@font-face {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/opensans_400/OpenSans-Regular-webfont.eot");
+  src: url("../fonts/opensans_400/OpenSans-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans_400/OpenSans-Regular-webfont.woff") format("woff"), url("../fonts/opensans_400/OpenSans-Regular-webfont.ttf") format("truetype"), url("../fonts/opensans_400/OpenSans-Regular-webfont.svg#open_sanslight") format("svg"); }
+@font-face {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/opensans_700/OpenSans-Bold-webfont.eot");
+  src: url("../fonts/opensans_700/OpenSans-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans_700/OpenSans-Bold-webfont.woff") format("woff"), url("../fonts/opensans_700/OpenSans-Bold-webfont.ttf") format("truetype"), url("../fonts/opensans_700/OpenSans-Bold-webfont.svg#open_sanslight") format("svg"); }
+@font-face {
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: 700;
+  src: url("../fonts/opensans_700-italic/OpenSans-BoldItalic-webfont.eot");
+  src: url("../fonts/opensans_700-italic/OpenSans-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans_700-italic/OpenSans-BoldItalic-webfont.woff") format("woff"), url("../fonts/opensans_700-italic/OpenSans-BoldItalic-webfont.ttf") format("truetype"), url("../fonts/opensans_700-italic/OpenSans-BoldItalic-webfont.svg#open_sanslight") format("svg"); }
+@font-face {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/robotoslab_300/RobotoSlab-Regular-webfont.eot");
+  src: url("../fonts/robotoslab_300/RobotoSlab-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/robotoslab_300/RobotoSlab-Regular-webfont.woff") format("woff"), url("../fonts/robotoslab_300/RobotoSlab-Regular-webfont.ttf") format("truetype"), url("../fonts/robotoslab_300/RobotoSlab-Regular-webfont.svg#open_sanslight") format("svg"); }
+@font-face {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/robotoslab_700/RobotoSlab-Bold-webfont.eot");
+  src: url("../fonts/robotoslab_700/RobotoSlab-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/robotoslab_700/RobotoSlab-Bold-webfont.woff") format("woff"), url("../fonts/robotoslab_700/RobotoSlab-Bold-webfont.ttf") format("truetype"), url("../fonts/robotoslab_700/RobotoSlab-Bold-webfont.svg#open_sanslight") format("svg"); }
 /**
 * Brand Level:
 * `var $brand-level` - this variable has the ablity to over take the standard acc coloring with a branded product color.  Standard values are:
@@ -129,7 +171,7 @@
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li class="divider"></li>
-*							<li><a href="#">See all →</a></li>
+*							<li><a href="#">See all ΓåÆ</a></li>
 *						</ul>
 *						</li>
 *						<li class="divider"></li>
@@ -141,7 +183,7 @@
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li class="divider"></li>
-*								<li><a href="#">See all →</a></li>
+*								<li><a href="#">See all ΓåÆ</a></li>
 *						</ul>
 *					</li>
 *				</ul>
@@ -571,7 +613,7 @@ meta.foundation-data-attribute-namespace {
 .h1, h1, .table th.h1 {
   letter-spacing: -1px;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 100; }
+  font-weight: 300; }
 
 .h2, h2, .table th.h2 {
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
@@ -653,7 +695,7 @@ meta.foundation-data-attribute-namespace {
 
 .nav-list li, .panel-selector li, h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector, .table, .normal {
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: .01em;
   color: #333333;
   font-size: 1em;
@@ -673,7 +715,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 
 .hint, .repeater .render .italic, .table tfoot tr td, .italic {
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   font-style: italic; }
 
 strong, .strong {
@@ -682,16 +724,16 @@ strong, .strong {
   color: #25b6e0; }
 
 em, .emphasis {
-  color: #0c4657;
+  color: #0d4757;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   font-style: italic;
   font-weight: 900; }
 
 .subtle {
   font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 100;
-  color: #66a0b0; }
+  font-weight: 300;
+  color: #66a0b1; }
 
 .block-margins {
   margin: 0 em(21px) 0; }
@@ -788,17 +830,17 @@ h6 {
     background-image: url(http://basehold.it/i/21); }
   .font.font-display {
     font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-    font-weight: 100; }
+    font-weight: 300; }
   .font.font-slab {
     font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
     font-weight: 400; }
   .font.font-normal {
     font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: .01em; }
   .font.font-light {
     font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-    font-weight: 100; }
+    font-weight: 300; }
   .font .font--name {
     color: #00386b; }
   .font .font--dropcase_2x {
@@ -2903,7 +2945,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   background-color: #e4f6fb; }
 
 .stripped tbody tr:nth-child(even) td:nth-child(odd) {
-  background-color: #dee9ed; }
+  background-color: #deeaed; }
 
 .stripped tbody tr + tr td, .banded tbody tr + tr td {
   border-top: 0px solid; }
@@ -2930,7 +2972,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   border-bottom: #1c9dc1 2px solid;
   color: #fff;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   font-style: italic;
   font-size: .75rem; }
 
@@ -3051,7 +3093,7 @@ th.sortable {
     border-right: 2px solid #999999;
     color: #b3b3b3; }
     th.sortable select:hover {
-      background-color: #4c4c4c; }
+      background-color: #4d4d4d; }
   th.sortable .sort {
     position: absolute;
     top: 0;
@@ -3084,7 +3126,7 @@ th.sortable {
       top: auto;
       bottom: 0.5rem; }
   th.sortable.selected .sort {
-    background-color: #4c4c4c; }
+    background-color: #4d4d4d; }
   th.sortable.selected .sorttoggle .fa-sort {
     color: #E08514; }
   th.sortable.selected.asc .sorttoggle .fa-sort:before {
@@ -3141,20 +3183,20 @@ tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.c
   border-bottom: 1px solid; }
 
 td.error, .table tbody tr + tr td.error, tr.error td, .stripped tr.error:nth-child(even) td:nth-child(odd) {
-  background-color: #f4d9db;
+  background-color: #f5d9dc;
   border-color: #f2b7bd; }
 
 tr:nth-child(even) td.error {
-  background-color: #f1ced1; }
+  background-color: #f2ced2; }
 
 tr:nth-child(even).error td {
-  background-color: #f1ced1; }
+  background-color: #f2ced2; }
 
 .stripped tbody tr.error td:nth-child(odd) {
-  background-color: #f4d9db; }
+  background-color: #f5d9dc; }
 
 td.warning, .table tbody tr + tr td.warning, tr.warning td, .stripped tr.warning:nth-child(even) td:nth-child(odd) {
-  background-color: #f9ead7;
+  background-color: #faead7;
   border-color: #f8dbb6; }
 
 tr:nth-child(even) td.warning {
@@ -3164,30 +3206,30 @@ tr:nth-child(even).warning td {
   background-color: #f8e4cb; }
 
 .stripped tbody tr.warning td:nth-child(odd) {
-  background-color: #f9ead7; }
+  background-color: #faead7; }
 
 td.validated, .table tbody tr + tr td.validated, tr.validated td, .stripped tr.validated:nth-child(even) td:nth-child(odd) {
-  background-color: #d7f1e2;
+  background-color: #d7f2e2;
   border-color: #aaf5cb; }
 
 tr:nth-child(even) td.validated {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 tr:nth-child(even).validated td {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 .stripped tbody tr.validated td:nth-child(odd) {
-  background-color: #d7f1e2; }
+  background-color: #d7f2e2; }
 
 td.info, .table tbody tr + tr td.info, tr.info td, .stripped tr.info:nth-child(even) td:nth-child(odd) {
   background-color: #f3fbfd;
   border-color: #ebf8fc; }
 
 tr:nth-child(even) td.info {
-  background-color: #f0f9fc; }
+  background-color: #f0fafd; }
 
 tr:nth-child(even).info td {
-  background-color: #f0f9fc; }
+  background-color: #f0fafd; }
 
 .stripped tbody tr.info td:nth-child(odd) {
   background-color: #f3fbfd; }
@@ -3206,17 +3248,17 @@ tr:nth-child(even).highlighted td {
   background-color: #d9f1f8; }
 
 td.completed, .table tbody tr + tr td.completed, tr.completed td, .stripped tr.completed:nth-child(even) td:nth-child(odd) {
-  background-color: #d7f1e2;
+  background-color: #d7f2e2;
   border-color: #aaf5cb; }
 
 tr:nth-child(even) td.completed {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 tr:nth-child(even).completed td {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 .stripped tbody tr.completed td:nth-child(odd) {
-  background-color: #d7f1e2; }
+  background-color: #d7f2e2; }
 
 td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .stripped tr.disabled:nth-child(even) td:nth-child(odd) {
   background-color: #f2f2f2;
@@ -3232,7 +3274,7 @@ tr:nth-child(even).disabled td {
   background-color: #f2f2f2; }
 
 td.attention, .table tbody tr + tr td.attention, tr.attention td, .stripped tr.attention:nth-child(even) td:nth-child(odd) {
-  background-color: #f9ead7;
+  background-color: #faead7;
   border-color: #f8dbb6; }
 
 tr:nth-child(even) td.attention {
@@ -3242,7 +3284,7 @@ tr:nth-child(even).attention td {
   background-color: #f8e4cb; }
 
 .stripped tbody tr.attention td:nth-child(odd) {
-  background-color: #f9ead7; }
+  background-color: #faead7; }
 
 /**
 * Table States Cells:
@@ -3887,7 +3929,7 @@ ul.toggle {
   background-color: #00386b; }
   .blue-bar .link {
     font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 1rem; }
 
 /**
@@ -3962,7 +4004,7 @@ ul.toggle {
       line-height: 2rem; }
     .user-id-block .user-info .user-application-switch {
       font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-      font-weight: 100;
+      font-weight: 300;
       font-size: .75rem;
       line-height: 1.25rem; }
   @media only screen and (max-width: 1024px) {
@@ -4047,7 +4089,7 @@ ul.toggle {
     text-align: center; }
   .membership-table .membership-table_price {
     font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-    font-weight: 100;
+    font-weight: 300;
     background-color: #f2f2f2;
     text-align: center;
     line-height: 1.2;
@@ -5155,16 +5197,16 @@ nav.top-bar {
   font-weight: 400; }
 
 .top-bar-section li.hover > a:not(.button) {
-  background-color: #19354f;
-  background: #28343e;
+  background-color: #1a364f;
+  background: #29343e;
   color: #FFF; }
 
 .top-bar-section li:not(.has-form) a:not(.button) {
   background: #00386b; }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
-  background-color: #19354f;
-  background: #28343e; }
+  background-color: #1a364f;
+  background: #29343e; }
 
 .top-bar-section li.active:not(.has-form) a:not(.button) {
   color: #FFF;
@@ -5367,7 +5409,7 @@ div.reveal-modal, dialog {
   margin: 1.42857rem 0;
   -ms-touch-action: none;
   touch-action: none;
-  background: #f4f4f4; }
+  background: whitesmoke; }
   .range-slider.vertical-range {
     display: block;
     position: relative;
@@ -5390,7 +5432,7 @@ div.reveal-modal, dialog {
       height: auto;
       bottom: 0; }
   .range-slider.radius {
-    background: #f4f4f4;
+    background: whitesmoke;
     border-radius: 5px; }
     .range-slider.radius .range-slider-handle {
       background: #198dae;
@@ -5398,7 +5440,7 @@ div.reveal-modal, dialog {
       .range-slider.radius .range-slider-handle:hover {
         background: #167c99; }
   .range-slider.round {
-    background: #f4f4f4;
+    background: whitesmoke;
     border-radius: 1000px; }
     .range-slider.round .range-slider-handle {
       background: #198dae;
@@ -5406,7 +5448,7 @@ div.reveal-modal, dialog {
       .range-slider.round .range-slider-handle:hover {
         background: #167c99; }
   .range-slider.disabled, .range-slider[disabled] {
-    background: #f4f4f4;
+    background: whitesmoke;
     cursor: default;
     opacity: 0.7; }
     .range-slider.disabled .range-slider-handle, .range-slider[disabled] .range-slider-handle {
@@ -5597,6 +5639,12 @@ div.reveal-modal, dialog {
 *	</div>
 *   <a class="link" href="http://foundation.zurb.com/docs/components/switch.html">Foundation Documentation</a>
 */
+.tooltip {
+  background-color: #1a364f; }
+
+.tooltip.tip-top > .nub {
+  border-color: #1a364f transparent transparent; }
+
 /**
 * Twitter Typeahead:
 * `.twitter-typeahead` - Type ahead javascript
@@ -5669,7 +5717,7 @@ div.reveal-modal, dialog {
     font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
     font-weight: 700; }
   .tt-suggestion.tt-cursor {
-    color: #e8f3f6;
+    color: #e8f4f7;
     background-color: #198dae; }
     .tt-suggestion.tt-cursor strong {
       color: #fff; }
@@ -5680,13 +5728,13 @@ div.reveal-modal, dialog {
 ----------------------------------*/
 .ui-widget {
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: .01em; }
   .ui-widget .ui-widget {
     font-size: 1em; }
   .ui-widget input, .ui-widget select, .ui-widget textarea {
     font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: .01em; }
   .ui-widget button {
     font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
@@ -6062,7 +6110,7 @@ div.reveal-modal, dialog {
     font-size: 1em; }
   .ui-autocomplete .description {
     font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-    font-weight: 100;
+    font-weight: 300;
     font-style: italic;
     color: #999999;
     font-size: .75em; }
@@ -6958,7 +7006,7 @@ h1 blockquote, h2 blockquote, h3 blockquote, h4 blockquote, h5 blockquote, h6 bl
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: .01em;
   border: 0 none transparent; }
 h1 blockquote {

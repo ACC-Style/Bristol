@@ -6,335 +6,48 @@
 *   @example
 *	<a  class="button" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
 */
-/**
-*	Zurb Foundation - Kitchen Sink:
-*	This is a visual representation of UI elements that come from the base framework from ZURB. This does not includes every single element from Foundation to view a full list go to the documentation. <a class="button tiny" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
-*
-*		@example 
-*		<h4 id="alert-boxes">Alert Boxes</h4><div data-alert="" class="alert-box radius">This is a standard alert (div.alert-box.radius).  <a href="" class="close">x</a></div><div data-alert="" class="alert-box success">  This is a success alert (div.alert-box.success).  <a href="" class="close">x</a></div><div data-alert="" class="alert-box alert round">  This is an alert (div.alert-box.alert.round).  <a href="" class="close">x</a></div><div data-alert="" class="alert-box secondary">  This is a secondary alert (div.alert-box.secondary).  <a href="" class="close">x</a></div><hr>
-*		<h4 id="breadcrumbs">Breadcrumbs</h4>
-*		<ul class="breadcrumbs">
-*		<li><a href="#">Home</a></li>
-*		<li><a href="#">Features</a></li>
-*		<li class="unavailable"><a href="#">Gene Splicing</a></li>
-*		<li class="current"><a href="#">Cloning</a></li>
-*		</ul>
-*		<h4 id="buttons">Buttons</h4>
-*		<div class="row">
-*			<div class="small-6 large-6 columns">
-*				<a href="#" class="tiny button">.tiny.button</a><br>
-*				<a href="#" class="small button">.small.button</a><br>
-*				<a href="#" class="button">.button</a><br>
-*				<a href="#" class="button expand">.expand</a><br>
-*			</div>
-*			<div class="small-6 large-6 columns">
-*				<a href="#" class="tiny button secondary">.tiny.secondary</a><br>
-*				<a href="#" class="small button success radius">.small.success.radius</a><br>
-*				<a href="#" class="button alert round disabled">.round.disabled</a><br>
-*			</div>
-*		</div>
-*		<div class="row">
-*			<h4 id="switches">switches</h4>
-*		<div class="small-6 column"><div class="switch tiny">
-*			<input id="a" name="switch-a" type="radio" checked="">
-*			<label for="a" onclick="">Off</label>
-*			<input id="a1" name="switch-a" type="radio">
-*			<label for="a1" onclick="">On</label>
-*			<span class="inline label">Power</span>
-*		</div></div>
-*		<div class="small-6 column"><div class="switch tiny">
-*			<span class="inline label">off</span>
-*			<input id="c1" name="switch-c" type="checkbox">
-*			<label for="c1" onclick="">On</label>
-*			<span class="inline label">on</span>
-*		</div></div>
-*		</div><br>
-*		<nav class="top-bar" data-topbar="">
-*			<ul class="title-area">
-*			<!-- Title Area -->
-*				<li class="name">
-*					<h1>
-*					<a href="#">
-*					Top Bar Title
-*					</a>
-*					</h1>
-*				</li>
-*				<li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
-*			</ul>
-*			<section class="top-bar-section">
-*				<!-- Right Nav Section -->
-*				<ul class="right">
-*					<li class="divider"></li>
-*					<li class="has-dropdown not-click">
-*					<a href="#">Main Item 1</a>
-*					<ul class="dropdown">
-*						<li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li><li class="parent-link hide-for-large-up"><a class="parent-link js-generated" href="#">Main Item 1</a></li>
-*						<li><label>Section Name</label></li>
-*						<li class="has-dropdown not-click">
-*						<a href="#" class="">Has Dropdown, Level 1</a>
-*						<ul class="dropdown">
-*							<li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
-*							<li class="parent-link hide-for-large-up"><a class="parent-link js-generated" href="#">Has Dropdown, Level 1</a>
-*							</li>
-*							<li><a href="#">Dropdown Options</a></li>
-*							<li><a href="#">Dropdown Options</a></li>
-*							<li><a href="#">Level 2</a></li>
-*							<li><a href="#">Subdropdown Option</a></li>
-*							<li><a href="#">Subdropdown Option</a></li>
-*							<li><a href="#">Subdropdown Option</a></li>
-*							</ul>
-*							</li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li class="divider"></li>
-*							<li><label>Section Name</label></li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li class="divider"></li>
-*							<li><a href="#">See all →</a></li>
-*						</ul>
-*						</li>
-*						<li class="divider"></li>
-*						<li class="has-dropdown not-click">
-*						<a href="#">Main Item 2</a>
-*						<ul class="dropdown">
-*							<li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li><li class="parent-link hide-for-large-up"><a class="parent-link js-generated" href="#">Main Item 2</a></li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li><a href="#">Dropdown Option</a></li>
-*							<li class="divider"></li>
-*								<li><a href="#">See all →</a></li>
-*						</ul>
-*					</li>
-*				</ul>
-*			</section>
-*		</nav><br>
-*		<h4>Grid</H4>
-*		<div class="row display">
-*	 		 <div class="small-2 large-4 columns">small 2 | large 4 </div>
-*	  		<div class="small-4 large-4 columns">small 4 | large 4 </div>
-*	 		 <div class="small-6 large-4 columns">small 6 | large 4</div>
-*		</div>
-*/
-/**
-* Icons from Font Awesome:
-* `fa-xxx` - fully css stylable font icons from Font Awesome. Please read documentation from the font awesome website. 
-* 
-*   @example
-*	<div id="web-application">
-*		<h2 class="page-header">Font Awesome</h2>
-*		<div class="row fontawesome-icon-list">
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/arrows"><i class="fa fa-arrows"></i>&nbsp; arrows</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/arrows-h"><i class="fa fa-arrows-h"></i>&nbsp; arrows-h</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/arrows-v"><i class="fa fa-arrows-v"></i>&nbsp; arrows-v</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/asterisk"><i class="fa fa-asterisk"></i>&nbsp; asterisk</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/at"><i class="fa fa-at"></i>&nbsp; at</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/bookmark"><i class="fa fa-bookmark"></i>&nbsp; bookmark</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/bookmark-o"><i class="fa fa-bookmark-o"></i>&nbsp; bookmark-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/briefcase"><i class="fa fa-briefcase"></i>&nbsp; briefcase</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/bug"><i class="fa fa-bug"></i>&nbsp; bug</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/building"><i class="fa fa-building"></i>&nbsp; building</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/calculator"><i class="fa fa-calculator"></i>&nbsp; calculator</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/calendar"><i class="fa fa-calendar"></i>&nbsp; calendar</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/calendar-o"><i class="fa fa-calendar-o"></i>&nbsp; calendar-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/camera"><i class="fa fa-camera"></i>&nbsp; camera</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/camera-retro"><i class="fa fa-camera-retro"></i>&nbsp; camera-retro</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-down"><i class="fa fa-caret-square-o-down"></i>&nbsp; caret-square-o-down</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-left"><i class="fa fa-caret-square-o-left"></i>&nbsp; caret-square-o-left</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-right"><i class="fa fa-caret-square-o-right"></i>&nbsp; caret-square-o-right</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-up"><i class="fa fa-caret-square-o-up"></i>&nbsp; caret-square-o-up</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cart-arrow-down"><i class="fa fa-cart-arrow-down"></i>&nbsp; cart-arrow-down</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check"><i class="fa fa-check"></i>&nbsp; check</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check-circle"><i class="fa fa-check-circle"></i>&nbsp; check-circle</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check-circle-o"><i class="fa fa-check-circle-o"></i>&nbsp; check-circle-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check-square"><i class="fa fa-check-square"></i>&nbsp; check-square</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check-square-o"><i class="fa fa-check-square-o"></i>&nbsp; check-square-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/circle"><i class="fa fa-circle"></i>&nbsp; circle</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/circle-o"><i class="fa fa-circle-o"></i>&nbsp; circle-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/circle-o-notch"><i class="fa fa-circle-o-notch"></i>&nbsp; circle-o-notch</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/circle-thin"><i class="fa fa-circle-thin"></i>&nbsp; circle-thin</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/clock-o"><i class="fa fa-clock-o"></i>&nbsp; clock-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/times"><i class="fa fa-close"></i>&nbsp; close <span class="text-muted">(alias)</span></a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cloud"><i class="fa fa-cloud"></i>&nbsp; cloud</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cloud-download"><i class="fa fa-cloud-download"></i>&nbsp; cloud-download</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cloud-upload"><i class="fa fa-cloud-upload"></i>&nbsp; cloud-upload</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/code"><i class="fa fa-code"></i>&nbsp; code</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/coffee"><i class="fa fa-coffee"></i>&nbsp; coffee</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cog"><i class="fa fa-cog"></i>&nbsp; cog</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cogs"><i class="fa fa-cogs"></i>&nbsp; cogs</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/comment"><i class="fa fa-comment"></i>&nbsp; comment</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/comment-o"><i class="fa fa-comment-o"></i>&nbsp; comment-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/pencil-square-o"><i class="fa fa-edit"></i>&nbsp; edit <span class="text-muted">(alias)</span></a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/envelope"><i class="fa fa-envelope"></i>&nbsp; envelope</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/envelope-o"><i class="fa fa-envelope-o"></i>&nbsp; envelope-o</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/exclamation"><i class="fa fa-exclamation"></i>&nbsp; exclamation</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/exclamation-circle"><i class="fa fa-exclamation-circle"></i>&nbsp; exclamation-circle</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/exclamation-triangle"><i class="fa fa-exclamation-triangle"></i>&nbsp; exclamation-triangle</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/external-link"><i class="fa fa-external-link"></i>&nbsp; external-link</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/wifi"><i class="fa fa-wifi"></i>&nbsp; wifi</a></div>
-*			<div class="column small-2 medium-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/wrench"><i class="fa fa-wrench"></i>&nbsp; wrench</a></div>
-*			<div class="column small-12"><a href="http://fortawesome.github.io/Font-Awesome/icons/">full list of icons</a></div>
-*		</div>
-*	</div>
-*/
-/**
-* JQUERY UI - Kitchen Sink:
-* `JQUERY UI 1.11.4` - This style is base for more complicated ui elements
-*	<nav class="nav-list small"><ul><li><a href="http://jqueryui.com/accordion/"><span class="text">Accordion</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/autocomplete/"><span class="text">Autocomplete</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/datepicker/"><span class="text">Datepicker</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/progressbar/"><span class="text">Progressbar</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/slider/"><span class="text">Slider</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/spinner/"><span class="text">Spinner </span><i class="fa fa-holder-dynamic"></i></a></li></ul></nav>
-* 
-*   @example
-*	<h5>Accordion</h5>
-*	<div id="accordion">
-*	  <h3>Section 1</h3>
-*	  <div>
-*	    <p>
-*	    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-*	    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-*	    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-*	    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-*	    </p>
-*	  </div>
-*	  <h3>Section 2</h3>
-*	  <div>
-*	    <p>
-*	    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-*	    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-*	    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-*	    suscipit faucibus urna.
-*	    </p>
-*	  </div>
-*	  <h3>Section 3</h3>
-*	  <div>
-*	    <p>
-*	    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-*	    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-*	    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-*	    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-*	    </p>
-*	    <ul>
-*	      <li>List item one</li>
-*	      <li>List item two</li>
-*	      <li>List item three</li>
-*	    </ul>
-*	  </div>
-*	  <h3>Section 4</h3>
-*	  <div>
-*	    <p>
-*	    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-*	    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-*	    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-*	    mauris vel est.
-*	    </p>
-*	    <p>
-*	    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-*	    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-*	    inceptos himenaeos.
-*	    </p>
-*	  </div>
-*	</div>
-*	<div id="accordion2" class="ui-accordion-override">
-*	  <h3>Section 1</h3>
-*	  <div>
-*	    <p>
-*	    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-*	    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-*	    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-*	    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-*	    </p>
-*	  </div>
-*	  <h3>Section 2</h3>
-*	  <div>
-*	    <p>
-*	    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-*	    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-*	    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-*	    suscipit faucibus urna.
-*	    </p>
-*	  </div>
-*	  <h3>Section 3</h3>
-*	  <div>
-*	    <p>
-*	    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-*	    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-*	    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-*	    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-*	    </p>
-*	    <ul>
-*	      <li>List item one</li>
-*	      <li>List item two</li>
-*	      <li>List item three</li>
-*	    </ul>
-*	  </div>
-*	  <h3>Section 4</h3>
-*	  <div>
-*	    <p>
-*	    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-*	    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-*	    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-*	    mauris vel est.
-*	    </p>
-*	    <p>
-*	    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-*	    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-*	    inceptos himenaeos.
-*	    </p>
-*	  </div>
-*	</div>
-*	<h5>Auto Complete</h5>
-*	<div class="question required">
-*	  <div class="label-holder">
-*	    <label for="">
-*	      <span class="text">Auto Complete</span>
-*	      <span class="required-holder">
-*	        <i class="fa fa-holder-dynamic"></i>
-*	      </span>
-*	    </label>
-*	  </div>
-*	  <div class="input-holder">
-*	    <div class="input-space column small-6 large-9">
-*	      <input type="text" id="tags">
-*	    </div>
-*	    <div class="column small-6 large-3">
-*	      <small class="value">Tags</small>
-*	    </div>
-*	  </div>
-*	   <div class="hint">Code tags like 'ASP'</div>
-*	</div>
-*	<h5>Slider</h5>
-*	<div class="question">
-*		<div class="label-holder">
-*	  		<label for="amount">Donation amount ($50 increments):</label>
-*	 	</div>
-*		<div class="input-holder">
-*	    <div class="input-space column small-9 large-10">
-*	      <div id="slider"></div>
-*	    </div>
-*	    <div class="input-space column small-3 large-2">
-*	      <input type="text" id="amount" readonly>
-*	    </div>			
-*		</div>
-*	</div>
-*	<h5>Datepicker</h5>
-*	<div class="question">
-*		<div class="label-holder">
-*	  		<label for="amount">
-*				 <span class="text">Date</span>
-*	  		</label>
-*	 	</div>
-*		<div class="input-holder">
-*			 <div class="input-space column small-6 large-9">
-*	     		<input type="text" id="datepicker">
-*	   		 </div>
-*		</div>
-*	</div>
-*	<h5>Spinner</h5>
-*	<p>
-*	  <label for="spinner">Select a value:</label>
-*	  <input id="spinner" name="value">
-*	</p>
-*	
-**/
+@font-face {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/opensans_300/OpenSans-Light-webfont.eot");
+  src: url("../fonts/opensans_300/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans_300/OpenSans-Light-webfont.woff") format("woff"), url("../fonts/opensans_300/OpenSans-Light-webfont.ttf") format("truetype"), url("../fonts/opensans_300/OpenSans-Light-webfont.svg#open_sanslight") format("svg"); }
+@font-face {
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: 300;
+  src: url("../fonts/opensans_300-italic/OpenSans-LightItalic-webfont.eot");
+  src: url("../fonts/opensans_300-italic/OpenSans-LightItalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans_300-italic/OpenSans-LightItalic-webfont.woff") format("woff"), url("../fonts/opensans_300-italic/OpenSans-LightItalic-webfont.ttf") format("truetype"), url("../fonts/opensans_300-italic/OpenSans-LightItalic-webfont.svg#open_sanslight") format("svg"); }
+@font-face {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/opensans_400/OpenSans-Regular-webfont.eot");
+  src: url("../fonts/opensans_400/OpenSans-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans_400/OpenSans-Regular-webfont.woff") format("woff"), url("../fonts/opensans_400/OpenSans-Regular-webfont.ttf") format("truetype"), url("../fonts/opensans_400/OpenSans-Regular-webfont.svg#open_sanslight") format("svg"); }
+@font-face {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/opensans_700/OpenSans-Bold-webfont.eot");
+  src: url("../fonts/opensans_700/OpenSans-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans_700/OpenSans-Bold-webfont.woff") format("woff"), url("../fonts/opensans_700/OpenSans-Bold-webfont.ttf") format("truetype"), url("../fonts/opensans_700/OpenSans-Bold-webfont.svg#open_sanslight") format("svg"); }
+@font-face {
+  font-family: Open Sans;
+  font-style: italic;
+  font-weight: 700;
+  src: url("../fonts/opensans_700-italic/OpenSans-BoldItalic-webfont.eot");
+  src: url("../fonts/opensans_700-italic/OpenSans-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans_700-italic/OpenSans-BoldItalic-webfont.woff") format("woff"), url("../fonts/opensans_700-italic/OpenSans-BoldItalic-webfont.ttf") format("truetype"), url("../fonts/opensans_700-italic/OpenSans-BoldItalic-webfont.svg#open_sanslight") format("svg"); }
+@font-face {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/robotoslab_300/RobotoSlab-Regular-webfont.eot");
+  src: url("../fonts/robotoslab_300/RobotoSlab-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/robotoslab_300/RobotoSlab-Regular-webfont.woff") format("woff"), url("../fonts/robotoslab_300/RobotoSlab-Regular-webfont.ttf") format("truetype"), url("../fonts/robotoslab_300/RobotoSlab-Regular-webfont.svg#open_sanslight") format("svg"); }
+@font-face {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/robotoslab_700/RobotoSlab-Bold-webfont.eot");
+  src: url("../fonts/robotoslab_700/RobotoSlab-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/robotoslab_700/RobotoSlab-Bold-webfont.woff") format("woff"), url("../fonts/robotoslab_700/RobotoSlab-Bold-webfont.ttf") format("truetype"), url("../fonts/robotoslab_700/RobotoSlab-Bold-webfont.svg#open_sanslight") format("svg"); }
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -1982,7 +1695,7 @@ meta.foundation-data-attribute-namespace {
 .h1, h1, .table th.h1 {
   letter-spacing: -1px;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 100; }
+  font-weight: 300; }
 
 .h2, h2, .table th.h2 {
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
@@ -2064,7 +1777,7 @@ meta.foundation-data-attribute-namespace {
 
 .nav-list li, .panel-selector li, h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector, .table, .normal {
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: .01em;
   color: #333333;
   font-size: 1em;
@@ -2072,7 +1785,7 @@ meta.foundation-data-attribute-namespace {
   margin-top: 0em;
   margin-bottom: 0em; }
 
-h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-selector li, .repeater .render .strong, .bold, b {
+h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-selector li, .bold, b {
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700; }
 
@@ -2082,9 +1795,9 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 .quiet {
   color: gray; }
 
-.hint, .repeater .render .italic, .table tfoot tr td, .italic {
+.hint, .table tfoot tr td, .italic {
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   font-style: italic; }
 
 strong, .strong {
@@ -2093,27 +1806,19 @@ strong, .strong {
   color: #6959b4; }
 
 em, .emphasis {
-  color: #272048;
+  color: #282148;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   font-style: italic;
   font-weight: 900; }
 
 .subtle {
   font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 100;
-  color: #817aa1; }
+  font-weight: 300;
+  color: #817aa2; }
 
 .block-margins {
   margin: 0 em(21px) 0; }
-
-.repeater .render .render-holder {
-  list-style: none;
-  display: block;
-  margin: 0; }
-  .repeater .render .render-holder > li {
-    display: inline-block;
-    margin-left: .25rem; }
 
 /**
  * Header Tags:
@@ -2664,130 +2369,6 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   margin-top: 0; }
 
 /**
-* Nav List (Checklist):
-* `.nav-checklist` - add class to the nav to change the .nav-list from forward links to a list with states of `.selected`, `.completed`, `.warning`, `.error`
-* 
-*   @example
-*	<nav class="nav-list nav-checklist">
-*	<ul>
-*	<li class="">
-*	<a><span class="text">Nav List Item 1(blank)</span><i class="fa fa-holder-dynamic"></i></a>
-*	<li  class="selected">
-*	<a><span class="text">Nav List Item 2(selected)</span><i class="fa fa-holder-dynamic"></i></a>
-*	</li>
-*	<li  class="completed">
-*	<a><span class="text">Nav List Item 3(completed)</span><i class="fa fa-holder-dynamic"></i></a>
-*	</li>
-*	</ul>
-*	</nav>
-*/
-.nav-list.nav-checklist li, .nav-checklist.panel-selector li {
-  border: 1px solid #e6e6e6;
-  border-left-width: 0;
-  border-right-width: 0;
-  margin-bottom: 0;
-  margin-top: -1px;
-  background-image: url(../img/empty_stripe.png); }
-  .nav-list.nav-checklist li i.fa-holder-dynamic:before, .nav-checklist.panel-selector li i.fa-holder-dynamic:before, .nav-list.nav-checklist li.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.dynamic i.fa-holder:before {
-    content: ""; }
-  .nav-list.nav-checklist li:hover, .nav-checklist.panel-selector li:hover {
-    background-image: none; }
-  .nav-list.nav-checklist li.selected, .nav-checklist.panel-selector li.selected {
-    border-bottom-width: 1px;
-    border-color: #8ef2b9;
-    background-image: none;
-    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-    font-weight: 700;
-    color: #333333; }
-    .nav-list.nav-checklist li.selected i.fa-holder-dynamic:before, .nav-checklist.panel-selector li.selected i.fa-holder-dynamic:before, .nav-list.nav-checklist li.selected.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.selected.dynamic i.fa-holder:before {
-      content: ""; }
-    .nav-list.nav-checklist li.selected i, .nav-checklist.panel-selector li.selected i {
-      color: white; }
-  .nav-list.nav-checklist li.completed i.fa-holder-dynamic:before, .nav-checklist.panel-selector li.completed i.fa-holder-dynamic:before, .nav-list.nav-checklist li.completed.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.completed.dynamic i.fa-holder:before {
-    content: ""; }
-  .nav-list.nav-checklist li.completed i, .nav-checklist.panel-selector li.completed i {
-    color: #14B057; }
-
-.nav-list.nav-checklist li.error, .nav-checklist.panel-selector li.error {
-  background-color: #f2b7bd;
-  border-color: #f0abb2;
-  border-bottom-width: 1;
-  color: #333333; }
-  .nav-list.nav-checklist li.error:hover, .nav-checklist.panel-selector li.error:hover {
-    background-color: #f7cfd3; }
-.nav-list.nav-checklist li.warning, .nav-checklist.panel-selector li.warning {
-  background-color: #f8dbb6;
-  border-color: #f7d5aa;
-  border-bottom-width: 1;
-  color: #333333; }
-  .nav-list.nav-checklist li.warning:hover, .nav-checklist.panel-selector li.warning:hover {
-    background-color: #fbe7ce; }
-.nav-list.nav-checklist li.validated, .nav-checklist.panel-selector li.validated {
-  background-color: #aaf5cb;
-  border-color: #9cf4c2;
-  border-bottom-width: 1;
-  color: #333333; }
-  .nav-list.nav-checklist li.validated:hover, .nav-checklist.panel-selector li.validated:hover {
-    background-color: #c7f9dc; }
-.nav-list.nav-checklist li.info, .nav-checklist.panel-selector li.info {
-  background-color: #eeecf7;
-  border-color: #ebe9f5;
-  border-bottom-width: 1;
-  color: #333333; }
-  .nav-list.nav-checklist li.info:hover, .nav-checklist.panel-selector li.info:hover {
-    background-color: #f4f3f9; }
-.nav-list.nav-checklist li.highlighted, .nav-checklist.panel-selector li.highlighted {
-  background-color: #c7c1e3;
-  border-color: #bdb6de;
-  border-bottom-width: 1;
-  color: #333333; }
-  .nav-list.nav-checklist li.highlighted:hover, .nav-checklist.panel-selector li.highlighted:hover {
-    background-color: #dad6ec; }
-.nav-list.nav-checklist li.completed, .nav-checklist.panel-selector li.completed {
-  background-color: #fff;
-  color: #333333; }
-  .nav-list.nav-checklist li.completed:hover, .nav-checklist.panel-selector li.completed:hover {
-    background-color: #c7f9dc; }
-.nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled {
-  background-color: #e8e8e8;
-  border-color: #e4e4e4;
-  border-bottom-width: 1;
-  color: #b3b3b3; }
-  .nav-list.nav-checklist li.disabled:hover, .nav-checklist.panel-selector li.disabled:hover {
-    background-color: #f0f0f0; }
-.nav-list.nav-checklist li.attention, .nav-checklist.panel-selector li.attention {
-  background-color: #f8dbb6;
-  border-color: #f7d5aa;
-  border-bottom-width: 1;
-  color: #333333; }
-  .nav-list.nav-checklist li.attention:hover, .nav-checklist.panel-selector li.attention:hover {
-    background-color: #fbe7ce; }
-
-/**
-* Nav List (Checklist w/ States):
-* `.nav-checklist.statename` - add class to the nav to change the list item to reflect the state with `.warning`, `.error`, `.highlighted`...
-* 
-*   @example
-*	<nav class="nav-list nav-checklist">
-*	<ul>
-*	<li class="">
-*	<a><span class="text">Nav List Item 1(blank)</span><i class="fa fa-holder-dynamic"></i></a>
-*	<li  class="selected warning">
-*	<a><span class="text">Nav List Item 2(selected and warning)</span><i class="fa fa-holder-dynamic"></i></a>
-*	</li>
-*	<li  class="highlighted">
-*	<a><span class="text">Nav List Item 3(highlighted)</span><i class="fa fa-holder-dynamic"></i></a>
-*	</li>
-*	<li  class="warning">
-*	<a><span class="text">Nav List Item 4(warning)</span><i class="fa fa-holder-dynamic"></i></a>
-*	</li>
-*	<li class="error">
-*	<a><span class="text">Nav List Item 5(error)</span><i class="fa fa-holder-dynamic"></i></a>
-*	</li  class="">
-*	</ul>
-*	</nav>
-*/
-/**
 * Section Nav (forward & back):
 * `.section-nav with .forward or .back` - wizard nav like section nav. 
 *  alter the position of the circle button by adding  `.forward` or `.back`.
@@ -3019,7 +2600,7 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
     left: 0;
     font-size: .75rem; }
 
-.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .answer.completed .required-holder, .question.completed .required-holder, .answer.disabled .required-holder, .question.disabled .required-holder, .answer.attention .required-holder, .question.attention .required-holder, .repeater.required > .label-holder .required-holder {
+.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .answer.completed .required-holder, .question.completed .required-holder, .answer.disabled .required-holder, .question.disabled .required-holder, .answer.attention .required-holder, .question.attention .required-holder {
   background-color: transparent;
   display: inline-block; }
 
@@ -3494,411 +3075,6 @@ input[type="checkbox"], input[type="radio"] {
         padding-top: .57143rem;
         padding-bottom: .57143rem; }
 
-.radio, .radio-content {
-  vertical-align: middle; }
-
-.radio-group-holder {
-  margin-bottom: .75rem; }
-
-.radio-group {
-  border: #cccccc 1px solid;
-  padding: .5rem;
-  border-radius: .5rem;
-  overflow: hidden;
-  min-height: 3rem;
-  clear: none; }
-  .warning .radio-group {
-    border-color: #de404e; }
-  .error .radio-group {
-    border-color: #de404e; }
-  .radio-group .radio {
-    width: 5rem;
-    padding: 0 .75rem;
-    text-align: center;
-    min-height: 3rem;
-    background-color: #e6e6e6;
-    border-radius: 10px;
-    display: table-cell;
-    width: 3rem; }
-    .radio-group .radio input[type='radio'] {
-      margin: 0 auto;
-      text-align: center;
-      min-height: 3rem;
-      height: 3rem;
-      vertical-align: middle;
-      position: relative; }
-  .radio-group .radio-content {
-    padding-left: .5rem;
-    min-height: 3rem;
-    display: table-cell; }
-    .radio-group .radio-content > * {
-      margin-bottom: 0; }
-  .radio-group:hover {
-    background-color: #e6e6e6; }
-    .radio-group:hover .radio {
-      background-color: #cccccc; }
-
-/**
-* Radio Button with Grouped Content:
-* `.radio-group` - This is a structural container for radio buttons that have an extended amount of content that goes with the radio button.
-* 
-*   @example
-*	<div class="question">
-*	<div class="label-holder">
-*		<label for="">
-*			<span class="text">The Title of the Radio Group</span>
-*			<span class="required-holder">
-*				<i class="fa fa-holder-dynamic"></i>
-*			</span>
-*		</label>
-*	</div>
-*	<div class="input-holder radio-group-holder row">
-*		<div class="column input-space small-6">
-*		  <label for="radio1" class="radio-group">
-*		    <span class="radio">
-*		      <input id='radio1' name="number" value="#" type="radio">
-*		    </span>
-*		    <span class="radio-content">
-*		      <span class="h4">Title One</span>
-*		      <span class="normal">Sub Content</span>
-*		    </span>
-*		  </label>
-*		</div>
-*		<div class="column input-space small-6">
-*		  <label for="radio2" class="radio-group">
-*		    <span class="radio">
-*		      <input id='radio2' name="number" value="#" type="radio">
-*		    </span>
-*		    <span class="radio-content">
-*		      <span class="h4">Title Two</span>
-*		      <span class="normal">Sub Content</span>
-*		    </span>
-*		  </label>
-*		</div>
-*	</div>
-*	<div class="message-holder">
-*		<small class="error"><i class="fa fa-holder"></i> Error message</small>
-*		<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
-*		<small class="data"><i class="fa fa-holder"></i> Data message</small>
-*	</div>
-*	<div class="hint">This is some hint text</div>
-*	</div>
-**/
-.repeater {
-  width: 100%;
-  margin: 0;
-  max-width: 114.28571rem; }
-  .repeater:before, .repeater:after {
-    content: " ";
-    display: table; }
-  .repeater:after {
-    clear: both; }
-  .repeater .render, .repeater .question-group, .repeater .repeater-action {
-    padding-left: 0;
-    padding-right: 0;
-    width: 100%;
-    float: left; }
-  .repeater.required > .label-holder .required-holder {
-    color: #E08514; }
-    .repeater.required > .label-holder .required-holder i.fa-holder-dynamic:before, .repeater.required > .label-holder .required-holder.dynamic i.fa-holder:before {
-      content: ""; }
-  .repeater .edit, .repeater .clear, .repeater .delete, .repeater .add, .repeater .set, .repeater .save {
-    font-size: .8rem;
-    line-height: 1rem;
-    padding: .5rem .4rem;
-    text-decoration: none;
-    height: 1.8rem; }
-    .repeater .edit .text, .repeater .clear .text, .repeater .delete .text, .repeater .add .text, .repeater .set .text, .repeater .save .text {
-      text-transform: capitalize; }
-    .repeater .edit .fa + .text, .repeater .clear .fa + .text, .repeater .delete .fa + .text, .repeater .add .fa + .text, .repeater .set .fa + .text, .repeater .save .fa + .text {
-      padding-left: .25rem; }
-  .repeater .edit, .repeater .clear, .repeater .delete, .repeater .set, .repeater .save {
-    color: gray; }
-    .repeater .edit:hover, .repeater .clear:hover, .repeater .delete:hover, .repeater .set:hover, .repeater .save:hover {
-      color: black; }
-      .repeater .edit:hover .text, .repeater .clear:hover .text, .repeater .delete:hover .text, .repeater .set:hover .text, .repeater .save:hover .text {
-        text-decoration: underline; }
-  .repeater .render, .repeater .question-group {
-    padding-left: 1.21429rem;
-    padding-right: 1.21429rem; }
-  .repeater .render {
-    position: relative;
-    display: block;
-    border-top: 1px dotted #e6e6e6;
-    border-bottom: 1px dotted #e6e6e6; }
-    .repeater .render a.button, .repeater .render button {
-      margin-bottom: 0; }
-    .repeater .render + .render {
-      border-top: 0px none; }
-    .repeater .render .render-holder {
-      margin: 0 17rem 0  0;
-      padding: 0.5rem 0; }
-    .repeater .render .comma-after:after {
-      content: ",";
-      padding-left: .25em;
-      display: inline; }
-    .repeater .render .render-actions {
-      position: absolute;
-      display: inline-block;
-      height: 2rem;
-      top: 0;
-      right: 0;
-      padding: .5rem 0; }
-      @media only screen and (max-width: 1024px) {
-        .repeater .render .render-actions .text {
-          display: none; } }
-    .repeater .render .starred {
-      color: #14B057; }
-    .repeater .render .break {
-      border-left: 2px solid #b3b3b3;
-      padding-left: .5rem;
-      margin-left: .25rem; }
-    .repeater .render .error {
-      color: #c32231; }
-    .repeater .render .warning {
-      color: #c32231; }
-    @media only screen and (max-width: 767px) {
-      .repeater .render .edit, .repeater .render .delete, .repeater .render .set {
-        display: inline-block;
-        float: left; }
-      .repeater .render .render-holder {
-        margin-right: 5rem;
-        font-size: .9rem; } }
-  .repeater .render {
-    max-height: 1000px;
-    -webkit-transition: max-height 0.8s;
-    -moz-transition: max-height 0.8s;
-    transition: max-height 0.8s;
-    overflow: hidden; }
-  .repeater .edit-mode--show {
-    display: none; }
-  .repeater.edit-mode .render {
-    max-height: 0; }
-  .repeater.edit-mode .edit-mode--show {
-    display: inline;
-    display: initial; }
-  .repeater.edit-mode .edit-mode--hide {
-    display: none; }
-  .repeater .question-group {
-    padding-top: 1.5em;
-    padding-bottom: 1.85em;
-    border: 2px dotted #e1e1e1;
-    margin-top: .5em;
-    border-radius: .5em;
-    border-top: 2px soliddesaturate(#6959b4, 40%);
-    border-bottom: 2px solid #878787;
-    background-image: url(../img/empty_stripe@2x.png);
-    background-color: #ededed;
-    position: relative; }
-    .repeater .question-group .answer.required .required-holder, .repeater .question-group .question.required .required-holder {
-      color: #4F4190; }
-    .repeater .question-group .required-message {
-      font-size: 0.85714rem;
-      padding: .25em .5em;
-      position: absolute;
-      top: -2px;
-      right: -2px;
-      background-color: #878787;
-      color: #fff;
-      -webkit-transition: background-color 0.8s;
-      -moz-transition: background-color 0.8s;
-      transition: background-color 0.8s; }
-  .repeater.edit-mode .question-group {
-    border: 2px dotted #ebdadc;
-    margin-top: .5em;
-    border-radius: .5em;
-    border-top: 2px soliddesaturate(#de404e, 40%);
-    border-bottom: 2px solid #b16d73;
-    background-image: url(../img/empty_stripe@2x.png);
-    background-color: #fcf0e2; }
-    .repeater.edit-mode .question-group .required-message {
-      background-color: #999999; }
-  .repeater .repeater-action {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 2rem;
-    margin-top: -1rem; }
-    .repeater .repeater-action .add-new-repeater {
-      display: inline-block;
-      position: relative;
-      text-align: right;
-      float: right;
-      margin-top: -1em;
-      padding: .5rem; }
-      .repeater .repeater-action .add-new-repeater .text {
-        color: #4F4190;
-        display: inline-block;
-        padding-right: 2rem;
-        font-size: 1rem; }
-    .repeater .repeater-action .save, .repeater .repeater-action .clear {
-      font-size: 1rem;
-      padding: .35rem .75rem .45rem;
-      border-radius: 4px;
-      height: auto;
-      border: 2px solid #198dae;
-      font-weight: 900; }
-    .repeater .repeater-action .save {
-      display: inline-block;
-      position: relative;
-      text-align: right;
-      float: right;
-      background-color: #198dae;
-      color: white;
-      text-decoration: none;
-      margin-right: 1em; }
-      .repeater .repeater-action .save:hover {
-        background-color: #14B057;
-        text-decoration: none; }
-    .repeater .repeater-action .clear {
-      float: left;
-      background-color: white;
-      border-radius: 4px;
-      margin-left: 1em;
-      border-color: #6959b4; }
-      .repeater .repeater-action .clear:hover {
-        background-color: #e6e6e6;
-        border-color: #4f4190; }
-
-.edit-mode.repeater .repeater-action .clear {
-  background-color: #666666;
-  border-color: #4d4d4d;
-  color: #fff; }
-  .edit-mode.repeater .repeater-action .clear:hover {
-    background-color: #404040;
-    border-color: #333333;
-    color: #fff; }
-
-.question-group .render .message-holder .warning, .question-group .render .message-holder .error {
-  display: none; }
-  .question-group .render .message-holder .warningsmall, .question-group .render .message-holder .warningspan, .question-group .render .message-holder .errorsmall, .question-group .render .message-holder .errorspan {
-    margin-bottom: .65rem; }
-.question-group .render.warning .message-holder .warning {
-  display: block; }
-.question-group .render.error .message-holder .error {
-  display: block; }
-
-/**
-* Form Repeater:
-* `.repeater` - This is form elements repeater. This Module is broken into 3 major containers the `renders`,`question-group`, and `repeater actions`. The repeater also has an `edit-mode` that can hide the renders and hide and show elements with tags of `edit-mode--hide` and `edit-mode--show`
-* 
-*   @example
-*	<div class="repeater required">
-*		<div class="label-holder">
-*			<label for="">
-*				<span class="text">Email</span>
-*				<span class="required-holder">
-*					<i class="fa fa-holder-dynamic"></i>
-*				</span>
-*			</label>
-*		</div>
-*		<div class="render">
-*		<div class="render-actions">
-*			<a href="" class="edit"><i class="fa fa-holder"></i><span class="text">edit</span></a>
-*			<a href="" class="delete"><i class="fa fa-holder"></i><span class="text">delete</span></a>
-*		</div>
-*		<ul class="render-holder">
-*			<li class="italic starred"><i class="fa fa-holder"></i> </li>
-*			<li class="bold break">Jeff Morris</li>
-*			<li>jmorris@acc.org</li>
-*			<li class="validated"><i class="fa fa-holder"></i></li>
-*		</ul>
-*		<div class="message-holder">
-*			<small class="warning">
-*				<i class="fa fa-holder-dynamic"></i>
-*				This is a dynamic render message.
-*			</small>
-*		</div>
-*	</div>
-*		<div class="question-group">
-*			<div class="required-message">All inputs marked with the * are required to submit and save</div>
-*			<h4 class="edit-mode--show warning">Edit Record</h4><h4 class="edit-mode--hide highlighted">Add Record</h4>
-*			<div class="row">
-*	<div class="question required column small-4">
-*		<div class="label-holder">
-*			<label for="">
-*				<span class="text">Question (Required)</span>
-*				<span class="required-holder">
-*					<i class="fa fa-holder-dynamic"></i>
-*				</span>
-*			</label>
-*		</div>
-*		<div class="input-holder">
-*			 <div class="input-space column small-6 large-9">
-*				<input type="text"/>
-*			</div>
-*			<div class="column small-6 large-3">
-*				<small class="value">Years</small>
-*			</div>
-*		</div>
-*		<div class="message-holder">
-*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
-*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
-*				<small class="data"><i class="fa fa-holder"></i> Data message</small>
-*		</div>
-*		<div class="hint">This is some hint text</div>
-*	</div>
-*	<div class="question required column small-4">
-*		<div class="label-holder">
-*			<label for="">
-*				<span class="text">Question (Required)</span>
-*				<span class="required-holder">
-*					<i class="fa fa-holder-dynamic"></i>
-*				</span>
-*			</label>
-*		</div>
-*		<div class="input-holder">
-*			 <div class="input-space column small-6 large-9">
-*				<input type="text"/>
-*			</div>
-*			<div class="column small-6 large-3">
-*				<small class="value">Years</small>
-*			</div>
-*		</div>
-*		<div class="message-holder">
-*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
-*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
-*				<small class="data"><i class="fa fa-holder"></i> Data message</small>
-*		</div>
-*		<div class="hint">This is some hint text</div>
-*	</div>
-*	<div class="question required column small-4">
-*		<div class="label-holder">
-*			<label for="">
-*				<span class="text">Question (Required)</span>
-*				<span class="required-holder">
-*					<i class="fa fa-holder-dynamic"></i>
-*				</span>
-*			</label>
-*		</div>
-*		<div class="input-holder">
-*			 <div class="input-space column small-6 large-9">
-*				<input type="text"/>
-*			</div>
-*			<div class="column small-6 large-3">
-*				<small class="value">Years</small>
-*			</div>
-*		</div>
-*		<div class="message-holder">
-*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
-*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
-*				<small class="data"><i class="fa fa-holder"></i> Data message</small>
-*		</div>
-*		<div class="hint">This is some hint text</div>
-*	</div>
-*			</div>
-*			<div class="message-holder">
-*				<small class="warning"><i class="fa fa-holder"></i>
-*					This is a dynmic message for the question group.
-*				</small>
-*			</div>
-*		</div>
-*		<div class="repeater-action">
-*			<a href="" class="clear"><i class="fa fa-holder"></i><span class="text">clear</span></a>
-*			<a href="" class="save"><i class="fa fa-holder"></i> <span class="text">save</span></a>
-*		</div>
-*	</div>		
-*/
 /**
 *  Tables:
 *  `table` - plan tables are clean with barely any styles.
@@ -4056,7 +3232,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   background-color: #e4f6fb; }
 
 .stripped tbody tr:nth-child(even) td:nth-child(odd) {
-  background-color: #dee9ed; }
+  background-color: #deeaed; }
 
 .stripped tbody tr + tr td, .banded tbody tr + tr td {
   border-top: 0px solid; }
@@ -4083,7 +3259,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   border-bottom: #56479e 2px solid;
   color: #fff;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   font-style: italic;
   font-size: .75rem; }
 
@@ -4117,152 +3293,6 @@ table a.button, table button, table .inline-list, table .nobutton {
 *		</tfoot>
 *	</table>
 */
-/**
-* Tables (Sortable):
-* `.banded or .stripped` - tables witha soratable table header. 
-*  Just add the class of the column to the table `.col1` and the sort direction `.sort-asc` or `.sort-desc`.
-* 
-*   @example
-*	<table class="table stripped  sort-asc col1">
-*		<thead class="sortableheader">
-*			<tr>
-*				<th class="col1 sortable">
-*                        <div class="relative firefoxfix">
-*                        	<span class="sort sorttoggle">
-*                        	<a class="fa fa-sort"></a>
-*                        	</span>
-*                        	<a class="text">Table Header </a>
-*                        </div>
-*                 </th>
-*				<th class="col2 sortable selected asc">
-*                        <div class="relative firefoxfix">
-*                        	<span class="sort sorttoggle">
-*                        	<a class="fa fa-sort"></a>
-*                        	</span>
-*                        	<a  class="text">Toggle Sorter </a>
-*                        </div>
-*                 </th>
-*				<th class="col3 sortable selected asc">
-*                        <div class="relative firefoxfix">
-*                        	<span class="sort sorttwoways">
-*                        	<a class="fa fa-sort selected"></a><a class="fa fa-sort"></a>
-*                        	</span>
-*                        	<a  class="text">Long Table<br>Header </a>
-*                        </div>
-*                 </th>
-*			</tr>
-*		</thead>
-*		<tbody>
-*			<tr>
-*				<td> row 1  cell A</td>
-*				<td> row 1  cell B</td>
-*				<td> row 1  cell C</td>
-*			</tr>
-*			<tr>
-*				<td> row 2  cell A</td>
-*				<td> row 2  cell B</td>
-*				<td> row 2  cell C</td>
-*			</tr>
-*		</tbody>
-*		<tfoot>
-*			<tr>
-*				<td colspan="3">footer cell</td>
-*			</tr>
-*		</tfoot>
-*	</table>
-*/
-.table thead tr:last-child th.sortable {
-  border-bottom: none 0; }
-
-.table thead th.sortable {
-  vertical-align: top; }
-
-.sortableheader {
-  background-color: gray; }
-
-th.sortable {
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 0;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 0px none transparent;
-  background-color: gray !important; }
-  th.sortable:hover {
-    background-color: #737373 !important; }
-  th.sortable select {
-    font-size: 0.85714rem;
-    margin: 0 0 0 .5em;
-    margin-left: 1em;
-    border: 0 none transparent;
-    background-color: #737373;
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    position: absolute;
-    left: 0em;
-    border-right: 2px solid #999999;
-    color: #b3b3b3; }
-    th.sortable select:hover {
-      background-color: #4c4c4c; }
-  th.sortable .sort {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    display: inline-block;
-    background-color: #666666;
-    padding: 0 3px;
-    vertical-align: middle; }
-    th.sortable .sort .fa-sort {
-      color: #cccccc;
-      top: .5rem;
-      position: relative;
-      vertical-align: middle;
-      width: 1em;
-      height: 1em;
-      text-align: center; }
-      th.sortable .sort .fa-sort:before {
-        content: "\f0dc"; }
-      th.sortable .sort .fa-sort.selected {
-        color: #E08514; }
-    th.sortable .sort.sorttwoways .fa-sort {
-      position: relative; }
-    th.sortable .sort.sorttwoways .fa-sort:before {
-      content: "\f0de"; }
-    th.sortable .sort.sorttwoways .fa-sort + .fa-sort:before {
-      content: "\f0dd"; }
-    th.sortable .sort.sorttwoways .fa-sort + .fa-sort {
-      position: absolute;
-      top: auto;
-      bottom: 0.5rem; }
-  th.sortable.selected .sort {
-    background-color: #4c4c4c; }
-  th.sortable.selected .sorttoggle .fa-sort {
-    color: #E08514; }
-  th.sortable.selected.asc .sorttoggle .fa-sort:before {
-    content: "\f0de"; }
-  th.sortable.selected.desc .sorttoggle .fa-sort:before {
-    content: "\f0dd"; }
-  th.sortable .text {
-    color: white;
-    padding: .25rem .5rem 0rem 1.25rem;
-    white-space: normal;
-    display: block;
-    line-height: 1.25;
-    min-height: 3em; }
-    @media only screen and (min-width: 1024px) {
-      th.sortable .text {
-        padding: 0.5rem 0.625rem 0.25rem 2rem; } }
-  th.sortable:hover.text {
-    color: #e6e6e6; }
-  th.sortable .has-tip {
-    border: none 0; }
-
-.firefoxfix {
-  position: initial;
-  height: 100%; }
-
 td.error, .table tbody tr + tr td.error, tr.error td, .stripped tr.error:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.error, tr:nth-child(even).error td, td.warning, .table tbody tr + tr td.warning, tr.warning td, .stripped tr.warning:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.warning, tr:nth-child(even).warning td, td.validated, .table tbody tr + tr td.validated, tr.validated td, .stripped tr.validated:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.validated, tr:nth-child(even).validated td, td.info, .table tbody tr + tr td.info, tr.info td, .stripped tr.info:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.info, tr:nth-child(even).info td, td.highlighted, .table tbody tr + tr td.highlighted, tr.highlighted td, .stripped tr.highlighted:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.highlighted, tr:nth-child(even).highlighted td, td.completed, .table tbody tr + tr td.completed, tr.completed td, .stripped tr.completed:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.completed, tr:nth-child(even).completed td, td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .stripped tr.disabled:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.disabled, tr:nth-child(even).disabled td, td.attention, .table tbody tr + tr td.attention, tr.attention td, .stripped tr.attention:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.attention, tr:nth-child(even).attention td {
   color: #333333; }
 
@@ -4294,20 +3324,20 @@ tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.c
   border-bottom: 1px solid; }
 
 td.error, .table tbody tr + tr td.error, tr.error td, .stripped tr.error:nth-child(even) td:nth-child(odd) {
-  background-color: #f4d9db;
+  background-color: #f5d9dc;
   border-color: #f2b7bd; }
 
 tr:nth-child(even) td.error {
-  background-color: #f1ced1; }
+  background-color: #f2ced2; }
 
 tr:nth-child(even).error td {
-  background-color: #f1ced1; }
+  background-color: #f2ced2; }
 
 .stripped tbody tr.error td:nth-child(odd) {
-  background-color: #f4d9db; }
+  background-color: #f5d9dc; }
 
 td.warning, .table tbody tr + tr td.warning, tr.warning td, .stripped tr.warning:nth-child(even) td:nth-child(odd) {
-  background-color: #f9ead7;
+  background-color: #faead7;
   border-color: #f8dbb6; }
 
 tr:nth-child(even) td.warning {
@@ -4317,59 +3347,59 @@ tr:nth-child(even).warning td {
   background-color: #f8e4cb; }
 
 .stripped tbody tr.warning td:nth-child(odd) {
-  background-color: #f9ead7; }
+  background-color: #faead7; }
 
 td.validated, .table tbody tr + tr td.validated, tr.validated td, .stripped tr.validated:nth-child(even) td:nth-child(odd) {
-  background-color: #d7f1e2;
+  background-color: #d7f2e2;
   border-color: #aaf5cb; }
 
 tr:nth-child(even) td.validated {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 tr:nth-child(even).validated td {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 .stripped tbody tr.validated td:nth-child(odd) {
-  background-color: #d7f1e2; }
+  background-color: #d7f2e2; }
 
 td.info, .table tbody tr + tr td.info, tr.info td, .stripped tr.info:nth-child(even) td:nth-child(odd) {
   background-color: #f5f4fa;
   border-color: #eeecf7; }
 
 tr:nth-child(even) td.info {
-  background-color: #f2f1f8; }
+  background-color: #f3f1f9; }
 
 tr:nth-child(even).info td {
-  background-color: #f2f1f8; }
+  background-color: #f3f1f9; }
 
 .stripped tbody tr.info td:nth-child(odd) {
   background-color: #f5f4fa; }
 
 td.highlighted, .table tbody tr + tr td.highlighted, tr.highlighted td, .stripped tr.highlighted:nth-child(even) td:nth-child(odd) {
-  background-color: #e1deec;
+  background-color: #e1dfec;
   border-color: #c7c1e3; }
 
 tr:nth-child(even) td.highlighted {
-  background-color: #d8d5e6; }
+  background-color: #d8d5e7; }
 
 tr:nth-child(even).highlighted td {
-  background-color: #d8d5e6; }
+  background-color: #d8d5e7; }
 
 .stripped tbody tr.highlighted td:nth-child(odd) {
-  background-color: #e1deec; }
+  background-color: #e1dfec; }
 
 td.completed, .table tbody tr + tr td.completed, tr.completed td, .stripped tr.completed:nth-child(even) td:nth-child(odd) {
-  background-color: #d7f1e2;
+  background-color: #d7f2e2;
   border-color: #aaf5cb; }
 
 tr:nth-child(even) td.completed {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 tr:nth-child(even).completed td {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 .stripped tbody tr.completed td:nth-child(odd) {
-  background-color: #d7f1e2; }
+  background-color: #d7f2e2; }
 
 td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .stripped tr.disabled:nth-child(even) td:nth-child(odd) {
   background-color: #f2f2f2;
@@ -4385,7 +3415,7 @@ tr:nth-child(even).disabled td {
   background-color: #f2f2f2; }
 
 td.attention, .table tbody tr + tr td.attention, tr.attention td, .stripped tr.attention:nth-child(even) td:nth-child(odd) {
-  background-color: #f9ead7;
+  background-color: #faead7;
   border-color: #f8dbb6; }
 
 tr:nth-child(even) td.attention {
@@ -4395,7 +3425,7 @@ tr:nth-child(even).attention td {
   background-color: #f8e4cb; }
 
 .stripped tbody tr.attention td:nth-child(odd) {
-  background-color: #f9ead7; }
+  background-color: #faead7; }
 
 /**
 * Table States Cells:
@@ -4593,107 +3623,6 @@ h1 + div > .collapsable-panel {
 table + div > .collapsable-panel {
   margin-top: -1rem;
   margin-bottom: 0.7rem; }
-
-/**
-* Collapsable Panel:
-* `.collapsable-panel` - a container element which naturaly is hiden and reveals when it is prompted.<br><br> !!  Requires Javascript to Function  !!
-* 
-*   @example
-*	<div class="row">
-*		<div class="column small-12 medium-6">
-*			<div class="collapsable-panel warning" style="display: block;">
-*				<div class="bar close">
-*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> <span class="text">close</span></a>
-*				</div>
-*				<div class="content">
-*					<div class="row">
-*						<div class="column small-12">
-*							<h2>H2 in Panel</h2>
-*			              <p>All basic html content can be placed in the panel</p>
-*						</div>
-*					</div>
-*				</div>
-*					<div class="bar jumpToTop">
-*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> <span class="text">top</span></a>
-*				</div>
-*			</div>
-*		</div>
-*		<div class="column small-12 medium-6">
-*			<div class="collapsable-panel error inset" style="display: block;">
-*				<div class="bar close">
-*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> <span class="text">close</span></a>
-*				</div>
-*				<div class="content">
-*					<div class="row">
-*						<div class="column small-12">
-*							<h2>H2 in Inset Panel</h2>
-*			              <p>All basic html content can be placed in the panel</p>
-*						</div>
-*					</div>
-*				</div>
-*					<div class="bar jumpToTop">
-*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> <span class="text">top</span></a>
-*				</div>
-*			</div>
-*		</div>
-*	</div>
-*/
-.collapsable-panel.error {
-  background-color: transparent;
-  border: 0 none transparent; }
-  .collapsable-panel.error.inset {
-    background-color: #fbe7e9; }
-    .collapsable-panel.error.inset .bar.close .action-btn {
-      color: #fff; }
-.collapsable-panel.warning {
-  background-color: transparent;
-  border: 0 none transparent; }
-  .collapsable-panel.warning.inset {
-    background-color: #fdf3e7; }
-    .collapsable-panel.warning.inset .bar.close .action-btn {
-      color: #fff; }
-.collapsable-panel.validated {
-  background-color: transparent;
-  border: 0 none transparent; }
-  .collapsable-panel.validated.inset {
-    background-color: #e3fcee; }
-    .collapsable-panel.validated.inset .bar.close .action-btn {
-      color: #fff; }
-.collapsable-panel.info {
-  background-color: transparent;
-  border: 0 none transparent; }
-  .collapsable-panel.info.inset {
-    background-color: #f9f9fc; }
-    .collapsable-panel.info.inset .bar.close .action-btn {
-      color: #333333; }
-.collapsable-panel.highlighted {
-  background-color: transparent;
-  border: 0 none transparent; }
-  .collapsable-panel.highlighted.inset {
-    background-color: #eceaf6; }
-    .collapsable-panel.highlighted.inset .bar.close .action-btn {
-      color: #fff; }
-.collapsable-panel.completed {
-  background-color: transparent;
-  border: 0 none transparent; }
-  .collapsable-panel.completed.inset {
-    background-color: #e3fcee; }
-    .collapsable-panel.completed.inset .bar.close .action-btn {
-      color: #fff; }
-.collapsable-panel.disabled {
-  background-color: transparent;
-  border: 0 none transparent; }
-  .collapsable-panel.disabled.inset {
-    background-color: #f7f7f7; }
-    .collapsable-panel.disabled.inset .bar.close .action-btn {
-      color: #333333; }
-.collapsable-panel.attention {
-  background-color: transparent;
-  border: 0 none transparent; }
-  .collapsable-panel.attention.inset {
-    background-color: #fdf3e7; }
-    .collapsable-panel.attention.inset .bar.close .action-btn {
-      color: #fff; }
 
 /**
 * Accordion (requires Collapsable Panel):
@@ -5198,89 +4127,10 @@ div.reveal-modal, dialog {
 *   <a class="link" href="http://foundation.zurb.com/docs/components/switch.html">Foundation Documentation</a>
 */
 .tooltip {
-  background-color: #413a61; }
+  background-color: #413a62; }
 
 .tooltip.tip-top > .nub {
-  border-color: #413a61 transparent transparent; }
-
-/**
-* Twitter Typeahead:
-* `.twitter-typeahead` - Type ahead javascript
-* 
-*   @example
-* <span class="twitter-typeahead" style="position: relative; display: inline-block; direction: ltr;">
-*  <input class="typeahead tt-hint" type="text" readonly="" autocomplete="off" spellcheck="false" tabindex="-1" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);"><input id="StateTypeAhead" class="typeahead tt-input" type="text" placeholder="States of USA" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: 'Open Sans', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;">ala</pre>
-*  <span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: block; right: auto;">
-*    <div class="tt-dataset-states">
-*      <span class="tt-suggestions" style="display: block;">
-*        <div class="tt-suggestion"><p style="white-space: normal;"><strong class="tt-highlight">Al</strong>abama</p></div>
-*        <div class="tt-suggestion tt-cursor"><p style="white-space: normal;"><strong class="tt-highlight">Al</strong>aska</p></div>
-*        <div class="tt-suggestion"><p style="white-space: normal;">C<strong class="tt-highlight">al</strong>ifornia</p></div>
-*      </span>
-*      </div>
-*    </span>
-*  </span><br/><br/><br/><br/><br/><a href="https://twitter.github.io/">Documentation</a>
-*
-**/
-.twitter-typeahead {
-  width: 100%; }
-
-.typeahead,
-.tt-query,
-.tt-hint {
-  height: 30px;
-  padding: .25rem .5rem;
-  font-size: 1rem;
-  line-height: 1;
-  border: 2px solid #b3b3b3;
-  outline: none; }
-
-.typeahead {
-  background-color: #fff; }
-
-.typeahead:focus {
-  border: 2px solid #198dae; }
-
-.tt-query {
-  -webkit-box-shadow: inset 0 1px 1px rgba(102, 102, 102, 0.075);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
-
-.tt-hint {
-  color: #999; }
-
-.tt-dropdown-menu {
-  width: inherit;
-  margin-top: .25rem;
-  padding: .25rem .25rem;
-  background-color: #fff;
-  border: 1px solid #b3b3b3;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
-
-.tt-suggestion {
-  padding: 3px 20px;
-  font-size: 1.5rem;
-  line-height: 1.75rem;
-  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-  font-weight: 400; }
-  .tt-suggestion strong {
-    color: #4F4190;
-    font-size: 1.10em;
-    margin: 0 2px 0 1px;
-    font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-    font-weight: 700; }
-  .tt-suggestion.tt-cursor {
-    color: #e8f3f6;
-    background-color: #198dae; }
-    .tt-suggestion.tt-cursor strong {
-      color: #fff; }
-  .tt-suggestion p {
-    margin: 0; }
+  border-color: #413a62 transparent transparent; }
 
 .page-wrapper {
   max-width: 1200px;
@@ -5859,7 +4709,7 @@ h1 blockquote, h2 blockquote, h3 blockquote, h4 blockquote, h5 blockquote, h6 bl
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: .01em;
   border: 0 none transparent; }
 h1 blockquote {
@@ -6107,103 +4957,103 @@ h6 blockquote {
 /*
 STATE TRUMPING CODE
 */
-.error .input-holder input, .error .input-holder textarea, .error .input-holder select, .error .input-holder .postfix, .error .input-holder .prefix, .error.question .button-group, .error .bar.close, .error.inset .bar.close, h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
+.error .input-holder input, .error .input-holder textarea, .error .input-holder select, .error .input-holder .postfix, .error .input-holder .prefix, .error.question .button-group, h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
   border-color: #c32231; }
 
-.nav-list.nav-checklist li.error i, .nav-checklist.panel-selector li.error i, .answer.error .required-holder, .question.error .required-holder, .error .label-holder label, .error .input-holder .postfix, .error .input-holder .prefix, .error .input-holder .value, .error .bar.close .action-btn, h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
+.answer.error .required-holder, .question.error .required-holder, .error .label-holder label, .error .input-holder .postfix, .error .input-holder .prefix, .error .input-holder .value, h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
   color: #c32231; }
 
-.error .message-holder > .error, .hint .error, .error.inset .bar.close .action-btn {
+.error .message-holder > .error, .hint .error {
   background-color: #c32231; }
 
-.error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .nav-list.nav-checklist li.error .fa-holder-dynamic:before, .nav-checklist.panel-selector li.error .fa-holder-dynamic:before {
+.error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before {
   content: ""; }
 
-.warning .input-holder input, .warning .input-holder textarea, .warning .input-holder select, .warning .input-holder .postfix, .warning .input-holder .prefix, .warning.question .button-group, .warning .bar.close, .warning.inset .bar.close, h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
+.warning .input-holder input, .warning .input-holder textarea, .warning .input-holder select, .warning .input-holder .postfix, .warning .input-holder .prefix, .warning.question .button-group, h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
   border-color: #E08514; }
 
-.nav-list.nav-checklist li.warning i, .nav-checklist.panel-selector li.warning i, .answer.warning .required-holder, .question.warning .required-holder, .warning .label-holder label, .warning .input-holder .postfix, .warning .input-holder .prefix, .warning .input-holder .value, .warning .bar.close .action-btn, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning {
+.answer.warning .required-holder, .question.warning .required-holder, .warning .label-holder label, .warning .input-holder .postfix, .warning .input-holder .prefix, .warning .input-holder .value, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning {
   color: #E08514; }
 
-.warning .message-holder > .warning, .hint .warning, .warning.inset .bar.close .action-btn {
+.warning .message-holder > .warning, .hint .warning {
   background-color: #E08514; }
 
-.warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .nav-list.nav-checklist li.warning .fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning .fa-holder-dynamic:before {
+.warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before {
   content: ""; }
 
-.validated .input-holder input, .validated .input-holder textarea, .validated .input-holder select, .validated .input-holder .postfix, .validated .input-holder .prefix, .validated.question .button-group, .validated .bar.close, .validated.inset .bar.close, h1.with-underline.validated, h2.with-underline.validated, h3.with-underline.validated, h4.with-underline.validated, h5.with-underline.validated, h6.with-underline.validated {
+.validated .input-holder input, .validated .input-holder textarea, .validated .input-holder select, .validated .input-holder .postfix, .validated .input-holder .prefix, .validated.question .button-group, h1.with-underline.validated, h2.with-underline.validated, h3.with-underline.validated, h4.with-underline.validated, h5.with-underline.validated, h6.with-underline.validated {
   border-color: #14B057; }
 
-.nav-list.nav-checklist li.validated i, .nav-checklist.panel-selector li.validated i, .answer.validated .required-holder, .question.validated .required-holder, .validated .label-holder label, .validated .input-holder .postfix, .validated .input-holder .prefix, .validated .input-holder .value, .validated .bar.close .action-btn, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated {
+.answer.validated .required-holder, .question.validated .required-holder, .validated .label-holder label, .validated .input-holder .postfix, .validated .input-holder .prefix, .validated .input-holder .value, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated {
   color: #14B057; }
 
-.validated .message-holder > .validated, .hint .validated, .validated.inset .bar.close .action-btn {
+.validated .message-holder > .validated, .hint .validated {
   background-color: #14B057; }
 
-.validated .fa-holder-dynamic:before, .validated.fa:before, .validated > .fa-holder:before, .nav-list.nav-checklist li.validated .fa-holder-dynamic:before, .nav-checklist.panel-selector li.validated .fa-holder-dynamic:before {
+.validated .fa-holder-dynamic:before, .validated.fa:before, .validated > .fa-holder:before {
   content: ""; }
 
-.info .input-holder input, .info .input-holder textarea, .info .input-holder select, .info .input-holder .postfix, .info .input-holder .prefix, .info.question .button-group, .info .bar.close, .info.inset .bar.close, h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
+.info .input-holder input, .info .input-holder textarea, .info .input-holder select, .info .input-holder .postfix, .info .input-holder .prefix, .info.question .button-group, h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
   border-color: #c7c1e3; }
 
-.nav-list.nav-checklist li.info i, .nav-checklist.panel-selector li.info i, .answer.info .required-holder, .question.info .required-holder, .info .label-holder label, .info .input-holder .postfix, .info .input-holder .prefix, .info .input-holder .value, .info .bar.close .action-btn, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
+.answer.info .required-holder, .question.info .required-holder, .info .label-holder label, .info .input-holder .postfix, .info .input-holder .prefix, .info .input-holder .value, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
   color: #c7c1e3; }
 
-.info .message-holder > .info, .hint .info, .info.inset .bar.close .action-btn {
+.info .message-holder > .info, .hint .info {
   background-color: #c7c1e3; }
 
-.info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder-dynamic:before, .nav-checklist.panel-selector li.info .fa-holder-dynamic:before {
+.info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before {
   content: ""; }
 
-.highlighted .input-holder input, .highlighted .input-holder textarea, .highlighted .input-holder select, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted.question .button-group, .highlighted .bar.close, .highlighted.inset .bar.close, h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
+.highlighted .input-holder input, .highlighted .input-holder textarea, .highlighted .input-holder select, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted.question .button-group, h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
   border-color: #4F4190; }
 
-.nav-list.nav-checklist li.highlighted i, .nav-checklist.panel-selector li.highlighted i, .answer.highlighted .required-holder, .question.highlighted .required-holder, .highlighted .label-holder label, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted .input-holder .value, .highlighted .bar.close .action-btn, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
+.answer.highlighted .required-holder, .question.highlighted .required-holder, .highlighted .label-holder label, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted .input-holder .value, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
   color: #4F4190; }
 
-.highlighted .message-holder > .highlighted, .hint .highlighted, .highlighted.inset .bar.close .action-btn {
+.highlighted .message-holder > .highlighted, .hint .highlighted {
   background-color: #4F4190; }
 
-.highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before {
+.highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before {
   content: ""; }
 
-.completed .input-holder input, .completed .input-holder textarea, .completed .input-holder select, .completed .input-holder .postfix, .completed .input-holder .prefix, .completed.question .button-group, .completed .bar.close, .completed.inset .bar.close, h1.with-underline.completed, h2.with-underline.completed, h3.with-underline.completed, h4.with-underline.completed, h5.with-underline.completed, h6.with-underline.completed {
+.completed .input-holder input, .completed .input-holder textarea, .completed .input-holder select, .completed .input-holder .postfix, .completed .input-holder .prefix, .completed.question .button-group, h1.with-underline.completed, h2.with-underline.completed, h3.with-underline.completed, h4.with-underline.completed, h5.with-underline.completed, h6.with-underline.completed {
   border-color: #14B057; }
 
-.nav-list.nav-checklist li.completed i, .nav-checklist.panel-selector li.completed i, .answer.completed .required-holder, .question.completed .required-holder, .completed .label-holder label, .completed .input-holder .postfix, .completed .input-holder .prefix, .completed .input-holder .value, .completed .bar.close .action-btn, h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed {
+.answer.completed .required-holder, .question.completed .required-holder, .completed .label-holder label, .completed .input-holder .postfix, .completed .input-holder .prefix, .completed .input-holder .value, h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed {
   color: #14B057; }
 
-.completed .message-holder > .completed, .hint .completed, .completed.inset .bar.close .action-btn {
+.completed .message-holder > .completed, .hint .completed {
   background-color: #14B057; }
 
-.completed .fa-holder-dynamic:before, .completed.fa:before, .completed > .fa-holder:before, .nav-list.nav-checklist li.completed .fa-holder-dynamic:before, .nav-checklist.panel-selector li.completed .fa-holder-dynamic:before {
+.completed .fa-holder-dynamic:before, .completed.fa:before, .completed > .fa-holder:before {
   content: ""; }
 
-.disabled .input-holder input, .disabled .input-holder textarea, .disabled .input-holder select, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled.question .button-group, .disabled .bar.close, .disabled.inset .bar.close, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
+.disabled .input-holder input, .disabled .input-holder textarea, .disabled .input-holder select, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled.question .button-group, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
   border-color: #b3b3b3; }
 
-.nav-list.nav-checklist li.disabled i, .nav-checklist.panel-selector li.disabled i, .answer.disabled .required-holder, .question.disabled .required-holder, .disabled .label-holder label, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .input-holder .value, .disabled .bar.close .action-btn, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
+.answer.disabled .required-holder, .question.disabled .required-holder, .disabled .label-holder label, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .input-holder .value, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
   color: #b3b3b3; }
 
-.disabled .message-holder > .disabled, .hint .disabled, .disabled.inset .bar.close .action-btn {
+.disabled .message-holder > .disabled, .hint .disabled {
   background-color: #b3b3b3; }
 
-.disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before {
+.disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before {
   content: ""; }
 
-.attention .input-holder input, .attention .input-holder textarea, .attention .input-holder select, .attention .input-holder .postfix, .attention .input-holder .prefix, .attention.question .button-group, .attention .bar.close, .attention.inset .bar.close, h1.with-underline.attention, h2.with-underline.attention, h3.with-underline.attention, h4.with-underline.attention, h5.with-underline.attention, h6.with-underline.attention {
+.attention .input-holder input, .attention .input-holder textarea, .attention .input-holder select, .attention .input-holder .postfix, .attention .input-holder .prefix, .attention.question .button-group, h1.with-underline.attention, h2.with-underline.attention, h3.with-underline.attention, h4.with-underline.attention, h5.with-underline.attention, h6.with-underline.attention {
   border-color: #E08514; }
 
-.nav-list.nav-checklist li.attention i, .nav-checklist.panel-selector li.attention i, .answer.attention .required-holder, .question.attention .required-holder, .attention .label-holder label, .attention .input-holder .postfix, .attention .input-holder .prefix, .attention .input-holder .value, .attention .bar.close .action-btn, h1.attention, h2.attention, h3.attention, h4.attention, h5.attention, h6.attention, p.attention, a.attention, li.attention, blockquote.attention {
+.answer.attention .required-holder, .question.attention .required-holder, .attention .label-holder label, .attention .input-holder .postfix, .attention .input-holder .prefix, .attention .input-holder .value, h1.attention, h2.attention, h3.attention, h4.attention, h5.attention, h6.attention, p.attention, a.attention, li.attention, blockquote.attention {
   color: #E08514; }
 
-.attention .message-holder > .attention, .hint .attention, .attention.inset .bar.close .action-btn {
+.attention .message-holder > .attention, .hint .attention {
   background-color: #E08514; }
 
-.attention .fa-holder-dynamic:before, .attention.fa:before, .attention > .fa-holder:before, .nav-list.nav-checklist li.attention .fa-holder-dynamic:before, .nav-checklist.panel-selector li.attention .fa-holder-dynamic:before {
+.attention .fa-holder-dynamic:before, .attention.fa:before, .attention > .fa-holder:before {
   content: ""; }
 
-.error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .nav-list.nav-checklist li.error .fa-holder-dynamic:before, .nav-checklist.panel-selector li.error .fa-holder-dynamic:before, .warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .nav-list.nav-checklist li.warning .fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning .fa-holder-dynamic:before, .validated .fa-holder-dynamic:before, .validated.fa:before, .validated > .fa-holder:before, .nav-list.nav-checklist li.validated .fa-holder-dynamic:before, .nav-checklist.panel-selector li.validated .fa-holder-dynamic:before, .info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder-dynamic:before, .nav-checklist.panel-selector li.info .fa-holder-dynamic:before, .highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before, .completed .fa-holder-dynamic:before, .completed.fa:before, .completed > .fa-holder:before, .nav-list.nav-checklist li.completed .fa-holder-dynamic:before, .nav-checklist.panel-selector li.completed .fa-holder-dynamic:before, .disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before, .attention .fa-holder-dynamic:before, .attention.fa:before, .attention > .fa-holder:before, .nav-list.nav-checklist li.attention .fa-holder-dynamic:before, .nav-checklist.panel-selector li.attention .fa-holder-dynamic:before {
+.error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .validated .fa-holder-dynamic:before, .validated.fa:before, .validated > .fa-holder:before, .info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .completed .fa-holder-dynamic:before, .completed.fa:before, .completed > .fa-holder:before, .disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .attention .fa-holder-dynamic:before, .attention.fa:before, .attention > .fa-holder:before {
   font-family: FontAwesome; }
 
 .dark-color-text, .message-holder > .info, .message-holder > .disabled, .hint .info, .hint .disabled {
