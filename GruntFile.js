@@ -111,13 +111,29 @@ module.exports = function(grunt){
 				,{
 					expand:true,
 					cwd:'assets/css',
-					src:'**',
+					src:'index.*',
 					dest:'styleguide/assets/css',
 				},{
 					expand:true,
 					cwd:'assets/img',
 					src:'**',
 					dest:'styleguide/assets/img',
+				},{
+					expand:true,
+					cwd:'assets/js',
+					src:'**',
+					dest:'converted-html/assets/js',
+				}
+				,{
+					expand:true,
+					cwd:'assets/css',
+					src:['index.*','foundaiton.*','font-awesome.*','jquery-ui','styledown.*'],
+					dest:'converted-html/assets/css',
+				},{
+					expand:true,
+					cwd:'assets/img',
+					src:'**',
+					dest:'converted-html/assets/img',
 				}
 				]
 			}

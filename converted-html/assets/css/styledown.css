@@ -103,7 +103,7 @@ code.sg:first-child {
  */
 
 @media (min-width: 768px) {
-/*  .sg-text {
+  .sg-text {
     float: left;
     width: 26%;
   }
@@ -112,7 +112,7 @@ code.sg:first-child {
   .sg-text + .sg-code {
     float: right;
     width: 70%;
-  }*/
+  }
 }
 
 .sg-text > :first-child {
@@ -198,6 +198,8 @@ code.sg:first-child {
   padding: 0;
   outline: 0;
   border: 0;
+  background: transparent;
+
   position: relative;
   top: -10px;
   left: -10px;
@@ -211,15 +213,18 @@ code.sg:first-child {
 }
 
 .sg-expando:before {
-  content: 'show code';
-  display: block;
+  content: '•••';
+  display: inline-block;
+
   height: 16px;
-  width: 100px;
+  width: 36px;
   line-height: 16px;
   text-align: center;
+
   font-size: 10px;
+  background: #fafafa;
   border-radius: 3px;
-  color: #333;
+  color: #888;
 
 }
 
@@ -235,7 +240,7 @@ code.sg:first-child {
 }
 
 .sg-expando-contract:before {
-  content: 'hide code';
+  content: '\2715';
 }
 
 /*

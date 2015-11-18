@@ -2,10 +2,10 @@ $(document).foundation();
 
 
 $(function() {
-  // $( "#accordion" ).accordion();
-  // $( "#accordion2" ).accordion();
-  // $("#chosen").chosen({width: "100%"});
-  //  $("#chosenSingle").chosen({width: "100%"});
+  $( "#accordion" ).accordion();
+  $( "#accordion2" ).accordion();
+  $("#chosen").chosen({width: "100%"});
+   $("#chosenSingle").chosen({width: "100%"});
 
 // to render html in an auto complete you must extend it. 
 // https://api.jqueryui.com/autocomplete/#method-_renderItem
@@ -39,13 +39,12 @@ $( "#tags" ).autocomplete({
              $('#tags').val(ui.item.id);
              return false;
          }
-})
-  // .data("ui-autocomplete")._renderItem = function (ul, item) {
-  //          return $("<li></li>")
-  //              .data("item.autocomplete", item)
-  //              .append("<a>" + item.label + "</a>")
-  //              .appendTo(ul);
-  //      };
+}).data("ui-autocomplete")._renderItem = function (ul, item) {
+         return $("<li></li>")
+             .data("item.autocomplete", item)
+             .append("<a>" + item.label + "</a>")
+             .appendTo(ul);
+     };
 });
   $(function() {
     $( "#slider" ).slider({
@@ -215,8 +214,8 @@ $( "#tags" ).autocomplete({
 
   var listchange = function(data, event){
     var hash = location.hash;
-    $('#sidebar li').removeClass('selected');
-    $('#sidebar li').each(function(){
+    $('#followUpList li,#guidelineList li, #compareTabs li,#evalutorTabs li').removeClass('selected');
+    $('#followUpList li,#guidelineList li, #compareTabs li,#evalutorTabs li').each(function(){
       var that = $(this);
       that[ $('a', this).attr( 'href' ) === hash ? 'addClass' : 'removeClass' ]( 'selected' );
       }
