@@ -1,6 +1,6 @@
 
 %shadedbackground {
-    background-color: grey(5);
+    background-image:url('../img/billie-holiday-lite.png');
 }
 
 %dropshoadowedbox {
@@ -13,6 +13,10 @@
 
 .page.with-group-sections {
     @extend %shadedbackground;
+    &.colored{
+        background-image:url('../img/billie-holiday-speck.png');
+        background-color: color(rebrand-color($primary-color, 1), 50);
+    }
 
     .page-wrapper {
         padding: 1rem 0 !important;
@@ -51,13 +55,13 @@
 
     .nav.tabs {
         padding: 2px 10px 0;
+        background-image: url('../img/construction-paper.png');
         background-color: rebrand-color($primary-color, 1);
 
         li {
             border-radius: 8px;
             display: inline-block;
             margin: .4rem 1px .4rem;
-            background-color: #CCC;
             background-color: color(rebrand-color($primary-color, 1), 20);
         }
 
@@ -77,6 +81,12 @@
 * `page-wrapper group-section-holder` - by default pages are white but when the need arises to have grouped section 'cards' are introduced and the background area becomes a layer of soft off white construction paper.
 * 
 *   @example
+*   <div class="page with-group-sections colored">
+*    <div class="page-wrapper">
+*    <section class="section group-section">
+*    <h1>Hello</h1> <p>This is content  that is showing up in a section group</section>
+*    </div>
+*    </div>
 *   <div class="page with-group-sections">
 *    <div class="page-wrapper">
 *    <section class="section group-section">
