@@ -33,18 +33,7 @@ var availableTags = [
   "<span class='headline'>Scala</span><span class='description'>code language</span><span>normal text</span>",
   "<span class='headline'>Scheme</span><span class='description'>code language</span>"
 ];
-$( "#tags" ).autocomplete({
-  source: availableTags,
-  select: function (event, ui) {
-             $('#tags').val(ui.item.id);
-             return false;
-         }
-}).data("ui-autocomplete")._renderItem = function (ul, item) {
-         return $("<li></li>")
-             .data("item.autocomplete", item)
-             .append("<a>" + item.label + "</a>")
-             .appendTo(ul);
-     };
+
 });
   $(function() {
     $( "#slider" ).slider({

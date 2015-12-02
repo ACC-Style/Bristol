@@ -171,7 +171,7 @@
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li class="divider"></li>
-*							<li><a href="#">See all →</a></li>
+*							<li><a href="#">See all ΓåÆ</a></li>
 *						</ul>
 *						</li>
 *						<li class="divider"></li>
@@ -183,7 +183,7 @@
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li class="divider"></li>
-*								<li><a href="#">See all →</a></li>
+*								<li><a href="#">See all ΓåÆ</a></li>
 *						</ul>
 *					</li>
 *				</ul>
@@ -724,7 +724,7 @@ strong, .strong {
   color: #25b6e0; }
 
 em, .emphasis {
-  color: #0c4657;
+  color: #0d4757;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: italic;
@@ -733,7 +733,7 @@ em, .emphasis {
 .subtle {
   font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
-  color: #66a0b0; }
+  color: #66a0b1; }
 
 .block-margins {
   margin: 0 em(21px) 0; }
@@ -1480,9 +1480,7 @@ button:disabled.secondary, .input-space
       border-color: #999999;
       vertical-align: bottom; }
       .with-group-sections .tabs.overlap li.selected {
-        background-color: #f2f2f2; }
-      .with-group-sections .group-section .tabs.overlap li.selected {
-        background-color: #fff; }
+        background: #fff url("../img/billie-holiday-lite.png"); }
       .tabs.overlap li.selected a {
         color: #333; }
     .tabs.overlap li.secondary {
@@ -1713,21 +1711,48 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 *	</nav>
 */
 /**
-* Section Nav (forward & back):
-* `.section-nav with .forward or .back` - wizard nav like section nav. 
-*  alter the position of the circle button by adding  `.forward` or `.back`.
+* Circle Section Nav (forward & back):
+* `.section-nav with .forward or .back` - A wizard-like page nav. Alter the position of the circle button by adding  `.forward` or `.back` to the `.section-nav` container.
 * 
 *   @example
 *	<div class="page with-group-sections"><div class="section-nav back">
-*		<a onclick="goBack()">
+*		<a>
 *			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
 *			<div class="text"> Back</div>
 *		</a>
-*	</div><div class="page-wrapper">
-*	<div class="row">hello I am some content in a row </div>
-*	<div class="row group-section">hello I am some content in a row with class group-section</div></div>
+*	</div>
+*	<div class="page-wrapper">
+*	<section class="group-section">
+*		<h1 class="with-underline">Page Title </h1>
+*		<p> hello I am some content on this page</p>
+*	</div>
+*	</section>
 *	<div class="section-nav forward">
-*		<a onclick="goBack()">
+*		<a>
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Forward</div>
+*		</a>
+*	</div></div>
+*/
+/**
+* Circle Section Nav (Disabled):
+* `.section-nav with .disabled` - Adding `.disabled` to the `.section-nav` container with style the circle nav accordingly.
+* 
+*   @example
+*	<div class="page"><div class="section-nav back">
+*		<a>
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Back</div>
+*		</a>
+*	</div>
+*	<div class="page-wrapper">
+*	<section class="group-section">
+*		<h1 class="with-underline">Page Title (Disabled)</h1>
+*		<p> Somethig on this page has disabled forward navigation</p>
+*	</div>
+*	</section>
+*	<div class="section-nav forward disabled">
+*		<a>
 *			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
 *			<div class="text"> Forward</div>
 *		</a>
@@ -1803,7 +1828,8 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
       -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
       -moz-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
       box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
-      background-color: #bfbfbf; }
+      background-color: #999999;
+      background-image: url("../img/empty_diamond.png"); }
 
 .inline-group {
   list-style: none;
@@ -2981,7 +3007,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   background-color: #e4f6fb; }
 
 .stripped tbody tr:nth-child(even) td:nth-child(odd) {
-  background-color: #dee9ed; }
+  background-color: #deeaed; }
 
 .stripped tbody tr + tr td, .banded tbody tr + tr td {
   border-top: 0px solid; }
@@ -3134,7 +3160,7 @@ th.sortable {
     vertical-align: top;
     padding-top: 0; }
     th.sortable select:hover {
-      background-color: #4c4c4c; }
+      background-color: #4d4d4d; }
   th.sortable .sort {
     position: absolute;
     top: 0;
@@ -3167,7 +3193,7 @@ th.sortable {
       top: auto;
       bottom: 0.5rem; }
   th.sortable.selected .sort {
-    background-color: #4c4c4c; }
+    background-color: #4d4d4d; }
   th.sortable.selected .sorttoggle .fa-sort {
     color: #E08514; }
   th.sortable.selected.asc .sorttoggle .fa-sort:before {
@@ -3224,20 +3250,20 @@ tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.c
   border-bottom: 1px solid; }
 
 td.error, .table tbody tr + tr td.error, tr.error td, .stripped tr.error:nth-child(even) td:nth-child(odd) {
-  background-color: #f4d9db;
+  background-color: #f5d9dc;
   border-color: #f2b7bd; }
 
 tr:nth-child(even) td.error {
-  background-color: #f1ced1; }
+  background-color: #f2ced2; }
 
 tr:nth-child(even).error td {
-  background-color: #f1ced1; }
+  background-color: #f2ced2; }
 
 .stripped tbody tr.error td:nth-child(odd) {
-  background-color: #f4d9db; }
+  background-color: #f5d9dc; }
 
 td.warning, .table tbody tr + tr td.warning, tr.warning td, .stripped tr.warning:nth-child(even) td:nth-child(odd) {
-  background-color: #f9ead7;
+  background-color: #faead7;
   border-color: #f8dbb6; }
 
 tr:nth-child(even) td.warning {
@@ -3247,30 +3273,30 @@ tr:nth-child(even).warning td {
   background-color: #f8e4cb; }
 
 .stripped tbody tr.warning td:nth-child(odd) {
-  background-color: #f9ead7; }
+  background-color: #faead7; }
 
 td.validated, .table tbody tr + tr td.validated, tr.validated td, .stripped tr.validated:nth-child(even) td:nth-child(odd) {
-  background-color: #d7f1e2;
+  background-color: #d7f2e2;
   border-color: #aaf5cb; }
 
 tr:nth-child(even) td.validated {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 tr:nth-child(even).validated td {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 .stripped tbody tr.validated td:nth-child(odd) {
-  background-color: #d7f1e2; }
+  background-color: #d7f2e2; }
 
 td.info, .table tbody tr + tr td.info, tr.info td, .stripped tr.info:nth-child(even) td:nth-child(odd) {
   background-color: #f3fbfd;
   border-color: #ebf8fc; }
 
 tr:nth-child(even) td.info {
-  background-color: #f0f9fc; }
+  background-color: #f0fafd; }
 
 tr:nth-child(even).info td {
-  background-color: #f0f9fc; }
+  background-color: #f0fafd; }
 
 .stripped tbody tr.info td:nth-child(odd) {
   background-color: #f3fbfd; }
@@ -3289,17 +3315,17 @@ tr:nth-child(even).highlighted td {
   background-color: #d9f1f8; }
 
 td.completed, .table tbody tr + tr td.completed, tr.completed td, .stripped tr.completed:nth-child(even) td:nth-child(odd) {
-  background-color: #d7f1e2;
+  background-color: #d7f2e2;
   border-color: #aaf5cb; }
 
 tr:nth-child(even) td.completed {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 tr:nth-child(even).completed td {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 .stripped tbody tr.completed td:nth-child(odd) {
-  background-color: #d7f1e2; }
+  background-color: #d7f2e2; }
 
 td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .stripped tr.disabled:nth-child(even) td:nth-child(odd) {
   background-color: #f2f2f2;
@@ -3315,7 +3341,7 @@ tr:nth-child(even).disabled td {
   background-color: #f2f2f2; }
 
 td.attention, .table tbody tr + tr td.attention, tr.attention td, .stripped tr.attention:nth-child(even) td:nth-child(odd) {
-  background-color: #f9ead7;
+  background-color: #faead7;
   border-color: #f8dbb6; }
 
 tr:nth-child(even) td.attention {
@@ -3325,7 +3351,7 @@ tr:nth-child(even).attention td {
   background-color: #f8e4cb; }
 
 .stripped tbody tr.attention td:nth-child(odd) {
-  background-color: #f9ead7; }
+  background-color: #faead7; }
 
 /**
 * Table States Cells:
@@ -5238,16 +5264,16 @@ nav.top-bar {
   font-weight: 400; }
 
 .top-bar-section li.hover > a:not(.button) {
-  background-color: #19354f;
-  background: #28343e;
+  background-color: #1a364f;
+  background: #29343e;
   color: #FFF; }
 
 .top-bar-section li:not(.has-form) a:not(.button) {
   background: #00386b; }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
-  background-color: #19354f;
-  background: #28343e; }
+  background-color: #1a364f;
+  background: #29343e; }
 
 .top-bar-section li.active:not(.has-form) a:not(.button) {
   color: #FFF;
@@ -5257,36 +5283,6 @@ nav.top-bar {
   background: #00386b;
   color: #FFF; }
 
-/**
-* Pagination:
-* `.pagination-holder` - used often with a result pagination or page of content pagination. !! requires 
-* 
-*   @example
-*	<div class="pagination-holder top"><ul class="pagination right">
-*		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*		<li class="current"><a href="">1</a></li>
-*		<li><a href="">2</a></li>
-*		<li><a href="">3</a></li>
-*		<li><a href="">4</a></li>
-*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*	</ul></div><br>
-*	<div class="pagination-holder"><ul class="pagination right">
-*		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*		<li class="current"><a href="">1</a></li>
-*		<li><a href="">2</a></li>
-*		<li><a href="">3</a></li>
-*		<li><a href="">4</a></li>
-*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*	</ul></div>
-*	<div class="pagination-holder"><ul class="pagination pagination--compact right">
-*		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*		<li class="current"><a href="">1</a></li>
-*		<li><a href="">2</a></li>
-*		<li><a href="">3</a></li>
-*		<li><a href="">4</a></li>
-*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*	</ul></div>
-*/
 .pagination-holder, .result-selector-holder {
   border-top: 2px solid #198dae;
   width: 100%;
@@ -5356,8 +5352,50 @@ ul.pagination li.disable a, ul.pagination li.disable a:hover {
   display: none; }
 
 /**
+* Pagination:
+* `.pagination-holder .pagination` - Pagination is often used when there is a table or page of results or repeated items. The Container defaultly styles the paginator to be at the bottom of the area of repeated content but render it at the top just add the class '.top' to render the pagination upside down. The paginator has a single modifier to condense the screen size by adding the class `.pagination--compact`.
+* 
+*   @example
+*	<div class="pagination-holder top"><ul class="pagination right">
+*		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
+*		<li class="current"><a href="">1</a></li>
+*		<li><a href="">2</a></li>
+*		<li><a href="">3</a></li>
+*		<li><a href="">4</a></li>
+*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
+*	</ul></div><br>
+*	<div class="pagination-holder"><ul class="pagination right">
+*		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
+*		<li class="current"><a href="">1</a></li>
+*		<li><a href="">2</a></li>
+*		<li><a href="">3</a></li>
+*		<li><a href="">4</a></li>
+*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
+*	</ul></div>
+*	<div class="pagination-holder"><ul class="pagination pagination--compact right">
+*		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
+*		<li class="current"><a href="">1</a></li>
+*		<li><a href="">2</a></li>
+*		<li><a href="">3</a></li>
+*		<li><a href="">4</a></li>
+*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
+*	</ul></div>
+*/
+.pagination.result-selector li.label, .pagination.result-selector li.value {
+  color: #5c5c5c;
+  font-weight: 700; }
+.pagination.result-selector li.label {
+  padding-left: .25em;
+  padding-right: .25em;
+  background-color: #e6e6e6; }
+  .top .pagination.result-selector li.label {
+    border-radius: 5px 0px 0px 0px; }
+  .bottom .pagination.result-selector li.label {
+    border-radius: 0px 0px 0px 5px; }
+
+/**
 * Pagination with Result Selector:
-* `.pagination-holder` - used often with a result pagination or page of content pagination. !! requires 
+* `.pagination-holder .pagination.result-selector` - used often with a paginator is a ruslt selector. This allows the user to limit the amount of returned items on a single page. Because the Result Selector is bult on the paginator design it can also be used at the top or bottom like a paginator.
 * 
 *   @example
 *	<div class="pagination-holder top">
@@ -5394,18 +5432,6 @@ ul.pagination li.disable a, ul.pagination li.disable a:hover {
 *	</ul></div>
 *
 */
-.pagination.result-selector li.label, .pagination.result-selector li.value {
-  color: #5c5c5c;
-  font-weight: 700; }
-.pagination.result-selector li.label {
-  padding-left: .25em;
-  padding-right: .25em;
-  background-color: #e6e6e6; }
-  .top .pagination.result-selector li.label {
-    border-radius: 5px 0px 0px 0px; }
-  .bottom .pagination.result-selector li.label {
-    border-radius: 0px 0px 0px 5px; }
-
 /**
 * Modals( Foundation Reveal):
 * `.reveal-modal` - Popup, modal, reveal - a design pattern to show and hide a part of content when you want the user to focus on the single task. 
@@ -5450,7 +5476,7 @@ div.reveal-modal, dialog {
   margin: 1.42857rem 0;
   -ms-touch-action: none;
   touch-action: none;
-  background: #f4f4f4; }
+  background: whitesmoke; }
   .range-slider.vertical-range {
     display: block;
     position: relative;
@@ -5473,7 +5499,7 @@ div.reveal-modal, dialog {
       height: auto;
       bottom: 0; }
   .range-slider.radius {
-    background: #f4f4f4;
+    background: whitesmoke;
     border-radius: 5px; }
     .range-slider.radius .range-slider-handle {
       background: #198dae;
@@ -5481,7 +5507,7 @@ div.reveal-modal, dialog {
       .range-slider.radius .range-slider-handle:hover {
         background: #167c99; }
   .range-slider.round {
-    background: #f4f4f4;
+    background: whitesmoke;
     border-radius: 1000px; }
     .range-slider.round .range-slider-handle {
       background: #198dae;
@@ -5489,7 +5515,7 @@ div.reveal-modal, dialog {
       .range-slider.round .range-slider-handle:hover {
         background: #167c99; }
   .range-slider.disabled, .range-slider[disabled] {
-    background: #f4f4f4;
+    background: whitesmoke;
     cursor: default;
     opacity: 0.7; }
     .range-slider.disabled .range-slider-handle, .range-slider[disabled] .range-slider-handle {
@@ -5681,10 +5707,10 @@ div.reveal-modal, dialog {
 *   <a class="link" href="http://foundation.zurb.com/docs/components/switch.html">Foundation Documentation</a>
 */
 .tooltip {
-  background-color: #19354f; }
+  background-color: #1a364f; }
 
 .tooltip.tip-top > .nub {
-  border-color: #19354f transparent transparent; }
+  border-color: #1a364f transparent transparent; }
 
 /**
 * Twitter Typeahead:
@@ -5758,7 +5784,7 @@ div.reveal-modal, dialog {
     font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
     font-weight: 700; }
   .tt-suggestion.tt-cursor {
-    color: #e8f3f6;
+    color: #e8f4f7;
     background-color: #198dae; }
     .tt-suggestion.tt-cursor strong {
       color: #fff; }
@@ -6257,7 +6283,7 @@ div.reveal-modal, dialog {
   -moz-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2); }
 
-.page.with-group-sections.colored {
+.page.with-group-sections.highlighted {
   background-image: url("../img/billie-holiday-speck.png");
   background-color: #77d2eb; }
 .page.with-group-sections .page-wrapper {
@@ -6280,8 +6306,11 @@ div.reveal-modal, dialog {
         padding: .5rem 1.5rem 1rem; } }
 
 .group-section-tab-holder {
-  margin: -.5rem -1rem 0; }
+  margin: -.75rem -.5rem 0; }
   @media only screen and (min-width: 767px) {
+    .group-section-tab-holder {
+      margin: -.5rem -.75rem 0; } }
+  @media only screen and (min-width: 1024px) {
     .group-section-tab-holder {
       margin: -.5rem -1.5rem 0; } }
   .group-section-tab-holder .nav.tabs {
@@ -6301,18 +6330,24 @@ div.reveal-modal, dialog {
       padding: .4rem;
       background-color: #fff; }
 
+.group-section-tab-holder.secondary .nav.tabs {
+  background-color: #b3b3b3; }
+  .group-section-tab-holder.secondary .nav.tabs li {
+    background-color: #f0f0f0; }
+    .group-section-tab-holder.secondary .nav.tabs li.selected {
+      background-color: #fff; }
+
 /**
 * Paper Card Grouping:
-* `page-wrapper group-section-holder` - by default pages are white but when the need arises to have grouped section 'cards' are introduced and the background area becomes a layer of soft off white construction paper.
+* `.page.with-group-sections .page-wrapper .group-section-holder` - by default pages are white but when the need arises to have grouped section 'cards' are introduced and the background area becomes a layer of soft off white construction paper. If the need arises to highlight a collection of cards add `.highlighted` to the `.page.with-group-sections` and the product color will bleed into the construction paper.
 * 
 *   @example
-*   <div class="page with-group-sections colored">
-*    <div class="page-wrapper">
-*    <section class="section group-section">
-*    <h1>Hello</h1> <p>This is content  that is showing up in a section group</section>
-*    </div>
-*    </div>
 *   <div class="page with-group-sections">
+*    <div class="page-wrapper">
+*    <section class="section group-section"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
+*    </div>
+*    </div>
+*   <div class="page with-group-sections highlighted">
 *    <div class="page-wrapper">
 *    <section class="section group-section">
 *    <h1>Hello</h1> <p>This is content  that is showing up in a section group</section>
@@ -6321,8 +6356,26 @@ div.reveal-modal, dialog {
 *
 **/
 /**
+* Tabs inside Grouping:
+* `page.with-group-sections > .overlap.tabs` - Tabs placed outside of the groups should use the overlap so they sink into the paper texture.
+* 
+*   @example
+*   <div class="page with-group-sections">
+*       <div class="page-wrapper">
+*   <ul class="nav tabs overlap">
+*       <li class="icon  "><a class="home"><i class="fa fa-holder"></i></a></li>
+*       <li class=""><a>Tab 2</li>
+*       <li class=" selected "><a >Tab 3</a></li>
+*       <li class=""><a >Tab 4</a></li>
+*   </ul>
+*    <section class="section group-section"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
+*        </div>
+*    </div>
+*
+**/
+/**
 * Tabs for Paper Cards:
-* `.group-section-tab-holder` - Special tabs holders are introduced to the cards so they can fill the full frame of the card.
+* `.group-section-tab-holder` - Special tabs holders are introduced to the cards so they can fill the full frame of the card.  The tab holder has a modification of adding the `secondary` class to convert it to using the secondary color if the need arises.
 * 
 *   @example
 *   <div class="page with-group-sections">
@@ -6338,7 +6391,18 @@ div.reveal-modal, dialog {
 *                    </ul>
 *                </div>
 *                <h1>Hello</h1> 
-*                  <p>This is content  that is showing up in a section group
+*                <p>This is content  that is showing up in a section group</p>
+*                <div class="group-section-tab-holder secondary">
+*                    <ul class="nav tabs">
+*                        <li class="">
+*                       <a>Tab 1</a>
+*                       </li>
+*                        <li class=" selected "> <a>Tab 2</a> </li>
+*                        <li class=""> <a>Tab 3</a> </li>
+*                    </ul>
+*                </div>
+*                <h2>I am Sub Tab Content</h2> 
+*                <p>This is content under a secondary tab in a card</p>
 *            </section>
 *        </div>
 *    </div>

@@ -1,33 +1,4 @@
-/**
-* Pagination:
-* `.pagination-holder` - used often with a result pagination or page of content pagination. !! requires 
-* 
-*   @example
-*	<div class="pagination-holder top"><ul class="pagination right">
-*		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*		<li class="current"><a href="">1</a></li>
-*		<li><a href="">2</a></li>
-*		<li><a href="">3</a></li>
-*		<li><a href="">4</a></li>
-*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*	</ul></div><br>
-*	<div class="pagination-holder"><ul class="pagination right">
-*		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*		<li class="current"><a href="">1</a></li>
-*		<li><a href="">2</a></li>
-*		<li><a href="">3</a></li>
-*		<li><a href="">4</a></li>
-*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*	</ul></div>
-*	<div class="pagination-holder"><ul class="pagination pagination--compact right">
-*		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*		<li class="current"><a href="">1</a></li>
-*		<li><a href="">2</a></li>
-*		<li><a href="">3</a></li>
-*		<li><a href="">4</a></li>
-*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*	</ul></div>
-*/
+
 $required-SCSS_pagination:true;
 $pagination-color:rebrand-color($primary-color,2);
 .pagination-holder{
@@ -96,4 +67,35 @@ ul.pagination li{
 	.pagination a > .text{display:none;}
 }
 .pagination--compact a > .text{display:none;}
+
+/**
+* Pagination:
+* `.pagination-holder .pagination` - Pagination is often used when there is a table or page of results or repeated items. The Container defaultly styles the paginator to be at the bottom of the area of repeated content but render it at the top just add the class '.top' to render the pagination upside down. The paginator has a single modifier to condense the screen size by adding the class `.pagination--compact`.
+* 
+*   @example
+*	<div class="pagination-holder top"><ul class="pagination right">
+*		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
+*		<li class="current"><a href="">1</a></li>
+*		<li><a href="">2</a></li>
+*		<li><a href="">3</a></li>
+*		<li><a href="">4</a></li>
+*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
+*	</ul></div><br>
+*	<div class="pagination-holder"><ul class="pagination right">
+*		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
+*		<li class="current"><a href="">1</a></li>
+*		<li><a href="">2</a></li>
+*		<li><a href="">3</a></li>
+*		<li><a href="">4</a></li>
+*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
+*	</ul></div>
+*	<div class="pagination-holder"><ul class="pagination pagination--compact right">
+*		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
+*		<li class="current"><a href="">1</a></li>
+*		<li><a href="">2</a></li>
+*		<li><a href="">3</a></li>
+*		<li><a href="">4</a></li>
+*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
+*	</ul></div>
+*/
 

@@ -30,10 +30,11 @@
     		<li><a href="#!/content/branding"><span class="text">Colors, Fonts &amp; Icons</span><i class="fa fa-holder-dynamic"></i></a></li>
     		<li><a href="#!/content/typography"><span class="text">Typography</span><i class="fa fa-holder-dynamic"></i></a></li>
     		<li><a href="#!/content/tables"><span class="text">Tables</span><i class="fa fa-holder-dynamic"></i></a></li>
-        <li><a href="#!/content/navigation"><span class="text">Buttons, Tabs &amp; Nav Lists</span><i class="fa fa-holder-dynamic"></i></a></li>
-        <li><a href="#!/content/qna"><span class="text">Forms - Questions &amp; Answers</span><i class="fa fa-holder-dynamic"></i></a></li>
+        <li><a href="#!/content/buttons"><span class="text">Inputs: Buttons &amp; Switches</span><i class="fa fa-holder-dynamic"></i></a></li>
+        <li><a href="#!/content/navigation"><span class="text">Navigation: Tabs &amp; Nav Lists</span><i class="fa fa-holder-dynamic"></i></a></li>
+        <li><a href="#!/content/qna"><span class="text">Forms: Questions &amp; Answers</span><i class="fa fa-holder-dynamic"></i></a></li>
         <li><a href="#!/content/layouts"><span class="text">Grids &amp; Layouts</span><i class="fa fa-holder-dynamic"></i></a></li>   
-        <li><a href="#!/content/paper"><span class="text">Paper Layouts &amp; Grouping</span><i class="fa fa-holder-dynamic"></i></a></li>     
+        <li><a href="#!/content/paper"><span class="text">Paper Layers &amp; Grouping</span><i class="fa fa-holder-dynamic"></i></a></li>     
     	</ul>
     </nav>
         </aside>
@@ -2104,8 +2105,8 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
       </div>
     </section>
 </div>
-              <div id="navigation"  data-bind="page: {id:'navigation'}">
-	<h1>Buttons, Tabs &amp; Nav Lists</h1>
+              <div id="buttons"  data-bind="page: {id:'buttons'}">
+	<h1>Inputs: Buttons &amp; Switches</h1>
 	<section class="sg-block sg-section-buttons">
     <div class="sg-text">
         <h3 id="buttons" class="sg">Buttons</h3>
@@ -2428,6 +2429,10 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
       </div>
     </section>
 
+</div>
+
+              <div id="navigation"  data-bind="page: {id:'navigation'}">
+	<h1>Navigation: Tabs &amp; Nav Lists</h1>
 	<h2>Tabs</h2>
 	<section class="sg-block sg-section-tabs-basic-">
       <div class="sg-text">
@@ -2607,6 +2612,147 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>Tab 6<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></pre>
+      </div>
+    </section>
+	    <section class="sg-block sg-section-tabs-inside-grouping">
+      <div class="sg-text">
+        <h3 id="tabs-inside-grouping" class="sg">Tabs Outside Grouping</h3>
+        <p class="sg">
+          <code class="sg">page.with-group-sections &gt; .overlap.tabs</code>- Tabs placed outside of the groups should use the overlap so they sink into the paper texture.</p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <div class="page with-group-sections">
+            <div class="page-wrapper">
+              <ul class="nav tabs overlap">
+                <li class="icon  ">
+                  <a class="home">
+                    <i class="fa fa-holder"></i>
+                  </a>
+                </li>
+                <li class="">
+                  <a>Tab 2</a>
+                </li>
+                <li class=" selected ">
+                  <a>Tab 3</a>
+                </li>
+                <li class="">
+                  <a>Tab 4</a>
+                </li>
+              </ul>
+              <section class="section group-section">
+                <h1>Hello</h1>
+                <p>This is content that is showing up in a section group</p>
+              </section>
+            </div>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page with-group-sections&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs overlap&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon  &quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;home&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 2<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot; selected &quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section group-section&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Hello<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is content that is showing up in a section group<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+      </div>
+    </section>
+
+    <section class="sg-block sg-section-tabs-for-paper-cards">
+      <div class="sg-text">
+        <h3 id="tabs-for-paper-cards" class="sg">Tabs for Paper Cards</h3>
+        <p class="sg">
+          <code class="sg">.group-section-tab-holder</code>- Special tabs holders are introduced to the cards so they can fill the full frame of the card. The tab holder has a modification of adding the
+          <code class="sg">secondary</code>class to convert it to using the secondary color if the need arises.</p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <div class="page with-group-sections">
+            <div class="page-wrapper">
+              <section class="section group-section">
+                <div class="group-section-tab-holder">
+                  <ul class="nav tabs">
+                    <li class="">
+                      <a>Tab 1</a>
+                    </li>
+                    <li class=" selected ">
+                      <a>Tab 2</a>
+                    </li>
+                    <li class="">
+                      <a>Tab 3</a>
+                    </li>
+                  </ul>
+                </div>
+                <h1>Hello</h1>
+                <p>This is content that is showing up in a section group</p>
+                <div class="group-section-tab-holder secondary">
+                  <ul class="nav tabs">
+                    <li class="">
+                      <a>Tab 1</a>
+                    </li>
+                    <li class=" selected ">
+                      <a>Tab 2</a>
+                    </li>
+                    <li class="">
+                      <a>Tab 3</a>
+                    </li>
+                  </ul>
+                </div>
+                <h2>I am Sub Tab Content</h2>
+                <p>This is content under a secondary tab in a card</p>
+              </section>
+            </div>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page with-group-sections&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section group-section&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;group-section-tab-holder&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot; selected &quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Hello<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is content that is showing up in a section group<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;group-section-tab-holder secondary&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot; selected &quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I am Sub Tab Content<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is content under a secondary tab in a card<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
       </div>
     </section>
 	<h2>Nav Lists</h2>
@@ -2921,6 +3067,491 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
 <span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span></pre>
       </div>
     </section>
+	<h2>Pagination</h2>
+	<section class="sg-block sg-section-pagination">
+    <div class="sg-text">
+        <h3 id="pagination" class="sg">Pagination</h3>
+        <p class="sg">
+        <code class="sg">.pagination-holder</code>- used often with a result pagination or page of content pagination. !! requires</p>
+    </div>
+    <div class="sg-example">
+        <div class="sg-canvas">
+            <div class="pagination-holder top">
+                <ul class="pagination right">
+                    <li class="arrow disable">
+                        <a href="">
+                        <i class="fa fa-caret-left "></i>
+                        <span class="text">prev</span>
+                        </a>
+                    </li>
+                    <li class="current">
+                        <a href="">1</a>
+                    </li>
+                    <li>
+                        <a href="">2</a>
+                    </li>
+                    <li>
+                        <a href="">3</a>
+                    </li>
+                    <li>
+                        <a href="">4</a>
+                    </li>
+                    <li class="arrow">
+                        <a href="">
+                        <span class="text">next</span>
+                        <i class="fa fa-caret-right "></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <div class="pagination-holder">
+                <ul class="pagination right">
+                    <li class="arrow disable">
+                        <a href="">
+                        <i class="fa fa-caret-left "></i>
+                        <span class="text">prev</span>
+                        </a>
+                    </li>
+                    <li class="current">
+                        <a href="">1</a>
+                    </li>
+                    <li>
+                        <a href="">2</a>
+                    </li>
+                    <li>
+                        <a href="">3</a>
+                    </li>
+                    <li>
+                        <a href="">4</a>
+                    </li>
+                    <li class="arrow">
+                        <a href="">
+                        <span class="text">next</span>
+                        <i class="fa fa-caret-right "></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="pagination-holder">
+                <ul class="pagination pagination--compact right">
+                    <li class="arrow disable">
+                        <a href="">
+                        <i class="fa fa-caret-left "></i>
+                        <span class="text">prev</span>
+                        </a>
+                    </li>
+                    <li class="current">
+                        <a href="">1</a>
+                    </li>
+                    <li>
+                        <a href="">2</a>
+                    </li>
+                    <li>
+                        <a href="">3</a>
+                    </li>
+                    <li>
+                        <a href="">4</a>
+                    </li>
+                    <li class="arrow">
+                        <a href="">
+                        <span class="text">next</span>
+                        <i class="fa fa-caret-right "></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination-holder top&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination right&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow disable&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-left &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>prev<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;current&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>next<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-right &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination-holder&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination right&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow disable&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-left &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>prev<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;current&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>next<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-right &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination-holder&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination pagination--compact right&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow disable&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-left &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>prev<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;current&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>next<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-right &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+    </div>
+</section>
+
+	   <section class="sg-block sg-section-pagination-with-result-selector">
+      <div class="sg-text">
+        <h3 id="pagination-with-result-selector" class="sg">Pagination with Result Selector</h3>
+        <p class="sg">
+          <code class="sg">.pagination-holder .pagination.result-selector</code>- used often with a paginator is a ruslt selector. This allows the user to limit the amount of returned items on a single page. Because the Result Selector is bult on the paginator design it can also be used at the top or bottom like a paginator.</p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <div class="pagination-holder top">
+            <ul class="pagination result-selector left">
+              <li class="label">Show</li>
+              <li class="current">
+                <a href="">10</a>
+              </li>
+              <li>
+                <a href="">20</a>
+              </li>
+              <li>
+                <a href="">50</a>
+              </li>
+              <li class="value">Results</li>
+            </ul>
+            <ul class="pagination right">
+              <li class="arrow unavailable">
+                <a href="">
+                  <i class="fa fa-caret-left "></i>
+                  <span class="text">prev</span>
+                </a>
+              </li>
+              <li class="current">
+                <a href="">1</a>
+              </li>
+              <li>
+                <a href="">2</a>
+              </li>
+              <li>
+                <a href="">3</a>
+              </li>
+              <li>
+                <a href="">4</a>
+              </li>
+              <li class="arrow">
+                <a href="">
+                  <span class="text">next</span>
+                  <i class="fa fa-caret-right "></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <br>
+          <div class="pagination-holder bottom">
+            <ul class="pagination result-selector left">
+              <li class="label">Show</li>
+              <li class="current">
+                <a href="">10</a>
+              </li>
+              <li>
+                <a href="">20</a>
+              </li>
+              <li>
+                <a href="">50</a>
+              </li>
+              <li class="value">Results</li>
+            </ul>
+            <ul class="pagination right">
+              <li class="arrow unavailable">
+                <a href="">
+                  <i class="fa fa-caret-left "></i>
+                  <span class="text">prev</span>
+                </a>
+              </li>
+              <li class="current">
+                <a href="">1</a>
+              </li>
+              <li>
+                <a href="">2</a>
+              </li>
+              <li>
+                <a href="">3</a>
+              </li>
+              <li>
+                <a href="">4</a>
+              </li>
+              <li class="arrow">
+                <a href="">
+                  <span class="text">next</span>
+                  <i class="fa fa-caret-right "></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination-holder top&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination result-selector left&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;label&quot;</span>&gt;</span>Show<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;current&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>10<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>20<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>50<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;value&quot;</span>&gt;</span>Results<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination right&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow unavailable&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-left &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>prev<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;current&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>next<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-right &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination-holder bottom&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination result-selector left&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;label&quot;</span>&gt;</span>Show<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;current&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>10<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>20<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>50<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;value&quot;</span>&gt;</span>Results<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination right&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow unavailable&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-left &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>prev<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;current&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>next<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-right &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+      </div>
+    </section>
+	<h2>Wizard Navs</h2>
+	<section class="sg-block sg-section-circle-section-nav-forward-back-">
+    <div class="sg-text">
+        <h3 id="circle-section-nav-forward-back-" class="sg">Circle Section Nav (forward &amp; back)</h3>
+        <p class="sg">
+        <code class="sg">.section-nav with .forward or .back</code>- A wizard-like page nav. Alter the position of the circle button by adding
+        <code class="sg">.forward</code>or
+        <code class="sg">.back</code>to the
+        <code class="sg">.section-nav</code>container.</p>
+    </div>
+    <div class="sg-example">
+        <div class="sg-canvas">
+            <div class="page with-group-sections">
+                <div class="section-nav back">
+                    <a>
+                    <div class="circle">
+                        <i class="fa fa-holder-dynamic"></i>
+                    </div>
+                    <div class="text">Back</div>
+                    </a>
+                </div>
+                <div class="page-wrapper">
+                    <section class="group-section">
+                        <h1 class="with-underline">Page Title</h1>
+                        <p>hello I am some content on this page</p>
+                    </section>
+                </div>
+                <div class="section-nav forward">
+                    <a>
+                    <div class="circle">
+                        <i class="fa fa-holder-dynamic"></i>
+                    </div>
+                    <div class="text">Forward</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+<pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page with-group-sections&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section-nav back&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;circle&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Back<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;group-section&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Page Title<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>hello I am some content on this page<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section-nav forward&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;circle&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Forward<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+    </div>
+</section>
+
+
+<section class="sg-block sg-section-circle-section-nav-disabled-">
+    <div class="sg-text">
+        <h3 id="circle-section-nav-disabled-" class="sg">Circle Section Nav (Disabled)</h3>
+        <p class="sg">
+        <code class="sg">.section-nav with .disabled</code>- Adding
+        <code class="sg">.disabled</code>to the
+        <code class="sg">.section-nav</code>container with style the circle nav accordingly.</p>
+    </div>
+    <div class="sg-example">
+        <div class="sg-canvas">
+            <div class="page">
+                <div class="section-nav back">
+                    <a>
+                    <div class="circle">
+                        <i class="fa fa-holder-dynamic"></i>
+                    </div>
+                    <div class="text">Back</div>
+                    </a>
+                </div>
+                <div class="page-wrapper">
+                    <section class="group-section">
+                        <h1 class="with-underline">Page Title (Disabled)</h1>
+                        <p>Somethig on this page has disabled forward navigation</p>
+                    </section>
+                </div>
+                <div class="section-nav forward disabled">
+                    <a>
+                    <div class="circle">
+                        <i class="fa fa-holder-dynamic"></i>
+                    </div>
+                    <div class="text">Forward</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+<pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section-nav back&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;circle&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Back<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;group-section&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Page Title (Disabled)<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Somethig on this page has disabled forward navigation<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section-nav forward disabled&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;circle&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Forward<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+    </div>
+</section>
 </div>
 
               <div id="qna"  data-bind="page: {id:'qna'}">
@@ -2930,8 +3561,60 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
 	The heart of this design is around the modular structure of how you implement inputs or <strong>"Questions"</strong> and how you display that information <strong>"Answers"</strong>. Question and Answers are containers that hold some or all of their children depending on the need. Both Questions and Answers share a common build structure. With the parent container which controls the width and its children which can be modified from the containters State.
 
 </p>
-<h2>Questions</h2>
-<p>	 Questions are constructed with a stacked collection of elements. The elements are `div.label-holder`, `div.input-holder`,`div.message-holder`, and `div.hint` </p>
+<h2>Questions - How they are built</h2>
+<p>	 Questions are constructed with a stacked collection of divs within the container <code>div.question</code>. The elements are <code>.label-holder, .input-holder,.message-holder, and .hint</code>.</p>
+
+<div class="row">
+	<h3>The Antomy</h3>
+	<div class="question required edge column large-6">
+	<span class="notation">.question.column.large-6</span>
+		<div class="label-holder outline">
+			<span class="notation">.label-holder</span>
+			<label class="outline" style="min-width:20em;">
+					<span class="notation">tag - label</span>
+					<span class="text outline">Label for Question <span class="notation">.text</span></span>
+					<span class="required-holder outline" style="min-width:9em;">
+						<span class="notation">.required-holder</span>
+					<i class="fa fa-holder-dynamic"></i>
+					</span>
+			</label>
+		</div>
+		<div class="input-holder outline">
+			<span class="notation">.input-holder </span>
+			<div class="input-space column small-6 outline">
+				<span class="notation">.input-space.column.small-6</span>
+				<input type="text">
+			</div>
+			<div class="input-space column small-6 outline">
+				<span class="notation">.input-space.column.small-6</span>
+				<select name="" id=""></select>
+			</div>
+		</div>
+		<div class="message-holder outline"><div class="notation">.message-holder</div></div>
+		<div class="hint outline"><span class="notation">.hint</span>this is helpful text to help answer the question right</div>
+	</div>
+	<div class="quiestion edge column large-4">
+		<span class="notation">.question.column.large-4</span>
+		<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=question&w=350&h=300" alt="">
+	</div>
+		<div class="quiestion edge column large-2">
+		<span class="notation">.question.column.large-2</span>
+				<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=question&w=175&h=300" alt="">
+	</div>
+</div>
+
+<style>
+	.edge,.outline{ border:thin #ccc solid; position: relative; padding:16px 4px 4px;}
+	.outline{ border:dashed thin red}
+	.outline .outline{ border:dotted thin blue; display:inline-block;}
+	.outline .outline .outline{ border:dotted thin green; display:inline-block;}
+	
+	.notation{font-size:10px; position: absolute; top: 0px;right: 4px;}
+	.outline .notation{ color:red;}
+	.outline .outline .notation{ color:blue;}
+.outline .outline .outline  .notation{ color:green;}
+
+</style>
 	<section class="sg-block sg-section-questions-required">
       <div class="sg-text">
         <h3 id="questions-required" class="sg">Questions -Required</h3>
@@ -3142,28 +3825,44 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
         <div class="panel">
             <span class="show-for-small-only">The screen is small and the container div has a class of 'small-12'</span>
             <span class="show-for-medium-only">The screen is medium and the container div has a class of 'medium-4'</span>
-            <span class="show-for-large-only">the screen is large and the container div has a class of 'large-3'</span>
+            <span class="show-for-large-up">the screen is large and the container div has a class of 'large-3'</span>
         </div>
     </div>
     <div class="column small-6 medium-4 large-3 visible-grid">
         <div class="panel">
             <span class="show-for-small-only">The screen is small and the container div has a class of 'small-6'</span>
             <span class="show-for-medium-only">The screen is medium and the container div has a class of 'medium-4'</span>
-            <span class="show-for-large-only">the screen is large and the container div has a class of 'large-3'</span>
+            <span class="show-for-large-up">the screen is large and the container div has a class of 'large-3'</span>
         </div>
     </div>
     <div class="column small-6 medium-4 large-3 visible-grid">
         <div class="panel">
             <span class="show-for-small-only">The screen is small and the container div has a class of 'small-6'</span>
             <span class="show-for-medium-only">The screen is medium and the container div has a class of 'medium-4'</span>
-            <span class="show-for-large-only">the screen is large and the container div has a class of 'large-3'</span>
+            <span class="show-for-large-up">the screen is large and the container div has a class of 'large-3'</span>
         </div>
     </div>
     <div class="column small-12 medium-12 large-3 visible-grid">
         <div class="panel">
             <span class="show-for-small-only">The screen is small and the container div has a class of 'small-12'</span>
             <span class="show-for-medium-only">The screen is medium and the container div has a class of 'medium-12'</span>
-        <span class="show-for-large-only">the screen is large and the container div has a class of 'large-3'</span></div>
+        <span class="show-for-large-up">the screen is large and the container div has a class of 'large-3'</span></div>
+    </div>
+</div>
+<div class="row">
+    <div class="column small-2 medium-7 large-4 visible-grid">
+        <div class="panel">
+            <span class="show-for-small-only">The screen is small and the container div has a class of 'small-2'</span>
+            <span class="show-for-medium-only">The screen is medium and the container div has a class of 'medium-7'</span>
+            <span class="show-for-large-up">the screen is large and the container div has a class of 'large-4'</span>
+        </div>
+    </div>
+    <div class="column small-10 medium-5 large-8 visible-grid">
+        <div class="panel">
+            <span class="show-for-small-only">The screen is small and the container div has a class of 'small-10'</span>
+            <span class="show-for-medium-only">The screen is medium and the container div has a class of 'medium-5'</span>
+            <span class="show-for-large-up">the screen is large and the container div has a class of 'large-8'</span>
+        </div>
     </div>
 </div>
 <style>
@@ -3180,16 +3879,78 @@ padding: 1em;
   
               <div id="paper"  data-bind="page: {id:'paper'}">
 	<h1>Paper Layers &amp; Grouping</h1>
-	 <section class="sg-block sg-section-paper-card-grouping">
-      <div class="sg-text">
+	<section class="sg-block sg-section-paper-card-grouping">
+    <div class="sg-text">
         <h3 id="paper-card-grouping" class="sg">Paper Card Grouping</h3>
         <p class="sg">
-          <code class="sg">page-wrapper group-section-holder</code>- by default pages are white but when the need arises to have grouped section &apos;cards&apos; are introduced and the background area becomes a layer of soft off white construction paper.</p>
+        <code class="sg">.page.with-group-sections .page-wrapper .group-section-holder</code>- by default pages are white but when the need arises to have grouped section &apos;cards&apos; are introduced and the background area becomes a layer of soft off white construction paper. If the need arises to highlight a collection of cards add
+        <code class="sg">.highlighted</code>to the
+        <code class="sg">.page.with-group-sections</code>and the product color will bleed into the construction paper.</p>
+    </div>
+    <div class="sg-example">
+        <div class="sg-canvas">
+            <div class="page with-group-sections">
+                <div class="page-wrapper">
+                    <section class="section group-section">
+                        <h1>Hello</h1>
+                        <p>This is content that is showing up in a section group</p>
+                    </section>
+                </div>
+            </div>
+            <div class="page with-group-sections highlighted">
+                <div class="page-wrapper">
+                    <section class="section group-section">
+                        <h1>Hello</h1>
+                        <p>This is content that is showing up in a section group</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+      <pre class="sg-code">
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page with-group-sections&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section group-section&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Hello<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is content that is showing up in a section group<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page with-group-sections highlighted&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section group-section&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Hello<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is content that is showing up in a section group<span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      </pre>
+    </div>
+</section>
+	    <section class="sg-block sg-section-tabs-inside-grouping">
+      <div class="sg-text">
+        <h3 id="tabs-inside-grouping" class="sg">Tabs Outside Grouping</h3>
+        <p class="sg">
+          <code class="sg">page.with-group-sections &gt; .overlap.tabs</code>- Tabs placed outside of the groups should use the overlap so they sink into the paper texture.</p>
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
           <div class="page with-group-sections">
             <div class="page-wrapper">
+              <ul class="nav tabs overlap">
+                <li class="icon  ">
+                  <a class="home">
+                    <i class="fa fa-holder"></i>
+                  </a>
+                </li>
+                <li class="">
+                  <a>Tab 2</a>
+                </li>
+                <li class=" selected ">
+                  <a>Tab 3</a>
+                </li>
+                <li class="">
+                  <a>Tab 4</a>
+                </li>
+              </ul>
               <section class="section group-section">
                 <h1>Hello</h1>
                 <p>This is content that is showing up in a section group</p>
@@ -3198,9 +3959,25 @@ padding: 1em;
           </div>
         </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page with-group-sections&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs overlap&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon  &quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;home&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 2<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot; selected &quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section group-section&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Hello<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is content that is showing up in a section group<span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is content that is showing up in a section group<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
       </div>
@@ -3210,7 +3987,8 @@ padding: 1em;
       <div class="sg-text">
         <h3 id="tabs-for-paper-cards" class="sg">Tabs for Paper Cards</h3>
         <p class="sg">
-          <code class="sg">.group-section-tab-holder</code>- Special tabs holders are introduced to the cards so they can fill the full frame of the card.</p>
+          <code class="sg">.group-section-tab-holder</code>- Special tabs holders are introduced to the cards so they can fill the full frame of the card. The tab holder has a modification of adding the
+          <code class="sg">secondary</code>class to convert it to using the secondary color if the need arises.</p>
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
@@ -3231,8 +4009,22 @@ padding: 1em;
                   </ul>
                 </div>
                 <h1>Hello</h1>
-                <p>This is content that is showing up in a section group
-                </p>
+                <p>This is content that is showing up in a section group</p>
+                <div class="group-section-tab-holder secondary">
+                  <ul class="nav tabs">
+                    <li class="">
+                      <a>Tab 1</a>
+                    </li>
+                    <li class=" selected ">
+                      <a>Tab 2</a>
+                    </li>
+                    <li class="">
+                      <a>Tab 3</a>
+                    </li>
+                  </ul>
+                </div>
+                <h2>I am Sub Tab Content</h2>
+                <p>This is content under a secondary tab in a card</p>
               </section>
             </div>
           </div>
@@ -3253,13 +4045,27 @@ padding: 1em;
         <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Hello<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is content that is showing up in a section group
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is content that is showing up in a section group<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;group-section-tab-holder secondary&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot; selected &quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I am Sub Tab Content<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is content under a secondary tab in a card<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
       </div>
     </section>
-
 </div>                            
             </div>
           </div>

@@ -92,7 +92,7 @@
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li class="divider"></li>
-*							<li><a href="#">See all →</a></li>
+*							<li><a href="#">See all ΓåÆ</a></li>
 *						</ul>
 *						</li>
 *						<li class="divider"></li>
@@ -104,7 +104,7 @@
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li class="divider"></li>
-*								<li><a href="#">See all →</a></li>
+*								<li><a href="#">See all ΓåÆ</a></li>
 *						</ul>
 *					</li>
 *				</ul>
@@ -2093,7 +2093,7 @@ strong, .strong {
   color: #cd096d; }
 
 em, .emphasis {
-  color: #430323;
+  color: #430324;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: italic;
@@ -2102,7 +2102,7 @@ em, .emphasis {
 .subtle {
   font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
-  color: #9c5c7d; }
+  color: #9d5d7d; }
 
 .block-margins {
   margin: 0 em(21px) 0; }
@@ -2547,9 +2547,7 @@ button:disabled.secondary, .input-space
       border-color: #999999;
       vertical-align: bottom; }
       .with-group-sections .tabs.overlap li.selected {
-        background-color: #f2f2f2; }
-      .with-group-sections .group-section .tabs.overlap li.selected {
-        background-color: #fff; }
+        background: #fff url("../img/billie-holiday-lite.png"); }
       .tabs.overlap li.selected a {
         color: #333; }
     .tabs.overlap li.secondary {
@@ -2656,21 +2654,48 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   margin-top: 0; }
 
 /**
-* Section Nav (forward & back):
-* `.section-nav with .forward or .back` - wizard nav like section nav. 
-*  alter the position of the circle button by adding  `.forward` or `.back`.
+* Circle Section Nav (forward & back):
+* `.section-nav with .forward or .back` - A wizard-like page nav. Alter the position of the circle button by adding  `.forward` or `.back` to the `.section-nav` container.
 * 
 *   @example
 *	<div class="page with-group-sections"><div class="section-nav back">
-*		<a onclick="goBack()">
+*		<a>
 *			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
 *			<div class="text"> Back</div>
 *		</a>
-*	</div><div class="page-wrapper">
-*	<div class="row">hello I am some content in a row </div>
-*	<div class="row group-section">hello I am some content in a row with class group-section</div></div>
+*	</div>
+*	<div class="page-wrapper">
+*	<section class="group-section">
+*		<h1 class="with-underline">Page Title </h1>
+*		<p> hello I am some content on this page</p>
+*	</div>
+*	</section>
 *	<div class="section-nav forward">
-*		<a onclick="goBack()">
+*		<a>
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Forward</div>
+*		</a>
+*	</div></div>
+*/
+/**
+* Circle Section Nav (Disabled):
+* `.section-nav with .disabled` - Adding `.disabled` to the `.section-nav` container with style the circle nav accordingly.
+* 
+*   @example
+*	<div class="page"><div class="section-nav back">
+*		<a>
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Back</div>
+*		</a>
+*	</div>
+*	<div class="page-wrapper">
+*	<section class="group-section">
+*		<h1 class="with-underline">Page Title (Disabled)</h1>
+*		<p> Somethig on this page has disabled forward navigation</p>
+*	</div>
+*	</section>
+*	<div class="section-nav forward disabled">
+*		<a>
 *			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
 *			<div class="text"> Forward</div>
 *		</a>
@@ -2746,7 +2771,8 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
       -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
       -moz-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
       box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
-      background-color: #bfbfbf; }
+      background-color: #999999;
+      background-image: url("../img/empty_diamond.png"); }
 
 .inline-group {
   list-style: none;
@@ -3609,7 +3635,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   background-color: #e4f6fb; }
 
 .stripped tbody tr:nth-child(even) td:nth-child(odd) {
-  background-color: #dee9ed; }
+  background-color: #deeaed; }
 
 .stripped tbody tr + tr td, .banded tbody tr + tr td {
   border-top: 0px solid; }
@@ -4204,7 +4230,7 @@ div.reveal-modal, dialog {
   margin: 1.42857rem 0;
   -ms-touch-action: none;
   touch-action: none;
-  background: #f4f4f4; }
+  background: whitesmoke; }
   .range-slider.vertical-range {
     display: block;
     position: relative;
@@ -4227,7 +4253,7 @@ div.reveal-modal, dialog {
       height: auto;
       bottom: 0; }
   .range-slider.radius {
-    background: #f4f4f4;
+    background: whitesmoke;
     border-radius: 5px; }
     .range-slider.radius .range-slider-handle {
       background: #860647;
@@ -4235,7 +4261,7 @@ div.reveal-modal, dialog {
       .range-slider.radius .range-slider-handle:hover {
         background: #76053e; }
   .range-slider.round {
-    background: #f4f4f4;
+    background: whitesmoke;
     border-radius: 1000px; }
     .range-slider.round .range-slider-handle {
       background: #860647;
@@ -4243,7 +4269,7 @@ div.reveal-modal, dialog {
       .range-slider.round .range-slider-handle:hover {
         background: #76053e; }
   .range-slider.disabled, .range-slider[disabled] {
-    background: #f4f4f4;
+    background: whitesmoke;
     cursor: default;
     opacity: 0.7; }
     .range-slider.disabled .range-slider-handle, .range-slider[disabled] .range-slider-handle {

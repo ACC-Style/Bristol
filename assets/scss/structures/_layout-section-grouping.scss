@@ -13,7 +13,7 @@
 
 .page.with-group-sections {
     @extend %shadedbackground;
-    &.colored{
+    &.highlighted{
         background-image:url('../img/billie-holiday-speck.png');
         background-color: color(rebrand-color($primary-color, 1), 50);
     }
@@ -51,11 +51,13 @@
 }
 
 .group-section-tab-holder {
-    margin: -.5rem -1rem 0;  
+     margin: -.75rem -.5rem 0;
+    @include bp(md){
+        margin: -.5rem -.75rem 0;
+    }  
     @include bp(lg){
         margin: -.5rem -1.5rem 0;  
     }
-
     .nav.tabs {
         padding: 2px 10px 0;
         background-image: url('../img/construction-paper.png');
@@ -78,19 +80,24 @@
         }
     }
 }
+.group-section-tab-holder.secondary .nav.tabs{background-color: $secondary-color;
+    li{
+         background-color: color(rebrand-color($secondary-color, 1), 20);
+         &.selected{background-color: #fff;}
+    }
+}
 
 /**
 * Paper Card Grouping:
-* `page-wrapper group-section-holder` - by default pages are white but when the need arises to have grouped section 'cards' are introduced and the background area becomes a layer of soft off white construction paper.
+* `.page.with-group-sections .page-wrapper .group-section-holder` - by default pages are white but when the need arises to have grouped section 'cards' are introduced and the background area becomes a layer of soft off white construction paper. If the need arises to highlight a collection of cards add `.highlighted` to the `.page.with-group-sections` and the product color will bleed into the construction paper.
 * 
 *   @example
-*   <div class="page with-group-sections colored">
-*    <div class="page-wrapper">
-*    <section class="section group-section">
-*    <h1>Hello</h1> <p>This is content  that is showing up in a section group</section>
-*    </div>
-*    </div>
 *   <div class="page with-group-sections">
+*    <div class="page-wrapper">
+*    <section class="section group-section"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
+*    </div>
+*    </div>
+*   <div class="page with-group-sections highlighted">
 *    <div class="page-wrapper">
 *    <section class="section group-section">
 *    <h1>Hello</h1> <p>This is content  that is showing up in a section group</section>
@@ -99,8 +106,26 @@
 *
 **/
 /**
+* Tabs inside Grouping:
+* `page.with-group-sections > .overlap.tabs` - Tabs placed outside of the groups should use the overlap so they sink into the paper texture.
+* 
+*   @example
+*   <div class="page with-group-sections">
+*       <div class="page-wrapper">
+*   <ul class="nav tabs overlap">
+*       <li class="icon  "><a class="home"><i class="fa fa-holder"></i></a></li>
+*       <li class=""><a>Tab 2</li>
+*       <li class=" selected "><a >Tab 3</a></li>
+*       <li class=""><a >Tab 4</a></li>
+*   </ul>
+*    <section class="section group-section"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
+*        </div>
+*    </div>
+*
+**/
+/**
 * Tabs for Paper Cards:
-* `.group-section-tab-holder` - Special tabs holders are introduced to the cards so they can fill the full frame of the card.
+* `.group-section-tab-holder` - Special tabs holders are introduced to the cards so they can fill the full frame of the card.  The tab holder has a modification of adding the `secondary` class to convert it to using the secondary color if the need arises.
 * 
 *   @example
 *   <div class="page with-group-sections">
@@ -116,9 +141,21 @@
 *                    </ul>
 *                </div>
 *                <h1>Hello</h1> 
-*                  <p>This is content  that is showing up in a section group
+*                <p>This is content  that is showing up in a section group</p>
+*                <div class="group-section-tab-holder secondary">
+*                    <ul class="nav tabs">
+*                        <li class="">
+*                       <a>Tab 1</a>
+*                       </li>
+*                        <li class=" selected "> <a>Tab 2</a> </li>
+*                        <li class=""> <a>Tab 3</a> </li>
+*                    </ul>
+*                </div>
+*                <h2>I am Sub Tab Content</h2> 
+*                <p>This is content under a secondary tab in a card</p>
 *            </section>
 *        </div>
 *    </div>
 *
 **/
+

@@ -1815,7 +1815,7 @@ em, .emphasis {
 .subtle {
   font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
-  color: #599999; }
+  color: #5a9a9a; }
 
 .block-margins {
   margin: 0 em(21px) 0; }
@@ -2260,9 +2260,7 @@ button:disabled.secondary, .input-space
       border-color: #999999;
       vertical-align: bottom; }
       .with-group-sections .tabs.overlap li.selected {
-        background-color: #f2f2f2; }
-      .with-group-sections .group-section .tabs.overlap li.selected {
-        background-color: #fff; }
+        background: #fff url("../img/billie-holiday-lite.png"); }
       .tabs.overlap li.selected a {
         color: #333; }
     .tabs.overlap li.secondary {
@@ -2369,21 +2367,48 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   margin-top: 0; }
 
 /**
-* Section Nav (forward & back):
-* `.section-nav with .forward or .back` - wizard nav like section nav. 
-*  alter the position of the circle button by adding  `.forward` or `.back`.
+* Circle Section Nav (forward & back):
+* `.section-nav with .forward or .back` - A wizard-like page nav. Alter the position of the circle button by adding  `.forward` or `.back` to the `.section-nav` container.
 * 
 *   @example
 *	<div class="page with-group-sections"><div class="section-nav back">
-*		<a onclick="goBack()">
+*		<a>
 *			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
 *			<div class="text"> Back</div>
 *		</a>
-*	</div><div class="page-wrapper">
-*	<div class="row">hello I am some content in a row </div>
-*	<div class="row group-section">hello I am some content in a row with class group-section</div></div>
+*	</div>
+*	<div class="page-wrapper">
+*	<section class="group-section">
+*		<h1 class="with-underline">Page Title </h1>
+*		<p> hello I am some content on this page</p>
+*	</div>
+*	</section>
 *	<div class="section-nav forward">
-*		<a onclick="goBack()">
+*		<a>
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Forward</div>
+*		</a>
+*	</div></div>
+*/
+/**
+* Circle Section Nav (Disabled):
+* `.section-nav with .disabled` - Adding `.disabled` to the `.section-nav` container with style the circle nav accordingly.
+* 
+*   @example
+*	<div class="page"><div class="section-nav back">
+*		<a>
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Back</div>
+*		</a>
+*	</div>
+*	<div class="page-wrapper">
+*	<section class="group-section">
+*		<h1 class="with-underline">Page Title (Disabled)</h1>
+*		<p> Somethig on this page has disabled forward navigation</p>
+*	</div>
+*	</section>
+*	<div class="section-nav forward disabled">
+*		<a>
 *			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
 *			<div class="text"> Forward</div>
 *		</a>
@@ -2459,7 +2484,8 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
       -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
       -moz-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
       box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
-      background-color: #bfbfbf; }
+      background-color: #999999;
+      background-image: url("../img/empty_diamond.png"); }
 
 .inline-group {
   list-style: none;
@@ -3232,7 +3258,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   background-color: #e4f6fb; }
 
 .stripped tbody tr:nth-child(even) td:nth-child(odd) {
-  background-color: #dee9ed; }
+  background-color: #deeaed; }
 
 .stripped tbody tr + tr td, .banded tbody tr + tr td {
   border-top: 0px solid; }
@@ -3324,20 +3350,20 @@ tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.c
   border-bottom: 1px solid; }
 
 td.error, .table tbody tr + tr td.error, tr.error td, .stripped tr.error:nth-child(even) td:nth-child(odd) {
-  background-color: #f4d9db;
+  background-color: #f5d9dc;
   border-color: #f2b7bd; }
 
 tr:nth-child(even) td.error {
-  background-color: #f1ced1; }
+  background-color: #f2ced2; }
 
 tr:nth-child(even).error td {
-  background-color: #f1ced1; }
+  background-color: #f2ced2; }
 
 .stripped tbody tr.error td:nth-child(odd) {
-  background-color: #f4d9db; }
+  background-color: #f5d9dc; }
 
 td.warning, .table tbody tr + tr td.warning, tr.warning td, .stripped tr.warning:nth-child(even) td:nth-child(odd) {
-  background-color: #f9ead7;
+  background-color: #faead7;
   border-color: #f8dbb6; }
 
 tr:nth-child(even) td.warning {
@@ -3347,59 +3373,59 @@ tr:nth-child(even).warning td {
   background-color: #f8e4cb; }
 
 .stripped tbody tr.warning td:nth-child(odd) {
-  background-color: #f9ead7; }
+  background-color: #faead7; }
 
 td.validated, .table tbody tr + tr td.validated, tr.validated td, .stripped tr.validated:nth-child(even) td:nth-child(odd) {
-  background-color: #d7f1e2;
+  background-color: #d7f2e2;
   border-color: #aaf5cb; }
 
 tr:nth-child(even) td.validated {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 tr:nth-child(even).validated td {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 .stripped tbody tr.validated td:nth-child(odd) {
-  background-color: #d7f1e2; }
+  background-color: #d7f2e2; }
 
 td.info, .table tbody tr + tr td.info, tr.info td, .stripped tr.info:nth-child(even) td:nth-child(odd) {
   background-color: #ebffff;
   border-color: #ddffff; }
 
 tr:nth-child(even) td.info {
-  background-color: #e5ffff; }
+  background-color: #e6ffff; }
 
 tr:nth-child(even).info td {
-  background-color: #e5ffff; }
+  background-color: #e6ffff; }
 
 .stripped tbody tr.info td:nth-child(odd) {
   background-color: #ebffff; }
 
 td.highlighted, .table tbody tr + tr td.highlighted, tr.highlighted td, .stripped tr.highlighted:nth-child(even) td:nth-child(odd) {
-  background-color: #d3e9e9;
+  background-color: #d4e9e9;
   border-color: #8cffff; }
 
 tr:nth-child(even) td.highlighted {
-  background-color: #c6e3e3; }
+  background-color: #c7e3e3; }
 
 tr:nth-child(even).highlighted td {
-  background-color: #c6e3e3; }
+  background-color: #c7e3e3; }
 
 .stripped tbody tr.highlighted td:nth-child(odd) {
-  background-color: #d3e9e9; }
+  background-color: #d4e9e9; }
 
 td.completed, .table tbody tr + tr td.completed, tr.completed td, .stripped tr.completed:nth-child(even) td:nth-child(odd) {
-  background-color: #d7f1e2;
+  background-color: #d7f2e2;
   border-color: #aaf5cb; }
 
 tr:nth-child(even) td.completed {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 tr:nth-child(even).completed td {
-  background-color: #cbedda; }
+  background-color: #cbeeda; }
 
 .stripped tbody tr.completed td:nth-child(odd) {
-  background-color: #d7f1e2; }
+  background-color: #d7f2e2; }
 
 td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .stripped tr.disabled:nth-child(even) td:nth-child(odd) {
   background-color: #f2f2f2;
@@ -3415,7 +3441,7 @@ tr:nth-child(even).disabled td {
   background-color: #f2f2f2; }
 
 td.attention, .table tbody tr + tr td.attention, tr.attention td, .stripped tr.attention:nth-child(even) td:nth-child(odd) {
-  background-color: #f9ead7;
+  background-color: #faead7;
   border-color: #f8dbb6; }
 
 tr:nth-child(even) td.attention {
@@ -3425,7 +3451,7 @@ tr:nth-child(even).attention td {
   background-color: #f8e4cb; }
 
 .stripped tbody tr.attention td:nth-child(odd) {
-  background-color: #f9ead7; }
+  background-color: #faead7; }
 
 /**
 * Table States Cells:
@@ -4127,10 +4153,10 @@ div.reveal-modal, dialog {
 *   <a class="link" href="http://foundation.zurb.com/docs/components/switch.html">Foundation Documentation</a>
 */
 .tooltip {
-  background-color: #195959; }
+  background-color: #1a5a5a; }
 
 .tooltip.tip-top > .nub {
-  border-color: #195959 transparent transparent; }
+  border-color: #1a5a5a transparent transparent; }
 
 .page-wrapper {
   max-width: 1200px;
@@ -4174,7 +4200,7 @@ div.reveal-modal, dialog {
   -moz-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2); }
 
-.page.with-group-sections.colored {
+.page.with-group-sections.highlighted {
   background-image: url("../img/billie-holiday-speck.png");
   background-color: #40ffff; }
 .page.with-group-sections .page-wrapper {
@@ -4197,8 +4223,11 @@ div.reveal-modal, dialog {
         padding: .5rem 1.5rem 1rem; } }
 
 .group-section-tab-holder {
-  margin: -.5rem -1rem 0; }
+  margin: -.75rem -.5rem 0; }
   @media only screen and (min-width: 767px) {
+    .group-section-tab-holder {
+      margin: -.5rem -.75rem 0; } }
+  @media only screen and (min-width: 1024px) {
     .group-section-tab-holder {
       margin: -.5rem -1.5rem 0; } }
   .group-section-tab-holder .nav.tabs {
@@ -4218,18 +4247,24 @@ div.reveal-modal, dialog {
       padding: .4rem;
       background-color: #fff; }
 
+.group-section-tab-holder.secondary .nav.tabs {
+  background-color: #b3b3b3; }
+  .group-section-tab-holder.secondary .nav.tabs li {
+    background-color: #b3ffff; }
+    .group-section-tab-holder.secondary .nav.tabs li.selected {
+      background-color: #fff; }
+
 /**
 * Paper Card Grouping:
-* `page-wrapper group-section-holder` - by default pages are white but when the need arises to have grouped section 'cards' are introduced and the background area becomes a layer of soft off white construction paper.
+* `.page.with-group-sections .page-wrapper .group-section-holder` - by default pages are white but when the need arises to have grouped section 'cards' are introduced and the background area becomes a layer of soft off white construction paper. If the need arises to highlight a collection of cards add `.highlighted` to the `.page.with-group-sections` and the product color will bleed into the construction paper.
 * 
 *   @example
-*   <div class="page with-group-sections colored">
-*    <div class="page-wrapper">
-*    <section class="section group-section">
-*    <h1>Hello</h1> <p>This is content  that is showing up in a section group</section>
-*    </div>
-*    </div>
 *   <div class="page with-group-sections">
+*    <div class="page-wrapper">
+*    <section class="section group-section"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
+*    </div>
+*    </div>
+*   <div class="page with-group-sections highlighted">
 *    <div class="page-wrapper">
 *    <section class="section group-section">
 *    <h1>Hello</h1> <p>This is content  that is showing up in a section group</section>
@@ -4238,8 +4273,26 @@ div.reveal-modal, dialog {
 *
 **/
 /**
+* Tabs inside Grouping:
+* `page.with-group-sections > .overlap.tabs` - Tabs placed outside of the groups should use the overlap so they sink into the paper texture.
+* 
+*   @example
+*   <div class="page with-group-sections">
+*       <div class="page-wrapper">
+*   <ul class="nav tabs overlap">
+*       <li class="icon  "><a class="home"><i class="fa fa-holder"></i></a></li>
+*       <li class=""><a>Tab 2</li>
+*       <li class=" selected "><a >Tab 3</a></li>
+*       <li class=""><a >Tab 4</a></li>
+*   </ul>
+*    <section class="section group-section"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
+*        </div>
+*    </div>
+*
+**/
+/**
 * Tabs for Paper Cards:
-* `.group-section-tab-holder` - Special tabs holders are introduced to the cards so they can fill the full frame of the card.
+* `.group-section-tab-holder` - Special tabs holders are introduced to the cards so they can fill the full frame of the card.  The tab holder has a modification of adding the `secondary` class to convert it to using the secondary color if the need arises.
 * 
 *   @example
 *   <div class="page with-group-sections">
@@ -4255,7 +4308,18 @@ div.reveal-modal, dialog {
 *                    </ul>
 *                </div>
 *                <h1>Hello</h1> 
-*                  <p>This is content  that is showing up in a section group
+*                <p>This is content  that is showing up in a section group</p>
+*                <div class="group-section-tab-holder secondary">
+*                    <ul class="nav tabs">
+*                        <li class="">
+*                       <a>Tab 1</a>
+*                       </li>
+*                        <li class=" selected "> <a>Tab 2</a> </li>
+*                        <li class=""> <a>Tab 3</a> </li>
+*                    </ul>
+*                </div>
+*                <h2>I am Sub Tab Content</h2> 
+*                <p>This is content under a secondary tab in a card</p>
 *            </section>
 *        </div>
 *    </div>

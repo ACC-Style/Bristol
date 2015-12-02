@@ -1,19 +1,46 @@
 /**
-* Section Nav (forward & back):
-* `.section-nav with .forward or .back` - wizard nav like section nav. 
-*  alter the position of the circle button by adding  `.forward` or `.back`.
+* Circle Section Nav (forward & back):
+* `.section-nav with .forward or .back` - A wizard-like page nav. Alter the position of the circle button by adding  `.forward` or `.back` to the `.section-nav` container.
 * 
 *   @example
 *	<div class="page with-group-sections"><div class="section-nav back">
-*		<a onclick="goBack()">
+*		<a>
 *			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
 *			<div class="text"> Back</div>
 *		</a>
-*	</div><div class="page-wrapper">
-*	<div class="row">hello I am some content in a row </div>
-*	<div class="row group-section">hello I am some content in a row with class group-section</div></div>
+*	</div>
+*	<div class="page-wrapper">
+*	<section class="group-section">
+*		<h1 class="with-underline">Page Title </h1>
+*		<p> hello I am some content on this page</p>
+*	</div>
+*	</section>
 *	<div class="section-nav forward">
-*		<a onclick="goBack()">
+*		<a>
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Forward</div>
+*		</a>
+*	</div></div>
+*/
+/**
+* Circle Section Nav (Disabled):
+* `.section-nav with .disabled` - Adding `.disabled` to the `.section-nav` container with style the circle nav accordingly.
+* 
+*   @example
+*	<div class="page"><div class="section-nav back">
+*		<a>
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Back</div>
+*		</a>
+*	</div>
+*	<div class="page-wrapper">
+*	<section class="group-section">
+*		<h1 class="with-underline">Page Title (Disabled)</h1>
+*		<p> Somethig on this page has disabled forward navigation</p>
+*	</div>
+*	</section>
+*	<div class="section-nav forward disabled">
+*		<a>
 *			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
 *			<div class="text"> Forward</div>
 *		</a>
@@ -90,7 +117,8 @@ $circle-lighttext:#fff;
 			-webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.20);
 			-moz-box-shadow: 	1px 1px 1px 0px rgba(0,0,0,0.20);
 			box-shadow: 		1px 1px 1px 0px rgba(0,0,0,0.20);
-			background-color: grey(25);
+			background-color: grey(40);
+			background-image:url("../img/empty_diamond.png");
 		}
 
 

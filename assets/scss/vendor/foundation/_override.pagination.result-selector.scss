@@ -7,9 +7,27 @@ $required_data:(
 	);
 @include required-check($required_data...);
 
+
+.result-selector-holder{
+	@extend .pagination-holder;
+}
+.pagination.result-selector{
+		li.label,li.value{ 
+			color: fontcolor($black);
+			font-weight: 700;
+		}
+		li.label{
+			padding-left: .25em;
+			padding-right: .25em;
+			background-color: grey(10);
+			.top &{border-radius: 5px 0px 0px 0px; }
+			.bottom &{border-radius: 0px 0px 0px 5px; }
+		}
+
+}
 /**
 * Pagination with Result Selector:
-* `.pagination-holder` - used often with a result pagination or page of content pagination. !! requires 
+* `.pagination-holder .pagination.result-selector` - used often with a paginator is a ruslt selector. This allows the user to limit the amount of returned items on a single page. Because the Result Selector is bult on the paginator design it can also be used at the top or bottom like a paginator.
 * 
 *   @example
 *	<div class="pagination-holder top">
@@ -46,20 +64,3 @@ $required_data:(
 *	</ul></div>
 *
 */
-.result-selector-holder{
-	@extend .pagination-holder;
-}
-.pagination.result-selector{
-		li.label,li.value{ 
-			color: fontcolor($black);
-			font-weight: 700;
-		}
-		li.label{
-			padding-left: .25em;
-			padding-right: .25em;
-			background-color: grey(10);
-			.top &{border-radius: 5px 0px 0px 0px; }
-			.bottom &{border-radius: 0px 0px 0px 5px; }
-		}
-
-}
