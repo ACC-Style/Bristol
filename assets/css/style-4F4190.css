@@ -1806,7 +1806,7 @@ strong, .strong {
   color: #6959b4; }
 
 em, .emphasis {
-  color: #282148;
+  color: #272048;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: italic;
@@ -1815,7 +1815,7 @@ em, .emphasis {
 .subtle {
   font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
-  color: #817aa2; }
+  color: #817aa1; }
 
 .block-margins {
   margin: 0 em(21px) 0; }
@@ -2065,11 +2065,67 @@ button:disabled.secondary, .input-space
       flex-wrap: wrap; } }
 
 .tabs.primary {
-  font-size: 21px;
   border: 0;
   background: none;
   margin: 0;
-  display: block; }
+  flex-wrap: wrap;
+  width: 100%;
+  clear: both;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex !important;
+  flex-direction: row;
+  align-items: stretch;
+  align-content: stretch;
+  font-size: 0.85714em;
+  line-height: 1.75em;
+  margin-top: 0em;
+  margin-bottom: 0em; }
+  .tabs.primary li {
+    -webkit-box-flex: 1 1 auto;
+    -moz-box-flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto; }
+    .tabs.primary li a {
+      padding: .55em .25em .75em; }
+      .tabs.primary li a:after {
+        border-bottom: 8px solid #00386b; }
+    .tabs.primary li.icon {
+      -webkit-box-flex: 0 0 2em;
+      -moz-box-flex: 0 0 2em;
+      -webkit-flex: 0 0 2em;
+      -ms-flex: 0 0 2em;
+      flex: 0 0 2em; }
+  @media only screen and (min-width: 320px) {
+    .tabs.primary {
+      font-size: 1em;
+      line-height: 1.5em;
+      margin-top: 0em;
+      margin-bottom: 0em; } }
+  @media only screen and (min-width: 767px) {
+    .tabs.primary {
+      display: block;
+      font-size: 1.21429em;
+      line-height: 1.23529em;
+      margin-top: 0em;
+      margin-bottom: 0em; }
+      .tabs.primary li a {
+        padding: 1em .5em; } }
+  @media only screen and (min-width: 1024px) {
+    .tabs.primary {
+      font-size: 1.42857em;
+      line-height: 1.05em;
+      margin-top: 0em;
+      margin-bottom: 0em; } }
+  @media only screen and (min-width: 1200px) {
+    .tabs.primary {
+      font-size: 1.71429em;
+      line-height: 1.75em;
+      margin-top: 0em;
+      margin-bottom: 0em; } }
   .tabs.primary:after {
     content: "";
     display: table;
@@ -2087,11 +2143,15 @@ button:disabled.secondary, .input-space
     display: block;
     float: left; }
     .tabs.primary li a {
-      padding: 1.25em .75em;
+      white-space: normal;
+      padding: .5em .25em;
       color: #333333; }
-      @media only screen and (max-width: 320px) {
+      @media only screen and (min-width: 320px) {
         .tabs.primary li a {
-          white-space: normal; } }
+          white-space: nowrap; } }
+      @media only screen and (min-width: 767px) {
+        .tabs.primary li a {
+          padding: 1.25em .75em; } }
     .tabs.primary li:hover {
       background-color: #fff;
       border-color: #4F4190; }
@@ -2130,48 +2190,9 @@ button:disabled.secondary, .input-space
       background-color: #4F4190; }
       .tabs.primary li.icon.selected a {
         color: #fff; }
-  @media only screen and (max-width: 1024px) {
-    .tabs.primary {
-      font-size: 17px; }
-      .tabs.primary li a {
-        padding: 1em .5em; } }
-  @media only screen and (max-width: 767px) {
-    .tabs.primary {
-      font-size: 15px;
-      width: 100%;
-      clear: both;
-      display: -webkit-box;
-      display: -moz-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex !important;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: stretch;
-      align-content: stretch;
-      margin: 0; }
-      .tabs.primary li a {
-        padding: .55em .25em .75em; }
-        .tabs.primary li a:after {
-          border-bottom: 8px solid #00386b; }
-      .tabs.primary li {
-        -webkit-box-flex: 1 1 auto;
-        -moz-box-flex: 1 1 auto;
-        -webkit-flex: 1 1 auto;
-        -ms-flex: 1 1 auto;
-        flex: 1 1 auto; }
-        .tabs.primary li.icon {
-          -webkit-box-flex: 0 0 2em;
-          -moz-box-flex: 0 0 2em;
-          -webkit-flex: 0 0 2em;
-          -ms-flex: 0 0 2em;
-          flex: 0 0 2em; } }
-  @media only screen and (max-width: 320px) {
-    .tabs.primary {
-      flex-wrap: wrap; } }
   .tabs.primary.reverse {
-    font-size: 1.21429em;
-    line-height: 1.23529em;
+    font-size: 0.85714em;
+    line-height: 1.75em;
     margin-top: 0em;
     margin-bottom: 0em; }
     .tabs.primary.reverse li {
@@ -2192,7 +2213,7 @@ button:disabled.secondary, .input-space
       border-width: 0px 8px;
       border-top: 10px solid #00386b;
       border-bottom: 0 none; }
-    @media only screen and (max-width: 767px) {
+    @media only screen and (min-width: 320px) {
       .tabs.primary.reverse {
         font-size: 1em;
         line-height: 1.5em;
@@ -2201,10 +2222,10 @@ button:disabled.secondary, .input-space
         margin: 0; }
         .tabs.primary.reverse li.selected a:after {
           border-top: 8px solid #00386b; } }
-    @media only screen and (max-width: 320px) {
+    @media only screen and (min-width: 767px) {
       .tabs.primary.reverse {
-        font-size: 0.85714em;
-        line-height: 1.75em;
+        font-size: 1.21429em;
+        line-height: 1.23529em;
         margin-top: 0em;
         margin-bottom: 0em; } }
 
@@ -3258,7 +3279,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   background-color: #e4f6fb; }
 
 .stripped tbody tr:nth-child(even) td:nth-child(odd) {
-  background-color: #deeaed; }
+  background-color: #dee9ed; }
 
 .stripped tbody tr + tr td, .banded tbody tr + tr td {
   border-top: 0px solid; }
@@ -3350,20 +3371,20 @@ tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.c
   border-bottom: 1px solid; }
 
 td.error, .table tbody tr + tr td.error, tr.error td, .stripped tr.error:nth-child(even) td:nth-child(odd) {
-  background-color: #f5d9dc;
+  background-color: #f4d9db;
   border-color: #f2b7bd; }
 
 tr:nth-child(even) td.error {
-  background-color: #f2ced2; }
+  background-color: #f1ced1; }
 
 tr:nth-child(even).error td {
-  background-color: #f2ced2; }
+  background-color: #f1ced1; }
 
 .stripped tbody tr.error td:nth-child(odd) {
-  background-color: #f5d9dc; }
+  background-color: #f4d9db; }
 
 td.warning, .table tbody tr + tr td.warning, tr.warning td, .stripped tr.warning:nth-child(even) td:nth-child(odd) {
-  background-color: #faead7;
+  background-color: #f9ead7;
   border-color: #f8dbb6; }
 
 tr:nth-child(even) td.warning {
@@ -3373,59 +3394,59 @@ tr:nth-child(even).warning td {
   background-color: #f8e4cb; }
 
 .stripped tbody tr.warning td:nth-child(odd) {
-  background-color: #faead7; }
+  background-color: #f9ead7; }
 
 td.validated, .table tbody tr + tr td.validated, tr.validated td, .stripped tr.validated:nth-child(even) td:nth-child(odd) {
-  background-color: #d7f2e2;
+  background-color: #d7f1e2;
   border-color: #aaf5cb; }
 
 tr:nth-child(even) td.validated {
-  background-color: #cbeeda; }
+  background-color: #cbedda; }
 
 tr:nth-child(even).validated td {
-  background-color: #cbeeda; }
+  background-color: #cbedda; }
 
 .stripped tbody tr.validated td:nth-child(odd) {
-  background-color: #d7f2e2; }
+  background-color: #d7f1e2; }
 
 td.info, .table tbody tr + tr td.info, tr.info td, .stripped tr.info:nth-child(even) td:nth-child(odd) {
   background-color: #f5f4fa;
   border-color: #eeecf7; }
 
 tr:nth-child(even) td.info {
-  background-color: #f3f1f9; }
+  background-color: #f2f1f8; }
 
 tr:nth-child(even).info td {
-  background-color: #f3f1f9; }
+  background-color: #f2f1f8; }
 
 .stripped tbody tr.info td:nth-child(odd) {
   background-color: #f5f4fa; }
 
 td.highlighted, .table tbody tr + tr td.highlighted, tr.highlighted td, .stripped tr.highlighted:nth-child(even) td:nth-child(odd) {
-  background-color: #e1dfec;
+  background-color: #e1deec;
   border-color: #c7c1e3; }
 
 tr:nth-child(even) td.highlighted {
-  background-color: #d8d5e7; }
+  background-color: #d8d5e6; }
 
 tr:nth-child(even).highlighted td {
-  background-color: #d8d5e7; }
+  background-color: #d8d5e6; }
 
 .stripped tbody tr.highlighted td:nth-child(odd) {
-  background-color: #e1dfec; }
+  background-color: #e1deec; }
 
 td.completed, .table tbody tr + tr td.completed, tr.completed td, .stripped tr.completed:nth-child(even) td:nth-child(odd) {
-  background-color: #d7f2e2;
+  background-color: #d7f1e2;
   border-color: #aaf5cb; }
 
 tr:nth-child(even) td.completed {
-  background-color: #cbeeda; }
+  background-color: #cbedda; }
 
 tr:nth-child(even).completed td {
-  background-color: #cbeeda; }
+  background-color: #cbedda; }
 
 .stripped tbody tr.completed td:nth-child(odd) {
-  background-color: #d7f2e2; }
+  background-color: #d7f1e2; }
 
 td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .stripped tr.disabled:nth-child(even) td:nth-child(odd) {
   background-color: #f2f2f2;
@@ -3441,7 +3462,7 @@ tr:nth-child(even).disabled td {
   background-color: #f2f2f2; }
 
 td.attention, .table tbody tr + tr td.attention, tr.attention td, .stripped tr.attention:nth-child(even) td:nth-child(odd) {
-  background-color: #faead7;
+  background-color: #f9ead7;
   border-color: #f8dbb6; }
 
 tr:nth-child(even) td.attention {
@@ -3451,7 +3472,7 @@ tr:nth-child(even).attention td {
   background-color: #f8e4cb; }
 
 .stripped tbody tr.attention td:nth-child(odd) {
-  background-color: #faead7; }
+  background-color: #f9ead7; }
 
 /**
 * Table States Cells:
@@ -3971,7 +3992,7 @@ ul.toggle {
 
 /**
 * Modals( Foundation Reveal):
-* `.reveal-modal` - Popup, modal, reveal - a design pattern to show and hide a part of content when you want the user to focus on the single task. 
+* `.reveal-modal` - Popup, modal, reveal - a design pattern to show a hidden a part of content when you want the user to focus on a single task. 
 * 
 *   @example
 *	<a href="#" class="button" data-reveal-id="myModal">Click Me For A Modal</a>
@@ -4153,10 +4174,10 @@ div.reveal-modal, dialog {
 *   <a class="link" href="http://foundation.zurb.com/docs/components/switch.html">Foundation Documentation</a>
 */
 .tooltip {
-  background-color: #413a62; }
+  background-color: #413a61; }
 
 .tooltip.tip-top > .nub {
-  border-color: #413a62 transparent transparent; }
+  border-color: #413a61 transparent transparent; }
 
 .page-wrapper {
   max-width: 1200px;
@@ -4605,33 +4626,40 @@ div.reveal-modal, dialog {
   background-color: #fff;
   display: block;
   clear: both;
-  width: 100%; }
+  width: 100%;
+  position: relative; }
   .page.header:after {
     content: "";
     display: table;
     clear: both; }
-  .page.header .logo img {
+  .page.header .logo {
+    position: absolute;
+    left: 0;
+    top: 0;
     display: none;
-    height: 60px;
-    float: left; }
-  @media only screen and (min-width: 767px) {
-    .page.header {
-      text-align: right; }
+    text-align: right;
+    clear: none;
+    float: left;
+    vertical-align: middle; }
+    @media only screen and (min-width: 767px) {
       .page.header .logo {
-        display: block; }
-      .page.header .logo img {
-        display: block;
-        clear: none;
-        float: left;
-        margin: .25rem 1rem; }
-      .page.header .tabs {
-        clear: none;
-        display: block;
-        width: auto;
-        float: right; } }
-  @media only screen and (min-width: 1024px) {
+        display: inline-block; } }
     .page.header .logo img {
-      height: 86px; } }
+      height: 60px; }
+      @media only screen and (min-width: 1024px) {
+        .page.header .logo img {
+          height: 70px;
+          margin: 10px 10px 0 0; } }
+      @media only screen and (min-width: 1200px) {
+        .page.header .logo img {
+          height: 85px;
+          margin: 10px 10px 0 0; } }
+  .page.header .tabs {
+    clear: none; }
+    @media only screen and (min-width: 767px) {
+      .page.header .tabs {
+        float: right;
+        width: auto; } }
 
 /**
 * Mobile Footer:
@@ -4762,23 +4790,35 @@ h6.with-underline {
 
 /**
  * Sub Content in Header Tags:
- * `headline > blockquote` - basic styling for sub content in headers. 
+ * `[Header Tag] > span.sub-line` - basic styling for sub content in headers. 
  *
  *     @example
  *     h1.with-underline Header 1 Tag
- *		blockquote sub content in a blockquote
+ *		span.sub-line sub lines of content in a `span.sub-line`
  *     h2.with-underline Header 2 Tag
- *		blockquote sub content in a blockquote
+ *		span.sub-line sub lines of content in a `span.sub-line`
  *     h3.with-underline Header 3 Tag
- *		blockquote sub content in a blockquote
+ *		span.sub-line sub lines of content in a `span.sub-line`
  *     h4.with-underline Header 4 Tag
- *		blockquote sub content in a blockquote
+ *		span.sub-line sub lines of content in a `span.sub-line`
  *     h5.with-underline Header 5 Tag 
- *		blockquote sub content in a blockquote
+ *		span.sub-line sub lines of content in a `span.sub-line`
  *     h6.with-underline Header 6 Tag
- *		blockquote sub content in a blockquote
+ *		span.sub-line sub lines of content in a `span.sub-line`
  */
-h1 blockquote, h2 blockquote, h3 blockquote, h4 blockquote, h5 blockquote, h6 blockquote {
+/**
+* Super Content in Header Tags:
+* `Header Tag] > span.sub-line` - You can use span.sub-line as super content in headers by just including them at the begining of the tag instead of after the header content. 
+*
+*     @example
+*	<h1 class="with-underline"><span class="sub-line">Super line of Content</span>H1 Tag that has some text above it </h1>
+*	<h2 class="with-underline"><span class="sub-line">Super line of Content</span>H2 Tag that has some text above it </h2>
+*	<h3 class="with-underline"><span class="sub-line">Super line of Content</span>H3 Tag that has some text above it </h3>
+*	<h4 class="with-underline"><span class="sub-line">Super line of Content</span>H4 Tag that has some text above it </h4>
+*	<h5 class="with-underline"><span class="sub-line">Super line of Content</span>H5 Tag that has some text above it </h5>
+*
+*/
+h1 blockquote, h2 blockquote, h3 blockquote, h4 blockquote, h5 blockquote, h6 blockquote, h1 .sub-line, h2 .sub-line, h3 .sub-line, h4 .sub-line, h5 .sub-line, h6 .sub-line {
   display: block;
   line-height: 1.1;
   font-size: .55em;
@@ -4787,48 +4827,50 @@ h1 blockquote, h2 blockquote, h3 blockquote, h4 blockquote, h5 blockquote, h6 bl
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 400;
   letter-spacing: .01em;
-  border: 0 none transparent; }
-h1 blockquote {
+  border: 0 none transparent;
+  opacity: .8; }
+
+h1 blockquote, h1 .sub-line {
   font-size: 0.4em;
   line-height: 1.5em;
   margin-top: 0em;
   margin-bottom: 0em; }
-h1.with-underline blockquote {
+h1.with-underline blockquote, h1.with-underline .sub-line {
   font-size: 0.4em;
   line-height: 1.5em;
   margin-top: 0.375em;
   margin-bottom: 0em; }
-h2 blockquote {
+h2 blockquote, h2 .sub-line {
   font-size: 0.5em;
   line-height: 1.75em;
   margin-top: 0em;
   margin-bottom: 0em; }
-h2.with-underline blockquote {
+h2.with-underline blockquote, h2.with-underline .sub-line {
   font-size: 0.5em;
   line-height: 1.75em;
   margin-top: 0.4375em;
   margin-bottom: 0em; }
-h3 blockquote {
+h3 blockquote, h3 .sub-line {
   font-size: 0.7em;
   line-height: 1.5em;
   margin-top: 0em;
   margin-bottom: 0em; }
-h3.with-underline blockquote {
+h3.with-underline blockquote, h3.with-underline .sub-line {
   font-size: 0.7em;
   line-height: 1.5em;
   margin-top: 0.375em;
   margin-bottom: 0em; }
-h4 blockquote {
+h4 blockquote, h4 .sub-line {
   font-size: 0.70588em;
   line-height: 1.75em;
   margin-top: 0em;
   margin-bottom: 0em; }
-h5 blockquote {
+h5 blockquote, h5 .sub-line {
   font-size: 0.71429em;
   line-height: 2.1em;
   margin-top: 0em;
   margin-bottom: 0em; }
-h6 blockquote {
+h6 blockquote, h6 .sub-line {
   font-size: 0.71429em;
   line-height: 2.1em;
   margin-top: 0em;

@@ -7,25 +7,36 @@ h6.with-underline{border-bottom: grey(30) 1px dotted;}
 
 /**
  * Sub Content in Header Tags:
- * `headline > blockquote` - basic styling for sub content in headers. 
+ * `[Header Tag] > span.sub-line` - basic styling for sub content in headers. 
  *
  *     @example
  *     h1.with-underline Header 1 Tag
- *		blockquote sub content in a blockquote
+ *		span.sub-line sub lines of content in a `span.sub-line`
  *     h2.with-underline Header 2 Tag
- *		blockquote sub content in a blockquote
+ *		span.sub-line sub lines of content in a `span.sub-line`
  *     h3.with-underline Header 3 Tag
- *		blockquote sub content in a blockquote
+ *		span.sub-line sub lines of content in a `span.sub-line`
  *     h4.with-underline Header 4 Tag
- *		blockquote sub content in a blockquote
+ *		span.sub-line sub lines of content in a `span.sub-line`
  *     h5.with-underline Header 5 Tag 
- *		blockquote sub content in a blockquote
+ *		span.sub-line sub lines of content in a `span.sub-line`
  *     h6.with-underline Header 6 Tag
- *		blockquote sub content in a blockquote
+ *		span.sub-line sub lines of content in a `span.sub-line`
+ */
+ /**
+ * Super Content in Header Tags:
+ * `Header Tag] > span.sub-line` - You can use span.sub-line as super content in headers by just including them at the begining of the tag instead of after the header content. 
+ *
+ *     @example
+ *	<h1 class="with-underline"><span class="sub-line">Super line of Content</span>H1 Tag that has some text above it </h1>
+ *	<h2 class="with-underline"><span class="sub-line">Super line of Content</span>H2 Tag that has some text above it </h2>
+ *	<h3 class="with-underline"><span class="sub-line">Super line of Content</span>H3 Tag that has some text above it </h3>
+ *	<h4 class="with-underline"><span class="sub-line">Super line of Content</span>H4 Tag that has some text above it </h4>
+ *	<h5 class="with-underline"><span class="sub-line">Super line of Content</span>H5 Tag that has some text above it </h5>
+ *
  */
 
-
-blockquote{
+blockquote, .sub-line{
 	h1 &,h2 &,h3 &,h4 &,h5 &,h6 &{
 		display: block;
 		line-height: 1.1;
@@ -34,7 +45,10 @@ blockquote{
 		padding: 0;
 		@include font();
 		border:0 none transparent;
+		opacity:.8;
 	}
+}
+blockquote, .sub-line{
 	h1 &{ @include baseline-font(0,0,0,5);}
 	h1.with-underline &{ @include baseline-font(0,.25,0,5);}
 	h2 &{ @include baseline-font(-1,0,0,3);}
@@ -46,6 +60,7 @@ blockquote{
 	h6 &{@include baseline-font(-2,0,0,0);}
 
 }
+
 .text-highlight-color{color:$typography-highlight-color!important;}
 /**
  * Group-divid:

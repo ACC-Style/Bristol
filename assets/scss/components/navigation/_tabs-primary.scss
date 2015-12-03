@@ -1,6 +1,3 @@
-
-
-
 $primary-tab-color:grey(40);
 $primary-tab-hover-color:rebrand-color($primary-color,3);
 $primary-tab-selected-color:rebrand-color($primary-color,1);
@@ -9,19 +6,45 @@ $primary-tab-darktext:$global-default-dark-text;
 $primary-tab-lighttext:$global-default-light-text;
 
 .tabs.primary{
-	font-size: 21px;
 	border:0;
 	background:none;
 	margin:0;
-	display: block;
+	flex-wrap:wrap;
+	width:100%;
+	clear:both;
+	@include flexbox();
+	flex-direction:row;
+	align-items:stretch;
+	align-content: stretch;
+	@include baseline-font(-1);
+	li {	
+		@include flex(1 1 auto);
+		a{padding: .55em .25em .75em;
+			&:after{border-bottom: 8px solid $primary-tab-Selected-tick-color;}
+		}
+		&.icon{@include flex(0 0 2em);}
+	}
+	@include bp(sm){
+		@include baseline-font(0);
+	}
+	@include bp(md){
+		display: block;
+		@include baseline-font(1);
+		li a{padding:1em .5em;}
+	}
+	@include bp(lg){
+		@include baseline-font(2);
+	}
+	@include bp(xl){
+		@include baseline-font(3);
+
+	}
 	&:after {
 	    content:"";
 	    display:table;
 	    clear:both;
 	}
 	li{
-			
-		
 		position: relative;
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
@@ -33,10 +56,18 @@ $primary-tab-lighttext:$global-default-light-text;
 		margin:0;
 		display: block;
 		float:left;	
-		a{
-			padding:1.25em .75em;
+		a{	
+			white-space: normal;
+			padding:.5em .25em;
+			
 			color:color-contrast($primary-tab-color,$primary-tab-darktext,$primary-tab-lighttext);
-			@include bp(xs-down){ white-space: normal;}
+			@include bp(sm){ 
+				white-space: nowrap; 
+
+			}
+			@include bp(md){
+				padding:1.25em .75em;
+			}
 		}
 		&:hover{
 			background-color: #fff;
@@ -91,33 +122,11 @@ $primary-tab-lighttext:$global-default-light-text;
 			}
 		}
 	}
-	@include bp(md-down){
-		font-size: 17px;
-		li a{padding:1em .5em;}
-	}
-	@include bp(sm-down){
-		font-size: 15px;
-		li a{padding: .55em .25em .75em;
-			&:after{border-bottom: 8px solid $primary-tab-Selected-tick-color;}
-		}
-		width:100%;
-		clear:both;
-		@include flexbox();
-		flex-direction:row;
-		flex-wrap:wrap;
-		align-items:stretch;
-		align-content: stretch;
-		margin:0;
-		li{@include flex(1 1 auto);
-			&.icon{@include flex(0 0 2em);}
-		}
-	}
-	@include bp(xs-down){
-		flex-wrap:wrap;
-	}
+
 
 	&.reverse{
-		@include baseline-font(1);
+		@include baseline-font(-1);
+		
 		li{
 			border-top-width:.45em;
 			border-bottom-width:1px; 
@@ -141,13 +150,13 @@ $primary-tab-lighttext:$global-default-light-text;
 					border-bottom: 0 none;
 				}
 		}
-		@include bp(sm-down){
-			@include baseline-font(0,0,0);
+		@include bp(sm){
+			@include baseline-font(0);
 			margin: 0;
 			li.selected a:after{border-top: 8px solid  $primary-tab-Selected-tick-color;}
 		}
-		@include bp(xs-down){
-			@include baseline-font(-1,0,0);
+		@include bp(md){
+			@include baseline-font(1);			
 		}
 
 	}

@@ -92,7 +92,7 @@
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li class="divider"></li>
-*							<li><a href="#">See all ΓåÆ</a></li>
+*							<li><a href="#">See all →</a></li>
 *						</ul>
 *						</li>
 *						<li class="divider"></li>
@@ -104,7 +104,7 @@
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li><a href="#">Dropdown Option</a></li>
 *							<li class="divider"></li>
-*								<li><a href="#">See all ΓåÆ</a></li>
+*								<li><a href="#">See all →</a></li>
 *						</ul>
 *					</li>
 *				</ul>
@@ -2093,7 +2093,7 @@ strong, .strong {
   color: #cd096d; }
 
 em, .emphasis {
-  color: #430324;
+  color: #430323;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: italic;
@@ -2102,7 +2102,7 @@ em, .emphasis {
 .subtle {
   font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
-  color: #9d5d7d; }
+  color: #9c5c7d; }
 
 .block-margins {
   margin: 0 em(21px) 0; }
@@ -2352,11 +2352,67 @@ button:disabled.secondary, .input-space
       flex-wrap: wrap; } }
 
 .tabs.primary {
-  font-size: 21px;
   border: 0;
   background: none;
   margin: 0;
-  display: block; }
+  flex-wrap: wrap;
+  width: 100%;
+  clear: both;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex !important;
+  flex-direction: row;
+  align-items: stretch;
+  align-content: stretch;
+  font-size: 0.85714em;
+  line-height: 1.75em;
+  margin-top: 0em;
+  margin-bottom: 0em; }
+  .tabs.primary li {
+    -webkit-box-flex: 1 1 auto;
+    -moz-box-flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto; }
+    .tabs.primary li a {
+      padding: .55em .25em .75em; }
+      .tabs.primary li a:after {
+        border-bottom: 8px solid #00386b; }
+    .tabs.primary li.icon {
+      -webkit-box-flex: 0 0 2em;
+      -moz-box-flex: 0 0 2em;
+      -webkit-flex: 0 0 2em;
+      -ms-flex: 0 0 2em;
+      flex: 0 0 2em; }
+  @media only screen and (min-width: 320px) {
+    .tabs.primary {
+      font-size: 1em;
+      line-height: 1.5em;
+      margin-top: 0em;
+      margin-bottom: 0em; } }
+  @media only screen and (min-width: 767px) {
+    .tabs.primary {
+      display: block;
+      font-size: 1.21429em;
+      line-height: 1.23529em;
+      margin-top: 0em;
+      margin-bottom: 0em; }
+      .tabs.primary li a {
+        padding: 1em .5em; } }
+  @media only screen and (min-width: 1024px) {
+    .tabs.primary {
+      font-size: 1.42857em;
+      line-height: 1.05em;
+      margin-top: 0em;
+      margin-bottom: 0em; } }
+  @media only screen and (min-width: 1200px) {
+    .tabs.primary {
+      font-size: 1.71429em;
+      line-height: 1.75em;
+      margin-top: 0em;
+      margin-bottom: 0em; } }
   .tabs.primary:after {
     content: "";
     display: table;
@@ -2374,11 +2430,15 @@ button:disabled.secondary, .input-space
     display: block;
     float: left; }
     .tabs.primary li a {
-      padding: 1.25em .75em;
+      white-space: normal;
+      padding: .5em .25em;
       color: #333333; }
-      @media only screen and (max-width: 320px) {
+      @media only screen and (min-width: 320px) {
         .tabs.primary li a {
-          white-space: normal; } }
+          white-space: nowrap; } }
+      @media only screen and (min-width: 767px) {
+        .tabs.primary li a {
+          padding: 1.25em .75em; } }
     .tabs.primary li:hover {
       background-color: #fff;
       border-color: #860647; }
@@ -2417,48 +2477,9 @@ button:disabled.secondary, .input-space
       background-color: #860647; }
       .tabs.primary li.icon.selected a {
         color: #fff; }
-  @media only screen and (max-width: 1024px) {
-    .tabs.primary {
-      font-size: 17px; }
-      .tabs.primary li a {
-        padding: 1em .5em; } }
-  @media only screen and (max-width: 767px) {
-    .tabs.primary {
-      font-size: 15px;
-      width: 100%;
-      clear: both;
-      display: -webkit-box;
-      display: -moz-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex !important;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: stretch;
-      align-content: stretch;
-      margin: 0; }
-      .tabs.primary li a {
-        padding: .55em .25em .75em; }
-        .tabs.primary li a:after {
-          border-bottom: 8px solid #00386b; }
-      .tabs.primary li {
-        -webkit-box-flex: 1 1 auto;
-        -moz-box-flex: 1 1 auto;
-        -webkit-flex: 1 1 auto;
-        -ms-flex: 1 1 auto;
-        flex: 1 1 auto; }
-        .tabs.primary li.icon {
-          -webkit-box-flex: 0 0 2em;
-          -moz-box-flex: 0 0 2em;
-          -webkit-flex: 0 0 2em;
-          -ms-flex: 0 0 2em;
-          flex: 0 0 2em; } }
-  @media only screen and (max-width: 320px) {
-    .tabs.primary {
-      flex-wrap: wrap; } }
   .tabs.primary.reverse {
-    font-size: 1.21429em;
-    line-height: 1.23529em;
+    font-size: 0.85714em;
+    line-height: 1.75em;
     margin-top: 0em;
     margin-bottom: 0em; }
     .tabs.primary.reverse li {
@@ -2479,7 +2500,7 @@ button:disabled.secondary, .input-space
       border-width: 0px 8px;
       border-top: 10px solid #00386b;
       border-bottom: 0 none; }
-    @media only screen and (max-width: 767px) {
+    @media only screen and (min-width: 320px) {
       .tabs.primary.reverse {
         font-size: 1em;
         line-height: 1.5em;
@@ -2488,10 +2509,10 @@ button:disabled.secondary, .input-space
         margin: 0; }
         .tabs.primary.reverse li.selected a:after {
           border-top: 8px solid #00386b; } }
-    @media only screen and (max-width: 320px) {
+    @media only screen and (min-width: 767px) {
       .tabs.primary.reverse {
-        font-size: 0.85714em;
-        line-height: 1.75em;
+        font-size: 1.21429em;
+        line-height: 1.23529em;
         margin-top: 0em;
         margin-bottom: 0em; } }
 
@@ -3635,7 +3656,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   background-color: #e4f6fb; }
 
 .stripped tbody tr:nth-child(even) td:nth-child(odd) {
-  background-color: #deeaed; }
+  background-color: #dee9ed; }
 
 .stripped tbody tr + tr td, .banded tbody tr + tr td {
   border-top: 0px solid; }
@@ -4188,7 +4209,7 @@ tr.highlight:nth-child(even) td.alert {
 
 /**
 * Modals( Foundation Reveal):
-* `.reveal-modal` - Popup, modal, reveal - a design pattern to show and hide a part of content when you want the user to focus on the single task. 
+* `.reveal-modal` - Popup, modal, reveal - a design pattern to show a hidden a part of content when you want the user to focus on a single task. 
 * 
 *   @example
 *	<a href="#" class="button" data-reveal-id="myModal">Click Me For A Modal</a>
@@ -4230,7 +4251,7 @@ div.reveal-modal, dialog {
   margin: 1.42857rem 0;
   -ms-touch-action: none;
   touch-action: none;
-  background: whitesmoke; }
+  background: #f4f4f4; }
   .range-slider.vertical-range {
     display: block;
     position: relative;
@@ -4253,7 +4274,7 @@ div.reveal-modal, dialog {
       height: auto;
       bottom: 0; }
   .range-slider.radius {
-    background: whitesmoke;
+    background: #f4f4f4;
     border-radius: 5px; }
     .range-slider.radius .range-slider-handle {
       background: #860647;
@@ -4261,7 +4282,7 @@ div.reveal-modal, dialog {
       .range-slider.radius .range-slider-handle:hover {
         background: #76053e; }
   .range-slider.round {
-    background: whitesmoke;
+    background: #f4f4f4;
     border-radius: 1000px; }
     .range-slider.round .range-slider-handle {
       background: #860647;
@@ -4269,7 +4290,7 @@ div.reveal-modal, dialog {
       .range-slider.round .range-slider-handle:hover {
         background: #76053e; }
   .range-slider.disabled, .range-slider[disabled] {
-    background: whitesmoke;
+    background: #f4f4f4;
     cursor: default;
     opacity: 0.7; }
     .range-slider.disabled .range-slider-handle, .range-slider[disabled] .range-slider-handle {
@@ -4772,33 +4793,40 @@ div.reveal-modal, dialog {
   background-color: #fff;
   display: block;
   clear: both;
-  width: 100%; }
+  width: 100%;
+  position: relative; }
   .page.header:after {
     content: "";
     display: table;
     clear: both; }
-  .page.header .logo img {
+  .page.header .logo {
+    position: absolute;
+    left: 0;
+    top: 0;
     display: none;
-    height: 60px;
-    float: left; }
-  @media only screen and (min-width: 767px) {
-    .page.header {
-      text-align: right; }
+    text-align: right;
+    clear: none;
+    float: left;
+    vertical-align: middle; }
+    @media only screen and (min-width: 767px) {
       .page.header .logo {
-        display: block; }
-      .page.header .logo img {
-        display: block;
-        clear: none;
-        float: left;
-        margin: .25rem 1rem; }
-      .page.header .tabs {
-        clear: none;
-        display: block;
-        width: auto;
-        float: right; } }
-  @media only screen and (min-width: 1024px) {
+        display: inline-block; } }
     .page.header .logo img {
-      height: 86px; } }
+      height: 60px; }
+      @media only screen and (min-width: 1024px) {
+        .page.header .logo img {
+          height: 70px;
+          margin: 10px 10px 0 0; } }
+      @media only screen and (min-width: 1200px) {
+        .page.header .logo img {
+          height: 85px;
+          margin: 10px 10px 0 0; } }
+  .page.header .tabs {
+    clear: none; }
+    @media only screen and (min-width: 767px) {
+      .page.header .tabs {
+        float: right;
+        width: auto; } }
 
 /**
 * Mobile Footer:
@@ -4912,23 +4940,35 @@ h6.with-underline {
 
 /**
  * Sub Content in Header Tags:
- * `headline > blockquote` - basic styling for sub content in headers. 
+ * `[Header Tag] > span.sub-line` - basic styling for sub content in headers. 
  *
  *     @example
  *     h1.with-underline Header 1 Tag
- *		blockquote sub content in a blockquote
+ *		span.sub-line sub lines of content in a `span.sub-line`
  *     h2.with-underline Header 2 Tag
- *		blockquote sub content in a blockquote
+ *		span.sub-line sub lines of content in a `span.sub-line`
  *     h3.with-underline Header 3 Tag
- *		blockquote sub content in a blockquote
+ *		span.sub-line sub lines of content in a `span.sub-line`
  *     h4.with-underline Header 4 Tag
- *		blockquote sub content in a blockquote
+ *		span.sub-line sub lines of content in a `span.sub-line`
  *     h5.with-underline Header 5 Tag 
- *		blockquote sub content in a blockquote
+ *		span.sub-line sub lines of content in a `span.sub-line`
  *     h6.with-underline Header 6 Tag
- *		blockquote sub content in a blockquote
+ *		span.sub-line sub lines of content in a `span.sub-line`
  */
-h1 blockquote, h2 blockquote, h3 blockquote, h4 blockquote, h5 blockquote, h6 blockquote {
+/**
+* Super Content in Header Tags:
+* `Header Tag] > span.sub-line` - You can use span.sub-line as super content in headers by just including them at the begining of the tag instead of after the header content. 
+*
+*     @example
+*	<h1 class="with-underline"><span class="sub-line">Super line of Content</span>H1 Tag that has some text above it </h1>
+*	<h2 class="with-underline"><span class="sub-line">Super line of Content</span>H2 Tag that has some text above it </h2>
+*	<h3 class="with-underline"><span class="sub-line">Super line of Content</span>H3 Tag that has some text above it </h3>
+*	<h4 class="with-underline"><span class="sub-line">Super line of Content</span>H4 Tag that has some text above it </h4>
+*	<h5 class="with-underline"><span class="sub-line">Super line of Content</span>H5 Tag that has some text above it </h5>
+*
+*/
+h1 blockquote, h2 blockquote, h3 blockquote, h4 blockquote, h5 blockquote, h6 blockquote, h1 .sub-line, h2 .sub-line, h3 .sub-line, h4 .sub-line, h5 .sub-line, h6 .sub-line {
   display: block;
   line-height: 1.1;
   font-size: .55em;
@@ -4937,48 +4977,50 @@ h1 blockquote, h2 blockquote, h3 blockquote, h4 blockquote, h5 blockquote, h6 bl
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 400;
   letter-spacing: .01em;
-  border: 0 none transparent; }
-h1 blockquote {
+  border: 0 none transparent;
+  opacity: .8; }
+
+h1 blockquote, h1 .sub-line {
   font-size: 0.4em;
   line-height: 1.5em;
   margin-top: 0em;
   margin-bottom: 0em; }
-h1.with-underline blockquote {
+h1.with-underline blockquote, h1.with-underline .sub-line {
   font-size: 0.4em;
   line-height: 1.5em;
   margin-top: 0.375em;
   margin-bottom: 0em; }
-h2 blockquote {
+h2 blockquote, h2 .sub-line {
   font-size: 0.5em;
   line-height: 1.75em;
   margin-top: 0em;
   margin-bottom: 0em; }
-h2.with-underline blockquote {
+h2.with-underline blockquote, h2.with-underline .sub-line {
   font-size: 0.5em;
   line-height: 1.75em;
   margin-top: 0.4375em;
   margin-bottom: 0em; }
-h3 blockquote {
+h3 blockquote, h3 .sub-line {
   font-size: 0.7em;
   line-height: 1.5em;
   margin-top: 0em;
   margin-bottom: 0em; }
-h3.with-underline blockquote {
+h3.with-underline blockquote, h3.with-underline .sub-line {
   font-size: 0.7em;
   line-height: 1.5em;
   margin-top: 0.375em;
   margin-bottom: 0em; }
-h4 blockquote {
+h4 blockquote, h4 .sub-line {
   font-size: 0.70588em;
   line-height: 1.75em;
   margin-top: 0em;
   margin-bottom: 0em; }
-h5 blockquote {
+h5 blockquote, h5 .sub-line {
   font-size: 0.71429em;
   line-height: 2.1em;
   margin-top: 0em;
   margin-bottom: 0em; }
-h6 blockquote {
+h6 blockquote, h6 .sub-line {
   font-size: 0.71429em;
   line-height: 2.1em;
   margin-top: 0em;

@@ -24,26 +24,52 @@
 	display: block;
 	clear:both;
 	width:100%;
+	position: relative;
 	&:after{content:"";display: table;clear:both;}
-	.logo img{display: none; height: 60px; float:left;}
-	@include bp(md){
+	.logo{
+		position: absolute;
+		left:0;
+		top:0;
+		display: none;
 		text-align: right;
-		.logo{display: block;} 
-		.logo img{
-			display: block;
-			clear:none;
-			float:left;
-			margin: .25rem 1rem;
+		clear:none;
+		float:left;
+		vertical-align: middle;
+		@include bp(md){ display: inline-block;}
+		img{
+			height: 60px;
+			@include bp(lg){ height: 70px;margin:10px 10px 0 0;}
+			@include bp(xl){height:85px;margin:10px 10px 0 0;}
 		}
-		.tabs{
-			clear:none;
-			display: block;
-			width:auto;
-			float: right;
-
-			}
 	}
-	@include bp(lg){
-		.logo img{height: 86px;}
-	};
+	.tabs{
+		clear:none;
+		@include bp(md){
+			float: right;
+			width:auto;
+		}
+	}
+
 }
+
+// @mixin baseline-font($font-level, $margin-top:0, $margin-bottom:0,$parent-level:0,$baseline:$base-line){
+// 	$font-size: ms($font-level);
+// 	@if($parent-level > 0){
+// 		$font-size: ms($font-level)/ms($parent-level) * $base-font-size;
+// 		// @debug $font-size "fontsize";
+// 	}
+// 	// @debug $font-size "real - fontsize";
+// 	$raw-line: strip-unit($font-size) /  strip-unit($baseline);
+// 	$lines:ceil( $raw-line ); 
+// 	$line-height:  ( $baseline * $lines ) / $font-size * 1em;
+// 	font-size: $font-size/$base-font-size * 1em;
+// 	@if($parent-level > 0){
+// 		$line-height:  ( $baseline * $lines ) / ms($font-level) * 1em;
+// 		// @debug $font-size "fontsize";
+// 	}
+// 	line-height: $line-height;
+// 	// @debug "lines" $lines;
+// 	// @debug "line-height: " $line-height/$lines;
+// 	margin-top: $margin-top * $line-height/$lines;
+// 	margin-bottom: $margin-bottom *  $line-height/$lines;
+// }
