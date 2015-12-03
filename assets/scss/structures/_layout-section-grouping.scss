@@ -51,39 +51,38 @@
 }
 
 .group-section-tab-holder {
-     margin: -.75rem -.5rem 0;
-    @include bp(md){
-        margin: -.5rem -.75rem 0;
-    }  
-    @include bp(lg){
-        margin: -.5rem -1.5rem 0;  
-    }
+    margin: -.75rem -.5rem 0;
+    @include bp(md){  margin: -.5rem -.75rem 0;  }  
+    @include bp(lg){ margin: -.5rem -1.5rem 0; }
     .nav.tabs {
         padding: 2px 10px 0;
         background-image: url('../img/construction-paper.png');
         background-color: rebrand-color($primary-color, 1);
-
         li {
             border-radius: 8px;
             display: inline-block;
             margin: .4rem 1px .4rem;
             background-color: color(rebrand-color($primary-color, 1), 20);
-        }
-
-        li.selected {
-            border-bottom-right-radius: 0px;
-            border-bottom-left-radius: 0px;
-            margin-bottom: 0;
-            vertical-align: bottom;
-            padding: .4rem;
-            background-color: #fff;
+            &:hover{ 
+                background-color: color(rebrand-color($primary-color, 1), 35);
+            }
+            &.selected {
+                border-bottom-right-radius: 0px;
+                border-bottom-left-radius: 0px;
+                margin-bottom: 0;
+                vertical-align: bottom;
+                padding: .4rem;
+                background-color: #fff;
+            }
         }
     }
-}
-.group-section-tab-holder.secondary .nav.tabs{background-color: $secondary-color;
-    li{
-         background-color: color(rebrand-color($secondary-color, 1), 20);
-         &.selected{background-color: #fff;}
+    &.secondary .nav.tabs{
+        background-color: $secondary-color;
+        li{
+             background-color: color($secondary-color, 20);
+             &:hover{ background-color: color($secondary-color, 35);}
+             &.selected{background-color: #fff;}
+        }
     }
 }
 

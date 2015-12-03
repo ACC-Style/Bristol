@@ -3555,13 +3555,14 @@ input[type="checkbox"], input[type="radio"] {
 
 /**
 * Form Repeater:
-* `.repeater` - This is form elements repeater. This Module is broken into 3 major containers the `renders`,`question-group`, and `repeater actions`. The repeater also has an `edit-mode` that can hide the renders and hide and show elements with tags of `edit-mode--hide` and `edit-mode--show`
+* `.repeater` - This is form elements repeater. This Module is broken into 3 major containers. The `renders` are any previously saved collection of inputs.The `question-group` holds all of the questions that need to be repeated. And the `.repeater-actions` is the buttons to save|submit and cancel the current session of inputs. 
+*  The repeater has a focused mode when editing adding  `.repeater.edit-mode` to the containter will hide the renders at the top and toggle any elements that have been tagged with `.edit-mode--hide` and `.edit-mode--show`.
 * 
 *   @example
 *	<div class="repeater required">
 *		<div class="label-holder">
 *			<label for="">
-*				<span class="text">Email</span>
+*				<span class="text">Multi Input Form</span>
 *				<span class="required-holder">
 *					<i class="fa fa-holder-dynamic"></i>
 *				</span>
@@ -3660,6 +3661,58 @@ input[type="checkbox"], input[type="radio"] {
 *				<small class="data"><i class="fa fa-holder"></i> Data message</small>
 *		</div>
 *		<div class="hint">This is some hint text</div>
+*	</div>
+*			</div>
+*			<div class="message-holder">
+*				<small class="warning"><i class="fa fa-holder"></i>
+*					This is a dynmic message for the question group.
+*				</small>
+*			</div>
+*		</div>
+*		<div class="repeater-action">
+*			<a href="" class="clear"><i class="fa fa-holder"></i><span class="text">clear</span></a>
+*			<a href="" class="save"><i class="fa fa-holder"></i> <span class="text">save</span></a>
+*		</div>
+*	</div>
+*	<div class="repeater required edit-mode">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Multi Input Form (Edit)</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder-dynamic"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="render">
+*		<div class="render-actions">
+*			<a href="" class="edit"><i class="fa fa-holder"></i><span class="text">edit</span></a>
+*			<a href="" class="delete"><i class="fa fa-holder"></i><span class="text">delete</span></a>
+*		</div>
+*		<ul class="render-holder">
+*			<li class="italic starred"><i class="fa fa-holder"></i> </li>
+*			<li class="bold break">Jeff Morris</li>
+*			<li>jmorris@acc.org</li>
+*			<li class="validated"><i class="fa fa-holder"></i></li>
+*		</ul>
+*		<div class="message-holder">
+*			<small class="warning">
+*				<i class="fa fa-holder-dynamic"></i>
+*				This is a dynamic render message.
+*			</small>
+*		</div>
+*	</div>
+*		<div class="question-group">
+*			<div class="required-message">All inputs marked with the * are required to submit and save</div>
+*			<h4 class="edit-mode--show warning">Edit Record</h4><h4 class="edit-mode--hide highlighted">Add Record</h4>
+*			<div class="row">
+*	<div class="question required column small-4 outline">
+*		<span class="notation">Question Block</span>
+*	</div>
+*	<div class="question required column small-5 outline">
+*		<span class="notation">Question Block</span>
+*	</div>
+*	<div class="question required column small-3 outline">
+*		<span class="notation">Question Block</span>
 *	</div>
 *			</div>
 *			<div class="message-holder">
@@ -4276,8 +4329,8 @@ tr:nth-child(even).attention td {
 *	</table>
 */
 /**
-* Collapsable Panel:
-* `.collapsable-panel` - a container element which naturaly is hiden and reveals when it is prompted.<br><br> !!  Requires Javascript to Function  !!
+* Collapsable Panels:
+* `.collapsable-panel` - a container element which naturaly is hiden and reveals when it is prompted. This element is great for `read more` links when the content is small.<br><br> !!  Requires Javascript to Function  !!
 * 
 *   @example
 *	<div class="row">
@@ -4289,7 +4342,7 @@ tr:nth-child(even).attention td {
 *				<div class="content">
 *					<div class="row">
 *						<div class="column small-12">
-*							<h2>H2 in Panel</h2>
+*							<h2>H2 in a collapse panel</h2>
 *			              <p>All basic html content can be placed in the panel</p>
 *						</div>
 *					</div>
@@ -4307,7 +4360,7 @@ tr:nth-child(even).attention td {
 *				<div class="content">
 *					<div class="row">
 *						<div class="column small-12">
-*							<h2>H2 in Inset Panel</h2>
+*							<h2>H2 in an inset collapse panel</h2>
 *			              <p>All basic html content can be placed in the panel</p>
 *						</div>
 *					</div>
@@ -4407,50 +4460,6 @@ table + div > .collapsable-panel {
   margin-top: -1rem;
   margin-bottom: 0.7rem; }
 
-/**
-* Collapsable Panel:
-* `.collapsable-panel` - a container element which naturaly is hiden and reveals when it is prompted.<br><br> !!  Requires Javascript to Function  !!
-* 
-*   @example
-*	<div class="row">
-*		<div class="column small-12 medium-6">
-*			<div class="collapsable-panel warning" style="display: block;">
-*				<div class="bar close">
-*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> <span class="text">close</span></a>
-*				</div>
-*				<div class="content">
-*					<div class="row">
-*						<div class="column small-12">
-*							<h2>H2 in Panel</h2>
-*			              <p>All basic html content can be placed in the panel</p>
-*						</div>
-*					</div>
-*				</div>
-*					<div class="bar jumpToTop">
-*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> <span class="text">top</span></a>
-*				</div>
-*			</div>
-*		</div>
-*		<div class="column small-12 medium-6">
-*			<div class="collapsable-panel error inset" style="display: block;">
-*				<div class="bar close">
-*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> <span class="text">close</span></a>
-*				</div>
-*				<div class="content">
-*					<div class="row">
-*						<div class="column small-12">
-*							<h2>H2 in Inset Panel</h2>
-*			              <p>All basic html content can be placed in the panel</p>
-*						</div>
-*					</div>
-*				</div>
-*					<div class="bar jumpToTop">
-*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> <span class="text">top</span></a>
-*				</div>
-*			</div>
-*		</div>
-*	</div>
-*/
 .collapsable-panel.error {
   background-color: transparent;
   border: 0 none transparent; }
@@ -4509,31 +4518,46 @@ table + div > .collapsable-panel {
       color: #fff; }
 
 /**
-* Accordion (requires Collapsable Panel):
-* `.accordion` - An extend DOM of Collapsable Paenel which allows it to be chained together and only have one open at a time.<br><br> !!  Requires Javascript to Function  !!
+* Collapsable Panel (State):
+* `.collapsable-panel` - Collapse panels can be used with states and the panels subtly color with the state colors.<br><br> !!  Requires Javascript to Function  !!
 * 
 *   @example
-*	<div class="accordion">
-*		<div class="selected">
-*			<h2 class="toggle" data-bind="click:panelShow"><i class="fa fa-holder"></i><span class="text">Header and Toggle Area (Open)</span></h2>
-*			<div class="collapsable-panel ">
+*	<div class="row">
+*		<div class="column small-12 medium-6">
+*			<div class="collapsable-panel warning" style="display: block;">
 *				<div class="bar close">
-*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> close</a>
+*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> <span class="text">close</span></a>
 *				</div>
 *				<div class="content">
 *					<div class="row">
 *						<div class="column small-12">
-*							<p>Content</p>
+*							<h2>H2 in Panel</h2>
+*			              <p>All basic html content can be placed in the panel</p>
 *						</div>
 *					</div>
 *				</div>
-*				<div class="bar jumpToTop">
-*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> top</a>
+*					<div class="bar jumpToTop">
+*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> <span class="text">top</span></a>
 *				</div>
 *			</div>
 *		</div>
-*		<div class="">
-*			<h2 class="toggle" data-bind="click:panelShow"><i class="fa fa-holder"></i><span class="text">Header and Toggle Area (Closed)</span></h2>
+*		<div class="column small-12 medium-6">
+*			<div class="collapsable-panel error inset" style="display: block;">
+*				<div class="bar close">
+*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> <span class="text">close</span></a>
+*				</div>
+*				<div class="content">
+*					<div class="row">
+*						<div class="column small-12">
+*							<h2>H2 in Inset Panel</h2>
+*			              <p>All basic html content can be placed in the panel</p>
+*						</div>
+*					</div>
+*				</div>
+*					<div class="bar jumpToTop">
+*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> <span class="text">top</span></a>
+*				</div>
+*			</div>
 *		</div>
 *	</div>
 */
@@ -4602,6 +4626,35 @@ table + div > .collapsable-panel {
   transform: rotate(90deg);
   color: #14b057; }
 
+/**
+* Accordion (requires Collapsable Panel SCSS):
+* `.accordion` - Accordions are built from a group of `Collapsable Panels` and are never full hidden like the collapsable panel. By default only one `panel` of the accordian can be open at a time.<br><br> !!  Requires Javascript to Function  !!
+* 
+*   @example
+*	<div class="accordion">
+*		<div class="selected">
+*			<h2 class="toggle" data-bind="click:panelShow"><i class="fa fa-holder"></i><span class="text">Header and Toggle Area (Open)</span></h2>
+*			<div class="collapsable-panel ">
+*				<div class="bar close">
+*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> close</a>
+*				</div>
+*				<div class="content">
+*					<div class="row">
+*						<div class="column small-12">
+*							<p>Content</p>
+*						</div>
+*					</div>
+*				</div>
+*				<div class="bar jumpToTop">
+*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> top</a>
+*				</div>
+*			</div>
+*		</div>
+*		<div class="">
+*			<h2 class="toggle" data-bind="click:panelShow"><i class="fa fa-holder"></i><span class="text">Header and Toggle Area (Closed)</span></h2>
+*		</div>
+*	</div>
+*/
 /**
 * Panel Selector:
 * `.panel-selector-holder` - the panel selector is a multi tree level selector allowing a user to select from the left coloum or parent and then select the filtered child elements.  !! Requires Javascript!!
@@ -6334,10 +6387,10 @@ div.reveal-modal, dialog {
   white-space: normal;
   display: table-cell; }
 
-.switch.check-visible input + label:after {
+.switch.check-visible input + label:after, .switch.dot-visible input + label:after, .switch.x-visible input + label:after {
   z-index: 100; }
 
-.switch.check-visible input + label:before, .switch.x-visible input + label:before {
+.switch.check-visible input + label:before, .switch.x-visible input + label:before, .switch.dot-visible input + label:before {
   position: absolute;
   display: block;
   height: 1.5em;
@@ -6363,11 +6416,17 @@ div.reveal-modal, dialog {
   top: .40em;
   color: #fff; }
 
+.switch.dot-visible input:checked + label:before,
 .switch.check-visible input:checked + label:before {
-  content: "\f00c";
   left: -3.05em;
-  top: .40em;
-  color: #fff; }
+  top: .375em;
+  color: #b8e7cc; }
+
+.switch.dot-visible input:checked + label:before {
+  content: "\f058"; }
+
+.switch.check-visible input:checked + label:before {
+  content: "\f00c"; }
 
 .switch.disabled label {
   background: #b3b3b3 url("../img/subtlenet2.png") repeat; }
@@ -6376,29 +6435,45 @@ div.reveal-modal, dialog {
 
 /**
 * Switch (Foundation Override):
-* `.switch` - Switches are a more visible and more touchable versions of checkbox or radio buttons. ADD `.check-visible` to a switch to make a check appear in the selected state of `.x-visible` to show the x when it is shut off
+* `.switch` - Switches are a more visible and more touchable versions of checkbox and radio buttons. ADD `.check-visible` to a switch to make a check appear in the selected state of `.x-visible` to show the x when it is shut off. 
 * 
 *   @example
+*	<h3>Radio Buttons should use `.round` modifier</h3>
 *	<div class="switch-input-space group-divide row">
-*		<div class="switch">
-*			<input type="radio" id="hb-check0">
-*			<label  for="hb-check0"onclick=""></label>
+*		<div class="switch round">
+*			<input name="radiobutton-switch" type="radio" id="radio-y">
+*			<label  for="radio-y" onclick=""></label>
 *		</div>
-*		<label  class="switch-value" for="hb-check0">Question to say yes to</label>		
+*		<label  class="switch-value" for="radio-y">Radio buttons have `.round` on the `.switch`</label>		
+*	</div>
+*	<div class="switch-input-space group-divide row">
+*		<div class="switch round dot-visible">
+*			<input name="radiobutton-switch"  type="radio" id="radio-n">
+*			<label  for="radio-n"onclick=""></label>
+*		</div>
+*		<label  class="switch-value" for="radio-n">`.dot-visible` Radio button a dot will appear when selected</label>		
+*	</div>
+*	<h3>Checkboxes should use the `.radius` or no modifier at all</h3>
+*	<div class="switch-input-space group-divide row">
+*		<div class="switch check-visible radius">
+*			<input type="checkbox" id="hb-check0">
+*			<label  for="hb-check0"></label>
+*		</div>
+*		<label  class="switch-value" for="hb-check0">This is a checkbox is using the `.radius` modifier</label>		
 *	</div>
 *	<div class="switch-input-space group-divide row">
 *		<div class="switch check-visible">
 *			<input type="checkbox" id="hb-check2">
 *			<label  for="hb-check2"></label>
 *		</div>
-*		<label  class="switch-value" for="hb-check2">When yes is selected you should see a checkmark</label>		
+*		<label  class="switch-value" for="hb-check2">This is a checkbox a check should appear when selected</label>		
 *	</div>
 *	<div class="switch-input-space group-divide row">
-*		<div class="switch x-visible round">
-*			<input type="checkbox" id="hb-checkround">
-*			<label  for="hb-checkround"></label>
+*		<div class="switch x-visible">
+*			<input type="checkbox" id="hb-check1">
+*			<label  for="hb-check1"></label>
 *		</div>
-*		<label  class="switch-value" for="hb-checkround">"x-visible" When No is selected you should show an X</label>		
+*		<label  class="switch-value" for="hb-check1">"x-visible" When No is selected you should show an X</label>		
 *	</div>
 *   <a class="link" href="http://foundation.zurb.com/docs/components/switch.html">Foundation Documentation</a>
 */
@@ -7275,7 +7350,6 @@ div.reveal-modal, dialog {
     display: table;
     clear: both; }
   .page.header .logo {
-    position: absolute;
     left: 0;
     top: 0;
     display: none;
@@ -7805,41 +7879,48 @@ h6 blockquote, h6 .sub-line {
 
 /**
 * HELPER - Condensable (Condense):
-* `.condensable` - a pattern to hide and show elements inside of a an element to shortend the text to respond to the space. You can set the break points of the condensings with `.small`, `.medium`, or `.large`
+* `.condensable.large .condense` - This pattern allows for responsive reduction of content.
+*  Content tagged with `.condense` will turn to display:none when it passes the below the break point. On the container element add  '.condensable' and set the break point where you want it  by adding the class `.small`, `.medium`, or `.large`.
+*  !! Single word reduction requires adding `condensable-word` see example below.
 * 
 *   @example
-*	<h2 class="condensable large">
-*		Super<span class="condense">califragilisticexpialidocious the full word is only seen on large screens</span> 
+*	<h2>
+*		Condensable Sub-line
+*		<span class="sub-line condensable large"><span class="condense">The full word is only seen on large screens.</span> It only says Super below on smaller screens</span>
+*		<span class="sub-line condensable condensable-word large">Super<span class="condense">califragilisticexpialidocious</span></span>
 *	</h2>
 */
 /**
 * HELPER - Swappable (short-text long-text):
-* `.swappable` - a pattern to hide and show elements long and short text to respond to the space. You can set the break points of the condensings with `.small`, `.medium`, or `.large`
+* `.swappable` - This pattern allows for responsive swapping of content from `.short-text` and `.long-text`.
+*   On the container element add `.swappable` and set the break point where you want it to switch by adding the class `.small`, `.medium`, or `.large`.
+*   The elements with the .short-text and .long-text must be inline elements.
 * 
 *   @example
-*	<h2 class="swappable meduim">
-*		<span class="short-text">Short Title</span>
-*		<span class="long-text">Long TItle Seen on Medium Screens and Up</span>
+*	<h2 class="swappable medium">
+*		Swappable Sub-line
+*		<span class="sub-line">
+*			<span class="short-text">Short Title</span>
+*			<span class="long-text">Long TItle Seen on Medium Screens and Up</span>
+*		</span>
 *	</h2>
 */
-.condensable {
+.condensable.condensable-word {
   word-spacing: -4px; }
+.condensable .condense {
+  display: inline; }
+@media only screen and (max-width: 320px) {
   .condensable .condense {
-    display: inline; }
-  .condensable * {
-    word-spacing: 0; }
-  @media only screen and (max-width: 320px) {
-    .condensable .condense {
-      display: none; } }
-  @media only screen and (max-width: 767px) {
-    .condensable.small .condense {
-      display: none; } }
-  @media only screen and (max-width: 1024px) {
-    .condensable.medium .condense {
-      display: none; } }
-  @media only screen and (max-width: 1200px) {
-    .condensable.large .condense {
-      display: none; } }
+    display: none; } }
+@media only screen and (max-width: 767px) {
+  .condensable.small .condense {
+    display: none; } }
+@media only screen and (max-width: 1024px) {
+  .condensable.medium .condense {
+    display: none; } }
+@media only screen and (max-width: 1200px) {
+  .condensable.large .condense {
+    display: none; } }
 
 .swappable .long-text {
   display: inline; }
@@ -7896,7 +7977,7 @@ STATE TRUMPING CODE
 .error .input-holder input, .error .input-holder textarea, .error .input-holder select, .error .input-holder .postfix, .error .input-holder .prefix, .error.question .button-group, .error .bar.close, .error.inset .bar.close, h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
   border-color: #c32231; }
 
-.nav-list.nav-checklist li.error i, .nav-checklist.panel-selector li.error i, .answer.error .required-holder, .question.error .required-holder, .error .label-holder label, .error .input-holder .postfix, .error .input-holder .prefix, .error .input-holder .value, .error .bar.close .action-btn, h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
+.nav-list.nav-checklist li.error i, .nav-checklist.panel-selector li.error i, .answer.error .required-holder, .question.error .required-holder, .error .label-holder label, .error .input-holder .postfix, .error .input-holder .prefix, .error .input-holder .value, .error .bar.close .action-btn, .collapsable-panel.error h1, .collapsable-panel.error h2, .collapsable-panel.error h3, .collapsable-panel.error h4, .collapsable-panel.error h5, .collapsable-panel.error h6, h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
   color: #c32231; }
 
 .error .message-holder > .error, .hint .error, .error.inset .bar.close .action-btn {
@@ -7908,7 +7989,7 @@ STATE TRUMPING CODE
 .warning .input-holder input, .warning .input-holder textarea, .warning .input-holder select, .warning .input-holder .postfix, .warning .input-holder .prefix, .warning.question .button-group, .warning .bar.close, .warning.inset .bar.close, h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
   border-color: #E08514; }
 
-.nav-list.nav-checklist li.warning i, .nav-checklist.panel-selector li.warning i, .answer.warning .required-holder, .question.warning .required-holder, .warning .label-holder label, .warning .input-holder .postfix, .warning .input-holder .prefix, .warning .input-holder .value, .warning .bar.close .action-btn, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning {
+.nav-list.nav-checklist li.warning i, .nav-checklist.panel-selector li.warning i, .answer.warning .required-holder, .question.warning .required-holder, .warning .label-holder label, .warning .input-holder .postfix, .warning .input-holder .prefix, .warning .input-holder .value, .warning .bar.close .action-btn, .collapsable-panel.warning h1, .collapsable-panel.warning h2, .collapsable-panel.warning h3, .collapsable-panel.warning h4, .collapsable-panel.warning h5, .collapsable-panel.warning h6, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning {
   color: #E08514; }
 
 .warning .message-holder > .warning, .hint .warning, .warning.inset .bar.close .action-btn {
@@ -7920,7 +8001,7 @@ STATE TRUMPING CODE
 .validated .input-holder input, .validated .input-holder textarea, .validated .input-holder select, .validated .input-holder .postfix, .validated .input-holder .prefix, .validated.question .button-group, .validated .bar.close, .validated.inset .bar.close, h1.with-underline.validated, h2.with-underline.validated, h3.with-underline.validated, h4.with-underline.validated, h5.with-underline.validated, h6.with-underline.validated {
   border-color: #14B057; }
 
-.nav-list.nav-checklist li.validated i, .nav-checklist.panel-selector li.validated i, .answer.validated .required-holder, .question.validated .required-holder, .validated .label-holder label, .validated .input-holder .postfix, .validated .input-holder .prefix, .validated .input-holder .value, .validated .bar.close .action-btn, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated {
+.nav-list.nav-checklist li.validated i, .nav-checklist.panel-selector li.validated i, .answer.validated .required-holder, .question.validated .required-holder, .validated .label-holder label, .validated .input-holder .postfix, .validated .input-holder .prefix, .validated .input-holder .value, .validated .bar.close .action-btn, .collapsable-panel.validated h1, .collapsable-panel.validated h2, .collapsable-panel.validated h3, .collapsable-panel.validated h4, .collapsable-panel.validated h5, .collapsable-panel.validated h6, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated {
   color: #14B057; }
 
 .validated .message-holder > .validated, .hint .validated, .validated.inset .bar.close .action-btn {
@@ -7932,7 +8013,7 @@ STATE TRUMPING CODE
 .info .input-holder input, .info .input-holder textarea, .info .input-holder select, .info .input-holder .postfix, .info .input-holder .prefix, .info.question .button-group, .info .bar.close, .info.inset .bar.close, h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
   border-color: #bbe8f4; }
 
-.nav-list.nav-checklist li.info i, .nav-checklist.panel-selector li.info i, .answer.info .required-holder, .question.info .required-holder, .info .label-holder label, .info .input-holder .postfix, .info .input-holder .prefix, .info .input-holder .value, .info .bar.close .action-btn, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
+.nav-list.nav-checklist li.info i, .nav-checklist.panel-selector li.info i, .answer.info .required-holder, .question.info .required-holder, .info .label-holder label, .info .input-holder .postfix, .info .input-holder .prefix, .info .input-holder .value, .info .bar.close .action-btn, .collapsable-panel.info h1, .collapsable-panel.info h2, .collapsable-panel.info h3, .collapsable-panel.info h4, .collapsable-panel.info h5, .collapsable-panel.info h6, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
   color: #bbe8f4; }
 
 .info .message-holder > .info, .hint .info, .info.inset .bar.close .action-btn {
@@ -7944,7 +8025,7 @@ STATE TRUMPING CODE
 .highlighted .input-holder input, .highlighted .input-holder textarea, .highlighted .input-holder select, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted.question .button-group, .highlighted .bar.close, .highlighted.inset .bar.close, h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
   border-color: #22AFD7; }
 
-.nav-list.nav-checklist li.highlighted i, .nav-checklist.panel-selector li.highlighted i, .answer.highlighted .required-holder, .question.highlighted .required-holder, .highlighted .label-holder label, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted .input-holder .value, .highlighted .bar.close .action-btn, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
+.nav-list.nav-checklist li.highlighted i, .nav-checklist.panel-selector li.highlighted i, .answer.highlighted .required-holder, .question.highlighted .required-holder, .highlighted .label-holder label, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted .input-holder .value, .highlighted .bar.close .action-btn, .collapsable-panel.highlighted h1, .collapsable-panel.highlighted h2, .collapsable-panel.highlighted h3, .collapsable-panel.highlighted h4, .collapsable-panel.highlighted h5, .collapsable-panel.highlighted h6, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
   color: #22AFD7; }
 
 .highlighted .message-holder > .highlighted, .hint .highlighted, .highlighted.inset .bar.close .action-btn {
@@ -7956,7 +8037,7 @@ STATE TRUMPING CODE
 .completed .input-holder input, .completed .input-holder textarea, .completed .input-holder select, .completed .input-holder .postfix, .completed .input-holder .prefix, .completed.question .button-group, .completed .bar.close, .completed.inset .bar.close, h1.with-underline.completed, h2.with-underline.completed, h3.with-underline.completed, h4.with-underline.completed, h5.with-underline.completed, h6.with-underline.completed {
   border-color: #14B057; }
 
-.nav-list.nav-checklist li.completed i, .nav-checklist.panel-selector li.completed i, .answer.completed .required-holder, .question.completed .required-holder, .completed .label-holder label, .completed .input-holder .postfix, .completed .input-holder .prefix, .completed .input-holder .value, .completed .bar.close .action-btn, h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed {
+.nav-list.nav-checklist li.completed i, .nav-checklist.panel-selector li.completed i, .answer.completed .required-holder, .question.completed .required-holder, .completed .label-holder label, .completed .input-holder .postfix, .completed .input-holder .prefix, .completed .input-holder .value, .completed .bar.close .action-btn, .collapsable-panel.completed h1, .collapsable-panel.completed h2, .collapsable-panel.completed h3, .collapsable-panel.completed h4, .collapsable-panel.completed h5, .collapsable-panel.completed h6, h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed {
   color: #14B057; }
 
 .completed .message-holder > .completed, .hint .completed, .completed.inset .bar.close .action-btn {
@@ -7968,7 +8049,7 @@ STATE TRUMPING CODE
 .disabled .input-holder input, .disabled .input-holder textarea, .disabled .input-holder select, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled.question .button-group, .disabled .bar.close, .disabled.inset .bar.close, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
   border-color: #b3b3b3; }
 
-.nav-list.nav-checklist li.disabled i, .nav-checklist.panel-selector li.disabled i, .answer.disabled .required-holder, .question.disabled .required-holder, .disabled .label-holder label, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .input-holder .value, .disabled .bar.close .action-btn, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
+.nav-list.nav-checklist li.disabled i, .nav-checklist.panel-selector li.disabled i, .answer.disabled .required-holder, .question.disabled .required-holder, .disabled .label-holder label, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .input-holder .value, .disabled .bar.close .action-btn, .collapsable-panel.disabled h1, .collapsable-panel.disabled h2, .collapsable-panel.disabled h3, .collapsable-panel.disabled h4, .collapsable-panel.disabled h5, .collapsable-panel.disabled h6, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
   color: #b3b3b3; }
 
 .disabled .message-holder > .disabled, .hint .disabled, .disabled.inset .bar.close .action-btn {
@@ -7980,7 +8061,7 @@ STATE TRUMPING CODE
 .attention .input-holder input, .attention .input-holder textarea, .attention .input-holder select, .attention .input-holder .postfix, .attention .input-holder .prefix, .attention.question .button-group, .attention .bar.close, .attention.inset .bar.close, h1.with-underline.attention, h2.with-underline.attention, h3.with-underline.attention, h4.with-underline.attention, h5.with-underline.attention, h6.with-underline.attention {
   border-color: #E08514; }
 
-.nav-list.nav-checklist li.attention i, .nav-checklist.panel-selector li.attention i, .answer.attention .required-holder, .question.attention .required-holder, .attention .label-holder label, .attention .input-holder .postfix, .attention .input-holder .prefix, .attention .input-holder .value, .attention .bar.close .action-btn, h1.attention, h2.attention, h3.attention, h4.attention, h5.attention, h6.attention, p.attention, a.attention, li.attention, blockquote.attention {
+.nav-list.nav-checklist li.attention i, .nav-checklist.panel-selector li.attention i, .answer.attention .required-holder, .question.attention .required-holder, .attention .label-holder label, .attention .input-holder .postfix, .attention .input-holder .prefix, .attention .input-holder .value, .attention .bar.close .action-btn, .collapsable-panel.attention h1, .collapsable-panel.attention h2, .collapsable-panel.attention h3, .collapsable-panel.attention h4, .collapsable-panel.attention h5, .collapsable-panel.attention h6, h1.attention, h2.attention, h3.attention, h4.attention, h5.attention, h6.attention, p.attention, a.attention, li.attention, blockquote.attention {
   color: #E08514; }
 
 .attention .message-holder > .attention, .hint .attention, .attention.inset .bar.close .action-btn {

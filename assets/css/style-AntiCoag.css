@@ -3540,8 +3540,8 @@ tr:nth-child(even).attention td {
 *	</table>
 */
 /**
-* Collapsable Panel:
-* `.collapsable-panel` - a container element which naturaly is hiden and reveals when it is prompted.<br><br> !!  Requires Javascript to Function  !!
+* Collapsable Panels:
+* `.collapsable-panel` - a container element which naturaly is hiden and reveals when it is prompted. This element is great for `read more` links when the content is small.<br><br> !!  Requires Javascript to Function  !!
 * 
 *   @example
 *	<div class="row">
@@ -3553,7 +3553,7 @@ tr:nth-child(even).attention td {
 *				<div class="content">
 *					<div class="row">
 *						<div class="column small-12">
-*							<h2>H2 in Panel</h2>
+*							<h2>H2 in a collapse panel</h2>
 *			              <p>All basic html content can be placed in the panel</p>
 *						</div>
 *					</div>
@@ -3571,7 +3571,7 @@ tr:nth-child(even).attention td {
 *				<div class="content">
 *					<div class="row">
 *						<div class="column small-12">
-*							<h2>H2 in Inset Panel</h2>
+*							<h2>H2 in an inset collapse panel</h2>
 *			              <p>All basic html content can be placed in the panel</p>
 *						</div>
 *					</div>
@@ -3671,35 +3671,6 @@ table + div > .collapsable-panel {
   margin-top: -1rem;
   margin-bottom: 0.7rem; }
 
-/**
-* Accordion (requires Collapsable Panel):
-* `.accordion` - An extend DOM of Collapsable Paenel which allows it to be chained together and only have one open at a time.<br><br> !!  Requires Javascript to Function  !!
-* 
-*   @example
-*	<div class="accordion">
-*		<div class="selected">
-*			<h2 class="toggle" data-bind="click:panelShow"><i class="fa fa-holder"></i><span class="text">Header and Toggle Area (Open)</span></h2>
-*			<div class="collapsable-panel ">
-*				<div class="bar close">
-*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> close</a>
-*				</div>
-*				<div class="content">
-*					<div class="row">
-*						<div class="column small-12">
-*							<p>Content</p>
-*						</div>
-*					</div>
-*				</div>
-*				<div class="bar jumpToTop">
-*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> top</a>
-*				</div>
-*			</div>
-*		</div>
-*		<div class="">
-*			<h2 class="toggle" data-bind="click:panelShow"><i class="fa fa-holder"></i><span class="text">Header and Toggle Area (Closed)</span></h2>
-*		</div>
-*	</div>
-*/
 .fa-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
@@ -3765,6 +3736,35 @@ table + div > .collapsable-panel {
   transform: rotate(90deg);
   color: teal; }
 
+/**
+* Accordion (requires Collapsable Panel SCSS):
+* `.accordion` - Accordions are built from a group of `Collapsable Panels` and are never full hidden like the collapsable panel. By default only one `panel` of the accordian can be open at a time.<br><br> !!  Requires Javascript to Function  !!
+* 
+*   @example
+*	<div class="accordion">
+*		<div class="selected">
+*			<h2 class="toggle" data-bind="click:panelShow"><i class="fa fa-holder"></i><span class="text">Header and Toggle Area (Open)</span></h2>
+*			<div class="collapsable-panel ">
+*				<div class="bar close">
+*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> close</a>
+*				</div>
+*				<div class="content">
+*					<div class="row">
+*						<div class="column small-12">
+*							<p>Content</p>
+*						</div>
+*					</div>
+*				</div>
+*				<div class="bar jumpToTop">
+*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> top</a>
+*				</div>
+*			</div>
+*		</div>
+*		<div class="">
+*			<h2 class="toggle" data-bind="click:panelShow"><i class="fa fa-holder"></i><span class="text">Header and Toggle Area (Closed)</span></h2>
+*		</div>
+*	</div>
+*/
 /**
 * Panel Selector:
 * `.panel-selector-holder` - the panel selector is a multi tree level selector allowing a user to select from the left coloum or parent and then select the filtered child elements.  !! Requires Javascript!!
@@ -4105,10 +4105,10 @@ div.reveal-modal, dialog {
   white-space: normal;
   display: table-cell; }
 
-.switch.check-visible input + label:after {
+.switch.check-visible input + label:after, .switch.dot-visible input + label:after, .switch.x-visible input + label:after {
   z-index: 100; }
 
-.switch.check-visible input + label:before, .switch.x-visible input + label:before {
+.switch.check-visible input + label:before, .switch.x-visible input + label:before, .switch.dot-visible input + label:before {
   position: absolute;
   display: block;
   height: 1.5em;
@@ -4134,11 +4134,17 @@ div.reveal-modal, dialog {
   top: .40em;
   color: #fff; }
 
+.switch.dot-visible input:checked + label:before,
 .switch.check-visible input:checked + label:before {
-  content: "\f00c";
   left: -3.05em;
-  top: .40em;
-  color: #fff; }
+  top: .375em;
+  color: #b2d8d8; }
+
+.switch.dot-visible input:checked + label:before {
+  content: "\f058"; }
+
+.switch.check-visible input:checked + label:before {
+  content: "\f00c"; }
 
 .switch.disabled label {
   background: #b3b3b3 url("../img/subtlenet2.png") repeat; }
@@ -4147,29 +4153,45 @@ div.reveal-modal, dialog {
 
 /**
 * Switch (Foundation Override):
-* `.switch` - Switches are a more visible and more touchable versions of checkbox or radio buttons. ADD `.check-visible` to a switch to make a check appear in the selected state of `.x-visible` to show the x when it is shut off
+* `.switch` - Switches are a more visible and more touchable versions of checkbox and radio buttons. ADD `.check-visible` to a switch to make a check appear in the selected state of `.x-visible` to show the x when it is shut off. 
 * 
 *   @example
+*	<h3>Radio Buttons should use `.round` modifier</h3>
 *	<div class="switch-input-space group-divide row">
-*		<div class="switch">
-*			<input type="radio" id="hb-check0">
-*			<label  for="hb-check0"onclick=""></label>
+*		<div class="switch round">
+*			<input name="radiobutton-switch" type="radio" id="radio-y">
+*			<label  for="radio-y" onclick=""></label>
 *		</div>
-*		<label  class="switch-value" for="hb-check0">Question to say yes to</label>		
+*		<label  class="switch-value" for="radio-y">Radio buttons have `.round` on the `.switch`</label>		
+*	</div>
+*	<div class="switch-input-space group-divide row">
+*		<div class="switch round dot-visible">
+*			<input name="radiobutton-switch"  type="radio" id="radio-n">
+*			<label  for="radio-n"onclick=""></label>
+*		</div>
+*		<label  class="switch-value" for="radio-n">`.dot-visible` Radio button a dot will appear when selected</label>		
+*	</div>
+*	<h3>Checkboxes should use the `.radius` or no modifier at all</h3>
+*	<div class="switch-input-space group-divide row">
+*		<div class="switch check-visible radius">
+*			<input type="checkbox" id="hb-check0">
+*			<label  for="hb-check0"></label>
+*		</div>
+*		<label  class="switch-value" for="hb-check0">This is a checkbox is using the `.radius` modifier</label>		
 *	</div>
 *	<div class="switch-input-space group-divide row">
 *		<div class="switch check-visible">
 *			<input type="checkbox" id="hb-check2">
 *			<label  for="hb-check2"></label>
 *		</div>
-*		<label  class="switch-value" for="hb-check2">When yes is selected you should see a checkmark</label>		
+*		<label  class="switch-value" for="hb-check2">This is a checkbox a check should appear when selected</label>		
 *	</div>
 *	<div class="switch-input-space group-divide row">
-*		<div class="switch x-visible round">
-*			<input type="checkbox" id="hb-checkround">
-*			<label  for="hb-checkround"></label>
+*		<div class="switch x-visible">
+*			<input type="checkbox" id="hb-check1">
+*			<label  for="hb-check1"></label>
 *		</div>
-*		<label  class="switch-value" for="hb-checkround">"x-visible" When No is selected you should show an X</label>		
+*		<label  class="switch-value" for="hb-check1">"x-visible" When No is selected you should show an X</label>		
 *	</div>
 *   <a class="link" href="http://foundation.zurb.com/docs/components/switch.html">Foundation Documentation</a>
 */
@@ -4260,20 +4282,23 @@ div.reveal-modal, dialog {
       display: inline-block;
       margin: .4rem 1px .4rem;
       background-color: #b3ffff; }
-    .group-section-tab-holder .nav.tabs li.selected {
-      border-bottom-right-radius: 0px;
-      border-bottom-left-radius: 0px;
-      margin-bottom: 0;
-      vertical-align: bottom;
-      padding: .4rem;
-      background-color: #fff; }
-
-.group-section-tab-holder.secondary .nav.tabs {
-  background-color: #b3b3b3; }
-  .group-section-tab-holder.secondary .nav.tabs li {
-    background-color: #b3ffff; }
-    .group-section-tab-holder.secondary .nav.tabs li.selected {
-      background-color: #fff; }
+      .group-section-tab-holder .nav.tabs li:hover {
+        background-color: #79ffff; }
+      .group-section-tab-holder .nav.tabs li.selected {
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        margin-bottom: 0;
+        vertical-align: bottom;
+        padding: .4rem;
+        background-color: #fff; }
+  .group-section-tab-holder.secondary .nav.tabs {
+    background-color: #b3b3b3; }
+    .group-section-tab-holder.secondary .nav.tabs li {
+      background-color: #f0f0f0; }
+      .group-section-tab-holder.secondary .nav.tabs li:hover {
+        background-color: #e4e4e4; }
+      .group-section-tab-holder.secondary .nav.tabs li.selected {
+        background-color: #fff; }
 
 /**
 * Paper Card Grouping:
@@ -4633,7 +4658,6 @@ div.reveal-modal, dialog {
     display: table;
     clear: both; }
   .page.header .logo {
-    position: absolute;
     left: 0;
     top: 0;
     display: none;
@@ -4987,41 +5011,48 @@ h6 blockquote, h6 .sub-line {
 
 /**
 * HELPER - Condensable (Condense):
-* `.condensable` - a pattern to hide and show elements inside of a an element to shortend the text to respond to the space. You can set the break points of the condensings with `.small`, `.medium`, or `.large`
+* `.condensable.large .condense` - This pattern allows for responsive reduction of content.
+*  Content tagged with `.condense` will turn to display:none when it passes the below the break point. On the container element add  '.condensable' and set the break point where you want it  by adding the class `.small`, `.medium`, or `.large`.
+*  !! Single word reduction requires adding `condensable-word` see example below.
 * 
 *   @example
-*	<h2 class="condensable large">
-*		Super<span class="condense">califragilisticexpialidocious the full word is only seen on large screens</span> 
+*	<h2>
+*		Condensable Sub-line
+*		<span class="sub-line condensable large"><span class="condense">The full word is only seen on large screens.</span> It only says Super below on smaller screens</span>
+*		<span class="sub-line condensable condensable-word large">Super<span class="condense">califragilisticexpialidocious</span></span>
 *	</h2>
 */
 /**
 * HELPER - Swappable (short-text long-text):
-* `.swappable` - a pattern to hide and show elements long and short text to respond to the space. You can set the break points of the condensings with `.small`, `.medium`, or `.large`
+* `.swappable` - This pattern allows for responsive swapping of content from `.short-text` and `.long-text`.
+*   On the container element add `.swappable` and set the break point where you want it to switch by adding the class `.small`, `.medium`, or `.large`.
+*   The elements with the .short-text and .long-text must be inline elements.
 * 
 *   @example
-*	<h2 class="swappable meduim">
-*		<span class="short-text">Short Title</span>
-*		<span class="long-text">Long TItle Seen on Medium Screens and Up</span>
+*	<h2 class="swappable medium">
+*		Swappable Sub-line
+*		<span class="sub-line">
+*			<span class="short-text">Short Title</span>
+*			<span class="long-text">Long TItle Seen on Medium Screens and Up</span>
+*		</span>
 *	</h2>
 */
-.condensable {
+.condensable.condensable-word {
   word-spacing: -4px; }
+.condensable .condense {
+  display: inline; }
+@media only screen and (max-width: 320px) {
   .condensable .condense {
-    display: inline; }
-  .condensable * {
-    word-spacing: 0; }
-  @media only screen and (max-width: 320px) {
-    .condensable .condense {
-      display: none; } }
-  @media only screen and (max-width: 767px) {
-    .condensable.small .condense {
-      display: none; } }
-  @media only screen and (max-width: 1024px) {
-    .condensable.medium .condense {
-      display: none; } }
-  @media only screen and (max-width: 1200px) {
-    .condensable.large .condense {
-      display: none; } }
+    display: none; } }
+@media only screen and (max-width: 767px) {
+  .condensable.small .condense {
+    display: none; } }
+@media only screen and (max-width: 1024px) {
+  .condensable.medium .condense {
+    display: none; } }
+@media only screen and (max-width: 1200px) {
+  .condensable.large .condense {
+    display: none; } }
 
 .swappable .long-text {
   display: inline; }

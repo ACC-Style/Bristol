@@ -8,9 +8,31 @@ $required_data:(
 	);
 @include required-check($required_data...);
 // End of required check
+
+.collapsable-panel{
+	@each $State in $states{
+		$state-selector:map-get($State,'Selector');
+		$state-name:map-get($State,'State');
+		&#{$state-selector}{
+			background-color: transparent;
+			border:0 none transparent;
+			@include setTrump('border-color',$state-name,'#{$state-selector} .bar.close,#{$state-selector}.inset .bar.close');
+			@include setTrump('color',$state-name,'#{$state-selector} .bar.close .action-btn, .collapsable-panel#{$state-selector} h1, .collapsable-panel#{$state-selector} h2, .collapsable-panel#{$state-selector} h3, .collapsable-panel#{$state-selector} h4, .collapsable-panel#{$state-selector} h5, .collapsable-panel#{$state-selector} h6');
+			
+			&.inset{
+				background-color:color(map-get($State,"Color"),10); 
+				.bar.close .action-btn{
+					@include setTrump('background-color', $state-name,'#{$state-selector}.inset .bar.close .action-btn');
+					color:color-contrast(map-get($State,"Color"));
+				}
+			}
+		}
+	}
+}
+
 /**
-* Collapsable Panel:
-* `.collapsable-panel` - a container element which naturaly is hiden and reveals when it is prompted.<br><br> !!  Requires Javascript to Function  !!
+* Collapsable Panel (State):
+* `.collapsable-panel` - Collapse panels can be used with states and the panels subtly color with the state colors.<br><br> !!  Requires Javascript to Function  !!
 * 
 *   @example
 *	<div class="row">
@@ -52,51 +74,3 @@ $required_data:(
 *		</div>
 *	</div>
 */
-.collapsable-panel{
-	@each $State in $states{
-		$state-selector:map-get($State,'Selector');
-		$state-name:map-get($State,'State');
-		&#{$state-selector}{
-			background-color: transparent;
-			border:0 none transparent;
-			@include setTrump('border-color',$state-name,'#{$state-selector} .bar.close,#{$state-selector}.inset .bar.close');
-			@include setTrump('color',$state-name,'#{$state-selector} .bar.close .action-btn');
-			
-			&.inset{
-				background-color:color(map-get($State,"Color"),10); 
-				.bar.close .action-btn{
-					@include setTrump('background-color', $state-name,'#{$state-selector}.inset .bar.close .action-btn');
-					color:color-contrast(map-get($State,"Color"));
-				}
-			}
-		}
-	}
-
-
-
-	// &.error,&.warning{background-color: transparent;}
-	// &.error{
-	// 	.bar.close ,&.inset .bar.close{
-	// 		border-color:$error-color;
-	// 	}
-	// 	.bar.close .action-btn{color:$error-color}
-	// 	&.inset{
-	// 		background-color:color($error-color,10); 
-	// 		.bar.close .action-btn{background-color: $error-color; color:color-contrast($error-color);
-	// 		}
-	// 	}
-	// }
-	// &.warning,&.alert{
-	// 		.bar.close ,&.inset .bar.close{
-	// 			border-color:$alert-color;
-			
-	// 	}
-	// 	.bar.close .action-btn{color:$alert-color}
-	// 	&.inset{
-	// 		background-color:color($alert-color,10); 
-	// 		.bar.close .action-btn{background-color: $alert-color;color:color-contrast($alert-color);
-	// 		}
-	// 	}
-	// }
-}
-
