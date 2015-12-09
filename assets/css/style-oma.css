@@ -1933,7 +1933,7 @@ button:disabled.secondary, .input-space
   margin-left: 0;
   width: 100%;
   background: #e6e6e6; }
-  .tabs div.row, .tabs div.hint {
+  .tabs div.row {
     max-width: 1200px; }
   @media only screen and (min-width: 767px) {
     .tabs {
@@ -2573,100 +2573,147 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
     display: block;
     clear: both; }
 
-.answer input[type="text"],
-.answer input[type="password"],
-.answer input[type="date"],
-.answer input[type="datetime"],
-.answer input[type="datetime-local"],
-.answer input[type="month"],
-.answer input[type="week"],
-.answer input[type="email"],
-.answer input[type="number"],
-.answer input[type="search"],
-.answer input[type="tel"],
-.answer input[type="time"],
-.answer input[type="url"],
-.answer input[type="color"],
-.answer textarea,
-.answer select,
-.answer button,
-.answer .button, .answer-group input[type="text"],
-.answer-group input[type="password"],
-.answer-group input[type="date"],
-.answer-group input[type="datetime"],
-.answer-group input[type="datetime-local"],
-.answer-group input[type="month"],
-.answer-group input[type="week"],
-.answer-group input[type="email"],
-.answer-group input[type="number"],
-.answer-group input[type="search"],
-.answer-group input[type="tel"],
-.answer-group input[type="time"],
-.answer-group input[type="url"],
-.answer-group input[type="color"],
-.answer-group textarea,
-.answer-group select,
-.answer-group button,
-.answer-group .button, .question input[type="text"],
-.question input[type="password"],
-.question input[type="date"],
-.question input[type="datetime"],
-.question input[type="datetime-local"],
-.question input[type="month"],
-.question input[type="week"],
-.question input[type="email"],
-.question input[type="number"],
-.question input[type="search"],
-.question input[type="tel"],
-.question input[type="time"],
-.question input[type="url"],
-.question input[type="color"],
-.question textarea,
-.question select,
-.question button,
-.question .button, .question-group input[type="text"],
-.question-group input[type="password"],
-.question-group input[type="date"],
-.question-group input[type="datetime"],
-.question-group input[type="datetime-local"],
-.question-group input[type="month"],
-.question-group input[type="week"],
-.question-group input[type="email"],
-.question-group input[type="number"],
-.question-group input[type="search"],
-.question-group input[type="tel"],
-.question-group input[type="time"],
-.question-group input[type="url"],
-.question-group input[type="color"],
-.question-group textarea,
-.question-group select,
-.question-group button,
-.question-group .button {
-  margin-bottom: 0; }
-
-.answer, .question {
+.answer, .answer-group, .question, .question-group, .question-inline, .question-grid-based {
   margin-bottom: 1rem; }
-  .answer .prefix, .answer .postfix, .answer .value, .question .prefix, .question .postfix, .question .value {
-    font-size: 1em;
-    line-height: 1.5em;
-    margin-top: 0em;
-    margin-bottom: 0em;
-    font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    padding: .5em;
-    margin-top: 0;
-    color: #666666;
-    display: block; }
+  .answer input[type="text"],
+  .answer input[type="password"],
+  .answer input[type="date"],
+  .answer input[type="datetime"],
+  .answer input[type="datetime-local"],
+  .answer input[type="month"],
+  .answer input[type="week"],
+  .answer input[type="email"],
+  .answer input[type="number"],
+  .answer input[type="search"],
+  .answer input[type="tel"],
+  .answer input[type="time"],
+  .answer input[type="url"],
+  .answer input[type="color"],
+  .answer textarea,
+  .answer select,
+  .answer button,
+  .answer .button, .answer-group input[type="text"],
+  .answer-group input[type="password"],
+  .answer-group input[type="date"],
+  .answer-group input[type="datetime"],
+  .answer-group input[type="datetime-local"],
+  .answer-group input[type="month"],
+  .answer-group input[type="week"],
+  .answer-group input[type="email"],
+  .answer-group input[type="number"],
+  .answer-group input[type="search"],
+  .answer-group input[type="tel"],
+  .answer-group input[type="time"],
+  .answer-group input[type="url"],
+  .answer-group input[type="color"],
+  .answer-group textarea,
+  .answer-group select,
+  .answer-group button,
+  .answer-group .button, .question input[type="text"],
+  .question input[type="password"],
+  .question input[type="date"],
+  .question input[type="datetime"],
+  .question input[type="datetime-local"],
+  .question input[type="month"],
+  .question input[type="week"],
+  .question input[type="email"],
+  .question input[type="number"],
+  .question input[type="search"],
+  .question input[type="tel"],
+  .question input[type="time"],
+  .question input[type="url"],
+  .question input[type="color"],
+  .question textarea,
+  .question select,
+  .question button,
+  .question .button, .question-group input[type="text"],
+  .question-group input[type="password"],
+  .question-group input[type="date"],
+  .question-group input[type="datetime"],
+  .question-group input[type="datetime-local"],
+  .question-group input[type="month"],
+  .question-group input[type="week"],
+  .question-group input[type="email"],
+  .question-group input[type="number"],
+  .question-group input[type="search"],
+  .question-group input[type="tel"],
+  .question-group input[type="time"],
+  .question-group input[type="url"],
+  .question-group input[type="color"],
+  .question-group textarea,
+  .question-group select,
+  .question-group button,
+  .question-group .button, .question-inline input[type="text"],
+  .question-inline input[type="password"],
+  .question-inline input[type="date"],
+  .question-inline input[type="datetime"],
+  .question-inline input[type="datetime-local"],
+  .question-inline input[type="month"],
+  .question-inline input[type="week"],
+  .question-inline input[type="email"],
+  .question-inline input[type="number"],
+  .question-inline input[type="search"],
+  .question-inline input[type="tel"],
+  .question-inline input[type="time"],
+  .question-inline input[type="url"],
+  .question-inline input[type="color"],
+  .question-inline textarea,
+  .question-inline select,
+  .question-inline button,
+  .question-inline .button, .question-grid-based input[type="text"],
+  .question-grid-based input[type="password"],
+  .question-grid-based input[type="date"],
+  .question-grid-based input[type="datetime"],
+  .question-grid-based input[type="datetime-local"],
+  .question-grid-based input[type="month"],
+  .question-grid-based input[type="week"],
+  .question-grid-based input[type="email"],
+  .question-grid-based input[type="number"],
+  .question-grid-based input[type="search"],
+  .question-grid-based input[type="tel"],
+  .question-grid-based input[type="time"],
+  .question-grid-based input[type="url"],
+  .question-grid-based input[type="color"],
+  .question-grid-based textarea,
+  .question-grid-based select,
+  .question-grid-based button,
+  .question-grid-based .button {
+    margin-bottom: 0; }
 
-.label-holder, .input-holder, .message-holder, .value-holder {
+.input-holder .prefix, .input-holder .postfix, .input-holder .value {
+  font-size: 0.85714em;
+  line-height: 1.75em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 2em;
+  padding: .5em;
+  margin-top: 0;
+  color: #666666;
+  border: 1px solid transparent; }
+.input-holder .prefix, .input-holder .postfix {
+  background: url("../img/paper-texture.png");
+  border: 1px solid #b3b3b3; }
+
+.question .label-holder, .question .input-holder, .question .message-holder, .question .value-holder, .question .hint {
   width: 100%;
   margin: 0;
   max-width: 114.28571rem; }
-  .label-holder:before, .label-holder:after, .input-holder:before, .input-holder:after, .message-holder:before, .message-holder:after, .value-holder:before, .value-holder:after {
+  .question .label-holder:before, .question .label-holder:after, .question .input-holder:before, .question .input-holder:after, .question .message-holder:before, .question .message-holder:after, .question .value-holder:before, .question .value-holder:after, .question .hint:before, .question .hint:after {
     content: " ";
     display: table; }
-  .label-holder:after, .input-holder:after, .message-holder:after, .value-holder:after {
+  .question .label-holder:after, .question .input-holder:after, .question .message-holder:after, .question .value-holder:after, .question .hint:after {
     clear: both; }
+.question .label-holder {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 0.75em;
+  margin-bottom: 0.375em;
+  white-space: nowrap; }
+  @media only screen and (max-width: 767px) {
+    .question .label-holder {
+      white-space: normal; } }
 
 .label-holder {
   font-size: 1em;
@@ -2675,17 +2722,12 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   margin-bottom: 0.375em;
   position: relative;
   background-color: transparent;
-  color: #5c5c5c;
-  white-space: nowrap; }
-  .label-holder label, .label-holder .label {
+  color: #5c5c5c; }
+  .label-holder label, .label-holder .label, .label-holder .text {
     font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
     font-weight: 700; }
-  @media only screen and (max-width: 767px) {
-    .label-holder {
-      white-space: normal; } }
   .label-holder .text {
-    padding-right: 1rem;
-    line-height: 1.2em; }
+    padding-right: 1rem; }
 
 .required-holder {
   display: none;
@@ -2701,28 +2743,17 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
     left: 0;
     font-size: .75rem; }
 
-.answer.required .required-holder, .question.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .answer.completed .required-holder, .question.completed .required-holder, .answer.disabled .required-holder, .question.disabled .required-holder, .answer.attention .required-holder, .question.attention .required-holder, .repeater.required > .label-holder .required-holder {
+.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .answer.completed .required-holder, .question.completed .required-holder, .answer.disabled .required-holder, .question.disabled .required-holder, .answer.attention .required-holder, .question.attention .required-holder, .repeater.required > .label-holder .required-holder {
   background-color: transparent;
   display: inline-block; }
 
-.answer.required .required-holder, .question.required .required-holder {
+.required .required-holder {
   color: #E08514; }
-  .answer.required .required-holder i.fa-holder-dynamic:before, .answer.required .required-holder.dynamic i.fa-holder:before, .question.required .required-holder i.fa-holder-dynamic:before, .question.required .required-holder.dynamic i.fa-holder:before {
+  .required .required-holder i.fa-holder-dynamic:before, .required .required-holder.dynamic i.fa-holder:before {
     content: ""; }
 
 .input-holder, .value-holder {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-  max-width: 114.28571rem;
   margin-bottom: 0; }
-  .input-holder:before, .input-holder:after, .value-holder:before, .value-holder:after {
-    content: " ";
-    display: table; }
-  .input-holder:after, .value-holder:after {
-    clear: both; }
   .input-holder > .input-space, .input-holder > .switch-input-space, .value-holder > .input-space, .value-holder > .switch-input-space {
     padding-left: 0;
     line-height: 1; }
@@ -2750,14 +2781,14 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
   margin-top: 0em;
   margin-bottom: 0em; }
 
-.answer input:disabled, .answer input[disabled], .answer textarea:disabled, .answer textarea[disabled], .answer option:disabled, .answer option[disabled], .question input:disabled, .question input[disabled], .question textarea:disabled, .question textarea[disabled], .question option:disabled, .question option[disabled], .answer .chosen-disabled.chosen-container .chosen-choices, .question .chosen-disabled.chosen-container .chosen-choices {
+.answer:disabled, .answer[disabled], .answer-group:disabled, .answer-group[disabled], .question:disabled, .question[disabled], .question-group:disabled, .question-group[disabled], .question-inline:disabled, .question-inline[disabled], .question-grid-based:disabled, .question-grid-based[disabled], .answer .chosen-disabled.chosen-container .chosen-choices, .question .chosen-disabled.chosen-container .chosen-choices {
   background-color: #b3b3b3;
   background-image: url(../img/empty_stripe.png);
   color: #999999; }
 
-.answer .required, .question .required {
+.answer .required, .question .required, .question-inline .required, .question-grid-based .required {
   display: none; }
-.answer.required .required, .question.required .required {
+.answer.required .required, .question.required .required, .question-inline.required .required, .question-grid-based.required .required {
   display: inline-block;
   width: 100%; }
 
@@ -2772,13 +2803,6 @@ h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector {
 
 .error .message-holder > .error, .message-holder > .error.make-visible, .warning .message-holder > .warning, .message-holder > .warning.make-visible, .validated .message-holder > .validated, .message-holder > .validated.make-visible, .info .message-holder > .info, .message-holder > .info.make-visible, .highlighted .message-holder > .highlighted, .message-holder > .highlighted.make-visible, .completed .message-holder > .completed, .message-holder > .completed.make-visible, .disabled .message-holder > .disabled, .message-holder > .disabled.make-visible, .attention .message-holder > .attention, .message-holder > .attention.make-visible {
   display: block; }
-
-.question.question-inline {
-  margin-bottom: .75rem; }
-  .question.question-inline .input-holder {
-    margin-bottom: .25rem; }
-    .question.question-inline .input-holder .input-space, .question.question-inline .input-holder .switch-input-space {
-      padding-left: 0; }
 
 .input-holder .input-space, .input-holder .switch-input-space {
   padding-left: 0;
@@ -2825,54 +2849,6 @@ input[type="checkbox"], input[type="radio"] {
     padding-left: 2em;
     display: inline-block; }
 
-.file-upload-holder {
-  height: 37px; }
-
-.file-upload {
-  position: relative;
-  overflow: hidden;
-  margin: 0 10px; }
-
-.file-upload input.upload {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0;
-  padding: 0;
-  font-size: 20px;
-  cursor: pointer;
-  opacity: 0;
-  filter: alpha(opacity=0); }
-
-/**
-* 	Questions - File Upload:
-* `.file-upload`  - File uploads are a modified from the standard input-spacer to allow for correct labels to show up when the file is attached 
-*
-*	@example
-*	<div class="button file-upload">
-*		<i class="fa fa-upload"></i>
-*		<span class="text">Upload</span>
-*		<input type="file" class="upload" data-bind="file: { data: document, name: documentname, allowed: allowedTypes }">
-*	</div>
-**/
-.question.question-inline {
-  display: block; }
-  .question.question-inline .label-holder, .question.question-inline .input-holder {
-    display: inline-block;
-    width: auto;
-    vertical-align: middle;
-    float: left; }
-  .question.question-inline .label-holder * {
-    white-space: nowrap;
-    padding-right: 1rem; }
-  .question.question-inline .message-holder, .question.question-inline .hint {
-    display: block;
-    clear: left; }
-  .question.question-inline .hint {
-    border-top: 1px solid #e6e6e6;
-    padding: .25rem;
-    background-color: #e4f6fb; }
-
 /**
 * Questions -Required:
 * `.question` - This is a standard formating for an input question. 
@@ -2891,8 +2867,8 @@ input[type="checkbox"], input[type="radio"] {
 *			 <div class="input-space column small-6 large-9">
 *				<input type="text"/>
 *			</div>
-*			<div class="column small-6 large-3">
-*				<small class="value">Years</small>
+*			<div class="column small-6 large-3 value">
+*				Years
 *			</div>
 *		</div>
 *		<div class="message-holder">
@@ -2921,8 +2897,8 @@ input[type="checkbox"], input[type="radio"] {
 *			 <div class="input-space column small-6 large-9">
 *				<input type="text"/>
 *			</div>
-*			<div class="column small-6 large-3">
-*				<small class="value">Years</small>
+*			<div class="column small-6 large-3 value">
+*				Years
 *			</div>
 *		</div>
 *		<div class="message-holder">
@@ -2933,37 +2909,6 @@ input[type="checkbox"], input[type="radio"] {
 *		<div class="hint">This is some hint text</div>
 *	</div>
 **/
-/**
-* Questions - Inline:
-* `.question-inline` - questions when there is a need can be made to be inline so the text box will follow the label. These questions will revert to the base question style when on smaller phones. 
-*  Modify any `.question` with the added class of  `.question-inline`
-* 
-*   @example
-*	<div class="question question-inline">
-*		<div class="label-holder">
-*			<label for="">
-*				<span class="text">Question Dropdown Title (Required)</span>
-*				<span class="required-holder">
-*					<i class="fa fa-holder-dynamic"></i>
-*				</span>
-*			</label>
-*		</div>
-*		<div class="input-holder">
-*			 <div class="input-space column small-6 large-9">
-*				<input type="text"/>
-*			</div>
-*			<div class="column small-6 large-3">
-*				<small class="value">Years</small>
-*			</div>
-*		</div>
-*		<div class="message-holder">
-*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
-*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
-*				<small class="data"><i class="fa fa-holder"></i> Data message</small>
-*		</div>
-*		<div class="hint">This is some hint text</div>
-*	</div>
-*/
 .radio, .radio-content {
   vertical-align: middle; }
 
@@ -3188,7 +3133,7 @@ input[type="checkbox"], input[type="radio"] {
     display: block;
     width: 100%;
     height: 2rem;
-    margin-top: -1rem; }
+    margin-top: -2rem; }
     .repeater .repeater-action .add-new-repeater {
       display: inline-block;
       position: relative;
@@ -5581,6 +5526,14 @@ div.reveal-modal, dialog {
     border-radius: #14B057; }
   .switch label:after {
     border-radius: #14B057; }
+  .switch :focus + label {
+    -webkit-box-shadow: inset 0px 0px 10px 2px #198dae;
+    -moz-box-shadow: inset 0px 0px 10px 2px #198dae;
+    box-shadow: inset 0px 0px 10px 2px #198dae; }
+  .switch :focus + label:after {
+    -webkit-box-shadow: 0px 0px 10px 2px #198dae;
+    -moz-box-shadow: 0px 0px 10px 2px #198dae;
+    box-shadow: 0px 0px 10px 2px #198dae; }
 
 .switch-value {
   display: inline-block;
@@ -7064,7 +7017,7 @@ STATE TRUMPING CODE
 .error .input-holder input, .error .input-holder textarea, .error .input-holder select, .error .input-holder .postfix, .error .input-holder .prefix, .info-text.error, h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
   border-color: #c32231; }
 
-.nav-list.nav-checklist li.error i, .nav-checklist.panel-selector li.error i, .answer.error .required-holder, .question.error .required-holder, .error .label-holder label, .error .input-holder .postfix, .error .input-holder .prefix, .error .input-holder .value, h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
+.nav-list.nav-checklist li.error i, .nav-checklist.panel-selector li.error i, .answer.error .required-holder, .question.error .required-holder, .question-inline.error .required-holder, .question-grid-based.error .required-holder, .error .label-holder label, .error .input-holder .postfix, .error .input-holder .prefix, .error .input-holder .value, h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
   color: #c32231; }
 
 .error .message-holder > .error, .hint .error, .info-text.error {
@@ -7076,7 +7029,7 @@ STATE TRUMPING CODE
 .warning .input-holder input, .warning .input-holder textarea, .warning .input-holder select, .warning .input-holder .postfix, .warning .input-holder .prefix, .info-text.warning, h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
   border-color: #E08514; }
 
-.nav-list.nav-checklist li.warning i, .nav-checklist.panel-selector li.warning i, .answer.warning .required-holder, .question.warning .required-holder, .warning .label-holder label, .warning .input-holder .postfix, .warning .input-holder .prefix, .warning .input-holder .value, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning {
+.nav-list.nav-checklist li.warning i, .nav-checklist.panel-selector li.warning i, .answer.warning .required-holder, .question.warning .required-holder, .question-inline.warning .required-holder, .question-grid-based.warning .required-holder, .warning .label-holder label, .warning .input-holder .postfix, .warning .input-holder .prefix, .warning .input-holder .value, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning {
   color: #E08514; }
 
 .warning .message-holder > .warning, .hint .warning, .info-text.warning {
@@ -7088,7 +7041,7 @@ STATE TRUMPING CODE
 .validated .input-holder input, .validated .input-holder textarea, .validated .input-holder select, .validated .input-holder .postfix, .validated .input-holder .prefix, .info-text.validated, h1.with-underline.validated, h2.with-underline.validated, h3.with-underline.validated, h4.with-underline.validated, h5.with-underline.validated, h6.with-underline.validated {
   border-color: #14B057; }
 
-.nav-list.nav-checklist li.validated i, .nav-checklist.panel-selector li.validated i, .answer.validated .required-holder, .question.validated .required-holder, .validated .label-holder label, .validated .input-holder .postfix, .validated .input-holder .prefix, .validated .input-holder .value, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated {
+.nav-list.nav-checklist li.validated i, .nav-checklist.panel-selector li.validated i, .answer.validated .required-holder, .question.validated .required-holder, .question-inline.validated .required-holder, .question-grid-based.validated .required-holder, .validated .label-holder label, .validated .input-holder .postfix, .validated .input-holder .prefix, .validated .input-holder .value, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated {
   color: #14B057; }
 
 .validated .message-holder > .validated, .hint .validated, .info-text.validated {
@@ -7100,7 +7053,7 @@ STATE TRUMPING CODE
 .info .input-holder input, .info .input-holder textarea, .info .input-holder select, .info .input-holder .postfix, .info .input-holder .prefix, .info-text.info, h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
   border-color: #bbe8f4; }
 
-.nav-list.nav-checklist li.info i, .nav-checklist.panel-selector li.info i, .answer.info .required-holder, .question.info .required-holder, .info .label-holder label, .info .input-holder .postfix, .info .input-holder .prefix, .info .input-holder .value, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
+.nav-list.nav-checklist li.info i, .nav-checklist.panel-selector li.info i, .answer.info .required-holder, .question.info .required-holder, .question-inline.info .required-holder, .question-grid-based.info .required-holder, .info .label-holder label, .info .input-holder .postfix, .info .input-holder .prefix, .info .input-holder .value, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
   color: #bbe8f4; }
 
 .info .message-holder > .info, .hint .info, .info-text.info {
@@ -7112,7 +7065,7 @@ STATE TRUMPING CODE
 .highlighted .input-holder input, .highlighted .input-holder textarea, .highlighted .input-holder select, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .info-text.highlighted, h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
   border-color: #22AFD7; }
 
-.nav-list.nav-checklist li.highlighted i, .nav-checklist.panel-selector li.highlighted i, .answer.highlighted .required-holder, .question.highlighted .required-holder, .highlighted .label-holder label, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted .input-holder .value, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
+.nav-list.nav-checklist li.highlighted i, .nav-checklist.panel-selector li.highlighted i, .answer.highlighted .required-holder, .question.highlighted .required-holder, .question-inline.highlighted .required-holder, .question-grid-based.highlighted .required-holder, .highlighted .label-holder label, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted .input-holder .value, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
   color: #22AFD7; }
 
 .highlighted .message-holder > .highlighted, .hint .highlighted, .info-text.highlighted {
@@ -7124,7 +7077,7 @@ STATE TRUMPING CODE
 .completed .input-holder input, .completed .input-holder textarea, .completed .input-holder select, .completed .input-holder .postfix, .completed .input-holder .prefix, .info-text.completed, h1.with-underline.completed, h2.with-underline.completed, h3.with-underline.completed, h4.with-underline.completed, h5.with-underline.completed, h6.with-underline.completed {
   border-color: #14B057; }
 
-.nav-list.nav-checklist li.completed i, .nav-checklist.panel-selector li.completed i, .answer.completed .required-holder, .question.completed .required-holder, .completed .label-holder label, .completed .input-holder .postfix, .completed .input-holder .prefix, .completed .input-holder .value, h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed {
+.nav-list.nav-checklist li.completed i, .nav-checklist.panel-selector li.completed i, .answer.completed .required-holder, .question.completed .required-holder, .question-inline.completed .required-holder, .question-grid-based.completed .required-holder, .completed .label-holder label, .completed .input-holder .postfix, .completed .input-holder .prefix, .completed .input-holder .value, h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed {
   color: #14B057; }
 
 .completed .message-holder > .completed, .hint .completed, .info-text.completed {
@@ -7136,7 +7089,7 @@ STATE TRUMPING CODE
 .disabled .input-holder input, .disabled .input-holder textarea, .disabled .input-holder select, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .info-text.disabled, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
   border-color: #b3b3b3; }
 
-.nav-list.nav-checklist li.disabled i, .nav-checklist.panel-selector li.disabled i, .answer.disabled .required-holder, .question.disabled .required-holder, .disabled .label-holder label, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .input-holder .value, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
+.nav-list.nav-checklist li.disabled i, .nav-checklist.panel-selector li.disabled i, .answer.disabled .required-holder, .question.disabled .required-holder, .question-inline.disabled .required-holder, .question-grid-based.disabled .required-holder, .disabled .label-holder label, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .input-holder .value, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
   color: #b3b3b3; }
 
 .disabled .message-holder > .disabled, .hint .disabled, .info-text.disabled {
@@ -7148,7 +7101,7 @@ STATE TRUMPING CODE
 .attention .input-holder input, .attention .input-holder textarea, .attention .input-holder select, .attention .input-holder .postfix, .attention .input-holder .prefix, .info-text.attention, h1.with-underline.attention, h2.with-underline.attention, h3.with-underline.attention, h4.with-underline.attention, h5.with-underline.attention, h6.with-underline.attention {
   border-color: #E08514; }
 
-.nav-list.nav-checklist li.attention i, .nav-checklist.panel-selector li.attention i, .answer.attention .required-holder, .question.attention .required-holder, .attention .label-holder label, .attention .input-holder .postfix, .attention .input-holder .prefix, .attention .input-holder .value, h1.attention, h2.attention, h3.attention, h4.attention, h5.attention, h6.attention, p.attention, a.attention, li.attention, blockquote.attention {
+.nav-list.nav-checklist li.attention i, .nav-checklist.panel-selector li.attention i, .answer.attention .required-holder, .question.attention .required-holder, .question-inline.attention .required-holder, .question-grid-based.attention .required-holder, .attention .label-holder label, .attention .input-holder .postfix, .attention .input-holder .prefix, .attention .input-holder .value, h1.attention, h2.attention, h3.attention, h4.attention, h5.attention, h6.attention, p.attention, a.attention, li.attention, blockquote.attention {
   color: #E08514; }
 
 .attention .message-holder > .attention, .hint .attention, .info-text.attention {

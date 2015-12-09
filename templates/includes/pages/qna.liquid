@@ -1,8 +1,11 @@
-<div id="qna"  data-bind="page: {id:'qna'}">
+<div id="qna"  data-bind="page: {id:'qna', afterShow: listchange}">
 	{% include "../sections/qna/qna-intro" %}
 	{% include "../sections/qna/question" %}
 	{% include "../sections/qna/question-states" %}
 	{% include "../sections/qna/question-inline" %}
+	{% include "../sections/qna/question-gridbased" %}
 <h2>Grouping Repeating Questions</h2>
-{% include "../sections/qna/form-repeater" %}
+	{% include "../sections/qna/form-repeater" %}
+<h2>Special Inputs</h2>
+	{% include "../sections/qna/question-fileupload" %}
 </div>

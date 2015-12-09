@@ -1,0 +1,55 @@
+.question-grid-based{
+	.label-holder,.input-holder,.value-holder{
+		@include grid-column($collapse:false,$float:true); 
+	}
+	.message-holder,.hint, &{
+		@include grid-row(); 
+	}
+	.label-holder{
+		text-align: right;
+	}
+	.label-holder .text{ padding-right: 0;}
+	&.required .label-holder .text{padding-right: 1rem;}
+}
+.label-holder,.message-holder,.hint{
+	 .seq{
+		@include baseline-font(-2,0,0);
+		color: rebrand-color($primary-color,2);
+		vertical-align: top;
+		display: inline-block;
+		margin-top: -.75em;
+		margin-left: -.35em;
+		&:hover{color:mix(rebrand-color($primary-color,2),$black); text-decoration: underline;}
+	}
+}
+/**
+* Questions Grid Based:
+* `.question-grid-based` - This is a variation of the question block used by NCDR. `.label-holder &amp; .input-holder` are used as containters so you can use grid sizers to align the label and input right and left.
+* 
+*   @example
+*	<div class="question-grid-based required">
+*		<div class="label-holder small-5">
+*			<label for="">
+*				<span class="text">Question Dropdown Title (Required) <a class="seq">1234</a></span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder-dynamic"></i>
+*				</span>
+*			</label>
+*		<div class="hint">This is some hint text</div>
+*		</div>
+*		<div class="input-holder small-7">
+*			 <div class="input-space column small-6 large-9">
+*				<input type="text"/>
+*			</div>
+*			<div class="column value small-6 large-3">
+*				Years
+*			</div>
+*		<div class="message-holder">
+*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
+*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*				<small class="data"><i class="fa fa-holder"></i> Data message</small>
+*		</div>
+*		<div class="hint">This is some hint text</div>
+*		</div>
+*	</div>
+*/

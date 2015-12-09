@@ -11,7 +11,7 @@ $required_data:(
 
 
 // End of required check
-.answer,.question{
+.answer,.question,.question-inline,.question-grid-based{
 	.required{display:none;}
 	@include match-display(".required");
 }
@@ -21,7 +21,7 @@ $required_data:(
 		$state-name:map-get($State,"State");
 		.answer#{$selector} &,.question#{$selector} &{
 			@extend %visible-required-icon;
-			@include setTrump('color',$state-name,'.answer#{$selector} .required-holder,.question#{$selector} .required-holder');
+			@include setTrump('color',$state-name,'.answer#{$selector} .required-holder,.question#{$selector} .required-holder,.question-inline#{$selector} .required-holder,.question-grid-based#{$selector} .required-holder');
 		}
 	}
 }

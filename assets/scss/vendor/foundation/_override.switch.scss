@@ -15,6 +15,16 @@ $switch-active-color:rebrand-color($select-color, 2);
   display:inline-block;
   display:table-cell;
   width: 1%;
+  :focus + label{
+	-webkit-box-shadow:inset  0px 0px 10px 2px rebrand-color($primary-color,2);
+	-moz-box-shadow:inset  0px 0px 10px 2px rebrand-color($primary-color,2);
+	box-shadow: inset 0px 0px 10px 2px rebrand-color($primary-color,2);
+  }
+    :focus + label:after{
+	-webkit-box-shadow:  0px 0px 10px 2px rebrand-color($primary-color,2);
+	-moz-box-shadow:  0px 0px 10px 2px rebrand-color($primary-color,2);
+	box-shadow:  0px 0px 10px 2px rebrand-color($primary-color,2);
+  }
 }
 
 .switch-value{

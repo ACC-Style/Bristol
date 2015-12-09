@@ -1,15 +1,7 @@
-.question.question-inline{
-	margin-bottom: .75rem;
-	.input-holder{
-		margin-bottom: .25rem;
-		.input-space{  
-		padding-left: 0;
-		}
-	}
-} 
+
 .input-holder .input-space{  
-		padding-left: 0;
-		position: relative;
+	padding-left: 0;
+	position: relative;
 }
 .input-space a.button, .input-space button, .input-space .button{
 	margin:0;
@@ -31,10 +23,10 @@
 	.input-lock{ 
 		position: absolute;
 		top: 0;
-	    right: 0;
-	    padding: 0.57143rem;
-	    font-size: 1.5rem;
-	    line-height: 1;
+		right: 0;
+		padding: 0.57143rem;
+		font-size: 1.5rem;
+		line-height: 1;
 		.lock-symbol{
 			color:grey(50);
 			&:hover{color:$link-color;}
@@ -56,59 +48,7 @@ input[type="checkbox"], input[type="radio"]{
 	// 	padding-bottom: .5em;
 	}
 }
-.file-upload-holder{height:37px;}
-.file-upload {
-	position: relative;
-	overflow: hidden;
-	margin: 0 10px;
-}
 
-.file-upload input.upload {
-	position: absolute;
-	top: 0;
-	right: 0;
-	margin: 0;
-	padding: 0;
-	font-size: 20px;
-	cursor: pointer;
-	opacity: 0;
-	filter: alpha(opacity=0);
-}
-
-/**
-* 	Questions - File Upload:
-* `.file-upload`  - File uploads are a modified from the standard input-spacer to allow for correct labels to show up when the file is attached 
-*
-*	@example
-*	<div class="button file-upload">
-*		<i class="fa fa-upload"></i>
-*		<span class="text">Upload</span>
-*		<input type="file" class="upload" data-bind="file: { data: document, name: documentname, allowed: allowedTypes }">
-*	</div>
-**/	
-
-.question.question-inline{
-	display: block;
-	.label-holder,.input-holder{
-		display: inline-block;
-		width:auto;
-		vertical-align: middle;
-		float: left;
-	}
-	.label-holder *{
-		white-space: nowrap;
-		padding-right: 1rem;
-	}
-	.label-holder{}
-	.message-holder,.hint{
-		display:block;
-		clear:left;
-	}
-	.hint{border-top:1px solid grey(10);   padding: .25rem; background-color: color($primary-color,10);}
-
-
-
-}
 
 /**
 * Questions -Required:
@@ -128,8 +68,8 @@ input[type="checkbox"], input[type="radio"]{
 *			 <div class="input-space column small-6 large-9">
 *				<input type="text"/>
 *			</div>
-*			<div class="column small-6 large-3">
-*				<small class="value">Years</small>
+*			<div class="column small-6 large-3 value">
+*				Years
 *			</div>
 *		</div>
 *		<div class="message-holder">
@@ -158,8 +98,8 @@ input[type="checkbox"], input[type="radio"]{
 *			 <div class="input-space column small-6 large-9">
 *				<input type="text"/>
 *			</div>
-*			<div class="column small-6 large-3">
-*				<small class="value">Years</small>
+*			<div class="column small-6 large-3 value">
+*				Years
 *			</div>
 *		</div>
 *		<div class="message-holder">
@@ -170,34 +110,4 @@ input[type="checkbox"], input[type="radio"]{
 *		<div class="hint">This is some hint text</div>
 *	</div>
 **/
-/**
-* Questions - Inline:
-* `.question-inline` - questions when there is a need can be made to be inline so the text box will follow the label. These questions will revert to the base question style when on smaller phones. 
-*  Modify any `.question` with the added class of  `.question-inline`
-* 
-*   @example
-*	<div class="question question-inline">
-*		<div class="label-holder">
-*			<label for="">
-*				<span class="text">Question Dropdown Title (Required)</span>
-*				<span class="required-holder">
-*					<i class="fa fa-holder-dynamic"></i>
-*				</span>
-*			</label>
-*		</div>
-*		<div class="input-holder">
-*			 <div class="input-space column small-6 large-9">
-*				<input type="text"/>
-*			</div>
-*			<div class="column small-6 large-3">
-*				<small class="value">Years</small>
-*			</div>
-*		</div>
-*		<div class="message-holder">
-*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
-*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
-*				<small class="data"><i class="fa fa-holder"></i> Data message</small>
-*		</div>
-*		<div class="hint">This is some hint text</div>
-*	</div>
-*/
+

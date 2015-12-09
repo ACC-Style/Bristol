@@ -203,8 +203,7 @@ var availableTags = [
 
   var listchange = function(data, event){
     var hash = location.hash;
-    $('#followUpList li,#guidelineList li, #compareTabs li,#evalutorTabs li').removeClass('selected');
-    $('#followUpList li,#guidelineList li, #compareTabs li,#evalutorTabs li').each(function(){
+    $('.split-sidebar .nav-list li').each(function(){
       var that = $(this);
       that[ $('a', this).attr( 'href' ) === hash ? 'addClass' : 'removeClass' ]( 'selected' );
       }
@@ -231,3 +230,37 @@ var availableTags = [
   };
   var appmodel = new PanelSelectorKO();
  // ko.applyBindings(appmodel);
+
+
+    function makeSticky() {
+      var myWindow = $( window ),
+        myHeader = $( ".data-display" );
+
+      myWindow.scroll( function() {
+        if ( myWindow.scrollTop() == 0 ) {
+          myHeader.removeClass( "sticky-nav" );
+        } else {
+          myHeader.addClass( "sticky-nav" );
+        }
+      } );
+    }
+    $( function() {
+      // makeSticky();
+       
+      var sticky = new Waypoint.Sticky({
+        element: $('.data-display')[0]
+      });
+          
+      var waypoint = new Waypoint({
+        element: $(".shrink-waypoint"),
+        handler: function(direction) {
+         if(direction=="down"){
+          $( ".data-display" ).addClass( "shrink" );
+             }else{
+          $( ".data-display" ).removeClass( "shrink" );
+
+         };
+         console.log(direction);
+        }
+      });
+});

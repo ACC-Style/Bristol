@@ -49,7 +49,7 @@
         <article class="split-content"  data-bind="page: {id:'content', role: 'start'}">
           <div class="page-wrapper">
             <div class="content-padding">
-              <div id="introduction"  data-bind="page: {id:'introduction', role: 'start'}">
+              <div id="introduction"  data-bind="page: {id:'introduction', role: 'start', afterShow: listchange}">
 	<h1>The ACC's App Framework
 	<blockquote>Code Name: Bristol</blockquote>
 	</h1>
@@ -68,7 +68,7 @@
 
 </div>
 
-              <div id="framework"  data-bind="page: {id:'framework'}">
+              <div id="framework"  data-bind="page: {id:'framework', afterShow: listchange}">
 	<h1>Base HTML Framework</h1>
 	
 	 <section class="sg-block sg-section-brand-level">
@@ -557,7 +557,7 @@
             </section>
 </div>
 
-              <div id="branding"  data-bind="page: {id:'branding'}">
+              <div id="branding"  data-bind="page: {id:'branding', afterShow: listchange}">
 	<h1>Colors, Textures, Fonts &amp; Icons</h1>
 <p>a paragraph that would talk about the high reaching goals of the project.</p>
 	 <section class="sg-block sg-section-colors">
@@ -1431,7 +1431,7 @@
             </section>
 </div>
 
-              <div id="typography"  data-bind="page: {id:'typography'}">
+              <div id="typography"  data-bind="page: {id:'typography', afterShow: listchange}">
 	<h1>Typography</h1>
 	<section class="sg-block sg-section-header-tags">
   <div class="sg-text">
@@ -1697,7 +1697,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
     </section>
 </div>
 
-              <div id="tables"  data-bind="page: {id:'tables'}">
+              <div id="tables"  data-bind="page: {id:'tables', afterShow: listchange}">
 	<h1>Tables</h1>
 	 <section class="sg-block sg-section-tables">
       <div class="sg-text">
@@ -2144,7 +2144,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
       </div>
     </section>
 </div>
-              <div id="buttons"  data-bind="page: {id:'buttons'}">
+              <div id="buttons"  data-bind="page: {id:'buttons', afterShow: listchange}">
 	<h1>Inputs: Buttons &amp; Switches</h1>
 	<section class="sg-block sg-section-buttons">
     <div class="sg-text">
@@ -2559,7 +2559,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
     </section>
 </div>
 
-              <div id="navigation"  data-bind="page: {id:'navigation'}">
+              <div id="navigation"  data-bind="page: {id:'navigation', afterShow: listchange}">
 	<h1>Navigation: Tabs &amp; Nav Lists</h1>
 	<h2>Tabs</h2>
 	<section class="sg-block sg-section-tabs-basic-">
@@ -3682,7 +3682,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
 </section>
 </div>
 
-              <div id="qna"  data-bind="page: {id:'qna'}">
+              <div id="qna"  data-bind="page: {id:'qna', afterShow: listchange}">
 	<h1>Forms - Questions &amp; Answers</h1>
 
 <p>
@@ -3900,8 +3900,8 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
               <div class="input-space column small-6 large-9">
                 <input type="text">
               </div>
-              <div class="column small-6 large-3">
-                <small class="value">Years</small>
+              <div class="column small-6 large-3 post-fix">
+                Years
               </div>
             </div>
             <div class="message-holder">
@@ -3927,8 +3927,8 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;input-space column small-6 large-9&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> /&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 large-3&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;value&quot;</span>&gt;</span>Years<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 large-3 post-fix&quot;</span>&gt;</span>
+      Years
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;message-holder&quot;</span>&gt;</span>
@@ -3943,8 +3943,79 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
       </div>
     </section>
+	<section class="sg-block sg-section-questions-grid-based">
+      <div class="sg-text">
+        <h3 id="questions-grid-based" class="sg">Questions Grid Based</h3>
+        <p class="sg">
+          <code class="sg">.question-grid-based</code>- This is a variation of the question block used by NCDR.
+          <code class="sg">.label-holder &amp;amp; .input-holder</code>are used as containters so you can use grid sizers to align the label and input right and left.</p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <div class="question-grid-based required">
+            <div class="label-holder small-5">
+              <label for="">
+                <span class="text">Question Dropdown Title (Required)
+                  <a class="seq">1234</a>
+                </span>
+                <span class="required-holder">
+                  <i class="fa fa-holder-dynamic"></i>
+                </span>
+              </label>
+              <div class="hint">This is some hint text</div>
+            </div>
+            <div class="input-holder small-7">
+              <div class="input-space column small-6 large-9">
+                <input type="text">
+              </div>
+              <div class="column value small-6 large-3">
+                Years
+              </div>
+              <div class="message-holder">
+                <small class="error">
+                  <i class="fa fa-holder"></i>Error message</small>
+                <small class="warning">
+                  <i class="fa fa-holder"></i>Warning message</small>
+                <small class="data">
+                  <i class="fa fa-holder"></i>Data message</small>
+              </div>
+              <div class="hint">This is some hint text</div>
+            </div>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;question-grid-based required&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;label-holder small-5&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Question Dropdown Title (Required)
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;seq&quot;</span>&gt;</span>1234<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;required-holder&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;hint&quot;</span>&gt;</span>This is some hint text<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;input-holder small-7&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;input-space column small-6 large-9&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column value small-6 large-3&quot;</span>&gt;</span>
+      Years
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;message-holder&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;error&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Error message<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;warning&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Warning message<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;data&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Data message<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;hint&quot;</span>&gt;</span>This is some hint text<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+      </div>
+    </section>
 <h2>Grouping Repeating Questions</h2>
-  <section class="sg-block sg-section-form-repeater">
+	  <section class="sg-block sg-section-form-repeater">
       <div class="sg-text">
         <h3 id="form-repeater" class="sg">Form Repeater</h3>
         <p class="sg">
@@ -4384,9 +4455,30 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
       </div>
     </section>
+<h2>Special Inputs</h2>
+	<section class="sg-block sg-section-questions-file-upload">
+  <div class="sg-text">
+    <h3 id="questions-file-upload" class="sg">Questions - File Upload</h3>
+    <p class="sg">
+      <code class="sg">.file-upload</code>- File uploads are a modified from the standard input-spacer to allow for correct labels to show up when the file is attached.</p>
+  </div>
+  <div class="sg-example">
+    <div class="sg-canvas">
+      <div class="button file-upload">
+        <i class="fa fa-upload"></i>
+        <span class="text">Upload</span>
+        <input type="file" class="upload" data-bind="file: { data: document, name: documentname, allowed: allowedTypes }">
+      </div>
+    </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;button file-upload&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-upload&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Upload<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;file&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;upload&quot;</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">&quot;file: { data: document, name: documentname, allowed: allowedTypes }&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+  </div>
+</section>
 </div>
 
-              <div id="layouts"  data-bind="page: {id:'layouts'}">
+              <div id="layouts"  data-bind="page: {id:'layouts', afterShow: listchange}">
 	<h1>Grids &amp; Layouts</h1>
 	<div class="row">
     <div class="column small-12 medium-4 large-3 visible-grid">
@@ -4903,9 +4995,34 @@ padding: 1em;
 <span class="hljs-tag">&lt;/<span class="hljs-title">footer</span>&gt;</span></pre>
       </div>
     </section>
+	<div class="data-display">
+ 	<header class="header page">
+	 	<a href="#" class="logo"><img src="assets/img/headerlogo.svg"  alt="ACC Statin Intolerance Guidelines"></a>
+	 	<ul class="nav tabs primary">
+			<li class="icon"><a class="home">  <i class="fa fa-holder"></i></a></li>
+			<li id="calculator-Tab" class="selected"><a href="#" class="condensable small">Eval  <span class="condense">uate</span></a></li>
+			<li id="recommendation-Tab" class=""><a href="#" class="condensable small">Recommend  <span class="condense">ation</span></a></li>
+		</ul>
+	</header>
+	<div class="data row">
+		<div class="columns small-6">
+			<strong class="h3">Risk Scores</strong>
+			<strong>CHA2DS2-VASc: <span>3</span></strong>
+			<strong>HAS-BLED: <span>2.1</span></strong>
+		</div>
+		<div class="columns small-6">	
+			<strong class="h3">Renal Status</strong>
+			<strong>Cr: <span>1.2</span>  (CrCL: <span >1.4</span> )</strong>
+			<strong>CKD: <span >6</span></strong>
+		</div>
+	</div>
+</div>
+	<BR><BR><BR><BR><BR>
+
+	<div class="shrink-waypoint">&nbsp;</div>
 </div>
   
-              <div id="paper"  data-bind="page: {id:'paper'}">
+              <div id="paper"  data-bind="page: {id:'paper', afterShow: listchange}">
 	<h1>Paper Layers &amp; Grouping</h1>
 	<section class="sg-block sg-section-paper-card-grouping">
     <div class="sg-text">
@@ -5095,7 +5212,7 @@ padding: 1em;
       </div>
     </section>
 </div>   
-              <div id="space-savers"  data-bind="page: {id:'space-savers'}">
+              <div id="space-savers"  data-bind="page: {id:'space-savers', afterShow: listchange}">
 	<h1>
 	Space Savers
 	<span class="sub-line">

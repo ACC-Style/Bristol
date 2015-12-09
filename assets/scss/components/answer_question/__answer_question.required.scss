@@ -11,7 +11,7 @@
 		clear:both;
 	}
 }
-.answer,.answer-group,.question,.question-group{
+.answer,.answer-group,.question,.question-group,.question-inline,.question-grid-based{
 	input[type="text"],
 	input[type="password"],
 	input[type="date"],
@@ -30,37 +30,46 @@
 	select,
 	button,
 	.button{margin-bottom: 0;}
-}
-.answer,.question{
 	margin-bottom: rem-calc(ms(0));
+	&:disabled,&[disabled]{
+		@extend %disabledinput;
+	}
+}
+.input-holder{	
 	.prefix,.postfix,.value{
-		@include baseline-font(0,0);
+		@include baseline-font(-1);
 		@include font-bold();
+		line-height: 2em;
 		padding: .5em;
 		margin-top: 0;
 		color:grey(60);
-		display: block;
+		border:1px solid transparent;
+	}
+	.prefix,.postfix{background:url("../img/paper-texture.png");border:1px solid grey(30); }
+}
+
+.question{
+	.label-holder,.input-holder,.message-holder,.value-holder,.hint{
+		@include grid-row(collapse);
+	}
+	.label-holder{
+		@include baseline-font(0,.5,.25);
+		white-space: nowrap;
+		@include bp(sm-down){
+			white-space:normal;
+		}
 	}
 }
-.answer,.question{.value{
 
 
-}}
 
-.label-holder,.input-holder,.message-holder,.value-holder{
-	@include grid-row(collapse);
-}
 .label-holder{
-	label, .label{@include font-bold();}
+	label, .label,.text{@include font-bold();}
 	@include baseline-font(0,.5,.25);
 	position: relative;
 	background-color:transparent;
 	color:fontcolor($black);
-	white-space: nowrap;
-	@include bp(sm-down){
-		white-space:normal;
-	}
-	.text{padding-right:1rem; line-height: 1.2em;}
+	.text{padding-right:1rem;}
 }
 
 
@@ -79,14 +88,13 @@
 	background-color: transparent;
 	display: inline-block;
 }
-.answer.required .required-holder,.question.required .required-holder{
+.required .required-holder{
 	@extend %visible-required-icon;
 	@include fa-holder($fa-var-asterisk,'dynamic');
 	color:$warning-color;
 }
 
 .input-holder,.value-holder{
-	@include grid-row();
 	margin-bottom: 0;
 	>.input-space{  padding-left: 0;line-height: 1;
 
@@ -109,7 +117,7 @@
 	}	
 }
 .hint{
-	@extend .row;
+
 	@include baseline-font(-1);
 	@extend %italic;
 }
@@ -122,9 +130,7 @@
 
 .answer,.question{
 input, textarea, option{
-	&:disabled,&[disabled]{
-		@extend %disabledinput;
-	}
+
 }
 .chosen-disabled.chosen-container .chosen-choices{@extend %disabledinput;}	
 }
