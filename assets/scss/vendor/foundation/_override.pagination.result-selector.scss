@@ -17,11 +17,10 @@ $required_data:(
 			font-weight: 700;
 		}
 		li.label{
-			padding-left: .25em;
-			padding-right: .25em;
+			padding: 0.1875rem 0.625rem;
 			background-color: grey(10);
-			.top &{border-radius: 5px 0px 0px 0px; }
-			.bottom &{border-radius: 0px 0px 0px 5px; }
+			.top &{border-radius: $global-border-radius 0px 0px 0px; }
+			.bottom &{border-radius: 0px 0px 0px $global-border-radius; }
 		}
 
 }
@@ -31,14 +30,14 @@ $required_data:(
 * 
 *   @example
 *	<div class="pagination-holder top">
-*		<ul class="pagination result-selector left">
+*		<ul class="pagination result-selector float-left">
 *			<li class="label">Show</li>
 *			<li class="current"><a href="">10</a></li>
 *			<li><a href="">20</a></li>
 *			<li><a href="">50</a></li>
 *			<li class="value">Results</li>
 *		</ul>
-*	<ul class="pagination right">
+*	<ul class="pagination float-right">
 *		<li class="arrow unavailable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
 *		<li class="current"><a href="">1</a></li>
 *		<li><a href="">2</a></li>
@@ -47,14 +46,14 @@ $required_data:(
 *		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
 *	</ul></div><br>
 *	<div class="pagination-holder bottom">
-*		<ul class="pagination result-selector left">
+*		<ul class="pagination result-selector float-left">
 *			<li class="label">Show</li>
 *			<li class="current"><a href="">10</a></li>
 *			<li><a href="">20</a></li>
 *			<li><a href="">50</a></li>
 *			<li class="value">Results</li>
 *		</ul>
-*	<ul class="pagination right">
+*	<ul class="pagination float-right">
 *		<li class="arrow unavailable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
 *		<li class="current"><a href="">1</a></li>
 *		<li><a href="">2</a></li>

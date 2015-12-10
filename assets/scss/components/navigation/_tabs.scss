@@ -1,5 +1,5 @@
 /**
-* Tabs (Basic):
+* Tabs (Basic) - depreciated:
 * `.tabs` - Group of nav that is build for a vertical space
 * 
 *   @example
@@ -11,7 +11,18 @@
 *	</ul>
 */
 
-@import "../../helpers/flex";
+/**
+* Tabs (Basic) - Foundation 6:
+* `.tabs` - Group of nav that is build for a vertical space
+* 
+*   @example
+*	<ul class="tabs" data-tabs id="example-tabs">
+*	  <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Tab 1</a></li>
+*	  <li class="tabs-title"><a href="#panel2">Tab 2</a></li>
+*	</ul>
+*/
+
+// @import "../../helpers/flex";
 $tab-color: grey(20);
 $tab-hover-color: grey(25);
 $tab-selected-color:#fff;
@@ -42,6 +53,7 @@ $tab-lighttext:$global-default-light-text;
 		
 		
 		a{
+			&, &:hover{background-color: transparent;}
 			display: inline-block;
 			padding: .55em 1em .5em;
 			text-align: center;
@@ -50,7 +62,9 @@ $tab-lighttext:$global-default-light-text;
 			margin: 0 auto;
 			width: 100%;
 			color:color-contrast($tab-color,$tab-darktext,$tab-lighttext);
-			@include bp(md){padding: .5em 1em .45em;}			
+			@include bp(md){
+				padding: .5em 1em .45em;
+			}			
 		}
 
 		&:hover{
@@ -113,32 +127,23 @@ $tab-lighttext:$global-default-light-text;
 		}
 	}
 	a{
-		
-
-	
 		@include bp(md){
-
-			
 		}
 	}
-
-@include bp(sm-down){
-		width:100%;
-		clear:both;
-		@include flexbox();
-		flex-direction:row;
-		flex-wrap:nowrap;
-		align-items:stretch;
-		align-content: stretch;
-		margin:.2em 0;
-		li{@include flex(1 1 auto);
-		&.icon{@include flex(0 0 2em);}
+	@include bp(sm-down){
+			width:100%;
+			clear:both;
+			@include flexbox();
+			flex-direction:row;
+			flex-wrap:nowrap;
+			align-items:stretch;
+			align-content: stretch;
+			margin:.2em 0;
+			li{@include flex(1 1 auto);
+			&.icon{@include flex(0 0 2em);}
+			}
+	@include bp(xs-down){
+			flex-wrap:wrap;
 		}
-@include bp(xs-down){
-		flex-wrap:wrap;
 	}
-}
-
-
-
 }

@@ -7,35 +7,31 @@ $pagination-color:rebrand-color($primary-color,2);
 	max-width: none;
 }
 ul.pagination li{
-	a,button{
-		border-radius: 0px 0px 0px 0px; 
-		color: fontcolor($black, 'quiet');
-	}
+	border-radius: 0px 0px 0px 0px; 
+	color: fontcolor($black, 'quiet');
+	@include baseline-font(-1);
+	line-height: 1.4rem;
+	a{line-height: 1.4rem;}
 	i{margin:  0 .25rem;}
-	&.current{
-		a,button{
-			&,&:hover{
-				background-color: $pagination-color;
-				color:color-contrast($pagination-color);
-			}
-		}
+	&.current{	
+		padding:0;
+		a{&,&:hover{
+			background-color: $pagination-color;
+			color:color-contrast($pagination-color);
+		}}
 	}
 	&.arrow{
-
-		a,button{
-			background-color: grey(10);
-			
-			color: fontcolor($black);
-			font-weight: 700;
-			&:hover{ 
+		background-color: grey(10);
+		color: fontcolor($black);
+		font-weight: 700;
+		a{&:hover{ 
 				background-color:  grey(30);
 				color: fontcolor($black,'loud');
 			}
 		}
-	&.left{a, button{border-radius: 0px 0px 0px 5px;}}	 
-	&.right{ a, button{
-				border-radius: 0px 0px 5px 0px; 
-			}}
+
+		&.left,&.left:hover{border-radius: 0px 0px 0px $global-border-radius;}	 
+		&.right,&.left:hover{ border-radius: 0px 0px $global-border-radius 0px;}
 	}
 	&.disable a, &.disable a:hover{
 	    border-color: grey(30);
@@ -46,19 +42,17 @@ ul.pagination li{
 }
 
 .pagination-holder.top{
-		border-top:0 none;
-		border-bottom:2px solid $pagination-color;
-		margin-bottom: 1.42857rem;
+	border-top:0 none;
+	border-bottom:2px solid $pagination-color;
+	margin-bottom: 1rem;
+	@include grid-row();
+	max-width: none;
 	ul.pagination{
 		margin-bottom: 0;
 	}
-	@include grid-row();
 	ul.pagination li.arrow{
-		&.left{a,button{border-radius: 5px 0 0 0;}}
-		
-		&.right{
-			a,button{border-radius: 0 5px 0 0;}
-		}
+		&.left{border-radius: $global-border-radius 0 0 0;}
+		&.right{border-radius: 0 $global-border-radius 0 0;}
 	} 
 
 
@@ -73,15 +67,15 @@ ul.pagination li{
 * `.pagination-holder .pagination` - Pagination is often used when there is a table or page of results or repeated items. The Container defaultly styles the paginator to be at the bottom of the area of repeated content but render it at the top just add the class '.top' to render the pagination upside down. The paginator has a single modifier to condense the screen size by adding the class `.pagination--compact`.
 * 
 *   @example
-*	<div class="pagination-holder top"><ul class="pagination right">
-*		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
+*	<div class="pagination-holder top"><ul class="pagination float-right">
+*		<li class="arrow disable left"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
 *		<li class="current"><a href="">1</a></li>
 *		<li><a href="">2</a></li>
 *		<li><a href="">3</a></li>
 *		<li><a href="">4</a></li>
-*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
+*		<li class="arrow right"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
 *	</ul></div><br>
-*	<div class="pagination-holder"><ul class="pagination right">
+*	<div class="pagination-holder"><ul class="pagination float-right">
 *		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
 *		<li class="current"><a href="">1</a></li>
 *		<li><a href="">2</a></li>

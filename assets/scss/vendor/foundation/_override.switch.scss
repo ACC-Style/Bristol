@@ -1,91 +1,92 @@
 
-$switch-active-color:rebrand-color($select-color, 2);
-.switch-input-space{
-	@extend .input-space;
-	white-space: nowrap;
-	display:table;
-	padding-bottom: .5rem;
-	padding-top: .5rem;
-	.with-underline{border-bottom: 1px dotted color( rebrand-color($black,3), 20);}
-	}
-.switch {
-  @include switch-base($switch-paddle-transition-speed, $switch-paddle-transition-ease);
-  @include switch-size($switch-height-sml);
-  @include switch-style($switch-paddle-bg, $switch-active-color, true);
-  display:inline-block;
-  display:table-cell;
-  width: 1%;
-  :focus + label{
-	-webkit-box-shadow:inset  0px 0px 10px 2px rebrand-color($primary-color,2);
-	-moz-box-shadow:inset  0px 0px 10px 2px rebrand-color($primary-color,2);
-	box-shadow: inset 0px 0px 10px 2px rebrand-color($primary-color,2);
-  }
-    :focus + label:after{
-	-webkit-box-shadow:  0px 0px 10px 2px rebrand-color($primary-color,2);
-	-moz-box-shadow:  0px 0px 10px 2px rebrand-color($primary-color,2);
-	box-shadow:  0px 0px 10px 2px rebrand-color($primary-color,2);
-  }
-}
+// $switch-active-color:rebrand-color($select-color, 2);
+// .switch-input-space{
+// 	@extend .input-space;
+// 	white-space: nowrap;
+// 	display:table;
+// 	padding-bottom: .5rem;
+// 	padding-top: .5rem;
+// 	.with-underline{border-bottom: 1px dotted color( rebrand-color($black,3), 20);}
+// 	}
+// .switch {
+//   @include switch-base($switch-paddle-transition-speed, $switch-paddle-transition-ease);
+//   @include switch-size($switch-height-sml);
+//   @include switch-style($switch-paddle-bg, $switch-active-color, true);
+//   display:inline-block;
+//   display:table-cell;
+//   width: 1%;
+//   :focus + label{
+// 	-webkit-box-shadow:inset  0px 0px 10px 2px rebrand-color($primary-color,2);
+// 	-moz-box-shadow:inset  0px 0px 10px 2px rebrand-color($primary-color,2);
+// 	box-shadow: inset 0px 0px 10px 2px rebrand-color($primary-color,2);
+//   }
+//     :focus + label:after{
+// 	-webkit-box-shadow:  0px 0px 10px 2px rebrand-color($primary-color,2);
+// 	-moz-box-shadow:  0px 0px 10px 2px rebrand-color($primary-color,2);
+// 	box-shadow:  0px 0px 10px 2px rebrand-color($primary-color,2);
+//   }
+// }
 
-.switch-value{
-	@extend .h4;
-	display: inline-block;
-	height: 2rem;
-	vertical-align: top;
-	padding: 0 0 0 .75rem;
-	margin: 0;
-	position: relative;
-	background-color:transparent;
-	color:fontcolor($black);
-	@include font-slab;
-	white-space: normal;
-	display:table-cell;
-}
-input + label:after {
-	.switch.check-visible &,.switch.dot-visible &,.switch.x-visible &{z-index: 100;}
-}
-.switch.check-visible input + label:before,.switch.x-visible input + label:before,.switch.dot-visible input + label:before,{
-	position: absolute; 
-	display: block;
-	height: 1.5em;
-	width: 1.5em; 
-	z-index: 1;
-	display: inline-block;
-	font: normal normal normal 14px/1 FontAwesome;
-	font-size: inherit;
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
-	text-align: center;
-	vertical-align: middle;
-}
-.tiny.switch input + label:before{font-size: 84%;}
-.large.switch input + label:before{font-size: 140%;}
-.switch.x-visible input + label:before {
-	    content: "\f00d";
-   	    left: -1.35em;
-	    top: .40em;
-	    color: #fff;
+// .switch-value{
+// 	@extend .h4;
+// 	display: inline-block;
+// 	height: 2rem;
+// 	vertical-align: top;
+// 	padding: 0 0 0 .75rem;
+// 	margin: 0;
+// 	position: relative;
+// 	background-color:transparent;
+// 	color:fontcolor($black);
+// 	@include font-slab;
+// 	white-space: normal;
+// 	display:table-cell;
+// }
+// input + label:after {
+// 	.switch.check-visible &,.switch.dot-visible &,.switch.x-visible &{z-index: 100;}
+// }
+// .switch.check-visible input + label:before,.switch.x-visible input + label:before,.switch.dot-visible input + label:before,{
+// 	position: absolute; 
+// 	display: block;
+// 	height: 1.5em;
+// 	width: 1.5em; 
+// 	z-index: 1;
+// 	display: inline-block;
+// 	font: normal normal normal 14px/1 FontAwesome;
+// 	font-size: inherit;
+// 	text-rendering: auto;
+// 	-webkit-font-smoothing: antialiased;
+// 	text-align: center;
+// 	vertical-align: middle;
+// }
+// .tiny.switch input + label:before{font-size: 84%;}
+// .large.switch input + label:before{font-size: 140%;}
+// .switch.x-visible input + label:before {
+// 	    content: "\f00d";
+//    	    left: -1.35em;
+// 	    top: .40em;
+// 	    color: #fff;
 
-}
-.switch.dot-visible input:checked + label:before,
-.switch.check-visible input:checked + label:before {
-		    left: -3.05em;
-		    top: .375em;
-		    color:mix($switch-active-color,#fff,30);
-}
-.switch.dot-visible input:checked + label:before {
-	    content: "\f058";
-}
-.switch.check-visible input:checked + label:before {
-	    content: "\f00c";
-}
-.switch.disabled label{
-	background:grey(30) url("../img/subtlenet2.png") repeat;
-	&:after{background-color:grey(10);
-	}
-}
+// }
+// .switch.dot-visible input:checked + label:before,
+// .switch.check-visible input:checked + label:before {
+// 		    left: -3.05em;
+// 		    top: .375em;
+// 		    color:mix($switch-active-color,#fff,30);
+// }
+// .switch.dot-visible input:checked + label:before {
+// 	    content: "\f058";
+// }
+// .switch.check-visible input:checked + label:before {
+// 	    content: "\f00c";
+// }
+// .switch.disabled label{
+// background:grey(30) url("../img/subtlenet2.png") repeat;
+// &:after{background-color:grey(10);
+// 	}
+// }
+
 /**
-* Switch (Foundation Override):
+* Switch (Foundation Override Depreciated):
 * `.switch` - Switches are a more visible and more touchable versions of checkbox and radio buttons. ADD `.check-visible` to a switch to make a check appear in the selected state of `.x-visible` to show the x when it is shut off. 
 * 
 *   @example
@@ -128,3 +129,149 @@ input + label:after {
 *	</div>
 *   <a class="link" href="http://foundation.zurb.com/docs/components/switch.html">Foundation Documentation</a>
 */
+.switch-input-space{
+	@extend .input-space;
+	white-space: nowrap;
+	display:table;
+	padding-bottom: .5rem;
+	padding-top: .5rem;
+	width:100%;
+	.with-underline{border-bottom: 1px dotted color( rebrand-color($black,3), 20);}
+	.switch{
+		display:table-cell;
+		width:1%;
+		}
+	}
+.switch-value{
+	display:table-cell;
+	vertical-align: middle;
+	padding: 0 0 0 .75rem;
+	margin: 0;
+	white-space: normal;
+	background-color:transparent;
+	color:fontcolor($black);
+	@include font-slab;
+	@include baseline-font(1);
+	
+	
+}	
+  // Container class
+  .switch {
+    @include switch-container;
+
+
+  }
+// <input> element
+  .switch-input {
+    @include switch-input;
+  }
+
+  // <label> element
+  .switch-paddle {
+    $switch-background-active:rebrand-color($select-color, 2);
+    @include switch-paddle;
+    border:2px solid grey(30);
+    background-image:url("../img/billie-holiday.png") repeat;
+    box-sizing:content-box;
+  }
+  .switch-input{
+	&:focus + .switch-paddle{
+		-webkit-box-shadow:inset  0px 0px 10px 2px rebrand-color($primary-color,2);
+		-moz-box-shadow:inset  0px 0px 10px 2px rebrand-color($primary-color,2);
+		box-shadow: inset 0px 0px 10px 2px rebrand-color($primary-color,2);
+	}
+	&:focus + .switch-paddle:after{
+		-webkit-box-shadow:  0px 0px 10px 2px rebrand-color($primary-color,2);
+		-moz-box-shadow:  0px 0px 10px 2px rebrand-color($primary-color,2);
+		box-shadow:  0px 0px 10px 2px rebrand-color($primary-color,2);
+	}
+  }
+
+  // Base label text styles
+  %switch-text {
+    @include switch-text;
+  }
+
+  // Active label text styles
+  .switch-active {
+    @extend %switch-text;
+    @include switch-text-active;
+    left:10%;
+  }
+
+  // Inactive label text styles
+  .switch-inactive {
+    @extend %switch-text;
+    @include switch-text-inactive;
+    right:10%;
+  }
+
+  // Switch sizes
+  .switch.tiny {
+    @include switch-size(rem-calc(10), 3rem, $switch-height-tiny, 1rem, $switch-paddle-offset);
+  }
+
+  .switch.small {
+    @include switch-size(rem-calc(12), 3.5rem, $switch-height-small, 1.25rem, $switch-paddle-offset);
+  }
+
+  .switch.large {
+    @include switch-size(rem-calc(16), 5rem, $switch-height-large, 2rem, $switch-paddle-offset);
+  }
+  .switch.radius{
+	.switch-paddle{border-radius: $global-border-radius;}
+	.switch-paddle:after{border-radius: $global-border-radius * .75;}
+  }
+  .switch.round,.switch.radio{
+	.switch-paddle,.switch-paddle:after{border-radius: $global-border-round;}
+  }
+  %switch-paddle-disabled{
+  	background:grey(30) url("../img/subtlenet2.png") repeat;
+  	border:2px solid grey(10);
+  	box-sizing:content-box;
+  }
+  %switch-text-disabled{color:grey(30);}
+  %switch-nob-disabled{ background-color:grey(10); }
+  .switch.disabled{
+  	.switch-paddle{
+  		@extend %switch-paddle-disabled;
+  		@extend %switch-text-disabled;
+		&:after{ @extend %switch-nob-disabled;}
+	}
+
+  }
+  .switch-input[disabled]~.switch-paddle{
+	@extend %switch-paddle-disabled;
+	@extend %switch-text-disabled;
+	&:after{ @extend %switch-nob-disabled;}
+
+  }
+
+
+/**
+* Switch (Foundation Override):
+* `.switch` - Switches are a more visible and more touchable versions of checkbox and radio buttons. ADD `.check-visible` to a switch to make a check appear in the selected state of `.x-visible` to show the x when it is shut off. 
+* 
+*   @example
+*
+*	<div class="switch-input-space group-divide row">	
+*	<div class="switch large round">
+*	  <input class="switch-input" id="yes-no-lr" type="checkbox" name="exampleSwitch">
+*	  <label class="switch-paddle" for="yes-no-lr">
+*	    <span class="show-for-sr">Do you like me?</span>
+*	  </label>
+*	</div>
+*	<label  class="switch-value" for="yes-no-lr">Large Round Radio Button</label>		
+*	</div>
+*    <div class="switch-input-space group-divide row">	
+*	<div class="switch large radius">
+*	  <input class="switch-input" id="yes-no-1" disabled type="checkbox" name="exampleSwitch">
+*	  <label class="switch-paddle" for="yes-no-1">
+*	    <span class="show-for-sr">Do you like me?</span>
+*	    <span class="switch-active" aria-hidden="true">Yes</span>
+*	    <span class="switch-inactive" aria-hidden="true">No</span>
+*	  </label>
+*	</div>
+*	<label  class="switch-value" for="yes-no-1">Yes or No Question</label>		
+*	</div>
+**/

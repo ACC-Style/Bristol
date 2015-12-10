@@ -14,9 +14,12 @@ $base-line: $baseline-modifier * $base-font-size;
 // parent-level is the ms() of the parent
 
 @mixin baseline-font($font-level, $margin-top:0, $margin-bottom:0,$parent-level:0,$baseline:$base-line){
+
 	$font-size: ms($font-level);
+
 	@if($parent-level > 0){
-		$font-size: ms($font-level)/ms($parent-level) * $base-font-size;
+
+		$font-size: $font-size/ms($parent-level) * $base-font-size;
 		// @debug $font-size "fontsize";
 	}
 	// @debug $font-size "real - fontsize";

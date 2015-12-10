@@ -1,52 +1,4 @@
-/**
-* Panel Selector:
-* `.panel-selector-holder` - the panel selector is a multi tree level selector allowing a user to select from the left coloum or parent and then select the filtered child elements.  !! Requires Javascript!!
-* 
-*   @example
-*	<section id="PanelSelector" class="panel-selector-holder">
-*		<div class="panel-selector parent">
-*			<ul>
-*				<li><i class="fa fa-holder"></i><span class="text">List Item Parent</span></li>
-*				<li><i class="fa fa-holder"></i><span class="text">List Item Parent</span></li>
-*				<li><i class="fa fa-holder"></i><span class="text">List Item Parent</span></li>
-*				<li><i class="fa fa-holder"></i><span class="text">List Item Parent</span></li>
-*				<li><i class="fa fa-holder"></i><span class="text">List Item Parent</span></li>
-*			</ul>
-*		</div>								
-*		<div class="panel-selector child">
-*			<ul>
-*				<li><i class="fa fa-holder"></i><span class="text">List Item Child</span></li>
-*				<li><i class="fa fa-holder"></i><span class="text">List Item Child</span></li>
-*				<li><i class="fa fa-holder"></i><span class="text">List Item Child</span></li>
-*				<li><i class="fa fa-holder"></i><span class="text">List Item Child</span></li>
-*				<li><i class="fa fa-holder"></i><span class="text">List Item Child</span></li>
-*			</ul>
-*		</div>
-*	</section>
-*	<a class="link" href="http://anovi.github.io/selectonic/">Javascript API Documentaion</a> 
-*/
-/**
-* Knockout Panel Selector:
-* `.panel-selector-holder` - the panel selector is a multi tree level selector allowing a user to select from the left coloum or parent and then select the filtered child elements.  !! Requires Javascript!!
-* 
-*   @example
-*	<section id="Knockout" class="panel-selector-holder row collapse">
-*	  <div class="panel-selector">
-*	    <ul  data-bind="foreach:$root.repeatedItems">
-*	      <li data-bind="css: {selected: selected},toggle:selected">
-*	        <i class="fa fa-holder"></i>
-*	        <span class="text" data-bind="text:name">List Item Parent</span>
-*	      </li>
-*	    </ul>
-*	  </div><div class="panel-selector">
-*	    <ul  data-bind="foreach:$root.repeatedItems2">
-*	      <li data-bind="css: {selected: selected},toggle:selected">
-*	        <i class="fa fa-holder"></i>
-*	        <span class="text" data-bind="text:name">List Item Parent</span>
-*	      </li>
-*	    </ul></div>
-*	 </section>
-*/
+
 
 // @if{}
 // @else{}
@@ -136,13 +88,13 @@ $panel-selector-color:rebrand-color($success-color,2);
 * `.button-group` -  !! Requires Javascript!!
 * 
 *   @example
-*	<div class="row"><ul id="ButtonGroup" class="button-group">
-*		<li><a class="button"><i class="fa fa-holder"></i><span class="text">button</span></a></li>
-*		<li><a class="button"><i class="fa fa-holder"></i><span class="text">button</span></a></li>
-*		<li><a class="button"><i class="fa fa-holder"></i><span class="text">button</span></a></li>
-*		<li><a class="button"><i class="fa fa-holder"></i><span class="text">button</span></a></li>
-*		<li><a class="button"><i class="fa fa-holder"></i><span class="text">button</span></a></li>
-*	</ul></div>
+*	<div class="row button-group"id="ButtonGroup" >
+*		<a class="button"><i class="fa fa-holder"></i><span class="text">button</span></a>
+*		<a class="button"><i class="fa fa-holder"></i><span class="text">button</span></a>
+*		<a class="button"><i class="fa fa-holder"></i><span class="text">button</span></a>
+*		<a class="button"><i class="fa fa-holder"></i><span class="text">button</span></a>
+*		<a class="button"><i class="fa fa-holder"></i><span class="text">button</span></a>
+*	</div>
 *	<a class="link" href="http://anovi.github.io/selectonic/">Javascript API Documentaion</a> 
 */
 .button-group{
@@ -161,4 +113,53 @@ $panel-selector-color:rebrand-color($success-color,2);
 		}
 	}
 }
+/**
+* Panel Selector:
+* `.panel-selector-holder` - the panel selector is a multi tree level selector allowing a user to select from the left coloum or parent and then select the filtered child elements.  !! Requires Javascript!!
+* 
+*   @example
+*	<section id="PanelSelector" class="panel-selector-holder">
+*		<div class="panel-selector parent">
+*			<ul>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Parent</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Parent</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Parent</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Parent</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Parent</span></li>
+*			</ul>
+*		</div>								
+*		<div class="panel-selector child">
+*			<ul>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Child</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Child</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Child</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Child</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Child</span></li>
+*			</ul>
+*		</div>
+*	</section>
+*	<a class="link" href="http://anovi.github.io/selectonic/">Javascript API Documentaion</a> 
+*/
+/**
+* Knockout Panel Selector:
+* `.panel-selector-holder` - the panel selector is a multi tree level selector allowing a user to select from the left coloum or parent and then select the filtered child elements.  !! Requires Javascript!!
+* 
+*   @example
+*	<section id="Knockout" class="panel-selector-holder row collapse">
+*	  <div class="panel-selector">
+*	    <ul  data-bind="foreach:$root.repeatedItems">
+*	      <li data-bind="css: {selected: selected},toggle:selected">
+*	        <i class="fa fa-holder"></i>
+*	        <span class="text" data-bind="text:name">List Item Parent</span>
+*	      </li>
+*	    </ul>
+*	  </div><div class="panel-selector">
+*	    <ul  data-bind="foreach:$root.repeatedItems2">
+*	      <li data-bind="css: {selected: selected},toggle:selected">
+*	        <i class="fa fa-holder"></i>
+*	        <span class="text" data-bind="text:name">List Item Parent</span>
+*	      </li>
+*	    </ul></div>
+*	 </section>
+*/
 

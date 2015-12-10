@@ -39,7 +39,11 @@ module.exports = function(grunt){
 			}
 		},
 		sass:{
-			dist:{			
+
+			dist:{
+				options: {                       // Target options
+			        style: 'expanded'
+			      },			
 				files:[{
 					expand: true,
 					cwd: './assets/scss',
@@ -48,22 +52,15 @@ module.exports = function(grunt){
 					ext: '.css'	
 				}]
 			},
-			styleguide:{			
+			vendor:{
+
 				files:[{
 					expand: true,
-					cwd: './assets/scss',
-					src: ['*.scss'],
-					dest: './styleguide/assets/css',
-					ext: '.css'	
-				}]
-			},
-			foundation:{
-				files:[{
-					expand: true,
-					cwd: './assets/scss/vendor/foundation',
-					src: ['*.scss','_foundation-override/*.scss'],
+					cwd: './assets/scss/vendor/',
+					src: ['**.scss'],
 					dest: './assets/css',
-					ext: '.css'	
+					ext: '.css',
+					flatten:true	
 			}]
 		}
 
@@ -74,8 +71,24 @@ module.exports = function(grunt){
 		       	'styleguide/index.html': 'assets/css/index.css',
 		      },
 		      options: {
-		        css: [ "assets/css/normalize.min.css",'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,600,400,300|Roboto+Slab:400,700|Raleway:300','assets/css/jquery-ui.css','assets/css/jquery-ui.structure.css',"assets/css/foundation.min.css",'assets/css/index.css'],
-		        js: ['assets/js/jquery-2.1.3.min.js','assets/js/selectonic.min.js','assets/js/chosen/chosen.jquery.min.js','assets/js/jquery-ui.js','assets/js/foundation.min.js','assets/js/knockout.js','assets/js/app.js'],
+		        css: [ 
+		        	"assets/css/normalize.min.css",
+		        	'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,600,400,300|Roboto+Slab:400,700|Raleway:300',
+		        	'assets/css/jquery-ui.css',
+		        	'assets/css/jquery-ui.structure.css',
+		        	"assets/css/font-awesome.min.css",
+		        	"assets/css/foundation.min.css",
+		        	'assets/css/index.css'],
+
+		        js: [
+		        	'assets/js/jquery-2.1.3.min.js',
+		        	'assets/js/selectonic.min.js',
+		        	'assets/js/chosen/chosen.jquery.min.js',
+		        	'assets/js/jquery-ui.js',
+		        	'assets/js/foundation-sites.js',
+		        	'assets/js/knockout.js',
+		        	'assets/js/app.js'],
+
 		        title: 'My Style Guide',
 		        sg_css: 'assets/css/styledown.css',
 		        sg_js: 'assets/js//styledown.js',
@@ -86,54 +99,64 @@ module.exports = function(grunt){
 
 		  },
 		copy:{ 
-			STYLES: {
-				files: [{
-					expand: true,
-					cwd: 'styleguide/',
-					src: '**',
-					dest: '//rdstgweb5/stage.tools.acc.org/BaseStyle'
-				},
+			STYLES:{
+				files:[
 				{
-					expand: true,
-					cwd: 'styleguide/',
-					src: '**',
-					dest: '//rdstgweb6/stage.tools.acc.org/BaseStyle'
-				}]
-			},
+					expand:true,
+					cwd:'assets/css',
+					src:'**',
+					dest:'converted-html/assets/css'
+				},{
+					expand:true,
+					cwd:'assets/css',
+					src:'**',
+					dest:'styleguide/assets/css'
+				}
+				]},
 			INTERNAL:{
 				files:[
 				{
 					expand:true,
 					cwd:'assets/js',
 					src:'**',
-					dest:'styleguide/assets/js',
+					dest:'converted-html/assets/js'
 				}
 				,{
 					expand:true,
 					cwd:'assets/css',
-					src:'index.*',
-					dest:'styleguide/assets/css',
+					src:'**',
+					dest:'converted-html/assets/css'
 				},{
 					expand:true,
 					cwd:'assets/img',
 					src:'**',
-					dest:'styleguide/assets/img',
+					dest:'converted-html/assets/img'
+				},{
+					expand:true,
+					cwd:'assets/fonts',
+					src:'**',
+					dest:'converted-html/assets/fonts'
 				},{
 					expand:true,
 					cwd:'assets/js',
 					src:'**',
-					dest:'converted-html/assets/js',
+					dest:'styleguide/assets/js'
 				}
 				,{
 					expand:true,
 					cwd:'assets/css',
-					src:['index.*','foundaiton.*','font-awesome.*','jquery-ui','styledown.*'],
-					dest:'converted-html/assets/css',
+					src:'**',
+					dest:'styleguide/assets/css'
 				},{
 					expand:true,
 					cwd:'assets/img',
 					src:'**',
-					dest:'converted-html/assets/img',
+					dest:'styleguide/assets/img'
+				},{
+					expand:true,
+					cwd:'assets/fonts',
+					src:'**',
+					dest:'styleguide/assets/fonts'
 				}
 				]
 			}
@@ -144,7 +167,7 @@ module.exports = function(grunt){
 			      livereload: true,
 			    },
 			js: {
-			files: [ 'assets/js/*.js','templates/includes/scripts.liquid' ],
+			files: [ 'assets/js/*.js' ],
 			tasks: [ 'liquid','copy:INTERNAL' ],
 
 			},
@@ -154,14 +177,17 @@ module.exports = function(grunt){
 
 			},
 			scss: {
-			files: [ 'assets/scss/*.scss','assets/scss/*/*.scss','assets/scss/*/*/*.scss' ],
-			tasks: [ 'sass:dist','cssmin','styledown:base','copy:INTERNAL'],
-
+			files: [ 'assets/scss/*.scss','assets/scss/**'],
+			tasks: [ 'sass:dist','cssmin','copy:STYLES']
+			},
+			index:{
+			files: [ 'assets/scss/index.scss'],
+			tasks: [ 'sass:vendor','styledown:base','copy:INTERNAL']	
 			}
 	    },
 		clean: {
-			localFolder:["converted-html/**"],
-			sassCasheFolder:[".sass-cache/**"]
+			localFolder:["converted-html/**","styleguide/**"],
+			sassCasheFolder:[".sass-cache/**"],
 
 		},
 	});
@@ -172,13 +198,13 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-liquid');
 	grunt.loadNpmTasks('grunt-styledown');
 	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-sass-convert');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	// Default task.
 	grunt.registerTask('build', [
 		'connect',
-		'sass:foundation',
+		'clean',
+		'sass:vendor',
 		'sass:dist',
 		'cssmin',
 		'copy:INTERNAL',

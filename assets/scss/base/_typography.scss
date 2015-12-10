@@ -54,14 +54,23 @@ letter-spacing: -1px;
 	@include bp(md){
 		@include baseline-font(2,.25,.75);
 		}
-	
+	@include bp(lg){
+		@include baseline-font(3,.75,.25);	
+	}
 
 }
 .h4{
 	@extend %h4;
 	@include baseline-font(1,.5,.5);
+	@include bp(md){
+		@include baseline-font(2,.25,.75);
+	}
 }
-.h5{@extend %h5;@include baseline-font(0); }
+.h5{@extend %h5;@include baseline-font(0); 	
+	@include bp(md){
+		@include baseline-font(1);
+	}
+}
 .h6{@extend %h6;@include baseline-font(0);}
 
 %normal {
