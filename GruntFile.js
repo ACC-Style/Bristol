@@ -56,8 +56,8 @@ module.exports = function(grunt){
 
 				files:[{
 					expand: true,
-					cwd: './assets/scss/vendor/',
-					src: ['**.scss'],
+					cwd: './assets/scss/vendor',
+					src: ['**.scss','*/**.scss','foundation-sites/vendor/*.scss'],
 					dest: './assets/css',
 					ext: '.css',
 					flatten:true	
@@ -72,21 +72,20 @@ module.exports = function(grunt){
 		      },
 		      options: {
 		        css: [ 
-		        	"assets/css/normalize.min.css",
 		        	'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,600,400,300|Roboto+Slab:400,700|Raleway:300',
 		        	'assets/css/jquery-ui.css',
 		        	'assets/css/jquery-ui.structure.css',
-		        	"assets/css/font-awesome.min.css",
-		        	"assets/css/foundation.min.css",
+		        	"assets/css/font-awesome.css",
+		        	"assets/css/foundation-sites.css",
 		        	'assets/css/index.css'],
 
 		        js: [
-		        	'assets/js/jquery-2.1.3.min.js',
+		        	'assets/js/jquery.min.js',
 		        	'assets/js/selectonic.min.js',
 		        	'assets/js/chosen/chosen.jquery.min.js',
 		        	'assets/js/jquery-ui.js',
-		        	'assets/js/foundation-sites.js',
 		        	'assets/js/knockout.js',
+		        	'assets/js/foundation.min.js',
 		        	'assets/js/app.js'],
 
 		        title: 'My Style Guide',
