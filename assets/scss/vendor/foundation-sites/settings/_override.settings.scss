@@ -243,10 +243,10 @@ $button-color: #fff;
 $button-color-alt: #000;
 $button-radius: $global-radius;
 $button-sizes: (
-  tiny: 0.6rem,
-  small: 0.75rem,
-  default: 0.9rem,
-  large: 1.25rem,
+  tiny: rem-calc(strip-unit(ms-calc(-2))),
+  small: rem-calc(strip-unit(ms-calc(0))),
+  default: rem-calc(strip-unit(ms-calc(1))),
+  large: rem-calc(strip-unit(ms-calc(2))),
 );
 $button-opacity-disabled: 0.25;
 
@@ -547,8 +547,9 @@ $tooltip-radius: $global-radius;
 // 35. Top Bar
 // -----------
 
-$topbar-padding: 0.5rem;
-$topbar-background: #eee;
+$topbar-padding: .5rem;
+$topbar-background: rebrand-color($brand-color,3);
+$topbar-bottomborder: rebrand-color($brand-color,1);
 $topbar-link-color: #fff;
 $topbar-input-width: 200px;
 

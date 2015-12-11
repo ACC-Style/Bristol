@@ -5,11 +5,10 @@
 *   @example
 *	<a  class="button" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
 */
-$brand-level:0; // Any Number between 0 and 3.   
+$brand-level:1; // Any Number between 0 and 3.   
 $product-brand-color: #9a1267;
 $ms-base: 14px;
 $ms-ratio: 1.2;
-
 $baseline-modifier:1.4;
 @import "base/font-local-include";
 @import "helpers/mixens";
@@ -88,14 +87,14 @@ $baseline-modifier:1.4;
 @import "components/accordion";
 @import "components/panel-selector";
 @import "components/toggle-selector";
-@import "components/data-display";
+
 
 // // Non-Core Components Styles
 // // OMA Modules
-@import "_non-core/components/_oma/branding";
-@import "_non-core/components/_oma/user-id-block";
-@import "_non-core/components/_oma/member-selection-table";
-@import "_non-core/structures/_oma/sections";
+// @import "_non-core/components/_oma/branding";
+// @import "_non-core/components/_oma/user-id-block";
+// @import "_non-core/components/_oma/member-selection-table";
+// @import "_non-core/structures/_oma/sections";
 
 // // OMA Admin Modules --  !!! requires admin fonts to be included !!
 // @import "_non-core/components/_oma-admin/table-history";
@@ -116,6 +115,7 @@ $baseline-modifier:1.4;
 @import "vendor/foundation/override.slider";
 @import "vendor/foundation/override.switch";
 @import "vendor/foundation/override.tooltip";
+@import "vendor/foundation/override.close-button";
 
 @import "vendor/typeahead/typeahead";
 @import "vendor/jquery-ui/theme-custom";
@@ -129,21 +129,21 @@ $baseline-modifier:1.4;
 // --> @import "structures/layout-split-off-canvas";  // this style must come before 'lyout-split'
 // --> @import "structures/layout-split";
 //@import "structures/_oma-admin/override.layout-split";
+// @import "structures/mobileApps/layout_header";
+// @import "structures/mobileApps/layout_footer";
+// @import "structures/website/footer";
+// @import "components/data-display";
 
-@import "structures/mobileApps/layout_header";
-@import "structures/mobileApps/layout_footer";
-@import "structures/website/footer";
 
-
-// Template specific views 
-//trumps the dreaded importants show up in the files below.
-@import "base/header-tag_order-marker";
-@import "base/typography.states.scss";
-@import "base/typography.trump";
+// // Template specific views 
+// //trumps the dreaded importants show up in the files below.
+// @import "base/header-tag_order-marker";
+// @import "base/typography.states.scss";
+// @import "base/typography.trump";
 
 //Utitlity Styles that Override other things
 @import "trumps/utilities";
-@import "trumps/condensable";
+// @import "trumps/condensable";
 @import "trumps/css3";
 @import "base/__states.trump";
 
