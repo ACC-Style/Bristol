@@ -17,7 +17,9 @@
         background-image:url('../img/billie-holiday-speck.png');
         background-color: color(rebrand-color($primary-color, 1), 50);
     }
-
+    .radius{border-radius: $global-border-radius;}
+    .radius-bottom{border-radius:  0 0 $global-border-radius  $global-border-radius;}
+    .radius-top{border-radius: $global-border-radius  $global-border-radius 0 0;}
     .page-wrapper {
         padding: 1rem 0 !important;
 
@@ -93,12 +95,12 @@
 *   @example
 *   <div class="page with-group-sections">
 *    <div class="page-wrapper">
-*    <section class="section group-section"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
+*    <section class="section group-section radius-top"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *    </div>
 *    </div>
 *   <div class="page with-group-sections highlighted">
 *    <div class="page-wrapper">
-*    <section class="section group-section">
+*    <section class="section group-section radius-bottom">
 *    <h1>Hello</h1> <p>This is content  that is showing up in a section group</section>
 *    </div>
 *    </div>
@@ -117,7 +119,7 @@
 *       <li class=" selected "><a >Tab 3</a></li>
 *       <li class=""><a >Tab 4</a></li>
 *   </ul>
-*    <section class="section group-section"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
+*    <section class="section group-section radius"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *        </div>
 *    </div>
 *
