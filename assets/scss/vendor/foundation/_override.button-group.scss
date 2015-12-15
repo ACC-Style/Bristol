@@ -1,3 +1,50 @@
+
+.button-group {
+    padding-left: 0;
+    border: 2px solid transparent;
+    .input-space & {
+        margin-bottom: 0;
+    }
+    & > li {
+        .button {
+            .input-space & {
+                padding-top: .57143rem;
+                padding-bottom: .57143rem;
+            }
+        }
+    }
+    &.selectable {
+        .button {
+            @include button-style($background: grey(30));
+        }
+        i.fa {
+            font-size: 1rem;
+            height: 1rem;
+            width: 1rem;
+            margin: 0 7px 0 0;
+            display: none;
+        }
+        a.selected {
+            &, &:hover {
+                background-color: rebrand-color($success-color, 2);
+            }
+            i.fa {
+                display: inline-block;
+            }
+        }
+    }
+  @include bp(sm-down){
+    @include button-group-expand();
+  }
+}
+
+@each $State in $states {
+    $selector: map-get($State, "Selector");
+    $state-name: map-get($State, "State");
+    $color: map-get($State, "Color");
+    @include setTrump('border-color', $state-name, '#{$selector}.question .button-group');
+}
+
 /**
 * Selectable Button Group:
 * `.selectable.button-group` - this is a toggle-able button group that changes colors when items are selected.  Add .selected to the `li`  to change colors and add the check to the button.<h4 class="warning">( Foundation Change  !! WARNING !! )</h4>
@@ -54,52 +101,3 @@
 * </div>
 *
 */
-
-
-/*  Button Group */
-
-.button-group {
-    padding-left: 0;
-    border: 2px solid transparent;
-    .input-space & {
-        margin-bottom: 0;
-    }
-    & > li {
-        .button {
-            .input-space & {
-                padding-top: .57143rem;
-                padding-bottom: .57143rem;
-            }
-        }
-    }
-    &.selectable {
-        .button {
-            @include button-style($background: grey(30));
-        }
-        i.fa {
-            font-size: 1rem;
-            height: 1rem;
-            width: 1rem;
-            margin: 0 7px 0 0;
-            display: none;
-        }
-        a.selected {
-            &, &:hover {
-                background-color: rebrand-color($success-color, 2);
-            }
-            i.fa {
-                display: inline-block;
-            }
-        }
-    }
-  @include breakpoint(small){
-    @include button-group-expand();
-  }
-}
-
-@each $State in $states {
-    $selector: map-get($State, "Selector");
-    $state-name: map-get($State, "State");
-    $color: map-get($State, "Color");
-    @include setTrump('border-color', $state-name, '#{$selector}.question .button-group');
-}

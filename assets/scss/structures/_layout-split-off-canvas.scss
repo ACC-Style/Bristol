@@ -18,8 +18,8 @@
 *	</section>
 *	</div>
 */
-$sidebarColumnSize:10;
-$sidebarSize:grid-calc($sidebarColumnSize,12);
+$sidebarColumnCount:10;
+$sidebarSize:percentage($sidebarColumnCount / $grid-column-count);
 .full-row, .full-col { overflow: hidden; position: absolute; }
 .full-row { left: 0; right: 0; }
 .full-col { top: 0; bottom: 0; }
@@ -30,7 +30,7 @@ $sidebarSize:grid-calc($sidebarColumnSize,12);
   overflow: hidden;
   width: 100%;
   -webkit-transition: 300ms ease all;
-   transition: 300ms ease all; 
+  transition: 300ms ease all; 
 
 	.split-layout{
 		-webkit-transition: 300ms ease all; transition: 300ms ease all; 
@@ -47,7 +47,12 @@ $sidebarSize:grid-calc($sidebarColumnSize,12);
 				transform: translate3d($sidebarSize, 0, 0);
 				-webkit-transform: translate3d($sidebarSize, 0, 0);
 			}
-		.split-sidebar{ display: block;	@include grid-column($sidebarColumnSize , $collapse:true); position: absolute;left:-$sidebarSize; right:auto;}
+		.split-sidebar{ 
+        display: block;
+        @include grid-column($sidebarColumnCount);
+        right:auto;
+        position: absolute;
+        }
 		&.reverse{
 			&.navOn{
 				-webkit-transform: translateX(-$sidebarSize);
@@ -60,28 +65,38 @@ $sidebarSize:grid-calc($sidebarColumnSize,12);
 			}
 
 		&.small{
-			@media #{$small-up}{
-				&,&.navOn{
-				-webkit-transform: translateX(0);
-				transform: translateX(0);
-				}
-
-			}			
-
+      @include breakpoint(small){
+          &,&.navOn{
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        }
+      }
 		}
 		&.medium,&.small{
-			@media #{$medium-up}{
-				&,&.navOn{
-					-webkit-transform: translateX(0);
-					transform: translateX(0);
-				}
-			}			
+       @include breakpoint(medium){
+        &,&.navOn{
+          -webkit-transform: translateX(0);
+          transform: translateX(0);
+          }
+       }
+		
 		}
 		&.large,&.medium, &.small{
-			@media #{$large-up}{}
+			  @include breakpoint(large){
+                &,&.navOn{
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+                }
+        }
 		}
 		&.xlarge,&.large,&.medium,&.small{
-			@media #{$xlarge-up}{}
+			  @include breakpoint(xlarge){
+          &,&.navOn{
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+            }
+          
+        }
 		}
 	}
 }

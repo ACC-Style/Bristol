@@ -91,7 +91,7 @@
     .checkbox &{ content: "\f00c"; }
   }
   .switch-inactive i.fa-holder:before{
-    .x-vixible &{ content: "\f00d"; }
+    .x-vixible &, .checkbox.x-vixible &{ content: "\f00d"; }
     .radio.x-vixible &{ content: "\f057"; }
   }
 
@@ -169,28 +169,28 @@
 * </div>
 *  </div>
 * <div class="row group-divide"><h3>Checkboxes should use `.radius`, `.checkbox`, no modifiers</h3>
-* <p>You can make a checkbox with eiither placing the `.checkbox` or `.radio`.  If you want control over the positive and negative position use `.radius`.  Use `.checkbox` to set it to the standard icon in the positive position</p>
+* <p>You can make a checkbox with eiither placing the `.checkbox` or `.radius`.  If you want control over the positive and negative position use `.radius`.  Use `.checkbox` to set it to the standard icon in the positive position</p>
 * <div class="switch-input-space column small-6"> 
 * <div class="switch radius">
-*   <input class="switch-input" id="yes-no-round" type="check" name="checkbox-switch">
-*   <label class="switch-paddle" for="yes-no-radius"> 
+*   <input class="switch-input" id="radius-checkbox" type="checkbox" value="true">
+*   <label class="switch-paddle" for="radius-checkbox"> 
 *     <span class="show-for-sr">Do you like me?</span>
 *     <span class="switch-active" aria-hidden="true"><i class="fa fa-check-circle-o"></i></span>
 *     <span class="switch-inactive" aria-hidden="true"><i class="fa fa-times-circle"></i></span>
 *   </label>
 * </div>
-* <label  class="switch-value" for="yes-no-radius">Radio button made with `.round`</label>    
+* <label  class="switch-value" for="radius-checkbox">Checkbox button made with `.radius`</label>    
 * </div>
 * <div class="switch-input-space column small-6"> 
-* <div class="switch chceckbox">
-*   <input class="switch-input" id="yes-no-radio" type="check" name="checkbox-switch">
-*   <label class="switch-paddle" for="yes-no-check">
+* <div class="switch checkbox">
+*   <input class="switch-input" id="checkbox-checkbox"  type="checkbox" value="false">
+*   <label class="switch-paddle" for="checkbox-checkbox">
 *     <span class="show-for-sr">Do you like me?</span>
 *     <span class="switch-active" aria-hidden="true"><i class="fa fa-holder"></i></span>
 *     <span class="switch-inactive" aria-hidden="true"><i class="fa fa-holder"></i></span>
 *   </label>
 * </div>
-* <label  class="switch-value" for="yes-no-check">Radio button made with `.radio`</label>    
+* <label  class="switch-value" for="checkbox-checkbox">Checkbox button made with `.checkbox`</label>    
 * </div>
 *  </div>
 **/

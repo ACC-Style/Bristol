@@ -1,4 +1,3 @@
-
 $required-SCSS_pagination:true;
 $pagination-color:rebrand-color($primary-color,2);
 .pagination-holder{
@@ -13,6 +12,14 @@ ul.pagination li{
 	line-height: 1.4rem;
 	a{line-height: 1.4rem;}
 	i{margin:  0 .25rem;}
+  a:hover{
+    .with-group-sections &{
+        background-color: grey(20);
+      }
+     .with-group-sections .group-section &{
+        background-color: grey(10);
+      } 
+    }
 	&.current{	
 		padding:0;
 		a{&,&:hover{
@@ -20,7 +27,7 @@ ul.pagination li{
 			color:color-contrast($pagination-color);
 		}}
 	}
-	&.arrow{
+	&.arrow, &.button {
 		background-color: grey(10);
 		color: fontcolor($black);
 		font-weight: 700;
@@ -28,6 +35,12 @@ ul.pagination li{
 				background-color:  grey(30);
 				color: fontcolor($black,'loud');
 			}
+    .with-group-sections &{
+        background-color: grey(20);
+      }
+     .with-group-sections .group-section &{
+        background-color: grey(10);
+      } 
 		}
 
 		&.left,&.left:hover{border-radius: 0px 0px 0px $global-border-radius;}	 
@@ -38,7 +51,14 @@ ul.pagination li{
 	    background: url("../img/subtlenet2.png") repeat;
 	    color: grey(40);
 	    cursor: not-allowed;
+      .with-group-sections &{
+        background-color: grey(50);
+      }
+     .with-group-sections .group-section &{
+        background-color: grey(30);
+      } 
 	}
+
 }
 
 .pagination-holder.top{
@@ -83,13 +103,21 @@ ul.pagination li{
 *		<li><a href="">4</a></li>
 *		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
 *	</ul></div>
-*	<div class="pagination-holder"><ul class="pagination pagination--compact right">
+*	<div class="page with-group-sections"><div class="pagination-holder"><ul class="pagination pagination--compact right">
 *		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
 *		<li class="current"><a href="">1</a></li>
 *		<li><a href="">2</a></li>
 *		<li><a href="">3</a></li>
 *		<li><a href="">4</a></li>
 *		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*	</ul></div>
+*	</ul></div></div>
+* <div class="page with-group-sections"><div class"page-warpper"><div class="group-section"><div class="pagination-holder"><ul class="pagination pagination--compact right">
+*   <li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
+*   <li class="current"><a href="">1</a></li>
+*   <li><a href="">2</a></li>
+*   <li><a href="">3</a></li>
+*   <li><a href="">4</a></li>
+*   <li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
+* </ul></div></div></div></div>
 */
 

@@ -77,7 +77,7 @@ module.exports = function(grunt){
 		        	'assets/css/jquery-uistructure.css',
 		        	"assets/css/font-awesome.css",
 		        	"assets/css/foundation-sites.css",
-		        	'assets/css/index.css'],
+              'assets/css/index.css'],
 
 		        js: [
 		        	'../bower_components/jquery/dist/jquery.js',
@@ -85,6 +85,9 @@ module.exports = function(grunt){
 		        	'assets/js/chosen/chosen.jquery.js',
 		        	'assets/js/jquery-ui.js',
 		        	'assets/js/knockout.js',
+              '../bower_components/waypoints/lib/jquery.waypoints.js',
+
+              '../bower_components/waypoints/lib/shortcuts/sticky.js',
 		        	'../bower_components/foundation-sites/dist/foundation.js',
 		        	'assets/js/app-styleguide.js'],
 

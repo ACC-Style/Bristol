@@ -1,26 +1,16 @@
 /**
-* Tabs (Basic) - depreciated:
-* `.tabs` - Group of nav that is build for a vertical space
+* Tabs (Basic):
+* `.tabs` - Group of nav that is build for a vertical space <h4 class="warning sg">( Foundation Change !! WARNING !! )</h4>
 * 
 *   @example
 *	<ul class="nav tabs">
-*		<li class="icon"><a class="home"><i class="fa fa-holder"></i></a></li>
-*		<li class=""><a>Tab 2</a></li>
-*		<li class=" selected "><a >Tab 3</a></li>
-*		<li class=""><a >Tab 4</a></li>
+*		<li class="tabs-title icon"><a class="home"><i class="fa fa-holder"></i></a></li>
+*		<li class="tabs-title"><a>Tab 2</a></li>
+*		<li class="tabs-title is-active"><a >Tab 3</a></li>
+*		<li class="tabs-title"><a >Tab 4</a></li>
 *	</ul>
 */
 
-/**
-* Tabs (Basic) - Foundation 6:
-* `.tabs` - Group of nav that is build for a vertical space
-* 
-*   @example
-*	<ul class="tabs" data-tabs id="example-tabs">
-*	  <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Tab 1</a></li>
-*	  <li class="tabs-title"><a href="#panel2">Tab 2</a></li>
-*	</ul>
-*/
 
 // @import "../../helpers/flex";
 $tab-color: grey(20);
@@ -32,30 +22,41 @@ $tab-lighttext:$global-default-light-text;
 
 .tabs{
 	div.row{  max-width: 1200px;}
-	font-size:rem-calc(ms(-1));
-	@include bp(md){
-		font-size: rem-calc(ms(0));
-	}
-	@include bp(lg){
-		font-size: rem-calc(ms(1));
-	}
-	@include font-slab-bold();
+  &,.tabs-title > a{
+    @include font-slab-bold();
+    font-size:rem-calc(ms(-1));
+    @include bp(md){
+      font-size: rem-calc(ms(0));
+    }
+    @include bp(lg){
+      font-size: rem-calc(ms(1));
+    }
+  }
 	margin-left: 0;
 	width:100%;
 	background: grey(10);
-	li{	
-		border-top-left-radius: 3px;
-		border-top-right-radius: 3px;
-		display: inline-block;
-		margin:.2rem 2px 0;
-		background-color: $tab-color;
 
+	li,.tabs-title{	
+    background-color: $tab-color;
+		border-top-left-radius: $global-border-radius * .5;
+		border-top-right-radius: $global-border-radius * .5;
+		display: inline-block;
+		margin:.2rem .2rem -1px;
+    @include bp(md){
+      margin:.25rem .25rem -1px;
+      border-top-left-radius: $global-border-radius * .75;
+      border-top-right-radius: $global-border-radius * .75;
+    } 
+    @include bp(lg){
+      margin:.3rem .3rem -1px;
+      border-top-left-radius: $global-border-radius;
+      border-top-right-radius: $global-border-radius;
+    } 
 		
-		
-		a{
+    > a{
 			&, &:hover{background-color: transparent;}
 			display: inline-block;
-			padding: .55em 1em .5em;
+			padding: .25em .5em .35em;
 			text-align: center;
 			white-space: nowrap;
 			vertical-align: top;
@@ -63,8 +64,11 @@ $tab-lighttext:$global-default-light-text;
 			width: 100%;
 			color:color-contrast($tab-color,$tab-darktext,$tab-lighttext);
 			@include bp(md){
-				padding: .5em 1em .45em;
-			}			
+				padding: .35em .75em .45em;
+			}	
+      @include bp(lg){
+        padding: .65em 1em .75em;
+      } 		
 		}
 
 		&:hover{
@@ -74,12 +78,14 @@ $tab-lighttext:$global-default-light-text;
 			}
 		}
 
-		&.selected{
+		&.selected,&.is-active{
 			background-color:$tab-selected-color;
-			
 			padding-left: 0;
 			padding-right: 0;
 			cursor:context-menu;
+      margin-bottom:-2px;
+      bottom:-1px;
+      position: relative;;
 			a{
 				color:color-contrast($tab-selected-color,$tab-darktext,$tab-lighttext);cursor:context-menu;
 			}
@@ -90,7 +96,7 @@ $tab-lighttext:$global-default-light-text;
 				padding-right: .5em !important;
 			}
 			width:3em;
-			&.selected{
+			&.selected,&.is-active{
 				background-color: $tab-selected-color;
 				a{
 					color:color-contrast($tab-selected-color,$tab-darktext,$tab-lighttext);
@@ -126,24 +132,17 @@ $tab-lighttext:$global-default-light-text;
 
 		}
 	}
-	a{
-		@include bp(md){
-		}
-	}
-	@include bp(sm-down){
+	@include bp(xs-down){
 			width:100%;
 			clear:both;
 			@include flexbox();
 			flex-direction:row;
-			flex-wrap:nowrap;
+			flex-wrap:wrap;
 			align-items:stretch;
 			align-content: stretch;
 			margin:.2em 0;
 			li{@include flex(1 1 auto);
 			&.icon{@include flex(0 0 2em);}
 			}
-	@include bp(xs-down){
-			flex-wrap:wrap;
-		}
 	}
 }
