@@ -211,6 +211,7 @@ module.exports = function(grunt){
 		'cssmin',
 		'copy:INTERNAL',
 		'styledown',
+    'liquid',
 		'watch',
 		
 	]);

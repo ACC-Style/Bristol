@@ -110,18 +110,13 @@
 *    <p>It has an easy to override visual style, and is appropriately subdued.</p>
 *    <a href="#">It's dangerous to go alone, take this.</a>
 *    </div>
-*    <div class="callout success">
-*    <h5>This is a success callout</h5>
-*    <p>It has an easy to override visual style, and is appropriately subdued.</p>
-*    <a href="#">It's dangerous to go alone, take this.</a>
-*    </div>
 *    <div class="callout warning">
 *    <h5>This is a warning callout</h5>
 *    <p>It has an easy to override visual style, and is appropriately subdued.</p>
 *    <a href="#">It's dangerous to go alone, take this.</a>
 *    </div>
-*    <div class="callout alert">
-*    <h5>This is an alert callout</h5>
+*    <div class="callout error">
+*    <h5>This is an error callout</h5>
 *    <p>It has an easy to override visual style, and is appropriately subdued.</p>
 *    <a href="#">It's dangerous to go alone, take this.</a>
 *    </div>
@@ -844,6 +839,10 @@ i.fa.fa-question-circle {
 
 body.is-reveal-open {
   overflow: hidden;
+}
+
+.row {
+  max-width: none;
 }
 
 .h1, h1, .table th.h1, .h2, h2, .table th.h2, .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3, .h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .table th.h4, .section-nav .text, .h5, h5, .h6, h6 {
@@ -6130,16 +6129,16 @@ ul.pagination li.arrow.right, ul.pagination li.arrow.left:hover, ul.pagination l
   border-radius: 0px 0px 6px 0px;
 }
 ul.pagination li.disable a, ul.pagination li.disable a:hover {
-  border-color: #b3b3b3;
-  background: url("../img/subtlenet2.png") repeat;
-  color: #999999;
+  border-color: #999999;
+  background: url("../img/empty_diamond.png") repeat;
+  color: gray;
   cursor: not-allowed;
 }
 .with-group-sections ul.pagination li.disable a, .with-group-sections ul.pagination li.disable a:hover {
   background-color: gray;
 }
 .with-group-sections .group-section ul.pagination li.disable a, .with-group-sections .group-section ul.pagination li.disable a:hover {
-  background-color: #b3b3b3;
+  background-color: #999999;
 }
 
 .pagination-holder.top, .top.result-selector-holder {
@@ -6198,22 +6197,27 @@ ul.pagination li.disable a, ul.pagination li.disable a:hover {
 *		<li><a href="">4</a></li>
 *		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
 *	</ul></div>
-*	<div class="page with-group-sections"><div class="pagination-holder"><ul class="pagination pagination--compact right">
+*   <div class="page with-group-sections">
+*       <div class="page-wrapper">
+*            <section class="section group-section">
+*   <div class="pagination-holder"><ul class="pagination pagination--compact right">
 *		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
 *		<li class="current"><a href="">1</a></li>
 *		<li><a href="">2</a></li>
 *		<li><a href="">3</a></li>
 *		<li><a href="">4</a></li>
 *		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*	</ul></div></div>
-* <div class="page with-group-sections"><div class="page-warpper"><div class="group-section"><div class="pagination-holder"><ul class="pagination pagination--compact right">
+*	</ul></div></section>
+* <div class="content-padding"><div class="pagination-holder"><ul class="pagination pagination--compact right">
 *   <li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
 *   <li class="current"><a href="">1</a></li>
 *   <li><a href="">2</a></li>
 *   <li><a href="">3</a></li>
 *   <li><a href="">4</a></li>
 *   <li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-* </ul></div></div></div></div>
+* </ul></div></div>
+* </div>
+* </div>
 */
 .pagination.result-selector li.label, .pagination.result-selector li.value {
   color: #5c5c5c;
@@ -6675,6 +6679,10 @@ input:checked + label > .switch-inactive {
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
   font-weight: 700;
   font-size: 17px;
+}
+
+.callout {
+  background-image: url(../img/empty_stripe.png);
 }
 
 .button-group {
@@ -8516,6 +8524,7 @@ cite {
 *           </div>
 *       </div>
 *   </div>
+*  <div class="shrink-waypoint"></div>
 **/
 /**
 * Headline with Counters:
@@ -8963,7 +8972,7 @@ STATE TRUMPING CODE
   color: #c32231;
 }
 
-.error .message-holder > .error, .hint .error, .error.inset .bar.close .action-btn {
+.error .message-holder > .error, .hint .error, .error.inset .bar.close .action-btn, .error.callout {
   background-color: #c32231;
 }
 
@@ -8979,7 +8988,7 @@ STATE TRUMPING CODE
   color: #E08514;
 }
 
-.warning .message-holder > .warning, .hint .warning, .warning.inset .bar.close .action-btn {
+.warning .message-holder > .warning, .hint .warning, .warning.inset .bar.close .action-btn, .warning.callout {
   background-color: #E08514;
 }
 
@@ -8995,7 +9004,7 @@ STATE TRUMPING CODE
   color: #14B057;
 }
 
-.validated .message-holder > .validated, .hint .validated, .validated.inset .bar.close .action-btn {
+.validated .message-holder > .validated, .hint .validated, .validated.inset .bar.close .action-btn, .validated.callout {
   background-color: #14B057;
 }
 
@@ -9011,7 +9020,7 @@ STATE TRUMPING CODE
   color: #bbe8f4;
 }
 
-.info .message-holder > .info, .hint .info, .info.inset .bar.close .action-btn {
+.info .message-holder > .info, .hint .info, .info.inset .bar.close .action-btn, .info.callout {
   background-color: #bbe8f4;
 }
 
@@ -9027,7 +9036,7 @@ STATE TRUMPING CODE
   color: #22AFD7;
 }
 
-.highlighted .message-holder > .highlighted, .hint .highlighted, .highlighted.inset .bar.close .action-btn {
+.highlighted .message-holder > .highlighted, .hint .highlighted, .highlighted.inset .bar.close .action-btn, .highlighted.callout {
   background-color: #22AFD7;
 }
 
@@ -9043,7 +9052,7 @@ STATE TRUMPING CODE
   color: #14B057;
 }
 
-.completed .message-holder > .completed, .hint .completed, .completed.inset .bar.close .action-btn {
+.completed .message-holder > .completed, .hint .completed, .completed.inset .bar.close .action-btn, .completed.callout {
   background-color: #14B057;
 }
 
@@ -9059,7 +9068,7 @@ STATE TRUMPING CODE
   color: #b3b3b3;
 }
 
-.disabled .message-holder > .disabled, .hint .disabled, .disabled.inset .bar.close .action-btn {
+.disabled .message-holder > .disabled, .hint .disabled, .disabled.inset .bar.close .action-btn, .disabled.callout {
   background-color: #b3b3b3;
 }
 
@@ -9075,7 +9084,7 @@ STATE TRUMPING CODE
   color: #E08514;
 }
 
-.attention .message-holder > .attention, .hint .attention, .attention.inset .bar.close .action-btn {
+.attention .message-holder > .attention, .hint .attention, .attention.inset .bar.close .action-btn, .attention.callout {
   background-color: #E08514;
 }
 
