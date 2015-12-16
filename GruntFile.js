@@ -115,6 +115,52 @@ module.exports = function(grunt){
 					dest:'styleguide/assets/css'
 				}
 				]},
+      BOWER:{
+        files:[
+        {
+          expand:true,
+          cwd:'bower_components/jquery/dist',
+          src:['**.js','**.map'],
+          dest:'assets/js'
+        },
+        {
+          expand:true,
+          cwd:'bower_components/foundation-sites/dist',
+          src:['**.js','**.map'],
+          dest:'assets/js'
+        },
+        {
+          expand:true,
+          cwd:'bower_components/knockout/dist',
+          src:['**.js','**.map'],
+          dest:'assets/js'
+        },
+        {
+          expand:true,
+          cwd:'bower_components/waypoints/lib',
+          src:['**.js','**.map'],
+          dest:'assets/js'
+        },
+        {
+          expand:true,
+          cwd:'bower_components/pagerjs/dist',
+          src:['**.js','**.map'],
+          dest:'assets/js'
+        },
+        {
+          expand:true,
+          cwd:'bower_components/foundation-sites/dist',
+          src:['**.css','**.map'],
+          dest:'assets/css'
+        },
+        {
+          expand:true,
+          cwd:'bower_components/animate.css',
+          src:['**.css','**.map'],
+          dest:'assets/css'
+        }
+        ]
+      },
 			INTERNAL:{
 				files:[
 				{
@@ -209,6 +255,7 @@ module.exports = function(grunt){
 		'sass:vendor',
 		'sass:dist',
 		'cssmin',
+    'copy:BOWER',
 		'copy:INTERNAL',
 		'styledown',
     'liquid',
