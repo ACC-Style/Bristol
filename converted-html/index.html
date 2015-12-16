@@ -50,7 +50,7 @@
           <div class="page-wrapper">
             <div class="content-padding">
               <div id="introduction"  data-bind="page: {id:'introduction', role: 'start', afterShow: listchange}">
-    <h1>The ACC's App Framework
+    <h1>The ACC's App Framework <strong>Version 2</strong>
     <span class="sub-line">Code Name: Bristol</span>
     </h1>
     <p>The American College of Cardiology is proud of its standards of excellence when it comes to the information it supplies to the best cardiologists in the world. And now it is taking great pains to bring that exceptional standards to its UI design.</p>
@@ -65,6 +65,16 @@
             <li>Reduce product design time by providing a visual design framework, eliminating the need for recurring style decisions</li>
             <li>Reduce product development time by providing a user interface element code base from which to generate customized designs.</li>
             <li>Reduce product suit updates, and single app maintenance.</li>
+        </ul>
+    </div>
+    <div class="callout highlighted">
+        <h2>New to Bristol in Version 2</h2>
+        <ul>
+            <li>Foundation 6 is now fully integrated with the Framework</li>
+            <li>Expanded Paper details</li>
+            <li>New Switches</li>
+            <li>Button Groups Simplified</li>
+            <li>New Top Bar for Web Layouts</li>
         </ul>
     </div>
 </div>
@@ -148,12 +158,13 @@
       <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></pre>
   </div>
 </section>
-	  <section class="sg-block sg-section-zurb-foundation-kitchen-sink">
+	 <section class="sg-block sg-section-zurb-foundation-kitchen-sink">
       <h3 id="zurb-foundation-kitchen-sink" class="sg">Zurb Foundation - Kitchen Sink</h3>
       <p class="sg">
         <code class="sg">kitchensink</code>- This is a visual representation of UI elements that come from the base framework from ZURB. This does not includes every single element from Foundation to view a full list go to the documentation.
         <a class="button tiny sg" href="http://foundation.zurb.com/docs">Go to Zurb Foundation Documentation</a>
       </p>
+      <h5 class="warning sg">Now Using Zurb Foundation Sites 6</h5>
       <p class="sg">@example
         <h4 id="alert-boxes" class="sg">Callout</h4>
         <div class="callout sg">
@@ -166,18 +177,13 @@
           <p class="sg">It has an easy to override visual style, and is appropriately subdued.</p>
           <a href="#" class="sg">It&apos;s dangerous to go alone, take this.</a>
         </div>
-        <div class="callout success sg">
-          <h5 class="sg">This is a success callout</h5>
-          <p class="sg">It has an easy to override visual style, and is appropriately subdued.</p>
-          <a href="#" class="sg">It&apos;s dangerous to go alone, take this.</a>
-        </div>
         <div class="callout warning sg">
           <h5 class="sg">This is a warning callout</h5>
           <p class="sg">It has an easy to override visual style, and is appropriately subdued.</p>
           <a href="#" class="sg">It&apos;s dangerous to go alone, take this.</a>
         </div>
-        <div class="callout alert sg">
-          <h5 class="sg">This is an alert callout</h5>
+        <div class="callout error sg">
+          <h5 class="sg">This is an error callout</h5>
           <p class="sg">It has an easy to override visual style, and is appropriately subdued.</p>
           <a href="#" class="sg">It&apos;s dangerous to go alone, take this.</a>
         </div>
@@ -504,9 +510,217 @@
               </div>
             </div>
           </div>
-        </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;web-application&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-header&quot;</span>&gt;</span>Font Awesome<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row fontawesome-icon-list&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/arrows&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-arrows&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; arrows<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/arrows-h&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-arrows-h&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; arrows-h<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/arrows-v&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-arrows-v&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; arrows-v<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/asterisk&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-asterisk&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; asterisk<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/at&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-at&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; at<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/bookmark&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-bookmark&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; bookmark<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/bookmark-o&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-bookmark-o&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; bookmark-o<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/briefcase&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-briefcase&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; briefcase<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/bug&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-bug&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; bug<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/building&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-building&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; building<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/calculator&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-calculator&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; calculator<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/calendar&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-calendar&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; calendar<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/calendar-o&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-calendar-o&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; calendar-o<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/camera&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-camera&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; camera<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/camera-retro&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-camera-retro&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; camera-retro<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-down&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-square-o-down&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; caret-square-o-down<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-left&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-square-o-left&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; caret-square-o-left<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-right&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-square-o-right&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; caret-square-o-right<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-up&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-square-o-up&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; caret-square-o-up<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/cart-arrow-down&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-cart-arrow-down&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; cart-arrow-down<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/check&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-check&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; check<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/check-circle&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-check-circle&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; check-circle<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/check-circle-o&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-check-circle-o&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; check-circle-o<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/check-square&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-check-square&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; check-square<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/check-square-o&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-check-square-o&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; check-square-o<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/circle&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-circle&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; circle<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/circle-o&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-circle-o&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; circle-o<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/circle-o-notch&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-circle-o-notch&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; circle-o-notch<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/circle-thin&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-circle-thin&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; circle-thin<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/clock-o&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-clock-o&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; clock-o<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/times&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-close&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; close
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text-muted&quot;</span>&gt;</span>(alias)<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/cloud&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-cloud&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; cloud<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/cloud-download&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-cloud-download&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; cloud-download<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/cloud-upload&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-cloud-upload&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; cloud-upload<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/code&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-code&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; code<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/coffee&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-coffee&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; coffee<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/cog&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-cog&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; cog<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/cogs&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-cogs&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; cogs<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/comment&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-comment&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; comment<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/comment-o&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-comment-o&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; comment-o<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/pencil-square-o&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-edit&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; edit
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text-muted&quot;</span>&gt;</span>(alias)<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/envelope&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-envelope&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; envelope<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/envelope-o&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-envelope-o&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; envelope-o<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/exclamation&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-exclamation&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; exclamation<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/exclamation-circle&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-exclamation-circle&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; exclamation-circle<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/exclamation-triangle&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-exclamation-triangle&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; exclamation-triangle<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/external-link&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-external-link&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; external-link<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/wifi&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-wifi&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; wifi<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-6 medium-4 large-3&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icon/wrench&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-wrench&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp; wrench<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;column small-12&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://fortawesome.github.io/Font-Awesome/icons/&quot;</span>&gt;</span>full list of icons<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
       </div>
     </section>
+
 </div>
 
               <div id="branding"  data-bind="page: {id:'branding', afterShow: listchange}">
@@ -1374,54 +1588,8 @@
       <span class="hljs-tag">&lt;<span class="hljs-title">h6</span>&gt;</span>Header 6 Tag<span class="hljs-tag">&lt;/<span class="hljs-title">h6</span>&gt;</span></pre>
   </div>
 </section>
-	<section class="sg-block sg-section-sub-content-in-header-tags">
-    <div class="sg-text">
-        <h3 id="sub-content-in-header-tags" class="sg">Sub Content in Header Tags</h3>
-        <p class="sg">
-        <code class="sg">headline &gt; blockquote</code>- basic styling for sub content in headers.</p>
-    </div>
-    <div class="sg-example">
-        <div class="sg-canvas">
-            <h1 class="with-underline">Header 1 Tag
-              <blockquote>sub content in a blockquote</blockquote>
-            </h1>
-            <h2 class="with-underline">Header 2 Tag
-              <blockquote>sub content in a blockquote</blockquote>
-            </h2>
-            <h3 class="with-underline">Header 3 Tag
-              <blockquote>sub content in a blockquote</blockquote>
-            </h3>
-            <h4 class="with-underline">Header 4 Tag
-              <blockquote>sub content in a blockquote</blockquote>
-            </h4>
-            <h5 class="with-underline">Header 5 Tag
-              <blockquote>sub content in a blockquote</blockquote>
-            </h5>
-            <h6 class="with-underline">Header 6 Tag
-              <blockquote>sub content in a blockquote</blockquote>
-            </h6>
-  </div>
-  <pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Header 1 Tag
-  <span class="hljs-tag">&lt;<span class="hljs-title">blockquote</span>&gt;</span>sub content in a blockquote<span class="hljs-tag">&lt;/<span class="hljs-title">blockquote</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Header 2 Tag
-  <span class="hljs-tag">&lt;<span class="hljs-title">blockquote</span>&gt;</span>sub content in a blockquote<span class="hljs-tag">&lt;/<span class="hljs-title">blockquote</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Header 3 Tag
-  <span class="hljs-tag">&lt;<span class="hljs-title">blockquote</span>&gt;</span>sub content in a blockquote<span class="hljs-tag">&lt;/<span class="hljs-title">blockquote</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Header 4 Tag
-  <span class="hljs-tag">&lt;<span class="hljs-title">blockquote</span>&gt;</span>sub content in a blockquote<span class="hljs-tag">&lt;/<span class="hljs-title">blockquote</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">h5</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Header 5 Tag
-  <span class="hljs-tag">&lt;<span class="hljs-title">blockquote</span>&gt;</span>sub content in a blockquote<span class="hljs-tag">&lt;/<span class="hljs-title">blockquote</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">h6</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Header 6 Tag
-  <span class="hljs-tag">&lt;<span class="hljs-title">blockquote</span>&gt;</span>sub content in a blockquote<span class="hljs-tag">&lt;/<span class="hljs-title">blockquote</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">h6</span>&gt;</span></pre>
-  </div>
-</section>
-	 <section class="sg-block sg-section-sub-content-in-header-tags">
+	
+	  <section class="sg-block sg-section-sub-content-in-header-tags">
       <div class="sg-text">
         <h3 id="sub-content-in-header-tags" class="sg">Sub Content in Header Tags</h3>
         <p class="sg">
@@ -1467,65 +1635,36 @@
 <span class="hljs-tag">&lt;/<span class="hljs-title">h6</span>&gt;</span></pre>
       </div>
     </section>
-
-    <section class="sg-block sg-section-super-content-in-header-tags">
-      <div class="sg-text">
-        <h3 id="super-content-in-header-tags" class="sg">Super Content in Header Tags</h3>
-        <p class="sg">
-          <code class="sg">Header Tag] &gt; span.sub-line</code>- You can use span.sub-line as super content in headers by just including them at the begining of the tag instead of after the header content.</p>
-      </div>
-      <div class="sg-example">
-        <div class="sg-canvas">
-          <h1 class="with-underline">
-            <span class="sub-line">Super line of Content</span>H1 Tag that has some text above it</h1>
-          <h2 class="with-underline">
-            <span class="sub-line">Super line of Content</span>H2 Tag that has some text above it</h2>
-          <h3 class="with-underline">
-            <span class="sub-line">Super line of Content</span>H3 Tag that has some text above it</h3>
-          <h4 class="with-underline">
-            <span class="sub-line">Super line of Content</span>H4 Tag that has some text above it</h4>
-          <h5 class="with-underline">
-            <span class="sub-line">Super line of Content</span>H5 Tag that has some text above it</h5>
-        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sub-line&quot;</span>&gt;</span>Super line of Content<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>H1 Tag that has some text above it<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sub-line&quot;</span>&gt;</span>Super line of Content<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>H2 Tag that has some text above it<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sub-line&quot;</span>&gt;</span>Super line of Content<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>H3 Tag that has some text above it<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sub-line&quot;</span>&gt;</span>Super line of Content<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>H4 Tag that has some text above it<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h5</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sub-line&quot;</span>&gt;</span>Super line of Content<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>H5 Tag that has some text above it<span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span></pre>
-      </div>
-    </section>
-	    <section class="sg-block sg-section-headline-with-counters">
+	 <section class="sg-block sg-section-headline-with-counters">
       <div class="sg-text">
         <h3 id="headline-with-counters" class="sg">Headline with Counters</h3>
         <p class="sg">
-          <code class="sg">.order-marker.</code>- It is some times useful to add an order-marker to the beginning of headlines.</p>
+          <code class="sg">.order-marker.</code>- It is some times useful to add an order-marker to the beginning of headlines. You can modify them by adding
+          <code class="sg">.hollow</code>or
+          <code class="sg">.inverse</code>depending on the need.</p>
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
-          <h1 class="with-underline">
+          <h1>
             <span class="order-marker">1</span>Header 1 Tag</h1>
-          <h2 class="with-underline">
+          <h2>
             <span class="order-marker">2</span>Header 2 Tag</h2>
-          <h3 class="with-underline">
+          <h3>
             <span class="order-marker">a</span>Header 3 Tag</h3>
           <h4 class="with-underline">
-            <span class="order-marker">b</span>Header 4 Tag</h4>
-          <h5 class="with-underline">
-            <span class="order-marker">c</span>Header 5 Tag</h5>
-        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;order-marker&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>Header 1 Tag<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>
+            <span class="order-marker hollow">b</span>Header 4 Tag</h4>
+          <h5 class="with-underline" style="background-color:grey; color:white; padding:.5em;">
+            <span class="order-marker inverse">c</span>Header 5 Tag</h5>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;order-marker&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>Header 1 Tag<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;order-marker&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>Header 2 Tag<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;order-marker&quot;</span>&gt;</span>a<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>Header 3 Tag<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;order-marker&quot;</span>&gt;</span>b<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>Header 4 Tag<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h5</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;order-marker&quot;</span>&gt;</span>c<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>Header 5 Tag<span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span></pre>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;order-marker hollow&quot;</span>&gt;</span>b<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>Header 4 Tag<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h5</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">&quot;background-color:grey; color:white; padding:.5em;&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;order-marker inverse&quot;</span>&gt;</span>c<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>Header 5 Tag<span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span></pre>
       </div>
     </section>
 	  <section class="sg-block sg-section-typography-states">
@@ -2073,13 +2212,13 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
         <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;button disabled&quot;</span>&gt;</span>disabled button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></pre>
     </div>
 </section>
-	  <section class="sg-block sg-section-selectable-button-group">
+	 <section class="sg-block sg-section-selectable-button-group">
       <div class="sg-text">
         <h3 id="selectable-button-group" class="sg">Selectable Button Group</h3>
         <p class="sg">
           <code class="sg">.selectable.button-group</code>- this is a toggle-able button group that changes colors when items are selected. Add .selected to the
           <code class="sg">li</code>to change colors and add the check to the button.
-          <h4 class="warning sg">( Foundation Change !! WARNING !! )</h4>
+          <h5 class="warning sg">( !! WARNING !! Updated HTML and Styles From Ver 1)</h5>
         </p>
       </div>
       <div class="sg-example">
@@ -2264,16 +2403,16 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
       </div>
     </section>
-
 	<h2>Inputs</h2>
-	 <section class="sg-block sg-section-switch-foundation-override-">
+	
+    <section class="sg-block sg-section-switch-foundation-override-">
       <div class="sg-text">
         <h3 id="switch-foundation-override-" class="sg">Switch (Foundation Override)</h3>
         <p class="sg">
-          <code class="sg">.switch</code>- Switches are a more visible and more touchable versions of checkbox and radio buttons.
-          <h4 class="warning sg">( Foundation Change !! WARNING !! )</h4>
-          ADD
-          <code class="sg">.x-visible</code>to show the x when it is shut off.</p>
+          <code class="sg">.switch</code>- Switches are a more visible and more touchable versions of checkbox and radio buttons. ADD
+          <code class="sg">.x-visible</code>to show the x when it is shut off.
+          <h5 class="warning sg">( !! WARNING !! Updated HTML and Styles From Ver 1)</h5>
+        </p>
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
@@ -2492,49 +2631,138 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
 
               <div id="navigation"  data-bind="page: {id:'navigation', afterShow: listchange}">
 	<h1>Navigation: Tabs &amp; Nav Lists</h1>
+	 <section class="sg-block sg-section-top-bar">
+      <div class="sg-text">
+        <h3 id="top-bar" class="sg">Top Bar</h3>
+        <p class="sg">
+          <code class="sg">.top-bar</code>- This is a great nav bar for website headers.
+          <h5 class="warning sg">( !! WARNING !! Updated HTML and Styles From Ver 1)</h5>
+        </p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <div class="top-bar">
+            <div class="top-bar-left">
+              <ul class="dropdown menu" data-dropdown-menu="">
+                <li class="menu-text">Site Title</li>
+                <li class="has-submenu">
+                  <a href="#">One</a>
+                  <ul class="submenu menu vertical" data-submenu="">
+                    <li>
+                      <a href="#">One</a>
+                    </li>
+                    <li>
+                      <a href="#">Two</a>
+                    </li>
+                    <li>
+                      <a href="#">Three</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Two</a>
+                </li>
+                <li>
+                  <a href="#">Three</a>
+                </li>
+              </ul>
+            </div>
+            <div class="top-bar-right">
+              <ul class="menu input-holder row collapse">
+                <li class="input-space">
+                  <input type="search" placeholder="Search">
+                </li>
+                <li class="input-space">
+                  <button type="button" class="button">Search</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;top-bar&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;top-bar-left&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;dropdown menu&quot;</span> <span class="hljs-attribute">data-dropdown-menu</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;menu-text&quot;</span>&gt;</span>Site Title<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;has-submenu&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>One<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;submenu menu vertical&quot;</span> <span class="hljs-attribute">data-submenu</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>One<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>Two<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>Three<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>Two<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>Three<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;top-bar-right&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;menu input-holder row collapse&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;input-space&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;search&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Search&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;input-space&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;button&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;button&quot;</span>&gt;</span>Search<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+      </div>
+    </section>
 	<h2>Tabs</h2>
-	<section class="sg-block sg-section-tabs-basic-">
+	 <section class="sg-block sg-section-tabs-basic-">
       <div class="sg-text">
         <h3 id="tabs-basic-" class="sg">Tabs (Basic)</h3>
         <p class="sg">
-          <code class="sg">.tabs</code>- Group of nav that is build for a vertical space</p>
+          <code class="sg">.tabs</code>- Group of nav that is build for a horizontal space.
+          <h5 class="warning sg">( !! WARNING !! Updated HTML and Styles From Ver 1)</h5>
+        </p>
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
           <ul class="nav tabs">
-            <li class="icon">
+            <li class="tabs-title icon">
               <a class="home">
                 <i class="fa fa-holder"></i>
               </a>
             </li>
-            <li class="">
+            <li class="tabs-title">
               <a>Tab 2</a>
             </li>
-            <li class=" selected ">
+            <li class="tabs-title is-active">
               <a>Tab 3</a>
             </li>
-            <li class="">
+            <li class="tabs-title">
               <a>Tab 4</a>
             </li>
           </ul>
         </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tabs-title icon&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;home&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 2<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot; selected &quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tabs-title&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tabs-title is-active&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tabs-title&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></pre>
       </div>
     </section>
-	 <section class="sg-block sg-section-tabs-overlap">
+	  <section class="sg-block sg-section-tabs-overlap">
       <div class="sg-text">
         <h3 id="tabs-overlap" class="sg">Tabs Overlap</h3>
         <p class="sg">
@@ -2543,47 +2771,50 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
       <div class="sg-example">
         <div class="sg-canvas">
           <ul class="nav tabs overlap">
-            <li class="icon  ">
+            <li class="tab-title icon">
               <a class="home">
                 <i class="fa fa-holder"></i>
               </a>
             </li>
-            <li class="">
+            <li class="tab-title ">
               <a>Tab 2</a>
             </li>
-            <li class=" selected ">
+            <li class="tab-title is-active">
               <a>Tab 3</a>
             </li>
-            <li class="">
+            <li class="tab-title ">
               <a>Tab 4</a>
             </li>
           </ul>
         </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs overlap&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon  &quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tab-title icon&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;home&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 2<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot; selected &quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tab-title &quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tab-title is-active&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tab-title &quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></pre>
       </div>
     </section>
-	 <section class="sg-block sg-section-tabs-primary">
+	  <section class="sg-block sg-section-tabs-primary">
       <div class="sg-text">
         <h3 id="tabs-primary" class="sg">Tabs Primary</h3>
         <p class="sg">
-          <code class="sg">.tabs.primary</code>- Priamary is used for top level nav for mobile porjects</p>
+          <code class="sg">.tabs.tabs-primary</code>- Priamary is used for top level nav for mobile porjects.
+          <h5 class="warning sg">( !! WARNING !! Updated HTML and Styles From Ver 1)</h5>
+        </p>
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
-          <ul class="nav tabs primary">
+          <ul class="nav tabs tabs-primary">
             <li class="icon  ">
               <a class="home" href="#">
                 <i class="fa fa-holder"></i>
@@ -2605,7 +2836,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
               <a href="#">Tab 6</a>
             </li>
           </ul>
-          <ul class="nav tabs primary reverse">
+          <ul class="nav tabs tabs-primary reverse">
             <li class="icon  ">
               <a class="home" href="#">
                 <i class="fa fa-holder"></i>
@@ -2627,7 +2858,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
               <a href="#">Tab 6</a>
             </li>
           </ul>
-        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs primary&quot;</span>&gt;</span>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs tabs-primary&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon  &quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;home&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
@@ -2649,7 +2880,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>Tab 6<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs primary reverse&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs tabs-primary reverse&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon  &quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;home&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
@@ -3127,103 +3358,196 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
       </div>
     </section>
 	<h2>Pagination</h2>
-	<section class="sg-block sg-section-pagination">
-    <div class="sg-text">
+	  <section class="sg-block sg-section-pagination">
+      <div class="sg-text">
         <h3 id="pagination" class="sg">Pagination</h3>
         <p class="sg">
-        <code class="sg">.pagination-holder</code>- used often with a result pagination or page of content pagination. !! requires</p>
-    </div>
-    <div class="sg-example">
+          <code class="sg">.pagination-holder .pagination</code>- Pagination is often used when there is a table or page of results or repeated items. The Container defaultly styles the paginator to be at the bottom of the area of repeated content but render it at the top just add the class &apos;.top&apos; to render the pagination upside down. The paginator has a single modifier to condense the screen size by adding the class
+          <code class="sg">.pagination--compact</code>.</p>
+      </div>
+      <div class="sg-example">
         <div class="sg-canvas">
-            <div class="pagination-holder top">
-                <ul class="pagination right">
+          <div class="pagination-holder top">
+            <ul class="pagination float-right">
+              <li class="arrow disable left">
+                <a href="">
+                  <i class="fa fa-caret-left "></i>
+                  <span class="text">prev</span>
+                </a>
+              </li>
+              <li class="current">
+                <a href="">1</a>
+              </li>
+              <li>
+                <a href="">2</a>
+              </li>
+              <li>
+                <a href="">3</a>
+              </li>
+              <li>
+                <a href="">4</a>
+              </li>
+              <li class="arrow right">
+                <a href="">
+                  <span class="text">next</span>
+                  <i class="fa fa-caret-right "></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <br>
+          <div class="page with-group-sections">
+            <div class="page-wrapper">
+              <section class="section group-section">
+                <div class="group-section-pagination-holder top">
+                  <ul class="pagination pagination--compact float-left">
                     <li class="arrow disable">
-                        <a href="">
+                      <a href="">
                         <i class="fa fa-caret-left "></i>
                         <span class="text">prev</span>
-                        </a>
+                      </a>
                     </li>
                     <li class="current">
-                        <a href="">1</a>
+                      <a href="">1</a>
                     </li>
                     <li>
-                        <a href="">2</a>
+                      <a href="">2</a>
                     </li>
                     <li>
-                        <a href="">3</a>
+                      <a href="">3</a>
                     </li>
                     <li>
-                        <a href="">4</a>
+                      <a href="">4</a>
                     </li>
                     <li class="arrow">
-                        <a href="">
+                      <a href="">
                         <span class="text">next</span>
                         <i class="fa fa-caret-right "></i>
-                        </a>
+                      </a>
                     </li>
-                </ul>
-            </div>
-            <br>
-            <div class="pagination-holder">
-                <ul class="pagination right">
+                  </ul>
+                  <ul class="pagination float-right">
+                    <li class="action">
+                      <a href="">
+                        <i class="fa fa-plus "></i>
+                        <span class="text">Add</span>
+                      </a>
+                    </li>
+                    <li class="action">
+                      <a href="">
+                        <i class="fa fa-times "></i>
+                        <span class="text">Remove</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="callout">this is some content</div>
+                <div class="pagination-holder">
+                  <ul class="pagination pagination--compact float-right">
                     <li class="arrow disable">
-                        <a href="">
+                      <a href="">
                         <i class="fa fa-caret-left "></i>
                         <span class="text">prev</span>
-                        </a>
+                      </a>
                     </li>
                     <li class="current">
-                        <a href="">1</a>
+                      <a href="">1</a>
                     </li>
                     <li>
-                        <a href="">2</a>
+                      <a href="">2</a>
                     </li>
                     <li>
-                        <a href="">3</a>
+                      <a href="">3</a>
                     </li>
                     <li>
-                        <a href="">4</a>
+                      <a href="">4</a>
                     </li>
                     <li class="arrow">
-                        <a href="">
+                      <a href="">
                         <span class="text">next</span>
                         <i class="fa fa-caret-right "></i>
-                        </a>
+                      </a>
                     </li>
-                </ul>
-            </div>
-            <div class="pagination-holder">
-                <ul class="pagination pagination--compact right">
+                  </ul>
+                </div>
+                <div class="group-section-pagination-holder">
+                  <ul class="pagination pagination--compact float-left">
                     <li class="arrow disable">
-                        <a href="">
+                      <a href="">
                         <i class="fa fa-caret-left "></i>
                         <span class="text">prev</span>
-                        </a>
+                      </a>
                     </li>
                     <li class="current">
-                        <a href="">1</a>
+                      <a href="">1</a>
                     </li>
                     <li>
-                        <a href="">2</a>
+                      <a href="">2</a>
                     </li>
                     <li>
-                        <a href="">3</a>
+                      <a href="">3</a>
                     </li>
                     <li>
-                        <a href="">4</a>
+                      <a href="">4</a>
                     </li>
                     <li class="arrow">
-                        <a href="">
+                      <a href="">
                         <span class="text">next</span>
                         <i class="fa fa-caret-right "></i>
-                        </a>
+                      </a>
                     </li>
-                </ul>
+                  </ul>
+                  <ul class="pagination float-right">
+                    <li class="action">
+                      <a href="">
+                        <i class="fa fa-plus "></i>
+                        <span class="text">Add</span>
+                      </a>
+                    </li>
+                    <li class="action">
+                      <a href="">
+                        <i class="fa fa-times "></i>
+                        <span class="text">Remove</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <div class="content-padding">
+                <div class="pagination-holder">
+                  <ul class="pagination pagination--compact float-left">
+                    <li class="arrow disable">
+                      <a href="">
+                        <i class="fa fa-caret-left "></i>
+                        <span class="text">prev</span>
+                      </a>
+                    </li>
+                    <li class="current">
+                      <a href="">1</a>
+                    </li>
+                    <li>
+                      <a href="">2</a>
+                    </li>
+                    <li>
+                      <a href="">3</a>
+                    </li>
+                    <li>
+                      <a href="">4</a>
+                    </li>
+                    <li class="arrow">
+                      <a href="">
+                        <span class="text">next</span>
+                        <i class="fa fa-caret-right "></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-        </div>
-        <pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination-holder top&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination right&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow disable&quot;</span>&gt;</span>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination-holder top&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination float-right&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow disable left&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-left &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>prev<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
@@ -3241,7 +3565,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow right&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>next<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-right &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
@@ -3250,66 +3574,158 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
   <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination-holder&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination right&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow disable&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-left &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>prev<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;current&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>next<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-right &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination-holder&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination pagination--compact right&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow disable&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-left &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>prev<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;current&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>next<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-right &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page with-group-sections&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section group-section&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;group-section-pagination-holder top&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination pagination--compact float-left&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow disable&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-left &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>prev<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;current&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>next<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-right &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination float-right&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;action&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-plus &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Add<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;action&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-times &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Remove<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;callout&quot;</span>&gt;</span>this is some content<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination-holder&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination pagination--compact float-right&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow disable&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-left &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>prev<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;current&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>next<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-right &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;group-section-pagination-holder&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination pagination--compact float-left&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow disable&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-left &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>prev<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;current&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>next<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-right &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination float-right&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;action&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-plus &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Add<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;action&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-times &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Remove<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;content-padding&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination-holder&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination pagination--compact float-left&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow disable&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-left &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>prev<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;current&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>next<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-right &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
-    </div>
-</section>
-
-	   <section class="sg-block sg-section-pagination-with-result-selector">
+      </div>
+    </section>
+	  <section class="sg-block sg-section-pagination-with-result-selector">
       <div class="sg-text">
         <h3 id="pagination-with-result-selector" class="sg">Pagination with Result Selector</h3>
         <p class="sg">
@@ -3318,7 +3734,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
       <div class="sg-example">
         <div class="sg-canvas">
           <div class="pagination-holder top">
-            <ul class="pagination result-selector left">
+            <ul class="pagination result-selector float-left">
               <li class="label">Show</li>
               <li class="current">
                 <a href="">10</a>
@@ -3331,7 +3747,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
               </li>
               <li class="value">Results</li>
             </ul>
-            <ul class="pagination right">
+            <ul class="pagination float-right">
               <li class="arrow unavailable">
                 <a href="">
                   <i class="fa fa-caret-left "></i>
@@ -3360,7 +3776,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
           </div>
           <br>
           <div class="pagination-holder bottom">
-            <ul class="pagination result-selector left">
+            <ul class="pagination result-selector float-left">
               <li class="label">Show</li>
               <li class="current">
                 <a href="">10</a>
@@ -3373,7 +3789,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
               </li>
               <li class="value">Results</li>
             </ul>
-            <ul class="pagination right">
+            <ul class="pagination float-right">
               <li class="arrow unavailable">
                 <a href="">
                   <i class="fa fa-caret-left "></i>
@@ -3401,7 +3817,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
             </ul>
           </div>
         </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination-holder top&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination result-selector left&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination result-selector float-left&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;label&quot;</span>&gt;</span>Show<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;current&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>10<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
@@ -3414,7 +3830,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
     <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;value&quot;</span>&gt;</span>Results<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination right&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination float-right&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow unavailable&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-left &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
@@ -3443,7 +3859,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination-holder bottom&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination result-selector left&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination result-selector float-left&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;label&quot;</span>&gt;</span>Show<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;current&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>10<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
@@ -3456,7 +3872,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
     <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;value&quot;</span>&gt;</span>Results<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination right&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pagination float-right&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;arrow unavailable&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-caret-left &quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
@@ -4465,7 +4881,7 @@ padding: 1em;
 }
 </style>
 
-	   <section class="sg-block sg-section-split-layout-with-off-canvas-reveal">
+	 <section class="sg-block sg-section-split-layout-with-off-canvas-reveal">
       <div class="sg-text">
         <h3 id="split-layout-with-off-canvas-reveal" class="sg">Split Layout With Off Canvas Reveal</h3>
         <p class="sg">
@@ -4489,7 +4905,7 @@ padding: 1em;
                 <div class="page-wrapper">
                   <div class="content-padding">
                     <h1>Outside of the Group Section
-                      <blockquote>I need to be wrapped by a div.content-padding to line up</blockquote>
+                      <span class="sub-line">I need to be wrapped by a div.content-padding to line up</span>
                     </h1>
                   </div>
                   <div class="group-section">
@@ -4529,7 +4945,8 @@ padding: 1em;
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
       </div>
     </section>
-	 <section class="sg-block sg-section-mobile-header">
+
+	  <section class="sg-block sg-section-mobile-header">
       <div class="sg-text">
         <h3 id="mobile-header" class="sg">Mobile Header</h3>
         <p class="sg">
@@ -4542,7 +4959,7 @@ padding: 1em;
               <a href="#!/content/calculator/" class="logo">
                 <img src="assets/img/headerlogo.svg" alt="ACC Statin Intolerance Guidelines">
               </a>
-              <ul class="nav tabs primary">
+              <ul class="nav tabs tabs-primary">
                 <li class="icon">
                   <a class="home">
                     <i class="fa fa-holder"></i>
@@ -4566,7 +4983,7 @@ padding: 1em;
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#!/content/calculator/&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;logo&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;assets/img/headerlogo.svg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;ACC Statin Intolerance Guidelines&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs primary&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs tabs-primary&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;home&quot;</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
@@ -4587,6 +5004,8 @@ padding: 1em;
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
       </div>
     </section>
+
+   
 	   <section class="sg-block sg-section-mobile-footer">
       <div class="sg-text">
         <h3 id="mobile-footer" class="sg">Mobile Footer</h3>
@@ -4926,28 +5345,61 @@ padding: 1em;
 <span class="hljs-tag">&lt;/<span class="hljs-title">footer</span>&gt;</span></pre>
       </div>
     </section>
-	<div class="data-display">
- 	<header class="header page">
-	 	<a href="#" class="logo"><img src="assets/img/headerlogo.svg"  alt="ACC Statin Intolerance Guidelines"></a>
-	 	<ul class="nav tabs primary">
-			<li class="icon"><a class="home">  <i class="fa fa-holder"></i></a></li>
-			<li id="calculator-Tab" class="selected"><a href="#" class="condensable small">Eval  <span class="condense">uate</span></a></li>
-			<li id="recommendation-Tab" class=""><a href="#" class="condensable small">Recommend  <span class="condense">ation</span></a></li>
-		</ul>
-	</header>
-	<div class="data row">
-		<div class="columns small-6">
-			<strong class="h3">Risk Scores</strong>
-			<strong>CHA2DS2-VASc: <span>3</span></strong>
-			<strong>HAS-BLED: <span>2.1</span></strong>
-		</div>
-		<div class="columns small-6">	
-			<strong class="h3">Renal Status</strong>
-			<strong>Cr: <span>1.2</span>  (CrCL: <span >1.4</span> )</strong>
-			<strong>CKD: <span >6</span></strong>
-		</div>
-	</div>
-</div>
+	     <section class="sg-block sg-section-sticky-headers-with-scorebars">
+      <div class="sg-text">
+        <h3 id="sticky-headers-with-scorebars" class="sg">Sticky Headers with Scorebars</h3>
+        <p class="sg">
+          <code class="sg">.data-display</code>-</p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <div class="data-display">
+            <header class="header page">
+              <a href="#!/content/calculator/" class="logo">
+                <img src="assets/img/headerlogo.svg" alt="ACC Statin Intolerance Guidelines">
+              </a>
+              <ul class="nav tabs tabs-primary condensable.condensable-word small">
+                <li class="icon">
+                  <a class="home">
+                    <i class="fa fa-holder"></i>
+                  </a>
+                </li>
+                <li id="calculator-Tab" class="selected">
+                  <a href="#!/content/calculator/">Eval
+                    <span class="condense">uate</span>
+                  </a>
+                </li>
+                <li id="recommendation-Tab" class="">
+                  <a href="#!/content/recommendation/prescribinginfo/">Recommend
+                    <span class="condense">ation</span>
+                  </a>
+                </li>
+              </ul>
+            </header>
+            <div class="data row">
+              <div class="columns small-6">
+                <strong class="h3">Risk Scores</strong>
+                <strong>CHA2DS2-VASc:
+                  <span>3</span>
+                </strong>
+                <strong>HAS-BLED:
+                  <span>2.1</span>
+                </strong>
+              </div>
+              <div class="columns small-6">
+                <strong class="h3">Renal Status</strong>
+                <strong>Cr:
+                  <span>1.2</span>(CrCL:
+                  <span>1.4</span>)</strong>
+                <strong>CKD:
+                  <span>6</span>
+                </strong>
+              </div>
+            </div>
+          </div>
+          <div class="shrink-waypoint">
+      </div>
+    </section>
 	<BR><BR><BR><BR><BR>
 
 	<div class="shrink-waypoint">&nbsp;</div>
@@ -5695,13 +6147,14 @@ padding: 1em;
 <script type="text/javascript" src="assets/js/chosen/chosen.jquery.js"></script>
 <script type="text/javascript" src="assets/js/selectonic.js"></script>
 <script type="text/javascript" src="assets/js/knockout.js"></script>
-
+<script type="text/javascript" src="assets/js/underscore.js"></script>
 <script type="text/javascript" src="assets/js/foundation.js"></script>
-
+<script type="text/javascript" src="assets/js/koui.js"></script>
 <script type="text/javascript" src="assets/js/waypoints.js"></script>
 <script type="text/javascript" src="assets/js/waypoints.sticky.js"></script>
 <script type="text/javascript" src="assets/js/pager.min.js"></script>
 <script type="text/javascript" src="assets/js/app-styleguide.js"></script>
+<script type="text/javascript" src="assets/js/appviewmodel.js"></script>
 
 <script>
 $(document).foundation();

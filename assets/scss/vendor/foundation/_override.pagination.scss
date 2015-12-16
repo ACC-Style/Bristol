@@ -1,128 +1,224 @@
 $required-SCSS_pagination:true;
-$pagination-color:rebrand-color($primary-color,2);
-.pagination-holder{
-	border-top:2px solid $pagination-color;
-	@include grid-row();
-	max-width: none;
+$pagination-color:rebrand-color($primary-color, 2);
+.pagination-holder {
+    border-top: 2px solid $pagination-color;
+    @include grid-row();
+    max-width: none;
 }
-ul.pagination li{
-	border-radius: 0px 0px 0px 0px; 
-	color: fontcolor($black, 'quiet');
-	@include baseline-font(-1);
-	line-height: 1.4rem;
-	a{line-height: 1.4rem;}
-	i{margin:  0 .25rem;}
-  a:hover{
-    .with-group-sections &{
-        background-color: grey(20);
-      }
-     .with-group-sections .group-section &{
-        background-color: grey(10);
-      } 
+
+.pagination li {
+    border-radius: 0px 0px 0px 0px;
+    color: fontcolor($black, 'quiet');
+    @include baseline-font(-1);
+    line-height: 1.4rem;
+    a {
+        line-height: 1.4rem;
     }
-	&.current{	
-		padding:0;
-		a{&,&:hover{
-			background-color: $pagination-color;
-			color:color-contrast($pagination-color);
-		}}
-	}
-	&.arrow, &.button {
-		background-color: grey(10);
-		color: fontcolor($black);
-		font-weight: 700;
-		a{&:hover{ 
-				background-color:  grey(30);
-				color: fontcolor($black,'loud');
-			}
-    .with-group-sections &{
-        background-color: grey(20);
-      }
-     .with-group-sections .group-section &{
+    i {
+        margin: 0 .25rem;
+    }
+    a:hover {
+        .with-group-sections & {
+            background-color: grey(20);
+        }
+        .group-section & {
+            background-color: grey(10);
+        }
+    }
+    &.current {
+        padding: 0;
+        a {
+            &, &:hover {
+                background-color: $pagination-color;
+                color: color-contrast($pagination-color);
+            }
+        }
+    }
+    &.arrow, &.action {
         background-color: grey(10);
-      } 
-		}
-
-		&.left,&.left:hover{border-radius: 0px 0px 0px $global-border-radius;}	 
-		&.right,&.left:hover{ border-radius: 0px 0px $global-border-radius 0px;}
-	}
-	&.disable a, &.disable a:hover{
-	    border-color: grey(40);
-	    background: url("../img/empty_diamond.png") repeat;
-	    color: grey(50 );
-	    cursor: not-allowed;
-      .with-group-sections &{
-        background-color: grey(50);
-      }
-     .with-group-sections .group-section &{
-        background-color: grey(40);
-      } 
-	}
-
+        color: fontcolor($black);
+        font-weight: 700;
+        margin-bottom: 0;
+        a {
+            &:hover {
+                background-color: grey(30);
+                color: fontcolor($black, 'loud');
+            }
+            .with-group-sections & {
+                background-color: grey(20);
+            }
+            .group-section & {
+                background-color: grey(10);
+            }
+        }
+        &.left, &.left:hover {
+            border-radius: 0px 0px 0px $global-border-radius;
+        }
+        &.right, &.left:hover {
+            border-radius: 0px 0px $global-border-radius 0px;
+        }
+    }
+    &.disable a, &.disable a:hover {
+        border-color: grey(40);
+        background: url("../img/empty_diamond.png") repeat;
+        color: grey(50);
+        cursor: not-allowed;
+        .with-group-sections & {
+            background-color: grey(50);
+        }
+        .group-section & {
+            background-color: grey(40);
+        }
+    }
 }
 
-.pagination-holder.top{
-	border-top:0 none;
-	border-bottom:2px solid $pagination-color;
-	margin-bottom: 1rem;
-	@include grid-row();
-	max-width: none;
-	ul.pagination{
-		margin-bottom: 0;
-	}
-	ul.pagination li.arrow{
-		&.left{border-radius: $global-border-radius 0 0 0;}
-		&.right{border-radius: 0 $global-border-radius 0 0;}
-	} 
+.pagination-holder.top {
+    border-top: 0 none;
+    border-bottom: 2px solid $pagination-color;
+    margin-bottom: 1rem;
+    @include grid-row();
+    max-width: none;
+    .pagination {
+        margin-bottom: 0;
+    }
+    .pagination li.arrow {
+        &.left {
+            border-radius: $global-border-radius 0 0 0;
+        }
+        &.right {
+            border-radius: 0 $global-border-radius 0 0;
+        }
+    }
+}
+
+@include bp(md-down) {
+    .pagination a > .text {
+        display: none;
+    }
+}
+
+.pagination--compact a > .text {
+    display: none;
+}
+
+.group-section-pagination-holder {
+    @include grid-row();
+    max-width: none;
+    margin: 1rem -1.5rem -1rem;
+    background: rebrand-color($primary-color, 2) url('../img/paper-texture.png');
+    .pagination{ margin-bottom: 0;}
+    .pagination li{
+        margin: 0 .25rem .25rem;
+        vertical-align: top;
+        a{color:color-contrast(rebrand-color($primary-color, 2));}
+        &.current{
+          a,a:hover{
+            background-color: white;
+            color:rebrand-color($primary-color, 2);
+          }
+        }
+        &.arrow, &.action {
+           margin: 0;
+           padding:.25rem;
+           background: mix(rebrand-color($primary-color, 2), $black) url('../img/paper-texture.png');
+
+           a{
+             background: mix(rebrand-color($primary-color, 2), $black)  url('../img/paper-texture.png');
+             color:color-contrast( mix(rebrand-color($primary-color, 2), $black));
+             &:hover{background-color:color(rebrand-color($primary-color, 2),80);  }
 
 
+           }
+           &.disable, &.disable a,&.disable a:hover{
+              background-color: mix(rebrand-color($primary-color, 2), grey(40),30%);
+              color:grey(60);
+           } 
+           
+        }
+    }
+    &.top{
+       margin: -.5rem -1.5rem 1rem;
+       .pagination li{
+        margin: .25rem .25rem 0;
+        vertical-align: bottom;
+          &.arrow, &.action {
+           margin: 0;
+         }
+       }
+    }
 }
-@include bp(md-down){
-	.pagination a > .text{display:none;}
-}
-.pagination--compact a > .text{display:none;}
+
 
 /**
 * Pagination:
 * `.pagination-holder .pagination` - Pagination is often used when there is a table or page of results or repeated items. The Container defaultly styles the paginator to be at the bottom of the area of repeated content but render it at the top just add the class '.top' to render the pagination upside down. The paginator has a single modifier to condense the screen size by adding the class `.pagination--compact`.
 * 
 *   @example
-*	<div class="pagination-holder top"><ul class="pagination float-right">
-*		<li class="arrow disable left"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*		<li class="current"><a href="">1</a></li>
-*		<li><a href="">2</a></li>
-*		<li><a href="">3</a></li>
-*		<li><a href="">4</a></li>
-*		<li class="arrow right"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*	</ul></div><br>
-*	<div class="pagination-holder"><ul class="pagination float-right">
-*		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*		<li class="current"><a href="">1</a></li>
-*		<li><a href="">2</a></li>
-*		<li><a href="">3</a></li>
-*		<li><a href="">4</a></li>
-*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*	</ul></div>
-*   <div class="page with-group-sections">
-*       <div class="page-wrapper">
-*            <section class="section group-section">
-*   <div class="pagination-holder"><ul class="pagination pagination--compact right">
-*		<li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*		<li class="current"><a href="">1</a></li>
-*		<li><a href="">2</a></li>
-*		<li><a href="">3</a></li>
-*		<li><a href="">4</a></li>
-*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*	</ul></div></section>
-* <div class="content-padding"><div class="pagination-holder"><ul class="pagination pagination--compact right">
-*   <li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
+* <div class="pagination-holder top"><ul class="pagination float-right">
+*   <li class="arrow disable left"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
 *   <li class="current"><a href="">1</a></li>
 *   <li><a href="">2</a></li>
 *   <li><a href="">3</a></li>
 *   <li><a href="">4</a></li>
-*   <li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-* </ul></div></div>
-* </div>
-* </div>
+*   <li class="arrow right"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
+* </ul></div><br>
+*  <div class="page with-group-sections">
+*      <div class="page-wrapper">
+*          <section class="section group-section">
+*              <div class="group-section-pagination-holder top">
+*                  <ul class="pagination pagination--compact float-left">
+*                      <li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
+*                      <li class="current"><a href="">1</a></li>
+*                      <li><a href="">2</a></li>
+*                      <li><a href="">3</a></li>
+*                      <li><a href="">4</a></li>
+*                      <li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
+*                  </ul>
+*                  <ul class="pagination float-right">
+*                      <li class="action"><a href=""><i class="fa fa-plus "></i><span class="text">Add</span></a></li>
+*                      <li class="action"><a href=""><i class="fa fa-times "></i><span class="text">Remove</span></a></li>
+*                  </ul>
+*              </div>
+*              <div class="callout">this is some content</div>
+*              <div class="pagination-holder">
+*                  <ul class="pagination pagination--compact float-right">
+*                      <li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
+*                      <li class="current"><a href="">1</a></li>
+*                      <li><a href="">2</a></li>
+*                      <li><a href="">3</a></li>
+*                      <li><a href="">4</a></li>
+*                      <li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
+*                  </ul>
+*              </div>
+*              <div class="group-section-pagination-holder">
+*                  <ul class="pagination pagination--compact float-left">
+*                      <li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
+*                      <li class="current"><a href="">1</a></li>
+*                      <li><a href="">2</a></li>
+*                      <li><a href="">3</a></li>
+*                      <li><a href="">4</a></li>
+*                      <li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
+*                  </ul>
+*                  <ul class="pagination float-right">
+*                      <li class="action"><a href=""><i class="fa fa-plus "></i><span class="text">Add</span></a></li>
+*                      <li class="action"><a href=""><i class="fa fa-times "></i><span class="text">Remove</span></a></li>
+*                  </ul>
+*              </div>
+*          </section>
+*          <div class="content-padding">
+*              <div class="pagination-holder">
+*                  <ul class="pagination pagination--compact float-left">
+*                      <li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
+*                      <li class="current"><a href="">1</a></li>
+*                      <li><a href="">2</a></li>
+*                      <li><a href="">3</a></li>
+*                      <li><a href="">4</a></li>
+*                      <li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
+*                  </ul>
+*              </div>
+*          </div>
+*      </div>
+*  </div>
 */
+
 
