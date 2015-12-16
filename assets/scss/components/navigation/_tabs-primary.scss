@@ -5,7 +5,7 @@ $primary-tab-Selected-tick-color:rebrand-color($acc-blue,3);
 $primary-tab-darktext:$global-default-dark-text;
 $primary-tab-lighttext:$global-default-light-text;
 
-.tabs.primary{
+.tabs.tabs-primary{
 	border:0;
 	background:none;
 	margin:0;
@@ -59,7 +59,6 @@ $primary-tab-lighttext:$global-default-light-text;
 		a{	
 			white-space: normal;
 			padding:.5em .25em;
-			
 			color:color-contrast($primary-tab-color,$primary-tab-darktext,$primary-tab-lighttext);
 			@include bp(sm){ 
 				white-space: nowrap; 
@@ -73,7 +72,8 @@ $primary-tab-lighttext:$global-default-light-text;
 			background-color: #fff;
 			border-color: $primary-tab-selected-color;
 			// border-bottom-width: .85em;
-			a{color:$primary-tab-selected-color;
+			a{
+				color:$primary-tab-selected-color;
 				// padding-bottom: 0;
 			}
 		}
@@ -163,10 +163,10 @@ $primary-tab-lighttext:$global-default-light-text;
 }
 /**
 * Tabs Primary:
-* `.tabs.primary` -  Priamary is used for top level nav for mobile porjects
+* `.tabs.tabs-primary` -  Priamary is used for top level nav for mobile porjects. <h5 class="warning">( !! WARNING !! Updated HTML and Styles From Ver 1)</h5>
 * 
 *   @example
-*	<ul class="nav tabs primary">
+*	<ul class="nav tabs tabs-primary">
 *		<li class="icon  "><a class="home" href="#"><i class="fa fa-holder"></i></a></li>
 *		<li class=""><a href="#">Tab 2</a></li>
 *		<li class="selected"><a  href="#">Tab 3</a></li>
@@ -174,7 +174,7 @@ $primary-tab-lighttext:$global-default-light-text;
 *		<li class=""><a  href="#">Tab 5</a></li>
 *		<li class="disabled"><a  href="#">Tab 6</a></li>
 *	</ul>
-*	<ul class="nav tabs primary reverse">
+*	<ul class="nav tabs tabs-primary reverse">
 *		<li class="icon  "><a class="home" href="#"><i class="fa fa-holder"></i></a></li>
 *		<li class=""><a href="#">Tab 2</a></li>
 *		<li class="selected"><a  href="#">Tab 3</a></li>

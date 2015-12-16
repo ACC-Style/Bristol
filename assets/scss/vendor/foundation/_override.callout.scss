@@ -1,0 +1,8 @@
+.callout{
+    background-image: url(../img/empty_stripe.png);
+}
+@each $State in $states {
+    $selector: map-get($State, "Selector");
+    $state-name: map-get($State, "State");
+    @include setTrump('background-color', $state-name, '#{$selector}.callout');
+}

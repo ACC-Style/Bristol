@@ -4,10 +4,10 @@
 * 
 *   @example
 *	<ul class="nav tabs overlap">
-*		<li class="icon  "><a class="home"><i class="fa fa-holder"></i></a></li>
-*		<li class=""><a>Tab 2</li>
-*		<li class=" selected "><a >Tab 3</a></li>
-*		<li class=""><a >Tab 4</a></li>
+*		<li class="tab-title icon"><a class="home"><i class="fa fa-holder"></i></a></li>
+*		<li class="tab-title "><a>Tab 2</a></li>
+*		<li class="tab-title is-active"><a >Tab 3</a></li>
+*		<li class="tab-title "><a >Tab 4</a></li>
 *	</ul>
 */
 .tabs.overlap {
@@ -20,8 +20,8 @@
 		border-bottom: 0;
 		border-top-left-radius: 7px;
 		border-top-right-radius: 7px;
-		&.selected{
-			margin-bottom: -2px;
+		&.selected,&.is-active{
+			margin-bottom: -1px;
 			padding-bottom: 3px;
 			background-color: white;
 			z-index: 1000;
@@ -35,4 +35,5 @@
 			
 		}
 	}
+ .with-group-sections &{ margin-bottom: 1rem; }
 }

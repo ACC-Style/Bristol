@@ -1,220 +1,106 @@
 /**
-* Selectable Button Group (Depreciate Selected Button Group):
-* `.selectable.button-group selected-btn[x]` - this is a toggle-able button group that is using an older combination classes `ul.selectable selected-btn1 > li > a.btn1`.
-* 
+* Selectable Button Group:
+* `.selectable.button-group` - this is a toggle-able button group that changes colors when items are selected.  Add .selected to the `li`  to change colors and add the check to the button.
+* <h5 class="warning group-divide">( Updated in this Version )</h5>
+*
 *   @example
-*	<h4>Basic</h4>
-*	<div class="question required">  
-*	  <div class="input-holder row collapse">
-*	    <div class="column small-12 input-space">
-*	      <ul class="button-group selectable selected-btn1">
-*	        <li class="btn1"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
-*	        <li class="btn2"><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
-*	        <li class="btn3"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
-*	      </ul>
-*	    </div>
-*	  </div>
-*	</div>
+* <h4>Basic</h4>
+* <div class="question required">  
+*   <div class="input-holder row collapse">
+*     <div class="column small-12 input-space">
+*   <div class="button-group selectable">
+*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*   </div>
+*     </div>
+*   </div>
+* </div>
+* <h4>Modified with an item having the class `.selected`</h4>
+* <div class="question required">  
+*   <div class="input-holder row collapse">
+*     <div class="column small-12 input-space">
+*   <div class="button-group selectable">
+*     <a href="" class="button selected"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*   </div>
+*     </div>
+*   </div>
+* </div>
+* <h4>Modified with the `.expand`</h4>
+* <div class="question">  
+* <div class="input-holder row collapse">
+*     <div class="column small-12 input-space">
+*   <div class="button-group expanded selectable">
+*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*   </div>
+*     </div>
+*   </div>
+* </div>
+* <h4>The container `.question` has an error state.<span class="sub-line"> NOTE: if button groups have states it is best for them to have been expanded.</span></h4>
+* <div class="question error">  
+* <div class="input-holder row collapse">
+*     <div class="column small-12 input-space">
+*   <div class="expanded button-group selectable">
+*     <a href="" class="button selected"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*   </div>
+*     </div>
+*   </div>
+*   <div class="message-holder"><small class="error">Error</small></div>
+* </div>
 *
 */
 
-/**
-* Selectable Button Group:
-* `.selectable.button-group` - this is a toggle-able button group that changes colors when items are selected.  Add .selected to the `li`  to change colors and add the check to the button.
-* 
-*   @example
-*	<h4>Basic</h4>
-*	<div class="question required">  
-*	  <div class="input-holder row collapse">
-*	    <div class="column small-12 input-space">
-*	      <ul class="button-group selectable">
-*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
-*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
-*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
-*	      </ul>
-*	    </div>
-*	  </div>
-*	</div>
-*	<h4>Modified with an item having the class `.selected`</h4>
-*	<div class="question required">  
-*	  <div class="input-holder row collapse">
-*	    <div class="column small-12 input-space">
-*	      <ul class="button-group selectable">
-*	        <li class="selected"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
-*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
-*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
-*	      </ul>
-*	    </div>
-*	  </div>
-*	</div>
-*	<h4>Modified with the `.expand`</h4>
-*	<div class="question">  
-*	<div class="input-holder row collapse">
-*	    <div class="column small-12 input-space">
-*	      <ul class="button-group expand selectable">
-*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
-*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
-*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
-*	      </ul>
-*	    </div>
-*	  </div>
-*	</div>
-*	<h4>The container `.question` has an error state.<blockquote> NOTE: if button groups have states it is best for them to have been expanded.</blockquote></h4>
-*	<div class="question error">  
-*	<div class="input-holder row collapse">
-*	    <div class="column small-12 input-space">
-*	      <ul class="button-group selectable expand">
-*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a></li>
-*	        <li class=""><a href="" class="button"><i class="fa fa-check"></i><span class="text">No</span></a></li>
-*	        <li class="selected"><a href="" class="button"><i class="fa fa-check"></i><span class="text">Maybe</span></a></li>
-*	      </ul>
-*	    </div>
-*	  </div>
-*	  <div class="message-holder"><small class="error">Error</small></div>
-*	</div>
-*
-*/
 
 /*  Button Group */
 
 .button-group {
-	padding-left: 0;
-	border:2px solid transparent;
-	margin:-2px;
- @include button-group-container();
- display: inline-block;
-  & > li {
-    @include button-group-style(
-      // This controls the radius of the left and right edges. Set to true or px value. Default: false
-      $radius:false,
-      // This makes the buttons take up even space in their container. Set to the number of buttons in the group. Default: false.
-      $even:false,
-      // Controls how the buttons in the group float set to left or right. Default: $default-float.
-      $float:left
-
-    );
-    .button{ .input-space &{
-      	padding-top: .57143rem;
-      	padding-bottom: .57143rem;
-      }
-
-  	}
-  }
-  &.selectable{
-	margin-bottom: -1px;
-	.button{
-		@include button-style($bg:grey(30));
-	}
-	i.fa{
-		font-size: 1rem;
-		height: 1rem;
-		width: 1rem;
-		margin: 0 7px 0 0;
-		display:none;
-	}
-	li.selected{
-		 a{
-			@include button-style($bg:rebrand-color($success-color,2));
-			i.fa{display: inline-block;} 
-		}
-	}
-
-
-		
-}
-}
-/*Need to Kill this function Badly produced to answer for the view from SI App. Should Consider a better reposnsive answer*/
-// .button-group a.button{
-// 	margin-bottom: 0;
-// 	white-space: nowrap;
-// 	@include bp("md-down"){
-// 		@include button-size($padding:$button-med)
-// 	}
-// 	@include bp("sm-down"){
-// 		@include button-size($padding:$button-sml)
-// 	}
-// 	@include bp("xs-down"){
-// 		@include button-size($padding:$button-tny)
-// 	}
-// }
-// NEED to depreciate this.
-.selectable{
-	margin: 0;
-	a{
-		background-color:color($primary-color,80);
-		transition: none;
-		&:hover{background-color: color($primary-color,100);}
-	}
-	i.fa{
-		font-size: 1rem;
-		height: 1rem;
-		width: 1rem;
-		margin: 0 7px 0 0;
-		display:none;
-	}
-	&.selected-btn1,&.selected-btn2,&.selected-btn3,&.selected-btn4,&.selected-btn5,{
-		a{
-			@include button-style($bg:grey(30));
-		}
-	} 
-	&.selected-btn1 .btn1,&.selected-btn2 .btn2,&.selected-btn3 .btn3,&.selected-btn4 .btn4,&.selected-btn5 .btn5,.selected{
-		 a{
-			@include button-style($bg:rebrand-color($success-color,2));
-			i.fa{display: inline-block;} 
-		}
-	}
-}
-
-
-.button-group.expand {
-	width:100%;
-	display: table;//fall back
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-	@include bp(md-down){
-	  -webkit-flex-wrap: wrap;
-  	  -ms-flex-wrap: wrap;
- 	  flex-wrap: wrap;
-	}
-	 li {
-	 	display: table-cell;//fallback
-	    -webkit-flex: 1 1 auto;
-	    -ms-flex: 1 1 auto;
-	    flex: 1 1 auto;
-	    -webkit-align-self: auto;
-	    -ms-flex-item-align: auto;
-	    align-self: auto;
-		    .button,button{
-		    	@include button-size($full-width:true); 
-		    	.input-space &{
-					padding-top: .57143rem;
-					padding-bottom: .57143rem;
-		    	}
-
-		    }
-
-	    }
+    padding-left: 0;
+    border: 2px solid transparent;
+    .input-space & {
+        margin-bottom: 0;
     }
+    & > li {
+        .button {
+            .input-space & {
+                padding-top: .57143rem;
+                padding-bottom: .57143rem;
+            }
+        }
+    }
+    &.selectable {
+        .button {
+            @include button-style($background: grey(30));
+        }
+        i.fa {
+            font-size: 1rem;
+            height: 1rem;
+            width: 1rem;
+            margin: 0 7px 0 0;
+            display: none;
+        }
+        a.selected {
+            &, &:hover {
+                background-color: rebrand-color($success-color, 2);
+            }
+            i.fa {
+                display: inline-block;
+            }
+        }
+    }
+  @include breakpoint(small){
+    @include button-group-expand();
+  }
+}
 
-@each $State in $states{
-	$selector:map-get($State,"Selector");
-	$state-name:map-get($State,"State");
-	$color:map-get($State,"Color");
-	@include setTrump('border-color',$state-name,'#{$selector}.question .button-group');
+@each $State in $states {
+    $selector: map-get($State, "Selector");
+    $state-name: map-get($State, "State");
+    $color: map-get($State, "Color");
+    @include setTrump('border-color', $state-name, '#{$selector}.question .button-group');
 }

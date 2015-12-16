@@ -3,9 +3,10 @@ $repeater-color: rebrand-color($primary-color,2);
 
 
 .repeater{
-	@include grid-row($behavior:collapse);
+	@include grid-row(12,collapse);
 	.render,.question-group,.repeater-action{
-		@include grid-column(12,$collapse:true);	
+		@include grid-column(12);
+		@include grid-column-collapse;	
 	}
 
 	&.required > .label-holder .required-holder{

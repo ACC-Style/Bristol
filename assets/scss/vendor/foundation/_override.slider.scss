@@ -1,82 +1,92 @@
 /**
 * Slider (Foundation Override):
-* `.range-slider .vertical-range` - Sliders are a great peice of UI for mobile and range of numbers !!REQUIRES JAVASCRIPT OF FOUNDATION!!!
+* `.range-slider .vertical-range` - Sliders are a great peice of UI for mobile and range of numbers <h5 class="warning">( !! WARNING !! Updated HTML and Styles From Ver 1)</h5>
 * 
 *   @example
-*   <div class="range-slider round" id="slider-weight" data-slider="187" data-options="start: 75; end: 300;">
-*    <span class="range-slider-handle" role="slider" tabindex="0" aria-valuemin="75" aria-valuemax="300" aria-valuenow="187" style="-webkit-transform: translateX(207.071111111111px); transform: translateX(207.071111111111px);"></span>
-*    <span class="range-slider-active-segment" style="width: 49.7777777777778%;"></span>
-*    <input type="hidden" value="187">
+*   <div class="slider" data-slider data-initial-start='50' data-end='200'>
+*   <span class="slider-handle"  data-slider-handle role="slider" tabindex="1"></span>
+*   <span class="slider-fill" data-slider-fill></span>
+*   <input type="hidden">
 *   </div>
-*   <a class="link" href="http://foundation.zurb.com/docs/components/range_slider.html">Foundation Documentation</a>
+*   <div class="slider vertical" data-slider data-initial-start='25' data-end='200' data-vertical="true">
+*     <span class="slider-handle" data-slider-handle role="slider" tabindex="1"></span>
+*     <span class="slider-fill" data-slider-fill></span>
+*    <input type="hidden">
+*   </div>
+*   <div class="slider" data-slider data-initial-start='25' data-initial-end='75'>
+*     <span class="slider-handle" data-slider-handle role="slider" tabindex="1"></span>
+*     <span class="slider-fill" data-slider-fill></span>
+*     <span class="slider-handle" data-slider-handle role="slider" tabindex="1"></span>
+*     <input type="hidden">
+*     <input type="hidden">
+*   </div>
+*   <a class="link" href="http://foundation.zurb.com/sites/docs/slider.html">Foundation Documentation</a>
 */
 
 
 // These variables define the slider bar styles
-// $range-slider-bar-width: 100%;
-// $range-slider-bar-height: rem-calc(16);
+/// Default height of the slider.
+/// @type Number
+$slider-height: 0.5rem !default;
 
-// $range-slider-bar-border-width: 1px;
-// $range-slider-bar-border-style: solid;
-// $range-slider-bar-border-color: $gainsboro;
-// $range-slider-radius: $global-radius;
-// $range-slider-round: $global-rounded;
-$range-slider-bar-bg-color:mix( rebrand-color($black,3), #fff, 5%);
+/// Default slider width of a vertical slider.
+/// @type Number
+$slider-width-vertical: $slider-height !default;
 
-// Vertical bar styles
-// $range-slider-vertical-bar-width: rem-calc(16);
-// $range-slider-vertical-bar-height: rem-calc(200);
+/// Default background color of the slider's track.
+/// @type Color
+$slider-background: $light-gray !default;
 
-// These variables define the slider handle styles
-// $range-slider-handle-width: rem-calc(32);
-// $range-slider-handle-height: rem-calc(22);
-// $range-slider-handle-position-top: rem-calc(-5);
-$range-slider-handle-bg-color: rebrand-color($primary-color,2);
-// $range-slider-handle-border-width: 1px;
-// $range-slider-handle-border-style: solid;
-// $range-slider-handle-border-color: none;
-// $range-slider-handle-radius: $global-radius;
-// $range-slider-handle-round: $global-rounded;
-$range-slider-handle-bg-hover-color: scale-color($range-slider-handle-bg-color, $lightness: -12%);
-// $range-slider-handle-cursor: pointer;
+/// Default color of the active fill color of the slider.
+/// @type Color
+$slider-fill-background: rebrand-color($primary-color, 2);
 
-  .range-slider {
-      @include range-slider-bar-base;
-      @include range-slider-bar-style($bg:true, $radius:false);
-      &.vertical-range {
-        @include range-slider-bar-base($vertical: true);
-        .range-slider-handle {
-          margin-top: 0;
-          margin-#{$default-float}: -($range-slider-handle-width / 4);
-          position: absolute;
-          bottom: -($range-slider-vertical-bar-height - $range-slider-handle-width);
-        }
-        .range-slider-active-segment {
-          width: $range-slider-bar-height - rem-calc((strip-unit($range-slider-bar-border-width) * 2));
-          height: auto;
-          bottom: 0;
-        }
-      }
-      &.radius {
-        @include range-slider-bar-style($radius:true);
-        .range-slider-handle { @include range-slider-handle-style($radius: true); }
-      }
-      &.round {
-        @include range-slider-bar-style($round:true);
-        .range-slider-handle { @include range-slider-handle-style($round: true); }
-      }
-      &.disabled, &[disabled] {
-        @include range-slider-bar-style($disabled:true);
-        .range-slider-handle { @include range-slider-handle-style($disabled: true); }
-      }
-    }
-    .range-slider-active-segment {
-      display: inline-block;
-      position: absolute;
-      height: $range-slider-bar-height - rem-calc((strip-unit($range-slider-bar-border-width) * 2));
-      background: $range-slider-active-segment-bg-color;
-    }
-    .range-slider-handle {
-      @include range-slider-handle-base;
-      @include range-slider-handle-style($bg:true, $radius: false);
-    }
+/// Default height of the handle of the slider.
+/// @type Number
+$slider-handle-height: 1.4rem !default;
+
+/// Default width of the handle of the slider.
+/// @type Number
+$slider-handle-width: 1.4rem !default;
+
+/// Default color of the handle for the slider.
+/// @type Color
+$slider-handle-background: grey(30) !default;
+
+/// Default fade amount of a disabled slider.
+/// @type Number
+$slider-opacity-disabled: 0.25 !default;
+
+/// Default radius for slider.
+/// @type Number
+$slider-radius: $global-radius !default;
+
+/// Transition properties to apply to the slider handle and fill.
+/// @type Transition
+$slider-transition: all 0.2s ease-in-out !default;
+
+   // Container
+  .slider {
+    @include slider-container;
+  }
+
+  // Fill area
+  .slider-fill {
+    @include slider-fill;
+  }
+
+  // Draggable handle
+  .slider-handle {
+    @include slider-handle;
+  }
+
+  // Disabled state
+  .slider.disabled,
+  .slider[disabled] {
+    @include slider-disabled;
+  }
+
+  // Vertical slider
+  .slider.vertical {
+    @include slider-vertical;
+  }
