@@ -2820,20 +2820,121 @@ input[type="checkbox"] + .text, input[type="radio"] + .text {
 *		<div class="hint">This is some hint text</div>
 *	</div>
 */
-.question-grid-based .message-holder, .question-grid-based .hint, .question-grid-based {
+.question-grid-based {
+  margin-left: -1.07143rem;
+  margin-right: -1.07143rem;
+}
+.question-grid-based::before, .question-grid-based::after {
+  content: ' ';
+  display: table;
+}
+.question-grid-based::after {
+  clear: both;
+}
+.question-grid-based .label-holder, .question-grid-based .input-holder, .question-grid-based .value-holder {
+  width: 50%;
+  float: left;
+  padding-left: 1.07143rem;
+  padding-right: 1.07143rem;
+}
+.question-grid-based .label-holder:last-child:not(:first-child), .question-grid-based .input-holder:last-child:not(:first-child), .question-grid-based .value-holder:last-child:not(:first-child) {
+  float: right;
+}
+.question-grid-based.split_1of5 .label-holder {
+  width: 20%;
+  float: left;
+  padding-left: 1.07143rem;
+  padding-right: 1.07143rem;
+}
+.question-grid-based.split_1of5 .label-holder:last-child:not(:first-child) {
+  float: right;
+}
+.question-grid-based.split_1of5 .input-holder, .question-grid-based.split_1of5 .value-holder {
+  width: 80%;
+  float: left;
+  padding-left: 1.07143rem;
+  padding-right: 1.07143rem;
+}
+.question-grid-based.split_1of5 .input-holder:last-child:not(:first-child), .question-grid-based.split_1of5 .value-holder:last-child:not(:first-child) {
+  float: right;
+}
+.question-grid-based.split_2of5 .label-holder {
+  width: 40%;
+  float: left;
+  padding-left: 1.07143rem;
+  padding-right: 1.07143rem;
+}
+.question-grid-based.split_2of5 .label-holder:last-child:not(:first-child) {
+  float: right;
+}
+.question-grid-based.split_2of5 .input-holder, .question-grid-based.split_2of5 .value-holder {
+  width: 60%;
+  float: left;
+  padding-left: 1.07143rem;
+  padding-right: 1.07143rem;
+}
+.question-grid-based.split_2of5 .input-holder:last-child:not(:first-child), .question-grid-based.split_2of5 .value-holder:last-child:not(:first-child) {
+  float: right;
+}
+.question-grid-based.split_3of5 .label-holder {
+  width: 60%;
+  float: left;
+  padding-left: 1.07143rem;
+  padding-right: 1.07143rem;
+}
+.question-grid-based.split_3of5 .label-holder:last-child:not(:first-child) {
+  float: right;
+}
+.question-grid-based.split_3of5 .input-holder, .question-grid-based.split_3of5 .value-holder {
+  width: 40%;
+  float: left;
+  padding-left: 1.07143rem;
+  padding-right: 1.07143rem;
+}
+.question-grid-based.split_3of5 .input-holder:last-child:not(:first-child), .question-grid-based.split_3of5 .value-holder:last-child:not(:first-child) {
+  float: right;
+}
+.question-grid-based.split_4of5 .label-holder {
+  width: 80%;
+  float: left;
+  padding-left: 1.07143rem;
+  padding-right: 1.07143rem;
+}
+.question-grid-based.split_4of5 .label-holder:last-child:not(:first-child) {
+  float: right;
+}
+.question-grid-based.split_4of5 .input-holder, .question-grid-based.split_4of5 .value-holder {
+  width: 20%;
+  float: left;
+  padding-left: 1.07143rem;
+  padding-right: 1.07143rem;
+}
+.question-grid-based.split_4of5 .input-holder:last-child:not(:first-child), .question-grid-based.split_4of5 .value-holder:last-child:not(:first-child) {
+  float: right;
+}
+.question-grid-based .message-holder, .question-grid-based .hint {
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
 }
-.question-grid-based .message-holder::before, .question-grid-based .message-holder::after, .question-grid-based .hint::before, .question-grid-based .hint::after, .question-grid-based::before, .question-grid-based::after {
+.question-grid-based .message-holder::before, .question-grid-based .message-holder::after, .question-grid-based .hint::before, .question-grid-based .hint::after {
   content: ' ';
   display: table;
 }
-.question-grid-based .message-holder::after, .question-grid-based .hint::after, .question-grid-based::after {
+.question-grid-based .message-holder::after, .question-grid-based .hint::after {
   clear: both;
 }
 .question-grid-based .label-holder {
+  text-align: left;
+}
+.question-grid-based .input-holder .message-holder {
   text-align: right;
+}
+.question-grid-based.center-alignment .label-holder {
+  text-align: right;
+}
+.question-grid-based.center-alignment .input-holder .message-holder, .question-grid-based.center-alignment .input-holder .hint {
+  text-align: left;
 }
 .question-grid-based .label-holder .text {
   padding-right: 0;
@@ -2860,34 +2961,150 @@ input[type="checkbox"] + .text, input[type="radio"] + .text {
 
 /**
 * Questions Grid Based:
-* `.question-grid-based` - This is a variation of the question block used by NCDR. `.label-holder &amp; .input-holder` are used as containters so you can use grid sizers to align the label and input right and left.
+* `.question-grid-based` - This is a variation of the question block used by NCDR. `.label-holder &amp; .input-holder` are used as containters so you can add class grid sizer to the  `split_1of5, split_2of5, split_3of5, split_4of5` to control the size of the label and input space.
 * 
 *   @example
-*	<div class="question-grid-based required">
-*		<div class="label-holder column small-5">
-*			<label for="">
-*				<span class="text">Question Dropdown Title (Required) <a class="seq">1234</a></span>
-*				<span class="required-holder">
-*					<i class="fa fa-holder-dynamic"></i>
-*				</span>
-*			</label>
-*		<div class="hint">This is some hint text</div>
-*		</div>
-*		<div class="input-holder column small-7">
-*			 <div class="input-space column small-6 large-9">
-*				<input type="text"/>
-*			</div>
-*			<div class="column value small-6 large-3">
-*				Years
-*			</div>
-*		<div class="message-holder">
-*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
-*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
-*				<small class="data"><i class="fa fa-holder"></i> Data message</small>
-*		</div>
-*		<div class="hint">This is some hint text</div>
-*		</div>
-*	</div>
+* <h5 class="highlighted">Default</h5>
+* <div class="question-grid-based required">
+*   <div class="label-holder">
+*     <label for="">
+*       <span class="text">Question Title<a class="seq">1234</a></span>
+*       <span class="required-holder">
+*         <i class="fa fa-holder-dynamic"></i>
+*       </span>
+*     </label>
+*   <div class="hint">This is some hint text</div>
+*   </div>
+*   <div class="input-holder">
+*      <div class="input-space column small-6 large-9">
+*       <input type="text"/>
+*     </div>
+*     <div class="column value small-6 large-3">
+*       Years
+*     </div>
+*   <div class="message-holder">
+*       <small class="error"><i class="fa fa-holder"></i> Error message</small>
+*       <small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*       <small class="data"><i class="fa fa-holder"></i> Data message</small>
+*   </div>
+*   <div class="hint">This is some hint text</div>
+*   </div>
+* </div>
+*/
+/**
+* Questions Grid Based (Size Modifier):
+* `.question-grid-based` - This is a modifier of spacing for the label-holder and the input-holder are controled my size modifiers on the question container. Grid sizers are `split_1of5, split_2of5, split_3of5, split_4of5`. The first number is the perpotional size of the label-holder in relation to container.
+* 
+*   @example
+* <div class="row"><div class="column large-6">
+* <div class="question-grid-based required split_1of5">
+*   <div class="label-holder">
+*     <label for="">
+*       <span class="text">Question (1 of 5) <a class="seq">1234</a></span>
+*       <span class="required-holder">
+*         <i class="fa fa-holder-dynamic"></i>
+*       </span>
+*     </label>
+*   <div class="hint">This is some hint text</div>
+*   </div>
+*   <div class="input-holder">
+*      <div class="input-space column small-6 large-9">
+*       <input type="text"/>
+*     </div>
+*     <div class="column value small-6 large-3">
+*       Years
+*     </div>
+*   <div class="message-holder">
+*       <small class="error"><i class="fa fa-holder"></i> Error message</small>
+*       <small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*       <small class="data"><i class="fa fa-holder"></i> Data message</small>
+*   </div>
+*   <div class="hint">This is some hint text</div>
+*   </div>
+* </div></div>
+* <div class="column large-6">
+* <div class="question-grid-based required split_2of5 warning">
+*   <div class="label-holder">
+*     <label for="">
+*       <span class="text">Question (2 of 5) <a class="seq">1234</a></span>
+*       <span class="required-holder">
+*         <i class="fa fa-holder-dynamic"></i>
+*       </span>
+*     </label>
+*   <div class="hint">This is some hint text</div>
+*   </div>
+*   <div class="input-holder">
+*      <div class="input-space column small-6 large-9">
+*       <input type="text"/>
+*     </div>
+*     <div class="column value small-6 large-3">
+*       Years
+*     </div>
+*   <div class="message-holder">
+*       <small class="error"><i class="fa fa-holder"></i> Error message</small>
+*       <small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*       <small class="data"><i class="fa fa-holder"></i> Data message</small>
+*   </div>
+*   <div class="hint">This is some hint text</div>
+*   </div>
+* </div></div></div><div class="row">
+* <div class="column large-6">
+* <div class="question-grid-based required split_3of5">
+*   <div class="label-holder">
+*     <label for="">
+*       <span class="text">Question (3 of 5)<a class="seq">1234</a></span>
+*       <span class="required-holder">
+*         <i class="fa fa-holder-dynamic"></i>
+*       </span>
+*     </label>
+*   <div class="hint">This is some hint text</div>
+*   </div>
+*   <div class="input-holder">
+*      <div class="input-space column small-6 large-9">
+*       <input type="text"/>
+*     </div>
+*     <div class="column value small-6 large-3">
+*       Years
+*     </div>
+*   <div class="message-holder">
+*       <small class="error"><i class="fa fa-holder"></i> Error message</small>
+*       <small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*       <small class="data"><i class="fa fa-holder"></i> Data message</small>
+*   </div>
+*   <div class="hint">This is some hint text</div>
+*   </div>
+* </div></div></div>
+*/
+/**
+* Questions Grid Based (Alignment Modifier):
+* `.question-grid-based` - The default alignment for the labels are to the left but to align the label and hints to align to the center just add `.center-alignment` to the question container.
+* 
+*   @example
+* <div class="question-grid-based warning center-alignment">
+*   <div class="label-holder">
+*     <label for="">
+*       <span class="text">Question Title (center-alignment)<a class="seq">1234</a></span>
+*       <span class="required-holder">
+*         <i class="fa fa-holder-dynamic"></i>
+*       </span>
+*     </label>
+*   <div class="hint">This is some hint text</div>
+*   </div>
+*   <div class="input-holder">
+*      <div class="input-space column small-6 large-9">
+*       <input type="text"/>
+*     </div>
+*     <div class="column value small-6 large-3">
+*       Years
+*     </div>
+*   <div class="message-holder">
+*       <small class="error"><i class="fa fa-holder"></i> Error message</small>
+*       <small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*       <small class="data"><i class="fa fa-holder"></i> Data message</small>
+*   </div>
+*   <div class="hint">This is some hint text</div>
+*   </div>
+* </div>
 */
 .file-upload-holder {
   height: 37px;
@@ -6435,7 +6652,7 @@ div.reveal .close-button {
   height: 0.5rem;
   background-color: #198dae;
   transition: all 0.2s ease-in-out;
-  background-image: url("../img/billie-holiday.png") repeat;
+  background-image: url("../img/billie-holiday.png");
   -webkit-box-shadow: inset 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: inset 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
   box-shadow: inset 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
@@ -6460,6 +6677,9 @@ div.reveal .close-button {
   border-radius: 0;
   border-radius: 1000px;
   border: 1px solid #266071;
+  -webkit-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
 }
 [data-whatinput='mouse'] .slider-handle {
   outline: 0;
@@ -6696,74 +6916,234 @@ input:checked + label > .switch-inactive {
   background-color: #e6e6e6;
 }
 
+.switch.value-switch .switch-active {
+  color: #333333;
+}
+.switch.value-switch .switch-inactive {
+  color: #c2c2c2;
+}
+.switch.value-switch .switch-active, .switch.value-switch .switch-inactive {
+  z-index: 100;
+}
+.switch.value-switch input + label > .switch-active {
+  display: block;
+}
+.switch.value-switch input:checked + label > .switch-inactive {
+  color: #333333;
+  display: block;
+}
+.switch.value-switch input:checked + label > .switch-active {
+  color: #c2c2c2;
+}
+.switch.value-switch .switch-paddle, .switch.value-switch input:checked .switch-paddle {
+  background-color: #198dae;
+}
+
+.switch.switch-2x .switch-active, .switch.switch-4x .switch-active {
+  left: .25em;
+}
+.switch.switch-2x .switch-inactive, .switch.switch-4x .switch-inactive {
+  right: .25em;
+}
+.switch.switch-2x .switch-paddle {
+  width: 7em;
+}
+.switch.switch-2x .switch-paddle::after {
+  width: 3em;
+}
+.switch.switch-2x input:checked ~ .switch-paddle::after {
+  left: 3.75em;
+}
+.switch.switch-2x .switch-active, .switch.switch-2x .switch-inactive {
+  width: 3em;
+  text-align: center;
+}
+.switch.switch-4x .switch-paddle {
+  width: 15em;
+}
+.switch.switch-4x .switch-paddle::after {
+  width: 7em;
+}
+.switch.switch-4x input:checked ~ .switch-paddle::after {
+  left: 7.75em;
+}
+.switch.switch-4x .switch-active, .switch.switch-4x .switch-inactive {
+  width: 7em;
+  text-align: center;
+}
+
+.group-switch {
+  background-color: #14B057;
+  border: 2px solid #b3b3b3;
+  background-image: url("../img/billie-holiday.png");
+  box-sizing: content-box;
+  width: auto;
+  height: 2rem;
+  transition: all 0.25s ease-out;
+  border-radius: 0;
+  color: inherit;
+  font-weight: inherit;
+  display: inline-block;
+}
+.group-switch .switch-position {
+  display: inline-block;
+}
+.group-switch .switch-input {
+  opacity: 0;
+  position: absolute;
+}
+.group-switch .switch-paddle {
+  border: 0 transparent none;
+  background-color: transparent;
+}
+.group-switch .switch-paddle:after {
+  width: 2.75em;
+  opacity: 0;
+  left: .25em;
+}
+.group-switch input:checked + .switch-paddle:after {
+  opacity: 1;
+  left: .25em;
+}
+.group-switch .switch-active, .group-switch .switch-inactive {
+  z-index: 100;
+}
+
 /**
 * Switch (Foundation Override): 
 * `.switch` - Switches are a more visible and more touchable versions of checkbox and radio buttons. 
 *  ADD `.x-visible` to show the x when it is shut off. <h5 class="warning">( !! WARNING !! Updated HTML and Styles From Ver 1)</h5>
 * 
 *   @example
-* <h3>Plain switch with `.disabled` on the input</h3>
-* <div class="switch-input-space  row">	
-*	<div class="switch">
-*	  <input class="switch-input" id="yes-no-1" disabled type="checkbox" name="exampleSwitch">
-*	  <label class="switch-paddle" for="yes-no-1">
-*	    <span class="show-for-sr">Do you like me?</span>
-*	    <span class="switch-active" aria-hidden="true">Yes</span>
-*	    <span class="switch-inactive" aria-hidden="true">No</span>
-*	  </label>
-*	</div>
-*	<label  class="switch-value" for="yes-no-1">Yes or No Question</label>		
-*	</div>
-* <div class="row group-divide"><h3>Radio Buttons should use `.round` or `.radio` modifier</h3>
-* <p>You can make a radio with eiither placing the `.round` or `.radio`.  If you want control over the positive and negative position use `.round`.  Use `.radio` to set it to the standard icon in the positive position</p>
-* <div class="switch-input-space column small-6"> 
-* <div class="switch round">
-*   <input class="switch-input" id="yes-no-round" type="radio" name="radio-switch">
-*   <label class="switch-paddle" for="yes-no-round"> 
-*     <span class="show-for-sr">Do you like me?</span>
-*     <span class="switch-active" aria-hidden="true"><i class="fa fa-check-circle-o"></i></span>
-*     <span class="switch-inactive" aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+*   <h3>Plain switch with `.disabled` on the input</h3>
+*   <div class="switch-input-space  row">
+*   <div class="switch">
+*   <input class="switch-input" id="yes-no-1" disabled type="checkbox" name="exampleSwitch">
+*   <label class="switch-paddle" for="yes-no-1">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true">Yes</span>
+*   <span class="switch-inactive" aria-hidden="true">No</span>
 *   </label>
-* </div>
-* <label  class="switch-value" for="yes-no-round">Radio button made with `.round`</label>    
-* </div>
-* <div class="switch-input-space column small-6"> 
-* <div class="switch radio">
+*   </div>
+*   <label  class="switch-value" for="yes-no-1">Yes or No Question</label>
+*   </div>
+*   <div class="row group-divide">
+*   <h3>Radio Buttons should use `.round` or `.radio` modifier</h3>
+*   <p>You can make a radio with eiither placing the `.round` or `.radio`.  If you want control over the positive and negative position use `.round`.  Use `.radio` to set it to the standard icon in the positive position</p>
+*   <div class="row">
+*   <div class="switch-input-space column small-6">
+*   <div class="switch round">
+*   <input class="switch-input" id="yes-no-round" type="radio" name="radio-switch">
+*   <label class="switch-paddle" for="yes-no-round">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true"><i class="fa fa-check-circle-o"></i></span>
+*   <span class="switch-inactive" aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+*   </label>
+*   </div>
+*   <label  class="switch-value" for="yes-no-round">Radio button made with `.round`</label>
+*   </div>
+*   <div class="switch-input-space column small-6">
+*   <div class="switch radio">
 *   <input class="switch-input" id="yes-no-radio" type="radio" name="radio-switch">
 *   <label class="switch-paddle" for="yes-no-radio">
-*     <span class="show-for-sr">Do you like me?</span>
-*     <span class="switch-active" aria-hidden="true"><i class="fa fa-holder"></i></span>
-*     <span class="switch-inactive" aria-hidden="true"><i class="fa fa-holder"></i></span>
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true"><i class="fa fa-holder"></i></span>
+*   <span class="switch-inactive" aria-hidden="true"><i class="fa fa-holder"></i></span>
 *   </label>
-* </div>
-* <label  class="switch-value" for="yes-no-radio">Radio button made with `.radio`</label>    
-* </div>
-*  </div>
-* <div class="row group-divide"><h3>Checkboxes should use `.radius`, `.checkbox`, no modifiers</h3>
-* <p>You can make a checkbox with eiither placing the `.checkbox` or `.radius`.  If you want control over the positive and negative position use `.radius`.  Use `.checkbox` to set it to the standard icon in the positive position</p>
-* <div class="switch-input-space column small-6"> 
-* <div class="switch radius">
+*   </div>
+*   <label  class="switch-value" for="yes-no-radio">Radio button made with `.radio`</label>
+*   </div>
+*   </div>
+*   </div>
+*   <div class="row group-divide">
+*   <h3>Checkboxes should use `.radius`, `.checkbox`, no modifiers</h3>
+*   <p>You can make a checkbox with eiither placing the `.checkbox` or `.radius`.  If you want control over the positive and negative position use `.radius`.  Use `.checkbox` to set it to the standard icon in the positive position</p>
+*   <div class="row">
+*   <div class="switch-input-space column small-6">
+*   <div class="switch radius">
 *   <input class="switch-input" id="radius-checkbox" type="checkbox" value="true">
-*   <label class="switch-paddle" for="radius-checkbox"> 
-*     <span class="show-for-sr">Do you like me?</span>
-*     <span class="switch-active" aria-hidden="true"><i class="fa fa-check-circle-o"></i></span>
-*     <span class="switch-inactive" aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+*   <label class="switch-paddle" for="radius-checkbox">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true"><i class="fa fa-check-circle-o"></i></span>
+*   <span class="switch-inactive" aria-hidden="true"><i class="fa fa-times-circle"></i></span>
 *   </label>
-* </div>
-* <label  class="switch-value" for="radius-checkbox">Checkbox button made with `.radius`</label>    
-* </div>
-* <div class="switch-input-space column small-6"> 
-* <div class="switch checkbox">
+*   </div>
+*   <label  class="switch-value" for="radius-checkbox">Checkbox button made with `.radius`</label>
+*   </div>
+*   <div class="switch-input-space column small-6">
+*   <div class="switch checkbox">
 *   <input class="switch-input" id="checkbox-checkbox"  type="checkbox" value="false">
 *   <label class="switch-paddle" for="checkbox-checkbox">
-*     <span class="show-for-sr">Do you like me?</span>
-*     <span class="switch-active" aria-hidden="true"><i class="fa fa-holder"></i></span>
-*     <span class="switch-inactive" aria-hidden="true"><i class="fa fa-holder"></i></span>
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true"><i class="fa fa-holder"></i></span>
+*   <span class="switch-inactive" aria-hidden="true"><i class="fa fa-holder"></i></span>
 *   </label>
-* </div>
-* <label  class="switch-value" for="checkbox-checkbox">Checkbox button made with `.checkbox`</label>    
-* </div>
-*  </div>
+*   </div>
+*   <label  class="switch-value" for="checkbox-checkbox">Checkbox button made with `.checkbox`</label>
+*   </div>
+*   </div>
+*   <div class="row group-divide"><h3>Value or Unit Swithcers</h3>
+*   <p>Value Switchers should use `.value-switch` so both sides of the switcher are always visible and stay colored.</p>
+*   <label  class="switch-value" for="checkbox-value-switch2">`.value-switch` gives room to have values on the switch that are always visible but can be toggled.</label>
+*   </div>
+*   <div class="switch-input-space column small-12">
+*   <div class="switch value-switch">
+*   <input class="switch-input" id="checkbox-value-switch"  type="checkbox" value="false">
+*   <label class="switch-paddle" for="checkbox-value-switch">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true"><i class="fa fa-thumbs-up"></i></span>
+*   <span class="switch-inactive" aria-hidden="true"><i class="fa fa-thumbs-down"></i></span>
+*   </label>
+*   </div>
+*   </div>
+*   <div class="switch-input-space column small-12">
+*   <div class="switch value-switch switch-2x radius">
+*   <input class="switch-input" id="checkbox-value-switch-radius"  type="checkbox" value="false">
+*   <label class="switch-paddle" for="checkbox-value-switch-radius">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true">US</span>
+*   <span class="switch-inactive" aria-hidden="true">SI</span>
+*   </label>
+*   </div>
+*   <label class="switch-value" for="checkbox-value-switch-radius">You expand the switch area with switch-2x and switch-4x</label>
+*   </div>
+*   <div class="switch-input-space column small-12">
+*   <div class="switch value-switch switch-4x round">
+*   <input class="switch-input" id="checkbox-value-switch-round"  type="checkbox" value="false">
+*   <label class="switch-paddle" for="checkbox-value-switch-round">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true">Inches</span>
+*   <span class="switch-inactive" aria-hidden="true">Centimeters</span>
+*   </label>
+*   </div>
+*   <label class="switch-value" for="checkbox-value-switch-round">You can also apply the `.radius` and `.round` to change the style
+*   </label>
+*   </div>
+*   </div>
+*   <div class="switch-input-space column small-12">
+*   <div class="group-switch"><div class="switch-position">
+*   <input class="switch-input" id="group-switch0"  type="checkbox" value="false">
+*   <label class="switch-paddle" for="group-switch0">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true">Unit</span>
+*   <span class="switch-inactive" aria-hidden="true">Unit</span>
+*   </label></div><div class="switch-position">
+*   <input class="switch-input" id="group-switch1"  type="checkbox" value="false">
+*   <label class="switch-paddle" for="group-switch1">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true">Unit</span>
+*   <span class="switch-inactive" aria-hidden="true">Unit</span>
+*   </label></div><div class="switch-position">
+*   <input class="switch-input" id="group-switch2"  type="checkbox" value="false">
+*   <label class="switch-paddle" for="group-switch2">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true">Unit</span>
+*   <span class="switch-inactive" aria-hidden="true">Unit</span>
+*   </label></div>
+*   </div>
+*   <label class="switch-value" for="checkbox-value-switch-round">You can also apply the `.radius` and `.round` to change the style
+*   </label>
+*   </div>
 **/
 .tooltip {
   background-color: #1a364f;

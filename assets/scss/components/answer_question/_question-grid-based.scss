@@ -1,17 +1,43 @@
 .question-grid-based{
+  @include grid-row($behavior: nest);
 	.label-holder,.input-holder,.value-holder{
-	
+    @include grid-column(1 of 2);
 	}
-	.message-holder,.hint, &{
-		@include grid-row(); 
+
+  &.split_1of5{
+    .label-holder{ @include grid-column(1 of 5); }
+    .input-holder,.value-holder{ @include grid-column(4 of 5); }
+  }
+  &.split_2of5{
+    .label-holder{ @include grid-column(2 of 5); }
+    .input-holder,.value-holder{ @include grid-column(3 of 5); }
+  }
+  &.split_3of5{
+    .label-holder{ @include grid-column(3 of 5); }
+    .input-holder,.value-holder{ @include grid-column(2 of 5); }
+  }
+  &.split_4of5{
+    .label-holder{ @include grid-column(4 of 5); }
+    .input-holder,.value-holder{ @include grid-column(1 of 5); }
+  }
+
+	.message-holder,.hint{
+		@include grid-row();  
 	}
 	.label-holder{
-		text-align: right;
+		text-align: left;
 	}
-	.label-holder .text{ padding-right: 0;}
-	&.required .label-holder .text{padding-right: 1rem;}
+  .input-holder{
+    .message-holder{text-align: right;}
+    }
+  &.center-alignment .label-holder{text-align: right;}
+  &.center-alignment   .input-holder{
+    .message-holder,.hint{text-align: left;}
+    }
+  .label-holder .text{ padding-right: 0;}
+  &.required .label-holder .text{padding-right: 1rem;}
 }
-.label-holder,.message-holder,.hint{
+  .label-holder,.message-holder,.hint{
 	 .seq{
 		@include baseline-font(-2,0,0);
 		color: rebrand-color($primary-color,2);
@@ -21,35 +47,156 @@
 		margin-left: -.35em;
 		&:hover{color:mix(rebrand-color($primary-color,2),$black); text-decoration: underline;}
 	}
+
+
 }
 /**
 * Questions Grid Based:
-* `.question-grid-based` - This is a variation of the question block used by NCDR. `.label-holder &amp; .input-holder` are used as containters so you can use grid sizers to align the label and input right and left.
+* `.question-grid-based` - This is a variation of the question block used by NCDR. `.label-holder &amp; .input-holder` are used as containters so you can add class grid sizer to the  `split_1of5, split_2of5, split_3of5, split_4of5` to control the size of the label and input space.
 * 
 *   @example
-*	<div class="question-grid-based required">
-*		<div class="label-holder column small-5">
-*			<label for="">
-*				<span class="text">Question Dropdown Title (Required) <a class="seq">1234</a></span>
-*				<span class="required-holder">
-*					<i class="fa fa-holder-dynamic"></i>
-*				</span>
-*			</label>
-*		<div class="hint">This is some hint text</div>
-*		</div>
-*		<div class="input-holder column small-7">
-*			 <div class="input-space column small-6 large-9">
-*				<input type="text"/>
-*			</div>
-*			<div class="column value small-6 large-3">
-*				Years
-*			</div>
-*		<div class="message-holder">
-*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
-*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
-*				<small class="data"><i class="fa fa-holder"></i> Data message</small>
-*		</div>
-*		<div class="hint">This is some hint text</div>
-*		</div>
-*	</div>
+* <h5 class="highlighted">Default</h5>
+* <div class="question-grid-based required">
+*   <div class="label-holder">
+*     <label for="">
+*       <span class="text">Question Title<a class="seq">1234</a></span>
+*       <span class="required-holder">
+*         <i class="fa fa-holder-dynamic"></i>
+*       </span>
+*     </label>
+*   <div class="hint">This is some hint text</div>
+*   </div>
+*   <div class="input-holder">
+*      <div class="input-space column small-6 large-9">
+*       <input type="text"/>
+*     </div>
+*     <div class="column value small-6 large-3">
+*       Years
+*     </div>
+*   <div class="message-holder">
+*       <small class="error"><i class="fa fa-holder"></i> Error message</small>
+*       <small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*       <small class="data"><i class="fa fa-holder"></i> Data message</small>
+*   </div>
+*   <div class="hint">This is some hint text</div>
+*   </div>
+* </div>
+*/
+
+
+/**
+* Questions Grid Based (Size Modifier):
+* `.question-grid-based` - This is a modifier of spacing for the label-holder and the input-holder are controled my size modifiers on the question container. Grid sizers are `split_1of5, split_2of5, split_3of5, split_4of5`. The first number is the perpotional size of the label-holder in relation to container.
+* 
+*   @example
+* <div class="row"><div class="column large-6">
+* <div class="question-grid-based required split_1of5">
+*   <div class="label-holder">
+*     <label for="">
+*       <span class="text">Question (1 of 5) <a class="seq">1234</a></span>
+*       <span class="required-holder">
+*         <i class="fa fa-holder-dynamic"></i>
+*       </span>
+*     </label>
+*   <div class="hint">This is some hint text</div>
+*   </div>
+*   <div class="input-holder">
+*      <div class="input-space column small-6 large-9">
+*       <input type="text"/>
+*     </div>
+*     <div class="column value small-6 large-3">
+*       Years
+*     </div>
+*   <div class="message-holder">
+*       <small class="error"><i class="fa fa-holder"></i> Error message</small>
+*       <small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*       <small class="data"><i class="fa fa-holder"></i> Data message</small>
+*   </div>
+*   <div class="hint">This is some hint text</div>
+*   </div>
+* </div></div>
+* <div class="column large-6">
+* <div class="question-grid-based required split_2of5 warning">
+*   <div class="label-holder">
+*     <label for="">
+*       <span class="text">Question (2 of 5) <a class="seq">1234</a></span>
+*       <span class="required-holder">
+*         <i class="fa fa-holder-dynamic"></i>
+*       </span>
+*     </label>
+*   <div class="hint">This is some hint text</div>
+*   </div>
+*   <div class="input-holder">
+*      <div class="input-space column small-6 large-9">
+*       <input type="text"/>
+*     </div>
+*     <div class="column value small-6 large-3">
+*       Years
+*     </div>
+*   <div class="message-holder">
+*       <small class="error"><i class="fa fa-holder"></i> Error message</small>
+*       <small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*       <small class="data"><i class="fa fa-holder"></i> Data message</small>
+*   </div>
+*   <div class="hint">This is some hint text</div>
+*   </div>
+* </div></div></div><div class="row">
+* <div class="column large-6">
+* <div class="question-grid-based required split_3of5">
+*   <div class="label-holder">
+*     <label for="">
+*       <span class="text">Question (3 of 5)<a class="seq">1234</a></span>
+*       <span class="required-holder">
+*         <i class="fa fa-holder-dynamic"></i>
+*       </span>
+*     </label>
+*   <div class="hint">This is some hint text</div>
+*   </div>
+*   <div class="input-holder">
+*      <div class="input-space column small-6 large-9">
+*       <input type="text"/>
+*     </div>
+*     <div class="column value small-6 large-3">
+*       Years
+*     </div>
+*   <div class="message-holder">
+*       <small class="error"><i class="fa fa-holder"></i> Error message</small>
+*       <small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*       <small class="data"><i class="fa fa-holder"></i> Data message</small>
+*   </div>
+*   <div class="hint">This is some hint text</div>
+*   </div>
+* </div></div></div>
+*/
+
+/**
+* Questions Grid Based (Alignment Modifier):
+* `.question-grid-based` - The default alignment for the labels are to the left but to align the label and hints to align to the center just add `.center-alignment` to the question container.
+* 
+*   @example
+* <div class="question-grid-based warning center-alignment">
+*   <div class="label-holder">
+*     <label for="">
+*       <span class="text">Question Title (center-alignment)<a class="seq">1234</a></span>
+*       <span class="required-holder">
+*         <i class="fa fa-holder-dynamic"></i>
+*       </span>
+*     </label>
+*   <div class="hint">This is some hint text</div>
+*   </div>
+*   <div class="input-holder">
+*      <div class="input-space column small-6 large-9">
+*       <input type="text"/>
+*     </div>
+*     <div class="column value small-6 large-3">
+*       Years
+*     </div>
+*   <div class="message-holder">
+*       <small class="error"><i class="fa fa-holder"></i> Error message</small>
+*       <small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*       <small class="data"><i class="fa fa-holder"></i> Data message</small>
+*   </div>
+*   <div class="hint">This is some hint text</div>
+*   </div>
+* </div>
 */
