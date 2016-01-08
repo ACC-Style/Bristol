@@ -1,6 +1,6 @@
 Welcome Bristol ACC APP Framework
 -------------------
-#### Bristol Ver 2.0 | Built on Foundation 6
+#### Bristol Ver 2.1 | Built on Foundation 6
 This is a library of modular styles powered by the framework of Zurb Foundation. This design was implemented for ACC Apps Construction. It is responsive and can be scaled up and down for the needs of the UI that is needed. Things to note this library is built with Sass to give the greatest flexablity for ACC App Builds. 
 
 ## Concept
@@ -32,7 +32,9 @@ coming soon
 
 
 #### Products that Use the Design
-http://tools.acc.org/StatinIntolerance/#!/
+http://tools.acc.org/StatinIntolerance/
+http://tools.acc.org/AntiCoag/
+http://tools.acc.org/TAVRRISK/
 
 
 #### Style Guide w/ HTML Examples
