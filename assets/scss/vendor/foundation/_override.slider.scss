@@ -79,7 +79,7 @@ $slider-transition: all 0.2s ease-in-out !default;
   // Fill area
   .slider-fill {
     @include slider-fill;
-    background-image: url('../img/billie-holiday.png')  repeat;
+    background-image: url('../img/billie-holiday.png');
         -webkit-box-shadow:inset 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: inset 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
     box-shadow:inset  1px 1px 2px 1px rgba(0, 0, 0, 0.2);
@@ -90,7 +90,10 @@ $slider-transition: all 0.2s ease-in-out !default;
   .slider-handle {
     @include slider-handle;
     border-radius:$global-border-round;
-     border:1px solid mix($slider-fill-background,grey(80));
+    border:1px solid mix($slider-fill-background,grey(80));
+    -webkit-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow:  1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow:  1px 1px 2px 1px rgba(0, 0, 0, 0.2);
   }
 
   // Disabled state
