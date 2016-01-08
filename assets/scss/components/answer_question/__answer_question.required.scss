@@ -51,23 +51,23 @@
 	.label-holder,.input-holder,.message-holder,.value-holder,.hint{
 		@include grid-row(collapse);
 	}
-	.label-holder{
-		@include baseline-font(0,.5,.25);
-		white-space: nowrap;
-		@include bp(sm-down){
-			white-space:normal;
-		}
-	}
 }
 
 
 
 .label-holder{
-	label, .label,.text{@include font-bold();}
-	@include baseline-font(0,.5,.25);
-	position: relative;
-	background-color:transparent;
-	color:fontcolor($black);
+	label, .label,.text{
+    @include font-bold();
+    @include baseline-font(0);
+  }
+  white-space: nowrap;
+  @include baseline-font(0,.5,.25);
+  position: relative;
+  background-color:transparent;
+  color:fontcolor($black);
+    @include bp(sm-down){
+      white-space:normal;
+    }
 	.text{padding-right:1rem;}
 }
 

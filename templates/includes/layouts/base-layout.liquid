@@ -14,11 +14,11 @@
 
 </head>
 	<body>
-    <a onClick="$('.mobile-offcanvas-wrapper').toggleClass('navOn')"><i class="fa fa-bars"></i></a>
+    <a class="hide-for-medium" onClick="$('.mobile-offcanvas-wrapper .split-layout').toggleClass('navOn')" style="display: block;width: 100%;text-align: center;color: white;background-color: #00386b;"><i class="fa fa-bars"></i> Menu</a>
     {% include 'sections/header' %}
 
-    <div class="mobile-offcanvas-wrapper navOn">
-      <section class="split-layout fill-page-height medium">
+    <div class="mobile-offcanvas-wrapper">
+      <section class="split-layout fill-page-height medium navOn">
         <aside class="split-sidebar">
          {% include "sidebar" %}
         </aside>
