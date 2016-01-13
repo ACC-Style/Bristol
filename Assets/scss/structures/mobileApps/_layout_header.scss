@@ -1,0 +1,74 @@
+/**
+* Mobile Header:
+* `.header.pagel` - there is a basic layout of short tabbed header of apps
+* 
+*   @example
+*	<div class="row"><header class="header page">
+*		<a href="#!/content/calculator/" class="logo">
+*			<img  src="assets/img/headerlogo.svg" alt="ACC Statin Intolerance Guidelines">
+*		</a>
+*		<ul class="nav tabs tabs-primary">
+*			<li class="icon tab-title"><a class="home"><i class="fa fa-holder"></i></a></li>
+*			<li id="calculator-Tab" class="selected tab-title"><a href="#!/content/calculator/"  class="condensable condensable-word small">Eval<span class="condense">uate</span></a></li>
+*			<li id="recommendation-Tab" class=" tab-title"><a href="#!/content/recommendation/prescribinginfo/"  class="condensable condensable-word small">Recommend<span class="condense">ation</span></a></li>
+*		</ul>
+*	</header></div>
+*/
+
+
+
+.page.header{
+	border-bottom: rebrand-color($brand-color, 3) 6px solid;
+	padding:0;
+	background-color: #fff;
+	display: block;
+	clear:both;
+	width:100%;
+	position: relative;
+	&:after{content:"";display: table;clear:both;}
+	.logo{
+		left:0;
+		top:0;
+		display: none;
+		text-align: right;
+		clear:none;
+		float:left;
+		vertical-align: middle;
+		@include bp(md){ display: inline-block;}
+		img{
+			height: 60px;
+			@include bp(lg){ height: 70px;margin:10px 10px 0 0;}
+			@include bp(xl){height:85px;margin:10px 10px 0 0;}
+		}
+	}
+	.tabs{
+		clear:none;
+		@include bp(md){
+			float: right;
+			width:auto;
+		}
+	}
+
+}
+
+// @mixin baseline-font($font-level, $margin-top:0, $margin-bottom:0,$parent-level:0,$baseline:$base-line){
+// 	$font-size: ms($font-level);
+// 	@if($parent-level > 0){
+// 		$font-size: ms($font-level)/ms($parent-level) * $base-font-size;
+// 		// @debug $font-size "fontsize";
+// 	}
+// 	// @debug $font-size "real - fontsize";
+// 	$raw-line: strip-unit($font-size) /  strip-unit($baseline);
+// 	$lines:ceil( $raw-line ); 
+// 	$line-height:  ( $baseline * $lines ) / $font-size * 1em;
+// 	font-size: $font-size/$base-font-size * 1em;
+// 	@if($parent-level > 0){
+// 		$line-height:  ( $baseline * $lines ) / ms($font-level) * 1em;
+// 		// @debug $font-size "fontsize";
+// 	}
+// 	line-height: $line-height;
+// 	// @debug "lines" $lines;
+// 	// @debug "line-height: " $line-height/$lines;
+// 	margin-top: $margin-top * $line-height/$lines;
+// 	margin-bottom: $margin-bottom *  $line-height/$lines;
+// }
