@@ -1,0 +1,398 @@
+.switch-input-space {
+    @extend .input-space;
+    white-space: nowrap;
+    display: table;
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+    .with-underline {
+        border-bottom: 1px dotted color( rebrand-color($black, 3), 20);
+    }
+    .switch {
+        display: table-cell;
+        width: 1%;
+    }
+}
+
+.switch-value {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 0 0 .75rem;
+    margin: 0;
+    white-space: normal;
+    background-color: transparent;
+    color: fontcolor($black);
+    @include font-slab;
+    @include baseline-font(1);
+}
+
+// Container class
+.switch {
+    @include switch-container;
+}
+
+// <input> element
+.switch-input {
+    @include switch-input;
+}
+
+// <label> element
+.switch-paddle {
+
+    $switch-background-active: rebrand-color($select-color, 2);
+    @include switch-paddle;
+    border: 2px solid grey(30);
+    background-image: url("../img/billie-holiday.png");
+    box-sizing: content-box;
+    margin-top:.25em;
+    .large &{ margin-top:0;}
+    .small &{ margin-top:.5em;}
+    .tiny &{ margin-top:1em;}
+}
+
+.switch-input {
+    &:focus + .switch-paddle {
+        -webkit-box-shadow: inset 0px 0px 10px 2px rebrand-color($primary-color, 2);
+        -moz-box-shadow: inset 0px 0px 10px 2px rebrand-color($primary-color, 2);
+        box-shadow: inset 0px 0px 10px 2px rebrand-color($primary-color, 2);
+    }
+    &:focus + .switch-paddle:after {
+        -webkit-box-shadow: 0px 0px 10px 2px rebrand-color($primary-color, 2);
+        -moz-box-shadow: 0px 0px 10px 2px rebrand-color($primary-color, 2);
+        box-shadow: 0px 0px 10px 2px rebrand-color($primary-color, 2);
+    }
+}
+
+// Base label text styles
+%switch-text {
+    @include switch-text;
+}
+
+// Active label text styles
+.switch-active {
+    @extend %switch-text;
+    @include switch-text-active;
+    left: 10%;
+}
+
+// Inactive label text styles
+.switch-inactive {
+    @extend %switch-text;
+    @include switch-text-inactive;
+    right: 10%;
+}
+
+// Switch sizes
+.switch.tiny {
+    @include switch-size(rem-calc(10), 3rem, $switch-height-tiny, 1rem, $switch-paddle-offset);
+}
+
+.switch.small {
+    @include switch-size(rem-calc(12), 3.5rem, $switch-height-small, 1.25rem, $switch-paddle-offset);
+}
+
+.switch.large {
+    @include switch-size(rem-calc(16), 5rem, $switch-height-large, 2rem, $switch-paddle-offset);
+}
+
+.switch-active i.fa-holder:before {
+    .radio & {
+        content: "\f058";
+    }
+    .checkbox & {
+        content: "\f00c";
+    }
+}
+
+.switch-inactive i.fa-holder:before {
+    .x-vixible &, .checkbox.x-vixible & {
+        content: "\f00d";
+    }
+    .radio.x-vixible & {
+        content: "\f057";
+    }
+}
+
+.switch.radius, .switch.checkbox {
+    .switch-paddle {
+        border-radius: $global-border-radius;
+    }
+    .switch-paddle:after {
+        border-radius: $global-border-radius * .75;
+    }
+}
+
+.switch.round, .switch.radio {
+    .switch-paddle, .switch-paddle:after {
+        border-radius: $global-border-round;
+    }
+}
+
+%switch-paddle-disabled {
+    background: grey(30) url("../img/subtlenet2.png") repeat;
+    border: 2px solid grey(10);
+    box-sizing: content-box;
+}
+
+%switch-text-disabled {
+    color: grey(30);
+}
+
+%switch-nob-disabled {
+    background-color: grey(10);
+}
+
+.switch.disabled {
+    .switch-paddle {
+        @extend %switch-paddle-disabled;
+        @extend %switch-text-disabled;
+        &:after {
+            @extend %switch-nob-disabled;
+        }
+    }
+}
+
+.switch-input[disabled]~.switch-paddle {
+    @extend %switch-paddle-disabled;
+    @extend %switch-text-disabled;
+    &:after {
+        @extend %switch-nob-disabled;
+    }
+}
+
+.switch.value-switch {
+    .switch-active {
+        color: fontcolor($real-black);
+    }
+    .switch-inactive {
+        color: fontcolor($black, 'light');
+    }
+    .switch-active, .switch-inactive {
+        z-index: 100;
+    }
+    input + label > .switch-active {
+        display: block;
+    }
+    input:checked + label > .switch-inactive {
+        color: fontcolor($real-black);
+        display: block;
+    }
+    input:checked + label > .switch-active {
+        color: fontcolor($black, 'light');
+    }
+    .switch-paddle, input:checked .switch-paddle {
+        background-color: rebrand-color($primary-color, 2);
+    }
+    .switch-active {}
+    .switch-inactive {}
+}
+
+.switch {
+    &.switch-2x, &.switch-4x {
+        .switch-active {
+            left: .25em;
+        }
+        .switch-inactive {
+            right: .25em;
+        }
+    }
+    &.switch-2x {
+        .switch-paddle {
+            width: 7em;
+        }
+        .switch-paddle::after {
+            width: 3em;
+        }
+        input:checked ~ .switch-paddle::after {
+            left: 3.75em;
+        }
+        .switch-active, .switch-inactive {
+            width: 3em;
+            text-align: center;
+        }
+    }
+    &.switch-4x {
+        .switch-paddle {
+            width: 15em;
+        }
+        .switch-paddle::after {
+            width: 7em;
+        }
+        input:checked ~ .switch-paddle::after {
+            left: 7.75em;
+        }
+        .switch-active, .switch-inactive {
+            width: 7em;
+            text-align: center;
+        }
+    }
+}
+.group-switch{
+    background-color: rebrand-color($select-color, 2);
+    border: 2px solid grey(30);
+    background-image: url("../img/billie-holiday.png");
+    box-sizing: content-box;   
+    width: auto;
+    height: 2rem;
+    transition: all 0.25s ease-out;
+    border-radius: 0;
+    color: inherit;
+    font-weight: inherit;
+    display: inline-block;
+  .switch-position{
+    display: inline-block;
+  }  
+  .switch-input{
+    opacity: 0;
+    position: absolute;
+  }  
+  .switch-paddle{
+    border: 0 transparent none;
+    background-color: transparent;
+    &:after{
+      width: 2.75em;
+      opacity: 0;
+      left:.25em;
+    }
+  }
+  input:checked + .switch-paddle:after{ opacity:1; left:.25em;}
+   .switch-active, .switch-inactive {
+        z-index: 100;
+    }
+}
+
+/**
+* Switch (Foundation Override): 
+* `.switch` - Switches are a more visible and more touchable versions of checkbox and radio buttons. 
+*  ADD `.x-visible` to show the x when it is shut off. <h5 class="warning">( !! WARNING !! Updated HTML and Styles From Ver 1)</h5>
+* 
+*   @example
+*   <h3>Plain switch with `.disabled` on the input</h3>
+*   <div class="switch-input-space  row">
+*   <div class="switch">
+*   <input class="switch-input" id="yes-no-1" disabled type="checkbox" name="exampleSwitch">
+*   <label class="switch-paddle" for="yes-no-1">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true">Yes</span>
+*   <span class="switch-inactive" aria-hidden="true">No</span>
+*   </label>
+*   </div>
+*   <label  class="switch-value" for="yes-no-1">Yes or No Question</label>
+*   </div>
+*   <div class="row group-divide">
+*   <h3>Radio Buttons should use `.round` or `.radio` modifier</h3>
+*   <p>You can make a radio with eiither placing the `.round` or `.radio`.  If you want control over the positive and negative position use `.round`.  Use `.radio` to set it to the standard icon in the positive position</p>
+*   <div class="row">
+*   <div class="switch-input-space column small-6">
+*   <div class="switch round">
+*   <input class="switch-input" id="yes-no-round" type="radio" name="radio-switch">
+*   <label class="switch-paddle" for="yes-no-round">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true"><i class="fa fa-check-circle-o"></i></span>
+*   <span class="switch-inactive" aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+*   </label>
+*   </div>
+*   <label  class="switch-value" for="yes-no-round">Radio button made with `.round`</label>
+*   </div>
+*   <div class="switch-input-space column small-6">
+*   <div class="switch radio">
+*   <input class="switch-input" id="yes-no-radio" type="radio" name="radio-switch">
+*   <label class="switch-paddle" for="yes-no-radio">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true"><i class="fa fa-holder"></i></span>
+*   <span class="switch-inactive" aria-hidden="true"><i class="fa fa-holder"></i></span>
+*   </label>
+*   </div>
+*   <label  class="switch-value" for="yes-no-radio">Radio button made with `.radio`</label>
+*   </div>
+*   </div>
+*   </div>
+*   <div class="row group-divide">
+*   <h3>Checkboxes should use `.radius`, `.checkbox`, no modifiers</h3>
+*   <p>You can make a checkbox with eiither placing the `.checkbox` or `.radius`.  If you want control over the positive and negative position use `.radius`.  Use `.checkbox` to set it to the standard icon in the positive position</p>
+*   <div class="row">
+*   <div class="switch-input-space column small-6">
+*   <div class="switch radius">
+*   <input class="switch-input" id="radius-checkbox" type="checkbox" value="true">
+*   <label class="switch-paddle" for="radius-checkbox">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true"><i class="fa fa-check-circle-o"></i></span>
+*   <span class="switch-inactive" aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+*   </label>
+*   </div>
+*   <label  class="switch-value" for="radius-checkbox">Checkbox button made with `.radius`</label>
+*   </div>
+*   <div class="switch-input-space column small-6">
+*   <div class="switch checkbox">
+*   <input class="switch-input" id="checkbox-checkbox"  type="checkbox" value="false">
+*   <label class="switch-paddle" for="checkbox-checkbox">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true"><i class="fa fa-holder"></i></span>
+*   <span class="switch-inactive" aria-hidden="true"><i class="fa fa-holder"></i></span>
+*   </label>
+*   </div>
+*   <label  class="switch-value" for="checkbox-checkbox">Checkbox button made with `.checkbox`</label>
+*   </div>
+*   </div>
+*   <div class="row group-divide"><h3>Value or Unit Swithcers</h3>
+*   <p>Value Switchers should use `.value-switch` so both sides of the switcher are always visible and stay colored.</p>
+*   <label  class="switch-value" for="checkbox-value-switch2">`.value-switch` gives room to have values on the switch that are always visible but can be toggled.</label>
+*   </div>
+*   <div class="switch-input-space column small-12">
+*   <div class="switch value-switch">
+*   <input class="switch-input" id="checkbox-value-switch"  type="checkbox" value="false">
+*   <label class="switch-paddle" for="checkbox-value-switch">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true"><i class="fa fa-thumbs-up"></i></span>
+*   <span class="switch-inactive" aria-hidden="true"><i class="fa fa-thumbs-down"></i></span>
+*   </label>
+*   </div>
+*   </div>
+*   <div class="switch-input-space column small-12">
+*   <div class="switch value-switch switch-2x radius">
+*   <input class="switch-input" id="checkbox-value-switch-radius"  type="checkbox" value="false">
+*   <label class="switch-paddle" for="checkbox-value-switch-radius">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true">US</span>
+*   <span class="switch-inactive" aria-hidden="true">SI</span>
+*   </label>
+*   </div>
+*   <label class="switch-value" for="checkbox-value-switch-radius">You expand the switch area with switch-2x and switch-4x</label>
+*   </div>
+*   <div class="switch-input-space column small-12">
+*   <div class="switch value-switch switch-4x round">
+*   <input class="switch-input" id="checkbox-value-switch-round"  type="checkbox" value="false">
+*   <label class="switch-paddle" for="checkbox-value-switch-round">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true">Inches</span>
+*   <span class="switch-inactive" aria-hidden="true">Centimeters</span>
+*   </label>
+*   </div>
+*   <label class="switch-value" for="checkbox-value-switch-round">You can also apply the `.radius` and `.round` to change the style
+*   </label>
+*   </div>
+*   </div>
+*   <div class="switch-input-space column small-12">
+*   <div class="group-switch"><div class="switch-position">
+*   <input class="switch-input" id="group-switch0"  type="checkbox" value="false">
+*   <label class="switch-paddle" for="group-switch0">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true">Unit</span>
+*   <span class="switch-inactive" aria-hidden="true">Unit</span>
+*   </label></div><div class="switch-position">
+*   <input class="switch-input" id="group-switch1"  type="checkbox" value="false">
+*   <label class="switch-paddle" for="group-switch1">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true">Unit</span>
+*   <span class="switch-inactive" aria-hidden="true">Unit</span>
+*   </label></div><div class="switch-position">
+*   <input class="switch-input" id="group-switch2"  type="checkbox" value="false">
+*   <label class="switch-paddle" for="group-switch2">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true">Unit</span>
+*   <span class="switch-inactive" aria-hidden="true">Unit</span>
+*   </label></div>
+*   </div>
+*   <label class="switch-value" for="checkbox-value-switch-round">You can also apply the `.radius` and `.round` to change the style
+*   </label>
+*   </div>
+**/

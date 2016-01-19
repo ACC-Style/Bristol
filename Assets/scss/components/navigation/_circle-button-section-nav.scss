@@ -1,0 +1,133 @@
+/**
+* Circle Section Nav (forward & back):
+* `.section-nav with .forward or .back` - A wizard-like page nav. Alter the position of the circle button by adding  `.forward` or `.back` to the `.section-nav` container.
+* 
+*   @example
+*	<div class="page with-group-sections"><div class="section-nav back">
+*		<a>
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Back</div>
+*		</a>
+*	</div>
+*	<div class="page-wrapper">
+*	<section class="group-section">
+*		<h1 class="with-underline">Page Title </h1>
+*		<p> hello I am some content on this page</p>
+*	</div>
+*	</section>
+*	<div class="section-nav forward">
+*		<a>
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Forward</div>
+*		</a>
+*	</div></div>
+*/
+/**
+* Circle Section Nav (Disabled):
+* `.section-nav with .disabled` - Adding `.disabled` to the `.section-nav` container with style the circle nav accordingly.
+* 
+*   @example
+*	<div class="page"><div class="section-nav back">
+*		<a>
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Back</div>
+*		</a>
+*	</div>
+*	<div class="page-wrapper">
+*	<section class="group-section">
+*		<h1 class="with-underline">Page Title (Disabled)</h1>
+*		<p> Somethig on this page has disabled forward navigation</p>
+*	</div>
+*	</section>
+*	<div class="section-nav forward disabled">
+*		<a>
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Forward</div>
+*		</a>
+*	</div></div>
+*/
+
+$circle-radius:25px;
+$circle-color:color(rebrand-color($primary-color,3),80);
+$circle-color-hover:color(rebrand-color($primary-color,3),100);
+$circle-darktext:$global-default-dark-text;
+$circle-lighttext:$global-default-light-text;
+
+// Override Var
+$circle-lighttext:#fff;
+.section-nav{
+	width:100%;
+	display: block;
+	position: relative;
+	border:0px solid grey(30);
+	.split-content &{
+		margin-left: -1.07143rem; 
+		margin-right: -1.07143rem;
+		padding-left: 1.07143rem; 
+		padding-right: 1.07143rem;
+	}
+
+	.text{@extend %h4; padding-top:$circle-radius * .25; padding-bottom:$circle-radius * .25; }
+	.circle{
+		position:absolute;
+		
+		width: $circle-radius*2;
+		height: $circle-radius*2;
+		background: $circle-color;
+		-moz-border-radius: $circle-radius;
+		-webkit-border-radius: $circle-radius;
+		border-radius: $circle-radius;
+		border:4px solid color-contrast($circle-color,$circle-darktext,$circle-lighttext);
+		-webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.61);
+		-moz-box-shadow: 	2px 2px 5px 0px rgba(0,0,0,0.61);
+		box-shadow: 		2px 2px 5px 0px rgba(0,0,0,0.61);
+		i{
+			font-size: $circle-radius;
+			line-height:1em;
+		 	margin:($circle-radius - 4px)/2;
+		 	color:color-contrast($circle-color,$circle-darktext,$circle-lighttext);
+		 	&:before{vertical-align: bottom;}
+		}
+
+	}
+	&.forward{
+		border-top-width: 1px;
+		background: url('../img/billie-holiday.png') repeat top right,url('../img/top-shade.png') repeat-x top right;
+		margin-top: $circle-radius *1.5;
+		border-top-width: 2px;
+		@include fa-holder($fa-var-chevron-right,'dynamic');
+		.circle{right:$circle-radius/2;bottom: $circle-radius/3;
+			i{margin:($circle-radius - 4px)/2 ($circle-radius+1)/2;}
+		}
+		.text{ padding-right:$circle-radius*3; text-align: right;}
+	}
+	&.back{
+		background:url('../img/billie-holiday.png') repeat top right,url('../img/bottom-shade.png') repeat-x bottom right;
+		margin-bottom: $circle-radius *1.5;
+		border-bottom-width: 2px;
+		@include fa-holder($fa-var-chevron-left,'dynamic');
+		.text{ padding-left:$circle-radius*3; text-align: left;}
+		.circle{left:$circle-radius/2;top: $circle-radius/3;}
+	}
+	&:hover .circle{
+			background: $circle-color-hover;
+			border:4px solid color-contrast($circle-color-hover,$circle-darktext,$circle-lighttext);
+			-webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.45);
+			-moz-box-shadow: 	2px 2px 2px 0px rgba(0,0,0,0.45);
+			box-shadow: 		2px 2px 2px 0px rgba(0,0,0,0.45);
+			i{color:color-contrast($circle-color-hover,$circle-darktext,$circle-lighttext)}
+		}
+	&.disabled{cursor:context-menu;
+		.text{color: grey(40);}
+		.circle, &.hover.circle{
+			-webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.20);
+			-moz-box-shadow: 	1px 1px 1px 0px rgba(0,0,0,0.20);
+			box-shadow: 		1px 1px 1px 0px rgba(0,0,0,0.20);
+			background-color: grey(40);
+			background-image:url("../img/empty_diamond.png");
+		}
+
+
+	}
+
+}
