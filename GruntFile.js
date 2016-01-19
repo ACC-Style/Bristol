@@ -228,7 +228,7 @@ module.exports = function(grunt){
 			},
 			index:{
 			files: [ 'assets/scss/index.scss'],
-			tasks: [ 'sass:vendor','styledown:base','copy:INTERNAL']	
+			tasks: [ 'sass:vendor','sass:dist','cssmin','styledown:base','copy:INTERNAL']	
 			}
 	    },
 		clean: {
