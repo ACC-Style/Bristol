@@ -16,7 +16,7 @@
 	<body>
     <a class="hide-for-medium" onClick="$('.mobile-offcanvas-wrapper .split-layout').toggleClass('navOn')" style="display: block;width: 100%;text-align: center;color: white;background-color: #00386b;"><i class="fa fa-bars"></i> Menu</a>
     {% include 'sections/header' %}
-
+ <div class="sticky-holder"></div>
     <div class="mobile-offcanvas-wrapper">
       <section class="split-layout fill-page-height medium navOn">
         <aside class="split-sidebar">
@@ -25,6 +25,7 @@
         <article class="split-content"  data-bind="page: {id:'content', role: 'start'}">
           <div class="page-wrapper">
             <div class="content-padding">
+            <div class="shrink-waypoint"></div>
               {% include "pages/introduction" %}
               {% include "pages/framework" %}
               {% include "pages/branding" %}
