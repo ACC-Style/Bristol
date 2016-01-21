@@ -56,12 +56,13 @@
 
 
 .label-holder{
+	@include baseline-font(0,.5,.25);
 	label, .label,.text{
     @include font-bold();
-    @include baseline-font(0);
+    font-size: 1em;
   }
   white-space: nowrap;
-  @include baseline-font(0,.5,.25);
+  
   position: relative;
   background-color:transparent;
   color:fontcolor($black);
@@ -80,7 +81,7 @@
 	margin-left:-1rem;
 	margin-right:-1rem;
 	color:grey(80);
-	i.fa-holder-dynamic{ position: absolute;top:0;left:0;font-size: .75rem;}
+	i.fa-holder-dynamic{ position: absolute;top:0;left:0;@include baseline-font(-1);}
 }
 
 %visible-required-icon{

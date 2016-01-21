@@ -28,7 +28,12 @@
 // Container class
 .switch {
     @include switch-container;
+    margin-top:.5em;
+    &.large{ margin-top:.25em;}
+    &.small{ margin-top:.5em;}
+    &.tiny{ margin-top:1em;}
 }
+
 
 // <input> element
 .switch-input {
@@ -37,16 +42,11 @@
 
 // <label> element
 .switch-paddle {
-
     $switch-background-active: rebrand-color($select-color, 2);
     @include switch-paddle;
     border: 2px solid grey(30);
     background-image: url("../img/billie-holiday.png");
     box-sizing: content-box;
-    margin-top:.25em;
-    .large &{ margin-top:0;}
-    .small &{ margin-top:.5em;}
-    .tiny &{ margin-top:1em;}
 }
 
 .switch-input {

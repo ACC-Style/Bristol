@@ -1,77 +1,135 @@
-.question-grid-based{
-
-  @include grid-row($behavior: nest);
-	.label-holder,.input-holder,.value-holder{
-    @include grid-column(1 of 2);
-	}
-
-  &.split_1of5{
-    .label-holder{ @include grid-column(1 of 5); }
-    .input-holder,.value-holder{ @include grid-column(4 of 5); }
-  }
-  &.split_2of5{
-    .label-holder{ @include grid-column(2 of 5); }
-    .input-holder,.value-holder{ @include grid-column(3 of 5); }
-  }
-  &.split_3of5{
-    .label-holder{ @include grid-column(3 of 5); }
-    .input-holder,.value-holder{ @include grid-column(2 of 5); }
-  }
-  &.split_4of5{
-    .label-holder{ @include grid-column(4 of 5); }
-    .input-holder,.value-holder{ @include grid-column(1 of 5); }
-  }
-
-	.message-holder,.hint{
-		@include grid-row();  
-	}
-	.label-holder{
-		text-align: left;
-	}
-  .input-holder{
-    .message-holder{text-align: right;}
+.question-grid-based {
+    @include grid-row($behavior: nest);
+    .label-holder, .input-holder, .value-holder {
+        @include grid-column(1 of 2);
     }
-  &.center-alignment .label-holder{text-align: right;}
-  &.center-alignment   .input-holder{
-    .message-holder,.hint{text-align: left;}
+    &.split_1of5 {
+        .label-holder {
+            @include grid-column(1 of 5);
+        }
+        .input-holder, .value-holder {
+            @include grid-column(4 of 5);
+        }
     }
-  .label-holder .text{ padding-right: 0;}
-  &.required .label-holder .text{padding-right: 1rem;}
-
+    &.split_2of5 {
+        .label-holder {
+            @include grid-column(2 of 5);
+        }
+        .input-holder, .value-holder {
+            @include grid-column(3 of 5);
+        }
+    }
+    &.split_3of5 {
+        .label-holder {
+            @include grid-column(3 of 5);
+        }
+        .input-holder, .value-holder {
+            @include grid-column(2 of 5);
+        }
+    }
+    &.split_4of5 {
+        .label-holder {
+            @include grid-column(4 of 5);
+        }
+        .input-holder, .value-holder {
+            @include grid-column(1 of 5);
+        }
+    }
+    .message-holder, .hint {
+        @include grid-row();
+    }
+    .label-holder {
+        text-align: left;
+    }
+    .input-holder {
+        .message-holder {
+            text-align: right;
+        }
+    }
+    &.center-alignment .label-holder {
+        text-align: right;
+    }
+    &.center-alignment .input-holder {
+        .message-holder, .hint {
+            text-align: left;
+        }
+    }
+    .label-holder .text {
+        padding-right: 0;
+    }
+    &.required .label-holder .text {
+        padding-right: 1rem;
+    }
+    &.instructions-left {
+        display: block;
+    }
+    &.instructions-right {
+        display: block;
+    }
 }
-.question-group.fluid-align{
-  display: table !important;
-  .question-grid-based{
-    display: table-row !important;
-    .label-holder,.input-holder{
-      display:table-cell !important;
-      vertical-align: top;
-      float:none;
-    }
-    .label-holder{width:1%; padding-top: .89rem;padding-right:0;}
-    .input-holder{width:auto;}
-  }
-
+.indent-1 .label-holder .text:before {
+    content: ">";
+    display: inline-block;
 }
+
+.indent-2 .label-holder .text:before {
+    content: ">>";
+    display: inline-block;
+}
+
+.indent-3 .label-holder .text:before {
+    content: ">>>";
+    display: inline-block;
+}
+
+
+.question-group.fluid-align {
+    display: table !important;
+    .question-grid-based {
+        display: table-row !important;
+        .label-holder, .input-holder {
+            display: table-cell !important;
+            vertical-align: top;
+            float: none;
+        }
+        .label-holder {
+            width: 1%;
+            padding-top: .89rem;
+            padding-right: 0;
+        }
+        .input-holder {
+            width: auto;
+        }
+    }
+}
+
 // Seq Numbers are a special NCDR paradym.
-.label-holder,.message-holder,.hint{
-	 .seq{
-		@include baseline-font(-2,0,0);
-		color: rebrand-color($primary-color,2);
-		vertical-align: top;
-		display: inline-block;
-		margin-top: -.75em;
-		margin-left: -.35em;
-		&:hover{color:mix(rebrand-color($primary-color,2),$black); text-decoration: underline;}
-	}
+.label-holder, .message-holder, .hint {
+    .seq {
+        @include baseline-font(-2, 0, 0);
+        color: rebrand-color($primary-color, 2);
+        vertical-align: top;
+        display: inline-block;
+        margin-top: -.75em;
+        margin-left: -.35em;
+        &:hover {
+            color: mix(rebrand-color($primary-color, 2), $black);
+            text-decoration: underline;
+        }
+        .seq-number-hidden & {
+            display: none;
+        }
+    }
 }
+
+
 /**
 * Questions Grid Based:
 * `.question-grid-based` - This is a variation of the question block used by NCDR. `.label-holder &amp; .input-holder` are used as containters so you can add class grid sizer to the  `split_1of5, split_2of5, split_3of5, split_4of5` to control the size of the label and input space.
 * 
 *   @example
 * <h5 class="highlighted">Default</h5>
-* <div class="question-grid-based required">
+* <div class="question-grid-based required indent-3 ">
 *   <div class="label-holder">
 *     <label for="">
 *       <span class="text">Question Title<a class="seq">1234</a></span>
@@ -172,6 +230,7 @@
 * </div>
 */
 
+
 /**
 * Questions Grid Based (Alignment Modifier):
 * `.question-grid-based.center-alignment` - The default alignment for the labels are to the left but to align the label and hints to the center just add `.center-alignment` to the question container and it will center align the inputs and labels.
@@ -203,6 +262,7 @@
 *   </div>
 * </div>
 */
+
 
 /**
 * Questions Group Fluid Align (Containter):

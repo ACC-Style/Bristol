@@ -2,8 +2,28 @@
     // default sizing is elements are inside of a small-6
     // &.span-1-col{}
     // default setting is label-position-left
+    .label-holder .text{white-space:normal;}
+    .hint{
+        border-top: 1px solid #e6e6e6;
+        padding: .25rem .75rem;
+        background-color: color(rebrand-color($primary-color,2),10);
+        @include grid-row($behavior: nest);
+        max-width: 100%;
+        clear:both;
+    }
+    .label-holder, .input-holder{
+        .hint{
+            margin:0;
+            border-top: 0 none;
+            padding: 0;
+            background-color: transparent;
+        }
+    }
     @include grid-row($behavior: nest);
-    .label-holder, .input-holder{@include grid-column(12);}
+    .label-holder, .input-holder{
+      @include grid-column(12);
+      .hint{line-height:1.25em;}
+    }
 
     @include bp(md){
        &.label-position-left , &.label-position-right{
@@ -16,22 +36,22 @@
       } 
       &.span-3-col{
         .label-holder{ @include grid-column(1 of 6); }
-        .input-holder{ @include grid-column(1 of 6); }  
+        .input-holder{ @include grid-column(5 of 6); }  
       }       
     }
     }
      @include bp(lg){
        &.label-position-left , &.label-position-right{
       .label-holder, .input-holder{ display:inline-block;} 
-      .label-holder{ @include grid-column(1 of 3); }
-      .input-holder{ @include grid-column(2 of 3); }  
+      .label-holder{ @include grid-column(3 of 6); }
+      .input-holder{ @include grid-column(3 of 6); }  
       &.span-2-col{
-        .label-holder{ @include grid-column(1 of 6); }
-        .input-holder{ @include grid-column(5 of 6); }  
+        .label-holder{ @include grid-column(3 of 12); }
+        .input-holder{ @include grid-column(9 of 12); }  
       } 
       &.span-3-col{
-        .label-holder{ @include grid-column(1 of 9); }
-        .input-holder{ @include grid-column(8 of 9); }  
+        .label-holder{ @include grid-column(3 of 18); }
+        .input-holder{ @include grid-column(15 of 18); }  
       }       
     }
     }
@@ -59,105 +79,366 @@
 
       }
     }
+%font-awesome{    
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  } 
+&.indent-1,&.indent-2,&.indent-3{
+  .label-holder{padding-left:0;}
+}  
+&.indent-1,&.indent-2{ .label-holder .text{color: grey(75); }}  
+&.indent-3{ .label-holder .text{color: grey(70); }}    
+&.indent-1,&.indent-2, &.indent-3 { .label-holder .text:before{ color: grey(20);@extend %font-awesome; content:"\f178"; letter-spacing: .25em;  } }   
+&.indent-1 .label-holder{padding-left:.25rem;} 
+&.indent-2 .label-holder{padding-left:.5rem;} 
+&.indent-3 .label-holder{padding-left:1rem;} 
+
+&.indent-1 .label-holder .text:before{} 
+&.indent-2 .label-holder .text:before{ content:"\f178\f054";} 
+&.indent-3 .label-holder .text:before,{content:"\f178\f054\f054";} 
+&.indent-1 .label-holder .hint{padding-left:1.25rem;} 
+&.indent-2 .label-holder .hint{padding-left:1.5rem;} 
+&.indent-3 .label-holder .hint{padding-left:1.75rem;} 
+}
+.label-holder,.message-holder,.hint{
+   .seq{
+    @include baseline-font(-2,0,0);
+    color: rebrand-color($primary-color,2);
+    vertical-align: top;
+    display: inline-block;
+    margin-top: -.75em;
+    margin-left: -.35em;
+    &:hover{color:mix(rebrand-color($primary-color,2),$black); text-decoration: underline;}
+  }
+}
+.question-group.fluid-align{
+  display: table !important;
+  width:100%;
+  .question-grid-based{
+    display: table-row !important;
+    .label-holder,.input-holder{
+      display:table-cell !important;
+      vertical-align: top;
+      float:none  !important;
+      width:auto;
+    }
+    .label-holder{padding-top: .89rem; padding-right:0;}
+    .input-holder{ min-width:20%;}
+  }
 
 }
+
+
+
+    .input-holder{
+      .group-3up &,.group-2up &,.group-1up &{
+        @include grid-column-row();
+      }
+    }
+    .input-space{
+      .group-1up & .group-2up &, .group-3up &{ @include grid-column(1 of 1, 0); }
+      @include bp(md){ 
+        .group-2up &, .group-3up &{ @include grid-column(1 of 2, 0); }
+      };
+      @include  bp(lg){
+       .group-3up &{ @include grid-column(1 of 3, 0);}
+      };
+     
+
+    }
+    // .input-spacer::nth-child(1){ clear:left;}
+  
+
 
 /**
 * Questions Grid Based:
 * `.question-grid-based` - This is a variation of the question block used by NCDR. `.label-holder &amp; .input-holder` are used as containters so you can add class grid sizer to the  `split_1of5, split_2of5, split_3of5, split_4of5` to control the size of the label and input space.
 * 
 *   @example
-* <h5 class="highlighted">Default</h5>
-* <div class='row'><div class='column small-6'><div class="question-grid-based required label-position-left ">
-*   <div class="label-holder">
-*     <label for="">
-*       <span class="text">Question Title<a class="seq">1234</a></span>
-*       <span class="required-holder">
-*         <i class="fa fa-holder-dynamic"></i>
-*       </span>
-*     </label>
-*   <div class="hint">This is some hint text</div>
-*   </div>
-*   <div class="input-holder">
-*      <div class="input-space">
-*       <input type="text"/>
-*     </div>
-*   <div class="message-holder">
-*       <small class="error"><i class="fa fa-holder"></i> Error message</small>
-*       <small class="warning"><i class="fa fa-holder"></i> Warning message</small>
-*       <small class="data"><i class="fa fa-holder"></i> Data message</small>
-*   </div>
-*   <div class="hint">This is some hint text</div>
-*   </div>
-* </div></div></div>
-* <h5 class="highlighted">label-position-top</h5>
-* <div class='row'><div class='column small-12 '><div class="question-grid-based required label-position-top">
-*   <div class="label-holder">
-*     <label for="">
-*       <span class="text">Question Title<a class="seq">1234</a></span>
-*       <span class="required-holder">
-*         <i class="fa fa-holder-dynamic"></i>
-*       </span>
-*     </label>
-*   <div class="hint">This is some hint text</div>
-*   </div>
-*   <div class="input-holder">
-*      <div class="input-space">
-*       <input type="text"/>
-*     </div>
-*   <div class="message-holder">
-*       <small class="error"><i class="fa fa-holder"></i> Error message</small>
-*       <small class="warning"><i class="fa fa-holder"></i> Warning message</small>
-*       <small class="data"><i class="fa fa-holder"></i> Data message</small>
-*   </div>
-*   <div class="hint">This is some hint text</div>
-*   </div>
-* </div></div></div>
-* <h5 class="highlighted">label-position-right span-2-col</h5>
-* <div class='row'><div class='column small-12 '><div class="question-grid-based required label-position-right span-2-col">
-*   <div class="label-holder">
-*     <label for="">
-*       <span class="text">Question Title<a class="seq">1234</a></span>
-*       <span class="required-holder">
-*         <i class="fa fa-holder-dynamic"></i>
-*       </span>
-*     </label>
-*   <div class="hint">This is some hint text</div>
-*   </div>
-*   <div class="input-holder">
-*      <div class="input-space">
-*       <input type="text"/>
-*     </div>
-*   <div class="message-holder">
-*       <small class="error"><i class="fa fa-holder"></i> Error message</small>
-*       <small class="warning"><i class="fa fa-holder"></i> Warning message</small>
-*       <small class="data"><i class="fa fa-holder"></i> Data message</small>
-*   </div>
-*   <div class="hint">This is some hint text</div>
-*   </div>
-* </div></div></div>
-* <h5 class="highlighted">label-position-right span-2-col</h5>
-* <div class='row'><div class='column small-12 '><div class="question-grid-based required label-position-right span-2-col single-switch">
-*   <div class="label-holder">
-*     <label for="">
-*       <span class="text">Question Title<a class="seq">1234</a></span>
-*       <span class="required-holder">
-*         <i class="fa fa-holder-dynamic"></i>
-*       </span>
-*     </label>
-*   <div class="hint">This is some hint text</div>
-*   </div>
-*   <div class="input-holder">
-*      <div class="input-space ">
-*    <div class="switch large sg">
-*      <input class="switch-input sg" id="largeSwitch" type="checkbox" name="exampleSwitch">
-*      <label class="switch-paddle sg" for="largeSwitch">
-*        <span class="show-for-sr sg">Show Large Elephants</span>
-*      </label>
-*    </div>
+* <div class="row">
+*   <h5 class="highlighted">Default</h5>
+*   <div class="column small-12 end">
+*     <div class="question-grid-based span-2-col required label-position-left">
+*       <div class="label-holder">
+*         <label for="">
+*           <span class="text">Question Title
+*             <a class="seq">1234</a>
+*           </span>
+*           <span class="required-holder">
+*             <i class="fa fa-holder-dynamic"></i>
+*           </span>
+*         </label>
+*         <div class="hint">This is some hint text</div>
+*       </div>
+*       <div class="input-holder">
+*         <div class="input-space">
+*           <input type="text">
+*         </div>
+*         <div class="message-holder">
+*           <small class="error">
+*             <i class="fa fa-holder"></i>Error message</small>
+*           <small class="warning">
+*             <i class="fa fa-holder"></i>Warning message</small>
+*           <small class="data">
+*             <i class="fa fa-holder"></i>Data message</small>
+*         </div>
+*         <div class="hint">This is some hint text</div>
+*       </div>
 *     </div>
 *   </div>
-* </div></div></div>
+* </div>
+*/
+/**
+* Indent Modifier:
+* `.indent-1` - children space themselves to show the relationship to the parent..
+* 
+*   @example
+* <div class="row">
+*   <h5 class="highlighted">Default</h5>
+*   <div class="column small-12 last">
+*     <div class="question-grid-based span-2-col required label-position-left indent-1">
+*       <div class="label-holder">
+*         <label for="">
+*           <span class="text">Question Indent 1
+*             <a class="seq">1234</a>
+*           </span>
+*           <span class="required-holder">
+*             <i class="fa fa-holder-dynamic"></i>
+*           </span>
+*         </label>
+*         <div class="hint">This is some hint text</div>
+*       </div>
+*       <div class="input-holder">
+*         <div class="input-space">
+*           <input type="text">
+*         </div>
+*         <div class="message-holder">
+*           <small class="error">
+*             <i class="fa fa-holder"></i>Error message</small>
+*           <small class="warning">
+*             <i class="fa fa-holder"></i>Warning message</small>
+*           <small class="data">
+*             <i class="fa fa-holder"></i>Data message</small>
+*         </div>
+*         <div class="hint">This is some hint text</div>
+*       </div>
+*     </div>
+*   </div>
+*   <div class="column small-12 last">
+*     <div class="question-grid-based span-2-col required label-position-left indent-2">
+*       <div class="label-holder">
+*         <label for="">
+*           <span class="text">Question Indent 2
+*             <a class="seq">1234</a>
+*           </span>
+*           <span class="required-holder">
+*             <i class="fa fa-holder-dynamic"></i>
+*           </span>
+*         </label>
+*         <div class="hint">This is some hint text</div>
+*       </div>
+*       <div class="input-holder">
+*         <div class="input-space">
+*           <input type="text">
+*         </div>
+*         <div class="message-holder">
+*           <small class="error">
+*             <i class="fa fa-holder"></i>Error message</small>
+*           <small class="warning">
+*             <i class="fa fa-holder"></i>Warning message</small>
+*           <small class="data">
+*             <i class="fa fa-holder"></i>Data message</small>
+*         </div>
+*         <div class="hint">This is some hint text</div>
+*       </div>
+*     </div>
+*   </div>
+*   <div class="column small-6">
+*     <div class="question-grid-based required label-position-left indent-3">
+*       <div class="label-holder">
+*         <label for="">
+*           <span class="text">Question Indent 3
+*             <a class="seq">1234</a>
+*           </span>
+*           <span class="required-holder">
+*             <i class="fa fa-holder-dynamic"></i>
+*           </span>
+*         </label>
+*         <div class="hint">This is some hint text</div>
+*       </div>
+*       <div class="input-holder">
+*         <div class="input-space">
+*           <input type="text">
+*         </div>
+*         <div class="message-holder">
+*           <small class="error">
+*             <i class="fa fa-holder"></i>Error message</small>
+*           <small class="warning">
+*             <i class="fa fa-holder"></i>Warning message</small>
+*           <small class="data">
+*             <i class="fa fa-holder"></i>Data message</small>
+*         </div>
+*         <div class="hint">This is some hint text</div>
+*       </div>
+*     </div>
+*   </div><div class="column small-6"></div>
+* </div>
 */
 
-
+/**
+* Repeating Switches Column Modifier:
+* `.group-3up` - special quesitons have repeating inputs like radio buttons ths controls how if the inputs will spread themselves into columns.
+* 
+*   @example
+* <div class="row">
+*    <div class="column small-12">
+*        <div class="question-grid-based required label-position-left span-2-col group-2up">
+*            <div class="label-holder">
+*              <label for="">
+*              <span class="text">Question Indent 3
+*              <a class="seq">1234</a>
+*          </span>
+*          <span class="required-holder">
+*              <i class="fa fa-holder-dynamic"></i>
+*          </span>
+*        </label>
+*      </div>
+*      <div class="input-holder">
+*         <div class="switch-input-space">
+*           <div class="switch radius">
+*              <input class="switch-input" id="radius-checkbox1" type="checkbox" value="true">
+*              <label class="switch-paddle" for="radius-checkbox1">
+*              <span class="show-for-sr">Do you like me?</span>
+*              <span class="switch-active" aria-hidden="true"><i class="fa fa-check-circle-o"></i></span>
+*              <span class="switch-inactive" aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+*             </label>
+*           </div>
+*           <label class="switch-value" for="radius-checkbox1">Random Label Length</label>
+*         </div>
+*         <div class="switch-input-space">
+*           <div class="switch radius">
+*             <input class="switch-input" id="radius-checkbox2" type="checkbox" value="true">
+*             <label class="switch-paddle" for="radius-checkbox2">
+*              <span class="show-for-sr">Do you like me?</span>
+*              <span class="switch-active" aria-hidden="true"><i class="fa fa-check-circle-o"></i></span>
+*              <span class="switch-inactive" aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+*             </label>
+*           </div>
+*           <label class="switch-value" for="radius-checkbox2">Random Label Length</label>
+*         </div>
+*         <div class="switch-input-space">
+*           <div class="switch radius">
+*             <input class="switch-input" id="radius-checkbox3" type="checkbox" value="true">
+*             <label class="switch-paddle" for="radius-checkbox3">
+*              <span class="show-for-sr">Do you like me?</span>
+*              <span class="switch-active" aria-hidden="true"><i class="fa fa-check-circle-o"></i></span>
+*              <span class="switch-inactive" aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+*             </label>
+*           </div>
+*           <label class="switch-value" for="radius-checkbox3">Random Label Length</label>
+*         </div>
+*         <div class="switch-input-space">
+*           <div class="switch radius">
+*             <input class="switch-input" id="radius-checkbox4" type="checkbox" value="true">
+*             <label class="switch-paddle" for="radius-checkbox4">
+*              <span class="show-for-sr">Do you like me?</span>
+*              <span class="switch-active" aria-hidden="true"><i class="fa fa-check-circle-o"></i></span>
+*              <span class="switch-inactive" aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+*             </label>
+*           </div>
+*           <label class="switch-value" for="radius-checkbox4">Random Label Length</label>
+*         </div>
+*         <div class="switch-input-space">
+*           <div class="switch radius">
+*             <input class="switch-input" id="radius-checkbox5" type="checkbox" value="true">
+*             <label class="switch-paddle" for="radius-checkbox5">
+*              <span class="show-for-sr">Do you like me?</span>
+*              <span class="switch-active" aria-hidden="true"><i class="fa fa-check-circle-o"></i></span>
+*              <span class="switch-inactive" aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+*             </label>
+*           </div>
+*           <label class="switch-value" for="radius-checkbox5">Random Label Length</label>
+*         </div>
+*         <div class="switch-input-space">
+*           <div class="switch radius">
+*             <input class="switch-input" id="radius-checkbox6" type="checkbox" value="true">
+*             <label class="switch-paddle" for="radius-checkbox6">
+*              <span class="show-for-sr">Do you like me?</span>
+*              <span class="switch-active" aria-hidden="true"><i class="fa fa-check-circle-o"></i></span>
+*              <span class="switch-inactive" aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+*             </label>
+*           </div>
+*           <label class="switch-value" for="radius-checkbox6">Random Label Length</label>
+*         </div>
+*      </div>
+*    </div>
+*   </div>
+* </div>
+**/
+/**
+* Fluid Question Group:
+* `.question-group.fluid-align` - A containter that will align the labels  to the longest label.
+* 
+*   @example
+*   <h5 class="highlighted">Default</h5>
+* <div class=" question-group fluid-align">
+*     <div class="question-grid-based span-2-col required label-position-left">
+*       <div class="label-holder">
+*         <label for="">
+*           <span class="text">Question Title  that is Longer
+*             <a class="seq">1234</a>
+*           </span>
+*           <span class="required-holder">
+*             <i class="fa fa-holder-dynamic"></i>
+*           </span>
+*         </label>
+*       </div>
+*       <div class="input-holder">
+*         <div class="input-space">
+*           <input type="text">
+*         </div>
+*         <div class="hint">This is some hint text</div>
+*       </div>
+*     </div>
+*     <div class="question-grid-based span-2-col required label-position-left">
+*       <div class="label-holder">
+*         <label for="">
+*           <span class="text">Title
+*             <a class="seq">1234</a>
+*           </span>
+*           <span class="required-holder">
+*             <i class="fa fa-holder-dynamic"></i>
+*           </span>
+*         </label>
+*       </div>
+*       <div class="input-holder">
+*         <div class="input-space">
+*           <input type="text">
+*         </div>
+*         <div class="hint">This is some hint text</div>
+*       </div>
+*     </div>
+*     <div class="question-grid-based span-2-col required label-position-left">
+*       <div class="label-holder">
+*         <label for="">
+*           <span class="text">Question Title
+*             <a class="seq">1234</a>
+*           </span>
+*           <span class="required-holder">
+*             <i class="fa fa-holder-dynamic"></i>
+*           </span>
+*         </label>
+*       </div>
+*       <div class="input-holder">
+*         <div class="input-space">
+*           <input type="text">
+*         </div>
+*         <div class="hint">This is some hint text</div>
+*       </div>
+*     </div>
+* </div>
+*/
