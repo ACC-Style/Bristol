@@ -1,5 +1,5 @@
-$score-bar-primary-color:$primary-color;
-$score-bar-secondary-color:rebrand-color($secondary-color,2);
+$score-bar-primary-color:rebrand-color($primary-color,2);
+$score-bar-secondary-color:mix($score-bar-primary-color,$secondary-color);
 $score-bar-size-unit:10px;
 $max-width:$global-width;
 
@@ -38,34 +38,37 @@ $max-width:$global-width;
     .small-fs-3x{font-size:2em;line-height:1em;}
     .small-fs-4x{font-size:2.5em;line-height:1em;}
     .small-fs-5x{font-size:3em;line-height:1em;}
-    .small-fs-6x{font-size:3.5em;line-height:1em;}
+    .small-fs-6x{font-size:4em;line-height:1em;}
     @include bp(md){
         .medium-fs-1x{font-size:1em;line-height:1em;}
         .medium-fs-2x{font-size:1.5em;line-height:1em;}
         .medium-fs-3x{font-size:2em;line-height:1em;}
         .medium-fs-4x{font-size:2.5em;line-height:1em;}
         .medium-fs-5x{font-size:3em;line-height:1em;}
-        .medium-fs-6x{font-size:3.5em;line-height:1em;}
+        .medium-fs-6x{font-size:4em;line-height:1em;}
     }
     @include bp(lg){
         .large-fs-1x{font-size:1em;line-height:1em;}
-        .large-fs-2x{font-size:2em;line-height:1em;}
-        .large-fs-3x{font-size:3em;line-height:1em;}
-        .large-fs-4x{font-size:4em;line-height:1em;}
-        .large-fs-5x{font-size:5em;line-height:1em;} 
-        .large-fs-6x{font-size:6em;line-height:1em;}        
+        .large-fs-2x{font-size:1.5em;line-height:1em;}
+        .large-fs-3x{font-size:2em;line-height:1em;}
+        .large-fs-4x{font-size:2.5em;line-height:1em;}
+        .large-fs-5x{font-size:3em;line-height:1em;}
+        .large-fs-6x{font-size:4em;line-height:1em;}      
     }
 
 
 
 }
-
+.sticky-wrapper{
+    margin-bottom: -1em;
+}
 .score-bar-holder {
     $size-unit:$score-bar-size-unit;
     width:100%; 
     background-color: $scrub-blue; 
     display:block;
     font-size: $size-unit;
+
     .score-bar{
         -moz-transition: padding .5s ease;
         -webkit-transition: padding .5s ease;
@@ -87,19 +90,16 @@ $max-width:$global-width;
         &.primary-color{ 
             background-color: $score-bar-primary-color;
             color:color-contrast($score-bar-primary-color);
+            border-color:color-contrast($score-bar-primary-color);
         }
         &.secondary-color{ 
             background-color: $score-bar-secondary-color;
             color:color-contrast( $score-bar-secondary-color );
+            border-color:color-contrast( $score-bar-secondary-color );
         }
      }   
-    .stuck &{
-       .data{ 
-            
-       }   
-    }
     .shrink.stuck &{
-        $size-unit:$score-bar-size-unit*.9;
+        $size-unit:$score-bar-size-unit * .9;
         font-size: $size-unit;  
         .data-container{
             padding-top:$size-unit;
@@ -107,7 +107,7 @@ $max-width:$global-width;
             padding-left:$size-unit;
         }
      @include bp(md){
-          $size-unit:$score-bar-size-unit*.8;
+          $size-unit: $score-bar-size-unit * .9.5;
             font-size: $size-unit;  
             .data-container{
                 padding-top:$size-unit;
@@ -115,6 +115,17 @@ $max-width:$global-width;
                 padding-left:$size-unit;
             }
         }
+    @include bp(lg){
+          $size-unit:$score-bar-size-unit;
+            font-size: $size-unit;  
+            .data-container{
+                padding-top:$size-unit;
+                padding-right:$size-unit;
+                padding-left:$size-unit;
+            }
+        }
+
+
     }
 }
 .sticky-holder{
@@ -126,19 +137,38 @@ $max-width:$global-width;
         width:100%;
     }
 }
+.data-group{
+    padding:.1em .25em .1em;
+     @include bp(md){
+    padding:.25em .5em .5em;
+    }
+}
 .data-group + .data-group,.data-header +.data-group{
-    border-left:1px dotted rgba(255,255,255,.25);
+    border-style: dotted;
+    border-width:0px;
+    border-top-width:1px;
     @include bp(md){
-        border-left:0 none transparent;
-        border-top:1px dotted rgba(255,255,255,.25);
+       border-left-width:0;
+       border-top-width:1px;
+        .shrink &{ 
+            border-left-width: 1px;
+            border-top-width: 0px; 
+        }
+    }
+}
+@include bp(md){
+    .shrink .data-group + .data-group{  padding-left: 2em;}
+   .shrink .data-header +.data-group{
+        border-left-width: 0px;
     }
 }
 .data{padding-bottom:1em;}
 .data-header{
     @include bp(md){
-         max-width:20em;
+         max-width:30em;
      }
     .shrink &{
+        padding-bottom:.25em;
         width:100%;
         @include bp(md){
             max-width:26em;
@@ -148,16 +178,23 @@ $max-width:$global-width;
 .data-group{
     display:table; 
     @include bp(md){
-        max-width:20em;  
+        max-width:30em;  
     }
     
     .data-value,.data-label{display:table-cell;}
-    .data-value{width:10%;vertical-align:middle;}
+    .data-value{width:10%;vertical-align:top;}
     .data-label{vertical-align:top;padding-left:.5rem;}
     .shrink &{ 
         @include bp(md){
+
             max-width:26em;
             width:50%;
+            &.content-block{    
+                width: 100%;
+                padding-left: 0;
+                border-left-width: 0;
+                max-width:48em;
+            }
             float:left;
         }
 
