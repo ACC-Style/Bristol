@@ -21,7 +21,16 @@
     .radius-bottom{border-radius:  0 0 $global-border-radius  $global-border-radius;}
     .radius-top{border-radius: $global-border-radius  $global-border-radius 0 0;}
     .page-wrapper {
-        padding: 1rem 0 !important;
+        -webkit-transition: padding 1s; /* Safari */
+        transition: padding 1s;
+        padding: 1rem 0;
+        @include bp(xs-height-down){  
+        padding: .5rem 0;
+        } 
+        @include bp(sm-height-down){ 
+        padding: .25rem 0;
+        } 
+        
 
         > .section, > section, > .row {
             padding: 0 .75rem;
@@ -29,22 +38,33 @@
 
         .group-section {
             @extend %dropshoadowedbox;
-
-            margin: 0 .65rem 1rem .5rem;
-            padding: .5rem .5rem;
-            width: auto;
-            position: relative;
-
             &.content-padding {
                 margin: 0 auto 1rem auto;
                 max-width: 1200px;
             }
-
+            -webkit-transition: padding 1s; /* Safari */
+            transition: padding 1s;
+            -webkit-transition: margin 1s; /* Safari */
+            transition: margin 1s;
+            margin: 0 .65rem 1rem .5rem;
+            padding: .5rem .5rem;
+            @include bp(md-down){ 
+                @include bp(xs-height-down){  
+                    padding-top: .25rem;
+                    padding-bottom: .25rem;
+                    margin-bottom:.25rem; 
+                    } 
+                @include bp(sm-height-down){ 
+                    padding-top: .15rem;
+                    padding-bottom: .1rem;
+                    margin-bottom:.5rem;
+                    }     
+            } 
+            width: auto;
+            position: relative;
             @include bp(md) {
                 padding: .5rem .75rem;
             }
-
-
             @include bp(lg) {
                 padding: .5rem 1.5rem 1rem;
             }
@@ -54,6 +74,7 @@
 
 .group-section-tab-holder {
     margin: -.75rem -.5rem 0;
+    @include bp(md){  margin: -.5rem -.75rem 0;  } 
     @include bp(md){  margin: -.5rem -.75rem 0;  }  
     @include bp(lg){ margin: -.5rem -1.5rem 0; }
     .nav.tabs {

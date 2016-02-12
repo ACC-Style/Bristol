@@ -31,9 +31,36 @@ $base-line: $baseline-modifier * $base-font-size;
 		$line-height:  ( $baseline * $lines ) / ms($font-level) * 1em;
 		// @debug $font-size "fontsize";
 	}
+	-webkit-transition: line-height 1s; /* Safari */
+	transition: line-height 1s;
+	-webkit-transition: margin 1s; /* Safari */
+	transition: margin 1s;
 	line-height: $line-height;
-	// @debug "lines" $lines;
-	// @debug "line-height: " $line-height/$lines;
 	margin-top: $margin-top * $line-height/$lines;
 	margin-bottom: $margin-bottom *  $line-height/$lines;
+	@include bp(md-down){
+		@include bp(sm-height-down){ 
+			line-height: clamp($line-height * .95, 1em,10em);
+			@if $margin-top != 0{
+				margin-top: clamp( $margin-top * $line-height/$lines * .9 , .1em, 10em) ;
+			}
+			@if $margin-bottom != 0{			
+			margin-bottom:  clamp( $margin-bottom *  $line-height/$lines * .9, .1em, 10em) ;
+			}
+		}    
+		@include bp(xs-height-down){ 
+			line-height: clamp($line-height * .85, 1em,10em);
+			@if $margin-top != 0{
+				margin-top: clamp( $margin-top * $line-height/$lines * .8 , .1em, 10em) ;
+			}
+			@if $margin-bottom != 0{			
+			margin-bottom:  clamp( $margin-bottom *  $line-height/$lines * .8, .1em, 10em) ;
+			}
+		}  
+	}
+
+}
+
+@function clamp($value, $min, $max) {
+  @return if($value > $max, $max, if($value < $min, $min, $value));
 }

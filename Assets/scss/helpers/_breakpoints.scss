@@ -14,7 +14,14 @@
     $sm-down: "only screen and (max-width : 767px)";
     $md-down: "only screen and (max-width : 1024px)";
     $lg-down: "only screen and (max-width : 1200px)";
-
+    $xs-height: "only screen and (min-height : 0px)";
+    $sm-height: "only screen and (min-height : 320px)";
+    $md-height: "only screen and (min-height : 480px)";
+    $lg-height: "only screen and (min-height : 600px)";
+    $xs-height-down: "only screen and (max-height : 320px)";
+    $sm-height-down: "only screen and (max-height : 480px)";
+    $md-height-down: "only screen and (max-height : 768px)";
+    $lg-height-down: "only screen and (max-height : 960px)";
   @if $point == xs-only {
     @media #{$xs-only} { @content; }
   }
@@ -60,5 +67,29 @@
   @else if $point == xl-only {
     @media #{$xl-only} { @content; }
   }
-
+  // This is for height media queries 
+  @else if $point == lg-height {
+    @media #{$lg-height} { @content; }
+  }
+  @else if $point == md-height {
+    @media #{$md-height} { @content; }
+  }
+  @else if $point == sm-height {
+    @media #{$sm-height} { @content; }
+  }
+  @else if $point == xs-height {
+    @media #{$xs-height} { @content; }
+  }
+    @else if $point == lg-height-down {
+    @media #{$lg-height-down} { @content; }
+  }
+  @else if $point == md-height-down {
+    @media #{$md-height-down} { @content; }
+  }
+  @else if $point == sm-height-down {
+    @media #{$sm-height-down} { @content; }
+  }
+  @else if $point == xs-height-down {
+    @media #{$xs-height-down} { @content; }
+  }
 }
