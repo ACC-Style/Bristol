@@ -2,8 +2,8 @@ $fontfolderpath:"../fonts";
 @mixin font-include($fontfolderpath,$fontfilename,$fontfamilyname,$font-weight: normal,$font-style:normal){
 	@font-face {
 	    font-family: #{$fontfamilyname};
-	    font-style: unquote(#{$font-style});
-		font-weight: unquote(#{$font-weight});
+	    font-style: #{$font-style};
+		font-weight: #{$font-weight};
 	    src: 	url('#{$fontfolderpath}#{$fontfilename}-webfont.eot');
 	    src: 	url('#{$fontfolderpath}#{$fontfilename}-webfont.eot?#iefix') format('embedded-opentype'),
 	         	url('#{$fontfolderpath}#{$fontfilename}-webfont.woff') format('woff'),

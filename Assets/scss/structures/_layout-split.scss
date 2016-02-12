@@ -1,28 +1,3 @@
-/**
-* Split Layout With Off Canvas Reveal:
-* `.mobile-offcanvas-wrapper` - This is a structural container that has the ablity to change from content and sidebar to just content and the sidebar being off canvas. Trigger the off canvas reveal by adding `.navOn` to the div.split-layout. Change the switch point by adding `.large`,`.medium`, or `.small`. <br>!!! must include _layout-split.scss !!! <br>!!! requires javascripts foundation equzlizer will remove the sidebar collapse !!!
-* 
-*   @example
-*	<div class="mobile-offcanvas-wrapper">
-*	<section class="split-layout medium navOn">
-*	<aside class="split-sidebar">
-*	<h2>Sidebar</h2>
-*	<p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
-*	</aside>
-*	<article class="split-content page with-group-sections">
-*	<div class="page-wrapper">
-*	<div class="content-padding"><h1>Outside of the Group Section<span class="sub-line">I need to be wrapped by a div.content-padding to line up</span>
-*	</h1></div>
-*	<div class="group-section">
-*		<h3>Inside of a Group Section</h3>
-*			<p>Some extra content in the content area</p>
-*			<p>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
-*	</div></div>
-*	</article>
-*	</section>
-*	</div>
-*/
-
 .page-wrapper > .split-layout{
 	margin:-1rem -.5rem;
 	@include bp(md){
@@ -51,10 +26,10 @@
 	}
 
 	
-	.split-sidebar{ display:none;	@include grid-column(12); left: percentage( -10 / $grid-column-count); border:grey(30) solid 0; border-right-width:1px;padding-left: 0 !important;
+	.split-sidebar{ display:none;	@include grid-column(12 of 12); left: percentage( -10 / $grid-column-count); border:grey(30) solid 0; border-right-width:1px;padding-left: 0 !important;
 				padding-right: 0 !important;}
 	.split-content{
-		@include grid-column(12);	
+		@include grid-column(12 of 12);	
 		}
 	&.xlarge,&.large,&.medium,&.small, &{
 		&.reverse,&.reverse.navOn{ 
@@ -76,12 +51,12 @@
 		@include breakpoint(small){
 			.split-sidebar{
 				display: block;
-				@include grid-column(5 );
+				@include grid-column(5  of 12);
 				padding-left: 0;padding-right: 0;
 			}
 			.split-content{
 				display: block;
-				@include grid-column(7);
+				@include grid-column(7 of 12);
 				padding-left:0;
 				padding-right:0;
 			}
@@ -95,12 +70,12 @@
 				position: relative;
 				left:0;right:0;
 				display: block;
-				@include grid-column(4);
+				@include grid-column(4 of 12);
 				padding-left: 0;padding-right: 0;
 			}
 			.split-content{
 				display: block;
-				@include grid-column(8);
+				@include grid-column(8 of 12);
 				padding-left:0;
 				padding-right:0;
 			}
@@ -110,12 +85,12 @@
 		@include breakpoint(large){
 			.split-sidebar, &.reverse .split-sidebar{
 				display: block;
-				@include grid-column(3);
+				@include grid-column(3 of 12);
 				padding-left: 0;padding-right: 0;
 			}
 			.split-content{
 				display: block;
-				@include grid-column(9);
+				@include grid-column(9 of 12);
 				padding-left:0;
 				padding-right:0;
 			}
@@ -125,12 +100,12 @@
 		@include breakpoint(xlarge){
 			.split-sidebar, &.reverse .split-sidebar{
 				display: block;
-				@include grid-column(3);
+				@include grid-column(3 of 12);
 				padding-left: 0;padding-right: 0;
 			}
 			.split-content{
 				display: block;
-				@include grid-column(9);
+				@include grid-column(9 of 12);
 				padding-left:0;
 				padding-right:0;
 			}
@@ -138,3 +113,27 @@
 	}
 }
 .with-group-sections .split-sidebar{background-color: #fff;}
+/**
+* Split Layout With Off Canvas Reveal:
+* `.mobile-offcanvas-wrapper` - This is a structural container that has the ablity to change from content and sidebar to just content and the sidebar being off canvas. Trigger the off canvas reveal by adding `.navOn` to the div.split-layout. Change the switch point by adding `.large`,`.medium`, or `.small`. <br>!!! must include _layout-split.scss !!! <br>!!! requires javascripts foundation equzlizer will remove the sidebar collapse !!!
+* 
+*   @example
+*	<div class="mobile-offcanvas-wrapper">
+*	<section class="split-layout medium navOn">
+*	<aside class="split-sidebar">
+*	<h2>Sidebar</h2>
+*	<p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+*	</aside>
+*	<article class="split-content page with-group-sections">
+*	<div class="page-wrapper">
+*	<div class="content-padding"><h1>Outside of the Group Section<span class="sub-line">I need to be wrapped by a div.content-padding to line up</span>
+*	</h1></div>
+*	<div class="group-section">
+*		<h3>Inside of a Group Section</h3>
+*			<p>Some extra content in the content area</p>
+*			<p>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+*	</div></div>
+*	</article>
+*	</section>
+*	</div>
+*/

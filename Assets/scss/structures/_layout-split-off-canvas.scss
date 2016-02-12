@@ -19,7 +19,7 @@
 *	</div>
 */
 $sidebarColumnCount:10;
-$sidebarSize:percentage($sidebarColumnCount / $grid-column-count);
+$sidebarSize:percentage($sidebarColumnCount / 12);
 .full-row, .full-col { overflow: hidden; position: absolute; }
 .full-row { left: 0; right: 0; }
 .full-col { top: 0; bottom: 0; }
@@ -49,7 +49,7 @@ $sidebarSize:percentage($sidebarColumnCount / $grid-column-count);
 			}
 		.split-sidebar{ 
         display: block;
-        @include grid-column($sidebarColumnCount);
+        @include grid-column($sidebarColumnCount of 12);
         right:auto;
         position: absolute;
         }

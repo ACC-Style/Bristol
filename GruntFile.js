@@ -130,6 +130,12 @@ module.exports = function(grunt){
 				},
 				{
 				  expand:true,
+				  cwd:'bower_components/foundation-sites/scss',
+				  src:['**'],
+				  dest:'assets/scss/vendor/foundation-sites'
+				},
+				{
+				  expand:true,
 				  cwd:'bower_components/knockout/dist',
 				  src:['**.js','**.map'],
 				  dest:'assets/js'
@@ -206,6 +212,16 @@ module.exports = function(grunt){
 					dest:'styleguide/assets/fonts'
 				}
 				]
+			},
+			FOUNDATIONSETTINGS:{
+			files:[
+				{
+				  expand:true,
+				  cwd:'assets/scss/vendor/foundation',
+				  src:['_override.settings.scss'],
+				  dest:'assets/scss/vendor/foundation-sites/settings'
+				},
+				]
 			}
 		},
 	    watch: {
@@ -234,7 +250,8 @@ module.exports = function(grunt){
 		clean: {
 			localFolder:["converted-html/**","styleguide/**"],
 			sassCasheFolder:[".sass-cache/**"],
-
+			foundationSites:["assets/scss/vendor/foundation-sites/**"],
+			foundationsFile:["assets/scss/vendor/foundation-sites/foundation.scss"],
 		},
 	});
 	// These plugins provide necessary tasks.
@@ -248,11 +265,15 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	// Default task.
 	grunt.registerTask('build', [
-		'clean',
+		'clean:localFolder',
+		'clean:foundationSites',
+	    'copy:BOWER',
+		// 'clean:foundationsFile',
+		'clean:sassCasheFolder',
+		'copy:FOUNDATIONSETTINGS',
 		'sass:vendor',
 		'sass:dist',
 		'cssmin',
-	    'copy:BOWER',
 		'copy:INTERNAL',
 		'styledown',
 	    'liquid',

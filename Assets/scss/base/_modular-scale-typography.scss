@@ -8,10 +8,17 @@ $airy:2;
 
 
 $base-font-size: 14px;
-$baseline-modifier:$normal;
+$baseline-modifier:$normal !default;
 $base-line: $baseline-modifier * $base-font-size;
 
 // parent-level is the ms() of the parent
+h1,h2,h3,h4,h5,h6,p,a,li,ul,blockquote,span,td,th,button,cite{
+	-webkit-transition: line-height 1s; /* Safari */
+	transition: line-height 1s;
+	-webkit-transition: margin 1s; /* Safari */
+	transition: margin 1s;
+}
+
 
 @mixin baseline-font($font-level, $margin-top:0, $margin-bottom:0,$parent-level:0,$baseline:$base-line){
 
@@ -25,22 +32,19 @@ $base-line: $baseline-modifier * $base-font-size;
 	// @debug $font-size "real - fontsize";
 	$raw-line: strip-unit($font-size) /  strip-unit($baseline);
 	$lines:ceil( $raw-line ); 
-	$line-height:  ( $baseline * $lines ) / $font-size * 1em;
+	$line-height:  ( $baseline * $lines ) / $font-size;
 	font-size: $font-size/$base-font-size * 1em;
 	@if($parent-level > 0){
 		$line-height:  ( $baseline * $lines ) / ms($font-level) * 1em;
 		// @debug $font-size "fontsize";
 	}
-	-webkit-transition: line-height 1s; /* Safari */
-	transition: line-height 1s;
-	-webkit-transition: margin 1s; /* Safari */
-	transition: margin 1s;
+	
 	line-height: $line-height;
 	margin-top: $margin-top * $line-height/$lines;
 	margin-bottom: $margin-bottom *  $line-height/$lines;
 	@include bp(md-down){
 		@include bp(sm-height-down){ 
-			line-height: clamp($line-height * .95, 1em,10em);
+			line-height: clamp($line-height * .95, 1,10);
 			@if $margin-top != 0{
 				margin-top: clamp( $margin-top * $line-height/$lines * .9 , .1em, 10em) ;
 			}
@@ -49,7 +53,7 @@ $base-line: $baseline-modifier * $base-font-size;
 			}
 		}    
 		@include bp(xs-height-down){ 
-			line-height: clamp($line-height * .85, 1em,10em);
+			line-height: clamp($line-height * .85, 1,10);
 			@if $margin-top != 0{
 				margin-top: clamp( $margin-top * $line-height/$lines * .8 , .1em, 10em) ;
 			}
