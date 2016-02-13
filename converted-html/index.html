@@ -14,7 +14,7 @@
 
 </head>
 	<body>
-    <a class="hide-for-medium" onClick="$('.mobile-offcanvas-wrapper .split-layout').toggleClass('navOn')" style="display: block;width: 100%;text-align: center;color: white;background-color: #00386b;"><i class="fa fa-bars"></i> Menu</a>
+    <a class="hide-for-medium button expanded tiny" onClick="$('.mobile-offcanvas-wrapper .split-layout').toggleClass('navOn')" style="margin-bottom:0;"><i class="fa fa-bars"></i> Menu</a>
     <div class="row">
   <header class="header page">
     <a href="#!/content/calculator/" class="logo">
@@ -22,7 +22,6 @@
     </a>
   </header>
 </div>
- <div class="sticky-holder"></div>
     <div class="mobile-offcanvas-wrapper">
       <section class="split-layout fill-page-height medium navOn">
         <aside class="split-sidebar">
@@ -53,7 +52,7 @@
             <div class="content-padding">
             <div class="shrink-waypoint"></div>
               <div id="introduction"  data-bind="page: {id:'introduction', role: 'start', afterShow: listchange}">
-    <h1>The ACC's App Framework <strong>Version 2.2</strong>
+    <h1>The ACC's App Framework <strong>Version 2.3</strong>
     <span class="sub-line">Code Name: Bristol</span>
     </h1>
     <p>The American College of Cardiology is proud of its standards of excellence when it comes to the information it supplies to the best cardiologists in the world. And now it is taking great pains to bring that exceptional standards to its UI design.</p>
@@ -72,16 +71,22 @@
     </div>
     <div class="callout highlighted">
         <h2>New to Bristol</h2>
+         <h3>Version 2.3</h3>
+            <h5>Vertical Media Queries and Adjustments</h5>
+            <ul >
+                <li>Modular Scale Modification - line height and margin adapth to small height</li>
+                <li>Vertical breakpoints added at 320, 480, 768px</li>
+                <li>Paper Layer responds to vertical break points</li>
+                <li>Page Layout responds to vertical break points</li>
+            </ul>
          <h3>Version 2.2</h3>
-        <ul>
-            <li>Grid Based Questions</li>
-            <li><ul>
+            <h5>Grid Based Questions</h5>
+            <ul>
                 <li>Size Modifies</li>
                 <li>Label Location Modifier</li>
                 <li>Indent Modifier</li>
                 <li>Repeating Input Grouping</li>
-            </ul></li>
-        </ul>
+            </ul>
         <h3>Version 2.1</h3>
         <ul>
             <li>Unit Switches</li>
@@ -1612,53 +1617,7 @@
       <span class="hljs-tag">&lt;<span class="hljs-title">h6</span>&gt;</span>Header 6 Tag<span class="hljs-tag">&lt;/<span class="hljs-title">h6</span>&gt;</span></pre>
   </div>
 </section>
-	<section class="sg-block sg-section-sub-content-in-header-tags">
-    <div class="sg-text">
-        <h3 id="sub-content-in-header-tags" class="sg">Sub Content in Header Tags</h3>
-        <p class="sg">
-        <code class="sg">headline &gt; blockquote</code>- basic styling for sub content in headers.</p>
-    </div>
-    <div class="sg-example">
-        <div class="sg-canvas">
-            <h1 class="with-underline">Header 1 Tag
-              <blockquote>sub content in a blockquote</blockquote>
-            </h1>
-            <h2 class="with-underline">Header 2 Tag
-              <blockquote>sub content in a blockquote</blockquote>
-            </h2>
-            <h3 class="with-underline">Header 3 Tag
-              <blockquote>sub content in a blockquote</blockquote>
-            </h3>
-            <h4 class="with-underline">Header 4 Tag
-              <blockquote>sub content in a blockquote</blockquote>
-            </h4>
-            <h5 class="with-underline">Header 5 Tag
-              <blockquote>sub content in a blockquote</blockquote>
-            </h5>
-            <h6 class="with-underline">Header 6 Tag
-              <blockquote>sub content in a blockquote</blockquote>
-            </h6>
-  </div>
-  <pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Header 1 Tag
-  <span class="hljs-tag">&lt;<span class="hljs-title">blockquote</span>&gt;</span>sub content in a blockquote<span class="hljs-tag">&lt;/<span class="hljs-title">blockquote</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">h2</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Header 2 Tag
-  <span class="hljs-tag">&lt;<span class="hljs-title">blockquote</span>&gt;</span>sub content in a blockquote<span class="hljs-tag">&lt;/<span class="hljs-title">blockquote</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Header 3 Tag
-  <span class="hljs-tag">&lt;<span class="hljs-title">blockquote</span>&gt;</span>sub content in a blockquote<span class="hljs-tag">&lt;/<span class="hljs-title">blockquote</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Header 4 Tag
-  <span class="hljs-tag">&lt;<span class="hljs-title">blockquote</span>&gt;</span>sub content in a blockquote<span class="hljs-tag">&lt;/<span class="hljs-title">blockquote</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">h5</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Header 5 Tag
-  <span class="hljs-tag">&lt;<span class="hljs-title">blockquote</span>&gt;</span>sub content in a blockquote<span class="hljs-tag">&lt;/<span class="hljs-title">blockquote</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">h6</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Header 6 Tag
-  <span class="hljs-tag">&lt;<span class="hljs-title">blockquote</span>&gt;</span>sub content in a blockquote<span class="hljs-tag">&lt;/<span class="hljs-title">blockquote</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">h6</span>&gt;</span></pre>
-  </div>
-</section>
+	
 	  <section class="sg-block sg-section-sub-content-in-header-tags">
       <div class="sg-text">
         <h3 id="sub-content-in-header-tags" class="sg">Sub Content in Header Tags</h3>
@@ -3136,6 +3095,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
             <div class="page-wrapper">
               <section class="section group-section">
                 <div class="group-section-tab-holder">
+                <div class="row"><h2 class="content-padding">Label of Tabs</h2></div>
                   <ul class="nav tabs">
                     <li class="">
                       <a>Tab 1</a>
@@ -3151,6 +3111,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
                 <h1>Hello</h1>
                 <p>This is content that is showing up in a section group</p>
                 <div class="group-section-tab-holder secondary">
+                 <div class="row"><h4 class="content-padding">Secondary Tabs</h4></div>
                   <ul class="nav tabs">
                     <li class="">
                       <a>Tab 1</a>
@@ -3165,6 +3126,14 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
                 </div>
                 <h2>I am Sub Tab Content</h2>
                 <p>This is content under a secondary tab in a card</p>
+
+                <div class="colored-paper">
+                <div class="content-padding">
+                  <h3>Inside of a Colored Paper Section</h3>
+                    <p>Some extra content in the content area</p>
+                    <p>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+                </div>
+                </div>
               </section>
             </div>
           </div>
@@ -6239,6 +6208,7 @@ padding: 1em;
             <div class="page-wrapper">
               <section class="section group-section">
                 <div class="group-section-tab-holder">
+                <div class="row"><h2 class="content-padding">Label of Tabs</h2></div>
                   <ul class="nav tabs">
                     <li class="">
                       <a>Tab 1</a>
@@ -6254,6 +6224,7 @@ padding: 1em;
                 <h1>Hello</h1>
                 <p>This is content that is showing up in a section group</p>
                 <div class="group-section-tab-holder secondary">
+                 <div class="row"><h4 class="content-padding">Secondary Tabs</h4></div>
                   <ul class="nav tabs">
                     <li class="">
                       <a>Tab 1</a>
@@ -6268,6 +6239,14 @@ padding: 1em;
                 </div>
                 <h2>I am Sub Tab Content</h2>
                 <p>This is content under a secondary tab in a card</p>
+
+                <div class="colored-paper">
+                <div class="content-padding">
+                  <h3>Inside of a Colored Paper Section</h3>
+                    <p>Some extra content in the content area</p>
+                    <p>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+                </div>
+                </div>
               </section>
             </div>
           </div>
@@ -6724,13 +6703,13 @@ padding: 1em;
     </div>
     <footer class="page-footer">
   <div class="row">
-    <a href="/">
+    <a class="logo-holder"href="/">
       <img class="logo" src="Assets/img/oma-01.svg" alt="Home">
     </a>
   </div>
   <div class="footer-darker">
     <div class="row">
-      <div class="columns large-8">
+      <div class="column large-8 medium-7">
         <section class="address row">
           <h3>American College of Cardiology</h3>
           <address>
@@ -6805,8 +6784,8 @@ padding: 1em;
           </ul>
         </section>
       </div>
-      <div class="columns large-4">
-        <section class="acc-websites row ">
+      <div class="columns large-4  medium-5">
+        <section class="acc-websites row">
           <h4>Powered By the ACC</h4>
           <nav class="nav-list small">
             <ul class="">
@@ -6846,14 +6825,9 @@ padding: 1em;
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="large-4 columns">
-      <h5>
+  <div class="row"><h5>
         <cite>&copy; 2015 American College of Cardiology</cite>
       </h5>
-    </div>
-    <div class="large-8 columns">
-    </div>
   </div>
 </footer>
     <script src="assets/js/styledown.js"></script>

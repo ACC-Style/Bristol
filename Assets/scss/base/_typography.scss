@@ -135,3 +135,23 @@ h6{
 	@extend .h6;
 	color:fontcolor($black,"quiet");
 }
+p{ 
+	@extend %normal;
+	margin-bottom:.25em;
+	@include bp(sm-height){
+		margin-bottom:.5em;
+	}
+
+}
+ul,ol{
+	@extend %normal;
+	margin-bottom:1em;
+	@include bp(sm-height){margin-bottom:.5em;}
+	@include bp(xs-height){margin-bottom:.75em;}
+	li{
+		margin-bottom:.25em;
+		@include bp(sm-height){margin-bottom:.2em;}
+		@include bp(xs-height){margin-bottom:.1em;}
+	}
+	}
+

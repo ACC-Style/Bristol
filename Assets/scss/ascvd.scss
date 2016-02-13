@@ -5,6 +5,8 @@
 *   @example
 *	<a  class="button" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
 */
+$brand-level:0; // Any Number between 0 and 3.   
+$product-brand-color: #9a1267;
 $brand-level:2; // Any Number between 0 and 3.   
 $product-brand-color: #5328FF;
 $ms-base: 14px;
@@ -14,12 +16,12 @@ $baseline-modifier:1.4;
 @import "helpers/mixens";
 @import "helpers/flex";
 @import 'base/brandVar';
-@import 'base/_brandVar.styleguide';
+// @import 'base/_brandVar.styleguide';
 @import "vendor/foundation/foundation-kitchensink";
 @import "vendor/font-awesome/_font-awesome_kitchensink";
 @import "vendor/jquery-ui/jquery-ui-kitchensink";
 @import "base/colors";
-@import "base/colors.styleguide";
+// @import "base/colors.styleguide";
 @import "base/fonts";
 @import "helpers/breakpoints";
 //base vendor files
@@ -48,21 +50,21 @@ $baseline-modifier:1.4;
 @import 'vendor/foundation-sites/util/util';
 @import "vendor/foundation-sites/settings/override.settings";
 @import "vendor/foundation-sites/foundation";
-.row{max-width: none;}
+
 
 
 //branding and typography
 @import "base/typography";
-@import "base/typography-fonts.styleguide";
-@import "base/textures.styleguide";
-@import "base/_header-tag_order-marker";
+// @import "base/typography-fonts.styleguide";
+// @import "base/textures.styleguide";
+// @import "base/_header-tag_order-marker";
 
 
 //Components that live inside of Layouts.
 @import "components/elements/buttons";
 @import "components/navigation/tabs";
 @import "components/navigation/tabs-primary";
-@import "components/navigation/tabs-overlap";
+// @import "components/navigation/tabs-overlap";
 @import "components/navigation/nav-list";
 // @import "components/navigation/nav-checklist";
 // @import "components/navigation/nav-checklist.states";
@@ -71,22 +73,22 @@ $baseline-modifier:1.4;
 @import "components/answer_question/__answer_question.states";
 @import "components/answer_question/question";
 // @import "components/answer_question/_question-inline";
-@import "components/answer_question/question-grid-based";
+// @import "components/answer_question/question-grid-based";
 // @import "components/answer_question/question-fileupload";
-@import "components/answer_question/question-radiogroup";
+// @import "components/answer_question/question-radiogroup";
 // @import "components/answer_question/form-repeater";
 // @import "components/answer_question/answer";
 @import "components/table/table";
 @import "components/table/table-stripped";
 @import "components/table/table-seperator";
-// @import "components/table/table-sortable";
-// @import "components/table/table-icon-cell";
+@import "components/table/table-sortable";
+@import "components/table/table-icon-cell";
 // @import "components/table/table-cell.states";
 @import "components/collapsable-panel";
 @import "components/collapsable-panel.states";
 @import "components/accordion";
 @import "components/panel-selector";
-@import "components/toggle-selector";
+// @import "components/toggle-selector";
 
 
 // // Non-Core Components Styles
@@ -107,12 +109,12 @@ $baseline-modifier:1.4;
 @import "_non-core/components/_si/si.recommendationTable";
 
 // // Vendor Overrides and Styles 
-@import "vendor/chosen/chosen";
-@import "vendor/foundation/override.topbar";
-@import "vendor/foundation/override.pagination";
-@import "vendor/foundation/override.pagination.result-selector";
+// @import "vendor/chosen/chosen";
+// @import "vendor/foundation/override.topbar";
+// @import "vendor/foundation/override.pagination";
+// @import "vendor/foundation/override.pagination.result-selector";
 @import "vendor/foundation/override.reveal";
-@import "vendor/foundation/override.slider";
+// @import "vendor/foundation/override.slider";
 @import "vendor/foundation/override.switch";
 @import "vendor/foundation/override.tooltip";
 @import "vendor/foundation/override.close-button";
@@ -134,13 +136,13 @@ $baseline-modifier:1.4;
 //@import "structures/_oma-admin/override.layout-split";
 @import "structures/mobileApps/layout_header";
 @import "structures/mobileApps/layout_footer";
-@import "structures/website/footer";
-@import "components/data-display";
+// @import "structures/website/footer";
+@import "components/score-bar";
 
 
 // // Template specific views 
 // //trumps the dreaded importants show up in the files below.
-@import "base/header-tag_order-marker";
+// @import "base/header-tag_order-marker";
 @import "base/typography.states.scss";
 @import "base/typography.trump";
 
@@ -149,5 +151,9 @@ $baseline-modifier:1.4;
 @import "trumps/condensable";
 @import "trumps/css3";
 @import "base/__states.trump";
+@import "_non-core/components/_si/shame";
 .row{max-width: 100%;}
+
+
+
 

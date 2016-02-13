@@ -3,11 +3,14 @@ $secondary-dark-color:grey(60);
 
 	border-top:$secondary-dark-color 4px solid;
 	background-color:$secondary-color;
-	padding:1rem 1rem 1rem 1rem;
+	.logo-holder{
+		width:100%;display:block;
+		padding:1rem 1rem 1rem 1rem;
+	}
 	.logo{
 		height:50px;	
 	}
-	h3{font-size: 1.5rem;@include  font-slab();}
+	h3{@include baseline-font(2);@include  font-slab();}
 	h4{margin-left:0; @include  font-slab();}
 	ul{margin-left:0;	list-style:none;} *{
 	color:$secondary-dark-color;
@@ -18,9 +21,11 @@ $secondary-dark-color:grey(60);
 
 .footer-darker{
 	background-color:$secondary-dark-color;
-	margin:1rem -1rem 1rem -1rem;
-	padding: 30px 40px;
-	margin-bottom: 20px;
+	margin-bottom: 2rem;
+	padding: 1rem;
+	@include bp(md){
+		padding: 2rem 2.5rem	;
+	}
 	background: url("../img/crossed_stripes.png");
 	@media only screen and (max-width: 767px){
 	margin-right:-2rem
@@ -35,10 +40,10 @@ $secondary-dark-color:grey(60);
 		display:inline-block;
 		width:auto;
 		float:left;
-		padding-right:1.67rem;}
+		padding-right:1.67rem;
+		margin-bottom:0;}
 	li{
-		font-size:1rem;
-		line-height:1.67rem;}
+		@include baseline-font(0);}
 }
 .acc-websites{
 	.nav-list.small{

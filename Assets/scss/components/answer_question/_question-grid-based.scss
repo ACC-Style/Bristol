@@ -7,7 +7,7 @@
         border-top: 1px solid #e6e6e6;
         padding: .25rem .75rem;
         background-color: color(rebrand-color($primary-color,2),10);
-        @include grid-row($behavior: nest);
+        // @include grid-row($behavior: nest);
         max-width: 100%;
         clear:both;
     }
@@ -19,9 +19,9 @@
             background-color: transparent;
         }
     }
-    @include grid-row($behavior: nest);
+     // @include grid-row($behavior: nest);
     .label-holder, .input-holder{
-      @include grid-column(12);
+      @include grid-column(12 of 12);
       .hint{line-height:1.25em;}
     }
 
@@ -56,7 +56,7 @@
     }
     }
     &.label-position-top{
-      .label-holder, .input-holder{@include grid-column(12);}
+      .label-holder, .input-holder{@include grid-column(12 of 12);}
     }
 
 
@@ -136,7 +136,7 @@
 
     .input-holder{
       .group-3up &,.group-2up &,.group-1up &{
-        @include grid-column-row();
+        // @include grid-column-row();
       }
     }
     .input-space{
