@@ -12,6 +12,24 @@
 	}
 }
 .answer,.answer-group,.question,.question-group,.question-inline,.question-grid-based{
+	-webkit-transition: margin 1s; /* Safari */
+	transition: margin 1s;
+	margin-bottom: .25em;
+	@include bp(sm-height){
+		margin-bottom: .5em;
+	}
+	@include bp(md-height){
+		margin-bottom:.75em;
+	}
+	@include bp(lg-height){
+		margin-bottom:.75em;
+	}
+	@include bp(lg){
+		margin-bottom: 1em;
+	}
+	&:disabled,&[disabled]{
+		@extend %disabledinput;
+	}
 	input[type="text"],
 	input[type="password"],
 	input[type="date"],
@@ -30,10 +48,6 @@
 	select,
 	button,
 	.button{margin-bottom: 0;}
-	margin-bottom: rem-calc(ms(0));
-	&:disabled,&[disabled]{
-		@extend %disabledinput;
-	}
 }
 .input-holder{	
 	.prefix,.postfix,.value{
