@@ -99,13 +99,26 @@ $max-width:$global-width;
         }
      }   
     .shrink.stuck &{
+     
         $size-unit:$score-bar-size-unit * .9;
         font-size: $size-unit;  
         .data-container{
-            padding-top:$size-unit;
-            padding-right:$size-unit;
-            padding-left:$size-unit;
+            padding-top:$size-unit*.5;
+            padding-right:$size-unit*.5;
+            padding-left:$size-unit*.5;
+            @include bp(sm-height){
+                padding-top:$size-unit*.75;
+                padding-right:$size-unit*.75;
+                padding-left:$size-unit*.75;
+            }
+            @include bp(md-height){
+                padding-top:$size-unit;
+                padding-right:$size-unit;
+                padding-left:$size-unit;
+            }
+
         }
+
      @include bp(md){
           $size-unit: $score-bar-size-unit * .9.5;
             font-size: $size-unit;  
