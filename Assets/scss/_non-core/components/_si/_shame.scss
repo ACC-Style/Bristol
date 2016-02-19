@@ -30,15 +30,22 @@
 
 .unit-of-measure{
 	position: absolute;
-	    top: .5rem;
+	
+	top: -.25em;
     right: .5rem;
+    @include bp(sm-height){
+    	top:0em;
+    }
+        @include bp(md-height){
+    	top:.5em;
+    }
 	@include bp(md){
-	    top: 1.5rem;
-    right: .75rem;
+		top:.5em;
+    	right: .75em;
 	}
 	@include bp(lg){
-		top: 1.25rem;
-		right: 1.25rem;
+		top: 1.25em;
+		right: 1.25em;
 	}
 	.switch-value{
 		text-align: right;
