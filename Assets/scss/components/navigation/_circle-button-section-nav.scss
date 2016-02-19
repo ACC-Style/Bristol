@@ -1,51 +1,3 @@
-/**
-* Circle Section Nav (forward & back):
-* `.section-nav with .forward or .back` - A wizard-like page nav. Alter the position of the circle button by adding  `.forward` or `.back` to the `.section-nav` container.
-* 
-*   @example
-*	<div class="page with-group-sections"><div class="section-nav back">
-*		<a>
-*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
-*			<div class="text"> Back</div>
-*		</a>
-*	</div>
-*	<div class="page-wrapper">
-*	<section class="group-section">
-*		<h1 class="with-underline">Page Title </h1>
-*		<p> hello I am some content on this page</p>
-*	</div>
-*	</section>
-*	<div class="section-nav forward">
-*		<a>
-*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
-*			<div class="text"> Forward</div>
-*		</a>
-*	</div></div>
-*/
-/**
-* Circle Section Nav (Disabled):
-* `.section-nav with .disabled` - Adding `.disabled` to the `.section-nav` container with style the circle nav accordingly.
-* 
-*   @example
-*	<div class="page"><div class="section-nav back">
-*		<a>
-*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
-*			<div class="text"> Back</div>
-*		</a>
-*	</div>
-*	<div class="page-wrapper">
-*	<section class="group-section">
-*		<h1 class="with-underline">Page Title (Disabled)</h1>
-*		<p> Somethig on this page has disabled forward navigation</p>
-*	</div>
-*	</section>
-*	<div class="section-nav forward disabled">
-*		<a>
-*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
-*			<div class="text"> Forward</div>
-*		</a>
-*	</div></div>
-*/
 
 $circle-radius:25px;
 $circle-color:color(rebrand-color($primary-color,3),80);
@@ -66,6 +18,12 @@ $circle-lighttext:#fff;
 		padding-left: 1.07143rem; 
 		padding-right: 1.07143rem;
 	}
+	 .with-group-sections &{
+	 	margin-left:0;
+	 	margin-right:0;
+	 	.section-nav.back .text{}
+
+	 }
 
 	.text{@extend %h4; padding-top:$circle-radius * .25; padding-bottom:$circle-radius * .25; }
 	.circle{
@@ -131,3 +89,53 @@ $circle-lighttext:#fff;
 	}
 
 }
+.with-group-sections .section-nav.forward .text{padding-right:$circle-radius * 3 - ($base-font-size * 1.07143);}
+.with-group-sections .section-nav.back .text{padding-left:$circle-radius * 3 - ($base-font-size * 1.07143);}
+/**
+* Circle Section Nav (forward & back):
+* `.section-nav with .forward or .back` - A wizard-like page nav. Alter the position of the circle button by adding  `.forward` or `.back` to the `.section-nav` container.
+* 
+*   @example
+*	<div class="page with-group-sections"><div class="section-nav back">
+*		<a>
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Back</div>
+*		</a>
+*	</div>
+*	<div class="page-wrapper">
+*	<section class="group-section">
+*		<h1 class="with-underline">Page Title </h1>
+*		<p> hello I am some content on this page</p>
+*	</div>
+*	</section>
+*	<div class="section-nav forward">
+*		<a>
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Forward</div>
+*		</a>
+*	</div></div>
+*/
+/**
+* Circle Section Nav (Disabled):
+* `.section-nav with .disabled` - Adding `.disabled` to the `.section-nav` container with style the circle nav accordingly.
+* 
+*   @example
+*	<div class="page"><div class="section-nav back">
+*		<a>
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Back</div>
+*		</a>
+*	</div>
+*	<div class="page-wrapper">
+*	<section class="group-section">
+*		<h1 class="with-underline">Page Title (Disabled)</h1>
+*		<p> Somethig on this page has disabled forward navigation</p>
+*	</div>
+*	</section>
+*	<div class="section-nav forward disabled">
+*		<a>
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Forward</div>
+*		</a>
+*	</div></div>
+*/

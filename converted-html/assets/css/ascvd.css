@@ -1893,54 +1893,6 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   margin-top: 0;
 }
 
-/**
-* Circle Section Nav (forward & back):
-* `.section-nav with .forward or .back` - A wizard-like page nav. Alter the position of the circle button by adding  `.forward` or `.back` to the `.section-nav` container.
-* 
-*   @example
-*	<div class="page with-group-sections"><div class="section-nav back">
-*		<a>
-*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
-*			<div class="text"> Back</div>
-*		</a>
-*	</div>
-*	<div class="page-wrapper">
-*	<section class="group-section">
-*		<h1 class="with-underline">Page Title </h1>
-*		<p> hello I am some content on this page</p>
-*	</div>
-*	</section>
-*	<div class="section-nav forward">
-*		<a>
-*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
-*			<div class="text"> Forward</div>
-*		</a>
-*	</div></div>
-*/
-/**
-* Circle Section Nav (Disabled):
-* `.section-nav with .disabled` - Adding `.disabled` to the `.section-nav` container with style the circle nav accordingly.
-* 
-*   @example
-*	<div class="page"><div class="section-nav back">
-*		<a>
-*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
-*			<div class="text"> Back</div>
-*		</a>
-*	</div>
-*	<div class="page-wrapper">
-*	<section class="group-section">
-*		<h1 class="with-underline">Page Title (Disabled)</h1>
-*		<p> Somethig on this page has disabled forward navigation</p>
-*	</div>
-*	</section>
-*	<div class="section-nav forward disabled">
-*		<a>
-*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
-*			<div class="text"> Forward</div>
-*		</a>
-*	</div></div>
-*/
 .section-nav {
   width: 100%;
   display: block;
@@ -1952,6 +1904,10 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   margin-right: -1.07143rem;
   padding-left: 1.07143rem;
   padding-right: 1.07143rem;
+}
+.with-group-sections .section-nav {
+  margin-left: 0;
+  margin-right: 0;
 }
 .section-nav .text {
   padding-top: 6.25px;
@@ -2039,6 +1995,62 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   background-image: url("../img/empty_diamond.png");
 }
 
+.with-group-sections .section-nav.forward .text {
+  padding-right: 59.99998px;
+}
+
+.with-group-sections .section-nav.back .text {
+  padding-left: 59.99998px;
+}
+
+/**
+* Circle Section Nav (forward & back):
+* `.section-nav with .forward or .back` - A wizard-like page nav. Alter the position of the circle button by adding  `.forward` or `.back` to the `.section-nav` container.
+* 
+*   @example
+*	<div class="page with-group-sections"><div class="section-nav back">
+*		<a>
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Back</div>
+*		</a>
+*	</div>
+*	<div class="page-wrapper">
+*	<section class="group-section">
+*		<h1 class="with-underline">Page Title </h1>
+*		<p> hello I am some content on this page</p>
+*	</div>
+*	</section>
+*	<div class="section-nav forward">
+*		<a>
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Forward</div>
+*		</a>
+*	</div></div>
+*/
+/**
+* Circle Section Nav (Disabled):
+* `.section-nav with .disabled` - Adding `.disabled` to the `.section-nav` container with style the circle nav accordingly.
+* 
+*   @example
+*	<div class="page"><div class="section-nav back">
+*		<a>
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Back</div>
+*		</a>
+*	</div>
+*	<div class="page-wrapper">
+*	<section class="group-section">
+*		<h1 class="with-underline">Page Title (Disabled)</h1>
+*		<p> Somethig on this page has disabled forward navigation</p>
+*	</div>
+*	</section>
+*	<div class="section-nav forward disabled">
+*		<a>
+*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="text"> Forward</div>
+*		</a>
+*	</div></div>
+*/
 .answer, .answer-group, .question, .question-group, .question-inline, .question-grid-based {
   -webkit-transition: margin 1s;
   /* Safari */
@@ -2114,15 +2126,15 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 
 @media only screen and (max-width: 1024px) and (max-height: 320px) {
   .input-holder [type='text'], .input-holder [type='password'], .input-holder [type='date'], .input-holder [type='datetime'], .input-holder [type='datetime-local'], .input-holder [type='month'], .input-holder [type='week'], .input-holder [type='email'], .input-holder [type='number'], .input-holder [type='search'], .input-holder [type='tel'], .input-holder [type='time'], .input-holder [type='url'], .input-holder [type='color'], .input-holder textarea, .input-holder button, .input-holder .button {
-    padding: 0.65rem 0.5rem;
-    height: 2.25rem;
+    padding: 0.25rem 0.5rem;
+    height: 2rem;
   }
 }
 
 @media only screen and (min-width: 767px) and (min-height: 480px) {
   .input-holder [type='text'], .input-holder [type='password'], .input-holder [type='date'], .input-holder [type='datetime'], .input-holder [type='datetime-local'], .input-holder [type='month'], .input-holder [type='week'], .input-holder [type='email'], .input-holder [type='number'], .input-holder [type='search'], .input-holder [type='tel'], .input-holder [type='time'], .input-holder [type='url'], .input-holder [type='color'], .input-holder textarea, .input-holder button, .input-holder .button {
-    padding: 0.5rem 0.5rem;
-    height: 2.5rem;
+    padding: 0.25rem 0.5rem;
+    height: 2rem;
   }
 }
 
@@ -2152,7 +2164,8 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 
 @media only screen and (min-width: 767px) and (min-height: 480px) {
   .input-holder select, .input-holder option {
-    height: 2.5rem;
+    height: 2rem;
+    padding: .25rem .5rem;
   }
 }
 
@@ -2317,8 +2330,8 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 
 @media only screen and (min-width: 767px) and (min-height: 480px) {
   .input-space-label {
-    padding: 0.5rem 0.5rem;
-    height: 2.5rem;
+    padding: 0.25rem 0.5rem;
+    height: 2rem;
   }
 }
 
