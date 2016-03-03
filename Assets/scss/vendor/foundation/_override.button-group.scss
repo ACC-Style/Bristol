@@ -1,5 +1,19 @@
 
 .button-group {
+    @include button-group();
+    @include bp(lg-down){
+        @include button-group-stack();
+        .button{
+        width:100%;
+        border-bottom:1px #fff solid;
+        &:last-child{border-bottom:0px;}
+        }
+    }
+    &.radius,&.radius-top&.radius-bottom{overflow:hidden; }
+    @include bp(lg){
+        @include button-group-unstack();
+        @include button-group-expand();
+    }
     padding-left: 0;
     border: 2px solid transparent;
     .input-space & {
@@ -16,6 +30,10 @@
     &.selectable {
         .button {
             @include button-style($background: grey(30));
+            &:hover,&:focus{
+                background-color:grey(60);
+                color:color-contrast(grey(60));
+            }
         }
         i.fa {
             font-size: 1rem;
@@ -24,24 +42,36 @@
             margin: 0 7px 0 0;
             display: none;
         }
-        a.selected {
-            &, &:hover {
-                background-color: rebrand-color($success-color, 2);
+        .selected {
+            &, &:hover, &:focus {
+                background-color: mix(rebrand-color($select-color, 2), $black,80);
+                color:color-contrast(rebrand-color($select-color, 2));
             }
             i.fa {
                 display: inline-block;
             }
         }
     }
-  @include bp(sm-down){
-    @include button-group-expand();
-  }
-}
 
+}
+%button-group-state{
+    margin-bottom: 0;
+}
+%button-group-button-state{
+    margin-bottom: 0;
+    border-radius: $global-border-radius  $global-border-radius 0 0;
+
+}
 @each $State in $states {
     $selector: map-get($State, "Selector");
     $state-name: map-get($State, "State");
     $color: map-get($State, "Color");
+    #{$selector}.question .button-group{
+        @extend %button-group-state;
+    }
+    #{$selector}.question .button-group.radius{
+        @extend %button-group-button-state;
+    }
     @include setTrump('border-color', $state-name, '#{$selector}.question .button-group');
 }
 
