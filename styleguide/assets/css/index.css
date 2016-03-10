@@ -2428,8 +2428,6 @@ button:disabled.secondary, .input-space
 }
 .nav-list li.selected, .panel-selector li.selected, .nav-list li.selected:hover a, .panel-selector li.selected:hover a {
   color: #333333;
-}
-.nav-list li.selected a, .panel-selector li.selected a, .nav-list li.selected a:hover, .panel-selector li.selected a:hover {
   cursor: pointer;
   cursor: context-menu;
 }
@@ -2601,17 +2599,17 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   background-color: #fff;
   color: #333333;
 }
-.nav-list.nav-checklist li.completed:hover, .nav-checklist.panel-selector li.completed:hover {
-  background-color: #c7f9dc;
+.nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled, .nav-list.nav-checklist li.disabled:hover, .nav-checklist.panel-selector li.disabled:hover {
+  cursor: none;
+  cursor: not-allowed;
+  background-color: #b3b3b3;
+  color: #999999;
+  background-image: url(../img/empty_stripe.png);
 }
-.nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled {
-  background-color: #e8e8e8;
-  border-color: #e4e4e4;
-  border-bottom-width: 1;
-  color: #b3b3b3;
-}
-.nav-list.nav-checklist li.disabled:hover, .nav-checklist.panel-selector li.disabled:hover {
-  background-color: #f0f0f0;
+.nav-list.nav-checklist li.disabled a, .nav-checklist.panel-selector li.disabled a, .nav-list.nav-checklist li.disabled a:hover, .nav-checklist.panel-selector li.disabled a:hover {
+  color: #999999;
+  cursor: none;
+  cursor: not-allowed;
 }
 .nav-list.nav-checklist li.attention, .nav-checklist.panel-selector li.attention {
   background-color: #f8dbb6;
@@ -2643,7 +2641,10 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *	</li>
 *	<li class="error">
 *	<a><span class="text">Nav List Item 5(error)</span><i class="fa fa-holder-dynamic"></i></a>
-*	</li  class="">
+*	</li >
+*	<li class="disabled">
+*	<a><span class="text">Nav List Item 5(disabled)</span><i class="fa fa-holder-dynamic"></i></a>
+*	</li >
 *	</ul>
 *	</nav>
 */
@@ -11059,7 +11060,7 @@ STATE TRUMPING CODE
   color: #c32231;
 }
 
-.error .message-holder > .error, .hint .error, .error.inset .bar.close .action-btn, .error.callout {
+.nav-list.nav-checklist li.error, .nav-checklist.panel-selector li.error, .error .message-holder > .error, .hint .error, .error.inset .bar.close .action-btn, .error.callout {
   background-color: #c32231;
 }
 
@@ -11075,7 +11076,7 @@ STATE TRUMPING CODE
   color: #E08514;
 }
 
-.warning .message-holder > .warning, .hint .warning, .warning.inset .bar.close .action-btn, .warning.callout {
+.nav-list.nav-checklist li.warning, .nav-checklist.panel-selector li.warning, .warning .message-holder > .warning, .hint .warning, .warning.inset .bar.close .action-btn, .warning.callout {
   background-color: #E08514;
 }
 
@@ -11091,7 +11092,7 @@ STATE TRUMPING CODE
   color: #14B057;
 }
 
-.validated .message-holder > .validated, .hint .validated, .validated.inset .bar.close .action-btn, .validated.callout {
+.nav-list.nav-checklist li.validated, .nav-checklist.panel-selector li.validated, .validated .message-holder > .validated, .hint .validated, .validated.inset .bar.close .action-btn, .validated.callout {
   background-color: #14B057;
 }
 
@@ -11107,7 +11108,7 @@ STATE TRUMPING CODE
   color: #bbe8f4;
 }
 
-.info .message-holder > .info, .hint .info, .info.inset .bar.close .action-btn, .info.callout {
+.nav-list.nav-checklist li.info, .nav-checklist.panel-selector li.info, .info .message-holder > .info, .hint .info, .info.inset .bar.close .action-btn, .info.callout {
   background-color: #bbe8f4;
 }
 
@@ -11123,7 +11124,7 @@ STATE TRUMPING CODE
   color: #22AFD7;
 }
 
-.highlighted .message-holder > .highlighted, .hint .highlighted, .highlighted.inset .bar.close .action-btn, .highlighted.callout {
+.nav-list.nav-checklist li.highlighted, .nav-checklist.panel-selector li.highlighted, .highlighted .message-holder > .highlighted, .hint .highlighted, .highlighted.inset .bar.close .action-btn, .highlighted.callout {
   background-color: #22AFD7;
 }
 
@@ -11139,7 +11140,7 @@ STATE TRUMPING CODE
   color: #14B057;
 }
 
-.completed .message-holder > .completed, .hint .completed, .completed.inset .bar.close .action-btn, .completed.callout {
+.nav-list.nav-checklist li.completed, .nav-checklist.panel-selector li.completed, .completed .message-holder > .completed, .hint .completed, .completed.inset .bar.close .action-btn, .completed.callout {
   background-color: #14B057;
 }
 
@@ -11155,7 +11156,7 @@ STATE TRUMPING CODE
   color: #b3b3b3;
 }
 
-.disabled .message-holder > .disabled, .hint .disabled, .disabled.inset .bar.close .action-btn, .disabled.callout {
+.nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled, .disabled .message-holder > .disabled, .hint .disabled, .disabled.inset .bar.close .action-btn, .disabled.callout {
   background-color: #b3b3b3;
 }
 
@@ -11171,7 +11172,7 @@ STATE TRUMPING CODE
   color: #E08514;
 }
 
-.attention .message-holder > .attention, .hint .attention, .attention.inset .bar.close .action-btn, .attention.callout {
+.nav-list.nav-checklist li.attention, .nav-checklist.panel-selector li.attention, .attention .message-holder > .attention, .hint .attention, .attention.inset .bar.close .action-btn, .attention.callout {
   background-color: #E08514;
 }
 
