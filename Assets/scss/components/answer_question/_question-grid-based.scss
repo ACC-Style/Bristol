@@ -15,7 +15,9 @@
 		}
 		}
 	}*/
-
+	&.tiny-switches .switch { @extend .tiny.switch;}
+	&.small-switches .switch {@extend .small.switch;}
+	&.large-switches .switch { @extend .large.switch;}
 	.label-holder .text {
 		white-space: normal;
 	}
@@ -161,20 +163,23 @@
 		}
 
 		&.single-switch {
+			&:after{content:'';display:table;clear:both;float:none;}
 			.input-holder {
 				margin-right: -7.5em;
-				width: auto;
-
+				width: 7em;
 				.input-space {
-					padding-right: 0;
+				padding-right: 0;
 				}
 			}
 
 			.label-holder {
-				padding-left: 8em;
-				;
+				padding-left: 6em;
 				width: 100%;
 			}
+			&.tiny-switches .label-holder{margin-top:.3rem;padding-left:4rem;}
+			&.small-switches .label-holder{margin-top:.4rem;padding-left:5rem;}
+			&.large-switches .label-holder{margin-top:.75rem;padding-left:6.5rem;}
+
 		}
 	}
 
@@ -192,17 +197,6 @@
 			position: relative;
 		}
 	}
-	// Depreceted to Simplify
-	// &.indent-1, &.indent-2 {
-	//     .input-holder .text {
-	//         color: grey(75);
-	//     }
-	// }
-	// &.indent-3 {
-	//     .input-holder .text {
-	//         color: grey(70);
-	//     }
-	// }
 	&.indent-1, &.indent-2, &.indent-3 {
 		.input-holder:before {
 			color: grey(20);
@@ -265,7 +259,6 @@
 			display: table-cell !important;
 			vertical-align: top;
 			float: none !important;
-			width: auto;
 		}
 
 		.label-holder {
@@ -350,8 +343,8 @@
 
 
 /**
-* Indent Modifier:
-* `.indent-1` - children space themselves to show the relationship to the parent..
+* Grid Based Question (Indent Modifier):
+* `.indent-1` - Grid questions can show there relationship to eachother by the use of indent modifiers. Children indent their inputs and mark themselves to show the relationship to the parent.
 * 
 *   @example
 * <div class="row">
@@ -540,7 +533,7 @@
 
 
 /**
-* Fluid Question Group:
+* Fluid Question Grouping:
 * `.question-group.fluid-align` - A containter that will align the labels  to the longest label.
 * 
 *   @example
@@ -602,3 +595,39 @@
 *     </div>
 * </div>
 */
+
+/**
+* Single Switch Modifier:
+* `.label-position-right.single-switch[.tiny-switches,.small-switches,.large-switches]` - Single switches sometimes don't have value labels but use the question labels. The size and alignment of the switches controlled by adding `.tiny-switches`,`.small-switches`,`.large-switches` to the question div.
+* 
+*   @example
+* <div class="row">
+*    <div class="column small-12">
+*        <div class="question-grid-based required single-switch label-position-right small-switches">
+*            <div class="label-holder">
+*              <label for="">
+*              <span class="text">Question Indent 3
+*              <a class="seq">1234</a>
+*          </span>
+*          <span class="required-holder">
+*              <i class="fa fa-holder-dynamic"></i>
+*          </span>
+*        </label>
+*      </div>
+*      <div class="input-holder">
+*         <div class="switch-input-space">
+*           <div class="switch radius">
+*              <input class="switch-input" id="radius-singleswitch" type="checkbox" value="true">
+*              <label class="switch-paddle" for="radius-singleswitch">
+*              <span class="show-for-sr">Do you like me?</span>
+*              <span class="switch-active" aria-hidden="true"><i class="fa fa-holder"></i></span>
+*              <span class="switch-inactive" aria-hidden="true"><i class="fa fa-holder"></i></span>
+*             </label>
+*           </div>
+*         </div>
+*      </div>
+*    </div>
+*   </div>
+* </div>
+**/
+
