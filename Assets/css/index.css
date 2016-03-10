@@ -2551,53 +2551,89 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 }
 
 .nav-list.nav-checklist li.error, .nav-checklist.panel-selector li.error {
-  background-color: #f2b7bd;
+  background-color: #f7cfd3;
   border-color: #f0abb2;
   border-bottom-width: 1;
   color: #333333;
 }
 .nav-list.nav-checklist li.error:hover, .nav-checklist.panel-selector li.error:hover {
-  background-color: #f7cfd3;
+  background-color: #ee9fa7;
+}
+.nav-list.nav-checklist li.error.selected, .nav-checklist.panel-selector li.error.selected {
+  color: white;
+}
+.nav-list.nav-checklist li.error.selected:hover, .nav-checklist.panel-selector li.error.selected:hover {
+  color: #5c5c5c;
 }
 .nav-list.nav-checklist li.warning, .nav-checklist.panel-selector li.warning {
-  background-color: #f8dbb6;
+  background-color: #fbe7ce;
   border-color: #f7d5aa;
   border-bottom-width: 1;
   color: #333333;
 }
 .nav-list.nav-checklist li.warning:hover, .nav-checklist.panel-selector li.warning:hover {
-  background-color: #fbe7ce;
+  background-color: #f6cf9d;
+}
+.nav-list.nav-checklist li.warning.selected, .nav-checklist.panel-selector li.warning.selected {
+  color: white;
+}
+.nav-list.nav-checklist li.warning.selected:hover, .nav-checklist.panel-selector li.warning.selected:hover {
+  color: #5c5c5c;
 }
 .nav-list.nav-checklist li.validated, .nav-checklist.panel-selector li.validated {
-  background-color: #aaf5cb;
+  background-color: #c7f9dc;
   border-color: #9cf4c2;
   border-bottom-width: 1;
   color: #333333;
 }
 .nav-list.nav-checklist li.validated:hover, .nav-checklist.panel-selector li.validated:hover {
-  background-color: #c7f9dc;
+  background-color: #8ef2b9;
+}
+.nav-list.nav-checklist li.validated.selected, .nav-checklist.panel-selector li.validated.selected {
+  color: white;
+}
+.nav-list.nav-checklist li.validated.selected:hover, .nav-checklist.panel-selector li.validated.selected:hover {
+  color: #5c5c5c;
 }
 .nav-list.nav-checklist li.info, .nav-checklist.panel-selector li.info {
-  background-color: #ebf8fc;
+  background-color: #f1fafd;
   border-color: #e7f7fb;
   border-bottom-width: 1;
   color: #333333;
 }
 .nav-list.nav-checklist li.info:hover, .nav-checklist.panel-selector li.info:hover {
-  background-color: #f1fafd;
+  background-color: #e4f6fb;
+}
+.nav-list.nav-checklist li.info.selected, .nav-checklist.panel-selector li.info.selected {
+  color: #5c5c5c;
+}
+.nav-list.nav-checklist li.info.selected:hover, .nav-checklist.panel-selector li.info.selected:hover {
+  color: #5c5c5c;
 }
 .nav-list.nav-checklist li.highlighted, .nav-checklist.panel-selector li.highlighted {
-  background-color: #bbe8f4;
+  background-color: #d2eff8;
   border-color: #b0e4f3;
   border-bottom-width: 1;
   color: #333333;
 }
 .nav-list.nav-checklist li.highlighted:hover, .nav-checklist.panel-selector li.highlighted:hover {
-  background-color: #d2eff8;
+  background-color: #a5e0f1;
+}
+.nav-list.nav-checklist li.highlighted.selected, .nav-checklist.panel-selector li.highlighted.selected {
+  color: white;
+}
+.nav-list.nav-checklist li.highlighted.selected:hover, .nav-checklist.panel-selector li.highlighted.selected:hover {
+  color: #5c5c5c;
 }
 .nav-list.nav-checklist li.completed, .nav-checklist.panel-selector li.completed {
   background-color: #fff;
   color: #333333;
+}
+.nav-list.nav-checklist li.completed.selected, .nav-checklist.panel-selector li.completed.selected {
+  color: white;
+}
+.nav-list.nav-checklist li.completed.selected:hover, .nav-checklist.panel-selector li.completed.selected:hover {
+  color: #5c5c5c;
 }
 .nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled, .nav-list.nav-checklist li.disabled:hover, .nav-checklist.panel-selector li.disabled:hover {
   cursor: none;
@@ -2612,13 +2648,19 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   cursor: not-allowed;
 }
 .nav-list.nav-checklist li.attention, .nav-checklist.panel-selector li.attention {
-  background-color: #f8dbb6;
+  background-color: #fbe7ce;
   border-color: #f7d5aa;
   border-bottom-width: 1;
   color: #333333;
 }
 .nav-list.nav-checklist li.attention:hover, .nav-checklist.panel-selector li.attention:hover {
-  background-color: #fbe7ce;
+  background-color: #f6cf9d;
+}
+.nav-list.nav-checklist li.attention.selected, .nav-checklist.panel-selector li.attention.selected {
+  color: white;
+}
+.nav-list.nav-checklist li.attention.selected:hover, .nav-checklist.panel-selector li.attention.selected:hover {
+  color: #5c5c5c;
 }
 
 /**
@@ -11158,6 +11200,8 @@ STATE TRUMPING CODE
 
 .nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled, .disabled .message-holder > .disabled, .hint .disabled, .disabled.inset .bar.close .action-btn, .disabled.callout {
   background-color: #b3b3b3;
+  cursor: none;
+  cursor: not-allowed;
 }
 
 .disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before {
