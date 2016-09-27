@@ -50,15 +50,10 @@
 }
 
 .switch-input {
-    &:focus + .switch-paddle {
-        -webkit-box-shadow: inset 0px 0px 10px 2px rebrand-color($primary-color, 2);
-        -moz-box-shadow: inset 0px 0px 10px 2px rebrand-color($primary-color, 2);
-        box-shadow: inset 0px 0px 10px 2px rebrand-color($primary-color, 2);
-    }
-    &:focus + .switch-paddle:after {
-        -webkit-box-shadow: 0px 0px 10px 2px rebrand-color($primary-color, 2);
-        -moz-box-shadow: 0px 0px 10px 2px rebrand-color($primary-color, 2);
-        box-shadow: 0px 0px 10px 2px rebrand-color($primary-color, 2);
+    &:focus + .switch-paddle{
+        -webkit-box-shadow: inset 0px 0px 10px 2px rgba(black, 0.2);
+        -moz-box-shadow: inset 0px 0px 10px 2px rgba(black, 0.2);
+        box-shadow: inset 0px 0px 10px 2px rgba(black, 0.2);
     }
 }
 
@@ -229,7 +224,6 @@
 .group-switch{
     background-color: rebrand-color($select-color, 2);
     border: 2px solid grey(30);
-    background-image: url("../img/billie-holiday.png");
     box-sizing: content-box;   
     width: auto;
     height: 2rem;
@@ -238,8 +232,17 @@
     color: inherit;
     font-weight: inherit;
     display: inline-block;
+    .switch-active,.switch-inactive{    
+        text-align: center;
+        width: 100%;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+    }
   .switch-position{
-    display: inline-block;
+    display: block;
+    float: left;
   }  
   .switch-input{
     opacity: 0;
@@ -249,12 +252,16 @@
     border: 0 transparent none;
     background-color: transparent;
     &:after{
-      width: 2.75em;
       opacity: 0;
-      left:.25em;
+      width: 80%;
+      left: 10%;
+      border-radius:3px;
     }
   }
-  input:checked + .switch-paddle:after{ opacity:1; left:.25em;}
+  input:checked + .switch-paddle:after{ 
+    opacity:1;
+    left: 10%;
+        }
    .switch-active, .switch-inactive {
         z-index: 100;
     }
@@ -281,7 +288,7 @@
 *   <div class="row group-divide">
 *   <h3>Radio Buttons should use `.round` or `.radio` modifier</h3>
 *   <p>You can make a radio with eiither placing the `.round` or `.radio`.  If you want control over the positive and negative position use `.round`.  Use `.radio` to set it to the standard icon in the positive position</p>
-*   <div class="row">
+*   <div class="row collapse">
 *   <div class="switch-input-space column small-6">
 *   <div class="switch round">
 *   <input class="switch-input" id="yes-no-round" type="radio" name="radio-switch">
@@ -309,7 +316,7 @@
 *   <div class="row group-divide">
 *   <h3>Checkboxes should use `.radius`, `.checkbox`, no modifiers</h3>
 *   <p>You can make a checkbox with eiither placing the `.checkbox` or `.radius`.  If you want control over the positive and negative position use `.radius`.  Use `.checkbox` to set it to the standard icon in the positive position</p>
-*   <div class="row">
+*   <div class="row collapse">
 *   <div class="switch-input-space column small-6">
 *   <div class="switch radius">
 *   <input class="switch-input" id="radius-checkbox" type="checkbox" value="true">
@@ -371,6 +378,7 @@
 *   </label>
 *   </div>
 *   </div>
+*   <div class="row group-divide"><h3>Grouped Swtiched</h3>
 *   <div class="switch-input-space column small-12">
 *   <div class="group-switch"><div class="switch-position">
 *   <input class="switch-input" id="group-switch0"  type="checkbox" value="false">
@@ -394,5 +402,5 @@
 *   </div>
 *   <label class="switch-value" for="checkbox-value-switch-round">You can also apply the `.radius` and `.round` to change the style
 *   </label>
-*   </div>
+*   </div></div>
 **/
