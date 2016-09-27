@@ -12,17 +12,17 @@ $primary-tab-lighttext:$global-default-light-text;
 	flex-wrap:wrap;
 	width:100%;
 	clear:both;
-	@include flexbox();
+	@include acc-flexbox();
 	flex-direction:row;
 	align-items:stretch;
 	align-content: stretch;
 	@include baseline-font(-1);
 	li {	
-		@include flex(1 1 auto);
+		@include acc-flex(1 1 auto);
 		a{padding: .55em .25em .75em;
 			&:after{border-bottom: 8px solid $primary-tab-Selected-tick-color;}
 		}
-		&.icon{@include flex(0 0 2em);}
+		&.icon{@include acc-flex(0 0 2em);}
 	}
 	@include bp(sm){
 		@include baseline-font(0);

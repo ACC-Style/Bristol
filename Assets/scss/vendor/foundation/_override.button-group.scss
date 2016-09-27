@@ -1,32 +1,35 @@
 
-.button-group {
-    @include button-group();
-    @include bp(lg-down){
-        @include button-group-stack();
-        .button{
-        width:100%;
-        border-bottom:1px #fff solid;
-        &:last-child{border-bottom:0px;}
-        }
-    }
+.button-group{
+    // @include button-group();
+    // @include bp(lg-down){
+    //     @include button-group-stack();
+    //     .button{
+    //     width:100%;
+    //     border-bottom:1px #fff solid;
+    //     &:last-child{border-bottom:0px;}
+    //     }
+    // }
     &.radius, &.radius-top, &.radius-bottom{overflow:hidden; }
-    @include bp(lg){
-        @include button-group-unstack();
-    }
-    padding-left: 0;
-    border: 2px solid transparent;
-    .input-space & {
-        margin-bottom: 0;
-    }
-    & > li {
-        .button {
-            .input-space & {
-                padding-top: .57143rem;
-                padding-bottom: .57143rem;
-            }
-        }
-    }
+    // @include bp(lg){
+    //     @include button-group-unstack();
+    // }
+    // padding-left: 0;
+    &.expanded.selectable .button:first-child:nth-last-child(3){border-right-width: 0;width:33.3333%}
+     border: 2px solid transparent;
+    // }
+    // .input-space & {
+    //     margin-bottom: 0;
+    // }
+    // & > li {
+    //     .button {
+    //         .input-space & {
+    //             padding-top: .57143rem;
+    //             padding-bottom: .57143rem;
+    //         }
+    //     }
+    // }
     &.selectable {
+    	margin-right: 0;
         .button {
             @include button-style($background: grey(30));
             &:hover,&:focus{
@@ -119,7 +122,7 @@
 * <div class="question error">  
 * <div class="input-holder row collapse">
 *     <div class="column small-12 input-space">
-*   <div class="expanded button-group selectable">
+*   <div class="button-group expanded selectable">
 *     <a href="" class="button selected"><i class="fa fa-check"></i><span class="text">Yes</span></a>
 *     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
 *     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
