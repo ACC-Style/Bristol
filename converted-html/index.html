@@ -75,7 +75,7 @@
             <h5>Foundation 6.2</h5>
             <ul >
                 <li>Button Group altered to use Foundation stack functions</ul>
-            <h5>Refactoring of states to remove unused states.</h5>
+            <h5>Refactoring of states to remove unused states. <span class="bold">Current List of States</span></h5>
             <ul >
                 <li>Error (.error)</li>
                 <li>Warning (.warning)</li>
@@ -1721,12 +1721,19 @@
   <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;order-marker inverse&quot;</span>&gt;</span>c<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>Header 5 Tag<span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span></pre>
       </div>
     </section>
-	  <section class="sg-block sg-section-typography-states">
-      <div class="sg-text">
-        <h3 id="typography-states" class="sg">Typography States</h3>
+	<section class="sg-block sg-section-header-tags-and-other-typography-states">
+  <div class="sg-text">
+        <h3 id="header-tags-and-other-typography-states" class="sg">Header Tags and other Typography States</h3>
         <p class="sg">
-          <code class="sg">.error, .warning, .etc...</code>- headers and
-          <code class="sg">p</code>tags can be fully manipulated to respond to states by adding the modifiying state like error, warning, info, highlighted, validated, and completed.</p>
+          <code class="sg">.error, .warning, .etc...</code>- headers
+          <code class="sg">p</code>
+          <code class="sg">li</code>
+          <code class="sg">blockquote</code>
+          <code class="sg">a</code>and
+          <code class="sg">p</code>tags can be fully manipulated to respond to states by adding the modifiying state like
+          <code class="sg">.error</code>,
+          <code class="sg">.warning</code>,
+          <code class="sg">.info</code>etc....</p>
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
@@ -1739,8 +1746,8 @@
           <h3 class="with-underline warning">Header 3 Tag
             <small>Warning State</small>
           </h3>
-          <h4 class="with-underline validated">Header 4 Tag
-            <blockquote>Validated/success State</blockquote>
+          <h4 class="with-underline success">Header 4 Tag
+            <span class="sub-line">Success State</span>
           </h4>
           <h5 class="with-underline highlighted">Header 5 Tag
             <small>Highlighted State</small>
@@ -1756,8 +1763,8 @@
 <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline warning&quot;</span>&gt;</span>Header 3 Tag
   <span class="hljs-tag">&lt;<span class="hljs-title">small</span>&gt;</span>Warning State<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline validated&quot;</span>&gt;</span>Header 4 Tag
-  <span class="hljs-tag">&lt;<span class="hljs-title">blockquote</span>&gt;</span>Validated/success State<span class="hljs-tag">&lt;/<span class="hljs-title">blockquote</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline success&quot;</span>&gt;</span>Header 4 Tag
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sub-line&quot;</span>&gt;</span>Success State<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">h5</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline highlighted&quot;</span>&gt;</span>Header 5 Tag
   <span class="hljs-tag">&lt;<span class="hljs-title">small</span>&gt;</span>Highlighted State<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
@@ -2080,7 +2087,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
 <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></pre>
       </div>
     </section>
-	 <section class="sg-block sg-section-table-states-cells">
+	  <section class="sg-block sg-section-table-states-cells">
       <div class="sg-text">
         <h3 id="table-states-cells" class="sg">Table States Cells</h3>
         <p class="sg">
@@ -2097,8 +2104,8 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
                 <i class="fa fa-holder"></i>
               </td>
               <td class="">Text</td>
-              <td class="">
-                <i class="fa fa-holder"></i>&#xA0;Warning</td>
+              <td class="warning">
+                <i class="fa fa-holder"></i>Warning</td>
             </tr>
             <tr>
               <td class="">
@@ -2123,13 +2130,13 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
                 <i class="fa fa-holder"></i>&#xA0;Text</td>
             </tr>
             <tr>
-              <td class="validated icon">
+              <td class="success icon">
                 <i class="fa fa-holder"></i>
               </td>
               <td class="info icon">
                 <i class="fa fa-holder"></i>
               </td>
-              <td class="validated">Validated</td>
+              <td class="success">Success</td>
               <td class="">
                 <i class="fa fa-holder"></i>&#xA0;text</td>
             </tr>
@@ -2143,8 +2150,8 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Text<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp;Warning<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;warning&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Warning<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
@@ -2169,13 +2176,13 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp;Text<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;validated icon&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;success icon&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;info icon&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;validated&quot;</span>&gt;</span>Validated<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;success&quot;</span>&gt;</span>Success<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp;text<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
@@ -2192,12 +2199,12 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
       <div class="sg-example">
         <div class="sg-canvas">
           <table class="table stripped">
-            <tr class="validated">
+            <tr class="success">
               <td class="icon">
                 <i class="fa fa-holder-dynamic"></i>
               </td>
               <td class=""></td>
-              <td class="">Cell Data in validated Row</td>
+              <td class="">Cell Data in success Row</td>
               <td class="">Icon is Dynamic</td>
             </tr>
             <tr class="warning">
@@ -2208,22 +2215,22 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
               <td class="">Cell Data in Warning Row</td>
               <td class="error">I am an error cell</td>
             </tr>
-            <tr class="warning">
+            <tr class="error">
               <td class="icon">
                 <i class="fa fa-holder-dynamic"></i>
               </td>
-              <td class=""></td>
-              <td class="">Cell Data in Warning Row</td>
-              <td>data</td>
+              <td class="">Icon is Dynamic</td>
+              <td class="">Cell Data in Error Row</td>
+              <td class="">Cell Data</td>
             </tr>
           </table>
         </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;table stripped&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;validated&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;success&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Cell Data in validated Row<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Cell Data in success Row<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Icon is Dynamic<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;warning&quot;</span>&gt;</span>
@@ -2234,14 +2241,15 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Cell Data in Warning Row<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;error&quot;</span>&gt;</span>I am an error cell<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;warning&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;error&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Cell Data in Warning Row<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>data<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span></pre>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Icon is Dynamic<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Cell Data in Error Row<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Cell Data<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></pre>
       </div>
     </section>
 </div>
@@ -3358,59 +3366,76 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
       </div>
     </section>
 	<h2>Nav Lists</h2>
-	  <section class="sg-block sg-section-navigation-list">
-      <div class="sg-text">
-        <h3 id="navigation-list" class="sg">Navigation List</h3>
+	<section class="sg-block sg-section-navigation-list">
+    <div class="sg-text">
+        <h3 class="sg" id="navigation-list">
+            Navigation List
+        </h3>
         <p class="sg">
-          <code class="sg">.nav-list ul li</code>- A collection of navigation links perfect for side navigation or a collection of external links. Add
-          <code class="sg">.selected</code>to the
-          <code class="sg">li</code>to highlight the nav link.</p>
-      </div>
-      <div class="sg-example">
+            <code class="sg">
+                .nav-list ul li
+            </code>
+            - A collection of navigation links perfect for side navigation or a collection of external links. Add
+            <code class="sg">
+                .selected
+            </code>
+            to the
+            <code class="sg">
+                li
+            </code>
+            to highlight the nav link.
+        </p>
+    </div>
+    <div class="sg-example">
         <div class="sg-canvas">
-          <nav class="nav-list">
-            <ul>
-              <li>
-                <a>
-                  <span class="text">Nav List Item 1</span>
-                  <i class="fa fa-holder-dynamic"></i>
-                </a>
-              </li>
-              <li class="selected">
-                <a>
-                  <span class="text">Nav List Item 2</span>
-                  <i class="fa fa-holder-dynamic"></i>
-                </a>
-              </li>
-
-            </ul>
-          </nav>
-        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">nav</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav-list&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Nav List Item 1<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;selected&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Nav List Item 2<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span></pre>
-      </div>
-    </section>
-	 <section class="sg-block sg-section-nav-list-checklist-">
+            <nav class="nav-list">
+                <ul>
+                    <li>
+                        <a>
+                            <span class="text">
+                                Nav List Item 1
+                            </span>
+                            <i class="fa fa-holder-dynamic">
+                            </i>
+                        </a>
+                    </li>
+                    <li class="selected">
+                        <a>
+                            <span class="text">
+                                Nav List Item 2
+                            </span>
+                            <i class="fa fa-holder-dynamic">
+                            </i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <pre class="sg-code"><span class="hljs-tag"><<span class="hljs-title">nav</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-list"</span>></span>
+        <span class="hljs-tag"><<span class="hljs-title">ul</span>></span>
+          <span class="hljs-tag"><<span class="hljs-title">li</span>></span>
+            <span class="hljs-tag"><<span class="hljs-title">a</span>></span>
+              <span class="hljs-tag"><<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text"</span>></span>Nav List Item 1<span class="hljs-tag"></<span class="hljs-title">span</span>></span>
+              <span class="hljs-tag"><<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fa fa-holder-dynamic"</span>></span><span class="hljs-tag"></<span class="hljs-title">i</span>></span>
+            <span class="hljs-tag"></<span class="hljs-title">a</span>></span>
+          <span class="hljs-tag"></<span class="hljs-title">li</span>></span>
+          <span class="hljs-tag"><<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"selected"</span>></span>
+            <span class="hljs-tag"><<span class="hljs-title">a</span>></span>
+              <span class="hljs-tag"><<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text"</span>></span>Nav List Item 2<span class="hljs-tag"></<span class="hljs-title">span</span>></span>
+              <span class="hljs-tag"><<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fa fa-holder-dynamic"</span>></span><span class="hljs-tag"></<span class="hljs-title">i</span>></span>
+            <span class="hljs-tag"></<span class="hljs-title">a</span>></span>
+          <span class="hljs-tag"></<span class="hljs-title">li</span>></span>
+        <span class="hljs-tag"></<span class="hljs-title">ul</span>></span>
+      <span class="hljs-tag"></<span class="hljs-title">nav</span>></span></pre>
+    </div>
+</section>
+	<section class="sg-block sg-section-nav-list-checklist-">
       <div class="sg-text">
         <h3 id="nav-list-checklist-" class="sg">Nav List (Checklist)</h3>
         <p class="sg">
           <code class="sg">.nav-checklist</code>- add class to the nav to change the .nav-list from forward links to a list with states of
           <code class="sg">.selected</code>,
-          <code class="sg">.completed</code>,
+          <code class="sg">.success</code>,
           <code class="sg">.warning</code>,
           <code class="sg">.error</code>
         </p>
@@ -3431,9 +3456,9 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
                   <i class="fa fa-holder-dynamic"></i>
                 </a>
               </li>
-              <li class="completed">
+              <li class="sucess">
                 <a>
-                  <span class="text">Nav List Item 3(completed)</span>
+                  <span class="text">Nav List Item 3(sucess)</span>
                   <i class="fa fa-holder-dynamic"></i>
                 </a>
               </li>
@@ -3452,18 +3477,18 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
           <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;completed&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sucess&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Nav List Item 3(completed)<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Nav List Item 3(sucess)<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span></pre>
       </div>
-    </section>
+</section>
 
-   <section class="sg-block sg-section-nav-list-checklist-w-states-">
+ <section class="sg-block sg-section-nav-list-checklist-w-states-">
       <div class="sg-text">
         <h3 id="nav-list-checklist-w-states-" class="sg">Nav List (Checklist w/ States)</h3>
         <p class="sg">
@@ -3482,7 +3507,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
                   <i class="fa fa-holder-dynamic"></i>
                 </a>
               </li>
-              <li class="selected warning">
+              <li class="selected">
                 <a>
                   <span class="text">Nav List Item 2(selected and warning)</span>
                   <i class="fa fa-holder-dynamic"></i>
@@ -3521,7 +3546,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
         <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Nav List Item 1(blank)<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;selected warning&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;selected&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Nav List Item 2(selected and warning)<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
@@ -4226,131 +4251,131 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
       </div>
     </section>
 	<h2>Wizard Navs</h2>
-	<section class="sg-block sg-section-circle-section-nav-forward-back-">
-    <div class="sg-text">
+	
+    <section class="sg-block sg-section-circle-section-nav-forward-back-">
+      <div class="sg-text">
         <h3 id="circle-section-nav-forward-back-" class="sg">Circle Section Nav (forward &amp; back)</h3>
         <p class="sg">
-        <code class="sg">.section-nav with .forward or .back</code>- A wizard-like page nav. Alter the position of the circle button by adding
-        <code class="sg">.forward</code>or
-        <code class="sg">.back</code>to the
-        <code class="sg">.section-nav</code>container.</p>
-    </div>
-    <div class="sg-example">
+          <code class="sg">.section-nav with .forward or .back</code>- A wizard-like page nav. Alter the position of the circle button by adding
+          <code class="sg">.forward</code>or
+          <code class="sg">.back</code>to the
+          <code class="sg">.section-nav</code>container.</p>
+      </div>
+      <div class="sg-example">
         <div class="sg-canvas">
-            <div class="page with-group-sections">
-                <div class="section-nav back">
-                    <a>
-                    <div class="circle">
-                        <i class="fa fa-holder-dynamic"></i>
-                    </div>
-                    <div class="text">Back</div>
-                    </a>
+          <div class="page with-group-sections">
+            <div class="section-nav back">
+              <a>
+                <div class="circle">
+                  <i class="fa fa-holder-dynamic"></i>
                 </div>
-                <div class="page-wrapper">
-                    <section class="group-section">
-                        <h1 class="with-underline">Page Title</h1>
-                        <p>hello I am some content on this page</p>
-                    </section>
-                </div>
-                <div class="section-nav forward">
-                    <a>
-                    <div class="circle">
-                        <i class="fa fa-holder-dynamic"></i>
-                    </div>
-                    <div class="text">Forward</div>
-                    </a>
-                </div>
+                <div class="text">Back</div>
+              </a>
             </div>
-        </div>
-<pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page with-group-sections&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section-nav back&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;circle&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Back<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;group-section&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Page Title<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>hello I am some content on this page<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section-nav forward&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;circle&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Forward<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <div class="page-wrapper">
+              <section class="group-section">
+                <h1 class="with-underline">Page Title</h1>
+                <p>hello I am some content on this page</p>
+              </section>
+            </div>
+
+            <div class="section-nav forward">
+              <a>
+                <div class="circle">
+                  <i class="fa fa-holder-dynamic"></i>
+                </div>
+                <div class="text">Forward</div>
+              </a>
+            </div>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page with-group-sections&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section-nav back&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;circle&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Back<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;group-section&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Page Title<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>hello I am some content on this page<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section-nav forward&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;circle&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Forward<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
-    </div>
-</section>
+      </div>
+    </section>
 
-
-<section class="sg-block sg-section-circle-section-nav-disabled-">
-    <div class="sg-text">
+    <section class="sg-block sg-section-circle-section-nav-disabled-">
+      <div class="sg-text">
         <h3 id="circle-section-nav-disabled-" class="sg">Circle Section Nav (Disabled)</h3>
         <p class="sg">
-        <code class="sg">.section-nav with .disabled</code>- Adding
-        <code class="sg">.disabled</code>to the
-        <code class="sg">.section-nav</code>container with style the circle nav accordingly.</p>
-    </div>
-    <div class="sg-example">
+          <code class="sg">.section-nav with .disabled</code>- Adding
+          <code class="sg">.disabled</code>to the
+          <code class="sg">.section-nav</code>container with style the circle nav accordingly.</p>
+      </div>
+      <div class="sg-example">
         <div class="sg-canvas">
-            <div class="page">
-                <div class="section-nav back">
-                    <a>
-                    <div class="circle">
-                        <i class="fa fa-holder-dynamic"></i>
-                    </div>
-                    <div class="text">Back</div>
-                    </a>
+          <div class="page">
+            <div class="section-nav back disabled">
+              <a>
+                <div class="circle">
+                  <i class="fa fa-holder-dynamic"></i>
                 </div>
-                <div class="page-wrapper">
-                    <section class="group-section">
-                        <h1 class="with-underline">Page Title (Disabled)</h1>
-                        <p>Somethig on this page has disabled forward navigation</p>
-                    </section>
-                </div>
-                <div class="section-nav forward disabled">
-                    <a>
-                    <div class="circle">
-                        <i class="fa fa-holder-dynamic"></i>
-                    </div>
-                    <div class="text">Forward</div>
-                    </a>
-                </div>
+                <div class="text">Back</div>
+              </a>
             </div>
-        </div>
-<pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section-nav back&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;circle&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Back<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;group-section&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Page Title (Disabled)<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Somethig on this page has disabled forward navigation<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section-nav forward disabled&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;circle&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Forward<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <div class="page-wrapper">
+              <section class="group-section">
+                <h1 class="with-underline">Page Title (Disabled)</h1>
+                <p>Somethig on this page has disabled forward navigation</p>
+              </section>
+            </div>
+
+            <div class="section-nav forward disabled">
+              <a>
+                <div class="circle">
+                  <i class="fa fa-holder-dynamic"></i>
+                </div>
+                <div class="text">Forward</div>
+              </a>
+            </div>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section-nav back disabled&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;circle&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Back<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;group-section&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Page Title (Disabled)<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Somethig on this page has disabled forward navigation<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section-nav forward disabled&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;circle&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Forward<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
-    </div>
-</section>
+      </div>
+    </section>
 </div>
 
               <div id="qna"  data-bind="page: {id:'qna', afterShow: listchange}">
