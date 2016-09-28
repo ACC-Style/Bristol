@@ -2499,7 +2499,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 
 /**
 * Nav List (Checklist):
-* `.nav-checklist` - add class to the nav to change the .nav-list from forward links to a list with states of `.selected`, `.completed`, `.warning`, `.error`
+* `.nav-checklist` - add class to the nav to change the .nav-list from forward links to a list with states of `.selected`, `.success`, `.warning`, `.error`
 * 
 *   @example
 *	<nav class="nav-list nav-checklist">
@@ -2509,8 +2509,8 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *	<li  class="selected">
 *	<a><span class="text">Nav List Item 2(selected)</span><i class="fa fa-holder-dynamic"></i></a>
 *	</li>
-*	<li  class="completed">
-*	<a><span class="text">Nav List Item 3(completed)</span><i class="fa fa-holder-dynamic"></i></a>
+*	<li  class="sucess">
+*	<a><span class="text">Nav List Item 3(sucess)</span><i class="fa fa-holder-dynamic"></i></a>
 *	</li>
 *	</ul>
 *	</nav>
@@ -2580,19 +2580,19 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 .nav-list.nav-checklist li.warning.selected:hover, .nav-checklist.panel-selector li.warning.selected:hover {
   color: #5c5c5c;
 }
-.nav-list.nav-checklist li.validated, .nav-checklist.panel-selector li.validated {
+.nav-list.nav-checklist li.success, .nav-checklist.panel-selector li.success {
   background-color: #c7f9dc;
   border-color: #9cf4c2;
   border-bottom-width: 1;
   color: #333333;
 }
-.nav-list.nav-checklist li.validated:hover, .nav-checklist.panel-selector li.validated:hover {
+.nav-list.nav-checklist li.success:hover, .nav-checklist.panel-selector li.success:hover {
   background-color: #8ef2b9;
 }
-.nav-list.nav-checklist li.validated.selected, .nav-checklist.panel-selector li.validated.selected {
+.nav-list.nav-checklist li.success.selected, .nav-checklist.panel-selector li.success.selected {
   color: white;
 }
-.nav-list.nav-checklist li.validated.selected:hover, .nav-checklist.panel-selector li.validated.selected:hover {
+.nav-list.nav-checklist li.success.selected:hover, .nav-checklist.panel-selector li.success.selected:hover {
   color: #5c5c5c;
 }
 .nav-list.nav-checklist li.info, .nav-checklist.panel-selector li.info {
@@ -2625,16 +2625,6 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 .nav-list.nav-checklist li.highlighted.selected:hover, .nav-checklist.panel-selector li.highlighted.selected:hover {
   color: #5c5c5c;
 }
-.nav-list.nav-checklist li.completed, .nav-checklist.panel-selector li.completed {
-  background-color: #fff;
-  color: #333333;
-}
-.nav-list.nav-checklist li.completed.selected, .nav-checklist.panel-selector li.completed.selected {
-  color: white;
-}
-.nav-list.nav-checklist li.completed.selected:hover, .nav-checklist.panel-selector li.completed.selected:hover {
-  color: #5c5c5c;
-}
 .nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled, .nav-list.nav-checklist li.disabled:hover, .nav-checklist.panel-selector li.disabled:hover {
   cursor: none;
   cursor: not-allowed;
@@ -2647,21 +2637,6 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   cursor: none;
   cursor: not-allowed;
 }
-.nav-list.nav-checklist li.attention, .nav-checklist.panel-selector li.attention {
-  background-color: #fbe7ce;
-  border-color: #f7d5aa;
-  border-bottom-width: 1;
-  color: #333333;
-}
-.nav-list.nav-checklist li.attention:hover, .nav-checklist.panel-selector li.attention:hover {
-  background-color: #f6cf9d;
-}
-.nav-list.nav-checklist li.attention.selected, .nav-checklist.panel-selector li.attention.selected {
-  color: white;
-}
-.nav-list.nav-checklist li.attention.selected:hover, .nav-checklist.panel-selector li.attention.selected:hover {
-  color: #5c5c5c;
-}
 
 /**
 * Nav List (Checklist w/ States):
@@ -2672,7 +2647,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *	<ul>
 *	<li class="">
 *	<a><span class="text">Nav List Item 1(blank)</span><i class="fa fa-holder-dynamic"></i></a>
-*	<li  class="selected warning">
+*	<li  class="selected">
 *	<a><span class="text">Nav List Item 2(selected and warning)</span><i class="fa fa-holder-dynamic"></i></a>
 *	</li>
 *	<li  class="highlighted">
@@ -2903,8 +2878,8 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 }
 
 .input-holder [type='text'], .input-holder [type='password'], .input-holder [type='date'], .input-holder [type='datetime'], .input-holder [type='datetime-local'], .input-holder [type='month'], .input-holder [type='week'], .input-holder [type='email'], .input-holder [type='number'], .input-holder [type='search'], .input-holder [type='tel'], .input-holder [type='time'], .input-holder [type='url'], .input-holder [type='color'], .input-holder textarea, .input-holder button, .input-holder .button {
-  font-size: 1rem;
-  line-height: 1rem;
+  font-size: 14px;
+  line-height: 14px;
   padding: 0.65625rem 0.65625rem;
   height: 2.1875rem;
 }
@@ -3050,7 +3025,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   font-size: .75em;
 }
 
-.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .answer.completed .required-holder, .question.completed .required-holder, .answer.disabled .required-holder, .question.disabled .required-holder, .answer.attention .required-holder, .question.attention .required-holder, .repeater.required > .label-holder .required-holder {
+.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.success .required-holder, .question.success .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .answer.disabled .required-holder, .question.disabled .required-holder, .repeater.required > .label-holder .required-holder {
   background-color: transparent;
   display: inline-block;
 }
@@ -3179,19 +3154,19 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   width: 100%;
 }
 
-.hint .error, .hint .warning, .hint .validated, .hint .info, .hint .highlighted, .hint .completed, .hint .disabled, .hint .attention {
+.hint .error, .hint .warning, .hint .success, .hint .info, .hint .highlighted, .hint .disabled {
   padding: .25em .5em;
 }
 
-.error textarea, .error select, .error input, .error datalist, .warning textarea, .warning select, .warning input, .warning datalist, .validated textarea, .validated select, .validated input, .validated datalist, .info textarea, .info select, .info input, .info datalist, .highlighted textarea, .highlighted select, .highlighted input, .highlighted datalist, .completed textarea, .completed select, .completed input, .completed datalist, .disabled textarea, .disabled select, .disabled input, .disabled datalist, .attention textarea, .attention select, .attention input, .attention datalist {
+.error textarea, .error select, .error input, .error datalist, .warning textarea, .warning select, .warning input, .warning datalist, .success textarea, .success select, .success input, .success datalist, .info textarea, .info select, .info input, .info datalist, .highlighted textarea, .highlighted select, .highlighted input, .highlighted datalist, .disabled textarea, .disabled select, .disabled input, .disabled datalist {
   margin-bottom: 0;
 }
 
-.message-holder > .error, .message-holder > .warning, .message-holder > .validated, .message-holder > .info, .message-holder > .highlighted, .message-holder > .completed, .message-holder > .disabled, .message-holder > .attention {
+.message-holder > .error, .message-holder > .warning, .message-holder > .success, .message-holder > .info, .message-holder > .highlighted, .message-holder > .disabled {
   display: none;
 }
 
-.error .message-holder > .error, .message-holder > .error.make-visible, .warning .message-holder > .warning, .message-holder > .warning.make-visible, .validated .message-holder > .validated, .message-holder > .validated.make-visible, .info .message-holder > .info, .message-holder > .info.make-visible, .highlighted .message-holder > .highlighted, .message-holder > .highlighted.make-visible, .completed .message-holder > .completed, .message-holder > .completed.make-visible, .disabled .message-holder > .disabled, .message-holder > .disabled.make-visible, .attention .message-holder > .attention, .message-holder > .attention.make-visible {
+.error .message-holder > .error, .message-holder > .error.make-visible, .warning .message-holder > .warning, .message-holder > .warning.make-visible, .success .message-holder > .success, .message-holder > .success.make-visible, .info .message-holder > .info, .message-holder > .info.make-visible, .highlighted .message-holder > .highlighted, .message-holder > .highlighted.make-visible, .disabled .message-holder > .disabled, .message-holder > .disabled.make-visible {
   display: block;
 }
 
@@ -4982,7 +4957,7 @@ th.sortable .has-tip {
   height: 100%;
 }
 
-td.error, .table tbody tr + tr td.error, tr.error td, .stripped tr.error:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.error, tr:nth-child(even).error td, td.warning, .table tbody tr + tr td.warning, tr.warning td, .stripped tr.warning:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.warning, tr:nth-child(even).warning td, td.validated, .table tbody tr + tr td.validated, tr.validated td, .stripped tr.validated:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.validated, tr:nth-child(even).validated td, td.info, .table tbody tr + tr td.info, tr.info td, .stripped tr.info:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.info, tr:nth-child(even).info td, td.highlighted, .table tbody tr + tr td.highlighted, tr.highlighted td, .stripped tr.highlighted:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.highlighted, tr:nth-child(even).highlighted td, td.completed, .table tbody tr + tr td.completed, tr.completed td, .stripped tr.completed:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.completed, tr:nth-child(even).completed td, td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .stripped tr.disabled:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.disabled, tr:nth-child(even).disabled td, td.attention, .table tbody tr + tr td.attention, tr.attention td, .stripped tr.attention:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.attention, tr:nth-child(even).attention td {
+td.error, .table tbody tr + tr td.error, tr.error td, .stripped tr.error:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.error, tr:nth-child(even).error td, td.warning, .table tbody tr + tr td.warning, tr.warning td, .stripped tr.warning:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.warning, tr:nth-child(even).warning td, td.success, .table tbody tr + tr td.success, tr.success td, .stripped tr.success:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.success, tr:nth-child(even).success td, td.info, .table tbody tr + tr td.info, tr.info td, .stripped tr.info:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.info, tr:nth-child(even).info td, td.highlighted, .table tbody tr + tr td.highlighted, tr.highlighted td, .stripped tr.highlighted:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.highlighted, tr:nth-child(even).highlighted td, td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .stripped tr.disabled:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.disabled, tr:nth-child(even).disabled td {
   color: #333333;
 }
 
@@ -4996,26 +4971,26 @@ td.icon i {
   margin: 0 auto;
 }
 
-tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.completed td, tr.disabled td, tr.attention td {
+tr.error td, tr.warning td, tr.success td, tr.info td, tr.highlighted td, tr.disabled td {
   background-image: url(../img/empty_stripe@2x.png);
   font-weight: 900;
 }
 
-.stripped tr.error td:nth-child(odd), .stripped tr.warning td:nth-child(odd), .stripped tr.validated td:nth-child(odd), .stripped tr.info td:nth-child(odd), .stripped tr.highlighted td:nth-child(odd), .stripped tr.completed td:nth-child(odd), .stripped tr.disabled td:nth-child(odd), .stripped tr.attention td:nth-child(odd) {
+.stripped tr.error td:nth-child(odd), .stripped tr.warning td:nth-child(odd), .stripped tr.success td:nth-child(odd), .stripped tr.info td:nth-child(odd), .stripped tr.highlighted td:nth-child(odd), .stripped tr.disabled td:nth-child(odd) {
   background-image: url(../img/empty_stripe-alt@2x.png);
   font-weight: 900;
 }
 
-td.error, .table tbody tr + tr td.error, td.warning, .table tbody tr + tr td.warning, td.validated, .table tbody tr + tr td.validated, td.info, .table tbody tr + tr td.info, td.highlighted, .table tbody tr + tr td.highlighted, td.completed, .table tbody tr + tr td.completed, td.disabled, .table tbody tr + tr td.disabled, td.attention, .table tbody tr + tr td.attention {
+td.error, .table tbody tr + tr td.error, td.warning, .table tbody tr + tr td.warning, td.success, .table tbody tr + tr td.success, td.info, .table tbody tr + tr td.info, td.highlighted, .table tbody tr + tr td.highlighted, td.disabled, .table tbody tr + tr td.disabled {
   background-image: url(../img/empty_diamond@2x.png) !important;
   font-weight: 900;
 }
 
-td.error, td.warning, td.validated, td.info, td.highlighted, td.completed, td.disabled, td.attention {
+td.error, td.warning, td.success, td.info, td.highlighted, td.disabled {
   border: 1px solid;
 }
 
-tr.error td, tr.warning td, tr.validated td, tr.info td, tr.highlighted td, tr.completed td, tr.disabled td, tr.attention td {
+tr.error td, tr.warning td, tr.success td, tr.info td, tr.highlighted td, tr.disabled td {
   border-top: 1px solid;
   border-bottom: 1px solid;
 }
@@ -5054,20 +5029,20 @@ tr:nth-child(even).warning td {
   background-color: #faead7;
 }
 
-td.validated, .table tbody tr + tr td.validated, tr.validated td, .stripped tr.validated:nth-child(even) td:nth-child(odd) {
+td.success, .table tbody tr + tr td.success, tr.success td, .stripped tr.success:nth-child(even) td:nth-child(odd) {
   background-color: #d7f2e2;
   border-color: #aaf5cb;
 }
 
-tr:nth-child(even) td.validated {
+tr:nth-child(even) td.success {
   background-color: #cbeeda;
 }
 
-tr:nth-child(even).validated td {
+tr:nth-child(even).success td {
   background-color: #cbeeda;
 }
 
-.stripped tbody tr.validated td:nth-child(odd) {
+.stripped tbody tr.success td:nth-child(odd) {
   background-color: #d7f2e2;
 }
 
@@ -5105,23 +5080,6 @@ tr:nth-child(even).highlighted td {
   background-color: #d9f1f8;
 }
 
-td.completed, .table tbody tr + tr td.completed, tr.completed td, .stripped tr.completed:nth-child(even) td:nth-child(odd) {
-  background-color: #d7f2e2;
-  border-color: #aaf5cb;
-}
-
-tr:nth-child(even) td.completed {
-  background-color: #cbeeda;
-}
-
-tr:nth-child(even).completed td {
-  background-color: #cbeeda;
-}
-
-.stripped tbody tr.completed td:nth-child(odd) {
-  background-color: #d7f2e2;
-}
-
 td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .stripped tr.disabled:nth-child(even) td:nth-child(odd) {
   background-color: #f2f2f2;
   border-color: #e8e8e8;
@@ -5137,23 +5095,6 @@ tr:nth-child(even).disabled td {
 
 .stripped tbody tr.disabled td:nth-child(odd) {
   background-color: #f2f2f2;
-}
-
-td.attention, .table tbody tr + tr td.attention, tr.attention td, .stripped tr.attention:nth-child(even) td:nth-child(odd) {
-  background-color: #faead7;
-  border-color: #f8dbb6;
-}
-
-tr:nth-child(even) td.attention {
-  background-color: #f8e4cb;
-}
-
-tr:nth-child(even).attention td {
-  background-color: #f8e4cb;
-}
-
-.stripped tbody tr.attention td:nth-child(odd) {
-  background-color: #faead7;
 }
 
 /**
@@ -5398,14 +5339,14 @@ table + div > .collapsable-panel {
 .collapsable-panel.warning.inset .bar.close .action-btn {
   color: #fff;
 }
-.collapsable-panel.validated {
+.collapsable-panel.success {
   background-color: transparent;
   border: 0 none transparent;
 }
-.collapsable-panel.validated.inset {
+.collapsable-panel.success.inset {
   background-color: #e3fcee;
 }
-.collapsable-panel.validated.inset .bar.close .action-btn {
+.collapsable-panel.success.inset .bar.close .action-btn {
   color: #fff;
 }
 .collapsable-panel.info {
@@ -5428,16 +5369,6 @@ table + div > .collapsable-panel {
 .collapsable-panel.highlighted.inset .bar.close .action-btn {
   color: #fff;
 }
-.collapsable-panel.completed {
-  background-color: transparent;
-  border: 0 none transparent;
-}
-.collapsable-panel.completed.inset {
-  background-color: #e3fcee;
-}
-.collapsable-panel.completed.inset .bar.close .action-btn {
-  color: #fff;
-}
 .collapsable-panel.disabled {
   background-color: transparent;
   border: 0 none transparent;
@@ -5447,16 +5378,6 @@ table + div > .collapsable-panel {
 }
 .collapsable-panel.disabled.inset .bar.close .action-btn {
   color: #333333;
-}
-.collapsable-panel.attention {
-  background-color: transparent;
-  border: 0 none transparent;
-}
-.collapsable-panel.attention.inset {
-  background-color: #fdf3e7;
-}
-.collapsable-panel.attention.inset .bar.close .action-btn {
-  color: #fff;
 }
 
 /**
@@ -7457,7 +7378,8 @@ This file is generated by `grunt build`, do not edit it by hand.
   margin-left: auto;
   margin-right: auto;
   max-width: none;
-  margin: 1rem -1.5rem -1rem;
+  margin: 1rem -1rem -1rem;
+  margin: 1rem calc(-1rem - 1px) calc(-1rem - 1px);
   background: #2199e8 url("../img/paper-texture.png");
 }
 .group-section-pagination-holder::before, .group-section-pagination-holder::after {
@@ -7498,7 +7420,8 @@ This file is generated by `grunt build`, do not edit it by hand.
   color: #666666;
 }
 .group-section-pagination-holder.top {
-  margin: -.5rem -1.5rem 1rem;
+  margin: -1rem -1rem 1rem;
+  margin: calc(-1rem - 1px) calc(-1rem - 1px) 1rem;
 }
 .group-section-pagination-holder.top .pagination li {
   margin: .25rem .25rem 0;
@@ -7989,26 +7912,26 @@ input:checked + label > .switch-inactive {
   background-color: #e6e6e6;
 }
 
-.switch.value-switch .switch-active {
+.switch.value-switch .switch-active, .switch-group .switch .switch-active {
   color: #333333;
 }
-.switch.value-switch .switch-inactive {
-  color: #adadad;
+.switch.value-switch .switch-inactive, .switch-group .switch .switch-inactive {
+  color: #e6e6e6;
 }
-.switch.value-switch .switch-active, .switch.value-switch .switch-inactive {
+.switch.value-switch .switch-active, .switch.value-switch .switch-inactive, .switch-group .switch .switch-active, .switch-group .switch .switch-inactive {
   z-index: 100;
 }
-.switch.value-switch input + label > .switch-active {
+.switch.value-switch input + label > .switch-active, .switch-group .switch input + label > .switch-active {
   display: block;
 }
-.switch.value-switch input:checked + label > .switch-inactive {
+.switch.value-switch input:checked + label > .switch-inactive, .switch-group .switch input:checked + label > .switch-inactive {
   color: #333333;
   display: block;
 }
-.switch.value-switch input:checked + label > .switch-active {
-  color: #adadad;
+.switch.value-switch input:checked + label > .switch-active, .switch-group .switch input:checked + label > .switch-active {
+  color: #e6e6e6;
 }
-.switch.value-switch .switch-paddle, .switch.value-switch input:checked .switch-paddle {
+.switch.value-switch .switch-paddle, .switch.value-switch input:checked .switch-paddle, .switch-group .switch .switch-paddle, .switch-group .switch input:checked .switch-paddle {
   background-color: #2199e8;
 }
 
@@ -8045,19 +7968,19 @@ input:checked + label > .switch-inactive {
   text-align: center;
 }
 
-.group-switch {
+.switch-group {
   background-color: #14B057;
   border: 2px solid #b3b3b3;
   box-sizing: content-box;
-  width: auto;
   height: 2rem;
   transition: all 0.25s ease-out;
   border-radius: 0;
   color: inherit;
   font-weight: inherit;
-  display: inline-block;
+  display: block;
+  width: auto;
 }
-.group-switch .switch-active, .group-switch .switch-inactive {
+.switch-group .switch .switch-active, .switch-group .switch .switch-inactive {
   text-align: center;
   width: 100%;
   left: 0;
@@ -8065,42 +7988,53 @@ input:checked + label > .switch-inactive {
   padding: 0;
   font-weight: bold;
 }
-.group-switch .switch-position {
-  display: block;
+.switch-group > .switch {
+  display: inline-block;
   float: left;
+  width: auto;
+  margin: 0;
 }
-.group-switch .switch-input {
+.switch-group .switch-input {
   opacity: 0;
   position: absolute;
 }
-.group-switch .switch-paddle {
+.switch-group .switch-paddle {
+  width: 4rem;
   border: 0 transparent none;
   background-color: transparent;
 }
-.group-switch .switch-paddle:after {
+.switch-group .switch-paddle:after {
   opacity: 0;
-  width: 80%;
-  left: 10%;
+  width: 80% !important;
+  width: calc(100% - .5rem) !important;
+  left: 10% !important;
+  left: calc(.25rem + 0px) !important;
   border-radius: 3px;
 }
-.group-switch input:checked + .switch-paddle:after {
-  opacity: 1;
-  left: 10%;
+.switch-group .switch.switch-2x .switch-paddle {
+  width: 8rem;
 }
-.group-switch .switch-active, .group-switch .switch-inactive {
+.switch-group .switch.switch-4x .switch-paddle {
+  width: 16rem;
+}
+.switch-group input:checked + .switch-paddle:after {
+  opacity: 1;
+  left: 10% !important;
+  left: calc(.25rem + 0px) !important;
+}
+.switch-group .switch-active, .switch-group .switch-inactive {
   z-index: 100;
 }
 
 /**
 * Switch (Foundation Override): 
 * `.switch` - Switches are a more visible and more touchable versions of checkbox and radio buttons. 
-*  ADD `.x-visible` to show the x when it is shut off. <h5 class="warning">( !! WARNING !! Updated HTML and Styles From Ver 1)</h5>
+*  <h5 class="warning">( !! WARNING !! Updated HTML and Styles From Ver 1)</h5>
 * 
 *   @example
-*   <h3>Plain switch with `.disabled` on the input</h3>
-*   <div class="switch-input-space  row">
+*   <div class="switch-input-space">
 *   <div class="switch">
-*   <input class="switch-input" id="yes-no-1" disabled type="checkbox" name="exampleSwitch">
+*   <input class="switch-input" id="yes-no-1" type="checkbox" name="exampleSwitch">
 *   <label class="switch-paddle" for="yes-no-1">
 *   <span class="show-for-sr">Do you like me?</span>
 *   <span class="switch-active" aria-hidden="true">Yes</span>
@@ -8109,10 +8043,32 @@ input:checked + label > .switch-inactive {
 *   </div>
 *   <label  class="switch-value" for="yes-no-1">Yes or No Question</label>
 *   </div>
+*/
+/**
+* Switch (Disabled): 
+* `disable` - on the input changes the look and cursor on rollover
+* 
+*   @example
+*   <div class="switch-input-space  row">
+*   <div class="switch">
+*   <input class="switch-input" id="yes-no-disabled" disabled type="checkbox" name="exampleSwitch">
+*   <label class="switch-paddle" for="yes-no-disabled">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true">Yes</span>
+*   <span class="switch-inactive" aria-hidden="true">No</span>
+*   </label>
+*   </div>
+*   <label  class="switch-value" for="yes-no-disabled">Yes or No Question</label>
+*   </div>
+*/
+/**
+* Switch modifing classes: 
+* `.switch` - Switches are remarkably flexable. Radio Buttons should use `.radio` as modifier, and Checkboxes use  `.checkbox`. `.round` and `.radius` are very useful to change the look and feel of buttons.  
+* 
+*   @example
 *   <div class="row group-divide">
-*   <h3>Radio Buttons should use `.round` or `.radio` modifier</h3>
-*   <p>You can make a radio with eiither placing the `.round` or `.radio`.  If you want control over the positive and negative position use `.round`.  Use `.radio` to set it to the standard icon in the positive position</p>
-*   <div class="row collapse">
+*   <h4>Radio Buttons should use `.round` or `.radio` modifier</h4>
+*   <p>You can make a radio with eiither placing the `.round` or `.radio`. *   <div class="row collapse">
 *   <div class="switch-input-space column small-6">
 *   <div class="switch round">
 *   <input class="switch-input" id="yes-no-round" type="radio" name="radio-switch">
@@ -8138,8 +8094,8 @@ input:checked + label > .switch-inactive {
 *   </div>
 *   </div>
 *   <div class="row group-divide">
-*   <h3>Checkboxes should use `.radius`, `.checkbox`, no modifiers</h3>
-*   <p>You can make a checkbox with eiither placing the `.checkbox` or `.radius`.  If you want control over the positive and negative position use `.radius`.  Use `.checkbox` to set it to the standard icon in the positive position</p>
+*   <h4>Checkboxes should use `.radius`, `.checkbox`, no modifiers</h4>
+*   <p>If you want control over the positive and negative icons use `.radius`.  Use `.checkbox` to set it to the standard icon in the positive position</p>
 *   <div class="row collapse">
 *   <div class="switch-input-space column small-6">
 *   <div class="switch radius">
@@ -8163,11 +8119,14 @@ input:checked + label > .switch-inactive {
 *   </div>
 *   <label  class="switch-value" for="checkbox-checkbox">Checkbox button made with `.checkbox`</label>
 *   </div>
-*   </div>
-*   <div class="row group-divide"><h3>Value or Unit Swithcers</h3>
-*   <p>Value Switchers should use `.value-switch` so both sides of the switcher are always visible and stay colored.</p>
-*   <label  class="switch-value" for="checkbox-value-switch2">`.value-switch` gives room to have values on the switch that are always visible but can be toggled.</label>
-*   </div>
+*   </div></div>
+
+**/
+/**
+* Value Switchers: 
+* `.value-switch` - Add `.value-switch` to a switch so both inactive and active content of the switcher are visible and stay colored.
+* 
+*   @example
 *   <div class="switch-input-space column small-12">
 *   <div class="switch value-switch">
 *   <input class="switch-input" id="checkbox-value-switch"  type="checkbox" value="false">
@@ -8201,36 +8160,41 @@ input:checked + label > .switch-inactive {
 *   <label class="switch-value" for="checkbox-value-switch-round">You can also apply the `.radius` and `.round` to change the style
 *   </label>
 *   </div>
-*   </div>
-*   <div class="row group-divide"><h3>Grouped Swtiched</h3>
-*   <div class="switch-input-space column small-12">
-*   <div class="group-switch"><div class="switch-position">
-*   <input class="switch-input" id="group-switch0"  type="checkbox" value="false">
-*   <label class="switch-paddle" for="group-switch0">
-*   <span class="show-for-sr">Do you like me?</span>
-*   <span class="switch-active" aria-hidden="true">Unit</span>
-*   <span class="switch-inactive" aria-hidden="true">Unit</span>
-*   </label></div><div class="switch-position">
-*   <input class="switch-input" id="group-switch1"  type="checkbox" value="false">
-*   <label class="switch-paddle" for="group-switch1">
-*   <span class="show-for-sr">Do you like me?</span>
-*   <span class="switch-active" aria-hidden="true">Unit</span>
-*   <span class="switch-inactive" aria-hidden="true">Unit</span>
-*   </label></div><div class="switch-position">
-*   <input class="switch-input" id="group-switch2"  type="checkbox" value="false">
-*   <label class="switch-paddle" for="group-switch2">
-*   <span class="show-for-sr">Do you like me?</span>
-*   <span class="switch-active" aria-hidden="true">Unit</span>
-*   <span class="switch-inactive" aria-hidden="true">Unit</span>
+*/
+/**
+* Switch Group: 
+* `.switch-group` - Switches can be grouped if you want a multi selected bar of similar items.
+* 
+*   @example
+*   <h4>Switch Groups group normal '.switch' DOM they just stack the active and inactive items </h4>
+*   <div class="switch-input-space">
+*   <div class="switch-group"><div class="switch">
+*   <input class="switch-input" id="switch-group0"  type="checkbox" value="false">
+*   <label class="switch-paddle" for="switch-group0">
+*   <span class="show-for-sr">Miles True?</span>
+*   <span class="switch-active" aria-hidden="true">Miles</span>
+*   <span class="switch-inactive" aria-hidden="true">Miles</span>
+*   </label></div><div class="switch">
+*   <input class="switch-input" id="switch-group1"  type="checkbox" value="false">
+*   <label class="switch-paddle" for="switch-group1">
+*   <span class="show-for-sr">Knots?</span>
+*   <span class="switch-active" aria-hidden="true">Knots</span>
+*   <span class="switch-inactive" aria-hidden="true">Knots</span>
+*   </label></div><div class="switch switch-2x">
+*   <input class="switch-input" id="switch-group2"  type="checkbox" value="false">
+*   <label class="switch-paddle" for="switch-group2">
+*   <span class="show-for-sr">Kilometers?</span>
+*   <span class="switch-active" aria-hidden="true">Kilometers</span>
+*   <span class="switch-inactive" aria-hidden="true">Kilometers</span>
 *   </label></div>
 *   </div>
-*   <label class="switch-value" for="checkbox-value-switch-round">You can also apply the `.radius` and `.round` to change the style
+*   <label class="switch-value" for="checkbox-value-switch-round">Show these types of distance
 *   </label>
-*   </div></div>
-**/
+*   </div>
+*/
 /**
 * Switch (States): 
-* `.error-active` - Switches can be colored with a class [state]-active and [state]-inactive
+* `.error-active` - Switches can be colored with a class [state]-active and [state]-inactive.
 * 
 *   @example
 *   <h3>Plain switch with `.error-active` and `.sucess-inactive` on the `.switch`</h3>
@@ -8243,7 +8207,7 @@ input:checked + label > .switch-inactive {
 *   <span class="switch-inactive" aria-hidden="true">No</span>
 *   </label>
 *   </div>
-*   <label  class="switch-value" for="active-inactive">Yes or No Question</label>
+*   <label  class="switch-value" for="active-inactive">.switch.error-active.warning-inactive/label>
 *   </div>
 */
 .tooltip {
@@ -8271,9 +8235,21 @@ input:checked + label > .switch-inactive {
 .button-group.radius, .button-group.radius-top, .button-group.radius-bottom {
   overflow: hidden;
 }
+.button-group.expanded.selectable .button:first-child:nth-last-child(2) {
+  border-right-width: 0;
+  width: 50%;
+}
 .button-group.expanded.selectable .button:first-child:nth-last-child(3) {
   border-right-width: 0;
   width: 33.3333%;
+}
+.button-group.expanded.selectable .button:first-child:nth-last-child(4) {
+  border-right-width: 0;
+  width: 25%;
+}
+.button-group.expanded.selectable .button:first-child:nth-last-child(5) {
+  border-right-width: 0;
+  width: 20%;
 }
 .button-group.selectable {
   margin-right: 0;
@@ -8297,19 +8273,27 @@ input:checked + label > .switch-inactive {
   margin: 0 7px 0 0;
   display: none;
 }
-.button-group.selectable .selected, .button-group.selectable .selected:hover, .button-group.selectable .selected:focus {
+.button-group.selectable .selected.button {
+  background-color: #14B057;
+  color: #FFF;
+}
+.button-group.selectable .selected.button:hover, .button-group.selectable .selected.button:focus {
+  background-color: #157894;
+  color: #FFF;
+}
+.button-group.selectable .selected.button:hover, .button-group.selectable .selected.button:focus {
   background-color: #1a9750;
   color: #fff;
 }
-.button-group.selectable .selected i.fa {
+.button-group.selectable .selected.button i.fa {
   display: inline-block;
 }
 
-.error.question .button-group, .warning.question .button-group, .validated.question .button-group, .info.question .button-group, .highlighted.question .button-group, .completed.question .button-group, .disabled.question .button-group, .attention.question .button-group {
+.error.question .button-group, .warning.question .button-group, .success.question .button-group, .info.question .button-group, .highlighted.question .button-group, .disabled.question .button-group {
   margin-bottom: 0;
 }
 
-.error.question .button-group.radius, .warning.question .button-group.radius, .validated.question .button-group.radius, .info.question .button-group.radius, .highlighted.question .button-group.radius, .completed.question .button-group.radius, .disabled.question .button-group.radius, .attention.question .button-group.radius {
+.error.question .button-group.radius, .warning.question .button-group.radius, .success.question .button-group.radius, .info.question .button-group.radius, .highlighted.question .button-group.radius, .disabled.question .button-group.radius {
   margin-bottom: 0;
   border-radius: 6px 6px 0 0;
 }
@@ -8348,7 +8332,7 @@ input:checked + label > .switch-inactive {
 * <div class="input-holder row collapse">
 *     <div class="column small-12 input-space">
 *   <div class="button-group expanded selectable">
-*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*     <a href="" class="button selected"><i class="fa fa-check"></i><span class="text">Yes</span></a>
 *     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
 *     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
 *   </div>
@@ -10533,7 +10517,7 @@ cite {
 *	<h5 class="with-underline highlighted">Header 5 Tag<small>Highlighted State</small></h5>
 *  	<p class="highlighted"><strong>Paragraph that is a highlighted State.</strong>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
 */
-h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted, h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled, h1.attention, h2.attention, h3.attention, h4.attention, h5.attention, h6.attention, p.attention, a.attention, li.attention, blockquote.attention {
+h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.success, h2.success, h3.success, h4.success, h5.success, h6.success, p.success, a.success, li.success, blockquote.success, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
   font-weight: 900;
 }
 
@@ -11048,7 +11032,7 @@ STATE TRUMPING CODE
   color: #c32231;
 }
 
-.nav-list.nav-checklist li.error, .nav-checklist.panel-selector li.error, .error .message-holder > .error, .hint .error, .error.inset .bar.close .action-btn, .error-inactive input ~ .switch-paddle, .error-active input:checked ~ .switch-paddle, .error.callout {
+.nav-list.nav-checklist li.error, .nav-checklist.panel-selector li.error, .error .message-holder > .error, .hint .error, .error.inset .bar.close .action-btn, .error-inactive .switch-paddle, .error-active input:checked ~ .switch-paddle, .error.callout {
   background-color: #c32231;
 }
 
@@ -11064,7 +11048,7 @@ STATE TRUMPING CODE
   color: #E08514;
 }
 
-.nav-list.nav-checklist li.warning, .nav-checklist.panel-selector li.warning, .warning .message-holder > .warning, .hint .warning, .warning.inset .bar.close .action-btn, .warning-inactive input ~ .switch-paddle, .warning-active input:checked ~ .switch-paddle, .warning.callout {
+.nav-list.nav-checklist li.warning, .nav-checklist.panel-selector li.warning, .warning .message-holder > .warning, .hint .warning, .warning.inset .bar.close .action-btn, .warning-inactive .switch-paddle, .warning-active input:checked ~ .switch-paddle, .warning.callout {
   background-color: #E08514;
 }
 
@@ -11072,19 +11056,19 @@ STATE TRUMPING CODE
   content: "";
 }
 
-.validated .order-marker.hollow, .validated.order-marker.hollow, .validated .input-holder input, .validated .input-holder textarea, .validated .input-holder select, .validated .input-holder .postfix, .validated .input-holder .prefix, .validated .bar.close, .validated.inset .bar.close, .validated.question .button-group, .validated .order-marker.hollow, .validated.order-marker.hollow, h1.with-underline.validated, h2.with-underline.validated, h3.with-underline.validated, h4.with-underline.validated, h5.with-underline.validated, h6.with-underline.validated {
+.success .order-marker.hollow, .success.order-marker.hollow, .success .input-holder input, .success .input-holder textarea, .success .input-holder select, .success .input-holder .postfix, .success .input-holder .prefix, .success .bar.close, .success.inset .bar.close, .success.question .button-group, .success .order-marker.hollow, .success.order-marker.hollow, h1.with-underline.success, h2.with-underline.success, h3.with-underline.success, h4.with-underline.success, h5.with-underline.success, h6.with-underline.success {
   border-color: #14B057;
 }
 
-.validated .order-marker.inverse, .validated.order-marker.inverse.validated .order-marker.hollow, .validated.order-marker.hollow, .nav-list.nav-checklist li.validated i, .nav-checklist.panel-selector li.validated i, .answer.validated .required-holder, .question.validated .required-holder, .question-inline.validated .required-holder, .question-grid-based.validated .required-holder, .validated .label-holder label, .validated .input-holder .postfix, .validated .input-holder .prefix, .validated .input-holder .value, .validated .bar.close .action-btn, .collapsable-panel.validated h1, .collapsable-panel.validated h2, .collapsable-panel.validated h3, .collapsable-panel.validated h4, .collapsable-panel.validated h5, .collapsable-panel.validated h6, .validated .order-marker.inverse, .validated.order-marker.inverse.validated .order-marker.hollow, .validated.order-marker.hollow, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated {
+.success .order-marker.inverse, .success.order-marker.inverse.success .order-marker.hollow, .success.order-marker.hollow, .nav-list.nav-checklist li.success i, .nav-checklist.panel-selector li.success i, .answer.success .required-holder, .question.success .required-holder, .question-inline.success .required-holder, .question-grid-based.success .required-holder, .success .label-holder label, .success .input-holder .postfix, .success .input-holder .prefix, .success .input-holder .value, .success .bar.close .action-btn, .collapsable-panel.success h1, .collapsable-panel.success h2, .collapsable-panel.success h3, .collapsable-panel.success h4, .collapsable-panel.success h5, .collapsable-panel.success h6, .success .order-marker.inverse, .success.order-marker.inverse.success .order-marker.hollow, .success.order-marker.hollow, h1.success, h2.success, h3.success, h4.success, h5.success, h6.success, p.success, a.success, li.success, blockquote.success {
   color: #14B057;
 }
 
-.nav-list.nav-checklist li.validated, .nav-checklist.panel-selector li.validated, .validated .message-holder > .validated, .hint .validated, .validated.inset .bar.close .action-btn, .validated-inactive input ~ .switch-paddle, .validated-active input:checked ~ .switch-paddle, .validated.callout {
+.nav-list.nav-checklist li.success, .nav-checklist.panel-selector li.success, .success .message-holder > .success, .hint .success, .success.inset .bar.close .action-btn, .success-inactive .switch-paddle, .success-active input:checked ~ .switch-paddle, .success.callout {
   background-color: #14B057;
 }
 
-.validated .fa-holder-dynamic:before, .validated.fa:before, .validated > .fa-holder:before, .nav-list.nav-checklist li.validated .fa-holder-dynamic:before, .nav-checklist.panel-selector li.validated .fa-holder-dynamic:before {
+.success .fa-holder-dynamic:before, .success.fa:before, .success > .fa-holder:before, .nav-list.nav-checklist li.success .fa-holder-dynamic:before, .nav-checklist.panel-selector li.success .fa-holder-dynamic:before {
   content: "";
 }
 
@@ -11096,7 +11080,7 @@ STATE TRUMPING CODE
   color: #bbe8f4;
 }
 
-.nav-list.nav-checklist li.info, .nav-checklist.panel-selector li.info, .info .message-holder > .info, .hint .info, .info.inset .bar.close .action-btn, .info-inactive input ~ .switch-paddle, .info-active input:checked ~ .switch-paddle, .info.callout {
+.nav-list.nav-checklist li.info, .nav-checklist.panel-selector li.info, .info .message-holder > .info, .hint .info, .info.inset .bar.close .action-btn, .info-inactive .switch-paddle, .info-active input:checked ~ .switch-paddle, .info.callout {
   background-color: #bbe8f4;
 }
 
@@ -11112,28 +11096,12 @@ STATE TRUMPING CODE
   color: #22AFD7;
 }
 
-.nav-list.nav-checklist li.highlighted, .nav-checklist.panel-selector li.highlighted, .highlighted .message-holder > .highlighted, .hint .highlighted, .highlighted.inset .bar.close .action-btn, .highlighted-inactive input ~ .switch-paddle, .highlighted-active input:checked ~ .switch-paddle, .highlighted.callout {
+.nav-list.nav-checklist li.highlighted, .nav-checklist.panel-selector li.highlighted, .highlighted .message-holder > .highlighted, .hint .highlighted, .highlighted.inset .bar.close .action-btn, .highlighted-inactive .switch-paddle, .highlighted-active input:checked ~ .switch-paddle, .highlighted.callout {
   background-color: #22AFD7;
 }
 
 .highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before {
   content: "";
-}
-
-.completed .order-marker.hollow, .completed.order-marker.hollow, .completed .input-holder input, .completed .input-holder textarea, .completed .input-holder select, .completed .input-holder .postfix, .completed .input-holder .prefix, .completed .bar.close, .completed.inset .bar.close, .completed.question .button-group, .completed .order-marker.hollow, .completed.order-marker.hollow, h1.with-underline.completed, h2.with-underline.completed, h3.with-underline.completed, h4.with-underline.completed, h5.with-underline.completed, h6.with-underline.completed {
-  border-color: #14B057;
-}
-
-.completed .order-marker.inverse, .completed.order-marker.inverse.completed .order-marker.hollow, .completed.order-marker.hollow, .nav-list.nav-checklist li.completed i, .nav-checklist.panel-selector li.completed i, .answer.completed .required-holder, .question.completed .required-holder, .question-inline.completed .required-holder, .question-grid-based.completed .required-holder, .completed .label-holder label, .completed .input-holder .postfix, .completed .input-holder .prefix, .completed .input-holder .value, .completed .bar.close .action-btn, .collapsable-panel.completed h1, .collapsable-panel.completed h2, .collapsable-panel.completed h3, .collapsable-panel.completed h4, .collapsable-panel.completed h5, .collapsable-panel.completed h6, .completed .order-marker.inverse, .completed.order-marker.inverse.completed .order-marker.hollow, .completed.order-marker.hollow, h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed {
-  color: #14B057;
-}
-
-.nav-list.nav-checklist li.completed, .nav-checklist.panel-selector li.completed, .completed .message-holder > .completed, .hint .completed, .completed.inset .bar.close .action-btn, .completed-inactive input ~ .switch-paddle, .completed-active input:checked ~ .switch-paddle, .completed.callout {
-  background-color: #14B057;
-}
-
-.completed .fa-holder-dynamic:before, .completed.fa:before, .completed > .fa-holder:before, .nav-list.nav-checklist li.completed .fa-holder-dynamic:before, .nav-checklist.panel-selector li.completed .fa-holder-dynamic:before {
-  content: "";
 }
 
 .disabled .order-marker.hollow, .disabled.order-marker.hollow, .disabled .input-holder input, .disabled .input-holder textarea, .disabled .input-holder select, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .bar.close, .disabled.inset .bar.close, .disabled.question .button-group, .disabled .order-marker.hollow, .disabled.order-marker.hollow, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
@@ -11144,7 +11112,7 @@ STATE TRUMPING CODE
   color: #b3b3b3;
 }
 
-.nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled, .disabled .message-holder > .disabled, .hint .disabled, .disabled.inset .bar.close .action-btn, .disabled-inactive input ~ .switch-paddle, .disabled-active input:checked ~ .switch-paddle, .disabled.callout {
+.nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled, .disabled .message-holder > .disabled, .hint .disabled, .disabled.inset .bar.close .action-btn, .disabled-inactive .switch-paddle, .disabled-active input:checked ~ .switch-paddle, .disabled.callout {
   background-color: #b3b3b3;
 }
 
@@ -11152,23 +11120,7 @@ STATE TRUMPING CODE
   content: "";
 }
 
-.attention .order-marker.hollow, .attention.order-marker.hollow, .attention .input-holder input, .attention .input-holder textarea, .attention .input-holder select, .attention .input-holder .postfix, .attention .input-holder .prefix, .attention .bar.close, .attention.inset .bar.close, .attention.question .button-group, .attention .order-marker.hollow, .attention.order-marker.hollow, h1.with-underline.attention, h2.with-underline.attention, h3.with-underline.attention, h4.with-underline.attention, h5.with-underline.attention, h6.with-underline.attention {
-  border-color: #E08514;
-}
-
-.attention .order-marker.inverse, .attention.order-marker.inverse.attention .order-marker.hollow, .attention.order-marker.hollow, .nav-list.nav-checklist li.attention i, .nav-checklist.panel-selector li.attention i, .answer.attention .required-holder, .question.attention .required-holder, .question-inline.attention .required-holder, .question-grid-based.attention .required-holder, .attention .label-holder label, .attention .input-holder .postfix, .attention .input-holder .prefix, .attention .input-holder .value, .attention .bar.close .action-btn, .collapsable-panel.attention h1, .collapsable-panel.attention h2, .collapsable-panel.attention h3, .collapsable-panel.attention h4, .collapsable-panel.attention h5, .collapsable-panel.attention h6, .attention .order-marker.inverse, .attention.order-marker.inverse.attention .order-marker.hollow, .attention.order-marker.hollow, h1.attention, h2.attention, h3.attention, h4.attention, h5.attention, h6.attention, p.attention, a.attention, li.attention, blockquote.attention {
-  color: #E08514;
-}
-
-.nav-list.nav-checklist li.attention, .nav-checklist.panel-selector li.attention, .attention .message-holder > .attention, .hint .attention, .attention.inset .bar.close .action-btn, .attention-inactive input ~ .switch-paddle, .attention-active input:checked ~ .switch-paddle, .attention.callout {
-  background-color: #E08514;
-}
-
-.attention .fa-holder-dynamic:before, .attention.fa:before, .attention > .fa-holder:before, .nav-list.nav-checklist li.attention .fa-holder-dynamic:before, .nav-checklist.panel-selector li.attention .fa-holder-dynamic:before {
-  content: "";
-}
-
-.error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .nav-list.nav-checklist li.error .fa-holder-dynamic:before, .nav-checklist.panel-selector li.error .fa-holder-dynamic:before, .warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .nav-list.nav-checklist li.warning .fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning .fa-holder-dynamic:before, .validated .fa-holder-dynamic:before, .validated.fa:before, .validated > .fa-holder:before, .nav-list.nav-checklist li.validated .fa-holder-dynamic:before, .nav-checklist.panel-selector li.validated .fa-holder-dynamic:before, .info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder-dynamic:before, .nav-checklist.panel-selector li.info .fa-holder-dynamic:before, .highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before, .completed .fa-holder-dynamic:before, .completed.fa:before, .completed > .fa-holder:before, .nav-list.nav-checklist li.completed .fa-holder-dynamic:before, .nav-checklist.panel-selector li.completed .fa-holder-dynamic:before, .disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before, .attention .fa-holder-dynamic:before, .attention.fa:before, .attention > .fa-holder:before, .nav-list.nav-checklist li.attention .fa-holder-dynamic:before, .nav-checklist.panel-selector li.attention .fa-holder-dynamic:before {
+.error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .nav-list.nav-checklist li.error .fa-holder-dynamic:before, .nav-checklist.panel-selector li.error .fa-holder-dynamic:before, .warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .nav-list.nav-checklist li.warning .fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning .fa-holder-dynamic:before, .success .fa-holder-dynamic:before, .success.fa:before, .success > .fa-holder:before, .nav-list.nav-checklist li.success .fa-holder-dynamic:before, .nav-checklist.panel-selector li.success .fa-holder-dynamic:before, .info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder-dynamic:before, .nav-checklist.panel-selector li.info .fa-holder-dynamic:before, .highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before, .disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before {
   font-family: FontAwesome;
 }
 
@@ -11176,7 +11128,7 @@ STATE TRUMPING CODE
   color: #333333;
 }
 
-.light-color-text, .error .order-marker, .error.order-marker, .warning .order-marker, .warning.order-marker, .validated .order-marker, .validated.order-marker, .highlighted .order-marker, .highlighted.order-marker, .completed .order-marker, .completed.order-marker, .attention .order-marker, .attention.order-marker, .message-holder > .error, .message-holder > .warning, .message-holder > .validated, .message-holder > .highlighted, .message-holder > .completed, .message-holder > .attention, .hint .error, .hint .warning, .hint .validated, .hint .highlighted, .hint .completed, .hint .attention, .error .order-marker, .error.order-marker, .warning .order-marker, .warning.order-marker, .validated .order-marker, .validated.order-marker, .highlighted .order-marker, .highlighted.order-marker, .completed .order-marker, .completed.order-marker, .attention .order-marker, .attention.order-marker {
+.light-color-text, .error .order-marker, .error.order-marker, .warning .order-marker, .warning.order-marker, .success .order-marker, .success.order-marker, .highlighted .order-marker, .highlighted.order-marker, .message-holder > .error, .message-holder > .warning, .message-holder > .success, .message-holder > .highlighted, .hint .error, .hint .warning, .hint .success, .hint .highlighted, .error .order-marker, .error.order-marker, .warning .order-marker, .warning.order-marker, .success .order-marker, .success.order-marker, .highlighted .order-marker, .highlighted.order-marker {
   color: #fff;
 }
 

@@ -104,7 +104,8 @@ $pagination-color:rebrand-color($primary-color, 2);
 .group-section-pagination-holder {
     @include grid-row();
     max-width: none;
-    margin: 1rem -1.5rem -1rem;
+    margin: 1rem -1rem -1rem;
+    margin: 1rem calc(-1rem - 1px) calc(-1rem - 1px);
     background: rebrand-color($primary-color, 2) url('../img/paper-texture.png');
     .pagination{ margin-bottom: 0;}
     .pagination li{
@@ -137,7 +138,9 @@ $pagination-color:rebrand-color($primary-color, 2);
         }
     }
     &.top{
-       margin: -.5rem -1.5rem 1rem;
+       margin: -1rem -1rem 1rem;
+       margin: calc(-1rem - 1px) calc(-1rem - 1px)  1rem;
+
        .pagination li{
         margin: .25rem .25rem 0;
         vertical-align: bottom;
