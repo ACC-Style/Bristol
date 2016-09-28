@@ -1934,7 +1934,6 @@ button:disabled.secondary, .input-space
   padding-left: 0;
   padding-right: 0;
   cursor: context-menu;
-  margin-bottom: -2px;
   bottom: -1px;
   position: relative;
 }
@@ -2194,6 +2193,7 @@ button:disabled.secondary, .input-space
   border-bottom-color: #00386b;
   border-right: 0 none;
   border-left: 0 none;
+  bottom: 0;
 }
 .tabs.tabs-primary li.selected a {
   color: #fff;
@@ -2684,9 +2684,16 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 .section-nav .text {
   padding-top: 6.25px;
   padding-bottom: 6.25px;
+  -webkit-transition: padding 1.5s;
+  /* Safari */
+  transition: padding 1.5s;
 }
 .section-nav .circle {
   position: absolute;
+  -webkit-transition: all 1.5s;
+  /* Safari */
+  transition: all 1.5s;
+  overflow: hidden;
   width: 50px;
   height: 50px;
   background: #4daded;
@@ -2703,6 +2710,14 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   line-height: 1em;
   margin: 10.5px;
   color: #fff;
+  -webkit-transition: all 1.5s;
+  /* Safari */
+  transition: all 1.5s;
+  -ms-transform: translate(0px, 0);
+  /* IE 9 */
+  -webkit-transform: translate(0px, 0);
+  /* Safari */
+  transform: translate(0px, 0);
 }
 .section-nav .circle i:before {
   vertical-align: bottom;
@@ -2759,12 +2774,42 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 .section-nav.disabled .text {
   color: #999999;
 }
+.section-nav.disabled.back .text {
+  padding-left: 1.5rem;
+}
+.section-nav.disabled.forward .text {
+  padding-right: 1.5rem;
+}
+.section-nav.disabled.back .circle {
+  top: 28px;
+}
+.section-nav.disabled.back .circle i {
+  -ms-transform: translate(-50px, -12.5px);
+  /* IE 9 */
+  -webkit-transform: translate(-50px, -12.5px);
+  /* Safari */
+  transform: translate(-50px, -12.5px);
+}
+.section-nav.disabled.forward .circle {
+  bottom: 28px;
+}
+.section-nav.disabled.forward .circle i {
+  -ms-transform: translate(50px, -12.5px);
+  /* IE 9 */
+  -webkit-transform: translate(50px, -12.5px);
+  /* Safari */
+  transform: translate(50px, -12.5px);
+}
 .section-nav.disabled .circle, .section-nav.disabled.hover.circle {
   -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
   background-color: #999999;
   background-image: url("../img/empty_diamond.png");
+  width: 12px;
+  height: 12px;
+  border-radius: 6PX;
+  border: 2px solid #fff;
 }
 
 .with-group-sections .section-nav.forward .text {
@@ -2804,7 +2849,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 * `.section-nav with .disabled` - Adding `.disabled` to the `.section-nav` container with style the circle nav accordingly.
 * 
 *   @example
-*	<div class="page"><div class="section-nav back">
+*	<div class="page"><div class="section-nav back disabled">
 *		<a>
 *			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
 *			<div class="text"> Back</div>
@@ -4957,10 +5002,6 @@ th.sortable .has-tip {
   height: 100%;
 }
 
-td.error, .table tbody tr + tr td.error, tr.error td, .stripped tr.error:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.error, tr:nth-child(even).error td, td.warning, .table tbody tr + tr td.warning, tr.warning td, .stripped tr.warning:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.warning, tr:nth-child(even).warning td, td.success, .table tbody tr + tr td.success, tr.success td, .stripped tr.success:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.success, tr:nth-child(even).success td, td.info, .table tbody tr + tr td.info, tr.info td, .stripped tr.info:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.info, tr:nth-child(even).info td, td.highlighted, .table tbody tr + tr td.highlighted, tr.highlighted td, .stripped tr.highlighted:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.highlighted, tr:nth-child(even).highlighted td, td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .stripped tr.disabled:nth-child(even) td:nth-child(odd), tr:nth-child(even) td.disabled, tr:nth-child(even).disabled td {
-  color: #333333;
-}
-
 td.icon {
   padding: .25rem .25rem .25rem .25rem;
   text-align: center;
@@ -4997,15 +5038,18 @@ tr.error td, tr.warning td, tr.success td, tr.info td, tr.highlighted td, tr.dis
 
 td.error, .table tbody tr + tr td.error, tr.error td, .stripped tr.error:nth-child(even) td:nth-child(odd) {
   background-color: #f5d9dc;
+  color: #333333;
   border-color: #f2b7bd;
 }
 
 tr:nth-child(even) td.error {
   background-color: #f2ced2;
+  color: #333333;
 }
 
 tr:nth-child(even).error td {
   background-color: #f2ced2;
+  color: #333333;
 }
 
 .stripped tbody tr.error td:nth-child(odd) {
@@ -5014,15 +5058,18 @@ tr:nth-child(even).error td {
 
 td.warning, .table tbody tr + tr td.warning, tr.warning td, .stripped tr.warning:nth-child(even) td:nth-child(odd) {
   background-color: #faead7;
+  color: #333333;
   border-color: #f8dbb6;
 }
 
 tr:nth-child(even) td.warning {
   background-color: #f8e4cb;
+  color: #333333;
 }
 
 tr:nth-child(even).warning td {
   background-color: #f8e4cb;
+  color: #333333;
 }
 
 .stripped tbody tr.warning td:nth-child(odd) {
@@ -5031,15 +5078,18 @@ tr:nth-child(even).warning td {
 
 td.success, .table tbody tr + tr td.success, tr.success td, .stripped tr.success:nth-child(even) td:nth-child(odd) {
   background-color: #d7f2e2;
+  color: #333333;
   border-color: #aaf5cb;
 }
 
 tr:nth-child(even) td.success {
   background-color: #cbeeda;
+  color: #333333;
 }
 
 tr:nth-child(even).success td {
   background-color: #cbeeda;
+  color: #333333;
 }
 
 .stripped tbody tr.success td:nth-child(odd) {
@@ -5048,15 +5098,18 @@ tr:nth-child(even).success td {
 
 td.info, .table tbody tr + tr td.info, tr.info td, .stripped tr.info:nth-child(even) td:nth-child(odd) {
   background-color: #f3fbfd;
+  color: #333333;
   border-color: #ebf8fc;
 }
 
 tr:nth-child(even) td.info {
   background-color: #f0fafd;
+  color: #333333;
 }
 
 tr:nth-child(even).info td {
   background-color: #f0fafd;
+  color: #333333;
 }
 
 .stripped tbody tr.info td:nth-child(odd) {
@@ -5065,15 +5118,18 @@ tr:nth-child(even).info td {
 
 td.highlighted, .table tbody tr + tr td.highlighted, tr.highlighted td, .stripped tr.highlighted:nth-child(even) td:nth-child(odd) {
   background-color: #d9f1f8;
+  color: #333333;
   border-color: #bbe8f4;
 }
 
 tr:nth-child(even) td.highlighted {
   background-color: #ceedf6;
+  color: #333333;
 }
 
 tr:nth-child(even).highlighted td {
   background-color: #ceedf6;
+  color: #333333;
 }
 
 .stripped tbody tr.highlighted td:nth-child(odd) {
@@ -5082,15 +5138,18 @@ tr:nth-child(even).highlighted td {
 
 td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .stripped tr.disabled:nth-child(even) td:nth-child(odd) {
   background-color: #f2f2f2;
+  color: #333333;
   border-color: #e8e8e8;
 }
 
 tr:nth-child(even) td.disabled {
   background-color: #eeeeee;
+  color: #333333;
 }
 
 tr:nth-child(even).disabled td {
   background-color: #eeeeee;
+  color: #333333;
 }
 
 .stripped tbody tr.disabled td:nth-child(odd) {
@@ -5107,7 +5166,7 @@ tr:nth-child(even).disabled td {
 *			<td class="error icon"><i class="fa fa-holder"></i></td>
 *			<td class=""><i class="fa fa-holder"></i></td>
 *			<td class="">Text</td>
-*			<td class=""><i class="fa fa-holder"></i>&nbsp;Warning</td>
+*			<td class="warning"><i class="fa fa-holder"></i>Warning</td>
 *		</tr>
 *		<tr>
 *			<td class=""><i class="fa fa-holder"></i></td>
@@ -5122,9 +5181,9 @@ tr:nth-child(even).disabled td {
 *			<td class=""><i class="fa fa-holder"></i>&nbsp;Text</td>
 *		</tr>
 *		<tr>
-*			<td class="validated icon"><i class="fa fa-holder"></i></td>
+*			<td class="success icon"><i class="fa fa-holder"></i></td>
 *			<td class="info icon"><i class="fa fa-holder"></i></td>
-*			<td class="validated">Validated</td>
+*			<td class="success">Success</td>
 *			<td class=""><i class="fa fa-holder"></i>&nbsp;text</td>
 *		</tr>
 *	</table>
@@ -5135,10 +5194,10 @@ tr:nth-child(even).disabled td {
 * 
 *   @example
 *	<table class="table stripped">
-*		<tr class="validated">
+*		<tr class="success">
 *			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
 *			<td class=""></td>
-*			<td class="">Cell Data in validated Row</td>
+*			<td class="">Cell Data in success Row</td>
 *			<td class="">Icon is Dynamic</td>
 *		</tr>
 *		<tr class="warning">
@@ -5147,13 +5206,6 @@ tr:nth-child(even).disabled td {
 *			<td class="">Cell Data in Warning Row</td>
 *			<td class="error">I am an error cell</td>
 *		</tr>
-*		<tr class="warning">
-*			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
-*			<td class=""></td>
-*			<td class="">Cell Data in Warning Row</td>
-*			<td>data</td>
-*		</tr>
-
 *		<tr class="error">
 *			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
 *			<td class="">Icon is Dynamic</td>
@@ -5787,261 +5839,6 @@ ul.toggle.minimized .selected {
   border-radius: 2px;
   border-width: 2px;
   margin: -3px;
-}
-
-td.grey-check, td.green-check, td.error, td.alert {
-  padding: .25rem .25rem .25rem .25rem;
-  text-align: center;
-  vertical-align: top;
-}
-td.grey-check i, td.green-check i, td.error i, td.alert i {
-  margin: 0 auto;
-}
-
-td.grey-check {
-  background-color: #cccccc;
-  color: #fff;
-}
-.highlight td.grey-check {
-  background-color: #bfbfbf;
-}
-td.grey-check .fa-holder:before {
-  content: "";
-}
-
-tr:nth-child(even) td.grey-check {
-  background-color: #b3b3b3;
-}
-
-tr.highlight:nth-child(even) td.grey-check {
-  background-color: #b3b3b3;
-}
-
-td.green-check {
-  background-color: #cccccc;
-  color: #fff;
-}
-.highlight td.green-check {
-  background-color: #9dedbb;
-}
-td.green-check .fa-holder:before {
-  content: "";
-}
-
-tr:nth-child(even) td.green-check {
-  background-color: #b3b3b3;
-}
-
-tr.highlight:nth-child(even) td.green-check {
-  background-color: #89e9ad;
-}
-
-td.error {
-  background-color: #cccccc;
-  color: #fff;
-}
-.highlight td.error {
-  background-color: #ea8791;
-}
-td.error .fa-holder:before {
-  content: "";
-}
-
-tr:nth-child(even) td.error {
-  background-color: #b3b3b3;
-}
-
-tr.highlight:nth-child(even) td.error {
-  background-color: #e66f7a;
-}
-
-td.alert {
-  background-color: #cccccc;
-  color: #fff;
-}
-.highlight td.alert {
-  background-color: #f4c285;
-}
-td.alert .fa-holder:before {
-  content: "";
-}
-
-tr:nth-child(even) td.alert {
-  background-color: #b3b3b3;
-}
-
-tr.highlight:nth-child(even) td.alert {
-  background-color: #f2b66c;
-}
-
-.recommendationTable .CORI, .recommendationTable .CORIIa, .recommendationTable .CORIIb, .recommendationTable .LOE-A, .recommendationTable .LOE-B, .recommendationTable .LOE-C {
-  text-align: center;
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-}
-
-.recommendationTable {
-  border-collapse: collapse;
-  border-spacing: 0;
-  line-height: 1.47em;
-}
-.recommendationTable td {
-  border: 0 none;
-  padding: .5em;
-}
-.recommendationTable .recommendationLevel1 {
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  background-color: #e6e6e6;
-  border-bottom: 1px solid #b3b3b3;
-  font-size: 1.28571em;
-  line-height: 1.08889em;
-  margin-top: 0em;
-  margin-bottom: 0em;
-}
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .recommendationTable .recommendationLevel1 {
-    line-height: 1em;
-  }
-}
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .recommendationTable .recommendationLevel1 {
-    line-height: 1em;
-  }
-}
-
-.recommendationTable .recommendationLevel2 {
-  padding-left: 3%;
-  font-size: 1em;
-  line-height: 1.4em;
-  margin-top: 0em;
-  margin-bottom: 0em;
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  background-color: #e4f6fb;
-  border-bottom: 1px solid #cccccc;
-}
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .recommendationTable .recommendationLevel2 {
-    line-height: 1.26em;
-  }
-}
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .recommendationTable .recommendationLevel2 {
-    line-height: 1.19em;
-  }
-}
-
-.recommendationTable .recommendationLevel3 {
-  padding-left: 6%;
-  font-size: 1em;
-  line-height: 1.4em;
-  margin-top: 0em;
-  margin-bottom: 0em;
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  letter-spacing: .01em;
-}
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .recommendationTable .recommendationLevel3 {
-    line-height: 1.26em;
-  }
-}
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .recommendationTable .recommendationLevel3 {
-    line-height: 1.19em;
-  }
-}
-
-.recommendationTable .recommendationLevel4 {
-  padding-left: 9%;
-  font-size: 0.78571em;
-  line-height: 1.78182em;
-  margin-top: 0em;
-  margin-bottom: 0em;
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .recommendationTable .recommendationLevel4 {
-    line-height: 1.60364em;
-  }
-}
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .recommendationTable .recommendationLevel4 {
-    line-height: 1.51455em;
-  }
-}
-
-.recommendationTable .CORI {
-  background-color: #5bc889;
-  color: #333333;
-}
-.recommendationTable .CORIIa {
-  background-color: #f7e352;
-  color: #333333;
-}
-.recommendationTable .CORIIb {
-  background-color: #e9aa5b;
-  color: #333333;
-}
-.recommendationTable .LOE-A {
-  background-color: #17589d;
-  color: #fff;
-}
-.recommendationTable .LOE-B {
-  background-color: #4781be;
-  color: #fff;
-}
-.recommendationTable .LOE-C {
-  background-color: #75a1ce;
-  color: #fff;
-}
-.recommendationTable thead th {
-  padding: 5px;
-  border-bottom-color: #114d74;
-}
-.recommendationTable thead small {
-  display: block;
-  margin: 0 auto;
-  font-size: 0.78571em;
-  line-height: 1.78182em;
-  margin-top: 0em;
-  margin-bottom: 0em;
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  letter-spacing: .01em;
-}
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .recommendationTable thead small {
-    line-height: 1.60364em;
-  }
-}
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .recommendationTable thead small {
-    line-height: 1.51455em;
-  }
-}
-
-.recommendationTable thead strong {
-  display: block;
-  margin: 0 auto;
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  color: #114d74;
-}
-.recommendationTable thead strong.left {
-  margin-left: 0;
-  text-align: left;
-  font-size: 1.3em;
-  margin: 0.2em 0.2em 0.2em 5PX;
-}
-.recommendationTable small.left {
-  margin-left: 0;
-  text-align: left;
-  font-size: 11px;
-  margin-left: 5PX;
 }
 
 /*!
@@ -9168,7 +8965,7 @@ input:checked + label > .switch-inactive {
   color: #fff;
 }
 .group-section-tab-holder.secondary h1, .group-section-tab-holder.secondary h2, .group-section-tab-holder.secondary h3, .group-section-tab-holder.secondary h4, .group-section-tab-holder.secondary h5, .group-section-tab-holder.secondary h6, .group-section-tab-holder.secondary p, .colored-paper.secondary h1, .colored-paper.secondary h2, .colored-paper.secondary h3, .colored-paper.secondary h4, .colored-paper.secondary h5, .colored-paper.secondary h6, .colored-paper.secondary p {
-  color: #333333;
+  color: #fff;
 }
 .group-section-tab-holder, .group-section-tab-holder .nav.tabs, .colored-paper, .colored-paper .nav.tabs {
   background-image: url("../img/construction-paper.png");
@@ -9242,6 +9039,11 @@ input:checked + label > .switch-inactive {
 }
 .group-section-tab-holder.secondary .nav.tabs li.selected, .colored-paper.secondary .nav.tabs li.selected {
   background-color: #fff;
+}
+
+.group-section .colored-paper:last-child {
+  margin-bottom: -1rem;
+  margin-bottom: calc(-1rem - 1px);
 }
 
 /**
@@ -10503,6 +10305,10 @@ cite {
   color: #2199e8;
 }
 
+h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.success, h2.success, h3.success, h4.success, h5.success, h6.success, p.success, a.success, li.success, blockquote.success, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
+  font-weight: 900;
+}
+
 /**
 * Header Tags and other Typography States:
 * `.error, .warning, .etc...` - headers `p` `li` `blockquote` `a` and `p` tags can be fully manipulated to respond to states by adding the modifiying state like `.error`, `.warning`, `.info` etc....
@@ -10513,14 +10319,10 @@ cite {
 *	</h1>
 *	<h2 class="with-underline error">Header 2 Tag <small>Error State</small></h2>
 *	<h3 class="with-underline warning">Header 3 Tag<small>Warning State</small></h3>
-*	<h4 class="with-underline validated">Header 4 Tag<span class="sub-line">Validated/success State</span></h4>
+*	<h4 class="with-underline success">Header 4 Tag<span class="sub-line">Success State</span></h4>
 *	<h5 class="with-underline highlighted">Header 5 Tag<small>Highlighted State</small></h5>
 *  	<p class="highlighted"><strong>Paragraph that is a highlighted State.</strong>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
 */
-h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.success, h2.success, h3.success, h4.success, h5.success, h6.success, p.success, a.success, li.success, blockquote.success, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
-  font-weight: 900;
-}
-
 h1.with-underline {
   border-bottom: #4daded 2px solid;
 }

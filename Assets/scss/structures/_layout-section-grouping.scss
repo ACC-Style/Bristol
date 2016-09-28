@@ -80,7 +80,7 @@
         padding-bottom:0rem;
     }
     h1,h2,h3,h4,h5,h6,p{color:color-contrast(rebrand-color($primary-color, 1));}
-    &.secondary{h1,h2,h3,h4,h5,h6,p{color:color-contrast(color($secondary-color, 20));}}
+    &.secondary{h1,h2,h3,h4,h5,h6,p{color: color-contrast( $secondary-color);}}
     &,.nav.tabs{background-image: url('../img/construction-paper.png');
     background-color: rebrand-color($primary-color, 1);}
     margin: -.5rem -.5rem 0; 
@@ -148,6 +148,10 @@
              &.selected{background-color: #fff;}
         }
     }
+}
+.group-section .colored-paper:last-child {
+    margin-bottom: -1rem;
+    margin-bottom: calc(-1rem - 1px);
 }
 
 /**

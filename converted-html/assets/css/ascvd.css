@@ -1379,7 +1379,6 @@ button:disabled.secondary, .input-space
   padding-left: 0;
   padding-right: 0;
   cursor: context-menu;
-  margin-bottom: -2px;
   bottom: -1px;
   position: relative;
 }
@@ -1639,6 +1638,7 @@ button:disabled.secondary, .input-space
   border-bottom-color: #00386b;
   border-right: 0 none;
   border-left: 0 none;
+  bottom: 0;
 }
 .tabs.tabs-primary li.selected a {
   color: #fff;
@@ -1914,9 +1914,16 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 .section-nav .text {
   padding-top: 6.25px;
   padding-bottom: 6.25px;
+  -webkit-transition: padding 1.5s;
+  /* Safari */
+  transition: padding 1.5s;
 }
 .section-nav .circle {
   position: absolute;
+  -webkit-transition: all 1.5s;
+  /* Safari */
+  transition: all 1.5s;
+  overflow: hidden;
   width: 50px;
   height: 50px;
   background: #4daded;
@@ -1933,6 +1940,14 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   line-height: 1em;
   margin: 10.5px;
   color: #fff;
+  -webkit-transition: all 1.5s;
+  /* Safari */
+  transition: all 1.5s;
+  -ms-transform: translate(0px, 0);
+  /* IE 9 */
+  -webkit-transform: translate(0px, 0);
+  /* Safari */
+  transform: translate(0px, 0);
 }
 .section-nav .circle i:before {
   vertical-align: bottom;
@@ -1989,12 +2004,42 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 .section-nav.disabled .text {
   color: #999999;
 }
+.section-nav.disabled.back .text {
+  padding-left: 1.5rem;
+}
+.section-nav.disabled.forward .text {
+  padding-right: 1.5rem;
+}
+.section-nav.disabled.back .circle {
+  top: 28px;
+}
+.section-nav.disabled.back .circle i {
+  -ms-transform: translate(-50px, -12.5px);
+  /* IE 9 */
+  -webkit-transform: translate(-50px, -12.5px);
+  /* Safari */
+  transform: translate(-50px, -12.5px);
+}
+.section-nav.disabled.forward .circle {
+  bottom: 28px;
+}
+.section-nav.disabled.forward .circle i {
+  -ms-transform: translate(50px, -12.5px);
+  /* IE 9 */
+  -webkit-transform: translate(50px, -12.5px);
+  /* Safari */
+  transform: translate(50px, -12.5px);
+}
 .section-nav.disabled .circle, .section-nav.disabled.hover.circle {
   -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
   background-color: #999999;
   background-image: url("../img/empty_diamond.png");
+  width: 12px;
+  height: 12px;
+  border-radius: 6PX;
+  border: 2px solid #fff;
 }
 
 .with-group-sections .section-nav.forward .text {
@@ -2034,7 +2079,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 * `.section-nav with .disabled` - Adding `.disabled` to the `.section-nav` container with style the circle nav accordingly.
 * 
 *   @example
-*	<div class="page"><div class="section-nav back">
+*	<div class="page"><div class="section-nav back disabled">
 *		<a>
 *			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
 *			<div class="text"> Back</div>
@@ -4499,7 +4544,7 @@ input:checked + label > .switch-inactive {
   color: #fff;
 }
 .group-section-tab-holder.secondary h1, .group-section-tab-holder.secondary h2, .group-section-tab-holder.secondary h3, .group-section-tab-holder.secondary h4, .group-section-tab-holder.secondary h5, .group-section-tab-holder.secondary h6, .group-section-tab-holder.secondary p, .colored-paper.secondary h1, .colored-paper.secondary h2, .colored-paper.secondary h3, .colored-paper.secondary h4, .colored-paper.secondary h5, .colored-paper.secondary h6, .colored-paper.secondary p {
-  color: #333333;
+  color: #fff;
 }
 .group-section-tab-holder, .group-section-tab-holder .nav.tabs, .colored-paper, .colored-paper .nav.tabs {
   background-image: url("../img/construction-paper.png");
@@ -4573,6 +4618,11 @@ input:checked + label > .switch-inactive {
 }
 .group-section-tab-holder.secondary .nav.tabs li.selected, .colored-paper.secondary .nav.tabs li.selected {
   background-color: #fff;
+}
+
+.group-section .colored-paper:last-child {
+  margin-bottom: -1rem;
+  margin-bottom: calc(-1rem - 1px);
 }
 
 /**
@@ -5501,6 +5551,10 @@ input:checked + label > .switch-inactive {
 *   </div>
 *  <div class="shrink-waypoint"></div>
 **/
+h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.success, h2.success, h3.success, h4.success, h5.success, h6.success, p.success, a.success, li.success, blockquote.success, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
+  font-weight: 900;
+}
+
 /**
 * Header Tags and other Typography States:
 * `.error, .warning, .etc...` - headers `p` `li` `blockquote` `a` and `p` tags can be fully manipulated to respond to states by adding the modifiying state like `.error`, `.warning`, `.info` etc....
@@ -5511,14 +5565,10 @@ input:checked + label > .switch-inactive {
 *	</h1>
 *	<h2 class="with-underline error">Header 2 Tag <small>Error State</small></h2>
 *	<h3 class="with-underline warning">Header 3 Tag<small>Warning State</small></h3>
-*	<h4 class="with-underline validated">Header 4 Tag<span class="sub-line">Validated/success State</span></h4>
+*	<h4 class="with-underline success">Header 4 Tag<span class="sub-line">Success State</span></h4>
 *	<h5 class="with-underline highlighted">Header 5 Tag<small>Highlighted State</small></h5>
 *  	<p class="highlighted"><strong>Paragraph that is a highlighted State.</strong>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
 */
-h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.success, h2.success, h3.success, h4.success, h5.success, h6.success, p.success, a.success, li.success, blockquote.success, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
-  font-weight: 900;
-}
-
 h1.with-underline {
   border-bottom: #4daded 2px solid;
 }

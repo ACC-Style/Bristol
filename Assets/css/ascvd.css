@@ -1379,7 +1379,6 @@ button:disabled.secondary, .input-space
   padding-left: 0;
   padding-right: 0;
   cursor: context-menu;
-  margin-bottom: -2px;
   bottom: -1px;
   position: relative;
 }
@@ -1639,6 +1638,7 @@ button:disabled.secondary, .input-space
   border-bottom-color: #00386b;
   border-right: 0 none;
   border-left: 0 none;
+  bottom: 0;
 }
 .tabs.tabs-primary li.selected a {
   color: #fff;
@@ -1914,9 +1914,16 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 .section-nav .text {
   padding-top: 6.25px;
   padding-bottom: 6.25px;
+  -webkit-transition: padding 1.5s;
+  /* Safari */
+  transition: padding 1.5s;
 }
 .section-nav .circle {
   position: absolute;
+  -webkit-transition: all 1.5s;
+  /* Safari */
+  transition: all 1.5s;
+  overflow: hidden;
   width: 50px;
   height: 50px;
   background: #4daded;
@@ -1933,6 +1940,14 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   line-height: 1em;
   margin: 10.5px;
   color: #fff;
+  -webkit-transition: all 1.5s;
+  /* Safari */
+  transition: all 1.5s;
+  -ms-transform: translate(0px, 0);
+  /* IE 9 */
+  -webkit-transform: translate(0px, 0);
+  /* Safari */
+  transform: translate(0px, 0);
 }
 .section-nav .circle i:before {
   vertical-align: bottom;
@@ -1989,12 +2004,42 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 .section-nav.disabled .text {
   color: #999999;
 }
+.section-nav.disabled.back .text {
+  padding-left: 1.5rem;
+}
+.section-nav.disabled.forward .text {
+  padding-right: 1.5rem;
+}
+.section-nav.disabled.back .circle {
+  top: 28px;
+}
+.section-nav.disabled.back .circle i {
+  -ms-transform: translate(-50px, -12.5px);
+  /* IE 9 */
+  -webkit-transform: translate(-50px, -12.5px);
+  /* Safari */
+  transform: translate(-50px, -12.5px);
+}
+.section-nav.disabled.forward .circle {
+  bottom: 28px;
+}
+.section-nav.disabled.forward .circle i {
+  -ms-transform: translate(50px, -12.5px);
+  /* IE 9 */
+  -webkit-transform: translate(50px, -12.5px);
+  /* Safari */
+  transform: translate(50px, -12.5px);
+}
 .section-nav.disabled .circle, .section-nav.disabled.hover.circle {
   -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
   background-color: #999999;
   background-image: url("../img/empty_diamond.png");
+  width: 12px;
+  height: 12px;
+  border-radius: 6PX;
+  border: 2px solid #fff;
 }
 
 .with-group-sections .section-nav.forward .text {
@@ -2034,7 +2079,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 * `.section-nav with .disabled` - Adding `.disabled` to the `.section-nav` container with style the circle nav accordingly.
 * 
 *   @example
-*	<div class="page"><div class="section-nav back">
+*	<div class="page"><div class="section-nav back disabled">
 *		<a>
 *			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
 *			<div class="text"> Back</div>
@@ -2108,8 +2153,8 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 }
 
 .input-holder [type='text'], .input-holder [type='password'], .input-holder [type='date'], .input-holder [type='datetime'], .input-holder [type='datetime-local'], .input-holder [type='month'], .input-holder [type='week'], .input-holder [type='email'], .input-holder [type='number'], .input-holder [type='search'], .input-holder [type='tel'], .input-holder [type='time'], .input-holder [type='url'], .input-holder [type='color'], .input-holder textarea, .input-holder button, .input-holder .button {
-  font-size: 1rem;
-  line-height: 1rem;
+  font-size: 14px;
+  line-height: 14px;
   padding: 0.65625rem 0.65625rem;
   height: 2.1875rem;
 }
@@ -2255,7 +2300,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   font-size: .75em;
 }
 
-.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.validated .required-holder, .question.validated .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .answer.completed .required-holder, .question.completed .required-holder, .answer.disabled .required-holder, .question.disabled .required-holder, .answer.attention .required-holder, .question.attention .required-holder {
+.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.success .required-holder, .question.success .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .answer.disabled .required-holder, .question.disabled .required-holder {
   background-color: transparent;
   display: inline-block;
 }
@@ -2384,19 +2429,19 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   width: 100%;
 }
 
-.hint .error, .hint .warning, .hint .validated, .hint .info, .hint .highlighted, .hint .completed, .hint .disabled, .hint .attention {
+.hint .error, .hint .warning, .hint .success, .hint .info, .hint .highlighted, .hint .disabled {
   padding: .25em .5em;
 }
 
-.error textarea, .error select, .error input, .error datalist, .warning textarea, .warning select, .warning input, .warning datalist, .validated textarea, .validated select, .validated input, .validated datalist, .info textarea, .info select, .info input, .info datalist, .highlighted textarea, .highlighted select, .highlighted input, .highlighted datalist, .completed textarea, .completed select, .completed input, .completed datalist, .disabled textarea, .disabled select, .disabled input, .disabled datalist, .attention textarea, .attention select, .attention input, .attention datalist {
+.error textarea, .error select, .error input, .error datalist, .warning textarea, .warning select, .warning input, .warning datalist, .success textarea, .success select, .success input, .success datalist, .info textarea, .info select, .info input, .info datalist, .highlighted textarea, .highlighted select, .highlighted input, .highlighted datalist, .disabled textarea, .disabled select, .disabled input, .disabled datalist {
   margin-bottom: 0;
 }
 
-.message-holder > .error, .message-holder > .warning, .message-holder > .validated, .message-holder > .info, .message-holder > .highlighted, .message-holder > .completed, .message-holder > .disabled, .message-holder > .attention {
+.message-holder > .error, .message-holder > .warning, .message-holder > .success, .message-holder > .info, .message-holder > .highlighted, .message-holder > .disabled {
   display: none;
 }
 
-.error .message-holder > .error, .message-holder > .error.make-visible, .warning .message-holder > .warning, .message-holder > .warning.make-visible, .validated .message-holder > .validated, .message-holder > .validated.make-visible, .info .message-holder > .info, .message-holder > .info.make-visible, .highlighted .message-holder > .highlighted, .message-holder > .highlighted.make-visible, .completed .message-holder > .completed, .message-holder > .completed.make-visible, .disabled .message-holder > .disabled, .message-holder > .disabled.make-visible, .attention .message-holder > .attention, .message-holder > .attention.make-visible {
+.error .message-holder > .error, .message-holder > .error.make-visible, .warning .message-holder > .warning, .message-holder > .warning.make-visible, .success .message-holder > .success, .message-holder > .success.make-visible, .info .message-holder > .info, .message-holder > .info.make-visible, .highlighted .message-holder > .highlighted, .message-holder > .highlighted.make-visible, .disabled .message-holder > .disabled, .message-holder > .disabled.make-visible {
   display: block;
 }
 
@@ -3071,14 +3116,14 @@ table + div > .collapsable-panel {
 .collapsable-panel.warning.inset .bar.close .action-btn {
   color: #fff;
 }
-.collapsable-panel.validated {
+.collapsable-panel.success {
   background-color: transparent;
   border: 0 none transparent;
 }
-.collapsable-panel.validated.inset {
+.collapsable-panel.success.inset {
   background-color: #e3fcee;
 }
-.collapsable-panel.validated.inset .bar.close .action-btn {
+.collapsable-panel.success.inset .bar.close .action-btn {
   color: #fff;
 }
 .collapsable-panel.info {
@@ -3101,16 +3146,6 @@ table + div > .collapsable-panel {
 .collapsable-panel.highlighted.inset .bar.close .action-btn {
   color: #fff;
 }
-.collapsable-panel.completed {
-  background-color: transparent;
-  border: 0 none transparent;
-}
-.collapsable-panel.completed.inset {
-  background-color: #e3fcee;
-}
-.collapsable-panel.completed.inset .bar.close .action-btn {
-  color: #fff;
-}
 .collapsable-panel.disabled {
   background-color: transparent;
   border: 0 none transparent;
@@ -3120,16 +3155,6 @@ table + div > .collapsable-panel {
 }
 .collapsable-panel.disabled.inset .bar.close .action-btn {
   color: #333333;
-}
-.collapsable-panel.attention {
-  background-color: transparent;
-  border: 0 none transparent;
-}
-.collapsable-panel.attention.inset {
-  background-color: #fdf3e7;
-}
-.collapsable-panel.attention.inset .bar.close .action-btn {
-  color: #fff;
 }
 
 /**
@@ -3951,26 +3976,26 @@ input:checked + label > .switch-inactive {
   background-color: #e6e6e6;
 }
 
-.switch.value-switch .switch-active {
+.switch.value-switch .switch-active, .switch-group .switch .switch-active {
   color: #333333;
 }
-.switch.value-switch .switch-inactive {
-  color: #adadad;
+.switch.value-switch .switch-inactive, .switch-group .switch .switch-inactive {
+  color: #e6e6e6;
 }
-.switch.value-switch .switch-active, .switch.value-switch .switch-inactive {
+.switch.value-switch .switch-active, .switch.value-switch .switch-inactive, .switch-group .switch .switch-active, .switch-group .switch .switch-inactive {
   z-index: 100;
 }
-.switch.value-switch input + label > .switch-active {
+.switch.value-switch input + label > .switch-active, .switch-group .switch input + label > .switch-active {
   display: block;
 }
-.switch.value-switch input:checked + label > .switch-inactive {
+.switch.value-switch input:checked + label > .switch-inactive, .switch-group .switch input:checked + label > .switch-inactive {
   color: #333333;
   display: block;
 }
-.switch.value-switch input:checked + label > .switch-active {
-  color: #adadad;
+.switch.value-switch input:checked + label > .switch-active, .switch-group .switch input:checked + label > .switch-active {
+  color: #e6e6e6;
 }
-.switch.value-switch .switch-paddle, .switch.value-switch input:checked .switch-paddle {
+.switch.value-switch .switch-paddle, .switch.value-switch input:checked .switch-paddle, .switch-group .switch .switch-paddle, .switch-group .switch input:checked .switch-paddle {
   background-color: #2199e8;
 }
 
@@ -4007,19 +4032,19 @@ input:checked + label > .switch-inactive {
   text-align: center;
 }
 
-.group-switch {
+.switch-group {
   background-color: #14B057;
   border: 2px solid #b3b3b3;
   box-sizing: content-box;
-  width: auto;
   height: 2rem;
   transition: all 0.25s ease-out;
   border-radius: 0;
   color: inherit;
   font-weight: inherit;
-  display: inline-block;
+  display: block;
+  width: auto;
 }
-.group-switch .switch-active, .group-switch .switch-inactive {
+.switch-group .switch .switch-active, .switch-group .switch .switch-inactive {
   text-align: center;
   width: 100%;
   left: 0;
@@ -4027,42 +4052,53 @@ input:checked + label > .switch-inactive {
   padding: 0;
   font-weight: bold;
 }
-.group-switch .switch-position {
-  display: block;
+.switch-group > .switch {
+  display: inline-block;
   float: left;
+  width: auto;
+  margin: 0;
 }
-.group-switch .switch-input {
+.switch-group .switch-input {
   opacity: 0;
   position: absolute;
 }
-.group-switch .switch-paddle {
+.switch-group .switch-paddle {
+  width: 4rem;
   border: 0 transparent none;
   background-color: transparent;
 }
-.group-switch .switch-paddle:after {
+.switch-group .switch-paddle:after {
   opacity: 0;
-  width: 80%;
-  left: 10%;
+  width: 80% !important;
+  width: calc(100% - .5rem) !important;
+  left: 10% !important;
+  left: calc(.25rem + 0px) !important;
   border-radius: 3px;
 }
-.group-switch input:checked + .switch-paddle:after {
-  opacity: 1;
-  left: 10%;
+.switch-group .switch.switch-2x .switch-paddle {
+  width: 8rem;
 }
-.group-switch .switch-active, .group-switch .switch-inactive {
+.switch-group .switch.switch-4x .switch-paddle {
+  width: 16rem;
+}
+.switch-group input:checked + .switch-paddle:after {
+  opacity: 1;
+  left: 10% !important;
+  left: calc(.25rem + 0px) !important;
+}
+.switch-group .switch-active, .switch-group .switch-inactive {
   z-index: 100;
 }
 
 /**
 * Switch (Foundation Override): 
 * `.switch` - Switches are a more visible and more touchable versions of checkbox and radio buttons. 
-*  ADD `.x-visible` to show the x when it is shut off. <h5 class="warning">( !! WARNING !! Updated HTML and Styles From Ver 1)</h5>
+*  <h5 class="warning">( !! WARNING !! Updated HTML and Styles From Ver 1)</h5>
 * 
 *   @example
-*   <h3>Plain switch with `.disabled` on the input</h3>
-*   <div class="switch-input-space  row">
+*   <div class="switch-input-space">
 *   <div class="switch">
-*   <input class="switch-input" id="yes-no-1" disabled type="checkbox" name="exampleSwitch">
+*   <input class="switch-input" id="yes-no-1" type="checkbox" name="exampleSwitch">
 *   <label class="switch-paddle" for="yes-no-1">
 *   <span class="show-for-sr">Do you like me?</span>
 *   <span class="switch-active" aria-hidden="true">Yes</span>
@@ -4071,10 +4107,32 @@ input:checked + label > .switch-inactive {
 *   </div>
 *   <label  class="switch-value" for="yes-no-1">Yes or No Question</label>
 *   </div>
+*/
+/**
+* Switch (Disabled): 
+* `disable` - on the input changes the look and cursor on rollover
+* 
+*   @example
+*   <div class="switch-input-space  row">
+*   <div class="switch">
+*   <input class="switch-input" id="yes-no-disabled" disabled type="checkbox" name="exampleSwitch">
+*   <label class="switch-paddle" for="yes-no-disabled">
+*   <span class="show-for-sr">Do you like me?</span>
+*   <span class="switch-active" aria-hidden="true">Yes</span>
+*   <span class="switch-inactive" aria-hidden="true">No</span>
+*   </label>
+*   </div>
+*   <label  class="switch-value" for="yes-no-disabled">Yes or No Question</label>
+*   </div>
+*/
+/**
+* Switch modifing classes: 
+* `.switch` - Switches are remarkably flexable. Radio Buttons should use `.radio` as modifier, and Checkboxes use  `.checkbox`. `.round` and `.radius` are very useful to change the look and feel of buttons.  
+* 
+*   @example
 *   <div class="row group-divide">
-*   <h3>Radio Buttons should use `.round` or `.radio` modifier</h3>
-*   <p>You can make a radio with eiither placing the `.round` or `.radio`.  If you want control over the positive and negative position use `.round`.  Use `.radio` to set it to the standard icon in the positive position</p>
-*   <div class="row collapse">
+*   <h4>Radio Buttons should use `.round` or `.radio` modifier</h4>
+*   <p>You can make a radio with eiither placing the `.round` or `.radio`. *   <div class="row collapse">
 *   <div class="switch-input-space column small-6">
 *   <div class="switch round">
 *   <input class="switch-input" id="yes-no-round" type="radio" name="radio-switch">
@@ -4100,8 +4158,8 @@ input:checked + label > .switch-inactive {
 *   </div>
 *   </div>
 *   <div class="row group-divide">
-*   <h3>Checkboxes should use `.radius`, `.checkbox`, no modifiers</h3>
-*   <p>You can make a checkbox with eiither placing the `.checkbox` or `.radius`.  If you want control over the positive and negative position use `.radius`.  Use `.checkbox` to set it to the standard icon in the positive position</p>
+*   <h4>Checkboxes should use `.radius`, `.checkbox`, no modifiers</h4>
+*   <p>If you want control over the positive and negative icons use `.radius`.  Use `.checkbox` to set it to the standard icon in the positive position</p>
 *   <div class="row collapse">
 *   <div class="switch-input-space column small-6">
 *   <div class="switch radius">
@@ -4125,11 +4183,14 @@ input:checked + label > .switch-inactive {
 *   </div>
 *   <label  class="switch-value" for="checkbox-checkbox">Checkbox button made with `.checkbox`</label>
 *   </div>
-*   </div>
-*   <div class="row group-divide"><h3>Value or Unit Swithcers</h3>
-*   <p>Value Switchers should use `.value-switch` so both sides of the switcher are always visible and stay colored.</p>
-*   <label  class="switch-value" for="checkbox-value-switch2">`.value-switch` gives room to have values on the switch that are always visible but can be toggled.</label>
-*   </div>
+*   </div></div>
+
+**/
+/**
+* Value Switchers: 
+* `.value-switch` - Add `.value-switch` to a switch so both inactive and active content of the switcher are visible and stay colored.
+* 
+*   @example
 *   <div class="switch-input-space column small-12">
 *   <div class="switch value-switch">
 *   <input class="switch-input" id="checkbox-value-switch"  type="checkbox" value="false">
@@ -4163,33 +4224,38 @@ input:checked + label > .switch-inactive {
 *   <label class="switch-value" for="checkbox-value-switch-round">You can also apply the `.radius` and `.round` to change the style
 *   </label>
 *   </div>
-*   </div>
-*   <div class="row group-divide"><h3>Grouped Swtiched</h3>
-*   <div class="switch-input-space column small-12">
-*   <div class="group-switch"><div class="switch-position">
-*   <input class="switch-input" id="group-switch0"  type="checkbox" value="false">
-*   <label class="switch-paddle" for="group-switch0">
-*   <span class="show-for-sr">Do you like me?</span>
-*   <span class="switch-active" aria-hidden="true">Unit</span>
-*   <span class="switch-inactive" aria-hidden="true">Unit</span>
-*   </label></div><div class="switch-position">
-*   <input class="switch-input" id="group-switch1"  type="checkbox" value="false">
-*   <label class="switch-paddle" for="group-switch1">
-*   <span class="show-for-sr">Do you like me?</span>
-*   <span class="switch-active" aria-hidden="true">Unit</span>
-*   <span class="switch-inactive" aria-hidden="true">Unit</span>
-*   </label></div><div class="switch-position">
-*   <input class="switch-input" id="group-switch2"  type="checkbox" value="false">
-*   <label class="switch-paddle" for="group-switch2">
-*   <span class="show-for-sr">Do you like me?</span>
-*   <span class="switch-active" aria-hidden="true">Unit</span>
-*   <span class="switch-inactive" aria-hidden="true">Unit</span>
+*/
+/**
+* Switch Group: 
+* `.switch-group` - Switches can be grouped if you want a multi selected bar of similar items.
+* 
+*   @example
+*   <h4>Switch Groups group normal '.switch' DOM they just stack the active and inactive items </h4>
+*   <div class="switch-input-space">
+*   <div class="switch-group"><div class="switch">
+*   <input class="switch-input" id="switch-group0"  type="checkbox" value="false">
+*   <label class="switch-paddle" for="switch-group0">
+*   <span class="show-for-sr">Miles True?</span>
+*   <span class="switch-active" aria-hidden="true">Miles</span>
+*   <span class="switch-inactive" aria-hidden="true">Miles</span>
+*   </label></div><div class="switch">
+*   <input class="switch-input" id="switch-group1"  type="checkbox" value="false">
+*   <label class="switch-paddle" for="switch-group1">
+*   <span class="show-for-sr">Knots?</span>
+*   <span class="switch-active" aria-hidden="true">Knots</span>
+*   <span class="switch-inactive" aria-hidden="true">Knots</span>
+*   </label></div><div class="switch switch-2x">
+*   <input class="switch-input" id="switch-group2"  type="checkbox" value="false">
+*   <label class="switch-paddle" for="switch-group2">
+*   <span class="show-for-sr">Kilometers?</span>
+*   <span class="switch-active" aria-hidden="true">Kilometers</span>
+*   <span class="switch-inactive" aria-hidden="true">Kilometers</span>
 *   </label></div>
 *   </div>
-*   <label class="switch-value" for="checkbox-value-switch-round">You can also apply the `.radius` and `.round` to change the style
+*   <label class="switch-value" for="checkbox-value-switch-round">Show these types of distance
 *   </label>
-*   </div></div>
-**/
+*   </div>
+*/
 .tooltip {
   background-color: #1a364f;
   z-index: 2000;
@@ -4215,9 +4281,21 @@ input:checked + label > .switch-inactive {
 .button-group.radius, .button-group.radius-top, .button-group.radius-bottom {
   overflow: hidden;
 }
+.button-group.expanded.selectable .button:first-child:nth-last-child(2) {
+  border-right-width: 0;
+  width: 50%;
+}
 .button-group.expanded.selectable .button:first-child:nth-last-child(3) {
   border-right-width: 0;
   width: 33.3333%;
+}
+.button-group.expanded.selectable .button:first-child:nth-last-child(4) {
+  border-right-width: 0;
+  width: 25%;
+}
+.button-group.expanded.selectable .button:first-child:nth-last-child(5) {
+  border-right-width: 0;
+  width: 20%;
 }
 .button-group.selectable {
   margin-right: 0;
@@ -4241,19 +4319,27 @@ input:checked + label > .switch-inactive {
   margin: 0 7px 0 0;
   display: none;
 }
-.button-group.selectable .selected, .button-group.selectable .selected:hover, .button-group.selectable .selected:focus {
+.button-group.selectable .selected.button {
+  background-color: #14B057;
+  color: #FFF;
+}
+.button-group.selectable .selected.button:hover, .button-group.selectable .selected.button:focus {
+  background-color: #157894;
+  color: #FFF;
+}
+.button-group.selectable .selected.button:hover, .button-group.selectable .selected.button:focus {
   background-color: #1a9750;
   color: #fff;
 }
-.button-group.selectable .selected i.fa {
+.button-group.selectable .selected.button i.fa {
   display: inline-block;
 }
 
-.error.question .button-group, .warning.question .button-group, .validated.question .button-group, .info.question .button-group, .highlighted.question .button-group, .completed.question .button-group, .disabled.question .button-group, .attention.question .button-group {
+.error.question .button-group, .warning.question .button-group, .success.question .button-group, .info.question .button-group, .highlighted.question .button-group, .disabled.question .button-group {
   margin-bottom: 0;
 }
 
-.error.question .button-group.radius, .warning.question .button-group.radius, .validated.question .button-group.radius, .info.question .button-group.radius, .highlighted.question .button-group.radius, .completed.question .button-group.radius, .disabled.question .button-group.radius, .attention.question .button-group.radius {
+.error.question .button-group.radius, .warning.question .button-group.radius, .success.question .button-group.radius, .info.question .button-group.radius, .highlighted.question .button-group.radius, .disabled.question .button-group.radius {
   margin-bottom: 0;
   border-radius: 6px 6px 0 0;
 }
@@ -4292,7 +4378,7 @@ input:checked + label > .switch-inactive {
 * <div class="input-holder row collapse">
 *     <div class="column small-12 input-space">
 *   <div class="button-group expanded selectable">
-*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*     <a href="" class="button selected"><i class="fa fa-check"></i><span class="text">Yes</span></a>
 *     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
 *     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
 *   </div>
@@ -4458,7 +4544,7 @@ input:checked + label > .switch-inactive {
   color: #fff;
 }
 .group-section-tab-holder.secondary h1, .group-section-tab-holder.secondary h2, .group-section-tab-holder.secondary h3, .group-section-tab-holder.secondary h4, .group-section-tab-holder.secondary h5, .group-section-tab-holder.secondary h6, .group-section-tab-holder.secondary p, .colored-paper.secondary h1, .colored-paper.secondary h2, .colored-paper.secondary h3, .colored-paper.secondary h4, .colored-paper.secondary h5, .colored-paper.secondary h6, .colored-paper.secondary p {
-  color: #333333;
+  color: #fff;
 }
 .group-section-tab-holder, .group-section-tab-holder .nav.tabs, .colored-paper, .colored-paper .nav.tabs {
   background-image: url("../img/construction-paper.png");
@@ -4532,6 +4618,11 @@ input:checked + label > .switch-inactive {
 }
 .group-section-tab-holder.secondary .nav.tabs li.selected, .colored-paper.secondary .nav.tabs li.selected {
   background-color: #fff;
+}
+
+.group-section .colored-paper:last-child {
+  margin-bottom: -1rem;
+  margin-bottom: calc(-1rem - 1px);
 }
 
 /**
@@ -5460,6 +5551,10 @@ input:checked + label > .switch-inactive {
 *   </div>
 *  <div class="shrink-waypoint"></div>
 **/
+h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.success, h2.success, h3.success, h4.success, h5.success, h6.success, p.success, a.success, li.success, blockquote.success, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
+  font-weight: 900;
+}
+
 /**
 * Header Tags and other Typography States:
 * `.error, .warning, .etc...` - headers `p` `li` `blockquote` `a` and `p` tags can be fully manipulated to respond to states by adding the modifiying state like `.error`, `.warning`, `.info` etc....
@@ -5470,14 +5565,10 @@ input:checked + label > .switch-inactive {
 *	</h1>
 *	<h2 class="with-underline error">Header 2 Tag <small>Error State</small></h2>
 *	<h3 class="with-underline warning">Header 3 Tag<small>Warning State</small></h3>
-*	<h4 class="with-underline validated">Header 4 Tag<span class="sub-line">Validated/success State</span></h4>
+*	<h4 class="with-underline success">Header 4 Tag<span class="sub-line">Success State</span></h4>
 *	<h5 class="with-underline highlighted">Header 5 Tag<small>Highlighted State</small></h5>
 *  	<p class="highlighted"><strong>Paragraph that is a highlighted State.</strong>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
 */
-h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted, h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled, h1.attention, h2.attention, h3.attention, h4.attention, h5.attention, h6.attention, p.attention, a.attention, li.attention, blockquote.attention {
-  font-weight: 900;
-}
-
 h1.with-underline {
   border-bottom: #4daded 2px solid;
 }
@@ -6013,19 +6104,19 @@ STATE TRUMPING CODE
   content: "";
 }
 
-.validated .input-holder input, .validated .input-holder textarea, .validated .input-holder select, .validated .input-holder .postfix, .validated .input-holder .prefix, .validated .bar.close, .validated.inset .bar.close, .validated.question .button-group, h1.with-underline.validated, h2.with-underline.validated, h3.with-underline.validated, h4.with-underline.validated, h5.with-underline.validated, h6.with-underline.validated {
+.success .input-holder input, .success .input-holder textarea, .success .input-holder select, .success .input-holder .postfix, .success .input-holder .prefix, .success .bar.close, .success.inset .bar.close, .success.question .button-group, h1.with-underline.success, h2.with-underline.success, h3.with-underline.success, h4.with-underline.success, h5.with-underline.success, h6.with-underline.success {
   border-color: #14B057;
 }
 
-.answer.validated .required-holder, .question.validated .required-holder, .question-inline.validated .required-holder, .question-grid-based.validated .required-holder, .validated .label-holder label, .validated .input-holder .postfix, .validated .input-holder .prefix, .validated .input-holder .value, .validated .bar.close .action-btn, .collapsable-panel.validated h1, .collapsable-panel.validated h2, .collapsable-panel.validated h3, .collapsable-panel.validated h4, .collapsable-panel.validated h5, .collapsable-panel.validated h6, h1.validated, h2.validated, h3.validated, h4.validated, h5.validated, h6.validated, p.validated, a.validated, li.validated, blockquote.validated {
+.answer.success .required-holder, .question.success .required-holder, .question-inline.success .required-holder, .question-grid-based.success .required-holder, .success .label-holder label, .success .input-holder .postfix, .success .input-holder .prefix, .success .input-holder .value, .success .bar.close .action-btn, .collapsable-panel.success h1, .collapsable-panel.success h2, .collapsable-panel.success h3, .collapsable-panel.success h4, .collapsable-panel.success h5, .collapsable-panel.success h6, h1.success, h2.success, h3.success, h4.success, h5.success, h6.success, p.success, a.success, li.success, blockquote.success {
   color: #14B057;
 }
 
-.validated .message-holder > .validated, .hint .validated, .validated.inset .bar.close .action-btn, .validated.callout {
+.success .message-holder > .success, .hint .success, .success.inset .bar.close .action-btn, .success.callout {
   background-color: #14B057;
 }
 
-.validated .fa-holder-dynamic:before, .validated.fa:before, .validated > .fa-holder:before {
+.success .fa-holder-dynamic:before, .success.fa:before, .success > .fa-holder:before {
   content: "";
 }
 
@@ -6061,22 +6152,6 @@ STATE TRUMPING CODE
   content: "";
 }
 
-.completed .input-holder input, .completed .input-holder textarea, .completed .input-holder select, .completed .input-holder .postfix, .completed .input-holder .prefix, .completed .bar.close, .completed.inset .bar.close, .completed.question .button-group, h1.with-underline.completed, h2.with-underline.completed, h3.with-underline.completed, h4.with-underline.completed, h5.with-underline.completed, h6.with-underline.completed {
-  border-color: #14B057;
-}
-
-.answer.completed .required-holder, .question.completed .required-holder, .question-inline.completed .required-holder, .question-grid-based.completed .required-holder, .completed .label-holder label, .completed .input-holder .postfix, .completed .input-holder .prefix, .completed .input-holder .value, .completed .bar.close .action-btn, .collapsable-panel.completed h1, .collapsable-panel.completed h2, .collapsable-panel.completed h3, .collapsable-panel.completed h4, .collapsable-panel.completed h5, .collapsable-panel.completed h6, h1.completed, h2.completed, h3.completed, h4.completed, h5.completed, h6.completed, p.completed, a.completed, li.completed, blockquote.completed {
-  color: #14B057;
-}
-
-.completed .message-holder > .completed, .hint .completed, .completed.inset .bar.close .action-btn, .completed.callout {
-  background-color: #14B057;
-}
-
-.completed .fa-holder-dynamic:before, .completed.fa:before, .completed > .fa-holder:before {
-  content: "";
-}
-
 .disabled .input-holder input, .disabled .input-holder textarea, .disabled .input-holder select, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .bar.close, .disabled.inset .bar.close, .disabled.question .button-group, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
   border-color: #b3b3b3;
 }
@@ -6093,23 +6168,7 @@ STATE TRUMPING CODE
   content: "";
 }
 
-.attention .input-holder input, .attention .input-holder textarea, .attention .input-holder select, .attention .input-holder .postfix, .attention .input-holder .prefix, .attention .bar.close, .attention.inset .bar.close, .attention.question .button-group, h1.with-underline.attention, h2.with-underline.attention, h3.with-underline.attention, h4.with-underline.attention, h5.with-underline.attention, h6.with-underline.attention {
-  border-color: #E08514;
-}
-
-.answer.attention .required-holder, .question.attention .required-holder, .question-inline.attention .required-holder, .question-grid-based.attention .required-holder, .attention .label-holder label, .attention .input-holder .postfix, .attention .input-holder .prefix, .attention .input-holder .value, .attention .bar.close .action-btn, .collapsable-panel.attention h1, .collapsable-panel.attention h2, .collapsable-panel.attention h3, .collapsable-panel.attention h4, .collapsable-panel.attention h5, .collapsable-panel.attention h6, h1.attention, h2.attention, h3.attention, h4.attention, h5.attention, h6.attention, p.attention, a.attention, li.attention, blockquote.attention {
-  color: #E08514;
-}
-
-.attention .message-holder > .attention, .hint .attention, .attention.inset .bar.close .action-btn, .attention.callout {
-  background-color: #E08514;
-}
-
-.attention .fa-holder-dynamic:before, .attention.fa:before, .attention > .fa-holder:before {
-  content: "";
-}
-
-.error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .validated .fa-holder-dynamic:before, .validated.fa:before, .validated > .fa-holder:before, .info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .completed .fa-holder-dynamic:before, .completed.fa:before, .completed > .fa-holder:before, .disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .attention .fa-holder-dynamic:before, .attention.fa:before, .attention > .fa-holder:before {
+.error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .success .fa-holder-dynamic:before, .success.fa:before, .success > .fa-holder:before, .info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before {
   font-family: FontAwesome;
 }
 
@@ -6117,7 +6176,7 @@ STATE TRUMPING CODE
   color: #333333;
 }
 
-.light-color-text, .message-holder > .error, .message-holder > .warning, .message-holder > .validated, .message-holder > .highlighted, .message-holder > .completed, .message-holder > .attention, .hint .error, .hint .warning, .hint .validated, .hint .highlighted, .hint .completed, .hint .attention {
+.light-color-text, .message-holder > .error, .message-holder > .warning, .message-holder > .success, .message-holder > .highlighted, .hint .error, .hint .warning, .hint .success, .hint .highlighted {
   color: #fff;
 }
 
