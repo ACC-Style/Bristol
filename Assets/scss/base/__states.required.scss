@@ -23,8 +23,8 @@ $states:
     "Trump-Border":"",
     "Trump-Icon":"" ),
     (
-    "State":"validated",
-    "Selector":".validated",
+    "State":"success",
+    "Selector":".success",
     "Color": $success-color,
     "Icon": $fa-var-check,
     "Trump-Color":"",
@@ -48,15 +48,15 @@ $states:
     "Trump-Color":"",
     "Trump-Border":"",
     "Trump-Icon":""),    
-    (
-    "State":"completed",
-    "Selector":".completed",
-    "Color": $success-color,
-    "Icon": $fa-var-check,
-    "Trump-Background":"",
-    "Trump-Color":"",
-    "Trump-Border":"",
-    "Trump-Icon":""),    
+    // (
+    // "State":"completed",
+    // "Selector":".completed",
+    // "Color": $success-color,
+    // "Icon": $fa-var-check,
+    // "Trump-Background":"",
+    // "Trump-Color":"",
+    // "Trump-Border":"",
+    // "Trump-Icon":""),    
     (
     "State":"disabled",
     "Selector":".disabled",
@@ -65,16 +65,16 @@ $states:
     "Trump-Background":"",
     "Trump-Color":"",
     "Trump-Border":"",
-    "Trump-Icon":""),    
-    (
-    "State":"attention",
-    "Selector":".attention",
-    "Color": $attention-color,
-    "Icon": $fa-var-exclamation-circle,
-    "Trump-Background":"",
-    "Trump-Color":"",
-    "Trump-Border":"",
-    "Trump-Icon":"" );
+    "Trump-Icon":"");    
+    // ,(
+    // "State":"attention",
+    // "Selector":".attention",
+    // "Color": $attention-color,
+    // "Icon": $fa-var-exclamation-circle,
+    // "Trump-Background":"",
+    // "Trump-Color":"",
+    // "Trump-Border":"",
+    // "Trump-Icon":"" );
     
     /*  (asterisk
     "State":"success",
@@ -88,39 +88,39 @@ $states:
 
 $error-background-trump:();
 $warning-background-trump:();
-$validated-background-trump:();
+$success-background-trump:();
 $info-background-trump:();
-$completed-background-trump:();
+//$completed-background-trump:();
 $highlighted-background-trump:();
 $disabled-background-trump:();
-$attention-background-trump:();
+// $attention-background-trump:();
 
 $error-border-trump:();
 $warning-border-trump:();
-$validated-border-trump:();
+$success-border-trump:();
 $info-border-trump:();
-$completed-border-trump:();
+//$completed-border-trump:();
 $highlighted-border-trump:();
 $disabled-border-trump:();
-$attention-border-trump:();
+// $attention-border-trump:();
 
 $error-fontcolor-trump:();
 $warning-fontcolor-trump:();
-$validated-fontcolor-trump:();
+$success-fontcolor-trump:();
 $info-fontcolor-trump:();
-$completed-fontcolor-trump:();
+//$completed-fontcolor-trump:();
 $highlighted-fontcolor-trump:();
 $disabled-fontcolor-trump:();
-$attention-fontcolor-trump:();
+// $attention-fontcolor-trump:();
 
 $error-icon-trump:();
 $warning-icon-trump:();
-$validated-icon-trump:();
+$success-icon-trump:();
 $info-icon-trump:();
-$completed-icon-trump:();
+//$completed-icon-trump:();
 $highlighted-icon-trump:();
 $disabled-icon-trump:();
-$attention-icon-trump:();
+// $attention-icon-trump:();
 
 //Font Text Trump
 $text-LightFont-Trump:(".light-color-text");
@@ -139,18 +139,18 @@ $text-DarkFont-Trump:(".dark-color-text");
       @if $TrumpList == "color"{ @return $warning-fontcolor-trump;}
       @if $TrumpList == "icon"{ @return $warning-icon-trump;}
     }
-    @if $State == "validated"{
-      @if $TrumpList == "background-color"{@return $validated-background-trump;}
-      @if $TrumpList == "border-color"{ @return $validated-border-trump;}
-      @if $TrumpList == "color"{ @return $validated-fontcolor-trump;}
-      @if $TrumpList == "icon"{ @return $validated-icon-trump;}
+    @if $State == "success"{
+      @if $TrumpList == "background-color"{@return $success-background-trump;}
+      @if $TrumpList == "border-color"{ @return $success-border-trump;}
+      @if $TrumpList == "color"{ @return $success-fontcolor-trump;}
+      @if $TrumpList == "icon"{ @return $success-icon-trump;}
     }
-    @if $State == "completed"{
-      @if $TrumpList == "background-color"{@return $completed-background-trump;}
-      @if $TrumpList == "border-color"{ @return $completed-border-trump;}
-      @if $TrumpList == "color"{ @return $completed-fontcolor-trump;}
-      @if $TrumpList == "icon"{ @return $completed-icon-trump;}
-    }    
+    // @if $State == "completed"{
+    //   @if $TrumpList == "background-color"{@return $completed-background-trump;}
+    //   @if $TrumpList == "border-color"{ @return $completed-border-trump;}
+    //   @if $TrumpList == "color"{ @return $completed-fontcolor-trump;}
+    //   @if $TrumpList == "icon"{ @return $completed-icon-trump;}
+    // }    
     @if $State == "disabled"{
       @if $TrumpList == "background-color"{@return $disabled-background-trump;}
       @if $TrumpList == "border-color"{ @return $disabled-border-trump;}
@@ -169,12 +169,12 @@ $text-DarkFont-Trump:(".dark-color-text");
       @if $TrumpList == "color"{ @return $highlighted-fontcolor-trump;}
       @if $TrumpList == "icon"{ @return $highlighted-icon-trump;}
     } 
-    @if $State == "attention"{
-      @if $TrumpList == "background-color"{@return $attention-background-trump;}
-      @if $TrumpList == "border-color"{ @return $attention-border-trump;}
-      @if $TrumpList == "color"{ @return $attention-fontcolor-trump;}
-      @if $TrumpList == "icon"{ @return $attention-icon-trump;}
-    } 
+    // @if $State == "attention"{
+    //   @if $TrumpList == "background-color"{@return $attention-background-trump;}
+    //   @if $TrumpList == "border-color"{ @return $attention-border-trump;}
+    //   @if $TrumpList == "color"{ @return $attention-fontcolor-trump;}
+    //   @if $TrumpList == "icon"{ @return $attention-icon-trump;}
+    // } 
      @warn "#{$State} - Miss matched call no reference to this getTrump";
     @return ();
 }
@@ -202,30 +202,30 @@ $text-DarkFont-Trump:(".dark-color-text");
         @if $TrumpList == "color"{$warning-fontcolor-trump:append($warning-fontcolor-trump,unquote($Selector),"comma")!global;}
         @if $TrumpList == "icon"{$warning-icon-trump:append($warning-icon-trump,unquote($Selector),"comma")!global;}
     }
-    @if $State == "validated"{
-        @if $TrumpList == "background-color"{$validated-background-trump:append($validated-background-trump,unquote($Selector),"comma")!global;}
-        @if $TrumpList == "border-color"{$validated-border-trump:append($validated-border-trump,unquote($Selector),"comma")!global;}
-        @if $TrumpList == "color"{$validated-fontcolor-trump:append($validated-fontcolor-trump,unquote($Selector),"comma")!global;}
-        @if $TrumpList == "icon"{$validated-icon-trump:append($validated-icon-trump,unquote($Selector),"comma")!global;}
+    @if $State == "success"{
+        @if $TrumpList == "background-color"{$success-background-trump:append($success-background-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "border-color"{$success-border-trump:append($success-border-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "color"{$success-fontcolor-trump:append($success-fontcolor-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "icon"{$success-icon-trump:append($success-icon-trump,unquote($Selector),"comma")!global;}
     }
-    @if $State == "completed"{
-        @if $TrumpList == "background-color"{$completed-background-trump:append($completed-background-trump,unquote($Selector),"comma")!global;}
-        @if $TrumpList == "border-color"{$completed-border-trump:append($completed-border-trump,unquote($Selector),"comma")!global;}
-        @if $TrumpList == "color"{$completed-fontcolor-trump:append($completed-fontcolor-trump,unquote($Selector),"comma")!global;}
-        @if $TrumpList == "icon"{$completed-icon-trump:append($completed-icon-trump,unquote($Selector),"comma")!global;}
-    }    
+    // @if $State == "completed"{
+    //     @if $TrumpList == "background-color"{$completed-background-trump:append($completed-background-trump,unquote($Selector),"comma")!global;}
+    //     @if $TrumpList == "border-color"{$completed-border-trump:append($completed-border-trump,unquote($Selector),"comma")!global;}
+    //     @if $TrumpList == "color"{$completed-fontcolor-trump:append($completed-fontcolor-trump,unquote($Selector),"comma")!global;}
+    //     @if $TrumpList == "icon"{$completed-icon-trump:append($completed-icon-trump,unquote($Selector),"comma")!global;}
+    // }    
     @if $State == "disabled"{
         @if $TrumpList == "background-color"{$disabled-background-trump:append($disabled-background-trump,unquote($Selector),"comma")!global;}
         @if $TrumpList == "border-color"{$disabled-border-trump:append($disabled-border-trump,unquote($Selector),"comma")!global;}
         @if $TrumpList == "color"{$disabled-fontcolor-trump:append($disabled-fontcolor-trump,unquote($Selector),"comma")!global;}
         @if $TrumpList == "icon"{$disabled-icon-trump:append($disabled-icon-trump,unquote($Selector),"comma")!global;}
     }
-    @if $State == "attention"{
-        @if $TrumpList == "background-color"{$attention-background-trump:append($attention-background-trump,unquote($Selector),"comma")!global;}
-        @if $TrumpList == "border-color"{$attention-border-trump:append($attention-border-trump,unquote($Selector),"comma")!global;}
-        @if $TrumpList == "color"{$attention-fontcolor-trump:append($attention-fontcolor-trump,unquote($Selector),"comma")!global;}
-        @if $TrumpList == "icon"{$attention-icon-trump:append($attention-icon-trump,unquote($Selector),"comma")!global;}
-    }
+    // @if $State == "attention"{
+    //     @if $TrumpList == "background-color"{$attention-background-trump:append($attention-background-trump,unquote($Selector),"comma")!global;}
+    //     @if $TrumpList == "border-color"{$attention-border-trump:append($attention-border-trump,unquote($Selector),"comma")!global;}
+    //     @if $TrumpList == "color"{$attention-fontcolor-trump:append($attention-fontcolor-trump,unquote($Selector),"comma")!global;}
+    //     @if $TrumpList == "icon"{$attention-icon-trump:append($attention-icon-trump,unquote($Selector),"comma")!global;}
+    // }
      @if $State == "info"{
         @if $TrumpList == "background-color"{$info-background-trump:append($info-background-trump,unquote($Selector),"comma")!global;}
         @if $TrumpList == "border-color"{$info-border-trump:append($info-border-trump,unquote($Selector),"comma")!global;}
