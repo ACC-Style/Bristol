@@ -2614,9 +2614,41 @@ table a.button, table button, table .inline-list, table .nobutton {
   font-size: .9rem;
 }
 
+.banded tbody tr:nth-child(even), .striped tbody tr:nth-child(even) {
+  background-color: #e6e6e6;
+}
+
+.striped th:nth-child(odd), .striped td:nth-child(odd) {
+  background-color: #e9f5fd;
+}
+
+.striped.desaturate th:nth-child(odd), .striped.desaturate td:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.striped tbody tr:nth-child(even) td:nth-child(odd) {
+  background-color: #e1e9ee;
+}
+
+.striped.desaturate tbody tr:nth-child(even) td:nth-child(odd) {
+  background-color: #dedede;
+}
+
+.striped tbody tr + tr td, .banded tbody tr + tr td {
+  border-top: 0px solid;
+}
+.striped th, .striped td, .banded th, .banded td {
+  padding: .25rem .25rem .25rem .55rem;
+}
+.striped tfoot td, .striped tfoot td:nth-child(odd), .banded tfoot td, .banded tfoot td:nth-child(odd) {
+  color: #333333;
+  border-top: 1px solid #2199e8;
+  background-color: #cccccc;
+}
+
 /**
 * Tables (Banded):
-* `.banded` - There are two high styled tables `.banded` or `.stripped`.
+* `.banded` - There are two high styled tables `.banded` or `.striped`.
 * 
 *   @example
 *	<table class="table banded">
@@ -2652,11 +2684,11 @@ table a.button, table button, table .inline-list, table .nobutton {
 *	</table>
 */
 /**
-* Tables (Stripped):
-* ` .stripped` - Table with the class`.stripped`.
+* Tables (Striped):
+* ` .striped` - Table with the class`.striped`.
 * 
 *   @example
-*	<table class="table stripped">
+*	<table class="table striped">
 *		<thead>
 *			<tr>
 *				<th>table header</th>
@@ -2688,30 +2720,43 @@ table a.button, table button, table .inline-list, table .nobutton {
 *		</tfoot>
 *	</table>
 */
-.banded tbody tr:nth-child(even), .stripped tbody tr:nth-child(even) {
-  background-color: #e6e6e6;
-}
-
-.stripped th:nth-child(odd), .stripped td:nth-child(odd) {
-  background-color: #e9f5fd;
-}
-
-.stripped tbody tr:nth-child(even) td:nth-child(odd) {
-  background-color: #e1e9ee;
-}
-
-.stripped tbody tr + tr td, .banded tbody tr + tr td {
-  border-top: 0px solid;
-}
-.stripped th, .stripped td, .banded th, .banded td {
-  padding: .25rem .25rem .25rem .55rem;
-}
-.stripped tfoot td, .stripped tfoot td:nth-child(odd), .banded tfoot td, .banded tfoot td:nth-child(odd) {
-  color: #333333;
-  border-top: 1px solid #2199e8;
-  background-color: #cccccc;
-}
-
+/**
+* Tables (Striped Desaturate):
+* ` .striped.desaturate` - Table with the class`.striped.desaturate` will produce a table that is cross colored with only greys.
+* 
+*   @example
+*	<table class="table striped desaturate">
+*		<thead>
+*			<tr>
+*				<th>table header</th>
+*				<th>table header</th>
+*				<th>table header</th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr>
+*				<td> row 2  cell A</td>
+*				<td> row 2  cell B</td>
+*				<td> row 2  cell C</td>
+*			</tr>
+*			<tr>
+*				<td> row 2  cell A</td>
+*				<td> row 2  cell B</td>
+*				<td> row 2  cell C</td>
+*			</tr>
+*		</tbody>
+*		<tfoot>
+*			<tr>
+*				<td colspan="3">footer cell</td>
+*			</tr>
+*		</tfoot>
+*	</table>
+*/
 .table .seperator td, .table .seperator:nth-child(even) td:nth-child(odd) {
   padding-top: 2.2px;
   padding-top: 0.1375rem;
@@ -2728,7 +2773,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   border-bottom: #279ce9 2px solid;
   color: #fff;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 700;
   font-style: italic;
   font-size: .75rem;
 }
@@ -3131,7 +3176,7 @@ table + div > .collapsable-panel {
   border: 0 none transparent;
 }
 .collapsable-panel.info.inset {
-  background-color: #f8fdfe;
+  background-color: #f6f6f6;
 }
 .collapsable-panel.info.inset .bar.close .action-btn {
   color: #333333;
@@ -3151,7 +3196,7 @@ table + div > .collapsable-panel {
   border: 0 none transparent;
 }
 .collapsable-panel.disabled.inset {
-  background-color: #f7f7f7;
+  background-color: #fafafa;
 }
 .collapsable-panel.disabled.inset .bar.close .action-btn {
   color: #333333;
@@ -6121,15 +6166,15 @@ STATE TRUMPING CODE
 }
 
 .info .input-holder input, .info .input-holder textarea, .info .input-holder select, .info .input-holder .postfix, .info .input-holder .prefix, .info .bar.close, .info.inset .bar.close, .info.question .button-group, h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
-  border-color: #bbe8f4;
+  border-color: #a6a6a6;
 }
 
 .answer.info .required-holder, .question.info .required-holder, .question-inline.info .required-holder, .question-grid-based.info .required-holder, .info .label-holder label, .info .input-holder .postfix, .info .input-holder .prefix, .info .input-holder .value, .info .bar.close .action-btn, .collapsable-panel.info h1, .collapsable-panel.info h2, .collapsable-panel.info h3, .collapsable-panel.info h4, .collapsable-panel.info h5, .collapsable-panel.info h6, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
-  color: #bbe8f4;
+  color: #a6a6a6;
 }
 
 .info .message-holder > .info, .hint .info, .info.inset .bar.close .action-btn, .info.callout {
-  background-color: #bbe8f4;
+  background-color: #a6a6a6;
 }
 
 .info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before {
@@ -6153,15 +6198,15 @@ STATE TRUMPING CODE
 }
 
 .disabled .input-holder input, .disabled .input-holder textarea, .disabled .input-holder select, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .bar.close, .disabled.inset .bar.close, .disabled.question .button-group, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
-  border-color: #b3b3b3;
+  border-color: #cccccc;
 }
 
 .answer.disabled .required-holder, .question.disabled .required-holder, .question-inline.disabled .required-holder, .question-grid-based.disabled .required-holder, .disabled .label-holder label, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .input-holder .value, .disabled .bar.close .action-btn, .collapsable-panel.disabled h1, .collapsable-panel.disabled h2, .collapsable-panel.disabled h3, .collapsable-panel.disabled h4, .collapsable-panel.disabled h5, .collapsable-panel.disabled h6, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
-  color: #b3b3b3;
+  color: #cccccc;
 }
 
 .disabled .message-holder > .disabled, .hint .disabled, .disabled.inset .bar.close .action-btn, .disabled.callout {
-  background-color: #b3b3b3;
+  background-color: #cccccc;
 }
 
 .disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before {
