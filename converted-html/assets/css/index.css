@@ -2596,13 +2596,13 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   color: #5c5c5c;
 }
 .nav-list.nav-checklist li.info, .nav-checklist.panel-selector li.info {
-  background-color: #f1fafd;
-  border-color: #e7f7fb;
+  background-color: #ededed;
+  border-color: #e0e0e0;
   border-bottom-width: 1;
   color: #333333;
 }
 .nav-list.nav-checklist li.info:hover, .nav-checklist.panel-selector li.info:hover {
-  background-color: #e4f6fb;
+  background-color: #dbdbdb;
 }
 .nav-list.nav-checklist li.info.selected, .nav-checklist.panel-selector li.info.selected {
   color: #5c5c5c;
@@ -2628,7 +2628,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 .nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled, .nav-list.nav-checklist li.disabled:hover, .nav-checklist.panel-selector li.disabled:hover {
   cursor: none;
   cursor: not-allowed;
-  background-color: #b3b3b3;
+  background-color: #cccccc;
   color: #999999;
   background-image: url(../img/empty_stripe.png);
 }
@@ -4677,9 +4677,41 @@ table a.button, table button, table .inline-list, table .nobutton {
   font-size: .9rem;
 }
 
+.banded tbody tr:nth-child(even), .striped tbody tr:nth-child(even) {
+  background-color: #e6e6e6;
+}
+
+.striped th:nth-child(odd), .striped td:nth-child(odd) {
+  background-color: #e9f5fd;
+}
+
+.striped.desaturate th:nth-child(odd), .striped.desaturate td:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.striped tbody tr:nth-child(even) td:nth-child(odd) {
+  background-color: #e1e9ee;
+}
+
+.striped.desaturate tbody tr:nth-child(even) td:nth-child(odd) {
+  background-color: #dedede;
+}
+
+.striped tbody tr + tr td, .banded tbody tr + tr td {
+  border-top: 0px solid;
+}
+.striped th, .striped td, .banded th, .banded td {
+  padding: .25rem .25rem .25rem .55rem;
+}
+.striped tfoot td, .striped tfoot td:nth-child(odd), .banded tfoot td, .banded tfoot td:nth-child(odd) {
+  color: #333333;
+  border-top: 1px solid #2199e8;
+  background-color: #cccccc;
+}
+
 /**
 * Tables (Banded):
-* `.banded` - There are two high styled tables `.banded` or `.stripped`.
+* `.banded` - There are two high styled tables `.banded` or `.striped`.
 * 
 *   @example
 *	<table class="table banded">
@@ -4715,11 +4747,11 @@ table a.button, table button, table .inline-list, table .nobutton {
 *	</table>
 */
 /**
-* Tables (Stripped):
-* ` .stripped` - Table with the class`.stripped`.
+* Tables (Striped):
+* ` .striped` - Table with the class`.striped`.
 * 
 *   @example
-*	<table class="table stripped">
+*	<table class="table striped">
 *		<thead>
 *			<tr>
 *				<th>table header</th>
@@ -4751,30 +4783,43 @@ table a.button, table button, table .inline-list, table .nobutton {
 *		</tfoot>
 *	</table>
 */
-.banded tbody tr:nth-child(even), .stripped tbody tr:nth-child(even) {
-  background-color: #e6e6e6;
-}
-
-.stripped th:nth-child(odd), .stripped td:nth-child(odd) {
-  background-color: #e9f5fd;
-}
-
-.stripped tbody tr:nth-child(even) td:nth-child(odd) {
-  background-color: #e1e9ee;
-}
-
-.stripped tbody tr + tr td, .banded tbody tr + tr td {
-  border-top: 0px solid;
-}
-.stripped th, .stripped td, .banded th, .banded td {
-  padding: .25rem .25rem .25rem .55rem;
-}
-.stripped tfoot td, .stripped tfoot td:nth-child(odd), .banded tfoot td, .banded tfoot td:nth-child(odd) {
-  color: #333333;
-  border-top: 1px solid #2199e8;
-  background-color: #cccccc;
-}
-
+/**
+* Tables (Striped Desaturate):
+* ` .striped.desaturate` - Table with the class`.striped.desaturate` will produce a table that is cross colored with only greys.
+* 
+*   @example
+*	<table class="table striped desaturate">
+*		<thead>
+*			<tr>
+*				<th>table header</th>
+*				<th>table header</th>
+*				<th>table header</th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr>
+*				<td> row 2  cell A</td>
+*				<td> row 2  cell B</td>
+*				<td> row 2  cell C</td>
+*			</tr>
+*			<tr>
+*				<td> row 2  cell A</td>
+*				<td> row 2  cell B</td>
+*				<td> row 2  cell C</td>
+*			</tr>
+*		</tbody>
+*		<tfoot>
+*			<tr>
+*				<td colspan="3">footer cell</td>
+*			</tr>
+*		</tfoot>
+*	</table>
+*/
 .table .seperator td, .table .seperator:nth-child(even) td:nth-child(odd) {
   padding-top: 2.2px;
   padding-top: 0.1375rem;
@@ -4791,7 +4836,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   border-bottom: #279ce9 2px solid;
   color: #fff;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 700;
   font-style: italic;
   font-size: .75rem;
 }
@@ -4817,6 +4862,121 @@ table a.button, table button, table .inline-list, table .nobutton {
 *			</tr>
 *			<tr class="seperator">
 *				<td colspan='3'> Separator</td>
+*			</tr>
+*		</tbody>
+*		<tfoot>
+*			<tr>
+*				<td colspan="3">footer cell</td>
+*			</tr>
+*		</tfoot>
+*	</table>
+*/
+.table .error.seperator td, .table .error.seperator:nth-child(even) td:nth-child(odd) {
+  background-color: #dc3443;
+  /* will be "on top", if browser supports it */
+  background-image: linear-gradient(to left, #df4856, #d02434);
+  /* these will reset other properties, like background-position, but it does know what you mean */
+  background: #dc3443;
+  background: linear-gradient(to left, #df4856, #d02434);
+  border-top: #d02434 1px solid;
+  border-bottom: #d02434 2px solid;
+  color: #fff;
+}
+
+.table .warning.seperator td, .table .warning.seperator:nth-child(even) td:nth-child(odd) {
+  background-color: #ec982f;
+  /* will be "on top", if browser supports it */
+  background-image: linear-gradient(to left, #eea244, #ea8b15);
+  /* these will reset other properties, like background-position, but it does know what you mean */
+  background: #ec982f;
+  background: linear-gradient(to left, #eea244, #ea8b15);
+  border-top: #ea8b15 1px solid;
+  border-bottom: #ea8b15 2px solid;
+  color: #333333;
+}
+
+.table .success.seperator td, .table .success.seperator:nth-child(even) td:nth-child(odd) {
+  background-color: #19da6c;
+  /* will be "on top", if browser supports it */
+  background-image: linear-gradient(to left, #27e679, #16c461);
+  /* these will reset other properties, like background-position, but it does know what you mean */
+  background: #19da6c;
+  background: linear-gradient(to left, #27e679, #16c461);
+  border-top: #16c461 1px solid;
+  border-bottom: #16c461 2px solid;
+  color: #fff;
+}
+
+.table .info.seperator td, .table .info.seperator:nth-child(even) td:nth-child(odd) {
+  background-color: #b3b3b3;
+  /* will be "on top", if browser supports it */
+  background-image: linear-gradient(to left, #bbbbbb, #a1a1a1);
+  /* these will reset other properties, like background-position, but it does know what you mean */
+  background: #b3b3b3;
+  background: linear-gradient(to left, #bbbbbb, #a1a1a1);
+  border-top: #a1a1a1 1px solid;
+  border-bottom: #a1a1a1 2px solid;
+  color: #333333;
+}
+
+.table .highlighted.seperator td, .table .highlighted.seperator:nth-child(even) td:nth-child(odd) {
+  background-color: #3fbde1;
+  /* will be "on top", if browser supports it */
+  background-image: linear-gradient(to left, #53c4e4, #27b5dd);
+  /* these will reset other properties, like background-position, but it does know what you mean */
+  background: #3fbde1;
+  background: linear-gradient(to left, #53c4e4, #27b5dd);
+  border-top: #27b5dd 1px solid;
+  border-bottom: #27b5dd 2px solid;
+  color: #333333;
+}
+
+.table .disabled.seperator td, .table .disabled.seperator:nth-child(even) td:nth-child(odd) {
+  background-color: #d4d4d4;
+  /* will be "on top", if browser supports it */
+  background-image: linear-gradient(to left, #d8d8d8, #bebebe);
+  /* these will reset other properties, like background-position, but it does know what you mean */
+  background: #d4d4d4;
+  background: linear-gradient(to left, #d8d8d8, #bebebe);
+  border-top: #bebebe 1px solid;
+  border-bottom: #bebebe 2px solid;
+  color: #333333;
+}
+
+/**
+* Tables Row(Seperator + State):
+* ` .seperator.error` - An Error State on a table sep.
+* 
+*   @example
+*	<table class="table stripped">
+*		<thead>
+*			<tr>
+*				<th>table header</th>
+*				<th>table header</th>
+*				<th>table header</th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr class="seperator error">
+*				<td colspan='3'> Separator With Error</td>
+*			</tr>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr class="seperator info">
+*				<td colspan='3'> Separator With Info</td>
+*			</tr>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
 *			</tr>
 *		</tbody>
 *		<tfoot>
@@ -5097,23 +5257,23 @@ tr:nth-child(even).success td {
 }
 
 td.info, .table tbody tr + tr td.info, tr.info td, .stripped tr.info:nth-child(even) td:nth-child(odd) {
-  background-color: #f3fbfd;
+  background-color: #f0f0f0;
   color: #333333;
-  border-color: #ebf8fc;
+  border-color: #e4e4e4;
 }
 
 tr:nth-child(even) td.info {
-  background-color: #f0fafd;
+  background-color: #ebebeb;
   color: #333333;
 }
 
 tr:nth-child(even).info td {
-  background-color: #f0fafd;
+  background-color: #ebebeb;
   color: #333333;
 }
 
 .stripped tbody tr.info td:nth-child(odd) {
-  background-color: #f3fbfd;
+  background-color: #f0f0f0;
 }
 
 td.highlighted, .table tbody tr + tr td.highlighted, tr.highlighted td, .stripped tr.highlighted:nth-child(even) td:nth-child(odd) {
@@ -5137,23 +5297,23 @@ tr:nth-child(even).highlighted td {
 }
 
 td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .stripped tr.disabled:nth-child(even) td:nth-child(odd) {
-  background-color: #f2f2f2;
+  background-color: #f6f6f6;
   color: #333333;
-  border-color: #e8e8e8;
+  border-color: #f0f0f0;
 }
 
 tr:nth-child(even) td.disabled {
-  background-color: #eeeeee;
+  background-color: #f4f4f4;
   color: #333333;
 }
 
 tr:nth-child(even).disabled td {
-  background-color: #eeeeee;
+  background-color: #f4f4f4;
   color: #333333;
 }
 
 .stripped tbody tr.disabled td:nth-child(odd) {
-  background-color: #f2f2f2;
+  background-color: #f6f6f6;
 }
 
 /**
@@ -5406,7 +5566,7 @@ table + div > .collapsable-panel {
   border: 0 none transparent;
 }
 .collapsable-panel.info.inset {
-  background-color: #f8fdfe;
+  background-color: #f6f6f6;
 }
 .collapsable-panel.info.inset .bar.close .action-btn {
   color: #333333;
@@ -5426,7 +5586,7 @@ table + div > .collapsable-panel {
   border: 0 none transparent;
 }
 .collapsable-panel.disabled.inset {
-  background-color: #f7f7f7;
+  background-color: #fafafa;
 }
 .collapsable-panel.disabled.inset .bar.close .action-btn {
   color: #333333;
@@ -10875,15 +11035,15 @@ STATE TRUMPING CODE
 }
 
 .info .order-marker.hollow, .info.order-marker.hollow, .info .input-holder input, .info .input-holder textarea, .info .input-holder select, .info .input-holder .postfix, .info .input-holder .prefix, .info .bar.close, .info.inset .bar.close, .info.question .button-group, .info .order-marker.hollow, .info.order-marker.hollow, h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
-  border-color: #bbe8f4;
+  border-color: #a6a6a6;
 }
 
 .info .order-marker.inverse, .info.order-marker.inverse.info .order-marker.hollow, .info.order-marker.hollow, .nav-list.nav-checklist li.info i, .nav-checklist.panel-selector li.info i, .answer.info .required-holder, .question.info .required-holder, .question-inline.info .required-holder, .question-grid-based.info .required-holder, .info .label-holder label, .info .input-holder .postfix, .info .input-holder .prefix, .info .input-holder .value, .info .bar.close .action-btn, .collapsable-panel.info h1, .collapsable-panel.info h2, .collapsable-panel.info h3, .collapsable-panel.info h4, .collapsable-panel.info h5, .collapsable-panel.info h6, .info .order-marker.inverse, .info.order-marker.inverse.info .order-marker.hollow, .info.order-marker.hollow, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
-  color: #bbe8f4;
+  color: #a6a6a6;
 }
 
 .nav-list.nav-checklist li.info, .nav-checklist.panel-selector li.info, .info .message-holder > .info, .hint .info, .info.inset .bar.close .action-btn, .info-inactive .switch-paddle, .info-active input:checked ~ .switch-paddle, .info.callout {
-  background-color: #bbe8f4;
+  background-color: #a6a6a6;
 }
 
 .info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder-dynamic:before, .nav-checklist.panel-selector li.info .fa-holder-dynamic:before {
@@ -10907,15 +11067,15 @@ STATE TRUMPING CODE
 }
 
 .disabled .order-marker.hollow, .disabled.order-marker.hollow, .disabled .input-holder input, .disabled .input-holder textarea, .disabled .input-holder select, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .bar.close, .disabled.inset .bar.close, .disabled.question .button-group, .disabled .order-marker.hollow, .disabled.order-marker.hollow, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
-  border-color: #b3b3b3;
+  border-color: #cccccc;
 }
 
 .disabled .order-marker.inverse, .disabled.order-marker.inverse.disabled .order-marker.hollow, .disabled.order-marker.hollow, .nav-list.nav-checklist li.disabled i, .nav-checklist.panel-selector li.disabled i, .answer.disabled .required-holder, .question.disabled .required-holder, .question-inline.disabled .required-holder, .question-grid-based.disabled .required-holder, .disabled .label-holder label, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .input-holder .value, .disabled .bar.close .action-btn, .collapsable-panel.disabled h1, .collapsable-panel.disabled h2, .collapsable-panel.disabled h3, .collapsable-panel.disabled h4, .collapsable-panel.disabled h5, .collapsable-panel.disabled h6, .disabled .order-marker.inverse, .disabled.order-marker.inverse.disabled .order-marker.hollow, .disabled.order-marker.hollow, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
-  color: #b3b3b3;
+  color: #cccccc;
 }
 
 .nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled, .disabled .message-holder > .disabled, .hint .disabled, .disabled.inset .bar.close .action-btn, .disabled-inactive .switch-paddle, .disabled-active input:checked ~ .switch-paddle, .disabled.callout {
-  background-color: #b3b3b3;
+  background-color: #cccccc;
 }
 
 .disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before {
