@@ -1,3 +1,4 @@
+$primary-tab-background-color:#fff;
 $primary-tab-color:grey(40);
 $primary-tab-hover-color:rebrand-color($primary-color,3);
 $primary-tab-selected-color:rebrand-color($primary-color,1);
@@ -48,9 +49,9 @@ $primary-tab-lighttext:$global-default-light-text;
 		position: relative;
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
-		background-color:#fff;
+		background-color:$primary-tab-background-color;
 		border-top: 1px $primary-tab-color solid;
-		border-bottom:.5em $primary-tab-color solid; 
+		border-bottom:.45em $primary-tab-color solid; 
 		border-left: 1px $primary-tab-color solid;
 		border-right:1px $primary-tab-color solid;
 		margin:0;
@@ -59,7 +60,7 @@ $primary-tab-lighttext:$global-default-light-text;
 		a{	
 			white-space: normal;
 			padding:.5em .25em;
-			color:color-contrast($primary-tab-color,$primary-tab-darktext,$primary-tab-lighttext);
+			color:color-contrast($primary-tab-background-color,$primary-tab-darktext,$primary-tab-lighttext);
 			@include bp(sm){ 
 				white-space: nowrap; 
 
@@ -69,12 +70,24 @@ $primary-tab-lighttext:$global-default-light-text;
 			}
 		}
 		&:hover{
-			background-color: #fff;
+			background-color: $primary-tab-background-color;
 			border-color: $primary-tab-selected-color;
-			// border-bottom-width: .85em;
 			a{
 				color:$primary-tab-selected-color;
-				// padding-bottom: 0;
+			}
+		}
+		&.sucsess{
+			background-color:$success-color;
+			border-right:0 none;
+			border-left:0 none;
+			border-top:0 none;
+
+			a{color:color-contrast($success-color,$primary-tab-darktext,$primary-tab-lighttext);}
+			&:hover{
+				background-color: $primary-tab-background-color;
+				border-color: $success-color;
+			
+				a{ color:$success-color;}
 			}
 		}
 		&.selected{
