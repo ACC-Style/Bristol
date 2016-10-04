@@ -73,11 +73,14 @@
     }
 }
 
-.group-section-tab-holder , .colored-paper{
-    .content-padding{
-        @include grid-row();
-        padding-top:.5rem;
-        padding-bottom:0rem;
+.group-section-tab-holder , .colored-paper{    
+    @include grid-row();
+    padding: .5rem;
+    @include bp(md) {
+        padding: .5rem .75rem;
+    }
+    @include bp(lg) {
+        padding: 1rem 1rem 1rem;
     }
     h1,h2,h3,h4,h5,h6,p{color:color-contrast(rebrand-color($primary-color, 1));}
     &.secondary{h1,h2,h3,h4,h5,h6,p{color: color-contrast( $secondary-color);}}
@@ -152,7 +155,34 @@
 .group-section .colored-paper:last-child {
     margin-bottom: -1rem;
     margin-bottom: calc(-1rem - 1px);
+
+    
 }
+.group-section .colored-paper:first-child {
+    margin-top: -.15rem;
+    margin-top: calc(-.15rem - 1px);
+    @include bp(sm-height-down){ 
+        margin-top: -.25rem;
+        margin-top: calc(-.25rem - 1px);
+        } 
+    @include bp(md){ 
+        margin-top:-.5rem;
+        margin-top: calc(-.5rem - 1px);
+        }  
+    @include bp(lg){
+        margin-top: -1rem;
+        margin-top: calc(-1rem - 1px);
+     }
+     @include bp(xl){
+        margin-top: -1rem;
+        margin-top: calc(-1rem - 1px);
+     }
+   
+}
+// .group-section .colored-paper{
+//      > *:first-child{ margin-top:0;}
+//      > *:last-child{ margin-bottom:0;}
+// }
 
 /**
 * Paper Card Grouping:

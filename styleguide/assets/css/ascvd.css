@@ -813,23 +813,23 @@ i.fa.fa-question-circle {
 }
 
 .h2, h2, .table th.h2 {
-  font-size: 1.42857em;
-  line-height: 1.54em;
-  margin-top: 0.5775em;
-  margin-bottom: 0.1925em;
+  font-size: 1.71429em;
+  line-height: 1.28333em;
+  margin-top: 0.48125em;
+  margin-bottom: 0.16042em;
 }
 @media only screen and (max-width: 1024px) and (max-height: 480px) {
   .h2, h2, .table th.h2 {
-    line-height: 1.386em;
-    margin-top: 0.51975em;
-    margin-bottom: 0.17325em;
+    line-height: 1.155em;
+    margin-top: 0.43313em;
+    margin-bottom: 0.14438em;
   }
 }
 @media only screen and (max-width: 1024px) and (max-height: 320px) {
   .h2, h2, .table th.h2 {
-    line-height: 1.309em;
-    margin-top: 0.43313em;
-    margin-bottom: 0.14438em;
+    line-height: 1.09083em;
+    margin-top: 0.36094em;
+    margin-bottom: 0.12031em;
   }
 }
 
@@ -1603,7 +1603,7 @@ button:disabled.secondary, .input-space
   border-top-right-radius: 0;
   background-color: #fff;
   border-top: 1px #999999 solid;
-  border-bottom: 0.5em #999999 solid;
+  border-bottom: 0.45em #999999 solid;
   border-left: 1px #999999 solid;
   border-right: 1px #999999 solid;
   margin: 0;
@@ -1631,6 +1631,22 @@ button:disabled.secondary, .input-space
 }
 .tabs.tabs-primary li:hover a {
   color: #2199e8;
+}
+.tabs.tabs-primary li.sucsess {
+  background-color: #3adb76;
+  border-right: 0 none;
+  border-left: 0 none;
+  border-top: 0 none;
+}
+.tabs.tabs-primary li.sucsess a {
+  color: #333333;
+}
+.tabs.tabs-primary li.sucsess:hover {
+  background-color: #fff;
+  border-color: #3adb76;
+}
+.tabs.tabs-primary li.sucsess:hover a {
+  color: #3adb76;
 }
 .tabs.tabs-primary li.selected {
   background-color: #2199e8;
@@ -2040,14 +2056,6 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   height: 12px;
   border-radius: 6PX;
   border: 2px solid #fff;
-}
-
-.with-group-sections .section-nav.forward .text {
-  padding-right: 59.99998px;
-}
-
-.with-group-sections .section-nav.back .text {
-  padding-left: 59.99998px;
 }
 
 /**
@@ -4462,18 +4470,18 @@ input:checked + label > .switch-inactive {
 }
 
 .content-padding {
-  padding: 0 .5rem;
+  padding: .0001PX .5rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 @media only screen and (min-width: 767px) {
   .content-padding {
-    padding: 0 .75rem;
+    padding: .0001PX .75rem;
   }
 }
 @media only screen and (min-width: 1024px) {
   .content-padding {
-    padding: 0 1rem;
+    padding: .0001PX 1rem;
   }
 }
 
@@ -4569,21 +4577,28 @@ input:checked + label > .switch-inactive {
 }
 
 .group-section-tab-holder, .colored-paper {
-  margin: -.5rem -.5rem 0;
-}
-.group-section-tab-holder .content-padding, .colored-paper .content-padding {
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
-  padding-top: .5rem;
-  padding-bottom: 0rem;
+  padding: .5rem;
+  margin: -.5rem -.5rem 0;
 }
-.group-section-tab-holder .content-padding::before, .group-section-tab-holder .content-padding::after, .colored-paper .content-padding::before, .colored-paper .content-padding::after {
+.group-section-tab-holder::before, .group-section-tab-holder::after, .colored-paper::before, .colored-paper::after {
   content: ' ';
   display: table;
 }
-.group-section-tab-holder .content-padding::after, .colored-paper .content-padding::after {
+.group-section-tab-holder::after, .colored-paper::after {
   clear: both;
+}
+@media only screen and (min-width: 767px) {
+  .group-section-tab-holder, .colored-paper {
+    padding: .5rem .75rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .group-section-tab-holder, .colored-paper {
+    padding: 1rem 1rem 1rem;
+  }
 }
 .group-section-tab-holder h1, .group-section-tab-holder h2, .group-section-tab-holder h3, .group-section-tab-holder h4, .group-section-tab-holder h5, .group-section-tab-holder h6, .group-section-tab-holder p, .colored-paper h1, .colored-paper h2, .colored-paper h3, .colored-paper h4, .colored-paper h5, .colored-paper h6, .colored-paper p {
   color: #fff;
@@ -4668,6 +4683,35 @@ input:checked + label > .switch-inactive {
 .group-section .colored-paper:last-child {
   margin-bottom: -1rem;
   margin-bottom: calc(-1rem - 1px);
+}
+
+.group-section .colored-paper:first-child {
+  margin-top: -.15rem;
+  margin-top: calc(-.15rem - 1px);
+}
+@media only screen and (max-height: 480px) {
+  .group-section .colored-paper:first-child {
+    margin-top: -.25rem;
+    margin-top: calc(-.25rem - 1px);
+  }
+}
+@media only screen and (min-width: 767px) {
+  .group-section .colored-paper:first-child {
+    margin-top: -.5rem;
+    margin-top: calc(-.5rem - 1px);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .group-section .colored-paper:first-child {
+    margin-top: -1rem;
+    margin-top: calc(-1rem - 1px);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .group-section .colored-paper:first-child {
+    margin-top: -1rem;
+    margin-top: calc(-1rem - 1px);
+  }
 }
 
 /**
@@ -6250,7 +6294,7 @@ STATE TRUMPING CODE
 }
 
 .button.reset-button {
-  margin-top: -2em;
+  margin-top: -1em;
 }
 @media only screen and (min-width: 767px) {
   .button.reset-button {
