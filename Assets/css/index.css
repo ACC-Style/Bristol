@@ -10,6 +10,22 @@ body {
   font-size: 14px;
 }
 
+/**
+* Style Markup:
+* `edge > outline` -coloring to show invisible containers in the styleguide.
+* 
+*   @example
+*	<style>
+*		.edge,.outline{ border:thin #ccc solid; position: relative; padding:16px 4px 4px;}
+*		.outline{ border:dashed thin red}
+*		.outline .outline{ border:dotted thin blue; display:inline-block;}
+*		.outline .outline .outline{ border:dotted thin green; display:inline-block;}
+*		.notation{font-size:10px; position: absolute; top: 0px;right: 4px;}
+*		.outline .notation{ color:red;}
+*		.outline .outline .notation{ color:blue;}
+*		.outline .outline .outline  .notation{ color:green;}
+*	</style>
+**/
 @font-face {
   font-family: Open Sans;
   font-style: normal;
@@ -8989,36 +9005,106 @@ input:checked + label > .switch-inactive {
   border-bottom: 2px solid #666666;
 }
 
-.page-wrapper {
-  max-width: 1200px;
+.page .page-wrapper, .content-padding {
   margin: 0 auto;
-  padding: 1rem .5rem;
+}
+
+.page .page-wrapper {
+  max-width: 1200px;
+}
+
+.page .page-wrapper {
+  padding: 1rem .5rem 1.25rem;
 }
 @media only screen and (min-width: 767px) {
-  .page-wrapper {
-    padding: 1.5rem .75rem;
+  .page .page-wrapper {
+    padding: 1.5rem .75rem 2rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .page-wrapper {
+  .page .page-wrapper {
     padding: 2rem 1rem 3rem;
   }
 }
 
-.content-padding {
-  padding: .0001PX .5rem;
-  max-width: 1200px;
-  margin: 0 auto;
+.with-group-sections .page-wrapper, .paper-page .page-wrapper {
+  padding: .25rem 0;
+}
+@media only screen and (min-width: 320px) {
+  .with-group-sections .page-wrapper, .paper-page .page-wrapper {
+    padding: .5rem 0;
+  }
 }
 @media only screen and (min-width: 767px) {
-  .content-padding {
-    padding: .0001PX .75rem;
+  .with-group-sections .page-wrapper, .paper-page .page-wrapper {
+    padding: .75rem 0;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .content-padding {
-    padding: .0001PX 1rem;
+  .with-group-sections .page-wrapper, .paper-page .page-wrapper {
+    padding: 1rem 0;
   }
+}
+
+.with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+  padding-top: .125rem;
+  padding-bottom: .125rem;
+}
+@media only screen and (min-width: 320px) {
+  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+  }
+}
+@media only screen and (min-width: 767px) {
+  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+@media only screen and (min-width: 767px) {
+  .content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+    padding-right: .75rem;
+    padding-left: .75rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+.colored-paper {
+  margin: 0;
+}
+
+.colored-paper {
+  margin: 0;
+}
+
+.page .page-wrapper, .content-padding, .colored-paper {
+  -webkit-transition: padding 1s;
+  /* Safari */
+  transition: padding 1s;
+  -webkit-transition: margin 1s;
+  /* Safari */
+  transition: margin 1s;
+}
+
+.section, section {
+  width: 100%;
 }
 
 .section-nav.back ~ .page-wrapper {
@@ -9030,13 +9116,20 @@ input:checked + label > .switch-inactive {
 * `page-wrapper` - inside all layout divs the page-wrapper is used to make a unified amount of spacing from the content and the vewport edges.
 * 
 *   @example
+*   <div class="page edge" ><div class="page-wrapper outline" ><span class="notation">page-wrapper</span><div class="section outline"><span class="notation">section</span>Hello this is content </div></div>
+**/
+/**
+* page layouts outline:
+* `page-wrapper` - inside all layout divs the page-wrapper is used to make a unified amount of spacing from the content and the vewport edges.
+* 
+*   @example
 *	<div class="page-wrapper" style="border:red 1px solid"><div class="section">Hello this is content </div></div>
 **/
-.with-group-sections, .page.with-group-sections {
+.with-group-sections, .paper-page {
   background-image: url("../img/billie-holiday-lite.png");
 }
 
-.with-group-sections .page-wrapper .group-section, .page.with-group-sections .page-wrapper .group-section {
+.with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card {
   border: 1px solid #d9d9d9;
   background-color: white;
   -webkit-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
@@ -9044,146 +9137,82 @@ input:checked + label > .switch-inactive {
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
 }
 
-.with-group-sections.highlighted, .page.with-group-sections.highlighted {
+.with-group-sections.highlighted, .with-group-sections.secondary, .paper-page.highlighted, .paper-page.secondary {
   background-image: url("../img/billie-holiday-speck.png");
-  background-color: #90ccf4;
 }
-.with-group-sections .page-wrapper, .page.with-group-sections .page-wrapper {
-  -webkit-transition: padding 1s;
-  /* Safari */
-  transition: padding 1s;
-  padding: 1rem 0;
+.with-group-sections.highlighted, .paper-page.highlighted {
+  background-color: #d3ebfa;
 }
-@media only screen and (max-height: 320px) {
-  .with-group-sections .page-wrapper, .page.with-group-sections .page-wrapper {
-    padding: .5rem 0;
-  }
+.with-group-sections.secondary, .paper-page.secondary {
+  background-color: #d9d9d9;
 }
-@media only screen and (max-height: 480px) {
-  .with-group-sections .page-wrapper, .page.with-group-sections .page-wrapper {
-    padding: .25rem 0;
-  }
-}
-.with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .page.with-group-sections .page-wrapper > .section, .page.with-group-sections .page-wrapper > section, .page.with-group-sections .page-wrapper > .row {
-  padding: 0 .75rem;
-}
-.with-group-sections .page-wrapper .group-section, .page.with-group-sections .page-wrapper .group-section {
-  -webkit-transition: padding 1s;
-  /* Safari */
-  transition: padding 1s;
-  -webkit-transition: margin 1s;
-  /* Safari */
-  transition: margin 1s;
-  margin: 0 .65rem 1rem .5rem;
+.with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card {
   width: auto;
   position: relative;
-  padding: .5rem .5rem 0;
-}
-.with-group-sections .page-wrapper .group-section.content-padding, .page.with-group-sections .page-wrapper .group-section.content-padding {
-  margin: 0 auto 1rem auto;
-  max-width: 1200px;
-}
-@media only screen and (max-width: 1024px) and (max-height: 768px) {
-  .with-group-sections .page-wrapper .group-section, .page.with-group-sections .page-wrapper .group-section {
-    margin-bottom: .5rem;
-  }
-}
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .with-group-sections .page-wrapper .group-section, .page.with-group-sections .page-wrapper .group-section {
-    padding-top: .25rem;
-    margin-bottom: .25rem;
-  }
-}
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .with-group-sections .page-wrapper .group-section, .page.with-group-sections .page-wrapper .group-section {
-    padding-top: .15rem;
-    margin-bottom: .15rem;
-  }
+  margin: 0 .65rem 1rem .5rem;
 }
 
-@media only screen and (min-width: 767px) {
-  .with-group-sections .page-wrapper .group-section, .page.with-group-sections .page-wrapper .group-section {
-    padding: .5rem .75rem;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .with-group-sections .page-wrapper .group-section, .page.with-group-sections .page-wrapper .group-section {
-    padding: 1rem 1rem 1rem;
-  }
-}
-
-.group-section-tab-holder, .colored-paper {
+.colored-paper {
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
-  padding: .5rem;
   margin: -.5rem -.5rem 0;
 }
-.group-section-tab-holder::before, .group-section-tab-holder::after, .colored-paper::before, .colored-paper::after {
+.colored-paper::before, .colored-paper::after {
   content: ' ';
   display: table;
 }
-.group-section-tab-holder::after, .colored-paper::after {
+.colored-paper::after {
   clear: both;
 }
-@media only screen and (min-width: 767px) {
-  .group-section-tab-holder, .colored-paper {
-    padding: .5rem .75rem;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .group-section-tab-holder, .colored-paper {
-    padding: 1rem 1rem 1rem;
-  }
-}
-.group-section-tab-holder h1, .group-section-tab-holder h2, .group-section-tab-holder h3, .group-section-tab-holder h4, .group-section-tab-holder h5, .group-section-tab-holder h6, .group-section-tab-holder p, .colored-paper h1, .colored-paper h2, .colored-paper h3, .colored-paper h4, .colored-paper h5, .colored-paper h6, .colored-paper p {
+.colored-paper h1, .colored-paper h2, .colored-paper h3, .colored-paper h4, .colored-paper h5, .colored-paper h6, .colored-paper p {
   color: #fff;
 }
-.group-section-tab-holder.secondary h1, .group-section-tab-holder.secondary h2, .group-section-tab-holder.secondary h3, .group-section-tab-holder.secondary h4, .group-section-tab-holder.secondary h5, .group-section-tab-holder.secondary h6, .group-section-tab-holder.secondary p, .colored-paper.secondary h1, .colored-paper.secondary h2, .colored-paper.secondary h3, .colored-paper.secondary h4, .colored-paper.secondary h5, .colored-paper.secondary h6, .colored-paper.secondary p {
+.colored-paper.secondary h1, .colored-paper.secondary h2, .colored-paper.secondary h3, .colored-paper.secondary h4, .colored-paper.secondary h5, .colored-paper.secondary h6, .colored-paper.secondary p {
   color: #fff;
 }
-.group-section-tab-holder, .group-section-tab-holder .nav.tabs, .colored-paper, .colored-paper .nav.tabs {
+.colored-paper, .colored-paper .nav.tabs {
   background-image: url("../img/construction-paper.png");
   background-color: #2199e8;
 }
 @media only screen and (max-width: 1024px) and (max-height: 768px) {
-  .group-section-tab-holder, .colored-paper {
+  .colored-paper {
     margin-top: -.5rem;
   }
 }
 @media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .group-section-tab-holder, .colored-paper {
+  .colored-paper {
     margin-top: -.25rem;
   }
 }
 @media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .group-section-tab-holder, .colored-paper {
+  .colored-paper {
     margin-top: -.15rem;
   }
 }
 
 @media only screen and (min-width: 767px) {
-  .group-section-tab-holder, .colored-paper {
+  .colored-paper {
     margin-left: -.75rem;
     margin-right: -.75rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .group-section-tab-holder, .colored-paper {
+  .colored-paper {
     margin: -1rem -1rem 0;
     margin: calc(-1rem - 1px) calc(-1rem - 1px) 0;
   }
 }
-* ~ .group-section-tab-holder, * ~ .colored-paper {
+* ~ .colored-paper {
   margin-top: 0 !important;
 }
-.group-section-tab-holder .nav.tabs, .colored-paper .nav.tabs {
+.colored-paper .nav.tabs {
   padding: 2px 10px 0;
   border: 0 none;
   background-image: url("../img/construction-paper.png");
   background-color: #2199e8;
 }
-.group-section-tab-holder .nav.tabs li, .colored-paper .nav.tabs li {
+.colored-paper .nav.tabs li {
   border-radius: .4em;
   display: inline-block;
   margin: .4em .05em .2em;
@@ -9191,10 +9220,10 @@ input:checked + label > .switch-inactive {
   background-color: #d3ebfa;
   padding: .2em .3em;
 }
-.group-section-tab-holder .nav.tabs li:hover, .colored-paper .nav.tabs li:hover {
+.colored-paper .nav.tabs li:hover {
   background-color: #b1dbf7;
 }
-.group-section-tab-holder .nav.tabs li.selected, .colored-paper .nav.tabs li.selected {
+.colored-paper .nav.tabs li.selected {
   border-radius: .5em;
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -9203,16 +9232,16 @@ input:checked + label > .switch-inactive {
   padding: .4em;
   background-color: #fff;
 }
-.group-section-tab-holder.secondary, .group-section-tab-holder.secondary .nav.tabs, .colored-paper.secondary, .colored-paper.secondary .nav.tabs {
+.colored-paper.secondary, .colored-paper.secondary .nav.tabs {
   background-color: #777;
 }
-.group-section-tab-holder.secondary .nav.tabs li, .colored-paper.secondary .nav.tabs li {
+.colored-paper.secondary .nav.tabs li {
   background-color: #e4e4e4;
 }
-.group-section-tab-holder.secondary .nav.tabs li:hover, .colored-paper.secondary .nav.tabs li:hover {
+.colored-paper.secondary .nav.tabs li:hover {
   background-color: #cfcfcf;
 }
-.group-section-tab-holder.secondary .nav.tabs li.selected, .colored-paper.secondary .nav.tabs li.selected {
+.colored-paper.secondary .nav.tabs li.selected {
   background-color: #fff;
 }
 
@@ -9252,7 +9281,7 @@ input:checked + label > .switch-inactive {
 
 /**
 * Paper Card Grouping:
-* `.page.with-group-sections .page-wrapper .group-section-holder` - by default pages are white but when the need arises to have grouped section 'cards' are introduced and the background area becomes a layer of soft off white construction paper. If the need arises to highlight a collection of cards add `.highlighted` to the `.page.with-group-sections` and the product color will bleed into the construction paper.
+* `.page.paper-page .page-wrapper .card` - by default pages are white but when the need arises to have grouped section 'cards' are introduced and the background area becomes a layer of soft off white construction paper. If the need arises to highlight a collection of cards add `.highlighted` to the `.page.with-group-sections` and the product color will bleed into the construction paper.
 * 
 *   @example
 *   <div class="page with-group-sections">
@@ -9269,8 +9298,8 @@ input:checked + label > .switch-inactive {
 *
 **/
 /**
-* Tabs inside Grouping:
-* `page.with-group-sections > .overlap.tabs` - Tabs placed outside of the groups should use the overlap so they sink into the paper texture.
+* Tabs on Paper Background Pages:
+* `.page.paper-page  > .overlap.tabs` - Tabs placed outside of the groups should use the overlap so they sink into the paper texture.
 * 
 *   @example
 *   <div class="page with-group-sections">
@@ -9288,13 +9317,13 @@ input:checked + label > .switch-inactive {
 **/
 /**
 * Tabs for Paper Cards:
-* `.group-section-tab-holder` - Special tabs holders are introduced to the cards so they can fill the full frame of the card.  The tab holder has a modification of adding the `secondary` class to convert it to using the secondary color if the need arises.
+* `.page.paper-page  .card .color-paper .nav.tabs` - Special tabs holders are introduced to the cards so they can fill the full frame of the card.  The tab holder has a modification of adding the `secondary` class to convert it to using the secondary color if the need arises.
 * 
 *   @example
-*   <div class="page with-group-sections">
+*   <div class="page paper-page">
 *       <div class="page-wrapper">
-*            <section class="section group-section">
-*                <div class="group-section-tab-holder">
+*            <section class="section card">
+*                <div class="colored-paper">
 *                    <ul class="nav tabs">
 *                        <li class="">
 *                       <a>Tab 1</a>
@@ -9305,7 +9334,7 @@ input:checked + label > .switch-inactive {
 *                </div>
 *                <h1>Hello</h1> 
 *                <p>This is content  that is showing up in a section group</p>
-*                <div class="group-section-tab-holder secondary">
+*                <div class="colored-paper secondary">
 *                    <ul class="nav tabs">
 *                        <li class="">
 *                       <a>Tab 1</a>
