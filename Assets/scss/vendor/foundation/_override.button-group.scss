@@ -1,33 +1,11 @@
 
 .button-group{
-    // @include button-group();
-    // @include bp(lg-down){
-    //     @include button-group-stack();
-    //     .button{
-    //     width:100%;
-    //     border-bottom:1px #fff solid;
-    //     &:last-child{border-bottom:0px;}
-    //     }
-    // }
     &.radius, &.radius-top, &.radius-bottom{overflow:hidden; }
-    // @include bp(lg){
-    //     @include button-group-unstack();
-    // }
-    // padding-left: 0;
-    &.expanded.selectable .button:first-child:nth-last-child(3){border-right-width: 0;width:33.3333%}
+    &.expanded.selectable .button:first-child:nth-last-child(2),{border-right-width: 0;width:50%}
+    &.expanded.selectable .button:first-child:nth-last-child(3),{border-right-width: 0;width:33.3333%}
+    &.expanded.selectable .button:first-child:nth-last-child(4),{border-right-width: 0;width:25%}
+    &.expanded.selectable .button:first-child:nth-last-child(5),{border-right-width: 0;width:20%}
      border: 2px solid transparent;
-    // }
-    // .input-space & {
-    //     margin-bottom: 0;
-    // }
-    // & > li {
-    //     .button {
-    //         .input-space & {
-    //             padding-top: .57143rem;
-    //             padding-bottom: .57143rem;
-    //         }
-    //     }
-    // }
     &.selectable {
     	margin-right: 0;
         .button {
@@ -44,8 +22,9 @@
             margin: 0 7px 0 0;
             display: none;
         }
-        .selected {
-            &, &:hover, &:focus {
+        .selected.button {
+        	 @include button-style(rebrand-color($select-color, 2));
+             &:hover, &:focus {
                 background-color: mix(rebrand-color($select-color, 2), $black,80);
                 color:color-contrast(rebrand-color($select-color, 2));
             }
@@ -111,7 +90,7 @@
 * <div class="input-holder row collapse">
 *     <div class="column small-12 input-space">
 *   <div class="button-group expanded selectable">
-*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*     <a href="" class="button selected"><i class="fa fa-check"></i><span class="text">Yes</span></a>
 *     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
 *     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
 *   </div>

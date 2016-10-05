@@ -52,7 +52,7 @@
             <div class="content-padding">
             <div class="shrink-waypoint"></div>
               <div id="introduction"  data-bind="page: {id:'introduction', role: 'start', afterShow: listchange}">
-    <h1>The ACC's App Framework <strong>Version 2.3</strong>
+    <h1>The ACC's App Framework <strong>Version 2.4</strong>
     <span class="sub-line">Code Name: Bristol</span>
     </h1>
     <p>The American College of Cardiology is proud of its standards of excellence when it comes to the information it supplies to the best cardiologists in the world. And now it is taking great pains to bring that exceptional standards to its UI design.</p>
@@ -71,6 +71,31 @@
     </div>
     <div class="callout highlighted">
         <h2>New to Bristol</h2>
+        <h3>Version 2.4</h3>
+            <h5>Foundation 6.2</h5>
+            <ul >
+                <li>Button Group altered to use Foundation stack functions</ul>
+            <h5>Refactoring of states to remove unused states. <span class="bold">Current List of States</span></h5>
+            <ul >
+                <li>Error (.error)</li>
+                <li>Warning (.warning)</li>
+                <li>Success (.success)</li>
+                <li>Info (.info)</li>
+                <li>highlighted (.highlighted)</li>
+                <li>disabled (.disabled)</li>
+            </ul>
+            <h5>Switch Upgrade</h5>
+            <ul >
+                <li>Grouped Switches</li>
+                <li>State Coloring for inactive and active states on switches</li>
+                <li>Paper Layer responds to vertical break points</li>
+                <li>Page Layout responds to vertical break points</li>
+            </ul>
+            <h5>Spacing and alignment</h5>
+            <ul >
+                <li>Paint Dipped Cards. Alignment of holders</li>
+                <li>use of calc() to remove single spaces of boarders when in browsers that support the function</li>
+            </ul>
          <h3>Version 2.3</h3>
             <h5>Vertical Media Queries and Adjustments</h5>
             <ul >
@@ -1696,12 +1721,19 @@
   <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;order-marker inverse&quot;</span>&gt;</span>c<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>Header 5 Tag<span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span></pre>
       </div>
     </section>
-	  <section class="sg-block sg-section-typography-states">
-      <div class="sg-text">
-        <h3 id="typography-states" class="sg">Typography States</h3>
+	<section class="sg-block sg-section-header-tags-and-other-typography-states">
+  <div class="sg-text">
+        <h3 id="header-tags-and-other-typography-states" class="sg">Header Tags and other Typography States</h3>
         <p class="sg">
-          <code class="sg">.error, .warning, .etc...</code>- headers and
-          <code class="sg">p</code>tags can be fully manipulated to respond to states by adding the modifiying state like error, warning, info, highlighted, validated, and completed.</p>
+          <code class="sg">.error, .warning, .etc...</code>- headers
+          <code class="sg">p</code>
+          <code class="sg">li</code>
+          <code class="sg">blockquote</code>
+          <code class="sg">a</code>and
+          <code class="sg">p</code>tags can be fully manipulated to respond to states by adding the modifiying state like
+          <code class="sg">.error</code>,
+          <code class="sg">.warning</code>,
+          <code class="sg">.info</code>etc....</p>
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
@@ -1714,8 +1746,8 @@
           <h3 class="with-underline warning">Header 3 Tag
             <small>Warning State</small>
           </h3>
-          <h4 class="with-underline validated">Header 4 Tag
-            <blockquote>Validated/success State</blockquote>
+          <h4 class="with-underline success">Header 4 Tag
+            <span class="sub-line">Success State</span>
           </h4>
           <h5 class="with-underline highlighted">Header 5 Tag
             <small>Highlighted State</small>
@@ -1731,8 +1763,8 @@
 <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline warning&quot;</span>&gt;</span>Header 3 Tag
   <span class="hljs-tag">&lt;<span class="hljs-title">small</span>&gt;</span>Warning State<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline validated&quot;</span>&gt;</span>Header 4 Tag
-  <span class="hljs-tag">&lt;<span class="hljs-title">blockquote</span>&gt;</span>Validated/success State<span class="hljs-tag">&lt;/<span class="hljs-title">blockquote</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline success&quot;</span>&gt;</span>Header 4 Tag
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sub-line&quot;</span>&gt;</span>Success State<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">h5</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline highlighted&quot;</span>&gt;</span>Header 5 Tag
   <span class="hljs-tag">&lt;<span class="hljs-title">small</span>&gt;</span>Highlighted State<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
@@ -1923,16 +1955,16 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
 <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></pre>
       </div>
     </section>
-	 <section class="sg-block sg-section-tables-stripped-">
+	    <section class="sg-block sg-section-tables-striped-">
       <div class="sg-text">
-        <h3 id="tables-stripped-" class="sg">Tables (Stripped)</h3>
+        <h3 id="tables-striped-" class="sg">Tables (Striped)</h3>
         <p class="sg">
-          <code class="sg">.stripped</code>- Table with the class
-          <code class="sg">.stripped</code>.</p>
+          <code class="sg">.striped</code>- Table with the class
+          <code class="sg">.striped</code>.</p>
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
-          <table class="table stripped">
+          <table class="table striped">
             <thead>
               <tr>
                 <th>table header</th>
@@ -1963,7 +1995,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
               </tr>
             </tfoot>
           </table>
-        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;table stripped&quot;</span>&gt;</span>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;table striped&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>table header<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
@@ -1996,7 +2028,83 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
 <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></pre>
       </div>
     </section>
-	 <section class="sg-block sg-section-tables-row-seperator-">
+
+    <section class="sg-block sg-section-tables-striped-desaturate-">
+      <div class="sg-text">
+        <h3 id="tables-striped-desaturate-" class="sg">Tables (Striped Desaturate)</h3>
+        <p class="sg">
+          <code class="sg">.striped.desaturate</code>- Table with the class
+          <code class="sg">.striped.desaturate</code>will produce a table that is cross colored with only greys.</p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <table class="table striped desaturate">
+            <thead>
+              <tr>
+                <th>table header</th>
+                <th>table header</th>
+                <th>table header</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>row 1 cell A</td>
+                <td>row 1 cell B</td>
+                <td>row 1 cell C</td>
+              </tr>
+              <tr>
+                <td>row 2 cell A</td>
+                <td>row 2 cell B</td>
+                <td>row 2 cell C</td>
+              </tr>
+              <tr>
+                <td>row 2 cell A</td>
+                <td>row 2 cell B</td>
+                <td>row 2 cell C</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3">footer cell</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;table striped desaturate&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>table header<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>table header<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>table header<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 1 cell A<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 1 cell B<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 1 cell C<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 2 cell A<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 2 cell B<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 2 cell C<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 2 cell A<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 2 cell B<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 2 cell C<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tfoot</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">colspan</span>=<span class="hljs-value">&quot;3&quot;</span>&gt;</span>footer cell<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tfoot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></pre>
+      </div>
+    </section>
+
+  
+	  <section class="sg-block sg-section-tables-row-seperator-">
       <div class="sg-text">
         <h3 id="tables-row-seperator-" class="sg">Tables Row(Seperator)</h3>
         <p class="sg">
@@ -2055,7 +2163,92 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
 <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></pre>
       </div>
     </section>
-	 <section class="sg-block sg-section-table-states-cells">
+
+    <section class="sg-block sg-section-tables-row-seperator-state-">
+      <div class="sg-text">
+        <h3 id="tables-row-seperator-state-" class="sg">Tables Row(Seperator + State)</h3>
+        <p class="sg">
+          <code class="sg">.seperator.error</code>- An Error State on a table sep.</p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <table class="table stripped">
+            <thead>
+              <tr>
+                <th>table header</th>
+                <th>table header</th>
+                <th>table header</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>row 1 cell A</td>
+                <td>row 1 cell B</td>
+                <td>row 1 cell C</td>
+              </tr>
+              <tr class="seperator error">
+                <td colspan="3">Separator With Error</td>
+              </tr>
+              <tr>
+                <td>row 1 cell A</td>
+                <td>row 1 cell B</td>
+                <td>row 1 cell C</td>
+              </tr>
+              <tr class="seperator info">
+                <td colspan="3">Separator With Info</td>
+              </tr>
+              <tr>
+                <td>row 1 cell A</td>
+                <td>row 1 cell B</td>
+                <td>row 1 cell C</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3">footer cell</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;table stripped&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>table header<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>table header<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>table header<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 1 cell A<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 1 cell B<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 1 cell C<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;seperator error&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">colspan</span>=<span class="hljs-value">&apos;3&apos;</span>&gt;</span>Separator With Error<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 1 cell A<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 1 cell B<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 1 cell C<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;seperator info&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">colspan</span>=<span class="hljs-value">&apos;3&apos;</span>&gt;</span>Separator With Info<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 1 cell A<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 1 cell B<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>row 1 cell C<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tfoot</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">colspan</span>=<span class="hljs-value">&quot;3&quot;</span>&gt;</span>footer cell<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tfoot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></pre>
+      </div>
+    </section>
+	  <section class="sg-block sg-section-table-states-cells">
       <div class="sg-text">
         <h3 id="table-states-cells" class="sg">Table States Cells</h3>
         <p class="sg">
@@ -2072,8 +2265,8 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
                 <i class="fa fa-holder"></i>
               </td>
               <td class="">Text</td>
-              <td class="">
-                <i class="fa fa-holder"></i>&#xA0;Warning</td>
+              <td class="warning">
+                <i class="fa fa-holder"></i>Warning</td>
             </tr>
             <tr>
               <td class="">
@@ -2098,13 +2291,13 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
                 <i class="fa fa-holder"></i>&#xA0;Text</td>
             </tr>
             <tr>
-              <td class="validated icon">
+              <td class="success icon">
                 <i class="fa fa-holder"></i>
               </td>
               <td class="info icon">
                 <i class="fa fa-holder"></i>
               </td>
-              <td class="validated">Validated</td>
+              <td class="success">Success</td>
               <td class="">
                 <i class="fa fa-holder"></i>&#xA0;text</td>
             </tr>
@@ -2118,8 +2311,8 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Text<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp;Warning<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;warning&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Warning<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
@@ -2144,13 +2337,13 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp;Text<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;validated icon&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;success icon&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;info icon&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;validated&quot;</span>&gt;</span>Validated<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;success&quot;</span>&gt;</span>Success<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp;text<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
@@ -2167,12 +2360,12 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
       <div class="sg-example">
         <div class="sg-canvas">
           <table class="table stripped">
-            <tr class="validated">
+            <tr class="success">
               <td class="icon">
                 <i class="fa fa-holder-dynamic"></i>
               </td>
               <td class=""></td>
-              <td class="">Cell Data in validated Row</td>
+              <td class="">Cell Data in success Row</td>
               <td class="">Icon is Dynamic</td>
             </tr>
             <tr class="warning">
@@ -2183,22 +2376,22 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
               <td class="">Cell Data in Warning Row</td>
               <td class="error">I am an error cell</td>
             </tr>
-            <tr class="warning">
+            <tr class="error">
               <td class="icon">
                 <i class="fa fa-holder-dynamic"></i>
               </td>
-              <td class=""></td>
-              <td class="">Cell Data in Warning Row</td>
-              <td>data</td>
+              <td class="">Icon is Dynamic</td>
+              <td class="">Cell Data in Error Row</td>
+              <td class="">Cell Data</td>
             </tr>
           </table>
         </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;table stripped&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;validated&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;success&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Cell Data in validated Row<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Cell Data in success Row<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Icon is Dynamic<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;warning&quot;</span>&gt;</span>
@@ -2209,14 +2402,15 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Cell Data in Warning Row<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;error&quot;</span>&gt;</span>I am an error cell<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;warning&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;error&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Cell Data in Warning Row<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>data<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span></pre>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Icon is Dynamic<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Cell Data in Error Row<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Cell Data<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span></pre>
       </div>
     </section>
 </div>
@@ -2433,21 +2627,19 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
       </div>
     </section>
 	<h2>Inputs</h2>
-	 <section class="sg-block sg-section-switch-foundation-override-">
+	  <section class="sg-block sg-section-switch-foundation-override-">
       <div class="sg-text">
         <h3 id="switch-foundation-override-" class="sg">Switch (Foundation Override)</h3>
         <p class="sg">
-          <code class="sg">.switch</code>- Switches are a more visible and more touchable versions of checkbox and radio buttons. ADD
-          <code class="sg">.x-visible</code>to show the x when it is shut off.
+          <code class="sg">.switch</code>- Switches are a more visible and more touchable versions of checkbox and radio buttons.
           <h5 class="warning sg">( !! WARNING !! Updated HTML and Styles From Ver 1)</h5>
         </p>
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
-          <h3>Plain switch with `.disabled` on the input</h3>
-          <div class="switch-input-space  row">
+          <div class="switch-input-space">
             <div class="switch">
-              <input class="switch-input" id="yes-no-1" disabled type="checkbox" name="exampleSwitch">
+              <input class="switch-input" id="yes-no-1" type="checkbox" name="exampleSwitch">
               <label class="switch-paddle" for="yes-no-1">
                 <span class="show-for-sr">Do you like me?</span>
                 <span class="switch-active" aria-hidden="true">Yes</span>
@@ -2456,46 +2648,106 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
             </div>
             <label class="switch-value" for="yes-no-1">Yes or No Question</label>
           </div>
-          <div class="row group-divide">
-            <h3>Radio Buttons should use `.round` or `.radio` modifier</h3>
-            <p>You can make a radio with eiither placing the `.round` or `.radio`. If you want control over the positive and negative position use `.round`. Use `.radio` to set it to the standard icon in the positive position</p>
-            <div class="row">
-              <div class="switch-input-space column small-6">
-                <div class="switch round">
-                  <input class="switch-input" id="yes-no-round" type="radio" name="radio-switch">
-                  <label class="switch-paddle" for="yes-no-round">
-                    <span class="show-for-sr">Do you like me?</span>
-                    <span class="switch-active" aria-hidden="true">
-                      <i class="fa fa-check-circle-o"></i>
-                    </span>
-                    <span class="switch-inactive" aria-hidden="true">
-                      <i class="fa fa-times-circle"></i>
-                    </span>
-                  </label>
-                </div>
-                <label class="switch-value" for="yes-no-round">Radio button made with `.round`</label>
-              </div>
-              <div class="switch-input-space column small-6">
-                <div class="switch radio">
-                  <input class="switch-input" id="yes-no-radio" type="radio" name="radio-switch">
-                  <label class="switch-paddle" for="yes-no-radio">
-                    <span class="show-for-sr">Do you like me?</span>
-                    <span class="switch-active" aria-hidden="true">
-                      <i class="fa fa-holder"></i>
-                    </span>
-                    <span class="switch-inactive" aria-hidden="true">
-                      <i class="fa fa-holder"></i>
-                    </span>
-                  </label>
-                </div>
-                <label class="switch-value" for="yes-no-radio">Radio button made with `.radio`</label>
-              </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input-space&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;yes-no-1&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;exampleSwitch&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-paddle&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;yes-no-1&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;show-for-sr&quot;</span>&gt;</span>Do you like me?<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-active&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>Yes<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-inactive&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>No<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-value&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;yes-no-1&quot;</span>&gt;</span>Yes or No Question<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+      </div>
+    </section>
+
+    <section class="sg-block sg-section-switch-disabled-">
+      <div class="sg-text">
+        <h3 id="switch-disabled-" class="sg">Switch (Disabled)</h3>
+        <p class="sg">
+          <code class="sg">disable</code>- on the input changes the look and cursor on rollover</p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <div class="switch-input-space  row">
+            <div class="switch">
+              <input class="switch-input" id="yes-no-disabled" disabled type="checkbox" name="exampleSwitch">
+              <label class="switch-paddle" for="yes-no-disabled">
+                <span class="show-for-sr">Do you like me?</span>
+                <span class="switch-active" aria-hidden="true">Yes</span>
+                <span class="switch-inactive" aria-hidden="true">No</span>
+              </label>
             </div>
+            <label class="switch-value" for="yes-no-disabled">Yes or No Question</label>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input-space  row&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;yes-no-disabled&quot;</span> <span class="hljs-attribute">disabled</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;exampleSwitch&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-paddle&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;yes-no-disabled&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;show-for-sr&quot;</span>&gt;</span>Do you like me?<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-active&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>Yes<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-inactive&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>No<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-value&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;yes-no-disabled&quot;</span>&gt;</span>Yes or No Question<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+      </div>
+    </section>
+
+    <section class="sg-block sg-section-switch-modifing-classes">
+      <div class="sg-text">
+        <h3 id="switch-modifing-classes" class="sg">Switch modifing classes</h3>
+        <p class="sg">
+          <code class="sg">.switch</code>- Switches are remarkably flexable. Radio Buttons should use
+          <code class="sg">.radio</code>as modifier, and Checkboxes use
+          <code class="sg">.checkbox</code>.
+          <code class="sg">.round</code>and
+          <code class="sg">.radius</code>are very useful to change the look and feel of buttons.</p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <div class="row group-divide">
+            <h4>Radio Buttons should use `.round` or `.radio` modifier</h4>
+            <p>You can make a radio with eiither placing the `.round` or `.radio`. *
+              <div class="row collapse">
+                <div class="switch-input-space column small-6">
+                  <div class="switch round">
+                    <input class="switch-input" id="yes-no-round" type="radio" name="radio-switch">
+                    <label class="switch-paddle" for="yes-no-round">
+                      <span class="show-for-sr">Do you like me?</span>
+                      <span class="switch-active" aria-hidden="true">
+                        <i class="fa fa-check-circle-o"></i>
+                      </span>
+                      <span class="switch-inactive" aria-hidden="true">
+                        <i class="fa fa-times-circle"></i>
+                      </span>
+                    </label>
+                  </div>
+                  <label class="switch-value" for="yes-no-round">Radio button made with `.round`</label>
+                </div>
+                <div class="switch-input-space column small-6">
+                  <div class="switch radio">
+                    <input class="switch-input" id="yes-no-radio" type="radio" name="radio-switch">
+                    <label class="switch-paddle" for="yes-no-radio">
+                      <span class="show-for-sr">Do you like me?</span>
+                      <span class="switch-active" aria-hidden="true">
+                        <i class="fa fa-holder"></i>
+                      </span>
+                      <span class="switch-inactive" aria-hidden="true">
+                        <i class="fa fa-holder"></i>
+                      </span>
+                    </label>
+                  </div>
+                  <label class="switch-value" for="yes-no-radio">Radio button made with `.radio`</label>
+                </div>
+              </div>
+            </p>
           </div>
           <div class="row group-divide">
-            <h3>Checkboxes should use `.radius`, `.checkbox`, no modifiers</h3>
-            <p>You can make a checkbox with eiither placing the `.checkbox` or `.radius`. If you want control over the positive and negative position use `.radius`. Use `.checkbox` to set it to the standard icon in the positive position</p>
-            <div class="row">
+            <h4>Checkboxes should use `.radius`, `.checkbox`, no modifiers</h4>
+            <p>If you want control over the positive and negative icons use `.radius`. Use `.checkbox` to set it to the standard icon in the positive position</p>
+            <div class="row collapse">
               <div class="switch-input-space column small-6">
                 <div class="switch radius">
                   <input class="switch-input" id="radius-checkbox" type="checkbox" value="true">
@@ -2527,103 +2779,48 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
                 <label class="switch-value" for="checkbox-checkbox">Checkbox button made with `.checkbox`</label>
               </div>
             </div>
-            <div class="row group-divide">
-              <h3>Value or Unit Swithcers</h3>
-              <p>Value Switchers should use `.value-switch` so both sides of the switcher are always visible and stay colored.</p>
-              <label class="switch-value" for="checkbox-value-switch2">`.value-switch` gives room to have values on the switch that are always visible but can be toggled.</label>
-            </div>
-            <div class="switch-input-space column small-12">
-              <div class="switch value-switch switch-2x">
-                <input class="switch-input" id="checkbox-value-switch" type="checkbox" value="false">
-                <label class="switch-paddle" for="checkbox-value-switch">
-                  <span class="show-for-sr">Do you like me?</span>
-                  <span class="switch-active" aria-hidden="true">
-                    <i class="fa fa-thumbs-up"></i>
-                  </span>
-                  <span class="switch-inactive" aria-hidden="true">
-                    <i class="fa fa-thumbs-down"></i>
-                  </span>
-                </label>
-              </div>
-            </div>
-            <div class="switch-input-space column small-12">
-              <div class="switch value-switch switch-4x radius">
-                <input class="switch-input" id="checkbox-value-switch-radius" type="checkbox" value="false">
-                <label class="switch-paddle" for="checkbox-value-switch-radius">
-                  <span class="show-for-sr">Do you like me?</span>
-                  <span class="switch-active" aria-hidden="true">US</span>
-                  <span class="switch-inactive" aria-hidden="true">SI</span>
-                </label>
-              </div>
-              <label class="switch-value" for="checkbox-value-switch-radius">You expand the switch area with switch-2x and switch-4x</label>
-            </div>
-            <div class="switch-input-space column small-12">
-              <div class="switch value-switch switch-4x round">
-                <input class="switch-input" id="checkbox-value-switch-round" type="checkbox" value="false">
-                <label class="switch-paddle" for="checkbox-value-switch-round">
-                  <span class="show-for-sr">Do you like me?</span>
-                  <span class="switch-active" aria-hidden="true">Inches</span>
-                  <span class="switch-inactive" aria-hidden="true">Centimeters</span>
-                </label>
-              </div>
-              <label class="switch-value" for="checkbox-value-switch-round">You can also apply the `.radius` and `.round` to change the style
-              </label>
-            </div>
           </div>
-        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Plain switch with `.disabled` on the input<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input-space  row&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;yes-no-1&quot;</span> <span class="hljs-attribute">disabled</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;exampleSwitch&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-paddle&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;yes-no-1&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;show-for-sr&quot;</span>&gt;</span>Do you like me?<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-active&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>Yes<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-inactive&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>No<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-value&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;yes-no-1&quot;</span>&gt;</span>Yes or No Question<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row group-divide&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>Radio Buttons should use `.round` or `.radio` modifier<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>You can make a radio with eiither placing the `.round` or `.radio`. *
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row collapse&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input-space column small-6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch round&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;yes-no-round&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;radio&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;radio-switch&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-paddle&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;yes-no-round&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;show-for-sr&quot;</span>&gt;</span>Do you like me?<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-active&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-check-circle-o&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-inactive&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-times-circle&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-value&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;yes-no-round&quot;</span>&gt;</span>Radio button made with `.round`<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input-space column small-6&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch radio&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;yes-no-radio&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;radio&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;radio-switch&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-paddle&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;yes-no-radio&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;show-for-sr&quot;</span>&gt;</span>Do you like me?<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-active&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-inactive&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-value&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;yes-no-radio&quot;</span>&gt;</span>Radio button made with `.radio`<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row group-divide&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Radio Buttons should use `.round` or `.radio` modifier<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>You can make a radio with eiither placing the `.round` or `.radio`. If you want control over the positive and negative
-    position use `.round`. Use `.radio` to set it to the standard icon in the positive position<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input-space column small-6&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch round&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;yes-no-round&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;radio&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;radio-switch&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-paddle&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;yes-no-round&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;show-for-sr&quot;</span>&gt;</span>Do you like me?<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-active&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-check-circle-o&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-          <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-inactive&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-times-circle&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-          <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-value&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;yes-no-round&quot;</span>&gt;</span>Radio button made with `.round`<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input-space column small-6&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch radio&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;yes-no-radio&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;radio&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;radio-switch&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-paddle&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;yes-no-radio&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;show-for-sr&quot;</span>&gt;</span>Do you like me?<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-active&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-          <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-inactive&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-          <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-value&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;yes-no-radio&quot;</span>&gt;</span>Radio button made with `.radio`<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row group-divide&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Checkboxes should use `.radius`, `.checkbox`, no modifiers<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>You can make a checkbox with eiither placing the `.checkbox` or `.radius`. If you want control over the positive and negative
-    position use `.radius`. Use `.checkbox` to set it to the standard icon in the positive position<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>Checkboxes should use `.radius`, `.checkbox`, no modifiers<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>If you want control over the positive and negative icons use `.radius`. Use `.checkbox` to set it to the standard icon
+    in the positive position<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row collapse&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input-space column small-6&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch radius&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;radius-checkbox&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>
@@ -2655,51 +2852,205 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
       <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-value&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;checkbox-checkbox&quot;</span>&gt;</span>Checkbox button made with `.checkbox`<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row group-divide&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Value or Unit Swithcers<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Value Switchers should use `.value-switch` so both sides of the switcher are always visible and stay colored.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-value&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;checkbox-value-switch2&quot;</span>&gt;</span>`.value-switch` gives room to have values on the switch that are always visible but can be toggled.<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input-space column small-12&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch value-switch switch-2x&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;checkbox-value-switch&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;false&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-paddle&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;checkbox-value-switch&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;show-for-sr&quot;</span>&gt;</span>Do you like me?<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-active&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-thumbs-up&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-inactive&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-thumbs-down&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input-space column small-12&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch value-switch switch-4x radius&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;checkbox-value-switch-radius&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;false&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-paddle&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;checkbox-value-switch-radius&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;show-for-sr&quot;</span>&gt;</span>Do you like me?<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-active&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>US<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-inactive&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>SI<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-value&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;checkbox-value-switch-radius&quot;</span>&gt;</span>You expand the switch area with switch-2x and switch-4x<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input-space column small-12&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch value-switch switch-4x round&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;checkbox-value-switch-round&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;false&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-paddle&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;checkbox-value-switch-round&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;show-for-sr&quot;</span>&gt;</span>Do you like me?<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-active&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>Inches<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-inactive&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>Centimeters<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-value&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;checkbox-value-switch-round&quot;</span>&gt;</span>You can also apply the `.radius` and `.round` to change the style
-    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
       </div>
     </section>
+
+    <section class="sg-block sg-section-value-switchers">
+      <div class="sg-text">
+        <h3 id="value-switchers" class="sg">Value Switchers</h3>
+        <p class="sg">
+          <code class="sg">.value-switch</code>- Add
+          <code class="sg">.value-switch</code>to a switch so both inactive and active content of the switcher are visible and stay colored.</p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <div class="switch-input-space column small-12">
+            <div class="switch value-switch">
+              <input class="switch-input" id="checkbox-value-switch" type="checkbox" value="false">
+              <label class="switch-paddle" for="checkbox-value-switch">
+                <span class="show-for-sr">Do you like me?</span>
+                <span class="switch-active" aria-hidden="true">
+                  <i class="fa fa-thumbs-up"></i>
+                </span>
+                <span class="switch-inactive" aria-hidden="true">
+                  <i class="fa fa-thumbs-down"></i>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="switch-input-space column small-12">
+            <div class="switch value-switch switch-2x radius">
+              <input class="switch-input" id="checkbox-value-switch-radius" type="checkbox" value="false">
+              <label class="switch-paddle" for="checkbox-value-switch-radius">
+                <span class="show-for-sr">Do you like me?</span>
+                <span class="switch-active" aria-hidden="true">US</span>
+                <span class="switch-inactive" aria-hidden="true">SI</span>
+              </label>
+            </div>
+            <label class="switch-value" for="checkbox-value-switch-radius">You expand the switch area with switch-2x and switch-4x</label>
+          </div>
+          <div class="switch-input-space column small-12">
+            <div class="switch value-switch switch-4x round">
+              <input class="switch-input" id="checkbox-value-switch-round" type="checkbox" value="false">
+              <label class="switch-paddle" for="checkbox-value-switch-round">
+                <span class="show-for-sr">Do you like me?</span>
+                <span class="switch-active" aria-hidden="true">Inches</span>
+                <span class="switch-inactive" aria-hidden="true">Centimeters</span>
+              </label>
+            </div>
+            <label class="switch-value" for="checkbox-value-switch-round">You can also apply the `.radius` and `.round` to change the style
+            </label>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input-space column small-12&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch value-switch&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;checkbox-value-switch&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;false&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-paddle&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;checkbox-value-switch&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;show-for-sr&quot;</span>&gt;</span>Do you like me?<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-active&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-thumbs-up&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-inactive&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-thumbs-down&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input-space column small-12&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch value-switch switch-2x radius&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;checkbox-value-switch-radius&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;false&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-paddle&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;checkbox-value-switch-radius&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;show-for-sr&quot;</span>&gt;</span>Do you like me?<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-active&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>US<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-inactive&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>SI<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-value&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;checkbox-value-switch-radius&quot;</span>&gt;</span>You expand the switch area with switch-2x and switch-4x<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input-space column small-12&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch value-switch switch-4x round&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;checkbox-value-switch-round&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;false&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-paddle&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;checkbox-value-switch-round&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;show-for-sr&quot;</span>&gt;</span>Do you like me?<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-active&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>Inches<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-inactive&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>Centimeters<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-value&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;checkbox-value-switch-round&quot;</span>&gt;</span>You can also apply the `.radius` and `.round` to change the style
+  <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+      </div>
+    </section>
+
+    <section class="sg-block sg-section-switch-group">
+      <div class="sg-text">
+        <h3 id="switch-group" class="sg">Switch Group</h3>
+        <p class="sg">
+          <code class="sg">.switch-group</code>- Switches can be grouped if you want a multi selected bar of similar items.</p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <h4>Switch Groups group normal &apos;.switch&apos; DOM they just stack the active and inactive items</h4>
+          <div class="switch-input-space">
+            <div class="switch-group">
+              <div class="switch">
+                <input class="switch-input" id="switch-group0" type="checkbox" value="false">
+                <label class="switch-paddle" for="switch-group0">
+                  <span class="show-for-sr">Miles True?</span>
+                  <span class="switch-active" aria-hidden="true">Miles</span>
+                  <span class="switch-inactive" aria-hidden="true">Miles</span>
+                </label>
+              </div>
+              <div class="switch">
+                <input class="switch-input" id="switch-group1" type="checkbox" value="false">
+                <label class="switch-paddle" for="switch-group1">
+                  <span class="show-for-sr">Knots?</span>
+                  <span class="switch-active" aria-hidden="true">Knots</span>
+                  <span class="switch-inactive" aria-hidden="true">Knots</span>
+                </label>
+              </div>
+              <div class="switch switch-2x">
+                <input class="switch-input" id="switch-group2" type="checkbox" value="false">
+                <label class="switch-paddle" for="switch-group2">
+                  <span class="show-for-sr">Kilometers?</span>
+                  <span class="switch-active" aria-hidden="true">Kilometers</span>
+                  <span class="switch-inactive" aria-hidden="true">Kilometers</span>
+                </label>
+              </div>
+            </div>
+            <label class="switch-value" for="checkbox-value-switch-round">Show these types of distance
+            </label>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>Switch Groups group normal &apos;.switch&apos; DOM they just stack the active and inactive items<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input-space&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-group&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;switch-group0&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-paddle&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;switch-group0&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;show-for-sr&quot;</span>&gt;</span>Miles True?<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-active&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>Miles<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-inactive&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>Miles<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;switch-group1&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-paddle&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;switch-group1&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;show-for-sr&quot;</span>&gt;</span>Knots?<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-active&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>Knots<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-inactive&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>Knots<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch switch-2x&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;switch-group2&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;false&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-paddle&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;switch-group2&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;show-for-sr&quot;</span>&gt;</span>Kilometers?<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-active&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>Kilometers<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-inactive&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>Kilometers<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-value&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;checkbox-value-switch-round&quot;</span>&gt;</span>Show these types of distance
+  <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+      </div>
+    </section>
+
+    <section class="sg-block sg-section-switch-states-">
+      <div class="sg-text">
+        <h3 id="switch-states-" class="sg">Switch (States)</h3>
+        <p class="sg">
+          <code class="sg">.error-active</code>- Switches can be colored with a class [state]-active and [state]-inactive.</p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <h3>Plain switch with `.error-active` and `.sucess-inactive` on the `.switch`</h3>
+          <div class="switch-input-space row">
+            <div class="switch warning-active error-inactive switch-2x">
+              <input class="switch-input" id="active-inactive" type="checkbox" name="exampleSwitch">
+              <label class="switch-paddle" for="active-inactive">
+                <span class="show-for-sr">Do you like me?</span>
+                <span class="switch-active" aria-hidden="true">Yes</span>
+                <span class="switch-inactive" aria-hidden="true">No</span>
+              </label>
+            </div>
+            <label class="switch-value" for="active-inactive">.switch.error-active.warning-inactive/label&gt;
+            </label>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Plain switch with `.error-active` and `.sucess-inactive` on the `.switch`<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input-space row&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch warning-active error-inactive switch-2x&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;active-inactive&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;exampleSwitch&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-paddle&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;active-inactive&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;show-for-sr&quot;</span>&gt;</span>Do you like me?<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-active&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>Yes<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-inactive&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>No<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-value&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;active-inactive&quot;</span>&gt;</span>.switch.error-active.warning-inactive/label&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+      </div>
+    </section>
+
 	  <section class="sg-block sg-section-slider-foundation-override-">
       <div class="sg-text">
         <h3 id="slider-foundation-override-" class="sg">Slider (Foundation Override)</h3>
@@ -3176,59 +3527,76 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
       </div>
     </section>
 	<h2>Nav Lists</h2>
-	  <section class="sg-block sg-section-navigation-list">
-      <div class="sg-text">
-        <h3 id="navigation-list" class="sg">Navigation List</h3>
+	<section class="sg-block sg-section-navigation-list">
+    <div class="sg-text">
+        <h3 class="sg" id="navigation-list">
+            Navigation List
+        </h3>
         <p class="sg">
-          <code class="sg">.nav-list ul li</code>- A collection of navigation links perfect for side navigation or a collection of external links. Add
-          <code class="sg">.selected</code>to the
-          <code class="sg">li</code>to highlight the nav link.</p>
-      </div>
-      <div class="sg-example">
+            <code class="sg">
+                .nav-list ul li
+            </code>
+            - A collection of navigation links perfect for side navigation or a collection of external links. Add
+            <code class="sg">
+                .selected
+            </code>
+            to the
+            <code class="sg">
+                li
+            </code>
+            to highlight the nav link.
+        </p>
+    </div>
+    <div class="sg-example">
         <div class="sg-canvas">
-          <nav class="nav-list">
-            <ul>
-              <li>
-                <a>
-                  <span class="text">Nav List Item 1</span>
-                  <i class="fa fa-holder-dynamic"></i>
-                </a>
-              </li>
-              <li class="selected">
-                <a>
-                  <span class="text">Nav List Item 2</span>
-                  <i class="fa fa-holder-dynamic"></i>
-                </a>
-              </li>
-
-            </ul>
-          </nav>
-        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">nav</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav-list&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Nav List Item 1<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;selected&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Nav List Item 2<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span></pre>
-      </div>
-    </section>
-	 <section class="sg-block sg-section-nav-list-checklist-">
+            <nav class="nav-list">
+                <ul>
+                    <li>
+                        <a>
+                            <span class="text">
+                                Nav List Item 1
+                            </span>
+                            <i class="fa fa-holder-dynamic">
+                            </i>
+                        </a>
+                    </li>
+                    <li class="selected">
+                        <a>
+                            <span class="text">
+                                Nav List Item 2
+                            </span>
+                            <i class="fa fa-holder-dynamic">
+                            </i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <pre class="sg-code"><span class="hljs-tag"><<span class="hljs-title">nav</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-list"</span>></span>
+        <span class="hljs-tag"><<span class="hljs-title">ul</span>></span>
+          <span class="hljs-tag"><<span class="hljs-title">li</span>></span>
+            <span class="hljs-tag"><<span class="hljs-title">a</span>></span>
+              <span class="hljs-tag"><<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text"</span>></span>Nav List Item 1<span class="hljs-tag"></<span class="hljs-title">span</span>></span>
+              <span class="hljs-tag"><<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fa fa-holder-dynamic"</span>></span><span class="hljs-tag"></<span class="hljs-title">i</span>></span>
+            <span class="hljs-tag"></<span class="hljs-title">a</span>></span>
+          <span class="hljs-tag"></<span class="hljs-title">li</span>></span>
+          <span class="hljs-tag"><<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"selected"</span>></span>
+            <span class="hljs-tag"><<span class="hljs-title">a</span>></span>
+              <span class="hljs-tag"><<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text"</span>></span>Nav List Item 2<span class="hljs-tag"></<span class="hljs-title">span</span>></span>
+              <span class="hljs-tag"><<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fa fa-holder-dynamic"</span>></span><span class="hljs-tag"></<span class="hljs-title">i</span>></span>
+            <span class="hljs-tag"></<span class="hljs-title">a</span>></span>
+          <span class="hljs-tag"></<span class="hljs-title">li</span>></span>
+        <span class="hljs-tag"></<span class="hljs-title">ul</span>></span>
+      <span class="hljs-tag"></<span class="hljs-title">nav</span>></span></pre>
+    </div>
+</section>
+	<section class="sg-block sg-section-nav-list-checklist-">
       <div class="sg-text">
         <h3 id="nav-list-checklist-" class="sg">Nav List (Checklist)</h3>
         <p class="sg">
           <code class="sg">.nav-checklist</code>- add class to the nav to change the .nav-list from forward links to a list with states of
           <code class="sg">.selected</code>,
-          <code class="sg">.completed</code>,
+          <code class="sg">.success</code>,
           <code class="sg">.warning</code>,
           <code class="sg">.error</code>
         </p>
@@ -3249,9 +3617,9 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
                   <i class="fa fa-holder-dynamic"></i>
                 </a>
               </li>
-              <li class="completed">
+              <li class="sucess">
                 <a>
-                  <span class="text">Nav List Item 3(completed)</span>
+                  <span class="text">Nav List Item 3(sucess)</span>
                   <i class="fa fa-holder-dynamic"></i>
                 </a>
               </li>
@@ -3270,18 +3638,18 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
           <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;completed&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sucess&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Nav List Item 3(completed)<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Nav List Item 3(sucess)<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span></pre>
       </div>
-    </section>
+</section>
 
-   <section class="sg-block sg-section-nav-list-checklist-w-states-">
+ <section class="sg-block sg-section-nav-list-checklist-w-states-">
       <div class="sg-text">
         <h3 id="nav-list-checklist-w-states-" class="sg">Nav List (Checklist w/ States)</h3>
         <p class="sg">
@@ -3300,7 +3668,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
                   <i class="fa fa-holder-dynamic"></i>
                 </a>
               </li>
-              <li class="selected warning">
+              <li class="selected">
                 <a>
                   <span class="text">Nav List Item 2(selected and warning)</span>
                   <i class="fa fa-holder-dynamic"></i>
@@ -3339,7 +3707,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
         <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Nav List Item 1(blank)<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;selected warning&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;selected&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Nav List Item 2(selected and warning)<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
@@ -4044,131 +4412,131 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
       </div>
     </section>
 	<h2>Wizard Navs</h2>
-	<section class="sg-block sg-section-circle-section-nav-forward-back-">
-    <div class="sg-text">
+	
+    <section class="sg-block sg-section-circle-section-nav-forward-back-">
+      <div class="sg-text">
         <h3 id="circle-section-nav-forward-back-" class="sg">Circle Section Nav (forward &amp; back)</h3>
         <p class="sg">
-        <code class="sg">.section-nav with .forward or .back</code>- A wizard-like page nav. Alter the position of the circle button by adding
-        <code class="sg">.forward</code>or
-        <code class="sg">.back</code>to the
-        <code class="sg">.section-nav</code>container.</p>
-    </div>
-    <div class="sg-example">
+          <code class="sg">.section-nav with .forward or .back</code>- A wizard-like page nav. Alter the position of the circle button by adding
+          <code class="sg">.forward</code>or
+          <code class="sg">.back</code>to the
+          <code class="sg">.section-nav</code>container.</p>
+      </div>
+      <div class="sg-example">
         <div class="sg-canvas">
-            <div class="page with-group-sections">
-                <div class="section-nav back">
-                    <a>
-                    <div class="circle">
-                        <i class="fa fa-holder-dynamic"></i>
-                    </div>
-                    <div class="text">Back</div>
-                    </a>
+          <div class="page with-group-sections">
+            <div class="section-nav back">
+              <a>
+                <div class="circle">
+                  <i class="fa fa-holder-dynamic"></i>
                 </div>
-                <div class="page-wrapper">
-                    <section class="group-section">
-                        <h1 class="with-underline">Page Title</h1>
-                        <p>hello I am some content on this page</p>
-                    </section>
-                </div>
-                <div class="section-nav forward">
-                    <a>
-                    <div class="circle">
-                        <i class="fa fa-holder-dynamic"></i>
-                    </div>
-                    <div class="text">Forward</div>
-                    </a>
-                </div>
+                <div class="text">Back</div>
+              </a>
             </div>
-        </div>
-<pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page with-group-sections&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section-nav back&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;circle&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Back<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;group-section&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Page Title<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>hello I am some content on this page<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section-nav forward&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;circle&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Forward<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <div class="page-wrapper">
+              <section class="group-section">
+                <h1 class="with-underline">Page Title</h1>
+                <p>hello I am some content on this page</p>
+              </section>
+            </div>
+
+            <div class="section-nav forward">
+              <a>
+                <div class="circle">
+                  <i class="fa fa-holder-dynamic"></i>
+                </div>
+                <div class="text">Forward</div>
+              </a>
+            </div>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page with-group-sections&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section-nav back&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;circle&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Back<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;group-section&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Page Title<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>hello I am some content on this page<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section-nav forward&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;circle&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Forward<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
-    </div>
-</section>
+      </div>
+    </section>
 
-
-<section class="sg-block sg-section-circle-section-nav-disabled-">
-    <div class="sg-text">
+    <section class="sg-block sg-section-circle-section-nav-disabled-">
+      <div class="sg-text">
         <h3 id="circle-section-nav-disabled-" class="sg">Circle Section Nav (Disabled)</h3>
         <p class="sg">
-        <code class="sg">.section-nav with .disabled</code>- Adding
-        <code class="sg">.disabled</code>to the
-        <code class="sg">.section-nav</code>container with style the circle nav accordingly.</p>
-    </div>
-    <div class="sg-example">
+          <code class="sg">.section-nav with .disabled</code>- Adding
+          <code class="sg">.disabled</code>to the
+          <code class="sg">.section-nav</code>container with style the circle nav accordingly.</p>
+      </div>
+      <div class="sg-example">
         <div class="sg-canvas">
-            <div class="page">
-                <div class="section-nav back">
-                    <a>
-                    <div class="circle">
-                        <i class="fa fa-holder-dynamic"></i>
-                    </div>
-                    <div class="text">Back</div>
-                    </a>
+          <div class="page">
+            <div class="section-nav back disabled">
+              <a>
+                <div class="circle">
+                  <i class="fa fa-holder-dynamic"></i>
                 </div>
-                <div class="page-wrapper">
-                    <section class="group-section">
-                        <h1 class="with-underline">Page Title (Disabled)</h1>
-                        <p>Somethig on this page has disabled forward navigation</p>
-                    </section>
-                </div>
-                <div class="section-nav forward disabled">
-                    <a>
-                    <div class="circle">
-                        <i class="fa fa-holder-dynamic"></i>
-                    </div>
-                    <div class="text">Forward</div>
-                    </a>
-                </div>
+                <div class="text">Back</div>
+              </a>
             </div>
-        </div>
-<pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section-nav back&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;circle&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Back<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;group-section&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Page Title (Disabled)<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Somethig on this page has disabled forward navigation<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section-nav forward disabled&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;circle&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Forward<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <div class="page-wrapper">
+              <section class="group-section">
+                <h1 class="with-underline">Page Title (Disabled)</h1>
+                <p>Somethig on this page has disabled forward navigation</p>
+              </section>
+            </div>
+
+            <div class="section-nav forward disabled">
+              <a>
+                <div class="circle">
+                  <i class="fa fa-holder-dynamic"></i>
+                </div>
+                <div class="text">Forward</div>
+              </a>
+            </div>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section-nav back disabled&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;circle&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Back<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;group-section&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>Page Title (Disabled)<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Somethig on this page has disabled forward navigation<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section-nav forward disabled&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;circle&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;text&quot;</span>&gt;</span>Forward<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
-    </div>
-</section>
+      </div>
+    </section>
 </div>
 
               <div id="qna"  data-bind="page: {id:'qna', afterShow: listchange}">

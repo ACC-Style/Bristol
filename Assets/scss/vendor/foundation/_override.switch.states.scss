@@ -11,11 +11,11 @@ $required_data:(
 
 @each $State in $states{
     $selector:map-get($State,"Selector");
-    @include setTrump('background-color',map-get($State,'State'),'#{$selector}-inactive input ~ .switch-paddle,#{$selector}-active input:checked ~ .switch-paddle');
+    @include setTrump('background-color',map-get($State,'State'),'#{$selector}-inactive .switch-paddle,#{$selector}-active input:checked ~ .switch-paddle');
 }
 /**
 * Switch (States): 
-* `.error-active` - Switches can be colored with a class [state]-active and [state]-inactive
+* `.error-active` - Switches can be colored with a class [state]-active and [state]-inactive.
 * 
 *   @example
 *   <h3>Plain switch with `.error-active` and `.sucess-inactive` on the `.switch`</h3>
@@ -28,6 +28,6 @@ $required_data:(
 *   <span class="switch-inactive" aria-hidden="true">No</span>
 *   </label>
 *   </div>
-*   <label  class="switch-value" for="active-inactive">Yes or No Question</label>
+*   <label  class="switch-value" for="active-inactive">.switch.error-active.warning-inactive/label>
 *   </div>
 */

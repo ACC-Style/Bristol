@@ -7,6 +7,21 @@ $required_data:(
 	'file':'_typography.state.scss'
 	);
 @include required-check($required_data...);
+%htmlContentTagsState{
+		font-weight: 900;
+	}
+$typography-selectors:"h1","h2","h3","h4","h5","h6","p","a","li","blockquote";	
+$underline-selectors: "h1.with-underline","h2.with-underline", "h3.with-underline", "h4.with-underline", "h5.with-underline", "h6.with-underline";
+@each $State in $states{
+	$state-selector:map-get($State,'Selector');
+	@each $selector in $typography-selectors{
+		@include setTrump('color',map-get($State,'State'),'#{$selector}#{$state-selector}');
+		#{$selector}#{$state-selector}{@extend %htmlContentTagsState;}
+	}
+	@each $selector in $underline-selectors{
+		@include setTrump('border-color',map-get($State,'State'),'#{$selector}#{$state-selector}');
+	}
+}
 // End of required check
 /**
 * Header Tags and other Typography States:
@@ -18,24 +33,7 @@ $required_data:(
 *	</h1>
 *	<h2 class="with-underline error">Header 2 Tag <small>Error State</small></h2>
 *	<h3 class="with-underline warning">Header 3 Tag<small>Warning State</small></h3>
-*	<h4 class="with-underline validated">Header 4 Tag<span class="sub-line">Validated/success State</span></h4>
+*	<h4 class="with-underline success">Header 4 Tag<span class="sub-line">Success State</span></h4>
 *	<h5 class="with-underline highlighted">Header 5 Tag<small>Highlighted State</small></h5>
 *  	<p class="highlighted"><strong>Paragraph that is a highlighted State.</strong>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
 */
-
-
-	%htmlContentTagsState{
-		font-weight: 900;
-	}
-	$typography-selectors:"h1","h2","h3","h4","h5","h6","p","a","li","blockquote";	
-	$underline-selectors: "h1.with-underline","h2.with-underline", "h3.with-underline", "h4.with-underline", "h5.with-underline", "h6.with-underline";
-	@each $State in $states{
-		$state-selector:map-get($State,'Selector');
-		@each $selector in $typography-selectors{
-			@include setTrump('color',map-get($State,'State'),'#{$selector}#{$state-selector}');
-			#{$selector}#{$state-selector}{@extend %htmlContentTagsState;}
-		}
-		@each $selector in $underline-selectors{
-			@include setTrump('border-color',map-get($State,'State'),'#{$selector}#{$state-selector}');
-		}
-	}
