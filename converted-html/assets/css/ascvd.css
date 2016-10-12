@@ -1374,18 +1374,6 @@ button:disabled.secondary, .input-space
 .tabs li:hover a, .tabs .tabs-title:hover a {
   color: #333333;
 }
-.tabs li.selected, .tabs li.is-active, .tabs .tabs-title.selected, .tabs .tabs-title.is-active {
-  background-color: #fff;
-  padding-left: 0;
-  padding-right: 0;
-  cursor: context-menu;
-  bottom: -1px;
-  position: relative;
-}
-.tabs li.selected a, .tabs li.is-active a, .tabs .tabs-title.selected a, .tabs .tabs-title.is-active a {
-  color: #333333;
-  cursor: context-menu;
-}
 .tabs li.icon, .tabs .tabs-title.icon {
   width: 3em;
 }
@@ -1408,25 +1396,50 @@ button:disabled.secondary, .input-space
 .tabs li.icon.selected:hover a, .tabs li.icon.is-active:hover a, .tabs .tabs-title.icon.selected:hover a, .tabs .tabs-title.icon.is-active:hover a {
   color: #fff;
 }
-.tabs li.secondary, .tabs .tabs-title.secondary {
-  background-color: #adadad;
+.tabs li.secondary, .tabs li.visited, .tabs .tabs-title.secondary, .tabs .tabs-title.visited {
+  background-color: #b3b3b3;
 }
-.tabs li.secondary a, .tabs .tabs-title.secondary a {
+.tabs li.secondary a, .tabs li.visited a, .tabs .tabs-title.secondary a, .tabs .tabs-title.visited a {
   color: #333333;
 }
-.tabs li.secondary:hover, .tabs .tabs-title.secondary:hover {
-  background-color: #777777;
+.tabs li.secondary:hover, .tabs li.visited:hover, .tabs .tabs-title.secondary:hover, .tabs .tabs-title.visited:hover {
+  background-color: #a6a6a6;
 }
-.tabs li.secondary:hover a, .tabs .tabs-title.secondary:hover a {
-  color: #fff;
+.tabs li.secondary:hover a, .tabs li.visited:hover a, .tabs .tabs-title.secondary:hover a, .tabs .tabs-title.visited:hover a {
+  color: #333333;
 }
 .tabs li.disabled, .tabs li.disabled:hover, .tabs .tabs-title.disabled, .tabs .tabs-title.disabled:hover {
-  background: url("../img/subtlenet2.png") repeat;
+  background-image: url("../img/subtlenet2.png");
 }
 .tabs li.disabled a, .tabs li.disabled, .tabs li.disabled:hover a, .tabs li.disabled:hover, .tabs .tabs-title.disabled a, .tabs .tabs-title.disabled, .tabs .tabs-title.disabled:hover a, .tabs .tabs-title.disabled:hover {
-  color: #999999;
+  color: #666666;
   cursor: not-allowed;
   opacity: .5;
+}
+.tabs li.visited, .tabs .tabs-title.visited {
+  background-image: url("../img/cross-hatched.png");
+}
+.tabs li.locked a:before, .tabs .tabs-title.locked a:before {
+  content: "\f023";
+  padding-right: .5em;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+.tabs li.selected, .tabs li.is-active, .tabs .tabs-title.selected, .tabs .tabs-title.is-active {
+  background-image: none;
+  background: #fff;
+  padding-left: 0;
+  padding-right: 0;
+  cursor: context-menu;
+  bottom: -1px;
+  position: relative;
+}
+.tabs li.selected a, .tabs li.is-active a, .tabs .tabs-title.selected a, .tabs .tabs-title.is-active a {
+  color: #333333;
+  cursor: context-menu;
 }
 @media only screen and (max-width: 320px) {
   .tabs {
@@ -1459,6 +1472,19 @@ button:disabled.secondary, .input-space
   }
 }
 
+/**
+* Tabs (modifications):
+* `.tabs+[modification]` - Tabs can be modified with `.secondary`,`.disabled`,`.visited`,`.locked`
+* 
+*   @example
+*	<ul class="nav tabs">
+*		<li class="tabs-title visited locked"><a class="home">visited locked</a></li>
+*		<li class="tabs-title visited locked"><a>visited locked</a></li>
+*		<li class="tabs-title selected"><a >Selected</a></li>
+*		<li class="tabs-title secondary"><a >Secondary</a></li>
+*		<li class="tabs-title disabled"><a >Disabled</a></li>
+*	</ul>
+*/
 .tabs.tabs-primary {
   border: 0;
   background: none;
@@ -2161,8 +2187,8 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 }
 
 .input-holder [type='text'], .input-holder [type='password'], .input-holder [type='date'], .input-holder [type='datetime'], .input-holder [type='datetime-local'], .input-holder [type='month'], .input-holder [type='week'], .input-holder [type='email'], .input-holder [type='number'], .input-holder [type='search'], .input-holder [type='tel'], .input-holder [type='time'], .input-holder [type='url'], .input-holder [type='color'], .input-holder textarea, .input-holder button, .input-holder .button {
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 0.875rem;
+  line-height: 1.09375rem;
   padding: 0.65625rem 0.65625rem;
   height: 2.1875rem;
 }
@@ -4494,55 +4520,128 @@ input:checked + label > .switch-inactive {
   }
 }
 
-.with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+.with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .group-section-tab-holder {
   padding-top: .125rem;
   padding-bottom: .125rem;
 }
 @media only screen and (min-width: 320px) {
-  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .group-section-tab-holder {
     padding-top: .25rem;
     padding-bottom: .25rem;
   }
 }
 @media only screen and (min-width: 767px) {
-  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .group-section-tab-holder {
     padding-top: .5rem;
     padding-bottom: .5rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .group-section-tab-holder {
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
 }
 
-.content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+.content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .group-section-tab-holder {
   padding-left: .5rem;
   padding-right: .5rem;
 }
 @media only screen and (min-width: 767px) {
-  .content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+  .content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .group-section-tab-holder {
     padding-right: .75rem;
     padding-left: .75rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+  .content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .group-section-tab-holder {
     padding-right: 1rem;
     padding-left: 1rem;
   }
 }
 
-.colored-paper {
-  margin: 0;
+.group-section .colored-paper:first-child, .group-section .group-section-tab-holder:first-child, .card .colored-paper:first-child, .card .group-section-tab-holder:first-child {
+  margin-top: -.15rem;
+  margin-top: calc(-.15rem - 1px);
+}
+@media only screen and (max-height: 480px) {
+  .group-section .colored-paper:first-child, .group-section .group-section-tab-holder:first-child, .card .colored-paper:first-child, .card .group-section-tab-holder:first-child {
+    margin-top: -.25rem;
+    margin-top: calc(-.25rem - 1px);
+  }
+}
+@media only screen and (min-width: 767px) {
+  .group-section .colored-paper:first-child, .group-section .group-section-tab-holder:first-child, .card .colored-paper:first-child, .card .group-section-tab-holder:first-child {
+    margin-top: -.5rem;
+    margin-top: calc(-.5rem - 1px);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .group-section .colored-paper:first-child, .group-section .group-section-tab-holder:first-child, .card .colored-paper:first-child, .card .group-section-tab-holder:first-child {
+    margin-top: -1rem;
+    margin-top: calc(-1rem - 1px);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .group-section .colored-paper:first-child, .group-section .group-section-tab-holder:first-child, .card .colored-paper:first-child, .card .group-section-tab-holder:first-child {
+    margin-top: -1rem;
+    margin-top: calc(-1rem - 1px);
+  }
 }
 
-.colored-paper {
-  margin: 0;
+.colored-paper .tabs, .group-section-tab-holder .tabs, .group-section .colored-paper:last-child, .group-section .group-section-tab-holder:last-child, .card .colored-paper:last-child, .card .group-section-tab-holder:last-child {
+  margin-bottom: -.15rem;
+  margin-bottom: calc(-.15rem - 1px);
+}
+@media only screen and (max-height: 480px) {
+  .colored-paper .tabs, .group-section-tab-holder .tabs, .group-section .colored-paper:last-child, .group-section .group-section-tab-holder:last-child, .card .colored-paper:last-child, .card .group-section-tab-holder:last-child {
+    margin-bottom: -.25rem;
+    margin-bottom: calc(-.25rem - 1px);
+  }
+}
+@media only screen and (min-width: 767px) {
+  .colored-paper .tabs, .group-section-tab-holder .tabs, .group-section .colored-paper:last-child, .group-section .group-section-tab-holder:last-child, .card .colored-paper:last-child, .card .group-section-tab-holder:last-child {
+    margin-bottom: -.5rem;
+    margin-bottom: calc(-.5rem - 1px);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .colored-paper .tabs, .group-section-tab-holder .tabs, .group-section .colored-paper:last-child, .group-section .group-section-tab-holder:last-child, .card .colored-paper:last-child, .card .group-section-tab-holder:last-child {
+    margin-bottom: -1rem;
+    margin-bottom: calc(-1rem - 1px);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .colored-paper .tabs, .group-section-tab-holder .tabs, .group-section .colored-paper:last-child, .group-section .group-section-tab-holder:last-child, .card .colored-paper:last-child, .card .group-section-tab-holder:last-child {
+    margin-bottom: -1rem;
+    margin-bottom: calc(-1rem - 1px);
+  }
 }
 
-.page .page-wrapper, .content-padding, .colored-paper {
+.colored-paper, .group-section-tab-holder {
+  margin-left: -.5rem;
+  margin-right: -.5rem;
+  margin-left: calc(-.5rem - 1px);
+  margin-right: calc(-.5rem - 1px);
+}
+@media only screen and (min-width: 767px) {
+  .colored-paper, .group-section-tab-holder {
+    margin-left: -.75rem;
+    margin-right: -.75rem;
+    margin-left: calc(-.75rem - 1px);
+    margin-right: calc(-.75rem - 1px);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .colored-paper, .group-section-tab-holder {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    margin-left: calc(-1rem - 1px);
+    margin-right: calc(-1rem - 1px);
+  }
+}
+
+.page .page-wrapper, .content-padding, .colored-paper, .group-section-tab-holder {
   -webkit-transition: padding 1s;
   /* Safari */
   transition: padding 1s;
@@ -4585,14 +4684,29 @@ input:checked + label > .switch-inactive {
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
 }
 
-.with-group-sections.highlighted, .with-group-sections.secondary, .paper-page.highlighted, .paper-page.secondary {
+.with-group-sections.error, .paper-page.error {
+  background-color: #f7cfd3;
+  background-image: url("../img/billie-holiday-speck.png");
+}
+.with-group-sections.warning, .paper-page.warning {
+  background-color: #fbe7ce;
+  background-image: url("../img/billie-holiday-speck.png");
+}
+.with-group-sections.success, .paper-page.success {
+  background-color: #c7f9dc;
+  background-image: url("../img/billie-holiday-speck.png");
+}
+.with-group-sections.info, .paper-page.info {
+  background-color: #ededed;
   background-image: url("../img/billie-holiday-speck.png");
 }
 .with-group-sections.highlighted, .paper-page.highlighted {
-  background-color: #d3ebfa;
+  background-color: #d2eff8;
+  background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.secondary, .paper-page.secondary {
-  background-color: #d9d9d9;
+.with-group-sections.disabled, .paper-page.disabled {
+  background-color: whitesmoke;
+  background-image: url("../img/billie-holiday-speck.png");
 }
 .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card {
   width: auto;
@@ -4600,78 +4714,86 @@ input:checked + label > .switch-inactive {
   margin: 0 .65rem 1rem .5rem;
 }
 
-.colored-paper {
-  max-width: 75rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin: -.5rem -.5rem 0;
-}
-.colored-paper::before, .colored-paper::after {
-  content: ' ';
-  display: table;
-}
-.colored-paper::after {
-  clear: both;
-}
-.colored-paper h1, .colored-paper h2, .colored-paper h3, .colored-paper h4, .colored-paper h5, .colored-paper h6, .colored-paper p {
-  color: #fff;
-}
-.colored-paper.secondary h1, .colored-paper.secondary h2, .colored-paper.secondary h3, .colored-paper.secondary h4, .colored-paper.secondary h5, .colored-paper.secondary h6, .colored-paper.secondary p {
-  color: #fff;
-}
-.colored-paper, .colored-paper .nav.tabs {
+.colored-paper, .group-section-tab-holder {
   background-image: url("../img/construction-paper.png");
   background-color: #2199e8;
 }
-@media only screen and (max-width: 1024px) and (max-height: 768px) {
-  .colored-paper {
-    margin-top: -.5rem;
-  }
+.colored-paper h1, .group-section-tab-holder h1, .colored-paper h2, .group-section-tab-holder h2, .colored-paper h3, .group-section-tab-holder h3, .colored-paper h4, .group-section-tab-holder h4, .colored-paper h5, .group-section-tab-holder h5, .colored-paper h6, .group-section-tab-holder h6, .colored-paper p, .group-section-tab-holder p, .colored-paper ul, .group-section-tab-holder ul, .colored-paper ol, .group-section-tab-holder ol {
+  color: #fff;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .colored-paper {
-    margin-top: -.25rem;
-  }
+.colored-paper.secondary h1, .secondary.group-section-tab-holder h1, .colored-paper.secondary h2, .secondary.group-section-tab-holder h2, .colored-paper.secondary h3, .secondary.group-section-tab-holder h3, .colored-paper.secondary h4, .secondary.group-section-tab-holder h4, .colored-paper.secondary h5, .secondary.group-section-tab-holder h5, .colored-paper.secondary h6, .secondary.group-section-tab-holder h6, .colored-paper.secondary p, .secondary.group-section-tab-holder p, .colored-paper.secondary ul, .secondary.group-section-tab-holder ul, .colored-paper.secondary ol, .secondary.group-section-tab-holder ol {
+  color: #fff;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .colored-paper {
-    margin-top: -.15rem;
-  }
+.colored-paper.error, .error.group-section-tab-holder {
+  background-color: #c32231;
 }
-
-@media only screen and (min-width: 767px) {
-  .colored-paper {
-    margin-left: -.75rem;
-    margin-right: -.75rem;
-  }
+.colored-paper.warning, .warning.group-section-tab-holder {
+  background-color: #E08514;
 }
-@media only screen and (min-width: 1024px) {
-  .colored-paper {
-    margin: -1rem -1rem 0;
-    margin: calc(-1rem - 1px) calc(-1rem - 1px) 0;
-  }
+.colored-paper.success, .success.group-section-tab-holder {
+  background-color: #14B057;
 }
-* ~ .colored-paper {
-  margin-top: 0 !important;
+.colored-paper.info, .info.group-section-tab-holder {
+  background-color: #a6a6a6;
 }
-.colored-paper .nav.tabs {
-  padding: 2px 10px 0;
+.colored-paper.highlighted, .highlighted.group-section-tab-holder {
+  background-color: #22AFD7;
+}
+.colored-paper.disabled, .disabled.group-section-tab-holder {
+  background-color: #cccccc;
+}
+.colored-paper.error .tabs li, .error.group-section-tab-holder .tabs li {
+  background-color: #f7cfd3;
+}
+.colored-paper.error .tabs li:hover, .error.group-section-tab-holder .tabs li:hover {
+  background-color: #f0abb2;
+}
+.colored-paper.warning .tabs li, .warning.group-section-tab-holder .tabs li {
+  background-color: #fbe7ce;
+}
+.colored-paper.warning .tabs li:hover, .warning.group-section-tab-holder .tabs li:hover {
+  background-color: #f7d5aa;
+}
+.colored-paper.success .tabs li, .success.group-section-tab-holder .tabs li {
+  background-color: #c7f9dc;
+}
+.colored-paper.success .tabs li:hover, .success.group-section-tab-holder .tabs li:hover {
+  background-color: #9cf4c2;
+}
+.colored-paper.info .tabs li, .info.group-section-tab-holder .tabs li {
+  background-color: #ededed;
+}
+.colored-paper.info .tabs li:hover, .info.group-section-tab-holder .tabs li:hover {
+  background-color: #e0e0e0;
+}
+.colored-paper.highlighted .tabs li, .highlighted.group-section-tab-holder .tabs li {
+  background-color: #d2eff8;
+}
+.colored-paper.highlighted .tabs li:hover, .highlighted.group-section-tab-holder .tabs li:hover {
+  background-color: #b0e4f3;
+}
+.colored-paper.disabled .tabs li, .disabled.group-section-tab-holder .tabs li {
+  background-color: whitesmoke;
+}
+.colored-paper.disabled .tabs li:hover, .disabled.group-section-tab-holder .tabs li:hover {
+  background-color: #ededed;
+}
+.colored-paper .tabs, .group-section-tab-holder .tabs {
   border: 0 none;
-  background-image: url("../img/construction-paper.png");
-  background-color: #2199e8;
+  background-color: transparent;
 }
-.colored-paper .nav.tabs li {
+.colored-paper .tabs li, .group-section-tab-holder .tabs li {
   border-radius: .4em;
   display: inline-block;
-  margin: .4em .05em .2em;
+  margin: .4em .05em .3em;
   vertical-align: bottom;
   background-color: #d3ebfa;
   padding: .2em .3em;
 }
-.colored-paper .nav.tabs li:hover {
+.colored-paper .tabs li:hover, .group-section-tab-holder .tabs li:hover {
   background-color: #b1dbf7;
 }
-.colored-paper .nav.tabs li.selected {
+.colored-paper .tabs li.selected, .group-section-tab-holder .tabs li.selected, .colored-paper .tabs li:hover.selected, .group-section-tab-holder .tabs li:hover.selected {
   border-radius: .5em;
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -4680,51 +4802,17 @@ input:checked + label > .switch-inactive {
   padding: .4em;
   background-color: #fff;
 }
-.colored-paper.secondary, .colored-paper.secondary .nav.tabs {
-  background-color: #777;
-}
-.colored-paper.secondary .nav.tabs li {
-  background-color: #e4e4e4;
-}
-.colored-paper.secondary .nav.tabs li:hover {
-  background-color: #cfcfcf;
-}
-.colored-paper.secondary .nav.tabs li.selected {
-  background-color: #fff;
+
+.radius.group-section .colored-paper:first-child, .radius.group-section .group-section-tab-holder:first-child, .radius.card .colored-paper:first-child, .radius.card .group-section-tab-holder:first-child, .radius.group-section .colored-paper:last-child, .radius.group-section .group-section-tab-holder:last-child, .radius.card .colored-paper:last-child, .radius.card .group-section-tab-holder:last-child {
+  border-radius: 6px;
 }
 
-.group-section .colored-paper:last-child {
-  margin-bottom: -1rem;
-  margin-bottom: calc(-1rem - 1px);
+.radius-bottom.group-section .colored-paper:last-child, .radius-bottom.group-section .group-section-tab-holder:last-child, .radius-bottom.card .colored-paper:last-child, .radius-bottom.card .group-section-tab-holder:last-child {
+  border-radius: 0 0 6px 6px;
 }
 
-.group-section .colored-paper:first-child {
-  margin-top: -.15rem;
-  margin-top: calc(-.15rem - 1px);
-}
-@media only screen and (max-height: 480px) {
-  .group-section .colored-paper:first-child {
-    margin-top: -.25rem;
-    margin-top: calc(-.25rem - 1px);
-  }
-}
-@media only screen and (min-width: 767px) {
-  .group-section .colored-paper:first-child {
-    margin-top: -.5rem;
-    margin-top: calc(-.5rem - 1px);
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .group-section .colored-paper:first-child {
-    margin-top: -1rem;
-    margin-top: calc(-1rem - 1px);
-  }
-}
-@media only screen and (min-width: 1200px) {
-  .group-section .colored-paper:first-child {
-    margin-top: -1rem;
-    margin-top: calc(-1rem - 1px);
-  }
+.radius-top.group-section .colored-paper:first-child, .radius-top.group-section .group-section-tab-holder:first-child, .radius-top.card .colored-paper:first-child, .radius-top.card .group-section-tab-holder:first-child {
+  border-radius: 6px 6px 0 0;
 }
 
 /**
@@ -4734,20 +4822,27 @@ input:checked + label > .switch-inactive {
 *   @example
 *   <div class="page with-group-sections">
 *    <div class="page-wrapper">
-*    <section class="section group-section radius-top"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
+*    <section class="section group-section"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *    </div>
 *    </div>
-*   <div class="page with-group-sections highlighted">
+*   <div class="page paper-page error">
 *    <div class="page-wrapper">
-*    <section class="section group-section radius-bottom">
-*    <h1>Hello</h1> <p>This is content  that is showing up in a section group</section>
+*       <section class="section group-section">
+*           <h1>.Page.Paper-Page.Error</h1>
+*       </section>
+*    </div></div>
+*   <div class="page paper-page highlighted">
+*    <div class="page-wrapper">
+*       <section class="section group-section">
+*           <h1>.Page.Paper-Page.Highlighted</h1>
+*       </section>
 *    </div>
 *    </div>
 *
 **/
 /**
 * Tabs on Paper Background Pages:
-* `.page.paper-page  > .overlap.tabs` - Tabs placed outside of the groups should use the overlap so they sink into the paper texture.
+* `.page.paper-page  > .overlap.tabs` - Tabs placed outside of cards are used to change all cards under the tabs.  This pattern is used for sub page toggling.
 * 
 *   @example
 *   <div class="page with-group-sections">
@@ -4765,7 +4860,7 @@ input:checked + label > .switch-inactive {
 **/
 /**
 * Tabs for Paper Cards:
-* `.page.paper-page  .card .color-paper .nav.tabs` - Special tabs holders are introduced to the cards so they can fill the full frame of the card.  The tab holder has a modification of adding the `secondary` class to convert it to using the secondary color if the need arises.
+* `.page.paper-page  .card .colored-paper .nav.tabs` - Special tabs holders are introduced to the cards so they can fill the full frame of the card. `.color-paper` is a container that wraps Tabs.This pattern should be used to toggle content on a single card or area of a card.
 * 
 *   @example
 *   <div class="page paper-page">
@@ -4782,7 +4877,7 @@ input:checked + label > .switch-inactive {
 *                </div>
 *                <h1>Hello</h1> 
 *                <p>This is content  that is showing up in a section group</p>
-*                <div class="colored-paper secondary">
+*                <div class="colored-paper info">
 *                    <ul class="nav tabs">
 *                        <li class="">
 *                       <a>Tab 1</a>
@@ -4795,6 +4890,80 @@ input:checked + label > .switch-inactive {
 *                <p>This is content under a secondary tab in a card</p>
 *            </section>
 *        </div>
+*    </div>
+**/
+/**
+* Content in Colored paper:
+* `.page.paper-page  .card .color-paper *` - Content can be written into colored paper but it is limited to basic contnet like headers and paragraph tags.  
+* 
+*   @example
+*   <div class="page paper-page">
+*       <div class="page-wrapper">
+*            <section class="section card">
+*                <div class="colored-paper">
+*                   <h2>I am Content inside of a colored paper</h2> 
+*                   <p>This is a "p" tag inside of colored paper</p>
+*                </div>
+*            </section>
+*        </div>
+*    </div>
+*
+**/
+/**
+* Content in Colored paper:
+* `.color-paper.[state]` - Colored paper can be colored with states to change it from its base color which is the product color.  
+* 
+*   @example
+*   <div class="page paper-page">
+*       <div class="page-wrapper">
+*        <div class="row">
+*            <div class="medium-4 columns">
+*                <div class="card">
+*                    <div class="colored-paper warning"><h3 class="text-center">Warning State</h3></div>
+*                </div>
+*            </div>
+*            <div class="medium-4 columns">
+*                <div class="card">
+*                    <div class="colored-paper info"><h3 class="text-center">Info State</h3></div>
+*                </div>
+*            </div>
+*            <div class="medium-4 columns">
+*                <div class="card">
+*                    <div class="colored-paper error"><h3 class="text-center">Error State</h3></div>
+*                </div>
+*            </div>
+*        </div>
+*        </div>
+*    </div>
+*
+**/
+/**
+* Paper Card Rounded Corners:
+* `.card.radius` - Using the Utility Class of radius you can round the corners of cards.  Just add "radius" "radius-top" "radius-bottom"
+* 
+*   @example
+*   <div class="page with-group-sections">
+*    <div class="page-wrapper">
+*        <div class="row">
+*            <div class="medium-4 columns">
+*                <div class="card radius-top">
+*                    <div class="colored-paper"><h3 class="text-center">radius-top</h3></div>
+*                      <p>colored paper also gets the rounded corners set by the card</p>
+*                </div>
+*            </div>
+*            <div class="medium-4 columns">
+*                <div class="card radius">
+*                    <h3 class="text-center">radius</h3>
+*                </div>
+*            </div>
+*            <div class="medium-4 columns">
+*                <div class="card radius-bottom">
+*                    <h3 class="text-center">radius-bottom</h3>
+*                    <div class="colored-paper"><h3 class="text-center">colored paper</h3></div>
+*                </div>
+*            </div>
+*        </div>
+*    </div>
 *    </div>
 *
 **/

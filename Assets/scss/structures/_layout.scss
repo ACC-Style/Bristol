@@ -58,11 +58,71 @@
         padding-left:1rem;
     }
 }
-%content-expanding-margin-vertical{
-margin:0;
+%content-expanding-margin-top{
+    margin-top: -.15rem;
+    margin-top: calc(-.15rem - 1px);
+    @include bp(sm-height-down){ 
+        margin-top: -.25rem;
+        margin-top: calc(-.25rem - 1px);
+        } 
+    @include bp(md){ 
+        margin-top:-.5rem;
+        margin-top: calc(-.5rem - 1px);
+        }  
+    @include bp(lg){
+        margin-top: -1rem;
+        margin-top: calc(-1rem - 1px);
+     }
+     @include bp(xl){
+        margin-top: -1rem;
+        margin-top: calc(-1rem - 1px);
+     }
 }
+%content-expanding-margin-bottom{
+    margin-bottom: -.15rem;
+    margin-bottom: calc(-.15rem - 1px);
+    @include bp(sm-height-down){ 
+        margin-bottom: -.25rem;
+        margin-bottom: calc(-.25rem - 1px);
+        } 
+    @include bp(md){ 
+        margin-bottom:-.5rem;
+        margin-bottom: calc(-.5rem - 1px);
+        }  
+    @include bp(lg){
+        margin-bottom: -1rem;
+        margin-bottom: calc(-1rem - 1px);
+     }
+     @include bp(xl){
+        margin-bottom: -1rem;
+        margin-bottom: calc(-1rem - 1px);
+     }
+}
+%content-expanding-margin-vertical{
+ @extend %content-expanding-margin-top;
+ @extend %content-expanding-margin-bottom;
+
+}
+
+
+
 %content-expanding-margin-horizontal{
-margin:0;
+        margin-left: -.5rem;
+        margin-right: -.5rem;
+        margin-left: calc(-.5rem - 1px);
+        margin-right: calc(-.5rem - 1px); 
+ @include bp(md){ 
+        margin-left: -.75rem;
+        margin-right: -.75rem;
+        margin-left: calc(-.75rem - 1px);
+        margin-right: calc(-.75rem - 1px);
+        }
+    @include bp(lg){
+        margin-left: -1rem;
+        margin-right: -1rem;
+        margin-left: calc(-1rem - 1px);
+        margin-right: calc(-1rem - 1px);
+     }
 }
 %spacing-transition{ 
     -webkit-transition: padding 1s; /* Safari */
