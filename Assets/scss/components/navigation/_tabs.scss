@@ -15,6 +15,9 @@
 // @import "../../helpers/flex";
 $tab-color: grey(20);
 $tab-hover-color: grey(25);
+$tab-secondary-color:grey(30);
+$tab-secondary-hover-color:grey(35);
+
 $tab-selected-color:#fff;
 $tab-selected-hover-color:scale-color($secondary-color, $lightness:-15%);
 $tab-darktext:$global-default-dark-text;
@@ -78,17 +81,7 @@ $tab-lighttext:$global-default-light-text;
 			}
 		}
 
-		&.selected,&.is-active{
-			background-color:$tab-selected-color;
-			padding-left: 0;
-			padding-right: 0;
-			cursor:context-menu;
-			bottom:-1px;
-			position: relative;
-			a{
-				color:color-contrast($tab-selected-color,$tab-darktext,$tab-lighttext);cursor:context-menu;
-			}
-		}
+		
 		&.icon{
 			a{
 				padding-left: .5em !important;
@@ -111,24 +104,53 @@ $tab-lighttext:$global-default-light-text;
 			}
 
 		} 
-		&.secondary{
-			background-color: color($secondary-color, 60);
+		&.secondary,&.visited{
+			background-color: $tab-secondary-color;
 			a{
-				color:color-contrast(color($secondary-color, 60),$tab-darktext,$tab-lighttext);
+				color: color-contrast($tab-secondary-color,$tab-darktext,$tab-lighttext);
 			}
-			&:hover{background-color: color($secondary-color, 100);
-				a{color:color-contrast(color($secondary-color,100),$tab-darktext,#fff);}
+			&:hover{
+				background-color: $tab-secondary-hover-color;
+				a{
+					color: color-contrast($tab-secondary-hover-color,$tab-darktext,$tab-lighttext);
+				}
 			}
 
 		}
 		&.disabled, &.disabled:hover{
-			background: url("../img/subtlenet2.png") repeat;
+			background-image: url("../img/subtlenet2.png");
 			a, &{
-				color: grey(40);
+				color: grey(60);
 				cursor: not-allowed;
 				opacity: .5;
 			}
 
+		}
+		&.visited{
+			background-image:url("../img/cross-hatched.png");
+		}
+		&.locked a:before{
+		    content: "\f023";
+		    padding-right: .5em;
+		    display: inline-block;
+		    font: normal normal normal 14px/1 FontAwesome;
+		    font-size: inherit;
+		    text-rendering: auto;
+		    -webkit-font-smoothing: antialiased;
+
+		}
+		&.selected,&.is-active{
+			background-image:none;
+			background:$tab-selected-color;
+			padding-left: 0;
+			padding-right: 0;
+			cursor:context-menu;
+			bottom:-1px;
+			position: relative;
+			a{
+				color:color-contrast($tab-selected-color,$tab-darktext,$tab-lighttext);
+				cursor:context-menu;
+			}
 		}
 	}
 	@include bp(xs-down){
@@ -145,3 +167,18 @@ $tab-lighttext:$global-default-light-text;
 			}
 	}
 }
+
+
+/**
+* Tabs (modifications):
+* `.tabs+[modification]` - Tabs can be modified with `.secondary`,`.disabled`,`.visited`,`.locked`
+* 
+*   @example
+*	<ul class="nav tabs">
+*		<li class="tabs-title visited locked"><a class="home">visited locked</a></li>
+*		<li class="tabs-title visited locked"><a>visited locked</a></li>
+*		<li class="tabs-title selected"><a >Selected</a></li>
+*		<li class="tabs-title secondary"><a >Secondary</a></li>
+*		<li class="tabs-title disabled"><a >Disabled</a></li>
+*	</ul>
+*/
