@@ -1,15 +1,15 @@
-    <section class="sg-block sg-section-tabs-inside-grouping">
+    <section class="sg-block sg-section-tabs-on-paper-background-pages">
       <div class="sg-text">
-        <h3 id="tabs-inside-grouping" class="sg">Tabs Outside Grouping</h3>
+        <h3 id="tabs-on-paper-background-pages" class="sg">Tabs on Paper Background Pages</h3>
         <p class="sg">
-          <code class="sg">page.with-group-sections &gt; .overlap.tabs</code>- Tabs placed outside of the groups should use the overlap so they sink into the paper texture.</p>
+          <code class="sg">.page.paper-page &gt; .overlap.tabs</code>- Tabs placed outside of cards are used to change all cards under the tabs. This pattern is used for sub page toggling.</p>
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
           <div class="page with-group-sections">
             <div class="page-wrapper">
               <ul class="nav tabs overlap">
-                <li class="icon  ">
+                <li class="icon">
                   <a class="home">
                     <i class="fa fa-holder"></i>
                   </a>
@@ -17,14 +17,14 @@
                 <li class="">
                   <a>Tab 2</a>
                 </li>
-                <li class=" selected ">
+                <li class="selected">
                   <a>Tab 3</a>
                 </li>
                 <li class="">
                   <a>Tab 4</a>
                 </li>
               </ul>
-              <section class="section group-section">
+              <section class="section group-section radius">
                 <h1>Hello</h1>
                 <p>This is content that is showing up in a section group</p>
               </section>
@@ -33,21 +33,22 @@
         </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page with-group-sections&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs overlap&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon  &quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;home&quot;</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 2<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot; selected &quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;selected&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section group-section&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section group-section radius&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Hello<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is content that is showing up in a section group<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
@@ -60,16 +61,15 @@
       <div class="sg-text">
         <h3 id="tabs-for-paper-cards" class="sg">Tabs for Paper Cards</h3>
         <p class="sg">
-          <code class="sg">.group-section-tab-holder</code>- Special tabs holders are introduced to the cards so they can fill the full frame of the card. The tab holder has a modification of adding the
-          <code class="sg">secondary</code>class to convert it to using the secondary color if the need arises.</p>
+          <code class="sg">.page.paper-page .card .color-paper .nav.tabs</code>- Special tabs holders are introduced to the cards so they can fill the full frame of the card.
+          <code class="sg">.color-paper</code>is a container that wraps Tabs.This pattern should be used to toggle content on a single card or area of a card.</p>
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
-          <div class="page with-group-sections">
+          <div class="page paper-page">
             <div class="page-wrapper">
-              <section class="section group-section">
-                <div class="group-section-tab-holder">
-                <div class="row"><h2 class="content-padding">Label of Tabs</h2></div>
+              <section class="section card">
+                <div class="colored-paper">
                   <ul class="nav tabs">
                     <li class="">
                       <a>Tab 1</a>
@@ -84,8 +84,7 @@
                 </div>
                 <h1>Hello</h1>
                 <p>This is content that is showing up in a section group</p>
-                <div class="group-section-tab-holder secondary">
-                 <div class="row"><h4 class="content-padding">Secondary Tabs</h4></div>
+                <div class="colored-paper info">
                   <ul class="nav tabs">
                     <li class="">
                       <a>Tab 1</a>
@@ -100,21 +99,13 @@
                 </div>
                 <h2>I am Sub Tab Content</h2>
                 <p>This is content under a secondary tab in a card</p>
-
-                <div class="colored-paper">
-                <div class="content-padding">
-                  <h3>Inside of a Colored Paper Section</h3>
-                    <p>Some extra content in the content area</p>
-                    <p>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
-                </div>
-                </div>
               </section>
             </div>
           </div>
-        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page with-group-sections&quot;</span>&gt;</span>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page paper-page&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section group-section&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;group-section-tab-holder&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section card&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;colored-paper&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs&quot;</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
@@ -129,7 +120,7 @@
       <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Hello<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is content that is showing up in a section group<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;group-section-tab-holder secondary&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;colored-paper info&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs&quot;</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
