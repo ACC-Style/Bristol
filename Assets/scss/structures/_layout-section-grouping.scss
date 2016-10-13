@@ -11,14 +11,19 @@
 
 .with-group-sections,.paper-page{
     @extend %shadedbackground;
+    .overlap .tabs .selected,.overlap .tabs .selected{
+        @extend %shadedbackground;
+    }
     @each $State in $states{
         $state-selector:map-get($State,'Selector'); 
-        &#{$state-selector}{
+        &#{$state-selector}, &#{$state-selector} .overlap .tabs .selected, &#{$state-selector} .overlap .tabs .selected{
             background-color:color(map-get($State,'Color'), 20);
             background-image:url('../img/billie-holiday-speck.png');
          }
     }
-    
+    .overlap + .page-wrapper{
+        padding-top:.5rem;
+    }
     .page-wrapper {
         @extend %page-padding-vertical-only; 
         // align sections and rows with in the page
@@ -104,7 +109,7 @@
 * `.page.paper-page .page-wrapper .card` - by default pages are white but when the need arises to have grouped section 'cards' are introduced and the background area becomes a layer of soft off white construction paper. If the need arises to highlight a collection of cards add `.highlighted` to the `.page.with-group-sections` and the product color will bleed into the construction paper.
 * 
 *   @example
-*   <div class="page with-group-sections">
+*   <div class="page paper-page">
 *    <div class="page-wrapper">
 *    <section class="section group-section"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *    </div>
@@ -129,14 +134,25 @@
 * `.page.paper-page  > .overlap >.tabs` - Tabs placed outside of cards are used to change all cards under the tabs.  This pattern is used for sub page toggling.
 * 
 *   @example
-*   <div class="page with-group-sections">
-*       <div class="page-wrapper">
+*   <div class="page paper-page">
 *     <nav class="overlap"><ul class="tabs">
 *     <li class="icon"><a class="home"><i class="fa fa-holder"></i></a></li>
 *     <li class=""><a>Tab 2</a></li>
 *     <li class="selected"><a >Tab 3</a></li>
 *     <li class=""><a >Tab 4</a></li>
 *     </ul></nav>
+*     <div class="page-wrapper">
+*     <section class="section group-section radius"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
+*        </div>
+*    </div>
+*   <div class="page paper-page error">
+*     <nav class="overlap"><ul class="tabs">
+*     <li class="icon"><a class="home"><i class="fa fa-holder"></i></a></li>
+*     <li class=""><a>Tab 2</a></li>
+*     <li class="selected"><a >Tab 3</a></li>
+*     <li class=""><a >Tab 4</a></li>
+*     </ul></nav>
+*     <div class="page-wrapper">
 *     <section class="section group-section radius"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *        </div>
 *    </div>

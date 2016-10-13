@@ -1905,18 +1905,18 @@ button:disabled.secondary, .input-space
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   display: inline-block;
-  margin: .2em .2em -1px;
+  margin: .2em .2em 0;
 }
 @media only screen and (min-width: 767px) {
   .tabs li, .tabs .tabs-title {
-    margin: .25em .25em -1px;
+    margin: .25em .25em 0;
     border-top-left-radius: 4.5px;
     border-top-right-radius: 4.5px;
   }
 }
 @media only screen and (min-width: 1024px) {
   .tabs li, .tabs .tabs-title {
-    margin: .3em .3em -1px;
+    margin: .3em .3em 0;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
   }
@@ -2398,22 +2398,26 @@ button:disabled.secondary, .input-space
 *	</ul>
 */
 .overlap {
-  background-color: white;
-  background: url("../img/billie-holiday.png") repeat top right, url("../img/bottom-shade.png") repeat-x bottom right, url("../img/top-shade.png") repeat-x right -1px;
+  background-color: #e7e7e7;
+  background-image: url("../img/billie-holiday.png"), url("../img/bottom-shade.png"), url("../img/top-shade.png");
+  background-position: top right,bottom right,right -1px;
+  background-repeat: repeat,repeat-x,repeat-x;
   border-bottom: 2px solid #999999;
+  margin-bottom: .25rem;
 }
 .overlap .tabs {
   padding-top: .25em;
-  border-bottom: 0;
+  border: 0;
   background: transparent none;
 }
-.overlap .tabs li {
+.overlap .tabs li, .overlap .tabs .tabs-title {
   border: 2px solid #b3b3b3;
   border-bottom: 0;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
+  margin-bottom: 0;
 }
-.overlap .tabs li.selected, .overlap .tabs li.is-active {
+.overlap .tabs li.selected, .overlap .tabs li.is-active, .overlap .tabs .tabs-title.selected, .overlap .tabs .tabs-title.is-active {
   margin-bottom: -1px;
   padding-bottom: 3px;
   background-color: white;
@@ -2421,17 +2425,11 @@ button:disabled.secondary, .input-space
   border-color: #999999;
   vertical-align: bottom;
 }
-.overlap .tabs li.selected a, .overlap .tabs li.is-active a {
+.overlap .tabs li.selected a, .overlap .tabs li.is-active a, .overlap .tabs .tabs-title.selected a, .overlap .tabs .tabs-title.is-active a {
   color: #333333;
 }
-.overlap .tabs li.secondary {
+.overlap .tabs li.secondary, .overlap .tabs .tabs-title.secondary {
   border-color: #959595;
-}
-
-.with-group-sections .overlap, .paper-page .overlap {
-  margin-bottom: 1rem;
-  border-left: 0;
-  border-right: 0;
 }
 
 /**
@@ -9231,7 +9229,7 @@ input:checked + label > .switch-inactive {
 *   @example
 *	<div class="page-wrapper" style="border:red 1px solid"><div class="section">Hello this is content </div></div>
 **/
-.with-group-sections, .paper-page {
+.with-group-sections, .paper-page, .with-group-sections .overlap .tabs .selected, .paper-page .overlap .tabs .selected {
   background-image: url("../img/billie-holiday-lite.png");
 }
 
@@ -9243,29 +9241,32 @@ input:checked + label > .switch-inactive {
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
 }
 
-.with-group-sections.error, .paper-page.error {
+.with-group-sections.error, .with-group-sections.error .overlap .tabs .selected, .with-group-sections.error .overlap .tabs .selected, .paper-page.error, .paper-page.error .overlap .tabs .selected, .paper-page.error .overlap .tabs .selected {
   background-color: #f7cfd3;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.warning, .paper-page.warning {
+.with-group-sections.warning, .with-group-sections.warning .overlap .tabs .selected, .with-group-sections.warning .overlap .tabs .selected, .paper-page.warning, .paper-page.warning .overlap .tabs .selected, .paper-page.warning .overlap .tabs .selected {
   background-color: #fbe7ce;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.success, .paper-page.success {
+.with-group-sections.success, .with-group-sections.success .overlap .tabs .selected, .with-group-sections.success .overlap .tabs .selected, .paper-page.success, .paper-page.success .overlap .tabs .selected, .paper-page.success .overlap .tabs .selected {
   background-color: #c7f9dc;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.info, .paper-page.info {
+.with-group-sections.info, .with-group-sections.info .overlap .tabs .selected, .with-group-sections.info .overlap .tabs .selected, .paper-page.info, .paper-page.info .overlap .tabs .selected, .paper-page.info .overlap .tabs .selected {
   background-color: #ededed;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.highlighted, .paper-page.highlighted {
+.with-group-sections.highlighted, .with-group-sections.highlighted .overlap .tabs .selected, .with-group-sections.highlighted .overlap .tabs .selected, .paper-page.highlighted, .paper-page.highlighted .overlap .tabs .selected, .paper-page.highlighted .overlap .tabs .selected {
   background-color: #d2eff8;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.disabled, .paper-page.disabled {
+.with-group-sections.disabled, .with-group-sections.disabled .overlap .tabs .selected, .with-group-sections.disabled .overlap .tabs .selected, .paper-page.disabled, .paper-page.disabled .overlap .tabs .selected, .paper-page.disabled .overlap .tabs .selected {
   background-color: whitesmoke;
   background-image: url("../img/billie-holiday-speck.png");
+}
+.with-group-sections .overlap + .page-wrapper, .paper-page .overlap + .page-wrapper {
+  padding-top: .5rem;
 }
 .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card {
   width: auto;
@@ -9379,7 +9380,7 @@ input:checked + label > .switch-inactive {
 * `.page.paper-page .page-wrapper .card` - by default pages are white but when the need arises to have grouped section 'cards' are introduced and the background area becomes a layer of soft off white construction paper. If the need arises to highlight a collection of cards add `.highlighted` to the `.page.with-group-sections` and the product color will bleed into the construction paper.
 * 
 *   @example
-*   <div class="page with-group-sections">
+*   <div class="page paper-page">
 *    <div class="page-wrapper">
 *    <section class="section group-section"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *    </div>
@@ -9404,14 +9405,25 @@ input:checked + label > .switch-inactive {
 * `.page.paper-page  > .overlap >.tabs` - Tabs placed outside of cards are used to change all cards under the tabs.  This pattern is used for sub page toggling.
 * 
 *   @example
-*   <div class="page with-group-sections">
-*       <div class="page-wrapper">
+*   <div class="page paper-page">
 *     <nav class="overlap"><ul class="tabs">
 *     <li class="icon"><a class="home"><i class="fa fa-holder"></i></a></li>
 *     <li class=""><a>Tab 2</a></li>
 *     <li class="selected"><a >Tab 3</a></li>
 *     <li class=""><a >Tab 4</a></li>
 *     </ul></nav>
+*     <div class="page-wrapper">
+*     <section class="section group-section radius"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
+*        </div>
+*    </div>
+*   <div class="page paper-page error">
+*     <nav class="overlap"><ul class="tabs">
+*     <li class="icon"><a class="home"><i class="fa fa-holder"></i></a></li>
+*     <li class=""><a>Tab 2</a></li>
+*     <li class="selected"><a >Tab 3</a></li>
+*     <li class=""><a >Tab 4</a></li>
+*     </ul></nav>
+*     <div class="page-wrapper">
 *     <section class="section group-section radius"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *        </div>
 *    </div>
