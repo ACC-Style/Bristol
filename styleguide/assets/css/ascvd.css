@@ -1294,29 +1294,34 @@ button:disabled.secondary, .input-space
 * `.tabs` - Group of nav that is build for a horizontal space. <h5 class="warning">( !! WARNING !! Updated HTML and Styles From Ver 1)</h5>
 * 
 *   @example
-*	<ul class="nav tabs">
+*	<nav class="nav"><ul class=" tabs">
 *		<li class="tabs-title icon"><a class="home"><i class="fa fa-holder"></i></a></li>
 *		<li class="tabs-title"><a>Tab 2</a></li>
 *		<li class="tabs-title is-active"><a >Tab 3</a></li>
 *		<li class="tabs-title"><a >Tab 4</a></li>
-*	</ul>
+*	</ul></nav>
 */
 .tabs {
-  margin-left: 0;
-  width: 100%;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
   background: #e6e6e6;
 }
-.tabs div.row {
-  max-width: 1200px;
+.tabs::before, .tabs::after {
+  content: ' ';
+  display: table;
+}
+.tabs::after {
+  clear: both;
 }
 .tabs, .tabs .tabs-title > a {
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
   font-weight: 700;
-  font-size: 0.625rem;
+  font-size: 0.75rem;
 }
 @media only screen and (min-width: 767px) {
   .tabs, .tabs .tabs-title > a {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -1329,25 +1334,25 @@ button:disabled.secondary, .input-space
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   display: inline-block;
-  margin: .2rem .2rem -1px;
+  margin: .2em .2em -1px;
 }
 @media only screen and (min-width: 767px) {
   .tabs li, .tabs .tabs-title {
-    margin: .25rem .25rem -1px;
+    margin: .25em .25em -1px;
     border-top-left-radius: 4.5px;
     border-top-right-radius: 4.5px;
   }
 }
 @media only screen and (min-width: 1024px) {
   .tabs li, .tabs .tabs-title {
-    margin: .3rem .3rem -1px;
+    margin: .3em .3em -1px;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
   }
 }
 .tabs li > a, .tabs .tabs-title > a {
   display: inline-block;
-  padding: .25em .5em .35em;
+  padding: .35em .5em .45em;
   text-align: center;
   white-space: nowrap;
   vertical-align: top;
@@ -1360,7 +1365,7 @@ button:disabled.secondary, .input-space
 }
 @media only screen and (min-width: 767px) {
   .tabs li > a, .tabs .tabs-title > a {
-    padding: .35em .75em .45em;
+    padding: .45em .75em .55em;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -1477,13 +1482,13 @@ button:disabled.secondary, .input-space
 * `.tabs+[modification]` - Tabs can be modified with `.secondary`,`.disabled`,`.visited`,`.locked`
 * 
 *   @example
-*	<ul class="nav tabs">
+*	<nav class="nav"><ul class="tabs">
 *		<li class="tabs-title visited locked"><a class="home">visited locked</a></li>
 *		<li class="tabs-title visited locked"><a>visited locked</a></li>
 *		<li class="tabs-title selected"><a >Selected</a></li>
 *		<li class="tabs-title secondary"><a >Secondary</a></li>
 *		<li class="tabs-title disabled"><a >Disabled</a></li>
-*	</ul>
+*	</ul></nav>
 */
 .tabs.tabs-primary {
   border: 0;
@@ -4520,112 +4525,112 @@ input:checked + label > .switch-inactive {
   }
 }
 
-.with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .group-section-tab-holder {
+.with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
   padding-top: .125rem;
   padding-bottom: .125rem;
 }
 @media only screen and (min-width: 320px) {
-  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .group-section-tab-holder {
+  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
     padding-top: .25rem;
     padding-bottom: .25rem;
   }
 }
 @media only screen and (min-width: 767px) {
-  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .group-section-tab-holder {
+  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
     padding-top: .5rem;
     padding-bottom: .5rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .group-section-tab-holder {
+  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
 }
 
-.content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .group-section-tab-holder {
+.content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
   padding-left: .5rem;
   padding-right: .5rem;
 }
 @media only screen and (min-width: 767px) {
-  .content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .group-section-tab-holder {
+  .content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
     padding-right: .75rem;
     padding-left: .75rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .group-section-tab-holder {
+  .content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
     padding-right: 1rem;
     padding-left: 1rem;
   }
 }
 
-.group-section .colored-paper:first-child, .group-section .group-section-tab-holder:first-child, .card .colored-paper:first-child, .card .group-section-tab-holder:first-child {
+.group-section .colored-paper:first-child, .card .colored-paper:first-child {
   margin-top: -.15rem;
   margin-top: calc(-.15rem - 1px);
 }
 @media only screen and (max-height: 480px) {
-  .group-section .colored-paper:first-child, .group-section .group-section-tab-holder:first-child, .card .colored-paper:first-child, .card .group-section-tab-holder:first-child {
+  .group-section .colored-paper:first-child, .card .colored-paper:first-child {
     margin-top: -.25rem;
     margin-top: calc(-.25rem - 1px);
   }
 }
 @media only screen and (min-width: 767px) {
-  .group-section .colored-paper:first-child, .group-section .group-section-tab-holder:first-child, .card .colored-paper:first-child, .card .group-section-tab-holder:first-child {
+  .group-section .colored-paper:first-child, .card .colored-paper:first-child {
     margin-top: -.5rem;
     margin-top: calc(-.5rem - 1px);
   }
 }
 @media only screen and (min-width: 1024px) {
-  .group-section .colored-paper:first-child, .group-section .group-section-tab-holder:first-child, .card .colored-paper:first-child, .card .group-section-tab-holder:first-child {
+  .group-section .colored-paper:first-child, .card .colored-paper:first-child {
     margin-top: -1rem;
     margin-top: calc(-1rem - 1px);
   }
 }
 @media only screen and (min-width: 1200px) {
-  .group-section .colored-paper:first-child, .group-section .group-section-tab-holder:first-child, .card .colored-paper:first-child, .card .group-section-tab-holder:first-child {
+  .group-section .colored-paper:first-child, .card .colored-paper:first-child {
     margin-top: -1rem;
     margin-top: calc(-1rem - 1px);
   }
 }
 
-.colored-paper .tabs, .group-section-tab-holder .tabs, .group-section .colored-paper:last-child, .group-section .group-section-tab-holder:last-child, .card .colored-paper:last-child, .card .group-section-tab-holder:last-child {
+.colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child {
   margin-bottom: -.15rem;
   margin-bottom: calc(-.15rem - 1px);
 }
 @media only screen and (max-height: 480px) {
-  .colored-paper .tabs, .group-section-tab-holder .tabs, .group-section .colored-paper:last-child, .group-section .group-section-tab-holder:last-child, .card .colored-paper:last-child, .card .group-section-tab-holder:last-child {
+  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child {
     margin-bottom: -.25rem;
     margin-bottom: calc(-.25rem - 1px);
   }
 }
 @media only screen and (min-width: 767px) {
-  .colored-paper .tabs, .group-section-tab-holder .tabs, .group-section .colored-paper:last-child, .group-section .group-section-tab-holder:last-child, .card .colored-paper:last-child, .card .group-section-tab-holder:last-child {
+  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child {
     margin-bottom: -.5rem;
     margin-bottom: calc(-.5rem - 1px);
   }
 }
 @media only screen and (min-width: 1024px) {
-  .colored-paper .tabs, .group-section-tab-holder .tabs, .group-section .colored-paper:last-child, .group-section .group-section-tab-holder:last-child, .card .colored-paper:last-child, .card .group-section-tab-holder:last-child {
+  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child {
     margin-bottom: -1rem;
     margin-bottom: calc(-1rem - 1px);
   }
 }
 @media only screen and (min-width: 1200px) {
-  .colored-paper .tabs, .group-section-tab-holder .tabs, .group-section .colored-paper:last-child, .group-section .group-section-tab-holder:last-child, .card .colored-paper:last-child, .card .group-section-tab-holder:last-child {
+  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child {
     margin-bottom: -1rem;
     margin-bottom: calc(-1rem - 1px);
   }
 }
 
-.colored-paper, .group-section-tab-holder {
+.colored-paper {
   margin-left: -.5rem;
   margin-right: -.5rem;
   margin-left: calc(-.5rem - 1px);
   margin-right: calc(-.5rem - 1px);
 }
 @media only screen and (min-width: 767px) {
-  .colored-paper, .group-section-tab-holder {
+  .colored-paper {
     margin-left: -.75rem;
     margin-right: -.75rem;
     margin-left: calc(-.75rem - 1px);
@@ -4633,7 +4638,7 @@ input:checked + label > .switch-inactive {
   }
 }
 @media only screen and (min-width: 1024px) {
-  .colored-paper, .group-section-tab-holder {
+  .colored-paper {
     margin-left: -1rem;
     margin-right: -1rem;
     margin-left: calc(-1rem - 1px);
@@ -4641,7 +4646,7 @@ input:checked + label > .switch-inactive {
   }
 }
 
-.page .page-wrapper, .content-padding, .colored-paper, .group-section-tab-holder {
+.page .page-wrapper, .content-padding, .colored-paper {
   -webkit-transition: padding 1s;
   /* Safari */
   transition: padding 1s;
@@ -4714,75 +4719,75 @@ input:checked + label > .switch-inactive {
   margin: 0 .65rem 1rem .5rem;
 }
 
-.colored-paper, .group-section-tab-holder {
+.colored-paper {
   background-image: url("../img/construction-paper.png");
   background-color: #2199e8;
 }
-.colored-paper h1, .group-section-tab-holder h1, .colored-paper h2, .group-section-tab-holder h2, .colored-paper h3, .group-section-tab-holder h3, .colored-paper h4, .group-section-tab-holder h4, .colored-paper h5, .group-section-tab-holder h5, .colored-paper h6, .group-section-tab-holder h6, .colored-paper p, .group-section-tab-holder p, .colored-paper ul, .group-section-tab-holder ul, .colored-paper ol, .group-section-tab-holder ol {
+.colored-paper h1, .colored-paper h2, .colored-paper h3, .colored-paper h4, .colored-paper h5, .colored-paper h6, .colored-paper p, .colored-paper ul, .colored-paper ol {
   color: #fff;
 }
-.colored-paper.secondary h1, .secondary.group-section-tab-holder h1, .colored-paper.secondary h2, .secondary.group-section-tab-holder h2, .colored-paper.secondary h3, .secondary.group-section-tab-holder h3, .colored-paper.secondary h4, .secondary.group-section-tab-holder h4, .colored-paper.secondary h5, .secondary.group-section-tab-holder h5, .colored-paper.secondary h6, .secondary.group-section-tab-holder h6, .colored-paper.secondary p, .secondary.group-section-tab-holder p, .colored-paper.secondary ul, .secondary.group-section-tab-holder ul, .colored-paper.secondary ol, .secondary.group-section-tab-holder ol {
+.colored-paper.secondary h1, .colored-paper.secondary h2, .colored-paper.secondary h3, .colored-paper.secondary h4, .colored-paper.secondary h5, .colored-paper.secondary h6, .colored-paper.secondary p, .colored-paper.secondary ul, .colored-paper.secondary ol {
   color: #fff;
 }
-.colored-paper.error, .error.group-section-tab-holder {
+.colored-paper.error {
   background-color: #c32231;
 }
-.colored-paper.warning, .warning.group-section-tab-holder {
+.colored-paper.warning {
   background-color: #E08514;
 }
-.colored-paper.success, .success.group-section-tab-holder {
+.colored-paper.success {
   background-color: #14B057;
 }
-.colored-paper.info, .info.group-section-tab-holder {
+.colored-paper.info {
   background-color: #a6a6a6;
 }
-.colored-paper.highlighted, .highlighted.group-section-tab-holder {
+.colored-paper.highlighted {
   background-color: #22AFD7;
 }
-.colored-paper.disabled, .disabled.group-section-tab-holder {
+.colored-paper.disabled {
   background-color: #cccccc;
 }
-.colored-paper.error .tabs li, .error.group-section-tab-holder .tabs li {
+.colored-paper.error .tabs li {
   background-color: #f7cfd3;
 }
-.colored-paper.error .tabs li:hover, .error.group-section-tab-holder .tabs li:hover {
+.colored-paper.error .tabs li:hover {
   background-color: #f0abb2;
 }
-.colored-paper.warning .tabs li, .warning.group-section-tab-holder .tabs li {
+.colored-paper.warning .tabs li {
   background-color: #fbe7ce;
 }
-.colored-paper.warning .tabs li:hover, .warning.group-section-tab-holder .tabs li:hover {
+.colored-paper.warning .tabs li:hover {
   background-color: #f7d5aa;
 }
-.colored-paper.success .tabs li, .success.group-section-tab-holder .tabs li {
+.colored-paper.success .tabs li {
   background-color: #c7f9dc;
 }
-.colored-paper.success .tabs li:hover, .success.group-section-tab-holder .tabs li:hover {
+.colored-paper.success .tabs li:hover {
   background-color: #9cf4c2;
 }
-.colored-paper.info .tabs li, .info.group-section-tab-holder .tabs li {
+.colored-paper.info .tabs li {
   background-color: #ededed;
 }
-.colored-paper.info .tabs li:hover, .info.group-section-tab-holder .tabs li:hover {
+.colored-paper.info .tabs li:hover {
   background-color: #e0e0e0;
 }
-.colored-paper.highlighted .tabs li, .highlighted.group-section-tab-holder .tabs li {
+.colored-paper.highlighted .tabs li {
   background-color: #d2eff8;
 }
-.colored-paper.highlighted .tabs li:hover, .highlighted.group-section-tab-holder .tabs li:hover {
+.colored-paper.highlighted .tabs li:hover {
   background-color: #b0e4f3;
 }
-.colored-paper.disabled .tabs li, .disabled.group-section-tab-holder .tabs li {
+.colored-paper.disabled .tabs li {
   background-color: whitesmoke;
 }
-.colored-paper.disabled .tabs li:hover, .disabled.group-section-tab-holder .tabs li:hover {
+.colored-paper.disabled .tabs li:hover {
   background-color: #ededed;
 }
-.colored-paper .tabs, .group-section-tab-holder .tabs {
+.colored-paper .tabs {
   border: 0 none;
   background-color: transparent;
 }
-.colored-paper .tabs li, .group-section-tab-holder .tabs li {
+.colored-paper .tabs li {
   border-radius: .4em;
   display: inline-block;
   margin: .4em .05em .3em;
@@ -4790,10 +4795,10 @@ input:checked + label > .switch-inactive {
   background-color: #d3ebfa;
   padding: .2em .3em;
 }
-.colored-paper .tabs li:hover, .group-section-tab-holder .tabs li:hover {
+.colored-paper .tabs li:hover {
   background-color: #b1dbf7;
 }
-.colored-paper .tabs li.selected, .group-section-tab-holder .tabs li.selected, .colored-paper .tabs li:hover.selected, .group-section-tab-holder .tabs li:hover.selected {
+.colored-paper .tabs li.selected, .colored-paper .tabs li:hover.selected {
   border-radius: .5em;
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -4803,15 +4808,15 @@ input:checked + label > .switch-inactive {
   background-color: #fff;
 }
 
-.radius.group-section .colored-paper:first-child, .radius.group-section .group-section-tab-holder:first-child, .radius.card .colored-paper:first-child, .radius.card .group-section-tab-holder:first-child, .radius.group-section .colored-paper:last-child, .radius.group-section .group-section-tab-holder:last-child, .radius.card .colored-paper:last-child, .radius.card .group-section-tab-holder:last-child {
+.radius.group-section .colored-paper:first-child, .radius.card .colored-paper:first-child, .radius.group-section .colored-paper:last-child, .radius.card .colored-paper:last-child {
   border-radius: 6px;
 }
 
-.radius-bottom.group-section .colored-paper:last-child, .radius-bottom.group-section .group-section-tab-holder:last-child, .radius-bottom.card .colored-paper:last-child, .radius-bottom.card .group-section-tab-holder:last-child {
+.radius-bottom.group-section .colored-paper:last-child, .radius-bottom.card .colored-paper:last-child {
   border-radius: 0 0 6px 6px;
 }
 
-.radius-top.group-section .colored-paper:first-child, .radius-top.group-section .group-section-tab-holder:first-child, .radius-top.card .colored-paper:first-child, .radius-top.card .group-section-tab-holder:first-child {
+.radius-top.group-section .colored-paper:first-child, .radius-top.card .colored-paper:first-child {
   border-radius: 6px 6px 0 0;
 }
 
@@ -4841,18 +4846,18 @@ input:checked + label > .switch-inactive {
 *
 **/
 /**
-* Tabs on Paper Background Pages:
-* `.page.paper-page  > .overlap.tabs` - Tabs placed outside of cards are used to change all cards under the tabs.  This pattern is used for sub page toggling.
+* Tabs on Paper Pages:
+* `.page.paper-page  > .overlap >.tabs` - Tabs placed outside of cards are used to change all cards under the tabs.  This pattern is used for sub page toggling.
 * 
 *   @example
 *   <div class="page with-group-sections">
 *       <div class="page-wrapper">
-*     <ul class="nav tabs overlap">
+*     <nav class="overlap"><ul class="tabs">
 *     <li class="icon"><a class="home"><i class="fa fa-holder"></i></a></li>
 *     <li class=""><a>Tab 2</a></li>
 *     <li class="selected"><a >Tab 3</a></li>
 *     <li class=""><a >Tab 4</a></li>
-*     </ul>
+*     </ul></nav>
 *     <section class="section group-section radius"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *        </div>
 *    </div>
@@ -4867,24 +4872,24 @@ input:checked + label > .switch-inactive {
 *       <div class="page-wrapper">
 *            <section class="section card">
 *                <div class="colored-paper">
-*                    <ul class="nav tabs">
+*                    <nav><ul class="nav tabs">
 *                        <li class="">
 *                       <a>Tab 1</a>
 *                       </li>
 *                        <li class=" selected "> <a>Tab 2</a> </li>
 *                        <li class=""> <a>Tab 3</a> </li>
-*                    </ul>
+*                    </ul></nav>
 *                </div>
 *                <h1>Hello</h1> 
 *                <p>This is content  that is showing up in a section group</p>
 *                <div class="colored-paper info">
-*                    <ul class="nav tabs">
+*                    <nav><ul class="nav tabs">
 *                        <li class="">
 *                       <a>Tab 1</a>
 *                       </li>
 *                        <li class=" selected "> <a>Tab 2</a> </li>
 *                        <li class=""> <a>Tab 3</a> </li>
-*                    </ul>
+*                    </ul></nav>
 *                </div>
 *                <h2>I am Sub Tab Content</h2> 
 *                <p>This is content under a secondary tab in a card</p>
@@ -4973,16 +4978,30 @@ input:checked + label > .switch-inactive {
 * 
 *   @example
 *	<div class="mobile-offcanvas-wrapper">
-*	<section class="split-layout medium navOn">
+*	<section class="split-layout medium navOff">
 *	<aside class="split-sidebar">
-*	<h2>Sidebar</h2>
-*	<p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+*	<h2>Sidebar with NavOn</h2>
+*	<p>This Content will stay visable as the screen gets smaller</p>
 *	</aside>
 *	<article class="split-content">
-*	<div class="page-wrapper">
+*	<div class="page-wrapper"><div class="content-padding">
 *	<h1>Content</h1>
 *	<p>Some extra content in the content area</p><p> It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+*	</div></div>
+*	</article>
+*	</section>
 *	</div>
+*	<div class="mobile-offcanvas-wrapper">
+*	<section class="split-layout large navOn">
+*	<aside class="split-sidebar">
+*	<h2>Sidebar navOff</h2>
+*	<p>When the view port shrinks past Large this will hide</p>
+*	</aside>
+*	<article class="split-content">
+*	<div class="page-wrapper"><div class="content-padding">
+*	<h1>Content</h1>
+*	<p>Some extra content in the content area</p><p> It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+*	</div></div>
 *	</article>
 *	</section>
 *	</div>
@@ -5115,38 +5134,9 @@ input:checked + label > .switch-inactive {
   padding-bottom: 9998px;
 }
 .split-layout.fill-page-height .split-content {
+  min-height: 100vh;
   margin-bottom: 0px;
   padding-bottom: 1em;
-}
-@media (min-device-height: 320px) {
-  .split-layout.fill-page-height .split-content {
-    min-height: 320px;
-  }
-}
-@media (min-device-height: 480px) {
-  .split-layout.fill-page-height .split-content {
-    min-height: 480px;
-  }
-}
-@media (min-device-height: 640px) {
-  .split-layout.fill-page-height .split-content {
-    min-height: 640px;
-  }
-}
-@media (min-device-height: 768px) {
-  .split-layout.fill-page-height .split-content {
-    min-height: 768px;
-  }
-}
-@media (min-device-height: 960px) {
-  .split-layout.fill-page-height .split-content {
-    min-height: 960px;
-  }
-}
-@media (min-device-height: 1024px) {
-  .split-layout.fill-page-height .split-content {
-    min-height: 1024px;
-  }
 }
 .split-layout .split-sidebar {
   display: none;
@@ -5296,8 +5286,8 @@ input:checked + label > .switch-inactive {
 }
 
 /**
-* Split Layout With Off Canvas Reveal:
-* `.mobile-offcanvas-wrapper` - This is a structural container that has the ablity to change from content and sidebar to just content and the sidebar being off canvas. Trigger the off canvas reveal by adding `.navOn` to the div.split-layout. Change the switch point by adding `.large`,`.medium`, or `.small`. <br>!!! must include _layout-split.scss !!! <br>!!! requires javascripts foundation equzlizer will remove the sidebar collapse !!!
+* Split Layout:
+* `.mobile-offcanvas-wrapper` - This is a structural container for content and sidebar. Change the switch point where the side bar disapears by adding `.large`,`.medium`, or `.small`. 
 * 
 *   @example
 *	<div class="mobile-offcanvas-wrapper">
@@ -5310,9 +5300,9 @@ input:checked + label > .switch-inactive {
 *	<div class="page-wrapper">
 *	<div class="content-padding"><h1>Outside of the Group Section<span class="sub-line">I need to be wrapped by a div.content-padding to line up</span>
 *	</h1></div>
-*	<div class="group-section">
-*		<h3>Inside of a Group Section</h3>
-*			<p>Some extra content in the content area</p>
+*	<div class="card">
+*		<div class="colored-paper"><h3>Inside of a "Card" on "Colored Paper"</h3>
+*			<p>Some extra content in the content area</p></div>
 *			<p>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
 *	</div></div>
 *	</article>
