@@ -1,8 +1,6 @@
-
 %shadedbackground {
     background-image:url('../img/billie-holiday-lite.png');
 }
-
 %dropshoadowedbox {
     border: 1px solid grey(15);
     background-color: white;
@@ -11,122 +9,73 @@
     box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
 }
 
-.with-group-sections,.page.with-group-sections {
+.with-group-sections,.paper-page{
     @extend %shadedbackground;
-    &.highlighted{
-        background-image:url('../img/billie-holiday-speck.png');
-        background-color: color(rebrand-color($primary-color, 1), 50);
+    @each $State in $states{
+        $state-selector:map-get($State,'Selector'); 
+        &#{$state-selector}{
+            background-color:color(map-get($State,'Color'), 20);
+            background-image:url('../img/billie-holiday-speck.png');
+         }
     }
-    
     .page-wrapper {
-        -webkit-transition: padding 1s; /* Safari */
-        transition: padding 1s;
-        padding: 1rem 0;
-        @include bp(xs-height-down){  
-        padding: .5rem 0;
-        } 
-        @include bp(sm-height-down){ 
-        padding: .25rem 0;
-        } 
-        
-
+        @extend %page-padding-vertical-only; 
+        // align sections and rows with in the page
         > .section, > section, > .row {
-            padding: 0 .75rem;
+            @extend %content-padding-horizontal;
         }
-
-        .group-section {
-            @extend %dropshoadowedbox;
-            &.content-padding {
-                margin: 0 auto 1rem auto;
-                max-width: 1200px;
-            }
-            -webkit-transition: padding 1s; /* Safari */
-            transition: padding 1s;
-            -webkit-transition: margin 1s; /* Safari */
-            transition: margin 1s;
-            margin: 0 .65rem 1rem .5rem;
+        .group-section,.card {
             width: auto;
             position: relative;
-            padding: .5rem .5rem 0;
-            @include bp(md-down){ 
-                @include bp(md-height-down){ 
-                    margin-bottom:.5rem;
-                    }  
-                @include bp(sm-height-down){ 
-                    padding-top: .25rem;
-                    // padding-bottom: .25rem;
-                    margin-bottom:.25rem;
-                    }     
-                @include bp(xs-height-down){  
-                    padding-top: .15rem;
-                    // padding-bottom: .15rem;
-                    margin-bottom:.15rem; 
-                    } 
-            } 
-            @include bp(md) {
-                padding: .5rem .75rem;
-            }
-            @include bp(lg) {
-                padding: 1rem 1rem 1rem;
-            }
+            margin: 0 .65rem 1rem .5rem;
+            @extend %dropshoadowedbox;
+            @extend %content-padding-vertical;
+            @extend %content-padding-horizontal;
+            
         }
     }
 }
-
-.group-section-tab-holder , .colored-paper{    
-    @include grid-row();
-    padding: .5rem;
-    @include bp(md) {
-        padding: .5rem .75rem;
+.group-section-tab-holder{
+    @extend .colored-paper;
+}
+.colored-paper{  
+    @extend %spacing-transition;
+    @extend %content-padding-vertical;
+    @extend %content-padding-horizontal;
+    @extend %content-expanding-margin-horizontal;
+    
+    h1,h2,h3,h4,h5,h6,p,ul,ol{color:color-contrast(rebrand-color($primary-color, 1));}
+    &.secondary{h1,h2,h3,h4,h5,h6,p,ul,ol{color: color-contrast( $secondary-color);}}
+    background-image: url('../img/construction-paper.png');
+    background-color: rebrand-color($primary-color, 1);
+    @each $State in $states{
+        $state-selector:map-get($State,'Selector'); 
+        &#{$state-selector}{
+            background-color:map-get($State,'Color');
+         }
     }
-    @include bp(lg) {
-        padding: 1rem 1rem 1rem;
+    @each $State in $states{
+        $state-selector:map-get($State,'Selector'); 
+        &#{$state-selector} .tabs li{
+            background-color: color(map-get($State,'Color'), 20);
+             &:hover{ background-color: color(map-get($State,'Color'), 35);}
+         }
     }
-    h1,h2,h3,h4,h5,h6,p{color:color-contrast(rebrand-color($primary-color, 1));}
-    &.secondary{h1,h2,h3,h4,h5,h6,p{color: color-contrast( $secondary-color);}}
-    &,.nav.tabs{background-image: url('../img/construction-paper.png');
-    background-color: rebrand-color($primary-color, 1);}
-    margin: -.5rem -.5rem 0; 
-
-    @include bp(md-down){ 
-       
-        @include bp(md-height-down){ 
-            margin-top:-.5rem;
-            }  
-        @include bp(sm-height-down){ 
-            margin-top: -.25rem;
-            // margin-bottom:.5rem;
-            }     
-        @include bp(xs-height-down){  
-            margin-top: -.15rem;
-            // margin-bottom:.25rem; 
-            } 
-    } 
-    @include bp(md){ 
-        margin-left: -.75rem;
-        margin-right: -.75rem;
-        }
-    @include bp(lg){
-         margin: -1rem -1rem 0; 
-         margin: calc(-1rem - 1px) calc(-1rem - 1px) 0; 
-     }
-    * ~ &{ margin-top:0 !important;}
-    .nav.tabs {
-        padding: 2px 10px 0;
+    .tabs {
+        @extend %content-expanding-margin-bottom;
         border:0 none;
-        background-image: url('../img/construction-paper.png');
-        background-color: rebrand-color($primary-color, 1);
+        background-color: transparent;
         li {
             border-radius: .4em;
             display: inline-block;
-            margin: .4em .05em .2em;
+            margin: .4em .05em .3em;
             vertical-align: bottom;
             background-color: color(rebrand-color($primary-color, 1), 20);
             padding:.2em .3em;
             &:hover{ 
                 background-color: color(rebrand-color($primary-color, 1), 35);
             }
-            &.selected {
+            &.selected,&:hover.selected  {
                 border-radius: .5em;
                 border-bottom-right-radius: 0px;
                 border-bottom-left-radius: 0px;
@@ -136,75 +85,49 @@
                 background-color: #fff;
             }
         }
-        @include bp(md){
-            li{
-
-            }
-        }
     }
-    &.secondary,  &.secondary .nav.tabs{background-color: $secondary-color;}
-    &.secondary .nav.tabs{
-        
-        li{
-             background-color: color($secondary-color, 20);
-             &:hover{ background-color: color($secondary-color, 35);}
-             &.selected{background-color: #fff;}
-        }
-    }
-}
-.group-section .colored-paper:last-child {
-    margin-bottom: -1rem;
-    margin-bottom: calc(-1rem - 1px);
 
-    
-}
-.group-section .colored-paper:first-child {
-    margin-top: -.15rem;
-    margin-top: calc(-.15rem - 1px);
-    @include bp(sm-height-down){ 
-        margin-top: -.25rem;
-        margin-top: calc(-.25rem - 1px);
-        } 
-    @include bp(md){ 
-        margin-top:-.5rem;
-        margin-top: calc(-.5rem - 1px);
-        }  
-    @include bp(lg){
-        margin-top: -1rem;
-        margin-top: calc(-1rem - 1px);
-     }
-     @include bp(xl){
-        margin-top: -1rem;
-        margin-top: calc(-1rem - 1px);
-     }
    
 }
-// .group-section .colored-paper{
-//      > *:first-child{ margin-top:0;}
-//      > *:last-child{ margin-bottom:0;}
-// }
+.group-section .colored-paper:last-child,.card .colored-paper:last-child {
+    @extend %content-expanding-margin-bottom;
+}
+.group-section .colored-paper:first-child ,.card .colored-paper:first-child {
+    @extend %content-expanding-margin-top;
+}
+.radius.group-section .colored-paper:first-child ,.radius.card .colored-paper:first-child,.radius.group-section .colored-paper:last-child,.radius.card .colored-paper:last-child {border-radius: $global-border-radius;}
+.radius-bottom.group-section .colored-paper:last-child,.radius-bottom.card .colored-paper:last-child {border-radius:  0 0 $global-border-radius  $global-border-radius;}
+.radius-top.group-section .colored-paper:first-child ,.radius-top.card .colored-paper:first-child {border-radius: $global-border-radius  $global-border-radius 0 0;}
+
 
 /**
 * Paper Card Grouping:
-* `.page.with-group-sections .page-wrapper .group-section-holder` - by default pages are white but when the need arises to have grouped section 'cards' are introduced and the background area becomes a layer of soft off white construction paper. If the need arises to highlight a collection of cards add `.highlighted` to the `.page.with-group-sections` and the product color will bleed into the construction paper.
+* `.page.paper-page .page-wrapper .card` - by default pages are white but when the need arises to have grouped section 'cards' are introduced and the background area becomes a layer of soft off white construction paper. If the need arises to highlight a collection of cards add `.highlighted` to the `.page.with-group-sections` and the product color will bleed into the construction paper.
 * 
 *   @example
 *   <div class="page with-group-sections">
 *    <div class="page-wrapper">
-*    <section class="section group-section radius-top"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
+*    <section class="section group-section"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *    </div>
 *    </div>
-*   <div class="page with-group-sections highlighted">
+*   <div class="page paper-page error">
 *    <div class="page-wrapper">
-*    <section class="section group-section radius-bottom">
-*    <h1>Hello</h1> <p>This is content  that is showing up in a section group</section>
+*       <section class="section group-section">
+*           <h1>.Page.Paper-Page.Error</h1>
+*       </section>
+*    </div></div>
+*   <div class="page paper-page highlighted">
+*    <div class="page-wrapper">
+*       <section class="section group-section">
+*           <h1>.Page.Paper-Page.Highlighted</h1>
+*       </section>
 *    </div>
 *    </div>
 *
 **/
 /**
-* Tabs inside Grouping:
-* `page.with-group-sections > .overlap.tabs` - Tabs placed outside of the groups should use the overlap so they sink into the paper texture.
+* Tabs on Paper Background Pages:
+* `.page.paper-page  > .overlap.tabs` - Tabs placed outside of cards are used to change all cards under the tabs.  This pattern is used for sub page toggling.
 * 
 *   @example
 *   <div class="page with-group-sections">
@@ -222,13 +145,13 @@
 **/
 /**
 * Tabs for Paper Cards:
-* `.group-section-tab-holder` - Special tabs holders are introduced to the cards so they can fill the full frame of the card.  The tab holder has a modification of adding the `secondary` class to convert it to using the secondary color if the need arises.
+* `.page.paper-page  .card .colored-paper .nav.tabs` - Special tabs holders are introduced to the cards so they can fill the full frame of the card. `.color-paper` is a container that wraps Tabs.This pattern should be used to toggle content on a single card or area of a card.
 * 
 *   @example
-*   <div class="page with-group-sections">
+*   <div class="page paper-page">
 *       <div class="page-wrapper">
-*            <section class="section group-section">
-*                <div class="group-section-tab-holder">
+*            <section class="section card">
+*                <div class="colored-paper">
 *                    <ul class="nav tabs">
 *                        <li class="">
 *                       <a>Tab 1</a>
@@ -239,7 +162,7 @@
 *                </div>
 *                <h1>Hello</h1> 
 *                <p>This is content  that is showing up in a section group</p>
-*                <div class="group-section-tab-holder secondary">
+*                <div class="colored-paper info">
 *                    <ul class="nav tabs">
 *                        <li class="">
 *                       <a>Tab 1</a>
@@ -253,6 +176,84 @@
 *            </section>
 *        </div>
 *    </div>
+**/
+/**
+* Content in Colored paper:
+* `.page.paper-page  .card .color-paper *` - Content can be written into colored paper but it is limited to basic contnet like headers and paragraph tags.  
+* 
+*   @example
+*   <div class="page paper-page">
+*       <div class="page-wrapper">
+*            <section class="section card">
+*                <div class="colored-paper">
+*                   <h2>I am Content inside of a colored paper</h2> 
+*                   <p>This is a "p" tag inside of colored paper</p>
+*                </div>
+*            </section>
+*        </div>
+*    </div>
 *
 **/
+/**
+* Content in Colored paper:
+* `.color-paper.[state]` - Colored paper can be colored with states to change it from its base color which is the product color.  
+* 
+*   @example
+*   <div class="page paper-page">
+*       <div class="page-wrapper">
+*        <div class="row">
+*            <div class="medium-4 columns">
+*                <div class="card">
+*                    <div class="colored-paper warning"><h3 class="text-center">Warning State</h3></div>
+*                </div>
+*            </div>
+*            <div class="medium-4 columns">
+*                <div class="card">
+*                    <div class="colored-paper info"><h3 class="text-center">Info State</h3></div>
+*                </div>
+*            </div>
+*            <div class="medium-4 columns">
+*                <div class="card">
+*                    <div class="colored-paper error"><h3 class="text-center">Error State</h3></div>
+*                </div>
+*            </div>
+*        </div>
+*        </div>
+*    </div>
+*
+**/
+/**
+* Paper Card Rounded Corners:
+* `.card.radius` - Using the Utility Class of radius you can round the corners of cards.  Just add "radius" "radius-top" "radius-bottom"
+* 
+*   @example
+*   <div class="page with-group-sections">
+*    <div class="page-wrapper">
+*        <div class="row">
+*            <div class="medium-4 columns">
+*                <div class="card radius-top">
+*                    <div class="colored-paper"><h3 class="text-center">radius-top</h3></div>
+*                      <p>colored paper also gets the rounded corners set by the card</p>
+*                </div>
+*            </div>
+*            <div class="medium-4 columns">
+*                <div class="card radius">
+*                    <h3 class="text-center">radius</h3>
+*                </div>
+*            </div>
+*            <div class="medium-4 columns">
+*                <div class="card radius-bottom">
+*                    <h3 class="text-center">radius-bottom</h3>
+*                    <div class="colored-paper"><h3 class="text-center">colored paper</h3></div>
+*                </div>
+*            </div>
+*        </div>
+*    </div>
+*    </div>
+*
+**/
+
+
+
+
 
