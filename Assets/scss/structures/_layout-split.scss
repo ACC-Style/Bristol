@@ -16,12 +16,7 @@
 	clear:both;
 	.split-sidebar,.split-content{margin-bottom:-9998px;padding-bottom:9998px;}
 	&.fill-page-height .split-content{
-		@media (min-device-height: 320px){ min-height: 320px;}
-		@media (min-device-height: 480px){ min-height: 480px;}
-		@media (min-device-height: 640px){ min-height: 640px;}
-		@media (min-device-height: 768px){ min-height: 768px;}
-		@media (min-device-height: 960px){ min-height: 960px;}
-		@media (min-device-height: 1024px){ min-height: 1024px;}
+		min-height: 100vh;
 		margin-bottom:0px;padding-bottom:1em;
 	}
 
@@ -114,8 +109,8 @@
 }
 .with-group-sections .split-sidebar{background-color: #fff;}
 /**
-* Split Layout With Off Canvas Reveal:
-* `.mobile-offcanvas-wrapper` - This is a structural container that has the ablity to change from content and sidebar to just content and the sidebar being off canvas. Trigger the off canvas reveal by adding `.navOn` to the div.split-layout. Change the switch point by adding `.large`,`.medium`, or `.small`. <br>!!! must include _layout-split.scss !!! <br>!!! requires javascripts foundation equzlizer will remove the sidebar collapse !!!
+* Split Layout:
+* `.mobile-offcanvas-wrapper` - This is a structural container for content and sidebar. Change the switch point where the side bar disapears by adding `.large`,`.medium`, or `.small`. 
 * 
 *   @example
 *	<div class="mobile-offcanvas-wrapper">
@@ -128,9 +123,9 @@
 *	<div class="page-wrapper">
 *	<div class="content-padding"><h1>Outside of the Group Section<span class="sub-line">I need to be wrapped by a div.content-padding to line up</span>
 *	</h1></div>
-*	<div class="group-section">
-*		<h3>Inside of a Group Section</h3>
-*			<p>Some extra content in the content area</p>
+*	<div class="card">
+*		<div class="colored-paper"><h3>Inside of a "Card" on "Colored Paper"</h3>
+*			<p>Some extra content in the content area</p></div>
 *			<p>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
 *	</div></div>
 *	</article>

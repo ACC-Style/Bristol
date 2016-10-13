@@ -52,7 +52,7 @@
             <div class="content-padding">
             <div class="shrink-waypoint"></div>
               <div id="introduction"  data-bind="page: {id:'introduction', role: 'start', afterShow: listchange}">
-    <h1>The ACC's App Framework <strong>Version 2.4</strong>
+    <h1>The ACC's App Framework <strong>Version 2.5</strong>
     <span class="sub-line">Code Name: Bristol</span>
     </h1>
     <p>The American College of Cardiology is proud of its standards of excellence when it comes to the information it supplies to the best cardiologists in the world. And now it is taking great pains to bring that exceptional standards to its UI design.</p>
@@ -83,6 +83,11 @@
         <ul >
             <li>Lock added Tab States</li>
             <li>Visited added Tab States</li>
+        </ul>
+        <h5 class="warning">Overlap Tabs</h5> 
+        <ul>
+            <li class="strong">DOM Change</li>
+            <li>Overlap Tabs will now stay in line with cards with the added change of moving nav.overlap to a container element</li>
         </ul>
         <h3>Version 2.4</h3>
             <h5>Foundation 6.2</h5>
@@ -3202,7 +3207,7 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
       </div>
     </section>
 	<h2>Tabs</h2>
-	 <section class="sg-block sg-section-tabs-basic-">
+	   <section class="sg-block sg-section-tabs-basic-">
       <div class="sg-text">
         <h3 id="tabs-basic-" class="sg">Tabs (Basic)</h3>
         <p class="sg">
@@ -3212,80 +3217,142 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
-          <ul class="nav tabs">
-            <li class="tabs-title icon">
-              <a class="home">
-                <i class="fa fa-holder"></i>
-              </a>
-            </li>
-            <li class="tabs-title">
-              <a>Tab 2</a>
-            </li>
-            <li class="tabs-title is-active">
-              <a>Tab 3</a>
-            </li>
-            <li class="tabs-title">
-              <a>Tab 4</a>
-            </li>
-          </ul>
-        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tabs-title icon&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;home&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tabs-title&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tabs-title is-active&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tabs-title&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></pre>
+          <nav class="nav">
+            <ul class=" tabs">
+              <li class="tabs-title icon">
+                <a class="home">
+                  <i class="fa fa-holder"></i>
+                </a>
+              </li>
+              <li class="tabs-title">
+                <a>Tab 2</a>
+              </li>
+              <li class="tabs-title is-active">
+                <a>Tab 3</a>
+              </li>
+              <li class="tabs-title">
+                <a>Tab 4</a>
+              </li>
+            </ul>
+          </nav>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">nav</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot; tabs&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tabs-title icon&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;home&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tabs-title&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tabs-title is-active&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tabs-title&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span></pre>
       </div>
     </section>
-	  <section class="sg-block sg-section-tabs-overlap">
+
+    <section class="sg-block sg-section-tabs-modifications-">
       <div class="sg-text">
-        <h3 id="tabs-overlap" class="sg">Tabs Overlap</h3>
+        <h3 id="tabs-modifications-" class="sg">Tabs (modifications)</h3>
         <p class="sg">
-          <code class="sg">.tabs.overlap</code>- Overlap gives shallow space and more rendered verstion of tabs</p>
+          <code class="sg">.tabs+[modification]</code>- Tabs can be modified with
+          <code class="sg">.secondary</code>,
+          <code class="sg">.disabled</code>,
+          <code class="sg">.visited</code>,
+          <code class="sg">.locked</code>
+        </p>
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
-          <ul class="nav tabs overlap">
-            <li class="tab-title icon">
-              <a class="home">
-                <i class="fa fa-holder"></i>
-              </a>
-            </li>
-            <li class="tab-title ">
-              <a>Tab 2</a>
-            </li>
-            <li class="tab-title is-active">
-              <a>Tab 3</a>
-            </li>
-            <li class="tab-title ">
-              <a>Tab 4</a>
-            </li>
-          </ul>
-        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs overlap&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tab-title icon&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;home&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tab-title &quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tab-title is-active&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tab-title &quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></pre>
+          <nav class="nav">
+            <ul class="tabs">
+              <li class="tabs-title visited locked">
+                <a class="home">visited locked</a>
+              </li>
+              <li class="tabs-title visited locked">
+                <a>visited locked</a>
+              </li>
+              <li class="tabs-title selected">
+                <a>Selected</a>
+              </li>
+              <li class="tabs-title secondary">
+                <a>Secondary</a>
+              </li>
+              <li class="tabs-title disabled">
+                <a>Disabled</a>
+              </li>
+            </ul>
+          </nav>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">nav</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tabs&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tabs-title visited locked&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;home&quot;</span>&gt;</span>visited locked<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tabs-title visited locked&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>visited locked<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tabs-title selected&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Selected<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tabs-title secondary&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Secondary<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tabs-title disabled&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Disabled<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span></pre>
+      </div>
+    </section>
+	 <section class="sg-block sg-section-tabs-overlap">
+      <div class="sg-text">
+        <h3 id="tabs-overlap" class="sg">Tabs Overlap</h3>
+        <p class="sg">
+          <code class="sg">.tabs.overlap</code>- Overlap gives shallow space to give a small layer effect</p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <nav class="overlap nav">
+            <ul class="tabs ">
+              <li class="tab-title icon">
+                <a class="home">
+                  <i class="fa fa-holder"></i>
+                </a>
+              </li>
+              <li class="tab-title ">
+                <a>Tab 2</a>
+              </li>
+              <li class="tab-title is-active">
+                <a>Tab 3</a>
+              </li>
+              <li class="tab-title ">
+                <a>Tab 4</a>
+              </li>
+            </ul>
+          </nav>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">nav</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;overlap nav&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tabs &quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tab-title icon&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;home&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tab-title &quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tab-title is-active&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tab-title &quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span></pre>
       </div>
     </section>
 	 <section class="sg-block sg-section-tabs-primary">
@@ -6620,7 +6687,7 @@ padding: 1em;
 }
 </style>
 
-	 <section class="sg-block sg-section-split-layout-with-off-canvas-reveal">
+	<section class="sg-block sg-section-split-layout-with-off-canvas-reveal">
       <div class="sg-text">
         <h3 id="split-layout-with-off-canvas-reveal" class="sg">Split Layout With Off Canvas Reveal</h3>
         <p class="sg">
@@ -6630,7 +6697,97 @@ padding: 1em;
           <code class="sg">.medium</code>, or
           <code class="sg">.small</code>.
           <br class="sg">!!! must include _layout-split.scss !!!
-          <br class="sg">!!! requires javascripts foundation equzlizer will remove the sidebar collapse !!!</p>
+          <br class="sg">!!! requires javascripts !!!</p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <div class="mobile-offcanvas-wrapper">
+            <section class="split-layout medium navOn">
+              <aside class="split-sidebar">
+                <h2>Sidebar with NavOn</h2>
+                <p>This Content will stay visable as the screen gets smaller</p>
+              </aside>
+              <article class="split-content">
+                <div class="page-wrapper">
+                  <div class="content-padding">
+                    <h1>Content</h1>
+                    <p>Some extra content in the content area</p>
+                    <p>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+                  </div>
+                </div>
+              </article>
+            </section>
+          </div>
+          <div class="mobile-offcanvas-wrapper">
+            <section class="split-layout large navOff">
+              <aside class="split-sidebar">
+                <h2>Sidebar navOff</h2>
+                <p>When the view port shrinks past Large this will hide</p>
+              </aside>
+              <article class="split-content">
+                <div class="page-wrapper">
+                  <div class="content-padding">
+                    <h1>Content</h1>
+                    <p>Some extra content in the content area</p>
+                    <p>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+                  </div>
+                </div>
+              </article>
+            </section>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;mobile-offcanvas-wrapper&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;split-layout medium navOn&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">aside</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;split-sidebar&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Sidebar with NavOn<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This Content will stay visable as the screen gets smaller<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">aside</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;split-content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;content-padding&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Content<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Some extra content in the content area<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
+            a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur,
+            from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable
+            source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes
+            of Good and Evil) by Cicero, written in 45 BC.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;mobile-offcanvas-wrapper&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;split-layout large navOff&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">aside</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;split-sidebar&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Sidebar navOff<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>When the view port shrinks past Large this will hide<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">aside</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">article</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;split-content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;content-padding&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Content<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Some extra content in the content area<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
+            a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur,
+            from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable
+            source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes
+            of Good and Evil) by Cicero, written in 45 BC.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+      </div>
+    </section>
+
+    <section class="sg-block sg-section-split-layout">
+      <div class="sg-text">
+        <h3 id="split-layout" class="sg">Split Layout</h3>
+        <p class="sg">
+          <code class="sg">.mobile-offcanvas-wrapper</code>- This is a structural container for content and sidebar. Change the switch point where the side bar disapears by adding
+          <code class="sg">.large</code>,
+          <code class="sg">.medium</code>, or
+          <code class="sg">.small</code>.</p>
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
@@ -6647,9 +6804,11 @@ padding: 1em;
                       <span class="sub-line">I need to be wrapped by a div.content-padding to line up</span>
                     </h1>
                   </div>
-                  <div class="group-section">
-                    <h3>Inside of a Group Section</h3>
-                    <p>Some extra content in the content area</p>
+                  <div class="card">
+                    <div class="colored-paper">
+                      <h3>Inside of a &quot;Card&quot; on &quot;Colored Paper&quot;</h3>
+                      <p>Some extra content in the content area</p>
+                    </div>
                     <p>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
                   </div>
                 </div>
@@ -6666,12 +6825,14 @@ padding: 1em;
       <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;content-padding&quot;</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Outside of the Group Section
-            <span class="hljs-tag">&lt;<span class="hljs-title">blockquote</span>&gt;</span>I need to be wrapped by a div.content-padding to line up<span class="hljs-tag">&lt;/<span class="hljs-title">blockquote</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sub-line&quot;</span>&gt;</span>I need to be wrapped by a div.content-padding to line up<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
           <span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;group-section&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Inside of a Group Section<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Some extra content in the content area<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;card&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;colored-paper&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Inside of a &quot;Card&quot; on &quot;Colored Paper&quot;<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Some extra content in the content area<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
             a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur,
             from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable
@@ -7154,32 +7315,34 @@ padding: 1em;
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
       </div>
     </section>
-	    <section class="sg-block sg-section-tabs-on-paper-background-pages">
+	  <section class="sg-block sg-section-tabs-on-paper-pages">
       <div class="sg-text">
-        <h3 id="tabs-on-paper-background-pages" class="sg">Tabs on Paper Background Pages</h3>
+        <h3 id="tabs-on-paper-pages" class="sg">Tabs on Paper Pages</h3>
         <p class="sg">
-          <code class="sg">.page.paper-page &gt; .overlap.tabs</code>- Tabs placed outside of cards are used to change all cards under the tabs. This pattern is used for sub page toggling.</p>
+          <code class="sg">.page.paper-page &gt; .overlap &gt;.tabs</code>- Tabs placed outside of cards are used to change all cards under the tabs. This pattern is used for sub page toggling.</p>
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
           <div class="page with-group-sections">
             <div class="page-wrapper">
-              <ul class="nav tabs overlap">
-                <li class="icon">
-                  <a class="home">
-                    <i class="fa fa-holder"></i>
-                  </a>
-                </li>
-                <li class="">
-                  <a>Tab 2</a>
-                </li>
-                <li class="selected">
-                  <a>Tab 3</a>
-                </li>
-                <li class="">
-                  <a>Tab 4</a>
-                </li>
-              </ul>
+              <nav class="overlap">
+                <ul class="tabs">
+                  <li class="icon">
+                    <a class="home">
+                      <i class="fa fa-holder"></i>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a>Tab 2</a>
+                  </li>
+                  <li class="selected">
+                    <a>Tab 3</a>
+                  </li>
+                  <li class="">
+                    <a>Tab 4</a>
+                  </li>
+                </ul>
+              </nav>
               <section class="section group-section radius">
                 <h1>Hello</h1>
                 <p>This is content that is showing up in a section group</p>
@@ -7188,22 +7351,24 @@ padding: 1em;
           </div>
         </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page with-group-sections&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs overlap&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;home&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;selected&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">nav</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;overlap&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tabs&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;home&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;selected&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 4<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section group-section radius&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Hello<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is content that is showing up in a section group<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
@@ -7217,7 +7382,7 @@ padding: 1em;
       <div class="sg-text">
         <h3 id="tabs-for-paper-cards" class="sg">Tabs for Paper Cards</h3>
         <p class="sg">
-          <code class="sg">.page.paper-page .card .color-paper .nav.tabs</code>- Special tabs holders are introduced to the cards so they can fill the full frame of the card.
+          <code class="sg">.page.paper-page .card .colored-paper .nav.tabs</code>- Special tabs holders are introduced to the cards so they can fill the full frame of the card.
           <code class="sg">.color-paper</code>is a container that wraps Tabs.This pattern should be used to toggle content on a single card or area of a card.</p>
       </div>
       <div class="sg-example">
@@ -7226,32 +7391,36 @@ padding: 1em;
             <div class="page-wrapper">
               <section class="section card">
                 <div class="colored-paper">
-                  <ul class="nav tabs">
-                    <li class="">
-                      <a>Tab 1</a>
-                    </li>
-                    <li class=" selected ">
-                      <a>Tab 2</a>
-                    </li>
-                    <li class="">
-                      <a>Tab 3</a>
-                    </li>
-                  </ul>
+                  <nav>
+                    <ul class="nav tabs">
+                      <li class="">
+                        <a>Tab 1</a>
+                      </li>
+                      <li class=" selected ">
+                        <a>Tab 2</a>
+                      </li>
+                      <li class="">
+                        <a>Tab 3</a>
+                      </li>
+                    </ul>
+                  </nav>
                 </div>
                 <h1>Hello</h1>
                 <p>This is content that is showing up in a section group</p>
                 <div class="colored-paper info">
-                  <ul class="nav tabs">
-                    <li class="">
-                      <a>Tab 1</a>
-                    </li>
-                    <li class=" selected ">
-                      <a>Tab 2</a>
-                    </li>
-                    <li class="">
-                      <a>Tab 3</a>
-                    </li>
-                  </ul>
+                  <nav>
+                    <ul class="nav tabs">
+                      <li class="">
+                        <a>Tab 1</a>
+                      </li>
+                      <li class=" selected ">
+                        <a>Tab 2</a>
+                      </li>
+                      <li class="">
+                        <a>Tab 3</a>
+                      </li>
+                    </ul>
+                  </nav>
                 </div>
                 <h2>I am Sub Tab Content</h2>
                 <p>This is content under a secondary tab in a card</p>
@@ -7262,32 +7431,36 @@ padding: 1em;
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section card&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;colored-paper&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot; selected &quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">nav</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot; selected &quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Hello<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is content that is showing up in a section group<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;colored-paper info&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot; selected &quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-          <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">nav</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nav tabs&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot; selected &quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">a</span>&gt;</span>Tab 3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I am Sub Tab Content<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is content under a secondary tab in a card<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>

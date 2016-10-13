@@ -18,6 +18,7 @@
             background-image:url('../img/billie-holiday-speck.png');
          }
     }
+    
     .page-wrapper {
         @extend %page-padding-vertical-only; 
         // align sections and rows with in the page
@@ -35,9 +36,7 @@
         }
     }
 }
-.group-section-tab-holder{
-    @extend .colored-paper;
-}
+
 .colored-paper{  
     @extend %spacing-transition;
     @extend %content-padding-vertical;
@@ -126,18 +125,18 @@
 *
 **/
 /**
-* Tabs on Paper Background Pages:
-* `.page.paper-page  > .overlap.tabs` - Tabs placed outside of cards are used to change all cards under the tabs.  This pattern is used for sub page toggling.
+* Tabs on Paper Pages:
+* `.page.paper-page  > .overlap >.tabs` - Tabs placed outside of cards are used to change all cards under the tabs.  This pattern is used for sub page toggling.
 * 
 *   @example
 *   <div class="page with-group-sections">
 *       <div class="page-wrapper">
-*     <ul class="nav tabs overlap">
+*     <nav class="overlap"><ul class="tabs">
 *     <li class="icon"><a class="home"><i class="fa fa-holder"></i></a></li>
 *     <li class=""><a>Tab 2</a></li>
 *     <li class="selected"><a >Tab 3</a></li>
 *     <li class=""><a >Tab 4</a></li>
-*     </ul>
+*     </ul></nav>
 *     <section class="section group-section radius"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *        </div>
 *    </div>
@@ -152,24 +151,24 @@
 *       <div class="page-wrapper">
 *            <section class="section card">
 *                <div class="colored-paper">
-*                    <ul class="nav tabs">
+*                    <nav><ul class="nav tabs">
 *                        <li class="">
 *                       <a>Tab 1</a>
 *                       </li>
 *                        <li class=" selected "> <a>Tab 2</a> </li>
 *                        <li class=""> <a>Tab 3</a> </li>
-*                    </ul>
+*                    </ul></nav>
 *                </div>
 *                <h1>Hello</h1> 
 *                <p>This is content  that is showing up in a section group</p>
 *                <div class="colored-paper info">
-*                    <ul class="nav tabs">
+*                    <nav><ul class="nav tabs">
 *                        <li class="">
 *                       <a>Tab 1</a>
 *                       </li>
 *                        <li class=" selected "> <a>Tab 2</a> </li>
 *                        <li class=""> <a>Tab 3</a> </li>
-*                    </ul>
+*                    </ul></nav>
 *                </div>
 *                <h2>I am Sub Tab Content</h2> 
 *                <p>This is content under a secondary tab in a card</p>
