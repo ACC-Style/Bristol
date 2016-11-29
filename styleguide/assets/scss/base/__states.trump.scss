@@ -1,0 +1,43 @@
+/*
+STATE TRUMPING CODE
+*/
+
+@each $State in $states{
+	@if length( getTrump('border-color', map-get($State,'State')) )  > 0 {
+		#{getTrump('border-color',map-get($State,'State'))}{
+			border-color:map-get($State,'Color');
+		}
+	}
+	@if length( getTrump('color', map-get($State,'State')) )  > 0 {
+		#{getTrump('color', map-get($State,'State'))}{
+		color:map-get($State,'Color');
+		}
+	}	
+	@if length(getTrump('background-color', map-get($State,'State'))) > 0 {
+		#{getTrump('background-color', map-get($State,'State')) }{
+			background-color:map-get($State,'Color');
+			// @if map-get($State,'State') == "disabled"{
+			// 	cursor:none;
+			//     cursor: not-allowed;
+			// }
+		}
+	}
+
+	@if length(getTrump('icon', map-get($State,'State')))  > 0 {
+		#{getTrump('icon', map-get($State,'State')) }{
+			@extend %extendFontAwesome;
+			content:map-get($State,'Icon');
+		}
+	}
+
+}
+%extendFontAwesome{
+	font-family: FontAwesome;
+}
+#{$text-DarkFont-Trump}{
+	color:$global-default-dark-text;
+}
+#{$text-LightFont-Trump}{
+	color:$global-default-light-text;
+}
+

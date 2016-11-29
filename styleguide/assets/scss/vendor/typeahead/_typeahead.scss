@@ -1,0 +1,84 @@
+/**
+* Twitter Typeahead:
+* `.twitter-typeahead` - Type ahead javascript
+* 
+*   @example
+* <span class="twitter-typeahead" style="position: relative; display: inline-block; direction: ltr;">
+*  <input class="typeahead tt-hint" type="text" readonly="" autocomplete="off" spellcheck="false" tabindex="-1" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);"><input id="StateTypeAhead" class="typeahead tt-input" type="text" placeholder="States of USA" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: 'Open Sans', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;">ala</pre>
+*  <span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: block; right: auto;">
+*    <div class="tt-dataset-states">
+*      <span class="tt-suggestions" style="display: block;">
+*        <div class="tt-suggestion"><p style="white-space: normal;"><strong class="tt-highlight">Al</strong>abama</p></div>
+*        <div class="tt-suggestion tt-cursor"><p style="white-space: normal;"><strong class="tt-highlight">Al</strong>aska</p></div>
+*        <div class="tt-suggestion"><p style="white-space: normal;">C<strong class="tt-highlight">al</strong>ifornia</p></div>
+*      </span>
+*      </div>
+*    </span>
+*  </span><br/><br/><br/><br/><br/><a href="https://twitter.github.io/">Documentation</a>
+*
+**/
+.twitter-typeahead{width:100%;}
+
+.typeahead,
+.tt-query,
+.tt-hint {
+  height: 30px;
+  padding: .25rem .5rem;
+  font-size: 1rem;
+  line-height: 1;
+  border: 2px solid grey(30);
+  // -webkit-border-radius: 8px;
+  //    -moz-border-radius: 8px;
+  //         border-radius: 8px;
+  outline: none;
+}
+
+.typeahead {
+  background-color: #fff;
+}
+
+.typeahead:focus {
+  border: 2px solid rebrand-color($primary-color,3);
+}
+
+.tt-query {
+  -webkit-box-shadow: inset 0 1px 1px rgba(grey(60),.075);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint {
+  color: #999
+}
+
+.tt-dropdown-menu {
+  width:inherit;
+  margin-top: .25rem;
+  padding:.25rem .25rem;
+  background-color: #fff;
+  border: 1px solid grey(30);
+  -webkit-border-radius: $global-radius;
+     -moz-border-radius: $global-radius;
+          border-radius: $global-radius;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.tt-suggestion {
+  padding: 3px 20px;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  @include font-slab;
+  strong{color:rebrand-color($select-color,2);font-size:1.10em;margin: 0 2px 0 1px; @include font-slab-bold;}
+  &.tt-cursor {
+      color:mix($primary-color,color-contrast(rebrand-color($primary-color,3)),10%);
+      background-color: rebrand-color($primary-color,3);
+      strong{color:color-contrast(rebrand-color($primary-color,3));}
+
+  }
+  p {
+  margin: 0;
+  }
+}
+

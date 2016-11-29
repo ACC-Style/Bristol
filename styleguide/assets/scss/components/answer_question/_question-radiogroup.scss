@@ -1,0 +1,86 @@
+.radio,.radio-content{vertical-align: middle;}
+.radio-group-holder{margin-bottom: .75rem; }
+.radio-group{
+	border:grey(20) 1px solid;
+	padding: .5rem;
+	border-radius: .5rem;
+	overflow: hidden;
+	min-height: 3rem;
+	clear:none;
+	.warning &{border-color:fontcolor($alert-color);}
+	.error &{border-color:fontcolor($error-color);}
+	.radio{
+		width:5rem;
+		padding: 0 .75rem;
+		text-align: center;
+		min-height: 3rem;
+		background-color: grey(10);
+		border-radius: 10px;
+		display: table-cell;
+		width: 3rem;
+		input[type='radio']{
+			margin:0 auto;
+			text-align: center;
+			min-height: 3rem;
+			height: 3rem;
+			vertical-align: middle;
+			position: relative;
+		}
+	}
+	.radio-content{
+		padding-left:.5rem;
+		min-height: 3rem;
+		display: table-cell;
+		>*{margin-bottom: 0;}
+	}
+	&:hover{background-color: grey(10);
+		.radio{background-color:grey(20); }
+	}
+}
+
+/**
+* Radio Button with Grouped Content:
+* `.radio-group` - This is a structural container for radio buttons that have an extended amount of content that goes with the radio button.
+* 
+*   @example
+*	<div class="question">
+*	<div class="label-holder">
+*		<label for="">
+*			<span class="text">The Title of the Radio Group</span>
+*			<span class="required-holder">
+*				<i class="fa fa-holder-dynamic"></i>
+*			</span>
+*		</label>
+*	</div>
+*	<div class="input-holder radio-group-holder row">
+*		<div class="column input-space small-6">
+*		  <label for="radio1" class="radio-group">
+*		    <span class="radio">
+*		      <input id='radio1' name="number" value="#" type="radio">
+*		    </span>
+*		    <span class="radio-content">
+*		      <span class="h4">Title One</span>
+*		      <span class="normal">Sub Content</span>
+*		    </span>
+*		  </label>
+*		</div>
+*		<div class="column input-space small-6">
+*		  <label for="radio2" class="radio-group">
+*		    <span class="radio">
+*		      <input id='radio2' name="number" value="#" type="radio">
+*		    </span>
+*		    <span class="radio-content">
+*		      <span class="h4">Title Two</span>
+*		      <span class="normal">Sub Content</span>
+*		    </span>
+*		  </label>
+*		</div>
+*	</div>
+*	<div class="message-holder">
+*		<small class="error"><i class="fa fa-holder"></i> Error message</small>
+*		<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*		<small class="data"><i class="fa fa-holder"></i> Data message</small>
+*	</div>
+*	<div class="hint">This is some hint text</div>
+*	</div>
+**/

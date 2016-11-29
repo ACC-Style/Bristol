@@ -1,0 +1,29 @@
+/**
+* Modals( Foundation Reveal):
+* `.reveal-modal` - Popup, modal, reveal - a design pattern to show a hidden a part of content when you want the user to focus on a single task. <h5 class="warning">( !! WARNING !! Updated HTML and Styles From Ver 1)</h5>
+* 
+*   @example
+*   <p><a class="button" data-open="exampleModal1">Click me for a modal</a></p>
+*   <div class="reveal" id="exampleModal1" data-reveal>
+*   <h1>Awesome. I Have It.</h1>
+*   <p class="lead">Your couch. It is mine.</p>
+*   <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+*   <button class="close-button" data-close aria-label="Close reveal" type="button">
+*   <span aria-hidden="true">&times;</span>
+*   </button>
+*   </div>
+*/
+$modal_branding-color: rebrand-color($primary-color, 1);
+$modal_light-text-color:$global-default-light-text;
+$modal_dark-text-color:$global-default-dark-text;
+
+div.reveal{
+	border-top:6px solid $modal_branding-color;
+	.close-button{
+		background-color: $modal_branding-color;
+		color:color-contrast($modal_branding-color,$modal_dark-text-color,$modal_light-text-color);
+		padding:.25em .5em .5em .5em;
+		top:0;
+		right:0;
+	}
+}

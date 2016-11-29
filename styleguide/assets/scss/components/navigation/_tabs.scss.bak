@@ -1,0 +1,133 @@
+/**
+* Tabs (Basic):
+* `.tabs` - Group of nav that is build for a vertical space
+* 
+*   @example
+*	<ul class="nav tabs">
+*		<li class="icon"><a class="home"><i class="fa fa-holder"></i></a></li>
+*		<li class=""><a>Tab 2</li>
+*		<li class=" selected "><a >Tab 3</a></li>
+*		<li class=""><a >Tab 4</a></li>
+*	</ul>
+*/
+
+@import "../../helpers/flex";
+$tab-color: grey(20);
+$tab-hover-color: grey(25);
+$tab-selected-color:#fff;
+$tab-selected-hover-color:scale-color($secondary-color, $lightness:-15%);
+$tab-darktext:$global-default-dark-text;
+$tab-lighttext:$global-default-light-text;
+
+.tabs{
+	div.row{  max-width: 1200px;}
+	font-size:rem-calc(ms(-1));
+	@include bp(md){
+		font-size: rem-calc(ms(0));
+	}
+	@include bp(lg){
+		font-size: rem-calc(ms(1));
+	}
+	@include font-slab-bold();
+	margin-left: 0;
+	width:100%;
+	background: grey(10);
+	li{	
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		display: inline-block;
+		margin:.2rem 2px 0;
+		background-color: $tab-color;
+		
+		
+		a{
+			display: inline-block;
+			padding: .55em 1em .5em;
+			text-align: center;
+			white-space: nowrap;
+			vertical-align: top;
+			margin: 0 auto;
+			width: 100%;
+			color:color-contrast($tab-color,$tab-darktext,$tab-lighttext);
+			@include bp(md){padding: .5em 1em .45em;}			
+		}
+
+		&:hover{
+			background-color:$tab-hover-color;
+			a{
+				color:color-contrast($tab-hover-color,$tab-darktext,$tab-lighttext);
+			}
+		}
+
+		&.selected{
+			background-color:$tab-selected-color;
+			padding-left: 0;
+			padding-right: 0;
+			cursor:context-menu;
+			a{
+				color:color-contrast($tab-selected-color,$tab-darktext,$tab-lighttext);cursor:context-menu;
+			}
+		}
+		&.icon{
+			a{
+				padding-left: .5em !important;
+				padding-right: .5em !important;
+			}
+			width:3em;
+			&.selected{
+				background-color: $tab-selected-color;
+				a{
+					color:color-contrast($tab-selected-color,$tab-darktext,$tab-lighttext);
+					&:hover{color:fontcolor($black);}
+					}
+
+				&:hover{
+					background-color: $tab-selected-hover-color;
+					a{
+						color:color-contrast($tab-selected-hover-color,$tab-darktext,$tab-lighttext);
+					}
+				}
+			}
+
+		} 
+		&.secondary{
+			background-color: color($secondary-color, 60);
+			a{
+				color:color-contrast(color($secondary-color, 60),$tab-darktext,$tab-lighttext);
+			}
+			&:hover{background-color: color($secondary-color, 100);
+				a{color:color-contrast(color($secondary-color,100),$tab-darktext,#fff);}
+			}
+
+		}
+	}
+	a{
+		
+
+	
+		@include bp(md){
+
+			
+		}
+	}
+
+@include bp(sm-down){
+		width:100%;
+		clear:both;
+		@include flexbox();
+		flex-direction:row;
+		flex-wrap:nowrap;
+		align-items:stretch;
+		align-content: stretch;
+		margin:.2em 0;
+		li{@include flex(1 1 auto);
+		&.icon{@include flex(0 0 2em);}
+		}
+@include bp(xs-down){
+		flex-wrap:wrap;
+	}
+}
+
+
+
+}

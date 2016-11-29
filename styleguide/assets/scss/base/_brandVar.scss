@@ -1,0 +1,30 @@
+$brand-level:0 !default;
+$product-brand-color: #9a1267 !default;
+
+
+@function rebrand-color( $color , $color-zone-level){
+	// Most colors are set to use the $primary-color or $brand-color which is passed in as $color in this function
+	// This function will test if the $brand-level is such that the color should shift away from its default color "$color" and be altered to use the $product-brand-color instead.
+	// $brand-level == 0 is a unaltered style of ACC APPS
+	// $brand-level == 1 is the inclusion of a light alteration of colors branding areas like the header and footer area only
+	// $brand-Level == 2 is the inclusion of mild product color usage in the content area
+	// $branding-Level == 3 is a full alteration of colors in Branding Area, Content Areas, And Action items like buttons and Links.
+	// $color-zone-level is an integer that defines the color request to be use in predefined color $brand-level
+
+	@if( $brand-level == 0){
+		@return $color;
+	}
+	  @else if ($brand-level >= 1 and $color-zone-level == 1){
+		@return  $product-brand-color;
+	}
+
+	  @else if ($brand-level >= 2 and $color-zone-level == 2){
+		@return  $product-brand-color;
+	}
+	  @else if ($brand-level >= 3 and $color-zone-level == 3){
+		@return  $product-brand-color;
+	}@else{
+		@return $color;
+	}
+
+}

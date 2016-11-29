@@ -1,0 +1,165 @@
+
+
+// @if{}
+// @else{}
+$panel-selector-color:rebrand-color($success-color,2);
+
+.panel-selector-holder{
+	
+	
+	display: block;
+	position: relative;
+	width: 100%;
+	
+	@include acc-flexbox(); 
+	@include flex-flow(column,nowrap);
+	@include flex-align-content(strech);
+	@include flex-align-items(strech);
+	// flex-flow: column;
+	// align-content:strech;
+	// align-items:strech;
+
+	// @include bp(md){
+	// 	display: table;
+	// 	height: 15em;
+		
+	// }
+
+}
+.panel-selector{
+	@extend .nav-list;
+	max-height: 15em;
+	display: block;
+	position: relative;
+	clear:both;
+	width: 100%;
+	overflow:auto;
+	border:1px solid grey(30);
+	margin-left: -1px;
+	@include acc-flex(felx-start 1 auto);
+	// @include bp(md){
+	// 	display: table-cell;
+	// 	vertical-align: top;
+	// 	height: 15em;
+	// }
+
+	&.active-focus{
+		-moz-box-shadow:    inset 0 0 10px $primary-color;
+		-webkit-box-shadow: inset 0 0 10px $primary-color;
+		box-shadow:         inset 0 0 10px $primary-color;
+	}
+	.paenl-selector-group-title{
+		font-size:ms(1);
+		padding: .5em .75em;
+    	@include font-bold();
+	    background-color:rebrand-color($primary-color, 2);
+	    color: color-contrast(rebrand-color($primary-color, 2));
+	}
+
+	ul{
+		overflow-x: visible;
+		
+		// @include bp(md){
+		// 	height: inherit;
+		// 	overflow-x: auto;
+		// }	
+	}
+	.group-title
+	li{
+		margin:3px;
+		white-space: nowrap;
+		+li{margin-top:0}
+		// &:hover{
+		// 	background-color: color($primary-color, 20);
+		// }
+		&.j-focused,&.focused{
+			background-color: grey(10);
+			}
+		&.j-selected,&.selected{
+			background-color:$panel-selector-color;
+			@include fa-holder($fa-var-check);
+			.text, .fa{color:#fff;}
+		}
+	}
+
+}
+/**
+* Button Selectors:
+* `.button-group` -  !! Requires Javascript!!
+* 
+*   @example
+*	<div class="row button-group"id="ButtonGroup" >
+*		<a class="button"><i class="fa fa-holder"></i><span class="text">button</span></a>
+*		<a class="button"><i class="fa fa-holder"></i><span class="text">button</span></a>
+*		<a class="button"><i class="fa fa-holder"></i><span class="text">button</span></a>
+*		<a class="button"><i class="fa fa-holder"></i><span class="text">button</span></a>
+*		<a class="button"><i class="fa fa-holder"></i><span class="text">button</span></a>
+*	</div>
+*	<a class="link" href="http://anovi.github.io/selectonic/">Javascript API Documentaion</a> 
+*/
+.button-group{
+	li{
+		a.button{
+			background-color: grey(30);
+		}
+		+li{margin-top:0}
+		&.j-focused a.button,&.focused a.button{
+			background-color:rebrand-color($primary-color,3);
+			}
+		&.j-selected  a.button,&.selected  a.button{
+			background-color:rebrand-color($select-color,2);
+			@include fa-holder($fa-var-check);
+			.text, .fa{color:#fff;}
+		}
+	}
+}
+/**
+* Panel Selector:
+* `.panel-selector-holder` - the panel selector is a multi tree level selector allowing a user to select from the left coloum or parent and then select the filtered child elements.  !! Requires Javascript!!
+* 
+*   @example
+*	<section id="PanelSelector" class="panel-selector-holder">
+*		<div class="panel-selector parent">
+*			<ul>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Parent</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Parent</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Parent</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Parent</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Parent</span></li>
+*			</ul>
+*		</div>								
+*		<div class="panel-selector child">
+*			<ul>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Child</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Child</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Child</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Child</span></li>
+*				<li><i class="fa fa-holder"></i><span class="text">List Item Child</span></li>
+*			</ul>
+*		</div>
+*	</section>
+*	<a class="link" href="http://anovi.github.io/selectonic/">Javascript API Documentaion</a> 
+*/
+/**
+* Knockout Panel Selector:
+* `.panel-selector-holder` - the panel selector is a multi tree level selector allowing a user to select from the left coloum or parent and then select the filtered child elements.  !! Requires Javascript!!
+* 
+*   @example
+*	<section id="Knockout" class="panel-selector-holder row collapse">
+*	  <div class="panel-selector">
+*	    <ul  data-bind="foreach:$root.repeatedItems">
+*	      <li data-bind="css: {selected: selected},toggle:selected">
+*	        <i class="fa fa-holder"></i>
+*	        <span class="text" data-bind="text:name">List Item Parent</span>
+*	      </li>
+*	    </ul>
+*	  </div><div class="panel-selector">
+*	    <ul  data-bind="foreach:$root.repeatedItems2">
+*	      <li data-bind="css: {selected: selected},toggle:selected">
+*	        <i class="fa fa-holder"></i>
+*	        <span class="text" data-bind="text:name">List Item Parent</span>
+*	      </li>
+*	    </ul></div>
+*	 </section>
+*/
+

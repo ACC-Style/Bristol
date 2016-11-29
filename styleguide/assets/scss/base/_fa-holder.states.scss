@@ -1,0 +1,25 @@
+// This code is just for dependency this is to help maintain the project but doesn't produce any css.
+$required-SCSS_states: "false" !default;
+$required_data:(
+	'bool' :$required-SCSS_states,
+	'required':'__states.required.scss',
+	'path':'scss/base/__states.required.scss',
+	'file':'__fa-holder.states.scss'
+	);
+@include required-check($required_data...);
+// End of required check
+@mixin fa-var($var){
+	 .fa-holder-dynamic:before, &.fa:before, >.fa-holder:before{ content: $var;}
+
+}
+
+@each $State in $states{
+	$selector:map-get($State,"Selector");
+	@include setTrump('icon',map-get($State,'State'),'#{$selector} .fa-holder-dynamic:before, #{$selector}.fa:before,#{$selector} >.fa-holder:before');
+	@include setTrump('color',map-get($State,'Icon'),'#{$selector}.fa');
+}
+
+.required{
+	@include fa-var($fa-var-asterisk);
+	&.fa{ color:$warning-color; }
+}

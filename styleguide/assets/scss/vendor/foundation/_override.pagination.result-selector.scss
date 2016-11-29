@@ -1,0 +1,65 @@
+$required-SCSS_pagination:false !default;
+$required_data:(
+	'bool' :$required-SCSS_states,
+	'required':'__states.required.scss',
+	'path':'scss/base/__states.required.scss',
+	'file':'_typography.state.scss'
+	);
+@include required-check($required_data...);
+
+
+.result-selector-holder{
+	@extend .pagination-holder;
+}
+.pagination.result-selector{
+		li.label,li.value{ 
+			color: fontcolor($black);
+			font-weight: 700;
+		}
+		li.label{
+			padding: 0.1875rem 0.625rem;
+			background-color: grey(10);
+			.top &{border-radius: $global-border-radius 0px 0px 0px; }
+			.bottom &{border-radius: 0px 0px 0px $global-border-radius; }
+		}
+
+}
+/**
+* Pagination with Result Selector:
+* `.pagination-holder .pagination.result-selector` - used often with a paginator is a ruslt selector. This allows the user to limit the amount of returned items on a single page. Because the Result Selector is bult on the paginator design it can also be used at the top or bottom like a paginator.
+* 
+*   @example
+*	<div class="pagination-holder top">
+*		<ul class="pagination result-selector float-left">
+*			<li class="label">Show</li>
+*			<li class="current"><a href="">10</a></li>
+*			<li><a href="">20</a></li>
+*			<li><a href="">50</a></li>
+*			<li class="value">Results</li>
+*		</ul>
+*	<ul class="pagination float-right">
+*		<li class="arrow unavailable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
+*		<li class="current"><a href="">1</a></li>
+*		<li><a href="">2</a></li>
+*		<li><a href="">3</a></li>
+*		<li><a href="">4</a></li>
+*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
+*	</ul></div><br>
+*	<div class="pagination-holder bottom">
+*		<ul class="pagination result-selector float-left">
+*			<li class="label">Show</li>
+*			<li class="current"><a href="">10</a></li>
+*			<li><a href="">20</a></li>
+*			<li><a href="">50</a></li>
+*			<li class="value">Results</li>
+*		</ul>
+*	<ul class="pagination float-right">
+*		<li class="arrow unavailable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
+*		<li class="current"><a href="">1</a></li>
+*		<li><a href="">2</a></li>
+*		<li><a href="">3</a></li>
+*		<li><a href="">4</a></li>
+*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
+*	</ul></div>
+*
+*/

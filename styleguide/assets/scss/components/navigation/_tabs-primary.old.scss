@@ -1,0 +1,76 @@
+/**
+* Tabs Primary:
+* `.tabs.primary` -  Priamary is used for top level nav for mobile porjects
+* 
+*   @example
+*	<ul class="nav tabs primary">
+*		<li class="icon  "><a class="home"><i class="fa fa-holder"></i></a></li>
+*		<li class=""><a>Tab 2</li>
+*		<li class="selected"><a >Tab 3</a></li>
+*		<li class=""><a >Tab 4</a></li>
+*	</ul>
+*/
+
+
+
+
+$primary-tab-color:grey(40);
+$primary-tab-hover-color:grey(30);
+$primary-tab-selected-color:rebrand-color($select-color,1);
+$primary-tab-darktext:$global-default-dark-text;
+$primary-tab-lighttext:$global-default-light-text;
+
+.tabs.primary{
+	font-size: 18px;
+	border:0;
+	background: transparent none;
+	@include bp(md-down){
+		margin:.25em;
+	}
+	li{
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		background-color: $primary-tab-color ;
+		a{color:color-contrast($primary-tab-color,$primary-tab-darktext,$primary-tab-lighttext);
+			@include bp(xs-down){ white-space: normal;}
+		}
+		&:hover{
+			background-color: $primary-tab-hover-color;
+			a{color:color-contrast($primary-tab-hover-color,$primary-tab-darktext,$primary-tab-lighttext);}
+		}
+		&.selected{
+			background-color:#fff;
+			a{
+				color:color-contrast(#fff,$primary-tab-darktext,$primary-tab-lighttext);
+				border-bottom: 3px solid $primary-tab-selected-color;
+				padding-bottom: .15em;
+				margin-bottom: -3px;
+			}
+			
+			
+		}
+		&.selected:hover{
+			background-color: #fff;
+			a{color:color-contrast(#fff,$primary-tab-darktext,$primary-tab-lighttext);}
+		}
+		&.icon.selected{
+			background-color: $primary-tab-selected-color;
+			a{
+				border-bottom: 0 none;
+				margin-bottom:0;
+				padding-bottom: .3em;
+				color:color-contrast($primary-tab-selected-color,$primary-tab-darktext,$primary-tab-lighttext);
+			}
+		}
+	}
+	&.reverse{
+		li.selected a{		
+			border-top: 3px solid $primary-tab-selected-color;
+			border-bottom: 0;
+		}
+		li.selected.icon a{
+			border-bottom: 0 none;
+			border-top: 0 none;
+		}
+	}
+}

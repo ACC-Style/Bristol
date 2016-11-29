@@ -1,0 +1,160 @@
+/**
+* Base Framework:
+* `zurb foundation` - The ACC App Mobile Framework is based off of a reduced build of zurb foundation all of the grid, columns, base typography, and form elements can be used from zurb.  All functions can be turned back on, but to reduce build size many of the design features have been disabled.
+* 
+*   @example
+*	<a  class="button" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
+*/
+$brand-level:0; // Any Number between 0 and 3.   
+$product-brand-color: #9a1267;
+
+
+//  ********* Please remeber to change all font size settings in your own version of "vendor/foundation-sites.scss"
+$ms-base: 14px;
+$ms-ratio: 1.2;
+$baseline-modifier:1.4;
+@import "base/font-local-include";
+@import "helpers/mixens";
+@import "helpers/flex";
+@import 'base/brandVar';
+// @import 'base/_brandVar.styleguide';
+@import "vendor/foundation/foundation-kitchensink";
+@import "vendor/font-awesome/_font-awesome_kitchensink";
+@import "vendor/jquery-ui/jquery-ui-kitchensink";
+@import "base/colors";
+// @import "base/colors.styleguide";
+@import "base/fonts";
+@import "helpers/breakpoints";
+//base vendor files
+// @import "vendor/font-awesome/font-awesome";
+@import "vendor/font-awesome/variables";
+@import "vendor/font-awesome/mixins";
+@import "vendor/font-awesome/path";
+@import "vendor/font-awesome/core";
+@import "vendor/font-awesome/larger";
+@import "vendor/font-awesome/fixed-width";
+@import "vendor/font-awesome/list";
+@import "vendor/font-awesome/bordered-pulled";
+@import "vendor/font-awesome/spinning";
+@import "vendor/font-awesome/rotated-flipped";
+@import "vendor/font-awesome/stacked";
+//@import "vendor/font-awesome/icons";
+
+@import "base/__states.required";
+
+// modular-scale
+@import "vendor/modular-scale";
+@import "base/modular-scale-typography";
+// dynamic usage of font awesome.
+@import "base/fa-holder";
+@import "base/fa-holder.states";
+@import 'vendor/foundation-sites/util/util';
+@import "vendor/foundation-sites/settings/override.settings";
+@import "vendor/foundation-sites/foundation";
+.row{max-width: none;}
+
+
+//branding and typography
+@import "base/typography";
+// @import "base/typography-fonts.styleguide";
+// @import "base/textures.styleguide";
+// @import "base/_header-tag_order-marker";
+
+
+//Components that live inside of Layouts.
+@import "components/elements/buttons";
+@import "components/navigation/tabs";
+@import "components/navigation/tabs-primary";
+// @import "components/navigation/tabs-overlap";
+@import "components/navigation/nav-list";
+// @import "components/navigation/nav-checklist";
+// @import "components/navigation/nav-checklist.states";
+@import "components/navigation/circle-button-section-nav";
+@import "components/answer_question/__answer_question.required";
+@import "components/answer_question/__answer_question.states";
+@import "components/answer_question/question";
+// @import "components/answer_question/_question-inline";
+// @import "components/answer_question/question-grid-based";
+// @import "components/answer_question/question-fileupload";
+// @import "components/answer_question/question-radiogroup";
+// @import "components/answer_question/form-repeater";
+// @import "components/answer_question/answer";
+@import "components/table/table";
+@import "components/table/table-stripped";
+@import "components/table/table-seperator";
+@import "components/table/table-sortable";
+@import "components/table/table-icon-cell";
+// @import "components/table/table-cell.states";
+@import "components/collapsable-panel";
+@import "components/collapsable-panel.states";
+@import "components/accordion";
+@import "components/panel-selector";
+// @import "components/toggle-selector";
+
+
+// // Non-Core Components Styles
+// // OMA Modules
+// @import "_non-core/components/_oma/branding";
+// @import "_non-core/components/_oma/user-id-block";
+// @import "_non-core/components/_oma/member-selection-table";
+// @import "_non-core/structures/_oma/sections";
+
+// // OMA Admin Modules --  !!! requires admin fonts to be included !!
+// @import "_non-core/components/_oma-admin/table-history";
+// @import "_non-core/components/_oma-admin/branding";
+// @import "_non-core/components/_oma-admin/user-id-block";
+// @import "_non-core/components/_oma-admin/admin.collapsable-panel";
+
+// // SI Modules
+@import "_non-core/components/_si/si.table-cellcolor";
+@import "_non-core/components/_si/si.recommendationTable";
+
+// // Vendor Overrides and Styles 
+// @import "vendor/chosen/chosen";
+// @import "vendor/foundation/override.topbar";
+// @import "vendor/foundation/override.pagination";
+// @import "vendor/foundation/override.pagination.result-selector";
+@import "vendor/foundation/override.reveal";
+// @import "vendor/foundation/override.slider";
+@import "vendor/foundation/override.switch";
+@import "vendor/foundation/override.tooltip";
+@import "vendor/foundation/override.close-button";
+@import "vendor/foundation/override.callout";
+
+@import "vendor/foundation/override.button-group";
+
+// @import "vendor/typeahead/typeahead";
+// @import "vendor/jquery-ui/theme-custom";
+// @import "vendor/jquery-ui/override.autocomplete";
+// @import "vendor/jquery-ui/override.datepicker";
+// @import "vendor/jquery-ui/override.accordion";
+
+//Structures and Layouts
+@import "structures/layout";
+@import "structures/layout-section-grouping";
+@import "structures/layout-split-off-canvas";  // this style must come before 'lyout-split'
+@import "structures/layout-split";
+//@import "structures/_oma-admin/override.layout-split";
+@import "structures/mobileApps/layout_header";
+@import "structures/mobileApps/layout_footer";
+// @import "structures/website/footer";
+@import "components/score-bar";
+
+
+// // Template specific views 
+// //trumps the dreaded importants show up in the files below.
+// @import "base/header-tag_order-marker";
+@import "base/typography.states.scss";
+@import "base/typography.trump";
+
+//Utitlity Styles that Override other things
+@import "trumps/utilities";
+@import "trumps/condensable";
+@import "trumps/css3";
+@import "base/__states.trump";
+@import "_non-core/base/_ascvd/shame";
+.row{max-width: 100%;}
+
+
+
+

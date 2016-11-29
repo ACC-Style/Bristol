@@ -1,0 +1,199 @@
+$primary-tab-background-color:#fff;
+$primary-tab-color:grey(40);
+$primary-tab-hover-color:rebrand-color($primary-color,3);
+$primary-tab-selected-color:rebrand-color($primary-color,1);
+$primary-tab-Selected-tick-color:rebrand-color($acc-blue,3);
+$primary-tab-darktext:$global-default-dark-text;
+$primary-tab-lighttext:$global-default-light-text;
+
+.tabs.tabs-primary{
+	border:0;
+	background:none;
+	margin:0;
+	flex-wrap:wrap;
+	width:100%;
+	clear:both;
+	@include acc-flexbox();
+	flex-direction:row;
+	align-items:stretch;
+	align-content: stretch;
+	@include baseline-font(-1);
+	li {	
+		@include acc-flex(1 1 auto);
+		a{padding: .55em .25em .75em;
+			&:after{border-bottom: 8px solid $primary-tab-Selected-tick-color;}
+		}
+		&.icon{@include acc-flex(0 0 2em);}
+	}
+	@include bp(sm){
+		@include baseline-font(0);
+	}
+	@include bp(md){
+		display: block;
+		@include baseline-font(1);
+		li a{padding:1em .5em;}
+	}
+	@include bp(lg){
+		@include baseline-font(2);
+	}
+	@include bp(xl){
+		@include baseline-font(3);
+
+	}
+	&:after {
+	    content:"";
+	    display:table;
+	    clear:both;
+	}
+	li{
+		position: relative;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		background-color:$primary-tab-background-color;
+		border-top: 1px $primary-tab-color solid;
+		border-bottom:.45em $primary-tab-color solid; 
+		border-left: 1px $primary-tab-color solid;
+		border-right:1px $primary-tab-color solid;
+		margin:0;
+		display: block;
+		float:left;	
+		a{	
+			white-space: normal;
+			padding:.5em .25em;
+			color:color-contrast($primary-tab-background-color,$primary-tab-darktext,$primary-tab-lighttext);
+			@include bp(sm){ 
+				white-space: nowrap; 
+
+			}
+			@include bp(md){
+				padding:1.25em .75em;
+			}
+		}
+		&:hover{
+			background-color: $primary-tab-background-color;
+			border-color: $primary-tab-selected-color;
+			a{
+				color:$primary-tab-selected-color;
+			}
+		}
+		&.sucsess{
+			background-color:$success-color;
+			border-right:0 none;
+			border-left:0 none;
+			border-top:0 none;
+
+			a{color:color-contrast($success-color,$primary-tab-darktext,$primary-tab-lighttext);}
+			&:hover{
+				background-color: $primary-tab-background-color;
+				border-color: $success-color;
+			
+				a{ color:$success-color;}
+			}
+		}
+		&.selected{
+			background-color:$primary-tab-selected-color;
+			border-color: $primary-tab-selected-color;
+			border-bottom-color:$primary-tab-Selected-tick-color;
+			border-right:0 none;
+			border-left:0 none;
+			bottom:0;
+
+			a{
+				color:color-contrast($primary-tab-selected-color,$primary-tab-darktext,$primary-tab-lighttext);
+				&:after{
+					content: "";
+					position: absolute;
+					bottom: -1px;
+					left: 50%;
+					/* width: 10%; */
+					margin-left: -10px;
+					border-style: solid;
+					border-color: transparent;
+					border-width: 0px 8px;
+					border-bottom: 10px solid $primary-tab-Selected-tick-color;
+				}
+			}
+			
+			
+		}
+		&.selected:hover{
+			background-color:$primary-tab-selected-color;
+			a{color:color-contrast($primary-tab-selected-color,$primary-tab-darktext,$primary-tab-lighttext);}
+		}
+		&.disabled, &.disabled:hover{
+			border-color: grey(30);
+			background: url("../img/subtlenet2.png") repeat;
+			a, &{
+				color: grey(40);
+				cursor: not-allowed;
+			}
+
+		}
+		&.icon.selected{
+			background-color: $primary-tab-selected-color;
+			a{
+				color:color-contrast($primary-tab-selected-color,$primary-tab-darktext,$primary-tab-lighttext);
+			}
+		}
+	}
+
+
+	&.reverse{
+		@include baseline-font(-1);
+		
+		li{
+			border-top-width:.45em;
+			border-bottom-width:1px; 
+		}
+		li.selected{
+			border-color: $primary-tab-selected-color;
+			border-top-color:$primary-tab-Selected-tick-color;
+		}
+		li.selected a{		
+			&:after{
+					content: "";
+					position: absolute;
+					top: -1px;
+					bottom: auto;
+					left: 50%;
+					margin-left: -10px;
+					border-style: solid;
+					border-color: transparent;
+					border-width: 0px 8px;
+					border-top: 10px solid  $primary-tab-Selected-tick-color;
+					border-bottom: 0 none;
+				}
+		}
+		@include bp(sm){
+			@include baseline-font(0);
+			margin: 0;
+			li.selected a:after{border-top: 8px solid  $primary-tab-Selected-tick-color;}
+		}
+		@include bp(md){
+			@include baseline-font(1);			
+		}
+
+	}
+}
+/**
+* Tabs Primary:
+* `.tabs.tabs-primary` -  Priamary is used for top level nav for mobile porjects. <h5 class="warning">( !! WARNING !! Updated HTML and Styles From Ver 1)</h5>
+* 
+*   @example
+*	<ul class="nav tabs tabs-primary">
+*		<li class="icon tabs-title "><a class="home" href="#"><i class="fa fa-holder"></i></a></li>
+*		<li class=" tabs-title"><a href="#">Tab 2</a></li>
+*		<li class="selected tabs-title " ><a  href="#">Tab 3</a></li>
+*		<li class=" tabs-title"><a  href="#">Tab 4</a></li>
+*		<li class=" tabs-title"><a  href="#">Tab 5</a></li>
+*		<li class="disabled tabs-title" ><a  href="#">Tab 6</a></li>
+*	</ul><br>
+*	<ul class="nav tabs tabs-primary reverse">
+*		<li class="icon   tabs-title"><a class="home" href="#"><i class="fa fa-holder"></i></a></li>
+*		<li class=" tabs-title"><a href="#">Tab 2</a></li>
+*		<li class="selected tabs-title"><a  href="#">Tab 3</a></li>
+*		<li class=" tabs-title"><a  href="#">Tab 4</a></li>
+*		<li class=" tabs-title"><a  href="#">Tab 5</a></li>
+*		<li class="disabled tabs-title"><a  href="#">Tab 6</a></li>
+*	</ul>
+*/
