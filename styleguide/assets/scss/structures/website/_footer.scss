@@ -1,0 +1,195 @@
+$secondary-dark-color:grey(60);
+.page-footer{
+
+	border-top:$secondary-dark-color 4px solid;
+	background-color:$secondary-color;
+	.logo-holder{
+		width:100%;display:block;
+		padding:1rem 1rem 1rem 1rem;
+	}
+	.logo{
+		height:50px;	
+	}
+	h3{@include baseline-font(2);@include  font-slab();}
+	h4{margin-left:0; @include  font-slab();}
+	ul{margin-left:0;	list-style:none;} *{
+	color:$secondary-dark-color;
+		}
+		.language-picker{display:none;}
+	}
+
+
+.footer-darker{
+	background-color:$secondary-dark-color;
+	margin-bottom: 2rem;
+	padding: 1rem;
+	@include bp(md){
+		padding: 2rem 2.5rem	;
+	}
+	background: url("../img/crossed_stripes.png");
+	@media only screen and (max-width: 767px){
+	margin-right:-2rem
+	}
+	 *{
+		color:#fff;
+	}
+	 section + section,.section + .section{margin-top:1rem;}
+}
+.address{
+	ul{
+		display:inline-block;
+		width:auto;
+		float:left;
+		padding-right:1.67rem;
+		margin-bottom:0;}
+	li{
+		@include baseline-font(0);}
+}
+.acc-websites{
+	.nav-list.small{
+		li{
+			border-color:grey(70);
+			&:hover{background-color: grey(65);}
+		}
+	}
+}
+
+.icon-only{
+      display:inline-block;
+      text-decoration:none;
+	  color:$black;
+	.text{display:none;}
+	
+}
+button, .button {
+	&.twitter{ @include button-style(#00aced);}
+	&.facebook{ @include button-style(#3b5998);}
+	&.linkedin{ @include button-style(#007bb6);}
+	&.googleplus{ @include button-style(#dd4b39);}
+	&.youtube{ @include button-style(#bb0000);}
+	&.block{
+		width:100%; 
+		text-align:left;
+		@include rem-fallback(min-width,1);
+			i{float:right;}
+			}
+}
+.social-buttons{
+
+	ul{
+		display:block;
+		list-style:none;
+		width:100%;
+		max-width:500px;
+	   }
+	li{
+		float:left;
+		display:inline-block;
+		padding:0 1% 5px 0;
+		width:20%;
+	}
+	a{font-size:1.25rem;}
+}
+.language-picker{
+	margin-bottom:0;
+	li{display:inline-block;}
+	label,h4{height:1.3rem; font-size:1rem;padding:.15rem;margin:0;}
+	input{margin:0 .15rem 0 .3rem;}
+
+	}
+cite{height:1.3rem; font-size:1rem;padding:.15rem;}
+@include bp(sm-down){
+	.page-footer{
+		padding-right:2rem;
+		ul{width:100%;position:relative;}
+
+	}
+
+}
+
+/**
+* Website Footer (Lite):
+* `footer` - the ACC.org footer is very large and has many moving parts this is the shorter lighter version for applications
+* 
+*   @example
+*   <footer class="page-footer">
+*		<div class="row">
+*			<a href="/"><img class="logo" src="Assets/img/oma-01.svg" alt="Home"></a>
+*		</div>
+*		<div class="footer-darker">
+*			<div class="row">
+*				<div class="columns large-8">
+*					<section class="address row">
+*						<h3>American College of Cardiology</h3>
+*						<address>
+*							<!-- http://microformats.org/wiki/hcard -->
+*							<h4>Heart House</h4>
+*							<ul>
+*								<li> <span class="street-address">2400 N. St. NW</span></li>
+*								<li> <span class="locality">Washington</span>, <span class="country-name"><abbr title="District of Colombia">DC</abbr></span> <span class="postal-code">20037</span></li>
+*								<li> <a href="mailto:resource@acc.org" class="email"><strong>Email:</strong> resource@acc.org</a></li>
+*							</ul>
+*							<ul>
+*								<li><span tel="+12023756000" class="tel"><strong>Phone:</strong> (202) 375-6000, ext. 5603</span></li>
+*								<li><span tel="+18002574737" class="tel"><strong>Toll Free:</strong> (800) 253-4636, ext. 5603</span></li>
+*								<li> <span fax="+12023757000" class="fax"><strong>Fax:</strong>(202) 375-7000</span></li>
+*							</ul>
+*						</address>
+*					</section>
+*					<section class="social-buttons row">
+*						<h4>Stay Connected</h4>
+*						<ul>
+*							<li>
+*								<a class="button twitter icon-only block" href="https://twitter.com/accintouch" target="_blank">
+*									<i class="fa fa-twitter"></i>
+*									<span class="text">Twitter</span>
+*								</a>
+*							</li>
+*							<li>
+*								<a class="button facebook icon-only block" href="https://www.facebook.com/AmericanCollegeofCardiology" target="_blank">
+*									<span class="text">Facebook</span><i class="fa fa-facebook"></i>
+*								</a>
+*							</li>
+*							<li>
+*								<a class="button linkedin icon-only block" href="http://www.linkedin.com/groups/American-College-Cardiology-732607?trk=myg_ugrp_ovr" target="_blank">
+*									<span class="text">LinkedIn</span><i class="fa fa-linkedin"></i>
+*								</a>
+*							</li>
+*							<li>
+*								<a class="button googleplus icon-only block" href="https://plus.google.com/118164094874227618578/about" target="_blank">
+*									<span class="text">Google+</span><i class="fa fa-google-plus"></i>
+*								</a>
+*							</li>
+*							<li>
+*								<a class="button youtube icon-only block" href="http://www.youtube.com/user/ACCinTouch" target="_blank">
+*									<span class="text">Youtube</span><i class="fa fa-youtube-play"></i>
+*								</a>
+*							</li>
+*						</ul>
+*					</section>
+*				</div>
+*				<div class="columns large-4">
+*					<section class="acc-websites row ">
+*						<h4>Powered By the ACC</h4>
+*						<nav class="nav-list small">
+*						<ul class="">
+*							<li><a target="_blank" class="" href="http://www.acc.org"><span class="text">Acc.org </span><i class="fa fa-external-link-square"></i></a></li>
+*							<li><a target="_blank" class="" href="http://cvquality.acc.org/"><span class="text">ACC Quality Improvement for Institutions</span> <i class="fa fa-external-link-square"></i></a></li>
+*							<li><a target="_blank" class="" href="http://www.ncdr.com"><span class="text">NCDR.com </span><i class="fa fa-external-link-square"></i></a></li>
+*							<li><a target="_blank" class="" href="http://www.cardiosmart.org"><span class="text">CardioSmart.org </span><i class="fa fa-external-link-square"></i></a></li>
+*							<li><a target="_blank" class="" href="http://blog.cardiosource.org"><span class="text">ACCinTouch.com </span><i class="fa fa-external-link-square"></i></a></li>
+*						</ul>
+*						</nav>
+*					</section>
+*				</div>
+*			</div>
+*		</div>
+*		<div class="row">
+*			<div class="large-4 columns">
+*				<h5><cite>&copy; 2015 American College of Cardiology</cite></h5>
+*			</div>
+*			<div class="large-8 columns">
+*			</div>
+*		</div>
+*	</footer>
+**/

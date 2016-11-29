@@ -1,0 +1,124 @@
+/**
+* Nav List (Basic):
+* `.nav-list ul li` - styling of a list of links perfect for a side nav or a collection of jump off points. Add `.selected` to the `li` to highlight the nav link. The nav list changes styles depending on the headline tag in front of the nav-list.  
+* 
+*   @example
+*	<nav class="nav-list">
+*	<ul>
+*	<li>
+*	<a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li class="selected">
+*	<a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	</li>
+*	</ul>
+*	</nav>
+*/
+$nav-list-selected:color(rebrand-color($primary-color,3),20);
+$nav-list-border-selected:color(rebrand-color($primary-color,3),20);
+.nav-list{
+
+	
+	a{
+		display: table;
+		width:100%;
+		text-align: right;
+		color:fontcolor($black);
+		.text,i{display:table-cell;}
+		.text{text-align: left;}
+		i{width: 2em;}
+	}
+	li{
+		.text + .fa, .fa+.text{padding-left: .5em;}
+		@extend %normal;
+		$icon:$fa-var-arrow-circle-right;
+		@include fa-holder($icon,'dynamic');
+		padding:.25rem 1rem;
+		&:hover{
+			background-color: grey(10);
+			a{color:fontcolor($black,'loud');}
+			
+		}
+		&.selected{background-color: $nav-list-selected;
+			&, &:hover a{color:fontcolor($real-black);}
+			a,a:hover{cursor:pointer;cursor:context-menu;} }
+	}
+	ul{
+		margin: 0;
+		width:100%;
+		display: block;
+		position: relative;
+		list-style-type: none;
+	}
+}
+
+/**
+* Nav List (With Headlines):
+* `.nav-list ul li` - The nav list changes styles depending on the headline tag in front of the nav-list. or simply add the class `large`, `medium`, or `small`  
+* 
+*   @example
+*	<h1>H1 header tag</h1>
+*	<nav class="nav-list">
+*	<ul>
+*	<li>
+*	<a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li class="selected">
+*	<a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	</li>
+*	</ul>
+*	</nav>
+*	<br>
+*	<div>This list has the medium class</div>
+*	<nav class="nav-list medium">
+*	<ul>
+*	<li>
+*	<a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li class="selected">
+*	<a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	</li>
+*	</ul>
+*	</nav>
+*	<br>
+*	<h3>H3 header tag</h3>
+*	<nav class="nav-list">
+*	<ul>
+*	<li>
+*	<a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li class="selected">
+*	<a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	</li>
+*	</ul>
+*	</nav>
+*/
+
+
+
+
+h1+.nav-list,.large.nav-list{
+	border-top:$typography-highlight-color 2px solid;
+	margin-top: -($h1-spacing / 2);
+	padding-top:$h3-spacing;
+	;margin-bottom:$h1-spacing;
+	li{@extend .h3;}
+}
+
+h2+.nav-list,.medium.nav-list{
+	;margin-bottom:$h2-spacing;
+	padding-top:.5rem;
+	margin-top:-.5rem;
+	border-top:2px solid grey(30);
+	li{@extend .h4;}
+}
+h3+.nav-list,.small.nav-list{
+	margin-bottom:$h3-spacing;
+	@extend %normal;
+	li{
+		@extend %bold;
+		border:1px solid grey(20);
+		border-left-width: 0;
+		border-right-width:0;
+		margin-bottom: 0;
+		margin-top: -1px;
+		}
+}
+.nav-list.large,.nav-list.medium,.nav-list.small{
+	margin-top:0}

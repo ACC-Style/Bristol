@@ -1,0 +1,96 @@
+// State Modifications
+// This code is just for dependency this is to help maintain the project but doesn't produce any css.
+$required-SCSS_states: "false" !default;
+$required_data:(
+	'bool' :$required-SCSS_states,
+	'required':'__states.required.scss',
+	'path':'scss/base/__states.required.scss',
+	'file':'_answer_quesiton.required.scss'
+	);
+@include required-check($required_data...);
+
+
+// End of required check
+.answer,.question,.question-inline,.question-grid-based{
+	.required{display:none;}
+	@include match-display(".required");
+}
+.required-holder {
+	@each $State in $states{
+		$selector:map-get($State,"Selector");
+		$state-name:map-get($State,"State");
+		.answer#{$selector} &,.question#{$selector} &{
+			@extend %visible-required-icon;
+			@include setTrump('color',$state-name,'.answer#{$selector} .required-holder,.question#{$selector} .required-holder,.question-inline#{$selector} .required-holder,.question-grid-based#{$selector} .required-holder');
+		}
+	}
+}
+
+@each $State in $states{
+	$selector:map-get($State,"Selector");
+	$state-name:map-get($State,"State");
+	@include setTrump('color',$state-name,'#{$selector} .label-holder label');
+	@include setTrump('border-color',$state-name,'#{$selector} .input-holder input,#{$selector} .input-holder textarea, #{$selector} .input-holder select');
+}
+
+
+.input-holder .postfix,.input-holder .prefix{
+	@each $State in $states{
+		$selector:map-get($State,"Selector");
+		$state-name:map-get($State,"State");
+		$color:map-get($State,"Color");
+		$background-color:mix(color($color,20),grey(20)); // Background is non standard
+		@include setTrump('color',$state-name,'#{$selector} .input-holder .postfix, #{$selector} .input-holder .prefix, #{$selector} .input-holder .value');
+		@include setTrump('border-color',$state-name,'#{$selector} .input-holder .postfix, #{$selector} .input-holder .prefix');
+	}
+}
+
+textarea,select,input,datalist{ 
+@each $State in $states{
+		$selector:map-get($State,"Selector");
+		#{$selector} &{
+			@extend %removeMarginBottom;
+		}
+	}
+} 
+
+
+.message-holder{
+	@each $State in $states{
+		$selector:map-get($State,"Selector");
+		$state-name:map-get($State,"State");
+		$color: map-get($State, 'Color');
+		
+		> #{$selector}{
+			@include setContrastTrump( $color, '.message-holder > #{$selector}');
+			@include setTrump('background-color',$state-name, '#{$selector} .message-holder > #{$selector}');
+			@extend %visibleDisplayNone;
+			#{$selector} &, &.make-visible{
+				@extend %visibleDisplayBlock;
+			}
+		}
+	}
+}
+%hint-state-padding{padding:.25em .5em;}
+.hint{
+	@each $State in $states{
+		$selector:map-get($State,"Selector");
+		$state-name:map-get($State,"State");
+		$color: map-get($State, 'Color');
+		#{$selector}{
+			@include setTrump('background-color',$state-name,'.hint #{$selector}');
+			@include setContrastTrump( $color, '.hint #{$selector}');
+			@extend %hint-state-padding;
+		}
+	}
+}
+
+%removeMarginBottom{
+	margin-bottom: 0;
+}
+%visibleDisplayNone{
+	display: none;
+}
+%visibleDisplayBlock{
+	display: block;
+}

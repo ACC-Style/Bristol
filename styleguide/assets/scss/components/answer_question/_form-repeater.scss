@@ -1,0 +1,391 @@
+
+$repeater-color: rebrand-color($primary-color,2);
+
+
+.repeater{
+	@include grid-row(12,collapse);
+	.render,.question-group,.repeater-action{
+		@include grid-column(12);
+		@include grid-column-collapse;	
+	}
+
+	&.required > .label-holder .required-holder{
+		@extend %visible-required-icon;
+		@include fa-holder($fa-var-asterisk,'dynamic');
+		color:$warning-color;
+	}
+	.edit,.clear,.delete,.add,.set, .save{
+		font-size: .8rem;
+		line-height: 1rem;
+		padding: .5rem .4rem;
+		text-decoration: none;		
+		height: 1.8rem;
+		.text{text-transform: capitalize;}
+		.fa + .text{padding-left:.25rem;}
+	}
+	.edit,.clear,.delete,.set, .save{
+		color:fontcolor($real-black,'quiet');
+		&:hover{ color:fontcolor($real-black,'loud');
+			.text{text-decoration: underline;}
+		 }
+	}
+	.render,.question-group{
+		padding-left: rem-calc(ms(1));
+		padding-right:rem-calc(ms(1));
+	}
+	.render{
+		position: relative;
+		display: block;
+		border-top: 1px dotted grey(10);
+		border-bottom: 1px dotted grey(10);
+		a.button, button{margin-bottom:0;}
+		+ .render{border-top: 0px none;}
+		.render-holder{@extend %inline-list;margin:0 17rem 0  0; padding:.5rem 0
+			
+
+
+		}
+		.strong{@extend %bold;}
+		.italic{@extend %italic;}
+		.comma-after:after{
+			content:",";
+			padding-left:.25em;
+			display: inline;
+
+		}
+		.render-actions{
+			position: absolute;
+			display: inline-block;
+			height: 2rem;
+			top:0;
+			right:0;
+			padding: .5rem 0;
+			@include bp(md-down){
+				.text{display:none;}
+			}
+		}
+		.starred{color:$success-color;}
+		.break{ border-left: 2px solid grey(30); padding-left: .5rem; margin-left: .25rem;}
+		.error{color:$error-color;}
+		.warning{color:$alert-color;}
+		.edit{}
+		.delete{}
+		.set{}
+
+		@include bp(sm-down){
+			.edit,.delete,.set{ 
+				display: inline-block;
+				float:left;
+			}
+			.render-holder{
+				margin-right: 5rem;
+				font-size: .9rem;
+			}
+
+
+		}
+
+	}
+	.render{
+		max-height: 1000px;
+		-webkit-transition: max-height 0.8s;
+		-moz-transition: max-height 0.8s;
+		transition: max-height 0.8s;
+		overflow: hidden;
+	}
+	.edit-mode--show{display: none;}
+	&.edit-mode{ 
+		.render{max-height: 0;}
+		.edit-mode--show{display:inline; display:initial;}
+		.edit-mode--hide{display:none;}
+	}
+	.question-group{
+		padding-top:1.5em; 
+		padding-bottom:1.85em;
+		border:2px dotted desaturate( color($repeater-color,20), 40% );
+		margin-top:.5em;
+		border-radius:.5em;
+		border-top:2px soliddesaturate( color($repeater-color,80), 40% );
+		border-bottom:2px solid  desaturate( color($repeater-color,80), 40% );
+		background-image: url(../img/empty_stripe@2x.png);
+		background-color: desaturate( color($repeater-color,12), 40% );
+		position: relative;
+		.answer.required .required-holder, .question.required .required-holder{color:$repeater-color;}
+		.required-message{
+			font-size:rem-calc(ms(-1));
+			padding:.25em .5em;
+			position: absolute;
+			top:-2px;
+			right:-2px;
+			background-color: desaturate( color($repeater-color,80), 40% );
+			color:color-contrast(color($repeater-color,80));
+			-webkit-transition: background-color 0.8s;
+			-moz-transition: background-color 0.8s;
+			transition: background-color 0.8s;
+		}
+
+	}
+	&.edit-mode .question-group{
+		border:2px dotted desaturate( color($alert-color,20), 40% );
+		margin-top:.5em;
+		border-radius:.5em;
+		border-top:2px soliddesaturate( color($alert-color,80), 40% );
+		border-bottom:2px solid  desaturate( color($alert-color,80), 40% );
+		background-image: url(../img/empty_stripe@2x.png);
+		background-color: color($warning-color,12);
+		.required-message{background-color: grey(40);}
+	}
+	.repeater-action{
+		position: relative;
+		display:block;
+		width:100%;
+		height:2rem;
+		margin-top:-2rem;
+		.add-new-repeater{
+			display: inline-block;
+			position: relative;
+			text-align: right;
+			float:right;
+			margin-top: -1em;	
+			padding:.5rem;
+			.text{
+				color:$repeater-color;
+				display: inline-block;
+				padding-right: 2rem;
+				font-size: 1rem;
+			}
+		}
+		.save,.clear{
+			font-size: 1rem;
+			padding: .35rem .75rem .45rem;
+			border-radius: 4px;
+			height:auto;
+			border:2px solid rebrand-color($primary-color,3);
+			font-weight: 900;
+		}
+		.save{
+			display: inline-block;
+			position: relative;
+			text-align: right;
+			float:right;
+			background-color:rebrand-color($primary-color,3);
+			color:white;
+			text-decoration: none;
+			margin-right: 1em;
+			&:hover{background-color: $success-color;text-decoration: none;}
+
+		}
+		.clear{
+			float:left;
+			background-color: white;
+			border-radius: 4px;
+			margin-left: 1em;
+			border-color: color($repeater-color,80);
+			&:hover{background-color:grey(10);border-color: color($repeater-color,100)}
+			
+
+
+		}
+	}
+}
+.edit-mode.repeater .repeater-action .clear{
+	background-color: grey(60);
+	border-color:grey(70);
+	color:#fff;
+	&:hover{
+		background-color: grey(75);
+		border-color:grey(80);
+		color:#fff;
+	}
+}
+
+.question-group .render{
+	.message-holder{
+		.warning,.error{display:none;
+		&small, &span{margin-bottom: .65rem;}
+		}
+	}
+	&.warning{
+			.message-holder .warning{display: block;}
+	}
+	&.error{
+		.message-holder .error{display: block;}
+	}
+}
+
+
+
+/**
+* Form Repeater:
+* `.repeater` - This is form elements repeater. This Module is broken into 3 major containers. The `renders` are any previously saved collection of inputs.The `question-group` holds all of the questions that need to be repeated. And the `.repeater-actions` is the buttons to save|submit and cancel the current session of inputs. 
+*  The repeater has a focused mode when editing adding  `.repeater.edit-mode` to the containter will hide the renders at the top and toggle any elements that have been tagged with `.edit-mode--hide` and `.edit-mode--show`.
+* 
+*   @example
+*	<div class="repeater required">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Multi Input Form</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder-dynamic"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="render">
+*		<div class="render-actions">
+*			<a href="" class="edit"><i class="fa fa-holder"></i><span class="text">edit</span></a>
+*			<a href="" class="delete"><i class="fa fa-holder"></i><span class="text">delete</span></a>
+*		</div>
+*		<ul class="render-holder">
+*			<li class="italic starred"><i class="fa fa-holder"></i> </li>
+*			<li class="bold break">Jeff Morris</li>
+*			<li>jmorris@acc.org</li>
+*			<li class="validated"><i class="fa fa-holder"></i></li>
+*		</ul>
+*		<div class="message-holder">
+*			<small class="warning">
+*				<i class="fa fa-holder-dynamic"></i>
+*				This is a dynamic render message.
+*			</small>
+*		</div>
+*	</div>
+*		<div class="question-group">
+*			<div class="required-message">All inputs marked with the * are required to submit and save</div>
+*			<h4 class="edit-mode--show warning">Edit Record</h4><h4 class="edit-mode--hide highlighted">Add Record</h4>
+*			<div class="row">
+*	<div class="question required column small-4">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Question (Required)</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder-dynamic"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="input-holder">
+*			 <div class="input-space column small-6 large-9">
+*				<input type="text"/>
+*			</div>
+*			<div class="column small-6 large-3">
+*				<small class="value">Years</small>
+*			</div>
+*		</div>
+*		<div class="message-holder">
+*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
+*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*				<small class="data"><i class="fa fa-holder"></i> Data message</small>
+*		</div>
+*		<div class="hint">This is some hint text</div>
+*	</div>
+*	<div class="question required column small-4">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Question (Required)</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder-dynamic"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="input-holder">
+*			 <div class="input-space column small-6 large-9">
+*				<input type="text"/>
+*			</div>
+*			<div class="column small-6 large-3">
+*				<small class="value">Years</small>
+*			</div>
+*		</div>
+*		<div class="message-holder">
+*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
+*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*				<small class="data"><i class="fa fa-holder"></i> Data message</small>
+*		</div>
+*		<div class="hint">This is some hint text</div>
+*	</div>
+*	<div class="question required column small-4">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Question (Required)</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder-dynamic"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="input-holder">
+*			 <div class="input-space column small-6 large-9">
+*				<input type="text"/>
+*			</div>
+*			<div class="column small-6 large-3">
+*				<small class="value">Years</small>
+*			</div>
+*		</div>
+*		<div class="message-holder">
+*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
+*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*				<small class="data"><i class="fa fa-holder"></i> Data message</small>
+*		</div>
+*		<div class="hint">This is some hint text</div>
+*	</div>
+*			</div>
+*			<div class="message-holder">
+*				<small class="warning"><i class="fa fa-holder"></i>
+*					This is a dynmic message for the question group.
+*				</small>
+*			</div>
+*		</div>
+*		<div class="repeater-action">
+*			<a href="" class="clear"><i class="fa fa-holder"></i><span class="text">clear</span></a>
+*			<a href="" class="save"><i class="fa fa-holder"></i> <span class="text">save</span></a>
+*		</div>
+*	</div>
+*	<div class="repeater required edit-mode">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Multi Input Form (Edit)</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder-dynamic"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="render">
+*		<div class="render-actions">
+*			<a href="" class="edit"><i class="fa fa-holder"></i><span class="text">edit</span></a>
+*			<a href="" class="delete"><i class="fa fa-holder"></i><span class="text">delete</span></a>
+*		</div>
+*		<ul class="render-holder">
+*			<li class="italic starred"><i class="fa fa-holder"></i> </li>
+*			<li class="bold break">Jeff Morris</li>
+*			<li>jmorris@acc.org</li>
+*			<li class="validated"><i class="fa fa-holder"></i></li>
+*		</ul>
+*		<div class="message-holder">
+*			<small class="warning">
+*				<i class="fa fa-holder-dynamic"></i>
+*				This is a dynamic render message.
+*			</small>
+*		</div>
+*	</div>
+*		<div class="question-group">
+*			<div class="required-message">All inputs marked with the * are required to submit and save</div>
+*			<h4 class="edit-mode--show warning">Edit Record</h4><h4 class="edit-mode--hide highlighted">Add Record</h4>
+*			<div class="row">
+*	<div class="question required column small-4 outline">
+*		<span class="notation">Question Block</span>
+*	</div>
+*	<div class="question required column small-5 outline">
+*		<span class="notation">Question Block</span>
+*	</div>
+*	<div class="question required column small-3 outline">
+*		<span class="notation">Question Block</span>
+*	</div>
+*			</div>
+*			<div class="message-holder">
+*				<small class="warning"><i class="fa fa-holder"></i>
+*					This is a dynmic message for the question group.
+*				</small>
+*			</div>
+*		</div>
+*		<div class="repeater-action">
+*			<a href="" class="clear"><i class="fa fa-holder"></i><span class="text">clear</span></a>
+*			<a href="" class="save"><i class="fa fa-holder"></i> <span class="text">save</span></a>
+*		</div>
+*	</div>		
+*/

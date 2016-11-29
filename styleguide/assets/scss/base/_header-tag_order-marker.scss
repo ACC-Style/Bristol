@@ -1,0 +1,50 @@
+/**
+* Headline with Counters:
+* `.order-marker.` - It is some times useful to add an order-marker to the beginning of headlines. You can modify them by adding `.hollow` or `.inverse` depending on the need.
+* 
+*   @example
+*   <h1><span class="order-marker">1</span>Header 1 Tag</h1>
+*   <h2><span class="order-marker">2</span>Header 2 Tag</h2>
+*   <h3><span class="order-marker">a</span>Header 3 Tag</h3>
+*   <h4 class="with-underline"><span class="order-marker hollow">b</span>Header 4 Tag</h4>
+*   <h5 class="with-underline" style="background-color:grey; color:white; padding:.5em;"><span class="order-marker inverse">c</span>Header 5 Tag</h5>
+*/
+
+.order-marker
+   {
+    background-color: rebrand-color($primary-color,2);
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    height: 1.5em;
+    width:1.5em;
+    margin-right: 0;
+    margin-bottom: 0;
+    padding: .75em 0 0 0;
+    position: relative;
+    top: -.25em;
+    margin-right: .5em;
+    text-align: center;
+    box-sizing:border-box;
+    text-transform: capitalize;
+    line-height: 0;
+    vertical-align: top;
+    &.hollow{
+      background-color: transparent;
+      border:.1em solid rebrand-color($primary-color,2);
+      color:rebrand-color($primary-color,2);
+    }
+    &.inverse{
+      background-color: #fff;
+      color:rebrand-color($primary-color,2);;
+    }
+}
+
+  @each $State in $states{
+    $selector:map-get($State,'Selector');
+     @include setTrump('color',map-get($State,'State'),'#{$selector} .order-marker.inverse,#{$selector}.order-marker.inverse#{$selector} .order-marker.hollow,#{$selector}.order-marker.hollow');
+     @include setTrump('background',map-get($State,'State'),'#{$selector} .order-marker,#{$selector}.order-marker');
+     @include setTrump('border-color',map-get($State,'State'),'#{$selector} .order-marker.hollow,#{$selector}.order-marker.hollow');
+    @include setContrastTrump(map-get($State,'Color'),'#{$selector} .order-marker,#{$selector}.order-marker');
+  }
+

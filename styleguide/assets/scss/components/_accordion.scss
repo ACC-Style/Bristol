@@ -1,0 +1,54 @@
+@import "../vendor/font-awesome/rotated-flipped";
+.accordion{
+	border: 0px none transparent;
+	.collapsable-panel{display:block;}
+	.toggle{
+		.fa{ 
+			color:fontcolor(rebrand-color($primary-color,3));
+			-webkit-transition: .25s ease-in-out;
+			-moz-transition: .25s ease-in-out;
+			-o-transition: .25s ease-in-out;
+			transition: .25s ease-in-out;
+			@include fa-icon-rotate(0deg, 0);
+			&.fa-holder:before{ content: $fa-var-chevron-circle-right;}
+		}
+		.text{ color:fontcolor($black);padding-left: .5rem;}
+		&:hover {
+		.fa{color:fontcolor(rebrand-color($primary-color,3),"loud");}
+		.text{color:fontcolor($black,"loud");}}
+	}
+	.selected .toggle .fa{ @include fa-icon-rotate(90deg, 1); color:fontcolor(rebrand-color($success-color,2),"loud");}
+}
+/**
+* Accordion (requires Collapsable Panel SCSS):
+* `.accordion` - Accordions are built from a group of `Collapsable Panels` and are never full hidden like the collapsable panel. By default only one `panel` of the accordian can be open at a time.<br><br> !!  Requires Javascript to Function  !!
+* 
+*   @example
+*	<div class="accordion">
+*		<div class="selected">
+*			<h2 class="toggle" data-bind="click:panelShow"><i class="fa fa-holder"></i><span class="text">Header and Toggle Area (Open)</span></h2>
+*			<div class="collapsable-panel ">
+*				<div class="bar close">
+*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> close</a>
+*				</div>
+*				<div class="content">
+*					<div class="row">
+*						<div class="column small-12">
+*							<p>Content</p>
+*						</div>
+*					</div>
+*				</div>
+*				<div class="bar jumpToTop">
+*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> top</a>
+*				</div>
+*			</div>
+*		</div>
+*		<div class="">
+*			<h2 class="toggle" data-bind="click:panelShow"><i class="fa fa-holder"></i><span class="text">Header and Toggle Area (Closed)</span></h2>
+*		</div>
+*	</div>
+*/
+
+
+
+

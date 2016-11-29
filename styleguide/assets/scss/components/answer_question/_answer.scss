@@ -1,0 +1,98 @@
+.answer {
+	.label-holder{border-bottom: 1px dotted grey(20);}
+	label,.label,.text{
+		color:mix(grey(30),color($primary-color,50));
+		@include font-cond();
+	}
+	
+}
+.value-holder{
+	color:$black;
+	font-size: 1em;
+	.answer.required &{
+		color:fontcolor($alert-color);
+	}
+	.answer.error &{
+		color:fontcolor($warning-color);
+	}
+	.answer.validated &{
+	}
+}
+.answer.inline{
+	position: relative;
+	.label-holder,.value-holder{
+		display:inline-block;
+		top:0;
+		width:auto;
+		margin-bottom: .25rem;
+		vertical-align: bottom;
+	}
+	.label-holder{  
+		border-bottom: 0 none;
+		text-align: right;
+	    position: absolute;
+	    right: 0;
+	    bottom: -1rem;
+	    top: auto;
+	    background: white;
+	    padding-left: .25rem;
+	    z-index: 0;
+		&, .text{padding-right: 0;}
+	}
+	.value-holder{
+		padding-bottom: .1rem;
+		z-index: 100;
+	}
+
+	border-bottom: 1px dotted grey(20);
+	&.validated,&.error,&.required{
+		
+		.label-holder{
+
+		 .text{
+			padding-right: 1rem;
+			}
+		}
+
+		border-bottom: 0 none;}
+}
+
+/**
+* Answers:
+* `.answers` - standard format for an answer. 
+* 
+*   @example
+*	<div class="answer error">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Answer From Form (Required)</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder-dynamic"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="value-holder">
+*			 <div class="value-space column small-6 large-9">
+*				missing
+*			</div>
+*			<div class="value-space unit column small-6 large-3">
+*				Years
+*			</div>
+*		</div>
+*	</div>
+*	<div class="answer inline">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Street (inline)</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder-dynamic"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="value-holder">
+*			 <div class="value-space">
+*				9805 Virginia Center Blvd #452
+*			</div>
+*		</div>
+*	</div>
+*/

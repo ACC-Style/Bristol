@@ -1,0 +1,116 @@
+/**
+* Split Layout With Off Canvas Reveal:
+* `.mobile-offcanvas-wrapper` - This is a structural container that has the ablity to change from content and sidebar to just content and the sidebar being off canvas. Trigger the off canvas reveal by adding `.navOn` to the div.split-layout. Change the switch point by adding `.large`,`.medium`, or `.small`. <br>!!! must include _layout-split.scss !!! <br>!!! requires javascripts !!!
+* 
+*   @example
+*	<div class="mobile-offcanvas-wrapper">
+*	<section class="split-layout medium navOff">
+*	<aside class="split-sidebar">
+*	<h2>Sidebar with NavOn</h2>
+*	<p>This Content will stay visable as the screen gets smaller</p>
+*	</aside>
+*	<article class="split-content">
+*	<div class="page-wrapper"><div class="content-padding">
+*	<h1>Content</h1>
+*	<p>Some extra content in the content area</p><p> It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+*	</div></div>
+*	</article>
+*	</section>
+*	</div>
+*	<div class="mobile-offcanvas-wrapper">
+*	<section class="split-layout large navOn">
+*	<aside class="split-sidebar">
+*	<h2>Sidebar navOff</h2>
+*	<p>When the view port shrinks past Large this will hide</p>
+*	</aside>
+*	<article class="split-content">
+*	<div class="page-wrapper"><div class="content-padding">
+*	<h1>Content</h1>
+*	<p>Some extra content in the content area</p><p> It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
+*	</div></div>
+*	</article>
+*	</section>
+*	</div>
+*/
+$sidebarColumnCount:10;
+$sidebarSize:percentage($sidebarColumnCount / $grid-column-count);
+.full-row, .full-col { overflow: hidden; position: absolute; }
+.full-row { left: 0; right: 0; }
+.full-col { top: 0; bottom: 0; }
+.scroll-x { overflow-x: auto; }
+.scroll-y { overflow-y: auto; }
+.mobile-offcanvas-wrapper{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  -webkit-transition: 300ms ease all;
+  transition: 300ms ease all; 
+
+	.split-layout{
+		-webkit-transition: 300ms ease all; transition: 300ms ease all; 
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+		-webkit-transform: translate3d(0, 0, 0); 
+		transform: translate3d(0, 0, 0); 
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		overflow: visible;
+		&.navOn{
+				-webkit-transform: translateX($sidebarSize);
+				transform: translateX($sidebarSize);
+				transform: translate3d($sidebarSize, 0, 0);
+				-webkit-transform: translate3d($sidebarSize, 0, 0);
+			}
+		.split-sidebar{ 
+        display: block;
+        @include grid-column($sidebarColumnCount of 12);
+        right:auto;
+        position: absolute;
+        }
+		&.reverse{
+			&.navOn{
+				-webkit-transform: translateX(-$sidebarSize);
+				transform: translateX(-$sidebarSize);
+				transform: translate3d(-$sidebarSize, 0, 0);
+				-webkit-transform: translate3d(-$sidebarSize, 0, 0);
+				}
+			.split-sidebar{position: absolute;right:-$sidebarSize;left:auto;
+				}	
+			}
+
+		&.small{
+      @include breakpoint(small){
+          &,&.navOn{
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        }
+      }
+		}
+		&.medium,&.small{
+       @include breakpoint(medium){
+        &,&.navOn{
+          -webkit-transform: translateX(0);
+          transform: translateX(0);
+          }
+       }
+		
+		}
+		&.large,&.medium, &.small{
+			  @include breakpoint(large){
+                &,&.navOn{
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+                }
+        }
+		}
+		&.xlarge,&.large,&.medium,&.small{
+			  @include breakpoint(xlarge){
+          &,&.navOn{
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+            }
+          
+        }
+		}
+	}
+}

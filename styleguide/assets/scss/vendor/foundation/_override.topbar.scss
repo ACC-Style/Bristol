@@ -1,0 +1,123 @@
+.top-bar {
+	position: relative;
+	z-index: 1002;
+	padding-top: 0;
+	padding-bottom: 0;
+
+	&, & .top-bar-left, & .top-bar-right {
+		> ul > li {
+			padding-top: $topbar-padding-top;
+			padding-bottom: $topbar-padding-bottom;
+		}
+	}
+
+	@if( $brand-level >= 1) {
+		border-bottom: rem-calc(6px) solid rebrand-color($primary-color,1);
+	}
+
+	@include font-slab-bold;
+	@include baseline-font(1,0,0);
+
+	@include bp(md) {
+		@include baseline-font(1,0,0);
+	}
+
+	@include bp(lg) {
+		@include baseline-font(2,0,0);
+	}
+
+	@include bp(xl) {
+		@include baseline-font(3,0,0);
+	}
+
+	li, li > a, ul li > a {
+		color: color-contrast( rebrand-color($brand-color,3));
+	}
+
+	.menu > li {
+		&:hover {
+			background-color: mix($topbar-background,$black);
+		}
+
+		&.menu-text:hover {
+			background-color: $topbar-background;
+		}
+	}
+
+	.menu .submenu > li {
+		&:hover {
+			background-color: mix($topbar-background,$white,20%);
+		}
+
+		&.menu-text:hover {
+			background-color: $topbar-background;
+		}
+	}
+
+	.submenu {
+		li > a, &ul li > a {
+			color: $black;
+		}
+
+		@include font();
+		margin-top: 3px;
+
+		@if( $brand-level >= 1) {
+			margin-top: 0px;
+			border-top: 0 none;
+		}
+
+		li a {
+			@include baseline-font(0,.25,.25,2);
+
+			@include bp(md) {
+				@include baseline-font(0,.25,.25,2);
+			}
+
+			@include bp(lg) {
+				@include baseline-font(1,.25,.25,2);
+			}
+		}
+	}
+
+	.input-holder .input-space input {
+		margin-right: 0;
+		width: auto;
+	}
+
+	.dropdown.menu .is-dropdown-submenu-parent.is-down-arrow > a::after {
+		border-color: color-contrast(rebrand-color($brand-color,3)) transparent transparent;
+		top: .75em;
+	}
+}
+/**
+* Top Bar:
+* `.top-bar` - This is a great nav bar for website headers. <h5 class="warning">( !! WARNING !! Updated HTML and Styles From Ver 1)</h5>
+* 
+*   @example
+*   <div class="top-bar">
+*   <div class="top-bar-left">
+*   <ul class="dropdown menu" data-dropdown-menu>
+*   <li class="menu-text">Site Title</li>
+*   <li class="has-submenu">
+*   <a href="#">One</a>
+*   <ul class="submenu menu vertical" data-submenu>
+*   <li><a href="#">One</a></li>
+*   <li><a href="#">Two</a></li>
+*   <li><a href="#">Three</a></li>
+*   </ul>
+*   </li>
+*   <li><a href="#">Two</a></li>
+*   <li><a href="#">Three</a></li>
+*   </ul>
+*   </div>
+*   <div class="top-bar-right">
+*   <ul class="menu input-holder row collapse">
+*   <li class="input-space"><input type="search" placeholder="Search"></li>
+*   <li class="input-space"><button type="button" class="button">Search</button></li>
+*   </ul>
+*   </div>
+*   </div>
+**/
+
+

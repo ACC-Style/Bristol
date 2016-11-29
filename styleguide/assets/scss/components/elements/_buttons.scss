@@ -1,0 +1,72 @@
+/**
+* Buttons:
+* `.nobutton .button or .button.secondary` - sample buttons from `.button` you can modifiers
+* 
+*   @example
+*   <div class="row">
+*   <!-- Anchors (links) -->
+*   <a href="about.html" class="button">Learn More</a>
+*   <a href="#features" class="button">View All Features</a>
+*   <!-- Buttons (actions) -->
+*   <button type="button" class="success button">Save</button>
+*   <button type="button" class="alert button">Delete</button>
+*   <button type="button" class="alert button disabled">Disabled</button>
+*   <a class="tiny button" href="#">So Tiny</a>
+*   <a class="small button" href="#">So Small</a>
+*   <a class="large button" href="#">So Large</a>
+*   <a class="small button radius" href="#">So Small with Radius</a>
+*   <a class="large button round" href="#">So Large with Round</a>
+*   <a class="expanded button" href="#">Such Expand</a>
+*   <div class="button-group expanded">
+*     <a class="button">One</a>
+*     <a class="button">Two</a>
+*     <a class="button">Three</a>
+*   </div>
+*   </div>
+*/
+
+
+%buttondisabled{
+	background-color: grey(30);
+	background-image: url(../img/empty_diamond.png);
+	color:fontcolor($black,'quiet');
+	border:1px solid grey(50);
+	cursor:not-allowed;
+}
+ button[disabled],
+ button:disabled,
+.button.disabled,
+.button.disabled:hover,{
+	&,&.success,&.alert,&.secondary{
+		@extend %buttondisabled;
+		.input-space &{ padding-top: 7px; padding-bottom:7px;}
+	}
+}
+.link.disabled,.link.disabled:hover{
+	background-image: url("../img/subtlenet2.png");
+	color:fontcolor($black,'quiet');
+	font-style: italic;
+}
+.nobutton{
+	@include button-hollow;
+	margin-bottom: 0;
+	&.disabled,&[disabled]{
+		&,&:hover{
+		color:fontcolor($black,'quiet');
+		cursor:not-allowed;
+		background-color: #fff;
+		}
+	}
+}
+.button{
+  @include font-slab-bold();
+  &.radius{
+    border-radius: $global-border-radius;
+  }
+  &.round{
+    border-radius: $global-border-round;
+  }
+  &.icon-only{
+  	.text{display:none;}
+  }
+}

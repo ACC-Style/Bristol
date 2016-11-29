@@ -1,0 +1,108 @@
+/**
+* Slider (Foundation Override):
+* `.range-slider .vertical-range` - Sliders are a great peice of UI for mobile and range of numbers <h5 class="warning">( !! WARNING !! Updated HTML and Styles From Ver 1)</h5>
+* 
+*   @example
+*   <div class="slider" data-slider data-initial-start='50' data-end='200'>
+*   <span class="slider-handle"  data-slider-handle role="slider" tabindex="1"></span>
+*   <span class="slider-fill" data-slider-fill></span>
+*   <input type="hidden">
+*   </div>
+*   <div class="slider vertical" data-slider data-initial-start='25' data-end='200' data-vertical="true">
+*     <span class="slider-handle" data-slider-handle role="slider" tabindex="1"></span>
+*     <span class="slider-fill" data-slider-fill></span>
+*    <input type="hidden">
+*   </div>
+*   <div class="slider" data-slider data-initial-start='25' data-initial-end='75'>
+*     <span class="slider-handle" data-slider-handle role="slider" tabindex="1"></span>
+*     <span class="slider-fill" data-slider-fill></span>
+*     <span class="slider-handle" data-slider-handle role="slider" tabindex="1"></span>
+*     <input type="hidden">
+*     <input type="hidden">
+*   </div>
+*   <a class="link" href="http://foundation.zurb.com/sites/docs/slider.html">Foundation Documentation</a>
+*/
+
+
+// These variables define the slider bar styles
+/// Default height of the slider.
+/// @type Number
+$slider-height: 0.5rem !default;
+
+/// Default slider width of a vertical slider.
+/// @type Number
+$slider-width-vertical: $slider-height !default;
+
+/// Default background color of the slider's track.
+/// @type Color
+$slider-background: $light-gray !default;
+
+/// Default color of the active fill color of the slider.
+/// @type Color
+$slider-fill-background: rebrand-color($primary-color, 2);
+
+/// Default height of the handle of the slider.
+/// @type Number
+$slider-handle-height: 1.4rem !default;
+
+/// Default width of the handle of the slider.
+/// @type Number
+$slider-handle-width: 1.4rem !default;
+
+/// Default color of the handle for the slider.
+/// @type Color
+$slider-handle-background: grey(30) !default;
+
+/// Default fade amount of a disabled slider.
+/// @type Number
+$slider-opacity-disabled: 0.25 !default;
+
+/// Default radius for slider.
+/// @type Number
+$slider-radius: $global-radius !default;
+
+/// Transition properties to apply to the slider handle and fill.
+/// @type Transition
+$slider-transition: all 0.2s ease-in-out !default;
+
+   // Container
+  .slider {
+    @include slider-container;
+    background-image: url('../img/billie-holiday.png');
+    border:1px solid mix($slider-fill-background,grey(50));
+    border-radius: $global-border-radius;
+    -webkit-box-shadow:inset 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
+    box-shadow:inset  1px 1px 4px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  // Fill area
+  .slider-fill {
+    @include slider-fill;
+    background-image: url('../img/billie-holiday.png');
+        -webkit-box-shadow:inset 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow:inset  1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+
+  }
+
+  // Draggable handle
+  .slider-handle {
+    @include slider-handle;
+    border-radius:$global-border-round;
+    border:1px solid mix($slider-fill-background,grey(80));
+    -webkit-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow:  1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow:  1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  // Disabled state
+  .slider.disabled,
+  .slider[disabled] {
+    @include slider-disabled;
+  }
+
+  // Vertical slider
+  .slider.vertical {
+    @include slider-vertical;
+  }

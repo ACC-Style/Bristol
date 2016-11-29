@@ -1,0 +1,139 @@
+h1.with-underline{border-bottom: $typography-highlight-color 2px solid;}
+h2.with-underline{border-bottom: grey(60) 2px solid;}
+h3.with-underline{border-bottom: color($typography-highlight-color,60) 1px dotted;}
+h4.with-underline{border-bottom: grey(40) 1px solid;}
+h5.with-underline{border-bottom: grey(30) 1px solid;}
+h6.with-underline{border-bottom: grey(30) 1px dotted;}
+
+/**
+ * Sub Line in Header Tags:
+ * `[Header Tag] > span.sub-line` - basic styling for sub content in headers. 
+ * <h5 class="warning group-divide">( Updated in this Version | Depreciated  blockquote usage )</h5>
+ *
+ *     @example
+ *     h1.with-underline Header 1 Tag
+ *		span.sub-line sub lines of content in a `span.sub-line`
+ *     h2.with-underline Header 2 Tag
+ *		span.sub-line sub lines of content in a `span.sub-line`
+ *     h3.with-underline Header 3 Tag
+ *		span.sub-line sub lines of content in a `span.sub-line`
+ *     h4.with-underline Header 4 Tag
+ *		span.sub-line sub lines of content in a `span.sub-line`
+ *     h5.with-underline Header 5 Tag 
+ *		span.sub-line sub lines of content in a `span.sub-line`
+ *     h6.with-underline Header 6 Tag
+ *		span.sub-line sub lines of content in a `span.sub-line`
+ */
+ /**
+ * Super Line in Header Tags:
+ * `[Header Tag] > span.sub-line` - You can use span.sub-line as super content in headers by just including them at the begining of the tag instead of after text in the tag. 
+ *
+ *     @example
+ *	<h1 class="with-underline"><span class="sub-line">Super line of Content</span>H1 Tag that has some text above it </h1>
+ *	<h2 class="with-underline"><span class="sub-line">Super line of Content</span>H2 Tag that has some text above it </h2>
+ *	<h3 class="with-underline"><span class="sub-line">Super line of Content</span>H3 Tag that has some text above it </h3>
+ *	<h4 class="with-underline"><span class="sub-line">Super line of Content</span>H4 Tag that has some text above it </h4>
+ *	<h5 class="with-underline"><span class="sub-line">Super line of Content</span>H5 Tag that has some text above it </h5>
+ *
+ */
+
+.sub-line{
+	h1 &,h2 &,h3 &,h4 &,h5 &,h6 &{
+		display: block;
+		line-height: 1.1;
+		font-size: .55em;
+		margin: 0;
+		padding: 0;
+		@include font();
+		border:0 none transparent;
+		opacity:.8;
+	}
+}
+blockquote, .sub-line{
+	h1 &{ @include baseline-font(0,0,0,5);}
+	h1.with-underline &{ @include baseline-font(0,.15,.1,5);}
+	h2 &{ @include baseline-font(-1,0,0,3);}
+	h2.with-underline &{ @include baseline-font(-1,.15,.1,3);}
+	h3 &{@include baseline-font(0,0,0,2);}
+	h3.with-underline &{ @include baseline-font(0,.15,.1,2);}
+	h4 &{@include baseline-font(-1,0,0,1);}
+	h5 &{@include baseline-font(-2,0,0,0);}
+	h6 &{@include baseline-font(-2,0,0,0);}
+
+}
+
+.text-highlight-color{color:$typography-highlight-color!important;}
+/**
+ * Group-divid:
+ * `.group-divide` - a line above or below the container elemtent
+ *
+ *     @example
+ *	div.group-divide
+ *    	 p this should be a paragraph a line before it. 
+ *	div.group-divide-bottom
+ *		p this paragraph with line after.
+ */
+
+.group-divide{
+	border-top:$typography-highlight-color 1px dotted;
+	margin-top:.5rem;
+	padding-top: 1rem;
+
+}
+.group-divide-bottom{	
+	border-bottom:$typography-highlight-color 1px dotted;
+	margin-bottom:.5rem;}
+.group-divide-auto + .group-divide-auto{	
+		border-top:$typography-highlight-color 1px dotted;
+		margin-top:1rem;
+		padding-top:.5rem;
+}
+/**
+*  A tag and .link:
+*  `.link` - a tags have a basic style  but links are a styled with `.link`
+*
+*     @example
+*     a 	
+* 	  span this is a plain "a" tag
+*	br
+*	a.link
+* 	  span this is an "a" tag with the ".link" class
+*		
+*/
+
+.link{
+	color:$typography-highlight-color;
+	text-decoration: underline;
+	&.icon{text-decoration: none}
+	&:hover{
+		color:color($typography-highlight-color,80);
+		text-decoration: underline;
+	}
+	&.reverse{color:#fff;}
+}
+/**
+*
+*  Type Modifiers:
+*  `bold, italic or subtle,etc...` - `.bold` - make text bold, `.italic` - make text italic, or `.subtle` - make text subtle
+*
+*     @example
+*     div.bold this has the `.bold` class added to the container which increases font weight and darkens the color.
+*     div.emphasis this has the `.emphasis` class added to the container which darkens the color and makes the font italic and bold
+*     div.loud this has the `.loud` class added to the container which darkens the color.
+*     div.quiet this has the `.quiet` class added to the container which lightens the color.
+*     div.subtle this has the `.subtle` class added to the container which decreases font weight and lightens the color.
+*     div.italic this has the `.italic` class added to the container which makes it lighter and makes it italic.
+*     div.text-highlight-color this has the `.text-highlight-color` class added to the container which changes the color to the product color
+*
+*/
+.bold, b{@extend %bold;}
+.italic{@extend %italic;}
+.subtle{@extend %subtle;}
+.loud{@extend %loud;}
+.quiet{@extend %quiet;}
+.normal{@extend %normal;}
+em,.emphasis{@extend %emphasis;}
+strong,.strong{@extend %strong;}
+.always-wrap{white-space: normal !important;}
+
+

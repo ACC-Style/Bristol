@@ -512,8 +512,50 @@ body {
 *				<td><h3>Error Color</h3></td>
 *				<td style="background-color:#c32231;"class="color-block">#c32231</td>
 *			</tr>
+*			<tr>
+*				<td><h3>Navigation Color</h3></td>
+*				<td style="background-color:#018adb;"class="color-block">#018adb</td>
+*			</tr>
 *		</tbody>
 *	</table>
+*	<h3>Scrub Colors</h3><table class="table">
+*		<thead>
+*			<tr>
+*				<th>Color Name</th>
+*				<th>Hex Color</th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td><h3>Scrub Teal</h3></td>
+*				<td style="background-color:#198dae;"class="color-block">#198dae</td>
+*			</tr>
+*			<tr>
+*				<td><h3>Scrub Green</h3></td>
+*				<td style="background-color:#14B057;"class="color-block">#14B057</td>
+*			</tr>
+*			<tr>
+*				<td><h3>Scrub Blue</h3></td>
+*				<td style="background-color:#018adb;"class="color-block">#018adb</td>
+*			</tr>
+*			<tr class="seperator secondary">
+*				<td colspan="2">Less Used Colors for Highlights and Pinstripes</td>
+*			</tr>
+*			<tr>
+*				<td><h3>Scrub Purple</h3></td>
+*				<td  style="background-color:#198dae;"class="color-block">#198dae</td>
+*			</tr>
+*			<tr>
+*				<td><h3>Scrub Magenta</h3></td>
+*				<td style="background-color:#70cd40;"class="color-block">#70cd40</td>
+*			</tr>
+*			<tr>
+*				<td><h3>Scrub Leaf Green</h3></td>
+*				<td style="background-color:#b84299;"class="color-block">#b84299</td>
+*			</tr>
+*		</tbody>
+*	</table>
+* 
 */
 .color-block {
   width: 50%;
@@ -522,50 +564,6 @@ body {
   font-weight: 900;
   font-size: 18px;
   color: white;
-}
-
-td.product-brand-color {
-  background-color: #9a1267;
-}
-
-td.brand-color {
-  background-color: #00386b;
-}
-
-td.primary-color {
-  background-color: #198dae;
-}
-
-td.secondary-color {
-  background-color: #b3b3b3;
-}
-
-td.tertiary-color {
-  background-color: #7d5891;
-}
-
-td.attention-color {
-  background-color: #E08514;
-}
-
-td.warning-color {
-  background-color: #E08514;
-}
-
-td.success-color {
-  background-color: #14B057;
-}
-
-td.select-color {
-  background-color: #14B057;
-}
-
-td.error-color {
-  background-color: #c32231;
-}
-
-td.alert-color {
-  background-color: #c32231;
 }
 
 /* FONT PATH
@@ -1244,11 +1242,11 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 strong, .strong {
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  color: #4daded;
+  color: #d7198f;
 }
 
 em, .emphasis {
-  color: #114d74;
+  color: #4d0934;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: italic;
@@ -1258,7 +1256,7 @@ em, .emphasis {
 .subtle {
   font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
-  color: #5d99c1;
+  color: #9a5680;
 }
 
 .block-margins {
@@ -1725,7 +1723,7 @@ ul li, ol li {
 *   <h5 class="with-underline" style="background-color:grey; color:white; padding:.5em;"><span class="order-marker inverse">c</span>Header 5 Tag</h5>
 */
 .order-marker {
-  background-color: #2199e8;
+  background-color: #9a1267;
   color: #fff;
   border-radius: 50%;
   display: inline-block;
@@ -1745,12 +1743,12 @@ ul li, ol li {
 }
 .order-marker.hollow {
   background-color: transparent;
-  border: 0.1em solid #2199e8;
-  color: #2199e8;
+  border: 0.1em solid #9a1267;
+  color: #9a1267;
 }
 .order-marker.inverse {
   background-color: #fff;
-  color: #2199e8;
+  color: #9a1267;
 }
 
 /**
@@ -1995,14 +1993,19 @@ button:disabled.secondary, .input-space
 .tabs li.visited, .tabs .tabs-title.visited {
   background-image: url("../img/cross-hatched.png");
 }
-.tabs li.locked a:before, .tabs .tabs-title.locked a:before {
-  content: "\f023";
+.tabs li.locked a:before, .tabs li.disabled a:before, .tabs .tabs-title.locked a:before, .tabs .tabs-title.disabled a:before {
   padding-right: .5em;
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
+}
+.tabs li.locked a:before, .tabs .tabs-title.locked a:before {
+  content: "\f023";
+}
+.tabs li.disabled a:before, .tabs .tabs-title.disabled a:before {
+  content: "\f05e";
 }
 .tabs li.selected, .tabs li.is-active, .tabs .tabs-title.selected, .tabs .tabs-title.is-active {
   background-image: none;
@@ -2229,10 +2232,10 @@ button:disabled.secondary, .input-space
 }
 .tabs.tabs-primary li:hover {
   background-color: #fff;
-  border-color: #2199e8;
+  border-color: #9a1267;
 }
 .tabs.tabs-primary li:hover a {
-  color: #2199e8;
+  color: #9a1267;
 }
 .tabs.tabs-primary li.sucsess {
   background-color: #3adb76;
@@ -2251,8 +2254,8 @@ button:disabled.secondary, .input-space
   color: #3adb76;
 }
 .tabs.tabs-primary li.selected {
-  background-color: #2199e8;
-  border-color: #2199e8;
+  background-color: #9a1267;
+  border-color: #9a1267;
   border-bottom-color: #00386b;
   border-right: 0 none;
   border-left: 0 none;
@@ -2274,7 +2277,7 @@ button:disabled.secondary, .input-space
   border-bottom: 10px solid #00386b;
 }
 .tabs.tabs-primary li.selected:hover {
-  background-color: #2199e8;
+  background-color: #9a1267;
 }
 .tabs.tabs-primary li.selected:hover a {
   color: #fff;
@@ -2288,7 +2291,7 @@ button:disabled.secondary, .input-space
   cursor: not-allowed;
 }
 .tabs.tabs-primary li.icon.selected {
-  background-color: #2199e8;
+  background-color: #9a1267;
 }
 .tabs.tabs-primary li.icon.selected a {
   color: #fff;
@@ -2315,7 +2318,7 @@ button:disabled.secondary, .input-space
   border-bottom-width: 1px;
 }
 .tabs.tabs-primary.reverse li.selected {
-  border-color: #2199e8;
+  border-color: #9a1267;
   border-top-color: #00386b;
 }
 .tabs.tabs-primary.reverse li.selected a:after {
@@ -2398,38 +2401,86 @@ button:disabled.secondary, .input-space
 *	</ul>
 */
 .overlap {
-  background-color: #e7e7e7;
-  background-image: url("../img/billie-holiday.png"), url("../img/bottom-shade.png"), url("../img/top-shade.png");
+  background-color: #cccccc;
+  background-image: url("../img/textured_paper.png"), url("../img/bottom-shade.png"), url("../img/top-shade.png");
   background-position: top right,bottom right,right -1px;
   background-repeat: repeat,repeat-x,repeat-x;
-  border-bottom: 2px solid #999999;
   margin-bottom: .25rem;
+  border-bottom: 5px solid #8d4974;
 }
 .overlap .tabs {
   padding-top: .25em;
   border: 0;
   background: transparent none;
+  overflow: hidden;
 }
 .overlap .tabs li, .overlap .tabs .tabs-title {
-  border: 2px solid #b3b3b3;
+  border: 1px solid #934f7a;
   border-bottom: 0;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
   margin-bottom: 0;
+  vertical-align: bottom;
 }
 .overlap .tabs li.selected, .overlap .tabs li.is-active, .overlap .tabs .tabs-title.selected, .overlap .tabs .tabs-title.is-active {
   margin-bottom: -1px;
   padding-bottom: 3px;
-  background-color: white;
+  background: #8d4974;
+  border-color: #8d4974;
   z-index: 1000;
-  border-color: #999999;
   vertical-align: bottom;
 }
+.page-overlap .overlap .tabs li.selected, .page-overlap .overlap .tabs li.is-active, .page-overlap .overlap .tabs .tabs-title.selected, .page-overlap .overlap .tabs .tabs-title.is-active {
+  background: url(../img/billie-holiday-speck.png);
+}
 .overlap .tabs li.selected a, .overlap .tabs li.is-active a, .overlap .tabs .tabs-title.selected a, .overlap .tabs .tabs-title.is-active a {
-  color: #333333;
+  color: #fff;
 }
 .overlap .tabs li.secondary, .overlap .tabs .tabs-title.secondary {
   border-color: #959595;
+}
+
+.with-group-sections.error .overlap, .paper-page.error .overlap {
+  border-bottom-color: #c32231;
+}
+.with-group-sections.error .overlap li.selected, .with-group-sections.error .overlap li.is-active, .with-group-sections.error .overlap .tabs-title.selected, .with-group-sections.error .overlap .tabs-title.is-active, .paper-page.error .overlap li.selected, .paper-page.error .overlap li.is-active, .paper-page.error .overlap .tabs-title.selected, .paper-page.error .overlap .tabs-title.is-active {
+  background-color: #c32231;
+  border-color: #c32231;
+}
+.with-group-sections.warning .overlap, .paper-page.warning .overlap {
+  border-bottom-color: #E08514;
+}
+.with-group-sections.warning .overlap li.selected, .with-group-sections.warning .overlap li.is-active, .with-group-sections.warning .overlap .tabs-title.selected, .with-group-sections.warning .overlap .tabs-title.is-active, .paper-page.warning .overlap li.selected, .paper-page.warning .overlap li.is-active, .paper-page.warning .overlap .tabs-title.selected, .paper-page.warning .overlap .tabs-title.is-active {
+  background-color: #E08514;
+  border-color: #E08514;
+}
+.with-group-sections.success .overlap, .paper-page.success .overlap {
+  border-bottom-color: #14B057;
+}
+.with-group-sections.success .overlap li.selected, .with-group-sections.success .overlap li.is-active, .with-group-sections.success .overlap .tabs-title.selected, .with-group-sections.success .overlap .tabs-title.is-active, .paper-page.success .overlap li.selected, .paper-page.success .overlap li.is-active, .paper-page.success .overlap .tabs-title.selected, .paper-page.success .overlap .tabs-title.is-active {
+  background-color: #14B057;
+  border-color: #14B057;
+}
+.with-group-sections.info .overlap, .paper-page.info .overlap {
+  border-bottom-color: #a6a6a6;
+}
+.with-group-sections.info .overlap li.selected, .with-group-sections.info .overlap li.is-active, .with-group-sections.info .overlap .tabs-title.selected, .with-group-sections.info .overlap .tabs-title.is-active, .paper-page.info .overlap li.selected, .paper-page.info .overlap li.is-active, .paper-page.info .overlap .tabs-title.selected, .paper-page.info .overlap .tabs-title.is-active {
+  background-color: #a6a6a6;
+  border-color: #a6a6a6;
+}
+.with-group-sections.highlighted .overlap, .paper-page.highlighted .overlap {
+  border-bottom-color: #9a1267;
+}
+.with-group-sections.highlighted .overlap li.selected, .with-group-sections.highlighted .overlap li.is-active, .with-group-sections.highlighted .overlap .tabs-title.selected, .with-group-sections.highlighted .overlap .tabs-title.is-active, .paper-page.highlighted .overlap li.selected, .paper-page.highlighted .overlap li.is-active, .paper-page.highlighted .overlap .tabs-title.selected, .paper-page.highlighted .overlap .tabs-title.is-active {
+  background-color: #9a1267;
+  border-color: #9a1267;
+}
+.with-group-sections.disabled .overlap, .paper-page.disabled .overlap {
+  border-bottom-color: #cccccc;
+}
+.with-group-sections.disabled .overlap li.selected, .with-group-sections.disabled .overlap li.is-active, .with-group-sections.disabled .overlap .tabs-title.selected, .with-group-sections.disabled .overlap .tabs-title.is-active, .paper-page.disabled .overlap li.selected, .paper-page.disabled .overlap li.is-active, .paper-page.disabled .overlap .tabs-title.selected, .paper-page.disabled .overlap .tabs-title.is-active {
+  background-color: #cccccc;
+  border-color: #cccccc;
 }
 
 /**
@@ -2532,7 +2583,7 @@ button:disabled.secondary, .input-space
 *	</nav>
 */
 h1 + .nav-list, h1 + .panel-selector, .large.nav-list, .large.panel-selector {
-  border-top: #4daded 2px solid;
+  border-top: #9a1267 2px solid;
   margin-top: -0.75rem;
   padding-top: 0.7rem;
   margin-bottom: 1.5rem;
@@ -2674,13 +2725,13 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   color: #5c5c5c;
 }
 .nav-list.nav-checklist li.highlighted, .nav-checklist.panel-selector li.highlighted {
-  background-color: #d2eff8;
-  border-color: #b0e4f3;
+  background-color: #f8c2e4;
+  border-color: #f395d0;
   border-bottom-width: 1;
   color: #333333;
 }
 .nav-list.nav-checklist li.highlighted:hover, .nav-checklist.panel-selector li.highlighted:hover {
-  background-color: #a5e0f1;
+  background-color: #f186c9;
 }
 .nav-list.nav-checklist li.highlighted.selected, .nav-checklist.panel-selector li.highlighted.selected {
   color: white;
@@ -3417,9 +3468,9 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   max-width: 600px;
 }
 .question-grid-based .input-holder input:focus, .question-grid-based .input-holder select:focus {
-  -webkit-box-shadow: inset 0px 0px 2px 2px #2199e8;
-  -moz-box-shadow: inset 0px 0px 2px 2px #2199e8;
-  box-shadow: inset 0px 0px 2px 2px #2199e8;
+  -webkit-box-shadow: inset 0px 0px 2px 2px #9a1267;
+  -moz-box-shadow: inset 0px 0px 2px 2px #9a1267;
+  box-shadow: inset 0px 0px 2px 2px #9a1267;
 }
 .question-grid-based .label-holder .text {
   white-space: normal;
@@ -3680,7 +3731,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   line-height: 2.17778em;
   margin-top: 0em;
   margin-bottom: 0em;
-  color: #2199e8;
+  color: #9a1267;
   vertical-align: top;
   display: inline-block;
   margin-top: -.75em;
@@ -3697,7 +3748,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 }
 
 .seq:hover {
-  color: #2a668e;
+  color: #67234d;
   text-decoration: underline;
 }
 
@@ -4338,17 +4389,17 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 .repeater .question-group {
   padding-top: 1.5em;
   padding-bottom: 1.85em;
-  border: 2px dotted #dce9f1;
+  border: 2px dotted #ead0e1;
   margin-top: .5em;
   border-radius: .5em;
-  border-top: 2px soliddesaturate(#4daded, 40%);
-  border-bottom: 2px solid #75a5c5;
+  border-top: 2px soliddesaturate(#d7198f, 40%);
+  border-bottom: 2px solid #a74984;
   background-image: url(../img/empty_stripe@2x.png);
-  background-color: #eaf2f6;
+  background-color: #f3e3ed;
   position: relative;
 }
 .repeater .question-group .answer.required .required-holder, .repeater .question-group .question.required .required-holder {
-  color: #2199e8;
+  color: #9a1267;
 }
 .repeater .question-group .required-message {
   font-size: 0.6875rem;
@@ -4356,7 +4407,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   position: absolute;
   top: -2px;
   right: -2px;
-  background-color: #75a5c5;
+  background-color: #a74984;
   color: #fff;
   -webkit-transition: background-color 0.8s;
   -moz-transition: background-color 0.8s;
@@ -4390,7 +4441,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   padding: .5rem;
 }
 .repeater .repeater-action .add-new-repeater .text {
-  color: #2199e8;
+  color: #9a1267;
   display: inline-block;
   padding-right: 2rem;
   font-size: 1rem;
@@ -4422,11 +4473,11 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   background-color: white;
   border-radius: 4px;
   margin-left: 1em;
-  border-color: #4daded;
+  border-color: #d7198f;
 }
 .repeater .repeater-action .clear:hover {
   background-color: #e6e6e6;
-  border-color: #2199e8;
+  border-color: #9a1267;
 }
 
 .edit-mode.repeater .repeater-action .clear {
@@ -4674,7 +4725,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   border-top: #e6e6e6 1px solid;
 }
 .table thead tr:last-child th {
-  border-bottom: 2px solid #2199e8;
+  border-bottom: 2px solid #9a1267;
 }
 .table tbody tr:nth-child(even) {
   background-color: transparent;
@@ -4684,7 +4735,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   padding: .25rem;
 }
 .table td .color-highlighted, .table th .color-highlighted {
-  color: #4daded;
+  color: #9a1267;
 }
 .table td small, .table th small {
   font-size: 80%;
@@ -4760,7 +4811,7 @@ table a.button, table button, table .inline-list, table .nobutton {
 }
 .striped tfoot td, .striped tfoot td:nth-child(odd), .banded tfoot td, .banded tfoot td:nth-child(odd) {
   color: #333333;
-  border-top: 1px solid #2199e8;
+  border-top: 1px solid #9a1267;
   background-color: #cccccc;
 }
 
@@ -4881,14 +4932,14 @@ table a.button, table button, table .inline-list, table .nobutton {
   padding-bottom: 2.2px;
   padding-bottom: 0.1375rem;
   /* can be treated like a fallback */
-  background-color: #42a8eb;
+  background-color: #c71785;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #55b1ed, #279ce9);
+  background-image: linear-gradient(to left, #e11a97, #b31578);
   /* these will reset other properties, like background-position, but it does know what you mean */
-  background: #42a8eb;
-  background: linear-gradient(to left, #55b1ed, #279ce9);
-  border-top: #279ce9 1px solid;
-  border-bottom: #279ce9 2px solid;
+  background: #c71785;
+  background: linear-gradient(to left, #e11a97, #b31578);
+  border-top: #b31578 1px solid;
+  border-bottom: #b31578 2px solid;
   color: #fff;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -4927,75 +4978,75 @@ table a.button, table button, table .inline-list, table .nobutton {
 *	</table>
 */
 .table .error.seperator td, .table .error.seperator:nth-child(even) td:nth-child(odd) {
-  background-color: #dc3443;
+  background-color: #c71785;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #df4856, #d02434);
+  background-image: linear-gradient(to left, #e11a97, #b31578);
   /* these will reset other properties, like background-position, but it does know what you mean */
-  background: #dc3443;
-  background: linear-gradient(to left, #df4856, #d02434);
-  border-top: #d02434 1px solid;
-  border-bottom: #d02434 2px solid;
+  background: #c71785;
+  background: linear-gradient(to left, #e11a97, #b31578);
+  border-top: #b31578 1px solid;
+  border-bottom: #b31578 2px solid;
   color: #fff;
 }
 
 .table .warning.seperator td, .table .warning.seperator:nth-child(even) td:nth-child(odd) {
-  background-color: #ec982f;
+  background-color: #c71785;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #eea244, #ea8b15);
+  background-image: linear-gradient(to left, #e11a97, #b31578);
   /* these will reset other properties, like background-position, but it does know what you mean */
-  background: #ec982f;
-  background: linear-gradient(to left, #eea244, #ea8b15);
-  border-top: #ea8b15 1px solid;
-  border-bottom: #ea8b15 2px solid;
-  color: #333333;
+  background: #c71785;
+  background: linear-gradient(to left, #e11a97, #b31578);
+  border-top: #b31578 1px solid;
+  border-bottom: #b31578 2px solid;
+  color: #fff;
 }
 
 .table .success.seperator td, .table .success.seperator:nth-child(even) td:nth-child(odd) {
-  background-color: #19da6c;
+  background-color: #c71785;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #27e679, #16c461);
+  background-image: linear-gradient(to left, #e11a97, #b31578);
   /* these will reset other properties, like background-position, but it does know what you mean */
-  background: #19da6c;
-  background: linear-gradient(to left, #27e679, #16c461);
-  border-top: #16c461 1px solid;
-  border-bottom: #16c461 2px solid;
+  background: #c71785;
+  background: linear-gradient(to left, #e11a97, #b31578);
+  border-top: #b31578 1px solid;
+  border-bottom: #b31578 2px solid;
   color: #fff;
 }
 
 .table .info.seperator td, .table .info.seperator:nth-child(even) td:nth-child(odd) {
-  background-color: #b3b3b3;
+  background-color: #c71785;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #bbbbbb, #a1a1a1);
+  background-image: linear-gradient(to left, #e11a97, #b31578);
   /* these will reset other properties, like background-position, but it does know what you mean */
-  background: #b3b3b3;
-  background: linear-gradient(to left, #bbbbbb, #a1a1a1);
-  border-top: #a1a1a1 1px solid;
-  border-bottom: #a1a1a1 2px solid;
-  color: #333333;
+  background: #c71785;
+  background: linear-gradient(to left, #e11a97, #b31578);
+  border-top: #b31578 1px solid;
+  border-bottom: #b31578 2px solid;
+  color: #fff;
 }
 
 .table .highlighted.seperator td, .table .highlighted.seperator:nth-child(even) td:nth-child(odd) {
-  background-color: #3fbde1;
+  background-color: #c71785;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #53c4e4, #27b5dd);
+  background-image: linear-gradient(to left, #e11a97, #b31578);
   /* these will reset other properties, like background-position, but it does know what you mean */
-  background: #3fbde1;
-  background: linear-gradient(to left, #53c4e4, #27b5dd);
-  border-top: #27b5dd 1px solid;
-  border-bottom: #27b5dd 2px solid;
-  color: #333333;
+  background: #c71785;
+  background: linear-gradient(to left, #e11a97, #b31578);
+  border-top: #b31578 1px solid;
+  border-bottom: #b31578 2px solid;
+  color: #fff;
 }
 
 .table .disabled.seperator td, .table .disabled.seperator:nth-child(even) td:nth-child(odd) {
-  background-color: #d4d4d4;
+  background-color: #c71785;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #d8d8d8, #bebebe);
+  background-image: linear-gradient(to left, #e11a97, #b31578);
   /* these will reset other properties, like background-position, but it does know what you mean */
-  background: #d4d4d4;
-  background: linear-gradient(to left, #d8d8d8, #bebebe);
-  border-top: #bebebe 1px solid;
-  border-bottom: #bebebe 2px solid;
-  color: #333333;
+  background: #c71785;
+  background: linear-gradient(to left, #e11a97, #b31578);
+  border-top: #b31578 1px solid;
+  border-bottom: #b31578 2px solid;
+  color: #fff;
 }
 
 /**
@@ -5332,23 +5383,23 @@ tr:nth-child(even).info td {
 }
 
 td.highlighted, .table tbody tr + tr td.highlighted, tr.highlighted td, .stripped tr.highlighted:nth-child(even) td:nth-child(odd) {
-  background-color: #d9f1f8;
+  background-color: #eed7e5;
   color: #333333;
-  border-color: #bbe8f4;
+  border-color: #f4a4d6;
 }
 
 tr:nth-child(even) td.highlighted {
-  background-color: #ceedf6;
+  background-color: #e9cbde;
   color: #333333;
 }
 
 tr:nth-child(even).highlighted td {
-  background-color: #ceedf6;
+  background-color: #e9cbde;
   color: #333333;
 }
 
 .stripped tbody tr.highlighted td:nth-child(odd) {
-  background-color: #d9f1f8;
+  background-color: #eed7e5;
 }
 
 td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .stripped tr.disabled:nth-child(even) td:nth-child(odd) {
@@ -5448,7 +5499,7 @@ tr:nth-child(even).disabled td {
 }
 .bar.close .action-btn {
   top: -1.1rem;
-  color: #2199e8;
+  color: #9a1267;
 }
 .bar.jumpToTop {
   bottom: -2px;
@@ -5475,7 +5526,7 @@ tr:nth-child(even).disabled td {
   clear: both;
 }
 .collapsable-panel .bar.close {
-  border-top: 2px solid #2199e8;
+  border-top: 2px solid #9a1267;
 }
 .collapsable-panel .bar.close .action-btn {
   background-color: white;
@@ -5514,13 +5565,13 @@ tr:nth-child(even).disabled td {
   float: right;
 }
 .collapsable-panel.inset .bar.close {
-  border-top: 7px solid #2199e8;
+  border-top: 7px solid #9a1267;
   top: -2px;
 }
 .collapsable-panel.inset .bar.close .action-btn {
   top: 0;
   color: white;
-  background-color: #2199e8;
+  background-color: #9a1267;
 }
 .collapsable-panel.inset .bar.jumpToTop {
   bottom: -2px;
@@ -5631,7 +5682,7 @@ table + div > .collapsable-panel {
   border: 0 none transparent;
 }
 .collapsable-panel.highlighted.inset {
-  background-color: #e8f7fb;
+  background-color: #fbe1f1;
 }
 .collapsable-panel.highlighted.inset .bar.close .action-btn {
   color: #fff;
@@ -5769,7 +5820,7 @@ table + div > .collapsable-panel {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
-  color: #3adb76;
+  color: #9a1267;
 }
 
 /**
@@ -5849,7 +5900,7 @@ table + div > .collapsable-panel {
   padding: .5em .75em;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  background-color: #2199e8;
+  background-color: #9a1267;
   color: #fff;
 }
 .panel-selector ul {
@@ -5872,7 +5923,7 @@ li.focused {
 .panel-selector .group-title
 li.j-selected, .panel-selector .group-title
 li.selected {
-  background-color: #3adb76;
+  background-color: #9a1267;
 }
 .panel-selector .group-title
 li.j-selected > i.fa-holder:before, .panel-selector .group-title
@@ -5913,7 +5964,7 @@ li.selected .fa {
   background-color: #2199e8;
 }
 .button-group li.j-selected a.button, .button-group li.selected a.button {
-  background-color: #14B057;
+  background-color: #9a1267;
 }
 .button-group li.j-selected a.button > i.fa-holder:before, .button-group li.j-selected a.button.fa:before, .button-group li.selected a.button > i.fa-holder:before, .button-group li.selected a.button.fa:before {
   content: "";
@@ -6029,16 +6080,16 @@ ul.toggle .toggle-position a {
 }
 ul.toggle .toggle-position.selected {
   opacity: 1;
-  border: #17cc65 0.2em solid;
-  background-color: #17cc65;
+  border: #b8167b 0.2em solid;
+  background-color: #b8167b;
   margin: -.25em 0px;
   border-radius: 5px;
   font-weight: 900;
   padding: .45em .375em;
 }
 ul.toggle .toggle-position.selected:hover {
-  background-color: #17cc65;
-  border-color: #14B057;
+  background-color: #b8167b;
+  border-color: #9a1267;
 }
 ul.toggle .toggle-position.selected a {
   color: #fff;
@@ -7053,6 +7104,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   z-index: 1002;
   padding-top: 0;
   padding-bottom: 0;
+  border-bottom: 0.375rem solid #9a1267;
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
   font-weight: 700;
   font-size: 1.28571em;
@@ -7152,6 +7204,8 @@ This file is generated by `grunt build`, do not edit it by hand.
   font-weight: 400;
   letter-spacing: .01em;
   margin-top: 3px;
+  margin-top: 0px;
+  border-top: 0 none;
 }
 .top-bar .submenu li > a, .top-bar .submenuul li > a {
   color: #333333;
@@ -7262,7 +7316,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 *   </div>
 **/
 .pagination-holder, .result-selector-holder {
-  border-top: 2px solid #2199e8;
+  border-top: 2px solid #9a1267;
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
@@ -7312,7 +7366,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   padding: 0;
 }
 .pagination li.current a, .pagination li.current a:hover {
-  background-color: #2199e8;
+  background-color: #9a1267;
   color: #fff;
 }
 .pagination li.arrow, .pagination li.action {
@@ -7352,7 +7406,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 
 .pagination-holder.top, .top.result-selector-holder {
   border-top: 0 none;
-  border-bottom: 2px solid #2199e8;
+  border-bottom: 2px solid #9a1267;
   margin-bottom: 1rem;
   max-width: 75rem;
   margin-left: auto;
@@ -7392,7 +7446,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   max-width: none;
   margin: 1rem -1rem -1rem;
   margin: 1rem calc(-1rem - 1px) calc(-1rem - 1px);
-  background: #2199e8 url("../img/paper-texture.png");
+  background: #9a1267 url("../img/paper-texture.png");
 }
 .group-section-pagination-holder::before, .group-section-pagination-holder::after {
   content: ' ';
@@ -7413,22 +7467,22 @@ This file is generated by `grunt build`, do not edit it by hand.
 }
 .group-section-pagination-holder .pagination li.current a, .group-section-pagination-holder .pagination li.current a:hover {
   background-color: white;
-  color: #2199e8;
+  color: #9a1267;
 }
 .group-section-pagination-holder .pagination li.arrow, .group-section-pagination-holder .pagination li.action {
   margin: 0;
   padding: .25rem;
-  background: #2a668e url("../img/paper-texture.png");
+  background: #67234d url("../img/paper-texture.png");
 }
 .group-section-pagination-holder .pagination li.arrow a, .group-section-pagination-holder .pagination li.action a {
-  background: #2a668e url("../img/paper-texture.png");
+  background: #67234d url("../img/paper-texture.png");
   color: #fff;
 }
 .group-section-pagination-holder .pagination li.arrow a:hover, .group-section-pagination-holder .pagination li.action a:hover {
-  background-color: #4daded;
+  background-color: #d7198f;
 }
 .group-section-pagination-holder .pagination li.arrow.disable, .group-section-pagination-holder .pagination li.arrow.disable a, .group-section-pagination-holder .pagination li.arrow.disable a:hover, .group-section-pagination-holder .pagination li.action.disable, .group-section-pagination-holder .pagination li.action.disable a, .group-section-pagination-holder .pagination li.action.disable a:hover {
-  background-color: #7599b1;
+  background-color: #99718a;
   color: #666666;
 }
 .group-section-pagination-holder.top {
@@ -7584,10 +7638,10 @@ This file is generated by `grunt build`, do not edit it by hand.
 *   </div>
 */
 div.reveal {
-  border-top: 6px solid #2199e8;
+  border-top: 6px solid #9a1267;
 }
 div.reveal .close-button {
-  background-color: #2199e8;
+  background-color: #9a1267;
   color: #fff;
   padding: .25em .5em .5em .5em;
   top: 0;
@@ -7628,7 +7682,7 @@ div.reveal .close-button {
   user-select: none;
   touch-action: none;
   background-image: url("../img/billie-holiday.png");
-  border: 1px solid #518db4;
+  border: 1px solid #8d4974;
   border-radius: 6px;
   -webkit-box-shadow: inset 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: inset 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
@@ -7642,7 +7696,7 @@ div.reveal .close-button {
   display: inline-block;
   max-width: 100%;
   height: 0.5rem;
-  background-color: #2199e8;
+  background-color: #9a1267;
   transition: all 0.2s ease-in-out;
   background-image: url("../img/billie-holiday.png");
   -webkit-box-shadow: inset 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
@@ -7668,7 +7722,7 @@ div.reveal .close-button {
   touch-action: manipulation;
   border-radius: 0;
   border-radius: 1000px;
-  border: 1px solid #2a668e;
+  border: 1px solid #67234d;
   -webkit-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
@@ -7808,7 +7862,7 @@ input + .switch-paddle {
   border-radius: 0;
 }
 input:checked ~ .switch-paddle {
-  background: #14B057;
+  background: #9a1267;
 }
 input:checked ~ .switch-paddle::after {
   left: 2.25rem;
@@ -7944,7 +7998,7 @@ input:checked + label > .switch-inactive {
   color: #e6e6e6;
 }
 .switch.value-switch .switch-paddle, .switch.value-switch input:checked .switch-paddle, .switch-group .switch .switch-paddle, .switch-group .switch input:checked .switch-paddle {
-  background-color: #2199e8;
+  background-color: #9a1267;
 }
 
 .switch.switch-2x .switch-active, .switch.switch-4x .switch-active {
@@ -7981,7 +8035,7 @@ input:checked + label > .switch-inactive {
 }
 
 .switch-group {
-  background-color: #14B057;
+  background-color: #9a1267;
   border: 2px solid #b3b3b3;
   box-sizing: content-box;
   height: 2rem;
@@ -8223,12 +8277,12 @@ input:checked + label > .switch-inactive {
 *   </div>
 */
 .tooltip {
-  background-color: #1a364f;
+  background-color: #67234d;
   z-index: 2000;
 }
 
 .tooltip.tip-top > .nub {
-  border-color: #1a364f transparent transparent;
+  border-color: #67234d transparent transparent;
 }
 
 .close-button {
@@ -8271,7 +8325,7 @@ input:checked + label > .switch-inactive {
   color: #FFF;
 }
 .button-group.selectable .button:hover, .button-group.selectable .button:focus {
-  background-color: #157894;
+  background-color: #830f58;
   color: #FFF;
 }
 .button-group.selectable .button:hover, .button-group.selectable .button:focus {
@@ -8286,15 +8340,15 @@ input:checked + label > .switch-inactive {
   display: none;
 }
 .button-group.selectable .selected.button {
-  background-color: #14B057;
+  background-color: #9a1267;
   color: #FFF;
 }
 .button-group.selectable .selected.button:hover, .button-group.selectable .selected.button:focus {
-  background-color: #157894;
+  background-color: #830f58;
   color: #FFF;
 }
 .button-group.selectable .selected.button:hover, .button-group.selectable .selected.button:focus {
-  background-color: #1a9750;
+  background-color: #85195d;
   color: #fff;
 }
 .button-group.selectable .selected.button i.fa {
@@ -8440,7 +8494,7 @@ input:checked + label > .switch-inactive {
   font-weight: 400;
 }
 .tt-suggestion strong {
-  color: #14B057;
+  color: #9a1267;
   font-size: 1.10em;
   margin: 0 2px 0 1px;
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
@@ -8545,18 +8599,18 @@ input:checked + label > .switch-inactive {
 }
 
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
-  border: 1px solid #3adb76;
-  background: #3adb76;
+  border: 1px solid #9a1267;
+  background: #9a1267;
   font-weight: normal;
-  color: #333333;
+  color: #fff;
 }
 
 .ui-state-active a {
-  color: #333333;
+  color: #fff;
   text-decoration: none;
 }
 .ui-state-active a:link, .ui-state-active a:visited {
-  color: #333333;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -9025,14 +9079,14 @@ input:checked + label > .switch-inactive {
 }
 .ui-accordion-override .ui-icon-triangle-1-s:before {
   content: "\f13a";
-  color: #14B057;
+  color: #9a1267;
 }
 .ui-accordion-override .ui-accordion-content {
   border: 0;
   border-radius: 0;
 }
 .ui-accordion-override .ui-accordion-content.ui-accordion-content-active {
-  border-top: 2px solid #4daded;
+  border-top: 2px solid #9a1267;
   border-bottom: 2px solid #666666;
 }
 
@@ -9118,8 +9172,8 @@ input:checked + label > .switch-inactive {
 }
 
 .group-section .colored-paper:first-child, .card .colored-paper:first-child {
-  margin-top: -.15rem;
-  margin-top: calc(-.15rem - 1px);
+  margin-top: -.2rem;
+  margin-top: calc(-.2rem - 1px);
 }
 @media only screen and (max-height: 480px) {
   .group-section .colored-paper:first-child, .card .colored-paper:first-child {
@@ -9147,31 +9201,31 @@ input:checked + label > .switch-inactive {
 }
 
 .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child {
-  margin-bottom: -.15rem;
-  margin-bottom: calc(-.15rem - 1px);
+  margin-bottom: -.2rem;
+  margin-bottom: calc(-.2rem - 2px);
 }
 @media only screen and (max-height: 480px) {
   .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child {
     margin-bottom: -.25rem;
-    margin-bottom: calc(-.25rem - 1px);
+    margin-bottom: calc(-.25rem - 2px);
   }
 }
 @media only screen and (min-width: 767px) {
   .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child {
     margin-bottom: -.5rem;
-    margin-bottom: calc(-.5rem - 1px);
+    margin-bottom: calc(-.5rem - 2px);
   }
 }
 @media only screen and (min-width: 1024px) {
   .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child {
     margin-bottom: -1rem;
-    margin-bottom: calc(-1rem - 1px);
+    margin-bottom: calc(-1rem - 2px);
   }
 }
 @media only screen and (min-width: 1200px) {
   .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child {
     margin-bottom: -1rem;
-    margin-bottom: calc(-1rem - 1px);
+    margin-bottom: calc(-1rem - 2px);
   }
 }
 
@@ -9229,7 +9283,7 @@ input:checked + label > .switch-inactive {
 *   @example
 *	<div class="page-wrapper" style="border:red 1px solid"><div class="section">Hello this is content </div></div>
 **/
-.with-group-sections, .paper-page, .with-group-sections .overlap .tabs .selected, .paper-page .overlap .tabs .selected {
+.with-group-sections, .paper-page {
   background-image: url("../img/billie-holiday-lite.png");
 }
 
@@ -9241,28 +9295,28 @@ input:checked + label > .switch-inactive {
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
 }
 
-.with-group-sections.error, .with-group-sections.error .overlap .tabs .selected, .with-group-sections.error .overlap .tabs .selected, .paper-page.error, .paper-page.error .overlap .tabs .selected, .paper-page.error .overlap .tabs .selected {
-  background-color: #f7cfd3;
+.with-group-sections.error, .with-group-sections.error .overlap .tabs .selected, .with-group-sections.error .overlap .tabs .is-active, .paper-page.error, .paper-page.error .overlap .tabs .selected, .paper-page.error .overlap .tabs .is-active {
+  background-color: #f5c3c8;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.warning, .with-group-sections.warning .overlap .tabs .selected, .with-group-sections.warning .overlap .tabs .selected, .paper-page.warning, .paper-page.warning .overlap .tabs .selected, .paper-page.warning .overlap .tabs .selected {
-  background-color: #fbe7ce;
+.with-group-sections.warning, .with-group-sections.warning .overlap .tabs .selected, .with-group-sections.warning .overlap .tabs .is-active, .paper-page.warning, .paper-page.warning .overlap .tabs .selected, .paper-page.warning .overlap .tabs .is-active {
+  background-color: #fae1c2;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.success, .with-group-sections.success .overlap .tabs .selected, .with-group-sections.success .overlap .tabs .selected, .paper-page.success, .paper-page.success .overlap .tabs .selected, .paper-page.success .overlap .tabs .selected {
-  background-color: #c7f9dc;
+.with-group-sections.success, .with-group-sections.success .overlap .tabs .selected, .with-group-sections.success .overlap .tabs .is-active, .paper-page.success, .paper-page.success .overlap .tabs .selected, .paper-page.success .overlap .tabs .is-active {
+  background-color: #b9f7d3;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.info, .with-group-sections.info .overlap .tabs .selected, .with-group-sections.info .overlap .tabs .selected, .paper-page.info, .paper-page.info .overlap .tabs .selected, .paper-page.info .overlap .tabs .selected {
-  background-color: #ededed;
+.with-group-sections.info, .with-group-sections.info .overlap .tabs .selected, .with-group-sections.info .overlap .tabs .is-active, .paper-page.info, .paper-page.info .overlap .tabs .selected, .paper-page.info .overlap .tabs .is-active {
+  background-color: #e9e9e9;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.highlighted, .with-group-sections.highlighted .overlap .tabs .selected, .with-group-sections.highlighted .overlap .tabs .selected, .paper-page.highlighted, .paper-page.highlighted .overlap .tabs .selected, .paper-page.highlighted .overlap .tabs .selected {
-  background-color: #d2eff8;
+.with-group-sections.highlighted, .with-group-sections.highlighted .overlap .tabs .selected, .with-group-sections.highlighted .overlap .tabs .is-active, .paper-page.highlighted, .paper-page.highlighted .overlap .tabs .selected, .paper-page.highlighted .overlap .tabs .is-active {
+  background-color: #f6b3dd;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.disabled, .with-group-sections.disabled .overlap .tabs .selected, .with-group-sections.disabled .overlap .tabs .selected, .paper-page.disabled, .paper-page.disabled .overlap .tabs .selected, .paper-page.disabled .overlap .tabs .selected {
-  background-color: whitesmoke;
+.with-group-sections.disabled, .with-group-sections.disabled .overlap .tabs .selected, .with-group-sections.disabled .overlap .tabs .is-active, .paper-page.disabled, .paper-page.disabled .overlap .tabs .selected, .paper-page.disabled .overlap .tabs .is-active {
+  background-color: #f2f2f2;
   background-image: url("../img/billie-holiday-speck.png");
 }
 .with-group-sections .overlap + .page-wrapper, .paper-page .overlap + .page-wrapper {
@@ -9276,7 +9330,7 @@ input:checked + label > .switch-inactive {
 
 .colored-paper {
   background-image: url("../img/construction-paper.png");
-  background-color: #2199e8;
+  background-color: #9a1267;
 }
 .colored-paper h1, .colored-paper h2, .colored-paper h3, .colored-paper h4, .colored-paper h5, .colored-paper h6, .colored-paper p, .colored-paper ul, .colored-paper ol {
   color: #fff;
@@ -9297,7 +9351,7 @@ input:checked + label > .switch-inactive {
   background-color: #a6a6a6;
 }
 .colored-paper.highlighted {
-  background-color: #22AFD7;
+  background-color: #9a1267;
 }
 .colored-paper.disabled {
   background-color: #cccccc;
@@ -9327,10 +9381,10 @@ input:checked + label > .switch-inactive {
   background-color: #e0e0e0;
 }
 .colored-paper.highlighted .tabs li {
-  background-color: #d2eff8;
+  background-color: #f8c2e4;
 }
 .colored-paper.highlighted .tabs li:hover {
-  background-color: #b0e4f3;
+  background-color: #f395d0;
 }
 .colored-paper.disabled .tabs li {
   background-color: whitesmoke;
@@ -9347,11 +9401,11 @@ input:checked + label > .switch-inactive {
   display: inline-block;
   margin: .4em .05em .3em;
   vertical-align: bottom;
-  background-color: #d3ebfa;
+  background-color: #f8c2e4;
   padding: .2em .3em;
 }
 .colored-paper .tabs li:hover {
-  background-color: #b1dbf7;
+  background-color: #f395d0;
 }
 .colored-paper .tabs li.selected, .colored-paper .tabs li:hover.selected {
   border-radius: .5em;
@@ -9406,6 +9460,24 @@ input:checked + label > .switch-inactive {
 * 
 *   @example
 *   <div class="page paper-page">
+*     <nav class="overlap"><ul class="tabs">
+*     <li class="icon"><a class="home"><i class="fa fa-holder"></i></a></li>
+*     <li class=""><a>Tab 2</a></li>
+*     <li class="selected"><a >Tab 3</a></li>
+*     <li class=""><a >Tab 4</a></li>
+*     </ul></nav>
+*     <div class="page-wrapper">
+*     <section class="section group-section radius"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
+*        </div>
+*    </div>
+*
+**/
+/**
+* Tabs on Paper Pages with States:
+* `.page.paper-page  > .overlap >.tabs` - Tabs placed outside of cards are used to change all cards under the tabs.  This pattern is used for sub page toggling.
+* 
+*   @example
+*   <div class="page paper-page warning">
 *     <nav class="overlap"><ul class="tabs">
 *     <li class="icon"><a class="home"><i class="fa fa-holder"></i></a></li>
 *     <li class=""><a>Tab 2</a></li>
@@ -10174,7 +10246,7 @@ button.twitter, .button.twitter {
   color: #FFF;
 }
 button.twitter:hover, button.twitter:focus, .button.twitter:hover, .button.twitter:focus {
-  background-color: #157894;
+  background-color: #830f58;
   color: #FFF;
 }
 button.facebook, .button.facebook {
@@ -10182,7 +10254,7 @@ button.facebook, .button.facebook {
   color: #FFF;
 }
 button.facebook:hover, button.facebook:focus, .button.facebook:hover, .button.facebook:focus {
-  background-color: #157894;
+  background-color: #830f58;
   color: #FFF;
 }
 button.linkedin, .button.linkedin {
@@ -10190,7 +10262,7 @@ button.linkedin, .button.linkedin {
   color: #FFF;
 }
 button.linkedin:hover, button.linkedin:focus, .button.linkedin:hover, .button.linkedin:focus {
-  background-color: #157894;
+  background-color: #830f58;
   color: #FFF;
 }
 button.googleplus, .button.googleplus {
@@ -10198,7 +10270,7 @@ button.googleplus, .button.googleplus {
   color: #FFF;
 }
 button.googleplus:hover, button.googleplus:focus, .button.googleplus:hover, .button.googleplus:focus {
-  background-color: #157894;
+  background-color: #830f58;
   color: #FFF;
 }
 button.youtube, .button.youtube {
@@ -10206,7 +10278,7 @@ button.youtube, .button.youtube {
   color: #FFF;
 }
 button.youtube:hover, button.youtube:focus, .button.youtube:hover, .button.youtube:focus {
-  background-color: #157894;
+  background-color: #830f58;
   color: #FFF;
 }
 button.block, .button.block {
@@ -10467,7 +10539,7 @@ cite {
 
 .score-bar-holder {
   width: 100%;
-  background-color: #198dae;
+  background-color: #2199e8;
   display: block;
   font-size: 10px;
 }
@@ -10491,12 +10563,12 @@ cite {
   padding-bottom: 200px;
 }
 .score-bar-holder .data-container.primary-color {
-  background-color: #2199e8;
+  background-color: #9a1267;
   color: #fff;
   border-color: #fff;
 }
 .score-bar-holder .data-container.secondary-color {
-  background-color: #267ab2;
+  background-color: #7b1c57;
   color: #fff;
   border-color: #fff;
 }
@@ -10683,7 +10755,7 @@ cite {
 *   <h5 class="with-underline" style="background-color:grey; color:white; padding:.5em;"><span class="order-marker inverse">c</span>Header 5 Tag</h5>
 */
 .order-marker {
-  background-color: #2199e8;
+  background-color: #9a1267;
   color: #fff;
   border-radius: 50%;
   display: inline-block;
@@ -10703,12 +10775,12 @@ cite {
 }
 .order-marker.hollow {
   background-color: transparent;
-  border: 0.1em solid #2199e8;
-  color: #2199e8;
+  border: 0.1em solid #9a1267;
+  color: #9a1267;
 }
 .order-marker.inverse {
   background-color: #fff;
-  color: #2199e8;
+  color: #9a1267;
 }
 
 h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.success, h2.success, h3.success, h4.success, h5.success, h6.success, p.success, a.success, li.success, blockquote.success, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
@@ -10730,7 +10802,7 @@ h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li
 *  	<p class="highlighted"><strong>Paragraph that is a highlighted State.</strong>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
 */
 h1.with-underline {
-  border-bottom: #4daded 2px solid;
+  border-bottom: #9a1267 2px solid;
 }
 
 h2.with-underline {
@@ -10738,7 +10810,7 @@ h2.with-underline {
 }
 
 h3.with-underline {
-  border-bottom: #94cef4 1px dotted;
+  border-bottom: #ea49ae 1px dotted;
 }
 
 h4.with-underline {
@@ -10963,7 +11035,7 @@ h6 blockquote, h6 .sub-line {
 }
 
 .text-highlight-color {
-  color: #4daded !important;
+  color: #9a1267 !important;
 }
 
 /**
@@ -10977,18 +11049,18 @@ h6 blockquote, h6 .sub-line {
  *		p this paragraph with line after.
  */
 .group-divide {
-  border-top: #4daded 1px dotted;
+  border-top: #9a1267 1px dotted;
   margin-top: .5rem;
   padding-top: 1rem;
 }
 
 .group-divide-bottom {
-  border-bottom: #4daded 1px dotted;
+  border-bottom: #9a1267 1px dotted;
   margin-bottom: .5rem;
 }
 
 .group-divide-auto + .group-divide-auto {
-  border-top: #4daded 1px dotted;
+  border-top: #9a1267 1px dotted;
   margin-top: 1rem;
   padding-top: .5rem;
 }
@@ -11006,14 +11078,14 @@ h6 blockquote, h6 .sub-line {
 *		
 */
 .link {
-  color: #4daded;
+  color: #9a1267;
   text-decoration: underline;
 }
 .link.icon {
   text-decoration: none;
 }
 .link:hover {
-  color: #71bef0;
+  color: #d7198f;
   text-decoration: underline;
 }
 .link.reverse {
@@ -11297,15 +11369,15 @@ STATE TRUMPING CODE
 }
 
 .highlighted .order-marker.hollow, .highlighted.order-marker.hollow, .highlighted .input-holder input, .highlighted .input-holder textarea, .highlighted .input-holder select, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted .bar.close, .highlighted.inset .bar.close, .highlighted.question .button-group, .highlighted .order-marker.hollow, .highlighted.order-marker.hollow, h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
-  border-color: #22AFD7;
+  border-color: #9a1267;
 }
 
 .highlighted .order-marker.inverse, .highlighted.order-marker.inverse.highlighted .order-marker.hollow, .highlighted.order-marker.hollow, .nav-list.nav-checklist li.highlighted i, .nav-checklist.panel-selector li.highlighted i, .answer.highlighted .required-holder, .question.highlighted .required-holder, .question-inline.highlighted .required-holder, .question-grid-based.highlighted .required-holder, .highlighted .label-holder label, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted .input-holder .value, .highlighted .bar.close .action-btn, .collapsable-panel.highlighted h1, .collapsable-panel.highlighted h2, .collapsable-panel.highlighted h3, .collapsable-panel.highlighted h4, .collapsable-panel.highlighted h5, .collapsable-panel.highlighted h6, .highlighted .order-marker.inverse, .highlighted.order-marker.inverse.highlighted .order-marker.hollow, .highlighted.order-marker.hollow, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
-  color: #22AFD7;
+  color: #9a1267;
 }
 
 .nav-list.nav-checklist li.highlighted, .nav-checklist.panel-selector li.highlighted, .highlighted .message-holder > .highlighted, .hint .highlighted, .highlighted.inset .bar.close .action-btn, .highlighted-inactive .switch-paddle, .highlighted-active input:checked ~ .switch-paddle, .highlighted.callout {
-  background-color: #22AFD7;
+  background-color: #9a1267;
 }
 
 .highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before {

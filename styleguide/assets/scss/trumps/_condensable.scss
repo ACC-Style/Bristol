@@ -1,0 +1,86 @@
+/**
+* HELPER - Condensable (Condense):
+* `.condensable.large .condense` - This pattern allows for responsive reduction of content.
+*  Content tagged with `.condense` will turn to display:none when it passes the below the break point. On the container element add  '.condensable' and set the break point where you want it  by adding the class `.small`, `.medium`, or `.large`.
+*  !! Single word reduction requires adding `condensable-word` see example below.
+* 
+*   @example
+*	<h2>
+*		Condensable Sub-line
+*		<span class="sub-line condensable large"><span class="condense">The full word is only seen on large screens.</span> It only says Super below on smaller screens</span>
+*		<span class="sub-line condensable condensable-word large">Super<span class="condense">califragilisticexpialidocious</span></span>
+*	</h2>
+*/
+/**
+* HELPER - Swappable (short-text long-text):
+* `.swappable` - This pattern allows for responsive swapping of content from `.short-text` and `.long-text`.
+*   On the container element add `.swappable` and set the break point where you want it to switch by adding the class `.small`, `.medium`, or `.large`.
+*   The elements with the .short-text and .long-text must be inline elements.
+* 
+*   @example
+*	<h2 class="swappable medium">
+*		Swappable Sub-line
+*		<span class="sub-line">
+*			<span class="short-text">Short Title</span>
+*			<span class="long-text">Long TItle Seen on Medium Screens and Up</span>
+*		</span>
+*	</h2>
+*/
+
+
+.condensable{
+	&.condensable-word{
+		word-spacing: -.35em;
+	}
+	.condense{ display:inline;}
+	@include bp(xs-down){
+		.condense{ display:none;}
+	}
+
+	&.small{
+		@include bp(sm-down){
+			.condense{ display:none;}
+		}
+	}
+
+	&.medium{
+		@include bp(md-down){
+			.condense{ display:none;}
+		}
+	}
+
+	&.large{
+		@include bp(lg-down){
+			.condense{ display:none;}
+		}
+	}
+}
+.swappable{
+	.long-text{ display:inline;}
+	.short-text{ display: none;}
+	@include bp(xs-down){
+		.short-text{ display: inline;}
+		.long-text{ display:none;}
+	}
+
+	&.small{
+		@include bp(sm-down){
+			.short-text{ display: inline;}
+			.long-text{ display:none;}
+		}
+	}
+
+	&.medium{
+		@include bp(md-down){
+			.short-text{ display: inline;}
+			.long-text{ display:none;}
+		}
+	}
+
+	&.large{
+		@include bp(lg-down){
+			.short-text{ display: inline;}
+			.long-text{ display:none;}
+		}
+	}
+}

@@ -202,6 +202,11 @@ module.exports = function(grunt){
 					dest:'styleguide/assets/css'
 				},{
 					expand:true,
+					cwd:'assets/scss',
+					src:'**',
+					dest:'styleguide/assets/scss'
+				},{
+					expand:true,
 					cwd:'assets/img',
 					src:'**',
 					dest:'styleguide/assets/img'

@@ -1,0 +1,32 @@
+//@import "vendor/font-awesome/_variables";
+%cellcolor{
+		padding: .25rem .25rem .25rem .25rem;
+		text-align: center;
+		vertical-align: top;
+		i{margin: 0 auto;}
+	}
+
+
+@mixin cellcolor($selector,$var,$bg, $grey,$color:#fff){
+	
+	td#{$selector}{
+		@extend %cellcolor;
+		background-color: fontcolor($grey,'light');
+		color:$color;
+		.highlight &{background-color:color($bg,50);}
+		.fa-holder:before{content:$var;}
+	}
+	tr:nth-child(even) td#{$selector}{
+		background-color: fontcolor($grey,'quiet');
+	}
+	tr.highlight:nth-child(even) td#{$selector}{
+		background-color:color($bg,60);
+	}
+}
+
+@include cellcolor('.grey-check',$fa-var-check,grey(50),grey(50));
+@include cellcolor('.green-check',$fa-var-check,$success-color,grey(50));
+@include cellcolor('.error',$fa-var-exclamation-circle,$error-red,grey(50));
+@include cellcolor('.alert',$fa-var-exclamation-triangle,$warning-orange,grey(50));
+	
+

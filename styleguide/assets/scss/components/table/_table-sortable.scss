@@ -1,0 +1,194 @@
+/**
+* Tables (Sortable):
+* `.banded or .stripped` - tables witha soratable table header. 
+*  Just add the class of the column to the table `.col1` and the sort direction `.sort-asc` or `.sort-desc`.
+* 
+*   @example
+*	<table class="table stripped  sort-asc col1">
+*		<thead class="sortableheader">
+*			<tr>
+*				<th class="col1 sortable">
+*                        <div class="relative firefoxfix">
+*                        	<span class="sort sorttoggle">
+*                        	<a class="fa fa-sort"></a>
+*                        	</span>
+*                        	<a class="text">Table Header </a>
+*                        </div>
+*                 </th>
+*				<th class="col2 sortable selected asc">
+*                        <div class="relative firefoxfix">
+*                        	<span class="sort sorttoggle">
+*                        	<a class="fa fa-sort"></a>
+*                        	</span>
+*                        	<a  class="text">Toggle Sorter </a>
+*                        </div>
+*                 </th>
+*				<th class="col3 sortable selected asc">
+*                        <div class="relative firefoxfix">
+*                        	<span class="sort sorttwoways">
+*                        	<a class="fa fa-sort selected"></a><a class="fa fa-sort"></a>
+*                        	</span>
+*                        	<a  class="text">Long Table<br>Header </a>
+*                        </div>
+*                 </th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr>
+*				<td> row 2  cell A</td>
+*				<td> row 2  cell B</td>
+*				<td> row 2  cell C</td>
+*			</tr>
+*		</tbody>
+*		<tfoot>
+*			<tr>
+*				<td colspan="3">footer cell</td>
+*			</tr>
+*		</tfoot>
+*	</table>
+*/
+
+// .fa-sort:before{content:$fa-var-sort;}
+$dark-grey:#666;
+.table thead tr:last-child th.sortable{border-bottom:none 0;} 
+.table thead th.sortable{vertical-align: top;}
+.sortableheader{background-color:grey(50);}
+th.sortable{
+	font-size: rem-calc(ms(0));
+	font-weight: 700;
+	padding:0;
+	position:relative;
+	overflow:hidden;
+	border-bottom: 0px none transparent;
+	background-color:grey(50) !important;
+	&:hover{ background-color: grey(55) !important;}
+	select{
+	    font-size: 0.92857rem;
+	    margin: 0 0 0 .5em;
+	    padding-left: 2em;
+	    border: 0 none rgba(0, 0, 0, 0);
+	    background-color: #737373;
+	    height: 100%;
+	    top: 0;
+	    bottom: 0;
+	    position: absolute;
+	    left: auto;
+	    width: 100%;
+	    font-family: 'Roboto Condensed', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+	    font-weight: 700;
+	    color: #FFF;
+	    right: 0;
+	    vertical-align: top;
+	    padding-top: 0;
+	    &:hover{
+	    	background-color:mix($dark-grey, $black,50%);
+	    };
+	}
+	.sort{
+		position:absolute;
+		top:0;
+		left:0;
+		bottom:0;
+		display:inline-block;
+		background-color:grey(60);
+		padding:0 3px;
+		vertical-align:middle;
+		.fa-sort{
+			color:grey(20);
+			top: .5rem;
+			position: relative;
+			vertical-align: middle;
+			width: 1em;
+			height: 1em;
+			text-align: center;
+			&:before{content:"\f0dc";}
+			&.selected{color:$warning-color;}
+		}
+		&.sorttwoways{
+			.fa-sort{position: relative;}
+			.fa-sort:before{ content:"\f0de";}
+			.fa-sort + .fa-sort:before{ content:"\f0dd";}
+			.fa-sort + .fa-sort{
+				position: absolute;
+				top:auto;
+				bottom: 0.5rem;
+			}
+		}
+	}
+	&.selected{
+		.sort{
+			background-color:mix($dark-grey, $black,50%); 
+		}
+		.sorttoggle .fa-sort{color:$warning-color;}
+		&.asc{
+			.sorttoggle .fa-sort:before{
+				content:"\f0de";
+			}
+		}
+		&.desc{
+			.sorttoggle .fa-sort:before{
+				 content:"\f0dd";
+			}
+		}
+	}
+
+	.text{
+		color:white;
+		padding: .25rem .5rem 0rem 1.25rem; 
+		//margin-bottom: -3em;
+		white-space:normal;
+		display: block;
+		line-height: 1.25;
+		min-height: 3em;
+		@include bp(lg){padding: 0.5rem 0.625rem 0.25rem 2rem;}
+	}
+	&:hover.text{color:grey(10);}
+	.has-tip{border:none 0;}
+	
+}
+.firefoxfix{ position: initial; height: 100%;}
+// $column-names:
+// 			".col1"
+// 			".col2"
+// 			".col3"
+// 			".col4"
+// 			".col5"
+// 			".col6"
+// 			".col7"
+// 			".col8"
+// 			".col9"
+// 			".col10";
+
+// 		//$selector is the colomn name
+// 		//$mod can only be .sort-asc  or .sort-desc
+		
+// 		@function sort_column_selectors($selectors, $mod) {
+// 		  $full-selctors: "";
+// 		  @each $selector in $selectors {
+// 			$temp-selector: $mod + $selector +" .sortable"+ $selector +" .sort i:before";
+// 			$full-selctors: $temp-selector + "," + $full-selctors;
+// 		  }
+// 		  @return $full-selctors;
+// 		}
+
+
+// 		@function sort_column_indicator_selectors($selectors) {
+// 		  $full-selctors: "";
+// 		  @each $selector in $selectors {
+// 			$temp-selector: $selector +" .sortable"+ $selector +" .sort";
+// 			$full-selctors: $temp-selector + "," + $full-selctors;
+// 		  }
+// 		  @return $full-selctors;
+// 		}
+// 		#{sort_column_selectors($column-names, '.sort-asc')}{ content:"\f0de";}
+// 		#{sort_column_selectors($column-names, '.sort-desc')}{ content:"\f0dd";}
+// 		#{sort_column_indicator_selectors($column-names)}{ 
+// 			background-color:mix($dark-grey, $black,50%);
+// 			i{color:$alert-color;
+// 				};
+// 			}

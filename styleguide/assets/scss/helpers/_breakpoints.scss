@@ -1,0 +1,95 @@
+@mixin bp($point) {
+  
+    $xs-only: "only screen and (max-width : 480px)";
+    $sm-only: "only screen and (min-width : 480px) and (max-width : 767px)";
+    $md-only: "only screen and (min-width : 768px) and (max-width : 1024px)";
+    $lg-only: "only screen and (min-width : 1025px) and (max-width : 1200px)";
+    $xl-only: "only screen and (min-width : 1200px)";
+    $xs: "only screen and (max-width : 480px)";
+    $sm: "only screen and (min-width : 320px)";
+    $md: "only screen and (min-width : 767px)";
+    $lg: "only screen and (min-width : 1024px)";
+    $xl: "only screen and (min-width : 1200px)";
+    $xs-down: "only screen and (max-width : 320px)";
+    $sm-down: "only screen and (max-width : 767px)";
+    $md-down: "only screen and (max-width : 1024px)";
+    $lg-down: "only screen and (max-width : 1200px)";
+    $xs-height: "only screen and (min-height : 0px)";
+    $sm-height: "only screen and (min-height : 320px)";
+    $md-height: "only screen and (min-height : 480px)";
+    $lg-height: "only screen and (min-height : 600px)";
+    $xs-height-down: "only screen and (max-height : 320px)";
+    $sm-height-down: "only screen and (max-height : 480px)";
+    $md-height-down: "only screen and (max-height : 768px)";
+    $lg-height-down: "only screen and (max-height : 960px)";
+  @if $point == xs-only {
+    @media #{$xs-only} { @content; }
+  }
+  @else if $point == xs {
+      @media #{$xs} { @content; }
+  }
+  @else if $point == xs-down {
+      @media #{$xs-down} { @content; }
+  }
+  @else if $point == sm-only {
+      @media #{$sm-only} { @content; }
+  }
+  @else if $point == sm {
+     @media #{$sm} { @content; }
+  }
+  @else if $point == sm-down {
+    @media #{$sm-down} { @content; }
+  }
+  @else if $point == sm-down {
+    @media #{$sm-down} { @content; }
+  }
+  @else if $point == md-only {
+    @media #{$md-only} { @content; }
+  }
+  @else if $point == md {
+    @media #{$md} { @content; }
+    }
+  @else if $point == md-down {
+    @media #{$md-down} { @content; }
+  }
+  @else if $point == lg {
+    @media #{$lg} { @content; }
+    }
+  @else if $point == lg-only {
+    @media #{$lg-only} { @content; }
+    }
+  @else if $point == lg-down {
+    @media #{$lg-down} { @content; }
+  }
+  @else if $point == xl {
+    @media #{$xl} { @content; }
+  }
+  @else if $point == xl-only {
+    @media #{$xl-only} { @content; }
+  }
+  // This is for height media queries 
+  @else if $point == lg-height {
+    @media #{$lg-height} { @content; }
+  }
+  @else if $point == md-height {
+    @media #{$md-height} { @content; }
+  }
+  @else if $point == sm-height {
+    @media #{$sm-height} { @content; }
+  }
+  @else if $point == xs-height {
+    @media #{$xs-height} { @content; }
+  }
+    @else if $point == lg-height-down {
+    @media #{$lg-height-down} { @content; }
+  }
+  @else if $point == md-height-down {
+    @media #{$md-height-down} { @content; }
+  }
+  @else if $point == sm-height-down {
+    @media #{$sm-height-down} { @content; }
+  }
+  @else if $point == xs-height-down {
+    @media #{$xs-height-down} { @content; }
+  }
+}

@@ -1,0 +1,80 @@
+/**
+* User ID Block:
+* `.user-id-block` - OMA User Id Container.
+* 
+*   @example
+*	<div class="user-id-block row collapse">
+*		<img class='user-pic' src="assets/img/profile-pic-default.jpg" alt="Avatar of Members Name">
+*		<ul class="no-bullet user-info">
+*			<li class="user-name" ><span class="fullName">Jeff Morris</span> <span class="userDesignation">MD, PHD</span></li>
+*			<li class="user-profession"><span class="loud">Professional Type:</span> Clinician</li>
+*			<li class="user-application "><span class="loud">Application Type:</span> FACC</li>
+*			<li class="user-application-switch"><a href="" class="link">Change Application Type</a></li>
+*		</ul>
+*	</div>
+*/
+
+
+
+.user-id-block{
+	margin: 2px;
+	border:1px solid grey(10);
+	padding-top:.5rem;
+	padding-bottom: 1rem;
+	position: relative;
+	.user-pic{
+			float:left; 
+-webkit-clip-path:circle(40px at center);
+-webkit-moz-path:circle(40px,40px,40px);
+clip-path:circle(40px,40px,40px);
+
+}
+	.user-pic{margin: .5rem 5px .5rem 5px;}
+	.user-info{
+		margin:.5rem .5rem .5rem -100px;
+		padding-left:105px;
+		float:right;
+		display: block;
+		box-sizing:border-box;
+		width: 100%;
+
+		.user-name,
+		.user-designation,
+		.user-profession,
+		.user-application{
+			line-height: 1.25rem;
+		}
+		.user-name{
+			@include font-slab();
+			font-weight: 700;
+			font-size: 1.5rem;
+			color:fontcolor($black,'loud');
+			line-height: 2rem;
+		}
+		.user-application-switch{
+			@include font-light();
+			font-size: .75rem;
+			line-height: 1.25rem;
+		}
+	}
+	@include bp(md-down){
+		.user-pic, .user-info{float: none; position: relative;;}
+		.user-pic{margin:0 auto;display: block;}
+		.user-info{margin:0; padding:0 1rem;text-align: center;}
+
+	}
+}
+
+
+.autosave-block{
+	display: inline-block;
+	text-align: left;
+	color:#fff;
+	background-color: $primary-color;
+	width:100%;
+	padding:.25rem;
+	position: fixed;
+	top:0;
+	@include font-bold();
+}
+

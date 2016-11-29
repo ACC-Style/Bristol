@@ -1,0 +1,17 @@
+/* AutoComplete */
+  .ui-autocomplete {
+    max-height: 15em;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+    font-size: 1.25rem;
+    line-height: 1;
+    span{padding:0 .25rem 0 0;   font-size: .8em;}
+    .headline{ @include font-slab-bold;display:block;color:fontcolor($black); font-size: 1em;}
+    .description{@include font-italic;color:fontcolor($black,'quiet');font-size: .75em;}
+    .ui-state-focus{
+      .headline,.description{
+          color:white;
+      }} 
+
+  }

@@ -1,0 +1,21 @@
+@import "../helpers/breakpoints";
+.tabs.primary{
+
+	@include bp(sm-down){
+		display: table;
+		width:100%;
+		li{
+			display: table-cell;
+		}
+	}
+	@include bp(xs-down){
+		display: block;	
+		li{display: block;width:100%}
+	}
+}
+.switch-paddle,.unit-of-measure{
+	position:relative;
+}
+.switch-active,.switch-inactive{
+	top:0;
+}
