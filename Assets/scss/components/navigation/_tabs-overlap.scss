@@ -9,7 +9,7 @@
 		border-bottom: 2px solid grey(50);
 	}
 	@if $brand-level > 1{
-		border-bottom: 5px solid mix( rebrand-color( grey(50) ,2), grey(50) );
+		border-bottom: 5px solid mix( $product-brand-color, grey(50),75 );
 	}
 
 	.tabs{
@@ -28,7 +28,7 @@
 		border: 2px solid grey(45);
 		}
 		@if $brand-level > 1{
-		border: 1px solid mix(grey(45),$product-brand-color);
+		border: 1px solid mix($product-brand-color,grey(50),25);
 		}
 		
 		border-bottom: 0;
@@ -39,18 +39,24 @@
 		&.selected,&.is-active{
 			margin-bottom: -1px;
 			padding-bottom: 3px;
-			background: mix(rebrand-color( white , 2), grey(50) );
-			border-color: mix(rebrand-color( grey(50) , 2), grey(50) );
+			@if $brand-level < 2{
+			background: grey(25);
+			border-color: grey(50);
+			}
+			@if $brand-level >= 2{
+			background:mix( $product-brand-color, grey(50),75 );
+			border-color:mix( $product-brand-color, grey(50),75 );
+			}
 			z-index: 1000;
 			vertical-align: bottom;
-			.page-overlap &{background: url(../img/billie-holiday-speck.png);}
+			.page-overlap &{background-image: url(../img/billie-holiday-speck.png);}
 			//.with-group-sections &{background:#fff url('../img/billie-holiday-lite.png');}
 			a{
 				@if $brand-level < 2{
 					color:$black;
 				}
 				@if $brand-level > 1{
-					color:#fff;
+					color: color-contrast(mix( $product-brand-color, grey(50),75 ));
 				}
 			}
 		}
