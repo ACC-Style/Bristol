@@ -11,7 +11,7 @@ $required_data:(
 @each $State in $states{
 	$selector:map-get($State,'Selector');
 	$color:map-get($State,'Color');
-	$sepstate-color-base:rebrand-color($color,2);
+	$sepstate-color-base:$color;
 	$sepstate-color:scale-color($sepstate-color-base,$lightness:15%);
 	$sepstate-darkcolor:scale-color($sepstate-color,$lightness:-10%);
 	$sepstate-lightcolor:scale-color($sepstate-color,$lightness:10%);
@@ -50,6 +50,22 @@ $required_data:(
 *				<td> row 1  cell B</td>
 *				<td> row 1  cell C</td>
 *			</tr>
+*			<tr class="seperator info">
+*				<td colspan='3'> Separator With Info</td>
+*			</tr>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr class="seperator success">
+*				<td colspan='3'> Separator With success</td>
+*			</tr>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
 *			<tr class="seperator error">
 *				<td colspan='3'> Separator With Error</td>
 *			</tr>
@@ -58,8 +74,16 @@ $required_data:(
 *				<td> row 1  cell B</td>
 *				<td> row 1  cell C</td>
 *			</tr>
-*			<tr class="seperator info">
-*				<td colspan='3'> Separator With Info</td>
+*			<tr class="seperator warning">
+*				<td colspan='3'> Separator With warning</td>
+*			</tr>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr class="seperator disabled">
+*				<td colspan='3'> Separator With disabled</td>
 *			</tr>
 *			<tr>
 *				<td> row 1  cell A</td>
