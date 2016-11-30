@@ -22,9 +22,10 @@
                 background-color:color(map-get($State,'Color'), 25);
                 background-image:url('../img/billie-holiday-speck.png');
             }
-        @if $brand-level < 2{    
+        @if $brand-level >= 2{    
             &#{$state-selector} .overlap .tabs .selected,&#{$state-selector} .overlap .tabs .is-active{
-                background-color:map-get($State,'Color');
+                background:map-get($State,'Color');
+                a{color:color-contrast(map-get($State,'Color'));}
              }
          }
     }
