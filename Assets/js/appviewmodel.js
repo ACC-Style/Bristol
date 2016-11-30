@@ -8,9 +8,26 @@ function viewModel(){
 	var self = this;
 	
 	self.Form = ko.observable(new formObject());
+	self.cssSwitch = ko.observable();
+	self.switchStyles = function () {
+	var cssFileTrue = "assets/css/index.css"; 
+	var cssFileFalse = "assets/css/index-2.css"; 
+	var cssLinkIndex = 6;
+	var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
 
+	var newlink = document.createElement("link");
+	newlink.setAttribute("rel", "stylesheet");
+	newlink.setAttribute("type", "text/css");
+	if(!self.cssSwitch()){
+		newlink.setAttribute("href", cssFileTrue);
+		console.log("true");
+	}else{
+		newlink.setAttribute("href", cssFileFalse);
+		console.log("false");
+	}
+	document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+	}
 
-// Cockcroft-Gault CrCl = (140-age) * (Wt in kg) * (0.85 if female) / (72 * Cr)
 
 	
 }
@@ -29,4 +46,5 @@ ko.applyBindings(appmodel);
 pager.start();
 // var path = "#!/";
 // pager.navigate(path);
-
+appmodel.cssSwitch.subscribe( appmodel.switchStyles );
+	

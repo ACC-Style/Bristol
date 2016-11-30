@@ -228,39 +228,39 @@ var availableTags = [
       self.hasAPI = ko.observableArray([]);
       self.hasFreePlan = ko.observableArray([]);
   };
-  var appmodel = new PanelSelectorKO();
- // ko.applyBindings(appmodel);
+//   var appmodel = new PanelSelectorKO();
+//  // ko.applyBindings(appmodel);
 
 
-    function makeSticky() {
-      var myWindow = $( window ),
-        myHeader = $( ".sticky-holder" );
+//     function makeSticky() {
+//       var myWindow = $( window ),
+//         myHeader = $( ".sticky-holder" );
 
-      myWindow.scroll( function() {
-        if ( myWindow.scrollTop() == 0 ) {
-          myHeader.removeClass( "sticky-nav" );
-        } else {
-          myHeader.addClass( "sticky-nav" );
-        }
-      } );
-    }
-    $( function() {
-      // makeSticky();
+//       myWindow.scroll( function() {
+//         if ( myWindow.scrollTop() == 0 ) {
+//           myHeader.removeClass( "sticky-nav" );
+//         } else {
+//           myHeader.addClass( "sticky-nav" );
+//         }
+//       } );
+//     }
+//     $( function() {
+//       // makeSticky();
        
-      var sticky = new Waypoint.Sticky({
-        element: $('.sticky-holder')[0]
-      });
+//       var sticky = new Waypoint.Sticky({
+//         element: $('.sticky-holder')[0]
+//       });
           
-      var waypoint = new Waypoint({
-        element: $(".shrink-waypoint"),
-        handler: function(direction) {
-         if(direction=="down"){
-          $( ".sticky-holder" ).addClass( "shrink" );
-             }else{
-          $( ".sticky-holder" ).removeClass( "shrink" );
+//       var waypoint = new Waypoint({
+//         element: $(".shrink-waypoint"),
+//         handler: function(direction) {
+//          if(direction=="down"){
+//           $( ".sticky-holder" ).addClass( "shrink" );
+//              }else{
+//           $( ".sticky-holder" ).removeClass( "shrink" );
 
-         };
-         console.log(direction);
-        }
-      });
-});
+//          };
+//          console.log(direction);
+//         }
+//       });
+// });

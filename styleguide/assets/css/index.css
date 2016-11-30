@@ -472,6 +472,7 @@ body {
 * `ACC's Colors` - The ACC has a set of standard colors which include the +ACC Blue+, +Scrub Colors+, and +Intent Colors+. The colors that change depending the product are the +Scrub Colors+
 * 
 *   @example
+*	<h4>Framework Colors</h4>
 *	<table class="table">
 *		<thead>
 *			<tr>
@@ -518,7 +519,8 @@ body {
 *			</tr>
 *		</tbody>
 *	</table>
-*	<h3>Scrub Colors</h3><table class="table">
+*	<h4>Scrub Colors</h4>
+*	<table class="table">
 *		<thead>
 *			<tr>
 *				<th>Color Name</th>
@@ -538,12 +540,12 @@ body {
 *				<td><h3>Scrub Blue</h3></td>
 *				<td style="background-color:#018adb;"class="color-block">#018adb</td>
 *			</tr>
-*			<tr class="seperator secondary">
+*			<tr class="seperator info">
 *				<td colspan="2">Less Used Colors for Highlights and Pinstripes</td>
 *			</tr>
 *			<tr>
 *				<td><h3>Scrub Purple</h3></td>
-*				<td  style="background-color:#198dae;"class="color-block">#198dae</td>
+*				<td  style="background-color:#7d5891;"class="color-block">#7d5891</td>
 *			</tr>
 *			<tr>
 *				<td><h3>Scrub Magenta</h3></td>
@@ -584,100 +586,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* makes the font 33% larger relative to the icon container */
-.fa-lg {
-  font-size: 1.33333em;
-  line-height: 0.75em;
-  vertical-align: -15%;
-}
-
-.fa-2x {
-  font-size: 2em;
-}
-
-.fa-3x {
-  font-size: 3em;
-}
-
-.fa-4x {
-  font-size: 4em;
-}
-
-.fa-5x {
-  font-size: 5em;
-}
-
-.fa-fw {
-  width: 1.28571em;
-  text-align: center;
-}
-
-.fa-ul {
-  padding-left: 0;
-  margin-left: 2.14286em;
-  list-style-type: none;
-}
-.fa-ul > li {
-  position: relative;
-}
-
-.fa-li {
-  position: absolute;
-  left: -2.14286em;
-  width: 2.14286em;
-  top: 0.14286em;
-  text-align: center;
-}
-.fa-li.fa-lg {
-  left: -1.85714em;
-}
-
-.fa-border {
-  padding: .2em .25em .15em;
-  border: solid 0.08em #eee;
-  border-radius: .1em;
-}
-
-.pull-right {
-  float: right;
-}
-
-.pull-left {
-  float: left;
-}
-
-.fa.pull-left {
-  margin-right: .3em;
-}
-.fa.pull-right {
-  margin-left: .3em;
-}
-
-.fa-spin {
-  -webkit-animation: fa-spin 2s infinite linear;
-  animation: fa-spin 2s infinite linear;
-}
-
-@-webkit-keyframes fa-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
-}
-@keyframes fa-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
-}
 .fa-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
@@ -719,34 +627,6 @@ body {
 :root .fa-flip-horizontal,
 :root .fa-flip-vertical {
   filter: none;
-}
-
-.fa-stack {
-  position: relative;
-  display: inline-block;
-  width: 2em;
-  height: 2em;
-  line-height: 2em;
-  vertical-align: middle;
-}
-
-.fa-stack-1x, .fa-stack-2x {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  text-align: center;
-}
-
-.fa-stack-1x {
-  line-height: inherit;
-}
-
-.fa-stack-2x {
-  font-size: 2em;
-}
-
-.fa-inverse {
-  color: #fff;
 }
 
     /*  (asterisk
@@ -1242,11 +1122,11 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 strong, .strong {
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  color: #d7198f;
+  color: #4daded;
 }
 
 em, .emphasis {
-  color: #4d0934;
+  color: #114d74;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: italic;
@@ -1256,7 +1136,7 @@ em, .emphasis {
 .subtle {
   font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
-  color: #9a5680;
+  color: #5d99c1;
 }
 
 .block-margins {
@@ -1543,25 +1423,26 @@ ul li, ol li {
 *	<div class="row"><h3>Paper Textures</h3>
 *	<div class="texture column medium-6 large-4">
 *		<div class="content-padding">
-*			<h4 class="texture--name">News Print Paper lite</h4>
+*			<h4 class="texture--name">News Print-Solid</h4>
 *			<div class="texture--thumb">
 *				<div class="texture--holder" style="background-image:url(Assets/img/billie-holiday-lite.png)"></div>
 *			</div>
 *			<ul class="no-bullet texture--cite">
 *				<li><strong>File Name: </strong><span class="text">billie-holiday-lite.png</span></li>
-*				<li><strong>Usage: </strong><span class="text">Soft paper used in the background of groupings and overlaps.</span></li>	
+*				<li><strong>Usage: </strong><span class="text">Soft paper used in the background. <strong>This texture opaque and can not be colored.</strong></span></li>	
 *			</ul>
 *		</div>
 *	</div>
 *	<div class="texture column medium-6 large-4">
 *		<div class="content-padding">
-*			<h4 class="texture--name">News Print Paper</h4>
+*			<h4 class="texture--name">News Print-Transparent</h4>
 *			<div class="texture--thumb">
-*				<div class="texture--holder" style="background-image:url(Assets/img/billie-holiday.png)"></div>
+*				<div class="texture--holder half-width" style="background-image:url(Assets/img/billie-holiday.png)"></div>
+*				<div class="texture--holder half-width" style="background-image:url(Assets/img/billie-holiday.png);background-color:#6cda22;"></div>
 *			</div>
 *			<ul class="no-bullet texture--cite">
 *				<li><strong>File Name: </strong><span class="text">billie-holiday.png</span></li>
-*				<li><strong>Usage: </strong><span class="text">Soft paper used in the background of groupings and overlaps.</span></li>	
+*				<li><strong>Usage: </strong><span class="text">News Print that can have a color behind it.</span></li>	
 *			</ul>
 *		</div>
 *	</div>
@@ -1574,6 +1455,18 @@ ul li, ol li {
 *			<ul class="no-bullet texture--cite">
 *				<li><strong>File Name: </strong><span class="text">billie-holiday-spec.png</span></li>
 *				<li><strong>Usage: </strong><span class="text">Alternate soft paper used in the background of groupings and overlaps.</span></li>	
+*			</ul>
+*		</div>
+*	</div></div><div class="row">
+*	<div class="texture column medium-6 large-4 end">
+*		<div class="content-padding">
+*			<h4 class="texture--name">News Print Dark</h4>
+*			<div class="texture--thumb">
+*				<div class="texture--holder" style="background-image:url(Assets/img/textured_paper.png)"></div>
+*			</div>
+*			<ul class="no-bullet texture--cite">
+*				<li><strong>File Name: </strong><span class="text">textured_paper.png</span></li>
+*				<li><strong>Usage: </strong><span class="text">This paper texture is used below news print when there is a need for a deepr layer of texture like in the overlap tabs that break the surface of News Print backgrounds.</span></li>	
 *			</ul>
 *		</div>
 *	</div>
@@ -1601,6 +1494,7 @@ ul li, ol li {
 *			</ul>
 *		</div>
 *	</div>
+*	</div>
 *	<div class="texture column medium-6 large-4 end">
 *		<div class="content-padding">
 *			<h4 class="texture--name">Carbon Paper</h4>
@@ -1612,7 +1506,9 @@ ul li, ol li {
 *				<li><strong>Usage: </strong><span class="text">Footer background with a lux quality.</span></li>	
 *			</ul>
 *		</div>
-*	</div></div><div class="row"><h3>Ink Marks</h3><p>Application Response is shown with "ink" markings that can be simply colored by changing the background-color.</p>
+*	</div>
+*<div class="row">
+*	</div><div class="row"><h3>Ink Marks</h3><p>Application Response is shown with "ink" markings that can be simply colored by changing the background-color.</p>
 *	<div class="texture column medium-6 large-4">
 *		<div class="content-padding">
 *			<h4 class="texture--name">Cross Hatched Ink</h4>
@@ -1690,6 +1586,10 @@ ul li, ol li {
   width: 150px;
   height: 150px;
 }
+.texture .texture--holder.half-width {
+  width: 75px;
+  float: right;
+}
 .texture .texture--uppercase {
   text-transform: uppercase;
 }
@@ -1723,7 +1623,7 @@ ul li, ol li {
 *   <h5 class="with-underline" style="background-color:grey; color:white; padding:.5em;"><span class="order-marker inverse">c</span>Header 5 Tag</h5>
 */
 .order-marker {
-  background-color: #9a1267;
+  background-color: #2199e8;
   color: #fff;
   border-radius: 50%;
   display: inline-block;
@@ -1743,12 +1643,12 @@ ul li, ol li {
 }
 .order-marker.hollow {
   background-color: transparent;
-  border: 0.1em solid #9a1267;
-  color: #9a1267;
+  border: 0.1em solid #2199e8;
+  color: #2199e8;
 }
 .order-marker.inverse {
   background-color: #fff;
-  color: #9a1267;
+  color: #2199e8;
 }
 
 /**
@@ -1847,6 +1747,12 @@ button:disabled.secondary, .input-space
 .button {
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
   font-weight: 700;
+  background-color: #2199e8;
+  color: #FFF;
+}
+.button:hover, .button:focus {
+  background-color: #147cc0;
+  color: #FFF;
 }
 .button.radius {
   border-radius: 6px;
@@ -2232,10 +2138,10 @@ button:disabled.secondary, .input-space
 }
 .tabs.tabs-primary li:hover {
   background-color: #fff;
-  border-color: #9a1267;
+  border-color: #2199e8;
 }
 .tabs.tabs-primary li:hover a {
-  color: #9a1267;
+  color: #2199e8;
 }
 .tabs.tabs-primary li.sucsess {
   background-color: #3adb76;
@@ -2254,8 +2160,8 @@ button:disabled.secondary, .input-space
   color: #3adb76;
 }
 .tabs.tabs-primary li.selected {
-  background-color: #9a1267;
-  border-color: #9a1267;
+  background-color: #2199e8;
+  border-color: #2199e8;
   border-bottom-color: #00386b;
   border-right: 0 none;
   border-left: 0 none;
@@ -2277,7 +2183,7 @@ button:disabled.secondary, .input-space
   border-bottom: 10px solid #00386b;
 }
 .tabs.tabs-primary li.selected:hover {
-  background-color: #9a1267;
+  background-color: #2199e8;
 }
 .tabs.tabs-primary li.selected:hover a {
   color: #fff;
@@ -2291,7 +2197,7 @@ button:disabled.secondary, .input-space
   cursor: not-allowed;
 }
 .tabs.tabs-primary li.icon.selected {
-  background-color: #9a1267;
+  background-color: #2199e8;
 }
 .tabs.tabs-primary li.icon.selected a {
   color: #fff;
@@ -2318,7 +2224,7 @@ button:disabled.secondary, .input-space
   border-bottom-width: 1px;
 }
 .tabs.tabs-primary.reverse li.selected {
-  border-color: #9a1267;
+  border-color: #2199e8;
   border-top-color: #00386b;
 }
 .tabs.tabs-primary.reverse li.selected a:after {
@@ -2406,16 +2312,16 @@ button:disabled.secondary, .input-space
   background-position: top right,bottom right,right -1px;
   background-repeat: repeat,repeat-x,repeat-x;
   margin-bottom: .25rem;
-  border-bottom: 5px solid #942e6d;
+  border-bottom: 2px solid gray;
 }
 .overlap .tabs {
   padding-top: .25em;
   border: 0;
   background: transparent none;
-  overflow: hidden;
+  overflow: visible;
 }
 .overlap .tabs li, .overlap .tabs .tabs-title {
-  border: 1px solid #87657a;
+  border: 2px solid #8c8c8c;
   border-bottom: 0;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
@@ -2425,8 +2331,8 @@ button:disabled.secondary, .input-space
 .overlap .tabs li.selected, .overlap .tabs li.is-active, .overlap .tabs .tabs-title.selected, .overlap .tabs .tabs-title.is-active {
   margin-bottom: -1px;
   padding-bottom: 3px;
-  background: #942e6d;
-  border-color: #942e6d;
+  background: #bfbfbf;
+  border-color: gray;
   z-index: 1000;
   vertical-align: bottom;
 }
@@ -2434,7 +2340,7 @@ button:disabled.secondary, .input-space
   background-image: url(../img/billie-holiday-speck.png);
 }
 .overlap .tabs li.selected a, .overlap .tabs li.is-active a, .overlap .tabs .tabs-title.selected a, .overlap .tabs .tabs-title.is-active a {
-  color: #fff;
+  color: #333333;
 }
 .overlap .tabs li.secondary, .overlap .tabs .tabs-title.secondary {
   border-color: #959595;
@@ -2469,11 +2375,11 @@ button:disabled.secondary, .input-space
   border-color: #a6a6a6;
 }
 .with-group-sections.highlighted .overlap, .paper-page.highlighted .overlap {
-  border-bottom-color: #9a1267;
+  border-bottom-color: #22AFD7;
 }
 .with-group-sections.highlighted .overlap li.selected, .with-group-sections.highlighted .overlap li.is-active, .with-group-sections.highlighted .overlap .tabs-title.selected, .with-group-sections.highlighted .overlap .tabs-title.is-active, .paper-page.highlighted .overlap li.selected, .paper-page.highlighted .overlap li.is-active, .paper-page.highlighted .overlap .tabs-title.selected, .paper-page.highlighted .overlap .tabs-title.is-active {
-  background-color: #9a1267;
-  border-color: #9a1267;
+  background-color: #22AFD7;
+  border-color: #22AFD7;
 }
 .with-group-sections.disabled .overlap, .paper-page.disabled .overlap {
   border-bottom-color: #cccccc;
@@ -2583,7 +2489,7 @@ button:disabled.secondary, .input-space
 *	</nav>
 */
 h1 + .nav-list, h1 + .panel-selector, .large.nav-list, .large.panel-selector {
-  border-top: #9a1267 2px solid;
+  border-top: #4daded 2px solid;
   margin-top: -0.75rem;
   padding-top: 0.7rem;
   margin-bottom: 1.5rem;
@@ -2725,13 +2631,13 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   color: #5c5c5c;
 }
 .nav-list.nav-checklist li.highlighted, .nav-checklist.panel-selector li.highlighted {
-  background-color: #f8c2e4;
-  border-color: #f395d0;
+  background-color: #d2eff8;
+  border-color: #b0e4f3;
   border-bottom-width: 1;
   color: #333333;
 }
 .nav-list.nav-checklist li.highlighted:hover, .nav-checklist.panel-selector li.highlighted:hover {
-  background-color: #f186c9;
+  background-color: #a5e0f1;
 }
 .nav-list.nav-checklist li.highlighted.selected, .nav-checklist.panel-selector li.highlighted.selected {
   color: white;
@@ -3468,9 +3374,9 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   max-width: 600px;
 }
 .question-grid-based .input-holder input:focus, .question-grid-based .input-holder select:focus {
-  -webkit-box-shadow: inset 0px 0px 2px 2px #9a1267;
-  -moz-box-shadow: inset 0px 0px 2px 2px #9a1267;
-  box-shadow: inset 0px 0px 2px 2px #9a1267;
+  -webkit-box-shadow: inset 0px 0px 2px 2px #2199e8;
+  -moz-box-shadow: inset 0px 0px 2px 2px #2199e8;
+  box-shadow: inset 0px 0px 2px 2px #2199e8;
 }
 .question-grid-based .label-holder .text {
   white-space: normal;
@@ -3731,7 +3637,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   line-height: 2.17778em;
   margin-top: 0em;
   margin-bottom: 0em;
-  color: #9a1267;
+  color: #2199e8;
   vertical-align: top;
   display: inline-block;
   margin-top: -.75em;
@@ -3748,7 +3654,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 }
 
 .seq:hover {
-  color: #67234d;
+  color: #2a668e;
   text-decoration: underline;
 }
 
@@ -4389,17 +4295,17 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 .repeater .question-group {
   padding-top: 1.5em;
   padding-bottom: 1.85em;
-  border: 2px dotted #ead0e1;
+  border: 2px dotted #dce9f1;
   margin-top: .5em;
   border-radius: .5em;
-  border-top: 2px soliddesaturate(#d7198f, 40%);
-  border-bottom: 2px solid #a74984;
+  border-top: 2px soliddesaturate(#4daded, 40%);
+  border-bottom: 2px solid #75a5c5;
   background-image: url(../img/empty_stripe@2x.png);
-  background-color: #f3e3ed;
+  background-color: #eaf2f6;
   position: relative;
 }
 .repeater .question-group .answer.required .required-holder, .repeater .question-group .question.required .required-holder {
-  color: #9a1267;
+  color: #2199e8;
 }
 .repeater .question-group .required-message {
   font-size: 0.6875rem;
@@ -4407,7 +4313,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   position: absolute;
   top: -2px;
   right: -2px;
-  background-color: #a74984;
+  background-color: #75a5c5;
   color: #fff;
   -webkit-transition: background-color 0.8s;
   -moz-transition: background-color 0.8s;
@@ -4441,7 +4347,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   padding: .5rem;
 }
 .repeater .repeater-action .add-new-repeater .text {
-  color: #9a1267;
+  color: #2199e8;
   display: inline-block;
   padding-right: 2rem;
   font-size: 1rem;
@@ -4473,11 +4379,11 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   background-color: white;
   border-radius: 4px;
   margin-left: 1em;
-  border-color: #d7198f;
+  border-color: #4daded;
 }
 .repeater .repeater-action .clear:hover {
   background-color: #e6e6e6;
-  border-color: #9a1267;
+  border-color: #2199e8;
 }
 
 .edit-mode.repeater .repeater-action .clear {
@@ -4725,7 +4631,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   border-top: #e6e6e6 1px solid;
 }
 .table thead tr:last-child th {
-  border-bottom: 2px solid #9a1267;
+  border-bottom: 2px solid #2199e8;
 }
 .table tbody tr:nth-child(even) {
   background-color: transparent;
@@ -4735,7 +4641,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   padding: .25rem;
 }
 .table td .color-highlighted, .table th .color-highlighted {
-  color: #9a1267;
+  color: #4daded;
 }
 .table td small, .table th small {
   font-size: 80%;
@@ -4811,7 +4717,7 @@ table a.button, table button, table .inline-list, table .nobutton {
 }
 .striped tfoot td, .striped tfoot td:nth-child(odd), .banded tfoot td, .banded tfoot td:nth-child(odd) {
   color: #333333;
-  border-top: 1px solid #9a1267;
+  border-top: 1px solid #2199e8;
   background-color: #cccccc;
 }
 
@@ -4932,14 +4838,14 @@ table a.button, table button, table .inline-list, table .nobutton {
   padding-bottom: 2.2px;
   padding-bottom: 0.1375rem;
   /* can be treated like a fallback */
-  background-color: #c71785;
+  background-color: #42a8eb;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #e11a97, #b31578);
+  background-image: linear-gradient(to left, #55b1ed, #279ce9);
   /* these will reset other properties, like background-position, but it does know what you mean */
-  background: #c71785;
-  background: linear-gradient(to left, #e11a97, #b31578);
-  border-top: #b31578 1px solid;
-  border-bottom: #b31578 2px solid;
+  background: #42a8eb;
+  background: linear-gradient(to left, #55b1ed, #279ce9);
+  border-top: #279ce9 1px solid;
+  border-bottom: #279ce9 2px solid;
   color: #fff;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -5026,15 +4932,15 @@ table a.button, table button, table .inline-list, table .nobutton {
 }
 
 .table .highlighted.seperator td, .table .highlighted.seperator:nth-child(even) td:nth-child(odd) {
-  background-color: #c71785;
+  background-color: #3fbde1;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #e11a97, #b31578);
+  background-image: linear-gradient(to left, #53c4e4, #27b5dd);
   /* these will reset other properties, like background-position, but it does know what you mean */
-  background: #c71785;
-  background: linear-gradient(to left, #e11a97, #b31578);
-  border-top: #b31578 1px solid;
-  border-bottom: #b31578 2px solid;
-  color: #fff;
+  background: #3fbde1;
+  background: linear-gradient(to left, #53c4e4, #27b5dd);
+  border-top: #27b5dd 1px solid;
+  border-bottom: #27b5dd 2px solid;
+  color: #333333;
 }
 
 .table .disabled.seperator td, .table .disabled.seperator:nth-child(even) td:nth-child(odd) {
@@ -5407,23 +5313,23 @@ tr:nth-child(even).info td {
 }
 
 td.highlighted, .table tbody tr + tr td.highlighted, tr.highlighted td, .stripped tr.highlighted:nth-child(even) td:nth-child(odd) {
-  background-color: #eed7e5;
+  background-color: #d9f1f8;
   color: #333333;
-  border-color: #f4a4d6;
+  border-color: #bbe8f4;
 }
 
 tr:nth-child(even) td.highlighted {
-  background-color: #e9cbde;
+  background-color: #ceedf6;
   color: #333333;
 }
 
 tr:nth-child(even).highlighted td {
-  background-color: #e9cbde;
+  background-color: #ceedf6;
   color: #333333;
 }
 
 .stripped tbody tr.highlighted td:nth-child(odd) {
-  background-color: #eed7e5;
+  background-color: #d9f1f8;
 }
 
 td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .stripped tr.disabled:nth-child(even) td:nth-child(odd) {
@@ -5523,7 +5429,7 @@ tr:nth-child(even).disabled td {
 }
 .bar.close .action-btn {
   top: -1.1rem;
-  color: #9a1267;
+  color: #2199e8;
 }
 .bar.jumpToTop {
   bottom: -2px;
@@ -5550,7 +5456,7 @@ tr:nth-child(even).disabled td {
   clear: both;
 }
 .collapsable-panel .bar.close {
-  border-top: 2px solid #9a1267;
+  border-top: 2px solid #2199e8;
 }
 .collapsable-panel .bar.close .action-btn {
   background-color: white;
@@ -5589,13 +5495,13 @@ tr:nth-child(even).disabled td {
   float: right;
 }
 .collapsable-panel.inset .bar.close {
-  border-top: 7px solid #9a1267;
+  border-top: 7px solid #2199e8;
   top: -2px;
 }
 .collapsable-panel.inset .bar.close .action-btn {
   top: 0;
   color: white;
-  background-color: #9a1267;
+  background-color: #2199e8;
 }
 .collapsable-panel.inset .bar.jumpToTop {
   bottom: -2px;
@@ -5706,7 +5612,7 @@ table + div > .collapsable-panel {
   border: 0 none transparent;
 }
 .collapsable-panel.highlighted.inset {
-  background-color: #fbe1f1;
+  background-color: #e8f7fb;
 }
 .collapsable-panel.highlighted.inset .bar.close .action-btn {
   color: #fff;
@@ -5844,7 +5750,7 @@ table + div > .collapsable-panel {
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
-  color: #9a1267;
+  color: #3adb76;
 }
 
 /**
@@ -5924,7 +5830,7 @@ table + div > .collapsable-panel {
   padding: .5em .75em;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  background-color: #9a1267;
+  background-color: #2199e8;
   color: #fff;
 }
 .panel-selector ul {
@@ -5947,7 +5853,7 @@ li.focused {
 .panel-selector .group-title
 li.j-selected, .panel-selector .group-title
 li.selected {
-  background-color: #9a1267;
+  background-color: #3adb76;
 }
 .panel-selector .group-title
 li.j-selected > i.fa-holder:before, .panel-selector .group-title
@@ -5988,7 +5894,7 @@ li.selected .fa {
   background-color: #2199e8;
 }
 .button-group li.j-selected a.button, .button-group li.selected a.button {
-  background-color: #9a1267;
+  background-color: #14B057;
 }
 .button-group li.j-selected a.button > i.fa-holder:before, .button-group li.j-selected a.button.fa:before, .button-group li.selected a.button > i.fa-holder:before, .button-group li.selected a.button.fa:before {
   content: "";
@@ -6104,16 +6010,16 @@ ul.toggle .toggle-position a {
 }
 ul.toggle .toggle-position.selected {
   opacity: 1;
-  border: #b8167b 0.2em solid;
-  background-color: #b8167b;
+  border: #17cc65 0.2em solid;
+  background-color: #17cc65;
   margin: -.25em 0px;
   border-radius: 5px;
   font-weight: 900;
   padding: .45em .375em;
 }
 ul.toggle .toggle-position.selected:hover {
-  background-color: #b8167b;
-  border-color: #9a1267;
+  background-color: #17cc65;
+  border-color: #14B057;
 }
 ul.toggle .toggle-position.selected a {
   color: #fff;
@@ -7128,7 +7034,6 @@ This file is generated by `grunt build`, do not edit it by hand.
   z-index: 1002;
   padding-top: 0;
   padding-bottom: 0;
-  border-bottom: 0.375rem solid #9a1267;
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
   font-weight: 700;
   font-size: 1.28571em;
@@ -7228,8 +7133,6 @@ This file is generated by `grunt build`, do not edit it by hand.
   font-weight: 400;
   letter-spacing: .01em;
   margin-top: 3px;
-  margin-top: 0px;
-  border-top: 0 none;
 }
 .top-bar .submenu li > a, .top-bar .submenuul li > a {
   color: #333333;
@@ -7340,7 +7243,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 *   </div>
 **/
 .pagination-holder, .result-selector-holder {
-  border-top: 2px solid #9a1267;
+  border-top: 2px solid #2199e8;
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
@@ -7390,7 +7293,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   padding: 0;
 }
 .pagination li.current a, .pagination li.current a:hover {
-  background-color: #9a1267;
+  background-color: #2199e8;
   color: #fff;
 }
 .pagination li.arrow, .pagination li.action {
@@ -7430,7 +7333,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 
 .pagination-holder.top, .top.result-selector-holder {
   border-top: 0 none;
-  border-bottom: 2px solid #9a1267;
+  border-bottom: 2px solid #2199e8;
   margin-bottom: 1rem;
   max-width: 75rem;
   margin-left: auto;
@@ -7470,7 +7373,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   max-width: none;
   margin: 1rem -1rem -1rem;
   margin: 1rem calc(-1rem - 1px) calc(-1rem - 1px);
-  background: #9a1267 url("../img/paper-texture.png");
+  background: #2199e8 url("../img/paper-texture.png");
 }
 .group-section-pagination-holder::before, .group-section-pagination-holder::after {
   content: ' ';
@@ -7491,22 +7394,22 @@ This file is generated by `grunt build`, do not edit it by hand.
 }
 .group-section-pagination-holder .pagination li.current a, .group-section-pagination-holder .pagination li.current a:hover {
   background-color: white;
-  color: #9a1267;
+  color: #2199e8;
 }
 .group-section-pagination-holder .pagination li.arrow, .group-section-pagination-holder .pagination li.action {
   margin: 0;
   padding: .25rem;
-  background: #67234d url("../img/paper-texture.png");
+  background: #2a668e url("../img/paper-texture.png");
 }
 .group-section-pagination-holder .pagination li.arrow a, .group-section-pagination-holder .pagination li.action a {
-  background: #67234d url("../img/paper-texture.png");
+  background: #2a668e url("../img/paper-texture.png");
   color: #fff;
 }
 .group-section-pagination-holder .pagination li.arrow a:hover, .group-section-pagination-holder .pagination li.action a:hover {
-  background-color: #d7198f;
+  background-color: #4daded;
 }
 .group-section-pagination-holder .pagination li.arrow.disable, .group-section-pagination-holder .pagination li.arrow.disable a, .group-section-pagination-holder .pagination li.arrow.disable a:hover, .group-section-pagination-holder .pagination li.action.disable, .group-section-pagination-holder .pagination li.action.disable a, .group-section-pagination-holder .pagination li.action.disable a:hover {
-  background-color: #99718a;
+  background-color: #7599b1;
   color: #666666;
 }
 .group-section-pagination-holder.top {
@@ -7662,10 +7565,10 @@ This file is generated by `grunt build`, do not edit it by hand.
 *   </div>
 */
 div.reveal {
-  border-top: 6px solid #9a1267;
+  border-top: 6px solid #2199e8;
 }
 div.reveal .close-button {
-  background-color: #9a1267;
+  background-color: #2199e8;
   color: #fff;
   padding: .25em .5em .5em .5em;
   top: 0;
@@ -7706,7 +7609,7 @@ div.reveal .close-button {
   user-select: none;
   touch-action: none;
   background-image: url("../img/billie-holiday.png");
-  border: 1px solid #8d4974;
+  border: 1px solid #518db4;
   border-radius: 6px;
   -webkit-box-shadow: inset 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: inset 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
@@ -7720,7 +7623,7 @@ div.reveal .close-button {
   display: inline-block;
   max-width: 100%;
   height: 0.5rem;
-  background-color: #9a1267;
+  background-color: #2199e8;
   transition: all 0.2s ease-in-out;
   background-image: url("../img/billie-holiday.png");
   -webkit-box-shadow: inset 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
@@ -7746,7 +7649,7 @@ div.reveal .close-button {
   touch-action: manipulation;
   border-radius: 0;
   border-radius: 1000px;
-  border: 1px solid #67234d;
+  border: 1px solid #2a668e;
   -webkit-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
@@ -7886,7 +7789,7 @@ input + .switch-paddle {
   border-radius: 0;
 }
 input:checked ~ .switch-paddle {
-  background: #9a1267;
+  background: #14B057;
 }
 input:checked ~ .switch-paddle::after {
   left: 2.25rem;
@@ -8022,7 +7925,7 @@ input:checked + label > .switch-inactive {
   color: #e6e6e6;
 }
 .switch.value-switch .switch-paddle, .switch.value-switch input:checked .switch-paddle, .switch-group .switch .switch-paddle, .switch-group .switch input:checked .switch-paddle {
-  background-color: #9a1267;
+  background-color: #2199e8;
 }
 
 .switch.switch-2x .switch-active, .switch.switch-4x .switch-active {
@@ -8059,7 +7962,7 @@ input:checked + label > .switch-inactive {
 }
 
 .switch-group {
-  background-color: #9a1267;
+  background-color: #14B057;
   border: 2px solid #b3b3b3;
   box-sizing: content-box;
   height: 2rem;
@@ -8301,12 +8204,12 @@ input:checked + label > .switch-inactive {
 *   </div>
 */
 .tooltip {
-  background-color: #67234d;
+  background-color: #1a364f;
   z-index: 2000;
 }
 
 .tooltip.tip-top > .nub {
-  border-color: #67234d transparent transparent;
+  border-color: #1a364f transparent transparent;
 }
 
 .close-button {
@@ -8349,7 +8252,7 @@ input:checked + label > .switch-inactive {
   color: #FFF;
 }
 .button-group.selectable .button:hover, .button-group.selectable .button:focus {
-  background-color: #830f58;
+  background-color: #157894;
   color: #FFF;
 }
 .button-group.selectable .button:hover, .button-group.selectable .button:focus {
@@ -8364,15 +8267,15 @@ input:checked + label > .switch-inactive {
   display: none;
 }
 .button-group.selectable .selected.button {
-  background-color: #9a1267;
+  background-color: #14B057;
   color: #FFF;
 }
 .button-group.selectable .selected.button:hover, .button-group.selectable .selected.button:focus {
-  background-color: #830f58;
+  background-color: #157894;
   color: #FFF;
 }
 .button-group.selectable .selected.button:hover, .button-group.selectable .selected.button:focus {
-  background-color: #85195d;
+  background-color: #1a9750;
   color: #fff;
 }
 .button-group.selectable .selected.button i.fa {
@@ -8518,7 +8421,7 @@ input:checked + label > .switch-inactive {
   font-weight: 400;
 }
 .tt-suggestion strong {
-  color: #9a1267;
+  color: #14B057;
   font-size: 1.10em;
   margin: 0 2px 0 1px;
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
@@ -8623,18 +8526,18 @@ input:checked + label > .switch-inactive {
 }
 
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
-  border: 1px solid #9a1267;
-  background: #9a1267;
+  border: 1px solid #3adb76;
+  background: #3adb76;
   font-weight: normal;
-  color: #fff;
+  color: #333333;
 }
 
 .ui-state-active a {
-  color: #fff;
+  color: #333333;
   text-decoration: none;
 }
 .ui-state-active a:link, .ui-state-active a:visited {
-  color: #fff;
+  color: #333333;
   text-decoration: none;
 }
 
@@ -9103,14 +9006,14 @@ input:checked + label > .switch-inactive {
 }
 .ui-accordion-override .ui-icon-triangle-1-s:before {
   content: "\f13a";
-  color: #9a1267;
+  color: #14B057;
 }
 .ui-accordion-override .ui-accordion-content {
   border: 0;
   border-radius: 0;
 }
 .ui-accordion-override .ui-accordion-content.ui-accordion-content-active {
-  border-top: 2px solid #9a1267;
+  border-top: 2px solid #4daded;
   border-bottom: 2px solid #666666;
 }
 
@@ -9307,7 +9210,7 @@ input:checked + label > .switch-inactive {
 *   @example
 *	<div class="page-wrapper" style="border:red 1px solid"><div class="section">Hello this is content </div></div>
 **/
-.with-group-sections, .paper-page {
+.with-group-sections, .paper-page, .with-group-sections .overlap .tabs .selected, .with-group-sections .overlap .tabs .is-active, .paper-page .overlap .tabs .selected, .paper-page .overlap .tabs .is-active {
   background-image: url("../img/billie-holiday-lite.png");
 }
 
@@ -9323,25 +9226,43 @@ input:checked + label > .switch-inactive {
   background-color: #f5c3c8;
   background-image: url("../img/billie-holiday-speck.png");
 }
+.with-group-sections.error .overlap .tabs .selected, .with-group-sections.error .overlap .tabs .is-active, .paper-page.error .overlap .tabs .selected, .paper-page.error .overlap .tabs .is-active {
+  background-color: #c32231;
+}
 .with-group-sections.warning, .with-group-sections.warning .overlap .tabs .selected, .with-group-sections.warning .overlap .tabs .is-active, .paper-page.warning, .paper-page.warning .overlap .tabs .selected, .paper-page.warning .overlap .tabs .is-active {
   background-color: #fae1c2;
   background-image: url("../img/billie-holiday-speck.png");
+}
+.with-group-sections.warning .overlap .tabs .selected, .with-group-sections.warning .overlap .tabs .is-active, .paper-page.warning .overlap .tabs .selected, .paper-page.warning .overlap .tabs .is-active {
+  background-color: #E08514;
 }
 .with-group-sections.success, .with-group-sections.success .overlap .tabs .selected, .with-group-sections.success .overlap .tabs .is-active, .paper-page.success, .paper-page.success .overlap .tabs .selected, .paper-page.success .overlap .tabs .is-active {
   background-color: #b9f7d3;
   background-image: url("../img/billie-holiday-speck.png");
 }
+.with-group-sections.success .overlap .tabs .selected, .with-group-sections.success .overlap .tabs .is-active, .paper-page.success .overlap .tabs .selected, .paper-page.success .overlap .tabs .is-active {
+  background-color: #14B057;
+}
 .with-group-sections.info, .with-group-sections.info .overlap .tabs .selected, .with-group-sections.info .overlap .tabs .is-active, .paper-page.info, .paper-page.info .overlap .tabs .selected, .paper-page.info .overlap .tabs .is-active {
   background-color: #e9e9e9;
   background-image: url("../img/billie-holiday-speck.png");
 }
+.with-group-sections.info .overlap .tabs .selected, .with-group-sections.info .overlap .tabs .is-active, .paper-page.info .overlap .tabs .selected, .paper-page.info .overlap .tabs .is-active {
+  background-color: #a6a6a6;
+}
 .with-group-sections.highlighted, .with-group-sections.highlighted .overlap .tabs .selected, .with-group-sections.highlighted .overlap .tabs .is-active, .paper-page.highlighted, .paper-page.highlighted .overlap .tabs .selected, .paper-page.highlighted .overlap .tabs .is-active {
-  background-color: #f6b3dd;
+  background-color: #c7ecf6;
   background-image: url("../img/billie-holiday-speck.png");
+}
+.with-group-sections.highlighted .overlap .tabs .selected, .with-group-sections.highlighted .overlap .tabs .is-active, .paper-page.highlighted .overlap .tabs .selected, .paper-page.highlighted .overlap .tabs .is-active {
+  background-color: #22AFD7;
 }
 .with-group-sections.disabled, .with-group-sections.disabled .overlap .tabs .selected, .with-group-sections.disabled .overlap .tabs .is-active, .paper-page.disabled, .paper-page.disabled .overlap .tabs .selected, .paper-page.disabled .overlap .tabs .is-active {
   background-color: #f2f2f2;
   background-image: url("../img/billie-holiday-speck.png");
+}
+.with-group-sections.disabled .overlap .tabs .selected, .with-group-sections.disabled .overlap .tabs .is-active, .paper-page.disabled .overlap .tabs .selected, .paper-page.disabled .overlap .tabs .is-active {
+  background-color: #cccccc;
 }
 .with-group-sections .overlap + .page-wrapper, .paper-page .overlap + .page-wrapper {
   padding-top: .5rem;
@@ -9354,7 +9275,7 @@ input:checked + label > .switch-inactive {
 
 .colored-paper {
   background-image: url("../img/construction-paper.png");
-  background-color: #9a1267;
+  background-color: #2199e8;
 }
 .colored-paper h1, .colored-paper h2, .colored-paper h3, .colored-paper h4, .colored-paper h5, .colored-paper h6, .colored-paper p, .colored-paper ul, .colored-paper ol {
   color: #fff;
@@ -9375,7 +9296,7 @@ input:checked + label > .switch-inactive {
   background-color: #a6a6a6;
 }
 .colored-paper.highlighted {
-  background-color: #9a1267;
+  background-color: #22AFD7;
 }
 .colored-paper.disabled {
   background-color: #cccccc;
@@ -9405,10 +9326,10 @@ input:checked + label > .switch-inactive {
   background-color: #e0e0e0;
 }
 .colored-paper.highlighted .tabs li {
-  background-color: #f8c2e4;
+  background-color: #d2eff8;
 }
 .colored-paper.highlighted .tabs li:hover {
-  background-color: #f395d0;
+  background-color: #b0e4f3;
 }
 .colored-paper.disabled .tabs li {
   background-color: whitesmoke;
@@ -9425,11 +9346,11 @@ input:checked + label > .switch-inactive {
   display: inline-block;
   margin: .4em .05em .3em;
   vertical-align: bottom;
-  background-color: #f8c2e4;
+  background-color: #d3ebfa;
   padding: .2em .3em;
 }
 .colored-paper .tabs li:hover {
-  background-color: #f395d0;
+  background-color: #b1dbf7;
 }
 .colored-paper .tabs li.selected, .colored-paper .tabs li:hover.selected {
   border-radius: .5em;
@@ -10270,7 +10191,7 @@ button.twitter, .button.twitter {
   color: #FFF;
 }
 button.twitter:hover, button.twitter:focus, .button.twitter:hover, .button.twitter:focus {
-  background-color: #830f58;
+  background-color: #157894;
   color: #FFF;
 }
 button.facebook, .button.facebook {
@@ -10278,7 +10199,7 @@ button.facebook, .button.facebook {
   color: #FFF;
 }
 button.facebook:hover, button.facebook:focus, .button.facebook:hover, .button.facebook:focus {
-  background-color: #830f58;
+  background-color: #157894;
   color: #FFF;
 }
 button.linkedin, .button.linkedin {
@@ -10286,7 +10207,7 @@ button.linkedin, .button.linkedin {
   color: #FFF;
 }
 button.linkedin:hover, button.linkedin:focus, .button.linkedin:hover, .button.linkedin:focus {
-  background-color: #830f58;
+  background-color: #157894;
   color: #FFF;
 }
 button.googleplus, .button.googleplus {
@@ -10294,7 +10215,7 @@ button.googleplus, .button.googleplus {
   color: #FFF;
 }
 button.googleplus:hover, button.googleplus:focus, .button.googleplus:hover, .button.googleplus:focus {
-  background-color: #830f58;
+  background-color: #157894;
   color: #FFF;
 }
 button.youtube, .button.youtube {
@@ -10302,7 +10223,7 @@ button.youtube, .button.youtube {
   color: #FFF;
 }
 button.youtube:hover, button.youtube:focus, .button.youtube:hover, .button.youtube:focus {
-  background-color: #830f58;
+  background-color: #157894;
   color: #FFF;
 }
 button.block, .button.block {
@@ -10587,12 +10508,12 @@ cite {
   padding-bottom: 200px;
 }
 .score-bar-holder .data-container.primary-color {
-  background-color: #9a1267;
+  background-color: #2199e8;
   color: #fff;
   border-color: #fff;
 }
 .score-bar-holder .data-container.secondary-color {
-  background-color: #7b1c57;
+  background-color: #267ab2;
   color: #fff;
   border-color: #fff;
 }
@@ -10779,7 +10700,7 @@ cite {
 *   <h5 class="with-underline" style="background-color:grey; color:white; padding:.5em;"><span class="order-marker inverse">c</span>Header 5 Tag</h5>
 */
 .order-marker {
-  background-color: #9a1267;
+  background-color: #2199e8;
   color: #fff;
   border-radius: 50%;
   display: inline-block;
@@ -10799,12 +10720,12 @@ cite {
 }
 .order-marker.hollow {
   background-color: transparent;
-  border: 0.1em solid #9a1267;
-  color: #9a1267;
+  border: 0.1em solid #2199e8;
+  color: #2199e8;
 }
 .order-marker.inverse {
   background-color: #fff;
-  color: #9a1267;
+  color: #2199e8;
 }
 
 h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.success, h2.success, h3.success, h4.success, h5.success, h6.success, p.success, a.success, li.success, blockquote.success, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
@@ -10826,7 +10747,7 @@ h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li
 *  	<p class="highlighted"><strong>Paragraph that is a highlighted State.</strong>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
 */
 h1.with-underline {
-  border-bottom: #9a1267 2px solid;
+  border-bottom: #4daded 2px solid;
 }
 
 h2.with-underline {
@@ -10834,7 +10755,7 @@ h2.with-underline {
 }
 
 h3.with-underline {
-  border-bottom: #ea49ae 1px dotted;
+  border-bottom: #94cef4 1px dotted;
 }
 
 h4.with-underline {
@@ -11059,7 +10980,7 @@ h6 blockquote, h6 .sub-line {
 }
 
 .text-highlight-color {
-  color: #9a1267 !important;
+  color: #4daded !important;
 }
 
 /**
@@ -11073,18 +10994,18 @@ h6 blockquote, h6 .sub-line {
  *		p this paragraph with line after.
  */
 .group-divide {
-  border-top: #9a1267 1px dotted;
+  border-top: #4daded 1px dotted;
   margin-top: .5rem;
   padding-top: 1rem;
 }
 
 .group-divide-bottom {
-  border-bottom: #9a1267 1px dotted;
+  border-bottom: #4daded 1px dotted;
   margin-bottom: .5rem;
 }
 
 .group-divide-auto + .group-divide-auto {
-  border-top: #9a1267 1px dotted;
+  border-top: #4daded 1px dotted;
   margin-top: 1rem;
   padding-top: .5rem;
 }
@@ -11102,14 +11023,14 @@ h6 blockquote, h6 .sub-line {
 *		
 */
 .link {
-  color: #9a1267;
+  color: #4daded;
   text-decoration: underline;
 }
 .link.icon {
   text-decoration: none;
 }
 .link:hover {
-  color: #d7198f;
+  color: #71bef0;
   text-decoration: underline;
 }
 .link.reverse {
@@ -11393,15 +11314,15 @@ STATE TRUMPING CODE
 }
 
 .highlighted .order-marker.hollow, .highlighted.order-marker.hollow, .highlighted .input-holder input, .highlighted .input-holder textarea, .highlighted .input-holder select, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted .bar.close, .highlighted.inset .bar.close, .highlighted.question .button-group, .highlighted .order-marker.hollow, .highlighted.order-marker.hollow, h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
-  border-color: #9a1267;
+  border-color: #22AFD7;
 }
 
 .highlighted .order-marker.inverse, .highlighted.order-marker.inverse.highlighted .order-marker.hollow, .highlighted.order-marker.hollow, .nav-list.nav-checklist li.highlighted i, .nav-checklist.panel-selector li.highlighted i, .answer.highlighted .required-holder, .question.highlighted .required-holder, .question-inline.highlighted .required-holder, .question-grid-based.highlighted .required-holder, .highlighted .label-holder label, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted .input-holder .value, .highlighted .bar.close .action-btn, .collapsable-panel.highlighted h1, .collapsable-panel.highlighted h2, .collapsable-panel.highlighted h3, .collapsable-panel.highlighted h4, .collapsable-panel.highlighted h5, .collapsable-panel.highlighted h6, .highlighted .order-marker.inverse, .highlighted.order-marker.inverse.highlighted .order-marker.hollow, .highlighted.order-marker.hollow, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
-  color: #9a1267;
+  color: #22AFD7;
 }
 
 .nav-list.nav-checklist li.highlighted, .nav-checklist.panel-selector li.highlighted, .highlighted .message-holder > .highlighted, .hint .highlighted, .highlighted.inset .bar.close .action-btn, .highlighted-inactive .switch-paddle, .highlighted-active input:checked ~ .switch-paddle, .highlighted.callout {
-  background-color: #9a1267;
+  background-color: #22AFD7;
 }
 
 .highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before {
