@@ -5,10 +5,10 @@
 *   @example
 *   <div class="row">
 *   <!-- Anchors (links) -->
-*   <a href="about.html" class="button">Learn More</a>
+*   <a href="" class="button">Learn More</a>
 *   <a href="#features" class="button">View All Features</a>
 *   <!-- Buttons (actions) -->
-*   <button type="button" class="success button">Save</button>
+*   <button type="button" class="success button"><i class="fa fa-floppy"></i>Save</button>
 *   <button type="button" class="alert button">Delete</button>
 *   <button type="button" class="alert button disabled">Disabled</button>
 *   <a class="tiny button" href="#">So Tiny</a>
@@ -25,6 +25,25 @@
 *   </div>
 */
 
+
+
+.button{
+  @include font-slab-bold();
+  @include button-style( rebrand-color($primary-color,2 ), auto, auto);
+  &.radius{
+    border-radius: $global-border-radius;
+  }
+  &.round{
+    border-radius: $global-border-round;
+  }
+  &.icon-only{
+  	.text{display:none;}
+  }
+}
+
+.button.navigation{ 
+	 @include button-style( $scrub-blue, auto, auto);
+}
 
 %buttondisabled{
 	background-color: grey(30);
@@ -57,21 +76,4 @@
 		background-color: #fff;
 		}
 	}
-}
-.button{
-  @include font-slab-bold();
-  @include button-style( rebrand-color($primary-color,2 ), auto, auto);
-  &.radius{
-    border-radius: $global-border-radius;
-  }
-  &.round{
-    border-radius: $global-border-round;
-  }
-  &.icon-only{
-  	.text{display:none;}
-  }
-}
-
-.button{ 
-	
 }
