@@ -1,0 +1,36 @@
+<div class="stuck-footer page paper-page" data-bind="page: {id:'demo--footer_sticky-button-bar', afterShow: buttonBarSticky ,beforeShow:listchange}" id="demo--footer_sticky-button-bar">
+    <div class="section-nav back">
+        <a href="#!/sections/content/introduction">
+            <div class="circle">
+                <i class="fa fa-holder-dynamic">
+                </i>
+            </div>
+            <div class="text">
+                Back to Introduction
+            </div>
+        </a>
+    </div>
+    <div class="page-wrapper">
+        <div class="content-padding">
+            <div class="callout warning">
+                <div class="content-padding">
+                    <h3>
+                        Sticky Buttons Do not work inside layouts that use the "mobile-offcanvas-wrapper"!
+                    </h3>
+                </div>
+            </div>
+            <h1>
+                Greek Page Content
+            </h1>
+            <div class="card">
+                {% include "../sections/greek-items/three-image-group" %}
+            {% include "../sections/greek-items/table" %}
+            {% include "../sections/greek-items/three-image-group" %}
+            </div>
+            <div class="card" >
+                {% include "../sections/layouts/sticky-button-bar" %}
+
+            </div>
+        </div>
+    </div>
+</div>
