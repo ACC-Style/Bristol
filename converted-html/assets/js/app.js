@@ -244,23 +244,42 @@ var availableTags = [
 //         }
 //       } );
 //     }
-//     $( function() {
-//       // makeSticky();
-       
-//       var sticky = new Waypoint.Sticky({
-//         element: $('.sticky-holder')[0]
-//       });
-          
-//       var waypoint = new Waypoint({
-//         element: $(".shrink-waypoint"),
-//         handler: function(direction) {
-//          if(direction=="down"){
-//           $( ".sticky-holder" ).addClass( "shrink" );
-//              }else{
-//           $( ".sticky-holder" ).removeClass( "shrink" );
+function buttonBarSticky(){
+  var sticky = new Waypoint.Sticky({
+    element: $('.footer.sticky-button-bar')[0]
+  });
+  var stickybuttonbar = new Waypoint({
+    element: $('#sticky-button-bar-holder'),
+    handler: function(direction) {
+     if(direction=='down'){
+        $( '#demo--footer_sticky-button-bar' ).removeClass( 'stuck-footer' );
+      }else{
+        $( '#demo--footer_sticky-button-bar' ).addClass( 'stuck-footer' );
+     };
+     console.log(direction);
+   },
+  offset: 'bottom-in-view'
 
-//          };
-//          console.log(direction);
-//         }
-//       });
+  });
+};
+
+
+//   $( function() {
+//     var sticky = new Waypoint.Sticky({
+//       element: $('.sticky-holder')[0]
+//     });
+
+//     var waypoint = new Waypoint({
+//       element: $(".shrink-waypoint"),
+//       handler: function(direction) {
+//        if(direction=="down"){
+//         $( ".sticky-holder" ).addClass( "shrink" );
+//            }else{
+//         $( ".sticky-holder" ).removeClass( "shrink" );
+
+//        };
+//        console.log(direction);
+//       }
+//     });
+// }
 // });

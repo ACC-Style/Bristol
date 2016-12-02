@@ -2706,7 +2706,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   padding-left: 1.07143rem;
   padding-right: 1.07143rem;
 }
-.with-group-sections .section-nav {
+.with-group-sections .section-nav, .paper-page .section-nav {
   margin-left: 0;
   margin-right: 0;
 }
@@ -10399,6 +10399,44 @@ cite {
 *		</div>
 *	</footer>
 **/
+.sticky-button-bar {
+  position: relative;
+}
+
+.stuck-footer .sticky-button-bar.footer, .stuck-header .sticky-button-bar.header {
+  width: 100%;
+  background: url(billie-holiday-spec.png) #f2f2f2;
+  -webkit-box-shadow: 0px -1px 10px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px -1px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px -1px 10px 0px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 0;
+  right: 0;
+  padding: .5em 0;
+  z-index: 10000;
+}
+.stuck-footer .sticky-button-bar.footer .button, .stuck-header .sticky-button-bar.header .button {
+  margin-bottom: 0;
+}
+
+.stuck-footer .sticky-button-bar.footer {
+  bottom: 0;
+  border-top: 1px solid #b5ee8f;
+}
+.stuck-header .sticky-button-bar.header {
+  top: 0;
+  border-bottom: 1px solid #b5ee8f;
+}
+
+/**
+* Sticky Button Bar:
+* `body.stuck-footer .footer.sticky-button-bar` -  Sticky button bars are made for moving a collection of buttons  to a fixed bar in the window so it is either always fixed or with 'waypoint.js' you can make it fixed if it is not with in the viewport. Making it sticky moves the bar into a fixed possition out of its normal flow so it can be on seen when it is below the fold.  This ui element need to be combined with waypoint to trigger .footer-stuck or .header-stuck on the body to toggle the sticky effect on and off at appropriate times. 
+* 
+*   @example
+*	<div class="footer sticky-button-bar"><div class="row">
+*		<div class="pull-right"><a class="secondary button" href="#">Secondary Button</a><a class="button" href="#">Action Button</a></div>
+*	</div></div>
+*/
 /* latin-ext */
 @font-face {
   font-family: 'Roboto Condensed';

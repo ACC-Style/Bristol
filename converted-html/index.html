@@ -14,7 +14,6 @@
 
 </head>
 	<body>
-    <a class="hide-for-medium button expanded tiny" onClick="$('.mobile-offcanvas-wrapper .split-layout').toggleClass('navOn')" style="margin-bottom:0;"><i class="fa fa-bars"></i> Menu</a>
     <div class="row">
   <header class="header page">
     <a href="#!/" class="logo">
@@ -22,7 +21,7 @@
     </a>
 	</header>
 </div>
-    <div class="mobile-offcanvas-wrapper">
+    <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
       <section class="split-layout fill-page-height medium navOn">
         <aside class="split-sidebar">
             <div class="content-padding">
@@ -31,23 +30,30 @@
    	</h2>
    </div>
     <nav  class="nav-list small">
-    	<ul id="sidebar">
-          <li><a href="#!/content/introduction"><span class="text">Introduction</span><i class="fa fa-holder-dynamic"></i></a></li>
+    	<ul >
+          <li><a href="#!/sections/content/introduction"><span class="text">Introduction</span><i class="fa fa-holder-dynamic"></i></a></li>
       
-    		<li><a href="#!/content/framework"><span class="text">Base HTML Framework</span><i class="fa fa-holder-dynamic"></i></a></li>
-    		<li><a href="#!/content/branding"><span class="text">Colors, Fonts &amp; Icons</span><i class="fa fa-holder-dynamic"></i></a></li>
-    		<li><a href="#!/content/typography"><span class="text">Typography</span><i class="fa fa-holder-dynamic"></i></a></li>
-    		<li><a href="#!/content/tables"><span class="text">Tables</span><i class="fa fa-holder-dynamic"></i></a></li>
-        <li><a href="#!/content/buttons"><span class="text">Inputs: Buttons &amp; Switches</span><i class="fa fa-holder-dynamic"></i></a></li>
-        <li><a href="#!/content/navigation"><span class="text">Navigation: Tabs &amp; Nav Lists</span><i class="fa fa-holder-dynamic"></i></a></li>
-        <li><a href="#!/content/qna"><span class="text">Forms: Questions &amp; Answers</span><i class="fa fa-holder-dynamic"></i></a></li>
-        <li><a href="#!/content/layouts"><span class="text">Grids &amp; Layouts</span><i class="fa fa-holder-dynamic"></i></a></li>   
-        <li><a href="#!/content/paper"><span class="text">Paper Layers &amp; Grouping</span><i class="fa fa-holder-dynamic"></i></a></li>     
-        <li><a href="#!/content/space-savers"><span class="text">Space Savers: Modals, Accordians & Collapses</span><i class="fa fa-holder-dynamic"></i></a></li>  
+    		<li><a href="#!/sections/content/framework"><span class="text">Base HTML Framework</span><i class="fa fa-holder-dynamic"></i></a></li>
+    		<li><a href="#!/sections/content/branding"><span class="text">Colors, Fonts &amp; Icons</span><i class="fa fa-holder-dynamic"></i></a></li>
+    		<li><a href="#!/sections/content/typography"><span class="text">Typography</span><i class="fa fa-holder-dynamic"></i></a></li>
+    		<li><a href="#!/sections/content/tables"><span class="text">Tables</span><i class="fa fa-holder-dynamic"></i></a></li>
+        <li><a href="#!/sections/content/buttons"><span class="text">Inputs: Buttons &amp; Switches</span><i class="fa fa-holder-dynamic"></i></a></li>
+        <li><a href="#!/sections/content/navigation"><span class="text">Navigation: Tabs &amp; Nav Lists</span><i class="fa fa-holder-dynamic"></i></a></li>
+        <li><a href="#!/sections/content/qna"><span class="text">Forms: Questions &amp; Answers</span><i class="fa fa-holder-dynamic"></i></a></li>
+        <li><a href="#!/sections/content/layouts"><span class="text">Grids &amp; Layouts</span><i class="fa fa-holder-dynamic"></i></a></li>   
+        <li><a href="#!/sections/content/paper"><span class="text">Paper Layers &amp; Grouping</span><i class="fa fa-holder-dynamic"></i></a></li>     
+        <li><a href="#!/sections/content/space-savers"><span class="text">Space Savers: Modals, Accordians &amp; Collapses</span><i class="fa fa-holder-dynamic"></i></a></li>  
     	</ul>
     </nav>
+   <div class="content-padding"><h2>Demos</h2></div> 
+      <nav  class="nav-list small">
+      <ul >
+          <li><a href="#!/demos/demo/demo--footer_sticky-button-bar"><span class="text">Footer Sticky Button Bar</span><i class="fa fa-holder-dynamic"></i></a></li>      
+    </ul>
+  </nav>
         </aside>
         <article class="split-content"  data-bind="page: {id:'content', role: 'start'}">
+        <a class="hide-for-medium button expanded tiny" onClick="$('.mobile-offcanvas-wrapper .split-layout').toggleClass('navOn')" style="margin-bottom:0;"><i class="fa fa-bars"></i> Menu</a>
           <div class="page-wrapper">
             <div class="content-padding">
             <div class="shrink-waypoint"></div>
@@ -6991,6 +6997,33 @@ padding: 1em;
       </div>
     </section>
 
+	 <section class="sg-block sg-section-sticky-button-bar">
+      <div class="sg-text">
+        <h3 id="sticky-button-bar" class="sg">Sticky Button Bar</h3>
+        <p class="sg">
+          <code class="sg">body.stuck-footer .footer.sticky-button-bar</code>- Sticky button bars are made for moving an actional button bar into a fixed possition out of its normal flow so it can be on screan when it is below the fold. This ui element need to be combined with waypoint to trigger .footer-stuck on the body to toggle on and off at appropriate times.</p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas" id="sticky-button-bar-holder">
+          <div class="footer sticky-button-bar">
+            <div class="row">
+              <div class="pull-right">
+                <a class="secondary button" href="#">Secondary Button</a>
+                <a class="button" href="#">Action Button</a>
+              </div>
+            </div>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;footer sticky-button-bar&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pull-right&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;secondary button&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>Secondary Button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;button&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>Action Button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+      </div>
+    </section>
+	<a href="#!/demos/demo/demo--footer_sticky-button-bar" class="link">Click here to see demo of it sticky</a>
 	  <section class="sg-block sg-section-mobile-header">
       <div class="sg-text">
         <h3 id="mobile-header" class="sg">Mobile Header</h3>
@@ -8304,6 +8337,174 @@ padding: 1em;
         </article>
       </section>
     </div>
+    <div data-bind="page:{id:'demos'}">
+      <section class="split-layout fill-page-height medium navOn">
+        <aside class="split-sidebar">
+            <div class="content-padding">
+   	<h2>
+   		Sections
+   	</h2>
+   </div>
+    <nav  class="nav-list small">
+    	<ul >
+          <li><a href="#!/sections/content/introduction"><span class="text">Introduction</span><i class="fa fa-holder-dynamic"></i></a></li>
+      
+    		<li><a href="#!/sections/content/framework"><span class="text">Base HTML Framework</span><i class="fa fa-holder-dynamic"></i></a></li>
+    		<li><a href="#!/sections/content/branding"><span class="text">Colors, Fonts &amp; Icons</span><i class="fa fa-holder-dynamic"></i></a></li>
+    		<li><a href="#!/sections/content/typography"><span class="text">Typography</span><i class="fa fa-holder-dynamic"></i></a></li>
+    		<li><a href="#!/sections/content/tables"><span class="text">Tables</span><i class="fa fa-holder-dynamic"></i></a></li>
+        <li><a href="#!/sections/content/buttons"><span class="text">Inputs: Buttons &amp; Switches</span><i class="fa fa-holder-dynamic"></i></a></li>
+        <li><a href="#!/sections/content/navigation"><span class="text">Navigation: Tabs &amp; Nav Lists</span><i class="fa fa-holder-dynamic"></i></a></li>
+        <li><a href="#!/sections/content/qna"><span class="text">Forms: Questions &amp; Answers</span><i class="fa fa-holder-dynamic"></i></a></li>
+        <li><a href="#!/sections/content/layouts"><span class="text">Grids &amp; Layouts</span><i class="fa fa-holder-dynamic"></i></a></li>   
+        <li><a href="#!/sections/content/paper"><span class="text">Paper Layers &amp; Grouping</span><i class="fa fa-holder-dynamic"></i></a></li>     
+        <li><a href="#!/sections/content/space-savers"><span class="text">Space Savers: Modals, Accordians &amp; Collapses</span><i class="fa fa-holder-dynamic"></i></a></li>  
+    	</ul>
+    </nav>
+   <div class="content-padding"><h2>Demos</h2></div> 
+      <nav  class="nav-list small">
+      <ul >
+          <li><a href="#!/demos/demo/demo--footer_sticky-button-bar"><span class="text">Footer Sticky Button Bar</span><i class="fa fa-holder-dynamic"></i></a></li>      
+    </ul>
+  </nav>
+        </aside>
+        <article class="split-content" data-bind="page:{id:'demo'}">
+          <div class="stuck-footer page paper-page" data-bind="page: {id:'demo--footer_sticky-button-bar', afterShow: buttonBarSticky ,beforeShow:listchange}" id="demo--footer_sticky-button-bar">
+    <div class="section-nav back">
+        <a href="#!/sections/content/introduction">
+            <div class="circle">
+                <i class="fa fa-holder-dynamic">
+                </i>
+            </div>
+            <div class="text">
+                Back to Introduction
+            </div>
+        </a>
+    </div>
+    <div class="page-wrapper">
+        <div class="content-padding">
+            <div class="callout warning">
+                <div class="content-padding">
+                    <h3>
+                        Sticky Buttons Do not work inside layouts that use the "mobile-offcanvas-wrapper"!
+                    </h3>
+                </div>
+            </div>
+            <h1>
+                Greek Page Content
+            </h1>
+            <div class="card">
+                <div class="row">
+	<div class="column medium-4"><img src="http://placehold.it/350x150&txt=image" width="100%" alt=""></div>
+	<div class="column medium-4"><img src="http://placehold.it/350x150&txt=image" width="100%" alt=""></div>
+	<div class="column medium-4"><img src="http://placehold.it/350x150&txt=image" width="100%" alt=""></div>
+</div>
+            <table class="recommendationTable table">
+	<thead>
+		<tr class="recommendationTableHeaders">
+			<th>
+				Table Header A
+			</th>
+			<th>
+				Table Header B
+			</th>
+			<th>
+				Table Header C
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="recommendationLevel1" colspan="3">
+				This is a greek table to show how a table might be used in a real world situation. 
+			</td>
+			
+		</tr>
+		<tr class="seperator">
+			<td class="recommendationLevel1" colspan="3">
+				fruit
+			</td>
+		</tr>
+		<tr>
+			<td>1. Apples</td>
+			<td>1. Orange</td>
+			<td>1. Plums</td>
+		</tr>
+		<tr>
+			<td>2. Apples</td>
+			<td>2. Orange</td>
+			<td>2. Plums</td>
+		</tr>
+		<tr>
+			<td>3. Apples</td>
+			<td>3. Orange</td>
+			<td>3. Plums</td>
+		</tr>
+		<tr class="seperator">
+			<td class="recommendationLevel1" colspan="3">
+				vegitables
+			</td>
+		</tr>
+		<tr>
+			<td>1. Squash</td>
+			<td>1. Carrots</td>
+			<td>1. Kale</td>
+		</tr>
+		<tr>
+			<td>2. Squash</td>
+			<td>2. Carrots</td>
+			<td>2. Kale</td>
+		</tr>
+		<tr>
+			<td>3. Squash</td>
+			<td>3. Carrots</td>
+			<td>3. Kale</td>
+		</tr>
+	</tbody>
+
+</table>
+            <div class="row">
+	<div class="column medium-4"><img src="http://placehold.it/350x150&txt=image" width="100%" alt=""></div>
+	<div class="column medium-4"><img src="http://placehold.it/350x150&txt=image" width="100%" alt=""></div>
+	<div class="column medium-4"><img src="http://placehold.it/350x150&txt=image" width="100%" alt=""></div>
+</div>
+            </div>
+            <div class="card" >
+                 <section class="sg-block sg-section-sticky-button-bar">
+      <div class="sg-text">
+        <h3 id="sticky-button-bar" class="sg">Sticky Button Bar</h3>
+        <p class="sg">
+          <code class="sg">body.stuck-footer .footer.sticky-button-bar</code>- Sticky button bars are made for moving an actional button bar into a fixed possition out of its normal flow so it can be on screan when it is below the fold. This ui element need to be combined with waypoint to trigger .footer-stuck on the body to toggle on and off at appropriate times.</p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas" id="sticky-button-bar-holder">
+          <div class="footer sticky-button-bar">
+            <div class="row">
+              <div class="pull-right">
+                <a class="secondary button" href="#">Secondary Button</a>
+                <a class="button" href="#">Action Button</a>
+              </div>
+            </div>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;footer sticky-button-bar&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pull-right&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;secondary button&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>Secondary Button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;button&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>Action Button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+      </div>
+    </section>
+
+            </div>
+        </div>
+    </div>
+</div>
+                          
+        </article>
+      </section>
+    </div>
     <footer class="page-footer">
   <div class="row">
     <a class="logo-holder"href="/">
@@ -8442,7 +8643,8 @@ padding: 1em;
 <script type="text/javascript" src="assets/js/underscore.js"></script>
 <script type="text/javascript" src="assets/js/foundation.js"></script>
 <script type="text/javascript" src="assets/js/koui.js"></script>
-
+<script type="text/javascript" src="assets/js/waypoints.js"></script>
+<script type="text/javascript" src="assets/js/waypoints.sticky.js"></script>
 <script type="text/javascript" src="assets/js/pager.min.js"></script>
 <script type="text/javascript" src="assets/js/app.js"></script>
 <script type="text/javascript" src="assets/js/appviewmodel.js"></script>
