@@ -264,6 +264,7 @@ function buttonBarSticky(){
 };
 
 
+
 //   $( function() {
 //     var sticky = new Waypoint.Sticky({
 //       element: $('.sticky-holder')[0]

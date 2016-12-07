@@ -8,7 +8,7 @@
   {% comment %}<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,600,400,300|Roboto+Slab:400,700|Raleway:300">{% endcomment %}
   <link rel="stylesheet" href="assets/css/jquery-ui.css">
   <link rel="stylesheet" href="assets/css/jquery-uistructure.css">
-  <link rel="stylesheet" href="assets/css/foundation-sites.css">
+  <link rel="stylesheet" href="assets/css/foundation-sites-brand.css">
    <link rel="stylesheet" href="assets/css/font-awesome.css">
   <link rel="stylesheet" href="assets/css/index-2.css" id="theme">
 
@@ -16,30 +16,72 @@
 	<body>
     <a class="hide-for-medium button expanded tiny" onClick="$('.mobile-offcanvas-wrapper .split-layout').toggleClass('navOn')" style="margin-bottom:0;"><i class="fa fa-bars"></i> Menu</a>
     {% include 'sections/header' %}
-    <div class="mobile-offcanvas-wrapper">
-      <section class="split-layout fill-page-height medium navOn">
-        <aside class="split-sidebar">
-         {% include "sidebar" %}
-        </aside>
-        <article class="split-content"  data-bind="page: {id:'content', role: 'start'}">
-          <div class="page-wrapper">
-            <div class="content-padding">
-            <div class="shrink-waypoint"></div>
-              {% include "pages/brandingcolorsample" %}
-              {% include "pages/framework" %}
-              {% include "pages/branding" %}
-              {% include "pages/typography" %}
-              {% include "pages/tables" %}
-              {% include "pages/buttons" %}
-              {% include "pages/navigation" %}
-              {% include "pages/qna" %}
-              {% include "pages/layouts" %}  
-              {% include "pages/paper" %}   
-              {% include "pages/space-savers" %}                            
-            </div>
-          </div>
-        </article>
-      </section>
+    <div  data-bind="page: {id:'content', role: 'start'}">
+      <div class="page-wrapper">
+        <div class="content-padding">
+        <div class="shrink-waypoint"></div>
+          {% include "pages/brandingcolorsample" %}
+          {% include "../sections/typography/typographyintro" %}
+          {% include "../sections/typography/headertags-basic" %}
+          {% include "../sections/typography/headertags-mod" %}
+          {% include "../sections/typography/headertags-subcontent" %}
+          {% include "../sections/typography/headertags-counters" %}
+          {% include "../sections/typography/headertags-states" %}
+          {% include "../sections/typography/text-mod" %}
+
+          {% include "../sections/navigation/buttoninput-intro" %}
+          {% include "../sections/navigation/buttons" %}
+          {% include "../sections/navigation/button-group" %}
+          <h2>Inputs</h2>
+          {% include "../sections/navigation/switches" %}
+          {% include "../sections/navigation/slider" %} 
+
+          {% include "../sections/navigation/navigation-intro" %}
+          {% include "../sections/navigation/top-bar" %}
+          <h2>Tabs</h2>
+          {% include "../sections/navigation/tabs-basic" %}
+          {% include "../sections/navigation/tabs-overlap" %}
+          {% include "../sections/navigation/tabs-primary-mobile-header" %}
+          {% include "../sections/navigation/tabs-papercard" %}
+          <h2>Nav Lists</h2>
+          {% include "../sections/navigation/navlist-basic" %}
+          {% include "../sections/navigation/navlist-checklist" %}
+          {% include "../sections/navigation/navlist-mod" %}
+          <h2>Pagination</h2>
+          {% include "../sections/navigation/pagination" %}
+          {% include "../sections/navigation/pagination-resultselector" %}
+          <h2>Wizard Navs</h2>
+          {% include "../sections/navigation/circle-section-nav" %} 
+
+          <h1>Paper Layers &amp; Grouping</h1>
+          {% include "../sections/layouts/paper-card" %}
+          {% include "../sections/layouts/paper-card-tabs" %}
+          {% include "../sections/layouts/paper-card-colored-paper" %}
+          {% include "../sections/layouts/paper-card-radius" %}
+
+          {% include "../sections/qna/qna-intro" %}
+          {% include "../sections/qna/question" %}
+          {% include "../sections/qna/question-states" %}
+          {% comment %} <h2>Questions  Inline (Depreciated)</h2>
+          {% include "../sections/qna/question-inline" %}{% endcomment %}
+          <h2>Questions Grid Based</h2>
+          {% include "../sections/qna/question-gridbased-intro" %}
+          {% include "../sections/qna/question-gridbased" %}
+          {% include "../sections/qna/question-gridbased--single-switch" %}
+
+          <h3>Grouping and Fluid Alignment for Grid Based Questions</h3>
+          {% include "../sections/qna/question-gridbased--repeating-switches" %}
+          {% include "../sections/qna/question-gridbased--fluid-grouping" %}
+          <div class="callout warning ">
+                  <h5>Override Warning</h5>
+                  <p>The use of the .question-group.fluid-align will override any sizing on the questions that might have been applied. </p>
+                </div>
+          <h2>Grouping Repeating Questions</h2>
+          {% include "../sections/qna/form-repeater" %}
+
+
+        </div>
+      </div>
     </div>
     {% include 'sections/footer' %}
     {% include "scripts" %}
