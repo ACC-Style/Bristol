@@ -244,7 +244,6 @@ var availableTags = [
 //         }
 //       } );
 //     }
-
 function buttonBarSticky(){
   var sticky = new Waypoint.Sticky({
     element: $('.footer.sticky-button-bar')[0]
@@ -262,8 +261,8 @@ function buttonBarSticky(){
   offset: 'bottom-in-view'
 
   });
-  console.log("create");
 };
+
 
 
 //   $( function() {
