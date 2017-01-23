@@ -2327,7 +2327,6 @@ button:disabled.secondary, .input-space
   padding-top: .25em;
   border: 0;
   background: transparent none;
-  margin: 0 !important;
   overflow: hidden;
 }
 .overlap .tabs li, .overlap .tabs .tabs-title {
@@ -2335,6 +2334,7 @@ button:disabled.secondary, .input-space
   border-bottom: 0;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
+  margin-bottom: 0;
   vertical-align: bottom;
 }
 .overlap .tabs li.selected, .overlap .tabs li.is-active, .overlap .tabs .tabs-title.selected, .overlap .tabs .tabs-title.is-active {
@@ -9053,21 +9053,21 @@ input:checked + label > .switch-inactive {
   }
 }
 
-.with-group-sections .page-wrapper, .paper-page .page-wrapper {
+.section-padding, .with-group-sections .page-wrapper, .paper-page .page-wrapper {
   padding: .25rem 0;
 }
 @media only screen and (min-width: 320px) {
-  .with-group-sections .page-wrapper, .paper-page .page-wrapper {
+  .section-padding, .with-group-sections .page-wrapper, .paper-page .page-wrapper {
     padding: .5rem 0;
   }
 }
 @media only screen and (min-width: 767px) {
-  .with-group-sections .page-wrapper, .paper-page .page-wrapper {
+  .section-padding, .with-group-sections .page-wrapper, .paper-page .page-wrapper {
     padding: .75rem 0;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .with-group-sections .page-wrapper, .paper-page .page-wrapper {
+  .section-padding, .with-group-sections .page-wrapper, .paper-page .page-wrapper {
     padding: 1rem 0;
   }
 }
@@ -9773,6 +9773,8 @@ input:checked + label > .switch-inactive {
   float: left;
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 .split-layout .split-content:last-child:not(:first-child) {
   float: right;
@@ -9787,8 +9789,8 @@ input:checked + label > .switch-inactive {
   padding-right: 0 !important;
 }
 .split-layout.xlarge.reverse .split-content, .split-layout.xlarge.reverse.navOn .split-content, .split-layout.large.reverse .split-content, .split-layout.large.reverse.navOn .split-content, .split-layout.medium.reverse .split-content, .split-layout.medium.reverse.navOn .split-content, .split-layout.small.reverse .split-content, .split-layout.small.reverse.navOn .split-content, .split-layout.reverse .split-content, .split-layout.reverse.navOn .split-content {
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 .split-layout.small .split-sidebar {
   display: block;
@@ -11191,6 +11193,19 @@ h6 blockquote, h6 .sub-line {
 
 .radius-top {
   border-radius: 6px 6px 0 0;
+}
+
+.white-space-normal {
+  white-space: normal !important;
+}
+
+.word-break {
+  word-break: break-all !important;
+}
+
+.no-vertical-margin {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 /**
