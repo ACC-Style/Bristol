@@ -8,6 +8,14 @@
     -moz-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
     box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
 }
+%ghostbox {
+    border: 2px solid grey(25);
+    background-color: grey(15);
+    background-image: url('../img/billie-holiday-speck.png');
+    -webkit-box-shadow: inset 0px 1px 6px 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0px 1px 6px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0px 1px 6px 3px rgba(0, 0, 0, 0.1);
+}
 
 .with-group-sections,.paper-page{
     @extend %shadedbackground;
@@ -47,6 +55,20 @@
             @extend %content-padding-horizontal;
             
         }
+        .group-section.ghost,.card.ghost{
+             @extend %ghostbox;
+             border-radius: $global-border-radius;
+
+
+        }
+        @each $State in $states{
+                 $state-selector:map-get($State,'Selector');
+                 &#{$state-selector}{
+                    .group-section.ghost,.card.ghost{
+                        background-color:mix(color(map-get($State,'Color'), 25),grey(15));
+                    }
+                 }
+            }
     }
 }
 
@@ -113,7 +135,7 @@
 
 
 /**
-* Paper Card Grouping:
+* Paper Cards:
 * `.page.paper-page .page-wrapper .card` - by default pages are white but when the need arises to have grouped section 'cards' are introduced and the background area becomes a layer of soft off white construction paper. If the need arises to highlight a collection of cards add `.highlighted` to the `.page.with-group-sections` and the product color will bleed into the construction paper.
 * 
 *   @example
@@ -124,14 +146,19 @@
 *    </div>
 *   <div class="page paper-page error">
 *    <div class="page-wrapper">
-*       <section class="section group-section">
+*       <section class="section card">
 *           <h1>.Page.Paper-Page.Error</h1>
 *       </section>
 *    </div></div>
 *   <div class="page paper-page highlighted">
 *    <div class="page-wrapper">
-*       <section class="section group-section">
+*       <section class="section card">
 *           <h1>.Page.Paper-Page.Highlighted</h1>
+*       </section>
+*    </div>
+*    <div class="page-wrapper">
+*       <section class="section card ghost">
+*           <h1>.Page.Paper-Page .Card.Ghost</h1>
 *       </section>
 *    </div>
 *    </div>
