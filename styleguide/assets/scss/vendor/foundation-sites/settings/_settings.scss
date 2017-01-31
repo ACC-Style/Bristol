@@ -54,15 +54,21 @@ $foundation-palette: (
   success: #3adb76,
   warning: #ffae00,
   alert: #ec5840,
-);
-$light-gray: #e6e6e6;
-$medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
-$black: #0a0a0a;
-$white: #fefefe;
+$global-font-size: 100% !default;
+$global-lineheight: $baseline-modifier;
+$primary-color: #2199e8 !default;
+$secondary-color: #777 !default;
+$success-color: #3adb76 !default;
+$warning-color: #ffae00 !default;
+$alert-color: #ec5840 !default;
+$light-gray: color($real-black,10);
+$medium-gray: color($real-black,30);
+$dark-gray: color($real-black,60);
+$black: color($real-black,80);
+$white: #FFF;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: 'Open Sans', Roboto ,"Helvetica Neue", Helvetica,  Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -71,6 +77,7 @@ $global-weight-bold: bold;
 $global-radius: 0;
 $global-text-direction: ltr;
 $global-flexbox: false;
+$rem-base: 14px;
 $print-transparent-backgrounds: true;
 
 @include add-foundation-colors;
@@ -108,29 +115,37 @@ $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-sizes: (
   small: (
-    'h1': 24,
-    'h2': 20,
-    'h3': 19,
-    'h4': 18,
-    'h5': 17,
-    'h6': 16,
+    'h1': strip-unit(ms-calc(4,$ms-base,$ms-ratio*1)),
+    'h2': strip-unit(ms-calc(3,$ms-base,$ms-ratio*1)),
+    'h3': strip-unit(ms-calc(2,$ms-base,$ms-ratio*1)),
+    'h4': strip-unit(ms-calc(1,$ms-base,$ms-ratio*1)),
+    'h5': strip-unit(ms-calc(0,$ms-base,$ms-ratio*1)),
+    'h6': strip-unit(ms-calc(-1,$ms-base,$ms-ratio*1)),
   ),
   medium: (
-    'h1': 48,
-    'h2': 40,
-    'h3': 31,
-    'h4': 25,
-    'h5': 20,
-    'h6': 16,
+    'h1': strip-unit(ms-calc(4,$ms-base,$ms-ratio*1.1)),
+    'h2': strip-unit(ms-calc(3,$ms-base,$ms-ratio*1.1)),
+    'h3': strip-unit(ms-calc(2,$ms-base,$ms-ratio*1.1)),
+    'h4': strip-unit(ms-calc(1,$ms-base,$ms-ratio*1.1)),
+    'h5': strip-unit(ms-calc(0,$ms-base,$ms-ratio*1.1)),
+    'h6': strip-unit(ms-calc(-1,$ms-base,$ms-ratio*1.1)),
+  ),
+    large: (
+    'h1': strip-unit(ms-calc(4,$ms-base,$ms-ratio*1.15)),
+    'h2': strip-unit(ms-calc(3,$ms-base,$ms-ratio*1.15)),
+    'h3': strip-unit(ms-calc(2,$ms-base,$ms-ratio*1.15)),
+    'h4': strip-unit(ms-calc(1,$ms-base,$ms-ratio*1.15)),
+    'h5': strip-unit(ms-calc(0,$ms-base,$ms-ratio*1.15)),
+    'h6': strip-unit(ms-calc(-1,$ms-base,$ms-ratio*1.15)),
   ),
 );
 $header-color: inherit;
-$header-lineheight: 1.4;
+$header-lineheight: $baseline-modifier;
 $header-margin-bottom: 0.5rem;
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
 $header-small-font-color: $medium-gray;
-$paragraph-lineheight: 1.6;
+$paragraph-lineheight: $baseline-modifier;
 $paragraph-margin-bottom: 1rem;
 $paragraph-text-rendering: optimizeLegibility;
 $code-color: $black;
@@ -171,8 +186,8 @@ $abbr-underline: 1px dotted $black;
 // ---------------------
 
 $lead-font-size: $global-font-size * 1.25;
-$lead-lineheight: 1.6;
-$subheader-lineheight: 1.4;
+$lead-lineheight: $baseline-modifier;
+$subheader-lineheight: $baseline-modifier;
 $subheader-color: $dark-gray;
 $subheader-font-weight: $global-weight-normal;
 $subheader-margin-top: 0.2rem;
@@ -184,10 +199,10 @@ $stat-font-size: 2.5rem;
 
 $abide-inputs: true;
 $abide-labels: true;
-$input-background-invalid: map-get($foundation-palette, alert);
-$form-label-color-invalid: map-get($foundation-palette, alert);
-$input-error-color: map-get($foundation-palette, alert);
-$input-error-font-size: rem-calc(12);
+$input-background-invalid: $alert-color;
+$form-label-color-invalid: $alert-color;
+$input-error-color: $alert-color;
+$input-error-font-size: rem-calc(ms(-1));
 $input-error-font-weight: $global-weight-bold;
 
 // 7. Accordion
@@ -199,8 +214,8 @@ $accordion-item-color: foreground($accordion-background, $primary-color);
 $accordion-item-background-hover: $light-gray;
 $accordion-item-padding: 1.25rem 1rem;
 $accordion-content-background: $white;
-$accordion-content-border: 1px solid $light-gray;
-$accordion-content-color: foreground($accordion-content-background, $body-font-color);
+$accordion-content-border: 0px none;
+$accordion-content-color: foreground($accordion-background, $primary-color);
 $accordion-content-padding: 1rem;
 
 // 8. Accordion Menu
@@ -212,7 +227,7 @@ $accordionmenu-arrow-color: $primary-color;
 // 9. Badge
 // --------
 
-$badge-background: $primary-color;
+$badge-background: rebrand-color($primary-color,2);
 $badge-color: foreground($badge-background);
 $badge-padding: 0.3em;
 $badge-minwidth: 2.1em;
@@ -236,16 +251,16 @@ $breadcrumbs-item-slash: true;
 $button-padding: 0.85em 1em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
-$button-background: $primary-color;
+$button-background: rebrand-color($primary-color,2);
 $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-color: $white;
 $button-color-alt: $black;
 $button-radius: $global-radius;
 $button-sizes: (
-  tiny: 0.6rem,
-  small: 0.75rem,
-  default: 0.9rem,
-  large: 1.25rem,
+  tiny: rem-calc(strip-unit(ms-calc(-2))),
+  small: rem-calc(strip-unit(ms-calc(0))),
+  default: rem-calc(strip-unit(ms-calc(1))),
+  large: rem-calc(strip-unit(ms-calc(2))),
 );
 $button-opacity-disabled: 0.25;
 
@@ -327,24 +342,24 @@ $fieldset-padding: rem-calc(20);
 $fieldset-margin: rem-calc(18 0);
 $legend-padding: rem-calc(0 3);
 $form-spacing: rem-calc(16);
-$helptext-color: $black;
-$helptext-font-size: rem-calc(13);
+$helptext-color: #333;
+$helptext-font-size: rem-calc(ms(-1));
 $helptext-font-style: italic;
 $input-prefix-color: $black;
 $input-prefix-background: $light-gray;
 $input-prefix-border: 1px solid $medium-gray;
 $input-prefix-padding: 1rem;
 $form-label-color: $black;
-$form-label-font-size: rem-calc(14);
+$form-label-font-size: rem-calc(ms(1));
 $form-label-font-weight: $global-weight-normal;
 $form-label-line-height: 1.8;
-$select-background: $white;
-$select-triangle-color: $dark-gray;
+$select-background: #fafafa;
+$select-triangle-color: #333;
 $select-radius: $global-radius;
 $input-color: $black;
 $input-placeholder-color: $medium-gray;
 $input-font-family: inherit;
-$input-font-size: rem-calc(16);
+$input-font-size: rem-calc(ms(1));
 $input-background: $white;
 $input-background-focus: $white;
 $input-background-disabled: $light-gray;
@@ -424,7 +439,7 @@ $orbit-control-zindex: 10;
 // 26. Pagination
 // --------------
 
-$pagination-font-size: rem-calc(14);
+$pagination-font-size: rem-calc(ms(0));
 $pagination-margin-bottom: $global-margin;
 $pagination-item-color: $black;
 $pagination-item-padding: rem-calc(3 10);
