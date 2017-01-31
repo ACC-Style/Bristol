@@ -9296,6 +9296,15 @@ input:checked + label > .switch-inactive {
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
 }
 
+.with-group-sections .page-wrapper .group-section.ghost, .with-group-sections .page-wrapper .card.ghost, .paper-page .page-wrapper .group-section.ghost, .paper-page .page-wrapper .card.ghost {
+  border: 2px solid #bfbfbf;
+  background-color: #d9d9d9;
+  background-image: url("../img/billie-holiday-speck.png");
+  -webkit-box-shadow: inset 0px 1px 6px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0px 1px 6px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0px 1px 6px 3px rgba(0, 0, 0, 0.1);
+}
+
 .with-group-sections.error, .with-group-sections.error .overlap .tabs .selected, .with-group-sections.error .overlap .tabs .is-active, .paper-page.error, .paper-page.error .overlap .tabs .selected, .paper-page.error .overlap .tabs .is-active {
   background-color: #f5c3c8;
   background-image: url("../img/billie-holiday-speck.png");
@@ -9327,6 +9336,27 @@ input:checked + label > .switch-inactive {
   width: auto;
   position: relative;
   margin: 0 .65rem 1rem .5rem;
+}
+.with-group-sections .page-wrapper .group-section.ghost, .with-group-sections .page-wrapper .card.ghost, .paper-page .page-wrapper .group-section.ghost, .paper-page .page-wrapper .card.ghost {
+  border-radius: 6px;
+}
+.with-group-sections .page-wrapper.error .group-section.ghost, .with-group-sections .page-wrapper.error .card.ghost, .paper-page .page-wrapper.error .group-section.ghost, .paper-page .page-wrapper.error .card.ghost {
+  background-color: #e7ced1;
+}
+.with-group-sections .page-wrapper.warning .group-section.ghost, .with-group-sections .page-wrapper.warning .card.ghost, .paper-page .page-wrapper.warning .group-section.ghost, .paper-page .page-wrapper.warning .card.ghost {
+  background-color: #eaddce;
+}
+.with-group-sections .page-wrapper.success .group-section.ghost, .with-group-sections .page-wrapper.success .card.ghost, .paper-page .page-wrapper.success .group-section.ghost, .paper-page .page-wrapper.success .card.ghost {
+  background-color: #c9e8d6;
+}
+.with-group-sections .page-wrapper.info .group-section.ghost, .with-group-sections .page-wrapper.info .card.ghost, .paper-page .page-wrapper.info .group-section.ghost, .paper-page .page-wrapper.info .card.ghost {
+  background-color: #e1e1e1;
+}
+.with-group-sections .page-wrapper.highlighted .group-section.ghost, .with-group-sections .page-wrapper.highlighted .card.ghost, .paper-page .page-wrapper.highlighted .group-section.ghost, .paper-page .page-wrapper.highlighted .card.ghost {
+  background-color: #d0e3e8;
+}
+.with-group-sections .page-wrapper.disabled .group-section.ghost, .with-group-sections .page-wrapper.disabled .card.ghost, .paper-page .page-wrapper.disabled .group-section.ghost, .paper-page .page-wrapper.disabled .card.ghost {
+  background-color: #e6e6e6;
 }
 
 .colored-paper {
@@ -9431,7 +9461,7 @@ input:checked + label > .switch-inactive {
 }
 
 /**
-* Paper Card Grouping:
+* Paper Cards:
 * `.page.paper-page .page-wrapper .card` - by default pages are white but when the need arises to have grouped section 'cards' are introduced and the background area becomes a layer of soft off white construction paper. If the need arises to highlight a collection of cards add `.highlighted` to the `.page.with-group-sections` and the product color will bleed into the construction paper.
 * 
 *   @example
@@ -9442,14 +9472,19 @@ input:checked + label > .switch-inactive {
 *    </div>
 *   <div class="page paper-page error">
 *    <div class="page-wrapper">
-*       <section class="section group-section">
+*       <section class="section card">
 *           <h1>.Page.Paper-Page.Error</h1>
 *       </section>
 *    </div></div>
 *   <div class="page paper-page highlighted">
 *    <div class="page-wrapper">
-*       <section class="section group-section">
+*       <section class="section card">
 *           <h1>.Page.Paper-Page.Highlighted</h1>
+*       </section>
+*    </div>
+*    <div class="page-wrapper">
+*       <section class="section card ghost">
+*           <h1>.Page.Paper-Page .Card.Ghost</h1>
 *       </section>
 *    </div>
 *    </div>
