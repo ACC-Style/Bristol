@@ -9,12 +9,13 @@
     box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
 }
 %ghostbox {
-    border: 2px solid grey(25);
-    background-color: grey(15);
-    background-image: url('../img/billie-holiday-speck.png');
-    -webkit-box-shadow: inset 0px 1px 6px 3px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: inset 0px 1px 6px 3px rgba(0, 0, 0, 0.1);
-    box-shadow: inset 0px 1px 6px 3px rgba(0, 0, 0, 0.1);
+    border: 2px dashed grey(25);
+    background-color:transparent;
+    // background-color: grey(15);
+    background-image: url('../img/empty_stripe_grey@2x.png');
+    -webkit-box-shadow: inset 0px 1px 6px 3px rgba(230, 230, 230, .2);
+    -moz-box-shadow: inset 0px 1px 6px 3px rgba(230, 230, 230, .2);
+    box-shadow: inset 0px 1px 6px 3px rgba(230, 230, 230, .2);
 }
 
 .with-group-sections,.paper-page{
@@ -56,9 +57,9 @@
             
         }
         .group-section.ghost,.card.ghost{
-             @extend %ghostbox;
-             border-radius: $global-border-radius;
-
+            @extend %ghostbox;
+            border-radius: $global-border-radius;
+            
 
         }
         @each $State in $states{
@@ -78,14 +79,16 @@
     @extend %content-padding-horizontal;
     @extend %content-expanding-margin-horizontal;
     
-    h1,h2,h3,h4,h5,h6,p,ul,ol{color:color-contrast(rebrand-color($primary-color, 1));}
-    &.secondary{h1,h2,h3,h4,h5,h6,p,ul,ol{color: color-contrast( $secondary-color);}}
+    h1,h2,h3,h4,h5,h6,p{color:color-contrast(rebrand-color($primary-color, 1));}
+    &.secondary{h1,h2,h3,h4,h5,h6,p{color: color-contrast( $secondary-color);}}
     background-image: url('../img/construction-paper.png');
     background-color: rebrand-color($primary-color, 1);
     @each $State in $states{
         $state-selector:map-get($State,'Selector'); 
         &#{$state-selector}{
             background-color:map-get($State,'Color');
+            color:color-contrast(map-get($State,'Color'));
+            h1,h2,h3,h4,h5,h6,p,{ color:color-contrast(map-get($State,'Color') );}
          }
     }
     @each $State in $states{
@@ -94,6 +97,12 @@
             background-color: color(map-get($State,'Color'), 20);
              &:hover{ background-color: color(map-get($State,'Color'), 35);}
          }
+    }
+    .card.ghost &,.group-section.ghost{
+        background-image: url('../img/construction_paper_grey.png');
+        border-radius:$global-border-radius * 1.25 !important;
+        margin:0 !important;
+
     }
     .tabs {
         @extend %content-expanding-margin-bottom;
@@ -129,6 +138,7 @@
 .group-section .colored-paper:first-child ,.card .colored-paper:first-child {
     @extend %content-expanding-margin-top;
 }
+
 .radius.group-section .colored-paper:first-child ,.radius.card .colored-paper:first-child,.radius.group-section .colored-paper:last-child,.radius.card .colored-paper:last-child {border-radius: $global-border-radius;}
 .radius-bottom.group-section .colored-paper:last-child,.radius-bottom.card .colored-paper:last-child {border-radius:  0 0 $global-border-radius  $global-border-radius;}
 .radius-top.group-section .colored-paper:first-child ,.radius-top.card .colored-paper:first-child {border-radius: $global-border-radius  $global-border-radius 0 0;}
@@ -141,7 +151,7 @@
 *   @example
 *   <div class="page paper-page">
 *    <div class="page-wrapper">
-*    <section class="section group-section"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
+*    <section class="section card"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *    </div>
 *    </div>
 *   <div class="page paper-page error">
@@ -156,12 +166,25 @@
 *           <h1>.Page.Paper-Page.Highlighted</h1>
 *       </section>
 *    </div>
+*    </div>
+*
+**/
+/**
+* Ghost Cards:
+* `card.ghost` - Ghosted cards are used as holder for an upcoming or locked section. When you want to show a section that will become editable or expanded but don't want it to pop in ghost is a good design pattern to use.
+* 
+*   @example
+*   <div class="page paper-page">
 *    <div class="page-wrapper">
-*       <section class="section card ghost">
-*           <h1>.Page.Paper-Page .Card.Ghost</h1>
+*    <section class="section card"><h1>Hello I am a ghost</h1> <p>This is content  that is showing up in a section group</p></section>
+*    </div>
+*    </div>
+*   <div class="page paper-page error">
+*    <div class="page-wrapper">
+*       <section class="section card ghost"><div class="error colored-paper">Colored Paper is Effected by Ghosting</div>
+*           <h1>.Page.Paper-Page.Error .Card.Ghost</h1>
 *       </section>
-*    </div>
-*    </div>
+*    </div></div>
 *
 **/
 /**

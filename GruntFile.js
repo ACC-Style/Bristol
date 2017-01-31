@@ -1,4 +1,5 @@
 module.exports = function(grunt){
+
 	//Project Config
 	grunt.initConfig({
 		 connect:{
@@ -28,6 +29,11 @@ module.exports = function(grunt){
 			    }]
 			  }
 			},	
+		 bower: {
+		    install: {
+		       //just run 'grunt bower:install' and you'll see files from your Bower packages in lib directory
+		    }
+		  },
 		liquid: {
 			options: {
 			  includes: 'templates/includes'
@@ -268,22 +274,24 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-bower-task');
 	// Default task.
-	grunt.registerTask('build', [
-		'clean:localFolder',
+	grunt.registerTask('BRISTOL', [
+		'bower',
 		'clean:foundationSites',
 	    'copy:BOWER',
-		// 'clean:foundationsFile',
+		
+	]);
+	grunt.registerTask('build', [
+		'clean:localFolder',
 		'clean:sassCasheFolder',
 		'copy:FOUNDATIONSETTINGS',
 		'sass:vendor',
 		'sass:dist',
-		// 'cssmin',
 		'copy:INTERNAL',
 		'styledown',
 	    'liquid',
-		'watch',
-		'connect',
+		'watch'
 		
 	]);
 	grunt.registerTask('serve', [

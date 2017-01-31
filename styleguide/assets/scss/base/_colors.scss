@@ -26,28 +26,6 @@ $scrub-leafgreen:#70cd40;
 /// @default $value normal
 /// @return hex color
 
-@function fontcolor($value, $option:""){
-	$color:$value;
-	@if $option == "xloud"{
-		$color:mix($value, $real-black,20%);
-	}
-	@if $option == "loud"{
-		$color:scale-color($value, $lightness:shift(100));
-	}
-	@elseif $option == "quiet"{
-		$color:scale-color($value, $lightness:shift(60));
-	}
-	@elseif $option == "light"{
-		$color:scale-color($value, $lightness:shift(40));
-	}
-	@elseif $option == "normal"{
-		$color:scale-color($value, $lightness:shift(80));
-	}
-	@else{$color:scale-color($value, $lightness:shift(80));}
-	@return $color;
-}
-
-
 /// grey() is a color conversion of grey to convert % of $black
 /// @group helper
 /// @access public
@@ -64,6 +42,28 @@ $scrub-leafgreen:#70cd40;
 	@return $newColor;
 
 }
+@function fontcolor($value:$black, $option:""){
+	$color:$value;
+	@if $option == "xloud"{
+		$color:mix($value, $real-black);
+	}
+	@if $option == "loud"{
+		$color:scale-color($value, $lightness:shift(100));
+	}
+	@elseif $option == "quiet"{
+		$color:scale-color($value, $lightness:shift(70));
+	}
+	@elseif $option == "light"{
+		$color:scale-color($value, $lightness:shift(50));
+	}
+	@elseif $option == "normal"{
+		$color:scale-color($value, $lightness:shift(80));
+	}
+	@else{$color:scale-color($value, $lightness:shift(80));}
+	@return $color;
+}
+
+
 /// shift()
 /// @group helper
 /// @access private

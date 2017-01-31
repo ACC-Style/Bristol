@@ -146,9 +146,9 @@
           <h3>
             <span class="order-marker">a</span>Header 3 Tag</h3>
           <h4 class="with-underline">
-            <span class="order-marker hollow">b</span>Header 4 Tag</h4>
-          <h5 class="with-underline" style="background-color:grey; color:white; padding:.5em;">
-            <span class="order-marker inverse">c</span>Header 5 Tag</h5>
+            <span class="order-marker hollow">b</span>Hollow Marker with H4 Tag</h4>
+          <h5 class="colored-paper" style="">
+            <span class="order-marker inverse">c</span>Inversed Marker with H5 Tag</h5>
         </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;order-marker&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>Header 1 Tag<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>
@@ -156,9 +156,9 @@
 <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;order-marker&quot;</span>&gt;</span>a<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>Header 3 Tag<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;order-marker hollow&quot;</span>&gt;</span>b<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>Header 4 Tag<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h5</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;with-underline&quot;</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">&quot;background-color:grey; color:white; padding:.5em;&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;order-marker inverse&quot;</span>&gt;</span>c<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>Header 5 Tag<span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span></pre>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;order-marker hollow&quot;</span>&gt;</span>b<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>Hollow Marker with H4 Tag<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h5</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;colored-paper&quot;</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;order-marker inverse&quot;</span>&gt;</span>c<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>Inversed Marker with H5 Tag<span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span></pre>
       </div>
     </section>
           <section class="sg-block sg-section-header-tags-and-other-typography-states">
@@ -2373,11 +2373,6 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
                 <h1>.Page.Paper-Page.Highlighted</h1>
               </section>
             </div>
-            <div class="page-wrapper">
-              <section class="section card ghost">
-                <h1>.Page.Paper-Page .Card.Ghost</h1>
-              </section>
-            </div>
           </div>
         </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page paper-page&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
@@ -2406,8 +2401,51 @@ class=&quot;loud&quot;</span>&gt;</span>this has the `.loud` class added to the 
     <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+</div>
+</section>
+
+      <section class="sg-block sg-section-ghost-cards">
+      <div class="sg-text">
+        <h3 id="ghost-cards" class="sg">Ghost Cards</h3>
+        <p class="sg">
+          <code class="sg">card.ghost</code>- Ghosted cards are used as holder for an upcoming or locked section. When you want to show a section that will become editable or expanded but don&apos;t want it to pop in ghost is a good design pattern to use.</p>
       </div>
-    </section>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <div class="page paper-page">
+            <div class="page-wrapper">
+              <section class="section card ghost card">
+                <h1>Hello I am a ghost</h1>
+                <p>you can see I am transparent and I do not float like other cards.</p>
+              </section>
+            </div>
+          </div>
+          <div class="page paper-page error">
+            <div class="page-wrapper">
+              <section class="section card ghost">
+                <div class="error colored-paper">Colored Paper is Effected by Ghosting</div>
+                <h1>.Page.Paper-Page.Error .Card.Ghost</h1>
+              </section>
+            </div>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page paper-page&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section card&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Hello I am a ghost<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is content that is showing up in a section group<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page paper-page error&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-wrapper&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;section card ghost&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;error colored-paper&quot;</span>&gt;</span>Colored Paper is Effected by Ghosting<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>.Page.Paper-Page.Error .Card.Ghost<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+</div>
+</section>
 
             <section class="sg-block sg-section-tabs-on-paper-pages">
       <div class="sg-text">
