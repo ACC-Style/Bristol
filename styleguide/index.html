@@ -2046,52 +2046,57 @@
       <div class="sg-text">
         <h3 id="buttons" class="sg">Buttons</h3>
         <p class="sg">
-          <code class="sg">.nobutton .button or .button.secondary</code>- sample buttons from
-          <code class="sg">.button</code>you can modifiers</p>
+          <code class="sg">.nobutton .button or .button.disabled</code>- buttons are a touchable link or action. There are a lot of features beyond the base version of button. Please look at all the features on
+          <a href="http://foundation.zurb.com/sites/docs/button.html" class="button sg">Zurb Foundation</a>.</p>
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
           <div class="row">
-            <!-- Anchors (links) -->
-            <a href="" class="button">Learn More</a>
-            <a href="#features" class="button">View All Features</a>
-            <!-- Buttons (actions) -->
-            <button type="button" class="success button">
-              <i class="fa fa-floppy"></i>Save</button>
-            <button type="button" class="alert button">Delete</button>
-            <button type="button" class="alert button disabled">Disabled</button>
-            <a class="tiny button" href="#">So Tiny</a>
-            <a class="small button" href="#">So Small</a>
-            <a class="large button" href="#">So Large</a>
-            <a class="small button radius" href="#">So Small with Radius</a>
-            <a class="large button round" href="#">So Large with Round</a>
-            <a class="expanded button" href="#">Such Expand</a>
-            <div class="button-group expanded">
-              <a class="button">One</a>
-              <a class="button">Two</a>
-              <a class="button">Three</a>
-            </div>
+            <a class="button">Button/a&gt;
+              <a class="nobutton">No Button</a>
+              <a class="button secondary">Secondary</a>
+              <a class="button navigation">navigation button&#xA0;
+                <i class="fa fa-arrow-right"></i>
+              </a>
+              <a class="button disabled">disabled button</a>
+            </a>
           </div>
         </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- Anchors (links) --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;button&quot;</span>&gt;</span>Learn More<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#features&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;button&quot;</span>&gt;</span>View All Features<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- Buttons (actions) --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;button&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;success button&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-floppy&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>Save<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;button&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;alert button&quot;</span>&gt;</span>Delete<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;button&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;alert button disabled&quot;</span>&gt;</span>Disabled<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;tiny button&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>So Tiny<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;small button&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>So Small<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;large button&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>So Large<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;small button radius&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>So Small with Radius<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;large button round&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>So Large with Round<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;expanded button&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>&gt;</span>Such Expand<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;button-group expanded&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;button&quot;</span>&gt;</span>One<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;button&quot;</span>&gt;</span>Two<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;button&quot;</span>&gt;</span>Three<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;button&quot;</span>&gt;</span>Button/a&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;nobutton&quot;</span>&gt;</span>No Button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;button secondary&quot;</span>&gt;</span>Secondary<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;button navigation&quot;</span>&gt;</span>navigation button&amp;nbsp;
+      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-arrow-right&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;button disabled&quot;</span>&gt;</span>disabled button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+      </div>
+    </section>
+
+    <section class="sg-block sg-section-buttons-modification">
+      <div class="sg-text">
+        <h3 id="buttons-modification" class="sg">Buttons Modification</h3>
+        <p class="sg">
+          <code class="sg">.button.[state] .button.disabled.[state] or .button.hollow.[state]</code>- sample buttons from
+          <code class="sg">.button</code>you can modifiers
+          <a href="http://foundation.zurb.com/sites/docs/button.html" class="link sg">View All Features</a>
+        </p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <div class="row">
+            <button class="success button">
+              <i class="fa fa-floppy"></i>&#xA0;Save</button>
+            <button class="error button">error + button</button>
+            <button class="error button disabled">error + button + disabled</button>
+            <button class="secondary button hollow">secondary + button + hollow</button>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;success button&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-floppy&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>&amp;nbsp;Save<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;error button&quot;</span>&gt;</span>error + button<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;error button disabled&quot;</span>&gt;</span>error + button + disabled<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;secondary button hollow&quot;</span>&gt;</span>secondary + button + hollow<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
       </div>
     </section>
