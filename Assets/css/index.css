@@ -1703,28 +1703,27 @@ ul li, ol li {
 
 /**
 * Buttons:
-* `.nobutton .button or .button.secondary` - sample buttons from `.button` you can modifiers
+* `.nobutton .button or .button.disabled` - buttons are a touchable link or action.  There are a lot of features beyond the base version of button. Please look at all the features on <a href="http://foundation.zurb.com/sites/docs/button.html" class="button">Zurb Foundation</a>.  
 * 
 *   @example
 *   <div class="row">
-*   <!-- Anchors (links) -->
-*   <a href="" class="button">Learn More</a>
-*   <a href="#features" class="button">View All Features</a>
-*   <!-- Buttons (actions) -->
-*   <button type="button" class="success button"><i class="fa fa-floppy"></i>Save</button>
-*   <button type="button" class="alert button">Delete</button>
-*   <button type="button" class="alert button disabled">Disabled</button>
-*   <a class="tiny button" href="#">So Tiny</a>
-*   <a class="small button" href="#">So Small</a>
-*   <a class="large button" href="#">So Large</a>
-*   <a class="small button radius" href="#">So Small with Radius</a>
-*   <a class="large button round" href="#">So Large with Round</a>
-*   <a class="expanded button" href="#">Such Expand</a>
-*   <div class="button-group expanded">
-*     <a class="button">One</a>
-*     <a class="button">Two</a>
-*     <a class="button">Three</a>
+*   <a class="button">Button/a>
+*   <a class="nobutton">No Button</a>
+*   <a class="button secondary">Secondary</a>
+*   <a class="button navigation">navigation button&nbsp;<i class="fa fa-arrow-right"></i></a>
+*   <a class="button disabled">disabled button</a>
 *   </div>
+*/
+/**
+* Buttons Modification:
+* `.button.[state] .button.disabled.[state] or .button.hollow.[state]` - sample buttons from `.button` you can modifiers <a href="http://foundation.zurb.com/sites/docs/button.html" class="link">View All Features</a>
+* 
+*   @example
+*   <div class="row">
+*   <button class="success button"><i class="fa fa-floppy"></i>&nbsp;Save</button>
+*   <button class="error button">error + button</button>
+*   <button class="error button disabled">error + button + disabled</button>
+*   <button class="secondary button hollow">secondary + button + hollow</button>
 *   </div>
 */
 .button {
@@ -1732,6 +1731,7 @@ ul li, ol li {
   font-weight: 700;
   background-color: #198dae;
   color: #FFF;
+  margin-bottom: 0;
 }
 .button:hover, .button:focus {
   background-color: #14718b;
@@ -1812,10 +1812,30 @@ button:disabled.secondary, .input-space
 }
 
 .nobutton {
+  display: inline-block;
+  text-align: center;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding: 0.85em 1em;
+  margin: 0 0 1rem 0;
+  font-size: 1.09375rem;
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 700;
+  background-color: #FFF;
+  color: #333333;
   margin-bottom: 0;
 }
-.nobutton, .nobutton:hover, .nobutton:focus {
-  background-color: transparent;
+[data-whatinput='mouse'] .nobutton {
+  outline: 0;
+}
+.nobutton:hover, .nobutton:focus {
+  background-color: #cccccc;
+  color: #333333;
 }
 .nobutton.disabled, .nobutton.disabled:hover, .nobutton[disabled], .nobutton[disabled]:hover {
   color: #707070;

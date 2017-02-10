@@ -29,8 +29,8 @@ $required_data:(
 @each $State in $states{
 	$selector:map-get($State,"Selector");
 	$state-name:map-get($State,"State");
-	@include setTrump('color',$state-name,'#{$selector} .label-holder label');
-	@include setTrump('border-color',$state-name,'#{$selector} .input-holder input,#{$selector} .input-holder textarea, #{$selector} .input-holder select');
+	@include setTrump('color',$state-name,'#{$selector}.question .label-holder label');
+	@include setTrump('border-color',$state-name,'#{$selector}.question .input-holder input,#{$selector}.question .input-holder textarea, #{$selector}.question .input-holder select');
 }
 
 
@@ -40,8 +40,8 @@ $required_data:(
 		$state-name:map-get($State,"State");
 		$color:map-get($State,"Color");
 		$background-color:mix(color($color,20),grey(20)); // Background is non standard
-		@include setTrump('color',$state-name,'#{$selector} .input-holder .postfix, #{$selector} .input-holder .prefix, #{$selector} .input-holder .value');
-		@include setTrump('border-color',$state-name,'#{$selector} .input-holder .postfix, #{$selector} .input-holder .prefix');
+		@include setTrump('color',$state-name,'#{$selector}.question .input-holder .postfix, #{$selector}.question .input-holder .prefix, #{$selector}.question .input-holder .value');
+		@include setTrump('border-color',$state-name,'#{$selector}.question .input-holder .postfix, #{$selector}.question .input-holder .prefix');
 	}
 }
 
@@ -63,7 +63,7 @@ textarea,select,input,datalist{
 		
 		> #{$selector}{
 			@include setContrastTrump( $color, '.message-holder > #{$selector}');
-			@include setTrump('background-color',$state-name, '#{$selector} .message-holder > #{$selector}');
+			@include setTrump('background-color',$state-name, '#{$selector}.question .message-holder > #{$selector}');
 			@extend %visibleDisplayNone;
 			#{$selector} &, &.make-visible{
 				@extend %visibleDisplayBlock;
