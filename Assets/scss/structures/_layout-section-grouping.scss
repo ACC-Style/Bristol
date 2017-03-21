@@ -1,12 +1,14 @@
 %shadedbackground {
     background-image:url('../img/billie-holiday-lite.png');
 }
-%dropshoadowedbox {
+%dropshoadowedbox{-webkit-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);}
+%liftedbox {
     border: 1px solid grey(15);
     background-color: white;
-    -webkit-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
-    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
+    @extend %dropshoadowedbox;
+    
 }
 %ghostbox {
     border: 2px dashed grey(25);
@@ -50,8 +52,7 @@
         .group-section,.card {
             width: auto;
             position: relative;
-            margin: 0 .65rem 1rem .5rem;
-            @extend %dropshoadowedbox;
+            @extend %liftedbox;
             @extend %content-padding-vertical;
             @extend %content-padding-horizontal;
             
