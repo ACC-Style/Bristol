@@ -632,6 +632,34 @@ body {
   filter: none;
 }
 
+.fa-stack {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: middle;
+}
+
+.fa-stack-1x, .fa-stack-2x {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.fa-stack-1x {
+  line-height: inherit;
+}
+
+.fa-stack-2x {
+  font-size: 2em;
+}
+
+.fa-inverse {
+  color: #fff;
+}
+
     /*  (asterisk
     "State":"success",
 	"Selector":".success",
@@ -4780,6 +4808,112 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *	</div>		
 */
 /**
+* Callout - Page Messages:
+* `.page-message` - added to `.callout` to make a top level message for an app.  These `.page-message` are designed be be outside of cards and show up in the background area. 
+* 
+*   @example
+*	<div class="page-message callout">
+*       <a class="close-bar">
+*           <span class="close-button"><i class="fa fa-times" aria-hidden="true"></i></span>
+*       </a>
+*		<div class="message-container">
+*  		<div class="icon-holder">
+*                <span class="fa-stack fa-lg">
+*                    <i class="fa fa-square-o fa-stack-2x"></i>
+*                    <i class="fa fa-holder-dynamic fa-stack-1x"></i>
+*                </span>
+*		</div>
+*		<div class="message-holder">
+*            <h5>This app is for nonvalvular atrial fibrillation patients only, and should not be used to guide therapy in patients with mechanical or bioprosthetic valves.</h5>
+*       </div>
+*		</div>
+*	</div>
+*/
+/**
+* Callout - Page Messages [States]:
+* `.page-message + .warning` - page messages are designed to work with states with the backgrounds, close bar and icon all changing to reflect the state add at the root level of the `.page-message` 
+* 
+*   @example
+*	<div class="page-message callout warning">
+*       <a class="close-bar">
+*           <span class="close-button"><i class="fa fa-times" aria-hidden="true"></i></span>
+*       </a>
+*		<div class="message-container">
+*  		<div class="icon-holder">
+*                <span class="fa-stack fa-lg">
+*                    <i class="fa fa-square-o fa-stack-2x"></i>
+*                    <i class="fa fa-holder-dynamic fa-stack-1x"></i>
+*                </span>
+*		</div>
+*		<div class="message-holder">
+*            <h5>This app is for nonvalvular atrial fibrillation patients only, and should not be used to guide therapy in patients with mechanical or bioprosthetic valves.</h5>
+*       </div>
+*		</div>
+*	</div>
+*/
+.close-bar {
+  position: absolute;
+  width: 100%;
+  text-align: right;
+  border-top: 5px solid #b3b3b3;
+  top: -1px;
+  right: 0;
+  left: 0;
+}
+
+.close-bar:hover {
+  border-color: #333333;
+}
+.close-bar:hover .close-button {
+  background-color: #333333;
+}
+
+.close-bar .close-button {
+  background: #b3b3b3;
+  top: 0;
+  right: 0;
+  color: white;
+  padding: .25em;
+}
+
+.close-bar .close-button:hover {
+  background-color: #333333;
+}
+
+.close-bar .close-button .fa {
+  color: #FFF;
+}
+
+.page-message {
+  background-color: #f4a4d6;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.page-message .fa-holder-dynamic:before {
+  content: "";
+}
+.page-message::before, .page-message::after {
+  content: ' ';
+  display: table;
+}
+.page-message::after {
+  clear: both;
+}
+.page-message .message-container {
+  display: flex;
+  margin: 0 1em 0 0;
+  align-items: center;
+}
+.page-message .icon-holder {
+  flex: none;
+  color: #666666;
+  font-size: 1.5em;
+  padding: 0 1em 0 0;
+}
+
+/**
 *  Tables:
 *  `table` - plan tables are clean with barely any styles.
 * 
@@ -8425,7 +8559,7 @@ input:checked + label > .switch-inactive {
   font-size: 18px;
 }
 
-.callout {
+.callout, .page-message {
   background-image: url(../img/empty_stripe.png);
 }
 
@@ -9421,12 +9555,15 @@ input:checked + label > .switch-inactive {
   background-image: url("../img/billie-holiday-lite.png");
 }
 
-.with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card {
-  border: 1px solid #d9d9d9;
-  background-color: white;
+.with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .lifted {
   -webkit-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card {
+  border: 1px solid #d9d9d9;
+  background-color: white;
 }
 
 .with-group-sections .page-wrapper .group-section.ghost, .with-group-sections .page-wrapper .card.ghost, .paper-page .page-wrapper .group-section.ghost, .paper-page .page-wrapper .card.ghost {
@@ -9468,7 +9605,6 @@ input:checked + label > .switch-inactive {
 .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card {
   width: auto;
   position: relative;
-  margin: 0 .65rem 1rem .5rem;
 }
 .with-group-sections .page-wrapper .group-section.ghost, .with-group-sections .page-wrapper .card.ghost, .paper-page .page-wrapper .group-section.ghost, .paper-page .page-wrapper .card.ghost {
   border-radius: 6px;
@@ -11646,15 +11782,15 @@ h6 blockquote, h6 .sub-line {
 /*
 STATE TRUMPING CODE
 */
-.error .order-marker.hollow, .error.order-marker.hollow, .error .input-holder input, .error .input-holder textarea, .error .input-holder select, .error .input-holder .postfix, .error .input-holder .prefix, .error .bar.close, .error.inset .bar.close, .error.question .button-group, .error .order-marker.hollow, .error.order-marker.hollow, h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
+.error .order-marker.hollow, .error.order-marker.hollow, .error.question .input-holder input, .error.question .input-holder textarea, .error.question .input-holder select, .error.question .input-holder .postfix, .error.question .input-holder .prefix, .error .close-bar, .error .bar.close, .error.inset .bar.close, .error.question .button-group, .error .order-marker.hollow, .error.order-marker.hollow, h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
   border-color: #c32231;
 }
 
-.error .order-marker.inverse, .error.order-marker.inverse.error .order-marker.hollow, .error.order-marker.hollow, .nav-list.nav-checklist li.error i, .nav-checklist.panel-selector li.error i, .answer.error .required-holder, .question.error .required-holder, .question-inline.error .required-holder, .question-grid-based.error .required-holder, .error .label-holder label, .error .input-holder .postfix, .error .input-holder .prefix, .error .input-holder .value, .error .bar.close .action-btn, .collapsable-panel.error h1, .collapsable-panel.error h2, .collapsable-panel.error h3, .collapsable-panel.error h4, .collapsable-panel.error h5, .collapsable-panel.error h6, .error .order-marker.inverse, .error.order-marker.inverse.error .order-marker.hollow, .error.order-marker.hollow, h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
+.error.fa, .error .order-marker.inverse, .error.order-marker.inverse.error .order-marker.hollow, .error.order-marker.hollow, .nav-list.nav-checklist li.error i, .nav-checklist.panel-selector li.error i, .answer.error .required-holder, .question.error .required-holder, .question-inline.error .required-holder, .question-grid-based.error .required-holder, .error.question .label-holder label, .error.question .input-holder .postfix, .error.question .input-holder .prefix, .error.question .input-holder .value, .error .bar.close .action-btn, .collapsable-panel.error h1, .collapsable-panel.error h2, .collapsable-panel.error h3, .collapsable-panel.error h4, .collapsable-panel.error h5, .collapsable-panel.error h6, .error .order-marker.inverse, .error.order-marker.inverse.error .order-marker.hollow, .error.order-marker.hollow, h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
   color: #c32231;
 }
 
-.nav-list.nav-checklist li.error, .nav-checklist.panel-selector li.error, .error .message-holder > .error, .hint .error, .error.inset .bar.close .action-btn, .error-inactive .switch-paddle, .error-active input:checked ~ .switch-paddle, .error.callout {
+.nav-list.nav-checklist li.error, .nav-checklist.panel-selector li.error, .error.question .message-holder > .error, .hint .error, .error .close-bar .close-button, .error.inset .bar.close .action-btn, .error-inactive .switch-paddle, .error-active input:checked ~ .switch-paddle, .error.callout, .error.page-message {
   background-color: #c32231;
 }
 
@@ -11662,15 +11798,15 @@ STATE TRUMPING CODE
   content: "";
 }
 
-.warning .order-marker.hollow, .warning.order-marker.hollow, .warning .input-holder input, .warning .input-holder textarea, .warning .input-holder select, .warning .input-holder .postfix, .warning .input-holder .prefix, .warning .bar.close, .warning.inset .bar.close, .warning.question .button-group, .warning .order-marker.hollow, .warning.order-marker.hollow, h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
+.warning .order-marker.hollow, .warning.order-marker.hollow, .warning.question .input-holder input, .warning.question .input-holder textarea, .warning.question .input-holder select, .warning.question .input-holder .postfix, .warning.question .input-holder .prefix, .warning .close-bar, .warning .bar.close, .warning.inset .bar.close, .warning.question .button-group, .warning .order-marker.hollow, .warning.order-marker.hollow, h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
   border-color: #E08514;
 }
 
-.warning .order-marker.inverse, .warning.order-marker.inverse.warning .order-marker.hollow, .warning.order-marker.hollow, .nav-list.nav-checklist li.warning i, .nav-checklist.panel-selector li.warning i, .answer.warning .required-holder, .question.warning .required-holder, .question-inline.warning .required-holder, .question-grid-based.warning .required-holder, .warning .label-holder label, .warning .input-holder .postfix, .warning .input-holder .prefix, .warning .input-holder .value, .warning .bar.close .action-btn, .collapsable-panel.warning h1, .collapsable-panel.warning h2, .collapsable-panel.warning h3, .collapsable-panel.warning h4, .collapsable-panel.warning h5, .collapsable-panel.warning h6, .warning .order-marker.inverse, .warning.order-marker.inverse.warning .order-marker.hollow, .warning.order-marker.hollow, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning {
+.warning.fa, .warning .order-marker.inverse, .warning.order-marker.inverse.warning .order-marker.hollow, .warning.order-marker.hollow, .nav-list.nav-checklist li.warning i, .nav-checklist.panel-selector li.warning i, .answer.warning .required-holder, .question.warning .required-holder, .question-inline.warning .required-holder, .question-grid-based.warning .required-holder, .warning.question .label-holder label, .warning.question .input-holder .postfix, .warning.question .input-holder .prefix, .warning.question .input-holder .value, .warning .bar.close .action-btn, .collapsable-panel.warning h1, .collapsable-panel.warning h2, .collapsable-panel.warning h3, .collapsable-panel.warning h4, .collapsable-panel.warning h5, .collapsable-panel.warning h6, .warning .order-marker.inverse, .warning.order-marker.inverse.warning .order-marker.hollow, .warning.order-marker.hollow, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning {
   color: #E08514;
 }
 
-.nav-list.nav-checklist li.warning, .nav-checklist.panel-selector li.warning, .warning .message-holder > .warning, .hint .warning, .warning.inset .bar.close .action-btn, .warning-inactive .switch-paddle, .warning-active input:checked ~ .switch-paddle, .warning.callout {
+.nav-list.nav-checklist li.warning, .nav-checklist.panel-selector li.warning, .warning.question .message-holder > .warning, .hint .warning, .warning .close-bar .close-button, .warning.inset .bar.close .action-btn, .warning-inactive .switch-paddle, .warning-active input:checked ~ .switch-paddle, .warning.callout, .warning.page-message {
   background-color: #E08514;
 }
 
@@ -11678,15 +11814,15 @@ STATE TRUMPING CODE
   content: "";
 }
 
-.success .order-marker.hollow, .success.order-marker.hollow, .success .input-holder input, .success .input-holder textarea, .success .input-holder select, .success .input-holder .postfix, .success .input-holder .prefix, .success .bar.close, .success.inset .bar.close, .success.question .button-group, .success .order-marker.hollow, .success.order-marker.hollow, h1.with-underline.success, h2.with-underline.success, h3.with-underline.success, h4.with-underline.success, h5.with-underline.success, h6.with-underline.success {
+.success .order-marker.hollow, .success.order-marker.hollow, .success.question .input-holder input, .success.question .input-holder textarea, .success.question .input-holder select, .success.question .input-holder .postfix, .success.question .input-holder .prefix, .success .close-bar, .success .bar.close, .success.inset .bar.close, .success.question .button-group, .success .order-marker.hollow, .success.order-marker.hollow, h1.with-underline.success, h2.with-underline.success, h3.with-underline.success, h4.with-underline.success, h5.with-underline.success, h6.with-underline.success {
   border-color: #14B057;
 }
 
-.success .order-marker.inverse, .success.order-marker.inverse.success .order-marker.hollow, .success.order-marker.hollow, .nav-list.nav-checklist li.success i, .nav-checklist.panel-selector li.success i, .answer.success .required-holder, .question.success .required-holder, .question-inline.success .required-holder, .question-grid-based.success .required-holder, .success .label-holder label, .success .input-holder .postfix, .success .input-holder .prefix, .success .input-holder .value, .success .bar.close .action-btn, .collapsable-panel.success h1, .collapsable-panel.success h2, .collapsable-panel.success h3, .collapsable-panel.success h4, .collapsable-panel.success h5, .collapsable-panel.success h6, .success .order-marker.inverse, .success.order-marker.inverse.success .order-marker.hollow, .success.order-marker.hollow, h1.success, h2.success, h3.success, h4.success, h5.success, h6.success, p.success, a.success, li.success, blockquote.success {
+.success.fa, .success .order-marker.inverse, .success.order-marker.inverse.success .order-marker.hollow, .success.order-marker.hollow, .nav-list.nav-checklist li.success i, .nav-checklist.panel-selector li.success i, .answer.success .required-holder, .question.success .required-holder, .question-inline.success .required-holder, .question-grid-based.success .required-holder, .success.question .label-holder label, .success.question .input-holder .postfix, .success.question .input-holder .prefix, .success.question .input-holder .value, .success .bar.close .action-btn, .collapsable-panel.success h1, .collapsable-panel.success h2, .collapsable-panel.success h3, .collapsable-panel.success h4, .collapsable-panel.success h5, .collapsable-panel.success h6, .success .order-marker.inverse, .success.order-marker.inverse.success .order-marker.hollow, .success.order-marker.hollow, h1.success, h2.success, h3.success, h4.success, h5.success, h6.success, p.success, a.success, li.success, blockquote.success {
   color: #14B057;
 }
 
-.nav-list.nav-checklist li.success, .nav-checklist.panel-selector li.success, .success .message-holder > .success, .hint .success, .success.inset .bar.close .action-btn, .success-inactive .switch-paddle, .success-active input:checked ~ .switch-paddle, .success.callout {
+.nav-list.nav-checklist li.success, .nav-checklist.panel-selector li.success, .success.question .message-holder > .success, .hint .success, .success .close-bar .close-button, .success.inset .bar.close .action-btn, .success-inactive .switch-paddle, .success-active input:checked ~ .switch-paddle, .success.callout, .success.page-message {
   background-color: #14B057;
 }
 
@@ -11694,15 +11830,15 @@ STATE TRUMPING CODE
   content: "";
 }
 
-.info .order-marker.hollow, .info.order-marker.hollow, .info .input-holder input, .info .input-holder textarea, .info .input-holder select, .info .input-holder .postfix, .info .input-holder .prefix, .info .bar.close, .info.inset .bar.close, .info.question .button-group, .info .order-marker.hollow, .info.order-marker.hollow, h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
+.info .order-marker.hollow, .info.order-marker.hollow, .info.question .input-holder input, .info.question .input-holder textarea, .info.question .input-holder select, .info.question .input-holder .postfix, .info.question .input-holder .prefix, .info .close-bar, .info .bar.close, .info.inset .bar.close, .info.question .button-group, .info .order-marker.hollow, .info.order-marker.hollow, h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
   border-color: #a6a6a6;
 }
 
-.info .order-marker.inverse, .info.order-marker.inverse.info .order-marker.hollow, .info.order-marker.hollow, .nav-list.nav-checklist li.info i, .nav-checklist.panel-selector li.info i, .answer.info .required-holder, .question.info .required-holder, .question-inline.info .required-holder, .question-grid-based.info .required-holder, .info .label-holder label, .info .input-holder .postfix, .info .input-holder .prefix, .info .input-holder .value, .info .bar.close .action-btn, .collapsable-panel.info h1, .collapsable-panel.info h2, .collapsable-panel.info h3, .collapsable-panel.info h4, .collapsable-panel.info h5, .collapsable-panel.info h6, .info .order-marker.inverse, .info.order-marker.inverse.info .order-marker.hollow, .info.order-marker.hollow, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
+.info.fa, .info .order-marker.inverse, .info.order-marker.inverse.info .order-marker.hollow, .info.order-marker.hollow, .nav-list.nav-checklist li.info i, .nav-checklist.panel-selector li.info i, .answer.info .required-holder, .question.info .required-holder, .question-inline.info .required-holder, .question-grid-based.info .required-holder, .info.question .label-holder label, .info.question .input-holder .postfix, .info.question .input-holder .prefix, .info.question .input-holder .value, .info .bar.close .action-btn, .collapsable-panel.info h1, .collapsable-panel.info h2, .collapsable-panel.info h3, .collapsable-panel.info h4, .collapsable-panel.info h5, .collapsable-panel.info h6, .info .order-marker.inverse, .info.order-marker.inverse.info .order-marker.hollow, .info.order-marker.hollow, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
   color: #a6a6a6;
 }
 
-.nav-list.nav-checklist li.info, .nav-checklist.panel-selector li.info, .info .message-holder > .info, .hint .info, .info.inset .bar.close .action-btn, .info-inactive .switch-paddle, .info-active input:checked ~ .switch-paddle, .info.callout {
+.nav-list.nav-checklist li.info, .nav-checklist.panel-selector li.info, .info.question .message-holder > .info, .hint .info, .info .close-bar .close-button, .info.inset .bar.close .action-btn, .info-inactive .switch-paddle, .info-active input:checked ~ .switch-paddle, .info.callout, .info.page-message {
   background-color: #a6a6a6;
 }
 
@@ -11710,15 +11846,15 @@ STATE TRUMPING CODE
   content: "";
 }
 
-.highlighted .order-marker.hollow, .highlighted.order-marker.hollow, .highlighted .input-holder input, .highlighted .input-holder textarea, .highlighted .input-holder select, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted .bar.close, .highlighted.inset .bar.close, .highlighted.question .button-group, .highlighted .order-marker.hollow, .highlighted.order-marker.hollow, h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
+.highlighted .order-marker.hollow, .highlighted.order-marker.hollow, .highlighted.question .input-holder input, .highlighted.question .input-holder textarea, .highlighted.question .input-holder select, .highlighted.question .input-holder .postfix, .highlighted.question .input-holder .prefix, .highlighted .close-bar, .highlighted .bar.close, .highlighted.inset .bar.close, .highlighted.question .button-group, .highlighted .order-marker.hollow, .highlighted.order-marker.hollow, h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
   border-color: #22AFD7;
 }
 
-.highlighted .order-marker.inverse, .highlighted.order-marker.inverse.highlighted .order-marker.hollow, .highlighted.order-marker.hollow, .nav-list.nav-checklist li.highlighted i, .nav-checklist.panel-selector li.highlighted i, .answer.highlighted .required-holder, .question.highlighted .required-holder, .question-inline.highlighted .required-holder, .question-grid-based.highlighted .required-holder, .highlighted .label-holder label, .highlighted .input-holder .postfix, .highlighted .input-holder .prefix, .highlighted .input-holder .value, .highlighted .bar.close .action-btn, .collapsable-panel.highlighted h1, .collapsable-panel.highlighted h2, .collapsable-panel.highlighted h3, .collapsable-panel.highlighted h4, .collapsable-panel.highlighted h5, .collapsable-panel.highlighted h6, .highlighted .order-marker.inverse, .highlighted.order-marker.inverse.highlighted .order-marker.hollow, .highlighted.order-marker.hollow, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
+.highlighted.fa, .highlighted .order-marker.inverse, .highlighted.order-marker.inverse.highlighted .order-marker.hollow, .highlighted.order-marker.hollow, .nav-list.nav-checklist li.highlighted i, .nav-checklist.panel-selector li.highlighted i, .answer.highlighted .required-holder, .question.highlighted .required-holder, .question-inline.highlighted .required-holder, .question-grid-based.highlighted .required-holder, .highlighted.question .label-holder label, .highlighted.question .input-holder .postfix, .highlighted.question .input-holder .prefix, .highlighted.question .input-holder .value, .highlighted .bar.close .action-btn, .collapsable-panel.highlighted h1, .collapsable-panel.highlighted h2, .collapsable-panel.highlighted h3, .collapsable-panel.highlighted h4, .collapsable-panel.highlighted h5, .collapsable-panel.highlighted h6, .highlighted .order-marker.inverse, .highlighted.order-marker.inverse.highlighted .order-marker.hollow, .highlighted.order-marker.hollow, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
   color: #22AFD7;
 }
 
-.nav-list.nav-checklist li.highlighted, .nav-checklist.panel-selector li.highlighted, .highlighted .message-holder > .highlighted, .hint .highlighted, .highlighted.inset .bar.close .action-btn, .highlighted-inactive .switch-paddle, .highlighted-active input:checked ~ .switch-paddle, .highlighted.callout {
+.nav-list.nav-checklist li.highlighted, .nav-checklist.panel-selector li.highlighted, .highlighted.question .message-holder > .highlighted, .hint .highlighted, .highlighted .close-bar .close-button, .highlighted.inset .bar.close .action-btn, .highlighted-inactive .switch-paddle, .highlighted-active input:checked ~ .switch-paddle, .highlighted.callout, .highlighted.page-message {
   background-color: #22AFD7;
 }
 
@@ -11726,15 +11862,15 @@ STATE TRUMPING CODE
   content: "";
 }
 
-.disabled .order-marker.hollow, .disabled.order-marker.hollow, .disabled .input-holder input, .disabled .input-holder textarea, .disabled .input-holder select, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .bar.close, .disabled.inset .bar.close, .disabled.question .button-group, .disabled .order-marker.hollow, .disabled.order-marker.hollow, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
+.disabled .order-marker.hollow, .disabled.order-marker.hollow, .disabled.question .input-holder input, .disabled.question .input-holder textarea, .disabled.question .input-holder select, .disabled.question .input-holder .postfix, .disabled.question .input-holder .prefix, .disabled .close-bar, .disabled .bar.close, .disabled.inset .bar.close, .disabled.question .button-group, .disabled .order-marker.hollow, .disabled.order-marker.hollow, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
   border-color: #cccccc;
 }
 
-.disabled .order-marker.inverse, .disabled.order-marker.inverse.disabled .order-marker.hollow, .disabled.order-marker.hollow, .nav-list.nav-checklist li.disabled i, .nav-checklist.panel-selector li.disabled i, .answer.disabled .required-holder, .question.disabled .required-holder, .question-inline.disabled .required-holder, .question-grid-based.disabled .required-holder, .disabled .label-holder label, .disabled .input-holder .postfix, .disabled .input-holder .prefix, .disabled .input-holder .value, .disabled .bar.close .action-btn, .collapsable-panel.disabled h1, .collapsable-panel.disabled h2, .collapsable-panel.disabled h3, .collapsable-panel.disabled h4, .collapsable-panel.disabled h5, .collapsable-panel.disabled h6, .disabled .order-marker.inverse, .disabled.order-marker.inverse.disabled .order-marker.hollow, .disabled.order-marker.hollow, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
+.disabled.fa, .disabled .order-marker.inverse, .disabled.order-marker.inverse.disabled .order-marker.hollow, .disabled.order-marker.hollow, .nav-list.nav-checklist li.disabled i, .nav-checklist.panel-selector li.disabled i, .answer.disabled .required-holder, .question.disabled .required-holder, .question-inline.disabled .required-holder, .question-grid-based.disabled .required-holder, .disabled.question .label-holder label, .disabled.question .input-holder .postfix, .disabled.question .input-holder .prefix, .disabled.question .input-holder .value, .disabled .bar.close .action-btn, .collapsable-panel.disabled h1, .collapsable-panel.disabled h2, .collapsable-panel.disabled h3, .collapsable-panel.disabled h4, .collapsable-panel.disabled h5, .collapsable-panel.disabled h6, .disabled .order-marker.inverse, .disabled.order-marker.inverse.disabled .order-marker.hollow, .disabled.order-marker.hollow, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
   color: #cccccc;
 }
 
-.nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled, .disabled .message-holder > .disabled, .hint .disabled, .disabled.inset .bar.close .action-btn, .disabled-inactive .switch-paddle, .disabled-active input:checked ~ .switch-paddle, .disabled.callout {
+.nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled, .disabled.question .message-holder > .disabled, .hint .disabled, .disabled .close-bar .close-button, .disabled.inset .bar.close .action-btn, .disabled-inactive .switch-paddle, .disabled-active input:checked ~ .switch-paddle, .disabled.callout, .disabled.page-message {
   background-color: #cccccc;
 }
 

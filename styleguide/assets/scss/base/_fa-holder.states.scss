@@ -16,7 +16,7 @@ $required_data:(
 @each $State in $states{
 	$selector:map-get($State,"Selector");
 	@include setTrump('icon',map-get($State,'State'),'#{$selector} .fa-holder-dynamic:before, #{$selector}.fa:before,#{$selector} >.fa-holder:before');
-	@include setTrump('color',map-get($State,'Icon'),'#{$selector}.fa');
+	@include setTrump('color',map-get($State,'State'),'#{$selector}.fa');
 }
 
 .required{
