@@ -1,8 +1,40 @@
 .callout{
     background-image: url(../img/empty_stripe.png);
+    background-color:grey(10);
 }
 @each $State in $states {
     $selector: map-get($State, "Selector");
     $state-name: map-get($State, "State");
     @include setTrump('background-color', $state-name, '#{$selector}.callout');
 }
+
+/**
+* Callout:
+* `.callout` - a small part of content that is called out on the page. This type of treatment is great for asides, extra info or alerts. 
+* 
+*   @example
+*	<div class="callout">
+*       <h5>This call out is used for showing content on the page that should not be missed.</h5>
+*	</div>
+*/
+/**
+* Callout [States]:
+* `.callouts + .warning` - Callouts are built to be effected by states so they can reflect there message as Info, Warning, Error for example. 
+* 
+*   @example
+*	<div class="callout warning">
+*        <h5>I am a call out that shows a warning about something in this section.</h5>
+*	</div>
+*/
+/**
+* Callout with close bar:
+* `.callouts & .close-bar` - most callouts are openned and closed by other inputs or section triggers but there are times when a callout should be dismissed.   In these cases adding the `.closebar` DOM is most useful.  
+* 
+*   @example
+*	<div class="callout warning">
+*       <a class="close-bar">
+*           <span class="close-button"><i class="fa fa-times" aria-hidden="true"></i></span>
+*       </a>
+*       <h5>I am a call out that is a warnning but can be dismissed.</h5>
+*	</div>
+*/
