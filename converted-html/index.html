@@ -60,7 +60,7 @@
             <div class="content-padding">
             <div class="shrink-waypoint"></div>
               <div id="introduction"  data-bind="page: {id:'introduction', role: 'start', afterShow: listchange}">
-    <h1>The ACC's App Framework <strong>Version 2.7</strong>
+    <h1>The ACC's App Framework <strong>Version 2.8</strong>
     <span class="sub-line">Code Name: Bristol</span>
     </h1>
     <p>The American College of Cardiology is proud of its standards of excellence when it comes to the information it supplies to the best cardiologists in the world. And now it is taking great pains to bring that exceptional standards to its UI design.</p>
@@ -79,6 +79,12 @@
     </div>
     <div class="callout highlighted">
         <h2>New to Bristol</h2>
+        <h3>Version 2.8</h3>
+        <h5>Page Level Callouts '.page-message'</h5>
+        <ul >
+            <li>Page or system level alert designs</li>
+            <li>Page Messages are State Effected </li>
+        </ul>
         <h3>Version 2.7</h3>
         <h5>Ghost Cards</h5>
         <ul >
@@ -8447,8 +8453,7 @@ padding: 1em;
 	<div class="page-wrapper">
 		<div class="content-padding">
 				<h1>Callouts and Messaging</h1>
-				<h1>Callouts and Messages</h1>
-<p>There are a lot of ways the UI can communicate with the user. Most of the time pure use of typography and higharcy is all that is needed.  But in times when you need to bring the attention to a specific peice of content a call out is used.</p>
+				<p>There are a lot of ways the UI can communicate with the user. Most of the time pure use of typography and higharcy is all that is needed.  But in times when you need to bring the attention to a specific peice of content a call out is used.  There are two levels of callouts.   One is at the page or system level and the second is at the card or section level.</p>
 		</div>
 	</div>
 	 <div class="page paper-page">
@@ -8530,6 +8535,110 @@ padding: 1em;
 	    </div>
 	</div>
 </div>
+	<div class="page-wrapper">
+		<div class="content-padding">
+				<h2>Code and Usage</h2>
+				<section class="sg-block sg-section-callout-page-messages">
+      <div class="sg-text">
+        <h3 id="callout-page-messages" class="sg">Callout - Page Messages</h3>
+        <p class="sg">
+          <code class="sg">.page-message</code>- added to
+          <code class="sg">.callout</code>to make a top level message for an app. These
+          <code class="sg">.page-message</code>are designed be be outside of cards and show up in the background area.</p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <div class="page-message callout">
+            <a class="close-bar">
+              <span class="close-button">
+                <i class="fa fa-times" aria-hidden="true"></i>
+              </span>
+            </a>
+            <div class="message-container">
+              <div class="icon-holder">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square-o fa-stack-2x"></i>
+                  <i class="fa fa-holder-dynamic fa-stack-1x"></i>
+                </span>
+              </div>
+              <div class="message-holder">
+                <h5>This app is for nonvalvular atrial fibrillation patients only, and should not be used to guide therapy in patients with mechanical or bioprosthetic valves.</h5>
+              </div>
+            </div>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-message callout&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;close-bar&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;close-button&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-times&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;message-container&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon-holder&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa-stack fa-lg&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-square-o fa-stack-2x&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic fa-stack-1x&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;message-holder&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h5</span>&gt;</span>This app is for nonvalvular atrial fibrillation patients only, and should not be used to guide therapy in patients
+        with mechanical or bioprosthetic valves.<span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+      </div>
+    </section>
+
+    <section class="sg-block sg-section-callout-page-messages-states-">
+      <div class="sg-text">
+        <h3 id="callout-page-messages-states-" class="sg">Callout - Page Messages [States]</h3>
+        <p class="sg">
+          <code class="sg">.page-message + .warning</code>- page messages are designed to work with states with the backgrounds, close bar and icon all changing to reflect the state add at the root level of the
+          <code class="sg">.page-message</code>
+        </p>
+      </div>
+      <div class="sg-example">
+        <div class="sg-canvas">
+          <div class="page-message callout warning">
+            <a class="close-bar">
+              <span class="close-button">
+                <i class="fa fa-times" aria-hidden="true"></i>
+              </span>
+            </a>
+            <div class="message-container">
+              <div class="icon-holder">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-square-o fa-stack-2x"></i>
+                  <i class="fa fa-holder-dynamic fa-stack-1x"></i>
+                </span>
+              </div>
+              <div class="message-holder">
+                <h5>This app is for nonvalvular atrial fibrillation patients only, and should not be used to guide therapy in patients with mechanical or bioprosthetic valves.</h5>
+              </div>
+            </div>
+          </div>
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page-message callout warning&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;close-bar&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;close-button&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-times&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;message-container&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon-holder&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa-stack fa-lg&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-square-o fa-stack-2x&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-holder-dynamic fa-stack-1x&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;message-holder&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h5</span>&gt;</span>This app is for nonvalvular atrial fibrillation patients only, and should not be used to guide therapy in patients
+        with mechanical or bioprosthetic valves.<span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+      </div>
+    </section>
+		</div>
+	</div>
 </div>  
         </article>
       </section>
