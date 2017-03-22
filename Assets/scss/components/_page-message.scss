@@ -1,3 +1,72 @@
+
+
+.close-bar {
+  position: absolute;
+  width: 100%;
+  text-align: right;
+  border-top: 5px solid grey(60);
+  top: -1px;
+  right: 0;
+  left: 0; }
+.close-bar:hover {
+    border-color: $black;
+    .close-button{ background-color: $black; }
+     }
+.close-bar .close-button {
+    background: grey(60);
+    top: 0;
+    right: 0;
+    color: white;
+    padding: .25em; }
+    .close-bar .close-button:hover {
+      background-color: $black; }
+    .close-bar .close-button .fa {
+      color: $white; 
+  }
+//Close Bar States
+@each $State in $states{
+	$selector:map-get($State,"Selector");
+	@include setTrump('border-color',map-get($State,'State'),'#{$selector} .close-bar');
+	@include setTrump('background-color',map-get($State,'State'),'#{$selector} .close-bar .close-button');
+	@include setContrastTrump(map-get($State,'Color'),'#{$selector} .close-bar .close-button .fa');
+	#{$selector}{
+		.close-bar:hover,.close-bar{
+			border-color:mix($black,map-get($State,'Color'));
+			.close-button,.close-button:hover{ 
+				background:mix($black,map-get($State,'Color'));
+				.fa{color:$white;}
+			}
+		}
+	}
+
+
+}
+
+
+
+
+.page-message{
+	background-color:rebrand-color(color($product-brand-color,30),2);
+	.fa-holder-dynamic:before{content:$fa-var-asterisk;}
+	@extend .callout;
+	@include grid-row();
+	position:relative;
+	
+	.message-container{
+		display:flex;
+		margin:0 1em 0 0;
+		align-items: center;
+
+	}
+	.icon-holder,.message-holder{}
+	.icon-holder{
+		flex:none;
+		color:grey(60);
+		font-size:1.5em;
+		padding: 0 1em 0 0;
+	}
+}
+
 /**
 * Callout - Page Messages:
 * `.page-message` - added to `.callout` to make a top level message for an app.  These `.page-message` are designed be be outside of cards and show up in the background area. 
@@ -42,54 +111,3 @@
 *		</div>
 *	</div>
 */
-
-.close-bar {
-  position: absolute;
-  width: 100%;
-  text-align: right;
-  border-top: 5px solid grey(30);
-  top: -1px;
-  right: 0;
-  left: 0; }
-.close-bar:hover {
-    border-color: $black;
-    .close-button{ background-color: $black; }
-     }
-.close-bar .close-button {
-    background: grey(60);
-    top: 0;
-    right: 0;
-    color: white;
-    padding: .25em; }
-    .close-bar .close-button:hover {
-      background-color: $black; }
-    .close-bar .close-button .fa {
-      color: $white; 
-  }
-//Close Bar States
-@each $State in $states{
-	$selector:map-get($State,"Selector");
-	@include setTrump('border-color',map-get($State,'State'),'#{$selector} .close-bar');
-	@include setTrump('background-color',map-get($State,'State'),'#{$selector} .close-bar .close-button');
-}
-.page-message{
-	background-color:rebrand-color(color($product-brand-color,30),2);
-	.fa-holder-dynamic:before{content:$fa-var-asterisk;}
-	@extend .callout;
-	@include grid-row();
-	position:relative;
-	
-	.message-container{
-		display:flex;
-		margin:0 1em 0 0;
-		align-items: center;
-
-	}
-	.icon-holder,.message-holder{}
-	.icon-holder{
-		flex:none;
-		color:grey(60);
-		font-size:1.5em;
-		padding: 0 1em 0 0;
-	}
-}

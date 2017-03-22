@@ -4807,6 +4807,128 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *		</div>
 *	</div>		
 */
+.close-bar {
+  position: absolute;
+  width: 100%;
+  text-align: right;
+  border-top: 5px solid #666666;
+  top: -1px;
+  right: 0;
+  left: 0;
+}
+
+.close-bar:hover {
+  border-color: #333333;
+}
+.close-bar:hover .close-button {
+  background-color: #333333;
+}
+
+.close-bar .close-button {
+  background: #666666;
+  top: 0;
+  right: 0;
+  color: white;
+  padding: .25em;
+}
+
+.close-bar .close-button:hover {
+  background-color: #333333;
+}
+
+.close-bar .close-button .fa {
+  color: #FFF;
+}
+
+.error .close-bar:hover, .error .close-bar {
+  border-color: #7b2b32;
+}
+.error .close-bar:hover .close-button, .error .close-bar:hover .close-button:hover, .error .close-bar .close-button, .error .close-bar .close-button:hover {
+  background: #7b2b32;
+}
+.error .close-bar:hover .close-button .fa, .error .close-bar:hover .close-button:hover .fa, .error .close-bar .close-button .fa, .error .close-bar .close-button:hover .fa {
+  color: #FFF;
+}
+
+.warning .close-bar:hover, .warning .close-bar {
+  border-color: #8a5c24;
+}
+.warning .close-bar:hover .close-button, .warning .close-bar:hover .close-button:hover, .warning .close-bar .close-button, .warning .close-bar .close-button:hover {
+  background: #8a5c24;
+}
+.warning .close-bar:hover .close-button .fa, .warning .close-bar:hover .close-button:hover .fa, .warning .close-bar .close-button .fa, .warning .close-bar .close-button:hover .fa {
+  color: #FFF;
+}
+
+.success .close-bar:hover, .success .close-bar {
+  border-color: #247245;
+}
+.success .close-bar:hover .close-button, .success .close-bar:hover .close-button:hover, .success .close-bar .close-button, .success .close-bar .close-button:hover {
+  background: #247245;
+}
+.success .close-bar:hover .close-button .fa, .success .close-bar:hover .close-button:hover .fa, .success .close-bar .close-button .fa, .success .close-bar .close-button:hover .fa {
+  color: #FFF;
+}
+
+.info .close-bar:hover, .info .close-bar {
+  border-color: #6d6d6d;
+}
+.info .close-bar:hover .close-button, .info .close-bar:hover .close-button:hover, .info .close-bar .close-button, .info .close-bar .close-button:hover {
+  background: #6d6d6d;
+}
+.info .close-bar:hover .close-button .fa, .info .close-bar:hover .close-button:hover .fa, .info .close-bar .close-button .fa, .info .close-bar .close-button:hover .fa {
+  color: #FFF;
+}
+
+.highlighted .close-bar:hover, .highlighted .close-bar {
+  border-color: #2b7185;
+}
+.highlighted .close-bar:hover .close-button, .highlighted .close-bar:hover .close-button:hover, .highlighted .close-bar .close-button, .highlighted .close-bar .close-button:hover {
+  background: #2b7185;
+}
+.highlighted .close-bar:hover .close-button .fa, .highlighted .close-bar:hover .close-button:hover .fa, .highlighted .close-bar .close-button .fa, .highlighted .close-bar .close-button:hover .fa {
+  color: #FFF;
+}
+
+.disabled .close-bar:hover, .disabled .close-bar {
+  border-color: gray;
+}
+.disabled .close-bar:hover .close-button, .disabled .close-bar:hover .close-button:hover, .disabled .close-bar .close-button, .disabled .close-bar .close-button:hover {
+  background: gray;
+}
+.disabled .close-bar:hover .close-button .fa, .disabled .close-bar:hover .close-button:hover .fa, .disabled .close-bar .close-button .fa, .disabled .close-bar .close-button:hover .fa {
+  color: #FFF;
+}
+
+.page-message {
+  background-color: #f4a4d6;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.page-message .fa-holder-dynamic:before {
+  content: "";
+}
+.page-message::before, .page-message::after {
+  content: ' ';
+  display: table;
+}
+.page-message::after {
+  clear: both;
+}
+.page-message .message-container {
+  display: flex;
+  margin: 0 1em 0 0;
+  align-items: center;
+}
+.page-message .icon-holder {
+  flex: none;
+  color: #666666;
+  font-size: 1.5em;
+  padding: 0 1em 0 0;
+}
+
 /**
 * Callout - Page Messages:
 * `.page-message` - added to `.callout` to make a top level message for an app.  These `.page-message` are designed be be outside of cards and show up in the background area. 
@@ -4851,68 +4973,6 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *		</div>
 *	</div>
 */
-.close-bar {
-  position: absolute;
-  width: 100%;
-  text-align: right;
-  border-top: 5px solid #b3b3b3;
-  top: -1px;
-  right: 0;
-  left: 0;
-}
-
-.close-bar:hover {
-  border-color: #333333;
-}
-.close-bar:hover .close-button {
-  background-color: #333333;
-}
-
-.close-bar .close-button {
-  background: #666666;
-  top: 0;
-  right: 0;
-  color: white;
-  padding: .25em;
-}
-
-.close-bar .close-button:hover {
-  background-color: #333333;
-}
-
-.close-bar .close-button .fa {
-  color: #FFF;
-}
-
-.page-message {
-  background-color: #f4a4d6;
-  max-width: 75rem;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-}
-.page-message .fa-holder-dynamic:before {
-  content: "";
-}
-.page-message::before, .page-message::after {
-  content: ' ';
-  display: table;
-}
-.page-message::after {
-  clear: both;
-}
-.page-message .message-container {
-  display: flex;
-  margin: 0 1em 0 0;
-  align-items: center;
-}
-.page-message .icon-holder {
-  flex: none;
-  color: #666666;
-  font-size: 1.5em;
-  padding: 0 1em 0 0;
-}
-
 /**
 *  Tables:
 *  `table` - plan tables are clean with barely any styles.
@@ -9389,7 +9449,7 @@ input:checked + label > .switch-inactive {
   border-bottom: 2px solid #666666;
 }
 
-.page .page-wrapper, .content-padding {
+.page .page-wrapper, .content-padding, .content-padding.page-wrapper {
   margin: 0 auto;
 }
 
@@ -9453,18 +9513,18 @@ input:checked + label > .switch-inactive {
   }
 }
 
-.content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+.content-padding, .content-padding.page-wrapper, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
   padding-left: .5rem;
   padding-right: .5rem;
 }
 @media only screen and (min-width: 767px) {
-  .content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+  .content-padding, .content-padding.page-wrapper, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
     padding-right: .75rem;
     padding-left: .75rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+  .content-padding, .content-padding.page-wrapper, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
     padding-right: 1rem;
     padding-left: 1rem;
   }
@@ -9551,7 +9611,7 @@ input:checked + label > .switch-inactive {
   }
 }
 
-.page .page-wrapper, .content-padding, .colored-paper {
+.page .page-wrapper, .content-padding, .content-padding.page-wrapper, .colored-paper {
   -webkit-transition: padding 1s;
   /* Safari */
   transition: padding 1s;
@@ -9795,18 +9855,18 @@ input:checked + label > .switch-inactive {
 * 
 *   @example
 *   <div class="page paper-page">
-*    <div class="page-wrapper">
+*    <div class="page-wrapper content-padding">
 *    <section class="section card"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *    </div>
 *    </div>
 *   <div class="page paper-page error">
-*    <div class="page-wrapper">
+*    <div class="page-wrapper content-padding">
 *       <section class="section card">
 *           <h1>.Page.Paper-Page.Error</h1>
 *       </section>
 *    </div></div>
 *   <div class="page paper-page highlighted">
-*    <div class="page-wrapper">
+*    <div class="page-wrapper content-padding">
 *       <section class="section card">
 *           <h1>.Page.Paper-Page.Highlighted</h1>
 *       </section>
@@ -9820,12 +9880,12 @@ input:checked + label > .switch-inactive {
 * 
 *   @example
 *   <div class="page paper-page">
-*    <div class="page-wrapper">
+*    <div class="page-wrapper content-padding">
 *    <section class="section card"><h1>Hello I am a ghost</h1> <p>This is content  that is showing up in a section group</p></section>
 *    </div>
 *    </div>
 *   <div class="page paper-page error">
-*    <div class="page-wrapper">
+*    <div class="page-wrapper content-padding">
 *       <section class="section card ghost"><div class="error colored-paper">Colored Paper is Effected by Ghosting</div>
 *           <h1>.Page.Paper-Page.Error .Card.Ghost</h1>
 *       </section>
@@ -9844,7 +9904,7 @@ input:checked + label > .switch-inactive {
 *     <li class="selected"><a >Tab 3</a></li>
 *     <li class=""><a >Tab 4</a></li>
 *     </ul></nav>
-*     <div class="page-wrapper">
+*     <div class="page-wrapper content-padding">
 *     <section class="section group-section radius"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *        </div>
 *    </div>
@@ -9862,7 +9922,7 @@ input:checked + label > .switch-inactive {
 *     <li class="selected"><a >Tab 3</a></li>
 *     <li class=""><a >Tab 4</a></li>
 *     </ul></nav>
-*     <div class="page-wrapper">
+*     <div class="page-wrapper content-padding">
 *     <section class="section group-section radius"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *        </div>
 *    </div>
@@ -9873,7 +9933,7 @@ input:checked + label > .switch-inactive {
 *     <li class="selected"><a >Tab 3</a></li>
 *     <li class=""><a >Tab 4</a></li>
 *     </ul></nav>
-*     <div class="page-wrapper">
+*     <div class="page-wrapper content-padding">
 *     <section class="section group-section radius"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *        </div>
 *    </div>
@@ -9885,7 +9945,7 @@ input:checked + label > .switch-inactive {
 * 
 *   @example
 *   <div class="page paper-page">
-*       <div class="page-wrapper">
+*       <div class="page-wrapper content-padding">
 *            <section class="section card">
 *                <div class="colored-paper">
 *                    <nav><ul class="nav tabs">
@@ -9919,7 +9979,7 @@ input:checked + label > .switch-inactive {
 * 
 *   @example
 *   <div class="page paper-page">
-*       <div class="page-wrapper">
+*       <div class="page-wrapper content-padding">
 *            <section class="section card">
 *                <div class="colored-paper">
 *                   <h2>I am Content inside of a colored paper</h2> 
@@ -9936,7 +9996,7 @@ input:checked + label > .switch-inactive {
 * 
 *   @example
 *   <div class="page paper-page">
-*       <div class="page-wrapper">
+*       <div class="page-wrapper content-padding">
 *        <div class="row">
 *            <div class="medium-4 columns">
 *                <div class="card">
@@ -9964,7 +10024,7 @@ input:checked + label > .switch-inactive {
 * 
 *   @example
 *   <div class="page with-group-sections">
-*    <div class="page-wrapper">
+*    <div class="page-wrapper content-padding">
 *        <div class="row">
 *            <div class="medium-4 columns">
 *                <div class="card radius-top">
@@ -11913,11 +11973,11 @@ STATE TRUMPING CODE
   font-family: FontAwesome;
 }
 
-.dark-color-text, .warning .order-marker, .warning.order-marker, .info .order-marker, .info.order-marker, .disabled .order-marker, .disabled.order-marker, .message-holder > .warning, .message-holder > .info, .message-holder > .disabled, .hint .warning, .hint .info, .hint .disabled, .warning .order-marker, .warning.order-marker, .info .order-marker, .info.order-marker, .disabled .order-marker, .disabled.order-marker {
+.dark-color-text, .warning .order-marker, .warning.order-marker, .info .order-marker, .info.order-marker, .disabled .order-marker, .disabled.order-marker, .message-holder > .warning, .message-holder > .info, .message-holder > .disabled, .hint .warning, .hint .info, .hint .disabled, .warning .close-bar .close-button .fa, .info .close-bar .close-button .fa, .disabled .close-bar .close-button .fa, .warning .order-marker, .warning.order-marker, .info .order-marker, .info.order-marker, .disabled .order-marker, .disabled.order-marker {
   color: #262626;
 }
 
-.light-color-text, .error .order-marker, .error.order-marker, .success .order-marker, .success.order-marker, .highlighted .order-marker, .highlighted.order-marker, .message-holder > .error, .message-holder > .success, .message-holder > .highlighted, .hint .error, .hint .success, .hint .highlighted, .error .order-marker, .error.order-marker, .success .order-marker, .success.order-marker, .highlighted .order-marker, .highlighted.order-marker {
+.light-color-text, .error .order-marker, .error.order-marker, .success .order-marker, .success.order-marker, .highlighted .order-marker, .highlighted.order-marker, .message-holder > .error, .message-holder > .success, .message-holder > .highlighted, .hint .error, .hint .success, .hint .highlighted, .error .close-bar .close-button .fa, .success .close-bar .close-button .fa, .highlighted .close-bar .close-button .fa, .error .order-marker, .error.order-marker, .success .order-marker, .success.order-marker, .highlighted .order-marker, .highlighted.order-marker {
   color: #fff;
 }
 

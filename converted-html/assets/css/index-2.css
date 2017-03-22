@@ -9255,7 +9255,7 @@ input:checked + label > .switch-inactive {
   border-bottom: 2px solid #666666;
 }
 
-.page .page-wrapper, .content-padding {
+.page .page-wrapper, .content-padding, .content-padding.page-wrapper {
   margin: 0 auto;
 }
 
@@ -9319,18 +9319,18 @@ input:checked + label > .switch-inactive {
   }
 }
 
-.content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+.content-padding, .content-padding.page-wrapper, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
   padding-left: .5rem;
   padding-right: .5rem;
 }
 @media only screen and (min-width: 767px) {
-  .content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+  .content-padding, .content-padding.page-wrapper, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
     padding-right: .75rem;
     padding-left: .75rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+  .content-padding, .content-padding.page-wrapper, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
     padding-right: 1rem;
     padding-left: 1rem;
   }
@@ -9417,7 +9417,7 @@ input:checked + label > .switch-inactive {
   }
 }
 
-.page .page-wrapper, .content-padding, .colored-paper {
+.page .page-wrapper, .content-padding, .content-padding.page-wrapper, .colored-paper {
   -webkit-transition: padding 1s;
   /* Safari */
   transition: padding 1s;
@@ -9697,18 +9697,18 @@ input:checked + label > .switch-inactive {
 * 
 *   @example
 *   <div class="page paper-page">
-*    <div class="page-wrapper">
+*    <div class="page-wrapper content-padding">
 *    <section class="section card"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *    </div>
 *    </div>
 *   <div class="page paper-page error">
-*    <div class="page-wrapper">
+*    <div class="page-wrapper content-padding">
 *       <section class="section card">
 *           <h1>.Page.Paper-Page.Error</h1>
 *       </section>
 *    </div></div>
 *   <div class="page paper-page highlighted">
-*    <div class="page-wrapper">
+*    <div class="page-wrapper content-padding">
 *       <section class="section card">
 *           <h1>.Page.Paper-Page.Highlighted</h1>
 *       </section>
@@ -9722,12 +9722,12 @@ input:checked + label > .switch-inactive {
 * 
 *   @example
 *   <div class="page paper-page">
-*    <div class="page-wrapper">
+*    <div class="page-wrapper content-padding">
 *    <section class="section card"><h1>Hello I am a ghost</h1> <p>This is content  that is showing up in a section group</p></section>
 *    </div>
 *    </div>
 *   <div class="page paper-page error">
-*    <div class="page-wrapper">
+*    <div class="page-wrapper content-padding">
 *       <section class="section card ghost"><div class="error colored-paper">Colored Paper is Effected by Ghosting</div>
 *           <h1>.Page.Paper-Page.Error .Card.Ghost</h1>
 *       </section>
@@ -9746,7 +9746,7 @@ input:checked + label > .switch-inactive {
 *     <li class="selected"><a >Tab 3</a></li>
 *     <li class=""><a >Tab 4</a></li>
 *     </ul></nav>
-*     <div class="page-wrapper">
+*     <div class="page-wrapper content-padding">
 *     <section class="section group-section radius"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *        </div>
 *    </div>
@@ -9764,7 +9764,7 @@ input:checked + label > .switch-inactive {
 *     <li class="selected"><a >Tab 3</a></li>
 *     <li class=""><a >Tab 4</a></li>
 *     </ul></nav>
-*     <div class="page-wrapper">
+*     <div class="page-wrapper content-padding">
 *     <section class="section group-section radius"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *        </div>
 *    </div>
@@ -9775,7 +9775,7 @@ input:checked + label > .switch-inactive {
 *     <li class="selected"><a >Tab 3</a></li>
 *     <li class=""><a >Tab 4</a></li>
 *     </ul></nav>
-*     <div class="page-wrapper">
+*     <div class="page-wrapper content-padding">
 *     <section class="section group-section radius"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *        </div>
 *    </div>
@@ -9787,7 +9787,7 @@ input:checked + label > .switch-inactive {
 * 
 *   @example
 *   <div class="page paper-page">
-*       <div class="page-wrapper">
+*       <div class="page-wrapper content-padding">
 *            <section class="section card">
 *                <div class="colored-paper">
 *                    <nav><ul class="nav tabs">
@@ -9821,7 +9821,7 @@ input:checked + label > .switch-inactive {
 * 
 *   @example
 *   <div class="page paper-page">
-*       <div class="page-wrapper">
+*       <div class="page-wrapper content-padding">
 *            <section class="section card">
 *                <div class="colored-paper">
 *                   <h2>I am Content inside of a colored paper</h2> 
@@ -9838,7 +9838,7 @@ input:checked + label > .switch-inactive {
 * 
 *   @example
 *   <div class="page paper-page">
-*       <div class="page-wrapper">
+*       <div class="page-wrapper content-padding">
 *        <div class="row">
 *            <div class="medium-4 columns">
 *                <div class="card">
@@ -9866,7 +9866,7 @@ input:checked + label > .switch-inactive {
 * 
 *   @example
 *   <div class="page with-group-sections">
-*    <div class="page-wrapper">
+*    <div class="page-wrapper content-padding">
 *        <div class="row">
 *            <div class="medium-4 columns">
 *                <div class="card radius-top">
