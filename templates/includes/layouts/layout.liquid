@@ -14,10 +14,24 @@
 </head>
 	<body>
     {% include 'sections/header' %}
-    <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
+    
     {% block content %}{% endblock %}
-    </div>
+
     {% include 'sections/web-footer' %}
     {% include "scripts" %}
+    <style>
+  td.full-cell { padding:0; }
+  td.full-cell button{ width:2.5em;height: 2.5em; }
+  .purchase-icon {
+  display: inline-block;
+  float: right;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  margin-top: 5px; }
+.purchase-icon.acc{background: transparent url(http://cstool.acc.org/Content/images/icon-ACC.png) no-repeat center;}
+.purchase-icon.iscience {
+  background-image: url(http://cstool.acc.org/Content/images/icon-iSc.png); }
+</style>
 	</body>
 </html>

@@ -1,0 +1,60 @@
+{% extends 'layouts/layout' %}
+{% block content %}
+<div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
+    <div class="page paper-page">
+        <div class="page-wrapper content-padding">
+        	<div class="row">
+        		<div class="column"><h1>Moving Purchase 
+					<div class="sub-line">Search for a member record in the "To Record" Search and click "Transfer" to move purchase to the new record </div>
+        		</h1></div>
+        	</div>
+            <div class="row">
+            	<div class="column medium-4 large-3">
+            		<div class="card">
+            			<div class="colored-paper"><h3>From Record <i class="fa fa-sign-out" aria-hidden="true"></i></h3></div>
+            			<div class="section-padding">
+            				<h4>
+								<div class="sub-line">Name</div>
+								Matt Watier
+            				</h4>
+            				<h4>
+								<div class="sub-line">Email</div>
+								 mwatier@acc.org
+            				</h4>
+            				<h4>
+								<div class="sub-line">Bagde Number</div>
+								01524354
+            				</h4>
+            			</div>
+            		</div>
+            	</div>
+            	<div class="column medium-8 large-9">
+	            	<div class="card">
+	            	<div class="colored-paper"><h3><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i> To Record</h3></div>
+		                <div class="colored-paper info">
+		                    <div class="question">
+		                        <div class="input-group input-holder">
+		                            <span class="input-group-label">Search</span>
+		                            <input class="input-group-field" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+		                            <div class="input-group-button">
+		                                <input type="submit" class="button" value="Search">
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="section-padding">
+		                    {%include 'sections/result/result-buttons' %} 
+		                    <table class="table">
+		     					{%include 'sections/result/table/thead-cond' %}
+		                        <tbody>
+		                            
+		                        </tbody>
+		                    </table>
+		                </div>
+		            </div>
+	            </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
