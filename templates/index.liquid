@@ -3,20 +3,10 @@
 <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
     <div class="page paper-page">
         <div class="page-wrapper content-padding">
+        {%include 'sections/search-bar' %}
             <div class="card">
-                <div class="colored-paper info">
-                    <div class="question">
-                        <div class="input-group input-holder">
-                            <span class="input-group-label">Search</span>
-                            <input class="input-group-field" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-                            <div class="input-group-button">
-                                <input type="submit" class="button" value="Search">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="colored-paper">{%include 'sections/result/result-buttons' %} </div>
                 <div class="section-padding">
-                    {%include 'sections/result/result-buttons' %} 
                     <table class="table">
                         {%include 'sections/result/table/thead-full' %}
                         <tbody>
@@ -24,6 +14,7 @@
                         </tbody>
                     </table>
                 </div>
+                {%include 'components/pagination' %}
             </div>
         </div>
     </div>

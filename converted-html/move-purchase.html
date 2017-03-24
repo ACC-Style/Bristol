@@ -5,118 +5,159 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/css/styledown.css">
   <link rel="stylesheet" href="assets/css/normalize.min.css">
-  
   <link rel="stylesheet" href="assets/css/jquery-ui.css">
   <link rel="stylesheet" href="assets/css/jquery-uistructure.css">
   <link rel="stylesheet" href="assets/css/foundation-sites.css">
    <link rel="stylesheet" href="assets/css/font-awesome.css">
-  <link rel="stylesheet" href="assets/css/index.css">
+  <link rel="stylesheet" href="assets/css/index.css" id="theme">
+
 </head>
 	<body>
-    <a class="hide-for-medium" onClick="$('.mobile-offcanvas-wrapper .split-layout').toggleClass('navOn')" style="display: block;width: 100%;text-align: center;color: white;background-color: #00386b;"><i class="fa fa-bars"></i> Menu</a>
-    <div class="sticky-holder">
-      <header class="header page">
-        <a href="index.html" class="logo">
-          <img src="assets/img/headerlogo.svg" alt="ACC Statin Intolerance Guidelines">
+    <div class="row">
+  <header class="header page">
+    <a href="#!/content/calculator/" class="logo">
+      <img src="assets/img/headerlogo.svg" alt="Customer First">
+    </a>
+    <ul class="nav tabs tabs-primary">
+      <li class="active selected">
+        <a class="home " href="index.html">
+          <i class="fa fa-holder"></i> Search
         </a>
-              <ul class="nav tabs tabs-primary">
-                <li class="icon"><a class="home"> <i class="fa fa-holder"></i> </a></li>
-                <li><a>Tab A</a></li>
-                <li> <a>Tab B</a></li>
-              </ul>
-      </header>
-      <div class="score-bar-holder">
-        <div class="score-bar row">
-          <div class="column small-6 primary-color data-container"> 
-            <div class="data float-right">
-              <div class="text-bold data-header small-fs-2x large-fs-3x">10-Year ASCVD Risk</div>
-              <div class="data-group">
-                  <div class="text-light small-fs-4x medium-fs-4x large-fs-6x data-value">3%</div>
-                  <div class="text-condensed small-fs-2x medium-fs-3x data-label">calculated risk</div>
-              </div>
-              <div class="data-group">
-               <div class="text-light small-fs-4x medium-fs-4x large-fs-6x data-value">3%</div>
-                <div class="data-label text-condensed small-fs-2x medium-fs-3x">risk with optimal risk factors**</div>
-              </div>
+      </li>
+      <li id="Move-Tab" class="disabled">
+        <a  href="move-purchase.html" class="condensable small">Move Purchase
+        </a>
+      </li>
+      <li id="logout-Tab" class="">
+        <a href="#!/content/recommendation/logoout/" class="condensable small">Log Out
+        </a>
+      </li>
+    </ul>
+  </header>
+</div>
+    
+    
+<div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
+    <div class="page paper-page">
+        <div class="page-wrapper content-padding">
+        	<div class="row">
+        		<div class="column">
+        			<h1>Moving Purchases <span data-tooltip aria-haspopup="true" class="has-tip top" data-disable-hover="false" tabindex="2" title="Search for a member record to transfer to and click the transfer button."><i class="fa fa-info-circle"></i></span>
+        			</h1>
+        		</div>
+        	</div>
+        	<div class="row">
+        		<div class="column"><div class="card ghost">
+    <div class="colored-paper highlighted section-padding">
+
+            <div class="input-group input-holder">
+                <span class="input-group-label show-for-medium"><i class="fa fa-search"></i></span>
+                <input class="input-group-field" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                <div class="input-group-button">
+                    <input type="submit" class="button" value="Search">
+                </div>
             </div>
-          </div>
-          <div class="column small-6 secondary-color data-container">
-            <div class="data float-left">
-                <div class="text-bold data-header small-fs-2x large-fs-3x">Lifetime ASCVD Risk</div>
-              <div class="data-group">
-                  <div class="text-light small-fs-4x medium-fs-4x large-fs-6x data-value">3%</div>
-                  <div class="text-condensed small-fs-2x medium-fs-3x data-label">calculated risk</div>
-              </div>
-              <div class="data-group">
-               <div class="text-light small-fs-4x medium-fs-4x large-fs-6x data-value">3%</div>
-                <div class="data-label text-condensed small-fs-2x medium-fs-3x">risk with optimal risk factors**</div>
-              </div>
+
+    </div>
+</div>
+<br></div>
+        	</div>
+            <div class="row">
+            	<div class="column medium-4 large-3">
+            		<div class="card">
+            			<div class="colored-paper"><h3>From Record <i class="fa fa-sign-out" aria-hidden="true"></i></h3></div>
+            			<div class="section-padding">
+            				<h4>
+								<div class="sub-line">Name</div>
+								Matt Watier
+            				</h4>
+            				<h4>
+								<div class="sub-line">Email</div>
+								 mwatier@acc.org
+            				</h4>
+            				<h4>
+								<div class="sub-line">Badge Number</div>
+								01524354
+            				</h4>
+            				<h4>
+								<div class="sub-line">Purchases</div>
+								<div>
+									<span class="purchase-icon acc" title="ACC2017"></span>
+									<span class="purchase-icon iscience" title="iSCIENCE"></span>
+								</div>
+            				</h4>
+            			</div>
+            		</div>
+            	</div>
+            	<div class="column medium-8 large-9">
+	            	<div class="card">
+	            	<div class="colored-paper"><h3><i class="fa fa-sign-in" aria-hidden="true"></i> To Record</h3></div>
+		                <div class="section-padding">
+		                    <table class="table">
+		     					<thead>
+    <tr>
+        <th class="secondary icon text-justified" ><i class="fa fa-check"></i></th>
+        <th class="show-for-large">
+            <div class="h5">Identifier</div>
+        </th>
+        <th class="show-for-large">
+            <div class="h5">Contact Info</div>
+        </th>
+        <th class="show-for-large">
+            <div class="h5">Purchases</div>
+        </th>
+        <th class="nowrap address hide-for-large"><span class="">Address<br>Member Type<br>Purchases</span></th>
+   </tr>
+</thead>
+		                        <tbody>                            
+		                        </tbody>
+		                    </table>
+		                </div>
+		                 <div class="group-section-pagination-holder">
+    <ul class="pagination pagination--compact float-right">
+      <li class="arrow disable">
+        <a href="">
+          <i class="fa fa-caret-left "></i>
+          <span class="text">prev</span>
+        </a>
+      </li>
+      <li class="current">
+        <a href="">1</a>
+      </li>
+      <li>
+        <a href="">2</a>
+      </li>
+      <li>
+        <a href="">3</a>
+      </li>
+      <li>
+        <a href="">4</a>
+      </li>
+      <li class="arrow">
+        <a href="">
+          <span class="text">next</span>
+          <i class="fa fa-caret-right "></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+		            </div>
+	            </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-    </div>
-         
+</div>
 
-    <div class="mobile-offcanvas-wrapper">
-      <section class="split-layout fill-page-height medium navOn">
-        <aside class="split-sidebar">
-            <div class="content-padding">
-   	<h2>
-   		Sections
-   	</h2>
-   </div>
-    <nav  class="nav-list small">
-    	<ul id="sidebar">
-      <li><a href="#"><span class="text">Fake Link to Nowhere</span><i class="fa fa-holder-dynamic"></i></a></li>
-      <li><a href="#"><span class="text">Fake Link to Nowhere</span><i class="fa fa-holder-dynamic"></i></a></li>
-      <li><a href="#"><span class="text">Fake Link to Nowhere</span><i class="fa fa-holder-dynamic"></i></a></li>
-      <li><a href="#"><span class="text">Fake Link to Nowhere</span><i class="fa fa-holder-dynamic"></i></a></li>
-      <li><a href="#"><span class="text">Fake Link to Nowhere</span><i class="fa fa-holder-dynamic"></i></a></li>
-    	</ul>
-    </nav>
-        </aside>
-        <article class="split-content"  data-bind="page: {id:'content', role: 'start'}">
-          <div class="page-wrapper">
-            <div class="content-padding">
-              
-   	<h2>
-   		Page
-   	</h2>
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-
-    <h2>
-      Sub Section
-    </h2>
-     <div class="shrink-waypoint"></div>
-      <p id="foo">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-                         
-            </div>
-          </div>
-        </article>
-      </section>
-    </div>
     <footer class="page-footer">
   <div class="row">
-    <a class="logo-holder"href="/">
+    <a href="/">
       <img class="logo" src="Assets/img/oma-01.svg" alt="Home">
     </a>
   </div>
   <div class="footer-darker">
     <div class="row">
-      <div class="column large-8 medium-7">
+      <div class="columns large-8">
         <section class="address row">
           <h3>American College of Cardiology</h3>
           <address>
@@ -191,8 +232,8 @@
           </ul>
         </section>
       </div>
-      <div class="columns large-4  medium-5">
-        <section class="acc-websites row">
+      <div class="columns large-4">
+        <section class="acc-websites row ">
           <h4>Powered By the ACC</h4>
           <nav class="nav-list small">
             <ul class="">
@@ -232,9 +273,14 @@
       </div>
     </div>
   </div>
-  <div class="row"><h5>
+  <div class="row">
+    <div class="large-4 columns">
+      <h5>
         <cite>&copy; 2015 American College of Cardiology</cite>
       </h5>
+    </div>
+    <div class="large-8 columns">
+    </div>
   </div>
 </footer>
     <script src="assets/js/styledown.js"></script>
@@ -245,6 +291,7 @@
 <script type="text/javascript" src="assets/js/knockout.js"></script>
 <script type="text/javascript" src="assets/js/underscore.js"></script>
 <script type="text/javascript" src="assets/js/foundation.js"></script>
+<script type="text/javascript" src="assets/js/foundation-site/foundation.dropdown.js"></script>
 <script type="text/javascript" src="assets/js/koui.js"></script>
 <script type="text/javascript" src="assets/js/waypoints.js"></script>
 <script type="text/javascript" src="assets/js/waypoints.sticky.js"></script>
@@ -253,6 +300,18 @@
 <script type="text/javascript" src="assets/js/appviewmodel.js"></script>
 
 
-
+    <style>
+  td.full-cell { padding:0; text-align: center; }
+  td.full-cell button{ width:2.5em;height: 2.5em; }
+  .purchase-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  margin-top: 5px; }
+.purchase-icon.acc{background: transparent url(http://cstool.acc.org/Content/images/icon-ACC.png) no-repeat center;}
+.purchase-icon.iscience {
+  background-image: url(http://cstool.acc.org/Content/images/icon-iSc.png); }
+</style>
 	</body>
 </html>
