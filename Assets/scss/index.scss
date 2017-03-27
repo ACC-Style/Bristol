@@ -15,7 +15,26 @@ $product-brand-color: #9a1267;
 $ms-base: 16px;
 $ms-ratio: 1.10;
 $baseline-modifier:1.4;
-body{font-size:$ms-base;}
+@import "helpers/breakpoints";
+body{
+		$ms-base: 12px;
+		font-size:$ms-base;
+	@include bp(md){
+		$ms-base: 14px;
+		font-size:$ms-base;
+	}
+	@include bp(lg){
+		$ms-base: 16px;
+		font-size:$ms-base;
+	}
+	@include bp(xl){
+		$ms-base: 16px;
+		font-size:$ms-base;
+
+	}
+
+
+}
 @import "base/stylemarkup.styleguide";
 @import "base/font-local-include";
 @import "helpers/mixens";
@@ -28,7 +47,10 @@ body{font-size:$ms-base;}
 @import "base/colors";
 @import "base/colors.styleguide";
 @import "base/fonts";
-@import "helpers/breakpoints";
+
+
+
+
 //base vendor files
 // @import "vendor/font-awesome/font-awesome";
 @import "vendor/font-awesome/variables";
@@ -144,6 +166,9 @@ body{font-size:$ms-base;}
 @import "structures/fixedposition/sticky-button-holder";
 @import "components/score-bar";
 
+// Card Specific Codes
+@import "vendor/foundation/override.card.pagination";
+
 // // Template specific views 
 // //trumps the dreaded importants show up in the files below.
 @import "base/header-tag_order-marker";
@@ -156,3 +181,4 @@ body{font-size:$ms-base;}
 @import "trumps/css3";
 @import "base/__states.trump";
 .row{max-width: 100%;}
+@import "_non-core/shame/cstools";
