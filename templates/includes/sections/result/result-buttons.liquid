@@ -1,17 +1,19 @@
-<div class="row">
-    <div class="column small-10 medium-6">
-        <h2 class="no-vertical-margin">Results</h2>
-        </div>
-    <div class="column small-2 medium-6">
-        <div class="show-for-medium">
+<div class="row question no-vertical-margin result-buttons">
+    <div class="column small-5 medium-2">
+        <h2 class="title">Results</h2>
+    </div>
+    <div class="column medium-7 input-holder show-for-medium">
+        <div class="">
             <div class="button-group small float-right no-vertical-margin">
                 <a href="javascript:void(0)" onclick="ShowEmailSelectedModal()" class="button secondary disabled">Email <span class="hidden-sm">Selected</span></a>
                 <a href="javascript:void(0)" onclick="PrintSelected()" class="button secondary disabled">Print <span class="hidden-sm">Selected</span></a>
                 <a href="javascript:void(0)" onclick="ViewSelected()" class="button secondary disabled">View <span class="hidden-sm">Selected</span></a>
             </div>
         </div>
-        <div class="hide-for-medium text-right">
-            <button class="button secondary tiny" type="button" data-toggle="example-dropdown"><i class="fa fa-bars"></i></button>
+    </div>
+    <div class="column small-1 input-holder hide-for-medium ">
+        <div class="text-right">
+            <button class="no-button tiny no-padding reverse" type="button" data-toggle="example-dropdown"><i class="fa fa-gear"></i></button>
             <div class="dropdown-pane no-padding" id="example-dropdown" data-dropdown data-auto-focus="true">
                 <nav class="nav-list small no-margin">
                     <ul>
@@ -22,5 +24,11 @@
                 </nav>
             </div>
         </div>
+    </div>
+    <div class="column small-6 medium-3 input-holder">
+        <select name="" id="" class="no-vertical-margin">
+            <option value="" defualt>Sort: Name</option>
+            <option value="" defualt>Sort: City</option>
+        </select>
     </div>
 </div>
