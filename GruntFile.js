@@ -63,7 +63,7 @@ module.exports = function(grunt){
 				files:[{
 					expand: true,
 					cwd: './assets/scss/vendor',
-					src: ['**.scss','*/**.scss','*/**.**.scss','/jquery-ui/jquery-ui.structure.scss','/foundation-sites/vendor/*.scss','/jquery-ui/*'],
+					src: ['**.scss','*/**.scss','*/**.**.scss','/jquery-ui/jquery-ui.structure.scss','/foundation-sites/*.scss','/jquery-ui/*'],
 					dest: './assets/css',
 					ext: '.css',
 					flatten:true	

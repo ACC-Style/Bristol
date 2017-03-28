@@ -1,8 +1,8 @@
 .group-section-pagination-holder {
-    @include grid-row();
+   @extend %row;
     max-width: none;
-    margin: 1rem -1rem -1rem;
-    margin: 1rem calc(-1rem - 1px) calc(-1rem - 1px);
+    @extend  %content-expanding-margin-horizontal;
+    @extend %content-expanding-margin-bottom;
     background: rebrand-color($primary-color, 2) url('../img/paper-texture.png');
     .pagination{ margin-bottom: 0;}
     .pagination li{
@@ -35,8 +35,8 @@
         }
     }
     &.top{
-       margin: -1rem -1rem 1rem;
-       margin: calc(-1rem - 1px) calc(-1rem - 1px)  1rem;
+      margin-bottom: 1rem;
+      @extend %content-expanding-margin-top;
 
        .pagination li{
         margin: .25rem .25rem 0;

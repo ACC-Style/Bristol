@@ -2,50 +2,72 @@
 {% block content %}
 <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
     <div class="page paper-page">
+        <div class="section-nav back">
+            <a href="index.html">
+              <div class="circle">
+                <i class="fa fa-holder-dynamic"></i>
+              </div>
+              <div class="text">Back</div>
+            </a>
+      </div>
         <div class="page-wrapper content-padding">
         	<div class="row">
         		<div class="column">
-        			<h1>Moving Purchases <span data-tooltip aria-haspopup="true" class="has-tip top" data-disable-hover="false" tabindex="2" title="Search for a member record to transfer to and click the transfer button."><i class="fa fa-info-circle"></i></span>
+        			<h1 class="no-vertical-margin">Moving Purchases <sup data-tooltip aria-haspopup="true" class="has-tip top" data-disable-hover="false" tabindex="2" title="Search for a member record to transfer to and click the transfer button."><i class="fa fa-info-circle"></i></sup>
         			</h1>
         		</div>
         	</div>
-        	<div class="row">
+        	<div class="row collapse">
         		<div class="column">{%include 'sections/search-bar' %}</div>
         	</div>
-            <div class="row">
+            <div class="row collapse">
             	<div class="column medium-4 large-3">
             		<div class="card">
-            			<div class="colored-paper"><h3>From Record <i class="fa fa-sign-out" aria-hidden="true"></i></h3></div>
-            			<div class="section-padding">
-            				<h4>
+            			<div class="colored-paper"> <h2 class="title">From Record <i class="fa fa-sign-out" aria-hidden="true"></i></h3></div>
+            			<div class="content-padding section-padding">
+            				<h5>
 								<div class="sub-line">Name</div>
 								Matt Watier
-            				</h4>
-            				<h4>
+            				</h5>
+            				<h5>
 								<div class="sub-line">Email</div>
 								 mwatier@acc.org
-            				</h4>
-            				<h4>
+            				</h5>
+            				<h5>
 								<div class="sub-line">Badge Number</div>
 								01524354
-            				</h4>
-            				<h4>
+            				</h5>
+            				<h5>
 								<div class="sub-line">Purchases</div>
 								<div>
 									<span class="purchase-icon acc" title="ACC2017"></span>
 									<span class="purchase-icon iscience" title="iSCIENCE"></span>
 								</div>
-            				</h4>
+            				</h5>
             			</div>
             		</div>
             	</div>
-            	<div class="column medium-8 large-9">
+            	<div class="column medium-7 large-8">
 	            	<div class="card">
-	            	<div class="colored-paper"><h3><i class="fa fa-sign-in" aria-hidden="true"></i> To Record</h3></div>
+	            	<div class="colored-paper">
+                        
+                    <div class="row question">
+                        <div class="column small-12 medium-6 ">
+                            <h2 class="title"><i class="fa fa-sign-in" aria-hidden="true"></i> To Record</h3>
+                        </div>
+                        <div class="column small-12 medium-6 input-holder">
+                            <select name="" id="" class="no-vertical-margin">
+                                <option value="" defualt>Sort: Name</option>
+                                <option value="" defualt>Sort: City</option>
+                            </select>
+                        </div>
+                    </div>
+                    </div>
 		                <div class="section-padding">
 		                    <table class="table">
 		     					{%include 'sections/result/table/thead-cond' %}
-		                        <tbody>                            
+		                        <tbody>  
+                                    {%include 'sections/result/table/row-cond' %}  {%include 'sections/result/table/row-cond' %}  {%include 'sections/result/table/row-cond' %}                          
 		                        </tbody>
 		                    </table>
 		                </div>
@@ -55,5 +77,51 @@
             </div>
         </div>
     </div>
+</div>
+<div class="reveal small" id="movePurchaseModal" data-reveal>
+  <h1>Select What Products you would like to move from <strong>Matt Watier</strong> to <strong>Imran Samiullah, MBBS</strong></h1>
+  <div class="question">
+      <div class="input-holder"><div class="switch-input-space">
+          <div class="switch checkbox">
+            <input class="switch-input" id="annualmeeting-check" type="checkbox" name="exampleSwitch">
+            <label class="switch-paddle" for="annualmeeting-check">
+              <span class="show-for-sr">ACC.18 - 01524354</span>
+          <span class="switch-active" aria-hidden="true">
+            <i class="fa fa-holder"></i>
+          </span>
+          <span class="switch-inactive" aria-hidden="true">
+            <i class="fa fa-holder"></i>
+          </span>
+            </label>
+          </div>
+          <label class="switch-value" for="annualmeeting-check">ACC.18 - 01524354</label>
+        </div>
+    </div>
+    <div class="input-holder"><div class="switch-input-space">
+          <div class="switch checkbox">
+            <input class="switch-input" id="iscience-check" type="checkbox" name="exampleSwitch">
+            <label class="switch-paddle" for="iscience-check">
+              <span class="show-for-sr">iScience</span>
+          <span class="switch-active" aria-hidden="true">
+            <i class="fa fa-holder"></i>
+          </span>
+          <span class="switch-inactive" aria-hidden="true">
+            <i class="fa fa-holder"></i>
+          </span>
+            </label>
+          </div>
+          <label class="switch-value" for="iscience-check">iScience*</label>
+        </div>
+        
+    </div>
+  </div>
+  <div class="button-group">
+      <a href="" ata-close aria-label="Close reveal" class="button primary float-right">Done</a>
+      <a href="" ata-close aria-label="Close reveal" class="button secondary float-right ">Cancel</a>
+  </div>
+  <div class="callout info"><small class="warning">*iScience will send an email to the iScience Team and will be resolve by the End of the Conference</small></div>
+  <button class="close-button" data-close aria-label="Close reveal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
 {% endblock %}
