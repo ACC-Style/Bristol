@@ -28,7 +28,23 @@
 	$selector:map-get($State,"Selector");
 	@include setTrump('border-color',map-get($State,'State'),'#{$selector} .close-bar');
 	@include setTrump('background-color',map-get($State,'State'),'#{$selector} .close-bar .close-button');
+	@include setContrastTrump(map-get($State,'Color'),'#{$selector} .close-bar .close-button .fa');
+	#{$selector}{
+		.close-bar:hover,.close-bar{
+			border-color:mix($black,map-get($State,'Color'));
+			.close-button,.close-button:hover{ 
+				background:mix($black,map-get($State,'Color'));
+				.fa{color:$white;}
+			}
+		}
+	}
+
+
 }
+
+
+
+
 .page-message{
 	background-color:rebrand-color(color($product-brand-color,30),2);
 	.fa-holder-dynamic:before{content:$fa-var-asterisk;}

@@ -101,55 +101,7 @@ $pagination-color:rebrand-color($primary-color, 2);
     display: none;
 }
 
-.group-section-pagination-holder {
-    @include grid-row();
-    max-width: none;
-    margin: 1rem -1rem -1rem;
-    margin: 1rem calc(-1rem - 1px) calc(-1rem - 1px);
-    background: rebrand-color($primary-color, 2) url('../img/paper-texture.png');
-    .pagination{ margin-bottom: 0;}
-    .pagination li{
-        margin: 0 .25rem .25rem;
-        vertical-align: top;
-        a{color:color-contrast(rebrand-color($primary-color, 2));}
-        &.current{
-          a,a:hover{
-            background-color: white;
-            color:rebrand-color($primary-color, 2);
-          }
-        }
-        &.arrow, &.action {
-           margin: 0;
-           padding:.25rem;
-           background: mix(rebrand-color($primary-color, 2), $black) url('../img/paper-texture.png');
-
-           a{
-             background: mix(rebrand-color($primary-color, 2), $black)  url('../img/paper-texture.png');
-             color:color-contrast( mix(rebrand-color($primary-color, 2), $black));
-             &:hover{background-color:color(rebrand-color($primary-color, 2),80);  }
-
-
-           }
-           &.disable, &.disable a,&.disable a:hover{
-              background-color: mix(rebrand-color($primary-color, 2), grey(40),30%);
-              color:grey(60);
-           } 
-           
-        }
-    }
-    &.top{
-       margin: -1rem -1rem 1rem;
-       margin: calc(-1rem - 1px) calc(-1rem - 1px)  1rem;
-
-       .pagination li{
-        margin: .25rem .25rem 0;
-        vertical-align: bottom;
-          &.arrow, &.action {
-           margin: 0;
-         }
-       }
-    }
-}
+/*  PAGINATION ON CARDS IS in _override.card.pagination.scss */
 
 
 /**
