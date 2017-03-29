@@ -294,6 +294,14 @@ module.exports = function(grunt){
 		'watch'
 		
 	]);
+
+	grunt.registerTask('buildsass', [
+		'sass:vendor',
+		'sass:dist',
+		'copy:INTERNAL',
+		'watch'
+		
+	]);
 	grunt.registerTask('serve', [
 		'connect'
 		]);

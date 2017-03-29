@@ -15,26 +15,18 @@
 		}
 		}
 	}*/
-	max-width: 600px;
+	max-width:600px;
 
 	.input-holder input:focus, .input-holder select:focus {
 		-webkit-box-shadow: inset 0px 0px 2px 2px rebrand-color($primary-color, 2);
-		-moz-box-shadow: inset 0px 0px 2px 2px rebrand-color($primary-color, 2);
-		box-shadow: inset 0px 0px 2px 2px rebrand-color($primary-color, 2);
+        -moz-box-shadow: inset 0px 0px 2px 2px rebrand-color($primary-color, 2);
+        box-shadow: inset 0px 0px 2px 2px rebrand-color($primary-color, 2);
 	}
-
-	&.tiny-switches .switch {
-		@extend .tiny.switch;
-	}
-
-	&.small-switches .switch {
-		@extend .small.switch;
-	}
-
-	&.large-switches .switch {
-		@extend .large.switch;
-	}
-
+	
+	&.tiny-switches .switch { @extend .tiny.switch;}
+	&.small-switches .switch {@extend .small.switch;}
+	&.large-switches .switch { @extend .large.switch;}
+	
 	.label-holder .text {
 		white-space: normal;
 	}
@@ -63,7 +55,7 @@
 
 		.label-holder {
 			@include grid-column(1 of 2);
-			padding-left: 0;
+			padding-left:0;
 		}
 
 		.input-holder {
@@ -72,10 +64,10 @@
 			padding-right: 0;
 		}
 
-		&.colspan-2 {
+		&.span-2-col {
 			.label-holder {
 				@include grid-column(1 of 4);
-				padding-left: 0;
+				padding-left:0;
 			}
 
 			.input-holder {
@@ -85,10 +77,10 @@
 			}
 		}
 
-		&.colspan-3 {
+		&.span-3-col {
 			.label-holder {
 				@include grid-column(1 of 6);
-				padding-left: 0;
+				padding-left:0;
 			}
 
 			.input-holder {
@@ -107,7 +99,7 @@
 
 		.label-holder {
 			@include grid-column(3 of 6);
-			padding-left: 0;
+			padding-left:0;
 		}
 
 		.input-holder {
@@ -116,10 +108,10 @@
 			padding-right: 0;
 		}
 
-		&.colspan-2 {
+		&.span-2-col {
 			.label-holder {
 				@include grid-column(3 of 12);
-				padding-left: 0;
+				padding-left:0;
 			}
 
 			.input-holder {
@@ -129,10 +121,10 @@
 			}
 		}
 
-		&.colspan-3 {
+		&.span-3-col {
 			.label-holder {
 				@include grid-column(3 of 18);
-				padding-left: 0;
+				padding-left:0;
 			}
 
 			.input-holder {
@@ -157,7 +149,7 @@
 	}
 
 	&.label-position-right {
-		&, &.colspan-2, &.colspan-3 {
+		&, &.span-2-col, &.span-3-col {
 			.label-holder, .input-holder {
 				float: right;
 			}
@@ -172,19 +164,12 @@
 		}
 
 		&.single-switch {
-			&:after {
-				content: '';
-				display: table;
-				clear: both;
-				float: none;
-			}
-
+			&:after{content:'';display:table;clear:both;float:none;}
 			.input-holder {
 				margin-right: -7.5em;
 				width: 7em;
-
 				.input-space {
-					padding-right: 0;
+				padding-right: 0;
 				}
 			}
 
@@ -192,21 +177,10 @@
 				padding-left: 6em;
 				width: 100%;
 			}
+			&.tiny-switches .label-holder{margin-top:.3rem;padding-left:4rem;}
+			&.small-switches .label-holder{margin-top:.4rem;padding-left:5rem;}
+			&.large-switches .label-holder{margin-top:.75rem;padding-left:6.5rem;}
 
-			&.tiny-switches .label-holder {
-				margin-top: .3rem;
-				padding-left: 4rem;
-			}
-
-			&.small-switches .label-holder {
-				margin-top: .4rem;
-				padding-left: 5rem;
-			}
-
-			&.large-switches .label-holder {
-				margin-top: .75rem;
-				padding-left: 6.5rem;
-			}
 		}
 	}
 
@@ -222,17 +196,18 @@
 	&.indent-1, &.indent-2, &.indent-3 {
 		.input-holder {
 			position: relative;
-
-			&:before {
-				color: grey(20);
-				@extend %font-awesome;
-				content: "\f178";
-				letter-spacing: .25em;
-				position: absolute;
-				top: 0;
-				left: 0;
-				padding: .75em 0;
-			}
+		}
+	}
+	&.indent-1, &.indent-2, &.indent-3 {
+		.input-holder:before {
+			color: grey(20);
+			@extend %font-awesome;
+			content: "\f178";
+			letter-spacing: .25em;
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding: .75em 0;
 		}
 	}
 
@@ -298,10 +273,6 @@
 	}
 }
 
-.group-1up, .group-2up, .group-3up {
-	max-width: none;
-}
-
 .input-holder {
 	.group-3up &, .group-2up &, .group-1up & {
 		// @include grid-column-row();
@@ -309,36 +280,25 @@
 }
 
 .input-space {
-	.group-1up &, .group-2up &, .group-3up & {
+	.group-1up & .group-2up &, .group-3up & {
 		@include grid-column(1 of 1, 0);
-		@include grid-column-end;
-		@include bp(md-only) {
-				&:nth-child(2n+1){clear:left;}
-			}
-		@include bp(lg-only) {
-				&:nth-child(3n+1){clear:left;}
-			}
 	}
 
 	@include bp(md) {
 		.group-2up &, .group-3up & {
 			@include grid-column(1 of 2, 0);
-			@include grid-column-end;
-			
 		}
 	}
+
+	;
 
 	@include bp(lg) {
 		.group-3up & {
 			@include grid-column(1 of 3, 0);
-			@include grid-column-end;
-			
-		}
-		.group-2up &{
-			&:nth-child(2n+1){clear:left;}
 		}
 	}
 
+	;
 }
 
 // .input-spacer::nth-child(1){ clear:left;}
@@ -351,7 +311,7 @@
 * <div class="row">
 *   <h5 class="highlighted">Default</h5>
 *   <div class="column small-12 end">
-*     <div class="question-grid-based colspan-2 required label-position-left">
+*     <div class="question-grid-based span-2-col required label-position-left">
 *       <div class="label-holder">
 *         <label for="">
 *           <span class="text">Question Title
@@ -391,7 +351,7 @@
 * <div class="row">
 *   <h5 class="highlighted">Default</h5>
 *   <div class="column small-12 last">
-*     <div class="question-grid-based colspan-2 required label-position-left indent-1">
+*     <div class="question-grid-based span-2-col required label-position-left indent-1">
 *       <div class="label-holder">
 *         <label for="">
 *           <span class="text">Question Indent 1
@@ -420,7 +380,7 @@
 *     </div>
 *   </div>
 *   <div class="column small-12 last">
-*     <div class="question-grid-based colspan-2 required label-position-left indent-2">
+*     <div class="question-grid-based span-2-col required label-position-left indent-2">
 *       <div class="label-holder">
 *         <label for="">
 *           <span class="text">Question Indent 2
@@ -488,7 +448,7 @@
 *   @example
 * <div class="row">
 *    <div class="column small-12">
-*        <div class="question-grid-based required label-position-left colspan-2 group-2up">
+*        <div class="question-grid-based required label-position-left span-2-col group-2up">
 *            <div class="label-holder">
 *              <label for="">
 *              <span class="text">Question Indent 3
@@ -580,7 +540,7 @@
 *   @example
 *   <h5 class="highlighted">Default</h5>
 * <div class=" question-group fluid-align">
-*     <div class="question-grid-based colspan-2 required label-position-left">
+*     <div class="question-grid-based span-2-col required label-position-left">
 *       <div class="label-holder">
 *         <label for="">
 *           <span class="text">Question Title  that is Longer
@@ -598,7 +558,7 @@
 *         <div class="hint">This is some hint text</div>
 *       </div>
 *     </div>
-*     <div class="question-grid-based colspan-2 required label-position-left">
+*     <div class="question-grid-based span-2-col required label-position-left">
 *       <div class="label-holder">
 *         <label for="">
 *           <span class="text">Title
@@ -616,7 +576,7 @@
 *         <div class="hint">This is some hint text</div>
 *       </div>
 *     </div>
-*     <div class="question-grid-based colspan-2 required label-position-left">
+*     <div class="question-grid-based span-2-col required label-position-left">
 *       <div class="label-holder">
 *         <label for="">
 *           <span class="text">Question Title

@@ -4807,6 +4807,172 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *		</div>
 *	</div>		
 */
+.close-bar {
+  position: absolute;
+  width: 100%;
+  text-align: right;
+  border-top: 5px solid #666666;
+  top: -1px;
+  right: 0;
+  left: 0;
+}
+
+.close-bar:hover {
+  border-color: #333333;
+}
+.close-bar:hover .close-button {
+  background-color: #333333;
+}
+
+.close-bar .close-button {
+  background: #666666;
+  top: 0;
+  right: 0;
+  color: white;
+  padding: .25em;
+}
+
+.close-bar .close-button:hover {
+  background-color: #333333;
+}
+
+.close-bar .close-button .fa {
+  color: #FFF;
+}
+
+.error .close-bar:hover, .error .close-bar {
+  border-color: #7b2b32;
+}
+.error .close-bar:hover .close-button, .error .close-bar:hover .close-button:hover, .error .close-bar .close-button, .error .close-bar .close-button:hover {
+  background: #7b2b32;
+}
+.error .close-bar:hover .close-button .fa, .error .close-bar:hover .close-button:hover .fa, .error .close-bar .close-button .fa, .error .close-bar .close-button:hover .fa {
+  color: #FFF;
+}
+
+.warning .close-bar:hover, .warning .close-bar {
+  border-color: #8a5c24;
+}
+.warning .close-bar:hover .close-button, .warning .close-bar:hover .close-button:hover, .warning .close-bar .close-button, .warning .close-bar .close-button:hover {
+  background: #8a5c24;
+}
+.warning .close-bar:hover .close-button .fa, .warning .close-bar:hover .close-button:hover .fa, .warning .close-bar .close-button .fa, .warning .close-bar .close-button:hover .fa {
+  color: #FFF;
+}
+
+.success .close-bar:hover, .success .close-bar {
+  border-color: #247245;
+}
+.success .close-bar:hover .close-button, .success .close-bar:hover .close-button:hover, .success .close-bar .close-button, .success .close-bar .close-button:hover {
+  background: #247245;
+}
+.success .close-bar:hover .close-button .fa, .success .close-bar:hover .close-button:hover .fa, .success .close-bar .close-button .fa, .success .close-bar .close-button:hover .fa {
+  color: #FFF;
+}
+
+.info .close-bar:hover, .info .close-bar {
+  border-color: #6d6d6d;
+}
+.info .close-bar:hover .close-button, .info .close-bar:hover .close-button:hover, .info .close-bar .close-button, .info .close-bar .close-button:hover {
+  background: #6d6d6d;
+}
+.info .close-bar:hover .close-button .fa, .info .close-bar:hover .close-button:hover .fa, .info .close-bar .close-button .fa, .info .close-bar .close-button:hover .fa {
+  color: #FFF;
+}
+
+.highlighted .close-bar:hover, .highlighted .close-bar {
+  border-color: #2b7185;
+}
+.highlighted .close-bar:hover .close-button, .highlighted .close-bar:hover .close-button:hover, .highlighted .close-bar .close-button, .highlighted .close-bar .close-button:hover {
+  background: #2b7185;
+}
+.highlighted .close-bar:hover .close-button .fa, .highlighted .close-bar:hover .close-button:hover .fa, .highlighted .close-bar .close-button .fa, .highlighted .close-bar .close-button:hover .fa {
+  color: #FFF;
+}
+
+.disabled .close-bar:hover, .disabled .close-bar {
+  border-color: gray;
+}
+.disabled .close-bar:hover .close-button, .disabled .close-bar:hover .close-button:hover, .disabled .close-bar .close-button, .disabled .close-bar .close-button:hover {
+  background: gray;
+}
+.disabled .close-bar:hover .close-button .fa, .disabled .close-bar:hover .close-button:hover .fa, .disabled .close-bar .close-button .fa, .disabled .close-bar .close-button:hover .fa {
+  color: #FFF;
+}
+
+.page-message {
+  background-color: #f4a4d6;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.page-message .fa-holder-dynamic:before {
+  content: "";
+}
+.page-message::before, .page-message::after {
+  content: ' ';
+  display: table;
+}
+.page-message::after {
+  clear: both;
+}
+.page-message .message-container {
+  display: flex;
+  margin: 0 1em 0 0;
+  align-items: center;
+}
+.page-message .icon-holder {
+  flex: none;
+  color: #666666;
+  font-size: 1.5em;
+  padding: 0 1em 0 0;
+}
+
+/**
+* Callout - Page Messages:
+* `.page-message` - added to `.callout` to make a top level message for an app.  These `.page-message` are designed be be outside of cards and show up in the background area. 
+* 
+*   @example
+*	<div class="page-message callout">
+*       <a class="close-bar">
+*           <span class="close-button"><i class="fa fa-times" aria-hidden="true"></i></span>
+*       </a>
+*		<div class="message-container">
+*  		<div class="icon-holder">
+*                <span class="fa-stack fa-lg">
+*                    <i class="fa fa-square-o fa-stack-2x"></i>
+*                    <i class="fa fa-holder-dynamic fa-stack-1x"></i>
+*                </span>
+*		</div>
+*		<div class="message-holder">
+*            <h5>This app is for nonvalvular atrial fibrillation patients only, and should not be used to guide therapy in patients with mechanical or bioprosthetic valves.</h5>
+*       </div>
+*		</div>
+*	</div>
+*/
+/**
+* Callout - Page Messages [States]:
+* `.page-message + .warning` - page messages are designed to work with states with the backgrounds, close bar and icon all changing to reflect the state add at the root level of the `.page-message` 
+* 
+*   @example
+*	<div class="page-message callout warning">
+*       <a class="close-bar">
+*           <span class="close-button"><i class="fa fa-times" aria-hidden="true"></i></span>
+*       </a>
+*		<div class="message-container">
+*  		<div class="icon-holder">
+*                <span class="fa-stack fa-lg">
+*                    <i class="fa fa-square-o fa-stack-2x"></i>
+*                    <i class="fa fa-holder-dynamic fa-stack-1x"></i>
+*                </span>
+*		</div>
+*		<div class="message-holder">
+*            <h5>This app is for nonvalvular atrial fibrillation patients only, and should not be used to guide therapy in patients with mechanical or bioprosthetic valves.</h5>
+*       </div>
+*		</div>
+*	</div>
+*/
 /**
 * Callout - Page Messages:
 * `.page-message` - added to `.callout` to make a top level message for an app.  These `.page-message` are designed be be outside of cards and show up in the background area. 
@@ -5093,6 +5259,8 @@ table a.button, table button, table .inline-list, table .nobutton {
 * 
 *   @example
 *	<table class="table striped">
+<<<<<<< HEAD
+=======
 *		<thead>
 *			<tr>
 *				<th>table header</th>
@@ -5130,6 +5298,7 @@ table a.button, table button, table .inline-list, table .nobutton {
 * 
 *   @example
 *	<table class="table striped desaturate">
+>>>>>>> Bristol/master
 *		<thead>
 *			<tr>
 *				<th>table header</th>
@@ -5161,6 +5330,46 @@ table a.button, table button, table .inline-list, table .nobutton {
 *		</tfoot>
 *	</table>
 */
+<<<<<<< HEAD
+/**
+* Tables (Striped Desaturate):
+* ` .striped.desaturate` - Table with the class`.striped.desaturate` will produce a table that is cross colored with only greys.
+* 
+*   @example
+*	<table class="table striped desaturate">
+*		<thead>
+*			<tr>
+*				<th>table header</th>
+*				<th>table header</th>
+*				<th>table header</th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr>
+*				<td> row 2  cell A</td>
+*				<td> row 2  cell B</td>
+*				<td> row 2  cell C</td>
+*			</tr>
+*			<tr>
+*				<td> row 2  cell A</td>
+*				<td> row 2  cell B</td>
+*				<td> row 2  cell C</td>
+*			</tr>
+*		</tbody>
+*		<tfoot>
+*			<tr>
+*				<td colspan="3">footer cell</td>
+*			</tr>
+*		</tfoot>
+*	</table>
+*/
+=======
+>>>>>>> Bristol/master
 .table .seperator td, .table .seperator:nth-child(even) td:nth-child(odd) {
   padding-top: 2.2px;
   padding-top: 0.1375rem;
@@ -6381,11 +6590,19 @@ ul.toggle.minimized .selected {
 /*!
 Chosen, a Select Box Enhancer for jQuery and Prototype
 by Patrick Filler for Harvest, http://getharvest.com
+<<<<<<< HEAD
 
 Version 1.4.2
 Full source at https://github.com/harvesthq/chosen
 Copyright (c) 2011-2015 Harvest http://getharvest.com
 
+=======
+
+Version 1.4.2
+Full source at https://github.com/harvesthq/chosen
+Copyright (c) 2011-2015 Harvest http://getharvest.com
+
+>>>>>>> Bristol/master
 MIT License, https://github.com/harvesthq/chosen/blob/master/LICENSE.md
 This file is generated by `grunt build`, do not edit it by hand.
 */
@@ -6400,6 +6617,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+<<<<<<< HEAD
 }
 .chosen-container * {
   -webkit-box-sizing: border-box;
@@ -6417,6 +6635,25 @@ This file is generated by `grunt build`, do not edit it by hand.
   background: #fff;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
 }
+=======
+}
+.chosen-container * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.chosen-container .chosen-drop {
+  position: absolute;
+  top: 100%;
+  left: -9999px;
+  z-index: 1010;
+  width: 100%;
+  border: 1px solid #aaa;
+  border-top: 0;
+  background: #fff;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+}
+>>>>>>> Bristol/master
 .chosen-container.chosen-with-drop .chosen-drop {
   left: 0;
 }
@@ -8599,11 +8836,19 @@ input:checked + label > .switch-inactive {
 }
 .button-group.radius, .button-group.radius-top, .button-group.radius-bottom {
   overflow: hidden;
+<<<<<<< HEAD
 }
 .button-group.expanded.selectable .button:first-child:nth-last-child(2) {
   border-right-width: 0;
   width: 50%;
 }
+=======
+}
+.button-group.expanded.selectable .button:first-child:nth-last-child(2) {
+  border-right-width: 0;
+  width: 50%;
+}
+>>>>>>> Bristol/master
 .button-group.expanded.selectable .button:first-child:nth-last-child(3) {
   border-right-width: 0;
   width: 33.3333%;
@@ -9389,7 +9634,11 @@ input:checked + label > .switch-inactive {
   border-bottom: 2px solid #666666;
 }
 
+<<<<<<< HEAD
 .page .page-wrapper, .content-padding {
+=======
+.page .page-wrapper, .content-padding, .content-padding.page-wrapper {
+>>>>>>> Bristol/master
   margin: 0 auto;
 }
 
@@ -9453,6 +9702,7 @@ input:checked + label > .switch-inactive {
   }
 }
 
+<<<<<<< HEAD
 .content-padding, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
   padding-left: .5rem;
   padding-right: .5rem;
@@ -9552,6 +9802,107 @@ input:checked + label > .switch-inactive {
 }
 
 .page .page-wrapper, .content-padding, .colored-paper {
+=======
+.content-padding, .content-padding.page-wrapper, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+@media only screen and (min-width: 767px) {
+  .content-padding, .content-padding.page-wrapper, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+    padding-right: .75rem;
+    padding-left: .75rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .content-padding, .content-padding.page-wrapper, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+.group-section .colored-paper:first-child, .card .colored-paper:first-child {
+  margin-top: -.2rem;
+  margin-top: calc(-.2rem - 1px);
+}
+@media only screen and (max-height: 480px) {
+  .group-section .colored-paper:first-child, .card .colored-paper:first-child {
+    margin-top: -.25rem;
+    margin-top: calc(-.25rem - 1px);
+  }
+}
+@media only screen and (min-width: 767px) {
+  .group-section .colored-paper:first-child, .card .colored-paper:first-child {
+    margin-top: -.5rem;
+    margin-top: calc(-.5rem - 1px);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .group-section .colored-paper:first-child, .card .colored-paper:first-child {
+    margin-top: -1rem;
+    margin-top: calc(-1rem - 1px);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .group-section .colored-paper:first-child, .card .colored-paper:first-child {
+    margin-top: -1rem;
+    margin-top: calc(-1rem - 1px);
+  }
+}
+
+.colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child {
+  margin-bottom: -.2rem;
+  margin-bottom: calc(-.2rem - 2px);
+}
+@media only screen and (max-height: 480px) {
+  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child {
+    margin-bottom: -.25rem;
+    margin-bottom: calc(-.25rem - 2px);
+  }
+}
+@media only screen and (min-width: 767px) {
+  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child {
+    margin-bottom: -.5rem;
+    margin-bottom: calc(-.5rem - 2px);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child {
+    margin-bottom: -1rem;
+    margin-bottom: calc(-1rem - 2px);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child {
+    margin-bottom: -1rem;
+    margin-bottom: calc(-1rem - 2px);
+  }
+}
+
+.colored-paper {
+  margin-left: -.5rem;
+  margin-right: -.5rem;
+  margin-left: calc(-.5rem - 1px);
+  margin-right: calc(-.5rem - 1px);
+}
+@media only screen and (min-width: 767px) {
+  .colored-paper {
+    margin-left: -.75rem;
+    margin-right: -.75rem;
+    margin-left: calc(-.75rem - 1px);
+    margin-right: calc(-.75rem - 1px);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .colored-paper {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    margin-left: calc(-1rem - 1px);
+    margin-right: calc(-1rem - 1px);
+  }
+}
+
+.page .page-wrapper, .content-padding, .content-padding.page-wrapper, .colored-paper {
+>>>>>>> Bristol/master
   -webkit-transition: padding 1s;
   /* Safari */
   transition: padding 1s;
@@ -9668,6 +10019,7 @@ input:checked + label > .switch-inactive {
 }
 .colored-paper.secondary h1, .colored-paper.secondary h2, .colored-paper.secondary h3, .colored-paper.secondary h4, .colored-paper.secondary h5, .colored-paper.secondary h6, .colored-paper.secondary p {
   color: #262626;
+<<<<<<< HEAD
 }
 .colored-paper.error {
   background-color: #c32231;
@@ -9726,6 +10078,66 @@ input:checked + label > .switch-inactive {
 .colored-paper.success .tabs li {
   background-color: #c7f9dc;
 }
+=======
+}
+.colored-paper.error {
+  background-color: #c32231;
+  color: #fff;
+}
+.colored-paper.error h1, .colored-paper.error h2, .colored-paper.error h3, .colored-paper.error h4, .colored-paper.error h5, .colored-paper.error h6, .colored-paper.error p {
+  color: #fff;
+}
+.colored-paper.warning {
+  background-color: #E08514;
+  color: #262626;
+}
+.colored-paper.warning h1, .colored-paper.warning h2, .colored-paper.warning h3, .colored-paper.warning h4, .colored-paper.warning h5, .colored-paper.warning h6, .colored-paper.warning p {
+  color: #262626;
+}
+.colored-paper.success {
+  background-color: #14B057;
+  color: #fff;
+}
+.colored-paper.success h1, .colored-paper.success h2, .colored-paper.success h3, .colored-paper.success h4, .colored-paper.success h5, .colored-paper.success h6, .colored-paper.success p {
+  color: #fff;
+}
+.colored-paper.info {
+  background-color: #a6a6a6;
+  color: #262626;
+}
+.colored-paper.info h1, .colored-paper.info h2, .colored-paper.info h3, .colored-paper.info h4, .colored-paper.info h5, .colored-paper.info h6, .colored-paper.info p {
+  color: #262626;
+}
+.colored-paper.highlighted {
+  background-color: #22AFD7;
+  color: #fff;
+}
+.colored-paper.highlighted h1, .colored-paper.highlighted h2, .colored-paper.highlighted h3, .colored-paper.highlighted h4, .colored-paper.highlighted h5, .colored-paper.highlighted h6, .colored-paper.highlighted p {
+  color: #fff;
+}
+.colored-paper.disabled {
+  background-color: #cccccc;
+  color: #262626;
+}
+.colored-paper.disabled h1, .colored-paper.disabled h2, .colored-paper.disabled h3, .colored-paper.disabled h4, .colored-paper.disabled h5, .colored-paper.disabled h6, .colored-paper.disabled p {
+  color: #262626;
+}
+.colored-paper.error .tabs li {
+  background-color: #f7cfd3;
+}
+.colored-paper.error .tabs li:hover {
+  background-color: #f0abb2;
+}
+.colored-paper.warning .tabs li {
+  background-color: #fbe7ce;
+}
+.colored-paper.warning .tabs li:hover {
+  background-color: #f7d5aa;
+}
+.colored-paper.success .tabs li {
+  background-color: #c7f9dc;
+}
+>>>>>>> Bristol/master
 .colored-paper.success .tabs li:hover {
   background-color: #9cf4c2;
 }
@@ -9746,12 +10158,21 @@ input:checked + label > .switch-inactive {
 }
 .colored-paper.disabled .tabs li:hover {
   background-color: #ededed;
+<<<<<<< HEAD
 }
 .card.ghost .colored-paper, .colored-paper .group-section.ghost {
   background-image: url("../img/construction_paper_grey.png");
   border-radius: 7.5px !important;
   margin: 0 !important;
 }
+=======
+}
+.card.ghost .colored-paper, .colored-paper .group-section.ghost {
+  background-image: url("../img/construction_paper_grey.png");
+  border-radius: 7.5px !important;
+  margin: 0 !important;
+}
+>>>>>>> Bristol/master
 .colored-paper .tabs {
   border: 0 none;
   background-color: transparent;
@@ -9795,6 +10216,7 @@ input:checked + label > .switch-inactive {
 * 
 *   @example
 *   <div class="page paper-page">
+<<<<<<< HEAD
 *    <div class="page-wrapper">
 *    <section class="section card"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *    </div>
@@ -9822,10 +10244,52 @@ input:checked + label > .switch-inactive {
 *   <div class="page paper-page">
 *    <div class="page-wrapper">
 *    <section class="section card"><h1>Hello I am a ghost</h1> <p>This is content  that is showing up in a section group</p></section>
+=======
+*    <div class="page-wrapper content-padding">
+*    <section class="section card"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
+*    </div>
+*    </div>
+*   <div class="page paper-page error">
+*    <div class="page-wrapper content-padding">
+*       <section class="section card">
+*           <h1>.Page.Paper-Page.Error</h1>
+*       </section>
+*    </div></div>
+*   <div class="page paper-page highlighted">
+*    <div class="page-wrapper content-padding">
+*       <section class="section card">
+*           <h1>.Page.Paper-Page.Highlighted</h1>
+*       </section>
+>>>>>>> Bristol/master
 *    </div>
 *    </div>
 *   <div class="page paper-page error">
 *    <div class="page-wrapper">
+*       <section class="section card ghost"><div class="error colored-paper">Colored Paper is Effected by Ghosting</div>
+*           <h1>.Page.Paper-Page.Error .Card.Ghost</h1>
+*       </section>
+*    </div></div>
+*
+**/
+/**
+<<<<<<< HEAD
+* Tabs on Paper Pages:
+* `.page.paper-page  > .overlap >.tabs` - Tabs placed outside of cards are used to change all cards under the tabs.  This pattern is used for sub page toggling.
+* 
+*   @example
+*   <div class="page paper-page">
+=======
+* Ghost Cards:
+* `card.ghost` - Ghosted cards are used as holder for an upcoming or locked section. When you want to show a section that will become editable or expanded but don't want it to pop in ghost is a good design pattern to use.
+* 
+*   @example
+*   <div class="page paper-page">
+*    <div class="page-wrapper content-padding">
+*    <section class="section card"><h1>Hello I am a ghost</h1> <p>This is content  that is showing up in a section group</p></section>
+*    </div>
+*    </div>
+*   <div class="page paper-page error">
+*    <div class="page-wrapper content-padding">
 *       <section class="section card ghost"><div class="error colored-paper">Colored Paper is Effected by Ghosting</div>
 *           <h1>.Page.Paper-Page.Error .Card.Ghost</h1>
 *       </section>
@@ -9838,13 +10302,18 @@ input:checked + label > .switch-inactive {
 * 
 *   @example
 *   <div class="page paper-page">
+>>>>>>> Bristol/master
 *     <nav class="overlap"><ul class="tabs">
 *     <li class="icon"><a class="home"><i class="fa fa-holder"></i></a></li>
 *     <li class=""><a>Tab 2</a></li>
 *     <li class="selected"><a >Tab 3</a></li>
 *     <li class=""><a >Tab 4</a></li>
 *     </ul></nav>
+<<<<<<< HEAD
 *     <div class="page-wrapper">
+=======
+*     <div class="page-wrapper content-padding">
+>>>>>>> Bristol/master
 *     <section class="section group-section radius"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *        </div>
 *    </div>
@@ -9862,7 +10331,11 @@ input:checked + label > .switch-inactive {
 *     <li class="selected"><a >Tab 3</a></li>
 *     <li class=""><a >Tab 4</a></li>
 *     </ul></nav>
+<<<<<<< HEAD
 *     <div class="page-wrapper">
+=======
+*     <div class="page-wrapper content-padding">
+>>>>>>> Bristol/master
 *     <section class="section group-section radius"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *        </div>
 *    </div>
@@ -9873,7 +10346,11 @@ input:checked + label > .switch-inactive {
 *     <li class="selected"><a >Tab 3</a></li>
 *     <li class=""><a >Tab 4</a></li>
 *     </ul></nav>
+<<<<<<< HEAD
 *     <div class="page-wrapper">
+=======
+*     <div class="page-wrapper content-padding">
+>>>>>>> Bristol/master
 *     <section class="section group-section radius"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
 *        </div>
 *    </div>
@@ -9885,7 +10362,11 @@ input:checked + label > .switch-inactive {
 * 
 *   @example
 *   <div class="page paper-page">
+<<<<<<< HEAD
 *       <div class="page-wrapper">
+=======
+*       <div class="page-wrapper content-padding">
+>>>>>>> Bristol/master
 *            <section class="section card">
 *                <div class="colored-paper">
 *                    <nav><ul class="nav tabs">
@@ -9919,7 +10400,11 @@ input:checked + label > .switch-inactive {
 * 
 *   @example
 *   <div class="page paper-page">
+<<<<<<< HEAD
 *       <div class="page-wrapper">
+=======
+*       <div class="page-wrapper content-padding">
+>>>>>>> Bristol/master
 *            <section class="section card">
 *                <div class="colored-paper">
 *                   <h2>I am Content inside of a colored paper</h2> 
@@ -9936,7 +10421,11 @@ input:checked + label > .switch-inactive {
 * 
 *   @example
 *   <div class="page paper-page">
+<<<<<<< HEAD
 *       <div class="page-wrapper">
+=======
+*       <div class="page-wrapper content-padding">
+>>>>>>> Bristol/master
 *        <div class="row">
 *            <div class="medium-4 columns">
 *                <div class="card">
@@ -9964,7 +10453,11 @@ input:checked + label > .switch-inactive {
 * 
 *   @example
 *   <div class="page with-group-sections">
+<<<<<<< HEAD
 *    <div class="page-wrapper">
+=======
+*    <div class="page-wrapper content-padding">
+>>>>>>> Bristol/master
 *        <div class="row">
 *            <div class="medium-4 columns">
 *                <div class="card radius-top">
@@ -11913,11 +12406,19 @@ STATE TRUMPING CODE
   font-family: FontAwesome;
 }
 
+<<<<<<< HEAD
 .dark-color-text, .warning .order-marker, .warning.order-marker, .info .order-marker, .info.order-marker, .disabled .order-marker, .disabled.order-marker, .message-holder > .warning, .message-holder > .info, .message-holder > .disabled, .hint .warning, .hint .info, .hint .disabled, .warning .order-marker, .warning.order-marker, .info .order-marker, .info.order-marker, .disabled .order-marker, .disabled.order-marker {
   color: #262626;
 }
 
 .light-color-text, .error .order-marker, .error.order-marker, .success .order-marker, .success.order-marker, .highlighted .order-marker, .highlighted.order-marker, .message-holder > .error, .message-holder > .success, .message-holder > .highlighted, .hint .error, .hint .success, .hint .highlighted, .error .order-marker, .error.order-marker, .success .order-marker, .success.order-marker, .highlighted .order-marker, .highlighted.order-marker {
+=======
+.dark-color-text, .warning .order-marker, .warning.order-marker, .info .order-marker, .info.order-marker, .disabled .order-marker, .disabled.order-marker, .message-holder > .warning, .message-holder > .info, .message-holder > .disabled, .hint .warning, .hint .info, .hint .disabled, .warning .close-bar .close-button .fa, .info .close-bar .close-button .fa, .disabled .close-bar .close-button .fa, .warning .order-marker, .warning.order-marker, .info .order-marker, .info.order-marker, .disabled .order-marker, .disabled.order-marker {
+  color: #262626;
+}
+
+.light-color-text, .error .order-marker, .error.order-marker, .success .order-marker, .success.order-marker, .highlighted .order-marker, .highlighted.order-marker, .message-holder > .error, .message-holder > .success, .message-holder > .highlighted, .hint .error, .hint .success, .hint .highlighted, .error .close-bar .close-button .fa, .success .close-bar .close-button .fa, .highlighted .close-bar .close-button .fa, .error .order-marker, .error.order-marker, .success .order-marker, .success.order-marker, .highlighted .order-marker, .highlighted.order-marker {
+>>>>>>> Bristol/master
   color: #fff;
 }
 
