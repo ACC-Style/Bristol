@@ -10,6 +10,10 @@ $required_data:(
 // End of required check
 %darkfont{color:$global-default-dark-text}
 %lightfont{color:$global-default-light-text;}
+$cell-texture:"../img/cream_pixels.png";
+$cell-texture-column:"../img/cream_pixels_blue.png";
+$cell-texture-row:"../img/cream_pixels_alt.png";
+$cell-texture-overlap:"../img/cream_pixels_altblue.png";
 td.icon{
 		padding: .25rem .25rem .25rem .25rem;
 		text-align: center;
@@ -19,16 +23,16 @@ td.icon{
 		i{margin: 0 auto;}
 	}
 %tr-td-state{  
-	background-image: url(../img/empty_stripe@2x.png);
+	background-image: url($cell-texture);
 	font-weight: 900;
 }	
 %tr-td-state-alt{  
-	background-image: url(../img/empty_stripe-alt@2x.png);
+	background-image: url($cell-texture-column);
 	font-weight: 900;
 
 }
 %td-state{  
-	background-image: url(../img/empty_diamond@2x.png) !important;
+	background-image: url($cell-texture) !important;
 	font-weight: 900;
 }
 %cell-color{border:1px solid;}
@@ -37,8 +41,8 @@ td.icon{
 	border-bottom:1px solid;
 }
 @each $State in $states{
-	$cell-color:mix(map-get($State,"Color"),white,17%);
-	$cell-color-shift:mix(map-get($State,"Color"),white,22%);
+	$cell-color:mix(map-get($State,"Color"),white,80%);
+	$cell-color-shift:mix(map-get($State,"Color"),white,75%);
 	$selector:map-get($State,"Selector");
 	tr#{$selector} td{
 		@extend %tr-td-state;
@@ -57,7 +61,7 @@ td.icon{
 	td#{$selector},.table tbody tr + tr td#{$selector},tr#{$selector} td,.stripped tr#{$selector}:nth-child(even) td:nth-child(odd){
 		
 		background-color:$cell-color;
-		color:color-contrast($cell-color);
+		color:$real-black;
 		border-color: color(map-get($State, "Color"),30);
 	}
 	td#{$selector}{
@@ -69,12 +73,12 @@ td.icon{
 	}
 	tr:nth-child(even) td#{$selector}{
 		background-color:$cell-color-shift;
-		color:color-contrast($cell-color-shift);
+		color:$real-black;
 	}
 	tr:nth-child(even){
 		&#{$selector} td{
 			background-color:$cell-color-shift;
-			color:color-contrast($cell-color-shift);
+			color:$real-black;
 		}
 	} 
 	.stripped tbody tr#{$selector} td:nth-child(odd){

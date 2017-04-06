@@ -264,6 +264,16 @@ module.exports = function(grunt){
 			foundationSites:["assets/scss/vendor/foundation-sites/**"],
 			foundationsFile:["assets/scss/vendor/foundation-sites/foundation.scss"],
 		},
+		 "babel": {
+		    options: {
+		      sourceMap: true
+		    },
+		    dist: {
+		      files: {
+		        "dist/app.js": "src/app.js"
+		      }
+		    }
+		  }
 	});
 	// These plugins provide necessary tasks.
 	grunt.loadNpmTasks('grunt-contrib-connect');
@@ -275,6 +285,8 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-bower-task');
+	grunt.loadNpmTasks('grunt-bower-task');
+
 	// Default task.
 	grunt.registerTask('BRISTOL', [
 		'bower',
