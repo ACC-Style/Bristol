@@ -7,33 +7,63 @@
 	background-color: rebrand-color($acc-blue,2);
 	@include font-slab;
 	color:$white;
-	font-size: ms(1);
+	font-size: 16px;
+	&, .menu > li{
+		line-height: 38px;
+		 > a, > button{
+		 	display:inline-block;
+		 	width:auto;
+		 	padding:rem-calc(9) 1rem rem-calc(5) 1rem;
+		 	font-size: rem-calc(16);
+		 	@include font-slab;
+		 }
+
+		}
 
 }
 .top-bar-toggle{
-	padding:.25 .5em;
+	padding:.25em .5em;
 }
 .top-bar-right{
 	.padding-right: .5em;
 	background-color: rebrand-color($primary-color,2);
 }
 .top-bar{
-	a{
-		@include font-slab();
+	a,button{
 		color:white;
 	}
-	.menu .menu{
-		background-color:white;
+	.dropdown-pane{
+		margin-top: 1px;
+		padding: .5em 0 .75em;
 	}
+	.dropdown-pane > .row{margin:0 .5em;}
+	.dropdown-pane .column  + .column  {border-left:solid grey(30) 1px;}
 }
 .top-bar-left{
 	padding-left:.5em;
-	li{ :hover{
-			background-color: white;
-			border-top:rebrand-color($scrub-green, 2) 6px solid;
+	> .menu  > li:hover{
+		line-height: 32px;
+		background-color: white;
+		border-top:rebrand-color($scrub-green, 2) 6px solid;		
+		a,button{
 			color:$black;
-			padding-top:5.2px;
-		}}
+			padding-top:rem-calc(3);
+		}
+	}
+	.submenu{
+		margin: 0;
+		@include font();
+		font-size: ms(0);
+		color:$black;
+		list-style: none;
+		li{
+			padding:.25em .75em;
+			&:hover{
+				color:$white;
+				background-color:rebrand-color($scrub-green, 2);  
+			}
+		}
+	}
 
 }
 .stack-medium .menu > li{
@@ -45,6 +75,9 @@
 	}
 
 }
+
+
+
 	
 /**
 * Top Bar:
