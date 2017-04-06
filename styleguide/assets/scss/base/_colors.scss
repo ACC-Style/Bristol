@@ -117,5 +117,9 @@ $error-color: $error-red !default;
 $alert-color: $error-red !default;
 $info-color: #22AFD7 !default;
 $navigation-color: $scrub-blue !default;
+$primary-app-color:$primary-color;
+@if $brand-level > 0 { $primary-app-color:$product-brand-color; }
 
+$primary-app-color-brightness: brightness($primary-app-color);
+@debug "$primary-app-color-brightness = #{$primary-app-color-brightness}";
 
