@@ -19,73 +19,47 @@ td.icon{
 		text-align: center;
 		vertical-align: middle;
 		width:1%;
-		
 		i{margin: 0 auto;}
 	}
-%tr-td-state{  
+
+%td-state{  
 	background-image: url($cell-texture);
 	font-weight: 900;
+}
+%row-state{  
+	background-image: url($cell-texture-row);
+	font-weight: 900;
 }	
-%tr-td-state-alt{  
+%column-state{  
 	background-image: url($cell-texture-column);
+	font-weight: 900;
+}
+%overlap-state{  
+	background-image: url($cell-texture-overlap);
 	font-weight: 900;
 
 }
-%td-state{  
-	background-image: url($cell-texture) !important;
-	font-weight: 900;
-}
-%cell-color{border:1px solid;}
+
+
 %tr-state{
 	border-top:1px solid;
 	border-bottom:1px solid;
 }
 @each $State in $states{
-	$cell-color:mix(map-get($State,"Color"),white,80%);
-	$cell-color-shift:mix(map-get($State,"Color"),white,75%);
+	$cell-color:map-get($State,"Color");
 	$selector:map-get($State,"Selector");
-	tr#{$selector} td{
-		@extend %tr-td-state;
-
-	}
-	.stripped tr#{$selector} td:nth-child(odd){
-		@extend %tr-td-state-alt;
-		
-
-
-	}
-	td#{$selector},.table tbody tr + tr td#{$selector}{
-		@extend %td-state;
-
-	}
-	td#{$selector},.table tbody tr + tr td#{$selector},tr#{$selector} td,.stripped tr#{$selector}:nth-child(even) td:nth-child(odd){
-		
-		background-color:$cell-color;
+	tr#{$selector} td,td#{$selector}{
+		background-image: url($cell-texture);
+		font-weight: 900;
+		background-color:$cell-color !important;
 		color:$real-black;
-		border-color: color(map-get($State, "Color"),30);
+		border-color: color($cell-color,30)  !important;
 	}
-	td#{$selector}{
-		@extend %cell-color;
-	}
-	tr#{$selector} td{
-		@extend %tr-state;
-		
-	}
-	tr:nth-child(even) td#{$selector}{
-		background-color:$cell-color-shift;
-		color:$real-black;
-	}
-	tr:nth-child(even){
-		&#{$selector} td{
-			background-color:$cell-color-shift;
-			color:$real-black;
-		}
-	} 
-	.stripped tbody tr#{$selector} td:nth-child(odd){
-		background-color:$cell-color;
-	}
+
 }
-
+// .striped tbody{
+// 	tr:nth-child(even) td:nth-child(even){ @extend %overlapped-column-row;}
+// }
 // Documentation of Table Cells
 /**
 * Table States Cells:
@@ -126,7 +100,7 @@ td.icon{
 * `tr.state` - quickly color table rows with the states. 
 * 
 *   @example
-*	<table class="table stripped">
+*	<table class="table striped">
 *		<tr class="success">
 *			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
 *			<td class=""></td>

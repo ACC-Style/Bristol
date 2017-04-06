@@ -1,41 +1,42 @@
 $table-cell-color:rebrand-color($primary-color,2);
-$cell-texture:"../img/cream_pixels.png";
-$cell-texture-column:"../img/cream_pixels_blue.png";
-$cell-texture-row:"../img/cream_pixels_alt.png";
-$cell-texture-overlap:"../img/cream_pixels_altblue.png";
+$cell-texture:"../img/cream_pixels.png";//white
+$cell-texture-column:"../img/cream_pixels_blue.png";//blue
+$cell-texture-row:"../img/cream_pixels_alt.png";// grey
+$cell-texture-grey-column:"../img/cream_pixels_alt.png";// grey
+$cell-texture-grey-overlap:"../img/cream_pixels_altdark.png";// darker grey grey overlap
+$cell-texture-overlap:"../img/cream_pixels_altblue.png";// grey blue  colored overlap
 
 %colored-row{
 	// background-color:grey(7);
 	background-image:url($cell-texture-row);
+	@if $primary-app-color-brightness < 60
+		{background-color: color($table-cell-color,15);}
+	@else 
+		{background-color: color($table-cell-color,40);}
 	}
 %colored-column{
-	 @if $primary-app-color-brightness < 60
-		{background-color: color($table-cell-color,10);}
-	@else 
-		{background-color: color($table-cell-color,30);}
+	background-image: url($cell-texture-column);
+	}
+
+%colored-overlap{
+	background-image: url($cell-texture-overlap);
 	}
 %grey-column{
-	background-color:grey(5);
-	}
-%overlapped-column-row{
-	@if $primary-app-color-brightness < 60
-		{background-color:mix(color($table-cell-color,14),grey(7));}
-	@else 
-		{background-color:mix(color($table-cell-color,30),grey(10));}
-	}
-%grey-overlapped-column-row{
-	background-color:grey(10);
+	background-image:url($cell-texture-grey-column);
+	}	
+%grey-overlap{
+	background-image:url($cell-texture-grey-overlap);
 	}
 
 .banded tbody,.striped tbody{
 	tr:nth-child(even) td{@extend %colored-row;}
 	}
 .striped{
-	th:nth-child(even){@extend %overlapped-column-row;}
+	th:nth-child(even),tr:nth-child(even) td:nth-child(even){@extend %colored-overlap;}
 	td:nth-child(even){@extend %colored-column;}
 }
 .striped.desaturate{
-	th:nth-child(even){@extend %grey-overlapped-column-row;}
+	th:nth-child(even),tr:nth-child(even) td:nth-child(even){@extend %grey-overlap;}
 	td:nth-child(even){@extend %grey-column;}
 }
 .striped, .banded{
@@ -50,12 +51,12 @@ $cell-texture-overlap:"../img/cream_pixels_altblue.png";
 	}
 }
 
-.striped tbody{
-	tr:nth-child(even) td:nth-child(even){ @extend %overlapped-column-row;}
-}
-.striped.desaturate tbody{
-	tr:nth-child(even) td:nth-child(even){ @extend %grey-overlapped-column-row;}
-}
+// .striped tbody{
+// 	tr:nth-child(even) td:nth-child(even){ @extend %colored-overlap;}
+// }
+// .striped.desaturate tbody{
+// 	tr:nth-child(even) td:nth-child(even){ @extend %grey-overlap;}
+// }
 /**
 * Tables (Banded):
 * `.banded` - There are two high styled tables `.banded` or `.striped`.

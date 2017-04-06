@@ -46,39 +46,20 @@ td.icon{
 	border-bottom:1px solid;
 }
 @each $State in $states{
-	$cell-color:mix(map-get($State,"Color"),white,80%);
-	$cell-color-shift:mix(map-get($State,"Color"),white,75%);
+	$cell-color:map-get($State,"Color");
 	$selector:map-get($State,"Selector");
 	tr#{$selector} td,td#{$selector}{
-		@extend %td-state;
+		background-image: url($cell-texture);
+		font-weight: 900;
+		background-color:$cell-color !important;
+		color:$real-black;
+		border-top:1px solid;
+		border-bottom:1px solid;
+		border-color: color($cell-color,60)  !important;
 
 	}
-	td#{$selector},.table tbody tr + tr td#{$selector},tr#{$selector} td, .striped tr#{$selector} td:nth-child(even){
-		
-		background-color:$cell-color;
-		color:$real-black;
-		border-color: color(map-get($State, "Color"),30);
-	}
 	td#{$selector}{
-		
-	}
-	tr#{$selector} td{
-		@extend %tr-state;
-		
-	}
-	tr:nth-child(even) td#{$selector}{
-		background-color:$cell-color-shift;
-		color:$real-black;
-	}
-	tr:nth-child(even){
-		&#{$selector} td{
-			background-color:$cell-color-shift;
-			color:$real-black;
-		}
-	} 
-	.striped tbody tr#{$selector} td:nth-child(even){
-		background-color:$cell-color;
-		@extend %column-state;
+		border:solid 1px;
 	}
 
 }

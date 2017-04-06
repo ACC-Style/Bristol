@@ -1,57 +1,4 @@
-/**
-* Tables (Sortable):
-* `.banded or .stripped` - tables witha soratable table header. 
-*  Just add the class of the column to the table `.col1` and the sort direction `.sort-asc` or `.sort-desc`.
-* 
-*   @example
-*	<table class="table stripped  sort-asc col1">
-*		<thead class="sortableheader">
-*			<tr>
-*				<th class="col1 sortable">
-*                        <div class="relative firefoxfix">
-*                        	<span class="sort sorttoggle">
-*                        	<a class="fa fa-sort"></a>
-*                        	</span>
-*                        	<a class="text">Table Header </a>
-*                        </div>
-*                 </th>
-*				<th class="col2 sortable selected asc">
-*                        <div class="relative firefoxfix">
-*                        	<span class="sort sorttoggle">
-*                        	<a class="fa fa-sort"></a>
-*                        	</span>
-*                        	<a  class="text">Toggle Sorter </a>
-*                        </div>
-*                 </th>
-*				<th class="col3 sortable selected asc">
-*                        <div class="relative firefoxfix">
-*                        	<span class="sort sorttwoways">
-*                        	<a class="fa fa-sort selected"></a><a class="fa fa-sort"></a>
-*                        	</span>
-*                        	<a  class="text">Long Table<br>Header </a>
-*                        </div>
-*                 </th>
-*			</tr>
-*		</thead>
-*		<tbody>
-*			<tr>
-*				<td> row 1  cell A</td>
-*				<td> row 1  cell B</td>
-*				<td> row 1  cell C</td>
-*			</tr>
-*			<tr>
-*				<td> row 2  cell A</td>
-*				<td> row 2  cell B</td>
-*				<td> row 2  cell C</td>
-*			</tr>
-*		</tbody>
-*		<tfoot>
-*			<tr>
-*				<td colspan="3">footer cell</td>
-*			</tr>
-*		</tfoot>
-*	</table>
-*/
+
 
 // .fa-sort:before{content:$fa-var-sort;}
 $dark-grey:#666;
@@ -66,6 +13,7 @@ th.sortable{
 	overflow:hidden;
 	border-bottom: 0px none transparent;
 	background-color:grey(50) !important;
+	background-image:none !important;
 	&:hover{ background-color: grey(55) !important;}
 	select{
 	    font-size: 0.92857rem;
@@ -152,43 +100,59 @@ th.sortable{
 	
 }
 .firefoxfix{ position: initial; height: 100%;}
-// $column-names:
-// 			".col1"
-// 			".col2"
-// 			".col3"
-// 			".col4"
-// 			".col5"
-// 			".col6"
-// 			".col7"
-// 			".col8"
-// 			".col9"
-// 			".col10";
-
-// 		//$selector is the colomn name
-// 		//$mod can only be .sort-asc  or .sort-desc
-		
-// 		@function sort_column_selectors($selectors, $mod) {
-// 		  $full-selctors: "";
-// 		  @each $selector in $selectors {
-// 			$temp-selector: $mod + $selector +" .sortable"+ $selector +" .sort i:before";
-// 			$full-selctors: $temp-selector + "," + $full-selctors;
-// 		  }
-// 		  @return $full-selctors;
-// 		}
 
 
-// 		@function sort_column_indicator_selectors($selectors) {
-// 		  $full-selctors: "";
-// 		  @each $selector in $selectors {
-// 			$temp-selector: $selector +" .sortable"+ $selector +" .sort";
-// 			$full-selctors: $temp-selector + "," + $full-selctors;
-// 		  }
-// 		  @return $full-selctors;
-// 		}
-// 		#{sort_column_selectors($column-names, '.sort-asc')}{ content:"\f0de";}
-// 		#{sort_column_selectors($column-names, '.sort-desc')}{ content:"\f0dd";}
-// 		#{sort_column_indicator_selectors($column-names)}{ 
-// 			background-color:mix($dark-grey, $black,50%);
-// 			i{color:$alert-color;
-// 				};
-// 			}
+/**
+* Tables (Sortable):
+* `.banded or .striped` - tables witha soratable table header. 
+*  Just add the class of the column to the table `.col1` and the sort direction `.sort-asc` or `.sort-desc`.
+* 
+*   @example
+*	<table class="table striped  sort-asc col1">
+*		<thead class="sortableheader">
+*			<tr>
+*				<th class="col1 sortable">
+*                        <div class="relative firefoxfix">
+*                        	<span class="sort sorttoggle">
+*                        	<a class="fa fa-sort"></a>
+*                        	</span>
+*                        	<a class="text">Table Header </a>
+*                        </div>
+*                 </th>
+*				<th class="col2 sortable selected asc">
+*                        <div class="relative firefoxfix">
+*                        	<span class="sort sorttoggle">
+*                        	<a class="fa fa-sort"></a>
+*                        	</span>
+*                        	<a  class="text">Toggle Sorter </a>
+*                        </div>
+*                 </th>
+*				<th class="col3 sortable selected asc">
+*                        <div class="relative firefoxfix">
+*                        	<span class="sort sorttwoways">
+*                        	<a class="fa fa-sort selected"></a><a class="fa fa-sort"></a>
+*                        	</span>
+*                        	<a  class="text">Long Table<br>Header </a>
+*                        </div>
+*                 </th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr>
+*				<td> row 2  cell A</td>
+*				<td> row 2  cell B</td>
+*				<td> row 2  cell C</td>
+*			</tr>
+*		</tbody>
+*		<tfoot>
+*			<tr>
+*				<td colspan="3">footer cell</td>
+*			</tr>
+*		</tfoot>
+*	</table>
+*/

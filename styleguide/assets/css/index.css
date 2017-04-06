@@ -1553,7 +1553,7 @@ ul li, ol li {
 *	</div>
 *	<div class="texture column large-4">
 *		<div class="content-padding">
-*			<h4 class="texture--name">Stripped Ink</h4>
+*			<h4 class="texture--name">striped Ink</h4>
 *			<div class="texture--thumb">
 *				<div class="texture--holder" style="background-image:url(Assets/img/empty_stripe@2x.png);background-color:#198dae"></div>
 *			</div>
@@ -1566,7 +1566,7 @@ ul li, ol li {
 *	</div><div class="row">
 *        <div class="texture column large-4">
 *          <div class="content-padding">
-*            <h4 class="texture--name">Stripped Ink <small>Alt Grey</small></h4>
+*            <h4 class="texture--name">striped Ink <small>Alt Grey</small></h4>
 *            <div class="texture--thumb">
 *              <div class="texture--holder third-width" style="background-image:url(Assets/img/empty_stripe_grey@2x.png);background-color:#dd5aa8;"></div>
 *              <div class="texture--holder third-width" style="background-image:url(Assets/img/empty_stripe@2x.png);background-color:#dd5aa8;"></div>
@@ -1586,7 +1586,7 @@ ul li, ol li {
 *        </div>
 *        <div class="texture column large-4">
 *          <div class="content-padding">
-*            <h4 class="texture--name">Stripped Ink <small>Alt Blue</small></h4>
+*            <h4 class="texture--name">striped Ink <small>Alt Blue</small></h4>
 *            <div class="texture--thumb">
 *              <div class="texture--holder third-width" style="background-image:url(Assets/img/empty_stripe_blue@2x.png);background-color:#dd5aa8;"></div>
 *              <div class="texture--holder third-width" style="background-image:url(Assets/img/empty_stripe@2x.png);background-color:#dd5aa8;"></div>
@@ -1606,7 +1606,7 @@ ul li, ol li {
 *        </div>
 *   	<div class="texture column large-4 end">
 *   		<div class="content-padding">
-*   			<h4 class="texture--name">Stripped Ink <small>Tight</small></h4>
+*   			<h4 class="texture--name">striped Ink <small>Tight</small></h4>
 *   			<div class="texture--thumb">
 *   				<div class="texture--holder" style="background-image:url(Assets/img/empty_stripe.png);background-color:#198dae"></div>
 *   			</div>
@@ -1616,6 +1616,22 @@ ul li, ol li {
 *   			</ul>
 *   		</div>
 *   	</div>
+*	</div>
+*	<div class="row">
+*		<div class="texture column large-4">
+*			<div class="content-padding">
+*				<h4 class="texture--name">Weaves</h4>
+*				<div class="texture--thumb">
+*					<div class="texture--holder third-width" style="background-image:url(Assets/img/cream_pixels.png); background-color:#E08514;"></div>
+*					<div class="texture--holder third-width" style="background-image:url(Assets/img/cream_pixels_alt.png); background-color:#E08514;"></div>
+*					<div class="texture--holder third-width" style="background-image:url(Assets/img/cream_pixels_altdark.png); background-color:#E08514;"></div>
+*				</div>
+*				<ul class="no-bullet texture--cite">
+*					<li><strong>File Name: </strong><span class="text">cream_pixels.png<br>cream_pixels_alt.png<br>cream_pixels_altdark.png</span></li>
+*					<li><strong>Usage: </strong><span class="text">A colorable texture to drop in to tables for the striped and baneded tables.</span></li>	
+*				</ul>
+*			</div>
+*		</div>
 *	</div>	
 */
 @media only screen and (max-width: 1024px) {
@@ -4273,105 +4289,83 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *   	<input type="file" class="upload" data-bind="file: { data: document, name: documentname, allowed: allowedTypes }">
 *   </div>
 **/
-.radio, .radio-content {
-  vertical-align: middle;
-}
-
-.radio-group-holder {
-  margin-bottom: .75rem;
-}
-
-.radio-group {
-  border: #cccccc 1px solid;
-  padding: .5rem;
-  border-radius: .5rem;
-  overflow: hidden;
-  min-height: 3rem;
-  clear: none;
-}
-.warning .radio-group {
-  border-color: #dc3443;
-}
-.error .radio-group {
-  border-color: #dc3443;
-}
-.radio-group .radio {
-  width: 5rem;
-  padding: 0 .75rem;
-  text-align: center;
-  min-height: 3rem;
-  background-color: #e6e6e6;
-  border-radius: 10px;
-  display: table-cell;
-  width: 3rem;
-}
-.radio-group .radio input[type='radio'] {
-  margin: 0 auto;
-  text-align: center;
-  min-height: 3rem;
-  height: 3rem;
-  vertical-align: middle;
-  position: relative;
-}
-.radio-group .radio-content {
-  padding-left: .5rem;
-  min-height: 3rem;
-  display: table-cell;
-}
-.radio-group .radio-content > * {
-  margin-bottom: 0;
-}
-.radio-group:hover {
-  background-color: #e6e6e6;
-}
-.radio-group:hover .radio {
-  background-color: #cccccc;
-}
-
 /**
-* Radio Button with Grouped Content:
-* `.radio-group` - This is a structural container for radio buttons that have an extended amount of content that goes with the radio button.
+* Switches with Grouped Content:
+* `.switch label` - labels can hold more then just plain text but can hold rich text when it is needed.  Remember most margins are not needed when placed in labels so using `no-vertical-margin` might improve how it looks..
 * 
 *   @example
-*	<div class="question">
-*	<div class="label-holder">
-*		<label for="">
-*			<span class="text">The Title of the Radio Group</span>
-*			<span class="required-holder">
-*				<i class="fa fa-holder-dynamic"></i>
-*			</span>
-*		</label>
-*	</div>
-*	<div class="input-holder radio-group-holder row">
-*		<div class="column input-space small-6">
-*		  <label for="radio1" class="radio-group">
-*		    <span class="radio">
-*		      <input id='radio1' name="number" value="#" type="radio">
-*		    </span>
-*		    <span class="radio-content">
-*		      <span class="h4">Title One</span>
-*		      <span class="normal">Sub Content</span>
-*		    </span>
-*		  </label>
-*		</div>
-*		<div class="column input-space small-6">
-*		  <label for="radio2" class="radio-group">
-*		    <span class="radio">
-*		      <input id='radio2' name="number" value="#" type="radio">
-*		    </span>
-*		    <span class="radio-content">
-*		      <span class="h4">Title Two</span>
-*		      <span class="normal">Sub Content</span>
-*		    </span>
-*		  </label>
-*		</div>
-*	</div>
-*	<div class="message-holder">
-*		<small class="error"><i class="fa fa-holder"></i> Error message</small>
-*		<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
-*		<small class="data"><i class="fa fa-holder"></i> Data message</small>
-*	</div>
-*	<div class="hint">This is some hint text</div>
+*	<div class="question required">
+*	    <div class="label-holder">
+*	        <label for="">
+*	            <span class="text">
+*	                Select One
+*	            </span>
+*	            <span class="required-holder">
+*	                <i class="fa fa-holder-dynamic">
+*	                </i>
+*	            </span>
+*	        </label>
+*	    </div>
+*	    <div class="switch-input-space column medium-6 large-12">
+*	        <div class="switch radio">
+*	            <input class="switch-input" data-bind="checked:Form().painArea.ForEditing" id="radio1" name="painArea" type="radio" value="true">
+*	                <label class="switch-paddle" for="radio1">
+*	                    <span class="show-for-sr">
+*	                       Bilateral: Possible intolerance
+*	                    </span>
+*	                    <span aria-hidden="true" class="switch-active">
+*	                        <i class="fa fa-holder">
+*	                        </i>
+*	                    </span>
+*	                    <span aria-hidden="true" class="switch-inactive">
+*	                        <i class="fa fa-holder">
+*	                        </i>
+*	                    </span>
+*	                </label>
+*	            
+*	        </div>
+*	        <label class="switch-value" for="radio1">
+*	            <h5 style="no-verticle-margin">
+*	                Bilateral
+*	            </h5>
+*	            <p>
+*	                Muscle symptoms are generalized (e.g., neck and shoulder pain, lower extremity pain)
+*	            </p>
+*	            <p class="strong">
+*	                Bilateral: Possible intolerance
+*	            </p>
+*	        </label>
+*	    </div>
+*	    <div class="switch-input-space column medium-6 large-12">
+*	        <div class="switch radio">
+*	            <input class="switch-input" data-bind="checked:Form().painArea.ForEditing" id="radio2" name="painArea" type="radio" value="false">
+*	                <label class="switch-paddle" for="radio2">
+*	                    <span class="show-for-sr">
+*	                        Unilateral: Unlikely intolerance
+*	                    </span>
+*	                    <span aria-hidden="true" class="switch-active">
+*	                        <i class="fa fa-holder">
+*	                        </i>
+*	                    </span>
+*	                    <span aria-hidden="true" class="switch-inactive">
+*	                        <i class="fa fa-holder">
+*	                        </i>
+*	                    </span>
+*	                </label>
+*	            
+*	        </div>
+*	        <label class="switch-value" for="radio2">
+*	            <h5 style="no-verticle-margin">
+*	                Unilateral
+*	            </h5>
+*	            <p>
+*	                Muscle symptoms are isolated (e.g., knee or shoulder ache)
+*	            </p>
+*	            <p class="strong">
+*	                Unilateral: Unlikely intolerance
+*	            </p>
+*	        </label>
+*	    </div>
 *	</div>
 **/
 .repeater {
@@ -4521,7 +4515,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   border-radius: .5em;
   border-top: 2px soliddesaturate(#25b6e0, 40%);
   border-bottom: 2px solid #579bae;
-  background-image: url(../img/empty_stripe@2x.png);
+  background-image: url(../img/empty_diamond.png);
   background-color: #e6f0f3;
   position: relative;
 }
@@ -4546,7 +4540,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   border-radius: .5em;
   border-top: 2px soliddesaturate(#de404e, 40%);
   border-bottom: 2px solid #b16d73;
-  background-image: url(../img/empty_stripe@2x.png);
+  background-image: url(../img/empty_diamond.png);
   background-color: #fcf0e2;
 }
 .repeater.edit-mode .question-group .required-message {
@@ -5080,22 +5074,23 @@ table a.button, table button, table .inline-list, table .nobutton {
 
 .banded tbody tr:nth-child(even) td, .striped tbody tr:nth-child(even) td {
   background-image: url("../img/cream_pixels_alt.png");
+  background-color: #d6f1f9;
 }
 
 .striped td:nth-child(even) {
-  background-color: #e4f6fb;
+  background-image: url("../img/cream_pixels_blue.png");
+}
+
+.striped th:nth-child(even), .striped tr:nth-child(even) td:nth-child(even) {
+  background-image: url("../img/cream_pixels_altblue.png");
 }
 
 .striped.desaturate td:nth-child(even) {
-  background-color: #f2f2f2;
+  background-image: url("../img/cream_pixels_alt.png");
 }
 
-.striped th:nth-child(even), .striped tbody tr:nth-child(even) td:nth-child(even) {
-  background-color: #e3f0f4;
-}
-
-.striped.desaturate th:nth-child(even), .striped.desaturate tbody tr:nth-child(even) td:nth-child(even) {
-  background-color: #e6e6e6;
+.striped.desaturate th:nth-child(even), .striped.desaturate tr:nth-child(even) td:nth-child(even) {
+  background-image: url("../img/cream_pixels_altdark.png");
 }
 
 .striped tbody tr + tr td, .banded tbody tr + tr td {
@@ -5244,10 +5239,10 @@ table a.button, table button, table .inline-list, table .nobutton {
 
 /**
 * Tables Row(Seperator):
-* ` .seperator` - Table with the class`.stripped`.
+* ` .seperator` - Table with the class`.striped`.
 * 
 *   @example
-*	<table class="table stripped">
+*	<table class="table striped">
 *		<thead>
 *			<tr>
 *				<th>table header</th>
@@ -5349,7 +5344,7 @@ table a.button, table button, table .inline-list, table .nobutton {
 * ` .seperator.error` - An Error State on a table sep.
 * 
 *   @example
-*	<table class="table stripped">
+*	<table class="table striped">
 *		<thead>
 *			<tr>
 *				<th>table header</th>
@@ -5411,60 +5406,6 @@ table a.button, table button, table .inline-list, table .nobutton {
 *		</tfoot>
 *	</table>
 */
-/**
-* Tables (Sortable):
-* `.banded or .stripped` - tables witha soratable table header. 
-*  Just add the class of the column to the table `.col1` and the sort direction `.sort-asc` or `.sort-desc`.
-* 
-*   @example
-*	<table class="table stripped  sort-asc col1">
-*		<thead class="sortableheader">
-*			<tr>
-*				<th class="col1 sortable">
-*                        <div class="relative firefoxfix">
-*                        	<span class="sort sorttoggle">
-*                        	<a class="fa fa-sort"></a>
-*                        	</span>
-*                        	<a class="text">Table Header </a>
-*                        </div>
-*                 </th>
-*				<th class="col2 sortable selected asc">
-*                        <div class="relative firefoxfix">
-*                        	<span class="sort sorttoggle">
-*                        	<a class="fa fa-sort"></a>
-*                        	</span>
-*                        	<a  class="text">Toggle Sorter </a>
-*                        </div>
-*                 </th>
-*				<th class="col3 sortable selected asc">
-*                        <div class="relative firefoxfix">
-*                        	<span class="sort sorttwoways">
-*                        	<a class="fa fa-sort selected"></a><a class="fa fa-sort"></a>
-*                        	</span>
-*                        	<a  class="text">Long Table<br>Header </a>
-*                        </div>
-*                 </th>
-*			</tr>
-*		</thead>
-*		<tbody>
-*			<tr>
-*				<td> row 1  cell A</td>
-*				<td> row 1  cell B</td>
-*				<td> row 1  cell C</td>
-*			</tr>
-*			<tr>
-*				<td> row 2  cell A</td>
-*				<td> row 2  cell B</td>
-*				<td> row 2  cell C</td>
-*			</tr>
-*		</tbody>
-*		<tfoot>
-*			<tr>
-*				<td colspan="3">footer cell</td>
-*			</tr>
-*		</tfoot>
-*	</table>
-*/
 .table thead tr:last-child th.sortable {
   border-bottom: none 0;
 }
@@ -5485,6 +5426,7 @@ th.sortable {
   overflow: hidden;
   border-bottom: 0px none transparent;
   background-color: gray !important;
+  background-image: none !important;
 }
 th.sortable:hover {
   background-color: #737373 !important;
@@ -5587,6 +5529,60 @@ th.sortable .has-tip {
   height: 100%;
 }
 
+/**
+* Tables (Sortable):
+* `.banded or .striped` - tables witha soratable table header. 
+*  Just add the class of the column to the table `.col1` and the sort direction `.sort-asc` or `.sort-desc`.
+* 
+*   @example
+*	<table class="table striped  sort-asc col1">
+*		<thead class="sortableheader">
+*			<tr>
+*				<th class="col1 sortable">
+*                        <div class="relative firefoxfix">
+*                        	<span class="sort sorttoggle">
+*                        	<a class="fa fa-sort"></a>
+*                        	</span>
+*                        	<a class="text">Table Header </a>
+*                        </div>
+*                 </th>
+*				<th class="col2 sortable selected asc">
+*                        <div class="relative firefoxfix">
+*                        	<span class="sort sorttoggle">
+*                        	<a class="fa fa-sort"></a>
+*                        	</span>
+*                        	<a  class="text">Toggle Sorter </a>
+*                        </div>
+*                 </th>
+*				<th class="col3 sortable selected asc">
+*                        <div class="relative firefoxfix">
+*                        	<span class="sort sorttwoways">
+*                        	<a class="fa fa-sort selected"></a><a class="fa fa-sort"></a>
+*                        	</span>
+*                        	<a  class="text">Long Table<br>Header </a>
+*                        </div>
+*                 </th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr>
+*				<td> row 2  cell A</td>
+*				<td> row 2  cell B</td>
+*				<td> row 2  cell C</td>
+*			</tr>
+*		</tbody>
+*		<tfoot>
+*			<tr>
+*				<td colspan="3">footer cell</td>
+*			</tr>
+*		</tfoot>
+*	</table>
+*/
 td.icon {
   padding: .25rem .25rem .25rem .25rem;
   text-align: center;
@@ -5597,139 +5593,88 @@ td.icon i {
   margin: 0 auto;
 }
 
-tr.error td, td.error, tr.warning td, td.warning, tr.success td, td.success, tr.info td, td.info, tr.highlighted td, td.highlighted, tr.disabled td, td.disabled {
+tr.error td, td.error {
   background-image: url("../img/cream_pixels.png");
   font-weight: 900;
-}
-
-.striped tbody tr.error td:nth-child(even), .striped tbody tr.warning td:nth-child(even), .striped tbody tr.success td:nth-child(even), .striped tbody tr.info td:nth-child(even), .striped tbody tr.highlighted td:nth-child(even), .striped tbody tr.disabled td:nth-child(even) {
-  background-image: url("../img/cream_pixels_blue.png");
-  font-weight: 900;
-}
-
-tr.error td, tr.warning td, tr.success td, tr.info td, tr.highlighted td, tr.disabled td {
+  background-color: #c32231 !important;
+  color: #000;
   border-top: 1px solid;
   border-bottom: 1px solid;
+  border-color: #e66f7a !important;
 }
 
-td.error, .table tbody tr + tr td.error, tr.error td, .striped tr.error td:nth-child(even) {
-  background-color: #cf4e5a;
+td.error {
+  border: solid 1px;
+}
+
+tr.warning td, td.warning {
+  background-image: url("../img/cream_pixels.png");
+  font-weight: 900;
+  background-color: #E08514 !important;
   color: #000;
-  border-color: #f2b7bd;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #f2b66c !important;
 }
 
-tr:nth-child(even) td.error {
-  background-color: #d25965;
+td.warning {
+  border: solid 1px;
+}
+
+tr.success td, td.success {
+  background-image: url("../img/cream_pixels.png");
+  font-weight: 900;
+  background-color: #14B057 !important;
   color: #000;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #56ec96 !important;
 }
 
-tr:nth-child(even).error td {
-  background-color: #d25965;
+td.success {
+  border: solid 1px;
+}
+
+tr.info td, td.info {
+  background-image: url("../img/cream_pixels.png");
+  font-weight: 900;
+  background-color: #a6a6a6 !important;
   color: #000;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #c9c9c9 !important;
 }
 
-.striped tbody tr.error td:nth-child(even) {
-  background-color: #cf4e5a;
+td.info {
+  border: solid 1px;
 }
 
-td.warning, .table tbody tr + tr td.warning, tr.warning td, .striped tr.warning td:nth-child(even) {
-  background-color: #e69d43;
+tr.highlighted td, td.highlighted {
+  background-image: url("../img/cream_pixels.png");
+  font-weight: 900;
+  background-color: #198dae !important;
   color: #000;
-  border-color: #f8dbb6;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #5cc9e8 !important;
 }
 
-tr:nth-child(even) td.warning {
-  background-color: #e8a44f;
+td.highlighted {
+  border: solid 1px;
+}
+
+tr.disabled td, td.disabled {
+  background-image: url("../img/cream_pixels.png");
+  font-weight: 900;
+  background-color: #cccccc !important;
   color: #000;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #e0e0e0 !important;
 }
 
-tr:nth-child(even).warning td {
-  background-color: #e8a44f;
-  color: #000;
-}
-
-.striped tbody tr.warning td:nth-child(even) {
-  background-color: #e69d43;
-}
-
-td.success, .table tbody tr + tr td.success, tr.success td, .striped tr.success td:nth-child(even) {
-  background-color: #43c079;
-  color: #000;
-  border-color: #aaf5cb;
-}
-
-tr:nth-child(even) td.success {
-  background-color: #4fc481;
-  color: #000;
-}
-
-tr:nth-child(even).success td {
-  background-color: #4fc481;
-  color: #000;
-}
-
-.striped tbody tr.success td:nth-child(even) {
-  background-color: #43c079;
-}
-
-td.info, .table tbody tr + tr td.info, tr.info td, .striped tr.info td:nth-child(even) {
-  background-color: #b8b8b8;
-  color: #000;
-  border-color: #e4e4e4;
-}
-
-tr:nth-child(even) td.info {
-  background-color: #bcbcbc;
-  color: #000;
-}
-
-tr:nth-child(even).info td {
-  background-color: #bcbcbc;
-  color: #000;
-}
-
-.striped tbody tr.info td:nth-child(even) {
-  background-color: #b8b8b8;
-}
-
-td.highlighted, .table tbody tr + tr td.highlighted, tr.highlighted td, .striped tr.highlighted td:nth-child(even) {
-  background-color: #47a4be;
-  color: #000;
-  border-color: #ade4f3;
-}
-
-tr:nth-child(even) td.highlighted {
-  background-color: #53aac2;
-  color: #000;
-}
-
-tr:nth-child(even).highlighted td {
-  background-color: #53aac2;
-  color: #000;
-}
-
-.striped tbody tr.highlighted td:nth-child(even) {
-  background-color: #47a4be;
-}
-
-td.disabled, .table tbody tr + tr td.disabled, tr.disabled td, .striped tr.disabled td:nth-child(even) {
-  background-color: #d6d6d6;
-  color: #000;
-  border-color: #f0f0f0;
-}
-
-tr:nth-child(even) td.disabled {
-  background-color: #d9d9d9;
-  color: #000;
-}
-
-tr:nth-child(even).disabled td {
-  background-color: #d9d9d9;
-  color: #000;
-}
-
-.striped tbody tr.disabled td:nth-child(even) {
-  background-color: #d6d6d6;
+td.disabled {
+  border: solid 1px;
 }
 
 /**
@@ -5903,6 +5848,12 @@ tr:nth-child(even).disabled td {
   bottom: 0;
   color: white;
   background-color: #9a9a9a;
+}
+
+[data-bind="click:panelShow"], .accordion .toggle {
+  margin: 0 auto .5rem;
+  position: relative;
+  z-index: 1000;
 }
 
 h1 + div > .collapsable-panel {
@@ -11709,13 +11660,10 @@ h6 blockquote, h6 .sub-line {
   padding: 0 !important;
 }
 
-<<<<<<< HEAD
-=======
 .display-block {
   display: block !important;
 }
 
->>>>>>> da3879d4f91ca58682711bc208ae6ba9ac30a023
 /**
 * HELPER - Condensable (Condense):
 * `.condensable.large .condense` - This pattern allows for responsive reduction of content.
@@ -11851,7 +11799,7 @@ STATE TRUMPING CODE
 }
 
 .nav-list.nav-checklist li.error, .nav-checklist.panel-selector li.error, .error.question .message-holder > .error, .hint .error, .error .close-bar .close-button, .error.inset .bar.close .action-btn, .error-inactive .switch-paddle, .error-active input:checked ~ .switch-paddle, .error.callout, .error.page-message {
-  background-color: #c32231;
+  background-color: #de404e;
 }
 
 .error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .nav-list.nav-checklist li.error .fa-holder-dynamic:before, .nav-checklist.panel-selector li.error .fa-holder-dynamic:before {
@@ -11867,7 +11815,7 @@ STATE TRUMPING CODE
 }
 
 .nav-list.nav-checklist li.warning, .nav-checklist.panel-selector li.warning, .warning.question .message-holder > .warning, .hint .warning, .warning .close-bar .close-button, .warning.inset .bar.close .action-btn, .warning-inactive .switch-paddle, .warning-active input:checked ~ .switch-paddle, .warning.callout, .warning.page-message {
-  background-color: #E08514;
+  background-color: #ee9e3c;
 }
 
 .warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .nav-list.nav-checklist li.warning .fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning .fa-holder-dynamic:before {
@@ -11883,7 +11831,7 @@ STATE TRUMPING CODE
 }
 
 .nav-list.nav-checklist li.success, .nav-checklist.panel-selector li.success, .success.question .message-holder > .success, .hint .success, .success .close-bar .close-button, .success.inset .bar.close .action-btn, .success-inactive .switch-paddle, .success-active input:checked ~ .switch-paddle, .success.callout, .success.page-message {
-  background-color: #14B057;
+  background-color: #1de573;
 }
 
 .success .fa-holder-dynamic:before, .success.fa:before, .success > .fa-holder:before, .nav-list.nav-checklist li.success .fa-holder-dynamic:before, .nav-checklist.panel-selector li.success .fa-holder-dynamic:before {
@@ -11899,7 +11847,7 @@ STATE TRUMPING CODE
 }
 
 .nav-list.nav-checklist li.info, .nav-checklist.panel-selector li.info, .info.question .message-holder > .info, .hint .info, .info .close-bar .close-button, .info.inset .bar.close .action-btn, .info-inactive .switch-paddle, .info-active input:checked ~ .switch-paddle, .info.callout, .info.page-message {
-  background-color: #a6a6a6;
+  background-color: #b8b8b8;
 }
 
 .info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder-dynamic:before, .nav-checklist.panel-selector li.info .fa-holder-dynamic:before {
@@ -11915,7 +11863,7 @@ STATE TRUMPING CODE
 }
 
 .nav-list.nav-checklist li.highlighted, .nav-checklist.panel-selector li.highlighted, .highlighted.question .message-holder > .highlighted, .hint .highlighted, .highlighted .close-bar .close-button, .highlighted.inset .bar.close .action-btn, .highlighted-inactive .switch-paddle, .highlighted-active input:checked ~ .switch-paddle, .highlighted.callout, .highlighted.page-message {
-  background-color: #198dae;
+  background-color: #25b6e0;
 }
 
 .highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before {
@@ -11931,7 +11879,7 @@ STATE TRUMPING CODE
 }
 
 .nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled, .disabled.question .message-holder > .disabled, .hint .disabled, .disabled .close-bar .close-button, .disabled.inset .bar.close .action-btn, .disabled-inactive .switch-paddle, .disabled-active input:checked ~ .switch-paddle, .disabled.callout, .disabled.page-message {
-  background-color: #cccccc;
+  background-color: #d6d6d6;
 }
 
 .disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before {
