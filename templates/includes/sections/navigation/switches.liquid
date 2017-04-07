@@ -313,77 +313,162 @@
       </div>
     </section>
 
-    <section class="sg-block sg-section-switch-group">
+   <section class="sg-block sg-section-switches-with-grouped-content">
       <div class="sg-text">
-        <h3 id="switch-group" class="sg">Switch Group</h3>
+        <h3 id="switches-with-grouped-content" class="sg">Switches with Grouped Content</h3>
         <p class="sg">
-          <code class="sg">.switch-group</code>- Switches can be grouped if you want a multi selected bar of similar items.</p>
+          <code class="sg">.switch label</code>- labels can hold more then just plain text but can hold rich text when it is needed. Remember most margins are not needed when placed in labels so using
+          <code class="sg">no-vertical-margin</code>might improve how it looks..</p>
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
-          <h4>Switch Groups group normal &apos;.switch&apos; DOM they just stack the active and inactive items</h4>
-          <div class="switch-input-space">
-            <div class="switch-group">
-              <div class="switch">
-                <input class="switch-input" id="switch-group0" type="checkbox" value="false">
-                <label class="switch-paddle" for="switch-group0">
-                  <span class="show-for-sr">Miles True?</span>
-                  <span class="switch-active" aria-hidden="true">Miles</span>
-                  <span class="switch-inactive" aria-hidden="true">Miles</span>
-                </label>
-              </div>
-              <div class="switch">
-                <input class="switch-input" id="switch-group1" type="checkbox" value="false">
-                <label class="switch-paddle" for="switch-group1">
-                  <span class="show-for-sr">Knots?</span>
-                  <span class="switch-active" aria-hidden="true">Knots</span>
-                  <span class="switch-inactive" aria-hidden="true">Knots</span>
-                </label>
-              </div>
-              <div class="switch switch-2x">
-                <input class="switch-input" id="switch-group2" type="checkbox" value="false">
-                <label class="switch-paddle" for="switch-group2">
-                  <span class="show-for-sr">Kilometers?</span>
-                  <span class="switch-active" aria-hidden="true">Kilometers</span>
-                  <span class="switch-inactive" aria-hidden="true">Kilometers</span>
-                </label>
-              </div>
+          <div class="question required">
+            <div class="label-holder">
+              <label for="">
+                <span class="text">
+                  Select One
+                </span>
+                <span class="required-holder">
+                  <i class="fa fa-holder-dynamic">
+                  </i>
+                </span>
+              </label>
             </div>
-            <label class="switch-value" for="checkbox-value-switch-round">Show these types of distance
-            </label>
+            <div class="switch-input-space column medium-6 large-12">
+              <div class="switch radio">
+                <input class="switch-input" data-bind="checked:Form().painArea.ForEditing" id="radio1" name="painArea" type="radio" value="true">
+                <label class="switch-paddle" for="radio1">
+                  <span class="show-for-sr">
+                    Bilateral: Possible intolerance
+                  </span>
+                  <span aria-hidden="true" class="switch-active">
+                    <i class="fa fa-holder">
+                    </i>
+                  </span>
+                  <span aria-hidden="true" class="switch-inactive">
+                    <i class="fa fa-holder">
+                    </i>
+                  </span>
+                </label>
+
+              </div>
+              <label class="switch-value" for="radio1">
+                <h5 style="no-verticle-margin">
+                  Bilateral
+                </h5>
+                <p>
+                  Muscle symptoms are generalized (e.g., neck and shoulder pain, lower extremity pain)
+                </p>
+                <p class="strong">
+                  Bilateral: Possible intolerance
+                </p>
+              </label>
+            </div>
+            <div class="switch-input-space column medium-6 large-12">
+              <div class="switch radio">
+                <input class="switch-input" data-bind="checked:Form().painArea.ForEditing" id="radio2" name="painArea" type="radio" value="false">
+                <label class="switch-paddle" for="radio2">
+                  <span class="show-for-sr">
+                    Unilateral: Unlikely intolerance
+                  </span>
+                  <span aria-hidden="true" class="switch-active">
+                    <i class="fa fa-holder">
+                    </i>
+                  </span>
+                  <span aria-hidden="true" class="switch-inactive">
+                    <i class="fa fa-holder">
+                    </i>
+                  </span>
+                </label>
+
+              </div>
+              <label class="switch-value" for="radio2">
+                <h5 style="no-verticle-margin">
+                  Unilateral
+                </h5>
+                <p>
+                  Muscle symptoms are isolated (e.g., knee or shoulder ache)
+                </p>
+                <p class="strong">
+                  Unilateral: Unlikely intolerance
+                </p>
+              </label>
+            </div>
           </div>
-        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>Switch Groups group normal &apos;.switch&apos; DOM they just stack the active and inactive items<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input-space&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-group&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;switch-group0&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;false&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-paddle&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;switch-group0&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;show-for-sr&quot;</span>&gt;</span>Miles True?<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-active&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>Miles<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-inactive&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>Miles<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;switch-group1&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;false&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-paddle&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;switch-group1&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;show-for-sr&quot;</span>&gt;</span>Knots?<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-active&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>Knots<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-inactive&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>Knots<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch switch-2x&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-input&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;switch-group2&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;false&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-paddle&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;switch-group2&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;show-for-sr&quot;</span>&gt;</span>Kilometers?<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-active&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>Kilometers<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-inactive&quot;</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>Kilometers<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        </div><pre class="sg-code sg-hidden"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"question required"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"label-holder"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">""</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text"</span>&gt;</span>
+        Select One
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"required-holder"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fa fa-holder-dynamic"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;switch-value&quot;</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;checkbox-value-switch-round&quot;</span>&gt;</span>Show these types of distance
-  <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"switch-input-space column medium-6 large-12"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"switch radio"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"switch-input"</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">"checked:Form().painArea.ForEditing"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"radio1"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"painArea"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"true"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"switch-paddle"</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"radio1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"show-for-sr"</span>&gt;</span>
+          Bilateral: Possible intolerance
+        <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"switch-active"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fa fa-holder"</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"switch-inactive"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fa fa-holder"</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"switch-value"</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"radio1"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h5</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"no-verticle-margin"</span>&gt;</span>
+        Bilateral
+      <span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+        Muscle symptoms are generalized (e.g., neck and shoulder pain, lower extremity pain)
+      <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"strong"</span>&gt;</span>
+        Bilateral: Possible intolerance
+      <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"switch-input-space column medium-6 large-12"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"switch radio"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"switch-input"</span> <span class="hljs-attribute">data-bind</span>=<span class="hljs-value">"checked:Form().painArea.ForEditing"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"radio2"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"painArea"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"false"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"switch-paddle"</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"radio2"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"show-for-sr"</span>&gt;</span>
+          Unilateral: Unlikely intolerance
+        <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"switch-active"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fa fa-holder"</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"switch-inactive"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fa fa-holder"</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"switch-value"</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"radio2"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h5</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"no-verticle-margin"</span>&gt;</span>
+        Unilateral
+      <span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+        Muscle symptoms are isolated (e.g., knee or shoulder ache)
+      <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"strong"</span>&gt;</span>
+        Unilateral: Unlikely intolerance
+      <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
-      </div>
+      <button class="sg-expando sg-expando-reveal"></button></div>
     </section>
 
     <section class="sg-block sg-section-switch-states-">
