@@ -3,7 +3,7 @@ $sep-color:scale-color($sep-color-base,$lightness:15%);
 $sep-darkcolor:scale-color($sep-color,$lightness:-10%);
 $sep-lightcolor:scale-color($sep-color,$lightness:10%);
 .table{
-	.seperator td,.seperator:nth-child(even) td:nth-child(odd){
+	tr.seperator td,tr.seperator:nth-child(even) td:nth-child(odd){
 		@include rem-fallback(padding-top,.1375);
 		@include rem-fallback(padding-bottom,.1375);
 		/* can be treated like a fallback */
@@ -24,10 +24,10 @@ $sep-lightcolor:scale-color($sep-color,$lightness:10%);
 
 /**
 * Tables Row(Seperator):
-* ` .seperator` - Table with the class`.stripped`.
+* ` .seperator` - Table with the class`.striped`.
 * 
 *   @example
-*	<table class="table stripped">
+*	<table class="table striped">
 *		<thead>
 *			<tr>
 *				<th>table header</th>

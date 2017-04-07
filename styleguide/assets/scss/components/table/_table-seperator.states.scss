@@ -15,7 +15,7 @@ $required_data:(
 	$sepstate-color:scale-color($sepstate-color-base,$lightness:15%);
 	$sepstate-darkcolor:scale-color($sepstate-color,$lightness:-10%);
 	$sepstate-lightcolor:scale-color($sepstate-color,$lightness:10%);
-	.table #{$selector}.seperator td, .table #{$selector}.seperator:nth-child(even) td:nth-child(odd){
+	.table tr#{$selector}.seperator td, .table tr#{$selector}.seperator:nth-child(even) td:nth-child(odd){
 
 		background-color: $sepstate-color;
 		/* will be "on top", if browser supports it */
@@ -36,7 +36,7 @@ $required_data:(
 * ` .seperator.error` - An Error State on a table sep.
 * 
 *   @example
-*	<table class="table stripped">
+*	<table class="table striped">
 *		<thead>
 *			<tr>
 *				<th>table header</th>

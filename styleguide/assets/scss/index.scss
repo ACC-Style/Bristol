@@ -10,8 +10,8 @@ $grid-column-count:12;
 *   @example
 *	<a  class="button" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
 */
-$brand-level:0; // Any Number between 0 and 3.   
-$product-brand-color: #9a1267;
+$brand-level:2; // Any Number between 0 and 3.   
+$product-brand-color: #198dae;
 $ms-base: 14px;
 $ms-ratio: 1.25;
 $baseline-modifier:1.4;
@@ -29,6 +29,7 @@ body{font-size:$ms-base;}
 @import "base/colors.styleguide";
 @import "base/fonts";
 @import "helpers/breakpoints";
+
 //base vendor files
 // @import "vendor/font-awesome/font-awesome";
 @import "vendor/font-awesome/variables";
@@ -82,7 +83,7 @@ body{font-size:$ms-base;}
 @import "components/page-message";
 // @import "components/answer_question/answer";
 @import "components/table/table";
-@import "components/table/table-stripped";
+@import "components/table/table-striped";
 @import "components/table/table-seperator";
 @import "components/table/table-seperator.states";
 @import "components/table/table-sortable";
@@ -143,6 +144,9 @@ body{font-size:$ms-base;}
 @import "structures/website/footer";
 @import "structures/fixedposition/sticky-button-holder";
 @import "components/score-bar";
+// Cards need the layout to fix.
+@import "vendor/foundation/override.card.pagination";
+
 
 // // Template specific views 
 // //trumps the dreaded importants show up in the files below.

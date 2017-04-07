@@ -43,44 +43,77 @@
 * `.radio-group` - This is a structural container for radio buttons that have an extended amount of content that goes with the radio button.
 * 
 *   @example
-*	<div class="question">
-*	<div class="label-holder">
-*		<label for="">
-*			<span class="text">The Title of the Radio Group</span>
-*			<span class="required-holder">
-*				<i class="fa fa-holder-dynamic"></i>
-*			</span>
-*		</label>
-*	</div>
-*	<div class="input-holder radio-group-holder row">
-*		<div class="column input-space small-6">
-*		  <label for="radio1" class="radio-group">
-*		    <span class="radio">
-*		      <input id='radio1' name="number" value="#" type="radio">
-*		    </span>
-*		    <span class="radio-content">
-*		      <span class="h4">Title One</span>
-*		      <span class="normal">Sub Content</span>
-*		    </span>
-*		  </label>
-*		</div>
-*		<div class="column input-space small-6">
-*		  <label for="radio2" class="radio-group">
-*		    <span class="radio">
-*		      <input id='radio2' name="number" value="#" type="radio">
-*		    </span>
-*		    <span class="radio-content">
-*		      <span class="h4">Title Two</span>
-*		      <span class="normal">Sub Content</span>
-*		    </span>
-*		  </label>
-*		</div>
-*	</div>
-*	<div class="message-holder">
-*		<small class="error"><i class="fa fa-holder"></i> Error message</small>
-*		<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
-*		<small class="data"><i class="fa fa-holder"></i> Data message</small>
-*	</div>
-*	<div class="hint">This is some hint text</div>
+*	<div class="question required">
+*	    <div class="label-holder">
+*	        <label for="">
+*	            <span class="text">
+*	                Select One
+*	            </span>
+*	            <span class="required-holder">
+*	                <i class="fa fa-holder-dynamic">
+*	                </i>
+*	            </span>
+*	        </label>
+*	    </div>
+*	    <div class="switch-input-space column medium-6 large-12">
+*	        <div class="switch radio">
+*	            <input class="switch-input" data-bind="checked:Form().painArea.ForEditing" id="radio1" name="painArea" type="radio" value="true">
+*	                <label class="switch-paddle" for="radio1">
+*	                    <span class="show-for-sr">
+*	                       Bilateral: Possible intolerance
+*	                    </span>
+*	                    <span aria-hidden="true" class="switch-active">
+*	                        <i class="fa fa-holder">
+*	                        </i>
+*	                    </span>
+*	                    <span aria-hidden="true" class="switch-inactive">
+*	                        <i class="fa fa-holder">
+*	                        </i>
+*	                    </span>
+*	                </label>
+*	            
+*	        </div>
+*	        <label class="switch-value" for="radio1">
+*	            <h5 style="no-verticle-margin">
+*	                Bilateral
+*	            </h5>
+*	            <p>
+*	                Muscle symptoms are generalized (e.g., neck and shoulder pain, lower extremity pain)
+*	            </p>
+*	            <p class="strong">
+*	                Bilateral: Possible intolerance
+*	            </p>
+*	        </label>
+*	    </div>
+*	    <div class="switch-input-space column medium-6 large-12">
+*	        <div class="switch radio">
+*	            <input class="switch-input" data-bind="checked:Form().painArea.ForEditing" id="radio2" name="painArea" type="radio" value="false">
+*	                <label class="switch-paddle" for="radio2">
+*	                    <span class="show-for-sr">
+*	                        Unilateral: Unlikely intolerance
+*	                    </span>
+*	                    <span aria-hidden="true" class="switch-active">
+*	                        <i class="fa fa-holder">
+*	                        </i>
+*	                    </span>
+*	                    <span aria-hidden="true" class="switch-inactive">
+*	                        <i class="fa fa-holder">
+*	                        </i>
+*	                    </span>
+*	                </label>
+*	            
+*	        </div>
+*	        <label class="switch-value" for="radio2">
+*	            <h5 style="no-verticle-margin">
+*	                Unilateral
+*	            </h5>
+*	            <p>
+*	                Muscle symptoms are isolated (e.g., knee or shoulder ache)
+*	            </p>
+*	            <p class="strong">
+*	                Unilateral: Unlikely intolerance
+*	            </p>
+*	        </label>
+*	    </div>
 *	</div>
 **/

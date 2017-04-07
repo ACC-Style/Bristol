@@ -15,7 +15,7 @@ STATE TRUMPING CODE
 	}	
 	@if length(getTrump('background-color', map-get($State,'State'))) > 0 {
 		#{getTrump('background-color', map-get($State,'State')) }{
-			background-color:map-get($State,'Color');
+			background-color:color(map-get($State,'Color'),80);
 			// @if map-get($State,'State') == "disabled"{
 			// 	cursor:none;
 			//     cursor: not-allowed;
