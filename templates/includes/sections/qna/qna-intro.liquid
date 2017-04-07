@@ -1,0 +1,60 @@
+<h1>Forms - Questions &amp; Answers</h1>
+
+<p>
+	The heart of this design is around the modular structure of how you implement inputs or <strong>"Questions"</strong> and how you display that information <strong>"Answers"</strong>. Question and Answers are containers that hold some or all of their children depending on the need. Both Questions and Answers share a common build structure. With the parent container which controls the width and its children which can be modified from the containters State.
+
+</p>
+<h2>Questions - How they are built</h2>
+<p>	 Questions are constructed with a stacked collection of divs within the container <code>div.question</code>. The elements are <code>.label-holder, .input-holder,.message-holder, and .hint</code>.</p>
+
+<div class="row">
+	<h3>The Antomy</h3>
+	<div class="question required edge column large-6">
+	<span class="notation">.question.column.large-6</span>
+		<div class="label-holder outline">
+			<span class="notation">.label-holder</span>
+			<label class="outline" style="min-width:20em;">
+					<span class="notation">tag - label</span>
+					<span class="text outline">Label for Question <span class="notation">.text</span></span>
+					<span class="required-holder outline" style="min-width:9em;">
+						<span class="notation">.required-holder</span>
+					<i class="fa fa-holder-dynamic"></i>
+					</span>
+			</label>
+		</div>
+		<div class="input-holder outline">
+			<span class="notation">.input-holder </span>
+			<div class="input-space column small-6 outline">
+				<span class="notation">.input-space.column.small-6</span>
+				<input type="text">
+			</div>
+			<div class="input-space column small-6 outline">
+				<span class="notation">.input-space.column.small-6</span>
+				<select name="" id=""></select>
+			</div>
+		</div>
+		<div class="message-holder outline"><div class="notation">.message-holder</div></div>
+		<div class="hint outline"><span class="notation">.hint</span>this is helpful text to help answer the question right</div>
+	</div>
+	<div class="quiestion edge column large-4">
+		<span class="notation">.question.column.large-4</span>
+		<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=question&w=350&h=300" alt="">
+	</div>
+		<div class="quiestion edge column large-2">
+		<span class="notation">.question.column.large-2</span>
+				<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=question&w=175&h=300" alt="">
+	</div>
+</div>
+
+<style>
+	.edge,.outline{ border:thin #ccc solid; position: relative; padding:16px 4px 4px;}
+	.outline{ border:dashed thin red}
+	.outline .outline{ border:dotted thin blue; display:inline-block;}
+	.outline .outline .outline{ border:dotted thin green; display:inline-block;}
+	
+	.notation{font-size:10px; position: absolute; top: 0px;right: 4px;}
+	.outline .notation{ color:red;}
+	.outline .outline .notation{ color:blue;}
+	.outline .outline .outline  .notation{ color:green;}
+
+</style>
