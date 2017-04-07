@@ -9,13 +9,19 @@
 	color:$white;
 	
 	&, .menu > li{
-		line-height: 2.75em;
+		line-height: 2em;
+		@include bp(md){
+			line-height: 2.75em;
+		}
 		font-size: ms(1);
 		> a,> button{
 		 	display:block;
 		 	width:auto;
-		 	padding: 1em 1em .75em;
 		 	@include font-slab;
+		 	padding: .5em 1em .5em;
+		 	@include bp(md){
+		 		padding: 1em 1em .75em;	
+		 	}
 		 }
 
 		}
@@ -27,18 +33,37 @@
 .top-bar-right{
 	.padding-right: .5em;
 	background-color: $primary-color;
+	&.secondary{background-color:$secondary-color;}
 }
 
 .top-bar-left{
 	padding-left:.5em;
 	li:hover{
 		background-color: white;
-		border-top:rebrand-color($scrub-green, 2) (6px/ms(1))*1em solid;		
+				
 		a,button{
 			color:$black;
-			margin-top: (6px/ms(1))*-1em;
-			padding-top: 1em;
 		}
+		.stack-for-small &{
+			@include bp(md){
+				border-top:rebrand-color($scrub-green, 2) (6px/ms(1))*1em solid;
+				a,button{
+					margin-top: (6px/ms(1))*-1em;
+					padding-top: 1em;
+				}
+			}
+		}
+
+		.stack-for-medium &{
+			@include bp(lg){
+				border-top:rebrand-color($scrub-green, 2) (6px/ms(1))*1em solid;
+				a,button{
+					margin-top: (6px/ms(1))*-1em;
+					padding-top: 1em;
+				}
+			}
+		}
+		
 	}
 	.submenu{
 		margin: 0;
@@ -46,10 +71,13 @@
 		&, &.nav-level-1{ font-size: ms(0);}
 		&.nav-level-2{ font-size:ms(-1);}
 		
-		li > a{ color:rebrand-color($primary-color, 2); width:100%; display:inline-block; 
+		li > a{ 
+			color:rebrand-color($primary-color, 2); 
+			width:100%; 
+			display:inline-block; 
 		    line-height: 1.5;
 		    padding: 0;}
-		list-style: none;
+			list-style: none;
 		li{
 			padding:.25em .75em;
 			&:hover{
@@ -67,14 +95,55 @@
 	}
 
 }
-.stack-medium .menu > li{
+.menu > li{
 	display: block;
 	width:100%;
-	@include bp(md){
-		    display: table-cell;
+	.dropdown-pane{
+		width:100%;
+		max-width:100vh;
+	}
+	.stack-for-small &{
+		@include bp(sm){
+			display: table-cell;
 		    width:auto;
+		    }
+	    @include bp(sm-down){
+			.dropdown-pane{
+			    top: 0 !important;
+			    left: 0 !important;
+			    display: block;
+			}
+			.dropdown-pane.is-open{position:relative}
+		}
+	}
+	.stack-for-medium &{
+		@include bp(lg){
+			display: table-cell;
+		    width:auto;
+			}
+		@include bp(lg-down){
+			.dropdown-pane{
+			    top: 0 !important;
+			    left: 0 !important;
+			    display: block;
+			}
+			.dropdown-pane.is-open{position:relative}
+		}
 	}
 
+}
+#siteMenu{
+	i.fa{margin-top:-1px; margin-bottom:-1px;}
+	.top-bar-left,.top-bar-right{
+		width:100%;
+		padding:0;
+		// @include bp(sm){width:auto;}
+		// @include bp(lg){width:auto;}
+		@include bp(lg){
+			width:auto;
+			padding:0 .5em;
+		}
+	}
 }
 .top-bar{
 	a,button{
@@ -82,53 +151,136 @@
 	}
 	.dropdown-pane{
 		margin-top: 1px;
+		padding: 0;
+
 		padding: .5em 0 .75em;
-		width:40em;
-		max-width: 75vw;
+		border:0 none transparent;
 		.double-column{width:80em;}
 	}
 	.dropdown-pane > .row{margin:0 .5em;}
 	.dropdown-pane .column {padding-left:0em;padding-right:.5em;}
-	.dropdown-pane .column  + .column  {border-left:solid grey(15) 1px; padding-left:.5em;padding-right:0em;}
+	&.stack-for-small & {
+		@include bp(sm){
+			.dropdown-pane{ 
+				width:40em;
+				max-width: 75vw;
+				border:1px solid grey(60);
+				padding: .5em 0 .75em;
+			}
+			.dropdown-pane .column  + .column  {border-left:solid grey(15) 1px; padding-left:.5em;padding-right:0em;}
+		}
+
+	}
+	&.stack-for-medium & {
+		@include bp(lg){
+			.dropdown-pane{ 
+				width:40em;
+				max-width: 75vw;
+				border:1px solid grey(60);
+				padding: .5em 0 .75em;
+			}
+			.dropdown-pane .column  + .column  {border-left:solid grey(15) 1px; padding-left:.5em;padding-right:0em;}}
+	}
 }
+.dropdown-menu-item .fa-holder:before{content: "\f107";}
+.dropdown-menu-item:hover .fa-holder:before{content: "\f0d7";}
+.search-bar{
+	line-height:normal;
+	padding: .5em ;
+    clear: both;
+    background-image: url(../img/cream_pixels_altdark.png);
+    background-color:$secondary-color;
+    display:none;
+    .question{margin:0;
+    	input{    
+    		background: grey(28);
+		    border-radius: 6px 0 0 6px;
+		    border: grey(20) 1px solid;
+		}
+		.button{
+			border-radius: 0 6px 6px 0;
+			background-color: grey(50);
+			vertical-align: text-top;
+			padding: 0;
+			border: 1px solid grey(20);
+		}
 
-
-	
+    }
+}
+.top-bar input, .search-bar input{max-width:100%;}
 /**
 * Top Bar:
-* `.top-bar` - This is a great nav bar for website headers. <h5 class="warning">( !! WARNING !! Updated HTML and Styles From Ver 1)</h5>
+* `.top-bar` - This is "ACC Style" website headers.  These should be used on any product that has multi pages and navigation beyond 1 to 2 tabs
 * 
 *   @example
 *	<div class="top-bar">
-*	  <div class="top-bar-title">
-*	    <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
-*	      <button class="menu-icon dark" type="button" data-toggle></button>
-*	    </span>
-*	    <strong>Site Title</strong>
-*	  </div>
-*	  <div id="responsive-menu">
-*	    <div class="top-bar-left">
-*	      <ul class="dropdown menu" data-dropdown-menu>
-*	        <li>
-*	          <a href="#">One</a>
-*	          <ul class="menu vertical">
-*	            <li><a href="#">One</a></li>
-*	            <li><a href="#">Two</a></li>
-*	            <li><a href="#">Three</a></li>
-*	          </ul>
+*		<div class="hide-for-medium">
+*		  <div class="top-bar-left" onClick="$('#siteMenu .top-bar-left').toggleClass('display-block')">
+*		       <a class="top-bar-toggle"><i class="fa fa-bars"></i>&nbsp;Menu</a>
+*		  </div>
+*		  <div class="top-bar-right" onClick="$('#siteMenu .top-bar-left').toggleClass('display-block')">
+*		       <a class="top-bar-toggle">Search&nbsp;<i class="fa fa-search"></i></a>
+*		  </div>
+*		</div>
+*	  <div id="siteMenu" class="stack-for-small">
+*	    <div class="top-bar-left" class="show-for-large">
+*	      <ul class="menu">
+*	        <li class="dropdown-menu-item">
+*		      <button type="button" class="dropdown-holder" data-toggle="example-dropdown">Toggle Dropdown</button>
+*	          <div class="dropdown-pane double-column" id="example-dropdown" data-dropdown data-dropdown data-hover="true" data-hover-pane="true">
+*				<div class="row collapse">
+*					<div class="column medium-6">
+*					<ul class="submenu nav-level-1">
+*					<li><a href="">Menu item</a></li>
+*					<li><a href="">Menu item</a></li>
+*					<li><a href="">Menu item</a></li>
+*					<li class="parent">
+*						<ul class="submenu nav-level-2">
+*						<li><a href="">Secondary Menu item</a></li>
+*						<li><a href="">Secondary Menu item</a></li>
+*						<li><a href="">Secondary Menu item</a></li>
+*						<li><a href="">Secondary Menu item</a></li>
+*						<li><a href="">Secondary Menu item</a></li>
+*						</ul>	
+*					</li>
+*					<li><a href="">Menu item</a></li>
+*				</ul>		
+*				</div>
+*					<div class="column medium-6"><ul class="submenu nav-level-1">
+*					<li><a href="">Menu item</a></li>
+*					<li><a href="">Menu item</a></li>
+*					<li><a href="">Menu item</a></li>
+*					<li><a href="">Menu item</a></li>
+*					<li><a href="">Menu item</a></li>
+*				</ul>
+*				</div>
+*				</div>
+*	          </div>
 *	        </li>
-*	        <li><a href="#">Two</a></li>
-*	        <li><a href="#">Three</a></li>
+*	        <li>
+*	          <a href="#">Two</a>
+*	        </li>
+*	        <li>
+*	          <a href="#">Three</a>
+*	        </li>
 *	      </ul>
 *	    </div>
-*	    <div class="top-bar-right">
-*	      <ul class="menu">
-*	        <li><input type="search" placeholder="Search"></li>
-*	        <li><button type="button" class="button">Search</button></li>
+*	    <div class="top-bar-right" class="show-for-large">
+*	     	<ul class="menu">
+*	        <li>
+*	          <a href="">Drop Down</a>
+*	        </li>
+*	        <li>
+*	          <a href="#">Two</a>
+*	        </li>
+*	        <li>
+*	          <a href="#">Three</a>
+*	        </li>
 *	      </ul>
 *	    </div>
 *	  </div>
 *	</div>
+*
 **/
 
 
