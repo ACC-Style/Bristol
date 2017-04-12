@@ -31,9 +31,17 @@
 	padding:.25em .5em;
 }
 .top-bar-right{
-	.padding-right: .5em;
+	padding-right: .5em;
 	background-color: $primary-color;
-	&.secondary{background-color:$secondary-color;}
+	li:hover{
+			background-color:mix($primary-color,$black);
+		}
+	&.secondary{
+		background-color:$secondary-color;
+		li:hover{
+				background-color:mix($secondary-color,$black);
+			}
+	}
 }
 
 .top-bar-left{
@@ -191,7 +199,6 @@
 	line-height:normal;
 	padding: .5em ;
     clear: both;
-    background-image: url(../img/cream_pixels_altdark.png);
     background-color:$secondary-color;
     display:none;
     .question{margin:0;
@@ -219,6 +226,36 @@
     }
 }
 .top-bar input, .search-bar input{max-width:100%;}
+ul.comittee-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+li.commitee {
+    margin: .1em;
+    border: .1em solid grey;
+    padding: .8em;
+    position: relative;
+}
+li.commitee .name{
+   font-size:1.25em; 
+   font-weight:bold;
+   line-height:1;   
+}
+li.commitee a{
+    display:inline-block;
+    vertical-align:middle;
+    display: table-cell;
+}
+li.commitee i.fa.fa-angle-right {
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    margin-top: -.5em;
+    font-size: 1.5em;
+}
+
 /**
 * Top Bar:
 * `.top-bar` - This is "ACC Style" website headers.  These should be used on any product that has multi pages and navigation beyond 1 to 2 tabs

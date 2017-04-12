@@ -6,30 +6,12 @@
 		<div class="row">
 			<h1 class="column"><i class="fa fa-user"></i> &nbsp; Profile</h1></div>
 		<div class="row">
-				<div class="page-message callout warning no-margin">
-				  <a class="close-bar">
-				    <span class="close-button">
-				      <i class="fa fa-times" aria-hidden="true"></i>
-				    </span>
-				  </a>
-				  <div class="message-container">
-				    <div class="icon-holder">
-				      <span class="fa-stack fa-lg">
-				        <i class="fa fa-square-o fa-stack-2x"></i>
-				        <i class="fa fa-holder-dynamic fa-stack-1x"></i>
-				      </span>
-				    </div>
-				    <div class="message-holder">
-				      <h2>Your Profile has missing Data</h2>
-				      <p>Your profile must be complete and up to date to apply for any committees</p>
-				    </div>
-				  </div>
-				</div>
+		{% include "elements/page-message-missing-data" %}
 
 		</div>
 		<div class="row">
 		
-			<div class="column section-padding">
+			<div id="contactData" class="column section-padding">
 				<div class="card">
 					<div class="colored-paper info">
 						<i class="fa fa-envelope">&nbsp;</i><b class="no-vertical-margin">Contact Info</b>
@@ -47,7 +29,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="column section-padding">
+			<div id="proExperianceData" class="column section-padding">
 				<div class="card">
 					<div class="colored-paper info">
 						<i class="fa fa-envelope">&nbsp;</i><b class="no-vertical-margin">Professional Experiance</b>
@@ -65,7 +47,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="column section-padding">
+			<div id="publicationsData"  class="column section-padding">
 				<div class="card">
 					<div class="colored-paper warning">
 						<i class="fa fa-envelope">&nbsp;</i><b class="no-vertical-margin">Publications</b>
@@ -84,7 +66,7 @@
 				</div>
 			</div>
 			<div class="column section-padding">
-				<div class="card">
+				<div id="awardsData" class="card">
 					<div class="colored-paper warning">
 						<i class="fa fa-envelope">&nbsp;</i><b class="no-vertical-margin">Awards</b>
 					</div>
