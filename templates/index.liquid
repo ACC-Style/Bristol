@@ -1,5 +1,77 @@
 {% extends 'layouts/layout' %}
 {% block content %}
 
-<br>
+<div class="page paper-page">
+	<div class="page-wrapper">
+		<div class="row section-padding">
+			<div class="column small-12">
+				<div class="page-message callout warning no-margin">
+  <a class="close-bar">
+    <span class="close-button">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </span>
+  </a>
+  <div class="message-container">
+    <div class="icon-holder">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-holder-dynamic fa-stack-1x"></i>
+      </span>
+    </div>
+    <div class="message-holder">
+      <h2>Your Profile has missing Data</h2>
+      <p>Your profile must be complete and up to date to apply for any committees</p>
+    </div>
+  </div>
+</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="column small-12 medium-7 large-8">
+				<div class="card">
+					<div class="colored-paper">
+						<h1 class="no-vertical-margin">Welcome <div class="sub-line">Doctor Name Zeta</div></h1>
+					</div>
+					<div class="section-padding">
+						<p>
+						Lorem ipsum dolor sit amet, ullamcorper ultricies nec odio, ac neque eu ac accumsan sed felis. Quis ipsum quisque dapibus vitae rhoncus neque. Rutrum a. Ipsum in turpis donec mi, diam donec vel fusce platea, libero curabitur vestibulum. Vehicula vivamus justo rutrum dictum sed, lorem etiam sollicitudin. Sapien tellus tristique nullam, nunc laoreet odio, risus ac risus nunc lacus, malesuada nec mi nibh mauris, rutrum velit wisi quam. Neque at sem arcu turpis mauris. Quis ullamcorper et sit, elit erat, nascetur tellus integer tellus quisque phasellus. Consectetuer et sed, dolor consectetuer ac. Risus tellus suscipit, neque quam felis, rhoncus in egestas sapien tortor magna posuere. Odio eget sed aliquam nam nec.
+						
+						</p>
+					</div>
+					<div class="row">
+						<div class="medium-12 large-6 column">
+							<h2 class="with-underline">Profile At a Glance</h2>
+							{% include "elements/profile-glance-list" %}
+						</div>
+						<div class="medium-12 large-6 column">
+							<h2 class="with-underline">In Progress Applications</h2>
+							{% include "elements/progress-glance-none" %}
+						</div>
+						<div class="medium-12 large-6 column">
+							<h2 class="with-underline">Requests</h2>
+							{% include "elements/requests-glance-none" %}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="column small-12 medium-5 large-4">
+				<h4 class="single-line-height">Current Top 4 Applications
+				<span class="sub-line">Please Rank your top 4 from Most to Least Interested</span>
+				</h4>
+				{% include "elements/empty-slots" %}
+				{% include "elements/empty-slots" %}
+				{% include "elements/empty-slots" %}
+				{% include "elements/empty-slots" %}
+				<h6>Full List of Applications &amp; Nominations</h6>
+			</div>
+		</div>
+	</div>
+</div>
+<style>
+	.card.ghost h6 a.button{maring-top:-.5rem;}
+	.card.ghost + .card.ghost{ margin-top:.25rem; }
+	.single-line-height{line-height: 1;}
+</style>
 {% endblock %}
+
+{% comment %}<img src="output/abstract-q-c-640-480-1.jpg">{% endcomment %}

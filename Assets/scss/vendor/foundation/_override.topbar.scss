@@ -133,7 +133,7 @@
 
 }
 #siteMenu{
-	i.fa{margin-top:-1px; margin-bottom:-1px;}
+	i.fa{margin-top:-4px}
 	.top-bar-left,.top-bar-right{
 		width:100%;
 		padding:0;
@@ -141,14 +141,17 @@
 		// @include bp(lg){width:auto;}
 		@include bp(lg){
 			width:auto;
-			padding:0 .5em;
 		}
 	}
 }
 .top-bar{
 	a,button{
 		color:white;
+
 	}
+	.title{
+			background-color: grey(60);
+		}
 	.dropdown-pane{
 		margin-top: 1px;
 		padding: 0;
@@ -192,17 +195,25 @@
     background-color:$secondary-color;
     display:none;
     .question{margin:0;
-    	input{    
-    		background: grey(28);
+    	select,input,.button,button{
+    		border: 1px solid grey(30);
+    	}
+    	select,option{    
+    		background: grey(50);
 		    border-radius: 6px 0 0 6px;
-		    border: grey(20) 1px solid;
+		    color:#fff;
+		    font-weight: bold;
+		    font-size: ms(0);
+		    @include font-bold();
 		}
-		.button{
+		input{
+			background: grey(10);
+		}
+		.button, button{
 			border-radius: 0 6px 6px 0;
 			background-color: grey(50);
 			vertical-align: text-top;
 			padding: 0;
-			border: 1px solid grey(20);
 		}
 
     }
