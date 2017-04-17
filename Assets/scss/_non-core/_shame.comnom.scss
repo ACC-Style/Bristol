@@ -2,34 +2,44 @@
 .card.ghost + .card.ghost{ margin-top:.25rem; }
 .single-line-height{line-height: 1;}
 
-li.committee {
+.committee {
     margin: .1em;
-    
     padding: .8em;
     position: relative;
-    &:hover{
-    	background-color:grey(10);
-    	i.fa.fa-angle-right:before{content: "\f0da";}
+    a &
+    { &:hover{
+        background-color:grey(10);
+        i.fa.fa-angle-right:before{content: "\f0da";}
+    }}
+    + .committee{
+        border-top: .1em solid grey(20);
+    }
+    .name{
+       font-size:1.25em; 
+       font-weight:bold;
+       line-height:1;
+    }   
+    a{
+        display:inline-block;
+        vertical-align:middle;
+        display: table-cell;
+    }
+    i.fa.fa-angle-right {
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        margin-top: -.5em;
+        font-size: 1.5em;
+    }
+    .flag{
+        background-color:grey(30);
+        display: block;
     }
 }
-li.committee + li.committee{
-    border-top: .1em solid grey(20);
-}
-li.committee .name{
-   font-size:1.25em; 
-   font-weight:bold;
-   line-height:1;   
-}
-li.committee a{
-    display:inline-block;
-    vertical-align:middle;
-    display: table-cell;
-}
-li.committee i.fa.fa-angle-right {
-    height: 100%;
-    position: absolute;
-    top: 50%;
-    right: 5px;
-    margin-top: -.5em;
-    font-size: 1.5em;
+
+.rank-controller{}
+.rank.button{
+    font-size: ms(-4);
+    height: 2.5em;
 }
