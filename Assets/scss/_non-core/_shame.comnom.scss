@@ -1,6 +1,6 @@
 .card.ghost h6 a.button{maring-top:-.5rem;}
 .card.ghost + .card.ghost{ margin-top:.25rem; }
-.single-line-height{line-height: 1;}
+.single-line-height{line-height: 1 !important;}
 
 .committee {
     margin: .1em;
@@ -14,11 +14,26 @@
     + .committee{
         border-top: .1em solid grey(20);
     }
+    .name,.type,.position,.avalablity{
+        @include font();
+        font-size:ms(0);
+        line-height: 1;
+        padding:.25rem 1rem; 
+    }
     .name{
-       font-size:1.25em; 
-       font-weight:bold;
+       font-size:ms(2); 
+       @include font-slab();
        line-height:1;
+       display: block;
+       padding:.5rem 1rem; 
     }   
+    .type{
+        display: block;
+    }
+    .position,.avalablity{
+        font-size: ms(-1);
+        @include font-italic();
+    }
     a{
         display:inline-block;
         vertical-align:middle;
@@ -33,13 +48,68 @@
         font-size: 1.5em;
     }
     .flag{
+        @include font-slab-bold();
+        font-size: ms(-3);
         background-color:grey(30);
-        display: block;
+        display: inline;
+        width: auto;
+        border-radius:$global-border-radius;
+        border:1px grey(40) solid;
+        text-align: left;
+        padding:.25em 1em .25em 1em;
+        color:$white;
+        &.nominated{background-color: $scrub-purple}
+        &.applied{background-color: $scrub-green;}
+        margin: -1px -2px 0;
+        width: calc(100% + 4px);
+        @include bp(md){margin-left: -2px;}
     }
 }
 
-.rank-controller{}
-.rank.button{
-    font-size: ms(-4);
-    height: 2.5em;
+.rank-controller{
+   &.row.collapse{ 
+    margin:-1px -1px -1px 0px;}
+    border:1px solid grey(40);
+    background-color:grey(40);
+    -webkit-box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.33);
+    -moz-box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.33);
+    box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.33);
+    @include bp(md){
+        margin: -1px -1px -1px 0;
+        -webkit-box-shadow: inset 5px 0px 5px 0px rgba(0,0,0,0.33);
+        -moz-box-shadow: inset 5px 0px 5px 0px rgba(0,0,0,0.33);
+        box-shadow: inset 5px 0px 5px 0px rgba(0,0,0,0.33);
+    }
+}
+.rank{ 
+    .button{
+        font-size: ms(-4);
+        background-color:transparent;
+        // background-image: url(../img/billie-holiday.png);
+        border:0 none transparent;
+        &:hover{
+             background-color:rgba(0, 0, 0, 0.33);
+             color:$warning-color;
+        }
+    }
+   + .rank{
+        border-left: dotted grey(60) thin;
+    @include bp(md){
+        border-left:0;
+        border-top: dotted grey(60) thin;
+    }
+   } 
+}
+.slots-area{
+    overflow: hidden;
+    border-radius:$global-border-radius *2;
+}
+
+.slot{
+    margin-bottom:.5rem;
+    border:1px solid grey(30);
+}
+.slot .committee{
+    padding:0;
+    margin:0 1px;
 }
