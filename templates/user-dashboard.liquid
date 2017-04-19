@@ -1,0 +1,80 @@
+{% extends 'layouts/layout' %}
+{% block content %}
+
+<div class="page paper-page">
+	<div class="page-wrapper">
+{% comment %}		<div class="row">
+			<div class="column small-12">
+				{% include "elements/page-message-deadline" %}
+			</div>
+		</div>
+		<div class="row section-padding">
+			<div class="column small-12">
+				{% include "elements/page-message-missing-data" %}
+			</div>
+		</div>{% endcomment %}
+		<div class="row">
+			<div class="column">
+				<h1 class="no-vertical-margin">Welcome <small class="strong">Doctor Name Zeta</small></h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="column small-12 medium-7 large-8">
+				<div class="card">
+					<div class="section-padding">
+						<p>
+						Lorem ipsum dolor sit amet, ullamcorper ultricies nec odio, ac neque eu ac accumsan sed felis. Quis ipsum quisque dapibus vitae rhoncus neque. Rutrum a. Ipsum in turpis donec mi, diam donec vel fusce platea, libero curabitur vestibulum. Vehicula vivamus justo rutrum dictum sed, lorem etiam sollicitudin. Sapien tellus tristique nullam, nunc laoreet odio, risus ac risus nunc lacus, malesuada nec mi nibh mauris, rutrum velit wisi quam. Neque at sem arcu turpis mauris. Quis ullamcorper et sit, elit erat, nascetur tellus integer tellus quisque phasellus. Consectetuer et sed, dolor consectetuer ac. Risus tellus suscipit, neque quam felis, rhoncus in egestas sapien tortor magna posuere. Odio eget sed aliquam nam nec.
+						
+						</p>
+					</div>
+					<div class="row">
+						<div class="medium-12 large-6 column">
+							<h2 class="with-underline">Profile At a Glance</h2>
+							{% include "elements/profile-glance-list" %}
+						</div>
+						<div class="medium-12 large-6 column">
+							<h2 class="with-underline">In Progress Applications</h2>
+							{% include "elements/progress-glance-none" %}
+						</div>
+						<div class="medium-12 large-6 column">
+							<h2 class="with-underline">Requests</h2>
+							{% include "elements/requests-glance-none" %}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="column small-12 medium-5 large-4">
+				
+				<div class="slots-area card">
+					<div class="colored-paper">
+						<h4 class="text-center no-vertical-margin">Top Interested Committees
+					<div class="sub-line">Active Application &amp; Nominations</div>
+				</h4>
+					</div>
+					<div class="colored-paper info">
+						<h5 class=" text-center">Top 4 Commitees<div class="sub-line single-line-height">Please Rank your top 4 from Most to Least Interested</div>
+					</h5>
+					</div>					
+					<div class="slots top-4 section-padding">
+						{% include "elements/filled-slot-nominated" %}
+						{% include "elements/filled-slot-applied" %}
+						{% include "elements/empty-slot" %}
+						{% include "elements/empty-slot" %}
+					</div>
+					<div class="colored-paper info">
+						<h6 class="text-center no-vertical-margin">Committees of Less Interest
+						<div class="sub-line single-line-height"></div>
+						</h6>
+					</div>
+					<div class="slots section-padding">
+						{% include "elements/filled-slot-nominated" %}
+					</div>
+				</div>
+				<a class="link">Hide Full List of Applications &amp; Nominations to Commitees</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% comment %}<img src="output/abstract-q-c-640-480-1.jpg">{% endcomment %}
