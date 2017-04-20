@@ -23,64 +23,42 @@
 		</div>
 		<div class="row">
 			<div class="column">
-				<table class="table banded">
+				<table id="application" class="table banded desaturate">
 					<thead>
 						<tr>
-							<td rowspan="2" class="info">Status</td>
-							<td rowspan="2">Name</td>
-							<td colspan="5" class="text-center info">Application Content</td>
-							<td rowspan="2" class="text-right">Actions</td>
+							<td colspan="2"></td>
+							<td colspan="5" class="text-center disabled"><small class="light">Application Content</small></td>
+							<td colspan="1"></td>
 						</tr>
 						<tr>
-							
-							<td class="text-center"><span>Exp</span></td>
-							<td class="text-center"><span>Pubs</span></td>
-							<td class="text-center"><span>Awards</span></td>
-							<td class="text-center"><span>Comp</span></td>
-							<td class="text-center"><span>Letter Ref</span></td>
+							<th>Name</th>
+							<th>Type</th>
+							<th class="text-center"><span>Exp</span></th>
+							<th class="text-center"><span>Pubs</span></th>
+							<th class="text-center"><span>Awards</span></th>
+							<th class="text-center"><span>Comp</span></th>
+							<th class="text-center"><span>Letter</span></th>
+							<th class="text-right"></th>
 							
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td class="success">Reviewed</td>
-							<td><a class="link" href="">dr zeta gamma</a></td>
-							<td class="text-center"><i class="fa fa-check"></i></td>
-							<td class="text-center"><i class="fa fa-check"></i></td>
-							<td class="text-center"><i class="fa fa-check"></i></td>
-							<td class="text-center"><i class="fa fa-check"></i></td>
-							<td class="text-center"><i class="fa fa-check"></i></td>
-							<td class="text-right">
-								<a href="" class="button secondary tiny radius">Other Actions</a>
-								<a href="" class="button tiny radius">Review</a>
-							</td>
-						</tr>
-						<tr>
-							<td class="highlighted">Submitted</td>
-							<td><a class="link" href="">dr zeta gamma</a></td>
-							<td class="text-center"><i class="fa fa-check"></i></td>
-							<td class="text-center"><i class="fa fa-check"></i></td>
-							<td class="text-center"><i class="fa fa-check"></i></td>
-							<td class="text-center"><i class="fa fa-check"></i></td>
-							<td class="text-center"><i class="fa fa-check"></i></td>
-							<td class="text-right">
-								<a href="" class="button secondary tiny radius">Other Actions</a>
-								<a href="" class="button tiny radius">Review</a>
-							</td>
-						</tr>
-						<tr>
-							<td class="disabled">Draft</td>
-							<td><a class="link" href="">dr zeta gamma</a></td>
-							<td class="text-center"><i class="fa fa-check"></i></td>
-							<td class="text-center"><i class="fa fa-check"></i></td>
-							<td class="text-center"><i class="fa fa-check"></i></td>
-							<td class="text-center"><i class="fa fa-check"></i></td>
-							<td class="text-center"><i class="fa fa-check"></i></td>
-							<td class="text-right">
-								<a href="" class="button disabled secondary tiny radius">Other Actions</a>
-								<a href="" class="button disabled tiny radius">Review</a>
-							</td>
-						</tr>
+						<tr class="seperator info">
+							<td colspan="8">Submitted <a href="	" class="float-right link">hide section</a></td>
+						</tr>{% include 'admin/elements/application-rows' %}
+						<tr class="seperator disabled">
+							<td colspan="8">Started/Draft <a href="	" class="float-right link">hide section</a></td>
+						</tr>{% include 'admin/elements/application-rows' %}
+						<tr class="seperator warning">
+							<td colspan="8">Pending Revision <a href="	" class="float-right link">hide section</a></td>
+						</tr>{% include 'admin/elements/application-rows' %}						
+						<tr class="seperator success">
+							<td colspan="8">Reviewed <a href="	" class="float-right link">hide section</a></td>
+						</tr>{% include 'admin/elements/application-rows' %}
+						<tr class="seperator error">
+							<td colspan="8">Rejected <a href="	" class="float-right link">hide section</a></td>
+						</tr>						
+						{% include 'admin/elements/application-rows' %}
 					</tbody>
 				</table>
 

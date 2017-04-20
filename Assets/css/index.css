@@ -12249,10 +12249,6 @@ STATE TRUMPING CODE
   max-width: 100%;
 }
 
-.table.banded thead {
-  border-bottom: 2px solid #00386b;
-}
-
 .card.ghost h6 a.button {
   maring-top: -.5rem;
 }
@@ -12317,6 +12313,20 @@ a .committee:hover i.fa.fa-angle-right:before {
   margin-top: -.5em;
   font-size: 1.5em;
 }
+.committee .marker {
+  flex: 0 1 5em;
+  display: flex;
+  flex-flow: row wrap;
+  height: 100%;
+}
+.committee span.counter {
+  background: grey;
+  color: white;
+  flex: 1 100%;
+}
+.committee .content {
+  flex: 0 1 auto;
+}
 .committee .flag {
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
   font-weight: 700;
@@ -12324,13 +12334,9 @@ a .committee:hover i.fa.fa-angle-right:before {
   background-color: #b3b3b3;
   display: inline;
   width: auto;
-  border-radius: 6px;
-  border: 1px #999999 solid;
   text-align: left;
   padding: .25em 1em .25em 1em;
   color: #FFF;
-  margin: -1px -2px 0;
-  width: calc(100% + 4px);
 }
 .committee .flag.nominated {
   background-color: #7d5891;
@@ -12395,6 +12401,11 @@ a .committee:hover i.fa.fa-angle-right:before {
 .slot .committee {
   padding: 0;
   margin: 0 1px;
+}
+
+#application td.highlighted {
+  border-right: 0px none;
+  border-left: 0px none;
 }
 
 /*# sourceMappingURL=index.css.map */
