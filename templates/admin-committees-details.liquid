@@ -1,0 +1,104 @@
+{% extends 'layouts/admin-layout' %}
+{% block content %}
+<div class="paper-page page">
+    <div class="section-nav back">
+        <a href="admin-committees-dashboard.html">
+            <div class="circle">
+                <i class="fa fa-holder-dynamic">
+                </i>
+            </div>
+            <div class="text">
+                Back to Committee Dashboard
+            </div>
+        </a>
+    </div>
+    <div class="page-wrapper">
+        <div class="row ">
+            <div class="column">
+                <h1 class="no-vertical-margin">
+                    Committee Name ABC
+                </h1>
+            </div>
+        </div>
+    </div>
+    <nav class="overlap nav">
+        <ul class="tabs ">
+            <li class="tab-title is-active">
+                <a class="home " href="admin-committees-details.html">
+                    <i class="fa fa-holder">
+                    </i>
+                    Committee Details
+                </a>
+            </li>
+            <li class="tab-title ">
+                <a href="admin-committees.html">
+                    Current Nominees
+                </a>
+            </li>
+        </ul>
+    </nav>
+             <div class="content page-wrapper">
+                <div class="row">
+                    <div class="column medium-6 large-8">
+                        <div class="card">
+                            <h2>
+                                Charge
+                            </h2>
+                            <p>
+                                {% include 'elements/lorem' %}
+                            </p>
+                            <h2>
+                                Focus
+                            </h2>
+                            <p>
+                                {% include 'elements/lorem' %}
+                            </p>
+                            <h2>Nominees</h2>
+                            			<table class="table striped desaturate">
+
+	<tbody>	
+		<tr class="highlighted">
+			<td>Elegible</td>
+			<td>3</td>
+		</tr>
+		<tr class="warning">
+			<td><i class="fa fa-question-circle"></i> Unknown</td>
+			<td>2</td>
+		</tr>
+		<tr class="info">
+			<td>Inelegible</td>
+			<td>2</td>
+		</tr>
+		</tbody></table>
+                        </div>
+                    </div>
+                    <div class="column medium-6 large-4">
+                        <div class="card">
+                            <div class="colored-paper">
+                                <h4 class="no-vertical-margin">
+                                    Current Members
+                                </h4>
+                            </div>
+                            <div class="section-padding">
+                                {% include "sections/current-members" %}
+                            </div>
+                            <div class="colored-paper">
+                                <h4 class="no-vertical-margin">
+                                    Available Positions
+                                </h4>
+                            </div>
+                            <div class="section-padding">
+                                {% include "elements/open-position" %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+</div>
+
+{% endblock %}
+
+{% comment %}
+<img src="output/abstract-q-c-640-480-1.jpg">
+    {% endcomment %}
+</img>
