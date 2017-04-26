@@ -8579,6 +8579,32 @@ input:checked + label > .switch-inactive {
   z-index: 100;
 }
 
+.switch.rotate .switch-paddle {
+  height: 4rem;
+  width: 2rem;
+}
+.switch.rotate .switch-active, .switch.rotate .switch-inactive {
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+}
+.switch.rotate .switch-active {
+  top: 0;
+}
+.switch.rotate.small .switch-paddle, .question-grid-based.small-switches .rotate.switch .switch-paddle {
+  height: 3.5rem;
+  width: 1.75rem;
+}
+.switch.rotate.tiny .switch-paddle, .question-grid-based.tiny-switches .rotate.switch .switch-paddle {
+  height: 3rem;
+  width: 1.5rem;
+}
+.switch.rotate input:checked ~ .switch-paddle::after {
+  top: 55%;
+  left: 50%;
+  transform: translatex(-50%);
+}
+
 /**
 * Switch (Foundation Override): 
 * `.switch` - Switches are a more visible and more touchable versions of checkbox and radio buttons. 
@@ -8662,7 +8688,7 @@ input:checked + label > .switch-inactive {
 *   <label  class="switch-value" for="radius-checkbox">Checkbox button made with `.radius`</label>
 *   </div>
 *   <div class="switch-input-space column small-6">
-*   <div class="switch checkbox">
+*   <div class="switch checkbox rotate">
 *   <input class="switch-input" id="checkbox-checkbox"  type="checkbox" value="false">
 *   <label class="switch-paddle" for="checkbox-checkbox">
 *   <span class="show-for-sr">Do you like me?</span>

@@ -120,7 +120,7 @@
             </div>
         </aside>
         <article class="split-content page paper-page" style="background:url('Assets/img/textured_paper.png') repeat, url('Assets/img/bottom-shade.png') bottom repeat-x, url('Assets/img/top-shade.png') top repeat-x">
-            <div class="page-wrapper">
+            <div class="page-wrapper" style="max-width: 100%">
                 <div class="row column">
                     <div class="card">
                         <div class="colored-paper">
@@ -154,23 +154,30 @@
                                         {% include 'elements/lorem' %}
                                     </p>
                                 </div>
+                                <div class="section-padding content-padding ">
+                                    <h3>
+                                        Competency
+                                    </h3>
+                                    <div class="row">
+                                       <div class="column">
+                                            <b>Leadership</b>
+                                        <div class="float-right">
+                                            Self:&nbsp;<strong>4.3</strong>/Peer:&nbsp;<strong>2.6</strong>
+                                        </div>
+                                       </div>
+                                        <div class="column">
+                                            <b>Technical</b>
+                                        <div class="float-right">
+                                            Self:&nbsp;<strong>4.9</strong>/Peer:&nbsp;<strong>4.6</strong>
+                                        </div>
+                                       </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="column medium-6">
                                 <div class="seciton-padding">
                                     <div class="h3">
-                                        <b>
-                                            Rate:
-                                        </b>
-                                        <i class="fa fa-star">
-                                        </i>
-                                        <i class="fa fa-star">
-                                        </i>
-                                        <i class="fa fa-star">
-                                        </i>
-                                        <i class="fa fa-star-o">
-                                        </i>
-                                        <i class="fa fa-star-o">
-                                        </i>
+                                        {% include 'elements/stars'%}
                                     </div>
                                     <h3>
                                         Comment
@@ -182,6 +189,7 @@
                                     </a>
                                     <h3>
                                         Committee Ranking
+                                        
                                     </h3>
                                     <nav class="nav nav-list nav-checklist">
                                         <ul>
@@ -222,40 +230,33 @@
                                             Applicaiton Details
                                         </a>
                                     </li>
-                                    <li class="">
+                                    <li class="hide-for-large">
                                         <a>
-                                            Comments & Ratings
+                                            Comments &amp; Ratings
                                         </a>
                                     </li>
+                                    <li><a href="">Current Appointments</a></li>
                                 </ul>
                             </nav>
                         </div>
-                        <div>
-                            <div class="section-padding">
-                                <h3>
-                                    Professional Experiance
-                                </h3>
-                                <p>
-                                    {% include 'elements/lorem' %}
-                                </p>
+                        <div class="row">
+                            <div class="columns large-6">
+                            <h2 class="with-underline show-for-large">Application Details</h2>
+                            {% include "admin/sections/com/application-details"%}
+                            <h3>Disclosures</h3>
+                            <span class="label success radius"><i class="fa fa-check"></i> Up to date</span> &nbsp;
+                            <a href=""><i class="fa fa-file"></i>&nbsp;View Disclosures</a>
                             </div>
-                            <div class="section-padding">
-                                <h3>
-                                    Publications
-                                </h3>
-                                <p>
-                                    {% include 'elements/lorem' %}
-                                </p>
-                            </div>
-                            <div class="section-padding">
-                                <h3>
-                                    Awards
-                                </h3>
-                                <p>
-                                    {% include 'elements/lorem' %}
-                                </p>
-                            </div>
+                            <div class="columns large-6 show-for-large">
+                            <h2 class="with-underline show-for-large">
+                            Comments &amp; Ratings
+                                <div class="float-right">
+                                    2.4 <i class="fa fa-star"></i>
+                                </div>
+                            </h2>
+                            {% include "admin/sections/com/application-comments"%}</div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
