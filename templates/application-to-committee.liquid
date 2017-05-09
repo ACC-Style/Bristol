@@ -3,29 +3,29 @@
 <div class="mobile-offcanvas-wrapper">
 	<section class="split-layout medium reverse">
 		<aside class="split-sidebar">
-			<div class="row">
-				<div class="column">
-					<h2>
-						Open Committees
-					</h2>
-					<div class="question section-padding">
-						<div class="input-holder">
-							<div class="input-space column small-8 medium-9">
-								<input name="" type="text">
-								</input>
-							</div>
-							<div class="input-space column small-4 medium-3">
-								<button class="button expanded">
-									<i class="fa fa-search">
-									</i>
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
+			<div class="content-padding">
+				<div class="search-bar colored-paper info display-block">
+            <div class="question">
+                <div class="input-holder">
+                    
+                    <div class="input-space column small-6 medium-7 large-8 ">
+                        <input name="" type="text">
+                        
+                    </div>
+                    <div class="input-space column small-6 medium-5 large-4 ">
+                        <button class="button expanded small condensable">
+                             
+                             <span class="condense ">Search</span>
+                             <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 			</div>
 			<div class="">
-				<nav class="nav-list small">
+				<nav class="small">
 					<ul class="comittee-list">
 						{% include "elements/comittee-List-item" %}
 						{% include "elements/comittee-List-item" %}
@@ -228,6 +228,12 @@
 			</div>
 		</article>
 	</section>
+</div>
+<div class="reveal large no-padding" id="comm-modal" data-reveal>
+  {% include "sections/committee-overview" %}
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
 {% endblock %}
 
