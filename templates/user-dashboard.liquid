@@ -22,24 +22,30 @@
 			<div class="column small-12 medium-7 large-8">
 				<div class="card">
 					<div class="section-padding">
+						<h3 class="no-vertical-margin">Welcome Intructions</h3>
 						<p>
 						Lorem ipsum dolor sit amet, ullamcorper ultricies nec odio, ac neque eu ac accumsan sed felis. Quis ipsum quisque dapibus vitae rhoncus neque. Rutrum a. Ipsum in turpis donec mi, diam donec vel fusce platea, libero curabitur vestibulum. Vehicula vivamus justo rutrum dictum sed, lorem etiam sollicitudin. Sapien tellus tristique nullam, nunc laoreet odio, risus ac risus nunc lacus, malesuada nec mi nibh mauris, rutrum velit wisi quam. Neque at sem arcu turpis mauris. Quis ullamcorper et sit, elit erat, nascetur tellus integer tellus quisque phasellus. Consectetuer et sed, dolor consectetuer ac. Risus tellus suscipit, neque quam felis, rhoncus in egestas sapien tortor magna posuere. Odio eget sed aliquam nam nec.
 						
 						</p>
 					</div>
 					<div class="row">
-						<div class="medium-12 large-6 column">
-							<h2 class="with-underline">Profile At a Glance</h2>
-							{% include "elements/profile-glance-list" %}
+						<div class="column">
+							<h2 class="with-underline">Your Application</h2>
+						{% include "elements/progress-glance-none" %}
 						</div>
-						<div class="medium-12 large-6 column">
-							<h2 class="with-underline">In Progress Applications</h2>
-							{% include "elements/progress-glance-none" %}
-						</div>
-						<div class="medium-12 large-6 column">
+					</div>
+					<div class="row">
+						<div class="column">
 							<h2 class="with-underline">Requests</h2>
 							{% include "elements/requests-glance-none" %}
 						</div>
+						{% comment %}
+							<div class="medium-12 large-6 column">
+								<h2 class="with-underline">Profile At a Glance</h2>
+								{% include "elements/profile-glance-list" %}
+							</div>
+						{% endcomment %}
+						
 					</div>
 				</div>
 			</div>
@@ -52,7 +58,7 @@
 				</h4>
 					</div>
 					<div class="colored-paper info">
-						<h5 class=" text-center">Top 4 Commitees<div class="sub-line single-line-height">Please Rank your top 4 from Most to Least Interested</div>
+						<h5 class=" text-center">Commitees to be Considered for<div class="sub-line single-line-height">Please sort your committees in rank of interest</div>
 					</h5>
 					</div>					
 					<div class="slots top-4 section-padding">
@@ -62,7 +68,7 @@
 						{% include "elements/empty-slot" %}
 					</div>
 					<div class="colored-paper info">
-						<h6 class="text-center no-vertical-margin">Committees of Less Interest
+						<h6 class="text-center no-vertical-margin">Committees Not To Be Considered For
 						<div class="sub-line single-line-height"></div>
 						</h6>
 					</div>
