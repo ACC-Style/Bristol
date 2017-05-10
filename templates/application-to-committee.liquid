@@ -1,239 +1,244 @@
 {% extends 'layouts/layout' %}
 {% block content %}
 <div class="mobile-offcanvas-wrapper">
-	<section class="split-layout medium reverse">
-		<aside class="split-sidebar">
-			<div class="content-padding">
-				<div class="search-bar colored-paper info display-block">
-            <div class="question">
-                <div class="input-holder">
-                    
-                    <div class="input-space column small-6 medium-7 large-8 ">
-                        <input name="" type="text">
-                        
-                    </div>
-                    <div class="input-space column small-6 medium-5 large-4 ">
-                        <button class="button expanded small condensable">
-                             
-                             <span class="condense ">Search</span>
-                             <i class="fa fa-search"></i>
-                        </button>
+    <section class="split-layout medium reverse">
+        <aside class="split-sidebar">
+            <div class="content-padding">
+                <div class="search-bar colored-paper info display-block">
+                    <div class="question">
+                        <div class="input-holder">
+                            <div class="input-space column small-6 medium-7 large-8 ">
+                                <input name="" type="text">
+                                </input>
+                            </div>
+                            <div class="input-space column small-6 medium-5 large-4 ">
+                                <button class="button expanded small condensable">
+                                    <span class="condense ">
+                                        Search
+                                    </span>
+                                    <i class="fa fa-search">
+                                    </i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-			</div>
-			<div class="">
-				<nav class="small">
-					<ul class="comittee-list">
+            <div class="">
+                <nav class="small">
+                    <ul class="comittee-list">
+                        {% include "elements/comittee-List-item" %}
 						{% include "elements/comittee-List-item" %}
 						{% include "elements/comittee-List-item" %}
 						{% include "elements/comittee-List-item" %}
 						{% include "elements/comittee-List-item" %}
 						{% include "elements/comittee-List-item" %}
-						{% include "elements/comittee-List-item" %}
-					</ul>
-				</nav>
-			</div>
-			{% include "elements/pagination-bottom" %}
-		</aside>
-		<article class="split-content page with-group-sections">
-			<div class="page-wrapper">
-				<div class="row column section-padding">
-					<h1 class="no-vertical-margin with-underline single-line-height">
-						Application
-						<span class="sub-line">
-							Dr.  Simon Sims, FACC | ssims@umd.org
-						</span>
-					</h1>
-				</div>
-				<div class="row column">
-					<div>
-						<h2 class="no-vertical-margin">
-							Statement of Interest
-						</h2>
-					</div>
-					<div class="card">
-						<div class="row column">
-							<div class="question">
-								<div class="label-holder">
-									<label for="">
-										Generic Statement for all interested committees
-									</label>
-								</div>
-								<div class="input-holder">
-									<div class="input-space">
-										<textarea id="" name="" rows="6">
-										</textarea>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row column group-divide">
-							<div class="column small-6 medium-7 large-8">
-								<div class="switch-input-space">
-									<div class="switch checkbox tiny">
-										<input class="switch-input" id="checkbox-checkbox" type="checkbox" value="false">
-											<label class="switch-paddle" for="checkbox-checkbox">
-												<span class="show-for-sr">
-													Do you like me?
-												</span>
-												<span aria-hidden="true" class="switch-active">
-													<i class="fa fa-holder">
-													</i>
-												</span>
-												<span aria-hidden="true" class="switch-inactive">
-													<i class="fa fa-holder">
-													</i>
-												</span>
-											</label>
-										</input>
-									</div>
-									<label class="switch-value" for="checkbox-checkbox">
-										Use the Statement or Interest from above
-									</label>
-								</div>
-								<div class="row column">
-									<textarea cols="30" id="" name="" rows="5">
-									</textarea>
-								</div>
-							</div>
-							<div class="column small-6 medium-5 large-4">
-								<div class="slot">
-									{% include 'elements/data-committee' %}
-								</div>
-							</div>
-						</div>
-						{% include 'elements/statement-interest-check' %}
+                    </ul>
+                </nav>
+            </div>
+            {% include "elements/pagination-bottom" %}
+        </aside>
+        <article class="split-content">
+            <div class="paper-page page">
+                <div class="page-wrapper">
+                    <div class="row column section-padding">
+                        <h1 class="no-vertical-margin with-underline single-line-height">
+                            Application
+                            <span class="sub-line">
+                                Dr.  Simon Sims, FACC | ssims@umd.org
+                            </span>
+                        </h1>
+                    </div>
+                    <div class="row column">
+                        <div>
+                            <h2 class="no-vertical-margin">
+                                Statement of Interest
+                            </h2>
+                        </div>
+                        <div class="card">
+                            <div class="row column">
+                                <div class="question">
+                                    <div class="label-holder">
+                                        <label for="">
+                                            Generic Statement for all interested committees
+                                        </label>
+                                    </div>
+                                    <div class="input-holder">
+                                        <div class="input-space">
+                                            <textarea id="" name="" rows="6">
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row column group-divide">
+                                <div class="column small-6 medium-7 large-8">
+                                    <div class="switch-input-space">
+                                        <div class="switch checkbox tiny">
+                                            <input class="switch-input" id="checkbox-checkbox" type="checkbox" value="false">
+                                                <label class="switch-paddle" for="checkbox-checkbox">
+                                                    <span class="show-for-sr">
+                                                        Do you like me?
+                                                    </span>
+                                                    <span aria-hidden="true" class="switch-active">
+                                                        <i class="fa fa-holder">
+                                                        </i>
+                                                    </span>
+                                                    <span aria-hidden="true" class="switch-inactive">
+                                                        <i class="fa fa-holder">
+                                                        </i>
+                                                    </span>
+                                                </label>
+                                            </input>
+                                        </div>
+                                        <label class="switch-value" for="checkbox-checkbox">
+                                            Use the Statement or Interest from above
+                                        </label>
+                                    </div>
+                                    <div class="row column">
+                                        <textarea cols="30" id="" name="" rows="5">
+                                        </textarea>
+                                    </div>
+                                </div>
+                                <div class="column small-6 medium-5 large-4">
+                                    <div class="slot">
+                                        {% include 'elements/data-committee' %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% include 'elements/statement-interest-check' %}
 						{% include 'elements/statement-interest-disabled' %}
 						{% include 'elements/statement-interest-disabled' %}    
 						{% include 'elements/statement-interest-disabled' %}
 						{% include 'elements/statement-interest-disabled' %}
-					</div>
-				</div>
-				<div class="row column page higlighted"><h2>
-					NCDR QUESTION
-				</h2>
-				<div class="card">
-					<div class="row column">
-						Question 1
-					</div>
-				</div>
-				</div>
-				
-				<div class="row column">
-					<h2>
-						Profile Information
-					</h2>
-				</div>
-				<div class="row column">
-					<div class="card">
-						<div class="colored-paper">
-							<h3 class="no-vertical-margin">
-								Professional Experiance
-							</h3>
-						</div>
-						<div class="section-padding">
-							<textarea cols="30" id="" name="" rows="10">
-							</textarea>
-						</div>
-					</div>
-					<div class="card">
-						<div class="colored-paper">
-							<h3 class="no-vertical-margin">
-								Publications
-							</h3>
-						</div>
-						<div class="section-padding">
-							<textarea cols="30" id="" name="" rows="10">
-							</textarea>
-						</div>
-					</div>
-					<div class="card">
-						<div class="colored-paper">
-							<h3 class="no-vertical-margin">
-								Honor Awards
-							</h3>
-						</div>
-						<div class="section-padding">
-							<textarea cols="30" id="" name="" rows="10">
-							</textarea>
-						</div>
-					</div>
-					<div class="card">
-						<div class="colored-paper">
-							<h3 class="no-vertical-margin">
-								Compentencies
-								<span class="sub-line">
-									Please select your three strongest compentencies
-								</span>
-							</h3>
-						</div>
-						<div class="row section-padding">
-												<div class="column "> <div class="callout warning">
-								<h4><i class="fa warning"></i> You must only select 3</h4>
-							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="paper-page page highlighted">
+                <div class="page-wrapper">
+                    <div class="row column">
+                        <h2>
+                            Digital CV
+                        </h2>
+                    </div>
+                    <div class="row column">
+                        <div class="card">
+                            <div class="colored-paper">
+                                <h3 class="no-vertical-margin">
+                                    Professional Experiance
+                                </h3>
+                            </div>
+                            <div class="section-padding">
+                                <textarea cols="30" id="" name="" rows="5">
+                                </textarea>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="colored-paper">
+                                <h3 class="no-vertical-margin">
+                                    Publications
+                                </h3>
+                            </div>
+                            <div class="section-padding">
+                                <textarea cols="30" id="" name="" rows="5">
+                                </textarea>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="colored-paper">
+                                <h3 class="no-vertical-margin">
+                                    Honor Awards
+                                </h3>
+                            </div>
+                            <div class="section-padding">
+                                <textarea cols="30" id="" name="" rows="5">
+                                </textarea>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="colored-paper">
+                                <h3 class="no-vertical-margin">
+                                    Compentencies
+                                    <span class="sub-line">
+                                        Please select your three strongest compentencies
+                                    </span>
+                                </h3>
+                            </div>
+                            <div class="row section-padding">
+                                <div class="column ">
+                                    <div class="callout warning">
+                                        <h4>
+                                            <i class="fa warning">
+                                            </i>
+                                            You must only select 3
+                                        </h4>
+                                    </div>
+                                    {% include 'elements/Comp-check'%}
 							{% include 'elements/Comp-check'%}
 							{% include 'elements/Comp-check'%}
 							{% include 'elements/Comp-check'%}
 							{% include 'elements/Comp-check'%}
 							{% include 'elements/Comp-check'%}
-							{% include 'elements/Comp-check'%}
-	
-							</div>
-							<div class="column group-divide">
-								<div class="question">
-								<div class="label-holder">
-									<label for="">
-										Explain your compentencies
-									</label>
-								</div>
-								<div class="input-holder">
-									<div class="input-space">
-										<textarea id="" name="" rows="6">
-										</textarea>
-									</div>
-								</div>
-							</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-				<div class="row column">
-					<h2>
-						Disclosures
-					</h2>
-				</div>
-				<div class="row column">
-					<div class="card ">
-						<div class="colored-paper success">
-							<h3>
-								<i class="fa fa-holder-dynamic">
-								</i>
-								Your Disclousres Are Up To Date
-							</h3>
-						</div>
-					</div>
-				</div>
-				<div class="row column section-padding">
-					<a class="button secondary float-right" href="">
-						Save For Later
-					</a>
-					<a class="button float-right" href="">
-						Submit
-					</a>
-				</div>
-			</div>
-		</article>
-	</section>
+                                </div>
+                                <div class="column group-divide">
+                                    <div class="question">
+                                        <div class="label-holder">
+                                            <label for="">
+                                                Explain your compentencies
+                                            </label>
+                                        </div>
+                                        <div class="input-holder">
+                                            <div class="input-space">
+                                                <textarea id="" name="" rows="6">
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="paper-page page">
+                <div class="page-wrapper">    
+                    <div class="row column">
+                        <h2>
+                            Disclosures
+                        </h2>
+                    </div>
+                    <div class="row column">
+                        <div class="card ">
+                            <div class="colored-paper success">
+                                <h3>
+                                    <i class="fa fa-holder-dynamic">
+                                    </i>
+                                    Your Disclousres Are Up To Date
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row column section-padding">
+                        <a class="button secondary float-right" href="">
+                            Save For Later
+                        </a>
+                        <a class="button float-right" href="">
+                            Submit
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
 </div>
-<div class="reveal large no-padding" id="comm-modal" data-reveal>
-  {% include "sections/committee-overview" %}
-  <button class="close-button" data-close aria-label="Close modal" type="button">
-    <span aria-hidden="true">&times;</span>
-  </button>
+<div class="reveal large no-padding" data-reveal="" id="comm-modal">
+    {% include "sections/committee-overview" %}
+    <button aria-label="Close modal" class="close-button" data-close="" type="button">
+        <span aria-hidden="true">
+            ×
+        </span>
+    </button>
 </div>
 {% endblock %}
 
