@@ -4,35 +4,19 @@
     <section class="split-layout medium reverse">
         <aside class="split-sidebar">
             <div class="content-padding">
-                <div class="search-bar colored-paper info display-block">
-                    <div class="question">
-                        <div class="input-holder">
-                            <div class="input-space column small-6 medium-7 large-8 ">
-                                <input name="" type="text">
-                                </input>
-                            </div>
-                            <div class="input-space column small-6 medium-5 large-4 ">
-                                <button class="button expanded small condensable">
-                                    <span class="condense ">
-                                        Search
-                                    </span>
-                                    <i class="fa fa-search">
-                                    </i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% include "elements/searchbar" %}
             </div>
             <div class="">
                 <nav class="small">
                     <ul class="comittee-list">
-                        {% include "elements/comittee-List-item" %}
-						{% include "elements/comittee-List-item" %}
-						{% include "elements/comittee-List-item" %}
-						{% include "elements/comittee-List-item" %}
-						{% include "elements/comittee-List-item" %}
-						{% include "elements/comittee-List-item" %}
+                        {% include "elements/comittee-List-item-selected" %}
+						{% include "elements/comittee-List-item-notselected" %}
+						{% include "elements/comittee-List-item-selected" %}
+						{% include "elements/comittee-List-item-notselected" %}
+						{% include "elements/comittee-List-item-notselected" %}
+						{% include "elements/comittee-List-item-notselected" %}{% include "elements/comittee-List-item-notselected" %}
+						{% include "elements/comittee-List-item-notselected" %}
+						{% include "elements/comittee-List-item-notselected" %}
                     </ul>
                 </nav>
             </div>
@@ -220,11 +204,11 @@
                         </div>
                     </div>
                     <div class="row column section-padding">
-                        <a class="button secondary float-right" href="">
-                            Save For Later
-                        </a>
                         <a class="button float-right" href="">
                             Submit
+                        </a>
+                        <a class="button secondary float-right" href="">
+                            Save For Later
                         </a>
                     </div>
                 </div>
@@ -232,11 +216,11 @@
         </article>
     </section>
 </div>
-<div class="reveal large no-padding" data-reveal="" id="comm-modal">
+<div class="reveal large no-padding paper-page page" data-reveal="" id="comm-modal">
     {% include "sections/committee-overview" %}
     <button aria-label="Close modal" class="close-button" data-close="" type="button">
         <span aria-hidden="true">
-            ×
+            <i class="fa fa-times"></i>
         </span>
     </button>
 </div>

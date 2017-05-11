@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="column">
                     <h2>
-                        Open Committees
+                        Pending Requests
                     </h2>
                     {% include "elements/searchbar" %}
                 </div>
@@ -14,18 +14,19 @@
             <div class="">
                 <nav class="">
                     <ul class="comittee-list">
-                        {% include "elements/comittee-List-item-notactive" %}
-                        {% include "elements/comittee-List-item-active" %}
-                        {% include "elements/comittee-List-item-notactive" %}
-                        {% include "elements/comittee-List-item-notactive" %}
-                        {% include "elements/comittee-List-item-notactive" %}
-                        {% include "elements/comittee-List-item-notactive" %}
+                        {% include "elements/request-List-item-notactive" %}
+                        {% include "elements/request-List-item-active" %}
+                        {% include "elements/request-List-item-notactive" %}
+                        {% include "elements/request-List-item-notactive" %}
+                        {% include "elements/request-List-item-notactive" %}
+                        {% include "elements/request-List-item-notactive" %}
                     </ul>
                 </nav>
             </div>
             {% include "elements/pagination-bottom" %}
         </aside>
         <article class="split-content page with-group-sections">
+            
             <div class="section-nav back hide-for-medium">
                 <a>
                     <div class="circle">
@@ -37,9 +38,8 @@
                     </div>
                 </a>
             </div>
-            {% include "elements/page-message-deadline" %}
             <div class="page-wrapper">
-                {% include "sections/committee-details" %}
+               {% include "sections/request" %}
             </div>
             
         </article>

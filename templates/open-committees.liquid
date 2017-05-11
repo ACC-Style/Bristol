@@ -8,31 +8,18 @@
                     <h2>
                         Open Committees
                     </h2>
-                    <div class="question section-padding">
-                        <div class="input-holder">
-                            <div class="input-space column small-8 medium-9">
-                                <input name="" type="text">
-                                </input>
-                            </div>
-                            <div class="input-space column small-4 medium-3">
-                                <button class="button expanded">
-                                    <i class="fa fa-search">
-                                    </i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    {% include "elements/searchbar" %}
                 </div>
             </div>
             <div class="">
                 <nav class="">
                     <ul class="comittee-list">
-                        {% include "elements/comittee-List-item" %}
-                        {% include "elements/comittee-List-item" %}
-                        {% include "elements/comittee-List-item" %}
-                        {% include "elements/comittee-List-item" %}
-                        {% include "elements/comittee-List-item" %}
-                        {% include "elements/comittee-List-item" %}
+                        {% include "elements/comittee-List-item-notactive" %}
+                        {% include "elements/comittee-List-item-active" %}
+                        {% include "elements/comittee-List-item-notactive" %}
+                        {% include "elements/comittee-List-item-notactive" %}
+                        {% include "elements/comittee-List-item-notactive" %}
+                        {% include "elements/comittee-List-item-notactive" %}
                     </ul>
                 </nav>
             </div>
@@ -50,11 +37,11 @@
                         Back to Open Committees
                     </div>
                 </a>
-            </div>
+            </div>{% include "elements/page-message-deadline" %}
             <div class="page-wrapper">
-                <div class="row column section-padding">{% include "elements/page-message-deadline" %}</div>
+               {% include "sections/committee-overview" %}
             </div>
-            {% include "sections/committee-overview" %}
+            
         </article>
     </section>
 </div>
