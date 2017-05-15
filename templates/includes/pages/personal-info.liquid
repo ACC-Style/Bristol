@@ -1,9 +1,14 @@
-<h1 class="with-underline">Personal Information</h1>
+
 <div class="card" id="fullscreen-spacer" >
+	<div class="colored-paper">
+		<h1>Personal Information
+			<div class="sub-line"><b>All fields denoted with an <sup><i class="fa required"></i></sup> are required.</b></div>
+		</h1>
+	</div>
 				<div class="row group-divide-auto">
 						<div class="row info-text" data-bind="css:{warning: $root.hasWarning &amp;&amp; $root.sectionWithMessage().length >0 &amp;&amp; $root.sectionWithMessage().indexOf('personal') >= 0, error: $root.hasError &amp;&amp; $root.sectionWithMessage().length > 0 &amp;&amp; $root.sectionWithMessage().indexOf('personal') >= 0, attention:$root.hasAlert&amp;&amp; $root.sectionWithMessage().length > 0 &amp;&amp; $root.sectionWithMessage().indexOf('personal') >= 0} ">
 		
-		<b>All fields denoted with an <sup><i class="fa required"></i></sup> are required.</b>
+		
 	</div>
 
             
@@ -208,13 +213,17 @@
 </div>
 </div>
 </div>
-<h2>Address(s)</h2>
+
 <div class="card">
-	
+	<div class="colored-paper">
+		<h2>Address(es)
+		<div class="sub-line"><b>At least one personal address is required.<sup><i class="fa fa-plus required"></i></sup></b></div>
+		</h2>
+	</div>
 				<div class="row group-divide-auto">
 						<div class="row info-text" data-bind="css:{warning: $root.hasWarning &amp;&amp; $root.sectionWithMessage().length >0 &amp;&amp; $root.sectionWithMessage().indexOf('address') >= 0, error: $root.hasError &amp;&amp; $root.sectionWithMessage().length > 0 &amp;&amp; $root.sectionWithMessage().indexOf('address') >= 0, attention:$root.hasAlert&amp;&amp; $root.sectionWithMessage().length > 0 &amp;&amp; $root.sectionWithMessage().indexOf('address') >= 0} ">
 		
-		<b>At least one personal address is required.<sup><i class="fa fa-plus required"></i></sup></b>
+		
 	</div>
 
             
@@ -288,7 +297,7 @@
 	</div>
 </div>
 <div class="row">
-	<div class="question column large-6 required" data-bind="css: { error: address1.hasError, required: address1.isRequired, warning: address1.hasWarning }">
+	<div class="question column large-4 required" data-bind="css: { error: address1.hasError, required: address1.isRequired, warning: address1.hasWarning }">
 		<div class="label-holder">
 			<label>
 				<span class="text">Street Address 1</span>
@@ -308,11 +317,33 @@
 			</small>
 		</div>
 	</div>
-	<div class="question column large-6">
+	<div class="question column large-4">
 		<div class="label-holder">
 			<label>
 				<span class="text">
 					Street Address 2
+				</span>
+				<span class="required-holder">
+					<i class="fa fa-holder-dynamic"></i>
+				</span>
+			</label>
+		</div>
+		<div class="input-holder">
+			<div class="input-space">
+				<input type="text" data-bind="value: address2, disable: institutionid">
+			</div>
+		</div>
+		<div class="message-holder">
+			<small class="error">
+				<i class="fa fa-holder"></i>
+			</small>
+		</div>
+	</div>
+	<div class="question column large-4">
+		<div class="label-holder">
+			<label>
+				<span class="text">
+					Street Address 3
 				</span>
 				<span class="required-holder">
 					<i class="fa fa-holder-dynamic"></i>
@@ -634,18 +665,21 @@ self.statecodeList(data.statecodeList);
 </script>
 
 				</div>
-				<div class="row group-divide-auto">
-						<h2>Contact Information</h2>
-						<div class="row info-text" data-bind="css:{warning: $root.hasWarning &amp;&amp; $root.sectionWithMessage().length >0 &amp;&amp; $root.sectionWithMessage().indexOf('contact') >= 0, error: $root.hasError &amp;&amp; $root.sectionWithMessage().length > 0 &amp;&amp; $root.sectionWithMessage().indexOf('contact') >= 0, attention:$root.hasAlert&amp;&amp; $root.sectionWithMessage().length > 0 &amp;&amp; $root.sectionWithMessage().indexOf('contact') >= 0} ">
+				</div><div class="card">
+				<div class="colored-paper">
+						<h2>Contact Information
+						
 		
-		<b>One phone number and one email are required. <sup><i class="fa fa-plus required"></i></sup></b>
+		</h2>
 	</div>
-
+<div class="colored-paper info">
+	<h5>Phone Number(s) <small class="sub-header">One Phone Number is required</small></h5>
+</div>
             
 					
 <!-- ko with: contact -->
 <div class="row">
-    <div class="question column small-12 medium-8 large-4 required" data-bind="css: { error:phone.hasError, required: phone.isRequired, warning: phone.hasWarning}">
+    <div class="question column small-12 medium-8 large-12 required" data-bind="css: { error:phone.hasError, required: phone.isRequired, warning: phone.hasWarning}">
         <div class="label-holder">
             <label for="">
                 <span class="text">Phone Number</span>
@@ -680,8 +714,12 @@ self.statecodeList(data.statecodeList);
             <!-- ko if: phonedefault() == true --><!--/ko-->
         </div>
         <div class="hint" data-bind="text: 'Format: (XXX)XXX-XXXX'">Format: (XXX)XXX-XXXX</div>
-    </div>
-    <div class="question column small-12 medium-4 end required" data-bind="css: { error:email.hasError, required: email.isRequired, warning: email.hasWarning }">
+    </div>    </div>
+<div class="colored-paper info">
+	<h5>Email Address(es) <small class="sub-header">One Email is required</small></h5>
+</div>
+    <div class="row">
+    <div class="question column small-12 medium-12 end required" data-bind="css: { error:email.hasError, required: email.isRequired, warning: email.hasWarning }">
         <div class="label-holder">
             <label for="">
                 <span class="text">Email</span>
@@ -691,9 +729,16 @@ self.statecodeList(data.statecodeList);
             </label>
         </div>
         <div class="input-holder">
-            <div class="input-space">
+            <div class="input-space column small-6 large-8">
                 <input type="text" data-bind="value: email">
             </div>
+            <div class="input-space column small-6 large-4">
+                <select name="" id="">
+                	<option value="">Select Type</option><option value="">Work</option>
+                </select>
+            </div>
+            
+
         </div>
         <div class="message-holder">
             <small data-bind="css:{ error: email.hasError, warning: email.hasWarning }" class="">
@@ -714,3 +759,15 @@ self.statecodeList(data.statecodeList);
 
 				</div>
     </div>
+    <style>
+	.input-space{position: relative;}
+	select{  background-position: right 0rem center;}  
+    .input-space .input-lock, .switch-input-space .input-lock {
+        position: absolute;
+    top: -1px;
+    right: 0;
+    padding: .57143rem;
+    font-size: 1em;
+    line-height: 1;
+    COLOR: grey;
+}</style>
