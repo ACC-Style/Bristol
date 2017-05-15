@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /**
-* Bristol 2.7
+* Bristol 2.8
 **/
 /**
 * Base Framework:
@@ -6389,6 +6389,494 @@ ul.toggle.minimized .selected {
   margin: -3px;
 }
 
+.branding {
+  background-color: white;
+}
+.branding .oma {
+  font-size: 0;
+  color: #fff;
+  width: 100%;
+  height: 4.5rem;
+  background-origin: padding-box;
+  background-size: contain;
+  padding: 0.5rem 0.5rem 0.5rem;
+}
+.branding .logo, .branding .title {
+  margin-bottom: 0;
+}
+.branding .logo {
+  background: url("../img/oma-01.svg") no-repeat top left;
+  background-origin: content-box;
+  background-size: contain;
+}
+.branding .title {
+  background: url("../img/oma-02.svg") no-repeat top right;
+  background-origin: content-box;
+  background-size: contain;
+}
+
+.blue-bar {
+  padding: .25rem 1rem;
+  background-color: #00386b;
+}
+.blue-bar .link {
+  font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+/**
+* User ID Block:
+* `.user-id-block` - OMA User Id Container.
+* 
+*   @example
+*	<div class="user-id-block row collapse">
+*		<img class='user-pic' src="assets/img/profile-pic-default.jpg" alt="Avatar of Members Name">
+*		<ul class="no-bullet user-info">
+*			<li class="user-name" ><span class="fullName">Jeff Morris</span> <span class="userDesignation">MD, PHD</span></li>
+*			<li class="user-profession"><span class="loud">Professional Type:</span> Clinician</li>
+*			<li class="user-application "><span class="loud">Application Type:</span> FACC</li>
+*			<li class="user-application-switch"><a href="" class="link">Change Application Type</a></li>
+*		</ul>
+*	</div>
+*/
+.header.application-frame {
+  border-bottom: #00386b 5px solid;
+}
+.header.application-frame .logo {
+  float: left;
+}
+.header.application-frame .logo img {
+  margin: 5px 3px 0;
+  height: 75px;
+  max-width: none;
+}
+.header.application-frame .nav.tabs.primary {
+  float: right;
+  display: inline-block;
+  width: auto;
+}
+.header.application-frame .user-id-block-alt {
+  display: inline-block;
+  list-style: none;
+  padding: 0 1em 0;
+  float: right;
+}
+.header.application-frame:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.user-id-block {
+  margin: 2px;
+  border: 1px solid #e6e6e6;
+  padding-top: .5rem;
+  padding-bottom: .75rem;
+  position: relative;
+  background-color: #fff;
+}
+.user-id-block .user-pic {
+  float: left;
+  -webkit-clip-path: circle(40px at center);
+  -webkit-moz-path: circle(40px, 40px, 40px);
+  clip-path: circle(40px, 40px, 40px);
+}
+.user-id-block .user-pic {
+  margin: .5rem 5px .5rem 5px;
+}
+.user-id-block .user-info {
+  margin: .5rem .5rem .5rem -100px;
+  padding-left: 105px;
+  float: right;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+}
+.user-id-block .user-info .user-name,
+.user-id-block .user-info .user-designation,
+.user-id-block .user-info .user-profession,
+.user-id-block .user-info .user-application {
+  line-height: 1.25rem;
+}
+.user-id-block .user-info .user-name {
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 400;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #333333;
+  line-height: 2rem;
+}
+.user-id-block .user-info .user-application-switch {
+  font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: .75rem;
+  line-height: 1.25rem;
+}
+@media only screen and (max-width: 1024px) {
+  .user-id-block .user-pic, .user-id-block .user-info {
+    float: none;
+    position: relative;
+  }
+  .user-id-block .user-pic {
+    margin: 0 auto;
+    display: block;
+  }
+  .user-id-block .user-info {
+    margin: 0;
+    padding: 0 1rem;
+    text-align: center;
+  }
+}
+
+.autosave-block {
+  display: inline-block;
+  text-align: left;
+  color: #fff;
+  background-color: #198dae;
+  width: 100%;
+  padding: .25rem;
+  position: fixed;
+  top: 0;
+  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+/**
+* (OMA) Membership Selection Table:
+* `.membership-table` - A table card that shows the details for membership selections.
+* 
+*   @example
+*   <ul class="membership-table">
+*   <li class="membership-table_title">Affilliate</li>
+*   <li class="membership-table_price"><div class="price-holder"><div class="price">$75.00</div><div class="price-alt">Membership Dues Per Year</div></div></li>
+*   <li class="membership-table_description">Fellowship is one of the most distinguished designations the College offers its members, and is the ultimate recognition of professional achievement.</li>
+*   <li class="membership-table_listitem">Have completed cardiovascular training <br><small class="italic">(FITs may apply within six months of completing training)</small></li>
+*   <li class="membership-table_listitem">Have a full-time academic and/or cardiovascular or cardiovascular-related position</li>
+*   <li class="membership-table_listitem">Dedicate at least 75% of their professional time/activities to cardiology</li>
+*   <li class="membership-table_cta">
+*   <button href="#" class="small button expand radius">Select</button>
+*   </li>
+*    <li class="membership-table_description" data-bind="html: Requirements"><p>To Apply You Need</p><ul>
+*      <li>To Currently Hold a Full-Time Academic and/or Cardiovascular or CV-Related Position </li>
+*      <li>To Present Two Letters of Sponsorship From Current FACCs</li>
+*    <li>Your List of Publications (if not Board certified)</li>
+*    </ul>
+*    <p><a href="http://www.acc.org/membership/about-membership/the-facc-designation" target="_blank">View full requirements here</a></p></li>
+*   </ul>
+*/
+.membership-table {
+  display: block;
+  list-style: none;
+  color: #525252;
+}
+.membership-table .membership-table_title, .membership-table .membership-table_price, .membership-table .membership-table_listitem, .membership-table .membership-table_description, .membership-table .membership-table_cta {
+  display: block;
+  border: 1px solid #e6e6e6;
+  padding: .75em 1.5em 1.25em;
+  font-size: 14px;
+  line-height: 19.6px;
+}
+.membership-table .membership-table_title + li, .membership-table .membership-table_price + li, .membership-table .membership-table_listitem + li, .membership-table .membership-table_description + li, .membership-table .membership-table_cta + li {
+  border-top: 0;
+}
+.membership-table ul, .membership-table ul li {
+  list-style-type: disk;
+}
+.membership-table small {
+  color: #198dae;
+  font-size: 0.78571em;
+  line-height: 1.78182em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+@media only screen and (max-width: 1024px) and (max-height: 480px) {
+  .membership-table small {
+    line-height: 1.60364em;
+  }
+}
+@media only screen and (max-width: 1024px) and (max-height: 320px) {
+  .membership-table small {
+    line-height: 1.51455em;
+  }
+}
+
+.membership-table .membership-table_title {
+  background-color: #198dae;
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 400;
+  color: #fff;
+  font-size: 27px;
+  padding: .15em 1em .2em;
+  line-height: 1.2;
+  display: inline-block;
+  width: 100%;
+  min-height: 3em;
+  vertical-align: middle;
+  text-align: center;
+}
+.membership-table .membership-table_price {
+  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  background-color: #f2f2f2;
+  text-align: center;
+  line-height: 1.2;
+  padding: .75em 1.5em .8em;
+}
+.membership-table .membership-table_price .price-holder {
+  display: inline-block;
+  margin: 0 auto;
+}
+.membership-table .membership-table_price .price {
+  font-size: 3.78571em;
+  line-height: 1.10943em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+@media only screen and (max-width: 1024px) and (max-height: 480px) {
+  .membership-table .membership-table_price .price {
+    line-height: 1em;
+  }
+}
+@media only screen and (max-width: 1024px) and (max-height: 320px) {
+  .membership-table .membership-table_price .price {
+    line-height: 1em;
+  }
+}
+
+.membership-table .membership-table_price .price small {
+  font-size: 0.26415em;
+  line-height: 1.4em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  color: #666666;
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 700;
+}
+@media only screen and (max-width: 1024px) and (max-height: 480px) {
+  .membership-table .membership-table_price .price small {
+    line-height: 1.26em;
+  }
+}
+@media only screen and (max-width: 1024px) and (max-height: 320px) {
+  .membership-table .membership-table_price .price small {
+    line-height: 1.19em;
+  }
+}
+
+.membership-table .membership-table_price .price-alt {
+  font-size: 0.78571em;
+  line-height: 1.78182em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 700;
+  color: #198dae;
+}
+@media only screen and (max-width: 1024px) and (max-height: 480px) {
+  .membership-table .membership-table_price .price-alt {
+    line-height: 1.60364em;
+  }
+}
+@media only screen and (max-width: 1024px) and (max-height: 320px) {
+  .membership-table .membership-table_price .price-alt {
+    line-height: 1.51455em;
+  }
+}
+
+.membership-table .membership-table_description {
+  font-size: 14px;
+  line-height: 1.65;
+  font-weight: bold;
+  color: #198dae;
+  line-height: 1.5;
+}
+.membership-table .membership-table_cta button, .membership-table .membership-table_cta .button {
+  margin-bottom: 0;
+}
+.membership-table .button-group {
+  position: relative;
+  display: inline-block;
+  margin: 1rem 0;
+  width: 100%;
+}
+.membership-table .button-group:before {
+  content: attr(data-grouptype);
+  z-index: 99999;
+  color: #999;
+  display: block;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 50%;
+  background: #FFF;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: auto;
+  margin-left: -1.5rem;
+}
+.membership-table .button-group button, .membership-table .button-group .button {
+  width: 45%;
+  background-color: #b3b3b3;
+  color: #FFF;
+}
+.membership-table .button-group button:hover, .membership-table .button-group button:focus, .membership-table .button-group .button:hover, .membership-table .button-group .button:focus {
+  background-color: #157894;
+  color: #FFF;
+}
+.membership-table .button-group button + button, .membership-table .button-group .button + .button {
+  margin-left: 5px;
+  background-color: #14B057;
+  color: #FFF;
+}
+.membership-table .button-group button + button:hover, .membership-table .button-group button + button:focus, .membership-table .button-group .button + .button:hover, .membership-table .button-group .button + .button:focus {
+  background-color: #157894;
+  color: #FFF;
+}
+
+/*
+
+.membership-table  {
+  @include pricing-table-container;
+
+  small{font-size: 80%;}
+  .membership-table_title  {
+    @include pricing-table-title;
+    background-color: rebrand-color($brand-color, 2);
+    @include font-slab();
+    color:color-contrast(rebrand-color($brand-color, 2));
+  }
+  .membership-table_price  {
+    @include pricing-table-price;
+    small{font-size: 50%;}
+  }
+  .membership-table_description   {
+    @include pricing-table-description;
+  }
+  .membership-table_listitem {
+    @include pricing-table-bullet;
+    line-height: 1.4;
+  }
+  .membership-table_cta    {
+    @include pricing-table-cta;
+  }
+  .button-group {
+    position: relative;
+    display: inline-block;
+    margin: 1rem 0;
+    width:100%;
+
+    &:before {
+      content: attr(data-grouptype);
+      z-index: 99999;
+      color: #999;
+      display: block;
+      font-size: 1rem;
+      padding: 1rem;
+      border-radius: 50%;
+      background: #FFF;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: auto;
+      margin-left: -1.5rem;
+    }
+    button, .button{
+      width:45%;
+      @include button-style(grey(30));
+    }
+    button + button,.button + .button {
+      margin-left: 5px;
+      @include button-style(rebrand-color($success-color, 3));
+    }
+  }
+}
+*/
+.info-text {
+  font-size: 1em;
+  line-height: 1.4em;
+  margin-top: 0.35em;
+  margin-bottom: 0.35em;
+  font-weight: normal;
+  color: #262626;
+  padding: .5rem 1rem .65rem;
+  position: relative;
+  background-image: url(../img/empty_stripe.png);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: transparent;
+}
+@media only screen and (max-width: 1024px) and (max-height: 480px) {
+  .info-text {
+    line-height: 1.26em;
+    margin-top: 0.315em;
+    margin-bottom: 0.315em;
+  }
+}
+@media only screen and (max-width: 1024px) and (max-height: 320px) {
+  .info-text {
+    line-height: 1.19em;
+    margin-top: 0.2625em;
+    margin-bottom: 0.2625em;
+  }
+}
+
+.info-text .fa-holder {
+  font-size: 1.92857em;
+  line-height: 1.45185em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  position: absolute;
+}
+@media only screen and (max-width: 1024px) and (max-height: 480px) {
+  .info-text .fa-holder {
+    line-height: 1.30667em;
+  }
+}
+@media only screen and (max-width: 1024px) and (max-height: 320px) {
+  .info-text .fa-holder {
+    line-height: 1.23407em;
+  }
+}
+
+.info-text p {
+  margin-bottom: 0;
+  padding-left: 4rem;
+}
+.info-text p br {
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+.info-text .error, .info-text .warning, .info-text .success, .info-text .info, .info-text .highlighted, .info-text .disabled {
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 700;
+  font-size: 1.28571em;
+  line-height: 1.08889em;
+  margin-top: 0.27222em;
+  margin-bottom: 0.27222em;
+  min-height: 27px;
+}
+@media only screen and (max-width: 1024px) and (max-height: 480px) {
+  .info-text .error, .info-text .warning, .info-text .success, .info-text .info, .info-text .highlighted, .info-text .disabled {
+    line-height: 1em;
+    margin-top: 0.245em;
+    margin-bottom: 0.245em;
+  }
+}
+@media only screen and (max-width: 1024px) and (max-height: 320px) {
+  .info-text .error, .info-text .warning, .info-text .success, .info-text .info, .info-text .highlighted, .info-text .disabled {
+    line-height: 1em;
+    margin-top: 0.20417em;
+    margin-bottom: 0.20417em;
+  }
+}
+
+.split-sidebar .nav-list.nav-checklist, .split-sidebar .nav-checklist.panel-selector {
+  background-color: #fff;
+}
+
 /*!
 Chosen, a Select Box Enhancer for jQuery and Prototype
 by Patrick Filler for Harvest, http://getharvest.com
@@ -12001,7 +12489,7 @@ h6 blockquote, h6 .sub-line {
 /*
 STATE TRUMPING CODE
 */
-.error .order-marker.hollow, .error.order-marker.hollow, .error.question .input-holder input, .error.question .input-holder textarea, .error.question .input-holder select, .error.question .input-holder .postfix, .error.question .input-holder .prefix, .error .close-bar, .error .bar.close, .error.inset .bar.close, .error.question .button-group, .error .order-marker.hollow, .error.order-marker.hollow, h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
+.error .order-marker.hollow, .error.order-marker.hollow, .error.question .input-holder input, .error.question .input-holder textarea, .error.question .input-holder select, .error.question .input-holder .postfix, .error.question .input-holder .prefix, .error .close-bar, .error .bar.close, .error.inset .bar.close, .info-text.error, .error.question .button-group, .error .order-marker.hollow, .error.order-marker.hollow, h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
   border-color: #c32231;
 }
 
@@ -12009,7 +12497,7 @@ STATE TRUMPING CODE
   color: #c32231;
 }
 
-.nav-list.nav-checklist li.error, .nav-checklist.panel-selector li.error, .error.question .message-holder > .error, .hint .error, .error .close-bar .close-button, .error.inset .bar.close .action-btn, .error-inactive .switch-paddle, .error-active input:checked ~ .switch-paddle, .error.callout, .error.page-message {
+.nav-list.nav-checklist li.error, .nav-checklist.panel-selector li.error, .error.question .message-holder > .error, .hint .error, .error .close-bar .close-button, .error.inset .bar.close .action-btn, .info-text.error, .error-inactive .switch-paddle, .error-active input:checked ~ .switch-paddle, .error.callout, .error.page-message {
   background-color: #de404e;
 }
 
@@ -12017,7 +12505,7 @@ STATE TRUMPING CODE
   content: "";
 }
 
-.warning .order-marker.hollow, .warning.order-marker.hollow, .warning.question .input-holder input, .warning.question .input-holder textarea, .warning.question .input-holder select, .warning.question .input-holder .postfix, .warning.question .input-holder .prefix, .warning .close-bar, .warning .bar.close, .warning.inset .bar.close, .warning.question .button-group, .warning .order-marker.hollow, .warning.order-marker.hollow, h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
+.warning .order-marker.hollow, .warning.order-marker.hollow, .warning.question .input-holder input, .warning.question .input-holder textarea, .warning.question .input-holder select, .warning.question .input-holder .postfix, .warning.question .input-holder .prefix, .warning .close-bar, .warning .bar.close, .warning.inset .bar.close, .info-text.warning, .warning.question .button-group, .warning .order-marker.hollow, .warning.order-marker.hollow, h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
   border-color: #E08514;
 }
 
@@ -12025,7 +12513,7 @@ STATE TRUMPING CODE
   color: #E08514;
 }
 
-.nav-list.nav-checklist li.warning, .nav-checklist.panel-selector li.warning, .warning.question .message-holder > .warning, .hint .warning, .warning .close-bar .close-button, .warning.inset .bar.close .action-btn, .warning-inactive .switch-paddle, .warning-active input:checked ~ .switch-paddle, .warning.callout, .warning.page-message {
+.nav-list.nav-checklist li.warning, .nav-checklist.panel-selector li.warning, .warning.question .message-holder > .warning, .hint .warning, .warning .close-bar .close-button, .warning.inset .bar.close .action-btn, .info-text.warning, .warning-inactive .switch-paddle, .warning-active input:checked ~ .switch-paddle, .warning.callout, .warning.page-message {
   background-color: #ee9e3c;
 }
 
@@ -12033,7 +12521,7 @@ STATE TRUMPING CODE
   content: "";
 }
 
-.success .order-marker.hollow, .success.order-marker.hollow, .success.question .input-holder input, .success.question .input-holder textarea, .success.question .input-holder select, .success.question .input-holder .postfix, .success.question .input-holder .prefix, .success .close-bar, .success .bar.close, .success.inset .bar.close, .success.question .button-group, .success .order-marker.hollow, .success.order-marker.hollow, h1.with-underline.success, h2.with-underline.success, h3.with-underline.success, h4.with-underline.success, h5.with-underline.success, h6.with-underline.success {
+.success .order-marker.hollow, .success.order-marker.hollow, .success.question .input-holder input, .success.question .input-holder textarea, .success.question .input-holder select, .success.question .input-holder .postfix, .success.question .input-holder .prefix, .success .close-bar, .success .bar.close, .success.inset .bar.close, .info-text.success, .success.question .button-group, .success .order-marker.hollow, .success.order-marker.hollow, h1.with-underline.success, h2.with-underline.success, h3.with-underline.success, h4.with-underline.success, h5.with-underline.success, h6.with-underline.success {
   border-color: #14B057;
 }
 
@@ -12041,7 +12529,7 @@ STATE TRUMPING CODE
   color: #14B057;
 }
 
-.nav-list.nav-checklist li.success, .nav-checklist.panel-selector li.success, .success.question .message-holder > .success, .hint .success, .success .close-bar .close-button, .success.inset .bar.close .action-btn, .success-inactive .switch-paddle, .success-active input:checked ~ .switch-paddle, .success.callout, .success.page-message {
+.nav-list.nav-checklist li.success, .nav-checklist.panel-selector li.success, .success.question .message-holder > .success, .hint .success, .success .close-bar .close-button, .success.inset .bar.close .action-btn, .info-text.success, .success-inactive .switch-paddle, .success-active input:checked ~ .switch-paddle, .success.callout, .success.page-message {
   background-color: #1de573;
 }
 
@@ -12049,7 +12537,7 @@ STATE TRUMPING CODE
   content: "";
 }
 
-.info .order-marker.hollow, .info.order-marker.hollow, .info.question .input-holder input, .info.question .input-holder textarea, .info.question .input-holder select, .info.question .input-holder .postfix, .info.question .input-holder .prefix, .info .close-bar, .info .bar.close, .info.inset .bar.close, .info.question .button-group, .info .order-marker.hollow, .info.order-marker.hollow, h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
+.info .order-marker.hollow, .info.order-marker.hollow, .info.question .input-holder input, .info.question .input-holder textarea, .info.question .input-holder select, .info.question .input-holder .postfix, .info.question .input-holder .prefix, .info .close-bar, .info .bar.close, .info.inset .bar.close, .info-text.info, .info.question .button-group, .info .order-marker.hollow, .info.order-marker.hollow, h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
   border-color: #a6a6a6;
 }
 
@@ -12057,7 +12545,7 @@ STATE TRUMPING CODE
   color: #a6a6a6;
 }
 
-.nav-list.nav-checklist li.info, .nav-checklist.panel-selector li.info, .info.question .message-holder > .info, .hint .info, .info .close-bar .close-button, .info.inset .bar.close .action-btn, .info-inactive .switch-paddle, .info-active input:checked ~ .switch-paddle, .info.callout, .info.page-message {
+.nav-list.nav-checklist li.info, .nav-checklist.panel-selector li.info, .info.question .message-holder > .info, .hint .info, .info .close-bar .close-button, .info.inset .bar.close .action-btn, .info-text.info, .info-inactive .switch-paddle, .info-active input:checked ~ .switch-paddle, .info.callout, .info.page-message {
   background-color: #b8b8b8;
 }
 
@@ -12065,7 +12553,7 @@ STATE TRUMPING CODE
   content: "";
 }
 
-.highlighted .order-marker.hollow, .highlighted.order-marker.hollow, .highlighted.question .input-holder input, .highlighted.question .input-holder textarea, .highlighted.question .input-holder select, .highlighted.question .input-holder .postfix, .highlighted.question .input-holder .prefix, .highlighted .close-bar, .highlighted .bar.close, .highlighted.inset .bar.close, .highlighted.question .button-group, .highlighted .order-marker.hollow, .highlighted.order-marker.hollow, h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
+.highlighted .order-marker.hollow, .highlighted.order-marker.hollow, .highlighted.question .input-holder input, .highlighted.question .input-holder textarea, .highlighted.question .input-holder select, .highlighted.question .input-holder .postfix, .highlighted.question .input-holder .prefix, .highlighted .close-bar, .highlighted .bar.close, .highlighted.inset .bar.close, .info-text.highlighted, .highlighted.question .button-group, .highlighted .order-marker.hollow, .highlighted.order-marker.hollow, h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
   border-color: #198dae;
 }
 
@@ -12073,7 +12561,7 @@ STATE TRUMPING CODE
   color: #198dae;
 }
 
-.nav-list.nav-checklist li.highlighted, .nav-checklist.panel-selector li.highlighted, .highlighted.question .message-holder > .highlighted, .hint .highlighted, .highlighted .close-bar .close-button, .highlighted.inset .bar.close .action-btn, .highlighted-inactive .switch-paddle, .highlighted-active input:checked ~ .switch-paddle, .highlighted.callout, .highlighted.page-message {
+.nav-list.nav-checklist li.highlighted, .nav-checklist.panel-selector li.highlighted, .highlighted.question .message-holder > .highlighted, .hint .highlighted, .highlighted .close-bar .close-button, .highlighted.inset .bar.close .action-btn, .info-text.highlighted, .highlighted-inactive .switch-paddle, .highlighted-active input:checked ~ .switch-paddle, .highlighted.callout, .highlighted.page-message {
   background-color: #25b6e0;
 }
 
@@ -12081,7 +12569,7 @@ STATE TRUMPING CODE
   content: "";
 }
 
-.disabled .order-marker.hollow, .disabled.order-marker.hollow, .disabled.question .input-holder input, .disabled.question .input-holder textarea, .disabled.question .input-holder select, .disabled.question .input-holder .postfix, .disabled.question .input-holder .prefix, .disabled .close-bar, .disabled .bar.close, .disabled.inset .bar.close, .disabled.question .button-group, .disabled .order-marker.hollow, .disabled.order-marker.hollow, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
+.disabled .order-marker.hollow, .disabled.order-marker.hollow, .disabled.question .input-holder input, .disabled.question .input-holder textarea, .disabled.question .input-holder select, .disabled.question .input-holder .postfix, .disabled.question .input-holder .prefix, .disabled .close-bar, .disabled .bar.close, .disabled.inset .bar.close, .info-text.disabled, .disabled.question .button-group, .disabled .order-marker.hollow, .disabled.order-marker.hollow, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
   border-color: #cccccc;
 }
 
@@ -12089,7 +12577,7 @@ STATE TRUMPING CODE
   color: #cccccc;
 }
 
-.nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled, .disabled.question .message-holder > .disabled, .hint .disabled, .disabled .close-bar .close-button, .disabled.inset .bar.close .action-btn, .disabled-inactive .switch-paddle, .disabled-active input:checked ~ .switch-paddle, .disabled.callout, .disabled.page-message {
+.nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled, .disabled.question .message-holder > .disabled, .hint .disabled, .disabled .close-bar .close-button, .disabled.inset .bar.close .action-btn, .info-text.disabled, .disabled-inactive .switch-paddle, .disabled-active input:checked ~ .switch-paddle, .disabled.callout, .disabled.page-message {
   background-color: #d6d6d6;
 }
 
@@ -12101,7 +12589,7 @@ STATE TRUMPING CODE
   font-family: FontAwesome;
 }
 
-.dark-color-text, .warning .order-marker, .warning.order-marker, .info .order-marker, .info.order-marker, .disabled .order-marker, .disabled.order-marker, .message-holder > .warning, .message-holder > .info, .message-holder > .disabled, .hint .warning, .hint .info, .hint .disabled, .warning .close-bar .close-button .fa, .info .close-bar .close-button .fa, .disabled .close-bar .close-button .fa, .warning .order-marker, .warning.order-marker, .info .order-marker, .info.order-marker, .disabled .order-marker, .disabled.order-marker {
+.dark-color-text, .warning .order-marker, .warning.order-marker, .info .order-marker, .info.order-marker, .disabled .order-marker, .disabled.order-marker, .message-holder > .warning, .message-holder > .info, .message-holder > .disabled, .hint .warning, .hint .info, .hint .disabled, .warning .close-bar .close-button .fa, .info .close-bar .close-button .fa, .disabled .close-bar .close-button .fa, .info-text.error, .info-text.error .required.fa, .info-text.warning, .info-text.warning .required.fa, .info-text.success, .info-text.success .required.fa, .info-text.info, .info-text.info .required.fa, .info-text.highlighted, .info-text.highlighted .required.fa, .info-text.disabled, .info-text.disabled .required.fa, .warning .order-marker, .warning.order-marker, .info .order-marker, .info.order-marker, .disabled .order-marker, .disabled.order-marker {
   color: #262626;
 }
 

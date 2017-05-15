@@ -14,42 +14,18 @@
 
 </head>
 	<body>
-    {% include 'sections/header' %}
-    <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
-      <section class="split-layout fill-page-height medium navOn">
-        <aside class="split-sidebar">
-         {% include "sidebar" %}
-        </aside>
-        <article class="split-content"  data-bind="page: {id:'content', role: 'start'}">
-        <a class="hide-for-medium button expanded tiny" onClick="$('.mobile-offcanvas-wrapper .split-layout').toggleClass('navOn')" style="margin-bottom:0;"><i class="fa fa-bars"></i> Menu</a>
-          <div class="page-wrapper">
+    {% comment %}{% include 'sections/header' %}{% endcomment %}
+    <div class="mobile-offcanvas-wrapper">
+      <section class="split-layout fill-page-height medium reverse navOn">
+        {% include "sidebar" %}
+        <article class="split-content paper paper-page"  >
+        <div class="page-wrapper">
             <div class="content-padding">
-            <div class="shrink-waypoint"></div>
-              {% include "pages/introduction" %}
-              {% include "pages/framework" %}
-              {% include "pages/branding" %}
-              {% include "pages/typography" %}
-              {% include "pages/tables" %}
-              {% include "pages/buttons" %}
-              {% include "pages/navigation" %}
-              {% include "pages/qna" %}
-              {% include "pages/layouts" %}  
-              {% include "pages/paper" %} 
-              
-              {% include "pages/space-savers" %}                            
+              {% block content %}{% endblock %}
+                              
             </div>
           </div>
-          {% include "pages/callouts" %}  
-        </article>
-      </section>
-    </div>
-    <div data-bind="page:{id:'demos'}">
-      <section class="split-layout fill-page-height medium navOn">
-        <aside class="split-sidebar">
-         {% include "sidebar" %}
-        </aside>
-        <article class="split-content" data-bind="page:{id:'demo'}">
-          {% include "demos/footer_sticky-button-bar"%}                          
+
         </article>
       </section>
     </div>
