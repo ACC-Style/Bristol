@@ -18,15 +18,15 @@
     <div class="row section-padding">
         <div class="column large-7">
             <div class="card">
-                <div class="colored-paper info">
+                {% comment %}<div class="colored-paper info">
                     <h2 class="single-line-height">
                         Compentency Rating
                         <div class="sub-line">
                             Please rate the requester's compentency levels below.  
                         </div>
                     </h2>
-                </div>
-
+                </div>{% endcomment %}
+{% comment %}
 <div class="section-padding">
                     <div class="">
                     <h2 class="with-underline">Leadership
@@ -52,31 +52,33 @@
                     </h2>
                     {% include 'elements/stars-buttons-disabled' %}
                 </div>
-</div>
+</div>{% endcomment %}
                 <div class="colored-paper info">
                     <h2 class="no-vertical-margin">
                         Statement of Reference
                     </h2>
                 </div>
                 <div class="section-padding">
+                <p>Please fill this request out be a nice human being.</p>
                     <textarea name="" id="" cols="30" rows="10"></textarea>
                 </div>
                 
             </div>
         </div>
         <div class="column large-5">
-            <h4>
-                Statement of Interest
+            {% comment %} <h4>
+            Statement of Interest
             </h4>
             <div class="card">
-                <p>{% include "elements/lorem" %}
-                </p> </div>
+            <p>{% include "elements/lorem" %}
+            </p> </div>
+            {% endcomment %}
             <h4>
                 Committees Applying To
             </h4>
             <div class="slots">
                 {% include "elements/comittee-List-item-selected" %}
-                        {% include "elements/comittee-List-item-selected" %}
+                {% include "elements/comittee-List-item-selected" %}
             </div>
             
         </div>
@@ -91,4 +93,13 @@
             </a>
         </div>
     </div>
+</div>
+
+<div class="reveal large no-padding paper-page page" data-reveal="" id="comm-modal">
+    {% include "sections/committee-overview" %}
+    <button aria-label="Close modal" class="close-button" data-close="" type="button">
+        <span aria-hidden="true">
+            <i class="fa fa-times"></i>
+        </span>
+    </button>
 </div>
