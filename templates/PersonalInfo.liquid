@@ -1,5 +1,41 @@
 {% extends 'layouts/base-layout' %}
 {% block content %}
- {% include "pages/personal-info" %}  
+{% include "sections/personal-name" %} 
+{% include "sections/personal-address" %}
+<div class="page paper-page repeater content-padding" id="addAddress" style="display: none;">
+    <div class="colored-paper success">
+        <div class="content-padding row">
+            <h4 style="position: relative;" class="no-vertical-margin">
+                <i class="fa fa-plus">
+                </i>
+                Add Address
+                <a href="" onclick="addressSlide(event)" class="close-button" style="color:#fff;"><i class="fa fa-times"></i> Close</a>
+            </h4>
+        </div>
+    </div>
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    {% include "sections/personal-address-add" %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ <div class="row">
+ 	<div class="column"><a id="addAddressButton" class="button small expanded secondary" onclick="addressSlide(event)"><i class="fa fa-plus"></i> Add an Address</a></div>
+ </div>       
+{% include "sections/personal-phone" %}
+{% include "sections/personal-email" %}
 
+<div class="row group-divide text-center">
+	    <div class="content-padding">
+      <h4>Is your Personal Information complete and up to date?</h4>
+      <a href="" class="disabled button"><i class="fa fa-holder"></i> Yes, Continue with Application</a>
+    </div>
+</div>
 {% endblock%}
+{% block sidebar %}
+{% include "sidebar" %}
+{% endblock %}

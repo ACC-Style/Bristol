@@ -1,0 +1,94 @@
+<div class="row">
+    <div class="column">
+        <h1 class="with-underline">
+            Contact Information
+        </h1>
+    </div>
+</div>
+<div class="row">
+    <div class="column">
+        <h2 id="Address">
+            Address(es)
+            <div class="sub-line">
+                <b>
+                    At least one personal address is required.
+                </b>
+            </div>
+        </h2>
+        <div class="repeater">
+            <!-- ko foreach: addressinfo() -->
+            <div class="render animated fadeIn">
+                <ul class="render-holder">
+                    <li class="has-tip starred primary" data-bind="visible: isprimary" title="Primary Address">
+                        <i class="fa fa-star">
+                        </i>
+                        Primary Address
+                    </li>
+                    <li class="has-tip locked" data-bind="visible: isprimary" title="Locked: Primary Address - Please use edit to change">
+                        <i class="fa fa-lock" title="Marked as Primary">
+                        </i>
+                        Protected Address
+                    </li>
+                    <!--ko if: 'home' == 'work' -->
+                    <!--/ko-->
+                    <!--ko ifnot: 'home' == 'work' -->
+                    <li class="loud" data-bind="text: address1">
+                        No. 223/224 Old No. Plot B TTK Roak
+                    </li>
+                    <!--/ko-->
+                    <li class="italic" >
+                        <span data-bind="text: city">Chennai, Tamilnadu</span>
+                    <span class="italic" data-bind="text: statecode">
+                    </span>
+                    <span class="italic" data-bind="text: postalcode">
+                        600018
+                    </span>
+                    <span class="italic break subtle" data-bind="text: countrycode">
+                        IND
+                    </span>
+                    </li>
+                </ul>
+                <div class="render-actions">
+                    <a class="set disabled">
+                        <i class="fa fa-star">
+                        </i>
+                        <span class="text">
+                            mark as preferred
+                        </span>
+                    </a>
+                    <a class="edit" data-bind="click: function() { $root.editCustomSection('address','addressinfo', $data) }" href="javascript:void(0)">
+                        <i class="fa fa-holder">
+                        </i>
+                        <span class="text">
+                            Edit
+                        </span>
+                    </a>
+                    <a class="delete disabled" data-bind="visible: (!isprimary() && !preferredmailing() ),click: function() { $root.deleteCustomSection('address','addressinfo', $data) }" href="javascript:void(0)" >
+                        <i class="fa fa-holder">
+                        </i>
+                        <span class="text">
+                            Delete
+                        </span>
+                    </a>
+                </div>
+                <div class="message-holder">
+                    <small class="warning">
+                        <i class="fa fa-holder-dynamic">
+                        </i>
+                        This is a dynamic render message.
+                    </small>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<script>
+    function addressSlide(e){
+        e.preventDefault();
+        $('#addAddress,#addAddressButton').slideToggle();
+        
+
+    }
+</script>
