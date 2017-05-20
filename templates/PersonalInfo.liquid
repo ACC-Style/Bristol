@@ -23,14 +23,16 @@
     }
     function addressSlide(e){
         e.preventDefault();
+        ($('#addAddressButton').css("display") == "none"  )? $('html, body').animate({scrollTop: $("#Address").offset().top}, 500):$('html, body').animate({scrollTop: $("#addAddress").parent().offset().top}, 500);
         $('#addAddress,#addAddressButton').slideToggle();
         
 
     }
     function addressSave(e){
         e.preventDefault();
-        $('#addAddress,#addAddressButton').slideToggle();
         $( "#addressRender" ).clone().appendTo( ".repeater" );
+        ($('#addAddressButton').css("display") == "none"  )?$('html, body').animate({scrollTop: $("#Address").offset().top}, 500): $('html, body').animate({scrollTop: $("#addAddress").parent().offset().top}, 500);
+        $('#addAddress,#addAddressButton').slideToggle();
     }
 </script>
 {% endblock%}

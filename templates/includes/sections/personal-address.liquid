@@ -17,7 +17,7 @@
         </h2>
         <div class="repeater">
             <!-- ko foreach: addressinfo() -->
-            <div id="addressRender" class="render animated fadeIn">
+            <div class="render animated fadeIn">
                 <ul class="render-holder">
                     <li class="has-tip starred primary" data-bind="visible: isprimary" title="Primary Address">
                         <i class="fa fa-star">
@@ -33,22 +33,26 @@
                     <!--/ko-->
                     <!--ko ifnot: 'home' == 'work' -->
                     <li class="loud" data-bind="text: type">
-                      <span class="strong">Work</span> 
+                        <span class="strong">
+                            Work
+                        </span>
                     </li>
                     <li class="loud" data-bind="text: address1">
                         No. 223/224 Old No. Plot B TTK Roak
                     </li>
                     <!--/ko-->
-                    <li class="italic" >
-                        <span data-bind="text: city">Chennai, Tamilnadu</span>
-                    <span class="italic" data-bind="text: statecode">
-                    </span>
-                    <span class="italic" data-bind="text: postalcode">
-                        600018
-                    </span>
-                    <span class="italic break subtle" data-bind="text: countrycode">
-                        IND
-                    </span>
+                    <li class="italic">
+                        <span data-bind="text: city">
+                            Chennai, Tamilnadu
+                        </span>
+                        <span class="italic" data-bind="text: statecode">
+                        </span>
+                        <span class="italic" data-bind="text: postalcode">
+                            600018
+                        </span>
+                        <span class="italic break subtle" data-bind="text: countrycode">
+                            IND
+                        </span>
                     </li>
                 </ul>
                 <div class="render-actions">
@@ -66,7 +70,7 @@
                             Edit
                         </span>
                     </a>
-                    <a class="delete disabled" data-bind="visible: (!isprimary() && !preferredmailing() ),click: function() { $root.deleteCustomSection('address','addressinfo', $data) }" href="javascript:void(0)" >
+                    <a class="delete disabled" data-bind="visible: (!isprimary() && !preferredmailing() ),click: function() { $root.deleteCustomSection('address','addressinfo', $data) }" href="javascript:void(0)">
                         <i class="fa fa-holder">
                         </i>
                         <span class="text">
@@ -83,7 +87,67 @@
                 </div>
             </div>
         </div>
-
-
+    </div>
+</div>
+{% comment %}this is just for effect not real code.{% endcomment %}
+<div style="display: none;">
+    <div class="render animated fadeIn" id="addressRender">
+        <ul class="render-holder">
+            <!--ko if: 'home' == 'work' -->
+            <!--/ko-->
+            <!--ko ifnot: 'home' == 'work' -->
+            <li class="loud" data-bind="text: type">
+                <span class="strong">
+                    Home
+                </span>
+            </li>
+            <li class="loud" data-bind="text: address1">
+                No. 223/224 Old No. Plot B TTK Roak
+            </li>
+            <!--/ko-->
+            <li class="italic">
+                <span data-bind="text: city">
+                    Chennai, Tamilnadu
+                </span>
+                <span class="italic" data-bind="text: statecode">
+                </span>
+                <span class="italic" data-bind="text: postalcode">
+                    600018
+                </span>
+                <span class="italic break subtle" data-bind="text: countrycode">
+                    IND
+                </span>
+            </li>
+        </ul>
+        <div class="render-actions">
+            <a class="set ">
+                <i class="fa fa-star">
+                </i>
+                <span class="text">
+                    mark as preferred
+                </span>
+            </a>
+            <a class="edit" data-bind="click: function() { $root.editCustomSection('address','addressinfo', $data) }" href="javascript:void(0)">
+                <i class="fa fa-holder">
+                </i>
+                <span class="text">
+                    Edit
+                </span>
+            </a>
+            <a class="delete " data-bind="visible: (!isprimary() && !preferredmailing() ),click: function() { $root.deleteCustomSection('address','addressinfo', $data) }" href="javascript:void(0)">
+                <i class="fa fa-holder">
+                </i>
+                <span class="text">
+                    Delete
+                </span>
+            </a>
+        </div>
+        <div class="message-holder">
+            <small class="warning">
+                <i class="fa fa-holder-dynamic">
+                </i>
+                This is a dynamic render message.
+            </small>
+        </div>
     </div>
 </div>
