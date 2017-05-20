@@ -1,31 +1,9 @@
 {% extends 'layouts/base-layout' %}
 {% block content %}
 {% include "sections/personal-name" %} 
+{% include "sections/personal-resident" %}
 {% include "sections/personal-address" %}
-<div class="page paper-page repeater content-padding" id="addAddress" style="display: none;">
-    <div class="colored-paper success">
-        <div class="content-padding row">
-            <h4 style="position: relative;" class="no-vertical-margin">
-                <i class="fa fa-plus">
-                </i>
-                Add Address
-                <a href="" onclick="addressSlide(event)" class="close-button" style="color:#fff;"><i class="fa fa-times"></i> Close</a>
-            </h4>
-        </div>
-    </div>
-    <div class="page-wrapper">
-        <div class="row">
-            <div class="column">
-                <div class="card">
-                    {% include "sections/personal-address-add" %}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
- <div class="row">
- 	<div class="column"><a id="addAddressButton" class="button small expanded secondary" onclick="addressSlide(event)"><i class="fa fa-plus"></i> Add an Address</a></div>
- </div>       
+{% include "sections/personal-address-add" %}   
 {% include "sections/personal-phone" %}
 {% include "sections/personal-email" %}
 
@@ -35,6 +13,26 @@
       <a href="" class="disabled button"><i class="fa fa-holder"></i> Yes, Continue with Application</a>
     </div>
 </div>
+<script>
+    function residentSlide(e){
+        e.preventDefault();
+        $('#residentQuestions').slideToggle();
+        ($('#profType').val()=="")?$('#profType').val('Resident'):$('#profType').val('');
+        
+
+    }
+    function addressSlide(e){
+        e.preventDefault();
+        $('#addAddress,#addAddressButton').slideToggle();
+        
+
+    }
+    function addressSave(e){
+        e.preventDefault();
+        $('#addAddress,#addAddressButton').slideToggle();
+        $( "#addressRender" ).clone().appendTo( ".repeater" );
+    }
+</script>
 {% endblock%}
 {% block sidebar %}
 {% include "sidebar" %}

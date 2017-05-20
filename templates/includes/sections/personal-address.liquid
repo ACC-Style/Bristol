@@ -17,7 +17,7 @@
         </h2>
         <div class="repeater">
             <!-- ko foreach: addressinfo() -->
-            <div class="render animated fadeIn">
+            <div id="addressRender" class="render animated fadeIn">
                 <ul class="render-holder">
                     <li class="has-tip starred primary" data-bind="visible: isprimary" title="Primary Address">
                         <i class="fa fa-star">
@@ -32,6 +32,9 @@
                     <!--ko if: 'home' == 'work' -->
                     <!--/ko-->
                     <!--ko ifnot: 'home' == 'work' -->
+                    <li class="loud" data-bind="text: type">
+                      <span class="strong">Work</span> 
+                    </li>
                     <li class="loud" data-bind="text: address1">
                         No. 223/224 Old No. Plot B TTK Roak
                     </li>
@@ -84,11 +87,3 @@
 
     </div>
 </div>
-<script>
-    function addressSlide(e){
-        e.preventDefault();
-        $('#addAddress,#addAddressButton').slideToggle();
-        
-
-    }
-</script>

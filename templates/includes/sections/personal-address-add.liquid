@@ -1,3 +1,18 @@
+<div class="page paper-page repeater content-padding" id="addAddress" style="display: none;">
+    <div class="colored-paper success">
+        <div class="content-padding row">
+            <h4 style="position: relative;" class="no-vertical-margin">
+                <i class="fa fa-plus">
+                </i>
+                Add Address
+                <a href="" onclick="addressSlide(event)" class="close-button" style="color:#fff;"><i class="fa fa-times"></i> Close</a>
+            </h4>
+        </div>
+    </div>
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="column">
+                <div class="card">
 <div class="question-group section-padding success">
     <!-- ko with: addressinfoForm -->
     <div class="row">
@@ -176,7 +191,7 @@
             <div class="label-holder">
                 <label>
                     <span class="text">
-                        State / Province
+                        State/Province
                     </span>
                     <span class="required-holder">
                         <i class="fa fa-holder-dynamic">
@@ -391,7 +406,7 @@
             <div class="label-holder">
                 <label>
                     <span class="text">
-                        Postal Code / Zip Code
+                        Postal/Zip Code
                     </span>
                     <span class="required-holder">
                         <i class="fa fa-holder-dynamic">
@@ -440,7 +455,15 @@
 </div>
 <div class="row group-divide">
     <div class="column text-right">
-        <a href="" onclick="addressSlide(event)" class="button secondary">Cancel</a><a href=""  onclick="addressSlide(event)"class="button">Save</a>
+        <a href="" onclick="addressSlide(event)" class="button secondary">Cancel</a><a href=""  onclick="addressSave(event)" class="button">Save</a>
 
     </div>
 </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ <div class="row">
+    <div class="column"><a id="addAddressButton" class="button small expanded secondary" onclick="addressSlide(event)"><i class="fa fa-plus"></i> Add an Address</a></div>
+ </div>   
