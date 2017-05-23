@@ -17,8 +17,8 @@
     {% endcomment %}
     <div class="row">
       <div class="column">
-        <h1>User Page <div class="sub-line">To Do's and Questions</div></h1>
-        <h2>Roles and Access</h2>
+        <h1>User Management</h1>
+        {% comment %}<h2>Roles and Access</h2>
         <ul>
           <li>Who Has Access</li>
           <li>Are Roles controled by Personify Only?</li>
@@ -32,12 +32,121 @@
                 <li>Reivewer</li>
               </ul>
           </li>
-        </ul>
+        </ul>{% endcomment %}
       </div>
     </div>
-    
+    <div class="row">
+        <div class="column medium-6">
+            <div class="card">
+              <div class="colored-paper">
+              <h3>Type Managers</h3>
+            </div>
+            {% include "admin/elements/search-bar"%}
+            <div class="section-padding">
+              <table class="table banded">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Type Control</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Thomas Jefferson</td>
+                    <td>ACC Guidance, ACC Annual Meeting</td>
+                    <td class="text-right"><a href="" class="button tiny secondary  radius"><i class="fa fa-2x fa-edit"></i></a>&nbsp;<a href="" class="button tiny alert  radius"><i class="fa fa-2x fa-times-circle"></i></a></td>
+                  </tr>
+                   <tr>
+                    <td>George Washington</td>
+                    <td>NCDR</td>
+                    <td class="text-right"><a href="" class="button tiny secondary  radius"><i class="fa fa-2x fa-edit"></i></a>&nbsp;<a href="" class="button tiny alert  radius"><i class="fa fa-2x fa-times-circle"></i></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
+        </div>
+        <div class="column medium-6">
+            <div class="card">
+              <div class="colored-paper">
+              <h3>Global Admin</h3>
+            </div>
+            {% include "admin/elements/search-bar"%}
+            <div class="section-padding">
+              <table class="table banded">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Bruce Carper</td>
+                    <td>bcarper@acc.org</td>
+                    <td class="text-right"><a href="" class="button tiny alert  radius"><i class="fa fa-2x fa-times-circle"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>Marthea Wilson</td>
+                    <td>mwilson@acc.org</td>
+                    <td class="text-right"><a href="" class="button tiny alert  radius"><i class="fa fa-2x fa-times-circle"></i></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="column"><h1>Staff Liasons &amp; Reviewers</h1></div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          {% include "admin/elements/search-bar-committee" %}
+        </div>
+      </div>
+    </div>
+    <div class="row section-padding">
+      <div class="column">
+        <div class="card">
+          <div class="colored-paper"><h2>Women In Cardiology</h2></div>
+          <div class="section-padding">
+            <table class="table banded">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Position</th>
+                  <th>User Type</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Marry Poppins</td>
+                  <td>Staff Liason</td>
+                  <td>Committee Admin</td>
+                  <td><a href="">mwilson@acc.org</a></td>
+                </tr>
+                <tr>
+                  <td>Bert Chimney Sweep</td>
+                  <td>Staff Liason</td>
+                  <td>Reviewer</td>
+                  <td><a href="">bcsweep@acc.org</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+
+
 {% endblock %}
 
 {% comment %}<img src="output/abstract-q-c-640-480-1.jpg">{% endcomment %}
