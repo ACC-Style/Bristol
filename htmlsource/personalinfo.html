@@ -3,7 +3,10 @@ layout: default
 ---
 
 {% include sections/personal-name.liquid %} 
-{% include sections/personal-resident.liquid %}
+<div id="extraQuestions">
+  <div data-title="~"></div>
+  {% include sections/personal-resident.liquid %}
+</div>
 {% include sections/personal-address.liquid %}
 {% include sections/personal-address-add.liquid %}   
 {% include sections/personal-phone.liquid %}
@@ -19,6 +22,17 @@ layout: default
     </div>
 </div>
 <script>
+    function extraQuestions(e){
+      e.preventDefault();
+      var objectFocus =  $('#extraQuestions > div');
+      var randompick = Math.floor(Math.random()*2);
+      $('#extraQuestions > div').slideUp();
+      $('#profType').val('');
+      $('#extraQuestions > div').eq(0).slideDown();
+      $('#profType').val(  $('#extraQuestions > div').eq(0).data("title") ); 
+      // ($('#profType').val()=="")?$('#profType').val('Resident'):;
+    }
+
     function residentSlide(e){
         e.preventDefault();
         $('#residentQuestions').slideToggle();
@@ -41,7 +55,7 @@ layout: default
         }
     function addressSave(e){
         e.preventDefault();
-        $( "#addressRender" ).clone().appendTo( ".repeater" );
+        $( "#addressRender .render" ).clone().appendTo( "#repeaterAddress" ).children('.added-flag').eq(0).delay( 800 ).fadeOut("slow");
         ($('#addAddressButton').css("display") == "none"  )?$('html, body').animate({scrollTop: $("#Address").offset().top}, 500): $('html, body').animate({scrollTop: $("#addAddress").parent().offset().top}, 500);
         $('#addAddress,#addAddressButton').slideToggle();
     }

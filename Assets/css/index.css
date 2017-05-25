@@ -589,6 +589,59 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* makes the font 33% larger relative to the icon container */
+.fa-lg {
+  font-size: 1.33333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-fw {
+  width: 1.28571em;
+  text-align: center;
+}
+
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear;
+}
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
 .fa-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
@@ -2547,7 +2600,7 @@ button:disabled.secondary, .input-space
 .nav-list li .text + .fa, .panel-selector li .text + .fa, .nav-list li .fa + .text, .panel-selector li .fa + .text {
   padding-left: .5em;
 }
-.nav-list li i.fa-holder-dynamic:before, .panel-selector li i.fa-holder-dynamic:before, .nav-list li.dynamic i.fa-holder:before, .panel-selector li.dynamic i.fa-holder:before {
+.nav-list li i.fa-holder:before, .panel-selector li i.fa-holder:before {
   content: "";
 }
 .nav-list li:hover, .panel-selector li:hover {
@@ -2656,7 +2709,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   margin-top: -1px;
   background-image: url(../img/empty_stripe.png);
 }
-.nav-list.nav-checklist li i.fa-holder-dynamic:before, .nav-checklist.panel-selector li i.fa-holder-dynamic:before, .nav-list.nav-checklist li.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.dynamic i.fa-holder:before {
+.nav-list.nav-checklist li i.fa-holder:before, .nav-checklist.panel-selector li i.fa-holder:before {
   content: "";
 }
 .nav-list.nav-checklist li:hover, .nav-checklist.panel-selector li:hover {
@@ -2670,13 +2723,13 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   font-weight: 700;
   color: #262626;
 }
-.nav-list.nav-checklist li.selected i.fa-holder-dynamic:before, .nav-checklist.panel-selector li.selected i.fa-holder-dynamic:before, .nav-list.nav-checklist li.selected.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.selected.dynamic i.fa-holder:before {
+.nav-list.nav-checklist li.selected i.fa-holder:before, .nav-checklist.panel-selector li.selected i.fa-holder:before {
   content: "";
 }
 .nav-list.nav-checklist li.selected i, .nav-checklist.panel-selector li.selected i {
   color: white;
 }
-.nav-list.nav-checklist li.completed i.fa-holder-dynamic:before, .nav-checklist.panel-selector li.completed i.fa-holder-dynamic:before, .nav-list.nav-checklist li.completed.dynamic i.fa-holder:before, .nav-checklist.panel-selector li.completed.dynamic i.fa-holder:before {
+.nav-list.nav-checklist li.completed i.fa-holder:before, .nav-checklist.panel-selector li.completed i.fa-holder:before {
   content: "";
 }
 .nav-list.nav-checklist li.completed i, .nav-checklist.panel-selector li.completed i {
@@ -2861,7 +2914,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   margin-top: 37.5px;
   border-top-width: 2px;
 }
-.section-nav.forward i.fa-holder-dynamic:before, .section-nav.forward.dynamic i.fa-holder:before {
+.section-nav.forward i.fa-holder:before {
   content: "";
 }
 .section-nav.forward .circle {
@@ -2880,7 +2933,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   margin-bottom: 37.5px;
   border-bottom-width: 2px;
 }
-.section-nav.back i.fa-holder-dynamic:before, .section-nav.back.dynamic i.fa-holder:before {
+.section-nav.back i.fa-holder:before {
   content: "";
 }
 .section-nav.back .text {
@@ -3212,7 +3265,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 .required .required-holder {
   color: #E08514;
 }
-.required .required-holder i.fa-holder-dynamic:before, .required .required-holder.dynamic i.fa-holder:before {
+.required .required-holder i.fa-holder:before {
   content: "";
 }
 
@@ -12149,6 +12202,18 @@ select {
   background-repeat: repeat-x, repeat-x, repeat;
   margin-bottom: .25rem;
 }
+.paper-page.repeater-area .close-button {
+  color: #fff;
+  border: #fff solid 1px;
+  border-radius: 6px;
+  padding: .5em 1em;
+  margin: 0;
+  top: 0;
+  right: -.5em;
+}
+.paper-page.repeater-area .close-button:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
 
 .render {
   padding: .5em 1em;
@@ -12187,6 +12252,12 @@ select {
   padding: .25em 0;
   font-size: 14px;
   border-bottom: 1px solid #cccccc;
+  margin: 6px;
+  width: auto;
+  border: 1px solid;
+  border-radius: 6px;
+  background-color: grey;
+  background-image: none;
 }
 .render-actions a:hover {
   background-color: #fff;
@@ -12204,16 +12275,26 @@ select {
   color: #b3b3b3;
 }
 
-.has-tip.starred.primary,
-.has-tip.locked {
+.render {
+  position: relative;
+}
+.render .starred.primary, .render .locked, .render .added-flag {
   display: block;
   background-color: #198dae;
   color: white;
 }
-
-.has-tip.locked {
+.render .has-tip.locked {
   background-color: #cccccc;
   color: #666666;
+}
+.render .added-flag {
+  background-color: rgba(20, 176, 87, 0.75);
+  border-radius: 0 0 6px 6px;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: #000;
 }
 
 .render {
@@ -12230,7 +12311,6 @@ select {
 }
 .render .render-actions a {
   flex: 0 1 auto;
-  width: 100%;
   vertical-align: middle;
 }
 
@@ -12243,6 +12323,22 @@ label.switch-value {
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-size: 1em;
+}
+
+.page-message.callout.empty, .page-message.empty {
+  background: none transparent;
+  border: 0;
+  padding: 0;
+}
+
+.page-message.empty .icon-holder {
+  font-size: 1em;
+  color: orange;
+  padding: 0;
+}
+
+.page-message.empty .icon-holder .fa-square-o {
+  display: none;
 }
 
 .row {

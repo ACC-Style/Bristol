@@ -25,6 +25,16 @@ select {
   background-position: bottom right, right -1px, top right;
   background-repeat: repeat-x, repeat-x, repeat;
   margin-bottom: .25rem;
+  .close-button{
+    color: #fff;
+    border: #fff solid 1px;
+    border-radius: 6px;
+    padding: .5em 1em;
+    margin: 0;
+    top: 0;
+    right: -.5em;
+    &:hover{background-color:rgba(0, 0, 0, .25);}
+  }
 }
 
 .render {
@@ -64,6 +74,12 @@ select {
 	padding: .25em 0;
 	font-size: ms(-1);
 	border-bottom:1px solid grey(20);
+      margin: 6px;
+    width: auto;
+    border: 1px solid;
+    border-radius: 6px;
+    background-color: grey;
+    background-image: none;
 	&:hover {
 	background-color: #fff;
 	color: grey(100);
@@ -84,18 +100,28 @@ select {
    }
 }
 }
-
-.has-tip.starred.primary,
-.has-tip.locked {
-  display: block;
-  background-color: $primary-color;
-  color: white;
+.render{
+  position:relative;
+  .starred.primary, .locked,.added-flag {
+    display: block;
+    background-color: $primary-color;
+    color: white;
+  }
+  .has-tip.locked {
+    background-color: grey(20);
+    color: grey(60);
+  }
+  .added-flag{
+    background-color:rgba($success-color,.75);
+    border-radius: 0 0  $global-border-radius $global-border-radius;
+        display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color:$real-black;
+  }
 }
 
-.has-tip.locked {
-  background-color: grey(20);
-  color: grey(60);
-}
 
 //    Flex Rules around render
 .render {
@@ -109,7 +135,6 @@ select {
   	flex-direction: column ;
     a {
     	flex:0 1 auto;
-    	width: 100%;
 	    vertical-align: middle;
 
     }
@@ -126,3 +151,16 @@ label.switch-value{
     font-weight: 700;
     font-size: 1em;}
 
+.page-message.callout.empty {
+    background: none transparent;
+    border: 0;
+    padding: 0;
+}
+
+.page-message.empty .icon-holder {
+    font-size: 1em;
+    color:orange;
+    padding:0
+}
+
+.page-message.empty .icon-holder .fa-square-o { display:none;}

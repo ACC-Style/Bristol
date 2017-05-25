@@ -15,7 +15,7 @@
                 </b>
             </div>
         </h2>
-        <div class="repeater">
+        <div class="repeater" id="repeaterAddress">
             <!-- ko foreach: addressinfo() -->
             <div class="render animated fadeIn">
                 <ul class="render-holder">
@@ -90,12 +90,14 @@
     </div>
 </div>
 {% comment %}this is just for effect not real code.{% endcomment %}
-<div style="display: none;">
-    <div class="render animated fadeIn" id="addressRender">
+<div style="display: none;" id="addressRender">
+    <div class="render animated fadeIn" >
+        <div class="added-flag" >
+            <h4 class="text-center">
+                Saving New Address <i class="fa fa-spinner fa-spin"></i>
+            </h4>
+        </div>
         <ul class="render-holder">
-            <!--ko if: 'home' == 'work' -->
-            <!--/ko-->
-            <!--ko ifnot: 'home' == 'work' -->
             <li class="loud" data-bind="text: type">
                 <span class="strong">
                     Home
@@ -104,7 +106,6 @@
             <li class="loud" data-bind="text: address1">
                 No. 223/224 Old No. Plot B TTK Roak
             </li>
-            <!--/ko-->
             <li class="italic">
                 <span data-bind="text: city">
                     Chennai, Tamilnadu
@@ -134,7 +135,7 @@
                     Edit
                 </span>
             </a>
-            <a class="delete " data-bind="visible: (!isprimary() && !preferredmailing() ),click: function() { $root.deleteCustomSection('address','addressinfo', $data) }" href="javascript:void(0)">
+            <a class="delete ">
                 <i class="fa fa-holder">
                 </i>
                 <span class="text">
