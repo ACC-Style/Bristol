@@ -1,0 +1,51 @@
+/// fa-holder implements any icon in a standard .wrapperclass>i.fa
+/// @required variable name of the font awesome icon
+/// @optional $optional adds an optional class to the pattern
+@mixin fa-holder($varible,$option:""){
+	@if $option == ""{
+		>i.fa-holder:before,&.fa:before{ content: $varible;}
+	}
+	@else{
+		i.fa-holder-dynamic:before,&.dynamic i.fa-holder:before{ content: $varible;}
+	}
+}
+@mixin fa($varible){
+	&:before{ content: $varible;}
+}
+
+
+/* TODO: refactor this 
+there are two to three needs for icons icons in containers, icons on icons and then icons that are dynamic to a parent container.**/
+// dynamics are used in the .question, .nav-checklist
+
+.fa-holder{text-decoration: none;
+	>i.fa-holder:before, * i.fa-holder-dynamic:before{text-decoration: none;}
+	:after{content:' ';}
+}
+.delete,.cancel,.close,.close-reveal-modal{ @include fa-holder($fa-var-times);}
+//.warning{@include fa-holder($fa-var-exclamation-triangle);}
+.validated,.selected{@include fa-holder($fa-var-check);}
+.data{@include fa-holder($fa-var-info-circle);}
+.edit{@include fa-holder($fa-var-pencil);}
+
+.clear,.refresh{@include fa-holder($fa-var-refresh);}
+.starred{@include fa-holder($fa-var-star);}
+.add{@include fa-holder($fa-var-plus-circle);}
+.home{@include fa-holder($fa-var-home);}
+.top{@include fa-holder($fa-var-arrow-up);}
+.fa-check:before{ content: $fa-var-check;}
+.back{@include fa-holder($fa-var-arrow-circle-left);}
+.set{@include fa-holder($fa-var-star-o);}
+.save{@include fa-holder($fa-var-check-square);}
+.search{@include fa-holder($fa-var-search);}
+
+.fa-check:before{content:$fa-var-check;}
+.fa-question-circle:before{content:$fa-var-question-circle;}
+.fa-arrow-circle-right:before { content: $fa-var-arrow-circle-right; }
+.fa-exclamation-triangle:before { content: $fa-var-exclamation-triangle; }
+.fa-exclamation-circle:before { content: $fa-var-exclamation-circle; }
+
+i.fa.fa-question-circle {
+    font-size: 1.35em;
+}
+

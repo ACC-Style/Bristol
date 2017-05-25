@@ -1,0 +1,175 @@
+%row{
+    @include grid-row();
+}
+%margin-centering{
+    margin: 0 auto;
+}
+%page-constraint{
+     max-width: 1200px;
+}
+%page-padding{
+    padding: 1rem .5rem 1.25rem;
+    @include bp(md) {
+        padding: 1.5rem .75rem 2rem;
+    }
+    @include bp(lg) {
+        padding: 2rem 1rem 3rem;
+    }
+
+}
+%page-padding-vertical-only{
+    padding: .25rem 0;
+     @include bp(sm){  
+    padding: .5rem 0;
+    } 
+    @include bp(md){  
+    padding: .75rem 0;
+    } 
+    @include bp(lg){
+    padding: 1rem 0;
+    }
+
+}
+
+%content-padding-vertical{
+   padding-top:.125rem;
+   padding-bottom:.125rem;
+    @include bp(sm) {
+        padding-top: .25rem;
+        padding-bottom: .25rem;
+
+    }
+    @include bp(md) {
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+    }
+    @include bp(lg) {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+}
+%content-padding-horizontal{
+    padding-left: .5rem; 
+    padding-right: .5rem;
+    @include bp(md) {
+        padding-right:.75rem;
+        padding-left:.75rem;
+    }
+    @include bp(lg) {
+        padding-right:1rem;
+        padding-left:1rem;
+    }
+}
+%content-expanding-margin-top{
+    margin-top: -.2rem;
+    margin-top: calc(-.2rem - 1px);
+    @include bp(sm-height-down){ 
+        margin-top: -.25rem;
+        margin-top: calc(-.25rem - 1px);
+        } 
+    @include bp(md){ 
+        margin-top:-.5rem;
+        margin-top: calc(-.5rem - 1px);
+        }  
+    @include bp(lg){
+        margin-top: -1rem;
+        margin-top: calc(-1rem - 1px);
+     }
+     @include bp(xl){
+        margin-top: -1rem;
+        margin-top: calc(-1rem - 1px);
+     }
+}
+%content-expanding-margin-bottom{
+    margin-bottom: -.2rem;
+    margin-bottom: calc(-.2rem - 2px);
+    @include bp(sm-height-down){ 
+        margin-bottom: -.25rem;
+        margin-bottom: calc(-.25rem - 2px);
+        } 
+    @include bp(md){ 
+        margin-bottom:-.5rem;
+        margin-bottom: calc(-.5rem - 2px);
+        }  
+    @include bp(lg){
+        margin-bottom: -1rem;
+        margin-bottom: calc(-1rem - 2px);
+     }
+     @include bp(xl){
+        margin-bottom: -1rem;
+        margin-bottom: calc(-1rem - 2px);
+     }
+}
+%content-expanding-margin-vertical{
+ @extend %content-expanding-margin-top;
+ @extend %content-expanding-margin-bottom;
+
+}
+
+
+
+%content-expanding-margin-horizontal{
+        margin-left: -.5rem;
+        margin-right: -.5rem;
+        margin-left: calc(-.5rem - 1px);
+        margin-right: calc(-.5rem - 1px); 
+ @include bp(md){ 
+        margin-left: -.75rem;
+        margin-right: -.75rem;
+        margin-left: calc(-.75rem - 1px);
+        margin-right: calc(-.75rem - 1px);
+        }
+    @include bp(lg){
+        margin-left: -1rem;
+        margin-right: -1rem;
+        margin-left: calc(-1rem - 1px);
+        margin-right: calc(-1rem - 1px);
+     }
+}
+%spacing-transition{ 
+    -webkit-transition: padding 1s; /* Safari */
+    transition: padding 1s;
+    -webkit-transition: margin 1s; /* Safari */
+    transition: margin 1s;
+    }
+.page .page-wrapper {
+    @extend %margin-centering;
+    @extend %page-constraint;
+    @extend %page-padding;
+    @extend %spacing-transition;
+
+}
+
+.content-padding,.content-padding.page-wrapper {
+    @extend %margin-centering;
+    @extend %content-padding-horizontal;
+    @extend %spacing-transition;
+}
+.section,section{
+    width:100%;
+}
+// Exceptions
+
+.section-nav.back ~ .page-wrapper {
+    padding-top: 0;
+}
+.section-padding{
+   @extend  %page-padding-vertical-only;
+}
+/**
+* page layouts:
+* `page-wrapper` - inside all layout divs the page-wrapper is used to make a unified amount of spacing from the content and the vewport edges.
+* 
+*   @example
+*   <div class="page edge" ><div class="page-wrapper outline" ><span class="notation">page-wrapper</span><div class="section outline"><span class="notation">section</span>Hello this is content </div></div>
+**/
+
+/**
+* page layouts outline:
+* `page-wrapper` - inside all layout divs the page-wrapper is used to make a unified amount of spacing from the content and the vewport edges.
+* 
+*   @example
+*	<div class="page-wrapper" style="border:red 1px solid"><div class="section">Hello this is content </div></div>
+**/
+

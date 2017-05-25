@@ -1,0 +1,41 @@
+.sticky-button-bar{position:relative;}
+%stuck_sticky-button-bar{
+	width:100%;
+	background: url(../img/billie-holiday-spec.png) grey(5);
+	-webkit-box-shadow: 0px -1px 10px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px -1px 10px 0px rgba(0,0,0,0.5);
+	box-shadow: 0px -1px 10px 0px rgba(0,0,0,0.5);
+	position: fixed;
+	left:0;
+	right:0;
+	padding:.5em 0;
+	z-index:10000;
+	.button{margin-bottom:0;}
+}
+
+.sticky-button-bar{
+	&.footer{
+	.stuck-footer &{
+		@extend %stuck_sticky-button-bar;
+		 bottom: 0;
+		 border-top: 1px solid color(rebrand-color($black,2),50);
+		}
+	}
+	&.header{
+	.stuck-header &{
+		@extend %stuck_sticky-button-bar;
+		top:0;
+		border-bottom: 1px solid color(rebrand-color($black,2),50);
+		}
+	}
+}
+
+/**
+* Sticky Button Bar:
+* `body.stuck-footer .footer.sticky-button-bar` -  Sticky button bars are made for moving a collection of buttons  to a fixed bar in the window so it is either always fixed or with 'waypoint.js' you can make it fixed if it is not with in the viewport. Making it sticky moves the bar into a fixed possition out of its normal flow so it can be on seen when it is below the fold.  This ui element need to be combined with waypoint to trigger .footer-stuck or .header-stuck on the body to toggle the sticky effect on and off at appropriate times. 
+* 
+*   @example
+*	<div class="footer sticky-button-bar"><div class="row">
+*		<div class="pull-right"><a class="secondary button" href="#">Secondary Button</a><a class="button" href="#">Action Button</a></div>
+*	</div></div>
+*/

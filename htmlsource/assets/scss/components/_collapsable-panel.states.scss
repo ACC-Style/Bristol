@@ -1,0 +1,76 @@
+// This code is just for dependency this is to help maintain the project but doesn't produce any css.
+$required-SCSS_states: "false" !default;
+$required_data:(
+	'bool' :$required-SCSS_states,
+	'required':'__states.required.scss',
+	'path':'scss/base/__states.required.scss',
+	'file':'_collapsable-panel.states.scss'
+	);
+@include required-check($required_data...);
+// End of required check
+
+.collapsable-panel{
+	@each $State in $states{
+		$state-selector:map-get($State,'Selector');
+		$state-name:map-get($State,'State');
+		&#{$state-selector}{
+			background-color: transparent;
+			border:0 none transparent;
+			@include setTrump('border-color',$state-name,'#{$state-selector} .bar.close,#{$state-selector}.inset .bar.close');
+			@include setTrump('color',$state-name,'#{$state-selector} .bar.close .action-btn, .collapsable-panel#{$state-selector} h1, .collapsable-panel#{$state-selector} h2, .collapsable-panel#{$state-selector} h3, .collapsable-panel#{$state-selector} h4, .collapsable-panel#{$state-selector} h5, .collapsable-panel#{$state-selector} h6');
+			
+			&.inset{
+				background-color:color(map-get($State,"Color"),10); 
+				.bar.close .action-btn{
+					@include setTrump('background-color', $state-name,'#{$state-selector}.inset .bar.close .action-btn');
+					color:color-contrast(map-get($State,"Color"));
+				}
+			}
+		}
+	}
+}
+
+/**
+* Collapsable Panel (State):
+* `.collapsable-panel` - Collapse panels can be used with states and the panels subtly color with the state colors.<br><br> !!  Requires Javascript to Function  !!
+* 
+*   @example
+*	<div class="row">
+*		<div class="column small-12 medium-6">
+*			<div class="collapsable-panel warning" style="display: block;">
+*				<div class="bar close">
+*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> <span class="text">close</span></a>
+*				</div>
+*				<div class="content">
+*					<div class="row">
+*						<div class="column small-12">
+*							<h2>H2 in Panel</h2>
+*			              <p>All basic html content can be placed in the panel</p>
+*						</div>
+*					</div>
+*				</div>
+*					<div class="bar jumpToTop">
+*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> <span class="text">top</span></a>
+*				</div>
+*			</div>
+*		</div>
+*		<div class="column small-12 medium-6">
+*			<div class="collapsable-panel error inset" style="display: block;">
+*				<div class="bar close">
+*					<a class="action-btn close" data-bind="click:panelHide"><i class="fa fa-holder"></i> <span class="text">close</span></a>
+*				</div>
+*				<div class="content">
+*					<div class="row">
+*						<div class="column small-12">
+*							<h2>H2 in Inset Panel</h2>
+*			              <p>All basic html content can be placed in the panel</p>
+*						</div>
+*					</div>
+*				</div>
+*					<div class="bar jumpToTop">
+*					<a class="action-btn top" data-bind="click:panelScrollTop"><i class="fa fa-holder"></i> <span class="text">top</span></a>
+*				</div>
+*			</div>
+*		</div>
+*	</div>
+*/

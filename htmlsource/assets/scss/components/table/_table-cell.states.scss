@@ -1,0 +1,129 @@
+// This code is just for dependency this is to help maintain the project but doesn't produce any css.
+$required-SCSS_states: "false" !default;
+$required_data:(
+	'bool' :$required-SCSS_states,
+	'required':'__states.required.scss',
+	'path':'scss/base/__states.required.scss',
+	'file':'_collapsable-panel.states.scss'
+	);
+@include required-check($required_data...);
+// End of required check
+%darkfont{color:$global-default-dark-text}
+%lightfont{color:$global-default-light-text;}
+$cell-texture:"../img/cream_pixels.png";
+$cell-texture-column:"../img/cream_pixels_blue.png";
+$cell-texture-row:"../img/cream_pixels_alt.png";
+$cell-texture-overlap:"../img/cream_pixels_altblue.png";
+td.icon{
+		padding: .25rem .25rem .25rem .25rem;
+		text-align: center;
+		vertical-align: middle;
+		width:1%;
+		i{margin: 0 auto;}
+	}
+
+%td-state{  
+	background-image: url($cell-texture);
+	font-weight: 900;
+}
+%row-state{  
+	background-image: url($cell-texture-row);
+	font-weight: 900;
+}	
+%column-state{  
+	background-image: url($cell-texture-column);
+	font-weight: 900;
+}
+%overlap-state{  
+	background-image: url($cell-texture-overlap);
+	font-weight: 900;
+
+}
+
+
+%tr-state{
+	border-top:1px solid;
+	border-bottom:1px solid;
+}
+@each $State in $states{
+	$cell-color:map-get($State,"Color");
+	$selector:map-get($State,"Selector");
+	tr#{$selector} td,td#{$selector}{
+		background-image: url($cell-texture);
+		font-weight: 900;
+		background-color:$cell-color !important;
+		color:$real-black;
+		border-top:1px solid;
+		border-bottom:1px solid;
+		border-color: color($cell-color,60)  !important;
+
+	}
+	td#{$selector}{
+		border:solid 1px;
+	}
+
+}
+// .striped tbody{
+// 	tr:nth-child(even) td:nth-child(even){ @extend %overlapped-column-row;}
+// }
+// Documentation of Table Cells
+/**
+* Table States Cells:
+* `td.state-name` - quickly color table cells. 
+* 
+*   @example
+*	<table class="table">
+*		<tr>
+*			<td class="error icon"><i class="fa fa-holder"></i></td>
+*			<td class=""><i class="fa fa-holder"></i></td>
+*			<td class="">Text</td>
+*			<td class="warning"><i class="fa fa-holder"></i>Warning</td>
+*		</tr>
+*		<tr>
+*			<td class=""><i class="fa fa-holder"></i></td>
+*			<td class="info icon"><i class="fa fa-holder"></i></td>
+*			<td class="">Text</td>
+*			<td class="info"><i class="fa fa-holder"></i>&nbsp;Info</td>
+*		</tr>
+*		<tr>
+*			<td class=""><i class="fa fa-holder"></i></td>
+*			<td class="warning icon"><i class="fa fa-holder"></i></td>
+*			<td class="error">Error</td>
+*			<td class=""><i class="fa fa-holder"></i>&nbsp;Text</td>
+*		</tr>
+*		<tr>
+*			<td class="success icon"><i class="fa fa-holder"></i></td>
+*			<td class="info icon"><i class="fa fa-holder"></i></td>
+*			<td class="success">Success</td>
+*			<td class=""><i class="fa fa-holder"></i>&nbsp;text</td>
+*		</tr>
+*	</table>
+*/
+
+// Documentation of Table Rows
+/**
+* Table States - Rows:
+* `tr.state` - quickly color table rows with the states. 
+* 
+*   @example
+*	<table class="table striped">
+*		<tr class="success">
+*			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
+*			<td class=""></td>
+*			<td class="">Cell Data in success Row</td>
+*			<td class="">Icon is Dynamic</td>
+*		</tr>
+*		<tr class="warning">
+*			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
+*			<td class=""></td>
+*			<td class="">Cell Data in Warning Row</td>
+*			<td class="error">I am an error cell</td>
+*		</tr>
+*		<tr class="error">
+*			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
+*			<td class="">Icon is Dynamic</td>
+*			<td class="">Cell Data in Error Row</td>
+*			<td class="">Cell Data</td>
+*		</tr>
+*	</table>
+*/

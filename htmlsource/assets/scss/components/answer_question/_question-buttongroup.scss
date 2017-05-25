@@ -1,0 +1,106 @@
+/**
+* Selectable Button Group:
+* `.selectable.button-group` - this is a toggle-able button group that changes colors when items are selected.  Add .selected to the `li`  to change colors and add the check to the button.
+* <h5 class="warning group-divide">( Updated in this Version )</h5>
+*
+*   @example
+* <h4>Basic</h4>
+* <div class="question required">  
+*   <div class="input-holder row collapse">
+*     <div class="column small-12 input-space">
+*   <div class="button-group selectable">
+*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*   </div>
+*     </div>
+*   </div>
+* </div>
+* <h4>Modified with an item having the class `.selected`</h4>
+* <div class="question required">  
+*   <div class="input-holder row collapse">
+*     <div class="column small-12 input-space">
+*   <div class="button-group selectable">
+*     <a href="" class="button selected"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*   </div>
+*     </div>
+*   </div>
+* </div>
+* <h4>Modified with the `.expand`</h4>
+* <div class="question">  
+* <div class="input-holder row collapse">
+*     <div class="column small-12 input-space">
+*   <div class="button-group expanded selectable">
+*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*   </div>
+*     </div>
+*   </div>
+* </div>
+* <h4>The container `.question` has an error state.<span class="sub-line"> NOTE: if button groups have states it is best for them to have been expanded.</span></h4>
+* <div class="question error">  
+* <div class="input-holder row collapse">
+*     <div class="column small-12 input-space">
+*   <div class="expanded button-group selectable">
+*     <a href="" class="button selected"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*     <a href="" class="button"><i class="fa fa-check"></i><span class="text">Yes</span></a>
+*   </div>
+*     </div>
+*   </div>
+*   <div class="message-holder"><small class="error">Error</small></div>
+* </div>
+*
+*/
+
+
+/*  Button Group */
+
+.button-group {
+    padding-left: 0;
+    border: 2px solid transparent;
+    .input-space & {
+        margin-bottom: 0;
+    }
+    & > li {
+        .button {
+            .input-space & {
+                padding-top: .57143rem;
+                padding-bottom: .57143rem;
+            }
+        }
+    }
+    &.selectable {
+        .button {
+            @include button-style($background: grey(30));
+        }
+        i.fa {
+            font-size: 1rem;
+            height: 1rem;
+            width: 1rem;
+            margin: 0 7px 0 0;
+            display: none;
+        }
+        a.selected {
+            &, &:hover {
+                background-color: rebrand-color($success-color, 2);
+            }
+            i.fa {
+                display: inline-block;
+            }
+        }
+    }
+  @include breakpoint(small){
+    @include button-group-expand();
+  }
+}
+
+@each $State in $states {
+    $selector: map-get($State, "Selector");
+    $state-name: map-get($State, "State");
+    $color: map-get($State, "Color");
+    @include setTrump('border-color', $state-name, '#{$selector}.question .button-group');
+}

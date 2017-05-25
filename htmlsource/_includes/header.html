@@ -1,0 +1,17 @@
+<header class="header page">
+    <a href="#!/calulate/estimator/"class="logo"><img src="assets/img/logo-header.svg"></a>
+     <ul class="nav tabs tabs-primary swappable small">
+      <li class="estimator-Tab" class="selected">
+            <a href="#!/calulate/estimator/" onclick="gaWrapper('send', 'event', 'Navigate', 'Clicked tab', 'Calculate Risk');">
+            <span>Estimator</span>
+            </a>
+        </li>
+        <li class="recommendation-Tab sucsess" data-bind="visible:$root.recommendationUnlock()">
+            <a href="#!/calulate/recommendation/" onclick="gaRecordRecommendation()">Recommendation <i class="fa fa-arrow-circle-right"></i></a>
+        </li>
+        <li class="recommendationFail-Tab disabled" data-bind="visible:!$root.recommendationUnlock(),click:function(){validate(true)}">
+            <a data-open="requiredModal" onclick="gaRecordMissingRecommendation()" >Recommendation <i class="fa fa-ban"></i></a>
+        </li>
+    </ul>
+</header>
+    

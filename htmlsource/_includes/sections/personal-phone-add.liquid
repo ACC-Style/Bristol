@@ -1,0 +1,49 @@
+<div class="page paper-page repeater-area content-padding" id="addPhone" style="display: none;">
+    <div class="colored-paper success">
+        <div class="content-padding row">
+            <h4 class="no-vertical-margin" style="position: relative;">
+                <i class="fa fa-plus">
+                </i>
+                Add Phone Number
+                <a class="close-button" href="" onclick="phoneSlide(event)" style="color:#fff;">
+                    <i class="fa fa-times">
+                    </i>
+                    Close
+                </a>
+            </h4>
+        </div>
+    </div>
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <div class="row">
+                        {% include snippets/question-select.liquid label="Type" option="Choose.." size="small-12 large-2" state="required" hint="" %}
+                        {% include snippets/question-select.liquid label="Country" option="Choose.." size="small-12 large-3" state="required" hint="" %}
+                        {% include snippets/question-text.liquid label="Number" size="small-12 large-3" state="required" hint="" %}
+                        {% include snippets/question-switch.liquid label="Mark As Primary" id="switch-1" shape="tiny checkbox"  size="small-12 large-4" state="required" hint="" %}
+                    </div>
+                    <div class="row group-divide">
+                        <div class="column text-right">
+                            <a class="button secondary" href="" onclick="phoneSlide(event)">
+                                Cancel
+                            </a>
+                            <a class="button" href="" onclick="phoneSlide(event)">
+                                Save
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="column">
+        <a class="button small expanded secondary" id="addPhoneButton" onclick="phoneSlide(event)">
+            <i class="fa fa-plus">
+            </i>
+            Add an Phone Number
+        </a>
+    </div>
+</div>

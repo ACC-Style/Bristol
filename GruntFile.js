@@ -119,6 +119,12 @@ module.exports = function(grunt){
 					src:'**',
 					dest:'styleguide/assets/css'
 				}
+				,{
+					expand:true,
+					cwd:'assets/css',
+					src:'**',
+					dest:'htmlsource/assets/css'
+				}
 				]},
 			BOWER:{
 			files:[
@@ -221,6 +227,32 @@ module.exports = function(grunt){
 					cwd:'assets/fonts',
 					src:'**',
 					dest:'styleguide/assets/fonts'
+				},{
+					expand:true,
+					cwd:'assets/js',
+					src:'**',
+					dest:'htmlsource/assets/js'
+				}
+				,{
+					expand:true,
+					cwd:'assets/css',
+					src:'**',
+					dest:'htmlsource/assets/css'
+				},{
+					expand:true,
+					cwd:'assets/scss',
+					src:'**',
+					dest:'htmlsource/assets/scss'
+				},{
+					expand:true,
+					cwd:'assets/img',
+					src:'**',
+					dest:'htmlsource/assets/img'
+				},{
+					expand:true,
+					cwd:'assets/fonts',
+					src:'**',
+					dest:'htmlsource/assets/fonts'
 				}
 				]
 			},

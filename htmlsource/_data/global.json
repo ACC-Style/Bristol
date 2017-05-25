@@ -1,0 +1,91 @@
+{
+	"Name":"DAPT Caculator",
+	"AppID":"org.acc.DAPT",
+	"version": "1.0",
+	"inputs":{
+		"age":{
+			"label":"Age",
+			"type":"multi-button",
+			"required":"required",
+			"post-value":"",
+			"hint":"",
+			"observable":"age",
+			"options":[{
+				"label":"Less then 65",
+				"value":"less_65"
+				},{
+				"label":"Between 65 to 74",
+				"value":"65_74"
+				},{
+				"label":"More then 75",
+				"value":"greater_75"
+				},
+			]},
+		"diabetic":{
+			"label":"",
+			"type":"switch-check",
+			"required":"required",
+			"post-value":"Diabetes Mellitus",
+			"hint":"",
+			"observable":"diabetic"
+			},
+		"smoker":{
+			"label":"",
+			"type":"switch-check",
+			"required":"required",
+			"post-value":"Cigarette Smoking Within Last Two Years",
+			"hint":"",
+			"observable":"smoker"
+			},
+		"pmi_pci":{
+			"label":"",
+			"type":"switch-check",
+			"required":"required",
+			"post-value":"Prior Myocardial Infarction or Percutaneous Coronary Intervention",
+			"hint":"",
+			"observable":"pmi_pci"
+			},	
+		"chf":{
+			"label":"",
+			"type":"switch-check",
+			"required":"required",
+			"post-value":"History of Congestive Heart Failure or Left Ventricular Ejection Fraction &lt; 30%",
+			"hint":"",
+			"observable":"chf"
+			},
+		"mip":{
+			"label":"",
+			"type":"switch-check",
+			"required":"required",
+			"post-value":"Myocardial Infarction at Presentation",
+			"hint":"",
+			"observable":"mip"
+			},
+		"stent":{
+			"label":"",
+			"type":"switch-check",
+			"required":"required",
+			"post-value":"Stenting of Vein of Graft",
+			"hint":"",
+			"observable":"stent"
+			},
+		"stentDiameter":{
+			"label":"",
+			"type":"switch-check",
+			"required":"required",
+			"post-value":"Stent Diameter &lt; 3mm",
+			"hint":"",
+			"observable":"stentDiameter"
+			}
+		},
+	"clinician-resources":[{
+	 		"file":"clinical_understanding",
+	 		"path":"pages/clinician/clinical_understanding",
+	 		"name":"Understanding Cardiovascular Risk"
+	}],
+	"patient-resources":[{
+		"file":"patient_risk",
+		"path":"pages/clinician/patient_risk",
+		"name":"Understanding My Cardiovascular Risk"
+	}]
+}

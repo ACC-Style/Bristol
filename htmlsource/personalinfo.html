@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+{% include sections/personal-name.liquid %} 
+{% include sections/personal-resident.liquid %}
+{% include sections/personal-address.liquid %}
+{% include sections/personal-address-add.liquid %}   
+{% include sections/personal-phone.liquid %}
+{% include sections/personal-phone-add.liquid %}
+{% include sections/personal-email.liquid %}
+{% include sections/personal-email-add.liquid %}
+{% include sections/demographics.liquid %}
+<div class="row group-divide text-center">
+      <div class="content-padding">
+      <h4>Is your Personal Information complete and up to date?</h4>
+      <a href="" class="disabled button"><i class="fa fa-holder"></i> Yes, Continue with Application</a>
+    </div>
+</div>
+<script>
+    function residentSlide(e){
+        e.preventDefault();
+        $('#residentQuestions').slideToggle();
+        ($('#profType').val()=="")?$('#profType').val('Resident'):$('#profType').val('');
+    }
+    function addressSlide(e){
+        e.preventDefault();
+        ($('#addAddressButton').css("display") == "none"  )? $('html, body').animate({scrollTop: $("#Address").offset().top}, 500):$('html, body').animate({scrollTop: $("#addAddress").offset().top}, 500);
+        $('#addAddress,#addAddressButton').slideToggle();
+        }
+    function phoneSlide(e){
+        e.preventDefault();
+        ($('#addPhoneButton').css("display") == "none"  )? $('html, body').animate({scrollTop: $("#Phone").offset().top}, 500):$('html, body').animate({scrollTop: $("#addPhone").offset().top}, 500);
+        $('#addPhone,#addPhoneButton').slideToggle();
+        }
+    function emailSlide(e){
+        e.preventDefault();
+        ($('#addEmailButton').css("display") == "none"  )? $('html, body').animate({scrollTop: $("#Email").offset().top}, 500):$('html, body').animate({scrollTop: $("#addEmail").offset().top}, 500);
+        $('#addEmail,#addEmailButton').slideToggle();
+        }
+    function addressSave(e){
+        e.preventDefault();
+        $( "#addressRender" ).clone().appendTo( ".repeater" );
+        ($('#addAddressButton').css("display") == "none"  )?$('html, body').animate({scrollTop: $("#Address").offset().top}, 500): $('html, body').animate({scrollTop: $("#addAddress").parent().offset().top}, 500);
+        $('#addAddress,#addAddressButton').slideToggle();
+    }
+</script>
+

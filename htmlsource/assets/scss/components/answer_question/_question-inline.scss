@@ -1,0 +1,61 @@
+.question-inline{
+	display: block;
+	margin-bottom: .75rem;
+	.label-holder{padding-top:.5em;padding-bottom: .5em;margin:0;}
+	.label-holder,.input-holder{
+		display: inline-block;
+		width:auto;
+		vertical-align: middle;
+		float: left;
+	}
+	.label-holder *{
+		white-space: nowrap;
+		padding-right: 1rem;
+	}
+	.input-holder{
+		margin-bottom: .25rem;
+		.input-space{  
+			padding-left: 0;
+		}
+	}
+	.message-holder,.hint{
+		display:block;
+		clear:left;
+	}
+	.hint{border-top:1px solid grey(10);   padding: .25rem; background-color: color($primary-color,10);}
+
+
+
+}
+
+/**
+* Questions - Inline:
+* `.question-inline` - questions when there is a need can be made to be inline so the text box will follow the label. These questions will revert to the base question style when on smaller phones. 
+*  Modify any `.question` with the added class of  `.question-inline`
+* 
+*   @example
+*	<div class="question question-inline">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Question Dropdown Title (Required)</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder-dynamic"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="input-holder">
+*			 <div class="input-space column small-6 large-9">
+*				<input type="text"/>
+*			</div>
+*			<div class="column small-6 large-3 post-fix">
+*				Years
+*			</div>
+*		</div>
+*		<div class="message-holder">
+*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
+*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*				<small class="data"><i class="fa fa-holder"></i> Data message</small>
+*		</div>
+*		<div class="hint">This is some hint text</div>
+*	</div>
+*/

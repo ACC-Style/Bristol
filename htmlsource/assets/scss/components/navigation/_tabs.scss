@@ -1,0 +1,184 @@
+/**
+* Tabs (Basic):
+* `.tabs` - Group of nav that is build for a horizontal space. <h5 class="warning">( !! WARNING !! Updated HTML and Styles From Ver 1)</h5>
+* 
+*   @example
+*	<nav class="nav"><ul class=" tabs">
+*		<li class="tabs-title icon"><a class="home"><i class="fa fa-holder"></i></a></li>
+*		<li class="tabs-title"><a>Tab 2</a></li>
+*		<li class="tabs-title is-active"><a >Tab 3</a></li>
+*		<li class="tabs-title"><a >Tab 4</a></li>
+*	</ul></nav>
+*/
+
+
+// @import "../../helpers/flex";
+$tab-color: grey(20);
+$tab-hover-color: grey(25);
+$tab-secondary-color:grey(30);
+$tab-secondary-hover-color:grey(35);
+
+$tab-selected-color:#fff;
+$tab-selected-hover-color:scale-color($secondary-color, $lightness:-15%);
+$tab-darktext:$global-default-dark-text;
+$tab-lighttext:$global-default-light-text;
+
+.tabs{
+	@include grid-row();	
+	&,.tabs-title > a{
+	    @include font-slab-bold();
+	    font-size:rem-calc(ms(-1));
+	    @include bp(md){
+	      font-size: rem-calc(ms(0));
+	    }
+	    @include bp(lg){
+	      font-size: rem-calc(ms(0));
+	    }
+	}
+	background: grey(10);
+
+	li,.tabs-title{	
+		    background-color: $tab-color;
+			border-top-left-radius: $global-border-radius * .5;
+			border-top-right-radius: $global-border-radius * .5;
+			display: inline-block;
+			margin:.2em .2em 0;
+	    @include bp(md){
+	      margin:.25em .25em 0;
+	      border-top-left-radius: $global-border-radius * .75;
+	      border-top-right-radius: $global-border-radius * .75;
+	    } 
+	    @include bp(lg){
+	      margin:.3em .3em 0;
+	      border-top-left-radius: $global-border-radius;
+	      border-top-right-radius: $global-border-radius;
+	    } 
+    > a{
+			&, &:hover{background-color: transparent;}
+			display: inline-block;
+			padding: .35em .5em .45em;
+			text-align: center;
+			white-space: nowrap;
+			vertical-align: top;
+			margin: 0 auto;
+			width: 100%;
+			color:color-contrast($tab-color,$tab-darktext,$tab-lighttext);
+			@include bp(md){
+				padding: .45em .75em .55em;
+			}	
+			@include bp(lg){
+				padding: .65em 1em .75em;
+			} 		
+		}
+		&:hover{
+			background-color:$tab-hover-color;
+			a{
+				color:color-contrast($tab-hover-color,$tab-darktext,$tab-lighttext);
+			}
+		}
+
+		
+		&.icon{
+			a{
+				padding-left: .5em !important;
+				padding-right: .5em !important;
+			}
+			width:3em;
+			&.selected,&.is-active{
+				background-color: $tab-selected-color;
+				a{
+					color:color-contrast($tab-selected-color,$tab-darktext,$tab-lighttext);
+					&:hover{color:fontcolor($black);}
+					}
+
+				&:hover{
+					background-color: $tab-selected-hover-color;
+					a{
+						color:color-contrast($tab-selected-hover-color,$tab-darktext,$tab-lighttext);
+					}
+				}
+			}
+
+		} 
+		&.secondary,&.visited{
+			background-color: $tab-secondary-color;
+			a{
+				color: color-contrast($tab-secondary-color,$tab-darktext,$tab-lighttext);
+			}
+			&:hover{
+				background-color: $tab-secondary-hover-color;
+				a{
+					color: color-contrast($tab-secondary-hover-color,$tab-darktext,$tab-lighttext);
+				}
+			}
+
+		}
+		&.disabled, &.disabled:hover{
+			background-image: url("../img/subtlenet2.png");
+			a, &{
+				color: grey(60);
+				cursor: not-allowed;
+				opacity: .5;
+			}
+
+		}
+		&.visited{
+			background-image:url("../img/cross-hatched.png");
+		}
+		&.locked a:before,&.disabled a:before{
+		    padding-right: .5em;
+		    display: inline-block;
+		    font: normal normal normal 14px/1 FontAwesome;
+		    font-size: inherit;
+		    text-rendering: auto;
+		    -webkit-font-smoothing: antialiased;			
+		}
+		&.locked a:before{
+		    content: "\f023";
+		}
+		&.disabled a:before{
+		    content: "\f05e";
+		}
+		&.selected,&.is-active{
+			background-image:none;
+			background:$tab-selected-color;
+			padding-left: 0;
+			padding-right: 0;
+			cursor:context-menu;
+			bottom:-1px;
+			position: relative;
+			a{
+				color:color-contrast($tab-selected-color,$tab-darktext,$tab-lighttext);
+				cursor:context-menu;
+			}
+		}
+	}
+	@include bp(xs-down){
+			width:100%;
+			clear:both;
+			@include acc-flexbox();
+			flex-direction:row;
+			flex-wrap:wrap;
+			align-items:stretch;
+			align-content: stretch;
+			margin:.2em 0;
+			li{@include acc-flex(1 1 auto);
+			&.icon{@include acc-flex(0 0 2em);}
+			}
+	}
+}
+
+
+/**
+* Tabs (modifications):
+* `.tabs+[modification]` - Tabs can be modified with `.secondary`,`.disabled`,`.visited`,`.locked`
+* 
+*   @example
+*	<nav class="nav"><ul class="tabs">
+*		<li class="tabs-title visited locked"><a class="home">visited locked</a></li>
+*		<li class="tabs-title visited locked"><a>visited locked</a></li>
+*		<li class="tabs-title selected"><a >Selected</a></li>
+*		<li class="tabs-title secondary"><a >Secondary</a></li>
+*		<li class="tabs-title disabled"><a >Disabled</a></li>
+*	</ul></nav>
+*/

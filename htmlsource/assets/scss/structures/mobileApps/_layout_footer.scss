@@ -1,0 +1,73 @@
+/**
+* Mobile Footer:
+* `.footer.page` - there is a basic layout of short tabbed footer for mobile apps
+* 
+*   @example
+*	<footer class="page footer">
+*		<a href="#!/content/home/" class="logo" >
+*			<img style="border:none 0; " src="assets/img/footerlogo.svg" alt="ACC Statin Intolerance Guidelines">
+*		</a>
+*		<ul class="nav tabs tabs-primary reverse swappable small">
+*			<li id="guideline-Tab" class="">
+*				<a href="#!/content/guideline/home">
+*					<span class="short-text">Resources</span>
+*					<span class="long-text">Resources</span>
+*				</a>
+*			</li>
+*			<li id="legal-Tab" class="selected">
+*				<a href="#!/content/legal">
+*				<span class="short-text">Disclaimer</span>
+*				<span class="long-text">Disclaimer</span>
+*				</a>
+*			</li>
+*			<li id="about-Tab" class="">
+*				<a href="#!/content/about">
+*				<span class="short-text">About</span>
+*				<span class="long-text">About the App</span>
+*				</a>
+*			</li>
+*		</ul>
+*	</footer>
+*/
+
+.page.footer{
+	border-top:rebrand-color($acc-blue,3) 4px solid;
+	background: url("../img/crossed_stripes.png");
+	&:after{content:"";display: table;clear:both;}
+	.tabs{float: right;width:auto;}
+	.logo img{margin: .25rem 1rem;display: none}
+	.tabs.primary li.selected{
+		border-top-color:rebrand-color($acc-blue,3);
+		a:after{border-top-color:rebrand-color($acc-blue,3);}
+	}
+	@include bp(sm-down){
+		text-align: right;
+		.logo img{display: block; width:320px;}
+		.tabs{width:100%; margin: 0;}
+		.logo{display: block; border-bottom:rebrand-color($acc-blue,3) 4px solid;&:after{content:"";display: table;clear:both;}}
+		.logo img{max-width:95%;margin:.25rem 2.5%;}
+	}
+	@include bp(md-down){
+		.tabs{font-weight: 500;}
+	}
+	@include bp(lg){
+		text-align: center;
+		.tabs.tabs-primary.reverse{
+			float:none;display: inline-block;
+			li{float: none;display: inline-block;}
+			&, li{
+				background-color: transparent;
+				border:0;
+				a{color: #fff;
+					&:after{
+						top:auto;
+						bottom: -1px;
+						border-width: 0px 8px;
+						border-bottom: 10px solid #fff;}
+					&:hover{text-decoration: underline;}
+				}
+			}
+		}
+	}
+
+}

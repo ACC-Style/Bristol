@@ -1,0 +1,98 @@
+
+.overlap{ 
+	background-color: grey(20); 
+	background-image:url('../img/textured_paper.png'),url('../img/bottom-shade.png'),url('../img/top-shade.png');
+	background-position:top right,bottom right,right -1px;
+	background-repeat:repeat,repeat-x,repeat-x;
+	margin-bottom:.25rem;
+	@if $brand-level < 2{
+		border-bottom: 2px solid grey(50);
+	}
+	@if $brand-level > 1{
+		border-bottom: 5px solid mix( $product-brand-color, grey(50),75 );
+	}
+
+	.tabs{
+		padding-top:.25em;
+		border:0;
+		background:transparent none;
+		
+		@if $brand-level < 2{
+		overflow: visible;
+		}
+		@if $brand-level > 1{
+		overflow: hidden;
+		}
+	li,.tabs-title{ 
+		@if $brand-level < 2{
+		border: 2px solid grey(45);
+		}
+		@if $brand-level > 1{
+		border: 1px solid mix($product-brand-color,grey(50),25);
+		}
+		
+		border-bottom: 0;
+		border-top-left-radius: 7px;
+		border-top-right-radius: 7px;
+		margin-bottom: 0;
+		vertical-align: bottom;
+		&.selected,&.is-active{
+			margin-bottom: -1px;
+			padding-bottom: 3px;
+			@if $brand-level < 2{
+			background: #fff;	
+			border-color: grey(50);
+			}
+			@if $brand-level >= 2{
+			background:mix( $product-brand-color, grey(50),75 );
+			border-color:mix( $product-brand-color, grey(50),75 );
+			}
+			z-index: 1000;
+			vertical-align: bottom;
+			.page-overlap &{background-image: url(../img/billie-holiday-speck.png);}
+			//.with-group-sections &{background:#fff url('../img/billie-holiday-lite.png');}
+			a{
+				@if $brand-level < 2{
+					color:$black;
+				}
+				@if $brand-level > 1{
+					color: color-contrast(mix( $product-brand-color, grey(50),75 ));
+				}
+			}
+		}
+		&.secondary{
+			border-color:mix(grey(30),color($secondary-color,100));				
+			}
+		}
+	 
+	}
+}
+
+.with-group-sections,.paper-page {
+	@each $State in $states{
+		$state-color: map-get($State,'Color');
+		&#{map-get($State,'Selector')}{
+			.overlap{
+					border-bottom-color: $state-color;
+					li,.tabs-title{
+						&.selected,&.is-active{
+							background-color: $state-color;
+							border-color: $state-color;
+					}
+				}
+			}
+		}
+	}
+}
+/**
+* Tabs Overlap:
+* `.tabs.overlap` -  Overlap gives shallow space to give a small layer effect
+* 
+*   @example
+*	<nav class="overlap nav"><ul class="tabs ">
+*		<li class="tab-title icon"><a class="home"><i class="fa fa-holder"></i></a></li>
+*		<li class="tab-title "><a>Tab 2</a></li>
+*		<li class="tab-title is-active"><a >Tab 3</a></li>
+*		<li class="tab-title "><a >Tab 4</a></li>
+*	</ul></nav>
+*/

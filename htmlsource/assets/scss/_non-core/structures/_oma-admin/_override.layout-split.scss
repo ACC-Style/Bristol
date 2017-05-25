@@ -1,0 +1,29 @@
+.split-sidebar{
+	background-color: #f4f4f4;
+	.section{
+		+ .section {padding-top: 1rem;}
+		.header{
+			display: block;
+			margin: 0 -.5rem 1rem;
+			padding:.5rem 1rem;
+			color:$real-black;
+			letter-spacing: 1px;
+			background: url('../img/squared_metal_trans.png') repeat top left, url('../img/top-shade.png') repeat-x top right, url('../img/bottom-shade.png') repeat-x bottom right ;
+			
+			@include bp(md){
+				margin: 0 -.75rem 1rem;
+				padding:.75rem .75rem;
+			};
+			@include bp(lg){
+				margin: 0 -1rem 1rem;
+				padding:1rem 1rem;
+			};
+		}
+	}
+}
+
+.xscrollauto{
+	overflow: visible;
+	overflow-x:auto;
+	width:100%;
+}

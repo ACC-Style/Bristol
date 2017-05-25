@@ -1,0 +1,23 @@
+.ui-datepicker-header{
+.ui-datepicker-prev,.ui-datepicker-next{
+
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome; // shortening font declaration
+  font-size: inherit; // can't have font-size inherit on line above, so need to override
+  text-rendering: auto; // optimizelegibility throws things off #1094
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+    margin: .1em;
+    border-radius: $global-radius;
+    &:before{ 
+      font-size: 1em;
+      margin: .35em .45em;
+      display: inline-block;
+    }
+    .ui-icon{text-indent: -9999px;}
+  }
+  .ui-datepicker-prev{&:before { content: $fa-var-chevron-circle-left;}
+  }
+  .ui-datepicker-next{&:before { content: $fa-var-chevron-circle-right;}
+  } 
+}

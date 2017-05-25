@@ -1,0 +1,29 @@
+.file-upload-holder{height:37px;}
+.file-upload {
+	position: relative;
+	overflow: hidden;
+	margin: 0 10px;
+}
+
+.file-upload input.upload {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+/**
+* Questions - File Upload:
+* `.file-upload` - File uploads are a modified from the standard input-spacer to allow for correct labels to show up when the file is attached. 
+* 
+*   @example
+*   <div class="button file-upload">
+*   	<i class="fa fa-upload"></i>
+*   	<span class="text">Upload</span>
+*   	<input type="file" class="upload" data-bind="file: { data: document, name: documentname, allowed: allowedTypes }">
+*   </div>
+**/

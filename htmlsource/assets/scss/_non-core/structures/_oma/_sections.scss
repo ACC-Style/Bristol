@@ -1,0 +1,38 @@
+.info-text{
+	@include baseline-font(0,.25,.25);
+	font-weight:normal;
+	color: fontcolor(#000);
+	padding:.5rem 1rem .65rem;
+	position:relative;
+	background-image: url(../img/empty_stripe.png);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color:transparent;
+	.fa-holder{@include baseline-font(3);position:absolute;}
+	p{margin-bottom:0;padding-left:4rem;
+		br{height:0;padding:0;margin:0;}
+	}
+	$list:();
+	@each $State in $states{
+		$list : append($list,unquote(map-get($State,'Selector')),'comma');
+		$state-name:map-get($State,'State');
+		$state-selector:map-get($State,'Selector');
+		&#{$state-selector}{
+			@include setTrump('background-color',$state-name,'.info-text#{$state-selector}');
+			@include setTrump('border-color',$state-name,'.info-text#{$state-selector}');
+			@include setContrastTrump(mix(map-get($State,'Color'),#fff),'.info-text#{$state-selector}');
+			@include setContrastTrump(mix(map-get($State,'Color'),#fff),'.info-text#{$state-selector} .required.fa');
+			}
+		}
+		#{$list}{
+			@include font-slab-bold();
+			@include baseline-font(1,.25,.25);
+			min-height:ms(3);
+		}
+
+}
+
+.split-sidebar .nav-list.nav-checklist{background-color:#fff;}
+
+

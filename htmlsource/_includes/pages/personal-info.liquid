@@ -1,0 +1,2066 @@
+<div class="card" id="fullscreen-spacer">
+    <div>
+        <h1 class="with-underline">
+            Personal Information
+            <div class="sub-line">
+                <b>
+                    All fields denoted with an
+                    <sup>
+                        <i class="fa required">
+                        </i>
+                    </sup>
+                    are required.
+                </b>
+            </div>
+        </h1>
+        <div class="row">
+            <div class="question column large-2 medium-3 small-4" data-bind="css: { error: prefix.hasError, required: prefix.isRequired }">
+                <div class="label-holder">
+                    <label>
+                        <span class="text">
+                            Prefix
+                        </span>
+                        <span class="required-holder">
+                            <i class="fa fa-holder-dynamic">
+                            </i>
+                        </span>
+                    </label>
+                </div>
+                <div class="input-holder">
+                    <div class="input-space">
+                        <select name="" id="">
+                        	<option value=""></option>
+                        </select>
+                        <span class="input-lock" data-bind="visible: true">
+                            <i aria-describedby="tooltip-j2q2mq1c0" class="fa fa-lock lock-symbol has-tip" data-selector="tooltip-j2q2mq1c0" data-tooltip="" title="">
+                            </i>
+                        </span>
+                    </div>
+                </div>
+                <div class="message-holder">
+                    <small class="" data-bind="css:{ error: prefix.hasError, warning: prefix.hasWarning }">
+                        <i class="fa fa-holder">
+                        </i>
+                        <!-- ko text: prefix.validationMessage -->
+                        <!-- /ko -->
+                    </small>
+                </div>
+            </div>
+            <div class="question column large-3 medium-5 small-8 required" data-bind="css: { error: firstname.hasError, required: firstname.isRequired }">
+                <div class="label-holder">
+                    <label>
+                        <span class="text">
+                            First Name
+                        </span>
+                        <span class="required-holder">
+                            <i class="fa fa-holder-dynamic">
+                            </i>
+                        </span>
+                    </label>
+                </div>
+                <div class="input-holder">
+                    <div class="input-space">
+                        <input data-bind="value: firstname, disable: true" disabled="" type="text">
+                            <span class="input-lock" data-bind="visible: true">
+                                <i aria-describedby="tooltip-j2q2mq1c1" class="fa fa-lock lock-symbol has-tip" data-selector="tooltip-j2q2mq1c1" data-tooltip="" title="">
+                                </i>
+                            </span>
+                        </input>
+                    </div>
+                </div>
+                <div class="message-holder">
+                    <small class="" data-bind="css:{ error: firstname.hasError, warning: firstname.hasWarning }">
+                        <i class="fa fa-holder">
+                        </i>
+                        <!-- ko text: firstname.validationMessage -->
+                        <!-- /ko -->
+                    </small>
+                </div>
+            </div>
+            <div class="question column large-2 medium-4" data-bind="css: { error: middlename.hasError, required: middlename.isRequired }">
+                <div class="label-holder">
+                    <label>
+                        <span class="text swappable large">
+                            <span class="long-text">
+                                Middle Initial
+                            </span>
+                            <span class="short-text">
+                                MI
+                            </span>
+                        </span>
+                        <span class="required-holder">
+                            <i class="fa fa-holder-dynamic">
+                            </i>
+                        </span>
+                    </label>
+                </div>
+                <div class="input-holder">
+                    <div class="input-space">
+                        <input data-bind="value: middlename, disable: true" disabled="" type="text">
+                            <span class="input-lock" data-bind="visible: true">
+                                <i aria-describedby="tooltip-j2q2mq1c2" class="fa fa-lock lock-symbol has-tip" data-selector="tooltip-j2q2mq1c2" data-tooltip="" title="">
+                                </i>
+                            </span>
+                        </input>
+                    </div>
+                </div>
+                <div class="message-holder">
+                    <small class="" data-bind="css:{ error: middlename.hasError, warning: middlename.hasWarning }">
+                        <i class="fa fa-holder">
+                        </i>
+                        <!-- ko text: middlename.validationMessage -->
+                        <!-- /ko -->
+                    </small>
+                </div>
+            </div>
+            <div class="question column large-3 medium-8 small-8 required" data-bind="css: { error: lastname.hasError, required: lastname.isRequired }">
+                <div class="label-holder">
+                    <label>
+                        <span class="text">
+                            Last Name
+                        </span>
+                        <span class="required-holder">
+                            <i class="fa fa-holder-dynamic">
+                            </i>
+                        </span>
+                    </label>
+                </div>
+                <div class="input-holder">
+                    <div class="input-space">
+                        <input data-bind="value: lastname, disable: true" disabled="" type="text">
+                            <span class="input-lock" data-bind="visible: true">
+                                <i aria-describedby="tooltip-j2q2mq1c3" class="fa fa-lock lock-symbol has-tip" data-selector="tooltip-j2q2mq1c3" data-tooltip="" title="">
+                                </i>
+                            </span>
+                        </input>
+                    </div>
+                </div>
+                <div class="message-holder">
+                    <small class="" data-bind="css:{ error: lastname.hasError, warning: lastname.hasWarning }">
+                        <i class="fa fa-holder">
+                        </i>
+                        <!-- ko text: lastname.validationMessage -->
+                        <!-- /ko -->
+                    </small>
+                </div>
+            </div>
+            <div class="question column large-2 medium-4 small-4" data-bind="css: { error: suffix.hasError, required: suffix.isRequired }">
+                <div class="label-holder">
+                    <label>
+                        <span class="text">
+                            Suffix
+                        </span>
+                        <span class="required-holder">
+                            <i class="fa fa-holder-dynamic">
+                            </i>
+                        </span>
+                    </label>
+                </div>
+                <div class="input-holder">
+                    <div class="input-space">
+                        <select data-bind="options: suffixList, optionsText: 'Text', optionsValue: 'Value', optionsCaption: 'Choose...', value: suffix, disable: true" disabled="">
+                            <option value="">
+                                Choose...
+                            </option>
+                            <option value="III">
+                                III
+                            </option>
+                            <option value="JR">
+                                Jr.
+                            </option>
+                            <option value="SR">
+                                Sr.
+                            </option>
+                            <option value="II">
+                                II
+                            </option>
+                            <option value="IV">
+                                IV
+                            </option>
+                        </select>
+                        <span class="input-lock" data-bind="visible: true">
+                            <i aria-describedby="tooltip-j2q2mq1c4" class="fa fa-lock lock-symbol has-tip" data-selector="tooltip-j2q2mq1c4" data-tooltip="" title="">
+                            </i>
+                        </span>
+                    </div>
+                </div>
+                <div class="message-holder">
+                    <small class="" data-bind="css:{ error: suffix.hasError, warning: suffix.hasWarning }">
+                        <i class="fa fa-holder">
+                        </i>
+                        <!-- ko text: suffix.validationMessage -->
+                        <!-- /ko -->
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="question column medium-6 required" data-bind="css: { error: designation.hasError, required: designation.isRequired }">
+                <div class="label-holder">
+                    <label>
+                        <span class="text">
+                            Credentials
+                        </span>
+                        <span class="required-holder">
+                            <i class="fa fa-holder-dynamic">
+                            </i>
+                        </span>
+                    </label>
+                </div>
+                <div class="input-holder">
+                    <div class="input-space">
+                        <select class="chosen-select" data-bind="options: designationList, optionsText: 'Text', optionsValue: 'Value', selectedOptions: designation(), disable: (true && true), chosen: true" data-placeholder="Choose..." disabled="" multiple="" style="display: none;">
+                            <option value="ACNP">
+                                ACNP
+                            </option>
+                            <option value="ACNP-BC">
+                                ACNP-BC
+                            </option>
+                            <option value="ACNS-BC">
+                                ACNS-BC
+                            </option>
+                            <option value="AGACNP-BC">
+                                AGACNP-BC
+                            </option>
+                            <option value="AGPCNP-BC">
+                                AGPCNP-BC
+                            </option>
+                            <option value="ANP-BC">
+                                ANP-BC
+                            </option>
+                            <option value="APRN">
+                                APRN
+                            </option>
+                            <option value="ARNP">
+                                ARNP
+                            </option>
+                            <option value="BA">
+                                BA
+                            </option>
+                            <option value="BAO">
+                                BAO
+                            </option>
+                            <option value="BCEN">
+                                BCEN
+                            </option>
+                            <option value="BCH">
+                                BCh
+                            </option>
+                            <option value="BCPS">
+                                BCPS
+                            </option>
+                            <option value="BEE">
+                                BEE
+                            </option>
+                            <option value="BM">
+                                BM
+                            </option>
+                            <option value="BMBS">
+                                BMBS
+                            </option>
+                            <option value="BS">
+                                BS
+                            </option>
+                            <option value="BSN">
+                                BSN
+                            </option>
+                            <option value="CAE">
+                                CAE
+                            </option>
+                            <option value="CCDS">
+                                CCDS
+                            </option>
+                            <option value="CCNS">
+                                CCNS
+                            </option>
+                            <option value="CCRN">
+                                CCRN
+                            </option>
+                            <option value="CCT">
+                                CCT
+                            </option>
+                            <option value="CDE">
+                                CDE
+                            </option>
+                            <option value="CEPS">
+                                CEPS
+                            </option>
+                            <option value="CHB">
+                                ChB
+                            </option>
+                            <option value="CHPN">
+                                CHPN
+                            </option>
+                            <option value="CLS">
+                                CLS
+                            </option>
+                            <option value="CM">
+                                CM
+                            </option>
+                            <option value="CNMT">
+                                CNMT
+                            </option>
+                            <option value="CNS">
+                                CNS
+                            </option>
+                            <option value="CPN">
+                                CPN
+                            </option>
+                            <option value="CPNP">
+                                CPNP
+                            </option>
+                            <option value="CRNA">
+                                CRNA
+                            </option>
+                            <option value="CRNP">
+                                CRNP
+                            </option>
+                            <option value="CVT">
+                                CVT
+                            </option>
+                            <option value="DCH E">
+                                DCH E
+                            </option>
+                            <option value="DM">
+                                DM
+                            </option>
+                            <option value="DNP">
+                                DNP
+                            </option>
+                            <option value="DO">
+                                DO
+                            </option>
+                            <option value="DPHIL">
+                                DPHIL
+                            </option>
+                            <option value="DPM">
+                                DPM
+                            </option>
+                            <option value="DPT">
+                                DPT
+                            </option>
+                            <option value="DR">
+                                DR
+                            </option>
+                            <option value="DR PH">
+                                DR PH
+                            </option>
+                            <option value="DSC">
+                                DSc
+                            </option>
+                            <option value="DSC (MED)">
+                                DSC (MED)
+                            </option>
+                            <option value="DVM">
+                                DVM
+                            </option>
+                            <option value="EDD">
+                                EDD
+                            </option>
+                            <option value="EE">
+                                EE
+                            </option>
+                            <option value="ENGSCD">
+                                ENGSCD
+                            </option>
+                            <option value="FNP">
+                                FNP
+                            </option>
+                            <option value="FNP-BC">
+                                FNP-BC
+                            </option>
+                            <option value="FNP-C">
+                                FNP-C
+                            </option>
+                            <option value="ING">
+                                ING
+                            </option>
+                            <option value="JD">
+                                JD
+                            </option>
+                            <option value="LLM">
+                                LLM
+                            </option>
+                            <option value="LPD">
+                                LPD
+                            </option>
+                            <option value="LPN">
+                                LPN
+                            </option>
+                            <option value="LVN">
+                                LVN
+                            </option>
+                            <option value="MA">
+                                MA
+                            </option>
+                            <option value="MB">
+                                MB
+                            </option>
+                            <option value="MBBCH">
+                                MB BCh
+                            </option>
+                            <option value="MB CHB">
+                                MB ChB
+                            </option>
+                            <option value="MBA">
+                                MBA
+                            </option>
+                            <option value="MBBS">
+                                MBBS
+                            </option>
+                            <option value="MC">
+                                MC
+                            </option>
+                            <option value="MCH">
+                                MCH
+                            </option>
+                            <option value="MD">
+                                MD
+                            </option>
+                            <option value="MED">
+                                MED
+                            </option>
+                            <option value="MEDSCD">
+                                MEDSCD
+                            </option>
+                            <option value="MHS">
+                                MHS
+                            </option>
+                            <option value="MM">
+                                MM
+                            </option>
+                            <option value="MMED">
+                                MMed
+                            </option>
+                            <option value="MMM">
+                                MMM
+                            </option>
+                            <option value="MNNP">
+                                MNNP
+                            </option>
+                            <option value="MPA">
+                                MPA
+                            </option>
+                            <option value="MPAS">
+                                MPAS
+                            </option>
+                            <option value="MPH">
+                                MPH
+                            </option>
+                            <option value="MPHIL">
+                                MPhil
+                            </option>
+                            <option value="MS">
+                                MS
+                            </option>
+                            <option value="MSC">
+                                MSc
+                            </option>
+                            <option value="MSED">
+                                MSED
+                            </option>
+                            <option value="MSN">
+                                MSN
+                            </option>
+                            <option value="NP">
+                                NP
+                            </option>
+                            <option value="NP-C">
+                                NP-C
+                            </option>
+                            <option value="PA">
+                                PA
+                            </option>
+                            <option value="PA-C">
+                                PA-C
+                            </option>
+                            <option value="PH">
+                                PH
+                            </option>
+                            <option value="PHARMD">
+                                PharmD
+                            </option>
+                            <option value="PHD">
+                                PhD
+                            </option>
+                            <option value="PT">
+                                PT
+                            </option>
+                            <option value="RCCS">
+                                RCCS
+                            </option>
+                            <option value="RCES">
+                                RCES
+                            </option>
+                            <option value="RCIS">
+                                RCIS
+                            </option>
+                            <option value="RCS">
+                                RCS
+                            </option>
+                            <option value="RCVT">
+                                RCVT
+                            </option>
+                            <option value="RD">
+                                RD
+                            </option>
+                            <option value="RDCS">
+                                RDCS
+                            </option>
+                            <option value="RDN">
+                                RDN
+                            </option>
+                            <option value="RN">
+                                RN
+                            </option>
+                            <option value="RN-C">
+                                RN-C
+                            </option>
+                            <option value="RNCS">
+                                RNCS
+                            </option>
+                            <option value="RPH">
+                                RPH
+                            </option>
+                            <option value="RT">
+                                RT
+                            </option>
+                            <option value="RVS">
+                                RVS
+                            </option>
+                            <option value="RVT">
+                                RVT
+                            </option>
+                            <option value="SM">
+                                SM
+                            </option>
+                            <option value="USAF">
+                                USAF
+                            </option>
+                            <option value="USN">
+                                USN
+                            </option>
+                            <option value="VMD">
+                                VMD
+                            </option>
+                        </select>
+                        <div class="chosen-container chosen-container-multi chosen-disabled" style="width: 578px;" title="">
+                            <ul class="chosen-choices">
+                                <li class="search-choice">
+                                    <span>
+                                        DM
+                                    </span>
+                                    <a class="search-choice-close" data-option-array-index="37">
+                                    </a>
+                                </li>
+                                <li class="search-choice">
+                                    <span>
+                                        MD
+                                    </span>
+                                    <a class="search-choice-close" data-option-array-index="68">
+                                    </a>
+                                </li>
+                                <li class="search-field">
+                                    <input autocomplete="off" class="" disabled="" style="width: 25px;" type="text" value="Choose..."/>
+                                </li>
+                            </ul>
+                            <div class="chosen-drop">
+                                <ul class="chosen-results">
+                                </ul>
+                            </div>
+                        </div>
+                        <span class="input-lock" data-bind="visible: true && true">
+                            <i aria-describedby="tooltip-j2q2mq1c5" class="fa fa-lock lock-symbol has-tip" data-selector="tooltip-j2q2mq1c5" data-tooltip="" title="">
+                            </i>
+                        </span>
+                    </div>
+                </div>
+                <div class="message-holder">
+                    <small class="" data-bind="css:{ error: designation.hasError, warning: designation.hasWarning }">
+                        <i class="fa fa-holder">
+                        </i>
+                        <!-- ko text: designation.validationMessage -->
+                        <!-- /ko -->
+                    </small>
+                </div>
+            </div>
+            <div class="question column medium-6 required" data-bind="css: { error: professionaltypecode.hasError, required: professionaltype.isRequired, warning: professionaltypecode.hasWarning }">
+                <div class="label-holder">
+                    <label>
+                        <span class="text">
+                            Professional Type
+                        </span>
+                        <span class="required-holder">
+                            <i class="fa fa-holder-dynamic">
+                            </i>
+                        </span>
+                    </label>
+                </div>
+                <div class="input-holder row collapse">
+                    <div class="input-space column small-3">
+                        <button class="button expand" data-bind="css:{'disabled': false}, disable: false, click: function(){ openModal() },focus: function(){ openModal() }">
+                            Add/Edit
+                        </button>
+                    </div>
+                    <div class="input-space column small-9">
+                        <input data-bind="value: ( (!isEmpty(professionaltypecategory()) ? professionaltypecategory() : '') + (!isEmpty(professionaltype()) ? ' - ' + professionaltype() : '') + (!isEmpty(professionalsubtype()) ? ' - ' + professionalsubtype() : '') ), disable: true" disabled="" type="text">
+                            <input data-bind="value: professionaltypecategory" type="hidden" value="Other Professional">
+                                <input data-bind="value: professionaltypecode" type="hidden" value="STUDENT">
+                                    <input data-bind="value: professionalsubtypecode" type="hidden" value="PHARMD">
+                                        <span class="input-lock" data-bind="visible: (false == true)" style="display: none;">
+                                            <i aria-describedby="tooltip-j2q2mq1c6" class="fa fa-lock lock-symbol has-tip" data-selector="tooltip-j2q2mq1c6" data-tooltip="" title="">
+                                            </i>
+                                        </span>
+                                    </input>
+                                </input>
+                            </input>
+                        </input>
+                    </div>
+                </div>
+                <div class="message-holder">
+                    <small class="" data-bind="css:{ error: professionaltypecode.hasError, warning: professionaltypecode.hasWarning }">
+                        <i class="fa fa-holder">
+                        </i>
+                        <!-- ko text: professionaltypecode.validationMessage -->
+                        <!-- /ko -->
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="reveal-modal" data-reveal="" id="professionalTypeModal">
+        <section class="panel-selector-holder row collapse" id="PanelSelector">
+            <h4>
+                Select Your Professional Type
+            </h4>
+            <!--Parent-->
+            <div class="panel-selector">
+                <div class="paenl-selector-group-title">
+                    Are you a..
+                </div>
+                <ul data-bind="foreach: professionaltypecategoryList">
+                    <li class="" data-bind="parentToggle: $parent, css: { selected: selected }">
+                        <i class="fa fa-holder">
+                        </i>
+                        <span class="text" data-bind="text: Text">
+                            Physician/Scientist
+                        </span>
+                    </li>
+                    <li class="" data-bind="parentToggle: $parent, css: { selected: selected }">
+                        <i class="fa fa-holder">
+                        </i>
+                        <span class="text" data-bind="text: Text">
+                            Other Professional
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <!--Child-->
+            <div class="panel-selector">
+                <!-- ko if: professionaltypeListHolder().length > 0 -->
+                <!-- /ko -->
+                <ul data-bind="foreach: professionaltypeListHolder">
+                </ul>
+            </div>
+            <!--List Item Child-->
+            <div class="panel-selector">
+                <!-- ko if: professionalsubtypeListHolder().length > 0 -->
+                <!-- /ko -->
+                <ul data-bind="foreach: professionalsubtypeListHolder">
+                </ul>
+            </div>
+        </section>
+        <a aria-label="Close" class="close-reveal-modal">
+            <i class="fa fa-holder">
+            </i>
+        </a>
+    </div>
+    <h2>
+        Address(es)
+        <div class="sub-line">
+            <b>
+                At least one personal address is required.
+                <sup>
+                    <i class="fa fa-plus required">
+                    </i>
+                </sup>
+            </b>
+        </div>
+    </h2>
+    <div class="row group-divide-auto">
+        <!-- ko with: address -->
+        <div class="repeater" data-bind="css:{'edit-mode':addressinfoForm().addressid() != undefined && addressinfoForm().addressid() != '0'}">
+            <div class="label-holder">
+                <label for="">
+                    <span class="text">
+                        Addresses
+                    </span>
+                    <span class="required-holder">
+                        <i class="fa fa-holder-dynamic">
+                        </i>
+                    </span>
+                </label>
+            </div>
+            <!-- ko foreach: addressinfo() -->
+            <div class="render animated fadeIn">
+                <div class="render-actions">
+                    <a class="set" data-bind="visible:!preferredmailing(), click: function() { $root.setPreferredMailing('address', $data) }" href="javascript:void(0)" style="display: none;">
+                        <i class="fa fa-envelope">
+                        </i>
+                        <span class="text">
+                            mark as preferred
+                        </span>
+                    </a>
+                    <a class="edit" data-bind="click: function() { $root.editCustomSection('address','addressinfo', $data) }" href="javascript:void(0)">
+                        <i class="fa fa-holder">
+                        </i>
+                        <span class="text">
+                            Edit
+                        </span>
+                    </a>
+                    <a class="delete" data-bind="visible: (!isprimary() && !preferredmailing() ),click: function() { $root.deleteCustomSection('address','addressinfo', $data) }" href="javascript:void(0)" style="display: none;">
+                        <i class="fa fa-holder">
+                        </i>
+                        <span class="text">
+                            Delete
+                        </span>
+                    </a>
+                </div>
+                <ul class="render-holder">
+                    <li class="has-tip starred" data-bind="visible: isprimary" title="Primary Address">
+                        <i class="fa fa-holder">
+                        </i>
+                    </li>
+                    <!--ko if: 'home' == 'work' -->
+                    <!--/ko-->
+                    <!--ko ifnot: 'home' == 'work' -->
+                    <li class="loud" data-bind="text: address1">
+                        No. 223/224 Old No. Plot B TTK Roak
+                    </li>
+                    <!--/ko-->
+                    <li class="italic" data-bind="text: city">
+                        Chennai, Tamilnadu
+                    </li>
+                    <li class="italic" data-bind="text: statecode">
+                    </li>
+                    <li class="italic" data-bind="text: postalcode">
+                        600018
+                    </li>
+                    <li class="italic break subtle" data-bind="text: countrycode">
+                        IND
+                    </li>
+                    <li class="italic break has-tip" data-bind="visible: isprimary" style="display: none;" title="Locked: Primary Address - Please use edit to change">
+                        <i class="fa fa-lock" title="Marked as Primary">
+                        </i>
+                    </li>
+                    <li class="italic break" data-bind="visible: preferredmailing">
+                        <i class="fa fa-envelope" title="Preferred Mailing">
+                        </i>
+                    </li>
+                </ul>
+                <div class="message-holder">
+                    <small class="warning">
+                        <i class="fa fa-holder-dynamic">
+                        </i>
+                        This is a dynamic render message.
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /ko -->
+</div>
+<div class="page paper-page success">
+    <div class="page-wrapper">
+        <div class="content-padding">
+            <div class="row section-padding content-padding">
+                <div class="card">
+                    <div class="colored-paper success">
+                        <h3 class="no-margin">
+                            <i class="fa fa-plus">
+                            </i>
+                            Add Address
+                            <span class="sub-line">
+                                All inputs marked with the * are required to submit and save
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="question-group section-padding ">
+    <!-- ko with: addressinfoForm -->
+    <div class="row">
+        <div class="question column medium-8 large-6 required" data-bind="css: { error: countrycode.hasError, required: countrycode.isRequired, warning: countrycode.hasWarning }">
+            <div class="label-holder">
+                <label>
+                    <span class="text">
+                        Country
+                    </span>
+                    <span class="required-holder">
+                        <i class="fa fa-holder-dynamic">
+                        </i>
+                    </span>
+                </label>
+            </div>
+            <div class="input-holder">
+                <select name="" id="">
+                	<option value=""></option>
+                </select>
+            </div>
+            <div class="message-holder">
+                <div class="message-holder">
+                    <small class="" data-bind="css:{ error: countrycode.hasError, warning: countrycode.hasWarning }">
+                        <i class="fa fa-holder">
+                        </i>
+                        <!-- ko text: countrycode.validationMessage -->
+                        <!-- /ko -->
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="question column large-4 required" data-bind="css: { error: address1.hasError, required: address1.isRequired, warning: address1.hasWarning }">
+            <div class="label-holder">
+                <label>
+                    <span class="text">
+                        Street Address 1
+                    </span>
+                    <span class="required-holder">
+                        <i class="fa fa-holder-dynamic">
+                        </i>
+                    </span>
+                </label>
+            </div>
+            <div class="input-holder">
+                <div class="input-space">
+                    <input data-bind="value: address1, disable: institutionid" type="text">
+                    </input>
+                </div>
+            </div>
+            <div class="message-holder">
+                <small class="" data-bind="css:{ error: address1.hasError, warning: address1.hasWarning }">
+                    <i class="fa fa-holder">
+                    </i>
+                    <!-- ko text: address1.validationMessage -->
+                    <!-- /ko -->
+                </small>
+            </div>
+        </div>
+        <div class="question column large-4">
+            <div class="label-holder">
+                <label>
+                    <span class="text">
+                        Street Address 2
+                    </span>
+                    <span class="required-holder">
+                        <i class="fa fa-holder-dynamic">
+                        </i>
+                    </span>
+                </label>
+            </div>
+            <div class="input-holder">
+                <div class="input-space">
+                    <input data-bind="value: address2, disable: institutionid" type="text">
+                    </input>
+                </div>
+            </div>
+            <div class="message-holder">
+                <small class="error">
+                    <i class="fa fa-holder">
+                    </i>
+                </small>
+            </div>
+        </div>
+        <div class="question column large-4">
+            <div class="label-holder">
+                <label>
+                    <span class="text">
+                        Street Address 3
+                    </span>
+                    <span class="required-holder">
+                        <i class="fa fa-holder-dynamic">
+                        </i>
+                    </span>
+                </label>
+            </div>
+            <div class="input-holder">
+                <div class="input-space">
+                    <input data-bind="value: address2, disable: institutionid" type="text">
+                    </input>
+                </div>
+            </div>
+            <div class="message-holder">
+                <small class="error">
+                    <i class="fa fa-holder">
+                    </i>
+                </small>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="question column large-6 required" data-bind="css: { error: city.hasError, required: city.isRequired, warning: city.hasWarning }">
+            <div class="label-holder">
+                <label>
+                    <span class="text">
+                        City
+                    </span>
+                    <span class="required-holder">
+                        <i class="fa fa-holder-dynamic">
+                        </i>
+                    </span>
+                </label>
+            </div>
+            <div class="input-holder">
+                <div class="input-space">
+                    <input data-bind="value: city, disable:institutionid" type="text">
+                    </input>
+                </div>
+            </div>
+            <div class="message-holder">
+                <small class="" data-bind="css:{ error: city.hasError, warning: city.hasWarning }">
+                    <i class="fa fa-holder">
+                    </i>
+                    <!-- ko text: city.validationMessage -->
+                    <!-- /ko -->
+                </small>
+            </div>
+        </div>
+        <div class="question column large-3 small-6 required" data-bind="css: { error: statecode.hasError, required: statecode.isRequired, warning: statecode.hasWarning }">
+            <div class="label-holder">
+                <label>
+                    <span class="text">
+                        State / Province
+                    </span>
+                    <span class="required-holder">
+                        <i class="fa fa-holder-dynamic">
+                        </i>
+                    </span>
+                </label>
+            </div>
+            <div class="input-holder">
+                <div class="input-space">
+                    <select class="show" data-bind="css: { 'show': statecode.showText(), 'hide': !statecode.showText() }, options: $root.address().statecodeListHolder, optionsText: 'Text', optionsValue: 'Value', optionsCaption: 'Choose...', value: statecode, disable: institutionid">
+                        <option value="">
+                            Choose...
+                        </option>
+                        <option value="AL">
+                            Alabama
+                        </option>
+                        <option value="AK">
+                            Alaska
+                        </option>
+                        <option value="AZ">
+                            Arizona
+                        </option>
+                        <option value="AR">
+                            Arkansas
+                        </option>
+                        <option value="AA">
+                            Armed Forces Americas
+                        </option>
+                        <option value="AE">
+                            Armed Forces Europe, Middle East
+                        </option>
+                        <option value="AP">
+                            Armed Forces Pacific
+                        </option>
+                        <option value="CA">
+                            California
+                        </option>
+                        <option value="CZ">
+                            Canal Zone
+                        </option>
+                        <option value="CO">
+                            Colorado
+                        </option>
+                        <option value="CT">
+                            Connecticut
+                        </option>
+                        <option value="DE">
+                            Delaware
+                        </option>
+                        <option value="DC">
+                            District of Columbia
+                        </option>
+                        <option value="FL">
+                            Florida
+                        </option>
+                        <option value="GA">
+                            Georgia
+                        </option>
+                        <option value="GU">
+                            Guam
+                        </option>
+                        <option value="HI">
+                            Hawaii
+                        </option>
+                        <option value="ID">
+                            Idaho
+                        </option>
+                        <option value="IL">
+                            Illinois
+                        </option>
+                        <option value="IN">
+                            Indiana
+                        </option>
+                        <option value="IA">
+                            Iowa
+                        </option>
+                        <option value="KS">
+                            Kansas
+                        </option>
+                        <option value="KY">
+                            Kentucky
+                        </option>
+                        <option value="LA">
+                            Louisiana
+                        </option>
+                        <option value="ME">
+                            Maine
+                        </option>
+                        <option value="MD">
+                            Maryland
+                        </option>
+                        <option value="MA">
+                            Massachusetts
+                        </option>
+                        <option value="MI">
+                            Michigan
+                        </option>
+                        <option value="MN">
+                            Minnesota
+                        </option>
+                        <option value="MS">
+                            Mississippi
+                        </option>
+                        <option value="MO">
+                            Missouri
+                        </option>
+                        <option value="MT">
+                            Montana
+                        </option>
+                        <option value="NE">
+                            Nebraska
+                        </option>
+                        <option value="NV">
+                            Nevada
+                        </option>
+                        <option value="NH">
+                            New Hampshire
+                        </option>
+                        <option value="NJ">
+                            New Jersey
+                        </option>
+                        <option value="NM">
+                            New Mexico
+                        </option>
+                        <option value="NY">
+                            New York
+                        </option>
+                        <option value="NC">
+                            North Carolina
+                        </option>
+                        <option value="ND">
+                            North Dakota
+                        </option>
+                        <option value="MP">
+                            Northern Mariana Islands
+                        </option>
+                        <option value="OH">
+                            Ohio
+                        </option>
+                        <option value="OK">
+                            Oklahoma
+                        </option>
+                        <option value="OR">
+                            Oregon
+                        </option>
+                        <option value="PI">
+                            Pacific Islands
+                        </option>
+                        <option value="PA">
+                            Pennsylvania
+                        </option>
+                        <option value="PR">
+                            Puerto Rico
+                        </option>
+                        <option value="RI">
+                            Rhode Island
+                        </option>
+                        <option value="SC">
+                            South Carolina
+                        </option>
+                        <option value="SD">
+                            South Dakota
+                        </option>
+                        <option value="TN">
+                            Tennessee
+                        </option>
+                        <option value="TX">
+                            Texas
+                        </option>
+                        <option value="TT">
+                            Trust Territories
+                        </option>
+                        <option value="UT">
+                            Utah
+                        </option>
+                        <option value="VT">
+                            Vermont
+                        </option>
+                        <option value="VI">
+                            Virgin Islands
+                        </option>
+                        <option value="VA">
+                            Virginia
+                        </option>
+                        <option value="WA">
+                            Washington
+                        </option>
+                        <option value="WV">
+                            West Virginia
+                        </option>
+                        <option value="WI">
+                            Wisconsin
+                        </option>
+                        <option value="WY">
+                            Wyoming
+                        </option>
+                    </select>
+                    <input class="hide" data-bind="css: { 'show': state.showText(), 'hide': !state.showText() }, value: state, disable: institutionid" type="text">
+                    </input>
+                </div>
+            </div>
+            <div class="message-holder">
+                <small class="" data-bind="css:{ error: statecode.hasError, warning: statecode.hasWarning }">
+                    <i class="fa fa-holder">
+                    </i>
+                    <!-- ko text: statecode.validationMessage -->
+                    <!-- /ko -->
+                </small>
+            </div>
+        </div>
+        <div class="question column large-3 small-6 required" data-bind="css: { error: postalcode.hasError, required: postalcode.isRequired, warning: postalcode.hasWarning }">
+            <div class="label-holder">
+                <label>
+                    <span class="text">
+                        Postal Code / Zip Code
+                    </span>
+                    <span class="required-holder">
+                        <i class="fa fa-holder-dynamic">
+                        </i>
+                    </span>
+                </label>
+            </div>
+            <div class="input-holder">
+                <div class="input-space">
+                    <input data-bind="value: postalcode, disable: institutionid, valueUpdate:'keyup'" type="text">
+                    </input>
+                </div>
+            </div>
+            <div class="message-holder">
+                <div class="message-holder">
+                    <small class="" data-bind="css:{ error: postalcode.hasError, warning: postalcode.hasWarning }">
+                        <i class="fa fa-holder">
+                        </i>
+                        <!-- ko text: postalcode.validationMessage -->
+                        <!-- /ko -->
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="repeater-action text-right group-divide">
+    <a class="button small radius secondary clear" data-bind="click: function() {$root.clearCustomSection('address','addressinfo') }" href="javascript:void(0)">
+        <span class="text edit-mode--show">
+            Cancel
+        </span>
+    </a>
+    <a class="save button small radius " href="javascript:void(0)">
+        <i class="fa fa-holder">
+        </i>
+        <span class="text edit-mode--hide">
+            Save
+        </span>
+    </a>
+</div>
+<div class="page paper-page">
+    <div class="page-wrapper">
+        <div class="content-padding">
+            <div class="card">
+                <h2>
+                    Contact Information
+                </h2>
+                <h5>
+                    Phone Number(s)
+                    <small class="sub-header">
+                        One Phone Number is required
+                    </small>
+                </h5>
+                <div class="section-padding">
+                    <div class="card ghost text-centered">
+                        <a class="button small secondary radius expanded" href="">
+                            <i class="fa fa-plus">
+                            </i>
+                            Add New Phone Number
+                        </a>
+                    </div>
+                </div>
+                <!-- ko with: contact -->
+                {% comment %}
+                <div class="row">
+                    <div class="question column small-12 medium-8 large-12 required" data-bind="css: { error:phone.hasError, required: phone.isRequired, warning: phone.hasWarning}">
+                        <div class="label-holder">
+                            <label for="">
+                                <span class="text">
+                                    Phone Number
+                                </span>
+                                <span class="required-holder">
+                                    <i class="fa fa-holder-dynamic">
+                                    </i>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="input-holder row collapse">
+                            <div class="input-space column small-6">
+                                <select data-bind="options: countrycodeList, optionsText: 'Text', optionsValue: 'Value',  value: countrycode">
+                                    <option value="USA">
+                                        UNITED STATES
+                                    </option>
+                                    <option value="CAN">
+                                        CANADA
+                                    </option>
+                                    <option value="AFG">
+                                        AFGHANISTAN
+                                    </option>
+                                    <option value="ALB">
+                                        ALBANIA
+                                    </option>
+                                    <option value="DZA">
+                                        ALGERIA
+                                    </option>
+                                    <option value="ASM">
+                                        AMERICAN SAMOA
+                                    </option>
+                                    <option value="AND">
+                                        ANDORRA
+                                    </option>
+                                    <option value="AGO">
+                                        ANGOLA
+                                    </option>
+                                    <option value="AIA">
+                                        ANGUILLA
+                                    </option>
+                                    <option value="ATA">
+                                        ANTARCTICA
+                                    </option>
+                                    <option value="ATG">
+                                        ANTIGUA AND BARBUDA
+                                    </option>
+                                    <option value="ARG">
+                                        ARGENTINA
+                                    </option>
+                                    <option value="ARM">
+                                        ARMENIA
+                                    </option>
+                                    <option value="ABW">
+                                        ARUBA
+                                    </option>
+                                    <option value="AUS">
+                                        AUSTRALIA
+                                    </option>
+                                    <option value="AUT">
+                                        AUSTRIA
+                                    </option>
+                                    <option value="AZE">
+                                        AZERBAIJAN
+                                    </option>
+                                    <option value="BHS">
+                                        BAHAMAS
+                                    </option>
+                                    <option value="BHR">
+                                        BAHRAIN
+                                    </option>
+                                    <option value="BGD">
+                                        BANGLADESH
+                                    </option>
+                                    <option value="BRB">
+                                        BARBADOS
+                                    </option>
+                                    <option value="BLR">
+                                        BELARUS
+                                    </option>
+                                    <option value="BEL">
+                                        BELGIUM
+                                    </option>
+                                    <option value="BLZ">
+                                        BELIZE
+                                    </option>
+                                    <option value="BEN">
+                                        BENIN
+                                    </option>
+                                    <option value="BMU">
+                                        BERMUDA
+                                    </option>
+                                    <option value="BTN">
+                                        BHUTAN
+                                    </option>
+                                    <option value="BOL">
+                                        BOLIVIA
+                                    </option>
+                                    <option value="BIH">
+                                        BOSNIA AND HERZEGOVINA
+                                    </option>
+                                    <option value="BWA">
+                                        BOTSWANA
+                                    </option>
+                                    <option value="BVT">
+                                        BOUVET ISLAND
+                                    </option>
+                                    <option value="BRA">
+                                        BRAZIL
+                                    </option>
+                                    <option value="IOT">
+                                        BRITISH INDIAN OCEAN TERR
+                                    </option>
+                                    <option value="BRN">
+                                        BRUNEI DARUSSALAM
+                                    </option>
+                                    <option value="BGR">
+                                        BULGARIA
+                                    </option>
+                                    <option value="BFA">
+                                        BURKINA FASO
+                                    </option>
+                                    <option value="BDI">
+                                        BURUNDI
+                                    </option>
+                                    <option value="KHM">
+                                        CAMBODIA
+                                    </option>
+                                    <option value="CMR">
+                                        CAMEROON
+                                    </option>
+                                    <option value="CPV">
+                                        CAPE VERDE
+                                    </option>
+                                    <option value="CYM">
+                                        CAYMAN ISLANDS
+                                    </option>
+                                    <option value="CAF">
+                                        CENTRAL AFRICAN REPUBLIC
+                                    </option>
+                                    <option value="TCD">
+                                        CHAD
+                                    </option>
+                                    <option value="CHL">
+                                        CHILE
+                                    </option>
+                                    <option value="CHN">
+                                        CHINA
+                                    </option>
+                                    <option value="CXR">
+                                        CHRISTMAS ISLAND
+                                    </option>
+                                    <option value="CCK">
+                                        COCOS (KEELING) ISLANDS
+                                    </option>
+                                    <option value="COL">
+                                        COLOMBIA
+                                    </option>
+                                    <option value="COM">
+                                        COMOROS
+                                    </option>
+                                    <option value="COG">
+                                        CONGO
+                                    </option>
+                                    <option value="COD">
+                                        CONGO-DEMOCRATIC REPUBLIC
+                                    </option>
+                                    <option value="COK">
+                                        COOK ISLANDS
+                                    </option>
+                                    <option value="CRI">
+                                        COSTA RICA
+                                    </option>
+                                    <option value="CIV">
+                                        COTE DIVOIRE
+                                    </option>
+                                    <option value="HRV">
+                                        CROATIA (HRVATSKA)
+                                    </option>
+                                    <option value="CUB">
+                                        CUBA
+                                    </option>
+                                    <option value="CUW">
+                                        CURACAO
+                                    </option>
+                                    <option value="CYP">
+                                        CYPRUS
+                                    </option>
+                                    <option value="CZE">
+                                        CZECH REPUBLIC
+                                    </option>
+                                    <option value="DNK">
+                                        DENMARK
+                                    </option>
+                                    <option value="DJI">
+                                        DJIBOUTI
+                                    </option>
+                                    <option value="DMA">
+                                        DOMINICA
+                                    </option>
+                                    <option value="DOM">
+                                        DOMINICAN REPUBLIC
+                                    </option>
+                                    <option value="TLS">
+                                        EAST TIMOR
+                                    </option>
+                                    <option value="ECU">
+                                        ECUADOR
+                                    </option>
+                                    <option value="EGY">
+                                        EGYPT
+                                    </option>
+                                    <option value="SLV">
+                                        EL SALVADOR
+                                    </option>
+                                    <option value="GNQ">
+                                        EQUATORIAL GUINEA
+                                    </option>
+                                    <option value="ERI">
+                                        ERITREA
+                                    </option>
+                                    <option value="EST">
+                                        ESTONIA
+                                    </option>
+                                    <option value="ETH">
+                                        ETHIOPIA
+                                    </option>
+                                    <option value="FLK">
+                                        FALKLAND ISLANDS
+                                    </option>
+                                    <option value="FRO">
+                                        FAROE ISLANDS
+                                    </option>
+                                    <option value="FJI">
+                                        FIJI
+                                    </option>
+                                    <option value="FIN">
+                                        FINLAND
+                                    </option>
+                                    <option value="FRA">
+                                        FRANCE
+                                    </option>
+                                    <option value="FXX">
+                                        FRANCE - METROPOLITAN
+                                    </option>
+                                    <option value="GUF">
+                                        FRENCH GUIANA
+                                    </option>
+                                    <option value="PYF">
+                                        FRENCH POLYNESIA
+                                    </option>
+                                    <option value="ATF">
+                                        FRENCH SOUTHERN TERR
+                                    </option>
+                                    <option value="GAB">
+                                        GABON
+                                    </option>
+                                    <option value="GMB">
+                                        GAMBIA
+                                    </option>
+                                    <option value="GEO">
+                                        GEORGIA
+                                    </option>
+                                    <option value="DEU">
+                                        GERMANY
+                                    </option>
+                                    <option value="GHA">
+                                        GHANA
+                                    </option>
+                                    <option value="GIB">
+                                        GIBRALTAR
+                                    </option>
+                                    <option value="GRC">
+                                        GREECE
+                                    </option>
+                                    <option value="GRL">
+                                        GREENLAND
+                                    </option>
+                                    <option value="GRD">
+                                        GRENADA
+                                    </option>
+                                    <option value="GLP">
+                                        GUADELOUPE
+                                    </option>
+                                    <option value="GTM">
+                                        GUATEMALA
+                                    </option>
+                                    <option value="GIN">
+                                        GUINEA
+                                    </option>
+                                    <option value="GNB">
+                                        GUINEA-BISSAU
+                                    </option>
+                                    <option value="GUY">
+                                        GUYANA
+                                    </option>
+                                    <option value="HTI">
+                                        HAITI
+                                    </option>
+                                    <option value="HMD">
+                                        HEARD & MCDONALD ISLANDS
+                                    </option>
+                                    <option value="VAT">
+                                        HOLY SEE (VATICAN CITY )
+                                    </option>
+                                    <option value="HND">
+                                        HONDURAS
+                                    </option>
+                                    <option value="HKG">
+                                        HONG KONG
+                                    </option>
+                                    <option value="HUN">
+                                        HUNGARY
+                                    </option>
+                                    <option value="ISL">
+                                        ICELAND
+                                    </option>
+                                    <option value="IND">
+                                        INDIA
+                                    </option>
+                                    <option value="IDN">
+                                        INDONESIA
+                                    </option>
+                                    <option value="IRN">
+                                        IRAN(ISLAMIC REPUBLIC OF)
+                                    </option>
+                                    <option value="IRQ">
+                                        IRAQ
+                                    </option>
+                                    <option value="IRL">
+                                        IRELAND
+                                    </option>
+                                    <option value="ISR">
+                                        ISRAEL
+                                    </option>
+                                    <option value="ITA">
+                                        ITALY
+                                    </option>
+                                    <option value="JAM">
+                                        JAMAICA
+                                    </option>
+                                    <option value="JPN">
+                                        JAPAN
+                                    </option>
+                                    <option value="JOR">
+                                        JORDAN
+                                    </option>
+                                    <option value="KAZ">
+                                        KAZAKHSTAN
+                                    </option>
+                                    <option value="KEN">
+                                        KENYA
+                                    </option>
+                                    <option value="KIR">
+                                        KIRIBATI
+                                    </option>
+                                    <option value="KOR">
+                                        KOREA,  REPUBLIC OF
+                                    </option>
+                                    <option value="PRK">
+                                        KOREA-DEMO PEOPLES REP
+                                    </option>
+                                    <option value="KWT">
+                                        KUWAIT
+                                    </option>
+                                    <option value="KGZ">
+                                        KYRGYZSTAN
+                                    </option>
+                                    <option value="LAO">
+                                        LAO PEOPLE DEMO REPUBLIC
+                                    </option>
+                                    <option value="LVA">
+                                        LATVIA
+                                    </option>
+                                    <option value="LBN">
+                                        LEBANON
+                                    </option>
+                                    <option value="LSO">
+                                        LESOTHO
+                                    </option>
+                                    <option value="LBR">
+                                        LIBERIA
+                                    </option>
+                                    <option value="LBY">
+                                        LIBYAN ARAB JAMAHIRIYA
+                                    </option>
+                                    <option value="LIE">
+                                        LIECHTENSTEIN
+                                    </option>
+                                    <option value="LTU">
+                                        LITHUANIA
+                                    </option>
+                                    <option value="LUX">
+                                        LUXEMBOURG
+                                    </option>
+                                    <option value="MAC">
+                                        MACAU
+                                    </option>
+                                    <option value="MKD">
+                                        MACEDONIA (YUGOSLAV REP)
+                                    </option>
+                                    <option value="MDG">
+                                        MADAGASCAR
+                                    </option>
+                                    <option value="MWI">
+                                        MALAWI
+                                    </option>
+                                    <option value="MYS">
+                                        MALAYSIA
+                                    </option>
+                                    <option value="MDV">
+                                        MALDIVES
+                                    </option>
+                                    <option value="MLI">
+                                        MALI
+                                    </option>
+                                    <option value="MLT">
+                                        MALTA
+                                    </option>
+                                    <option value="MHL">
+                                        MARSHALL ISLANDS
+                                    </option>
+                                    <option value="MTQ">
+                                        MARTINIQUE
+                                    </option>
+                                    <option value="MRT">
+                                        MAURITANIA
+                                    </option>
+                                    <option value="MUS">
+                                        MAURITIUS
+                                    </option>
+                                    <option value="MYT">
+                                        MAYOTTE
+                                    </option>
+                                    <option value="MEX">
+                                        MEXICO
+                                    </option>
+                                    <option value="FSM">
+                                        MICRONESIA-FEDERATED STAT
+                                    </option>
+                                    <option value="MDA">
+                                        MOLDOVA - REPUBLIC OF
+                                    </option>
+                                    <option value="MCO">
+                                        MONACO
+                                    </option>
+                                    <option value="MNG">
+                                        MONGOLIA
+                                    </option>
+                                    <option value="MNE">
+                                        MONTENEGRO
+                                    </option>
+                                    <option value="MSR">
+                                        MONTSERRAT
+                                    </option>
+                                    <option value="MAR">
+                                        MOROCCO
+                                    </option>
+                                    <option value="MOZ">
+                                        MOZAMBIQUE
+                                    </option>
+                                    <option value="MMR">
+                                        MYANMAR
+                                    </option>
+                                    <option value="NAM">
+                                        NAMIBIA
+                                    </option>
+                                    <option value="NRU">
+                                        NAURU
+                                    </option>
+                                    <option value="NPL">
+                                        NEPAL
+                                    </option>
+                                    <option value="NLD">
+                                        NETHERLANDS
+                                    </option>
+                                    <option value="ANT">
+                                        NETHERLANDS ANTILLES
+                                    </option>
+                                    <option value="NCL">
+                                        NEW CALEDONIA
+                                    </option>
+                                    <option value="NZL">
+                                        NEW ZEALAND
+                                    </option>
+                                    <option value="NIC">
+                                        NICARAGUA
+                                    </option>
+                                    <option value="NER">
+                                        NIGER
+                                    </option>
+                                    <option value="NGA">
+                                        NIGERIA
+                                    </option>
+                                    <option value="NIU">
+                                        NIUE
+                                    </option>
+                                    <option value="NFK">
+                                        NORFOLK ISLAND
+                                    </option>
+                                    <option value="MNP">
+                                        NORTHERN MARIANA ISLANDS
+                                    </option>
+                                    <option value="NOR">
+                                        NORWAY
+                                    </option>
+                                    <option value="OMN">
+                                        OMAN
+                                    </option>
+                                    <option value="PAK">
+                                        PAKISTAN
+                                    </option>
+                                    <option value="PLW">
+                                        PALAU
+                                    </option>
+                                    <option value="PSE">
+                                        PALESTINIAN TERRITORY, OCCUPIED
+                                    </option>
+                                    <option value="PAN">
+                                        PANAMA
+                                    </option>
+                                    <option value="PNG">
+                                        PAPUA NEW GUINEA
+                                    </option>
+                                    <option value="PRY">
+                                        PARAGUAY
+                                    </option>
+                                    <option value="PER">
+                                        PERU
+                                    </option>
+                                    <option value="PHL">
+                                        PHILIPPINES
+                                    </option>
+                                    <option value="PCN">
+                                        PITCAIRN
+                                    </option>
+                                    <option value="POL">
+                                        POLAND
+                                    </option>
+                                    <option value="PRT">
+                                        PORTUGAL
+                                    </option>
+                                    <option value="QAT">
+                                        QATAR
+                                    </option>
+                                    <option value="REU">
+                                        REUNION
+                                    </option>
+                                    <option value="ROU">
+                                        ROMANIA
+                                    </option>
+                                    <option value="RUS">
+                                        RUSSIAN FEDERATION
+                                    </option>
+                                    <option value="RWA">
+                                        RWANDA
+                                    </option>
+                                    <option value="KNA">
+                                        SAINT KITTS AND NEVIS
+                                    </option>
+                                    <option value="LCA">
+                                        SAINT LUCIA
+                                    </option>
+                                    <option value="WSM">
+                                        SAMOA
+                                    </option>
+                                    <option value="SMR">
+                                        SAN MARINO
+                                    </option>
+                                    <option value="STP">
+                                        SAO TOME AND PRINCIPE
+                                    </option>
+                                    <option value="SAU">
+                                        SAUDI ARABIA
+                                    </option>
+                                    <option value="SEN">
+                                        SENEGAL
+                                    </option>
+                                    <option value="SRB">
+                                        SERBIA
+                                    </option>
+                                    <option value="SYC">
+                                        SEYCHELLES
+                                    </option>
+                                    <option value="SLE">
+                                        SIERRA LEONE
+                                    </option>
+                                    <option value="SGP">
+                                        SINGAPORE
+                                    </option>
+                                    <option value="SVK">
+                                        SLOVAKIA(SLOVAK REPUBLIC)
+                                    </option>
+                                    <option value="SVN">
+                                        SLOVENIA
+                                    </option>
+                                    <option value="SLB">
+                                        SOLOMON ISLANDS
+                                    </option>
+                                    <option value="SOM">
+                                        SOMALIA
+                                    </option>
+                                    <option value="ZAF">
+                                        SOUTH AFRICA
+                                    </option>
+                                    <option value="SGS">
+                                        SOUTH GEORGIA
+                                    </option>
+                                    <option value="ESP">
+                                        SPAIN
+                                    </option>
+                                    <option value="LKA">
+                                        SRI LANKA
+                                    </option>
+                                    <option value="VCT">
+                                        ST VINCENT AND GRENADINES
+                                    </option>
+                                    <option value="SHN">
+                                        ST. HELENA
+                                    </option>
+                                    <option value="SPM">
+                                        ST. PIERRE AND MIQUELON
+                                    </option>
+                                    <option value="SDN">
+                                        SUDAN
+                                    </option>
+                                    <option value="SUR">
+                                        SURINAME
+                                    </option>
+                                    <option value="SJM">
+                                        SVALBARD & JAN MAYEN ISL
+                                    </option>
+                                    <option value="SWZ">
+                                        SWAZILAND
+                                    </option>
+                                    <option value="SWE">
+                                        SWEDEN
+                                    </option>
+                                    <option value="CHE">
+                                        SWITZERLAND
+                                    </option>
+                                    <option value="SYR">
+                                        SYRIAN ARAB REPUBLIC
+                                    </option>
+                                    <option value="TWN">
+                                        TAIWAN
+                                    </option>
+                                    <option value="TJK">
+                                        TAJIKISTAN
+                                    </option>
+                                    <option value="TZA">
+                                        TANZANIA-UNITED REPUBLIC
+                                    </option>
+                                    <option value="THA">
+                                        THAILAND
+                                    </option>
+                                    <option value="TGO">
+                                        TOGO
+                                    </option>
+                                    <option value="TKL">
+                                        TOKELAU
+                                    </option>
+                                    <option value="TON">
+                                        TONGA
+                                    </option>
+                                    <option value="TTO">
+                                        TRINIDAD AND TOBAGO
+                                    </option>
+                                    <option value="TUN">
+                                        TUNISIA
+                                    </option>
+                                    <option value="TUR">
+                                        TURKEY
+                                    </option>
+                                    <option value="TKM">
+                                        TURKMENISTAN
+                                    </option>
+                                    <option value="TCA">
+                                        TURKS AND CAICOS ISLANDS
+                                    </option>
+                                    <option value="TUV">
+                                        TUVALU
+                                    </option>
+                                    <option value="UGA">
+                                        UGANDA
+                                    </option>
+                                    <option value="UKR">
+                                        UKRAINE
+                                    </option>
+                                    <option value="ARE">
+                                        UNITED ARAB EMIRATES
+                                    </option>
+                                    <option value="GBR">
+                                        UNITED KINGDOM
+                                    </option>
+                                    <option value="URY">
+                                        URUGUAY
+                                    </option>
+                                    <option value="UZB">
+                                        UZBEKISTAN
+                                    </option>
+                                    <option value="VUT">
+                                        VANUATU
+                                    </option>
+                                    <option value="VEN">
+                                        VENEZUELA
+                                    </option>
+                                    <option value="VNM">
+                                        VIET NAM
+                                    </option>
+                                    <option value="VGB">
+                                        VIRGIN ISLANDS (BRITISH)
+                                    </option>
+                                    <option value="WLF">
+                                        WALLIS AND FUTUNA ISLANDS
+                                    </option>
+                                    <option value="ESH">
+                                        WESTERN SAHARA
+                                    </option>
+                                    <option value="YEM">
+                                        YEMEN
+                                    </option>
+                                    <option value="ZMB">
+                                        ZAMBIA
+                                    </option>
+                                    <option value="ZWE">
+                                        ZIMBABWE
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="input-space column small-6 end">
+                                <input data-bind="value: phone" type="text">
+                                </input>
+                            </div>
+                        </div>
+                        <div class="message-holder">
+                            <small class="" data-bind="css:{ error: phone.hasError, warning: phone.hasWarning }">
+                                <i class="fa fa-holder">
+                                </i>
+                                <!-- ko text: phone.validationMessage -->
+                                <!-- /ko -->
+                            </small>
+                        </div>
+                        <div class="hint">
+                            <!-- ko if: phonedefault() != true -->
+                            <a class="set link" data-bind="click: function() { $root.setContactDefault('contact', $data,'PHONE') }" href="javascript:void(0)">
+                                <i class="fa fa-holder" title="Default">
+                                </i>
+                                <span class="text">
+                                    set as default
+                                </span>
+                            </a>
+                            <!--/ko-->
+                            <!-- ko if: phonedefault() == true -->
+                            <!--/ko-->
+                        </div>
+                        <div class="hint" data-bind="text: 'Format: (XXX)XXX-XXXX'">
+                            Format: (XXX)XXX-XXXX
+                        </div>
+                    </div>
+                </div>
+                {% endcomment %}
+                <h5>
+                    Email Address(es)
+                    <small class="sub-header">
+                        One Email is required
+                    </small>
+                </h5>
+                <div class="section-padding">
+                    <div class="card ghost text-centered">
+                        <a class="button small secondary radius expanded" href="">
+                            <i class="fa fa-plus">
+                            </i>
+                            Add New Email
+                        </a>
+                    </div>
+                </div>
+                {% comment %}
+                <div class="row">
+                    <div class="question column small-12 medium-12 end required" data-bind="css: { error:email.hasError, required: email.isRequired, warning: email.hasWarning }">
+                        <div class="label-holder">
+                            <label for="">
+                                <span class="text">
+                                    Email
+                                </span>
+                                <span class="required-holder">
+                                    <i class="fa fa-holder-dynamic">
+                                    </i>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="input-holder">
+                            <div class="input-space column small-6 large-8">
+                                <input data-bind="value: email" type="text">
+                                </input>
+                            </div>
+                            <div class="input-space column small-6 large-4">
+                                <select id="" name="">
+                                    <option value="">
+                                        Select Type
+                                    </option>
+                                    <option value="">
+                                        Work
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="message-holder">
+                            <small class="" data-bind="css:{ error: email.hasError, warning: email.hasWarning }">
+                                <i class="fa fa-holder">
+                                </i>
+                                <!-- ko text: email.validationMessage -->
+                                <!-- /ko -->
+                            </small>
+                        </div>
+                        <div class="hint">
+                            <!-- ko if: emaildefault() != true -->
+                            <!--/ko-->
+                            <!-- ko if: emaildefault() == true -->
+                            <div class="has-tip starred completed" title="Primary Email">
+                                <i class="fa fa-holder">
+                                </i>
+                                This is your primary email.
+                            </div>
+                            <!--/ko-->
+                        </div>
+                        <div class="hint">
+                            Format: abc@12345.com
+                        </div>
+                    </div>
+                </div>
+                {% endcomment %}
+            </div>
+            <style>
+                .input-space{position: relative;}
+	select{  background-position: right 0rem center;}  
+    .input-space .input-lock, .switch-input-space .input-lock {
+        position: absolute;
+    top: -1px;
+    right: 0;
+    padding: .57143rem;
+    font-size: 1em;
+    line-height: 1;
+    COLOR: grey;
+}
+            </style>
+        </div>
+    </div>
+</div>

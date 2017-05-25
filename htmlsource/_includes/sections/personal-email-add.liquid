@@ -1,0 +1,48 @@
+<div class="page paper-page repeater-area content-padding" id="addEmail" style="display: none;">
+    <div class="colored-paper success">
+        <div class="content-padding row">
+            <h4 class="no-vertical-margin" style="position: relative;">
+                <i class="fa fa-plus">
+                </i>
+                Add Email
+                <a class="close-button" href="" onclick="emailSlide(event)" style="color:#fff;">
+                    <i class="fa fa-times">
+                    </i>
+                    Close
+                </a>
+            </h4>
+        </div>
+    </div>
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <div class="row">
+                        {% include snippets/question-select.liquid label="Type" option="Choose.." size="small-12 large-2" state="required" hint="" %}
+                        {% include snippets/question-text.liquid label="Email Address" size="small-12 large-6" state="required" hint="" %}
+                        {% include snippets/question-switch.liquid label="Mark As Primary" id="switch-1" shape="tiny checkbox"  size="small-12 large-4 end" state="required" hint="" %}
+                    </div>
+                    <div class="row group-divide">
+                        <div class="column text-right">
+                            <a class="button secondary" href="" onclick="emailSlide(event)">
+                                Cancel
+                            </a>
+                            <a class="button" href="" onclick="emailSlide(event)">
+                                Save
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="column">
+        <a class="button small expanded secondary" id="addEmailButton" onclick="emailSlide(event)">
+            <i class="fa fa-plus">
+            </i>
+            Add an Email
+        </a>
+    </div>
+</div>

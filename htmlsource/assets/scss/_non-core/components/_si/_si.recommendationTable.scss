@@ -1,0 +1,123 @@
+
+$scrub-blue2:#1962AE;
+$scrub-yellow:#F5DC27;
+$scrub-orange:#E08514;
+$scrub-red:#D62D64;
+
+//@extend-elements
+//original selectors
+//.recommendationTable .recommendationLevel1, .recommendationTable .recommendationLevel1
+%extend_1 {
+  @include font();
+}
+
+//original selectors
+//.recommendationTable .CORI, .recommendationTable .CORIIa, .recommendationTable .CORIIb, .recommendationTable .LOE-A, .recommendationTable .LOE-B, .recommendationTable .LOE-C
+%extend_2 {
+  text-align: center;
+  @include font-bold();
+}
+
+
+.recommendationTable {
+  border-collapse: collapse;
+  border-spacing: 0;
+  line-height: 1.47em;
+  td {
+    border: 0 none;
+    padding: .5em;
+  }
+  .recommendationLevel1 {
+    @include font-bold;
+    background-color:grey(10);
+    border-bottom:1px solid grey(30);
+     @include baseline-font(1);
+  }
+  .recommendationLevel2 {
+    padding-left: 3%;
+    @include baseline-font(0);
+    @include font-bold;
+        background-color:color(rebrand-color($scrub-blue,2),10);
+    border-bottom:1px solid grey(20);
+  }
+  .recommendationLevel3 {
+    padding-left: 6%;
+    @include baseline-font(0);
+    @include font;
+  }
+  .recommendationLevel4 {
+    padding-left: 9%;
+    @include baseline-font(-1);
+    @include font-italic;
+
+  }
+
+  .CORI {
+    @extend %extend_2;
+    background-color: mix( $scrub-green,white,70% );
+    color:color-contrast( mix($scrub-green,white,70%));
+  }
+  .CORIIa {
+    @extend %extend_2;
+    background-color:mix( $scrub-yellow,white,80%);
+    color:color-contrast( mix( $scrub-yellow,white,80%));
+  }
+  .CORIIb {
+    @extend %extend_2;
+    background-color: mix($scrub-orange,white,70%);
+        color:color-contrast(  mix($scrub-orange,white,70%));
+
+  }
+  .LOE-A {
+    @extend %extend_2;
+    background-color: mix($scrub-blue2,black,90%);
+        color:color-contrast( mix($scrub-blue2,black,90%));
+
+  }
+  .LOE-B {
+    @extend %extend_2;
+     background-color: mix($scrub-blue2,white,80%);
+         color:color-contrast( mix($scrub-blue2,white,80%));
+
+  }
+  .LOE-C {
+    @extend %extend_2;
+    background-color: mix($scrub-blue2,white,60%);
+        color:color-contrast( mix($scrub-blue2,white,60%));
+
+  }
+
+  thead {
+    th {
+      padding: 5px;
+      border-bottom-color:mix(rebrand-color($primary-color,2),black);
+    }
+    small {
+      display: block;
+      margin: 0 auto;
+      @include baseline-font(-1);
+      @include font();
+    }
+    strong {
+      display: block;
+      margin: 0 auto;
+      @include font-bold();
+      color: mix(rebrand-color($primary-color,2),black);
+      &.left {
+        margin-left: 0;
+        text-align: left;
+        font-size: 1.3em;
+        margin: 0.2em 0.2em 0.2em 5PX;
+      }
+    }
+    tr.recommendationTableHeaders {
+
+    }
+  }
+  small.left {
+    margin-left: 0;
+    text-align: left;
+    font-size: 11px;
+    margin-left: 5PX;
+  }
+}

@@ -1,0 +1,114 @@
+/**
+* Tables (Banded):
+* `.banded` - There are two high styled tables `.banded` or `.stripped`.
+* 
+*   @example
+*	<table class="table banded">
+*		<thead>
+*			<tr>
+*				<th>table header</th>
+*				<th>table header</th>
+*				<th>table header</th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr>
+*				<td> row 2  cell A</td>
+*				<td> row 2  cell B</td>
+*				<td> row 2  cell C</td>
+*			</tr>
+*			<tr>
+*				<td> row 3  cell A</td>
+*				<td> row 3  cell B</td>
+*				<td> row 3  cell C</td>
+*			</tr>
+*		</tbody>
+*		<tfoot>
+*			<tr>
+*				<td colspan="3">footer cell</td>
+*			</tr>
+*		</tfoot>
+*	</table>
+*/
+
+
+
+
+
+
+/**
+* Tables (Stripped):
+* ` .stripped` - Table with the class`.stripped`.
+* 
+*   @example
+*	<table class="table stripped">
+*		<thead>
+*			<tr>
+*				<th>table header</th>
+*				<th>table header</th>
+*				<th>table header</th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr>
+*				<td> row 2  cell A</td>
+*				<td> row 2  cell B</td>
+*				<td> row 2  cell C</td>
+*			</tr>
+*			<tr>
+*				<td> row 2  cell A</td>
+*				<td> row 2  cell B</td>
+*				<td> row 2  cell C</td>
+*			</tr>
+*		</tbody>
+*		<tfoot>
+*			<tr>
+*				<td colspan="3">footer cell</td>
+*			</tr>
+*		</tfoot>
+*	</table>
+*/
+$table-cell-color:rebrand-color($primary-color,3);
+%colored-row{
+		background-color:grey(10);
+	}
+%colored-column{
+		background-color:scale-color($table-cell-color,$lightness:90%);
+	}
+%overlapped-column-row{
+	background-color:mix(scale-color($table-cell-color,$lightness:87%),grey(12));
+	}
+.stripped{
+	th:nth-child(odd),td:nth-child(odd){@extend %colored-column;}
+}
+.banded tbody,.stripped tbody{
+	tr:nth-child(even){@extend %colored-row;}
+	}
+.stripped tbody{
+	tr:nth-child(even){@extend %colored-row;}
+	tr:nth-child(even) td:nth-child(odd){ @extend %overlapped-column-row;}
+}
+
+.stripped, .banded{
+	tbody tr + tr td{border-top:0px solid;}
+	th,td{padding:.25rem .25rem .25rem .55rem;}
+	tfoot{
+		
+		td,td:nth-child(odd) {	color:$black;
+			border-top:1px solid rebrand-color($primary-color,2);
+			background-color: grey(20);
+		}
+	}
+}
+
+

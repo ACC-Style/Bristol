@@ -1,0 +1,37 @@
+<div class="question column {{include.size}} {{include.state}}">
+    <div class="label-holder">
+        <span class="text">
+           &nbsp;
+        </span>
+    </div>
+    <div class="input-holder">
+        <div class="switch-input-space">
+            <div class="switch {{include.state}} {{include.shape}}">
+                <input class="switch-input" id="{{include.id}}" name="exampleSwitch" type="checkbox" {{include.state}} >
+                    <label class="switch-paddle" for="{{include.id}}">
+                        <span class="show-for-sr">
+                            {{include.label}}
+                        </span>
+                        <span aria-hidden="true" class="switch-active">
+                            <i class="fa fa-holder"></i>
+                        </span>
+                        <span aria-hidden="true" class="switch-inactive">
+                            <i class="fa fa-holder"></i>
+                        </span>
+                    </label>
+                </input>
+            </div>
+            <label class="switch-value" for="{{include.id}}">
+                 {{include.label}}
+            </label>
+        </div>
+    </div>
+    <div class="message-holder">
+        <small class="error">
+            Error Message
+        </small>
+    </div>
+    <div class="hint">
+        {{include.hint}}
+    </div>
+</div>

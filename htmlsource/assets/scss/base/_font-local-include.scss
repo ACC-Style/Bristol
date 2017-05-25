@@ -1,0 +1,21 @@
+$fontfolderpath:"../fonts";
+@mixin font-include($fontfolderpath,$fontfilename,$fontfamilyname,$font-weight: normal,$font-style:normal){
+	@font-face {
+	    font-family: #{$fontfamilyname};
+	    font-style: #{$font-style};
+		font-weight: #{$font-weight};
+	    src: 	url('#{$fontfolderpath}#{$fontfilename}-webfont.eot');
+	    src: 	url('#{$fontfolderpath}#{$fontfilename}-webfont.eot?#iefix') format('embedded-opentype'),
+	         	url('#{$fontfolderpath}#{$fontfilename}-webfont.woff') format('woff'),
+	         	url('#{$fontfolderpath}#{$fontfilename}-webfont.ttf') format('truetype'),
+	         	url('#{$fontfolderpath}#{$fontfilename}-webfont.svg#open_sanslight') format('svg');
+	}	
+}
+
+@include font-include('#{$fontfolderpath}/opensans_300/','OpenSans-Light','Open Sans','300');
+@include font-include('#{$fontfolderpath}/opensans_300-italic/','OpenSans-LightItalic','Open Sans','300','italic');
+@include font-include('#{$fontfolderpath}/opensans_400/','OpenSans-Regular','Open Sans','400');
+@include font-include('#{$fontfolderpath}/opensans_700/','OpenSans-Bold','Open Sans','700');
+@include font-include('#{$fontfolderpath}/opensans_700-italic/','OpenSans-BoldItalic','Open Sans','700','italic');
+@include font-include('#{$fontfolderpath}/robotoslab_300/','RobotoSlab-Regular','Roboto Slab','400');
+@include font-include('#{$fontfolderpath}/robotoslab_700/','RobotoSlab-Bold','Roboto Slab','700');
