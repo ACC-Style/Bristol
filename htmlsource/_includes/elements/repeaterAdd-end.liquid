@@ -1,0 +1,34 @@
+                        </div>
+                        <div class="row group-divide">
+                            <div class="column text-right">
+                                <a class="button secondary" href="" onclick="{{ include.title | remove: " " }}Slide(event)">
+                                    Cancel
+                                </a>
+                                <a class="button" href="" onclick="{{ include.title | remove: " " }}Save(event)">
+                                    Save
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page-wrapper">
+    <div class="row">
+        <div class="column">
+            <a class="button small radius expanded success" id="add{{ include.title | remove: " " }}Button" onclick="{{ include.title | remove: " " }}Slide(event)">
+                <i class="fa fa-plus">
+                </i>
+                Add {{ include.title }}
+            </a>
+        </div>
+    </div>
+<script>
+     function {{include.title  | remove: " "}}Slide(e){
+        e.preventDefault();
+        ($('#add{{include.title | remove: " "}}Button').css("display") == "none"  )? $('html, body').animate({scrollTop: $("#{{include.title | remove: " "}}").offset().top}, 500):$('html, body').animate({scrollTop: $("#add{{include.title  | remove: " "}}").offset().top}, 500);
+        $('#add{{include.title | remove: " "}} .repeater-area,#add{{include.title | remove: " "}}Button').slideToggle();
+        }
+</script>

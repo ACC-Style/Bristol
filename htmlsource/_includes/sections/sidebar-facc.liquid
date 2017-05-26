@@ -25,8 +25,26 @@
         </ul>
     </div>
 
-    <div class="content-padding text-center">
-      <h4 class="single-line-height">Is your Personal Information complete and up to date?</h4>
-      <a href="" class="disabled button"><i class="fa fa-holder"></i> Yes, Continue with Application</a>
-    </div>
+     <nav class="nav-list check-list">
+        <ul>
+            <li {% if page.id == "personal" %} class="selected"{% endif %}>
+                <a href="personalinfo.html">
+                    <span class="text">
+                        Personal Information
+                    </span>
+                    <i class="fa fa-holder">
+                    </i>
+                </a>
+            </li>
+            <li  {% if page.id == "edu" %} class="selected"{% endif %}  >
+                <a href="educationTraining.html">
+                    <span class="text">
+                        Education &amp; Training
+                    </span>
+                    <i class="fa fa-holder">
+                    </i>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </aside>

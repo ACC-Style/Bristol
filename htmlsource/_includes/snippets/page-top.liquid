@@ -1,20 +1,37 @@
-<div class="row">
-  <div class="column">
-    <h1 class="with-underline">{{ include.title }}</h1>
-  </div>
+
+
+<div class="row" id="{{ include.title | remove: ' ' }}">
+    <div class="column">
+        <{{include.level}} class="{{include.style}}">
+            {{ include.title }}
+             {% if include.level != "h1" %}
+                <div class="sub-line">
+                    {{ include.message }}
+                </div>
+                {% endif %}
+        </{{include.level}}>
+    </div>
 </div>
+{% if include.level == "h1" %}
 <div class="row column">
-  <div class="page-message callout">
-  <div class="message-container">
-    <div class="icon-holder">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-square-o fa-stack-2x"></i>
-        <i class="fa fa-holder-dynamic fa-stack-1x"></i>
-      </span>
+    <div class="page-message callout empty">
+        <div class="message-container">
+            <div class="icon-holder">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-square-o fa-stack-2x">
+                    </i>
+                    <i class="fa fa-holder fa-stack-1x">
+                    </i>
+                </span>
+            </div>
+            <div class="message-holder">
+                
+                <h5 class="no-margin">
+                    {{ include.message }}
+                </h5>
+              
+            </div>
+        </div>
     </div>
-    <div class="message-holder">
-      <h5>{{ include.message }}</h5>
-    </div>
-  </div>
 </div>
-</div>
+  {% endif %}

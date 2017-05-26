@@ -735,12 +735,6 @@ there are two to three needs for icons icons in containers, icons on icons and t
 .fa-holder {
   text-decoration: none;
 }
-.fa-holder > i.fa-holder:before, .fa-holder * i.fa-holder-dynamic:before {
-  text-decoration: none;
-}
-.fa-holder :after {
-  content: ' ';
-}
 
 .delete > i.fa-holder:before, .delete.fa:before, .cancel > i.fa-holder:before, .cancel.fa:before, .close > i.fa-holder:before, .close.fa:before, .close-reveal-modal > i.fa-holder:before, .close-reveal-modal.fa:before {
   content: "";
@@ -4520,7 +4514,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   margin-right: auto;
   position: relative;
 }
-.page-message .fa-holder-dynamic:before {
+.page-message .fa-holder:before {
   content: "";
 }
 .page-message::before, .page-message::after {
@@ -12075,7 +12069,7 @@ STATE TRUMPING CODE
   background-color: #de404e;
 }
 
-.error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .nav-list.nav-checklist li.error .fa-holder-dynamic:before, .nav-checklist.panel-selector li.error .fa-holder-dynamic:before {
+.error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .nav-list.nav-checklist li.error .fa-holder-dynamic:before, .nav-checklist.panel-selector li.error .fa-holder-dynamic:before, .error.page-message .fa-holder:before {
   content: "";
 }
 
@@ -12091,7 +12085,7 @@ STATE TRUMPING CODE
   background-color: #ee9e3c;
 }
 
-.warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .nav-list.nav-checklist li.warning .fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning .fa-holder-dynamic:before {
+.warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .nav-list.nav-checklist li.warning .fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning .fa-holder-dynamic:before, .warning.page-message .fa-holder:before {
   content: "";
 }
 
@@ -12107,7 +12101,7 @@ STATE TRUMPING CODE
   background-color: #1de573;
 }
 
-.success .fa-holder-dynamic:before, .success.fa:before, .success > .fa-holder:before, .nav-list.nav-checklist li.success .fa-holder-dynamic:before, .nav-checklist.panel-selector li.success .fa-holder-dynamic:before {
+.success .fa-holder-dynamic:before, .success.fa:before, .success > .fa-holder:before, .nav-list.nav-checklist li.success .fa-holder-dynamic:before, .nav-checklist.panel-selector li.success .fa-holder-dynamic:before, .success.page-message .fa-holder:before {
   content: "";
 }
 
@@ -12123,7 +12117,7 @@ STATE TRUMPING CODE
   background-color: #b8b8b8;
 }
 
-.info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder-dynamic:before, .nav-checklist.panel-selector li.info .fa-holder-dynamic:before {
+.info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder-dynamic:before, .nav-checklist.panel-selector li.info .fa-holder-dynamic:before, .info.page-message .fa-holder:before {
   content: "";
 }
 
@@ -12139,7 +12133,7 @@ STATE TRUMPING CODE
   background-color: #4bc1e2;
 }
 
-.highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before {
+.highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before, .highlighted.page-message .fa-holder:before {
   content: "";
 }
 
@@ -12155,11 +12149,11 @@ STATE TRUMPING CODE
   background-color: #d6d6d6;
 }
 
-.disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before {
+.disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before, .disabled.page-message .fa-holder:before {
   content: "";
 }
 
-.error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .nav-list.nav-checklist li.error .fa-holder-dynamic:before, .nav-checklist.panel-selector li.error .fa-holder-dynamic:before, .warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .nav-list.nav-checklist li.warning .fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning .fa-holder-dynamic:before, .success .fa-holder-dynamic:before, .success.fa:before, .success > .fa-holder:before, .nav-list.nav-checklist li.success .fa-holder-dynamic:before, .nav-checklist.panel-selector li.success .fa-holder-dynamic:before, .info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder-dynamic:before, .nav-checklist.panel-selector li.info .fa-holder-dynamic:before, .highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before, .disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before {
+.error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .nav-list.nav-checklist li.error .fa-holder-dynamic:before, .nav-checklist.panel-selector li.error .fa-holder-dynamic:before, .error.page-message .fa-holder:before, .warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .nav-list.nav-checklist li.warning .fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning .fa-holder-dynamic:before, .warning.page-message .fa-holder:before, .success .fa-holder-dynamic:before, .success.fa:before, .success > .fa-holder:before, .nav-list.nav-checklist li.success .fa-holder-dynamic:before, .nav-checklist.panel-selector li.success .fa-holder-dynamic:before, .success.page-message .fa-holder:before, .info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder-dynamic:before, .nav-checklist.panel-selector li.info .fa-holder-dynamic:before, .info.page-message .fa-holder:before, .highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before, .highlighted.page-message .fa-holder:before, .disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before, .disabled.page-message .fa-holder:before {
   font-family: FontAwesome;
 }
 
@@ -12169,6 +12163,11 @@ STATE TRUMPING CODE
 
 .light-color-text, .error .order-marker, .error.order-marker, .success .order-marker, .success.order-marker, .highlighted .order-marker, .highlighted.order-marker, .message-holder > .error, .message-holder > .success, .message-holder > .highlighted, .hint .error, .hint .success, .hint .highlighted, .error .close-bar .close-button .fa, .success .close-bar .close-button .fa, .highlighted .close-bar .close-button .fa, .error .order-marker, .error.order-marker, .success .order-marker, .success.order-marker, .highlighted .order-marker, .highlighted.order-marker {
   color: #fff;
+}
+
+.page-wrapper, .page .page-wrapper {
+  max-width: 60em;
+  margin: 0 auto;
 }
 
 .input-space, .switch-input-space {
@@ -12277,6 +12276,7 @@ select {
 
 .render {
   position: relative;
+  padding: 0;
 }
 .render .starred.primary, .render .locked, .render .added-flag {
   display: block;
