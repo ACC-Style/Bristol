@@ -1,19 +1,22 @@
 {% extends 'layouts/admin-layout' %}
 {% block content %}
 <div class="page paper-page">
- <div class="section-nav back">
-    <a href="admin-com-management.html">
-      <div class="circle">
-        <i class="fa fa-holder-dynamic"></i>
-      </div>
-      <div class="text">Back</div>
-    </a>
-  </div>
+    <div class="section-nav back">
+        <a href="admin-com-management.html">
+            <div class="circle">
+                <i class="fa fa-holder-dynamic">
+                </i>
+            </div>
+            <div class="text">
+                Back Committee List
+            </div>
+        </a>
+    </div>
     <div class="page-wrapper">
         <div class="row">
             <div class="column small-6 large-8">
                 <h1 class="single-line-height">
-                    Committee A Name
+                    Committee: Alphabet
                 </h1>
             </div>
             <div class="column small-6 large-4">
@@ -46,82 +49,78 @@
             </div>
         </div>
         <div class="row">
-            <div class="card">
-                <div class="colored-paper">
-                    <h2>
-                        Content
-                    </h2>
+            <div class="column small-12 medium-4 large-3">
+                <h4>
+                    Available Positions
+                </h4>
+                {% include "elements/open-position" %}
+                <h4>
+                    Current Members
+                </h4>
+                <div class="card">
+                    {% include "sections/current-members" %}
+                    <a href="admin-commmittee-active-users.html" class="small button secondary expanded">Active Member Management</a>
                 </div>
-                <div class="section-padding row">
-                    <div class="column small-12 large-6">
-                        <h2 class="no-margin">
-                            Roles and Responsibilities:
+            </div>
+            <div class="column small-12 medium-8 large-9">
+                <div class="card">
+                    <div class="colored-paper">
+                        <h2>
+                            Content
                         </h2>
-                        <textarea cols="30" id="" name="" rows="12">
-                            The Assembly of International Governors Steering Committee is an advisory group of regional representatives that provides guidance on international issues as identified by the ACC or the Assembly of International Governors.
-                            The AIGSC:
-Supports the ACC/ACCF Board of Trustees by making recommendations for the International Strategy of the ACC.
-Creates bi-directional communication between ACC International Chapters, ACC Board Standing Committees such as the Membership Committee, and the ACC Board of Trustees.
-Recommends strategies for continued growth of all ACC member types internationally.
-                        </textarea>
-                        <div class="row">
-                        	{% include "elements/visible-switch-nocheck" %}
+                    </div>
+                    <div class="section-padding row">
+                        <div class="column small-12 large-6">
+                            <h2 class="no-margin">
+                                Roles and Responsibilities:
+                            </h2>
+                            <textarea cols="30" id="" name="" rows="8">The Assembly of International Governors Steering Committee is an advisory group of regional representatives that provides guidance on international issues as identified by the ACC or the Assembly of International Governors.
+                            </textarea>
+                            <div class="row">
+                                {% include "elements/visible-switch-nocheck" %}
+                            </div>
+                        </div>
+                        <div class="column small-12 large-6">
+                            <h2 class="no-margin">
+                                Competency Requirements
+                            </h2>
+                            <textarea cols="30" id="" name="" rows="8">Members must be able to anticipate & lead change and demonstrate strategic leadership by working to advise ACC on its international strategy and ensure
+                            </textarea>
+                            <div class="row">
+                                {% include "elements/visible-switch-checked" %}
+                            </div>
                         </div>
                     </div>
-                    <div class="column small-12 large-6">
-                        <h2 class="no-margin">
-                            Competency Requirements
-                        </h2>
-                        <textarea cols="30" id="" name="" rows="12">
-                            Members must be able to anticipate & lead change and demonstrate strategic leadership by working to advise ACC on its international strategy and ensure the ACC achieves its mission to its fullest extent worldwide.
-
-Members must also be knowledgeable about the cardiovascular community within their regions and its relevance to the ACC mission and activities.
-                        </textarea>
-                         <div class="row">
-                        	{% include "elements/visible-switch-checked" %}
+                    <div class="section-padding row group-divide">
+                        <div class="column small-12 large-6">
+                            <h2 class="no-margin">
+                                Composition:
+                            </h2>
+                            <textarea cols="30" id="" name="" rows="8">The Assembly of International Governors Steering Committee is an advisory group of regional representatives that provides guidance on international issues as identified by the ACC or the Assembly of International Governors.</textarea>
+                            <div class="row">
+                                {% include "elements/visible-switch-nocheck" %}
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="section-padding row group-divide">
-                    <div class="column small-12 large-6">
-                        <h2 class="no-margin">
-                            Composition:
-                        </h2>
-                        <textarea cols="30" id="" name="" rows="12">
-                            The Assembly of International Governors Steering Committee is an advisory group of regional representatives that provides guidance on international issues as identified by the ACC or the Assembly of International Governors.
-                            The AIGSC:
-Supports the ACC/ACCF Board of Trustees by making recommendations for the International Strategy of the ACC.
-Creates bi-directional communication between ACC International Chapters, ACC Board Standing Committees such as the Membership Committee, and the ACC Board of Trustees.
-Recommends strategies for continued growth of all ACC member types internationally.
-                        </textarea>
-
-                         <div class="row">
-                        	{% include "elements/visible-switch-nocheck" %}
-                        </div>
-                    </div>
-                    <div class="column small-12 large-6">
-                        <h2 class="no-margin">
-                            Meeting Schedule
-                        </h2>
-                        <textarea cols="30" id="" name="" rows="12">
-                            Members must be able to anticipate & lead change and demonstrate strategic leadership by working to advise ACC on its international strategy and ensure the ACC achieves its mission to its fullest extent worldwide.
-
-Members must also be knowledgeable about the cardiovascular community within their regions and its relevance to the ACC mission and activities.
-                        </textarea>
-                         <div class="row">
-                        	{% include "elements/visible-switch-nocheck" %}
+                        <div class="column small-12 large-6">
+                            <h2 class="no-margin">
+                                Meeting Schedule
+                            </h2>
+                            <textarea cols="30" id="" name="" rows="8">Members must be able to anticipate & lead change and demonstrate strategic leadership by working to advise ACC on its international strategy and ensure the ACC achieves its mission to its fullest extent worldwide.
+                            </textarea>
+                            <div class="row">
+                                {% include "elements/visible-switch-nocheck" %}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row group-divide">
-        <div class="column text-right">
-
-            <a class="button" href="application-to-committee.html">
-               Save All
-            </a>
         </div>
-    </div>
+        <div class="row group-divide">
+            <div class="column text-right">
+                <a class="button" href="application-to-committee.html">
+                    Save All
+                </a>
+            </div>
         </div>
     </div>
 </div>
