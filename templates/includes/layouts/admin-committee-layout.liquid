@@ -1,0 +1,83 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <title>COM NOMS ADMIN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/styledown.css">
+  <link rel="stylesheet" href="assets/css/normalize.min.css">
+  <link rel="stylesheet" href="assets/css/jquery-ui.css">
+  <link rel="stylesheet" href="assets/css/jquery-uistructure.css">
+  <link rel="stylesheet" href="assets/css/foundation-sites.css">
+   <link rel="stylesheet" href="assets/css/font-awesome.css">
+  <link rel="stylesheet" href="assets/css/index.css" id="theme">
+
+</head>
+	<body>
+    {% include 'admin/sections/header' %}
+    <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
+
+<section class="split-layout medium navOn reverse">
+    <aside class="split-sidebar">
+      <div class="paper-page page content-padding" style="padding-bottom: 2000px;margin-bottom: -2000px;">
+       <div class="colored-paper info">
+           <h2>Committee Notes</h2>
+            <textarea name="" id="" cols="30" rows="5"></textarea>
+            <a href="" class="button expanded add"><i class="fa fa-holder"></i> Add Committee Comment</a>
+        </div>
+
+            
+          <ul class="no-bullet comment-holder section-padding">
+            <li class="group-divide-bottom">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                <cite class="text-right"><strong>Nicole Homes</strong> - <span class="lite">Jan 1st 2017 | 12:53 PM</span></cite>
+            </li>
+            <li class="group-divide-bottom">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                <cite class="text-right"><strong>Marthea Williams</strong> - <span class="lite">Jan 1st 2017 | 12:50 PM</span></cite>
+            </li>
+            <li class="group-divide-bottom">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                <cite class="text-right"><strong>Nicole Homes</strong> - <span class="lite">Jan 1st 2017 | 12:42 PM</span></cite>
+            </li>
+            <li class="group-divide-bottom">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                <cite class="text-right"><strong>Nicole Homes</strong> - <span class="lite">Jan 1st 2017 | 12:39 PM</span></cite>
+            </li>
+        </ul>
+      </div>
+    </aside>
+    <article class="split-content">
+      <div class="paper-page page">
+          <div class="section-nav back">
+              <a href="admin-committees-dashboard.html">
+                  <div class="circle">
+                      <i class="fa fa-holder-dynamic">
+                      </i>
+                  </div>
+                  <div class="text">
+                      Back to Committee Dashboard
+                  </div>
+              </a>
+          </div>
+          <div class="page-wrapper">
+          {% block content %}{% endblock %}
+        </div>
+      </div>
+    </article>
+</section>
+
+
+
+
+
+
+    </div>
+    {% include 'sections/web-footer' %}
+    {% include "scripts" %}
+    <style>
+      .page-wrapper {
+        max-width: 100% !important;
+      }
+    </style>
+	</body>
+</html>

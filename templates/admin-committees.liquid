@@ -1,60 +1,12 @@
-{% extends 'layouts/admin-layout' %}
+{% extends 'layouts/admin-committee-layout' %}
 {% block content %}
-<div class="paper-page page">
-    <div class="section-nav back">
-        <a href="admin-committees-dashboard.html">
-            <div class="circle">
-                <i class="fa fa-holder-dynamic">
-                </i>
-            </div>
-            <div class="text">
-                Back to Committee Dashboard
-            </div>
-        </a>
-    </div>
-    <div class="page-wrapper">
         <div class="row ">
             <div class="column">
-                <h1>
+                <h1 class="no-vertical-margin">
                     Committee Name ABC
+
+                    <a href="" class="float-right secondary button hollow"><i class="fa fa-pencil"></i> Edit Committee Details</a>
                 </h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card">
-                <div class="colored-paper"><h3>Notes  &amp; Comments</h3></div>   
-            <div class="section-padding row">
-                <div class="column medium-6">
-                    <h2>Committee Comments</h2>
-                    <ul class="no-bullet comment-holder">
-                        <li class="group-divide-bottom">
-                            {% include 'elements/lorem-short' %}
-                            <cite class="text-right"><strong>Nicole Homes</strong> - <span class="lite">Jan 1st 2017 | 12:53 PM</span></cite>
-                        </li>
-                        <li class="group-divide-bottom">
-                            {% include 'elements/lorem' %}
-                            <cite class="text-right"><strong>Marthea Williams</strong> - <span class="lite">Jan 1st 2017 | 12:50 PM</span></cite>
-                        </li>
-                        <li class="group-divide-bottom">
-                            {% include 'elements/lorem' %}
-                            <cite class="text-right"><strong>Nicole Homes</strong> - <span class="lite">Jan 1st 2017 | 12:42 PM</span></cite>
-                        </li>
-                        <li class="group-divide-bottom">
-                            {% include 'elements/lorem-short' %}
-                            <cite class="text-right"><strong>Nicole Homes</strong> - <span class="lite">Jan 1st 2017 | 12:39 PM</span></cite>
-                        </li>
-                    </ul>
-                    <a href="" class="link"><i class="fa  fa-align-left"></i> Open All Comments in New Window</a>
-                </div>
-                <div class="column medium-6">
-                    <div class="callout">
-                        <h2 class="">Comment</h2>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                        <a href="" class="float-right button add"><i class="fa fa-holder"></i> Add Committee Comment</a>
-                    </div>
-                </div>
-                
-            </div>
             </div>
         </div>
     </div>
@@ -93,8 +45,8 @@
     </div>
 </div>
 <div class="mobile-offcanvas-wrapper" style="border-top:1px solid grey">
-    <section class="split-layout medium">
-        <aside class="split-sidebar ">
+    <section class="row collapse">
+        <aside class="column medium-3">
             <div class="">
                 <div class="colored-paper no-margin ">
                     <h4 class="no-vertical-margin">
@@ -160,8 +112,8 @@
                 </div>
             </div>
         </aside>
-        <article class="split-content page paper-page" style="background:url('Assets/img/textured_paper.png') repeat, url('Assets/img/bottom-shade.png') bottom repeat-x, url('Assets/img/top-shade.png') top repeat-x">
-            <div class="page-wrapper" style="max-width: 100%">
+        <article class="column medium-9 page paper-page" style="background:url('Assets/img/textured_paper.png') repeat, url('Assets/img/bottom-shade.png') bottom repeat-x, url('Assets/img/top-shade.png') top repeat-x">
+            <div class="page-wrapper content-padding" style="max-width: 100%">
                 <div class="row column">
                     <div class="card">
                         <div class="colored-paper">
@@ -300,19 +252,14 @@
                                 <ul class="nav tabs">
                                     <li class=" selected ">
                                         <a>
-                                            Applicaiton Details
+                                            Applicaiton
                                         </a>
                                     </li>
-                                    <li class="hide-for-large">
-                                        <a>
-                                            Comments &amp; Ratings
-                                        </a>
-                                    </li>
-                                    <li><a href="">Current Appointments</a></li>
+                                    <li><a href="">Appointments</a></li>
                                     <li><a href="">Chapter</a></li>
                                     <li><a href="">Committees</a></li>
                                     <li><a href="">Sections</a></li>
-                                    <li><a href="">Program Attendance</a></li>
+                                    <li><a href="">Attendance</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -337,7 +284,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row ">
+            <div >
                 <div class="column">
                     <div class="button-group small float-right">
                         <a class="button secondary" href="">
