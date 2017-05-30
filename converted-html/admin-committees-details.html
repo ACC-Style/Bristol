@@ -148,8 +148,8 @@
 </div>
     <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
 
-<section class="split-layout medium navOn reverse">
-    <aside class="split-sidebar">
+<div class="off-canvas-wrapper">
+     <div class="off-canvas-absolute position-right" id="offCanvasRightSplit2" data-off-canvas>
       <div class="paper-page page content-padding" style="padding-bottom: 2000px;margin-bottom: -2000px;">
        <div class="colored-paper info">
            <h2>Committee Notes</h2>
@@ -177,8 +177,9 @@
             </li>
         </ul>
       </div>
-    </aside>
-    <article class="split-content">
+    </div>
+
+     <div class="off-canvas-content" data-off-canvas-content>
       <div class="paper-page page">
           <div class="section-nav back">
               <a href="admin-committees-dashboard.html">
@@ -192,7 +193,8 @@
               </a>
           </div>
           <div class="page-wrapper">
-          
+         <button type="button" class="button" data-toggle="offCanvasRightSplit2">Open Right</button>
+
 
         <div class="row ">
             <div class="column">
@@ -407,8 +409,8 @@
 
         </div>
       </div>
-    </article>
-</section>
+    </div>
+</div>
 
 
 
