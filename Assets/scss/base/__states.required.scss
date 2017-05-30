@@ -179,7 +179,7 @@ $text-DarkFont-Trump:(".dark-color-text");
     @return ();
 }
 @mixin setContrastTrump($ContrastQuery, $Selector){
-   $contrastResult :color-contrast($ContrastQuery);
+   $contrastResult: acc-color-contrast($ContrastQuery,#fff);
    @if $contrastResult == $global-default-dark-text{
     $text-DarkFont-Trump: append($text-DarkFont-Trump,unquote($Selector),"comma")!global;
    }

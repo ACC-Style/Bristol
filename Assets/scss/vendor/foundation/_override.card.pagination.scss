@@ -1,14 +1,15 @@
+ .card >.group-section-pagination-holder{@extend %content-expanding-margin-bottom;}
 .group-section-pagination-holder {
    @extend %row;
     max-width: none;
     @extend  %content-expanding-margin-horizontal;
-    @extend %content-expanding-margin-bottom;
+   
     background: rebrand-color($primary-color, 2) url('../img/paper-texture.png');
     .pagination{ margin-bottom: 0;}
     .pagination li{
         margin: 0 .25rem .25rem;
         vertical-align: top;
-        a{color:color-contrast(rebrand-color($primary-color, 2));}
+        a{color:acc-color-contrast(rebrand-color($primary-color, 2));}
         &.current{
           a,a:hover{
             background-color: white;
@@ -22,7 +23,7 @@
 
            a{
              background: mix(rebrand-color($primary-color, 2), $black)  url('../img/paper-texture.png');
-             color:color-contrast( mix(rebrand-color($primary-color, 2), $black));
+             color:acc-color-contrast( mix(rebrand-color($primary-color, 2), $black));
              &:hover{background-color:color(rebrand-color($primary-color, 2),80);  }
 
 

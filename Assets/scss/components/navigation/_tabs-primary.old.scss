@@ -31,17 +31,17 @@ $primary-tab-lighttext:$global-default-light-text;
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
 		background-color: $primary-tab-color ;
-		a{color:color-contrast($primary-tab-color,$primary-tab-darktext,$primary-tab-lighttext);
+		a{color:acc-color-contrast($primary-tab-color,$primary-tab-darktext,$primary-tab-lighttext);
 			@include bp(xs-down){ white-space: normal;}
 		}
 		&:hover{
 			background-color: $primary-tab-hover-color;
-			a{color:color-contrast($primary-tab-hover-color,$primary-tab-darktext,$primary-tab-lighttext);}
+			a{color:acc-color-contrast($primary-tab-hover-color,$primary-tab-darktext,$primary-tab-lighttext);}
 		}
 		&.selected{
 			background-color:#fff;
 			a{
-				color:color-contrast(#fff,$primary-tab-darktext,$primary-tab-lighttext);
+				color:acc-color-contrast(#fff,$primary-tab-darktext,$primary-tab-lighttext);
 				border-bottom: 3px solid $primary-tab-selected-color;
 				padding-bottom: .15em;
 				margin-bottom: -3px;
@@ -51,7 +51,7 @@ $primary-tab-lighttext:$global-default-light-text;
 		}
 		&.selected:hover{
 			background-color: #fff;
-			a{color:color-contrast(#fff,$primary-tab-darktext,$primary-tab-lighttext);}
+			a{color:acc-color-contrast(#fff,$primary-tab-darktext,$primary-tab-lighttext);}
 		}
 		&.icon.selected{
 			background-color: $primary-tab-selected-color;
@@ -59,7 +59,7 @@ $primary-tab-lighttext:$global-default-light-text;
 				border-bottom: 0 none;
 				margin-bottom:0;
 				padding-bottom: .3em;
-				color:color-contrast($primary-tab-selected-color,$primary-tab-darktext,$primary-tab-lighttext);
+				color:acc-color-contrast($primary-tab-selected-color,$primary-tab-darktext,$primary-tab-lighttext);
 			}
 		}
 	}
