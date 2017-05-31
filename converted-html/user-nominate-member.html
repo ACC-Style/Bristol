@@ -133,12 +133,12 @@
 </div>
     <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
     
-<div class="row collapse">
-    <aside class="column hide-for-small medium-3 page paper-page" style="border-right:1px solid #ccc;">
+<div class="row collapse" class="off-canvas-wrapper">
+    <aside class="page paper-page off-canvas-absolute position-left" style="border-right:1px solid #ccc;" data-off-canvas="" id="offCanvasCommittees">
         <div class="row page-wrapper">
             <div class="column">
                 <h2>
-                    Open Committees
+                    Open Committee
                 </h2>
                 <div class="search-bar colored-paper info display-block">
     <div class="question">
@@ -164,8 +164,32 @@
         <div class="">
             <nav class="">
                 <ul class="comittee-list">
-                    <li>
-	<a class="" data-open="comm-modal"><img src="assets/img/comnoms/Committee-NotActive.png" alt=""></a>
+                        <div class="card no-padding slot filled">
+	<a class="" data-open="comm-modal"><img src="assets/img/comnoms/Committee-Selected.png" alt=""></a>
+</div>
+
+
+
+
+
+                        <li>
+	<a class="" data-open="comm-modal"><img src="assets/img/comnoms/Committee-NotSelected.png" alt=""></a>
+</li>
+
+
+
+
+
+                        <div class="card no-padding slot filled">
+	<a class="" data-open="comm-modal"><img src="assets/img/comnoms/Committee-Selected.png" alt=""></a>
+</div>
+
+
+
+
+
+                        <li>
+	<a class="" data-open="comm-modal"><img src="assets/img/comnoms/Committee-NotSelected.png" alt=""></a>
 </li>
 
 
@@ -173,7 +197,7 @@
 
 
                         <li>
-	<a class="" data-open="comm-modal"><img src="assets/img/comnoms/Committee-Active.png" alt=""></a>
+	<a class="" data-open="comm-modal"><img src="assets/img/comnoms/Committee-NotSelected.png" alt=""></a>
 </li>
 
 
@@ -181,7 +205,7 @@
 
 
                         <li>
-	<a class="" data-open="comm-modal"><img src="assets/img/comnoms/Committee-NotActive.png" alt=""></a>
+	<a class="" data-open="comm-modal"><img src="assets/img/comnoms/Committee-NotSelected.png" alt=""></a>
 </li>
 
 
@@ -189,7 +213,7 @@
 
 
                         <li>
-	<a class="" data-open="comm-modal"><img src="assets/img/comnoms/Committee-NotActive.png" alt=""></a>
+	<a class="" data-open="comm-modal"><img src="assets/img/comnoms/Committee-NotSelected.png" alt=""></a>
 </li>
 
 
@@ -197,7 +221,7 @@
 
 
                         <li>
-	<a class="" data-open="comm-modal"><img src="assets/img/comnoms/Committee-NotActive.png" alt=""></a>
+	<a class="" data-open="comm-modal"><img src="assets/img/comnoms/Committee-NotSelected.png" alt=""></a>
 </li>
 
 
@@ -205,7 +229,7 @@
 
 
                         <li>
-	<a class="" data-open="comm-modal"><img src="assets/img/comnoms/Committee-NotActive.png" alt=""></a>
+	<a class="" data-open="comm-modal"><img src="assets/img/comnoms/Committee-NotSelected.png" alt=""></a>
 </li>
 
 
@@ -244,9 +268,10 @@
   </ul>
 </div>
     </aside>
-    <div class="column small-12 medium-9">
+    <div class="column off-canvas-content" data-off-canvas-content="">
         <div class="page paper-page">
             <div class="page-wrapper">
+             <button class="button secondary small circle-button" data-toggle="offCanvasCommittees" id="committee-toggle" type="button"> <i class="fa fa-bars" style="color:white"></i></button>
                 <div class="row">
                     <div class="column medium-8">
                         <div class="card">
@@ -406,6 +431,9 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                <div class="row">
+                                    <div class="column"><button class="button tiny success expanded" data-toggle="offCanvasCommittees" id="comment-toggle" type="button"> Add Another committee Click Here Show "Open Committee" Panel and select a committee from the left panel</button></div>
+                                </div>
                             </div>
                             <div class="colored-paper info">
                                 <h3>
