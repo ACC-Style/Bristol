@@ -1,3 +1,8 @@
+%cast-shadow{
+    -webkit-box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.65);
+    -moz-box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.65);
+    box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.65);
+}
 .colored-paper
 .card.ghost h6 a.button{maring-top:-.5rem;}
 .card.ghost + .card.ghost{ margin-top:.25rem; }
@@ -68,7 +73,7 @@
 //     }
 //     span.counter {
 //         background: grey;
-//         color: white;
+//         color: #fff;
         
 //         flex: 1 100%;
 //     }
@@ -83,7 +88,7 @@
 //         width: auto;
 //         text-align: left;
 //         padding:.25em 1em .25em 1em;
-//         color:$white;
+//         color:$#fff;
 //         &.nominated{background-color: $scrub-purple}
 //         &.applied{background-color: $scrub-green;}
 //         @include bp(md){margin-left: -2px;}
@@ -117,30 +122,71 @@
    
 //    } 
 // }
-.committee--list-item{
-    display:table;
+.slot+.slot{margin-top:.35rem;}
 
-}
-.committee--data,.committee--selector{
-    display:table-cell;
-}
-.committee--selector{
-    width:6em;
-    padding:.25em;
-    background-image: url(../img/construction-paper.png);
-    background-color: grey(20);
-    text-align: center;
-    i.fa-holder{
-        font-size:5em;
-        color:grey(40);
-        &:before {
-            content: "\f111";
+.committee--list-item{
+    background-color:#fff;
+    position:relative;
+    &.selected{
+        background-color:color($primary-color,20);
+        .committee--data{
+            .action{
+                background-color:color($primary-color,80);
+                            .fa-stack-2x{color:color($primary-color,40);}
+            .fa-stack-1x{color:color($primary-color,80);}
+
+            }
         }
     }
-    &.is-active{}
+
+    + .committee--list-item{margin-top:.25em;}
+    .committee--data{
+        display: table;
+        .committee{
+                @extend %content-padding-horizontal;
+    @extend %content-padding-vertical;
+            display: table-cell;
+            width:90%;
+            .name{
+                font-size:ms(1);
+                line-height: 1;
+                margin-top:0;
+            }
+        }
+        .flag{
+            position:absolute;
+            top:.25em;
+            right:.25em;
+            height: 1.5em;
+            width: 1.5em;
+            border-radius:50%;
+            background-color:grey;
+            .marker{ 
+                text-align: center;
+                width:1.5em;
+                }
+            &.nominated{
+                background-color:$scrub-purple;
+                .marker:before{
+                    content:"N";
+                    @include font-slab-bold;
+                    color:#fff;
+
+                }
+            }
+        }
+        .action{
+            display: table-cell;
+            width: 3em;
+            background-color:grey(10);
+            text-align: center;
+            vertical-align: middle;
+            .fa-stack-2x{ color:grey(40);}
+            .fa-stack-1x{color:grey(5);}
+        }
+
+    }
 }
-
-
 
 .slots-area{
     overflow: hidden;
@@ -163,12 +209,20 @@
 .comment-holder{
         padding: 1.25em;
     margin: 0 -.5em -.5em;
-    background: white;
+    background: #fff;
 .lite{
     display:block;
     font-size:ms(-2);
     line-height:1;
 }
+}
+
+.comittee-list{
+    margin:-.5rem;
+    list-style: none;
+    .committee--list-item{
+        margin-bottom:.45rem;
+    }
 }
 .off-canvas.position-right{
     border-left:1px solid grey(60);
@@ -241,3 +295,52 @@ right: 30px;
     right: 20px;
     @include font-bold();
 }
+
+.inset-area{ 
+    position:relative;
+    margin-left:.5em;
+    margin-right:.5em;
+    background-color: grey(25);
+    background-image: url(../img/textured_paper.png), url(../img/bottom-shade.png), url(../img/top-shade.png), url(../img/left-shade.png), url(../img/right-shade.png);
+    background-position: top right,bottom right,right -1px,top left,top right;
+    background-repeat: repeat,repeat-x,repeat-x,repeat-y,repeat-y;
+    @extend %content-padding-horizontal;
+    margin-bottom: -3000px;
+    padding-bottom:3000px;
+    border-left:1px solid grey(60);
+    border-right:1px solid grey(60);
+    >.colored-paper{
+        @extend %cast-shadow;
+        background-image: url(../img/construction-paper.png), url(../img/left-shade.png), url(../img/right-shade.png), url(../img/top-shade.png);
+        background-position: top right,top left,top right,top right;
+        background-repeat: repeat,repeat-y,repeat-y,repeat-x;
+        border-left:1px solid grey(60);
+        border-right:1px solid grey(60);
+    }
+    .collapse.inset-container &{ margin-right:0; margin-left:0;}
+}
+.button.success,.label.success{color:#fff;}
+.dropdown-pane{
+    padding:0;
+}
+.dropdown-pane .button-group{
+    margin:0;
+}
+.button.hollow.reverse{
+    color:#fff;
+    border-color:#fff;
+    &:hover{
+        background-color:rgba(255,255,255,.25);
+    }
+}
+.page-header{
+@extend %cast-shadow;
+background: grey(15) url(../img/construction-paper.png) repeat;
+padding:0 1em;
+}
+
+.interest-menu{
+    display: flex;
+    .button{flex:1 0 auto;}
+}
+// ../img/construction-paper.png

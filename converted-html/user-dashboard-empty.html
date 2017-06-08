@@ -17,6 +17,15 @@
     </head>
     <body>
 
+    <div class="callout no-margin">
+
+<b class="bold">Modes of the Design: </b>
+  <a href="user-dashboard-empty.html" class="link">Empty State</a> |
+  <a href="user-dashboard-nominated.html" class="link">Nominated State</a> |
+  <a href="#" class="link">Applied State</a> |
+  <a href="#" class="link">Applied and Nomination</a>
+
+</div>
         <div class="row">
   <header class="header page">
     <a href="index.html" class="logo">
@@ -132,17 +141,107 @@
 </div>
 
 </div>
-        <div class="mobile-offcanvas-wrapper stuck-footer" data-bind="page: {id:'sections', role: 'start'}">
+        <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
             <div class="paper-page page">
             <div class="page-header clearfix">
                 <h1>
-    Open Committees
+    Dashboard
 </h1>
             </div>
                 <div class="row collapse">
-                    <div class="column large-3 inset-container collapse">
-                        <aside class="inset-area ">
+                    <div class="column large-6">
+                        <div class="page-wrapper content-padding">
+                            
+<div class="card">
+    <div class="row">
+        <div class="column">
+            <h2 class="with-underline">
+                Current Application
+            </h2>
+            <div class="callout disabled clearfix">
+                <p>
+                    You have no application in progress.
+                    <a class="button float-right success" href="application-to-committee.html">
+                        Start an Application
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+        <div class="row">
+            <div class="column">
+            <h2 class="with-underline">
+                Nominations
+            </h2>
+            <div class="callout disabled clearfix">
+                <div class="subtle">
+                    you have no pending nominations.
+                    <a class="button secondary float-right" href="">
+                        Nominate a Member
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    <div class="row">
+        <div class="column">
+            <h2 class="with-underline">
+                Reference Requests
+            </h2>
+            <div class="callout disabled clearfix">
+                <div class="subtle">
+                    You have no pending requests.
+                    <a class="button float-right disabled" href="">
+                        Respond to Requests
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+                        </div>
+                    </div>
+                    <div class="column large-3 inset-container">
+                        <div class=" inset-area">
+                             
+<div class="colored-paper">
+    <h2 class="no-margin text-center">Active Application</h2>
+</div>
+<div class="page-wrapper">
+    <div class="card content-padding">
+       <div class="warning colored-paper">
+           <div class="row coloumn"> <h4 class="text-center">No Active Applications</h4></div>
+       </div>
+        
+        <p class="section-padding"><strong>Active Applications</strong> allow you to express intrest in up to 6 committees during active seasons.  You will have access to interested committees after you have completed and saved the application for this season. </p>
+        <a href="application-to-committee.html" class="button expanded success">Start Application</a>
+    </div>
+    <br>
+    <div class="card ghost">
+        <div class="colored-paper info">
+            <h4 class="text-center"> <i class="fa fa-lock"></i> Committees of Interest <i class="fa fa-lock"></i> 
+            <div class="sub-line">This area is disabled because you have not finished your active application</div>
+
+            </h4>
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                    <div class="column large-3 inset-container">
+                        <aside class="inset-area">
+                            <div class="colored-paper" style="background-color: #444;">
+                                <h2 class="clearfix text-center">
+                                    Open Committees
+                                </h2>
+                                <a class="expanded hollow button tiny reverse" href="open-committees.html" style="">
+                                    Explore All Open Committees
+                                    <i class="fa fa-arrow-right">
+                                    </i>
+                                </a>
+                            </div>
                             
                             <div class="colored-paper clearfix text-center" style="background-color:#ccc;padding: .5em 0 0 0;">
                                 <div class="switch-input-space column small-12">
@@ -184,10 +283,11 @@
 <div class="dropdown-pane" id="example-dropdown-1" data-dropdown data-hover="true" data-hover-pane="true">
   <div class="button-group stacked radius small">
   	<a href="" class="button">Mark as Intrested</a>
+  	<a href="" class="button secondary">Veiw Details</a>
   	<a href="" class="button secondary">Nominated A Member</a>
   </div>
 </div>
-                                        <li class="committee--list-item selected">
+                                        <li class="committee--list-item">
                                             <div class="committee--data">
                                                 <div class="committee">
                                                     <h2 class="name">
@@ -212,7 +312,7 @@
                                                     <span class="fa-stack fa-lg" data-toggle="example-dropdown-2">
                                                         <i class="fa fa-circle fa-stack-2x">
                                                         </i>
-                                                        <i class="fa fa-arrow-right fa-stack-1x">
+                                                        <i class="fa fa-ellipsis-h fa-stack-1x">
                                                         </i>
                                                     </span>
                                                 </div>
@@ -225,6 +325,9 @@
                                                 </a>
                                                 <a class="button secondary" href="">
                                                     Nominated A Member
+                                                </a>
+                                                <a class="button secondary" href="">
+                                                    Veiw Details
                                                 </a>
                                             </div>
                                         </div>
@@ -247,6 +350,7 @@
 <div class="dropdown-pane" id="example-dropdown-1" data-dropdown data-hover="true" data-hover-pane="true">
   <div class="button-group stacked radius small">
   	<a href="" class="button">Mark as Intrested</a>
+  	<a href="" class="button secondary">Veiw Details</a>
   	<a href="" class="button secondary">Nominated A Member</a>
   </div>
 </div>
@@ -269,6 +373,7 @@
 <div class="dropdown-pane" id="example-dropdown-1" data-dropdown data-hover="true" data-hover-pane="true">
   <div class="button-group stacked radius small">
   	<a href="" class="button">Mark as Intrested</a>
+  	<a href="" class="button secondary">Veiw Details</a>
   	<a href="" class="button secondary">Nominated A Member</a>
   </div>
 </div>
@@ -291,6 +396,7 @@
 <div class="dropdown-pane" id="example-dropdown-1" data-dropdown data-hover="true" data-hover-pane="true">
   <div class="button-group stacked radius small">
   	<a href="" class="button">Mark as Intrested</a>
+  	<a href="" class="button secondary">Veiw Details</a>
   	<a href="" class="button secondary">Nominated A Member</a>
   </div>
 </div>
@@ -313,6 +419,7 @@
 <div class="dropdown-pane" id="example-dropdown-1" data-dropdown data-hover="true" data-hover-pane="true">
   <div class="button-group stacked radius small">
   	<a href="" class="button">Mark as Intrested</a>
+  	<a href="" class="button secondary">Veiw Details</a>
   	<a href="" class="button secondary">Nominated A Member</a>
   </div>
 </div>
@@ -350,29 +457,156 @@
                             </div>
                         </aside>
                     </div>
-                    <div class="column large-9">
-                       
-                            
-    <div class="page-message callout highlighted no-margin">
-  <a class="close-bar">
-    <span class="close-button">
-      close <i class="fa fa-times" aria-hidden="true"></i>
-    </span>
-  </a>
-  <div class="message-container">
-    <div class="icon-holder">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-square-o fa-stack-2x"></i>
-        <i class="fa fa-hourglass-end fa-stack-1x"></i>
-      </span>
-    </div>
-    <div class="message-holder">
-      <h2 class="single-line-height">Deadline Approaching</h2>
-      <p>The deadline for "ACC Guidance Committees" is in <b>4 Days</b></p>
+                </div>
+            </div>
+        </div>
+    <footer class="page-footer">
+  <div class="row">
+    <a href="/">
+      <img class="logo" src="Assets/img/oma-01.svg" alt="Home">
+    </a>
+  </div>
+  <div class="footer-darker">
+    <div class="row">
+      <div class="columns large-8">
+        <section class="address row">
+          <h3>American College of Cardiology</h3>
+          <address>
+            <!-- http://microformats.org/wiki/hcard -->
+            <h4>Heart House</h4>
+            <ul>
+              <li>
+                <span class="street-address">2400 N. St. NW</span>
+              </li>
+              <li>
+                <span class="locality">Washington</span>,
+                <span class="country-name">
+                  <abbr title="District of Colombia">DC</abbr>
+                </span>
+                <span class="postal-code">20037</span>
+              </li>
+              <li>
+                <a href="mailto:resource@acc.org" class="email">
+                  <strong>Email:</strong>resource@acc.org</a>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <span tel="+12023756000" class="tel">
+                  <strong>Phone:</strong>(202) 375-6000, ext. 5603</span>
+              </li>
+              <li>
+                <span tel="+18002574737" class="tel">
+                  <strong>Toll Free:</strong>(800) 253-4636, ext. 5603</span>
+              </li>
+              <li>
+                <span fax="+12023757000" class="fax">
+                  <strong>Fax:</strong>(202) 375-7000</span>
+              </li>
+            </ul>
+          </address>
+        </section>
+        <section class="social-buttons row">
+          <h4>Stay Connected</h4>
+          <ul>
+            <li>
+              <a class="button twitter icon-only block" href="https://twitter.com/accintouch" target="_blank">
+                <i class="fa fa-twitter"></i>
+                <span class="text">Twitter</span>
+              </a>
+            </li>
+            <li>
+              <a class="button facebook icon-only block" href="https://www.facebook.com/AmericanCollegeofCardiology" target="_blank">
+                <span class="text">Facebook</span>
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a class="button linkedin icon-only block" href="http://www.linkedin.com/groups/American-College-Cardiology-732607?trk=myg_ugrp_ovr"
+              target="_blank">
+                <span class="text">LinkedIn</span>
+                <i class="fa fa-linkedin"></i>
+              </a>
+            </li>
+            <li>
+              <a class="button googleplus icon-only block" href="https://plus.google.com/118164094874227618578/about" target="_blank">
+                <span class="text">Google+</span>
+                <i class="fa fa-google-plus"></i>
+              </a>
+            </li>
+            <li>
+              <a class="button youtube icon-only block" href="http://www.youtube.com/user/ACCinTouch" target="_blank">
+                <span class="text">Youtube</span>
+                <i class="fa fa-youtube-play"></i>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="columns large-4">
+        <section class="acc-websites row ">
+          <h4>Powered By the ACC</h4>
+          <nav class="nav-list small">
+            <ul class="">
+              <li>
+                <a target="_blank" class="" href="http://www.acc.org">
+                  <span class="text">Acc.org</span>
+                  <i class="fa fa-external-link-square"></i>
+                </a>
+              </li>
+              <li>
+                <a target="_blank" class="" href="http://cvquality.acc.org/">
+                  <span class="text">ACC Quality Improvement for Institutions</span>
+                  <i class="fa fa-external-link-square"></i>
+                </a>
+              </li>
+              <li>
+                <a target="_blank" class="" href="http://www.ncdr.com">
+                  <span class="text">NCDR.com</span>
+                  <i class="fa fa-external-link-square"></i>
+                </a>
+              </li>
+              <li>
+                <a target="_blank" class="" href="http://www.cardiosmart.org">
+                  <span class="text">CardioSmart.org</span>
+                  <i class="fa fa-external-link-square"></i>
+                </a>
+              </li>
+              <li>
+                <a target="_blank" class="" href="http://blog.cardiosource.org">
+                  <span class="text">ACCinTouch.com</span>
+                  <i class="fa fa-external-link-square"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </section>
+      </div>
     </div>
   </div>
-</div>
+  <div class="row">
+    <div class="large-4 columns">
+      <h5>
+        <cite>&copy; 2015 American College of Cardiology</cite>
+      </h5>
+    </div>
+    <div class="large-8 columns">
+    </div>
+  </div>
+</footer>
+    
+<script type="text/javascript" src="assets/js/jquery.js"></script>
+<script type="text/javascript" src="assets/js/jquery-ui.js"></script>
+<script type="text/javascript" src="assets/js/chosen/chosen.jquery.js"></script>
+<script type="text/javascript" src="assets/js/selectonic.js"></script>
+<script type="text/javascript" src="assets/js/knockout.js"></script>
+<script type="text/javascript" src="assets/js/underscore.js"></script>
+<script type="text/javascript" src="assets/js/foundation.js"></script>
 
+
+<script type="text/javascript" src="assets/js/app.js"></script>
+
+    <div class="reveal large no-padding paper-page page" data-reveal="" id="comm-modal">
     <div class="page-wrapper">
     <div class="row">
         <div class="column">
@@ -558,169 +792,11 @@ The committee and BOT International Working Group will work together to ensure t
         </div>
     </div>
 </div>
-
-
-                     <div class="footer sticky-button-bar group-divide">
-  <div class="column small-12 section-padding content-padding">
-    <div class="pull-left">
-        <a href="user-dashboard-empty.html" class="button navigation small"><i class="fa fa-arrow-left"></i> Back To Dashboard</a>
-    </div>
-    <div class="pull-right">
-      <a class="secondary button small" href="#">Nominate A Member</a>
-      <a class="button small" href="#">Mark as Interested</a>
-    </div>
-  </div>
-</div>   
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    <footer class="page-footer">
-  <div class="row">
-    <a href="/">
-      <img class="logo" src="Assets/img/oma-01.svg" alt="Home">
-    </a>
-  </div>
-  <div class="footer-darker">
-    <div class="row">
-      <div class="columns large-8">
-        <section class="address row">
-          <h3>American College of Cardiology</h3>
-          <address>
-            <!-- http://microformats.org/wiki/hcard -->
-            <h4>Heart House</h4>
-            <ul>
-              <li>
-                <span class="street-address">2400 N. St. NW</span>
-              </li>
-              <li>
-                <span class="locality">Washington</span>,
-                <span class="country-name">
-                  <abbr title="District of Colombia">DC</abbr>
-                </span>
-                <span class="postal-code">20037</span>
-              </li>
-              <li>
-                <a href="mailto:resource@acc.org" class="email">
-                  <strong>Email:</strong>resource@acc.org</a>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <span tel="+12023756000" class="tel">
-                  <strong>Phone:</strong>(202) 375-6000, ext. 5603</span>
-              </li>
-              <li>
-                <span tel="+18002574737" class="tel">
-                  <strong>Toll Free:</strong>(800) 253-4636, ext. 5603</span>
-              </li>
-              <li>
-                <span fax="+12023757000" class="fax">
-                  <strong>Fax:</strong>(202) 375-7000</span>
-              </li>
-            </ul>
-          </address>
-        </section>
-        <section class="social-buttons row">
-          <h4>Stay Connected</h4>
-          <ul>
-            <li>
-              <a class="button twitter icon-only block" href="https://twitter.com/accintouch" target="_blank">
-                <i class="fa fa-twitter"></i>
-                <span class="text">Twitter</span>
-              </a>
-            </li>
-            <li>
-              <a class="button facebook icon-only block" href="https://www.facebook.com/AmericanCollegeofCardiology" target="_blank">
-                <span class="text">Facebook</span>
-                <i class="fa fa-facebook"></i>
-              </a>
-            </li>
-            <li>
-              <a class="button linkedin icon-only block" href="http://www.linkedin.com/groups/American-College-Cardiology-732607?trk=myg_ugrp_ovr"
-              target="_blank">
-                <span class="text">LinkedIn</span>
-                <i class="fa fa-linkedin"></i>
-              </a>
-            </li>
-            <li>
-              <a class="button googleplus icon-only block" href="https://plus.google.com/118164094874227618578/about" target="_blank">
-                <span class="text">Google+</span>
-                <i class="fa fa-google-plus"></i>
-              </a>
-            </li>
-            <li>
-              <a class="button youtube icon-only block" href="http://www.youtube.com/user/ACCinTouch" target="_blank">
-                <span class="text">Youtube</span>
-                <i class="fa fa-youtube-play"></i>
-              </a>
-            </li>
-          </ul>
-        </section>
-      </div>
-      <div class="columns large-4">
-        <section class="acc-websites row ">
-          <h4>Powered By the ACC</h4>
-          <nav class="nav-list small">
-            <ul class="">
-              <li>
-                <a target="_blank" class="" href="http://www.acc.org">
-                  <span class="text">Acc.org</span>
-                  <i class="fa fa-external-link-square"></i>
-                </a>
-              </li>
-              <li>
-                <a target="_blank" class="" href="http://cvquality.acc.org/">
-                  <span class="text">ACC Quality Improvement for Institutions</span>
-                  <i class="fa fa-external-link-square"></i>
-                </a>
-              </li>
-              <li>
-                <a target="_blank" class="" href="http://www.ncdr.com">
-                  <span class="text">NCDR.com</span>
-                  <i class="fa fa-external-link-square"></i>
-                </a>
-              </li>
-              <li>
-                <a target="_blank" class="" href="http://www.cardiosmart.org">
-                  <span class="text">CardioSmart.org</span>
-                  <i class="fa fa-external-link-square"></i>
-                </a>
-              </li>
-              <li>
-                <a target="_blank" class="" href="http://blog.cardiosource.org">
-                  <span class="text">ACCinTouch.com</span>
-                  <i class="fa fa-external-link-square"></i>
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </section>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="large-4 columns">
-      <h5>
-        <cite>&copy; 2015 American College of Cardiology</cite>
-      </h5>
-    </div>
-    <div class="large-8 columns">
-    </div>
-  </div>
-</footer>
-    
-<script type="text/javascript" src="assets/js/jquery.js"></script>
-<script type="text/javascript" src="assets/js/jquery-ui.js"></script>
-<script type="text/javascript" src="assets/js/chosen/chosen.jquery.js"></script>
-<script type="text/javascript" src="assets/js/selectonic.js"></script>
-<script type="text/javascript" src="assets/js/knockout.js"></script>
-<script type="text/javascript" src="assets/js/underscore.js"></script>
-<script type="text/javascript" src="assets/js/foundation.js"></script>
-
-
-<script type="text/javascript" src="assets/js/app.js"></script>
-
+    <button aria-label="Close modal" class="close-button" data-close="" type="button">
+        <span aria-hidden="true">
+            <i class="fa fa-times"></i>
+        </span>
+    </button>
+</div>
     </body>
 </html>

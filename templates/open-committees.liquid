@@ -1,50 +1,12 @@
-{% extends 'layouts/layout' %}
+{% extends 'layouts/layout-open-committees' %}
+{% block page-name %}
+    Open Committees
+{% endblock %}
 {% block content %}
-<div class="mobile-offcanvas-wrapper">
-    <section class="split-layout medium">
-        <aside class="split-sidebar">
-            <div class="row">
-                <div class="column">
-                    <h2>
-                        Open Committees
-                    </h2>
-                    {% include "elements/searchbar" %}
-                </div>
-            </div>
-            <div class="">
-                <nav class="">
-                    <ul class="comittee-list">
-                        {% include "elements/comittee-List-item-notactive" %}
-                        {% include "elements/comittee-List-item-active" %}
-                        {% include "elements/comittee-List-item-notactive" %}
-                        {% include "elements/comittee-List-item-notactive" %}
-                        {% include "elements/comittee-List-item-notactive" %}
-                        {% include "elements/comittee-List-item-notactive" %}
-                    </ul>
-                </nav>
-            </div>
-            {% include "elements/pagination-bottom" %}
-        </aside>
-        <article class="split-content page with-group-sections">
-            
-            <div class="section-nav back hide-for-medium">
-                <a>
-                    <div class="circle">
-                        <i class="fa fa-holder-dynamic">
-                        </i>
-                    </div>
-                    <div class="text">
-                        Back to Open Committees
-                    </div>
-                </a>
-            </div>{% include "elements/page-message-deadline" %}
-            <div class="page-wrapper">
-               {% include "sections/committee-overview" %}
-            </div>
-            
-        </article>
-    </section>
-</div>
+    {% include "elements/page-message-deadline" %}
+
+    {% include "sections/committee-overview" %}
+
 {% endblock %}
 
 {% comment %}

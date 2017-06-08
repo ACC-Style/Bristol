@@ -1,0 +1,125 @@
+{% include "head" %}
+
+    {% include 'sections/time-control'%}
+        {% include 'sections/header-active-application' %}
+        <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
+            <div class="paper-page page">
+            <div class="page-header clearfix">
+                <h1>{% block page-name %}{% endblock %}</h1>
+            </div>
+                <div class="row collapse">
+                    <div class="column large-6">
+                        <div class="page-wrapper content-padding">
+                            {% block content %}{% endblock %}
+                        </div>
+                    </div>
+                    <div class="column large-3 inset-container">
+                        <div class=" inset-area">
+                            {% block active-application %}{% endblock %}
+                        </div>
+                    </div>
+                    <div class="column large-3 inset-container">
+                        <aside class="inset-area">
+                            <div class="colored-paper" style="background-color: #444;">
+                                <h2 class="clearfix text-center">
+                                    Open Committees
+                                </h2>
+                                <a class="expanded hollow button tiny reverse" href="open-committees.html" style="">
+                                    Explore All Open Committees
+                                    <i class="fa fa-arrow-right">
+                                    </i>
+                                </a>
+                            </div>
+                            {% comment %}{% include "elements/searchbar" %}{% endcomment %}
+                            <div class="colored-paper clearfix text-center" style="background-color:#ccc;padding: .5em 0 0 0;">
+                                <div class="switch-input-space column small-12">
+                                    <div class="switch value-switch switch-4x round">
+                                        <input class="switch-input" id="checkbox-value-switch-round" type="checkbox" value="false">
+                                            <label class="switch-paddle" for="checkbox-value-switch-round">
+                                                <span class="show-for-sr">
+                                                    Do you like me?
+                                                </span>
+                                                <span aria-hidden="true" class="switch-active">
+                                                    All
+                                                </span>
+                                                <span aria-hidden="true" class="switch-inactive">
+                                                    Nominated
+                                                </span>
+                                            </label>
+                                        </input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-padding">
+                                    <ul class="comittee-list">
+                                        {% include "elements/comittee-List-item" %}
+                                        <li class="committee--list-item">
+                                            <div class="committee--data">
+                                                <div class="committee">
+                                                    <h2 class="name">
+                                                        Assembly of Interantional Governors Steering Committee
+                                                        <div class="sub-line">
+                                                            ACC Guidance Committee
+                                                        </div>
+                                                    </h2>
+                                                    <span class="label secondary">
+                                                        Open Positions:
+                                                        <b>
+                                                            4
+                                                        </b>
+                                                    </span>
+                                                    <span class="label">
+                                                        Nominated
+                                                        <i class="fa fa-thumbs-up">
+                                                        </i>
+                                                    </span>
+                                                </div>
+                                                <div class="action">
+                                                    <span class="fa-stack fa-lg" data-toggle="example-dropdown-2">
+                                                        <i class="fa fa-circle fa-stack-2x">
+                                                        </i>
+                                                        <i class="fa fa-ellipsis-h fa-stack-1x">
+                                                        </i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <div class="dropdown-pane" data-dropdown="" data-hover="true" data-hover-pane="true" id="example-dropdown-2">
+                                            <div class="button-group stacked radius small">
+                                                <a class="button" href="">
+                                                    Mark as Intrested
+                                                </a>
+                                                <a class="button secondary" href="">
+                                                    Nominated A Member
+                                                </a>
+                                                <a class="button secondary" href="">
+                                                    Veiw Details
+                                                </a>
+                                            </div>
+                                        </div>
+                                        {% include "elements/comittee-List-item" %}
+                                        {% include "elements/comittee-List-item" %}
+                                        {% include "elements/comittee-List-item" %}
+                                        {% include "elements/comittee-List-item" %}
+                                    </ul>
+                            </div>
+                            <div style="position: static;left: 0;right: 0;bottom: 0;">
+                                {% include "elements/card-pagination-bottom" %}
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% include 'sections/web-footer' %}
+    {% include "scripts" %}
+    <div class="reveal large no-padding paper-page page" data-reveal="" id="comm-modal">
+    {% include "sections/committee-overview" %}
+    <button aria-label="Close modal" class="close-button" data-close="" type="button">
+        <span aria-hidden="true">
+            <i class="fa fa-times"></i>
+        </span>
+    </button>
+</div>
+    </body>
+</html>

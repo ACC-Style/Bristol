@@ -1,0 +1,90 @@
+{% extends 'layouts/layout-active-application' %}
+{% block content %}
+<div class="card">
+    <div class="row">
+        <div class="column">
+            <h2 class="with-underline">
+                Current Application
+            </h2>
+            <div class="callout disabled clearfix">
+                <p>
+                    You have no application in progress.
+                    <a class="button float-right success" href="application-to-committee.html">
+                        Start an Application
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+        <div class="row">
+            <div class="column">
+            <h2 class="with-underline">
+                Nominations
+            </h2>
+            <div class="callout disabled clearfix">
+                <div class="subtle">
+                    you have no pending nominations.
+                    <a class="button secondary float-right" href="">
+                        Nominate a Member
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    <div class="row">
+        <div class="column">
+            <h2 class="with-underline">
+                Reference Requests
+            </h2>
+            <div class="callout disabled clearfix">
+                <div class="subtle">
+                    You have no pending requests.
+                    <a class="button float-right disabled" href="">
+                        Respond to Requests
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block active-application %} 
+<div class="colored-paper">
+    <h2 class="no-margin text-center">Active Application</h2>
+</div>
+<div class="page-wrapper">
+    <div class="card content-padding">
+       <div class="warning colored-paper">
+           <div class="row coloumn"> <h4 class="text-center">No Active Applications</h4></div>
+       </div>
+        
+        <p class="section-padding"><strong>Active Applications</strong> allow you to express intrest in up to 6 committees during active seasons.  You will have access to interested committees after you have completed and saved the application for this season. </p>
+        <a href="application-to-committee.html" class="button expanded success">Start Application</a>
+    </div>
+    <br>
+    <br>
+    <div class="card content-padding">
+       <div class="success colored-paper">
+           <div class="row coloumn"> <h4 class="text-center">You have been Nominated!</h4></div>
+       </div>
+        <p class="section-padding"><b>Congradulations!</b> Another member of the ACC thinks you could add great value to college by being a part of a committee.  Nominations still need you to have an <strong>Active Applications</strong> which you don't seem to have.</p>
+        <p class="section-padding">Finish your <strong>Active Applications</strong> and you will be considdered to for committees you have marked interested in. </p>
+        <a href="application-to-committee.html" class="button expanded success">Start Application</a>
+    </div>
+    <br><br>
+    <div class="card ghost">
+        <div class="colored-paper info">
+            <h4>Committees of Interest
+            <div class="sub-line">This area is disabled because you have not finished your active application</div>
+
+            </h4>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% comment %}
+<img src="output/abstract-q-c-640-480-1.jpg">
+</img>
+{% endcomment %}
