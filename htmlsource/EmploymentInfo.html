@@ -1,0 +1,17 @@
+---
+layout: default
+title: Current Employment Information
+id: emp
+---
+<div class="page-wrapper">
+{%  include snippets/page-top.liquid title="Current Employment Information" level="h1" style="with-underline" message="Please fill in with your current employment"%}
+    <div class="row">
+        {% include snippets/question-select.liquid label="Address Type" option="Work" size="small-12 large-4" state="required disabled" hint="" %}
+        {% include snippets/question-text.liquid label="Institution Name" size="small-12 large-8" state="required" hint="" %}
+         </div><div class="row">
+        {% include elements/street-address.liquid %}
+        </div><div class="row">
+        {% include elements/country-city-state-zip.liquid %}
+    </div>
+    {% include elements/continue-button-bar.liquid %}    
+</div>

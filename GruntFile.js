@@ -332,10 +332,11 @@ module.exports = function(grunt){
 		'copy:FOUNDATIONSETTINGS',
 		'sass:vendor',
 		'sass:dist',
-		'copy:INTERNAL',
-		'styledown',
-	    'liquid',
-		'watch'
+		'copy:INTERNAL'
+		// ,
+		// 'styledown',
+	 //    'liquid',
+		// 'watch'
 		
 	]);
 

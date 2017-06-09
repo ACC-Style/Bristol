@@ -1,5 +1,14 @@
+<div class="row">
+        <div class="column">
+            <a class="button small radius expanded success" id="add{{ include.title | remove: " " }}Button" onclick="{{ include.title | remove: " " }}Slide(event)">
+                <i class="fa fa-plus">
+                </i>
+                Add {{ include.title }}
+            </a>
+        </div>
+    </div>
 </div>
-<div id="add{{include.title  | remove: ' '}}">
+<div id="add{{include.title  | remove: ' '}}" class="repeater-holder">
     <div class="page paper-page repeater-area content-padding" style="display: none;">
         <div class="colored-paper success">
             <div class="content-padding row">
@@ -19,4 +28,4 @@
             <div class="row">
                 <div class="column">
                     <div class="card">
-                        <div class="question-group section-padding success">
+                        <div class="question-group">

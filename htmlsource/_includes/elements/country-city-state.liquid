@@ -1,0 +1,9 @@
+{% if include.type == 'international'%}
+{% include snippets/question-select.liquid label="Country" option="Choose.." size="small-12 large-4" state="required" hint="" %}
+{% include snippets/question-text.liquid label="State/Province" size="small-12 large-4" state="required" hint="" %}
+{% include snippets/question-text.liquid label="City" size="small-12 large-4" state="required" hint="" %}
+{% else %}
+{% include snippets/question-select.liquid label="Country" option="USA" size="small-12 large-4" state="required" hint="" %}
+{% include snippets/question-select.liquid label="State" option="Choose.." size="small-12 large-4" state="required" hint="" %}
+{% include snippets/question-text.liquid label="City" size="small-12 large-4" state="required" hint="" %}
+{% endif %}

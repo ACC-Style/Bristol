@@ -2,17 +2,13 @@
    <div class="row">
        {% include snippets/question-text.liquid label="Institution Name" size="small-12 large-12" state="required" hint="" %}
    </div>
+   <div class="row">
+       {% include elements/country-city-state.liquid %}
+   </div>
     <div class="row">
         {% comment %} Add Questions{% endcomment %}
         {% include snippets/question-select.liquid label="Education Level" option="Choose.." size="small-12 large-4" state="required" hint="" %}
-        {% include snippets/question-select.liquid label="Degree Name" option="Choose.." size="small-12 large-5" state="required" hint="" %}
-        {% include snippets/question-date.liquid label="Year Graduated" option="Choose.." size="small-12 large-3" state="required " hint="" %}
-   </div>
-   <div class="row">
-       {% include snippets/question-select.liquid label="Country" option="United States" size="small-12 large-4" state="required" hint="" %}
-       {% include snippets/question-text.liquid label="State/Province" size="small-12 large-4" state="required" hint="" %}
-       {% include snippets/question-text.liquid label="City" size="small-12 large-4" state="required" hint="" %}
-       
-       
+        {% include snippets/question-select.liquid label="Degree" option="Choose.." size="small-12 large-4" state="required" hint="" %}
+        {% include snippets/question-date.liquid label="Year Graduated" option="Choose.." size="small-12 large-4" state="required " hint="" %}
    </div>
 {% include elements/repeaterAdd-end.liquid title="Education" %}

@@ -704,18 +704,18 @@
             <!-- ko foreach: addressinfo() -->
             <div class="render animated fadeIn">
                 <div class="render-actions">
-                    <a class="set" data-bind="visible:!preferredmailing(), click: function() { $root.setPreferredMailing('address', $data) }" href="javascript:void(0)" style="display: none;">
-                        <i class="fa fa-envelope">
-                        </i>
-                        <span class="text">
-                            mark as preferred
-                        </span>
-                    </a>
                     <a class="edit" data-bind="click: function() { $root.editCustomSection('address','addressinfo', $data) }" href="javascript:void(0)">
                         <i class="fa fa-holder">
                         </i>
                         <span class="text">
                             Edit
+                        </span>
+                    </a>
+                    <a class="set" data-bind="visible:!preferredmailing(), click: function() { $root.setPreferredMailing('address', $data) }" href="javascript:void(0)" style="display: none;">
+                        <i class="fa fa-envelope">
+                        </i>
+                        <span class="text">
+                            mark as preferred
                         </span>
                     </a>
                     <a class="delete" data-bind="visible: (!isprimary() && !preferredmailing() ),click: function() { $root.deleteCustomSection('address','addressinfo', $data) }" href="javascript:void(0)" style="display: none;">
@@ -790,7 +790,7 @@
         </div>
     </div>
 </div>
-<div class="question-group section-padding ">
+<div class="question-group ">
     <!-- ko with: addressinfoForm -->
     <div class="row">
         <div class="question column medium-8 large-6 required" data-bind="css: { error: countrycode.hasError, required: countrycode.isRequired, warning: countrycode.hasWarning }">

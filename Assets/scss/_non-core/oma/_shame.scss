@@ -30,10 +30,10 @@ select {
     color: #fff;
     border: #fff solid 1px;
     border-radius: 6px;
-    padding: .5em 1em;
-    margin: 0;
-    top: 0;
+    top: -6px;
     right: -.5em;
+    padding: .35em .75em;
+    margin: 0;
     &:hover{background-color:rgba(0, 0, 0, .25);}
   }
 }
@@ -68,22 +68,21 @@ select {
 }
 
 .render-actions a {
-	background-color: mix(grey(5),color($primary-color,10));
+	background-color: $primary-color;
 	text-align: center;
-	color: black;
+	color: white;
 	width: 33%;
 	padding: .25em 0;
 	font-size: ms(-1);
-	border-bottom:1px solid grey(20);
+	border:1px solid mix($primary-color,$black,20%);
       margin: 6px;
     width: auto;
-    border: 1px solid;
+    
     border-radius: 6px;
-    background-color: grey;
     background-image: none;
 	&:hover {
-	background-color: #fff;
-	color: grey(100);
+	background-color: mix($primary-color,$black,20%);
+	color:#fff ;
  }
 }
 
@@ -95,6 +94,7 @@ select {
     background-color: grey(80);
     color: grey(40);
     background-image: url(../img/cream_pixels.png);
+    border-color:grey(40);
     @include font-light();
     i.fa {
       color: grey(30);
@@ -166,3 +166,41 @@ label.switch-value{
 }
 
 .page-message.empty .icon-holder .fa-square-o { display:none;}
+
+.date-input-holder{  max-width: calc(100% - 3rem);}
+.date-picker-holder{ min-width: calc(3rem);}
+.nav-checklist .selected i.fa.fa-holder-dynamic:before{ content: "\f061"; color:black;}
+
+.group-section,.card {
+            width: auto;
+            position: relative;
+            @extend %liftedbox;
+            @extend %content-padding-vertical;
+            @extend %content-padding-horizontal;
+            
+        }
+  .split-content .section-nav {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 1.07143rem;
+    padding-right: 1.07143rem;
+}
+.split-content{
+  padding-bottom:0 !important;
+  position:relative;
+}
+.split-content .section-nav.forward{
+  position:absolute;
+  bottom:0;
+  right:0;
+  left:0;
+}
+h4.no-vertical-margin {
+    margin: 0.35em 0 !important;
+}
+.split-content>.page>.page-wrapper {
+    padding: 0;
+}
+.split-content>.page{
+  padding-bottom:5rem;
+}

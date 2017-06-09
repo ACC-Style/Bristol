@@ -1,12 +1,11 @@
 ---
 layout: default
+title: Personal Information
+id: personal
+
 ---
-<div class="page-wrapper">{% include sections/personal-name.liquid %} 
-<div id="extraQuestions">
-  <div data-title="~"></div>
-  {% include sections/personal-resident.liquid %}
-  {% include sections/personal-student.liquid %}
-</div>
+
+{% include sections/personal-name.liquid %}
 {% include sections/personal-address.liquid %}
 {% include sections/personal-address-add.liquid %}   
 {% include sections/personal-phone.liquid %}
@@ -14,31 +13,28 @@ layout: default
 {% include sections/personal-email.liquid %}
 {% include sections/personal-email-add.liquid %}
 {% include sections/demographics.liquid %}
-
-<div class="row group-divide text-center">
-      <div class="content-padding">
-      <h4>Is your Personal Information complete and up to date?</h4>
-      <a href="" class="disabled button"><i class="fa fa-holder"></i> Yes, Continue with Application</a>
-    </div>
-</div>
-</div>
-
+{% include elements/continue-button-bar.liquid %}
+    <!-- <div id="extraQuestions">
+  <div data-title="~"></div>
+  {% include sections/personal-resident.liquid %}
+  {% include sections/personal-student.liquid %}
+</div> -->
 <script>
-    function extraQuestions(e){
-      e.preventDefault();
-      var randompick = Math.floor(Math.random()*2)+1;
-      console.log(randompick);
-      if( $('#profType').val() == "" ){
-      $('#extraQuestions > div').slideUp();
-      $('#profType').val('');
-      $('#extraQuestions > div').eq(randompick).slideDown();
-      $('#profType').val(  $('#extraQuestions > div').eq(randompick).data("title") ); 
-      // ()?$('#profType').val('Resident'):;
-      }else{
-       $('#extraQuestions > div').slideUp();
-      $('#profType').val('');  
-      }
-    }
+    // function extraQuestions(e){
+    //   e.preventDefault();
+    //   var randompick = Math.floor(Math.random()*2)+1;
+    //   console.log(randompick);
+    //   if( $('#profType').val() == "" ){
+    //   $('#extraQuestions > div').slideUp();
+    //   $('#profType').val('');
+    //   $('#extraQuestions > div').eq(randompick).slideDown();
+    //   $('#profType').val(  $('#extraQuestions > div').eq(randompick).data("title") ); 
+    //   // ()?$('#profType').val('Resident'):;
+    //   }else{
+    //    $('#extraQuestions > div').slideUp();
+    //   $('#profType').val('');  
+    //   }
+    // }
 
     function residentSlide(e){
         e.preventDefault();
@@ -54,4 +50,3 @@ layout: default
         $('#addAddress,#addAddressButton').slideToggle();
     }
 </script>
-

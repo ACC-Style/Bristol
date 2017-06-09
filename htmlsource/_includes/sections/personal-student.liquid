@@ -1,5 +1,5 @@
-<div class="section-padding group-divide-bottom" id="residentQuestions" data-title="Student" style="display: none;">
-    <div class="group-divide ">
+<div class="section-padding " id="residentQuestions" data-title="Student">
+    <div>
         <div class="row">
             <div class="column">
                 <h1 class="with-underline">
@@ -7,156 +7,16 @@
                 </h1>
             </div>
         </div>
-        <div class="row">
-            <div class="question column medium-4">
-                <div class="label-holder">
-                    <span class="text">
-                        Institution Name
-                    </span>
-                    <span class="required-holder">
-                        <i class="fa fa-holder-dynamic">
-                        </i>
-                    </span>
-                </div>
-                <div class="input-holder">
-                    <div class="input-space column">
-                        <input type="text">
-                        </input>
-                    </div>
-                </div>
-                <div class="message-holder">
-                    <small class="error">
-                        Error Message
-                    </small>
-                </div>
-                <div class="hint">
-                </div>
-            </div>
-            <div class="question column medium-4">
-                <div class="label-holder">
-                    <span class="text">
-                        Program Type
-                    </span>
-                    <span class="required-holder">
-                        <i class="fa fa-holder-dynamic">
-                        </i>
-                    </span>
-                </div>
-                <div class="input-holder">
-                    <div class="input-space column">
-                        <input type="text">
-                        </input>
-                    </div>
-                </div>
-                <div class="message-holder">
-                    <small class="error">
-                        Error Message
-                    </small>
-                </div>
-                <div class="hint">
-                </div>
-            </div>
-            <div class="question column medium-4">
-                <div class="label-holder">
-                    <span class="text">
-                        Graduation Date
-                    </span>
-                    <span class="required-holder">
-                        <i class="fa fa-holder-dynamic">
-                        </i>
-                    </span>
-                </div>
-                <div class="input-holder">
-                    <div class="input-space column">
-                        <input type="text">
-                        </input>
-                    </div>
-                </div>
-                <div class="message-holder">
-                    <small class="error">
-                        Error Message
-                    </small>
-                </div>
-                <div class="hint">
-                </div>
-            </div>
+        <div class="row">        
+            {% include snippets/question-text.liquid label="Institution Name" size="small-12 large-6" state="required" hint="" %}
         </div>
         <div class="row">
-            <div class="question column medium-4">
-                <div class="label-holder">
-                    <span class="text">
-                        Country
-                    </span>
-                    <span class="required-holder">
-                        <i class="fa fa-holder-dynamic">
-                        </i>
-                    </span>
-                </div>
-                <div class="input-holder">
-                    <div class="input-space column">
-                        <select id="" name="">
-                            <option value="">
-                                USA
-                            </option>
-                        </select>
-                    </div>
-                </div>
-                <div class="message-holder">
-                    <small class="error">
-                        Error Message
-                    </small>
-                </div>
-                <div class="hint">
-                </div>
-            </div>
-            <div class="question column medium-4">
-                <div class="label-holder">
-                    <span class="text">
-                        State/Provedence
-                    </span>
-                    <span class="required-holder">
-                        <i class="fa fa-holder-dynamic">
-                        </i>
-                    </span>
-                </div>
-                <div class="input-holder">
-                    <div class="input-space column">
-                        <input type="text">
-                        </input>
-                    </div>
-                </div>
-                <div class="message-holder">
-                    <small class="error">
-                        Error Message
-                    </small>
-                </div>
-                <div class="hint">
-                </div>
-            </div>
-            <div class="question column medium-4">
-                <div class="label-holder">
-                    <span class="text">
-                        City
-                    </span>
-                    <span class="required-holder">
-                        <i class="fa fa-holder-dynamic">
-                        </i>
-                    </span>
-                </div>
-                <div class="input-holder">
-                    <div class="input-space column">
-                        <input type="text">
-                        </input>
-                    </div>
-                </div>
-                <div class="message-holder">
-                    <small class="error">
-                        Error Message
-                    </small>
-                </div>
-                <div class="hint">
-                </div>
-            </div>
+        {% include snippets/question-select.liquid label="Education Level" option="Choose.." size="small-12 large-4" state="required" hint="" %}
+       {% include snippets/question-select.liquid label="Program Type" option="Choose.." size="small-12 large-4" state="required" hint="" %}
+       {% include snippets/question-date.liquid label="Graduation Date" option="Choose.." size="small-12 large-4" state="required " hint="" %}
+        </div>
+        <div class="row">
+        {% include elements/country-city-state.liquid type="Domestic" %}
         </div>
     </div>
 </div>

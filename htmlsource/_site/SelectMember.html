@@ -1,0 +1,565 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <title>Select Application</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/styledown.css">
+  <link rel="stylesheet" href="assets/css/normalize.min.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,600,400,300|Roboto+Slab:400,700|Raleway:300">
+  <link rel="stylesheet" href="assets/css/jquery-ui.css">
+  <link rel="stylesheet" href="assets/css/jquery-uistructure.css">
+  <link rel="stylesheet" href="assets/css/foundation-sites.css">
+   <link rel="stylesheet" href="assets/css/font-awesome.css">
+  <link rel="stylesheet" href="assets/css/index.css" id="theme">
+
+</head>
+    <body>
+    <div class="mobile-offcanvas-wrapper">
+      <section class="split-layout fill-page-height medium navOn">
+        <aside class="sidebar">
+            <aside id="OMA_Sidebar" class="split-sidebar">
+        <div class="branding row collapse hide-for-small-only">
+          <div class="column medium-6"><h2 class="oma logo">American College of Cardiology</h2></div>
+          <div class="column medium-6"><h2 class="oma title">Online Membership Application</h2></div>
+        </div>
+        <div class="row blue-bar hide-for-small-only"></div>
+<div id="autoSave" class="row autosave-block hide" style="position: fixed;">
+    <div class="column small-12">
+        <i class="fa fa-spinner fa-spin"></i> Auto Save
+    </div>
+</div>
+    <div class="user-id-block row collapse">
+        <img class="user-pic" src="Assets/img/profile-pic-default.jpg" alt="Avatar of Members Name">
+        <ul class="no-bullet user-info">
+            <li class="user-name">
+                <span class="fullName">
+                    Sanjiv Agrawal
+                    <span class="userDesignation">, DM, MD</span>
+                </span> 
+            </li>
+          <li><a class="link" href="index.html">Save &amp; Signout</a></li>
+        </ul>
+    </div>
+
+    
+</aside>
+        </aside>
+        <article class="split-content">
+              <div class="page-wrapper">
+<h1 class="with-underline">Select Application</h1>
+    <div class="row">
+        <div class="column">
+            <div class="callout info">
+                <h3 class="no-margin">
+                    Instructions &amp; Requirements
+                </h3>
+                <p>
+                    The letters must be on the sponsors’ business letterhead, dated, signed by the sponsor and included with the application, otherwise, the application will not be processed or reviewed. Sponsoring Fellows must be well acquainted with your current professional activities. At least one of the sponsors must be from your geographic area of professional activity; however, only one of the sponsors can be from a partner or colleague who works in your office. You are also limited to one sponsor from your training program. Relatives may not sponsor. Each letter must clearly have been originally written by the sponsor (substantially identical letters will be rejected). Letters should detail accomplishments of distinction by the candidate, such as positions of hospital, medical society, educational, or academic leadership.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row section-padding">
+        <div class="column">
+            <div class="card" id="SearchForSponsorCard">
+                <div class="colored-paper">
+                    <div class="row" id="SearchforASponsors">
+    <div class="column relative-position">
+        <h3 class="with-underline">
+            Search for A Sponsors
+
+             
+                <div class="sub-line">
+                    Your membership application requires a domestic sponsor from (USA or Canada) 
+                </div>
+                
+        </h3>
+
+    </div>
+</div>
+
+                </div>
+                <div class="section-padding row" id="SponsorResults">
+                    <div class="question column small-12 large-6 required">
+	<div class="label-holder">
+		    <span class="text">
+                Sponsor
+            </span>
+            <span class="required-holder">
+                <i class="fa fa-holder">
+                </i>
+            </span>
+	</div>
+	<div class="input-holder">
+		<div class="input-space column">
+			<input type="text" required>
+			<span class="input-lock">
+                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
+                </i>
+            </span>
+		</div>
+	</div>
+	<div class="message-holder">
+		<small class="error">Error Message</small>
+	</div>
+	<div class="hint">You can search by: First Name Last Name or Email</div>
+</div>	
+                    <div class="question column large-6">
+                        <div class="label-holder">
+                            <span class="text">
+                            </span>
+                        </div>
+                        <div class="input-holder">
+                            <a class="button small radius expanded success" id="addSponsorResultsButton" onclick="SponsorResultsSlide(event)">
+                                <i class="fa fa-search">
+                                </i>
+                                Search
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="addSponsorResults">
+    <div class="page paper-page repeater-area content-padding" style="display: none; background-color: #198dae;">
+        <div class="colored-paper">
+            <div class="content-padding row">
+                <h4 class="no-vertical-margin" style="position: relative;">
+                    
+                    Sponsor Results
+                    <a class="close-button radius" href="" onclick='SponsorResultsSlide(event)'>
+                        <i class="fa fa-times">
+                        </i>
+                        Close
+                    </a>
+                </h4>
+            </div>
+        </div>
+        <div class="page-wrapper">
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <div class="question-group">
+                        <table class="table banded">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Country</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- ko foreach: searchresults -->
+                        <tr>
+                            <td data-bind="text: LongName">Allan L. Mattern, M.D., FACC</td>
+                            <td data-bind="text: address.country">United States</td>
+                            <td class="text-right"><a " class="button tiny expanded secondary">Select &amp; Attach Letter</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td data-bind="text: LongName">George E. Matthews, MD, FACC</td>
+                            <td data-bind="text: address.country">United States</td>
+                            <td class="text-right"><a " class="button tiny expanded secondary">Select &amp; Attach Letter</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td data-bind="text: LongName">Charles J. Mattina, MD, FACC</td>
+                            <td data-bind="text: address.country">United States</td>
+                            <td class="text-right"><a " class="button tiny expanded secondary">Select &amp; Attach Letter</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td data-bind="text: LongName">Bradford J. Matthews, M.D., FACC</td>
+                            <td data-bind="text: address.country">United States</td>
+                            <td class="text-right"><a " class="button tiny expanded secondary">Select &amp; Attach Letter</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td data-bind="text: LongName">Carsten Matthias Schmalfuss, M.D., FACC</td>
+                            <td data-bind="text: address.country">United States</td>
+                            <td class="text-right"><a " class="button tiny expanded secondary">Select &amp; Attach Letter</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td data-bind="text: LongName">Eric Matthew Graham, M.D., FACC</td>
+                            <td data-bind="text: address.country">United States</td>
+                            <td class="text-right"><a " class="button tiny expanded secondary">Select &amp; Attach Letter</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td data-bind="text: LongName">Janis Town Matthai, NP, AACC</td>
+                            <td data-bind="text: address.country">United States</td>
+                            <td class="text-right"><a " class="button tiny expanded secondary">Select &amp; Attach Letter</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td data-bind="text: LongName">John Matthew Lee, MD, FACC</td>
+                            <td data-bind="text: address.country">United States</td>
+                            <td class="text-right"><a " class="button tiny expanded secondary">Select &amp; Attach Letter</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td data-bind="text: LongName">Brian Matthew Stegman, MD, FACC</td>
+                            <td data-bind="text: address.country">United States</td>
+                            <td class="text-right"><a " class="button tiny expanded secondary">Select &amp; Attach Letter</a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td data-bind="text: LongName">Andre Rodrigues De Mattos Paixao, MD, FACC</td>
+                            <td data-bind="text: address.country">United States</td>
+                            <td class="text-right"><a " class="button tiny expanded secondary">Select &amp; Attach Letter</a></td>
+                        </tr>
+                        <!-- /ko -->
+                    </tbody>
+                </table>
+                        </div>
+                        <div class="row column">
+                            <div class="callout highlighted">
+                              <div class="row colored-paper clearfix"><div class=""><h3 class="no-margin text-center">Can't Find Your Sponsor?</h3></div></div>
+                              <div class="row clearfix section-padding">
+                                <div class="column small-8">If you were not able to find a record of your sponsor in the search above, then please use the "Add Sponsor" button.</div>
+                                <div class="column small-4"><a href="" class="button expanded success" onclick='SponsorAddSlide(event)'><i class="fa fa-plus"></i> Add Sponsor</a></div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+     function SponsorResultsSlide(e){
+        e.preventDefault();
+        ($('#addSponsorResultsButton').css("display") == "none"  )? $('html, body').animate({scrollTop: $("#SponsorResults").offset().top}, 500):$('html, body').animate({scrollTop: $("#addSponsorResults").offset().top}, 500);
+        $('#addSponsorResults .repeater-area,#SearchForSponsorCard').slideToggle();
+        }
+</script>
+
+<div id="addSponsorAdd">
+    <div class="page paper-page repeater-area content-padding" style="display: none;">
+        <div class="colored-paper success">
+            <div class="content-padding row">
+                <h4 class="no-vertical-margin" style="position: relative;">
+                    <i class="fa fa-plus">
+                    </i>
+                    Add a Sponsor
+                    <a class="close-button radius" href="" onclick="SponsorAddClose(event)">
+                        <i class="fa fa-times">
+                        </i>
+                        Close
+                    </a>
+                </h4>
+            </div>
+        </div>
+        <div class="page-wrapper">
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <div class="question-group row">
+                            <div class="question column small-12 large-4 required">
+	<div class="label-holder">
+		    <span class="text">
+                Sponsors Full Name
+            </span>
+            <span class="required-holder">
+                <i class="fa fa-holder">
+                </i>
+            </span>
+	</div>
+	<div class="input-holder">
+		<div class="input-space column">
+			<input type="text" required>
+			<span class="input-lock">
+                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
+                </i>
+            </span>
+		</div>
+	</div>
+	<div class="message-holder">
+		<small class="error">Error Message</small>
+	</div>
+	<div class="hint"></div>
+</div>	
+                              <div class="question column small-12 large-4 required">
+	<div class="label-holder">
+		    <span class="text">
+                Country
+            </span>
+            <span class="required-holder">
+                <i class="fa fa-holder">
+                </i>
+            </span>
+	</div>
+	<div class="input-holder">
+		<div class="input-space column">
+			<select name="" id="" required>
+				<option value="">Choose..</option>
+			</select>
+			<span class="input-lock">
+                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
+                </i>
+            </span>
+		</div>
+	</div>
+	<div class="message-holder">
+		<small class="error">Error Message</small>
+	</div>
+	<div class="hint"></div>
+</div>	
+                            <div class="question column medium-4">
+                                <div class="label-holder">
+                                    <span class="text">
+                                    </span>
+                                </div>
+                                <div class="input-holder">
+                                    <div class="input-space column">
+                                        <a class="button expanded" href="">
+                                            Attach Letter
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row group-divide">
+                            <div class="column text-right">
+                                <a class="button secondary" href="" onclick="BoardCertificationSlide(event)">
+                                    Cancel
+                                </a>
+                                <a class="button disabled" href="" onclick="BoardCertificationSave(event)">
+                                   <i class="fa fa-holder"></i> Save
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script>
+        function SponsorAddSlide(e){
+        e.preventDefault();
+        ($('#addSponsorAddButton').css("display") == "none"  )? $('html, body').animate({scrollTop: $("#SponsorAdd").offset().top}, 500):$('html, body').animate({scrollTop: $("#addSponsorAdd").offset().top}, 500);
+        $('#addSponsorAdd .repeater-area,#addSponsorResults .repeater-area').slideToggle();
+        }
+    function SponsorAddClose(e){
+        e.preventDefault();
+        ($('#addSponsorAddButton').css("display") == "none"  )? $('html, body').animate({scrollTop: $("#SponsorAdd").offset().top}, 500):$('html, body').animate({scrollTop: $("#addSponsorAdd").offset().top}, 500);
+        $('#addSponsorAdd .repeater-area').slideToggle();
+        }
+    </script>
+
+    <div class="row content-padding" id="EducationData">
+        <div class="repeater">
+            <div class="render">
+                <ul class="render-holder">
+                    <li class="strong">
+                       Sponsor's Full Name
+                    </li>
+                    <li class="loud">
+                        <span>
+                          State, City Country
+                        </span>
+                    </li>
+                    <li>File:  DocumentName.docx</li>
+
+                </ul>
+                <div class="render-actions">
+                    <a class="edit" href="">
+                        <i class="fa fa-holder">
+                        </i>
+                        <span class="text">
+                            Attach File
+                        </span>
+                    </a>
+                    <a class="delete" href="">
+                        <i class="fa fa-holder">
+                        </i>
+                        <span class="text">
+                            Delete
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+        </article>
+      </section>
+    </div>
+    <footer class="page-footer">
+  <div class="row">
+    <a class="logo-holder"href="/">
+      <img class="logo" src="Assets/img/oma-01.svg" alt="Home">
+    </a>
+  </div>
+  <div class="footer-darker">
+    <div class="row">
+      <div class="column large-8 medium-7">
+        <section class="address row">
+          <h3>American College of Cardiology</h3>
+          <address>
+            <!-- http://microformats.org/wiki/hcard -->
+            <h4>Heart House</h4>
+            <ul>
+              <li>
+                <span class="street-address">2400 N. St. NW</span>
+              </li>
+              <li>
+                <span class="locality">Washington</span>,
+                <span class="country-name">
+                  <abbr title="District of Colombia">DC</abbr>
+                </span>
+                <span class="postal-code">20037</span>
+              </li>
+              <li>
+                <a href="mailto:resource@acc.org" class="email">
+                  <strong>Email:</strong>resource@acc.org</a>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <span tel="+12023756000" class="tel">
+                  <strong>Phone:</strong>(202) 375-6000, ext. 5603</span>
+              </li>
+              <li>
+                <span tel="+18002574737" class="tel">
+                  <strong>Toll Free:</strong>(800) 253-4636, ext. 5603</span>
+              </li>
+              <li>
+                <span fax="+12023757000" class="fax">
+                  <strong>Fax:</strong>(202) 375-7000</span>
+              </li>
+            </ul>
+          </address>
+        </section>
+        <section class="social-buttons row">
+          <h4>Stay Connected</h4>
+          <ul>
+            <li>
+              <a class="button twitter icon-only block" href="https://twitter.com/accintouch" target="_blank">
+                <i class="fa fa-twitter"></i>
+                <span class="text">Twitter</span>
+              </a>
+            </li>
+            <li>
+              <a class="button facebook icon-only block" href="https://www.facebook.com/AmericanCollegeofCardiology" target="_blank">
+                <span class="text">Facebook</span>
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a class="button linkedin icon-only block" href="http://www.linkedin.com/groups/American-College-Cardiology-732607?trk=myg_ugrp_ovr"
+              target="_blank">
+                <span class="text">LinkedIn</span>
+                <i class="fa fa-linkedin"></i>
+              </a>
+            </li>
+            <li>
+              <a class="button googleplus icon-only block" href="https://plus.google.com/118164094874227618578/about" target="_blank">
+                <span class="text">Google+</span>
+                <i class="fa fa-google-plus"></i>
+              </a>
+            </li>
+            <li>
+              <a class="button youtube icon-only block" href="http://www.youtube.com/user/ACCinTouch" target="_blank">
+                <span class="text">Youtube</span>
+                <i class="fa fa-youtube-play"></i>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="columns large-4  medium-5">
+        <section class="acc-websites row">
+          <h4>Powered By the ACC</h4>
+          <nav class="nav-list small">
+            <ul class="">
+              <li>
+                <a target="_blank" class="" href="http://www.acc.org">
+                  <span class="text">Acc.org</span>
+                  <i class="fa fa-external-link-square"></i>
+                </a>
+              </li>
+              <li>
+                <a target="_blank" class="" href="http://cvquality.acc.org/">
+                  <span class="text">ACC Quality Improvement for Institutions</span>
+                  <i class="fa fa-external-link-square"></i>
+                </a>
+              </li>
+              <li>
+                <a target="_blank" class="" href="http://www.ncdr.com">
+                  <span class="text">NCDR.com</span>
+                  <i class="fa fa-external-link-square"></i>
+                </a>
+              </li>
+              <li>
+                <a target="_blank" class="" href="http://www.cardiosmart.org">
+                  <span class="text">CardioSmart.org</span>
+                  <i class="fa fa-external-link-square"></i>
+                </a>
+              </li>
+              <li>
+                <a target="_blank" class="" href="http://blog.cardiosource.org">
+                  <span class="text">ACCinTouch.com</span>
+                  <i class="fa fa-external-link-square"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div class="row"><h5>
+        <cite>&copy; 2015 American College of Cardiology</cite>
+      </h5>
+  </div>
+</footer>
+    <script type="text/javascript" src="assets/js/dist/jquery.js"></script>
+<script type="text/javascript" src="assets/js/dist/knockout.js"></script>
+<script type="text/javascript" src="assets/js/underscore.js"></script>
+<script type="text/javascript" src="assets/js/dist/foundation.js"></script>
+<script type="text/javascript" src="assets/js/koui.js"></script>
+<script type="text/javascript" src="assets/js/jquery.waypoints.js"></script>
+<script type="text/javascript" src="assets/js/jquery.panzoom.js"></script>
+<script type="text/javascript" src="assets/js/waypoint/shortcuts/sticky.js"></script>
+<script type="text/javascript" src="assets/js/d3.js"></script>
+<script type="text/javascript" src="assets/js/pager.js"></script>
+
+<script type="text/javascript" src="assets/js/jquery.panzoom.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/appdata.js"></script>
+<script type="text/javascript" src="assets/js/formdata.js"></script>
+<script type="text/javascript" src="assets/js/appviewmodel.js"></script>
+<script type="text/javascript" src="assets/js/query-string.js"></script>
+<script type="text/javascript" src="assets/js/email.js"></script>
+<script type="text/javascript" src="assets/js/customAnalytics.js"></script>
+
+<script>
+	$(document).foundation();
+</script>
+<style>
+
+</style>
+<script type="text/javascript" src="assets/js/daptChart.js"></script>
+<script>
+
+</script>
+<style>
+select{
+	-webkit-user-select: auto !important;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	z-index:1000 !important; 
+	}
+</style>
+
+
+    </body>
+</html>

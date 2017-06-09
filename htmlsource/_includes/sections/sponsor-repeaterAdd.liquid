@@ -1,0 +1,47 @@
+
+<div id="addSponsorResults">
+    <div class="page paper-page repeater-area content-padding" style="display: none; background-color: #198dae;">
+        <div class="colored-paper">
+            <div class="content-padding row">
+                <h4 class="no-vertical-margin" style="position: relative;">
+                    
+                    Sponsor Results
+                    <a class="close-button radius" href="" onclick='SponsorResultsSlide(event)'>
+                        <i class="fa fa-times">
+                        </i>
+                        Close
+                    </a>
+                </h4>
+            </div>
+        </div>
+        <div class="page-wrapper">
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <div class="question-group">
+                        {% include elements/sponsor-result-table.liquid %}
+                        </div>
+                        <div class="row column">
+                            <div class="callout highlighted">
+                              <div class="row colored-paper clearfix"><div class=""><h3 class="no-margin text-center">Can't Find Your Sponsor?</h3></div></div>
+                              <div class="row clearfix section-padding">
+                                <div class="column small-8">If you were not able to find a record of your sponsor in the search above, then please use the "Add Sponsor" button.</div>
+                                <div class="column small-4"><a href="" class="button expanded success" onclick='SponsorAddSlide(event)'><i class="fa fa-plus"></i> Add Sponsor</a></div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+     function SponsorResultsSlide(e){
+        e.preventDefault();
+        ($('#addSponsorResultsButton').css("display") == "none"  )? $('html, body').animate({scrollTop: $("#SponsorResults").offset().top}, 500):$('html, body').animate({scrollTop: $("#addSponsorResults").offset().top}, 500);
+        $('#addSponsorResults .repeater-area,#SearchForSponsorCard').slideToggle();
+        }
+</script>

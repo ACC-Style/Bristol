@@ -1,0 +1,50 @@
+---
+layout: FACC
+title: Sponsors
+id: sp
+---
+
+{%  include snippets/page-top.liquid title="Sponsors & Sponsorship Letters" level="h1" style="with-underline" message=" 
+You must upload two letters of sponsorship." %}
+    <div class="row">
+        <div class="column">
+            <div class="callout info">
+                <h3 class="no-margin">
+                    Instructions &amp; Requirements
+                </h3>
+                <p>
+                    The letters must be on the sponsors’ business letterhead, dated, signed by the sponsor and included with the application, otherwise, the application will not be processed or reviewed. Sponsoring Fellows must be well acquainted with your current professional activities. At least one of the sponsors must be from your geographic area of professional activity; however, only one of the sponsors can be from a partner or colleague who works in your office. You are also limited to one sponsor from your training program. Relatives may not sponsor. Each letter must clearly have been originally written by the sponsor (substantially identical letters will be rejected). Letters should detail accomplishments of distinction by the candidate, such as positions of hospital, medical society, educational, or academic leadership.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row section-padding">
+        <div class="column">
+            <div class="card" id="SearchForSponsorCard">
+                <div class="colored-paper">
+                    {%  include snippets/page-top.liquid title="Search for A Sponsors" level="h3" style="with-underline" message="Your membership application requires a domestic sponsor from (USA or Canada) " %}
+                </div>
+                <div class="section-padding row" id="SponsorResults">
+                    {% include snippets/question-text.liquid label="Sponsor" size="small-12 large-6" state="required" hint="You can search by: First Name Last Name or Email" %}
+                    <div class="question column large-6">
+                        <div class="label-holder">
+                            <span class="text">
+                            </span>
+                        </div>
+                        <div class="input-holder">
+                            <a class="button small radius expanded success" id="addSponsorResultsButton" onclick="SponsorResultsSlide(event)">
+                                <i class="fa fa-search">
+                                </i>
+                                Search
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include sections/sponsor-repeaterAdd.liquid %}
+{% include sections/sponsorAdd-repeaterAdd.liquid %}
+<div class="page-wrapper">
+{% include sections/sponsor-repeater.liquid %}

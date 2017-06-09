@@ -1,18 +1,22 @@
-
-
 <div class="row" id="{{ include.title | remove: ' ' }}">
-    <div class="column">
+    <div class="column relative-position">{% if include.level == "h1" %}
+              <div style="top: 2rem;position: absolute;right: 1rem;">
+                <span class="emphasis">&quot;<i class="fa fa-asterisk" style="color:orange;"></i>&quot; required</span>
+            </div>
+              {% endif %}
         <{{include.level}} class="{{include.style}}">
             {{ include.title }}
+
              {% if include.level != "h1" %}
                 <div class="sub-line">
                     {{ include.message }}
                 </div>
                 {% endif %}
         </{{include.level}}>
+
     </div>
 </div>
-{% if include.level == "h1" %}
+{% if include.level == "h1" and include.message != "" %}
 <div class="row column">
     <div class="page-message callout empty">
         <div class="message-container">

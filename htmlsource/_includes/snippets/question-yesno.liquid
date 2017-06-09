@@ -1,0 +1,73 @@
+
+	<div class="row">
+    <div class="question column small-12 {{include.state}}">
+        <div class="label-holder">
+            <label for="">
+                <span class="text white-space-normal">
+                    {{ include.title }}
+                </span>
+                <span class="required-holder">
+                    <i class="fa fa-holder-dynamic">
+                    </i>
+                </span>
+            </label>
+        </div>
+        <div class="input-holder">
+        	<div class="switch-input-space column medium-6 large-6">
+            <div class="switch radio">
+                <input class="switch-input" id="{{include.id}}1" name="{{include.id}}" type="radio" value="true">
+                    <label class="switch-paddle" for="{{include.id}}1">
+                        <span class="show-for-sr">
+                            Yes
+                        </span>
+                        <span aria-hidden="true" class="switch-active">
+                            <i class="fa fa-holder">
+                            </i>
+                        </span>
+                        <span aria-hidden="true" class="switch-inactive">
+                            <i class="fa fa-holder">
+                            </i>
+                        </span>
+                    </label>
+                </input>
+            </div>
+            <label class="switch-value" for="{{include.id}}1">
+                <h5 style="no-verticle-margin">
+                    Yes
+                </h5>
+                {% if include.yes-extra != "" %}
+				<p>{{include.yes-extra}}</p>
+                {% endif %}
+            </label>
+        </div>
+        <div class="switch-input-space column medium-6 large-6">
+            <div class="switch radio">
+                <input class="switch-input" id="{{include.id}}2" name="{{include.id}}" type="radio" value="false">
+                    <label class="switch-paddle" for="{{include.id}}2">
+                        <span class="show-for-sr">
+                            No
+                        </span>
+                        <span aria-hidden="true" class="switch-active">
+                            <i class="fa fa-holder">
+                            </i>
+                        </span>
+                        <span aria-hidden="true" class="switch-inactive">
+                            <i class="fa fa-holder">
+                            </i>
+                        </span>
+                    </label>
+                </input>
+            </div>
+            <label class="switch-value" for="{{include.id}}2">
+                <h5 style="no-verticle-margin">
+                    No
+                </h5>
+                {% if include.no-extra != "" %}
+				<p>{{include.no-extra}}</p>
+                {% endif %}
+            </label>
+        </div>
+        </div>
+    </div>
+
+</div>

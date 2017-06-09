@@ -15,9 +15,9 @@
 </head>
     <body>
     <div class="mobile-offcanvas-wrapper">
-      <section class="split-layout fill-page-height medium reverse navOn">
-        <aside class="sidebar">
-            <aside id="OMA_Sidebar" class="split-sidebar">
+      <section class="split-layout fill-page-height medium  navOn">
+        <aside id="OMA_Sidebar" class="split-sidebar">
+            
         <div class="branding row collapse hide-for-small-only">
           <div class="column medium-6"><h2 class="oma logo">American College of Cardiology</h2></div>
           <div class="column medium-6"><h2 class="oma title">Online Membership Application</h2></div>
@@ -40,18 +40,27 @@
             
       <li class="">FACC Domestic</li>
       
-      <li><a class="link" href="/Account/SignOut">Save &amp; Signout</a></li>
+      <li><a class="link" href="index.html">Save &amp; Signout</a></li>
         </ul>
     </div>
 
-     <nav class="nav-list check-list">
+     <nav class="nav-list nav-checklist">
         <ul>
             <li >
                 <a href="personalinfo.html">
                     <span class="text">
                         Personal Information
                     </span>
-                    <i class="fa fa-holder">
+                    <i class="fa fa-holder-dynamic">
+                    </i>
+                </a>
+            </li>
+            <li    >
+                <a href="EmploymentInfo.html">
+                    <span class="text">
+                        Current Employment
+                    </span>
+                    <i class="fa fa-holder-dynamic">
                     </i>
                 </a>
             </li>
@@ -60,24 +69,75 @@
                     <span class="text">
                         Education &amp; Training
                     </span>
-                    <i class="fa fa-holder">
+                    <i class="fa fa-holder-dynamic">
+                    </i>
+                </a>
+            </li>
+            <li    >
+                <a href="appointments.html">
+                    <span class="text">
+                        Appointments
+                    </span>
+                    <i class="fa fa-holder-dynamic">
+                    </i>
+                </a>
+            </li>
+            <li    >
+                <a href="boardCertification.html">
+                    <span class="text">
+                        Board Certification
+                    </span>
+                    <i class="fa fa-holder-dynamic">
+                    </i>
+                </a>
+            </li>
+                        <li    >
+                <a href="Sponsors.html">
+                    <span class="text">
+                        Sponsors
+                    </span>
+                    <i class="fa fa-holder-dynamic">
+                    </i>
+                </a>
+            </li>
+            <li    >
+                <a href="submitapplication.html">
+                    <span class="text">
+                        Submit
+                    </span>
+                    <i class="fa fa-holder-dynamic">
                     </i>
                 </a>
             </li>
         </ul>
     </nav>
-</aside>
+
         </aside>
         <article class="split-content">
-              <div class="page-wrapper">
-                
-
-<div class="row" id="MedicalEducation&amp;Training">
-    <div class="column">
+             <div class="page">
+               
+                 <div class="section-nav back">
+    <a>
+      <div class="circle">
+        <i class="fa fa-holder"></i>
+      </div>
+      <div class="text">Back to {Previous Page Name}</div>
+    </a>
+  </div>
+              
+                <div class="page-wrapper">
+                <div class="row" id="MedicalEducation&amp;Training">
+    <div class="column relative-position">
+              <div style="top: 2rem;position: absolute;right: 1rem;">
+                <span class="emphasis">&quot;<i class="fa fa-asterisk" style="color:orange;"></i>&quot; required</span>
+            </div>
+              
         <h1 class="with-underline">
             Medical Education &amp; Training
+
              
         </h1>
+
     </div>
 </div>
 
@@ -95,7 +155,7 @@
             <div class="message-holder">
                 
                 <h5 class="no-margin">
-                    This is the required message that explains how many or what is required
+                    At least one Graduate/Medical education level degree is required.
                 </h5>
               
             </div>
@@ -103,24 +163,23 @@
     </div>
 </div>
   
-
-
 <div class="row" id="Education">
-    <div class="column">
+    <div class="column relative-position">
         <h2 class="">
             Education
+
              
                 <div class="sub-line">
                     This is the required message that explains how many or what is required
                 </div>
                 
         </h2>
+
     </div>
 </div>
 
     <div class="row content-padding" id="EducationData">
         <div class="repeater">
-            
             <div class="render">
                 <ul class="render-holder">
                     <li class="strong">
@@ -162,8 +221,17 @@
             </div>
         </div>
     </div>
+<div class="row">
+        <div class="column">
+            <a class="button small radius expanded success" id="addEducationButton" onclick="EducationSlide(event)">
+                <i class="fa fa-plus">
+                </i>
+                Add Education
+            </a>
+        </div>
+    </div>
 </div>
-<div id="addEducation">
+<div id="addEducation" class="repeater-holder">
     <div class="page paper-page repeater-area content-padding" style="display: none;">
         <div class="colored-paper success">
             <div class="content-padding row">
@@ -183,7 +251,7 @@
             <div class="row">
                 <div class="column">
                     <div class="card">
-                        <div class="question-group section-padding success">
+                        <div class="question-group">
    <div class="row">
        <div class="question column small-12 large-12 required">
 	<div class="label-holder">
@@ -210,88 +278,9 @@
 	<div class="hint"></div>
 </div>	
    </div>
-    <div class="row">
-        
-        <div class="question column small-12 large-4 required">
-	<div class="label-holder">
-		    <span class="text">
-                Education Level
-            </span>
-            <span class="required-holder">
-                <i class="fa fa-holder">
-                </i>
-            </span>
-	</div>
-	<div class="input-holder">
-		<div class="input-space column">
-			<select name="" id="">
-				<option value="">Choose..</option>
-			</select>
-			<span class="input-lock">
-                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
-                </i>
-            </span>
-		</div>
-	</div>
-	<div class="message-holder">
-		<small class="error">Error Message</small>
-	</div>
-	<div class="hint"></div>
-</div>	
-        <div class="question column small-12 large-5 required">
-	<div class="label-holder">
-		    <span class="text">
-                Degree Name
-            </span>
-            <span class="required-holder">
-                <i class="fa fa-holder">
-                </i>
-            </span>
-	</div>
-	<div class="input-holder">
-		<div class="input-space column">
-			<select name="" id="">
-				<option value="">Choose..</option>
-			</select>
-			<span class="input-lock">
-                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
-                </i>
-            </span>
-		</div>
-	</div>
-	<div class="message-holder">
-		<small class="error">Error Message</small>
-	</div>
-	<div class="hint"></div>
-</div>	
-        <div class="question column small-12 large-3 required ">
-	<div class="label-holder">
-		    <span class="text">
-                Year Graduated
-            </span>
-            <span class="required-holder">
-                <i class="fa fa-holder">
-                </i>
-            </span>
-	</div>
-	<div class="input-holder row collapse">
-		<div class="input-space column small-10">
-			<input type="text" required   placeholder="YYYY">
-			<span class="input-lock">
-                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
-                </i>
-            </span>
-		</div>
-		<input-space class="column small-2 end"><a href="" class="button hollow expanded"><i class="fa fa-calendar"></i></a></input-space>
-	</div>
-	<div class="message-holder">
-		<small class="error">Error Message</small>
-	</div>
-	<div class="hint"></div>
-</div>	
-   </div>
    <div class="row">
-       <div class="question column small-12 large-4 required">
+       
+<div class="question column small-12 large-4 required">
 	<div class="label-holder">
 		    <span class="text">
                 Country
@@ -303,8 +292,8 @@
 	</div>
 	<div class="input-holder">
 		<div class="input-space column">
-			<select name="" id="">
-				<option value="">United States</option>
+			<select name="" id="" required>
+				<option value="">USA</option>
 			</select>
 			<span class="input-lock">
                 <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
@@ -317,10 +306,10 @@
 	</div>
 	<div class="hint"></div>
 </div>	
-       <div class="question column small-12 large-4 required">
+<div class="question column small-12 large-4 required">
 	<div class="label-holder">
 		    <span class="text">
-                State/Province
+                State
             </span>
             <span class="required-holder">
                 <i class="fa fa-holder">
@@ -329,7 +318,9 @@
 	</div>
 	<div class="input-holder">
 		<div class="input-space column">
-			<input type="text" required>
+			<select name="" id="" required>
+				<option value="">Choose..</option>
+			</select>
 			<span class="input-lock">
                 <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
                 </i>
@@ -341,7 +332,7 @@
 	</div>
 	<div class="hint"></div>
 </div>	
-       <div class="question column small-12 large-4 required">
+<div class="question column small-12 large-4 required">
 	<div class="label-holder">
 		    <span class="text">
                 City
@@ -365,8 +356,88 @@
 	</div>
 	<div class="hint"></div>
 </div>	
-       
-       
+
+
+   </div>
+    <div class="row">
+        
+        <div class="question column small-12 large-4 required">
+	<div class="label-holder">
+		    <span class="text">
+                Education Level
+            </span>
+            <span class="required-holder">
+                <i class="fa fa-holder">
+                </i>
+            </span>
+	</div>
+	<div class="input-holder">
+		<div class="input-space column">
+			<select name="" id="" required>
+				<option value="">Choose..</option>
+			</select>
+			<span class="input-lock">
+                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
+                </i>
+            </span>
+		</div>
+	</div>
+	<div class="message-holder">
+		<small class="error">Error Message</small>
+	</div>
+	<div class="hint"></div>
+</div>	
+        <div class="question column small-12 large-4 required">
+	<div class="label-holder">
+		    <span class="text">
+                Degree
+            </span>
+            <span class="required-holder">
+                <i class="fa fa-holder">
+                </i>
+            </span>
+	</div>
+	<div class="input-holder">
+		<div class="input-space column">
+			<select name="" id="" required>
+				<option value="">Choose..</option>
+			</select>
+			<span class="input-lock">
+                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
+                </i>
+            </span>
+		</div>
+	</div>
+	<div class="message-holder">
+		<small class="error">Error Message</small>
+	</div>
+	<div class="hint"></div>
+</div>	
+        <div class="question column small-12 large-4 required ">
+	<div class="label-holder">
+		    <span class="text">
+                Year Graduated
+            </span>
+            <span class="required-holder">
+                <i class="fa fa-holder">
+                </i>
+            </span>
+	</div>
+	<div class="input-holder row collapse">
+		<div class="input-space column small-10 date-input-holder">
+			<input type="text" required   placeholder="YYYY">
+			<span class="input-lock">
+                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
+                </i>
+            </span>
+		</div>
+		<div class="column small-2 input-space end date-picker-holder"><a href="" class="button hollow expanded"><i class="fa fa-calendar"></i></a></div>
+	</div>
+	<div class="message-holder">
+		<small class="error">Error Message</small>
+	</div>
+	<div class="hint"></div>
+</div>	
    </div>
                         </div>
                         <div class="row group-divide">
@@ -386,15 +457,7 @@
     </div>
 </div>
 <div class="page-wrapper">
-    <div class="row">
-        <div class="column">
-            <a class="button small radius expanded success" id="addEducationButton" onclick="EducationSlide(event)">
-                <i class="fa fa-plus">
-                </i>
-                Add Education
-            </a>
-        </div>
-    </div>
+    
 <script>
      function EducationSlide(e){
         e.preventDefault();
@@ -402,67 +465,69 @@
         $('#addEducation .repeater-area,#addEducationButton').slideToggle();
         }
 </script>
-
-
 <div class="row" id="PostGraduateTraining">
-    <div class="column">
+    <div class="column relative-position">
         <h2 class="">
             Post Graduate Training
+
              
                 <div class="sub-line">
                     This is what is required for post grad training message that explains how many or what is required
                 </div>
                 
         </h2>
+
     </div>
 </div>
 
-    <div class="row content-padding" id="PostGraduateTrainingData">
-        <div class="repeater">
-            
-            <div class="render">
-                <ul class="render-holder">
-                    <li class="strong">
-                        Name of Institution
-                    </li>
-                    <li class="loud">
-                        <span>
-                            FellowShip
-                        </span>
-                        |
-                        <span>
-                            Adult Cardiology
-                        </span>
-                        -
-                        <span>
-                            2015
-                        </span>
-                    </li>
-                    <li class="italic">
-                        GA, Atatlanta, USA
-                    </li>
-                </ul>
-                <div class="render-actions">
-                    <a class="edit" href="">
-                        <i class="fa fa-holder">
-                        </i>
-                        <span class="text">
-                            Edit
-                        </span>
-                    </a>
-                    <a class="delete" href="">
-                        <i class="fa fa-holder">
-                        </i>
-                        <span class="text">
-                            Delete
-                        </span>
-                    </a>
-                </div>
+<div class="row content-padding" id="PostGraduateTrainingData">
+    <div class="repeater">
+        <div class="render">
+            <ul class="render-holder">
+                <li class="strong">
+                    Name of Sponsor
+                </li>
+                <li class="loud">
+                    <span>
+                        United States
+                    </span>
+                    |
+                    <span>
+                        File: SponsorLetter.docx
+                    </span>
+                </li>
+
+            </ul>
+            <div class="render-actions">
+                <a class="edit" href="">
+                    <i class="fa fa-holder">
+                    </i>
+                    <span class="text">
+                        Edit
+                    </span>
+                </a>
+                <a class="delete" href="">
+                    <i class="fa fa-holder">
+                    </i>
+                    <span class="text">
+                        Delete
+                    </span>
+                </a>
             </div>
         </div>
     </div>
 </div>
-<div id="addPostGraduateTraining">
+<div class="row">
+        <div class="column">
+            <a class="button small radius expanded success" id="addPostGraduateTrainingButton" onclick="PostGraduateTrainingSlide(event)">
+                <i class="fa fa-plus">
+                </i>
+                Add Post Graduate Training
+            </a>
+        </div>
+    </div>
+</div>
+<div id="addPostGraduateTraining" class="repeater-holder">
     <div class="page paper-page repeater-area content-padding" style="display: none;">
         <div class="colored-paper success">
             <div class="content-padding row">
@@ -482,7 +547,7 @@
             <div class="row">
                 <div class="column">
                     <div class="card">
-                        <div class="question-group section-padding success">
+                        <div class="question-group">
    <div class="row">
        <div class="question column small-12 large-12 required">
 	<div class="label-holder">
@@ -523,7 +588,7 @@
 	</div>
 	<div class="input-holder">
 		<div class="input-space column">
-			<select name="" id="">
+			<select name="" id="" required>
 				<option value="">Choose..</option>
 			</select>
 			<span class="input-lock">
@@ -537,7 +602,7 @@
 	</div>
 	<div class="hint"></div>
 </div>	
-        <div class="question column small-12 large-5 required">
+        <div class="question column small-12 large-4 required">
 	<div class="label-holder">
 		    <span class="text">
                 Area of Specialization
@@ -549,7 +614,7 @@
 	</div>
 	<div class="input-holder">
 		<div class="input-space column">
-			<select name="" id="">
+			<select name="" id="" required>
 				<option value="">Choose..</option>
 			</select>
 			<span class="input-lock">
@@ -563,7 +628,32 @@
 	</div>
 	<div class="hint"></div>
 </div>	
-        <div class="question column small-12 large-3 required ">
+        <div class="question column small-12 large-2 required ">
+	<div class="label-holder">
+		    <span class="text">
+                Begin Year
+            </span>
+            <span class="required-holder">
+                <i class="fa fa-holder">
+                </i>
+            </span>
+	</div>
+	<div class="input-holder row collapse">
+		<div class="input-space column small-10 date-input-holder">
+			<input type="text" required   placeholder="YYYY">
+			<span class="input-lock">
+                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
+                </i>
+            </span>
+		</div>
+		<div class="column small-2 input-space end date-picker-holder"><a href="" class="button hollow expanded"><i class="fa fa-calendar"></i></a></div>
+	</div>
+	<div class="message-holder">
+		<small class="error">Error Message</small>
+	</div>
+	<div class="hint"></div>
+</div>	
+        <div class="question column small-12 large-2 required ">
 	<div class="label-holder">
 		    <span class="text">
                 End Year
@@ -574,14 +664,14 @@
             </span>
 	</div>
 	<div class="input-holder row collapse">
-		<div class="input-space column small-10">
+		<div class="input-space column small-10 date-input-holder">
 			<input type="text" required   placeholder="YYYY">
 			<span class="input-lock">
                 <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
                 </i>
             </span>
 		</div>
-		<input-space class="column small-2 end"><a href="" class="button hollow expanded"><i class="fa fa-calendar"></i></a></input-space>
+		<div class="column small-2 input-space end date-picker-holder"><a href="" class="button hollow expanded"><i class="fa fa-calendar"></i></a></div>
 	</div>
 	<div class="message-holder">
 		<small class="error">Error Message</small>
@@ -590,7 +680,8 @@
 </div>	
    </div>
    <div class="row">
-       <div class="question column small-12 large-4 required">
+       
+<div class="question column small-12 large-4 required">
 	<div class="label-holder">
 		    <span class="text">
                 Country
@@ -602,8 +693,8 @@
 	</div>
 	<div class="input-holder">
 		<div class="input-space column">
-			<select name="" id="">
-				<option value="">United States</option>
+			<select name="" id="" required>
+				<option value="">USA</option>
 			</select>
 			<span class="input-lock">
                 <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
@@ -616,10 +707,10 @@
 	</div>
 	<div class="hint"></div>
 </div>	
-       <div class="question column small-12 large-4 required">
+<div class="question column small-12 large-4 required">
 	<div class="label-holder">
 		    <span class="text">
-                State/Province
+                State
             </span>
             <span class="required-holder">
                 <i class="fa fa-holder">
@@ -628,7 +719,9 @@
 	</div>
 	<div class="input-holder">
 		<div class="input-space column">
-			<input type="text" required>
+			<select name="" id="" required>
+				<option value="">Choose..</option>
+			</select>
 			<span class="input-lock">
                 <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
                 </i>
@@ -640,7 +733,7 @@
 	</div>
 	<div class="hint"></div>
 </div>	
-       <div class="question column small-12 large-4 required">
+<div class="question column small-12 large-4 required">
 	<div class="label-holder">
 		    <span class="text">
                 City
@@ -664,8 +757,8 @@
 	</div>
 	<div class="hint"></div>
 </div>	
-       
-       
+
+
    </div>
                         </div>
                         <div class="row group-divide">
@@ -685,15 +778,7 @@
     </div>
 </div>
 <div class="page-wrapper">
-    <div class="row">
-        <div class="column">
-            <a class="button small radius expanded success" id="addPostGraduateTrainingButton" onclick="PostGraduateTrainingSlide(event)">
-                <i class="fa fa-plus">
-                </i>
-                Add Post Graduate Training
-            </a>
-        </div>
-    </div>
+    
 <script>
      function PostGraduateTrainingSlide(e){
         e.preventDefault();
@@ -703,6 +788,17 @@
 </script>
 
               </div>
+              
+                               <div class="section-nav forward">
+    <a>
+      <div class="circle">
+        <i class="fa fa-holder"></i>
+      </div>
+      <div class="text">Forward to {Next Page Name}</div>
+    </a>
+  </div>
+
+             </div>
         </article>
       </section>
     </div>
