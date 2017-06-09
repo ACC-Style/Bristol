@@ -1,0 +1,84 @@
+---
+layout: Affiliate
+title: Society Membership or Sponsor Letters
+id: sp
+---
+
+{%  include snippets/page-top.liquid title="Society Membership or Sponsor Letters" level="h1" style="with-underline" message="" %}
+<div class="row">
+    <div class="column text-center">
+        <h3>Are you a member of a society?<sup><i class="fa fa-asterisk" style="color:orange;"></i></sup></h3>
+        
+    </div>
+    
+</div>
+<div class="row">
+    <div class="column small-centered medium-centered large-centered large-4 medium-6 small-8">
+        <div class="button-group expanded selectable">
+            <a href="" class="button"><i class="fa fa-holder"></i><span class="text">Yes</span></a>
+            <a href="" class="button selected"><i class="fa fa-holder"></i><span class="text">No</span></a>
+        </div>
+    </div>
+</div>
+{%  include snippets/page-top.liquid title="Sponsorship is needed" level="h2" style="with-underline" message=" 
+Two ACC member sponsor letters are required with your application." %}
+    <div class="row">
+        <div class="column">
+            <div class="callout info">
+                <h3 class="no-margin">
+                    Instructions &amp; Requirements
+                </h3>
+                  <div class="row content-padding">
+                    <div class="column medium-6"><h4>Sponsor Requirements:</h4>
+                        <ul class="content-padding">
+                        <li>Sponsors must be current FACCs</li>
+                        <li>Sponsors must be well acquainted with your current professional activities</li>
+                        <li>At least one sponsor must be from your geographic area of professional activity</li>
+                        <li>Only one sponsor can be from a partner or colleague that works in your office</li>
+                        <li>Only one sponsor can be from your training program</li>
+                        <li>Your relatives may not sponsor you</li>
+                        </ul></div>
+                                            <div class="column medium-6"><h4>Sponsorship Letter Requirements:</h4>
+                        <ul class="content-padding">
+                            <li>Letters must be included with your application</li>
+                        <li>Letters must be on the sponsor’s business letterhead, dated and signed by the sponsor</li>
+                        <li>Letters should detail your accomplishments of distinction, such as hospital, medical society or educational leadership</li>
+                        <li>Letters should be original in content—substantially identical letters will be rejected</li>
+                        </ul></div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="row section-padding">
+        <div class="column">
+            <div class="card" id="SearchForSponsorCard">
+                <div class="colored-paper">
+                    {%  include snippets/page-top.liquid title="Search for A Sponsors" level="h3" style="with-underline" message="Your membership application requires a domestic sponsor from (USA or Canada) " %}
+                </div>
+                <div class="section-padding row" id="SponsorResults">
+                    {% include snippets/question-text.liquid label="Sponsor" size="small-12 large-6" state="required" hint="You can search by: First Name Last Name or Email" %}
+                    <div class="question column large-6">
+                        <div class="label-holder">
+                            <span class="text">
+                            </span>
+                        </div>
+                        <div class="input-holder">
+                            <a class="button small radius expanded success" id="addSponsorResultsButton" onclick="SponsorResultsSlide(event)">
+                                <i class="fa fa-search">
+                                </i>
+                                Search
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include sections/sponsor-repeaterAdd.liquid %}
+{% include sections/sponsorAdd-repeaterAdd.liquid %}
+<div class="page-wrapper">
+{% include sections/sponsor-repeater.liquid %}
