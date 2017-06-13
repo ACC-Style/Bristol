@@ -7,48 +7,89 @@ id: sp
 {%  include snippets/page-top.liquid title="Society Membership or Sponsor Letters" level="h1" style="with-underline" message="" %}
 <div class="row">
     <div class="column text-center">
-        <h3>Are you a member of a society?<sup><i class="fa fa-asterisk" style="color:orange;"></i></sup></h3>
-        
+        <h3>
+            Are you a member of a society?
+            <sup>
+                <i class="fa fa-asterisk" style="color:orange;">
+                </i>
+            </sup>
+        </h3>
     </div>
-    
 </div>
 <div class="row">
     <div class="column small-centered medium-centered large-centered large-4 medium-6 small-8">
-        <div class="button-group expanded selectable">
-            <a href="" class="button"><i class="fa fa-holder"></i><span class="text">Yes</span></a>
-            <a href="" class="button selected"><i class="fa fa-holder"></i><span class="text">No</span></a>
+        <div class="button-group expanded selectable" id="Affiliate-Society">
+            <a class="button" href="" data-answer="yes">
+                <i class="fa fa-holder">
+                </i>
+                <span class="text">
+                    Yes
+                </span>
+            </a>
+            <a class="button" href="" data-answer="no">
+                <i class="fa fa-holder">
+                </i>
+                <span class="text">
+                    No
+                </span>
+            </a>
         </div>
     </div>
 </div>
-{%  include snippets/page-top.liquid title="Sponsorship is needed" level="h2" style="with-underline" message=" 
-Two ACC member sponsor letters are required with your application." %}
+<div id="Affiliate-Society-No" style="display:none;">
+    {%  include snippets/page-top.liquid title="Because you have no society memberships sponsorship is needed" level="h2" style="with-underline" message="Two ACC member sponsor letters are required with your application." %}
     <div class="row">
         <div class="column">
             <div class="callout info">
                 <h3 class="no-margin">
-                    Instructions &amp; Requirements
+                    Instructions & Requirements
                 </h3>
-                  <div class="row content-padding">
-                    <div class="column medium-6"><h4>Sponsor Requirements:</h4>
+                <div class="row content-padding">
+                    <div class="column medium-6">
+                        <h4>
+                            Sponsor Requirements:
+                        </h4>
                         <ul class="content-padding">
-                        <li>Sponsors must be current FACCs</li>
-                        <li>Sponsors must be well acquainted with your current professional activities</li>
-                        <li>At least one sponsor must be from your geographic area of professional activity</li>
-                        <li>Only one sponsor can be from a partner or colleague that works in your office</li>
-                        <li>Only one sponsor can be from your training program</li>
-                        <li>Your relatives may not sponsor you</li>
-                        </ul></div>
-                                            <div class="column medium-6"><h4>Sponsorship Letter Requirements:</h4>
+                            <li>
+                                Sponsors must be current FACCs
+                            </li>
+                            <li>
+                                Sponsors must be well acquainted with your current professional activities
+                            </li>
+                            <li>
+                                At least one sponsor must be from your geographic area of professional activity
+                            </li>
+                            <li>
+                                Only one sponsor can be from a partner or colleague that works in your office
+                            </li>
+                            <li>
+                                Only one sponsor can be from your training program
+                            </li>
+                            <li>
+                                Your relatives may not sponsor you
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="column medium-6">
+                        <h4>
+                            Sponsorship Letter Requirements:
+                        </h4>
                         <ul class="content-padding">
-                            <li>Letters must be included with your application</li>
-                        <li>Letters must be on the sponsor’s business letterhead, dated and signed by the sponsor</li>
-                        <li>Letters should detail your accomplishments of distinction, such as hospital, medical society or educational leadership</li>
-                        <li>Letters should be original in content—substantially identical letters will be rejected</li>
-                        </ul></div>
+                            <li>
+                                Letters must be included with your application
+                            </li>
+                            <li>
+                                Letters must be on the sponsor’s business letterhead, dated and signed by the sponsor
+                            </li>
+                            <li>
+                                Letters should detail your accomplishments of distinction, such as hospital, medical society or educational leadership
+                            </li>
+                            <li>
+                                Letters should be original in content—substantially identical letters will be rejected
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-
-
-
             </div>
         </div>
     </div>
@@ -80,5 +121,31 @@ Two ACC member sponsor letters are required with your application." %}
 </div>
 {% include sections/sponsor-repeaterAdd.liquid %}
 {% include sections/sponsorAdd-repeaterAdd.liquid %}
-<div class="page-wrapper">
-{% include sections/sponsor-repeater.liquid %}
+<div class="page-wrapper " id="sponsorHolder" style="display:none;">
+    <div class="row column">
+        <h2 class="with-underline">Sponsors & Letters</h2>
+    </div>
+    {% include sections/sponsor-repeater.liquid %}
+</div>
+<div id="Affiliate-Society-Yes" class="page-wrapper" style="display:none;">
+{%  include snippets/page-top.liquid title="Society Memberships" level="h2" style="with-underline" message="At least one is requried." %}
+ {% include sections/society-repeater.liquid %}
+     <div class="row">
+        <div class="column">
+            <a class="button small radius expanded success" id="addSocietyMembershipButton" onclick="SocietyMembershipsSlide(event)">
+                <i class="fa fa-plus">
+                </i>
+                Add Society Membership
+            </a>
+        </div>
+    </div>
+</div>
+{% include sections/society-repeaterAdd.liquid %}
+
+<div id="societyHolder" style="display:none;">
+   
+    
+</div>
+</div>
+
+

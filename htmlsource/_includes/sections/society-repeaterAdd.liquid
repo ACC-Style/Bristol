@@ -1,0 +1,27 @@
+
+<div id="addSocietyMemberships" class="repeater-holder">
+    <div class="page paper-page repeater-area content-padding" style="display: none;">
+        <div class="colored-paper success">
+            <div class="content-padding row">
+                <h4 class="no-vertical-margin" style="position: relative;">
+                    <i class="fa fa-plus">
+                    </i>
+                    Add Society Membership
+                    <a class="close-button radius" href="" onclick='SocietyMembershipsSlide(event)'>
+                        <i class="fa fa-times">
+                        </i>
+                        Close
+                    </a>
+                </h4>
+            </div>
+        </div>
+        <div class="page-wrapper">
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <div class="question-group">
+  <div class="row">
+    {% include snippets/question-text.liquid label="Society Name" size="small-12" state="required" hint="" %}
+    
+  </div>
+{% include elements/repeaterAdd-end.liquid title="Society Memberships" %}

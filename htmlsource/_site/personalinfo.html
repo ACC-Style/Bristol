@@ -40,11 +40,29 @@
           <li><a class="link" href="index.html">Save &amp; Signout</a></li>
         </ul>
     </div>
+    <nav class="nav-list nav-checklist">
+     <ul>
+            <li  class="selected">
+                <a href="personalinfo.html">
+                    <span class="text">
+                        Personal Information
+                    </span>
+                    <i class="fa fa-holder-dynamic">
+                    </i>
+                </a>
+            </li>
+            <li  class="disabled" >
+                <a href="personalinfo.html">
+                    <span class="text">
+                        Membership Selection
+                    </span>
+                    <i class="fa fa-holder-dynamic">
+                    </i>
+                </a>
+            </li>
+            </ul></nav>
 
-    <div class="content-padding section-padding text-center">
-      <h4 class="single-line-height">Is your Personal Information complete and up to date?</h4>
-      <a href="" class="disabled button"><i class="fa fa-holder"></i> Yes, Continue with Application</a>
-    </div>
+
 </aside>
         </aside>
         <article class="split-content">
@@ -288,15 +306,15 @@
                     </label>
                 </div>
                 <div class="input-holder row collapse">
-                    <div class="input-space column small-3">
-                        <a onclick="extraQuestions(event)" class="button expanded" >
-                            Add/Edit
-                        </a>
-                    </div>
                     <div class="input-space column small-9">
                         <input disabled="" type="text" id="profType">
                             
                         </input>
+                    </div>
+                    <div class="input-space column small-3">
+                        <a onclick="extraQuestions(event)" class="button expanded" >
+                            Add/Edit
+                        </a>
                     </div>
                 </div>
                 <div class="message-holder">
@@ -364,7 +382,7 @@
                             600018
                         </span>
                         <span class="italic break subtle" data-bind="text: countrycode">
-                            IND
+                            India
                         </span>
                     </li>
                 </ul>
@@ -1513,7 +1531,7 @@
 	<div class="question column small-12 large-4 required">
 	<div class="label-holder">
 		    <span class="text">
-                Render
+                Race
             </span>
             <span class="required-holder">
                 <i class="fa fa-holder">
@@ -1538,7 +1556,7 @@
 </div>	
 	
 </div>
-<div class="row group-divide text-center">
+<!-- <div class="row group-divide text-center">
     <div class="content-padding">
         <h4>
             Is your Personal Information complete and up to date?
@@ -1549,746 +1567,8 @@
             Yes, Continue with Application
         </a>
     </div>
-</div>
-    <!-- <div id="extraQuestions">
-  <div data-title="~"></div>
-  <div class="section-padding " id="residentQuestions" data-title="Resident">
-
-        <div class="row">
-        <div class="question column small-12 large-5 required">
-	<div class="label-holder">
-		    <span class="text">
-                Institution Name
-            </span>
-            <span class="required-holder">
-                <i class="fa fa-holder">
-                </i>
-            </span>
-	</div>
-	<div class="input-holder">
-		<div class="input-space column">
-			<input type="text" required>
-			<span class="input-lock">
-                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
-                </i>
-            </span>
-		</div>
-	</div>
-	<div class="message-holder">
-		<small class="error">Error Message</small>
-	</div>
-	<div class="hint"></div>
-</div>	
-       <div class="question column small-12 large-4 required">
-	<div class="label-holder">
-		    <span class="text">
-                Program Type
-            </span>
-            <span class="required-holder">
-                <i class="fa fa-holder">
-                </i>
-            </span>
-	</div>
-	<div class="input-holder">
-		<div class="input-space column">
-			<select name="" id="" required>
-				<option value="">Choose..</option>
-			</select>
-			<span class="input-lock">
-                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
-                </i>
-            </span>
-		</div>
-	</div>
-	<div class="message-holder">
-		<small class="error">Error Message</small>
-	</div>
-	<div class="hint"></div>
-</div>	
-       <div class="question column small-12 large-3 required ">
-	<div class="label-holder">
-		    <span class="text">
-                Graduation Date
-            </span>
-            <span class="required-holder">
-                <i class="fa fa-holder">
-                </i>
-            </span>
-	</div>
-	<div class="input-holder row collapse">
-		<div class="input-space column small-10 date-input-holder">
-			<input type="text" required   placeholder="YYYY">
-			<span class="input-lock">
-                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
-                </i>
-            </span>
-		</div>
-		<div class="column small-2 input-space end date-picker-holder"><a href="" class="button hollow expanded"><i class="fa fa-calendar"></i></a></div>
-	</div>
-	<div class="message-holder">
-		<small class="error">Error Message</small>
-	</div>
-	<div class="hint"></div>
-</div>	
-        </div>
-        <div class="row">
-        
-<div class="question column small-12 large-4 required">
-	<div class="label-holder">
-		    <span class="text">
-                Country
-            </span>
-            <span class="required-holder">
-                <i class="fa fa-holder">
-                </i>
-            </span>
-	</div>
-	<div class="input-holder">
-		<div class="input-space column">
-			<select name="" id="" required>
-				<option value="">USA</option>
-			</select>
-			<span class="input-lock">
-                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
-                </i>
-            </span>
-		</div>
-	</div>
-	<div class="message-holder">
-		<small class="error">Error Message</small>
-	</div>
-	<div class="hint"></div>
-</div>	
-<div class="question column large-3 small-6">
-        <div class="label-holder">
-            <label>
-                <span class="text">
-                    State/Province
-                </span>
-                <span class="required-holder">
-                    <i class="fa fa-holder-dynamic">
-                    </i>
-                </span>
-            </label>
-        </div>
-        <div class="input-holder">
-            <div class="input-space">
-                <select class="show" data-bind="css: { 'show': statecode.showText(), 'hide': !statecode.showText() }, options: $root.address().statecodeListHolder, optionsText: 'Text', optionsValue: 'Value', optionsCaption: 'Choose...', value: statecode, disable: institutionid">
-                    <option value="">
-                        Choose...
-                    </option>
-                    <option value="AL">
-                        Alabama
-                    </option>
-                    <option value="AK">
-                        Alaska
-                    </option>
-                    <option value="AZ">
-                        Arizona
-                    </option>
-                    <option value="AR">
-                        Arkansas
-                    </option>
-                    <option value="AA">
-                        Armed Forces Americas
-                    </option>
-                    <option value="AE">
-                        Armed Forces Europe, Middle East
-                    </option>
-                    <option value="AP">
-                        Armed Forces Pacific
-                    </option>
-                    <option value="CA">
-                        California
-                    </option>
-                    <option value="CZ">
-                        Canal Zone
-                    </option>
-                    <option value="CO">
-                        Colorado
-                    </option>
-                    <option value="CT">
-                        Connecticut
-                    </option>
-                    <option value="DE">
-                        Delaware
-                    </option>
-                    <option value="DC">
-                        District of Columbia
-                    </option>
-                    <option value="FL">
-                        Florida
-                    </option>
-                    <option value="GA">
-                        Georgia
-                    </option>
-                    <option value="GU">
-                        Guam
-                    </option>
-                    <option value="HI">
-                        Hawaii
-                    </option>
-                    <option value="ID">
-                        Idaho
-                    </option>
-                    <option value="IL">
-                        Illinois
-                    </option>
-                    <option value="IN">
-                        Indiana
-                    </option>
-                    <option value="IA">
-                        Iowa
-                    </option>
-                    <option value="KS">
-                        Kansas
-                    </option>
-                    <option value="KY">
-                        Kentucky
-                    </option>
-                    <option value="LA">
-                        Louisiana
-                    </option>
-                    <option value="ME">
-                        Maine
-                    </option>
-                    <option value="MD">
-                        Maryland
-                    </option>
-                    <option value="MA">
-                        Massachusetts
-                    </option>
-                    <option value="MI">
-                        Michigan
-                    </option>
-                    <option value="MN">
-                        Minnesota
-                    </option>
-                    <option value="MS">
-                        Mississippi
-                    </option>
-                    <option value="MO">
-                        Missouri
-                    </option>
-                    <option value="MT">
-                        Montana
-                    </option>
-                    <option value="NE">
-                        Nebraska
-                    </option>
-                    <option value="NV">
-                        Nevada
-                    </option>
-                    <option value="NH">
-                        New Hampshire
-                    </option>
-                    <option value="NJ">
-                        New Jersey
-                    </option>
-                    <option value="NM">
-                        New Mexico
-                    </option>
-                    <option value="NY">
-                        New York
-                    </option>
-                    <option value="NC">
-                        North Carolina
-                    </option>
-                    <option value="ND">
-                        North Dakota
-                    </option>
-                    <option value="MP">
-                        Northern Mariana Islands
-                    </option>
-                    <option value="OH">
-                        Ohio
-                    </option>
-                    <option value="OK">
-                        Oklahoma
-                    </option>
-                    <option value="OR">
-                        Oregon
-                    </option>
-                    <option value="PI">
-                        Pacific Islands
-                    </option>
-                    <option value="PA">
-                        Pennsylvania
-                    </option>
-                    <option value="PR">
-                        Puerto Rico
-                    </option>
-                    <option value="RI">
-                        Rhode Island
-                    </option>
-                    <option value="SC">
-                        South Carolina
-                    </option>
-                    <option value="SD">
-                        South Dakota
-                    </option>
-                    <option value="TN">
-                        Tennessee
-                    </option>
-                    <option value="TX">
-                        Texas
-                    </option>
-                    <option value="TT">
-                        Trust Territories
-                    </option>
-                    <option value="UT">
-                        Utah
-                    </option>
-                    <option value="VT">
-                        Vermont
-                    </option>
-                    <option value="VI">
-                        Virgin Islands
-                    </option>
-                    <option value="VA">
-                        Virginia
-                    </option>
-                    <option value="WA">
-                        Washington
-                    </option>
-                    <option value="WV">
-                        West Virginia
-                    </option>
-                    <option value="WI">
-                        Wisconsin
-                    </option>
-                    <option value="WY">
-                        Wyoming
-                    </option>
-                </select>
-                <input class="hide" data-bind="css: { 'show': state.showText(), 'hide': !state.showText() }, value: state, disable: institutionid" type="text">
-                </input>
-            </div>
-        </div>
-        <div class="message-holder">
-            <small class="" data-bind="css:{ error: statecode.hasError, warning: statecode.hasWarning }">
-                <i class="fa fa-holder">
-                </i>
-                <!-- ko text: statecode.validationMessage -->
-                <!-- /ko -->
-            </small>
-        </div>
-    </div>
-<div class="question column small-12 large-4 required">
-	<div class="label-holder">
-		    <span class="text">
-                City
-            </span>
-            <span class="required-holder">
-                <i class="fa fa-holder">
-                </i>
-            </span>
-	</div>
-	<div class="input-holder">
-		<div class="input-space column">
-			<input type="text" required>
-			<span class="input-lock">
-                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
-                </i>
-            </span>
-		</div>
-	</div>
-	<div class="message-holder">
-		<small class="error">Error Message</small>
-	</div>
-	<div class="hint"></div>
-</div>	
-
-
-        </div>
-</div>
-  <div class="section-padding " id="residentQuestions" data-title="Student">
-    <div>
-        <div class="row">
-            <div class="column">
-                <h1 class="with-underline">
-                   Student Information
-                </h1>
-            </div>
-        </div>
-        <div class="row">        
-            <div class="question column small-12 large-6 required">
-	<div class="label-holder">
-		    <span class="text">
-                Institution Name
-            </span>
-            <span class="required-holder">
-                <i class="fa fa-holder">
-                </i>
-            </span>
-	</div>
-	<div class="input-holder">
-		<div class="input-space column">
-			<input type="text" required>
-			<span class="input-lock">
-                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
-                </i>
-            </span>
-		</div>
-	</div>
-	<div class="message-holder">
-		<small class="error">Error Message</small>
-	</div>
-	<div class="hint"></div>
-</div>	
-        </div>
-        <div class="row">
-        <div class="question column small-12 large-4 required">
-	<div class="label-holder">
-		    <span class="text">
-                Education Level
-            </span>
-            <span class="required-holder">
-                <i class="fa fa-holder">
-                </i>
-            </span>
-	</div>
-	<div class="input-holder">
-		<div class="input-space column">
-			<select name="" id="" required>
-				<option value="">Choose..</option>
-			</select>
-			<span class="input-lock">
-                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
-                </i>
-            </span>
-		</div>
-	</div>
-	<div class="message-holder">
-		<small class="error">Error Message</small>
-	</div>
-	<div class="hint"></div>
-</div>	
-       <div class="question column small-12 large-4 required">
-	<div class="label-holder">
-		    <span class="text">
-                Program Type
-            </span>
-            <span class="required-holder">
-                <i class="fa fa-holder">
-                </i>
-            </span>
-	</div>
-	<div class="input-holder">
-		<div class="input-space column">
-			<select name="" id="" required>
-				<option value="">Choose..</option>
-			</select>
-			<span class="input-lock">
-                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
-                </i>
-            </span>
-		</div>
-	</div>
-	<div class="message-holder">
-		<small class="error">Error Message</small>
-	</div>
-	<div class="hint"></div>
-</div>	
-       <div class="question column small-12 large-4 required ">
-	<div class="label-holder">
-		    <span class="text">
-                Graduation Date
-            </span>
-            <span class="required-holder">
-                <i class="fa fa-holder">
-                </i>
-            </span>
-	</div>
-	<div class="input-holder row collapse">
-		<div class="input-space column small-10 date-input-holder">
-			<input type="text" required   placeholder="YYYY">
-			<span class="input-lock">
-                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
-                </i>
-            </span>
-		</div>
-		<div class="column small-2 input-space end date-picker-holder"><a href="" class="button hollow expanded"><i class="fa fa-calendar"></i></a></div>
-	</div>
-	<div class="message-holder">
-		<small class="error">Error Message</small>
-	</div>
-	<div class="hint"></div>
-</div>	
-        </div>
-        <div class="row">
-        
-<div class="question column small-12 large-4 required">
-	<div class="label-holder">
-		    <span class="text">
-                Country
-            </span>
-            <span class="required-holder">
-                <i class="fa fa-holder">
-                </i>
-            </span>
-	</div>
-	<div class="input-holder">
-		<div class="input-space column">
-			<select name="" id="" required>
-				<option value="">USA</option>
-			</select>
-			<span class="input-lock">
-                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
-                </i>
-            </span>
-		</div>
-	</div>
-	<div class="message-holder">
-		<small class="error">Error Message</small>
-	</div>
-	<div class="hint"></div>
-</div>	
-<div class="question column large-3 small-6">
-        <div class="label-holder">
-            <label>
-                <span class="text">
-                    State/Province
-                </span>
-                <span class="required-holder">
-                    <i class="fa fa-holder-dynamic">
-                    </i>
-                </span>
-            </label>
-        </div>
-        <div class="input-holder">
-            <div class="input-space">
-                <select class="show" data-bind="css: { 'show': statecode.showText(), 'hide': !statecode.showText() }, options: $root.address().statecodeListHolder, optionsText: 'Text', optionsValue: 'Value', optionsCaption: 'Choose...', value: statecode, disable: institutionid">
-                    <option value="">
-                        Choose...
-                    </option>
-                    <option value="AL">
-                        Alabama
-                    </option>
-                    <option value="AK">
-                        Alaska
-                    </option>
-                    <option value="AZ">
-                        Arizona
-                    </option>
-                    <option value="AR">
-                        Arkansas
-                    </option>
-                    <option value="AA">
-                        Armed Forces Americas
-                    </option>
-                    <option value="AE">
-                        Armed Forces Europe, Middle East
-                    </option>
-                    <option value="AP">
-                        Armed Forces Pacific
-                    </option>
-                    <option value="CA">
-                        California
-                    </option>
-                    <option value="CZ">
-                        Canal Zone
-                    </option>
-                    <option value="CO">
-                        Colorado
-                    </option>
-                    <option value="CT">
-                        Connecticut
-                    </option>
-                    <option value="DE">
-                        Delaware
-                    </option>
-                    <option value="DC">
-                        District of Columbia
-                    </option>
-                    <option value="FL">
-                        Florida
-                    </option>
-                    <option value="GA">
-                        Georgia
-                    </option>
-                    <option value="GU">
-                        Guam
-                    </option>
-                    <option value="HI">
-                        Hawaii
-                    </option>
-                    <option value="ID">
-                        Idaho
-                    </option>
-                    <option value="IL">
-                        Illinois
-                    </option>
-                    <option value="IN">
-                        Indiana
-                    </option>
-                    <option value="IA">
-                        Iowa
-                    </option>
-                    <option value="KS">
-                        Kansas
-                    </option>
-                    <option value="KY">
-                        Kentucky
-                    </option>
-                    <option value="LA">
-                        Louisiana
-                    </option>
-                    <option value="ME">
-                        Maine
-                    </option>
-                    <option value="MD">
-                        Maryland
-                    </option>
-                    <option value="MA">
-                        Massachusetts
-                    </option>
-                    <option value="MI">
-                        Michigan
-                    </option>
-                    <option value="MN">
-                        Minnesota
-                    </option>
-                    <option value="MS">
-                        Mississippi
-                    </option>
-                    <option value="MO">
-                        Missouri
-                    </option>
-                    <option value="MT">
-                        Montana
-                    </option>
-                    <option value="NE">
-                        Nebraska
-                    </option>
-                    <option value="NV">
-                        Nevada
-                    </option>
-                    <option value="NH">
-                        New Hampshire
-                    </option>
-                    <option value="NJ">
-                        New Jersey
-                    </option>
-                    <option value="NM">
-                        New Mexico
-                    </option>
-                    <option value="NY">
-                        New York
-                    </option>
-                    <option value="NC">
-                        North Carolina
-                    </option>
-                    <option value="ND">
-                        North Dakota
-                    </option>
-                    <option value="MP">
-                        Northern Mariana Islands
-                    </option>
-                    <option value="OH">
-                        Ohio
-                    </option>
-                    <option value="OK">
-                        Oklahoma
-                    </option>
-                    <option value="OR">
-                        Oregon
-                    </option>
-                    <option value="PI">
-                        Pacific Islands
-                    </option>
-                    <option value="PA">
-                        Pennsylvania
-                    </option>
-                    <option value="PR">
-                        Puerto Rico
-                    </option>
-                    <option value="RI">
-                        Rhode Island
-                    </option>
-                    <option value="SC">
-                        South Carolina
-                    </option>
-                    <option value="SD">
-                        South Dakota
-                    </option>
-                    <option value="TN">
-                        Tennessee
-                    </option>
-                    <option value="TX">
-                        Texas
-                    </option>
-                    <option value="TT">
-                        Trust Territories
-                    </option>
-                    <option value="UT">
-                        Utah
-                    </option>
-                    <option value="VT">
-                        Vermont
-                    </option>
-                    <option value="VI">
-                        Virgin Islands
-                    </option>
-                    <option value="VA">
-                        Virginia
-                    </option>
-                    <option value="WA">
-                        Washington
-                    </option>
-                    <option value="WV">
-                        West Virginia
-                    </option>
-                    <option value="WI">
-                        Wisconsin
-                    </option>
-                    <option value="WY">
-                        Wyoming
-                    </option>
-                </select>
-                <input class="hide" data-bind="css: { 'show': state.showText(), 'hide': !state.showText() }, value: state, disable: institutionid" type="text">
-                </input>
-            </div>
-        </div>
-        <div class="message-holder">
-            <small class="" data-bind="css:{ error: statecode.hasError, warning: statecode.hasWarning }">
-                <i class="fa fa-holder">
-                </i>
-                <!-- ko text: statecode.validationMessage -->
-                <!-- /ko -->
-            </small>
-        </div>
-    </div>
-<div class="question column small-12 large-4 required">
-	<div class="label-holder">
-		    <span class="text">
-                City
-            </span>
-            <span class="required-holder">
-                <i class="fa fa-holder">
-                </i>
-            </span>
-	</div>
-	<div class="input-holder">
-		<div class="input-space column">
-			<input type="text" required>
-			<span class="input-lock">
-                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
-                </i>
-            </span>
-		</div>
-	</div>
-	<div class="message-holder">
-		<small class="error">Error Message</small>
-	</div>
-	<div class="hint"></div>
-</div>	
-
-
-        </div>
-    </div>
-</div>
 </div> -->
+
 <script>
     // function extraQuestions(e){
     //   e.preventDefault();
@@ -2474,8 +1754,8 @@
 <script type="text/javascript" src="assets/js/pager.js"></script>
 
 <script type="text/javascript" src="assets/js/jquery.panzoom.js"></script>
-<script type="text/javascript" src="assets/js/app.js"></script>
-<script type="text/javascript" src="assets/js/appdata.js"></script>
+<!-- <script type="text/javascript" src="assets/js/app.js"></script>-->
+ <script type="text/javascript" src="assets/js/appdata.js"></script>
 <script type="text/javascript" src="assets/js/formdata.js"></script>
 <script type="text/javascript" src="assets/js/appviewmodel.js"></script>
 <script type="text/javascript" src="assets/js/query-string.js"></script>
@@ -2490,6 +1770,31 @@
 </style>
 <script type="text/javascript" src="assets/js/daptChart.js"></script>
 <script>
+
+
+$(function() {
+	$(".selectable a.button").click(function(e){
+	e.preventDefault();
+	$(this).addClass('selected').siblings().removeClass('selected');
+
+
+});
+     $("#Affiliate-Society a").click(function(e){
+     	console.log("click");
+        if($(this).data( "answer" ) === "yes" ){
+            $("#Affiliate-Society-No,#sponsorHolder").slideUp();
+
+            $("#Affiliate-Society-Yes, #societyHolder").slideDown();
+        }
+        if($(this).data( "answer" ) === "no" ){
+            $("#Affiliate-Society-No,#sponsorHolder").slideDown();
+            $("#Affiliate-Society-Yes, #societyHolder").slideUp();
+        }
+
+    });
+});
+
+
 
 </script>
 <style>

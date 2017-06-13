@@ -21,9 +21,30 @@
           <li><a class="link" href="index.html">Save &amp; Signout</a></li>
         </ul>
     </div>
+    <nav class="nav-list nav-checklist">
+     <ul>
+            <li {% if page.id == "personal" %} class="selected"{% endif %}>
+                <a href="personalinfo.html">
+                    <span class="text">
+                        Personal Information
+                    </span>
+                    <i class="fa fa-holder-dynamic">
+                    </i>
+                </a>
+            </li>
+            <li {% if page.id == "member" %} class="selected"{% else %} class="disabled" {% endif %}>
+                <a href="personalinfo.html">
+                    <span class="text">
+                        Membership Selection
+                    </span>
+                    <i class="fa fa-holder-dynamic">
+                    </i>
+                </a>
+            </li>
+            </ul></nav>
 
-    <div class="content-padding section-padding text-center">
+{% comment %}    <div class="content-padding section-padding text-center">
       <h4 class="single-line-height">Is your {{ page.title }} complete and up to date?</h4>
       <a href="" class="disabled button"><i class="fa fa-holder"></i> Yes, Continue with Application</a>
-    </div>
+    </div>{% endcomment %}
 </aside>

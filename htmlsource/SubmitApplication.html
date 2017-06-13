@@ -3,7 +3,7 @@ layout: FACC
 title: Submit Application
 id: submit
 ---
-{%  include snippets/page-top.liquid title="Submit Application" level="h1" style="with-underline" message=""%}
+{%  include snippets/page-top.liquid title="Submit Application" level="h1" style="with-underline" message="Applicant's Authorization To Release Information "%}
 {%  include snippets/page-top.liquid title="Legal Disclosures" level="h2" style="with-underline" message="Accurate disclosure information is essential to review and process your application. All questions are required." %}
 <div class="row">
     <div class="question column small-12 warning">
@@ -92,7 +92,7 @@ id: submit
 {% include snippets/question-yesno.liquid title="Have you ever been convicted of, or plead guilty to, a felony or other serious crime?" yes-extra="I will explain bellow" no-extra="" state="required" id="sc" %}
 <div class="row column">
     <h2 class="with-underline">
-        Applicant's Authorization To Release Information
+        Applicant's Authorization To Release Information 
     </h2>
     <div class="content-padding section-padding">
         <p class="text-justify">
@@ -143,7 +143,15 @@ id: submit
         </div>
     </div>
 </div>
-<div class="row group-divide">
+<div class="row">
+    <div class="column group-divide"><a href="" class="button large sucess float-right">Finish Application &amp; Pay</a></div>
+</div>
+<style>
+    #forwardNav{
+        display:none;
+    }
+</style>
+{% comment %}<div class="row group-divide">
     <div class="column">
         <h2 class="with-underline">
             Payment Summary
@@ -200,4 +208,4 @@ id: submit
     </div>
      <div class="colored-paper disabled">  <h6> but your application will not be reviewed till we recieve payment.</h6></div>
     
-</div>
+</div>{% endcomment %}

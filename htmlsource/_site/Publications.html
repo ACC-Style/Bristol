@@ -47,7 +47,7 @@
      <nav class="nav-list nav-checklist">
         <ul>
             <li >
-                <a href="personalinfo.html">
+                <a href="personalinfo-active.html">
                     <span class="text">
                         Personal Information
                     </span>
@@ -101,15 +101,16 @@
                 </a>
             </li>
             <li    >
-                <a href="#">
+                <a href="professionalProfile.html">
                     <span class="text">
-                        Professional Profile <em>(placeholder)</em>
+                        Professional Profile 
                     </span>
                     <i class="fa fa-holder-dynamic">
                     </i>
                 </a>
             </li>
-            <li    >
+
+            <li   class="disabled"  >
                 <a href="submitapplication.html">
                     <span class="text">
                         Submit
@@ -125,7 +126,7 @@
         <article class="split-content">
              <div class="page">
                
-                 <div class="section-nav back">
+                 <div id="backNav" class="section-nav back">
     <a>
       <div class="circle">
         <i class="fa fa-holder"></i>
@@ -155,44 +156,23 @@
         <h3 class="no-margin">
             Instructions &amp; Requirements
         </h3>
-        <div class="row section-padding content-padding">
-            <div class="column small-12 medium-6">
-                <h4 class="">
-                    Candidates with a PhD
-                </h4>
-                
-                <div class="label text-center" style="display: block; width:100%">
-                    <i class="fa fa-exclamation"></i> This section is optional. <i class="fa fa-exclamation"></i>
-                   
-                </div>
-                We suggest you include your publications to improve your application.
-            </div>
-            <div class="column small-12 medium-6">
-                <h4 class="">
-                    Candidates without a PhD
-                </h4>
-                Will need
-                <strong>
-                    10
-                </strong>
-                articles with
-                <strong>
-                    5
-                </strong>
-                first or senior authorship in cardiovascular peer reviewed journals.
-                <bold>
-                    If you do not have a PHD this section is required
-                </bold>
+        <div class="row section-padding">
+            <div class="column">
+                <p>Please upload your bibliography in the following format:</p>
+ 
+<ul>
+    <li>Published papers in peer reviewed journals</li>
+<li>Textbook chapters, invited articles and reviews</li>
+<li>Published abstracts</li>
+<li>Miscellaneous</li>
+</ul>
+ 
+<div class="label warning">Do not upload reprints of articles.</div>
             </div>
         </div>
+
         <div class="section-padding">
-            <p>
-                In order for your application to be evaluated fairly, please organize and upload your bibliography using the
-                <a class="link" href="/Assets/docs/publicationTemplate.doc">
-                    linked template
-                </a>
-                ; otherwise, your application will be considered incomplete and will not be reviewed. List precisely as published with the authors, title of article, name (volume, page and date) of journal.  Do not upload reprints of articles, abstracts, etc. List and number in separate categories as follows:
-            </p>
+
             <a class="button small secondary radius" href="/Assets/docs/publicationTemplate.doc">
                 Download Publication Template
             </a>
@@ -216,7 +196,7 @@
 
               </div>
               
-                               <div class="section-nav forward">
+                               <div id="forwardNav" class="section-nav forward">
     <a>
       <div class="circle">
         <i class="fa fa-holder"></i>
@@ -370,8 +350,8 @@
 <script type="text/javascript" src="assets/js/pager.js"></script>
 
 <script type="text/javascript" src="assets/js/jquery.panzoom.js"></script>
-<script type="text/javascript" src="assets/js/app.js"></script>
-<script type="text/javascript" src="assets/js/appdata.js"></script>
+<!-- <script type="text/javascript" src="assets/js/app.js"></script>-->
+ <script type="text/javascript" src="assets/js/appdata.js"></script>
 <script type="text/javascript" src="assets/js/formdata.js"></script>
 <script type="text/javascript" src="assets/js/appviewmodel.js"></script>
 <script type="text/javascript" src="assets/js/query-string.js"></script>
@@ -386,6 +366,31 @@
 </style>
 <script type="text/javascript" src="assets/js/daptChart.js"></script>
 <script>
+
+
+$(function() {
+	$(".selectable a.button").click(function(e){
+	e.preventDefault();
+	$(this).addClass('selected').siblings().removeClass('selected');
+
+
+});
+     $("#Affiliate-Society a").click(function(e){
+     	console.log("click");
+        if($(this).data( "answer" ) === "yes" ){
+            $("#Affiliate-Society-No,#sponsorHolder").slideUp();
+
+            $("#Affiliate-Society-Yes, #societyHolder").slideDown();
+        }
+        if($(this).data( "answer" ) === "no" ){
+            $("#Affiliate-Society-No,#sponsorHolder").slideDown();
+            $("#Affiliate-Society-Yes, #societyHolder").slideUp();
+        }
+
+    });
+});
+
+
 
 </script>
 <style>

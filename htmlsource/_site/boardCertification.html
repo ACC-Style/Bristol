@@ -47,7 +47,7 @@
      <nav class="nav-list nav-checklist">
         <ul>
             <li >
-                <a href="personalinfo.html">
+                <a href="personalinfo-active.html">
                     <span class="text">
                         Personal Information
                     </span>
@@ -101,15 +101,16 @@
                 </a>
             </li>
             <li    >
-                <a href="#">
+                <a href="professionalProfile.html">
                     <span class="text">
-                        Professional Profile <em>(placeholder)</em>
+                        Professional Profile 
                     </span>
                     <i class="fa fa-holder-dynamic">
                     </i>
                 </a>
             </li>
-            <li    >
+
+            <li   class="disabled"  >
                 <a href="submitapplication.html">
                     <span class="text">
                         Submit
@@ -125,7 +126,7 @@
         <article class="split-content">
              <div class="page">
                
-                 <div class="section-nav back">
+                 <div id="backNav" class="section-nav back">
     <a>
       <div class="circle">
         <i class="fa fa-holder"></i>
@@ -375,7 +376,7 @@
 
               </div>
               
-                               <div class="section-nav forward">
+                               <div id="forwardNav" class="section-nav forward">
     <a>
       <div class="circle">
         <i class="fa fa-holder"></i>
@@ -529,8 +530,8 @@
 <script type="text/javascript" src="assets/js/pager.js"></script>
 
 <script type="text/javascript" src="assets/js/jquery.panzoom.js"></script>
-<script type="text/javascript" src="assets/js/app.js"></script>
-<script type="text/javascript" src="assets/js/appdata.js"></script>
+<!-- <script type="text/javascript" src="assets/js/app.js"></script>-->
+ <script type="text/javascript" src="assets/js/appdata.js"></script>
 <script type="text/javascript" src="assets/js/formdata.js"></script>
 <script type="text/javascript" src="assets/js/appviewmodel.js"></script>
 <script type="text/javascript" src="assets/js/query-string.js"></script>
@@ -545,6 +546,31 @@
 </style>
 <script type="text/javascript" src="assets/js/daptChart.js"></script>
 <script>
+
+
+$(function() {
+	$(".selectable a.button").click(function(e){
+	e.preventDefault();
+	$(this).addClass('selected').siblings().removeClass('selected');
+
+
+});
+     $("#Affiliate-Society a").click(function(e){
+     	console.log("click");
+        if($(this).data( "answer" ) === "yes" ){
+            $("#Affiliate-Society-No,#sponsorHolder").slideUp();
+
+            $("#Affiliate-Society-Yes, #societyHolder").slideDown();
+        }
+        if($(this).data( "answer" ) === "no" ){
+            $("#Affiliate-Society-No,#sponsorHolder").slideDown();
+            $("#Affiliate-Society-Yes, #societyHolder").slideUp();
+        }
+
+    });
+});
+
+
 
 </script>
 <style>

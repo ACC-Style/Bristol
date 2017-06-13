@@ -145,6 +145,33 @@
                             </i>
                         </a>
                     </li>
+                    <li>
+                <a href="Publications.html">
+                    <span class="text">
+                        Publications
+                    </span>
+                    <i class="fa fa-holder">
+                    </i>
+                </a>
+            </li>
+                    <li>
+                <a href="professionalProfile.html">
+                    <span class="text">
+                        Professional Profile 
+                    </span>
+                    <i class="fa fa-holder">
+                    </i>
+                </a>
+            </li>
+            <li>
+                <a href="submitapplication.html">
+                    <span class="text">
+                        Submit
+                    </span>
+                    <i class="fa fa-holder">
+                    </i>
+                </a>
+            </li>
                 </ul>
                 <h3 class="content-padding">Exceptions</h3>
                     <ul>
@@ -318,8 +345,8 @@
 <script type="text/javascript" src="assets/js/pager.js"></script>
 
 <script type="text/javascript" src="assets/js/jquery.panzoom.js"></script>
-<script type="text/javascript" src="assets/js/app.js"></script>
-<script type="text/javascript" src="assets/js/appdata.js"></script>
+<!-- <script type="text/javascript" src="assets/js/app.js"></script>-->
+ <script type="text/javascript" src="assets/js/appdata.js"></script>
 <script type="text/javascript" src="assets/js/formdata.js"></script>
 <script type="text/javascript" src="assets/js/appviewmodel.js"></script>
 <script type="text/javascript" src="assets/js/query-string.js"></script>
@@ -334,6 +361,31 @@
 </style>
 <script type="text/javascript" src="assets/js/daptChart.js"></script>
 <script>
+
+
+$(function() {
+	$(".selectable a.button").click(function(e){
+	e.preventDefault();
+	$(this).addClass('selected').siblings().removeClass('selected');
+
+
+});
+     $("#Affiliate-Society a").click(function(e){
+     	console.log("click");
+        if($(this).data( "answer" ) === "yes" ){
+            $("#Affiliate-Society-No,#sponsorHolder").slideUp();
+
+            $("#Affiliate-Society-Yes, #societyHolder").slideDown();
+        }
+        if($(this).data( "answer" ) === "no" ){
+            $("#Affiliate-Society-No,#sponsorHolder").slideDown();
+            $("#Affiliate-Society-Yes, #societyHolder").slideUp();
+        }
+
+    });
+});
+
+
 
 </script>
 <style>

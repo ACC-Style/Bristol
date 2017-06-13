@@ -28,7 +28,7 @@
      <nav class="nav-list nav-checklist">
         <ul>
             <li {% if page.id == "personal" %} class="selected"{% endif %}>
-                <a href="personalinfo.html">
+                <a href="personalinfo-active.html">
                     <span class="text">
                         Personal Information
                     </span>
@@ -81,16 +81,25 @@
                     </i>
                 </a>
             </li>
-            <li  {% if page.id == "pp" %} class="selected"{% endif %}  >
-                <a href="#">
+            <li  {% if page.id == "pro" %} class="selected"{% endif %}  >
+                <a href="professionalProfile.html">
                     <span class="text">
-                        Professional Profile <em>(placeholder)</em>
+                        Professional Profile 
                     </span>
                     <i class="fa fa-holder-dynamic">
                     </i>
                 </a>
             </li>
-            <li  {% if page.id == "submit" %} class="selected"{% endif %}  >
+{% comment %}            <li  {% if page.id == "legal" %} class="selected"{% endif %}  >
+                <a href="legal.html">
+                    <span class="text">
+                       Legal Disclosures
+                    </span>
+                    <i class="fa fa-holder-dynamic">
+                    </i>
+                </a>
+            </li>{% endcomment %}
+            <li  {% if page.id == "submit" %} class="selected"{% else %} class="disabled"{% endif %}  >
                 <a href="submitapplication.html">
                     <span class="text">
                         Submit

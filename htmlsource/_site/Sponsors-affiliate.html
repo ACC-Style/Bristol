@@ -152,28 +152,44 @@
 
 <div class="row">
     <div class="column text-center">
-        <h3>Are you a member of a society?<sup><i class="fa fa-asterisk" style="color:orange;"></i></sup></h3>
-        
+        <h3>
+            Are you a member of a society?
+            <sup>
+                <i class="fa fa-asterisk" style="color:orange;">
+                </i>
+            </sup>
+        </h3>
     </div>
-    
 </div>
 <div class="row">
     <div class="column small-centered medium-centered large-centered large-4 medium-6 small-8">
-        <div class="button-group expanded selectable">
-            <a href="" class="button"><i class="fa fa-holder"></i><span class="text">Yes</span></a>
-            <a href="" class="button selected"><i class="fa fa-holder"></i><span class="text">No</span></a>
+        <div class="button-group expanded selectable" id="Affiliate-Society">
+            <a class="button" href="" data-answer="yes">
+                <i class="fa fa-holder">
+                </i>
+                <span class="text">
+                    Yes
+                </span>
+            </a>
+            <a class="button" href="" data-answer="no">
+                <i class="fa fa-holder">
+                </i>
+                <span class="text">
+                    No
+                </span>
+            </a>
         </div>
     </div>
 </div>
-<div class="row" id="Sponsorshipisneeded">
+<div id="Affiliate-Society-No" style="display:none;">
+    <div class="row" id="Becauseyouhavenosocietymembershipssponsorshipisneeded">
     <div class="column relative-position">
         <h2 class="with-underline">
-            Sponsorship is needed
+            Because you have no society memberships sponsorship is needed
 
              
                 <div class="sub-line">
-                     
-Two ACC member sponsor letters are required with your application.
+                    Two ACC member sponsor letters are required with your application.
                 </div>
                 
         </h2>
@@ -185,29 +201,54 @@ Two ACC member sponsor letters are required with your application.
         <div class="column">
             <div class="callout info">
                 <h3 class="no-margin">
-                    Instructions &amp; Requirements
+                    Instructions & Requirements
                 </h3>
-                  <div class="row content-padding">
-                    <div class="column medium-6"><h4>Sponsor Requirements:</h4>
+                <div class="row content-padding">
+                    <div class="column medium-6">
+                        <h4>
+                            Sponsor Requirements:
+                        </h4>
                         <ul class="content-padding">
-                        <li>Sponsors must be current FACCs</li>
-                        <li>Sponsors must be well acquainted with your current professional activities</li>
-                        <li>At least one sponsor must be from your geographic area of professional activity</li>
-                        <li>Only one sponsor can be from a partner or colleague that works in your office</li>
-                        <li>Only one sponsor can be from your training program</li>
-                        <li>Your relatives may not sponsor you</li>
-                        </ul></div>
-                                            <div class="column medium-6"><h4>Sponsorship Letter Requirements:</h4>
+                            <li>
+                                Sponsors must be current FACCs
+                            </li>
+                            <li>
+                                Sponsors must be well acquainted with your current professional activities
+                            </li>
+                            <li>
+                                At least one sponsor must be from your geographic area of professional activity
+                            </li>
+                            <li>
+                                Only one sponsor can be from a partner or colleague that works in your office
+                            </li>
+                            <li>
+                                Only one sponsor can be from your training program
+                            </li>
+                            <li>
+                                Your relatives may not sponsor you
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="column medium-6">
+                        <h4>
+                            Sponsorship Letter Requirements:
+                        </h4>
                         <ul class="content-padding">
-                            <li>Letters must be included with your application</li>
-                        <li>Letters must be on the sponsor’s business letterhead, dated and signed by the sponsor</li>
-                        <li>Letters should detail your accomplishments of distinction, such as hospital, medical society or educational leadership</li>
-                        <li>Letters should be original in content—substantially identical letters will be rejected</li>
-                        </ul></div>
+                            <li>
+                                Letters must be included with your application
+                            </li>
+                            <li>
+                                Letters must be on the sponsor’s business letterhead, dated and signed by the sponsor
+                            </li>
+                            <li>
+                                Letters should detail your accomplishments of distinction, such as hospital, medical society or educational leadership
+                            </li>
+                            <li>
+                                Letters should be original in content—substantially identical letters will be rejected
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-
-
-
             </div>
         </div>
     </div>
@@ -274,7 +315,7 @@ Two ACC member sponsor letters are required with your application.
         </div>
     </div>
 </div>
-
+</div>
 <div id="addSponsorResults">
     <div class="page paper-page repeater-area content-padding" style="display: none; background-color: #198dae;">
         <div class="colored-paper">
@@ -304,67 +345,67 @@ Two ACC member sponsor letters are required with your application.
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- ko foreach: searchresults -->
+                       
                         <tr>
-                            <td data-bind="text: LongName">Allan L. Mattern, M.D., FACC</td>
-                            <td data-bind="text: address.country">United States</td>
-                            <td class="text-right"><a " class="button tiny expanded secondary">Select &amp; Attach Letter</a></td>
+                            <td >Allan L. Mattern, M.D., FACC</td>
+                            <td >United States</td>
+                            <td class="text-right"><a " class="button small expanded secondary">Select &amp; Attach Letter</a></td>
                         </tr>
                         
                         <tr>
-                            <td data-bind="text: LongName">George E. Matthews, MD, FACC</td>
-                            <td data-bind="text: address.country">United States</td>
-                            <td class="text-right"><a " class="button tiny expanded secondary">Select &amp; Attach Letter</a></td>
+                            <td >George E. Matthews, MD, FACC</td>
+                            <td >United States</td>
+                            <td class="text-right"><a " class="button small expanded secondary">Select &amp; Attach Letter</a></td>
                         </tr>
                         
                         <tr>
-                            <td data-bind="text: LongName">Charles J. Mattina, MD, FACC</td>
-                            <td data-bind="text: address.country">United States</td>
-                            <td class="text-right"><a " class="button tiny expanded secondary">Select &amp; Attach Letter</a></td>
+                            <td >Charles J. Mattina, MD, FACC</td>
+                            <td >United States</td>
+                            <td class="text-right"><a " class="button small expanded secondary">Select &amp; Attach Letter</a></td>
                         </tr>
                         
                         <tr>
-                            <td data-bind="text: LongName">Bradford J. Matthews, M.D., FACC</td>
-                            <td data-bind="text: address.country">United States</td>
-                            <td class="text-right"><a " class="button tiny expanded secondary">Select &amp; Attach Letter</a></td>
+                            <td >Bradford J. Matthews, M.D., FACC</td>
+                            <td >United States</td>
+                            <td class="text-right"><a " class="button small expanded secondary">Select &amp; Attach Letter</a></td>
                         </tr>
                         
                         <tr>
-                            <td data-bind="text: LongName">Carsten Matthias Schmalfuss, M.D., FACC</td>
-                            <td data-bind="text: address.country">United States</td>
-                            <td class="text-right"><a " class="button tiny expanded secondary">Select &amp; Attach Letter</a></td>
+                            <td >Carsten Matthias Schmalfuss, M.D., FACC</td>
+                            <td >United States</td>
+                            <td class="text-right"><a " class="button small expanded secondary">Select &amp; Attach Letter</a></td>
                         </tr>
                         
                         <tr>
-                            <td data-bind="text: LongName">Eric Matthew Graham, M.D., FACC</td>
-                            <td data-bind="text: address.country">United States</td>
-                            <td class="text-right"><a " class="button tiny expanded secondary">Select &amp; Attach Letter</a></td>
+                            <td >Eric Matthew Graham, M.D., FACC</td>
+                            <td >United States</td>
+                            <td class="text-right"><a " class="button small expanded secondary">Select &amp; Attach Letter</a></td>
                         </tr>
                         
                         <tr>
-                            <td data-bind="text: LongName">Janis Town Matthai, NP, AACC</td>
-                            <td data-bind="text: address.country">United States</td>
-                            <td class="text-right"><a " class="button tiny expanded secondary">Select &amp; Attach Letter</a></td>
+                            <td >Janis Town Matthai, NP, AACC</td>
+                            <td >United States</td>
+                            <td class="text-right"><a " class="button small expanded secondary">Select &amp; Attach Letter</a></td>
                         </tr>
                         
                         <tr>
-                            <td data-bind="text: LongName">John Matthew Lee, MD, FACC</td>
-                            <td data-bind="text: address.country">United States</td>
-                            <td class="text-right"><a " class="button tiny expanded secondary">Select &amp; Attach Letter</a></td>
+                            <td >John Matthew Lee, MD, FACC</td>
+                            <td >United States</td>
+                            <td class="text-right"><a " class="button small expanded secondary">Select &amp; Attach Letter</a></td>
                         </tr>
                         
                         <tr>
-                            <td data-bind="text: LongName">Brian Matthew Stegman, MD, FACC</td>
-                            <td data-bind="text: address.country">United States</td>
-                            <td class="text-right"><a " class="button tiny expanded secondary">Select &amp; Attach Letter</a></td>
+                            <td >Brian Matthew Stegman, MD, FACC</td>
+                            <td >United States</td>
+                            <td class="text-right"><a " class="button small expanded secondary">Select &amp; Attach Letter</a></td>
                         </tr>
                         
                         <tr>
-                            <td data-bind="text: LongName">Andre Rodrigues De Mattos Paixao, MD, FACC</td>
-                            <td data-bind="text: address.country">United States</td>
-                            <td class="text-right"><a " class="button tiny expanded secondary">Select &amp; Attach Letter</a></td>
+                            <td >Andre Rodrigues De Mattos Paixao, MD, FACC</td>
+                            <td >United States</td>
+                            <td class="text-right"><a " class="button small expanded secondary">Select &amp; Attach Letter</a></td>
                         </tr>
-                        <!-- /ko -->
+                        
                     </tbody>
                 </table>
                         </div>
@@ -480,10 +521,10 @@ Two ACC member sponsor letters are required with your application.
                         </div>
                         <div class="row group-divide">
                             <div class="column text-right">
-                                <a class="button secondary" href="" onclick="BoardCertificationSlide(event)">
+                                <a class="button secondary" href="" onclick="SponsorAddSlide(event)">
                                     Cancel
                                 </a>
-                                <a class="button disabled" href="" onclick="BoardCertificationSave(event)">
+                                <a class="button disabled" href="" onclick="SponsorAddSave(event)">
                                    <i class="fa fa-holder"></i> Save
                                 </a>
                             </div>
@@ -494,7 +535,7 @@ Two ACC member sponsor letters are required with your application.
         </div>
     </div>
 </div>
-
+<page class="wrapper">
     <script>
         function SponsorAddSlide(e){
         e.preventDefault();
@@ -508,8 +549,11 @@ Two ACC member sponsor letters are required with your application.
         }
     </script>
 
-<div class="page-wrapper">
-    <div class="row content-padding" id="EducationData">
+<div class="page-wrapper " id="sponsorHolder" style="display:none;">
+    <div class="row column">
+        <h2 class="with-underline">Sponsors & Letters</h2>
+    </div>
+        <div class="row content-padding" id="EducationData">
         <div class="repeater">
             <div class="render">
                 <ul class="render-holder">
@@ -543,6 +587,140 @@ Two ACC member sponsor letters are required with your application.
             </div>
         </div>
     </div>
+</div>
+<div id="Affiliate-Society-Yes" class="page-wrapper" style="display:none;">
+<div class="row" id="SocietyMemberships">
+    <div class="column relative-position">
+        <h2 class="with-underline">
+            Society Memberships
+
+             
+                <div class="sub-line">
+                    At least one is requried.
+                </div>
+                
+        </h2>
+
+    </div>
+</div>
+
+ <div class="row content-padding" id="EducationData">
+    <div class="repeater">
+        <div class="render">
+            <ul class="render-holder">
+                <li class="strong">
+                   Society Membership Name
+                </li>
+
+            </ul>
+            <div class="render-actions">
+
+                <a class="delete" href="">
+                    <i class="fa fa-holder">
+                    </i>
+                    <span class="text">
+                        Delete
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+     <div class="row">
+        <div class="column">
+            <a class="button small radius expanded success" id="addSocietyMembershipButton" onclick="SocietyMembershipsSlide(event)">
+                <i class="fa fa-plus">
+                </i>
+                Add Society Membership
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="addSocietyMemberships" class="repeater-holder">
+    <div class="page paper-page repeater-area content-padding" style="display: none;">
+        <div class="colored-paper success">
+            <div class="content-padding row">
+                <h4 class="no-vertical-margin" style="position: relative;">
+                    <i class="fa fa-plus">
+                    </i>
+                    Add Society Membership
+                    <a class="close-button radius" href="" onclick='SocietyMembershipsSlide(event)'>
+                        <i class="fa fa-times">
+                        </i>
+                        Close
+                    </a>
+                </h4>
+            </div>
+        </div>
+        <div class="page-wrapper">
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <div class="question-group">
+  <div class="row">
+    <div class="question column small-12 required">
+	<div class="label-holder">
+		    <span class="text">
+                Society Name
+            </span>
+            <span class="required-holder">
+                <i class="fa fa-holder">
+                </i>
+            </span>
+	</div>
+	<div class="input-holder">
+		<div class="input-space column">
+			<input type="text" required>
+			<span class="input-lock">
+                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
+                </i>
+            </span>
+		</div>
+	</div>
+	<div class="message-holder">
+		<small class="error">Error Message</small>
+	</div>
+	<div class="hint"></div>
+</div>	
+    
+  </div>
+                        </div>
+                        <div class="row group-divide">
+                            <div class="column text-right">
+                                <a class="button secondary" href="" onclick="SocietyMembershipsSlide(event)">
+                                    Cancel
+                                </a>
+                                <a class="button" href="" onclick="SocietyMembershipsSave(event)">
+                                    Save
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page-wrapper">
+    
+<script>
+     function SocietyMembershipsSlide(e){
+        e.preventDefault();
+        ($('#addSocietyMembershipsButton').css("display") == "none"  )? $('html, body').animate({scrollTop: $("#SocietyMemberships").offset().top}, 500):$('html, body').animate({scrollTop: $("#addSocietyMemberships").offset().top}, 500);
+        $('#addSocietyMemberships .repeater-area,#addSocietyMembershipsButton').slideToggle();
+        }
+</script>
+
+
+<div id="societyHolder" style="display:none;">
+   
+    
+</div>
+</div>
+
+
+
               </div>
               
                                <div class="section-nav forward">
@@ -699,8 +877,8 @@ Two ACC member sponsor letters are required with your application.
 <script type="text/javascript" src="assets/js/pager.js"></script>
 
 <script type="text/javascript" src="assets/js/jquery.panzoom.js"></script>
-<script type="text/javascript" src="assets/js/app.js"></script>
-<script type="text/javascript" src="assets/js/appdata.js"></script>
+<!-- <script type="text/javascript" src="assets/js/app.js"></script>-->
+ <script type="text/javascript" src="assets/js/appdata.js"></script>
 <script type="text/javascript" src="assets/js/formdata.js"></script>
 <script type="text/javascript" src="assets/js/appviewmodel.js"></script>
 <script type="text/javascript" src="assets/js/query-string.js"></script>
@@ -715,6 +893,31 @@ Two ACC member sponsor letters are required with your application.
 </style>
 <script type="text/javascript" src="assets/js/daptChart.js"></script>
 <script>
+
+
+$(function() {
+	$(".selectable a.button").click(function(e){
+	e.preventDefault();
+	$(this).addClass('selected').siblings().removeClass('selected');
+
+
+});
+     $("#Affiliate-Society a").click(function(e){
+     	console.log("click");
+        if($(this).data( "answer" ) === "yes" ){
+            $("#Affiliate-Society-No,#sponsorHolder").slideUp();
+
+            $("#Affiliate-Society-Yes, #societyHolder").slideDown();
+        }
+        if($(this).data( "answer" ) === "no" ){
+            $("#Affiliate-Society-No,#sponsorHolder").slideDown();
+            $("#Affiliate-Society-Yes, #societyHolder").slideUp();
+        }
+
+    });
+});
+
+
 
 </script>
 <style>

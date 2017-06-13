@@ -1,0 +1,20 @@
+<div class="switch-input-space">
+    <div class="switch {{include.state}} {{include.shape}}">
+        <input class="switch-input" id="{{include.id}}" name="exampleSwitch" type="checkbox" {{include.state}} >
+            <label class="switch-paddle" for="{{include.id}}">
+                <span class="show-for-sr">
+                    {{include.label}}
+                </span>
+                <span aria-hidden="true" class="switch-active">
+                    <i class="fa fa-holder"></i>
+                </span>
+                <span aria-hidden="true" class="switch-inactive">
+                    <i class="fa fa-holder"></i>
+                </span>
+            </label>
+        </input>
+    </div>
+    <label class="switch-value" for="{{include.id}}">
+         {{include.label}}
+    </label>
+</div>

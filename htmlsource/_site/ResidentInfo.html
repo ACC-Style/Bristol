@@ -40,11 +40,29 @@
           <li><a class="link" href="index.html">Save &amp; Signout</a></li>
         </ul>
     </div>
+    <nav class="nav-list nav-checklist">
+     <ul>
+            <li >
+                <a href="personalinfo.html">
+                    <span class="text">
+                        Personal Information
+                    </span>
+                    <i class="fa fa-holder-dynamic">
+                    </i>
+                </a>
+            </li>
+            <li  class="disabled" >
+                <a href="personalinfo.html">
+                    <span class="text">
+                        Membership Selection
+                    </span>
+                    <i class="fa fa-holder-dynamic">
+                    </i>
+                </a>
+            </li>
+            </ul></nav>
 
-    <div class="content-padding section-padding text-center">
-      <h4 class="single-line-height">Is your Resident Information complete and up to date?</h4>
-      <a href="" class="disabled button"><i class="fa fa-holder"></i> Yes, Continue with Application</a>
-    </div>
+
 </aside>
         </aside>
         <article class="split-content">
@@ -615,8 +633,8 @@
 <script type="text/javascript" src="assets/js/pager.js"></script>
 
 <script type="text/javascript" src="assets/js/jquery.panzoom.js"></script>
-<script type="text/javascript" src="assets/js/app.js"></script>
-<script type="text/javascript" src="assets/js/appdata.js"></script>
+<!-- <script type="text/javascript" src="assets/js/app.js"></script>-->
+ <script type="text/javascript" src="assets/js/appdata.js"></script>
 <script type="text/javascript" src="assets/js/formdata.js"></script>
 <script type="text/javascript" src="assets/js/appviewmodel.js"></script>
 <script type="text/javascript" src="assets/js/query-string.js"></script>
@@ -631,6 +649,31 @@
 </style>
 <script type="text/javascript" src="assets/js/daptChart.js"></script>
 <script>
+
+
+$(function() {
+	$(".selectable a.button").click(function(e){
+	e.preventDefault();
+	$(this).addClass('selected').siblings().removeClass('selected');
+
+
+});
+     $("#Affiliate-Society a").click(function(e){
+     	console.log("click");
+        if($(this).data( "answer" ) === "yes" ){
+            $("#Affiliate-Society-No,#sponsorHolder").slideUp();
+
+            $("#Affiliate-Society-Yes, #societyHolder").slideDown();
+        }
+        if($(this).data( "answer" ) === "no" ){
+            $("#Affiliate-Society-No,#sponsorHolder").slideDown();
+            $("#Affiliate-Society-Yes, #societyHolder").slideUp();
+        }
+
+    });
+});
+
+
 
 </script>
 <style>
