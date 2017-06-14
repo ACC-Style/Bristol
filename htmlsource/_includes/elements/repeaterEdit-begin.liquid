@@ -1,0 +1,32 @@
+{% comment %}<div class="row">
+        <div class="column">
+            <a class="button small radius expanded warning" id="add{{ include.title | remove: " " }}Button" onclick="{{ include.title | remove: " " }}Slide(event)">
+                <i class="fa fa-plus">
+                </i>
+                Add {{ include.title }}
+            </a>
+        </div>
+    </div>
+{% endcomment %}
+</div>
+<div id="add{{include.title  | remove: ' '}}" class="repeater-holder">
+    <div class="page paper-page repeater-area edit content-padding" >
+        <div class="colored-paper warning">
+            <div class="content-padding row">
+                <h4 class="no-vertical-margin" style="position: relative; color:white;">
+                    <i class="fa fa-pencil">
+                    </i>
+                    Edit {{include.title}}
+                    <a class="close-button radius" href="" onclick='{{include.title  | remove: " " }}Slide(event)'>
+                        <i class="fa fa-times">
+                        </i>
+                        Close
+                    </a>
+                </h4>
+            </div>
+        </div>
+        <div class="page-wrapper">
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <div class="question-group">

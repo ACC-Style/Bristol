@@ -6,9 +6,21 @@ id: personal
 ---
 
 {% include sections/personal-name.liquid %}
-{% include sections/personal-address.liquid %}
-{% include sections/personal-address-add.liquid %}   
-{% comment %}{% include sections/personal-address-edit.liquid %}   {% endcomment %}
+{% comment %}{% include sections/personal-address.liquid %}
+{% include sections/personal-address-add.liquid %}   {% endcomment %}
+<div class="row">
+    <div class="column">
+        <h2 id="Address">
+            Address(es)
+            <div class="sub-line">
+                <b>
+                    At least one personal address is required.
+                </b>
+            </div>
+        </h2>
+    </div>
+</div>
+{% include sections/personal-address-edit.liquid %}   
 {% include sections/personal-phone.liquid %}
 {% include sections/personal-phone-add.liquid %}
 {% include sections/personal-email.liquid %}

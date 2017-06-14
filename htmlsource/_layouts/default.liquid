@@ -1,53 +1,69 @@
-<!doctype html>
+<!DOCTYPE doctype html>
 <html class="no-js" lang="en">
-<head>
-  <title>{{ page.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/styledown.css">
-  <link rel="stylesheet" href="assets/css/normalize.min.css">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,600,400,300|Roboto+Slab:400,700|Raleway:300">
-  <link rel="stylesheet" href="assets/css/jquery-ui.css">
-  <link rel="stylesheet" href="assets/css/jquery-uistructure.css">
-  <link rel="stylesheet" href="assets/css/foundation-sites.css">
-   <link rel="stylesheet" href="assets/css/font-awesome.css">
-  <link rel="stylesheet" href="assets/css/index.css" id="theme">
-
-</head>
+    <head>
+        <title>
+            {{ page.title }}
+        </title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+            <link href="assets/css/styledown.css" rel="stylesheet">
+                <link href="assets/css/normalize.min.css" rel="stylesheet">
+                    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,600,400,300|Roboto+Slab:400,700|Raleway:300" rel="stylesheet">
+                        <link href="assets/css/jquery-ui.css" rel="stylesheet">
+                            <link href="assets/css/jquery-uistructure.css" rel="stylesheet">
+                                <link href="assets/css/foundation-sites.css" rel="stylesheet">
+                                    <link href="assets/css/font-awesome.css" rel="stylesheet">
+                                        <link href="assets/css/index.css" id="theme" rel="stylesheet">
+                                        </link>
+                                    </link>
+                                </link>
+                            </link>
+                        </link>
+                    </link>
+                </link>
+            </link>
+        </meta>
+    </head>
     <body>
-    <div class="mobile-offcanvas-wrapper">
-      <section class="split-layout fill-page-height medium navOn">
-        <aside class="sidebar">
-            {% include sections/sidebar-default.liquid %}
-        </aside>
-        <article class="split-content">
-              <div class="page" style="padding-bottom: 4em;">
-                              {% if page.id != "personal" %}
-                                
-                               <div class="section-nav back ">
-    <a>
-      <div class="circle">
-        <i class="fa fa-holder"></i>
-      </div>
-      <div class="text">Back to {Previous Page Name}</div>
-    </a>
-  </div>
-                              {% endif %}
-             <div class="page-wrapper">
-                {{content}}
-             </div> 
-                                             <div class="section-nav forward">
-    <a>
-      <div class="circle">
-        <i class="fa fa-holder"></i>
-      </div>
-      <div class="text">Forward to {Next Page Name}</div>
-    </a>
-  </div>
-        </article>
-      </section>
-    </div>
-    {% include footer.html %}
+        <div class="mobile-offcanvas-wrapper">
+            <section class="split-layout fill-page-height medium navOn">
+                <aside class="sidebar">
+                    {% include sections/sidebar-default.liquid %}
+                </aside>
+                <article class="split-content">
+                    <div class="page" style="padding-bottom: 4em;">
+                        {% if page.id != "personal" %}
+                        <div class="section-nav back ">
+                            <a>
+                                <div class="circle">
+                                    <i class="fa fa-holder">
+                                    </i>
+                                </div>
+                                <div class="text">
+                                    Back to {Previous Page Name}
+                                </div>
+                            </a>
+                        </div>
+                        {% endif %}
+                        <div class="page-wrapper">
+                            {{content}}
+                        </div>
+                        <div class="section-nav forward">
+                            <a>
+                                <div class="circle">
+                                    <i class="fa fa-holder">
+                                    </i>
+                                </div>
+                                <div class="text">
+                                    Forward to {Next Page Name}
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>
+        {% include footer.html %}
     {% include scripts.html %}
-
+       
     </body>
 </html>

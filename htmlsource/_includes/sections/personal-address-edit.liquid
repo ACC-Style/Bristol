@@ -1,0 +1,111 @@
+{% include elements/repeaterEdit-begin.liquid title="Address" %}
+
+{% comment %} end of front{% endcomment %}
+<div class="row">
+    <div class="question column medium-8 large-6 ">
+        <div class="label-holder">
+            <label>
+                <span class="text">
+                    Address Type
+                </span>
+                <span class="required-holder">
+                    <i class="fa fa-holder-dynamic">
+                    </i>
+                </span>
+            </label>
+        </div>
+        <div class="input-holder">
+            <select id="addresstype" name="">
+                <option value="">Work</option>
+                
+            </select>
+        </div>
+        <div class="message-holder">
+            <div class="message-holder">
+                <small class="" >
+                    <i class="fa fa-holder">
+                    </i>
+                    <!-- ko text: countrycode.validationMessage -->
+                    <!-- /ko -->
+                </small>
+            </div>
+        </div>
+    </div>
+    <div class="question column medium-8 large-6 ">
+        <div class="label-holder">
+            <label>
+                <span class="text">
+                    Country
+                </span>
+                <span class="required-holder">
+                    <i class="fa fa-holder-dynamic">
+                    </i>
+                </span>
+            </label>
+        </div>
+        <div class="input-holder">
+            <select id="" name="">
+                <option value="">India
+                </option>
+            </select>
+        </div>
+        <div class="message-holder">
+            <div class="message-holder">
+                <small class="" data-bind="css:{ error: countrycode.hasError, warning: countrycode.hasWarning }">
+                    <i class="fa fa-holder">
+                    </i>
+                    <!-- ko text: countrycode.validationMessage -->
+                    <!-- /ko -->
+                </small>
+            </div>
+        </div>
+        <div class="hnt">
+        </div>
+    </div>
+</div>
+<div class="row" id="institution">
+    {% include snippets/question-text.liquid label="Institution Name" value="Elephant Medical" size="small-12" state="required" hint="" %}
+    
+</div>
+
+<div class="row">
+    {% include snippets/question-text.liquid label="Street Address 1" size="small-12" state="required" hint="" value="No. 223/224 Old No. Plot B TTK Roak" %}
+    
+</div>
+<div class="row">
+     {% include snippets/question-text.liquid label="Street Address 2" size="small-12 large-6" state="" hint="" %}
+      {% include snippets/question-text.liquid label="Street Address 3" size="small-12 large-6" state="" hint="" %}
+</div>
+<div class="row">
+{% include snippets/question-text.liquid label="City" size="small-12 large-4" value="Chennai" state="required" hint="" %}
+{% include snippets/question-text.liquid label="State" size="small-12 large-4" value="Tamilnadu" state="required" hint="" %}
+{% include snippets/question-text.liquid label="Zip/Postal Code" size="small-12 large-4" value="Tamilnadu" state="required" hint="" %}
+</div>
+<div class="row">
+    <div class="question column">
+        <div class="switch-input-space">
+            <div class="switch tiny checkbox">
+                <input class="switch-input" id="checkbox-checkbox" type="checkbox" value="false">
+                    <label class="switch-paddle" for="checkbox-checkbox">
+                        <span class="show-for-sr">
+                            Do you like me?
+                        </span>
+                        <span aria-hidden="true" class="switch-active">
+                            <i class="fa fa-holder">
+                            </i>
+                        </span>
+                        <span aria-hidden="true" class="switch-inactive">
+                            <i class="fa fa-holder">
+                            </i>
+                        </span>
+                    </label>
+                </input>
+            </div>
+            <label class="switch-value" for="checkbox-checkbox">
+                Mark as prefered
+            </label>
+        </div>
+    </div>
+</div>
+{% comment %} beginning of close{% endcomment %}   
+{% include  elements/repeaterAdd-end.liquid  title="Address"%}

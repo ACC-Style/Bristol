@@ -1,0 +1,68 @@
+<div class="card membership-table no-padding">
+            <div class="colored-paper membership-table_title no-margin">
+                {{ include.title }}
+            </div>
+            <div class="colored-paper no-margin disabled membership-table_price">
+                <div class="price-holder">
+                    <div class="price">
+                        <sup>
+                            $
+                        </sup>
+                        <span data-bind="text: ProductPrice">
+                            {{include.price}}
+                        </span>
+                        <small data-bind="text:'('+CurrencyCode+')'">
+                            (USD)
+                        </small>
+                    </div>
+                    <div class="price-alt">
+                        + Non-refundable application fee
+                        <sup>
+                            $
+                        </sup>
+                        <span data-bind="text: ApplicationFee">
+                            25
+                        </span>
+                        <small data-bind="text:'('+CurrencyCode+')'">
+                            (USD)
+                        </small>
+                    </div>
+                </div>
+            </div>
+            {% if include.state=="selected" %}
+            <div class="colored-paper success text-center no-margin">
+                <h6>Previous Selected Membership</h6>
+            </div>
+                
+            {% endif %}
+            <div class="membership-table_description" data-bind="html: Description">
+                If you are practicing as a Nurse, PA, PharmD, Genetic Counselor, Cardiac Rehab Specialist or CV Technologist you are on the front lines of care, and ACC's resources can help provide you support in your daily practice.  CV Team membership can grant you access to these resources and together we can improve heart health.
+            </div>
+            <div class="membership-table_listitem" data-bind="html: Benefits">
+                Gain an advocate for your interests and full access to ACC’s resources and benefits including the latest news, JACC journals, guidelines, education, quality and networking opportunities.
+            </div>
+            <div class="membership-table_listitem section-padding" data-bind="html: Requirements">
+                <h4>
+                    To Apply You Need
+                </h4>
+                <ul>
+                    <li>
+                        A Current FACC, AACC or Cardiovascular Team Member Sponsor
+                    </li>
+                    <li>
+                        A Copy of Your Current Practicing License or Applicable Certification
+                    </li>
+                    <li>
+                        To Meet Application Requirements By Professional Type
+                    </li>
+                </ul>
+                <a class="link" href="/Assets/docs/CVTeamApplicationInformation.pdf" target="_blank">
+                    View full requirements here
+                </a>
+            </div>
+            <div class="colored-paper info no-margin">
+                <a class="small button expanded radius" type="submit" href="educationTraining.html">
+                    Select
+                </a>
+            </div>
+        </div>
