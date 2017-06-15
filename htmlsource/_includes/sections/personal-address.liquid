@@ -20,10 +20,10 @@
             <!-- ko foreach: addressinfo() -->
             <div class="render animated fadeIn">
                 <ul class="render-holder">
-                    <li class="has-tip starred primary" data-bind="visible: isprimary" title="Primary Address">
+                    <li class="has-tip starred primary" data-bind="visible: isprimary" title="Preferred Address">
                         <i class="fa fa-star">
                         </i>
-                        Primary Address
+                        Preferred Address
                     </li>
                     <li class="has-tip locked" data-bind="visible: isprimary" title="Locked: Primary Address - Please use edit to change">
                         <i class="fa fa-lock" title="Marked as Primary">
@@ -68,7 +68,7 @@
                         <i class="fa fa-star">
                         </i>
                         <span class="text">
-                            mark as preferred
+                            mark as Preferred
                         </span>
                     </a>
                     <a class="delete disabled" data-bind="visible: (!isprimary() && !preferredmailing() ),click: function() { $root.deleteCustomSection('address','addressinfo', $data) }" href="javascript:void(0)">
