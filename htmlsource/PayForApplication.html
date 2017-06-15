@@ -1,0 +1,378 @@
+---
+layout: FACC
+title: Pay For Application
+id: submit
+---
+{%  include snippets/page-top.liquid title="Pay For Application" level="h1" style="with-underline" message=""%}
+<div class="row">
+    <div class="callout disabled text-center card">
+    <div class="colored-paper disabled">
+        <h3 class="single-line-height">
+        Finish and submit your application for review Quickly, Securely, and Easily through our Ebiz credit card payment.
+    </h3>
+    </div>
+    <div class="row section-padding">
+        <button class="button large" id="btnPayByCard"  type="button">
+           Pay by credit card <i class="fa fa-cc-visa">
+            </i>
+            <i class="fa fa-cc-mastercard">
+            </i>
+            <i class="fa fa-cc-amex">
+            </i>
+        </button>
+    <h4>
+        or
+    </h4>
+    <button class="no-button small"id="btnPayByCheck"  type="link" value="">&dagger;  pay by check</button>
+    </div>
+     <div class="colored-paper disabled">  <h6>&dagger; If you pay by check your application will not be reviewed till we recieve payment.</h6></div>
+    
+</div>
+</div>
+<div class="row">
+    <div class="column large-7  medium-6">
+        <h3>
+            Promo or Discout Code
+        </h3>
+        <div class="row">
+            <div class="question column">
+                <div class="input-holder row collapse">
+                    <div class="input-space column small-8">
+                        <input type="text" value="Graduation20">
+                        </input>
+                    </div>
+                    <div class="input-space column small-4">
+                        <a class="button alert expanded" href="">
+                            <i class="fa fa-times">
+                            </i>
+                            Remove Code
+                        </a>
+                    </div>
+                </div>
+                <div class="message-holder">
+                    <small class="error">
+                        Error Message
+                    </small>
+                </div>
+                <div class="hint">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="question column">
+                <div class="input-holder row collapse">
+                    <div class="input-space column small-8">
+                        <input type="text">
+                        </input>
+                    </div>
+                    <div class="input-space column small-4">
+                        <a class="button expanded" href="">
+                            Apply Code
+                        </a>
+                    </div>
+                </div>
+                <div class="message-holder">
+                    <small class="error">
+                        Error Message
+                    </small>
+                </div>
+                <div class="hint">
+                </div>
+            </div>
+        </div>
+        <h3>
+            Credit Card Information
+        </h3>
+        <div class="question required" data-bind="css: { error: cardtype.hasError, required: cardtype.isRequired}">
+            <div class="label-holder">
+                <label for="">
+                    <span class="text">
+                        Card Type
+                    </span>
+                    <span class="required-holder">
+                        <i class="fa fa-holder-dynamic">
+                        </i>
+                    </span>
+                </label>
+            </div>
+            <div class="input-holder">
+                {% include snippets/switch.liquid state="" shape="radio tiny" id="visa" size="column small-6" label="
+                <i class='fa fa-cc-visa'>
+                </i>
+                Visa"  %}
+                    {% include snippets/switch.liquid state="" shape="radio tiny" id="master" size="column small-6" label="
+                <i class='fa fa-cc-mastercard'>
+                </i>
+                Master Card"  %}
+                    {% include snippets/switch.liquid state="" shape="radio tiny" id="amex" size="column small-6" label="
+                <i class='fa fa-cc-amex'>
+                </i>
+                American Express"  %}
+                    {% include snippets/switch.liquid state="" shape="radio tiny" id="discover" size="column small-6" label="
+                <i class='fa fa-cc-discover'>
+                </i>
+                Discover"  %}
+            </div>
+            <div class="message-holder">
+                <small class="" data-bind="css:{ error: cardtype.hasError }">
+                    <i class="fa fa-holder">
+                    </i>
+                    <!-- ko text: cardtype.validationMessage -->
+                    <!-- /ko -->
+                </small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="question required" data-bind="css: { error: cardnumber.hasError, required: cardnumber.isRequired}">
+                <div class="label-holder">
+                    <label for="">
+                        <span class="text">
+                            Card Number
+                        </span>
+                        <span class="required-holder">
+                            <i class="fa fa-holder-dynamic">
+                            </i>
+                        </span>
+                    </label>
+                </div>
+                <div class="input-holder">
+                    <div class="input-space">
+                        <input data-bind="value:cardnumber" name="cardnumber" style='background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII="); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;' type="text"/>
+                    </div>
+                </div>
+                <div class="message-holder">
+                    <small class="" data-bind="css:{ error: cardnumber.hasError }">
+                        <i class="fa fa-holder">
+                        </i>
+                        <!-- ko text: cardnumber.validationMessage -->
+                        <!-- /ko -->
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row">
+                <div class="question column small-6 medium-8 large-9 required" data-bind="css: { error: expirationmonth.hasError || expirationyear.hasError, required: expirationmonth.isRequired || expirationyear.isRequired }">
+                    <div class="label-holder">
+                        <label for="">
+                            <span class="text">
+                                Expiration Date
+                            </span>
+                            <span class="required-holder">
+                                <i class="fa fa-holder-dynamic">
+                                </i>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="input-holder">
+                        <div class="input-space column small-4 large-6">
+                            <select data-bind="options:montharr, optionsCaption: 'Choose...',value:expirationmonth" id="" name="expirationmonth">
+                                <option value="">
+                                    Choose...
+                                </option>
+                                <option value="01">
+                                    01
+                                </option>
+                                <option value="02">
+                                    02
+                                </option>
+                                <option value="03">
+                                    03
+                                </option>
+                                <option value="04">
+                                    04
+                                </option>
+                                <option value="05">
+                                    05
+                                </option>
+                                <option value="06">
+                                    06
+                                </option>
+                                <option value="07">
+                                    07
+                                </option>
+                                <option value="08">
+                                    08
+                                </option>
+                                <option value="09">
+                                    09
+                                </option>
+                                <option value="10">
+                                    10
+                                </option>
+                                <option value="11">
+                                    11
+                                </option>
+                                <option value="12">
+                                    12
+                                </option>
+                            </select>
+                            <div class="hint">
+                                Month
+                            </div>
+                        </div>
+                        <div class="input-space column small-8 large-6">
+                            <select data-bind="options:yeararr, optionsCaption: 'Choose...',value:expirationyear" id="" name="expirationyear">
+                                <option value="">
+                                    Choose...
+                                </option>
+                                <option value="2017">
+                                    2017
+                                </option>
+                                <option value="2018">
+                                    2018
+                                </option>
+                                <option value="2019">
+                                    2019
+                                </option>
+                                <option value="2020">
+                                    2020
+                                </option>
+                                <option value="2021">
+                                    2021
+                                </option>
+                                <option value="2022">
+                                    2022
+                                </option>
+                                <option value="2023">
+                                    2023
+                                </option>
+                                <option value="2024">
+                                    2024
+                                </option>
+                                <option value="2025">
+                                    2025
+                                </option>
+                                <option value="2026">
+                                    2026
+                                </option>
+                            </select>
+                            <div class="hint">
+                                Year
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message-holder">
+                        <small class="" data-bind="css:{ error: expirationmonth.hasError || expirationyear.hasError }">
+                            <!--ko if: expirationmonth.hasError-->
+                            <!--/ko-->
+                            <!--ko if: expirationyear.hasError-->
+                            <!--/ko-->
+                        </small>
+                    </div>
+                </div>
+                <div class="question column small-6 medium-4 large-3 required" data-bind="css: { error: securitycode.hasError, required: securitycode.isRequired}">
+                    <div class="label-holder">
+                        <label for="">
+                            <span class="text">
+                                Security Code
+                            </span>
+                            <span class="required-holder">
+                                <i class="fa fa-holder-dynamic">
+                                </i>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="input-holder">
+                        <div class="input-space">
+                            <input data-bind="value:securitycode" name="securitycode" type="text"/>
+                        </div>
+                        <div class="hint">
+                            <span aria-describedby="tooltip-j3xbfnw70" aria-haspopup="true" class="has-tip" data-disable-hover="false" data-selector="tooltip-j3xbfnw70" data-tooltip="" tabindex="1" title="">
+                                what is a security code?
+                            </span>
+                        </div>
+                    </div>
+                    <div class="message-holder">
+                        <small class="" data-bind="css:{ error: securitycode.hasError }">
+                            <i class="fa fa-holder">
+                            </i>
+                            <!-- ko text: securitycode.validationMessage -->
+                            <!-- /ko -->
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column large-5  medium-6">
+        <h2 class="with-underline">
+            Payment Summary
+        </h2>
+        <table class="table banded">
+            <tbody>
+                <tr>
+                    <td class="">
+                        Application Fee
+                    </td>
+                    <td class="">
+                        150.00 USD
+                    </td>
+                </tr>
+                <tr>
+                    <td class="">
+                        Membership Dues
+                    </td>
+                    <td class="">
+                        785.00 USD
+                    </td>
+                </tr>
+                <tr class="">
+                    <td class="">
+                        <h6 class="success">20% Off Dues</strong>
+                    </td>
+                    <td class="">
+                       <h6 class="success">157.00</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="">
+                        Total
+                    </td>
+                    <td class="">
+                        778.00 USD
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row group-divide">
+    <div class="column large-6 medium-8">
+        <div class="row">
+            <div class="question">
+            <div class="label-holder">
+                <label for="">
+                    <span class="text">
+                        Total Amount Due
+                    </span>
+                    <span class="required-holder">
+                        <i class="fa fa-holder-dynamic">
+                        </i>
+                    </span>
+                </label>
+            </div>
+            <div class="input-holder">
+                <div class="input-space">
+                    <input data-bind="value:amountdue" name="amountdue" readonly="true" type="text" value="$778.00 USD"/>
+                </div>
+            </div>
+            <div class="message-holder">
+                <small class="error">
+                    <i class="fa fa-holder">
+                    </i>
+                </small>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div>
+        <input data-bind="value:ordernumber" name="ordernumber" type="hidden" value="9011659115">
+        </input>
+    </div>
+   
+</div> 
+<div class="row"><div class="column large-3 medium-3">
+        <a href="" class="button expanded large">PAY Now</a>
+    </div></div>
+<style>#forwardNav{display:none;}</style>
