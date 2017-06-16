@@ -3,14 +3,39 @@ layout: CVT
 title: Professional Verification
 id: prov
 ---
-{%  include snippets/page-top.liquid title="Professional Verification" level="h1" style="with-underline" message="Please select and upload one of the following" %}
+{%  include snippets/page-top.liquid title="Professional Verification" level="h1" style="with-underline" message="" %}
+<div class="row">
+    <div class="column">
+        <h2>Do you spend the majority of your time in cardiovascular medicine?<sup><i class="fa fa-asterisk" style="color:orange;"></i></sup></h2>
+        
+    </div>
+    
+</div>
+<div class="row">
+    <div class="column large-4 medium-6 small-8 section-padding content-padding">
+        <div class="button-group expanded selectable">
+            <a href="" class="button"><i class="fa fa-holder"></i><span class="text">Yes</span></a>
+            <a href="" class="button"><i class="fa fa-holder"></i><span class="text">No</span></a>
+        </div>
+    </div>
+</div>
+<h2>Please select and upload one of the following<sup><i class="fa fa-asterisk" style="color:orange;"></i></sup></h2>
 <div class="row">
 	<div class="column">
-{% include snippets/switch-radio.liquid label="A copy of your current practicing license" id="license" shape="small radio fileType"  size="small-12" state="" hint="" %}
+			<div class="question columnrequired">
+				<div class="input-holder">
+					{% include snippets/switch-radio.liquid label="A copy of your current practicing license" id="license" shape="small radio fileType"  size="small-12" state="" hint="" %}
 {% include snippets/switch-radio.liquid label="Sponsorship Letter from an ACC member" id="sponsor" shape="small radio fileType"  size="small-12" state="" hint="" %}
 {% include snippets/switch-radio.liquid label="Employment verification letter" id="employment" shape="small radio fileType"  size="small-12" state="" hint="" %}
 	<a href="" class="button disabled fileTypeUpload"><i class="fa fa-file"></i> Attach Above Document Type</a>
 	</div>
+				</div>
+				<div class="message-holder">
+					<small class="error">Error Message</small>
+				</div>
+				<div class="hint"></div>
+			</div>	
+
 </div>
 
 
