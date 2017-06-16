@@ -71,8 +71,25 @@ select {
   margin: 0
 }
 
-.render ul li {
-  padding: .25em 1em;
+.render ul  {
+  padding-top:.5rem;
+  padding-bottom:.4rem;
+  li{
+    padding: 0 1rem;
+    font-size:ms(-1);
+    line-height: ms(0);}
+  .strong{
+    @include font-slab-bold();
+    font-size:ms(2);
+    line-height: ms(4);
+    color:$acc-blue;
+  }
+  .loud{
+  }
+  li.has-tip{margin-bottom:.5rem;}
+  li.has-tip:first-child,li.has-tip+li.has-tip{
+    margin-top: -.5rem;
+  }
 }
 
 .render-actions a {
@@ -117,6 +134,7 @@ select {
     background-color: $primary-color;
     color: white;
   }
+  .has-tip{padding: .25em 1em;}
   .has-tip.locked {
     background-color: grey(20);
     color: grey(60);
@@ -137,7 +155,8 @@ select {
 .render {
 	display:flex;
   .render-holder {
-	display:block;flex:2 1 75%;
+	display:block;
+  flex:2 1 75%;
   }
   .render-actions {
   	display:flex;
@@ -221,9 +240,13 @@ div.reveal{
      top: -6px;
   }
 }
-.nav-list.nav-checklist li.error.selected, .nav-checklist.panel-selector li.error.selected{
-&, a{
-  color: #fff !important;
-  }
+.nav-list.nav-checklist{
+  li{ padding: .3em 1em .35em;}
+  li.error.selected, .nav-checklist.panel-selector li.error.selected{
+    &, a{
+      color: #fff !important;
+      }
+    }
 }
-
+#OMA_Sidebar{ background-color:grey(8);}
+.render .render-actions a + a{margin-top:0}

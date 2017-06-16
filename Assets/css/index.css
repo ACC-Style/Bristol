@@ -6073,49 +6073,56 @@ ul.toggle.minimized .selected {
 }
 
 .user-id-block {
-  margin: 2px;
+  margin: 5px 7px 8px;
   border: 1px solid #e6e6e6;
-  padding-top: .5rem;
-  padding-bottom: .75rem;
+  padding-top: .15rem;
+  padding-bottom: .25rem;
   position: relative;
   background-color: #fff;
 }
 .user-id-block .user-pic {
+  width: 40px;
   float: left;
-  -webkit-clip-path: circle(40px at center);
-  -webkit-moz-path: circle(40px, 40px, 40px);
-  clip-path: circle(40px, 40px, 40px);
+  -webkit-clip-path: circle(20px at center);
+  -webkit-moz-path: circle(20px, 20px, 20px);
+  clip-path: circle(20px, 20px, 20px);
 }
 .user-id-block .user-pic {
-  margin: .5rem 5px .5rem 5px;
+  margin: .5rem 5px .5rem .75rem;
 }
 .user-id-block .user-info {
-  margin: .5rem .5rem .5rem -100px;
-  padding-left: 105px;
+  margin: .5rem 1rem .5rem -100px;
+  padding-left: 82px;
   float: right;
   display: block;
   box-sizing: border-box;
   width: 100%;
+  font-size: 16px;
 }
 .user-id-block .user-info .user-name,
 .user-id-block .user-info .user-designation,
 .user-id-block .user-info .user-profession,
 .user-id-block .user-info .user-application {
-  line-height: 1.25rem;
+  line-height: 1.25;
 }
 .user-id-block .user-info .user-name {
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
   font-weight: 400;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 20px;
   color: #333333;
-  line-height: 2rem;
+}
+.user-id-block .user-info .user-application {
+  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #198dae;
 }
 .user-id-block .user-info .user-application-switch {
   font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
-  font-size: .75rem;
-  line-height: 1.25rem;
+  font-size: 10px;
+  line-height: 1.25;
 }
 @media only screen and (max-width: 1024px) {
   .user-id-block .user-pic, .user-id-block .user-info {
@@ -12253,8 +12260,27 @@ select {
   margin: 0;
 }
 
+.render ul {
+  padding-top: .5rem;
+  padding-bottom: .4rem;
+}
 .render ul li {
-  padding: .25em 1em;
+  padding: 0 1rem;
+  font-size: 14px;
+  line-height: 16px;
+}
+.render ul .strong {
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  color: #00386b;
+}
+.render ul li.has-tip {
+  margin-bottom: .5rem;
+}
+.render ul li.has-tip:first-child, .render ul li.has-tip + li.has-tip {
+  margin-top: -.5rem;
 }
 
 .render-actions a {
@@ -12295,6 +12321,9 @@ select {
   display: block;
   background-color: #198dae;
   color: white;
+}
+.render .has-tip {
+  padding: .25em 1em;
 }
 .render .has-tip.locked {
   background-color: #cccccc;
@@ -12415,8 +12444,19 @@ div.reveal .close-button {
   top: -6px;
 }
 
-.nav-list.nav-checklist li.error.selected, .nav-checklist.panel-selector li.error.selected, .nav-list.nav-checklist li.error.selected a, .nav-checklist.panel-selector li.error.selected a, .nav-checklist.panel-selector li.error.selected, .nav-checklist.panel-selector li.error.selected a {
+.nav-list.nav-checklist li, .nav-checklist.panel-selector li {
+  padding: .3em 1em .35em;
+}
+.nav-list.nav-checklist li.error.selected, .nav-checklist.panel-selector li.error.selected, .nav-list.nav-checklist li.error.selected a, .nav-checklist.panel-selector li.error.selected a, .nav-list.nav-checklist .nav-checklist.panel-selector li.error.selected, .nav-checklist.panel-selector .nav-checklist.panel-selector li.error.selected, .nav-list.nav-checklist .nav-checklist.panel-selector li.error.selected a, .nav-checklist.panel-selector .nav-checklist.panel-selector li.error.selected a {
   color: #fff !important;
+}
+
+#OMA_Sidebar {
+  background-color: #ebebeb;
+}
+
+.render .render-actions a + a {
+  margin-top: 0;
 }
 
 .row {

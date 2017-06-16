@@ -37,12 +37,12 @@
                     <span class="userDesignation">, DM, MD</span>
                 </span> 
             </li>
-            
-      <li class="">FACC Domestic</li>
-      
-      <li><a class="link" href="index.html">Save &amp; Signout</a></li>
-        </ul>
-    </div>
+       
+      <li class="user-application">Fellow of ACC <small><a href="" class="user-application-switch">Change Application</a></small></li>
+          
+      <li><a class="button hollow tiny expanded" href="index.html">Save &amp; Signout</a></li>  
+    </ul>
+</div>
 
      <nav class="nav-list nav-checklist">
         <ul>
@@ -162,7 +162,7 @@
         </div>
     </div>
     <div class="row">
-       <div class="question column small-4 medium-3 large-2 disabled">
+       <div class="question column small-4 medium-3 large-2 required">
 	<div class="label-holder">
 		    <span class="text">
                 Prefix
@@ -174,7 +174,7 @@
 	</div>
 	<div class="input-holder">
 		<div class="input-space column">
-			<select name="" id="" disabled>
+			<select name="" id="" required>
 				<option value="">..Choose</option>
 			</select>
 			<span class="input-lock">
@@ -439,10 +439,9 @@
                     <!--ko if: 'home' == 'work' -->
                     <!--/ko-->
                     <!--ko ifnot: 'home' == 'work' -->
-                    <li class="loud" data-bind="text: type">
-                        <span class="strong">
+                    <li class="strong" data-bind="text: type">
                             Work
-                        </span>
+                       
                     </li>
                     <li class="loud" data-bind="text: address1">
                         No. 223/224 Old No. Plot B TTK Roak
@@ -505,10 +504,10 @@
             </h4>
         </div>
         <ul class="render-holder">
-            <li class="loud" data-bind="text: type">
-                <span class="strong">
+            <li class="strong" >
+               
                     Home
-                </span>
+              
             </li>
             <li class="loud" data-bind="text: address1">
                 No. 223/224 Old No. Plot B TTK Roak
@@ -1557,7 +1556,7 @@
 	<div class="question column small-12 large-4 required">
 	<div class="label-holder">
 		    <span class="text">
-                Sex
+                Gender
             </span>
             <span class="required-holder">
                 <i class="fa fa-holder">
@@ -1583,21 +1582,22 @@
 	<div class="question column small-12 large-4 required">
 	<div class="label-holder">
 		    <span class="text">
-                Age
+                Date of Birth
             </span>
             <span class="required-holder">
                 <i class="fa fa-holder">
                 </i>
             </span>
 	</div>
-	<div class="input-holder">
-		<div class="input-space column">
-			<input type="text" required value="" >
+	<div class="input-holder row collapse">
+		<div class="input-space column small-10 date-input-holder">
+			<input type="date" required  placeholder="DD/MM/YYYY">
 			<span class="input-lock">
                 <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
                 </i>
             </span>
 		</div>
+		<div class="column small-2 input-space end date-picker-holder"><a href="" class="button hollow expanded"><i class="fa fa-calendar"></i></a></div>
 	</div>
 	<div class="message-holder">
 		<small class="error">Error Message</small>
@@ -1607,7 +1607,7 @@
 	<div class="question column small-12 large-4 required">
 	<div class="label-holder">
 		    <span class="text">
-                Race
+                Race/Ethnicity
             </span>
             <span class="required-holder">
                 <i class="fa fa-holder">

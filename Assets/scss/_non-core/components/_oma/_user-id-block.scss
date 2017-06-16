@@ -30,45 +30,53 @@
 
 
 .user-id-block{
-	margin: 2px;
+	margin: 5px 7px 8px;
 	border:1px solid grey(10);
-	padding-top:.5rem;
-	padding-bottom: .75rem;
+	padding-top:.15rem;
+	padding-bottom: .25rem;
 	position: relative;
 	background-color:#fff;
 	.user-pic{
-			float:left; 
--webkit-clip-path:circle(40px at center);
--webkit-moz-path:circle(40px,40px,40px);
-clip-path:circle(40px,40px,40px);
+		width:40px;
+		float:left; 
+		-webkit-clip-path:circle(20px at center);
+		-webkit-moz-path:circle(20px,20px,20px);
+		clip-path:circle(20px,20px,20px);
 
 }
-	.user-pic{margin: .5rem 5px .5rem 5px;}
+	.user-pic{margin: .5rem 5px .5rem .75rem;}
 	.user-info{
-		margin:.5rem .5rem .5rem -100px;
-		padding-left:105px;
+		margin:.5rem 1rem .5rem -100px;
+		padding-left:82px;
 		float:right;
 		display: block;
 		box-sizing:border-box;
 		width: 100%;
+		font-size:ms(0);
 
 		.user-name,
 		.user-designation,
 		.user-profession,
 		.user-application{
-			line-height: 1.25rem;
+			line-height: 1.25;
 		}
 		.user-name{
 			@include font-slab();
 			font-weight: 700;
-			font-size: 1.5rem;
+			font-size: ms(2);
 			color:fontcolor($black,'loud');
-			line-height: 2rem;
+		
 		}
+		.user-application{
+			@include font-bold();
+			font-size:ms(0);
+			color: $primary-color;
+		}
+
 		.user-application-switch{
 			@include font-light();
-			font-size: .75rem;
-			line-height: 1.25rem;
+			font-size: ms(-4);
+			line-height: 1.25;
 		}
 	}
 	@include bp(md-down){
