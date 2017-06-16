@@ -1,0 +1,49 @@
+---
+layout: CVT
+title: Personal Information
+id: personal
+
+---
+
+{% include sections/personal-name.liquid %}
+{% include sections/personal-address.liquid %}
+{% include sections/personal-address-add.liquid %}   
+{% comment %}{% include sections/personal-address-edit.liquid %}   {% endcomment %}
+{% include sections/personal-phone.liquid %}
+{% include sections/personal-phone-add.liquid %}
+{% include sections/personal-email.liquid %}
+{% include sections/personal-email-add.liquid %}
+{% include sections/demographics.liquid %}
+<!-- {% include elements/continue-button-bar.liquid %} -->
+
+<script>
+    // function extraQuestions(e){
+    //   e.preventDefault();
+    //   var randompick = Math.floor(Math.random()*2)+1;
+    //   console.log(randompick);
+    //   if( $('#profType').val() == "" ){
+    //   $('#extraQuestions > div').slideUp();
+    //   $('#profType').val('');
+    //   $('#extraQuestions > div').eq(randompick).slideDown();
+    //   $('#profType').val(  $('#extraQuestions > div').eq(randompick).data("title") ); 
+    //   // ()?$('#profType').val('Resident'):;
+    //   }else{
+    //    $('#extraQuestions > div').slideUp();
+    //   $('#profType').val('');  
+    //   }
+    // }
+
+    function residentSlide(e){
+        e.preventDefault();
+        $('#residentQuestions').slideToggle();
+        ($('#profType').val()=="")?$('#profType').val('Resident'):$('#profType').val('');
+    }
+
+   
+    function AddressSave(e){
+        e.preventDefault();
+        $( "#AddressRender .render" ).clone().appendTo( "#repeaterAddress" ).children('.added-flag').eq(0).delay( 800 ).fadeOut("slow");
+        ($('#addAddressButton').css("display") == "none"  )?$('html, body').animate({scrollTop: $("#Address").offset().top}, 500): $('html, body').animate({scrollTop: $("#addAddress").parent().offset().top}, 500);
+        $('#addAddress,#addAddressButton').slideToggle();
+    }
+</script>
