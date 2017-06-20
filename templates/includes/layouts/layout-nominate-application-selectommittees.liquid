@@ -1,0 +1,78 @@
+{% include "head" %}
+
+    {% include 'sections/time-control'%}
+        {% include 'sections/header-active-application' %}
+        <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
+            <div class="paper-page page stuck-footer">
+            <div class="page-header clearfix">
+                <h1>{% block page-name %}{% endblock %}</h1>
+            </div>
+
+
+            <div class="row collapse mobile-offcanvas-wrapper">
+             <div class="column large-4">
+                        <div class="page-wrapper content-padding">
+                            
+                        {% block content %}{% endblock %}</div>
+            </div>
+                    <div class="column large-4 inset-container">
+                        <aside class="inset-area">
+                             {% block Nominate-Committee  %}{% endblock %}
+                            
+                            {% include "elements/searchbar" %}
+                            <div class="section-padding">
+                                    <ul class="comittee-list">
+                                        {% include "elements/comittee-List-item-notselected" %}
+                                        {% include "elements/comittee-List-item-selected" %}
+                                        {% include "elements/comittee-List-item-notselected" %}
+                                        {% include "elements/comittee-List-item-notselected" %}
+                                        {% include "elements/comittee-List-item-notselected" %}
+                                    </ul>
+                            </div>
+                            <div style="position: static;left: 0;right: 0;bottom: 0;">
+                                {% include "elements/card-pagination-bottom" %}
+                            </div>
+                        </aside>
+                    </div>
+                    <div class="column large-4 ">
+                        <div class="inset-area">
+                            {% block Select-Committee %}{% endblock %}
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row page-wrapper">
+                    <div class="column medium-centered medium-9 large-8">
+                        {% block Nomination-Details %}{% endblock %}
+                    </div>
+                </div>
+                <div class="footer sticky-button-bar">
+                    <div class="row">
+                        <div class="column">
+                            <a class="button success float-right" href="{% block url  %}{% endblock %}">
+                                NEXT <i class="fa fa-arrow-right"></i>
+                            </a>
+                            <a class="button secondary float-right" href="">
+                                Save For Later
+                            </a>
+                            <a class="button secondary hollow float-right" href="">
+                                Cancel
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="reveal large no-padding paper-page page" data-reveal id="comm-modal">
+    {% include "sections/committee-overview" %}
+    <button aria-label="Close modal" class="close-button" data-close="" type="button">
+        <span aria-hidden="true">
+            <i class="fa fa-times"></i>
+        </span>
+    </button>
+</div>
+    {% include 'sections/web-footer' %}
+    {% include "scripts" %}
+    </body>
+</html>

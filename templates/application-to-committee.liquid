@@ -12,17 +12,18 @@
                                 Statement of Interest
                             </h2>
                         </div>
-                        <div class="card">
+                        <div class="card" id="StatementofInterest">
                             <div class="row column">
                                 <div class="question">
-                                    <div class="label-holder">
-                                        <h4 for="">
-                                            Generic Statement for all interested committees
+                                    <div class="label-holder white-space-normal">
+                                        <h4 class="no-margin">
+                                            Generic Statement of Interest
                                         </h4>
+                                        <p>This statement of interest will be submitted for all your committes below unless you select not to use it and include a unique Statement for that committee.</p>
                                     </div>
                                     <div class="input-holder">
                                         <div class="input-space">
-                                            <textarea id="" name="" rows="6">
+                                            <textarea id="" name="" rows="8" style="height: auto;">
                                             </textarea>
                                         </div>
                                     </div>
@@ -30,11 +31,10 @@
                             </div>
                             <div class="row column group-divide">
 
-                                <h4>
-Assembly of Interantional Governors Steering Committee</h4>
+                                <h4>Assembly of Interantional Governors Steering Committee</h4>
                                     <div class="switch-input-space">
                                         <div class="switch switch-2x checkbox tiny error-inactive">
-                                            <input class="switch-input" id="checkbox-checkbox" type="checkbox" value="false">
+                                            <input class="switch-input" id="checkbox-checkbox" type="checkbox" checked>
                                                 <label class="switch-paddle" for="checkbox-checkbox">
                                                     <span class="show-for-sr">
                                                         Do you like me?
@@ -49,15 +49,36 @@ Assembly of Interantional Governors Steering Committee</h4>
                                             </input>
                                         </div>
                                         <label class="switch-value" for="checkbox-checkbox">
-                                            Use the Statement or Interest from above
+                                            Use the Generic Statement of Interest
                                         </label>
                                     </div>
-                                    <div class="row column">
-                                        <textarea cols="30" id="" name="" rows="5">
-                                        </textarea>
-                                    </div>
+                                   
                                 </div>
-                         
+                          <div class="row column group-divide">
+
+                                <h4>Candy Bar Wrappers</h4>
+                                    <div class="switch-input-space">
+                                        <div class="switch switch-2x checkbox tiny error-inactive">
+                                            <input class="switch-input" id="checkbox-checkbox" type="checkbox" checked>
+                                                <label class="switch-paddle" for="checkbox-checkbox">
+                                                    <span class="show-for-sr">
+                                                        Do you like me?
+                                                    </span>
+                                                    <span aria-hidden="true" class="switch-active">
+                                                        Yes
+                                                    </span>
+                                                    <span aria-hidden="true" class="switch-inactive">
+                                                        No
+                                                    </span>
+                                                </label>
+                                            </input>
+                                        </div>
+                                        <label class="switch-value" for="checkbox-checkbox">
+                                            Use the Generic Statement of Interest
+                                        </label>
+                                    </div>
+                                   
+                                </div>
                            
                            {% comment %} {% include 'elements/statement-interest-check' %}
 						{% include 'elements/statement-interest-disabled' %}
@@ -76,7 +97,7 @@ Assembly of Interantional Governors Steering Committee</h4>
                         </h2>
                     </div>
                     <div class="row column">
-                        <div class="card">
+                        <div class="card" id="digitalCV">
                             <div class="colored-paper">
                                 <h3 class="no-vertical-margin">
                                     Professional Experiance
@@ -160,7 +181,7 @@ Assembly of Interantional Governors Steering Committee</h4>
                         </h2>
                     </div>
                     <div class="row column">
-                        <div class="card ">
+                        <div class="card " id="disclosures">
                             <div class="colored-paper success">
                                 <h3>
                                     <i class="fa fa-holder-dynamic">
@@ -192,16 +213,55 @@ Assembly of Interantional Governors Steering Committee</h4>
 
 {% block active-application %} 
 <div class="colored-paper">
-    <h2 class="no-margin text-center">Committees of Interest</h2>
+    <h2 class="no-margin text-center">Committees of Interest
+    </h2>
+        <p class="text-center" >Rank the your interest by dragging and dropping your committees.</p> 
 </div>
-<div class="page-wrapper committee-list">
+<ul class="ranking-committee page-wrapper committee-list" id="sortable">
+    <li>
+        <div class="committee-rank one">1</div>      
+        <div class="committee--holder">{% include 'elements/data-committee' %}</div>
+    </li>
+    <li>
+        <div class="committee-rank two">2</div>
+        <div class="committee--holder">{% include 'elements/data-committee-empty' %}</div>
+    </li>
+    <li>
+        <div class="committee-rank three">3</div>
+        <div class="committee--holder">{% include 'elements/data-committee-candybar' %}</div>
+    </li>
+    <li>
+        <div class="committee-rank four">4</div>
+        <div class="committee--holder">{% include 'elements/data-committee-empty' %}</div>
+    </li>
+    <li>
+        <div class="committee-rank five">5</div>
+        <div class="committee--holder">{% include 'elements/data-committee-empty' %}</div>
+    </li>
+    <li>
+        <div class="committee-rank six">6</div>
+        <div class="committee--holder">{% include 'elements/data-committee-empty' %}</div>
+    </li>
+</ul>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#sortable" ).sortable(
+        {
+      placeholder: "ui-state-highlight"
+    });
+    $( "#sortable" ).disableSelection();
+  } );
+  </script>
+{% comment %}<div class="page-wrapper committee-list">
     {% include 'elements/data-committee' %}
     {% include 'elements/data-committee-empty' %}
     {% include 'elements/data-committee-empty' %}
     {% include 'elements/data-committee-empty' %}
     {% include 'elements/data-committee-empty' %}
     {% include 'elements/data-committee-empty' %}
-</div>
+</div>{% endcomment %}
 {% endblock %}
 
 {% comment %}

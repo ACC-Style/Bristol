@@ -1,24 +1,24 @@
-{% include "head" %}
+{% extends 'layouts/layout-nominate' %}
+{% block page-name %}
+Nominate A Member (Page 2 of 3)
+   <div class="sub-line">Select up to &nbsp;<b>Six</b>&nbsp; Committees  for your Nominee</div>
+{% endblock %}
 
-    {% include 'sections/time-control'%}
-        {% include 'sections/header-active-application' %}
-<div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
-    <div class="paper-page page">
-        <div class="page-header clearfix">
-            <h1>
-                {% block page-name %}{% endblock %}
-            </h1>
-        </div>
-        <div class="row collapse">
-            <div class="column large-3 inset-container">
-                <aside class="inset-area">
+
+{% block  forward-btn %}
+<a class="button  navigation float-right" href="nominate-application-statementofreference.html">
+   Next <i class="fa fa-arrow-right"></i> 
+</a>
+{% endblock %}
+
+{% block content %}
+<div class="row ">
+    <div class="column  medium-6 inset-container">
+         <aside class="inset-area">
                     <div class="colored-paper" style="background-color: #444;">
                         <h2 class="clearfix text-center">
                             Open Committees
                         </h2>
-                        <p class="text-center">
-                            Select up to six committees to add your "Committees of Interest" list.
-                        </p>
                         <a class="expanded hollow button tiny reverse" href="open-committees.html" style="">
                             Explore All Open Committees
                             <i class="fa fa-arrow-right">
@@ -27,7 +27,7 @@
                     </div>
                     {% comment %}{% include "elements/searchbar" %}{% endcomment %}
                     <div class="colored-paper clearfix text-center" style="background-color:#ccc;padding: .5em 0 0 0;">
-{% comment %}                        <div class="switch-input-space column small-12">
+                        <div class="switch-input-space column small-12">
                             <div class="switch value-switch switch-4x round">
                                 <input class="switch-input" id="checkbox-value-switch-round" type="checkbox" value="false">
                                     <label class="switch-paddle" for="checkbox-value-switch-round">
@@ -43,18 +43,11 @@
                                     </label>
                                 </input>
                             </div>
-                        </div>{% endcomment %}
-                       <div class="content-padding">
-                            <div class="button-group  selectable selectable-switch small">
-                            <a href="" class="button  selected"><i class="fa fa-holder"></i>All</a>
-                            <a href="" class="button "><i class="fa fa-holder"></i>Nominated</a>
-                            <a href="" class="button "><i class="fa fa-holder"></i>Interested</a>
                         </div>
-                       </div>
                     </div>
                     <div class="section-padding">
                         <ul class="comittee-list">
-                            <li class="committee--list-item selected checked">
+<li class="committee--list-item">
                                 <div class="committee--data">
                                     <div class="action">
                                         <span aria-controls="committee--data-3" aria-expanded="false" aria-haspopup="true" class="fa-stack fa-lg" data-is-focus="false" data-toggle="committee--data-3" data-yeti-box="committee--data-3">
@@ -66,11 +59,12 @@
                                     </div>
                                     <div class="committee">
                                         <h2 class="name">
-                                            Assembly of Interantional Governors Steering Committee
+                                            Assembly of Interantional Governors Steering Committee <small><a href="see details" class="link">see details</a></small>
                                             <div class="sub-line">
                                                 ACC Guidance Committee
                                             </div>
                                         </h2>
+                                      
                                         <span class="label secondary">
                                             Open Positions:
                                             <b>
@@ -78,43 +72,13 @@
                                             </b>
                                         </span>
                                     </div>
-                                </div>
-                            </li>
-                            <li class="committee--list-item selected checked">
-                                <div class="committee--data">
-                                    <div class="action">
-                                        <span aria-controls="committee--data-3" aria-expanded="false" aria-haspopup="true" class="fa-stack fa-lg" data-is-focus="false" data-toggle="committee--data-3" data-yeti-box="committee--data-3">
-                                            <i class="fa fa-circle fa-stack-2x">
-                                            </i>
-                                            <i class="fa fa-check fa-stack-1x">
-                                            </i>
-                                        </span>
-                                    </div>
-                                    <div class="committee">
-                                        <h2 class="name">
-                                            Assembly of Interantional Governors Steering Committee
-                                            <div class="sub-line">
-                                                ACC Guidance Committee
-                                            </div>
-                                        </h2>
-                                        <span aria-haspopup="true" class="label has-tip" data-disable-hover="false" data-tooltip="" tabindex="1" title="Dr. Albert Einstien">
-                                            Nominated
-                                            <i class="fa fa-info-circle">
-                                            </i>
-                                        </span>
-                                        <span class="label secondary">
-                                            Open Positions:
-                                            <b>
-                                                4
-                                            </b>
-                                        </span>
-                                    </div>
+                               
                                 </div>
                             </li>
                             <li class="committee--list-item">
                                 <div class="committee--data">
                                     <div class="action">
-                                        <span aria-controls="committee--data-1" aria-expanded="false" aria-haspopup="true" class="fa-stack fa-lg" data-is-focus="false" data-toggle="committee--data-1" data-yeti-box="committee--data-1">
+                                        <span aria-controls="committee--data-3" aria-expanded="false" aria-haspopup="true" class="fa-stack fa-lg" data-is-focus="false" data-toggle="committee--data-3" data-yeti-box="committee--data-3">
                                             <i class="fa fa-circle fa-stack-2x">
                                             </i>
                                             <i class="fa fa-check fa-stack-1x">
@@ -123,11 +87,12 @@
                                     </div>
                                     <div class="committee">
                                         <h2 class="name">
-                                            The Chocolate Factory
+                                            Assembly of Interantional Governors Steering Committee <small><a href="see details" class="link">see details</a></small>
                                             <div class="sub-line">
                                                 ACC Guidance Committee
                                             </div>
                                         </h2>
+                                      
                                         <span class="label secondary">
                                             Open Positions:
                                             <b>
@@ -135,12 +100,13 @@
                                             </b>
                                         </span>
                                     </div>
+                               
                                 </div>
                             </li>
-                            <li class="committee--list-item selected checked">
+                            <li class="committee--list-item">
                                 <div class="committee--data">
                                     <div class="action">
-                                        <span aria-controls="committee--data-2" aria-expanded="false" aria-haspopup="true" class="fa-stack fa-lg" data-is-focus="false" data-toggle="committee--data-2" data-yeti-box="committee--data-2">
+                                        <span aria-controls="committee--data-3" aria-expanded="false" aria-haspopup="true" class="fa-stack fa-lg" data-is-focus="false" data-toggle="committee--data-3" data-yeti-box="committee--data-3">
                                             <i class="fa fa-circle fa-stack-2x">
                                             </i>
                                             <i class="fa fa-check fa-stack-1x">
@@ -149,11 +115,12 @@
                                     </div>
                                     <div class="committee">
                                         <h2 class="name">
-                                            Candy Bar Wrappers
+                                            Assembly of Interantional Governors Steering Committee <small><a href="see details" class="link">see details</a></small>
                                             <div class="sub-line">
                                                 ACC Guidance Committee
                                             </div>
                                         </h2>
+                                      
                                         <span class="label secondary">
                                             Open Positions:
                                             <b>
@@ -161,6 +128,63 @@
                                             </b>
                                         </span>
                                     </div>
+                               
+                                </div>
+                            </li>
+                            <li class="committee--list-item">
+                                <div class="committee--data">
+                                    <div class="action">
+                                        <span aria-controls="committee--data-3" aria-expanded="false" aria-haspopup="true" class="fa-stack fa-lg" data-is-focus="false" data-toggle="committee--data-3" data-yeti-box="committee--data-3">
+                                            <i class="fa fa-circle fa-stack-2x">
+                                            </i>
+                                            <i class="fa fa-check fa-stack-1x">
+                                            </i>
+                                        </span>
+                                    </div>
+                                    <div class="committee">
+                                        <h2 class="name">
+                                            Assembly of Interantional Governors Steering Committee <small><a href="see details" class="link">see details</a></small>
+                                            <div class="sub-line">
+                                                ACC Guidance Committee
+                                            </div>
+                                        </h2>
+                                      
+                                        <span class="label secondary">
+                                            Open Positions:
+                                            <b>
+                                                4
+                                            </b>
+                                        </span>
+                                    </div>
+                               
+                                </div>
+                            </li>
+                            <li class="committee--list-item">
+                                <div class="committee--data">
+                                    <div class="action">
+                                        <span aria-controls="committee--data-3" aria-expanded="false" aria-haspopup="true" class="fa-stack fa-lg" data-is-focus="false" data-toggle="committee--data-3" data-yeti-box="committee--data-3">
+                                            <i class="fa fa-circle fa-stack-2x">
+                                            </i>
+                                            <i class="fa fa-check fa-stack-1x">
+                                            </i>
+                                        </span>
+                                    </div>
+                                    <div class="committee">
+                                        <h2 class="name">
+                                            Assembly of Interantional Governors Steering Committee <small><a href="see details" class="link">see details</a></small>
+                                            <div class="sub-line">
+                                                ACC Guidance Committee
+                                            </div>
+                                        </h2>
+                                      
+                                        <span class="label secondary">
+                                            Open Positions:
+                                            <b>
+                                                4
+                                            </b>
+                                        </span>
+                                    </div>
+                               
                                 </div>
                             </li>
                         </ul>
@@ -169,29 +193,52 @@
                         {% include "elements/card-pagination-bottom" %}
                     </div>
                 </aside>
-            </div>
-            <div class="column large-3 inset-container">
-                <div class=" inset-area " data-sticky-container>
-               <div  class="sticky" data-sticky data-top-anchor="StatementofInterest:top" data-btm-anchor="disclosures">{% block active-application %}{% endblock %}</div>
-                    
-                </div>
-            </div>
-            <div class="column large-6">
-                <div class="page-wrapper content-padding">
-                    {% block content %}{% endblock %}
-                </div>
-            </div>
-        </div>
+    </div>
+    <div class="column medium-6 inset-container"><div class="inset-area">
+        <div class="colored-paper">
+    <h2 class="no-margin">Selected Committees for Nominee</h2>
+        <p>Select up to 6 committees.</p> 
+</div>
+<ul class="ranking-committee page-wrapper committee-list" id="sortable">
+    <li>
+        <div class="committee-rank one">1</div>      
+        <div class="committee--holder">{% include 'elements/data-committee-remove' %}</div>
+    </li>
+    <li>
+        <div class="committee-rank three">3</div>
+        <div class="committee--holder">{% include 'elements/data-committee-remove' %}</div>
+    </li>
+    <li>
+        <div class="committee-rank two">2</div>
+        <div class="committee--holder">{% include 'elements/data-committee-empty' %}</div>
+    </li>
+    <li>
+        <div class="committee-rank four">4</div>
+        <div class="committee--holder">{% include 'elements/data-committee-empty' %}</div>
+    </li>
+    <li>
+        <div class="committee-rank five">5</div>
+        <div class="committee--holder">{% include 'elements/data-committee-empty' %}</div>
+    </li>
+    <li>
+        <div class="committee-rank six">6</div>
+        <div class="committee--holder">{% include 'elements/data-committee-empty' %}</div>
+    </li>
+</ul></div>
     </div>
 </div>
-{% include 'sections/web-footer' %}
-    {% include "scripts" %}
-<div class="reveal large no-padding paper-page page" data-reveal="" id="comm-modal">
-    {% include "sections/committee-overview" %}
-    <button aria-label="Close modal" class="close-button" data-close="" type="button">
-        <span aria-hidden="true">
-            <i class="fa fa-times">
-            </i>
-        </span>
-    </button>
-</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+{% block back-btn %}
+<a class="button navigation float-left" href="user-nominate-member.html">
+    <i class="fa fa-arrow-left"></i> Back
+</a>
+{% endblock %}

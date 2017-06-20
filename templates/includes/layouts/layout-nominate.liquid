@@ -1,0 +1,46 @@
+{% include "head" %}
+
+    {% include 'sections/time-control'%}
+        {% include 'sections/header-active-application' %}
+<div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
+    <div class="paper-page page">
+        <div class="page-header clearfix">
+            <h1>
+                {% block page-name %}{% endblock %}
+            </h1>
+        </div>
+        <div class="row collapse mobile-offcanvas-wrapper">
+            <div class="column medium-10 large-8 medium-centered">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+            <div class="footer sticky-button-bar group-divide no-margin">
+                <div class="row">
+                    <div class="column small-12 content-padding section-padding">
+                        {% block forward-btn %}
+                            {% endblock %}
+
+                            {% block back-btn  %}
+                            {% endblock %}
+                        <a class="button secondary float-right" href="">
+                            Save For Later
+                        </a>
+                        <a class="button secondary hollow float-right" href="">
+                            Cancel
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="reveal large no-padding paper-page page" data-reveal="" id="comm-modal">
+        {% include "sections/committee-overview" %}
+        <button aria-label="Close modal" class="close-button" data-close="" type="button">
+            <span aria-hidden="true">
+                <i class="fa fa-times">
+                </i>
+            </span>
+        </button>
+    </div>
+    {% include 'sections/web-footer' %}
+    {% include "scripts" %}
+</div>

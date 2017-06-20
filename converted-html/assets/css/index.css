@@ -9854,14 +9854,14 @@ input:checked + label > .switch-inactive {
   }
 }
 
-.colored-paper, .group-section-pagination-holder {
+.colored-paper, .group-section-pagination-holder, .committee-list.ranking-committee {
   margin-left: -.5rem;
   margin-right: -.5rem;
   margin-left: calc(-.5rem - 1px);
   margin-right: calc(-.5rem - 1px);
 }
 @media only screen and (min-width: 767px) {
-  .colored-paper, .group-section-pagination-holder {
+  .colored-paper, .group-section-pagination-holder, .committee-list.ranking-committee {
     margin-left: -.75rem;
     margin-right: -.75rem;
     margin-left: calc(-.75rem - 1px);
@@ -9869,7 +9869,7 @@ input:checked + label > .switch-inactive {
   }
 }
 @media only screen and (min-width: 1024px) {
-  .colored-paper, .group-section-pagination-holder {
+  .colored-paper, .group-section-pagination-holder, .committee-list.ranking-committee {
     margin-left: -1rem;
     margin-right: -1rem;
     margin-left: calc(-1rem - 1px);
@@ -12354,14 +12354,13 @@ STATE TRUMPING CODE
   max-width: 100%;
 }
 
-.inset-area > .colored-paper, .page-header {
+.comittee-list .committee--list-item, .inset-area > .colored-paper, .inset-area .sticky > .colored-paper, .page-header {
   -webkit-box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.65);
   -moz-box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.65);
   box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.65);
 }
 
-.colored-paper
-.card.ghost h6 a.button {
+.colored-paper .card.ghost h6 a.button {
   maring-top: -.5rem;
 }
 
@@ -12385,13 +12384,73 @@ STATE TRUMPING CODE
   background: transparent none;
 }
 
+.footer.sticky-button-bar {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
 .slot + .slot {
   margin-top: .35rem;
+}
+
+.committee-list {
+  list-style: none;
+}
+.committee-list.ranking-committee {
+  padding-top: 0;
+}
+.committee-list.ranking-committee li {
+  display: table;
+  width: 100%;
+  margin-bottom: 0;
+}
+.committee-list.ranking-committee li .committee-rank, .committee-list.ranking-committee li .committee--holder {
+  display: table-cell;
+}
+.committee-list.ranking-committee li .committee--holder {
+  padding: .25em .65em .25em .2em;
+}
+.committee-list.ranking-committee li .committee--holder .committee--list-item {
+  margin-bottom: 0;
+}
+.committee-list.ranking-committee li .committee-rank {
+  font-size: 32px;
+  width: 2em;
+  background-color: #198dae;
+  text-align: center;
+  vertical-align: middle;
+  color: #FFF;
+  background-image: url(../img/construction-paper.png), url(../img/top-shade.png), url(../img/left-shade.png);
+  background-position: top right, right -1px, top left;
+  background-repeat: repeat,  repeat-x, repeat-y;
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 700;
+}
+.committee-list.ranking-committee li .committee-rank.one {
+  background-color: #24a15a;
+}
+.committee-list.ranking-committee li .committee-rank.two {
+  background-color: #31965c;
+}
+.committee-list.ranking-committee li .committee-rank.three {
+  background-color: #3d8b5f;
+}
+.committee-list.ranking-committee li .committee-rank.four {
+  background-color: #498061;
+}
+.committee-list.ranking-committee li .committee-rank.five {
+  background-color: #5e6d65;
+}
+.committee-list.ranking-committee li .committee-rank.six {
+  background-color: #666666;
 }
 
 .committee--list-item {
   background-color: #fff;
   position: relative;
+}
+.committee--list-item .action .fa-stack-1x.fa-ellipsis-v:before {
+  content: "\f142\f142";
 }
 .committee--list-item.selected {
   background-color: #c9edf7;
@@ -12404,6 +12463,18 @@ STATE TRUMPING CODE
 }
 .committee--list-item.selected .committee--data .action .fa-stack-1x {
   color: #25b6e0;
+}
+.committee--list-item.selected.checked {
+  background-color: white;
+}
+.committee--list-item.selected.checked .committee--data .action {
+  background-color: #498061;
+}
+.committee--list-item.selected.checked .committee--data .action .fa-stack-2x {
+  color: #1de573;
+}
+.committee--list-item.selected.checked .committee--data .action .fa-stack-1x {
+  color: #fff;
 }
 .committee--list-item + .committee--list-item {
   margin-top: .25em;
@@ -12445,6 +12516,9 @@ STATE TRUMPING CODE
 .committee--list-item .committee--data .action {
   display: table-cell;
   width: 3em;
+  background-image: url(../img/construction-paper.png), url(../img/left-shade.png), url(../img/right-shade.png);
+  background-position: top right, left top, top right;
+  background-repeat: repeat,  repeat-y, repeat-y;
   background-color: #e6e6e6;
   text-align: center;
   vertical-align: middle;
@@ -12605,19 +12679,24 @@ STATE TRUMPING CODE
   margin-right: .5em;
   background-color: #bfbfbf;
   background-image: url(../img/textured_paper.png), url(../img/bottom-shade.png), url(../img/top-shade.png), url(../img/left-shade.png), url(../img/right-shade.png);
-  background-position: top right,bottom right,right -1px,top left,top right;
-  background-repeat: repeat,repeat-x,repeat-x,repeat-y,repeat-y;
+  background-position: top right, bottom right, right -1px, top left, top right;
+  background-repeat: repeat, repeat-x, repeat-x, repeat-y, repeat-y;
   margin-bottom: -3000px;
   padding-bottom: 3000px;
   border-left: 1px solid #666666;
   border-right: 1px solid #666666;
 }
-.inset-area > .colored-paper {
+.inset-area > .colored-paper, .inset-area .sticky > .colored-paper {
   background-image: url(../img/construction-paper.png), url(../img/left-shade.png), url(../img/right-shade.png), url(../img/top-shade.png);
-  background-position: top right,top left,top right,top right;
-  background-repeat: repeat,repeat-y,repeat-y,repeat-x;
+  background-position: top right, top left, top right, top right;
+  background-repeat: repeat, repeat-y, repeat-y, repeat-x;
   border-left: 1px solid #666666;
   border-right: 1px solid #666666;
+}
+.inset-area .sticky > .colored-paper {
+  margin-left: calc(-1rem + 1px);
+  margin-right: calc(-1rem + 1px);
+  border: 0;
 }
 .collapse.inset-container .inset-area {
   margin-right: 0;
@@ -12654,6 +12733,31 @@ STATE TRUMPING CODE
 }
 .interest-menu .button {
   flex: 1 0 auto;
+}
+
+.selectable.selectable-switch {
+  background: #8c8c8c;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: all 0.25s ease-out;
+  border-radius: 6px;
+  color: inherit;
+  font-weight: inherit;
+  border: 2px solid #b3b3b3;
+  background-image: url(../img/billie-holiday.png);
+  box-sizing: content-box;
+}
+.selectable.selectable-switch a.button {
+  margin: .2em;
+  padding: .3em;
+  background: transparent none;
+  color: #666666;
+}
+.selectable.selectable-switch a.button.selected {
+  background-color: white;
+  border-radius: 4px;
+  color: #000;
 }
 
 /*# sourceMappingURL=index.css.map */

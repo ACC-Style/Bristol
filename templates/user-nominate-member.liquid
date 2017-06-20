@@ -1,282 +1,103 @@
-{% extends 'layouts/layout' %}
+{% extends 'layouts/layout-nominate' %}
+{% block page-name %}
+    Nominate A Member (Page 1 of 3)
+    <div class="sub-line">Find the Member you want to Nominate</div>
+{% endblock %}
+
+
+{% block  forward-btn %}
+<a class="button  navigation float-right" href="user-nominate-committee.html">
+   Next <i class="fa fa-arrow-right"></i> 
+</a>
+{% endblock %}
+
 {% block content %}
-<div class="row collapse" class="off-canvas-wrapper">
-    <aside class="page paper-page off-canvas-absolute position-left" style="border-right:1px solid #ccc;" data-off-canvas="" id="offCanvasCommittees">
-        <div class="row page-wrapper">
-            <div class="column">
-                <h2>
-                    Open Committee
-                </h2>
-                {% include "elements/searchbar" %}
-            </div>
+
+<div class="section-padding page-wrapper">
+    <div class="card section-padding content-padding">
+        <div class="colored-paper">
+            <h2>Search and Select A Member</h2>
+            <p>Search by First Last Name, or by Email</p>
         </div>
-        <div class="">
-            <nav class="">
-                <ul class="comittee-list">
-                        {% include "elements/comittee-List-item-selected" %}
-                        {% include "elements/comittee-List-item-notselected" %}
-                        {% include "elements/comittee-List-item-selected" %}
-                        {% include "elements/comittee-List-item-notselected" %}
-                        {% include "elements/comittee-List-item-notselected" %}
-                        {% include "elements/comittee-List-item-notselected" %}
-                        {% include "elements/comittee-List-item-notselected" %}
-                        {% include "elements/comittee-List-item-notselected" %}
-                        {% include "elements/comittee-List-item-notselected" %}
-                </ul>
-            </nav>
-        </div>
-        {% include "elements/pagination-bottom" %}
-    </aside>
-    <div class="column off-canvas-content" data-off-canvas-content="">
-        <div class="page paper-page">
-            <div class="page-wrapper">
-             <button class="button secondary small circle-button" data-toggle="offCanvasCommittees" id="committee-toggle" type="button"> <i class="fa fa-bars" style="color:white"></i></button>
-                <div class="row">
-                    <div class="column medium-8">
-                        <div class="card">
-                            <div class="colored-paper">
-                                <h2>
-                                    Nomminate Member
-                                </h2>
-                            </div>
-                            <div class="colored-paper info">
-                                <h3>
-                                    Step 1: Find a Member to Nominate
-                                </h3>
-                            </div>
-                            {%include "elements/searchbar"%}
-                            <div class="section-padding">
-                                <h4>
-                                    Search Results
-                                </h4>
-                                <table class="table banded">
-                                    <thead>
-                                        <tr>
-                                            <th>
-                                                Nominate
-                                            </th>
-                                            <th>
-                                                Name
-                                            </th>
-                                            <th>
-                                                Institution
-                                            </th>
-                                            <th>
-                                                Location
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                {% include "elements/radio-select"  %}
-                                            </td>
-                                            <td>
-                                                Luke Skywalker
-                                            </td>
-                                            <td>
-                                                The Rebel Aliance
-                                            </td>
-                                            <td>
-                                                Hollywood, CA
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="colored-paper info">
-                                <h3>
-                                    Step 2: Select Commitees for Nomination
-                                </h3>
-                                <p>
-                                    Select up to 6 committees from the left sidebar.
-                                </p>
-                            </div>
-                            <div class="section-padding">
-                                <table class="table banded">
-                                    <thead>
-                                        <tr>
-                                            <th>
-                                                Committee
-                                            </th>
-                                            <th>
-                                                Type
-                                            </th>
-                                            <th>
-                                                Openning
-                                            </th>
-                                            <th>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                Committee A
-                                            </td>
-                                            <td>
-                                                ACC Governence
-                                            </td>
-                                            <td>
-                                                3 positions
-                                            </td>
-                                            <td>
-                                                <a class="link remove" href="">
-                                                    <i class="fa fa-times">
-                                                    </i>
-                                                    Remove
-                                                </a>
-                                            </td>
-   
-                                        </tr>
-                                        <tr>
-                                                                                     <td>
-                                                NCDR Committee A
-                                            </td>
-                                            <td>
-                                                NCDR Compliance
-                                            </td>
-                                            <td>
-                                                3 positions
-                                            </td>
-                                            <td>
-                                                <a class="link remove" href="">
-                                                    <i class="fa fa-times">
-                                                    </i>
-                                                    Remove
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="row">
-                                    <div class="column"><button class="button tiny success expanded" data-toggle="offCanvasCommittees" id="comment-toggle" type="button"> Add Another committee Click Here Show "Open Committee" Panel and select a committee from the left panel</button></div>
-                                </div>
-                            </div>
-                            <div class="colored-paper info">
-                                <h3>
-                                    Step 3: Write a Statment of Refernce
-                                </h3>
-                                <p>
-                                    discribe your cologue and why their strenghts would be a good fit for the commitees you have selected for them.
-                                </p>
-                            </div>
-                            <div class="section-padding">
-                                <textarea cols="30" id="" name="" rows="10">
-                                </textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column medium-4">
-                        <div class="card ghost">
-                            <h2 class="text-center">
-                                Request Overview
-                            </h2>
-                            <div class="callout">
-                                <h4 class="colored-paper empty text-center">
-                                    Nominator (You)
-                                </h4>
-                                <div style="position: relative;">
-                                    <h6>
-                                        <div class="sub-line">
-                                            Name
-                                        </div>
-                                        Dr. Loly Pop
-                                    </h6>
-                                    <h6>
-                                        <div class="sub-line">
-                                            Institution
-                                        </div>
-                                        The Xavier School
-                                    </h6>
-                                    <h6>
-                                        <div class="sub-line">
-                                            Location
-                                        </div>
-                                        Atlanta,GA
-                                    </h6>
-                                    <a class="link close-button" href="">
-                                        <i class="fa fa-pencil">
-                                        </i>
-                                        edit
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="callout">
-                                <h4 class="colored-paper empty text-center">
-                                    Nominee (Them)
-                                </h4>
-                                <div style="position: relative;">
-                                    <h6>
-                                        <div class="sub-line">
-                                            Name
-                                        </div>
-                                        Dr. Luke Skywalker
-                                    </h6>
-                                    <h6>
-                                        <div class="sub-line">
-                                            Institution
-                                        </div>
-                                        The Rebel Alliance
-                                    </h6>
-                                    <h6>
-                                        <div class="sub-line">
-                                            Location
-                                        </div>
-                                        Hollywood, CA
-                                    </h6>
-                                    <a class="link close-button" href="">
-                                        <i class="fa fa-times">
-                                        </i>
-                                        remove
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="callout">
-                                <h4 class="colored-paper empty text-center">
-                                    Nominated Committees
-                                </h4>
-                                <div class="section-padding">
-                                    <ul class="no-bullet">
-                                    <li>
-                                        Committee A
-                                        <a class="link remove float-right" href="">
-                                            <i class="fa fa-times">
-                                            </i>
-                                            Remove
-                                        </a>
-                                    </li>
-                                    <li>
-                                        NCDR Committee A
-                                        <a class="link remove float-right" href="">
-                                            <i class="fa fa-times">
-                                            </i>
-                                            Remove
-                                        </a>
-                                    </li>
-                                </ul>
-                                </div>
-                            </div>
-                            <div class="callout warning">
-                                <h4 class="colored-paper empty">Statement of Reference</h4>
-                                <h6 class="text-center">Missing Statement of Reference</h6>
-                            </div>
-                            <a href="" class="button disabled expanded">Submit</a>
-                        </div>
-                    </div>
-                </div>
-                    <div class="row">
-                        <div class="column  group-divide">
-                            <a class="button success float-right" href="">
-                                Submit
-                            </a>
-                            <a class="button secondary float-right" href="">
-                                Cancel
-                            </a>
-                        </div>
-                    </div>
-            </div>
+        {%include "elements/searchbar"%}
+        <div class="section-padding">
+            <h4>
+                Search Results
+            </h4>
+            <table class="table banded">
+                <thead>
+                    <tr>
+                        <th>
+                            Nominate
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Institution
+                        </th>
+                        <th>
+                            Location
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            {% include "elements/radio-select"  %}
+                        </td>
+                        <td>
+                            Luke Skywalker
+                        </td>
+                        <td>
+                            The Rebel Aliance
+                        </td>
+                        <td>
+                            Hollywood, CA
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {% include "elements/radio-noselect"  %}
+                        </td>
+                        <td>
+                           Han Solo
+                        </td>
+                        <td>
+                            The Rebel Aliance
+                        </td>
+                        <td>
+                            Hollywood, CA
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {% include "elements/radio-noselect"  %}
+                        </td>
+                        <td>
+                            Darth Vader
+                        </td>
+                        <td>
+                            The Empire
+                        </td>
+                        <td>
+                            Hollywood, CA
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
+{% endblock %}
+
+
+
+
+
+
+{% block back-btn %}
+<a class="button navigation float-left" href="user-dashboard-empty.html">
+    <i class="fa fa-arrow-left"></i> Back to Dashboard
+</a>
 {% endblock %}
