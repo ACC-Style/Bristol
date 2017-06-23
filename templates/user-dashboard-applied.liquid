@@ -1,0 +1,162 @@
+{% extends 'layouts/layout-active-application' %}
+{% block page-name %}
+    Dashboard
+{% endblock %}
+{% block content %}
+<div class="card">
+    <div class="row">
+        <div class="column">
+            <h2 class="with-underline">
+                Current Application
+            </h2>
+            <div class="page-message callout clearfix success">
+  <div class="message-container">
+    <div class="icon-holder">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-holder-dynamic fa-stack-1x"></i>
+      </span>
+    </div>
+    <div class="message-holder">
+      <h5>You have submitted an active Application.    </h5><p class="sub-line">Feel free to add remove and rank your interested committees while the nomination season is still active.</p>
+      <a href="" class="link">Click Here if you want to edit your application</a> 
+
+    </div>
+  </div>
+</div>
+        </div>
+    </div>
+        <div class="row">
+            <div class="column">
+            <h2 class="with-underline">
+                Nominations
+            </h2>
+            <div class="callout disabled clearfix">
+                <div class="subtle">
+                    you have no pending nominations.
+                    <a class="button secondary float-right" href="user-nominate-member.html">
+                        Nominate a Member
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    <div class="row">
+        <div class="column">
+            <h2 class="with-underline">
+                Reference Requests
+            </h2>
+            <div class="callout disabled clearfix">
+                <div class="subtle">
+                    You have no pending requests.
+                    <a class="button float-right disabled" href="">
+                        Respond to Requests
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block active-application %} 
+<div class="colored-paper">
+    <h2 class="no-margin text-center"><i class="fa fa-check-circle"></i> Active Application</h2>
+</div>
+<div class="colored-paper info">
+    <h2 class="no-margin text-center">Committees of Interest
+    </h2>
+        <p class="text-center" >Rank the your interest by dragging and dropping your committees up and down.</p> 
+</div>
+<ul class="ranking-committee page-wrapper committee-list" id="sortable">
+    <li>
+        <div class="committee-rank one">1</div>      
+        <div class="committee--holder">{% include 'elements/data-committee' %}</div>
+    </li>
+    <li>
+        <div class="committee-rank two">2</div>
+        <div class="committee--holder">{% include 'elements/data-committee-empty' %}</div>
+    </li>
+    <li>
+        <div class="committee-rank three">3</div>
+        <div class="committee--holder">{% include 'elements/data-committee-candybar' %}</div>
+    </li>
+    <li>
+        <div class="committee-rank four">4</div>
+        <div class="committee--holder">{% include 'elements/data-committee-empty' %}</div>
+    </li>
+    <li>
+        <div class="committee-rank five">5</div>
+        <div class="committee--holder">{% include 'elements/data-committee-empty' %}</div>
+    </li>
+    <li>
+        <div class="committee-rank six">6</div>
+        <div class="committee--holder">{% include 'elements/data-committee-empty' %}</div>
+    </li>
+</ul>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#sortable" ).sortable(
+        {
+      placeholder: "ui-state-highlight"
+    });
+    $( "#sortable" ).disableSelection();
+  } );
+  </script>
+{% endblock %}
+
+ {% block selected-committee %}
+  <li class="committee--list-item checked selected">
+                                <div class="committee--data">
+                                <div class="action">
+                                        <span aria-controls="committee--data-3" aria-expanded="false" aria-haspopup="true" class="fa-stack fa-lg" data-is-focus="false" data-toggle="committee--data-3" data-yeti-box="committee--data-3">
+                                            <i class="fa fa-circle fa-stack-2x">
+                                            </i>
+                                            <i class="fa fa-check fa-stack-1x">
+                                            </i>
+                                        </span>
+                                    </div>
+                                    <div class="committee">
+                                        <h2 class="name">
+                                            Candy Bar Wrappers
+                                            <div class="sub-line">
+                                                ACC Guidance Committee
+                                            </div>
+                                        </h2>
+                                        <span class="label secondary">
+                                            Open Positions:
+                                            <b>
+                                                4
+                                            </b>
+                                        </span>
+                                        <span class="label">
+                                            Nominated
+                                            <i class="fa fa-thumbs-up">
+                                            </i>
+                                        </span>
+                                    </div>
+                                    <div class="action">
+                                        <span class="fa-stack fa-lg" data-toggle="example-dropdown-remove">
+                                            <i class="fa fa-circle fa-stack-2x">
+                                            </i>
+                                            <i class="fa fa-ellipsis-h fa-stack-1x">
+                                            </i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <div class="dropdown-pane" data-dropdown="" data-hover="true" data-hover-pane="true" id="example-dropdown-remove">
+                                <div class="button-group stacked radius small">
+                                    <a class="button" href="">
+                                        Remove interest
+                                    </a>
+                                    <a class="button secondary" href="">
+                                        Nominated A Member
+                                    </a>
+                                    <a class="button secondary" href="">
+                                        Veiw Details
+                                    </a>
+                                </div>
+                            </div>{% endblock %}
+

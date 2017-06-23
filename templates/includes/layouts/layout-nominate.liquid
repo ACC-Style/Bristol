@@ -1,7 +1,5 @@
 {% include "head" %}
-
-    {% include 'sections/time-control'%}
-        {% include 'sections/header-active-application' %}
+{% include 'sections/header-active-application' %}
 <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
     <div class="paper-page page">
         <div class="page-header clearfix">
@@ -14,23 +12,23 @@
                 {% block content %}{% endblock %}
             </div>
         </div>
-            <div class="footer sticky-button-bar group-divide no-margin">
-                <div class="row">
-                    <div class="column small-12 content-padding section-padding">
-                        {% block forward-btn %}
+        <div class="footer sticky-button-bar group-divide no-margin">
+            <div class="row">
+                <div class="column small-12 content-padding section-padding">
+                    {% block forward-btn %}
                             {% endblock %}
 
                             {% block back-btn  %}
                             {% endblock %}
-                        <a class="button secondary float-right" href="">
-                            Save For Later
-                        </a>
-                        <a class="button secondary hollow float-right" href="">
-                            Cancel
-                        </a>
-                    </div>
+                    <a class="button secondary float-right" href="">
+                        Save For Later
+                    </a>
+                    <a class="button secondary hollow float-right" href="">
+                        Cancel
+                    </a>
                 </div>
             </div>
+        </div>
     </div>
     <div class="reveal large no-padding paper-page page" data-reveal="" id="comm-modal">
         {% include "sections/committee-overview" %}

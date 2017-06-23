@@ -3,7 +3,32 @@
     Dashboard
 {% endblock %}
 {% block content %}
+<div class="seciton-padding">
+<div class="page-message callout success">
+  <a class="close-bar">
+    <span class="close-button">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </span>
+  </a>
+  <div class="message-container">
+    <div class="icon-holder">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-hourglass-start fa-stack-1x"></i>
+      </span>
+    </div>
+    <div class="message-holder">
+         <h3 class="">
+            Committee Nomination Season is Now Open!
+        </h3>
+        <p>The {Committee Name} Committee(s) are now accepting application.  Make sure you have submitted your active application before the deadline.</p>
+        <b>Committee {Committee Type} Deadline: {Date}</b>
+    </div>
+  </div>
+</div>
+</div>
 <div class="card">
+
     <div class="row">
         <div class="column">
             <h2 class="with-underline">
@@ -11,7 +36,7 @@
             </h2>
             <div class="callout disabled clearfix">
                 <p>
-                    You have no application in progress.
+                    You have no active application for this season.
                     <a class="button float-right success" href="application-to-committee.html">
                         Start an Application
                     </a>
@@ -52,8 +77,8 @@
 </div>
 {% endblock %}
 {% block active-application %} 
-<div class="colored-paper">
-    <h2 class="no-margin text-center">Active Application</h2>
+<div class="colored-paper warning">
+    <h2 class="no-margin text-center"><i class="fa fa-exclamation-triangle"></i> Active Application</h2>
 </div>
 <div class="page-wrapper">
     <div class="card content-padding">
