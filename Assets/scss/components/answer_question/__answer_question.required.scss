@@ -45,7 +45,7 @@
 
 
 .input-holder {
-	[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea,button,.button,{
+	[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],button,.button,{
 		font-size:rem-calc( ms(0));
 		line-height:rem-calc( ms(0)*1.25);
 		// *default* all inputs are medium sized
@@ -87,6 +87,11 @@
 			padding: 0 .5rem;
 		}
 	}
+	textarea{
+		padding:rem-calc(ms(0)*.75) rem-calc(ms(0)*.75);
+		@include baseline-font($font-level:0);
+		padding:$vertical-space *.5 $vertical-space;
+	}
 	.prefix, .postfix, .value {
 		@include baseline-font(0);
 		@include font-bold();
@@ -110,16 +115,13 @@
 
 
 .label-holder{
-	label, .label,.text{
-	@include font-bold();
-	@include baseline-font(0);
-  }
+	margin:$vertical-space/4 0;
   white-space: nowrap;
-  @include baseline-font(0,.5,.25);
+  text-overflow: ellipsis;
   position: relative;
   background-color:transparent;
   color:fontcolor($black);
-	@include bp(sm-down){
+	@include bp(md-down){
 	  white-space:normal;
 	}
 	.text{padding-right:1rem;}
@@ -159,7 +161,7 @@
 .input-holder{@include grid-row(  $behavior: collapse);}
 .input-space,.value-space{ @include grid-column-collapse;}
 .input-space-label{
-	@include baseline-font(0);
+	@include baseline-font(0,0,0);
 	@include font-bold();
 	color:grey(60);
 	// *default* all inputs are medium sized
