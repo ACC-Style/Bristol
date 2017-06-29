@@ -8,8 +8,6 @@
     border: 1px solid grey(15);
     background-color: white;
     @extend %dropshoadowedbox;
-    
-    
 }
 %ghostbox {
     border: 2px dashed grey(25);
@@ -37,7 +35,7 @@
         @if $brand-level >= 2{    
             &#{$state-selector} .overlap .tabs .selected,&#{$state-selector} .overlap .tabs .is-active{
                 background:map-get($State,'Color');
-                a{color:color-contrast(map-get($State,'Color'));}
+                a{color:acc-color-contrast(map-get($State,'Color'));}
              }
          }
     }
@@ -81,16 +79,16 @@
     @extend %content-padding-horizontal;
     @extend %content-expanding-margin-horizontal;
     
-    h1,h2,h3,h4,h5,h6,p{color:color-contrast(rebrand-color($primary-color, 1));}
-    &.secondary{h1,h2,h3,h4,h5,h6,p{color: color-contrast( $secondary-color);}}
+    h1,h2,h3,h4,h5,h6,p{color:acc-color-contrast(rebrand-color($primary-color, 1));}
+    &.secondary{h1,h2,h3,h4,h5,h6,p{color: acc-color-contrast( $secondary-color);}}
     background-image: url('../img/construction-paper.png');
     background-color: rebrand-color($primary-color, 1);
     @each $State in $states{
         $state-selector:map-get($State,'Selector'); 
         &#{$state-selector}{
             background-color:map-get($State,'Color');
-            color:color-contrast(map-get($State,'Color'));
-            h1,h2,h3,h4,h5,h6,p,{ color:color-contrast(map-get($State,'Color') );}
+            color:acc-color-contrast(map-get($State,'Color'));
+            h1,h2,h3,h4,h5,h6,p,{ color:acc-color-contrast(map-get($State,'Color') );}
          }
     }
     @each $State in $states{

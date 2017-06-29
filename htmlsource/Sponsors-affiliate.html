@@ -8,7 +8,7 @@ id: sp
 <div class="row">
     <div class="column text-center">
         <h3>
-            Are you a member of a society?
+            Are you a member of a medical society?
             <sup>
                 <i class="fa fa-asterisk" style="color:orange;">
                 </i>
@@ -128,24 +128,9 @@ id: sp
     {% include sections/sponsor-repeater.liquid %}
 </div>
 <div id="Affiliate-Society-Yes" class="page-wrapper" style="display:none;">
-{%  include snippets/page-top.liquid title="Society Memberships" level="h2" style="with-underline" message="At least one is requried." %}
- {% include sections/society-repeater.liquid %}
-     <div class="row">
-        <div class="column">
-            <a class="button small radius expanded success" id="addSocietyMembershipButton" onclick="SocietyMembershipsSlide(event)">
-                <i class="fa fa-plus">
-                </i>
-                Add Society Membership
-            </a>
-        </div>
-    </div>
-</div>
-{% include sections/society-repeaterAdd.liquid %}
-
-<div id="societyHolder" style="display:none;">
-   
-    
-</div>
+{%  include snippets/page-top.liquid title="Medical Society Memberships" level="h2" style="with-underline" message="At least one is requried." %}
+     {% include snippets/question-text.liquid label="Society Name" size="small-12 large-4 end" state="required" hint="" %}
+     
 </div>
 
 

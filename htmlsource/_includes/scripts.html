@@ -50,6 +50,7 @@
 </script>
 <script>
     $(function() {
+     $( "#auto-save .message" ).slideUp();
     $(".selectable a.button").click(function(e){
     e.preventDefault();
     $(this).addClass('selected').siblings().removeClass('selected');
@@ -75,6 +76,11 @@
         $(".fileTypeUpload").removeClass('disabled');
     });
 });
+    $( document.body ).click(function () {
+  $( "#auto-save .message" ).slideDown( "slow", function() {
+    $(this).delay( 800 ).slideUp("slow");
+  });
+})
 </script>
 <style>
     select{

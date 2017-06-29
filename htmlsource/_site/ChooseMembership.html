@@ -38,18 +38,22 @@
         <i class="fa fa-spinner fa-spin"></i> Auto Save
     </div>
 </div>
-    <div class="user-id-block row collapse">
+    <div class="user-id-block card">
+  <div class="row">
         <img class="user-pic" src="Assets/img/profile-pic-default.jpg" alt="Avatar of Members Name">
-        <ul class="no-bullet user-info">
-            <li class="user-name">
+        <div class="no-bullet user-info">
+            <div class="user-name">
                 <span class="fullName">
                     Sanjiv Agrawal
                     <span class="userDesignation">, DM, MD</span>
                 </span> 
-            </li>
+            </div>
           
-      <li><a class="button  small expanded" href="index.html">Save &amp; Log Out</a></li>  
-    </ul>
+    </div>
+</div>
+  <div class="clearfix column row">
+    <a class="button secondary tiny radius expanded" href="index.html">Save &amp; Log Out</a>
+  </div>
 </div>
 
     <nav class="nav-list nav-checklist">
@@ -385,41 +389,9 @@
       </div>
       <div class="columns large-4  medium-5">
         <section class="acc-websites row">
-          <h4>Powered By the ACC</h4>
-          <nav class="nav-list small">
-            <ul class="">
-              <li>
-                <a target="_blank" class="" href="http://www.acc.org">
-                  <span class="text">Acc.org</span>
-                  <i class="fa fa-external-link-square"></i>
-                </a>
-              </li>
-              <li>
-                <a target="_blank" class="" href="http://cvquality.acc.org/">
-                  <span class="text">ACC Quality Improvement for Institutions</span>
-                  <i class="fa fa-external-link-square"></i>
-                </a>
-              </li>
-              <li>
-                <a target="_blank" class="" href="http://www.ncdr.com">
-                  <span class="text">NCDR.com</span>
-                  <i class="fa fa-external-link-square"></i>
-                </a>
-              </li>
-              <li>
-                <a target="_blank" class="" href="http://www.cardiosmart.org">
-                  <span class="text">CardioSmart.org</span>
-                  <i class="fa fa-external-link-square"></i>
-                </a>
-              </li>
-              <li>
-                <a target="_blank" class="" href="http://blog.cardiosource.org">
-                  <span class="text">ACCinTouch.com</span>
-                  <i class="fa fa-external-link-square"></i>
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <h4>Do you have questions?</h4>
+          <p>If you have any questions please contact the Member Services Department at <a href="" class="link">membership@acc.org</a>.</p>
+          
         </section>
       </div>
     </div>
@@ -475,6 +447,7 @@
 </script>
 <script>
     $(function() {
+     $( "#auto-save .message" ).slideUp();
     $(".selectable a.button").click(function(e){
     e.preventDefault();
     $(this).addClass('selected').siblings().removeClass('selected');
@@ -500,6 +473,11 @@
         $(".fileTypeUpload").removeClass('disabled');
     });
 });
+    $( document.body ).click(function () {
+  $( "#auto-save .message" ).slideDown( "slow", function() {
+    $(this).delay( 800 ).slideUp("slow");
+  });
+})
 </script>
 <style>
     select{
@@ -509,6 +487,11 @@
     }
 </style>
 
-       
+<div id="auto-save">
+	<div class="message">
+			<i class="fa fa-cog fa-spin fa-fw"></i>
+	<span>Saving Your Information...</span> 
+	</div>
+</div>
     </body>
 </html>

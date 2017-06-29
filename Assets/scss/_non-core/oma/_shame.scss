@@ -57,11 +57,7 @@ select {
   list-style: none;
 }
 
-.render-actions {
-  background-color: grey(80);
-  border-left: 1px solid grey(30);
-  background-image:url(../img/cream_pixels.png);
-}
+
 
 .render.animated.fadeIn {
   padding: 0;
@@ -91,20 +87,26 @@ select {
     margin-top: -.5rem;
   }
 }
+.render-actions {
+  background-color: grey(80);
+  border-left: 1px solid grey(30);
+  background-image:url(../img/cream_pixels.png);
+}
 
 .render-actions a {
-	background-color: $primary-color;
-	text-align: center;
-	color: white;
-	width: 33%;
-	padding: .25em 0;
-	font-size: ms(-1);
-	border:1px solid mix($primary-color,$black,20%);
-      margin: 6px;
-    width: auto;
-    
-    border-radius: 6px;
-    background-image: none;
+  @include font-slab-bold;
+  font-size: ms(-1);
+  background-color: $secondary-color;
+  text-align: center;
+  color: $black;
+  width: 33%;
+  padding: $vertical-space/4 .25em;
+  border:1px solid mix($primary-color,$black,20%);
+  margin: 6px;
+  width: auto;
+  border-radius: 6px;
+  background-image: none;
+  height: 2.5em;
 	&:hover {
 	background-color: mix($primary-color,$black,20%);
 	color:#fff ;
@@ -116,11 +118,12 @@ select {
 .render-actions a.disabled {
   &,
   &:hover {
-    background-color: grey(80);
-    color: grey(40);
-    background-image: url(../img/cream_pixels.png);
-    border-color:grey(40);
     @include font-light();
+    background-color: grey(80);
+    color: grey(35);
+    background-image: url(../img/cream_pixels.png);
+    border-color:grey(20);
+    cursor:not-allowed
     i.fa {
       color: grey(30);
    }
@@ -250,3 +253,21 @@ div.reveal{
 }
 #OMA_Sidebar{ background-color:grey(8);}
 .render .render-actions a + a{margin-top:0}
+
+#auto-save{
+  display: block;
+  width:100%;
+  position:fixed;
+  background-color:$acc-blue;
+  opacity: .85;
+  border-bottom:2px solid $acc-blue;
+  top:0;
+  left:0;
+  right:0;
+  text-align: center;
+  .message{
+    @include font-slab-bold;
+    @include baseline-font(2);
+    color:$white;
+  }
+}

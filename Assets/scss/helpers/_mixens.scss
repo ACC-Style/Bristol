@@ -50,6 +50,17 @@
   }
 
 }
+@function MathPow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}
 
 @mixin linear-gradient($angle, $color-stops...) {
   $_angle-with-vendor-prefix: "";

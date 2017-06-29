@@ -39,7 +39,8 @@
   	.text{display:none;}
   }
 }
-
+.button.secondary{ 
+  @include button-style( $secondary-color, auto, auto);}
 .button.navigation{ 
 	 @include button-style( $scrub-blue, auto, auto);
 }
@@ -47,7 +48,7 @@
 %buttondisabled{
 	background-color: grey(30);
 	background-image: url(../img/empty_diamond.png);
-	color:fontcolor($black,'quiet');
+	color:grey(50) !important;
 	border:1px solid grey(50);
 	cursor:not-allowed;
 }

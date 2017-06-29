@@ -48,15 +48,15 @@ $states:
     "Trump-Color":"",
     "Trump-Border":"",
     "Trump-Icon":""),    
-    // (
-    // "State":"completed",
-    // "Selector":".completed",
-    // "Color": $success-color,
-    // "Icon": $fa-var-check,
-    // "Trump-Background":"",
-    // "Trump-Color":"",
-    // "Trump-Border":"",
-    // "Trump-Icon":""),    
+    (
+    "State":"locked",
+    "Selector":".locked",
+    "Color": $secondary-color,
+    "Icon": $fa-var-lock,
+    "Trump-Background":"",
+    "Trump-Color":"",
+    "Trump-Border":"",
+    "Trump-Icon":""),    
     (
     "State":"disabled",
     "Selector":".disabled",
@@ -90,6 +90,7 @@ $error-background-trump:();
 $warning-background-trump:();
 $success-background-trump:();
 $info-background-trump:();
+$locked-background-trump:();
 //$completed-background-trump:();
 $highlighted-background-trump:();
 $disabled-background-trump:();
@@ -99,6 +100,7 @@ $error-border-trump:();
 $warning-border-trump:();
 $success-border-trump:();
 $info-border-trump:();
+$locked-border-trump:();
 //$completed-border-trump:();
 $highlighted-border-trump:();
 $disabled-border-trump:();
@@ -108,6 +110,7 @@ $error-fontcolor-trump:();
 $warning-fontcolor-trump:();
 $success-fontcolor-trump:();
 $info-fontcolor-trump:();
+$locked-fontcolor-trump:();
 //$completed-fontcolor-trump:();
 $highlighted-fontcolor-trump:();
 $disabled-fontcolor-trump:();
@@ -117,6 +120,7 @@ $error-icon-trump:();
 $warning-icon-trump:();
 $success-icon-trump:();
 $info-icon-trump:();
+$locked-icon-trump:();
 //$completed-icon-trump:();
 $highlighted-icon-trump:();
 $disabled-icon-trump:();
@@ -150,7 +154,13 @@ $text-DarkFont-Trump:(".dark-color-text");
     //   @if $TrumpList == "border-color"{ @return $completed-border-trump;}
     //   @if $TrumpList == "color"{ @return $completed-fontcolor-trump;}
     //   @if $TrumpList == "icon"{ @return $completed-icon-trump;}
-    // }    
+    // } 
+         @if $State == "locked"{
+      @if $TrumpList == "background-color"{@return $locked-background-trump;}
+      @if $TrumpList == "border-color"{ @return $locked-border-trump;}
+      @if $TrumpList == "color"{ @return $locked-fontcolor-trump;}
+      @if $TrumpList == "icon"{ @return $locked-icon-trump;}
+    }    
     @if $State == "disabled"{
       @if $TrumpList == "background-color"{@return $disabled-background-trump;}
       @if $TrumpList == "border-color"{ @return $disabled-border-trump;}
@@ -179,7 +189,7 @@ $text-DarkFont-Trump:(".dark-color-text");
     @return ();
 }
 @mixin setContrastTrump($ContrastQuery, $Selector){
-   $contrastResult :color-contrast($ContrastQuery);
+   $contrastResult: acc-color-contrast($ContrastQuery,#fff);
    @if $contrastResult == $global-default-dark-text{
     $text-DarkFont-Trump: append($text-DarkFont-Trump,unquote($Selector),"comma")!global;
    }
@@ -213,7 +223,13 @@ $text-DarkFont-Trump:(".dark-color-text");
     //     @if $TrumpList == "border-color"{$completed-border-trump:append($completed-border-trump,unquote($Selector),"comma")!global;}
     //     @if $TrumpList == "color"{$completed-fontcolor-trump:append($completed-fontcolor-trump,unquote($Selector),"comma")!global;}
     //     @if $TrumpList == "icon"{$completed-icon-trump:append($completed-icon-trump,unquote($Selector),"comma")!global;}
-    // }    
+    // }   
+    @if $State == "locked"{
+        @if $TrumpList == "background-color"{$locked-background-trump:append($locked-background-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "border-color"{$locked-border-trump:append($locked-border-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "color"{$locked-fontcolor-trump:append($locked-fontcolor-trump,unquote($Selector),"comma")!global;}
+        @if $TrumpList == "icon"{$locked-icon-trump:append($locked-icon-trump,unquote($Selector),"comma")!global;}
+    }    
     @if $State == "disabled"{
         @if $TrumpList == "background-color"{$disabled-background-trump:append($disabled-background-trump,unquote($Selector),"comma")!global;}
         @if $TrumpList == "border-color"{$disabled-border-trump:append($disabled-border-trump,unquote($Selector),"comma")!global;}

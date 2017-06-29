@@ -10,10 +10,13 @@
 	
 	&, .menu > li{
 		line-height: 2em;
+		font-size: ms(0);
 		@include bp(md){
 			line-height: 2.75em;
+			font-size: ms(-1);
 		}
-		font-size: ms(1);
+		@include bp(lg){font-size:ms(0);}
+		@include bp(xl){font-size: ms(1);}
 		> a,> button{
 		 	display:block;
 		 	width:auto;
@@ -31,9 +34,17 @@
 	padding:.25em .5em;
 }
 .top-bar-right{
-	.padding-right: .5em;
+	padding-right: .5em;
 	background-color: $primary-color;
-	&.secondary{background-color:$secondary-color;}
+	li:hover{
+			background-color:mix($primary-color,$black);
+		}
+	&.secondary{
+		background-color:$secondary-color;
+		li:hover{
+				background-color:mix($secondary-color,$black);
+			}
+	}
 }
 
 .top-bar-left{
@@ -133,7 +144,7 @@
 
 }
 #siteMenu{
-	i.fa{margin-top:-1px; margin-bottom:-1px;}
+	i.fa{margin-top:-4px}
 	.top-bar-left,.top-bar-right{
 		width:100%;
 		padding:0;
@@ -141,14 +152,17 @@
 		// @include bp(lg){width:auto;}
 		@include bp(lg){
 			width:auto;
-			padding:0 .5em;
 		}
 	}
 }
 .top-bar{
 	a,button{
 		color:white;
+
 	}
+	.title{
+			background-color: grey(60);
+		}
 	.dropdown-pane{
 		margin-top: 1px;
 		padding: 0;
@@ -188,99 +202,226 @@
 	line-height:normal;
 	padding: .5em ;
     clear: both;
-    background-image: url(../img/cream_pixels_altdark.png);
     background-color:$secondary-color;
-    display:none;
+    .top-bar &{display:none;}
     .question{margin:0;
-    	input{    
-    		background: grey(28);
+    	select,input,.button,button{
+    		border: 1px solid grey(30);
+    	}
+    	select,option{    
+    		background: grey(50);
 		    border-radius: 6px 0 0 6px;
-		    border: grey(20) 1px solid;
+		    color:#fff;
+		    font-weight: bold;
+		    font-size: ms(0);
+		    @include font-bold();
 		}
-		.button{
+		input{
+			background: grey(10);
+		}
+		.button, button{
 			border-radius: 0 6px 6px 0;
 			background-color: grey(50);
 			vertical-align: text-top;
 			padding: 0;
-			border: 1px solid grey(20);
 		}
 
     }
 }
 .top-bar input, .search-bar input{max-width:100%;}
+
+
+
 /**
 * Top Bar:
 * `.top-bar` - This is "ACC Style" website headers.  These should be used on any product that has multi pages and navigation beyond 1 to 2 tabs
 * 
 *   @example
 *	<div class="top-bar">
-*		<div class="hide-for-medium">
-*		  <div class="top-bar-left" onClick="$('#siteMenu .top-bar-left').toggleClass('display-block')">
-*		       <a class="top-bar-toggle"><i class="fa fa-bars"></i>&nbsp;Menu</a>
-*		  </div>
-*		  <div class="top-bar-right" onClick="$('#siteMenu .top-bar-left').toggleClass('display-block')">
-*		       <a class="top-bar-toggle">Search&nbsp;<i class="fa fa-search"></i></a>
-*		  </div>
-*		</div>
-*	  <div id="siteMenu" class="stack-for-small">
-*	    <div class="top-bar-left" class="show-for-large">
-*	      <ul class="menu">
-*	        <li class="dropdown-menu-item">
-*		      <button type="button" class="dropdown-holder" data-toggle="example-dropdown">Toggle Dropdown</button>
-*	          <div class="dropdown-pane double-column" id="example-dropdown" data-dropdown data-dropdown data-hover="true" data-hover-pane="true">
-*				<div class="row collapse">
-*					<div class="column medium-6">
-*					<ul class="submenu nav-level-1">
-*					<li><a href="">Menu item</a></li>
-*					<li><a href="">Menu item</a></li>
-*					<li><a href="">Menu item</a></li>
-*					<li class="parent">
-*						<ul class="submenu nav-level-2">
-*						<li><a href="">Secondary Menu item</a></li>
-*						<li><a href="">Secondary Menu item</a></li>
-*						<li><a href="">Secondary Menu item</a></li>
-*						<li><a href="">Secondary Menu item</a></li>
-*						<li><a href="">Secondary Menu item</a></li>
-*						</ul>	
-*					</li>
-*					<li><a href="">Menu item</a></li>
-*				</ul>		
-*				</div>
-*					<div class="column medium-6"><ul class="submenu nav-level-1">
-*					<li><a href="">Menu item</a></li>
-*					<li><a href="">Menu item</a></li>
-*					<li><a href="">Menu item</a></li>
-*					<li><a href="">Menu item</a></li>
-*					<li><a href="">Menu item</a></li>
-*				</ul>
-*				</div>
-*				</div>
-*	          </div>
-*	        </li>
-*	        <li>
-*	          <a href="#">Two</a>
-*	        </li>
-*	        <li>
-*	          <a href="#">Three</a>
-*	        </li>
-*	      </ul>
+*	    <div class="hide-for-large" id="mobileMenu">
+*	        <div class="top-bar-left" onclick="$('#siteMenu .top-bar-left').toggleClass('display-block')">
+*	            <a class="top-bar-toggle">
+*	                <i class="fa fa-bars">
+*	                </i>
+*	                Menu
+*	            </a>
+*	        </div>
+*	        <div class="top-bar-right secondary" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+*	            <a class="top-bar-toggle small condensable">
+*	                <span class="condense">
+*	                    Search
+*	                </span>
+*	                <i class="fa fa-search">
+*	                </i>
+*	            </a>
+*	        </div>
+*	        <div class="top-bar-right " onclick="$('#siteMenu .top-bar-right.user-nav').toggleClass('display-block')">
+*	            <a class="top-bar-toggle small condensable">
+*	                <span class="condense">
+*	                    Profile
+*	                </span>
+*	                <i class="fa fa-user">
+*	                </i>
+*	            </a>
+*	        </div>
 *	    </div>
-*	    <div class="top-bar-right" class="show-for-large">
-*	     	<ul class="menu">
-*	        <li>
-*	          <a href="">Drop Down</a>
-*	        </li>
-*	        <li>
-*	          <a href="#">Two</a>
-*	        </li>
-*	        <li>
-*	          <a href="#">Three</a>
-*	        </li>
-*	      </ul>
+*	    <div class="stack-for-medium " id="siteMenu">
+*	        <div class="top-bar-left show-for-large">
+*	            <ul class="menu">
+*	                <li class="dropdown-menu-item">
+*	                    <button data-toggle="example-dropdown" type="button">
+*	                        <i aria-hidden="true" class="fa fa-holder">
+*	                        </i>
+*	                        Toggle Dropdown
+*	                    </button>
+*	                    <div class="dropdown-pane double-column" data-dropdown="" data-hover="true" data-hover-pane="true" id="example-dropdown">
+*	                        <div class="row collapse">
+*	                            <div class="column medium-6">
+*	                                <ul class="submenu nav-level-1">
+*	                                    <li>
+*	                                        <a href="">
+*	                                            Menu item
+*	                                        </a>
+*	                                    </li>
+*	                                    <li>
+*	                                        <a href="">
+*	                                            Menu item
+*	                                        </a>
+*	                                    </li>
+*	                                    <li>
+*	                                        <a href="">
+*	                                            Menu item
+*	                                        </a>
+*	                                    </li>
+*	                                    <li class="parent">
+*	                                        <ul class="submenu nav-level-2">
+*	                                            <li>
+*	                                                <a href="">
+*	                                                    Secondary Menu item
+*	                                                </a>
+*	                                            </li>
+*	                                            <li>
+*	                                                <a href="">
+*	                                                    Secondary Menu item
+*	                                                </a>
+*	                                            </li>
+*	                                            <li>
+*	                                                <a href="">
+*	                                                    Secondary Menu item
+*	                                                </a>
+*	                                            </li>
+*	                                            <li>
+*	                                                <a href="">
+*	                                                    Secondary Menu item
+*	                                                </a>
+*	                                            </li>
+*	                                            <li>
+*	                                                <a href="">
+*	                                                    Secondary Menu item
+*	                                                </a>
+*	                                            </li>
+*	                                        </ul>
+*	                                    </li>
+*	                                    <li>
+*	                                        <a href="">
+*	                                            Menu item
+*	                                        </a>
+*	                                    </li>
+*	                                </ul>
+*	                            </div>
+*	                            <div class="column medium-6">
+*	                                <ul class="submenu nav-level-1">
+*	                                    <li>
+*	                                        <a href="">
+*	                                            Menu item
+*	                                        </a>
+*	                                    </li>
+*	                                    <li>
+*	                                        <a href="">
+*	                                            Menu item
+*	                                        </a>
+*	                                    </li>
+*	                                    <li>
+*	                                        <a href="">
+*	                                            Menu item
+*	                                        </a>
+*	                                    </li>
+*	                                    <li>
+*	                                        <a href="">
+*	                                            Menu item
+*	                                        </a>
+*	                                    </li>
+*	                                    <li>
+*	                                        <a href="">
+*	                                            Menu item
+*	                                        </a>
+*	                                    </li>
+*	                                </ul>
+*	                            </div>
+*	                        </div>
+*	                    </div>
+*	                </li>
+*	                <li>
+*	                    <a href="#">
+*	                        Two
+*	                    </a>
+*	                </li>
+*	                <li>
+*	                    <a href="#">
+*	                        Three
+*	                    </a>
+*	                </li>
+*	            </ul>
+*	        </div>
+*	        <div class="top-bar-right secondary show-for-large" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+*	            <ul class="menu">
+*	                <li>
+*	                    <a class="top-bar-toggle small condensable">
+*	                        <span class="condense">
+*	                            Search
+*	                        </span>
+*	                        <i class="fa fa-search">
+*	                        </i>
+*	                    </a>
+*	                </li>
+*	            </ul>
+*	        </div>
+*	        <div class="top-bar-right user-nav show-for-large">
+*	            <ul class="menu">
+*	                <li>
+*	                    <a href="">
+*	                        Drop Down
+*	                    </a>
+*	                </li>
+*	                <li>
+*	                    <a href="#">
+*	                        Two
+*	                    </a>
+*	                </li>
+*	                <li>
+*	                    <a href="#">
+*	                        Three
+*	                    </a>
+*	                </li>
+*	            </ul>
+*	        </div>
+*	        <div class="search-bar">
+*	            <div class="question">
+*	                <div class="input-holder">
+*	                    <div class="input-space column small-6 medium-9 large-10 ">
+*	                        <input name="" type="text">
+*	                        </input>
+*	                    </div>
+*	                    <div class="input-space column small-6 medium-3 large-2 ">
+*	                        <button class="button expanded">
+*	                            Search
+*	                        </button>
+*	                    </div>
+*	                </div>
+*	            </div>
+*	        </div>
 *	    </div>
-*	  </div>
 *	</div>
-*
 **/
 
 

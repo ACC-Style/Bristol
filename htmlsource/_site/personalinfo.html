@@ -38,18 +38,22 @@
         <i class="fa fa-spinner fa-spin"></i> Auto Save
     </div>
 </div>
-    <div class="user-id-block row collapse">
+    <div class="user-id-block card">
+  <div class="row">
         <img class="user-pic" src="Assets/img/profile-pic-default.jpg" alt="Avatar of Members Name">
-        <ul class="no-bullet user-info">
-            <li class="user-name">
+        <div class="no-bullet user-info">
+            <div class="user-name">
                 <span class="fullName">
                     Sanjiv Agrawal
                     <span class="userDesignation">, DM, MD</span>
                 </span> 
-            </li>
+            </div>
           
-      <li><a class="button  small expanded" href="index.html">Save &amp; Log Out</a></li>  
-    </ul>
+    </div>
+</div>
+  <div class="clearfix column row">
+    <a class="button secondary tiny radius expanded" href="index.html">Save &amp; Log Out</a>
+  </div>
 </div>
 
     <nav class="nav-list nav-checklist">
@@ -90,36 +94,37 @@
                     <div class="page" style="padding-bottom: 4em;">
                         
                         <div class="page-wrapper">
-                            
-    <div class="row">
-        <div class="column small-12">
-            <h1 class="with-underline">
-                Personal Information
-                <div class="sub-line">
-                    All fields denoted with an
-                    <sup>
-                        <i class="fa required">
-                        </i>
-                    </sup>
-                    are required.
-                </div>
-            </h1>
-        </div>
+                            <div class="row" id="PersonalInformation">
+    <div class="column relative-position">
+              <div style="top: 2rem;position: absolute;right: 1rem;">
+                <span class="emphasis">&quot;<i class="fa fa-asterisk" style="color:orange;"></i>&quot; required</span>
+            </div>
+              
+        <h1 class="with-underline">
+            Personal Information
+
+             
+        </h1>
+
     </div>
+</div>
+
     <div class="row">
-       <div class="question column small-4 medium-3 large-2 required">
+       <div class="question column small-4 medium-3 large-2 required disabled">
 	<div class="label-holder">
-		    <span class="text">
+		   <label for="">
+		   	 <span class="text">
                 Prefix
             </span>
             <span class="required-holder">
                 <i class="fa fa-holder">
                 </i>
             </span>
+		   </label>
 	</div>
 	<div class="input-holder">
 		<div class="input-space column">
-			<select name="" id="" required>
+			<select name="" id="" required disabled>
 				<option value="">..Choose</option>
 			</select>
 			<span class="input-lock">
@@ -133,164 +138,122 @@
 	</div>
 	<div class="hint"></div>
 </div>	
-       
-        <div class="question column large-3 medium-5 small-8 required" data-bind="css: { error: firstname.hasError, required: firstname.isRequired }">
-            <div class="label-holder">
-                <label>
-                    <span class="text">
-                        First Name
-                    </span>
-                    <span class="required-holder">
-                        <i class="fa fa-holder-dynamic">
-                        </i>
-                    </span>
-                </label>
-            </div>
-            <div class="input-holder">
-                <div class="input-space">
-                    <input data-bind="value: firstname, disable: true" disabled="" value="Sanjiv" type="text">
-                        <span class="input-lock" data-bind="visible: true">
-                            <i aria-describedby="tooltip-j2q2mq1c1" class="fa fa-lock lock-symbol has-tip" data-selector="tooltip-j2q2mq1c1" data-tooltip="" title="">
-                            </i>
-                        </span>
-                    </input>
-                </div>
-            </div>
-            <div class="message-holder">
-                <small class="" data-bind="css:{ error: firstname.hasError, warning: firstname.hasWarning }">
-                    <i class="fa fa-holder">
-                    </i>
-                    <!-- ko text: firstname.validationMessage -->
-                    <!-- /ko -->
-                </small>
-            </div>
-        </div>
-        <div class="question column large-2 medium-4" data-bind="css: { error: middlename.hasError, required: middlename.isRequired }">
-            <div class="label-holder">
-                <label>
-                    <span class="text swappable large">
-                        <span class="long-text">
-                            Middle Initial
-                        </span>
-                        <span class="short-text">
-                            MI
-                        </span>
-                    </span>
-                    <span class="required-holder">
-                        <i class="fa fa-holder-dynamic">
-                        </i>
-                    </span>
-                </label>
-            </div>
-            <div class="input-holder">
-                <div class="input-space">
-                    <input data-bind="value: middlename, disable: true" disabled="" type="text">
-                        <span class="input-lock" data-bind="visible: true">
-                            <i aria-describedby="tooltip-j2q2mq1c2" class="fa fa-lock lock-symbol has-tip" data-selector="tooltip-j2q2mq1c2" data-tooltip="" title="">
-                            </i>
-                        </span>
-                    </input>
-                </div>
-            </div>
-            <div class="message-holder">
-                <small class="" data-bind="css:{ error: middlename.hasError, warning: middlename.hasWarning }">
-                    <i class="fa fa-holder">
-                    </i>
-                    <!-- ko text: middlename.validationMessage -->
-                    <!-- /ko -->
-                </small>
-            </div>
-        </div>
-        <div class="question column large-3 medium-8 small-8 required" data-bind="css: { error: lastname.hasError, required: lastname.isRequired }">
-            <div class="label-holder">
-                <label>
-                    <span class="text">
-                        Last Name
-                    </span>
-                    <span class="required-holder">
-                        <i class="fa fa-holder-dynamic">
-                        </i>
-                    </span>
-                </label>
-            </div>
-            <div class="input-holder">
-                <div class="input-space">
-                    <input data-bind="value: lastname, disable: true" disabled="" value="Agrawal" type="text">
-                        <span class="input-lock" data-bind="visible: true">
-                            <i aria-describedby="tooltip-j2q2mq1c3" class="fa fa-lock lock-symbol has-tip" data-selector="tooltip-j2q2mq1c3" data-tooltip="" title="">
-                            </i>
-                        </span>
-                    </input>
-                </div>
-            </div>
-            <div class="message-holder">
-                <small class="" data-bind="css:{ error: lastname.hasError, warning: lastname.hasWarning }">
-                    <i class="fa fa-holder">
-                    </i>
-                    <!-- ko text: lastname.validationMessage -->
-                    <!-- /ko -->
-                </small>
-            </div>
-        </div>
-        <div class="question column large-2 medium-4 small-4" data-bind="css: { error: suffix.hasError, required: suffix.isRequired }">
-            <div class="label-holder">
-                <label>
-                    <span class="text">
-                        Suffix
-                    </span>
-                    <span class="required-holder">
-                        <i class="fa fa-holder-dynamic">
-                        </i>
-                    </span>
-                </label>
-            </div>
-            <div class="input-holder">
-                <div class="input-space">
-                    <select data-bind="options: suffixList, optionsText: 'Text', optionsValue: 'Value', optionsCaption: 'Choose...', value: suffix, disable: true" disabled="">
-                        <option value="">
-                            Choose...
-                        </option>
-                        <option value="III">
-                            III
-                        </option>
-                        <option value="JR">
-                            Jr.
-                        </option>
-                        <option value="SR">
-                            Sr.
-                        </option>
-                        <option value="II">
-                            II
-                        </option>
-                        <option value="IV">
-                            IV
-                        </option>
-                    </select>
-                    <span class="input-lock" data-bind="visible: true">
-                        <i aria-describedby="tooltip-j2q2mq1c4" class="fa fa-lock lock-symbol has-tip" data-selector="tooltip-j2q2mq1c4" data-tooltip="" title="">
-                        </i>
-                    </span>
-                </div>
-            </div>
-            <div class="message-holder">
-                <small class="" data-bind="css:{ error: suffix.hasError, warning: suffix.hasWarning }">
-                    <i class="fa fa-holder">
-                    </i>
-                    <!-- ko text: suffix.validationMessage -->
-                    <!-- /ko -->
-                </small>
-            </div>
-        </div>
+       <div class="question column small-8 medium-5 large-3 required disabled">
+	<div class="label-holder">
+		   <label for="">
+		   	 <span class="text">
+                First Name
+            </span>
+            <span class="required-holder">
+                <i class="fa fa-holder">
+                </i>
+            </span>
+		   </label>
+	</div>
+	<div class="input-holder">
+		<div class="input-space column">
+			<input type="text" required disabled value="" >
+			<span class="input-lock">
+                <i data-tooltip class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
+                </i>
+            </span>
+		</div>
+	</div>
+	<div class="message-holder">
+		<small class="error">Error Message</small>
+	</div>
+	<div class="hint"></div>
+</div>	
+       <div class="question column large-2 medium-4 required disabled">
+	<div class="label-holder">
+		   <label for="">
+		   	 <span class="text">
+                MI
+            </span>
+            <span class="required-holder">
+                <i class="fa fa-holder">
+                </i>
+            </span>
+		   </label>
+	</div>
+	<div class="input-holder">
+		<div class="input-space column">
+			<input type="text" required disabled value="" >
+			<span class="input-lock">
+                <i data-tooltip class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
+                </i>
+            </span>
+		</div>
+	</div>
+	<div class="message-holder">
+		<small class="error">Error Message</small>
+	</div>
+	<div class="hint"></div>
+</div>	
+        <div class="question column large-3 medium-8 small-8 required disabled">
+	<div class="label-holder">
+		   <label for="">
+		   	 <span class="text">
+                Last Name
+            </span>
+            <span class="required-holder">
+                <i class="fa fa-holder">
+                </i>
+            </span>
+		   </label>
+	</div>
+	<div class="input-holder">
+		<div class="input-space column">
+			<input type="text" required disabled value="" >
+			<span class="input-lock">
+                <i data-tooltip class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
+                </i>
+            </span>
+		</div>
+	</div>
+	<div class="message-holder">
+		<small class="error">Error Message</small>
+	</div>
+	<div class="hint"></div>
+</div>	
+        <div class="question column large-2 medium-4 small-4 required disabled">
+	<div class="label-holder">
+		   <label for="">
+		   	 <span class="text">
+                Suffix
+            </span>
+            <span class="required-holder">
+                <i class="fa fa-holder">
+                </i>
+            </span>
+		   </label>
+	</div>
+	<div class="input-holder">
+		<div class="input-space column">
+			<select name="" id="" required disabled>
+				<option value="">Choose..</option>
+			</select>
+			<span class="input-lock">
+                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
+                </i>
+            </span>
+		</div>
+	</div>
+	<div class="message-holder">
+		<small class="error">Error Message</small>
+	</div>
+	<div class="hint"></div>
+</div>	
     </div>
             <div class="row">
-            <div class="question column medium-6 required" data-bind="css: { error: designation.hasError, required: designation.isRequired }">
+            <div class="question column medium-6 required disabled">
                 <div class="label-holder">
                     <label>
                         <span class="text">
                             Credentials/Degrees
                         </span>
                         <span class="required-holder">
-                            <i class="fa fa-holder-dynamic">
+                            <i class="fa fa-holder">
                             </i>
                         </span>
                     </label>
@@ -314,14 +277,14 @@
                     </small>
                 </div>
             </div>
-            <div class="question column medium-6 required" data-bind="css: { error: professionaltypecode.hasError, required: professionaltype.isRequired, warning: professionaltypecode.hasWarning }">
+            <div class="question column medium-6 required disabled" >
                 <div class="label-holder">
                     <label>
                         <span class="text">
                             Professional Type
                         </span>
                         <span class="required-holder">
-                            <i class="fa fa-holder-dynamic">
+                            <i class="fa fa-holder">
                             </i>
                         </span>
                     </label>
@@ -333,7 +296,7 @@
                         </input>
                     </div>
                     <div class="input-space column small-3">
-                        <a onclick="extraQuestions(event)" class="button expanded success" >
+                        <a onclick="extraQuestions(event)" class="button expanded success disabled" >
                             Add/Edit
                         </a>
                     </div>
@@ -362,9 +325,9 @@
         <h2 id="Address">
             Address(es)
             <div class="sub-line">
-                <b>
+                
                     At least one personal address is required.
-                </b>
+               
             </div>
         </h2>
         <div class="repeater" id="repeaterAddress">
@@ -379,7 +342,7 @@
                     <li class="has-tip locked" data-bind="visible: isprimary" title="Locked: Primary Address - Please use edit to change">
                         <i class="fa fa-lock" title="Marked as Primary">
                         </i>
-                        Protected Address
+                        This address can be edited but not deleted
                     </li>
                     <!--ko if: 'home' == 'work' -->
                     <!--/ko-->
@@ -419,13 +382,6 @@
                         </i>
                         <span class="text">
                             mark as Preferred
-                        </span>
-                    </a>
-                    <a class="delete disabled" data-bind="visible: (!isprimary() && !preferredmailing() ),click: function() { $root.deleteCustomSection('address','addressinfo', $data) }" href="javascript:void(0)">
-                        <i class="fa fa-holder">
-                        </i>
-                        <span class="text">
-                            Delete
                         </span>
                     </a>
                 </div>
@@ -506,7 +462,7 @@
 
 <div class="row">
         <div class="column">
-            <a class="button small radius expanded success" id="addAddressButton" onclick="AddressSlide(event)">
+            <a class="button radius expanded success" id="addAddressButton" onclick="AddressSlide(event)">
                 <i class="fa fa-plus">
                 </i>
                 Add Address
@@ -602,19 +558,21 @@
 <div class="row" id="institution">
     <div class="question column small-12 required">
 	<div class="label-holder">
-		    <span class="text">
+		   <label for="">
+		   	 <span class="text">
                 Institution Name
             </span>
             <span class="required-holder">
                 <i class="fa fa-holder">
                 </i>
             </span>
+		   </label>
 	</div>
 	<div class="input-holder">
 		<div class="input-space column">
 			<input type="text" required value="" >
 			<span class="input-lock">
-                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
+                <i data-tooltip class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
                 </i>
             </span>
 		</div>
@@ -629,19 +587,21 @@
 <div class="row">
     <div class="question column small-12 large-12 required">
 	<div class="label-holder">
-		    <span class="text">
+		   <label for="">
+		   	 <span class="text">
                 Street Address 1
             </span>
             <span class="required-holder">
                 <i class="fa fa-holder">
                 </i>
             </span>
+		   </label>
 	</div>
 	<div class="input-holder">
 		<div class="input-space column">
 			<input type="text" required value="" >
 			<span class="input-lock">
-                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
+                <i data-tooltip class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
                 </i>
             </span>
 		</div>
@@ -653,19 +613,21 @@
 </div>	
 <div class="question column small-12 large-6 ">
 	<div class="label-holder">
-		    <span class="text">
+		   <label for="">
+		   	 <span class="text">
                 Street Address 2
             </span>
             <span class="required-holder">
                 <i class="fa fa-holder">
                 </i>
             </span>
+		   </label>
 	</div>
 	<div class="input-holder">
 		<div class="input-space column">
 			<input type="text"  value="" >
 			<span class="input-lock">
-                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
+                <i data-tooltip class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
                 </i>
             </span>
 		</div>
@@ -677,19 +639,21 @@
 </div>	
 <div class="question column small-12 large-6 ">
 	<div class="label-holder">
-		    <span class="text">
+		   <label for="">
+		   	 <span class="text">
                 Street Address 3
             </span>
             <span class="required-holder">
                 <i class="fa fa-holder">
                 </i>
             </span>
+		   </label>
 	</div>
 	<div class="input-holder">
 		<div class="input-space column">
 			<input type="text"  value="" >
 			<span class="input-lock">
-                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
+                <i data-tooltip class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
                 </i>
             </span>
 		</div>
@@ -1004,10 +968,10 @@
                         </div>
                         <div class="row group-divide">
                             <div class="column text-right">
-                                <a class="button secondary" href="" onclick="AddressSlide(event)">
+                                <a class="button secondary radius" href="" onclick="AddressSlide(event)">
                                     Cancel
                                 </a>
-                                <a class="button" href="" onclick="AddressSave(event)">
+                                <a class="button radius" href="" onclick="AddressSave(event)">
                                     Save
                                 </a>
                             </div>
@@ -1052,7 +1016,7 @@
                     <li class="has-tip locked" data-bind="visible: isprimary" title="Locked: Primary Address - Please use edit to change">
                         <i class="fa fa-lock" title="Marked as Preferred">
                         </i>
-                        Protected Phone Number
+                        This phone number can be edited but not deleted
                     </li>
                     <!--ko if: 'home' == 'work' -->
                     <!--/ko-->
@@ -1160,7 +1124,7 @@
         </div>
 <div class="row">
         <div class="column">
-            <a class="button small radius expanded success" id="addPhoneButton" onclick="PhoneSlide(event)">
+            <a class="button radius expanded success" id="addPhoneButton" onclick="PhoneSlide(event)">
                 <i class="fa fa-plus">
                 </i>
                 Add Phone
@@ -1192,13 +1156,15 @@
     <div class="row">
         <div class="question column small-12 large-2 required">
 	<div class="label-holder">
-		    <span class="text">
+		   <label for="">
+		   	 <span class="text">
                 Type
             </span>
             <span class="required-holder">
                 <i class="fa fa-holder">
                 </i>
             </span>
+		   </label>
 	</div>
 	<div class="input-holder">
 		<div class="input-space column">
@@ -1218,13 +1184,15 @@
 </div>	
         <div class="question column small-12 large-3 required">
 	<div class="label-holder">
-		    <span class="text">
+		   <label for="">
+		   	 <span class="text">
                 Country
             </span>
             <span class="required-holder">
                 <i class="fa fa-holder">
                 </i>
             </span>
+		   </label>
 	</div>
 	<div class="input-holder">
 		<div class="input-space column">
@@ -1244,19 +1212,21 @@
 </div>	
         <div class="question column small-12 large-3 required">
 	<div class="label-holder">
-		    <span class="text">
+		   <label for="">
+		   	 <span class="text">
                 Number
             </span>
             <span class="required-holder">
                 <i class="fa fa-holder">
                 </i>
             </span>
+		   </label>
 	</div>
 	<div class="input-holder">
 		<div class="input-space column">
 			<input type="text" required value="" >
 			<span class="input-lock">
-                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
+                <i data-tooltip class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
                 </i>
             </span>
 		</div>
@@ -1308,10 +1278,10 @@
                         </div>
                         <div class="row group-divide">
                             <div class="column text-right">
-                                <a class="button secondary" href="" onclick="PhoneSlide(event)">
+                                <a class="button secondary radius" href="" onclick="PhoneSlide(event)">
                                     Cancel
                                 </a>
-                                <a class="button" href="" onclick="PhoneSave(event)">
+                                <a class="button radius" href="" onclick="PhoneSave(event)">
                                     Save
                                 </a>
                             </div>
@@ -1346,7 +1316,7 @@
 </div>
 <div class="row">
         <div class="column">
-            <a class="button small radius expanded success" id="addEmailButton" onclick="EmailSlide(event)">
+            <a class="button radius expanded success" id="addEmailButton" onclick="EmailSlide(event)">
                 <i class="fa fa-plus">
                 </i>
                 Add Email
@@ -1378,13 +1348,15 @@
     <div class="row">
         <div class="question column small-12 large-2 required">
 	<div class="label-holder">
-		    <span class="text">
+		   <label for="">
+		   	 <span class="text">
                 Type
             </span>
             <span class="required-holder">
                 <i class="fa fa-holder">
                 </i>
             </span>
+		   </label>
 	</div>
 	<div class="input-holder">
 		<div class="input-space column">
@@ -1404,19 +1376,21 @@
 </div>	
         <div class="question column small-12 large-6 required">
 	<div class="label-holder">
-		    <span class="text">
+		   <label for="">
+		   	 <span class="text">
                 Email Address
             </span>
             <span class="required-holder">
                 <i class="fa fa-holder">
                 </i>
             </span>
+		   </label>
 	</div>
 	<div class="input-holder">
 		<div class="input-space column">
 			<input type="text" required value="" >
 			<span class="input-lock">
-                <i data-tooltip aria-haspopup="true" class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
+                <i data-tooltip class="fa fa-lock lock-symbol has-tip" title="Input is locked.  Call Member Services if this needs to change">
                 </i>
             </span>
 		</div>
@@ -1468,10 +1442,10 @@
                         </div>
                         <div class="row group-divide">
                             <div class="column text-right">
-                                <a class="button secondary" href="" onclick="EmailSlide(event)">
+                                <a class="button secondary radius" href="" onclick="EmailSlide(event)">
                                     Cancel
                                 </a>
-                                <a class="button" href="" onclick="EmailSave(event)">
+                                <a class="button radius" href="" onclick="EmailSave(event)">
                                     Save
                                 </a>
                             </div>
@@ -1501,13 +1475,15 @@
 <div class="row">
 	<div class="question column small-12 large-4 required">
 	<div class="label-holder">
-		    <span class="text">
+		   <label for="">
+		   	 <span class="text">
                 Gender
             </span>
             <span class="required-holder">
                 <i class="fa fa-holder">
                 </i>
             </span>
+		   </label>
 	</div>
 	<div class="input-holder">
 		<div class="input-space column">
@@ -1527,13 +1503,15 @@
 </div>	
 	<div class="question column small-12 large-4 required">
 	<div class="label-holder">
-		    <span class="text">
+		   <label for="">
+		   	 <span class="text">
                 Date of Birth
             </span>
             <span class="required-holder">
                 <i class="fa fa-holder">
                 </i>
             </span>
+	   </label>
 	</div>
 	<div class="input-holder row collapse">
 		<div class="input-space column small-10 date-input-holder">
@@ -1552,13 +1530,15 @@
 </div>	
 	<div class="question column small-12 large-4 required">
 	<div class="label-holder">
-		    <span class="text">
+		   <label for="">
+		   	 <span class="text">
                 Race/Ethnicity
             </span>
             <span class="required-holder">
                 <i class="fa fa-holder">
                 </i>
             </span>
+		   </label>
 	</div>
 	<div class="input-holder">
 		<div class="input-space column">
@@ -1724,41 +1704,9 @@
       </div>
       <div class="columns large-4  medium-5">
         <section class="acc-websites row">
-          <h4>Powered By the ACC</h4>
-          <nav class="nav-list small">
-            <ul class="">
-              <li>
-                <a target="_blank" class="" href="http://www.acc.org">
-                  <span class="text">Acc.org</span>
-                  <i class="fa fa-external-link-square"></i>
-                </a>
-              </li>
-              <li>
-                <a target="_blank" class="" href="http://cvquality.acc.org/">
-                  <span class="text">ACC Quality Improvement for Institutions</span>
-                  <i class="fa fa-external-link-square"></i>
-                </a>
-              </li>
-              <li>
-                <a target="_blank" class="" href="http://www.ncdr.com">
-                  <span class="text">NCDR.com</span>
-                  <i class="fa fa-external-link-square"></i>
-                </a>
-              </li>
-              <li>
-                <a target="_blank" class="" href="http://www.cardiosmart.org">
-                  <span class="text">CardioSmart.org</span>
-                  <i class="fa fa-external-link-square"></i>
-                </a>
-              </li>
-              <li>
-                <a target="_blank" class="" href="http://blog.cardiosource.org">
-                  <span class="text">ACCinTouch.com</span>
-                  <i class="fa fa-external-link-square"></i>
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <h4>Do you have questions?</h4>
+          <p>If you have any questions please contact the Member Services Department at <a href="" class="link">membership@acc.org</a>.</p>
+          
         </section>
       </div>
     </div>
@@ -1814,6 +1762,7 @@
 </script>
 <script>
     $(function() {
+     $( "#auto-save .message" ).slideUp();
     $(".selectable a.button").click(function(e){
     e.preventDefault();
     $(this).addClass('selected').siblings().removeClass('selected');
@@ -1839,6 +1788,11 @@
         $(".fileTypeUpload").removeClass('disabled');
     });
 });
+    $( document.body ).click(function () {
+  $( "#auto-save .message" ).slideDown( "slow", function() {
+    $(this).delay( 800 ).slideUp("slow");
+  });
+})
 </script>
 <style>
     select{
@@ -1848,6 +1802,11 @@
     }
 </style>
 
-       
+<div id="auto-save">
+	<div class="message">
+			<i class="fa fa-cog fa-spin fa-fw"></i>
+	<span>Saving Your Information...</span> 
+	</div>
+</div>
     </body>
 </html>

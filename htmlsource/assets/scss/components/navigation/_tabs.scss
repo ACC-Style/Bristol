@@ -62,7 +62,7 @@ $tab-lighttext:$global-default-light-text;
 			vertical-align: top;
 			margin: 0 auto;
 			width: 100%;
-			color:color-contrast($tab-color,$tab-darktext,$tab-lighttext);
+			color:acc-color-contrast($tab-color,$tab-darktext,$tab-lighttext);
 			@include bp(md){
 				padding: .45em .75em .55em;
 			}	
@@ -73,7 +73,7 @@ $tab-lighttext:$global-default-light-text;
 		&:hover{
 			background-color:$tab-hover-color;
 			a{
-				color:color-contrast($tab-hover-color,$tab-darktext,$tab-lighttext);
+				color:acc-color-contrast($tab-hover-color,$tab-darktext,$tab-lighttext);
 			}
 		}
 
@@ -87,14 +87,14 @@ $tab-lighttext:$global-default-light-text;
 			&.selected,&.is-active{
 				background-color: $tab-selected-color;
 				a{
-					color:color-contrast($tab-selected-color,$tab-darktext,$tab-lighttext);
+					color:acc-color-contrast($tab-selected-color,$tab-darktext,$tab-lighttext);
 					&:hover{color:fontcolor($black);}
 					}
 
 				&:hover{
 					background-color: $tab-selected-hover-color;
 					a{
-						color:color-contrast($tab-selected-hover-color,$tab-darktext,$tab-lighttext);
+						color:acc-color-contrast($tab-selected-hover-color,$tab-darktext,$tab-lighttext);
 					}
 				}
 			}
@@ -103,12 +103,12 @@ $tab-lighttext:$global-default-light-text;
 		&.secondary,&.visited{
 			background-color: $tab-secondary-color;
 			a{
-				color: color-contrast($tab-secondary-color,$tab-darktext,$tab-lighttext);
+				color: acc-color-contrast($tab-secondary-color,$tab-darktext,$tab-lighttext);
 			}
 			&:hover{
 				background-color: $tab-secondary-hover-color;
 				a{
-					color: color-contrast($tab-secondary-hover-color,$tab-darktext,$tab-lighttext);
+					color: acc-color-contrast($tab-secondary-hover-color,$tab-darktext,$tab-lighttext);
 				}
 			}
 
@@ -148,7 +148,7 @@ $tab-lighttext:$global-default-light-text;
 			bottom:-1px;
 			position: relative;
 			a{
-				color:color-contrast($tab-selected-color,$tab-darktext,$tab-lighttext);
+				color:acc-color-contrast($tab-selected-color,$tab-darktext,$tab-lighttext);
 				cursor:context-menu;
 			}
 		}

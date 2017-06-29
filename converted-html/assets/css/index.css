@@ -1,6 +1,15 @@
 @charset "UTF-8";
+h1, h2, h3, h4, h5, h6, p, td, th {
+  -webkit-transition: line-height 1s;
+  /* Safari */
+  transition: line-height 1s;
+  -webkit-transition: margin 1s;
+  /* Safari */
+  transition: margin 1s;
+}
+
 /**
-* Bristol 2.8
+* Bristol 2.9
 **/
 /**
 * Base Framework:
@@ -9,26 +18,10 @@
 *   @example
 *	<a  class="button" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
 */
-body {
+html, body, html body {
   font-size: 16px;
 }
 
-/**
-* Style Markup:
-* `edge > outline` -coloring to show invisible containers in the styleguide.
-* 
-*   @example
-*	<style>
-*		.edge,.outline{ border:thin #ccc solid; position: relative; padding:16px 4px 4px;}
-*		.outline{ border:dashed thin red}
-*		.outline .outline{ border:dotted thin blue; display:inline-block;}
-*		.outline .outline .outline{ border:dotted thin green; display:inline-block;}
-*		.notation{font-size:10px; position: absolute; top: 0px;right: 4px;}
-*		.outline .notation{ color:red;}
-*		.outline .outline .notation{ color:blue;}
-*		.outline .outline .outline  .notation{ color:green;}
-*	</style>
-**/
 @font-face {
   font-family: Open Sans;
   font-style: normal;
@@ -78,497 +71,11 @@ body {
   src: url("../fonts/robotoslab_700/RobotoSlab-Bold-webfont.eot");
   src: url("../fonts/robotoslab_700/RobotoSlab-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/robotoslab_700/RobotoSlab-Bold-webfont.woff") format("woff"), url("../fonts/robotoslab_700/RobotoSlab-Bold-webfont.ttf") format("truetype"), url("../fonts/robotoslab_700/RobotoSlab-Bold-webfont.svg#open_sanslight") format("svg");
 }
-/**
-* Brand Level:
-* `var $brand-level` - this variable has the ablity to over take the standard acc coloring with a branded product color.  Standard values are:
-*  <ol start="0"><li>Pure ACC Color</li><li>Header Bar and Primaary Nav Selects</li><li>Lines, Selects, and Header Bar</li><li>Full Color OVer Take, Typography, Selects, Header Bar, and Lines</li></ol>
-* 
-*   @example
-*	<table class="table">
-*		<thead>
-*			<tr>
-*				<th>Variable</th>
-*				<th>Color</th>
-*			</tr>
-*		</thead>
-*		<tbody>
-*			<tr>
-*				<td>$brand-color</td>
-*				<td class="brand-color">&nbsp;</td>
-*			</tr>
-*			<tr>
-*				<td>$product-brand-color</td>
-*				<td class="product-brand-color">&nbsp;</td>
-*			</tr>
-*			<tr>
-*				<td>$primary-color</td>
-*				<td class="primary-color">&nbsp;</td>
-*			</tr>
-*			<tr>
-*				<td>$secondary-color</td>
-*				<td class="secondary-color">&nbsp;</td>
-*			</tr>
-*			<tr>
-*				<td>$tertiary-color</td>
-*				<td class="tertiary-color">&nbsp;</td>
-*			</tr>
-*		</tbody>
-*	</table>
-*/
-/**
-* Zurb Foundation - Kitchen Sink :
-* `kitchensink` - This is a visual representation of UI elements that come from the base framework from ZURB. 
-* This does not includes every single element from Foundation to view a full list go to the documentation. 
-* <a class="button tiny" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
-* <h5 class="warning">Now Using Zurb Foundation Sites 6</h5>
-*
-*  @example 
-*    <h4 id="alert-boxes">Callout</h4>
-*    <div class="callout">
-*    <h5>This is a callout.</h5>
-*    <p>It has an easy to override visual style, and is appropriately subdued.</p>
-*    <a href="#">It's dangerous to go alone, take this.</a>
-*    </div>
-*    <div class="callout secondary">
-*    <h5>This is a secondary callout</h5>
-*    <p>It has an easy to override visual style, and is appropriately subdued.</p>
-*    <a href="#">It's dangerous to go alone, take this.</a>
-*    </div>
-*    <div class="callout warning">
-*    <h5>This is a warning callout</h5>
-*    <p>It has an easy to override visual style, and is appropriately subdued.</p>
-*    <a href="#">It's dangerous to go alone, take this.</a>
-*    </div>
-*    <div class="callout error">
-*    <h5>This is an error callout</h5>
-*    <p>It has an easy to override visual style, and is appropriately subdued.</p>
-*    <a href="#">It's dangerous to go alone, take this.</a>
-*    </div>
-*    <h4 id="buttons">Breadcrumbs</h4>
-*    <nav aria-label="You are here:" role="navigation">
-*    <ul class="breadcrumbs">
-*    <li><a href="#">Home</a></li>
-*    <li><a href="#">Features</a></li>
-*    <li class="disabled">Gene Splicing</li>
-*    <li>
-*    <span class="show-for-sr">Current: </span> Cloning
-*    </li>
-*    </ul>
-*    </nav>
-*    <h4 id="buttons">Buttons</h4>
-*    <div class="row">
-*    <!-- Anchors (links) -->
-*    <a href="about.html" class="button">Learn More</a>
-*    <a href="#features" class="button">View All Features</a>
-*    <!-- Buttons (actions) -->
-*    <button type="button" class="success button">Save</button>
-*    <button type="button" class="alert button">Delete</button>
-*    <button type="button" class="alert button disabled">Disabled</button>
-*    <a class="tiny button" href="#">So Tiny</a>
-*    <a class="small button" href="#">So Small</a>
-*    <a class="large button" href="#">So Large</a>
-*    <a class="small button radius" href="#">So Small with Radius</a>
-*    <a class="large button round" href="#">So Large with Round</a>
-*    <a class="expanded button" href="#">Such Expand</a>
-*    <div class="button-group expanded">
-*      <a class="button">One</a>
-*      <a class="button">Two</a>
-*      <a class="button">Three</a>
-*    </div>
-*    </div>
-*    <div class="row">
-*    <h4 id="switches">switches</h4>
-*    <div class="switch tiny">
-*    <input class="switch-input" id="tinySwitch" type="checkbox" name="exampleSwitch">
-*    <label class="switch-paddle" for="tinySwitch">
-*    <span class="show-for-sr">Tiny Sandwiches Enabled</span>
-*    </label>
-*    </div>
-*    <div class="switch small">
-*    <input class="switch-input" id="smallSwitch" type="checkbox" name="exampleSwitch">
-*    <label class="switch-paddle" for="smallSwitch">
-*    <span class="show-for-sr">Small Portions Only</span>
-*    </label>
-*    </div> 
-*    <div class="switch large">
-*    <input class="switch-input" id="largeSwitch" type="checkbox" name="exampleSwitch">
-*    <label class="switch-paddle" for="largeSwitch">
-*    <span class="show-for-sr">Show Large Elephants</span>
-*    </label>
-*    </div>
-*    </div>
-*    <h4>Grid</h4>
-*      <div class="row">
-*          <div class="column small-12 medium-4 large-3 visible-grid">
-*              <div class="panel">
-*                  <span class="show-for-small-only">The screen is small and the container div has a class of 'small-12'</span>
-*                  <span class="show-for-medium-only">The screen is medium and the container div has a class of 'medium-4'</span>
-*                  <span class="show-for-large-up">the screen is large and the container div has a class of 'large-3'</span>
-*              </div>
-*          </div>
-*          <div class="column small-6 medium-4 large-3 visible-grid">
-*              <div class="panel">
-*                  <span class="show-for-small-only">The screen is small and the container div has a class of 'small-6'</span>
-*                  <span class="show-for-medium-only">The screen is medium and the container div has a class of 'medium-4'</span>
-*                  <span class="show-for-large-up">the screen is large and the container div has a class of 'large-3'</span>
-*              </div>
-*          </div>
-*          <div class="column small-6 medium-4 large-3 visible-grid">
-*              <div class="panel">
-*                  <span class="show-for-small-only">The screen is small and the container div has a class of 'small-6'</span>
-*                  <span class="show-for-medium-only">The screen is medium and the container div has a class of 'medium-4'</span>
-*                  <span class="show-for-large-up">the screen is large and the container div has a class of 'large-3'</span>
-*              </div>
-*          </div>
-*          <div class="column small-12 medium-12 large-3 visible-grid">
-*              <div class="panel">
-*                  <span class="show-for-small-only">The screen is small and the container div has a class of 'small-12'</span>
-*                  <span class="show-for-medium-only">The screen is medium and the container div has a class of 'medium-12'</span>
-*              <span class="show-for-large-up">the screen is large and the container div has a class of 'large-3'</span></div>
-*          </div>
-*      </div>
-*      <div class="row">
-*          <div class="column small-12 medium-7 large-4 visible-grid">
-*              <div class="panel">
-*                  <span class="show-for-small-only">The screen is small and the container div has a class of 'small-12'</span>
-*                  <span class="show-for-medium-only">The screen is medium and the container div has a class of 'medium-7'</span>
-*                  <span class="show-for-large-up">the screen is large and the container div has a class of 'large-4'</span>
-*              </div>
-*          </div>
-*          <div class="column small-12 medium-5 large-8 visible-grid">
-*              <div class="panel">
-*                  <span class="show-for-small-only">The screen is small and the container div has a class of 'small-12'</span>
-*                  <span class="show-for-medium-only">The screen is medium and the container div has a class of 'medium-5'</span>
-*                  <span class="show-for-large-up">the screen is large and the container div has a class of 'large-8'</span>
-*              </div>
-*          </div>
-*      </div>
-**/
-.visible-grid > .panel {
-  color: black;
-  border: 1px solid #aaa;
-  background-color: #ccc;
-  padding: 1em;
-  margin-bottom: .5em;
-}
-
-/**
-* Icons from Font Awesome:
-* `fa-xxx` - fully css stylable font icons from Font Awesome. Please read documentation from the font awesome website. 
-* 
-*   @example
-*	<div id="web-application">
-*		<h2 class="page-header">Font Awesome</h2>
-*		<div class="row fontawesome-icon-list">
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/arrows"><i class="fa fa-arrows"></i>&nbsp; arrows</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/arrows-h"><i class="fa fa-arrows-h"></i>&nbsp; arrows-h</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/arrows-v"><i class="fa fa-arrows-v"></i>&nbsp; arrows-v</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/asterisk"><i class="fa fa-asterisk"></i>&nbsp; asterisk</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/at"><i class="fa fa-at"></i>&nbsp; at</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/bookmark"><i class="fa fa-bookmark"></i>&nbsp; bookmark</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/bookmark-o"><i class="fa fa-bookmark-o"></i>&nbsp; bookmark-o</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/briefcase"><i class="fa fa-briefcase"></i>&nbsp; briefcase</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/bug"><i class="fa fa-bug"></i>&nbsp; bug</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/building"><i class="fa fa-building"></i>&nbsp; building</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/calculator"><i class="fa fa-calculator"></i>&nbsp; calculator</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/calendar"><i class="fa fa-calendar"></i>&nbsp; calendar</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/calendar-o"><i class="fa fa-calendar-o"></i>&nbsp; calendar-o</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/camera"><i class="fa fa-camera"></i>&nbsp; camera</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/camera-retro"><i class="fa fa-camera-retro"></i>&nbsp; camera-retro</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-down"><i class="fa fa-caret-square-o-down"></i>&nbsp; caret-square-o-down</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-left"><i class="fa fa-caret-square-o-left"></i>&nbsp; caret-square-o-left</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-right"><i class="fa fa-caret-square-o-right"></i>&nbsp; caret-square-o-right</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-up"><i class="fa fa-caret-square-o-up"></i>&nbsp; caret-square-o-up</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cart-arrow-down"><i class="fa fa-cart-arrow-down"></i>&nbsp; cart-arrow-down</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check"><i class="fa fa-check"></i>&nbsp; check</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check-circle"><i class="fa fa-check-circle"></i>&nbsp; check-circle</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check-circle-o"><i class="fa fa-check-circle-o"></i>&nbsp; check-circle-o</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check-square"><i class="fa fa-check-square"></i>&nbsp; check-square</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check-square-o"><i class="fa fa-check-square-o"></i>&nbsp; check-square-o</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/circle"><i class="fa fa-circle"></i>&nbsp; circle</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/circle-o"><i class="fa fa-circle-o"></i>&nbsp; circle-o</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/circle-o-notch"><i class="fa fa-circle-o-notch"></i>&nbsp; circle-o-notch</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/circle-thin"><i class="fa fa-circle-thin"></i>&nbsp; circle-thin</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/clock-o"><i class="fa fa-clock-o"></i>&nbsp; clock-o</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/times"><i class="fa fa-close"></i>&nbsp; close <span class="text-muted">(alias)</span></a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cloud"><i class="fa fa-cloud"></i>&nbsp; cloud</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cloud-download"><i class="fa fa-cloud-download"></i>&nbsp; cloud-download</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cloud-upload"><i class="fa fa-cloud-upload"></i>&nbsp; cloud-upload</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/code"><i class="fa fa-code"></i>&nbsp; code</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/coffee"><i class="fa fa-coffee"></i>&nbsp; coffee</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cog"><i class="fa fa-cog"></i>&nbsp; cog</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cogs"><i class="fa fa-cogs"></i>&nbsp; cogs</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/comment"><i class="fa fa-comment"></i>&nbsp; comment</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/comment-o"><i class="fa fa-comment-o"></i>&nbsp; comment-o</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/pencil-square-o"><i class="fa fa-edit"></i>&nbsp; edit <span class="text-muted">(alias)</span></a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/envelope"><i class="fa fa-envelope"></i>&nbsp; envelope</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/envelope-o"><i class="fa fa-envelope-o"></i>&nbsp; envelope-o</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/exclamation"><i class="fa fa-exclamation"></i>&nbsp; exclamation</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/exclamation-circle"><i class="fa fa-exclamation-circle"></i>&nbsp; exclamation-circle</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/exclamation-triangle"><i class="fa fa-exclamation-triangle"></i>&nbsp; exclamation-triangle</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/external-link"><i class="fa fa-external-link"></i>&nbsp; external-link</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/wifi"><i class="fa fa-wifi"></i>&nbsp; wifi</a></div>
-*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/wrench"><i class="fa fa-wrench"></i>&nbsp; wrench</a></div>
-*			<div class="column small-12"><a href="http://fortawesome.github.io/Font-Awesome/icons/">full list of icons</a></div>
-*		</div>
-*	</div>
-*/
-/**
-* JQUERY UI - Kitchen Sink:
-* `JQUERY UI 1.11.4` - This style is base for more complicated ui elements
-*	<nav class="nav-list small"><ul><li><a href="http://jqueryui.com/accordion/"><span class="text">Accordion</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/autocomplete/"><span class="text">Autocomplete</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/datepicker/"><span class="text">Datepicker</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/progressbar/"><span class="text">Progressbar</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/slider/"><span class="text">Slider</span> <i class="fa fa-holder-dynamic"></i></a></li><li><a href="http://jqueryui.com/spinner/"><span class="text">Spinner </span><i class="fa fa-holder-dynamic"></i></a></li></ul></nav>
-* 
-*   @example
-*	<h5>Accordion</h5>
-*	<div id="accordion">
-*	  <h3>Section 1</h3>
-*	  <div>
-*	    <p>
-*	    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-*	    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-*	    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-*	    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-*	    </p>
-*	  </div>
-*	  <h3>Section 2</h3>
-*	  <div>
-*	    <p>
-*	    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-*	    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-*	    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-*	    suscipit faucibus urna.
-*	    </p>
-*	  </div>
-*	  <h3>Section 3</h3>
-*	  <div>
-*	    <p>
-*	    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-*	    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-*	    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-*	    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-*	    </p>
-*	    <ul>
-*	      <li>List item one</li>
-*	      <li>List item two</li>
-*	      <li>List item three</li>
-*	    </ul>
-*	  </div>
-*	  <h3>Section 4</h3>
-*	  <div>
-*	    <p>
-*	    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-*	    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-*	    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-*	    mauris vel est.
-*	    </p>
-*	    <p>
-*	    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-*	    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-*	    inceptos himenaeos.
-*	    </p>
-*	  </div>
-*	</div>
-*	<div id="accordion2" class="ui-accordion-override">
-*	  <h3>Section 1</h3>
-*	  <div>
-*	    <p>
-*	    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-*	    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-*	    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-*	    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-*	    </p>
-*	  </div>
-*	  <h3>Section 2</h3>
-*	  <div>
-*	    <p>
-*	    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-*	    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-*	    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-*	    suscipit faucibus urna.
-*	    </p>
-*	  </div>
-*	  <h3>Section 3</h3>
-*	  <div>
-*	    <p>
-*	    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-*	    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-*	    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-*	    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-*	    </p>
-*	    <ul>
-*	      <li>List item one</li>
-*	      <li>List item two</li>
-*	      <li>List item three</li>
-*	    </ul>
-*	  </div>
-*	  <h3>Section 4</h3>
-*	  <div>
-*	    <p>
-*	    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-*	    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-*	    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-*	    mauris vel est.
-*	    </p>
-*	    <p>
-*	    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-*	    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-*	    inceptos himenaeos.
-*	    </p>
-*	  </div>
-*	</div>
-*	<h5>Auto Complete</h5>
-*	<div class="question required">
-*	  <div class="label-holder">
-*	    <label for="">
-*	      <span class="text">Auto Complete</span>
-*	      <span class="required-holder">
-*	        <i class="fa fa-holder-dynamic"></i>
-*	      </span>
-*	    </label>
-*	  </div>
-*	  <div class="input-holder">
-*	    <div class="input-space column small-6 large-9">
-*	      <input type="text" id="tags">
-*	    </div>
-*	    <div class="column small-6 large-3">
-*	      <small class="value">Tags</small>
-*	    </div>
-*	  </div>
-*	   <div class="hint">Code tags like 'ASP'</div>
-*	</div>
-*	<h5>Slider</h5>
-*	<div class="question">
-*		<div class="label-holder">
-*	  		<label for="amount">Donation amount ($50 increments):</label>
-*	 	</div>
-*		<div class="input-holder">
-*	    <div class="input-space column small-9 large-10">
-*	      <div id="slider"></div>
-*	    </div>
-*	    <div class="input-space column small-3 large-2">
-*	      <input type="text" id="amount" readonly>
-*	    </div>			
-*		</div>
-*	</div>
-*	<h5>Datepicker</h5>
-*	<div class="question">
-*		<div class="label-holder">
-*	  		<label for="amount">
-*				 <span class="text">Date</span>
-*	  		</label>
-*	 	</div>
-*		<div class="input-holder">
-*			 <div class="input-space column small-6 large-9">
-*	     		<input type="text" id="datepicker">
-*	   		 </div>
-*		</div>
-*	</div>
-*	<h5>Spinner</h5>
-*	<p>
-*	  <label for="spinner">Select a value:</label>
-*	  <input id="spinner" name="value">
-*	</p>
-*	
-**/
-/**
-* Colors:
-* `ACC's Colors` - The ACC has a set of standard colors which include the +ACC Blue+, +Scrub Colors+, and +Intent Colors+. The colors that change depending the product are the +Scrub Colors+
-* 
-*   @example
-*	<h4>Framework Colors</h4>
-*	<table class="table">
-*		<thead>
-*			<tr>
-*				<th>Color Name</th>
-*				<th>Hex Color</th>
-*			</tr>
-*		</thead>
-*		<tbody>
-*			<tr>
-*				<td><h3>ACC Blue</h3></td>
-*				<td style="background-color:#00386b;"class="color-block">#00386b</td>
-*			</tr>
-*			<tr>
-*				<td><h3>Product Color</h3></td>
-*				<td style="background-color:#198dae;"class="color-block">#198dae</td>
-*			</tr>
-*			<tr>
-*				<td><h3>Primary Color</h3></td>
-*				<td  style="background-color:#198dae;"class="color-block">#198dae</td>
-*			</tr>
-*			<tr>
-*				<td><h3>Secondary Color</h3></td>
-*				<td style="background-color:#b3b3b3;"class="color-block">#b3b3b3</td>
-*			</tr>
-*			<tr>
-*				<td><h3>Tertiary Color</h3></td>
-*				<td style="background-color:#7d5891;"class="color-block">#7d5891</td>
-*			</tr>
-*			<tr>
-*				<td><h3>Success Color</h3></td>
-*				<td style="background-color:#14B057;"class="color-block">#14B057</td>
-*			</tr>
-*			<tr>
-*				<td><h3>Warning Color</h3></td>
-*				<td style="background-color:#E08514;"class="color-block">#E08514</td>
-*			</tr>
-*			<tr>
-*				<td><h3>Error Color</h3></td>
-*				<td style="background-color:#c32231;"class="color-block">#c32231</td>
-*			</tr>
-*			<tr>
-*				<td><h3>Navigation Color</h3></td>
-*				<td style="background-color:#018adb;"class="color-block">#018adb</td>
-*			</tr>
-*		</tbody>
-*	</table>
-*	<h4>Scrub Colors</h4>
-*	<table class="table">
-*		<thead>
-*			<tr>
-*				<th>Color Name</th>
-*				<th>Hex Color</th>
-*			</tr>
-*		</thead>
-*		<tbody>
-*			<tr>
-*				<td><h3>Scrub Teal</h3></td>
-*				<td style="background-color:#198dae;"class="color-block">#198dae</td>
-*			</tr>
-*			<tr>
-*				<td><h3>Scrub Green</h3></td>
-*				<td style="background-color:#1abc9c;"class="color-block">#1abc9c</td>
-*			</tr>
-*			<tr>
-*				<td><h3>Scrub Blue</h3></td>
-*				<td style="background-color:#018adb;"class="color-block">#018adb</td>
-*			</tr>
-*			<tr class="seperator info">
-*				<td colspan="2">Less Used Colors for Highlights and Pinstripes</td>
-*			</tr>
-*			<tr>
-*				<td><h3>Scrub Purple</h3></td>
-*				<td  style="background-color:#7d5891;"class="color-block">#7d5891</td>
-*			</tr>
-*			<tr>
-*				<td><h3>Scrub Magenta</h3></td>
-*				<td style="background-color:#b84299;"class="color-block">#b84299</td>
-*			</tr>
-*			<tr>
-*				<td><h3>Scrub Leaf Green</h3></td>
-*				<td style="background-color:#70cd40;"class="color-block">#70cd40</td>
-*			</tr>
-*		</tbody>
-*	</table>
-* 
-*/
-.color-block {
-  width: 50%;
-  padding: 20px;
-  text-align: center;
-  font-weight: 900;
-  font-size: 18px;
-  color: white;
+html {
+  -webkit-font-smoothing: antialiased;
+  -webkit-line-break: after-white-space;
+  -webkit-locale: "en";
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* FONT PATH
@@ -721,15 +228,6 @@ body {
 
 
     */
-h1, h2, h3, h4, h5, h6, p, td, th {
-  -webkit-transition: line-height 1s;
-  /* Safari */
-  transition: line-height 1s;
-  -webkit-transition: margin 1s;
-  /* Safari */
-  transition: margin 1s;
-}
-
 /* TODO: refactor this 
 there are two to three needs for icons icons in containers, icons on icons and then icons that are dynamic to a parent container.**/
 .fa-holder {
@@ -834,13 +332,11 @@ i.fa.fa-question-circle {
 }
 
 .h1, h1, .table th.h1, .h2, h2, .table th.h2, .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3, .h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .table th.h4, .section-nav .text, .h5, h5, .h6, h6 {
-  margin-top: 0;
   clear: both;
 }
 
 .h1, h1, .table th.h1 {
-  letter-spacing: -1px;
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
 
@@ -855,331 +351,216 @@ i.fa.fa-question-circle {
 }
 
 .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3, .h5, h5, .h6, h6 {
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
 }
 
 .h1, h1, .table th.h1 {
-  font-size: 1.625em;
-  line-height: 1.6em;
-  margin-top: 0.8em;
-  margin-bottom: 0.8em;
+  font-size: 1.625rem;
+  line-height: 1.35;
+  margin-top: 1.15313rem;
+  margin-bottom: 1.15313rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .h1, h1, .table th.h1 {
-    line-height: 1.44em;
-    margin-top: 0.72em;
-    margin-bottom: 0.72em;
-  }
+.colored-paper .h1, .colored-paper h1, .colored-paper .table th.h1, .table .colored-paper th.h1, .callout .h1, .page-message .h1, .callout h1, .page-message h1, .callout .table th.h1, .table .callout th.h1, .page-message .table th.h1, .table .page-message th.h1 {
+  margin-top: 0.40312rem;
+  margin-bottom: 0.40312rem;
+  line-height: 1.125;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .h1, h1, .table th.h1 {
-    line-height: 1.36em;
-    margin-top: 0.6em;
-    margin-bottom: 0.6em;
-  }
-}
-
 @media only screen and (min-width: 767px) {
   .h1, h1, .table th.h1 {
-    font-size: 1.8125em;
-    line-height: 1.43448em;
-    margin-top: 0.71724em;
-    margin-bottom: 0.71724em;
+    font-size: 1.8125rem;
+    line-height: 1.125;
+    margin-top: 1.23047rem;
+    margin-bottom: 1.23047rem;
+  }
+  .colored-paper .h1, .colored-paper h1, .colored-paper .table th.h1, .table .colored-paper th.h1, .callout .h1, .page-message .h1, .callout h1, .page-message h1, .callout .table th.h1, .table .callout th.h1, .page-message .table th.h1, .table .page-message th.h1 {
+    margin-top: 0.48047rem;
+    margin-bottom: 0.48047rem;
+    line-height: 1.125;
   }
 }
-@media only screen and (min-width: 767px) and (max-width: 1024px) and (max-height: 480px) {
-  .h1, h1, .table th.h1 {
-    line-height: 1.29103em;
-    margin-top: 0.64552em;
-    margin-bottom: 0.64552em;
-  }
-}
-@media only screen and (min-width: 767px) and (max-width: 1024px) and (max-height: 320px) {
-  .h1, h1, .table th.h1 {
-    line-height: 1.21931em;
-    margin-top: 0.53793em;
-    margin-bottom: 0.53793em;
-  }
-}
-
 @media only screen and (min-width: 1024px) {
   .h1, h1, .table th.h1 {
-    font-size: 2em;
-    line-height: 1.3em;
-    margin-top: 0.65em;
-    margin-bottom: 0.65em;
+    font-size: 2rem;
+    line-height: 1.125;
+    margin-top: 1.125rem;
+    margin-bottom: 1.125rem;
   }
-}
-@media only screen and (min-width: 1024px) and (max-width: 1024px) and (max-height: 480px) {
-  .h1, h1, .table th.h1 {
-    line-height: 1.17em;
-    margin-top: 0.585em;
-    margin-bottom: 0.585em;
-  }
-}
-@media only screen and (min-width: 1024px) and (max-width: 1024px) and (max-height: 320px) {
-  .h1, h1, .table th.h1 {
-    line-height: 1.105em;
-    margin-top: 0.4875em;
-    margin-bottom: 0.4875em;
+  .colored-paper .h1, .colored-paper h1, .colored-paper .table th.h1, .table .colored-paper th.h1, .callout .h1, .page-message .h1, .callout h1, .page-message h1, .callout .table th.h1, .table .callout th.h1, .page-message .table th.h1, .table .page-message th.h1 {
+    margin-top: 0.375rem;
+    margin-bottom: 0.375rem;
+    line-height: 1.125;
   }
 }
 
 .h2, h2, .table th.h2 {
-  font-size: 1.4375em;
-  line-height: 1.53043em;
-  margin-top: 0.57391em;
-  margin-bottom: 0.1913em;
+  font-size: 1.4375rem;
+  line-height: 1.35;
+  margin-top: 0.52969rem;
+  margin-bottom: 0.52969rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .h2, h2, .table th.h2 {
-    line-height: 1.37739em;
-    margin-top: 0.51652em;
-    margin-bottom: 0.17217em;
-  }
+.colored-paper .h2, .colored-paper h2, .colored-paper .table th.h2, .table .colored-paper th.h2, .callout .h2, .page-message .h2, .callout h2, .page-message h2, .callout .table th.h2, .table .callout th.h2, .page-message .table th.h2, .table .page-message th.h2 {
+  margin-top: 0.52969rem;
+  margin-bottom: 0.52969rem;
+  line-height: 1.125;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .h2, h2, .table th.h2 {
-    line-height: 1.30087em;
-    margin-top: 0.43043em;
-    margin-bottom: 0.14348em;
-  }
-}
-
 @media only screen and (min-width: 767px) {
   .h2, h2, .table th.h2 {
-    font-size: 1.4375em;
-    line-height: 1.8087em;
-    margin-top: 0.67826em;
-    margin-bottom: 0.22609em;
+    font-size: 1.625rem;
+    line-height: 1.35;
+    margin-top: 1.15313rem;
+    margin-bottom: 1.15313rem;
+  }
+  .colored-paper .h2, .colored-paper h2, .colored-paper .table th.h2, .table .colored-paper th.h2, .callout .h2, .page-message .h2, .callout h2, .page-message h2, .callout .table th.h2, .table .callout th.h2, .page-message .table th.h2, .table .page-message th.h2 {
+    margin-top: 0.40312rem;
+    margin-bottom: 0.40312rem;
+    line-height: 1.125;
   }
 }
-@media only screen and (min-width: 767px) and (max-width: 1024px) and (max-height: 480px) {
-  .h2, h2, .table th.h2 {
-    line-height: 1.62783em;
-    margin-top: 0.61043em;
-    margin-bottom: 0.20348em;
-  }
-}
-@media only screen and (min-width: 767px) and (max-width: 1024px) and (max-height: 320px) {
-  .h2, h2, .table th.h2 {
-    line-height: 1.53739em;
-    margin-top: 0.5087em;
-    margin-bottom: 0.16957em;
-  }
-}
-
 @media only screen and (min-width: 1024px) {
   .h2, h2, .table th.h2 {
-    font-size: 1.625em;
-    line-height: 1.6em;
-    margin-top: 0.6em;
-    margin-bottom: 0.2em;
+    font-size: 1.8125rem;
+    line-height: 1.125;
+    margin-top: 1.23047rem;
+    margin-bottom: 1.23047rem;
   }
-}
-@media only screen and (min-width: 1024px) and (max-width: 1024px) and (max-height: 480px) {
-  .h2, h2, .table th.h2 {
-    line-height: 1.44em;
-    margin-top: 0.54em;
-    margin-bottom: 0.18em;
-  }
-}
-@media only screen and (min-width: 1024px) and (max-width: 1024px) and (max-height: 320px) {
-  .h2, h2, .table th.h2 {
-    line-height: 1.36em;
-    margin-top: 0.45em;
-    margin-bottom: 0.15em;
+  .colored-paper .h2, .colored-paper h2, .colored-paper .table th.h2, .table .colored-paper th.h2, .callout .h2, .page-message .h2, .callout h2, .page-message h2, .callout .table th.h2, .table .callout th.h2, .page-message .table th.h2, .table .page-message th.h2 {
+    margin-top: 0.48047rem;
+    margin-bottom: 0.48047rem;
+    line-height: 1.125;
   }
 }
 
 .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3 {
-  font-size: 1.25em;
-  line-height: 1.76em;
-  margin-top: 0.66em;
-  margin-bottom: 0.22em;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-top: 0.5625rem;
+  margin-bottom: 0.5625rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3 {
-    line-height: 1.584em;
-    margin-top: 0.594em;
-    margin-bottom: 0.198em;
-  }
+.colored-paper .h3, .colored-paper h3, .colored-paper h1 + .nav-list li, h1 + .nav-list .colored-paper li, .colored-paper h1 + .panel-selector li, h1 + .panel-selector .colored-paper li, .colored-paper .large.nav-list li, .large.nav-list .colored-paper li, .colored-paper .large.panel-selector li, .large.panel-selector .colored-paper li, .colored-paper .table th.h3, .table .colored-paper th.h3, .callout .h3, .page-message .h3, .callout h3, .page-message h3, .callout h1 + .nav-list li, h1 + .nav-list .callout li, .page-message h1 + .nav-list li, h1 + .nav-list .page-message li, .callout h1 + .panel-selector li, h1 + .panel-selector .callout li, .page-message h1 + .panel-selector li, h1 + .panel-selector .page-message li, .callout .large.nav-list li, .large.nav-list .callout li, .page-message .large.nav-list li, .large.nav-list .page-message li, .callout .large.panel-selector li, .large.panel-selector .callout li, .page-message .large.panel-selector li, .large.panel-selector .page-message li, .callout .table th.h3, .table .callout th.h3, .page-message .table th.h3, .table .page-message th.h3 {
+  margin-top: 0.5625rem;
+  margin-bottom: 0.5625rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3 {
-    line-height: 1.496em;
-    margin-top: 0.495em;
-    margin-bottom: 0.165em;
-  }
-}
-
 @media only screen and (min-width: 767px) {
   .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3 {
-    font-size: 1.25em;
-    line-height: 1.04em;
-    margin-top: 0.26em;
-    margin-bottom: 0.78em;
+    font-size: 1.4375rem;
+    line-height: 1.35;
+    margin-top: 0.52969rem;
+    margin-bottom: 0.52969rem;
+  }
+  .colored-paper .h3, .colored-paper h3, .colored-paper h1 + .nav-list li, h1 + .nav-list .colored-paper li, .colored-paper h1 + .panel-selector li, h1 + .panel-selector .colored-paper li, .colored-paper .large.nav-list li, .large.nav-list .colored-paper li, .colored-paper .large.panel-selector li, .large.panel-selector .colored-paper li, .colored-paper .table th.h3, .table .colored-paper th.h3, .callout .h3, .page-message .h3, .callout h3, .page-message h3, .callout h1 + .nav-list li, h1 + .nav-list .callout li, .page-message h1 + .nav-list li, h1 + .nav-list .page-message li, .callout h1 + .panel-selector li, h1 + .panel-selector .callout li, .page-message h1 + .panel-selector li, h1 + .panel-selector .page-message li, .callout .large.nav-list li, .large.nav-list .callout li, .page-message .large.nav-list li, .large.nav-list .page-message li, .callout .large.panel-selector li, .large.panel-selector .callout li, .page-message .large.panel-selector li, .large.panel-selector .page-message li, .callout .table th.h3, .table .callout th.h3, .page-message .table th.h3, .table .page-message th.h3 {
+    margin-top: 0.52969rem;
+    margin-bottom: 0.52969rem;
+    line-height: 1.125;
   }
 }
-@media only screen and (min-width: 767px) and (max-width: 1024px) and (max-height: 480px) {
-  .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3 {
-    line-height: 1em;
-    margin-top: 0.234em;
-    margin-bottom: 0.702em;
-  }
-}
-@media only screen and (min-width: 767px) and (max-width: 1024px) and (max-height: 320px) {
-  .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3 {
-    line-height: 1em;
-    margin-top: 0.195em;
-    margin-bottom: 0.585em;
-  }
-}
-
 @media only screen and (min-width: 1024px) {
   .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3 {
-    font-size: 1.4375em;
-    line-height: 1.8087em;
-    margin-top: 0.67826em;
-    margin-bottom: 0.22609em;
+    font-size: 1.625rem;
+    line-height: 1.35;
+    margin-top: 1.15313rem;
+    margin-bottom: 1.15313rem;
   }
-}
-@media only screen and (min-width: 1024px) and (max-width: 1024px) and (max-height: 480px) {
-  .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3 {
-    line-height: 1.62783em;
-    margin-top: 0.61043em;
-    margin-bottom: 0.20348em;
-  }
-}
-@media only screen and (min-width: 1024px) and (max-width: 1024px) and (max-height: 320px) {
-  .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3 {
-    line-height: 1.53739em;
-    margin-top: 0.5087em;
-    margin-bottom: 0.16957em;
+  .colored-paper .h3, .colored-paper h3, .colored-paper h1 + .nav-list li, h1 + .nav-list .colored-paper li, .colored-paper h1 + .panel-selector li, h1 + .panel-selector .colored-paper li, .colored-paper .large.nav-list li, .large.nav-list .colored-paper li, .colored-paper .large.panel-selector li, .large.panel-selector .colored-paper li, .colored-paper .table th.h3, .table .colored-paper th.h3, .callout .h3, .page-message .h3, .callout h3, .page-message h3, .callout h1 + .nav-list li, h1 + .nav-list .callout li, .page-message h1 + .nav-list li, h1 + .nav-list .page-message li, .callout h1 + .panel-selector li, h1 + .panel-selector .callout li, .page-message h1 + .panel-selector li, h1 + .panel-selector .page-message li, .callout .large.nav-list li, .large.nav-list .callout li, .page-message .large.nav-list li, .large.nav-list .page-message li, .callout .large.panel-selector li, .large.panel-selector .callout li, .page-message .large.panel-selector li, .large.panel-selector .page-message li, .callout .table th.h3, .table .callout th.h3, .page-message .table th.h3, .table .page-message th.h3 {
+    margin-top: 0.40312rem;
+    margin-bottom: 0.40312rem;
+    line-height: 1.125;
   }
 }
 
 .h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .table th.h4 {
-  font-size: 1.125em;
-  line-height: 1.15556em;
-  margin-top: 0.57778em;
-  margin-bottom: 0.57778em;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin-top: 0.65625rem;
+  margin-bottom: 0.65625rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .table th.h4 {
-    line-height: 1.04em;
-    margin-top: 0.52em;
-    margin-bottom: 0.52em;
-  }
+.colored-paper .h4, .colored-paper h4, .colored-paper h2 + .nav-list li, h2 + .nav-list .colored-paper li, .colored-paper h2 + .panel-selector li, h2 + .panel-selector .colored-paper li, .colored-paper .medium.nav-list li, .medium.nav-list .colored-paper li, .colored-paper .medium.panel-selector li, .medium.panel-selector .colored-paper li, .colored-paper .table th.h4, .table .colored-paper th.h4, .callout .h4, .page-message .h4, .callout h4, .page-message h4, .callout h2 + .nav-list li, h2 + .nav-list .callout li, .page-message h2 + .nav-list li, h2 + .nav-list .page-message li, .callout h2 + .panel-selector li, h2 + .panel-selector .callout li, .page-message h2 + .panel-selector li, h2 + .panel-selector .page-message li, .callout .medium.nav-list li, .medium.nav-list .callout li, .page-message .medium.nav-list li, .medium.nav-list .page-message li, .callout .medium.panel-selector li, .medium.panel-selector .callout li, .page-message .medium.panel-selector li, .medium.panel-selector .page-message li, .callout .table th.h4, .table .callout th.h4, .page-message .table th.h4, .table .page-message th.h4 {
+  margin-top: 0.65625rem;
+  margin-bottom: 0.65625rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .table th.h4 {
-    line-height: 1em;
-    margin-top: 0.43333em;
-    margin-bottom: 0.43333em;
-  }
-}
-
 @media only screen and (min-width: 767px) {
   .h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .table th.h4 {
-    font-size: 1.25em;
-    line-height: 1.04em;
-    margin-top: 0.26em;
-    margin-bottom: 0.78em;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-top: 0.5625rem;
+    margin-bottom: 0.5625rem;
   }
-}
-@media only screen and (min-width: 767px) and (max-width: 1024px) and (max-height: 480px) {
-  .h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .table th.h4 {
-    line-height: 1em;
-    margin-top: 0.234em;
-    margin-bottom: 0.702em;
-  }
-}
-@media only screen and (min-width: 767px) and (max-width: 1024px) and (max-height: 320px) {
-  .h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .table th.h4 {
-    line-height: 1em;
-    margin-top: 0.195em;
-    margin-bottom: 0.585em;
+  .colored-paper .h4, .colored-paper h4, .colored-paper h2 + .nav-list li, h2 + .nav-list .colored-paper li, .colored-paper h2 + .panel-selector li, h2 + .panel-selector .colored-paper li, .colored-paper .medium.nav-list li, .medium.nav-list .colored-paper li, .colored-paper .medium.panel-selector li, .medium.panel-selector .colored-paper li, .colored-paper .table th.h4, .table .colored-paper th.h4, .callout .h4, .page-message .h4, .callout h4, .page-message h4, .callout h2 + .nav-list li, h2 + .nav-list .callout li, .page-message h2 + .nav-list li, h2 + .nav-list .page-message li, .callout h2 + .panel-selector li, h2 + .panel-selector .callout li, .page-message h2 + .panel-selector li, h2 + .panel-selector .page-message li, .callout .medium.nav-list li, .medium.nav-list .callout li, .page-message .medium.nav-list li, .medium.nav-list .page-message li, .callout .medium.panel-selector li, .medium.panel-selector .callout li, .page-message .medium.panel-selector li, .medium.panel-selector .page-message li, .callout .table th.h4, .table .callout th.h4, .page-message .table th.h4, .table .page-message th.h4 {
+    margin-top: 0.5625rem;
+    margin-bottom: 0.5625rem;
+    line-height: 1.35;
   }
 }
 
 .h5, h5 {
-  font-size: 1em;
-  line-height: 1.3em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .h5, h5 {
-    line-height: 1.17em;
-  }
+.colored-paper .h5, .colored-paper h5, .callout .h5, .page-message .h5, .callout h5, .page-message h5 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .h5, h5 {
-    line-height: 1.105em;
-  }
-}
-
 @media only screen and (min-width: 767px) {
   .h5, h5 {
-    font-size: 1.125em;
-    line-height: 1.15556em;
-    margin-top: 0em;
-    margin-bottom: 0em;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    margin-top: 0.65625rem;
+    margin-bottom: 0.65625rem;
   }
-}
-@media only screen and (min-width: 767px) and (max-width: 1024px) and (max-height: 480px) {
-  .h5, h5 {
-    line-height: 1.04em;
-  }
-}
-@media only screen and (min-width: 767px) and (max-width: 1024px) and (max-height: 320px) {
-  .h5, h5 {
-    line-height: 1em;
+  .colored-paper .h5, .colored-paper h5, .callout .h5, .page-message .h5, .callout h5, .page-message h5 {
+    margin-top: 0.65625rem;
+    margin-bottom: 0.65625rem;
+    line-height: 1.35;
   }
 }
 
 .h6, h6 {
-  font-size: 1em;
-  line-height: 1.3em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
+.colored-paper .h6, .colored-paper h6, .callout .h6, .page-message .h6, .callout h6, .page-message h6 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
+}
+@media only screen and (min-width: 767px) {
   .h6, h6 {
-    line-height: 1.17em;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    margin-top: 0.65625rem;
+    margin-bottom: 0.65625rem;
   }
-}
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .h6, h6 {
-    line-height: 1.105em;
+  .colored-paper .h6, .colored-paper h6, .callout .h6, .page-message .h6, .callout h6, .page-message h6 {
+    margin-top: 0.65625rem;
+    margin-bottom: 0.65625rem;
+    line-height: 1.35;
   }
 }
 
-p, ul, ol, .nav-list li, .panel-selector li, h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector, .table, .normal {
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+p, .nav-list li, .panel-selector li, h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector, .table, .normal {
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 400;
   letter-spacing: .01em;
-  color: #262626;
-  font-size: 1em;
-  line-height: 1.3em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  p, ul, ol, .nav-list li, .panel-selector li, h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector, .table, .normal {
-    line-height: 1.17em;
-  }
-}
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  p, ul, ol, .nav-list li, .panel-selector li, h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector, .table, .normal {
-    line-height: 1.105em;
-  }
+.colored-paper p, .colored-paper .nav-list li, .nav-list .colored-paper li, .colored-paper .panel-selector li, .panel-selector .colored-paper li, .colored-paper h3 + .nav-list, .colored-paper h3 + .panel-selector, .colored-paper .small.nav-list, .colored-paper .small.panel-selector, .colored-paper .table, .colored-paper .normal, .callout p, .page-message p, .callout .nav-list li, .nav-list .callout li, .page-message .nav-list li, .nav-list .page-message li, .callout .panel-selector li, .panel-selector .callout li, .page-message .panel-selector li, .panel-selector .page-message li, .callout h3 + .nav-list, .page-message h3 + .nav-list, .callout h3 + .panel-selector, .page-message h3 + .panel-selector, .callout .small.nav-list, .page-message .small.nav-list, .callout .small.panel-selector, .page-message .small.panel-selector, .callout .table, .page-message .table, .callout .normal, .page-message .normal {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  line-height: 1.35;
 }
 
 h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-selector li, .bold, b {
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
 }
 
@@ -1192,33 +573,29 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 }
 
 .hint, .table tfoot tr td, .italic {
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: italic;
 }
 
 strong, .strong {
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
   color: #1faed7;
 }
 
 em, .emphasis {
   color: #0d4757;
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: italic;
   font-weight: 900;
 }
 
 .subtle {
-  font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
   color: #397384;
-}
-
-.block-margins {
-  margin: 0 em(20.8px) 0;
 }
 
 /**
@@ -1236,48 +613,41 @@ em, .emphasis {
  *     h5 Header 5 Tag 
  *     h6 Header 6 Tag
  */
-h1 {
-  color: #525252;
-}
-
-h6 {
-  color: #666666;
-}
-
-p {
-  margin-bottom: .25em;
+p + p {
+  margin-top: 0.75rem;
 }
 @media only screen and (min-height: 320px) {
-  p {
-    margin-bottom: .5em;
+  p + p {
+    margin-top: 0.375rem;
   }
 }
 
 ul, ol {
-  margin-bottom: 1em;
-}
-@media only screen and (min-height: 320px) {
-  ul, ol {
-    margin-bottom: .5em;
-  }
+  margin-bottom: 0.375rem;
 }
 @media only screen and (min-height: 0px) {
   ul, ol {
-    margin-bottom: .75em;
+    margin-bottom: 0.375rem;
+  }
+}
+@media only screen and (min-height: 320px) {
+  ul, ol {
+    margin-bottom: 0.75rem;
   }
 }
 ul li, ol li {
-  margin-bottom: .25em;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: .01em;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-top: 0.01875rem;
+  margin-bottom: 0.16875rem;
 }
-@media only screen and (min-height: 320px) {
-  ul li, ol li {
-    margin-bottom: .2em;
-  }
-}
-@media only screen and (min-height: 0px) {
-  ul li, ol li {
-    margin-bottom: .1em;
-  }
+.colored-paper ul li, .callout ul li, .page-message ul li, .colored-paper ol li, .callout ol li, .page-message ol li {
+  margin-top: 0.01875rem;
+  margin-bottom: 0.16875rem;
+  line-height: 1.35;
 }
 
 /**
@@ -1332,7 +702,7 @@ ul li, ol li {
   background-image: url(http://basehold.it/i/21);
 }
 .font.font-display {
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
 .font.font-slab {
@@ -1340,12 +710,12 @@ ul li, ol li {
   font-weight: 400;
 }
 .font.font-normal {
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 400;
   letter-spacing: .01em;
 }
 .font.font-light {
-  font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
 .font .font--name {
@@ -1365,105 +735,70 @@ ul li, ol li {
   text-transform: uppercase;
 }
 .font .ms12 {
-  font-size: 3.25em;
-  line-height: 1.2em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 3.25rem;
+  line-height: 1.125;
+  margin-top: 1.17188rem;
+  margin-bottom: 1.17188rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .font .ms12 {
-    line-height: 1.08em;
-  }
+.colored-paper .font .ms12, .callout .font .ms12, .page-message .font .ms12 {
+  margin-top: 0.42188rem;
+  margin-bottom: 0.42188rem;
+  line-height: 1.125;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .font .ms12 {
-    line-height: 1.02em;
-  }
-}
-
 .font .ms6 {
-  font-size: 2em;
-  line-height: 1.3em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 2rem;
+  line-height: 1.125;
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .font .ms6 {
-    line-height: 1.17em;
-  }
+.colored-paper .font .ms6, .callout .font .ms6, .page-message .font .ms6 {
+  margin-top: 0.375rem;
+  margin-bottom: 0.375rem;
+  line-height: 1.125;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .font .ms6 {
-    line-height: 1.105em;
-  }
-}
-
 .font .ms4 {
-  font-size: 1.625em;
-  line-height: 1.6em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 1.625rem;
+  line-height: 1.35;
+  margin-top: 1.15313rem;
+  margin-bottom: 1.15313rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .font .ms4 {
-    line-height: 1.44em;
-  }
+.colored-paper .font .ms4, .callout .font .ms4, .page-message .font .ms4 {
+  margin-top: 0.40312rem;
+  margin-bottom: 0.40312rem;
+  line-height: 1.125;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .font .ms4 {
-    line-height: 1.36em;
-  }
-}
-
 .font .ms2 {
-  font-size: 1.25em;
-  line-height: 1.04em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-top: 0.5625rem;
+  margin-bottom: 0.5625rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .font .ms2 {
-    line-height: 1em;
-  }
+.colored-paper .font .ms2, .callout .font .ms2, .page-message .font .ms2 {
+  margin-top: 0.5625rem;
+  margin-bottom: 0.5625rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .font .ms2 {
-    line-height: 1em;
-  }
-}
-
 .font .ms1 {
-  font-size: 1.125em;
-  line-height: 1.15556em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin-top: 0.65625rem;
+  margin-bottom: 0.65625rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .font .ms1 {
-    line-height: 1.04em;
-  }
+.colored-paper .font .ms1, .callout .font .ms1, .page-message .font .ms1 {
+  margin-top: 0.65625rem;
+  margin-bottom: 0.65625rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .font .ms1 {
-    line-height: 1em;
-  }
-}
-
 .font .ms {
-  font-size: 1em;
-  line-height: 1.3em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .font .ms {
-    line-height: 1.17em;
-  }
-}
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .font .ms {
-    line-height: 1.105em;
-  }
+.colored-paper .font .ms, .callout .font .ms, .page-message .font .ms {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
 }
 
 /**
@@ -1527,7 +862,7 @@ ul li, ol li {
 *			<h4 class="texture--name">Construction Paper</h4>
 *			<div class="texture--thumb">
 *				<div class="texture--holder third-width" style="background-image:url(Assets/img/construction-paper.png); background-color:#198dae;"></div>
-*				<div class="texture--holder third-width" style="background-image:url(Assets/img/construction-paper.png); background-color:#b3b3b3;"></div>
+*				<div class="texture--holder third-width" style="background-image:url(Assets/img/construction-paper.png); background-color:#bfbfbf;"></div>
 *				<div class="texture--holder third-width" style="background-image:url(Assets/img/construction-paper.png); background-color:#c32231;"></div>
 *			</div>
 *			<ul class="no-bullet texture--cite">
@@ -1717,23 +1052,17 @@ ul li, ol li {
   text-transform: uppercase;
 }
 .texture .texture--cite {
-  font-size: 1em;
-  line-height: 1.3em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
   color: font-color(#333333);
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .texture .texture--cite {
-    line-height: 1.17em;
-  }
+.colored-paper .texture .texture--cite, .callout .texture .texture--cite, .page-message .texture .texture--cite {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .texture .texture--cite {
-    line-height: 1.105em;
-  }
-}
-
 @media only screen and (max-width: 1024px) {
   .texture .texture--cite {
     float: left;
@@ -1828,6 +1157,15 @@ ul li, ol li {
   display: none;
 }
 
+.button.secondary {
+  background-color: #bfbfbf;
+  color: #333333;
+}
+.button.secondary:hover, .button.secondary:focus {
+  background-color: #999999;
+  color: #333333;
+}
+
 .button.navigation {
   background-color: #018adb;
   color: #FFF;
@@ -1852,7 +1190,7 @@ button.secondary:disabled,
 .button.disabled.secondary:hover {
   background-color: #b3b3b3;
   background-image: url(../img/empty_diamond.png);
-  color: #666666;
+  color: gray !important;
   border: 1px solid gray;
   cursor: not-allowed;
 }
@@ -2031,7 +1369,7 @@ button:disabled.secondary, .input-space
   color: #525252;
 }
 .tabs li.icon.selected:hover, .tabs li.icon.is-active:hover, .tabs .tabs-title.icon.selected:hover, .tabs .tabs-title.icon.is-active:hover {
-  background-color: #989898;
+  background-color: #a3a3a3;
 }
 .tabs li.icon.selected:hover a, .tabs li.icon.is-active:hover a, .tabs .tabs-title.icon.selected:hover a, .tabs .tabs-title.icon.is-active:hover a {
   color: #262626;
@@ -2145,22 +1483,16 @@ button:disabled.secondary, .input-space
   flex-direction: row;
   align-items: stretch;
   align-content: stretch;
-  font-size: 0.875em;
-  line-height: 1.48571em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-top: 0.09375rem;
+  margin-bottom: 0.09375rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .tabs.tabs-primary {
-    line-height: 1.33714em;
-  }
+.colored-paper .tabs.tabs-primary, .callout .tabs.tabs-primary, .page-message .tabs.tabs-primary {
+  margin-top: 0.09375rem;
+  margin-bottom: 0.09375rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .tabs.tabs-primary {
-    line-height: 1.26286em;
-  }
-}
-
 .tabs.tabs-primary li {
   -webkit-box-flex: 1 1 auto;
   -moz-box-flex: 1 1 auto;
@@ -2183,86 +1515,60 @@ button:disabled.secondary, .input-space
 }
 @media only screen and (min-width: 320px) {
   .tabs.tabs-primary {
-    font-size: 1em;
-    line-height: 1.3em;
-    margin-top: 0em;
-    margin-bottom: 0em;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .colored-paper .tabs.tabs-primary, .callout .tabs.tabs-primary, .page-message .tabs.tabs-primary {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.35;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 1024px) and (max-height: 480px) {
-  .tabs.tabs-primary {
-    line-height: 1.17em;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 1024px) and (max-height: 320px) {
-  .tabs.tabs-primary {
-    line-height: 1.105em;
-  }
-}
-
 @media only screen and (min-width: 767px) {
   .tabs.tabs-primary {
     display: block;
-    font-size: 1.125em;
-    line-height: 1.15556em;
-    margin-top: 0em;
-    margin-bottom: 0em;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    margin-top: 0.65625rem;
+    margin-bottom: 0.65625rem;
   }
-}
-@media only screen and (min-width: 767px) and (max-width: 1024px) and (max-height: 480px) {
-  .tabs.tabs-primary {
-    line-height: 1.04em;
+  .colored-paper .tabs.tabs-primary, .callout .tabs.tabs-primary, .page-message .tabs.tabs-primary {
+    margin-top: 0.65625rem;
+    margin-bottom: 0.65625rem;
+    line-height: 1.35;
   }
-}
-@media only screen and (min-width: 767px) and (max-width: 1024px) and (max-height: 320px) {
-  .tabs.tabs-primary {
-    line-height: 1em;
-  }
-}
-
-@media only screen and (min-width: 767px) {
   .tabs.tabs-primary li a {
     padding: 1em .5em;
   }
 }
 @media only screen and (min-width: 1024px) {
   .tabs.tabs-primary {
-    font-size: 1.25em;
-    line-height: 1.04em;
-    margin-top: 0em;
-    margin-bottom: 0em;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-top: 0.5625rem;
+    margin-bottom: 0.5625rem;
+  }
+  .colored-paper .tabs.tabs-primary, .callout .tabs.tabs-primary, .page-message .tabs.tabs-primary {
+    margin-top: 0.5625rem;
+    margin-bottom: 0.5625rem;
+    line-height: 1.35;
   }
 }
-@media only screen and (min-width: 1024px) and (max-width: 1024px) and (max-height: 480px) {
-  .tabs.tabs-primary {
-    line-height: 1em;
-  }
-}
-@media only screen and (min-width: 1024px) and (max-width: 1024px) and (max-height: 320px) {
-  .tabs.tabs-primary {
-    line-height: 1em;
-  }
-}
-
 @media only screen and (min-width: 1200px) {
   .tabs.tabs-primary {
-    font-size: 1.4375em;
-    line-height: 1.8087em;
-    margin-top: 0em;
-    margin-bottom: 0em;
+    font-size: 1.4375rem;
+    line-height: 1.35;
+    margin-top: 0.52969rem;
+    margin-bottom: 0.52969rem;
+  }
+  .colored-paper .tabs.tabs-primary, .callout .tabs.tabs-primary, .page-message .tabs.tabs-primary {
+    margin-top: 0.52969rem;
+    margin-bottom: 0.52969rem;
+    line-height: 1.125;
   }
 }
-@media only screen and (min-width: 1200px) and (max-width: 1024px) and (max-height: 480px) {
-  .tabs.tabs-primary {
-    line-height: 1.62783em;
-  }
-}
-@media only screen and (min-width: 1200px) and (max-width: 1024px) and (max-height: 320px) {
-  .tabs.tabs-primary {
-    line-height: 1.53739em;
-  }
-}
-
 .tabs.tabs-primary:after {
   content: "";
   display: table;
@@ -2363,22 +1669,16 @@ button:disabled.secondary, .input-space
   color: #fff;
 }
 .tabs.tabs-primary.reverse {
-  font-size: 0.875em;
-  line-height: 1.48571em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-top: 0.09375rem;
+  margin-bottom: 0.09375rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .tabs.tabs-primary.reverse {
-    line-height: 1.33714em;
-  }
+.colored-paper .tabs.tabs-primary.reverse, .callout .tabs.tabs-primary.reverse, .page-message .tabs.tabs-primary.reverse {
+  margin-top: 0.09375rem;
+  margin-bottom: 0.09375rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .tabs.tabs-primary.reverse {
-    line-height: 1.26286em;
-  }
-}
-
 .tabs.tabs-primary.reverse li {
   border-top-width: .45em;
   border-bottom-width: 1px;
@@ -2402,45 +1702,32 @@ button:disabled.secondary, .input-space
 }
 @media only screen and (min-width: 320px) {
   .tabs.tabs-primary.reverse {
-    font-size: 1em;
-    line-height: 1.3em;
-    margin-top: 0em;
-    margin-bottom: 0em;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
     margin: 0;
   }
-}
-@media only screen and (min-width: 320px) and (max-width: 1024px) and (max-height: 480px) {
-  .tabs.tabs-primary.reverse {
-    line-height: 1.17em;
+  .colored-paper .tabs.tabs-primary.reverse, .callout .tabs.tabs-primary.reverse, .page-message .tabs.tabs-primary.reverse {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.35;
   }
-}
-@media only screen and (min-width: 320px) and (max-width: 1024px) and (max-height: 320px) {
-  .tabs.tabs-primary.reverse {
-    line-height: 1.105em;
-  }
-}
-
-@media only screen and (min-width: 320px) {
   .tabs.tabs-primary.reverse li.selected a:after {
     border-top: 8px solid #00386b;
   }
 }
 @media only screen and (min-width: 767px) {
   .tabs.tabs-primary.reverse {
-    font-size: 1.125em;
-    line-height: 1.15556em;
-    margin-top: 0em;
-    margin-bottom: 0em;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    margin-top: 0.65625rem;
+    margin-bottom: 0.65625rem;
   }
-}
-@media only screen and (min-width: 767px) and (max-width: 1024px) and (max-height: 480px) {
-  .tabs.tabs-primary.reverse {
-    line-height: 1.04em;
-  }
-}
-@media only screen and (min-width: 767px) and (max-width: 1024px) and (max-height: 320px) {
-  .tabs.tabs-primary.reverse {
-    line-height: 1em;
+  .colored-paper .tabs.tabs-primary.reverse, .callout .tabs.tabs-primary.reverse, .page-message .tabs.tabs-primary.reverse {
+    margin-top: 0.65625rem;
+    margin-bottom: 0.65625rem;
+    line-height: 1.35;
   }
 }
 
@@ -2503,7 +1790,7 @@ button:disabled.secondary, .input-space
   color: #333333;
 }
 .overlap .tabs li.secondary, .overlap .tabs .tabs-title.secondary {
-  border-color: #b3b3b3;
+  border-color: #b9b9b9;
 }
 
 .with-group-sections.error .overlap, .paper-page.error .overlap {
@@ -2540,6 +1827,13 @@ button:disabled.secondary, .input-space
 .with-group-sections.highlighted .overlap li.selected, .with-group-sections.highlighted .overlap li.is-active, .with-group-sections.highlighted .overlap .tabs-title.selected, .with-group-sections.highlighted .overlap .tabs-title.is-active, .paper-page.highlighted .overlap li.selected, .paper-page.highlighted .overlap li.is-active, .paper-page.highlighted .overlap .tabs-title.selected, .paper-page.highlighted .overlap .tabs-title.is-active {
   background-color: #22AFD7;
   border-color: #22AFD7;
+}
+.with-group-sections.locked .overlap, .paper-page.locked .overlap {
+  border-bottom-color: #bfbfbf;
+}
+.with-group-sections.locked .overlap li.selected, .with-group-sections.locked .overlap li.is-active, .with-group-sections.locked .overlap .tabs-title.selected, .with-group-sections.locked .overlap .tabs-title.is-active, .paper-page.locked .overlap li.selected, .paper-page.locked .overlap li.is-active, .paper-page.locked .overlap .tabs-title.selected, .paper-page.locked .overlap .tabs-title.is-active {
+  background-color: #bfbfbf;
+  border-color: #bfbfbf;
 }
 .with-group-sections.disabled .overlap, .paper-page.disabled .overlap {
   border-bottom-color: #cccccc;
@@ -2805,6 +2099,21 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 .nav-list.nav-checklist li.highlighted.selected:hover, .nav-checklist.panel-selector li.highlighted.selected:hover {
   color: #474747;
 }
+.nav-list.nav-checklist li.locked, .nav-checklist.panel-selector li.locked {
+  background-color: #f2f2f2;
+  border-color: #e9e9e9;
+  border-bottom-width: 1;
+  color: #262626;
+}
+.nav-list.nav-checklist li.locked:hover, .nav-checklist.panel-selector li.locked:hover {
+  background-color: #e6e6e6;
+}
+.nav-list.nav-checklist li.locked.selected, .nav-checklist.panel-selector li.locked.selected {
+  color: #474747;
+}
+.nav-list.nav-checklist li.locked.selected:hover, .nav-checklist.panel-selector li.locked.selected:hover {
+  color: #474747;
+}
 .nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled, .nav-list.nav-checklist li.disabled:hover, .nav-checklist.panel-selector li.disabled:hover {
   cursor: none;
   cursor: not-allowed;
@@ -3044,7 +2353,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   -webkit-transition: margin 1s;
   /* Safari */
   transition: margin 1s;
-  margin-bottom: .25em;
+  margin-bottom: 0.375rem;
 }
 @media only screen and (min-height: 320px) {
   .answer, .answer-group, .question, .question-group, .question-inline, .question-grid-based {
@@ -3094,81 +2403,6 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   margin-bottom: 0;
 }
 
-.input-holder [type='text'], .input-holder [type='password'], .input-holder [type='date'], .input-holder [type='datetime'], .input-holder [type='datetime-local'], .input-holder [type='month'], .input-holder [type='week'], .input-holder [type='email'], .input-holder [type='number'], .input-holder [type='search'], .input-holder [type='tel'], .input-holder [type='time'], .input-holder [type='url'], .input-holder [type='color'], .input-holder textarea, .input-holder button, .input-holder .button {
-  font-size: 1rem;
-  line-height: 1.25rem;
-  padding: 0.75rem 0.75rem;
-  height: 2.5rem;
-}
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .input-holder [type='text'], .input-holder [type='password'], .input-holder [type='date'], .input-holder [type='datetime'], .input-holder [type='datetime-local'], .input-holder [type='month'], .input-holder [type='week'], .input-holder [type='email'], .input-holder [type='number'], .input-holder [type='search'], .input-holder [type='tel'], .input-holder [type='time'], .input-holder [type='url'], .input-holder [type='color'], .input-holder textarea, .input-holder button, .input-holder .button {
-    padding: 0.25rem 0.5rem;
-    height: 2rem;
-  }
-}
-
-@media only screen and (min-width: 767px) and (min-height: 480px) {
-  .input-holder [type='text'], .input-holder [type='password'], .input-holder [type='date'], .input-holder [type='datetime'], .input-holder [type='datetime-local'], .input-holder [type='month'], .input-holder [type='week'], .input-holder [type='email'], .input-holder [type='number'], .input-holder [type='search'], .input-holder [type='tel'], .input-holder [type='time'], .input-holder [type='url'], .input-holder [type='color'], .input-holder textarea, .input-holder button, .input-holder .button {
-    padding: 0.25rem 0.5rem;
-    height: 2rem;
-  }
-}
-
-.input-holder select, .input-holder option {
-  font-size: 1rem;
-  line-height: 1rem;
-  height: 2.5rem;
-}
-@media only screen and (max-width: 1024px) {
-  .input-holder select, .input-holder option {
-    padding: 0 .5rem;
-  }
-}
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .input-holder select, .input-holder option {
-    height: 2.25rem;
-  }
-}
-
-@media only screen and (min-width: 767px) {
-  .input-holder select, .input-holder option {
-    padding: 0 .5rem;
-  }
-}
-@media only screen and (min-width: 767px) and (min-height: 480px) {
-  .input-holder select, .input-holder option {
-    height: 2rem;
-  }
-}
-
-.input-holder .prefix, .input-holder .postfix, .input-holder .value {
-  font-size: 1em;
-  line-height: 1.3em;
-  margin-top: 0em;
-  margin-bottom: 0em;
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  padding: .5em;
-  margin-top: 0;
-  color: #666666;
-  border: 1px solid transparent;
-}
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .input-holder .prefix, .input-holder .postfix, .input-holder .value {
-    line-height: 1.17em;
-  }
-}
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .input-holder .prefix, .input-holder .postfix, .input-holder .value {
-    line-height: 1.105em;
-  }
-}
-
-.input-holder .prefix, .input-holder .postfix {
-  background: url("../img/paper-texture.png");
-  border: 1px solid #b3b3b3;
-}
-
 .question .label-holder, .question .input-holder, .question .message-holder, .question .value-holder, .question .hint {
   max-width: 75rem;
   margin-left: auto;
@@ -3182,57 +2416,24 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   clear: both;
 }
 
-.label-holder {
+.label-holder label {
+  margin: 0.375rem 0;
   white-space: nowrap;
-  font-size: 1em;
-  line-height: 1.3em;
-  margin-top: 0.65em;
-  margin-bottom: 0.325em;
+  text-overflow: ellipsis;
   position: relative;
   background-color: transparent;
   color: #525252;
 }
-.label-holder label, .label-holder .label, .label-holder .text {
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 1em;
-  line-height: 1.3em;
-  margin-top: 0em;
-  margin-bottom: 0em;
-}
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .label-holder label, .label-holder .label, .label-holder .text {
-    line-height: 1.17em;
-  }
-}
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .label-holder label, .label-holder .label, .label-holder .text {
-    line-height: 1.105em;
-  }
-}
-
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .label-holder {
-    line-height: 1.17em;
-    margin-top: 0.585em;
-    margin-bottom: 0.2925em;
-  }
-}
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .label-holder {
-    line-height: 1.105em;
-    margin-top: 0.4875em;
-    margin-bottom: 0.24375em;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .label-holder {
+@media only screen and (max-width: 1024px) {
+  .label-holder label {
     white-space: normal;
   }
 }
-.label-holder .text {
-  padding-right: 1rem;
+.label-holder label .text {
+  padding-right: 1.5rem;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: .01em;
 }
 
 .required-holder {
@@ -3244,23 +2445,22 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   margin-right: -1em;
   color: #333333;
 }
-.required-holder i.fa-holder-dynamic {
+.required-holder i.fa-holder {
   position: absolute;
   top: 0;
   left: 0;
   font-size: .75em;
 }
-
-.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.success .required-holder, .question.success .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .answer.disabled .required-holder, .question.disabled .required-holder {
-  background-color: transparent;
-  display: inline-block;
-}
-
 .required .required-holder {
   color: #E08514;
 }
 .required .required-holder i.fa-holder:before {
   content: "";
+}
+
+.required .required-holder, .answer.error .required-holder, .question.error .required-holder, .answer.warning .required-holder, .question.warning .required-holder, .answer.success .required-holder, .question.success .required-holder, .answer.info .required-holder, .question.info .required-holder, .answer.highlighted .required-holder, .question.highlighted .required-holder, .answer.locked .required-holder, .question.locked .required-holder, .answer.disabled .required-holder, .question.disabled .required-holder {
+  background-color: transparent;
+  display: inline-block;
 }
 
 .input-holder, .value-holder {
@@ -3279,54 +2479,105 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 .input-holder::after {
   clear: both;
 }
-
-.input-space, .switch-input-space, .value-space {
+.input-holder .input-space, .input-holder .switch-input-space, .input-holder .value-space {
   padding-left: 0;
   padding-right: 0;
 }
-
-.input-space-label {
-  font-size: 1em;
-  line-height: 1.3em;
-  margin-top: 0em;
-  margin-bottom: 0em;
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  color: #666666;
-  padding: 0.75rem 0.75rem;
+.input-holder [type='text'], .input-holder [type='password'], .input-holder [type='date'], .input-holder [type='datetime'], .input-holder [type='datetime-local'], .input-holder [type='month'], .input-holder [type='week'], .input-holder [type='email'], .input-holder [type='number'], .input-holder [type='search'], .input-holder [type='tel'], .input-holder [type='time'], .input-holder [type='url'], .input-holder [type='color'], .input-holder button, .input-holder .button {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  padding: 0.5rem 0.5rem;
   height: 2.5rem;
-  padding-left: 1em;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .input-space-label {
-    line-height: 1.17em;
-  }
+.colored-paper .input-holder [type='text'], .callout .input-holder [type='text'], .page-message .input-holder [type='text'], .colored-paper .input-holder [type='password'], .callout .input-holder [type='password'], .page-message .input-holder [type='password'], .colored-paper .input-holder [type='date'], .callout .input-holder [type='date'], .page-message .input-holder [type='date'], .colored-paper .input-holder [type='datetime'], .callout .input-holder [type='datetime'], .page-message .input-holder [type='datetime'], .colored-paper .input-holder [type='datetime-local'], .callout .input-holder [type='datetime-local'], .page-message .input-holder [type='datetime-local'], .colored-paper .input-holder [type='month'], .callout .input-holder [type='month'], .page-message .input-holder [type='month'], .colored-paper .input-holder [type='week'], .callout .input-holder [type='week'], .page-message .input-holder [type='week'], .colored-paper .input-holder [type='email'], .callout .input-holder [type='email'], .page-message .input-holder [type='email'], .colored-paper .input-holder [type='number'], .callout .input-holder [type='number'], .page-message .input-holder [type='number'], .colored-paper .input-holder [type='search'], .callout .input-holder [type='search'], .page-message .input-holder [type='search'], .colored-paper .input-holder [type='tel'], .callout .input-holder [type='tel'], .page-message .input-holder [type='tel'], .colored-paper .input-holder [type='time'], .callout .input-holder [type='time'], .page-message .input-holder [type='time'], .colored-paper .input-holder [type='url'], .callout .input-holder [type='url'], .page-message .input-holder [type='url'], .colored-paper .input-holder [type='color'], .callout .input-holder [type='color'], .page-message .input-holder [type='color'], .colored-paper .input-holder button, .callout .input-holder button, .page-message .input-holder button, .colored-paper .input-holder .button, .callout .input-holder .button, .page-message .input-holder .button {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .input-space-label {
-    line-height: 1.105em;
-  }
-}
-
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .input-space-label {
-    padding: 0.35rem 0.5rem;
-    height: 2.25rem;
-  }
-}
-
-@media only screen and (min-width: 767px) and (min-height: 480px) {
-  .input-space-label {
+@media only screen and (max-height: 768px) {
+  .input-holder [type='text'], .input-holder [type='password'], .input-holder [type='date'], .input-holder [type='datetime'], .input-holder [type='datetime-local'], .input-holder [type='month'], .input-holder [type='week'], .input-holder [type='email'], .input-holder [type='number'], .input-holder [type='search'], .input-holder [type='tel'], .input-holder [type='time'], .input-holder [type='url'], .input-holder [type='color'], .input-holder button, .input-holder .button {
     padding: 0.25rem 0.5rem;
     height: 2rem;
   }
 }
+.input-holder select, .input-holder option {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  line-height: 1;
+  height: 2.5rem;
+}
+.colored-paper .input-holder select, .callout .input-holder select, .page-message .input-holder select, .colored-paper .input-holder option, .callout .input-holder option, .page-message .input-holder option {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  line-height: 1.35;
+}
+@media only screen and (max-height: 768px) {
+  .input-holder select, .input-holder option {
+    padding: 0.25rem 0.5rem;
+    height: 2rem;
+  }
+}
+.input-holder textarea {
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1.5rem;
+}
+.colored-paper .input-holder textarea, .callout .input-holder textarea, .page-message .input-holder textarea {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
+}
+
+.value-space {
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  line-height: 1.5;
+  padding: 0.5rem 0.5rem;
+  height: 2.5rem;
+  color: #666666;
+  vertical-align: middle;
+}
+.colored-paper .value-space, .callout .value-space, .page-message .value-space {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  line-height: 1.35;
+}
+@media only screen and (max-height: 768px) {
+  .value-space {
+    padding: 0.25rem 0.5rem;
+    height: 2rem;
+  }
+}
+.value-space.prefix, .value-space.postfix {
+  border: 1px solid transparent;
+  background: url("../img/paper-texture.png");
+  border: 1px solid #b3b3b3;
+}
+.value-space.prefix .value {
+  padding-right: .5em;
+  text-align: right;
+}
+.value-space.postfix .value {
+  padding-left: .5em;
+  text-align: left;
+}
 
 .message-holder > small, .message-holder > span {
-  font-size: 0.875em;
-  line-height: 1.48571em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-top: 0.09375rem;
+  margin-bottom: 0.09375rem;
   display: none;
   padding: .375rem .5625rem .5625rem;
   margin-top: -1px;
@@ -3334,42 +2585,33 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   clear: both;
   color: #FFF;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .message-holder > small, .message-holder > span {
-    line-height: 1.33714em;
-  }
+.colored-paper .message-holder > small, .callout .message-holder > small, .page-message .message-holder > small, .colored-paper .message-holder > span, .callout .message-holder > span, .page-message .message-holder > span {
+  margin-top: 0.09375rem;
+  margin-bottom: 0.09375rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .message-holder > small, .message-holder > span {
-    line-height: 1.26286em;
-  }
-}
-
 .message-holder > small i, .message-holder > span i {
   margin-right: .5rem;
 }
 
 .hint {
-  font-size: 0.875em;
-  line-height: 1.48571em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-top: 0.09375rem;
+  margin-bottom: 0.09375rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .hint {
-    line-height: 1.33714em;
-  }
-}
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .hint {
-    line-height: 1.26286em;
-  }
+.colored-paper .hint, .callout .hint, .page-message .hint {
+  margin-top: 0.09375rem;
+  margin-bottom: 0.09375rem;
+  line-height: 1.35;
 }
 
-.answer:disabled, .answer[disabled], .answer-group:disabled, .answer-group[disabled], .question:disabled, .question[disabled], .question-group:disabled, .question-group[disabled], .question-inline:disabled, .question-inline[disabled], .question-grid-based:disabled, .question-grid-based[disabled], .answer .chosen-disabled.chosen-container .chosen-choices, .question .chosen-disabled.chosen-container .chosen-choices {
+.answer:disabled, .answer[disabled], .answer.locked, .answer-group:disabled, .answer-group[disabled], .answer-group.locked, .question:disabled, .question[disabled], .question.locked, .question-group:disabled, .question-group[disabled], .question-group.locked, .question-inline:disabled, .question-inline[disabled], .question-inline.locked, .question-grid-based:disabled, .question-grid-based[disabled], .question-grid-based.locked, .disabled .input-holder [type='text'], .locked .input-holder [type='text'], .disabled .input-holder [type='password'], .locked .input-holder [type='password'], .disabled .input-holder [type='date'], .locked .input-holder [type='date'], .disabled .input-holder [type='datetime'], .locked .input-holder [type='datetime'], .disabled .input-holder [type='datetime-local'], .locked .input-holder [type='datetime-local'], .disabled .input-holder [type='month'], .locked .input-holder [type='month'], .disabled .input-holder [type='week'], .locked .input-holder [type='week'], .disabled .input-holder [type='email'], .locked .input-holder [type='email'], .disabled .input-holder [type='number'], .locked .input-holder [type='number'], .disabled .input-holder [type='search'], .locked .input-holder [type='search'], .disabled .input-holder [type='tel'], .locked .input-holder [type='tel'], .disabled .input-holder [type='time'], .locked .input-holder [type='time'], .disabled .input-holder [type='url'], .locked .input-holder [type='url'], .disabled .input-holder [type='color'], .locked .input-holder [type='color'], .disabled .input-holder button, .locked .input-holder button, .disabled .input-holder .button, .locked .input-holder .button, .disabled .input-holder select, .locked .input-holder select, .disabled .input-holder option, .locked .input-holder option, .disabled .input-holder textarea, .locked .input-holder textarea, .answer .chosen-disabled.chosen-container .chosen-choices, .question .chosen-disabled.chosen-container .chosen-choices {
+  background: rgba(179, 179, 179, 0.99) url(../img/empty_stripe.png);
   background-color: #b3b3b3;
   background-image: url(../img/empty_stripe.png);
   color: #666666;
+  -webkit-appearance: none;
 }
 
 .answer .required, .question .required, .question-inline .required, .question-grid-based .required {
@@ -3380,19 +2622,19 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   width: 100%;
 }
 
-.hint .error, .hint .warning, .hint .success, .hint .info, .hint .highlighted, .hint .disabled {
+.hint .error, .hint .warning, .hint .success, .hint .info, .hint .highlighted, .hint .locked, .hint .disabled {
   padding: .25em .5em;
 }
 
-.error textarea, .error select, .error input, .error datalist, .warning textarea, .warning select, .warning input, .warning datalist, .success textarea, .success select, .success input, .success datalist, .info textarea, .info select, .info input, .info datalist, .highlighted textarea, .highlighted select, .highlighted input, .highlighted datalist, .disabled textarea, .disabled select, .disabled input, .disabled datalist {
+.error textarea, .error select, .error input, .error datalist, .warning textarea, .warning select, .warning input, .warning datalist, .success textarea, .success select, .success input, .success datalist, .info textarea, .info select, .info input, .info datalist, .highlighted textarea, .highlighted select, .highlighted input, .highlighted datalist, .locked textarea, .locked select, .locked input, .locked datalist, .disabled textarea, .disabled select, .disabled input, .disabled datalist {
   margin-bottom: 0;
 }
 
-.message-holder > .error, .message-holder > .warning, .message-holder > .success, .message-holder > .info, .message-holder > .highlighted, .message-holder > .disabled {
+.message-holder > .error, .message-holder > .warning, .message-holder > .success, .message-holder > .info, .message-holder > .highlighted, .message-holder > .locked, .message-holder > .disabled {
   display: none;
 }
 
-.error .message-holder > .error, .message-holder > .error.make-visible, .warning .message-holder > .warning, .message-holder > .warning.make-visible, .success .message-holder > .success, .message-holder > .success.make-visible, .info .message-holder > .info, .message-holder > .info.make-visible, .highlighted .message-holder > .highlighted, .message-holder > .highlighted.make-visible, .disabled .message-holder > .disabled, .message-holder > .disabled.make-visible {
+.error .message-holder > .error, .message-holder > .error.make-visible, .warning .message-holder > .warning, .message-holder > .warning.make-visible, .success .message-holder > .success, .message-holder > .success.make-visible, .info .message-holder > .info, .message-holder > .info.make-visible, .highlighted .message-holder > .highlighted, .message-holder > .highlighted.make-visible, .locked .message-holder > .locked, .message-holder > .locked.make-visible, .disabled .message-holder > .disabled, .message-holder > .disabled.make-visible {
   display: block;
 }
 
@@ -3910,26 +3152,20 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 }
 
 .seq {
-  font-size: 0.8125em;
-  line-height: 1.6em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
   color: #198dae;
   vertical-align: top;
   display: inline-block;
   margin-top: -.75em;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .seq {
-    line-height: 1.44em;
-  }
+.colored-paper .seq, .callout .seq, .page-message .seq {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .seq {
-    line-height: 1.36em;
-  }
-}
-
 .seq:hover {
   color: #266071;
   text-decoration: underline;
@@ -4497,6 +3733,16 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   color: #FFF;
 }
 
+.locked .close-bar:hover, .locked .close-bar {
+  border-color: #797979;
+}
+.locked .close-bar:hover .close-button, .locked .close-bar:hover .close-button:hover, .locked .close-bar .close-button, .locked .close-bar .close-button:hover {
+  background: #797979;
+}
+.locked .close-bar:hover .close-button .fa, .locked .close-bar:hover .close-button:hover .fa, .locked .close-bar .close-button .fa, .locked .close-bar .close-button:hover .fa {
+  color: #FFF;
+}
+
 .disabled .close-bar:hover, .disabled .close-bar {
   border-color: gray;
 }
@@ -4644,26 +3890,20 @@ table a.button, table button, table .inline-list, table .nobutton {
   color: #666666;
 }
 .table th {
-  font-size: 1em;
-  line-height: 1.3em;
-  margin-top: 0em;
-  margin-bottom: 0em;
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
   border: 0;
   vertical-align: bottom;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .table th {
-    line-height: 1.17em;
-  }
+.colored-paper .table th, .callout .table th, .page-message .table th {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .table th {
-    line-height: 1.105em;
-  }
-}
-
 .table th.h1, .table thh2, .table thh3, .table thh4 {
   margin-top: 0;
   clear: both;
@@ -4844,8 +4084,8 @@ table a.button, table button, table .inline-list, table .nobutton {
   border-top: #1c9dc1 1px solid;
   border-bottom: #1c9dc1 2px solid;
   color: #fff;
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 800;
   font-style: italic;
   font-size: .75rem;
 }
@@ -4937,6 +4177,18 @@ table a.button, table button, table .inline-list, table .nobutton {
   background: linear-gradient(to left, #53c4e4, #27b5dd);
   border-top: #27b5dd 1px solid;
   border-bottom: #27b5dd 2px solid;
+  color: #262626;
+}
+
+.table tr.locked.seperator td, .table tr.locked.seperator:nth-child(even) td:nth-child(odd) {
+  background-color: #c9c9c9;
+  /* will be "on top", if browser supports it */
+  background-image: linear-gradient(to left, #cecece, #b5b5b5);
+  /* these will reset other properties, like background-position, but it does know what you mean */
+  background: #c9c9c9;
+  background: linear-gradient(to left, #cecece, #b5b5b5);
+  border-top: #b5b5b5 1px solid;
+  border-bottom: #b5b5b5 2px solid;
   color: #262626;
 }
 
@@ -5276,6 +4528,20 @@ td.highlighted {
   border: solid 1px;
 }
 
+tr.locked td, td.locked {
+  background-image: url("../img/cream_pixels.png");
+  font-weight: 900;
+  background-color: #bfbfbf !important;
+  color: #000;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #d9d9d9 !important;
+}
+
+td.locked {
+  border: solid 1px;
+}
+
 tr.disabled td, td.disabled {
   background-image: url("../img/cream_pixels.png");
   font-weight: 900;
@@ -5573,6 +4839,16 @@ table + div > .collapsable-panel {
 .collapsable-panel.highlighted.inset .bar.close .action-btn {
   color: #fff;
 }
+.collapsable-panel.locked {
+  background-color: transparent;
+  border: 0 none transparent;
+}
+.collapsable-panel.locked.inset {
+  background-color: #f9f9f9;
+}
+.collapsable-panel.locked.inset .bar.close .action-btn {
+  color: #262626;
+}
 .collapsable-panel.disabled {
   background-color: transparent;
   border: 0 none transparent;
@@ -5784,7 +5060,7 @@ table + div > .collapsable-panel {
 .panel-selector .paenl-selector-group-title {
   font-size: 18px;
   padding: .5em .75em;
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
   background-color: #198dae;
   color: #fff;
@@ -6024,7 +5300,7 @@ ul.toggle.minimized .selected {
   background-color: #00386b;
 }
 .blue-bar .link {
-  font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 1rem;
 }
@@ -6072,25 +5348,21 @@ ul.toggle.minimized .selected {
   clear: both;
 }
 
-.user-id-block {
-  margin: 5px 7px 8px;
-  border: 1px solid #e6e6e6;
-  padding-top: .15rem;
-  padding-bottom: .25rem;
-  position: relative;
-  background-color: #fff;
+.user-id-block.card {
+  margin: .5rem .375rem .75rem;
+  padding: .5rem .375rem .75rem;
 }
-.user-id-block .user-pic {
+.user-id-block.card .user-pic {
   width: 40px;
   float: left;
   -webkit-clip-path: circle(20px at center);
   -webkit-moz-path: circle(20px, 20px, 20px);
   clip-path: circle(20px, 20px, 20px);
 }
-.user-id-block .user-pic {
+.user-id-block.card .user-pic {
   margin: .5rem 5px .5rem .75rem;
 }
-.user-id-block .user-info {
+.user-id-block.card .user-info {
   margin: .5rem 1rem .5rem -100px;
   padding-left: 82px;
   float: right;
@@ -6099,42 +5371,66 @@ ul.toggle.minimized .selected {
   width: 100%;
   font-size: 16px;
 }
-.user-id-block .user-info .user-name,
-.user-id-block .user-info .user-designation,
-.user-id-block .user-info .user-profession,
-.user-id-block .user-info .user-application {
+.user-id-block.card .user-info .user-name,
+.user-id-block.card .user-info .user-designation,
+.user-id-block.card .user-info .user-profession,
+.user-id-block.card .user-info .user-application {
   line-height: 1.25;
 }
-.user-id-block .user-info .user-name {
+.user-id-block.card .user-info .user-name {
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
   font-weight: 400;
-  font-weight: 700;
-  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
   color: #333333;
 }
-.user-id-block .user-info .user-application {
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  color: #198dae;
+.colored-paper .user-id-block.card .user-info .user-name, .callout .user-id-block.card .user-info .user-name, .page-message .user-id-block.card .user-info .user-name {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  line-height: 1.35;
 }
-.user-id-block .user-info .user-application-switch {
-  font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+.user-id-block.card .user-info .user-application {
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  color: #525252;
+}
+.colored-paper .user-id-block.card .user-info .user-application, .callout .user-id-block.card .user-info .user-application, .page-message .user-id-block.card .user-info .user-application {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  line-height: 1.35;
+}
+.user-id-block.card .user-info .user-application-switch {
+  font-family: 'Muli','Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
-  font-size: 10px;
-  line-height: 1.25;
-  display: block;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+.colored-paper .user-id-block.card .user-info .user-application-switch, .callout .user-id-block.card .user-info .user-application-switch, .page-message .user-id-block.card .user-info .user-application-switch {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  line-height: 1.35;
+}
+.user-id-block.card .user-info .user-application-switch a {
+  color: #525252;
 }
 @media only screen and (max-width: 1024px) {
-  .user-id-block .user-pic, .user-id-block .user-info {
+  .user-id-block.card .user-pic, .user-id-block.card .user-info {
     float: none;
     position: relative;
   }
-  .user-id-block .user-pic {
+  .user-id-block.card .user-pic {
     margin: 0 auto;
     display: block;
   }
-  .user-id-block .user-info {
+  .user-id-block.card .user-info {
     margin: 0;
     padding: 0 1rem;
     text-align: center;
@@ -6150,7 +5446,7 @@ ul.toggle.minimized .selected {
   padding: .25rem;
   position: fixed;
   top: 0;
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
 }
 
@@ -6186,8 +5482,15 @@ ul.toggle.minimized .selected {
   display: block;
   border: 1px solid #e6e6e6;
   padding: .75em 1.5em 1.25em;
-  font-size: 16px;
-  line-height: 20.8px;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+.colored-paper .membership-table .membership-table_title, .callout .membership-table .membership-table_title, .page-message .membership-table .membership-table_title, .colored-paper .membership-table .membership-table_price, .callout .membership-table .membership-table_price, .page-message .membership-table .membership-table_price, .colored-paper .membership-table .membership-table_listitem, .callout .membership-table .membership-table_listitem, .page-message .membership-table .membership-table_listitem, .colored-paper .membership-table .membership-table_description, .callout .membership-table .membership-table_description, .page-message .membership-table .membership-table_description, .colored-paper .membership-table .membership-table_cta, .callout .membership-table .membership-table_cta, .page-message .membership-table .membership-table_cta {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  line-height: 1.35;
 }
 .membership-table .membership-table_title + li, .membership-table .membership-table_price + li, .membership-table .membership-table_listitem + li, .membership-table .membership-table_description + li, .membership-table .membership-table_cta + li {
   border-top: 0;
@@ -6197,39 +5500,39 @@ ul.toggle.minimized .selected {
 }
 .membership-table small {
   color: #00386b;
-  font-size: 0.875em;
-  line-height: 1.48571em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .membership-table small {
-    line-height: 1.33714em;
-  }
+.colored-paper .membership-table small, .callout .membership-table small, .page-message .membership-table small {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .membership-table small {
-    line-height: 1.26286em;
-  }
-}
-
 .membership-table .membership-table_title {
-  background-color: #00386b;
-  font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
+  font-size: 1.8125rem;
+  line-height: 1.125;
+  margin-top: 1.23047rem;
+  margin-bottom: 1.23047rem;
+  padding: 1.5rem 1.5rem;
+  background-color: #00386b;
   color: #fff;
-  font-size: 32px;
-  padding: 1.5rem 1rem;
-  line-height: 1.3;
-  display: inline-block;
   width: 100%;
   min-height: 3em;
   vertical-align: middle;
   text-align: left;
   background-image: none;
 }
+.colored-paper .membership-table .membership-table_title, .callout .membership-table .membership-table_title, .page-message .membership-table .membership-table_title {
+  margin-top: 0.48047rem;
+  margin-bottom: 0.48047rem;
+  line-height: 1.125;
+}
 .membership-table .membership-table_price {
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
   background-color: #f2f2f2;
   text-align: center;
@@ -6241,62 +5544,44 @@ ul.toggle.minimized .selected {
   margin: 0 auto;
 }
 .membership-table .membership-table_price .price {
-  font-size: 2em;
-  line-height: 1.3em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 2rem;
+  line-height: 1.125;
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .membership-table .membership-table_price .price {
-    line-height: 1.17em;
-  }
+.colored-paper .membership-table .membership-table_price .price, .callout .membership-table .membership-table_price .price, .page-message .membership-table .membership-table_price .price {
+  margin-top: 0.375rem;
+  margin-bottom: 0.375rem;
+  line-height: 1.125;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .membership-table .membership-table_price .price {
-    line-height: 1.105em;
-  }
-}
-
 .membership-table .membership-table_price .price small {
-  font-size: 0.5em;
-  line-height: 1.3em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
   color: #666666;
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
   font-weight: 700;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .membership-table .membership-table_price .price small {
-    line-height: 1.17em;
-  }
+.colored-paper .membership-table .membership-table_price .price small, .callout .membership-table .membership-table_price .price small, .page-message .membership-table .membership-table_price .price small {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .membership-table .membership-table_price .price small {
-    line-height: 1.105em;
-  }
-}
-
 .membership-table .membership-table_price .price-alt {
-  font-size: 0.875em;
-  line-height: 1.48571em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-top: 0.09375rem;
+  margin-bottom: 0.09375rem;
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
   font-weight: 700;
   color: #00386b;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .membership-table .membership-table_price .price-alt {
-    line-height: 1.33714em;
-  }
+.colored-paper .membership-table .membership-table_price .price-alt, .callout .membership-table .membership-table_price .price-alt, .page-message .membership-table .membership-table_price .price-alt {
+  margin-top: 0.09375rem;
+  margin-bottom: 0.09375rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .membership-table .membership-table_price .price-alt {
-    line-height: 1.26286em;
-  }
-}
-
 .membership-table .membership-table_description {
   font-size: 16px;
   line-height: 1.65;
@@ -6357,7 +5642,7 @@ ul.toggle.minimized .selected {
     @include pricing-table-title;
     background-color: rebrand-color($brand-color, 2);
     @include font-slab();
-    color:color-contrast(rebrand-color($brand-color, 2));
+    color:acc-color-contrast(rebrand-color($brand-color, 2));
   }
   .membership-table_price  {
     @include pricing-table-price;
@@ -6406,10 +5691,10 @@ ul.toggle.minimized .selected {
 }
 */
 .info-text {
-  font-size: 1em;
-  line-height: 1.3em;
-  margin-top: 0.325em;
-  margin-bottom: 0.325em;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0.375rem;
+  margin-bottom: 0.375rem;
   font-weight: normal;
   color: #262626;
   padding: .5rem 1rem .65rem;
@@ -6420,39 +5705,23 @@ ul.toggle.minimized .selected {
   border-radius: 5px;
   border-color: transparent;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .info-text {
-    line-height: 1.17em;
-    margin-top: 0.2925em;
-    margin-bottom: 0.2925em;
-  }
+.colored-paper .info-text, .callout .info-text, .page-message .info-text {
+  margin-top: 0.375rem;
+  margin-bottom: 0.375rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .info-text {
-    line-height: 1.105em;
-    margin-top: 0.24375em;
-    margin-bottom: 0.24375em;
-  }
-}
-
 .info-text .fa-holder {
-  font-size: 1.4375em;
-  line-height: 1.8087em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 1.4375rem;
+  line-height: 1.35;
+  margin-top: 0.52969rem;
+  margin-bottom: 0.52969rem;
   position: absolute;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .info-text .fa-holder {
-    line-height: 1.62783em;
-  }
+.colored-paper .info-text .fa-holder, .callout .info-text .fa-holder, .page-message .info-text .fa-holder {
+  margin-top: 0.52969rem;
+  margin-bottom: 0.52969rem;
+  line-height: 1.125;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .info-text .fa-holder {
-    line-height: 1.53739em;
-  }
-}
-
 .info-text p {
   margin-bottom: 0;
   padding-left: 4rem;
@@ -6462,28 +5731,19 @@ ul.toggle.minimized .selected {
   padding: 0;
   margin: 0;
 }
-.info-text .error, .info-text .warning, .info-text .success, .info-text .info, .info-text .highlighted, .info-text .disabled {
+.info-text .error, .info-text .warning, .info-text .success, .info-text .info, .info-text .highlighted, .info-text .locked, .info-text .disabled {
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
   font-weight: 700;
-  font-size: 1.125em;
-  line-height: 1.15556em;
-  margin-top: 0.28889em;
-  margin-bottom: 0.28889em;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin-top: 0.32813rem;
+  margin-bottom: 0.32813rem;
   min-height: 23px;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .info-text .error, .info-text .warning, .info-text .success, .info-text .info, .info-text .highlighted, .info-text .disabled {
-    line-height: 1.04em;
-    margin-top: 0.26em;
-    margin-bottom: 0.26em;
-  }
-}
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .info-text .error, .info-text .warning, .info-text .success, .info-text .info, .info-text .highlighted, .info-text .disabled {
-    line-height: 1em;
-    margin-top: 0.21667em;
-    margin-bottom: 0.21667em;
-  }
+.colored-paper .info-text .error, .callout .info-text .error, .page-message .info-text .error, .colored-paper .info-text .warning, .callout .info-text .warning, .page-message .info-text .warning, .colored-paper .info-text .success, .callout .info-text .success, .page-message .info-text .success, .colored-paper .info-text .info, .callout .info-text .info, .page-message .info-text .info, .colored-paper .info-text .highlighted, .callout .info-text .highlighted, .page-message .info-text .highlighted, .colored-paper .info-text .locked, .callout .info-text .locked, .page-message .info-text .locked, .colored-paper .info-text .disabled, .callout .info-text .disabled, .page-message .info-text .disabled {
+  margin-top: 0.32813rem;
+  margin-bottom: 0.32813rem;
+  line-height: 1.35;
 }
 
 .split-sidebar .nav-list.nav-checklist, .split-sidebar .nav-checklist.panel-selector {
@@ -7501,11 +6761,22 @@ This file is generated by `grunt build`, do not edit it by hand.
 }
 .top-bar, .top-bar .menu > li {
   line-height: 2em;
-  font-size: 18px;
+  font-size: 16px;
 }
 @media only screen and (min-width: 767px) {
   .top-bar, .top-bar .menu > li {
     line-height: 2.75em;
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .top-bar, .top-bar .menu > li {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .top-bar, .top-bar .menu > li {
+    font-size: 18px;
   }
 }
 .top-bar > a, .top-bar > button, .top-bar .menu > li > a, .top-bar .menu > li > button {
@@ -7526,11 +6797,17 @@ This file is generated by `grunt build`, do not edit it by hand.
 }
 
 .top-bar-right {
-  .padding-right: .5em;
+  padding-right: .5em;
   background-color: #198dae;
 }
+.top-bar-right li:hover {
+  background-color: #266071;
+}
 .top-bar-right.secondary {
-  background-color: #b3b3b3;
+  background-color: #bfbfbf;
+}
+.top-bar-right.secondary li:hover {
+  background-color: #797979;
 }
 
 .top-bar-left {
@@ -7562,7 +6839,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 }
 .top-bar-left .submenu {
   margin: 0;
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 400;
   letter-spacing: .01em;
   list-style: none;
@@ -7643,8 +6920,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 }
 
 #siteMenu i.fa {
-  margin-top: -1px;
-  margin-bottom: -1px;
+  margin-top: -4px;
 }
 #siteMenu .top-bar-left, #siteMenu .top-bar-right {
   width: 100%;
@@ -7653,12 +6929,14 @@ This file is generated by `grunt build`, do not edit it by hand.
 @media only screen and (min-width: 1024px) {
   #siteMenu .top-bar-left, #siteMenu .top-bar-right {
     width: auto;
-    padding: 0 .5em;
   }
 }
 
 .top-bar a, .top-bar button {
   color: white;
+}
+.top-bar .title {
+  background-color: #666666;
 }
 .top-bar .dropdown-pane {
   margin-top: 1px;
@@ -7715,24 +6993,34 @@ This file is generated by `grunt build`, do not edit it by hand.
   line-height: normal;
   padding: 0.5em;
   clear: both;
-  background-image: url(../img/cream_pixels_altdark.png);
-  background-color: #b3b3b3;
+  background-color: #bfbfbf;
+}
+.top-bar .search-bar {
   display: none;
 }
 .search-bar .question {
   margin: 0;
 }
-.search-bar .question input {
-  background: #b8b8b8;
-  border-radius: 6px 0 0 6px;
-  border: #cccccc 1px solid;
+.search-bar .question select, .search-bar .question input, .search-bar .question .button, .search-bar .question button {
+  border: 1px solid #b3b3b3;
 }
-.search-bar .question .button {
+.search-bar .question select, .search-bar .question option {
+  background: gray;
+  border-radius: 6px 0 0 6px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+.search-bar .question input {
+  background: #e6e6e6;
+}
+.search-bar .question .button, .search-bar .question button {
   border-radius: 0 6px 6px 0;
   background-color: gray;
   vertical-align: text-top;
   padding: 0;
-  border: 1px solid #cccccc;
 }
 
 .top-bar input, .search-bar input {
@@ -7745,73 +7033,190 @@ This file is generated by `grunt build`, do not edit it by hand.
 * 
 *   @example
 *	<div class="top-bar">
-*		<div class="hide-for-medium">
-*		  <div class="top-bar-left" onClick="$('#siteMenu .top-bar-left').toggleClass('display-block')">
-*		       <a class="top-bar-toggle"><i class="fa fa-bars"></i>&nbsp;Menu</a>
-*		  </div>
-*		  <div class="top-bar-right" onClick="$('#siteMenu .top-bar-left').toggleClass('display-block')">
-*		       <a class="top-bar-toggle">Search&nbsp;<i class="fa fa-search"></i></a>
-*		  </div>
-*		</div>
-*	  <div id="siteMenu" class="stack-for-small">
-*	    <div class="top-bar-left" class="show-for-large">
-*	      <ul class="menu">
-*	        <li class="dropdown-menu-item">
-*		      <button type="button" class="dropdown-holder" data-toggle="example-dropdown">Toggle Dropdown</button>
-*	          <div class="dropdown-pane double-column" id="example-dropdown" data-dropdown data-dropdown data-hover="true" data-hover-pane="true">
-*				<div class="row collapse">
-*					<div class="column medium-6">
-*					<ul class="submenu nav-level-1">
-*					<li><a href="">Menu item</a></li>
-*					<li><a href="">Menu item</a></li>
-*					<li><a href="">Menu item</a></li>
-*					<li class="parent">
-*						<ul class="submenu nav-level-2">
-*						<li><a href="">Secondary Menu item</a></li>
-*						<li><a href="">Secondary Menu item</a></li>
-*						<li><a href="">Secondary Menu item</a></li>
-*						<li><a href="">Secondary Menu item</a></li>
-*						<li><a href="">Secondary Menu item</a></li>
-*						</ul>	
-*					</li>
-*					<li><a href="">Menu item</a></li>
-*				</ul>		
-*				</div>
-*					<div class="column medium-6"><ul class="submenu nav-level-1">
-*					<li><a href="">Menu item</a></li>
-*					<li><a href="">Menu item</a></li>
-*					<li><a href="">Menu item</a></li>
-*					<li><a href="">Menu item</a></li>
-*					<li><a href="">Menu item</a></li>
-*				</ul>
-*				</div>
-*				</div>
-*	          </div>
-*	        </li>
-*	        <li>
-*	          <a href="#">Two</a>
-*	        </li>
-*	        <li>
-*	          <a href="#">Three</a>
-*	        </li>
-*	      </ul>
+*	    <div class="hide-for-large" id="mobileMenu">
+*	        <div class="top-bar-left" onclick="$('#siteMenu .top-bar-left').toggleClass('display-block')">
+*	            <a class="top-bar-toggle">
+*	                <i class="fa fa-bars">
+*	                </i>
+*	                Menu
+*	            </a>
+*	        </div>
+*	        <div class="top-bar-right secondary" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+*	            <a class="top-bar-toggle small condensable">
+*	                <span class="condense">
+*	                    Search
+*	                </span>
+*	                <i class="fa fa-search">
+*	                </i>
+*	            </a>
+*	        </div>
+*	        <div class="top-bar-right " onclick="$('#siteMenu .top-bar-right.user-nav').toggleClass('display-block')">
+*	            <a class="top-bar-toggle small condensable">
+*	                <span class="condense">
+*	                    Profile
+*	                </span>
+*	                <i class="fa fa-user">
+*	                </i>
+*	            </a>
+*	        </div>
 *	    </div>
-*	    <div class="top-bar-right" class="show-for-large">
-*	     	<ul class="menu">
-*	        <li>
-*	          <a href="">Drop Down</a>
-*	        </li>
-*	        <li>
-*	          <a href="#">Two</a>
-*	        </li>
-*	        <li>
-*	          <a href="#">Three</a>
-*	        </li>
-*	      </ul>
+*	    <div class="stack-for-medium " id="siteMenu">
+*	        <div class="top-bar-left show-for-large">
+*	            <ul class="menu">
+*	                <li class="dropdown-menu-item">
+*	                    <button data-toggle="example-dropdown" type="button">
+*	                        <i aria-hidden="true" class="fa fa-holder">
+*	                        </i>
+*	                        Toggle Dropdown
+*	                    </button>
+*	                    <div class="dropdown-pane double-column" data-dropdown="" data-hover="true" data-hover-pane="true" id="example-dropdown">
+*	                        <div class="row collapse">
+*	                            <div class="column medium-6">
+*	                                <ul class="submenu nav-level-1">
+*	                                    <li>
+*	                                        <a href="">
+*	                                            Menu item
+*	                                        </a>
+*	                                    </li>
+*	                                    <li>
+*	                                        <a href="">
+*	                                            Menu item
+*	                                        </a>
+*	                                    </li>
+*	                                    <li>
+*	                                        <a href="">
+*	                                            Menu item
+*	                                        </a>
+*	                                    </li>
+*	                                    <li class="parent">
+*	                                        <ul class="submenu nav-level-2">
+*	                                            <li>
+*	                                                <a href="">
+*	                                                    Secondary Menu item
+*	                                                </a>
+*	                                            </li>
+*	                                            <li>
+*	                                                <a href="">
+*	                                                    Secondary Menu item
+*	                                                </a>
+*	                                            </li>
+*	                                            <li>
+*	                                                <a href="">
+*	                                                    Secondary Menu item
+*	                                                </a>
+*	                                            </li>
+*	                                            <li>
+*	                                                <a href="">
+*	                                                    Secondary Menu item
+*	                                                </a>
+*	                                            </li>
+*	                                            <li>
+*	                                                <a href="">
+*	                                                    Secondary Menu item
+*	                                                </a>
+*	                                            </li>
+*	                                        </ul>
+*	                                    </li>
+*	                                    <li>
+*	                                        <a href="">
+*	                                            Menu item
+*	                                        </a>
+*	                                    </li>
+*	                                </ul>
+*	                            </div>
+*	                            <div class="column medium-6">
+*	                                <ul class="submenu nav-level-1">
+*	                                    <li>
+*	                                        <a href="">
+*	                                            Menu item
+*	                                        </a>
+*	                                    </li>
+*	                                    <li>
+*	                                        <a href="">
+*	                                            Menu item
+*	                                        </a>
+*	                                    </li>
+*	                                    <li>
+*	                                        <a href="">
+*	                                            Menu item
+*	                                        </a>
+*	                                    </li>
+*	                                    <li>
+*	                                        <a href="">
+*	                                            Menu item
+*	                                        </a>
+*	                                    </li>
+*	                                    <li>
+*	                                        <a href="">
+*	                                            Menu item
+*	                                        </a>
+*	                                    </li>
+*	                                </ul>
+*	                            </div>
+*	                        </div>
+*	                    </div>
+*	                </li>
+*	                <li>
+*	                    <a href="#">
+*	                        Two
+*	                    </a>
+*	                </li>
+*	                <li>
+*	                    <a href="#">
+*	                        Three
+*	                    </a>
+*	                </li>
+*	            </ul>
+*	        </div>
+*	        <div class="top-bar-right secondary show-for-large" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+*	            <ul class="menu">
+*	                <li>
+*	                    <a class="top-bar-toggle small condensable">
+*	                        <span class="condense">
+*	                            Search
+*	                        </span>
+*	                        <i class="fa fa-search">
+*	                        </i>
+*	                    </a>
+*	                </li>
+*	            </ul>
+*	        </div>
+*	        <div class="top-bar-right user-nav show-for-large">
+*	            <ul class="menu">
+*	                <li>
+*	                    <a href="">
+*	                        Drop Down
+*	                    </a>
+*	                </li>
+*	                <li>
+*	                    <a href="#">
+*	                        Two
+*	                    </a>
+*	                </li>
+*	                <li>
+*	                    <a href="#">
+*	                        Three
+*	                    </a>
+*	                </li>
+*	            </ul>
+*	        </div>
+*	        <div class="search-bar">
+*	            <div class="question">
+*	                <div class="input-holder">
+*	                    <div class="input-space column small-6 medium-9 large-10 ">
+*	                        <input name="" type="text">
+*	                        </input>
+*	                    </div>
+*	                    <div class="input-space column small-6 medium-3 large-2 ">
+*	                        <button class="button expanded">
+*	                            Search
+*	                        </button>
+*	                    </div>
+*	                </div>
+*	            </div>
+*	        </div>
 *	    </div>
-*	  </div>
 *	</div>
-*
 **/
 .pagination-holder, .result-selector-holder {
   border-top: 2px solid #198dae;
@@ -7831,23 +7236,17 @@ This file is generated by `grunt build`, do not edit it by hand.
 .pagination li {
   border-radius: 0px 0px 0px 0px;
   color: #666666;
-  font-size: 0.875em;
-  line-height: 1.48571em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-top: 0.09375rem;
+  margin-bottom: 0.09375rem;
   line-height: 1.4rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .pagination li {
-    line-height: 1.33714em;
-  }
+.colored-paper .pagination li, .callout .pagination li, .page-message .pagination li {
+  margin-top: 0.09375rem;
+  margin-bottom: 0.09375rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .pagination li {
-    line-height: 1.26286em;
-  }
-}
-
 .pagination li a {
   line-height: 1.4rem;
 }
@@ -8229,20 +7628,15 @@ div.reveal .close-button {
   color: #525252;
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
   font-weight: 400;
-  font-size: 1em;
-  line-height: 1.3em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .switch-value {
-    line-height: 1.17em;
-  }
-}
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .switch-value {
-    line-height: 1.105em;
-  }
+.colored-paper .switch-value, .callout .switch-value, .page-message .switch-value {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
 }
 
 .switch {
@@ -8339,45 +7733,6 @@ input:checked + label > .switch-active {
 }
 input:checked + label > .switch-inactive {
   display: none;
-}
-
-.switch.tiny .switch-paddle, .question-grid-based.tiny-switches .switch .switch-paddle {
-  width: 3rem;
-  height: 1.5rem;
-  font-size: 0.625rem;
-}
-.switch.tiny .switch-paddle::after, .question-grid-based.tiny-switches .switch .switch-paddle::after {
-  width: 1rem;
-  height: 1rem;
-}
-.switch.tiny input:checked ~ .switch-paddle::after, .question-grid-based.tiny-switches .switch input:checked ~ .switch-paddle::after {
-  left: 1.75rem;
-}
-
-.switch.small .switch-paddle, .question-grid-based.small-switches .switch .switch-paddle {
-  width: 3.5rem;
-  height: 1.75rem;
-  font-size: 0.75rem;
-}
-.switch.small .switch-paddle::after, .question-grid-based.small-switches .switch .switch-paddle::after {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-.switch.small input:checked ~ .switch-paddle::after, .question-grid-based.small-switches .switch input:checked ~ .switch-paddle::after {
-  left: 2rem;
-}
-
-.switch.large .switch-paddle, .question-grid-based.large-switches .switch .switch-paddle {
-  width: 5rem;
-  height: 2.5rem;
-  font-size: 1rem;
-}
-.switch.large .switch-paddle::after, .question-grid-based.large-switches .switch .switch-paddle::after {
-  width: 2rem;
-  height: 2rem;
-}
-.switch.large input:checked ~ .switch-paddle::after, .question-grid-based.large-switches .switch input:checked ~ .switch-paddle::after {
-  left: 2.75rem;
 }
 
 .radio .switch-active i.fa-holder:before {
@@ -8533,6 +7888,32 @@ input:checked + label > .switch-inactive {
   z-index: 100;
 }
 
+.switch.rotate .switch-paddle {
+  height: 4rem;
+  width: 2rem;
+}
+.switch.rotate .switch-active, .switch.rotate .switch-inactive {
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+}
+.switch.rotate .switch-active {
+  top: 0;
+}
+.switch.rotate.small .switch-paddle, .question-grid-based.small-switches .rotate.switch .switch-paddle {
+  height: 3.5rem;
+  width: 1.75rem;
+}
+.switch.rotate.tiny .switch-paddle, .question-grid-based.tiny-switches .rotate.switch .switch-paddle {
+  height: 3rem;
+  width: 1.5rem;
+}
+.switch.rotate input:checked ~ .switch-paddle::after {
+  top: 55%;
+  left: 50%;
+  transform: translatex(-50%);
+}
+
 /**
 * Switch (Foundation Override): 
 * `.switch` - Switches are a more visible and more touchable versions of checkbox and radio buttons. 
@@ -8616,7 +7997,7 @@ input:checked + label > .switch-inactive {
 *   <label  class="switch-value" for="radius-checkbox">Checkbox button made with `.radius`</label>
 *   </div>
 *   <div class="switch-input-space column small-6">
-*   <div class="switch checkbox">
+*   <div class="switch checkbox rotate">
 *   <input class="switch-input" id="checkbox-checkbox"  type="checkbox" value="false">
 *   <label class="switch-paddle" for="checkbox-checkbox">
 *   <span class="show-for-sr">Do you like me?</span>
@@ -8793,12 +8174,12 @@ input:checked + label > .switch-inactive {
   margin-right: 0;
 }
 .button-group.selectable .button {
-  background-color: #b3b3b3;
-  color: #FFF;
+  background-color: #bfbfbf;
+  color: #333333;
 }
 .button-group.selectable .button:hover, .button-group.selectable .button:focus {
-  background-color: #157894;
-  color: #FFF;
+  background-color: #999999;
+  color: #333333;
 }
 .button-group.selectable .button:hover, .button-group.selectable .button:focus {
   background-color: #666666;
@@ -8813,11 +8194,11 @@ input:checked + label > .switch-inactive {
 }
 .button-group.selectable .selected.button {
   background-color: #14B057;
-  color: #FFF;
+  color: #fff;
 }
 .button-group.selectable .selected.button:hover, .button-group.selectable .selected.button:focus {
-  background-color: #157894;
-  color: #FFF;
+  background-color: #14B057;
+  color: #fff;
 }
 .button-group.selectable .selected.button:hover, .button-group.selectable .selected.button:focus {
   background-color: #1a9750;
@@ -8827,11 +8208,11 @@ input:checked + label > .switch-inactive {
   display: inline-block;
 }
 
-.error.question .button-group, .warning.question .button-group, .success.question .button-group, .info.question .button-group, .highlighted.question .button-group, .disabled.question .button-group {
+.error.question .button-group, .warning.question .button-group, .success.question .button-group, .info.question .button-group, .highlighted.question .button-group, .locked.question .button-group, .disabled.question .button-group {
   margin-bottom: 0;
 }
 
-.error.question .button-group.radius, .warning.question .button-group.radius, .success.question .button-group.radius, .info.question .button-group.radius, .highlighted.question .button-group.radius, .disabled.question .button-group.radius {
+.error.question .button-group.radius, .warning.question .button-group.radius, .success.question .button-group.radius, .info.question .button-group.radius, .highlighted.question .button-group.radius, .locked.question .button-group.radius, .disabled.question .button-group.radius {
   margin-bottom: 0;
   border-radius: 6px 6px 0 0;
 }
@@ -8986,7 +8367,7 @@ input:checked + label > .switch-inactive {
 /* Component containers
 ----------------------------------*/
 .ui-widget {
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 400;
   letter-spacing: .01em;
 }
@@ -8994,7 +8375,7 @@ input:checked + label > .switch-inactive {
   font-size: 1em;
 }
 .ui-widget input, .ui-widget select, .ui-widget textarea {
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 400;
   letter-spacing: .01em;
 }
@@ -9468,7 +8849,7 @@ input:checked + label > .switch-inactive {
   font-size: 1em;
 }
 .ui-autocomplete .description {
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: italic;
   color: #666666;
@@ -9504,10 +8885,10 @@ input:checked + label > .switch-inactive {
 }
 
 .ui-accordion-override .ui-accordion-header {
-  font-size: 1.4375em;
-  line-height: 1.8087em;
-  margin-top: 0.67826em;
-  margin-bottom: 0.22609em;
+  font-size: 1.4375rem;
+  line-height: 1.35;
+  margin-top: 0.79453rem;
+  margin-bottom: 0.26484rem;
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
   font-weight: 400;
   color: #262626;
@@ -9517,21 +8898,11 @@ input:checked + label > .switch-inactive {
   border: 0px none;
   margin-bottom: 0;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .ui-accordion-override .ui-accordion-header {
-    line-height: 1.62783em;
-    margin-top: 0.61043em;
-    margin-bottom: 0.20348em;
-  }
+.colored-paper .ui-accordion-override .ui-accordion-header, .callout .ui-accordion-override .ui-accordion-header, .page-message .ui-accordion-override .ui-accordion-header {
+  margin-top: 0.79453rem;
+  margin-bottom: 0.26484rem;
+  line-height: 1.125;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .ui-accordion-override .ui-accordion-header {
-    line-height: 1.53739em;
-    margin-top: 0.5087em;
-    margin-bottom: 0.16957em;
-  }
-}
-
 .ui-accordion-override .ui-accordion-header:hover {
   color: #000;
 }
@@ -9685,30 +9056,30 @@ input:checked + label > .switch-inactive {
   }
 }
 
-.colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .group-section-pagination-holder {
+.colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .card > .group-section-pagination-holder {
   margin-bottom: -.2rem;
   margin-bottom: calc(-.2rem - 2px);
 }
 @media only screen and (max-height: 480px) {
-  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .group-section-pagination-holder {
+  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .card > .group-section-pagination-holder {
     margin-bottom: -.25rem;
     margin-bottom: calc(-.25rem - 2px);
   }
 }
 @media only screen and (min-width: 767px) {
-  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .group-section-pagination-holder {
+  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .card > .group-section-pagination-holder {
     margin-bottom: -.5rem;
     margin-bottom: calc(-.5rem - 2px);
   }
 }
 @media only screen and (min-width: 1024px) {
-  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .group-section-pagination-holder {
+  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .card > .group-section-pagination-holder {
     margin-bottom: -1rem;
     margin-bottom: calc(-1rem - 2px);
   }
 }
 @media only screen and (min-width: 1200px) {
-  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .group-section-pagination-holder {
+  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .card > .group-section-pagination-holder {
     margin-bottom: -1rem;
     margin-bottom: calc(-1rem - 2px);
   }
@@ -9812,6 +9183,10 @@ input:checked + label > .switch-inactive {
   background-color: #c7ecf6;
   background-image: url("../img/billie-holiday-speck.png");
 }
+.with-group-sections.locked, .with-group-sections.locked .overlap .tabs .selected, .with-group-sections.locked .overlap .tabs .is-active, .paper-page.locked, .paper-page.locked .overlap .tabs .selected, .paper-page.locked .overlap .tabs .is-active {
+  background-color: #efefef;
+  background-image: url("../img/billie-holiday-speck.png");
+}
 .with-group-sections.disabled, .with-group-sections.disabled .overlap .tabs .selected, .with-group-sections.disabled .overlap .tabs .is-active, .paper-page.disabled, .paper-page.disabled .overlap .tabs .selected, .paper-page.disabled .overlap .tabs .is-active {
   background-color: #f2f2f2;
   background-image: url("../img/billie-holiday-speck.png");
@@ -9840,6 +9215,9 @@ input:checked + label > .switch-inactive {
 }
 .with-group-sections .page-wrapper.highlighted .group-section.ghost, .with-group-sections .page-wrapper.highlighted .card.ghost, .paper-page .page-wrapper.highlighted .group-section.ghost, .paper-page .page-wrapper.highlighted .card.ghost {
   background-color: #d0e3e8;
+}
+.with-group-sections .page-wrapper.locked .group-section.ghost, .with-group-sections .page-wrapper.locked .card.ghost, .paper-page .page-wrapper.locked .group-section.ghost, .paper-page .page-wrapper.locked .card.ghost {
+  background-color: #e4e4e4;
 }
 .with-group-sections .page-wrapper.disabled .group-section.ghost, .with-group-sections .page-wrapper.disabled .card.ghost, .paper-page .page-wrapper.disabled .group-section.ghost, .paper-page .page-wrapper.disabled .card.ghost {
   background-color: #e6e6e6;
@@ -9890,6 +9268,13 @@ input:checked + label > .switch-inactive {
 .colored-paper.highlighted h1, .colored-paper.highlighted h2, .colored-paper.highlighted h3, .colored-paper.highlighted h4, .colored-paper.highlighted h5, .colored-paper.highlighted h6, .colored-paper.highlighted p {
   color: #fff;
 }
+.colored-paper.locked {
+  background-color: #bfbfbf;
+  color: #262626;
+}
+.colored-paper.locked h1, .colored-paper.locked h2, .colored-paper.locked h3, .colored-paper.locked h4, .colored-paper.locked h5, .colored-paper.locked h6, .colored-paper.locked p {
+  color: #262626;
+}
 .colored-paper.disabled {
   background-color: #cccccc;
   color: #262626;
@@ -9926,6 +9311,12 @@ input:checked + label > .switch-inactive {
 }
 .colored-paper.highlighted .tabs li:hover {
   background-color: #b0e4f3;
+}
+.colored-paper.locked .tabs li {
+  background-color: #f2f2f2;
+}
+.colored-paper.locked .tabs li:hover {
+  background-color: #e9e9e9;
 }
 .colored-paper.disabled .tabs li {
   background-color: whitesmoke;
@@ -10788,7 +10179,7 @@ input:checked + label > .switch-inactive {
 
 .page-footer {
   border-top: #666666 4px solid;
-  background-color: #b3b3b3;
+  background-color: #bfbfbf;
 }
 .page-footer .logo-holder {
   width: 100%;
@@ -10800,24 +10191,18 @@ input:checked + label > .switch-inactive {
   padding: 10px;
 }
 .page-footer h3 {
-  font-size: 1.25em;
-  line-height: 1.04em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-top: 0.5625rem;
+  margin-bottom: 0.5625rem;
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
   font-weight: 400;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .page-footer h3 {
-    line-height: 1em;
-  }
+.colored-paper .page-footer h3, .callout .page-footer h3, .page-message .page-footer h3 {
+  margin-top: 0.5625rem;
+  margin-bottom: 0.5625rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .page-footer h3 {
-    line-height: 1em;
-  }
-}
-
 .page-footer h4 {
   margin-left: 0;
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
@@ -10864,20 +10249,15 @@ input:checked + label > .switch-inactive {
   margin-bottom: 0;
 }
 .address li {
-  font-size: 1em;
-  line-height: 1.3em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  .address li {
-    line-height: 1.17em;
-  }
-}
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  .address li {
-    line-height: 1.105em;
-  }
+.colored-paper .address li, .callout .address li, .page-message .address li {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
 }
 
 .acc-websites .nav-list.small li, .acc-websites .small.panel-selector li {
@@ -11133,7 +10513,7 @@ cite {
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 .score-bar .text-bold {
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
 }
 .score-bar .text-condensed {
@@ -11145,7 +10525,7 @@ cite {
   font-weight: 700;
 }
 .score-bar .text-light {
-  font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
 .score-bar .small-fs-1x {
@@ -11520,10 +10900,6 @@ cite {
   color: #198dae;
 }
 
-h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning, h1.success, h2.success, h3.success, h4.success, h5.success, h6.success, p.success, a.success, li.success, blockquote.success, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
-  font-weight: 900;
-}
-
 /**
 * Header Tags and other Typography States:
 * `.error, .warning, .etc...` - headers `p` `li` `blockquote` `a` and `p` tags can be fully manipulated to respond to states by adding the modifiying state like `.error`, `.warning`, `.info` etc....
@@ -11599,7 +10975,7 @@ h1 .sub-line, h2 .sub-line, h3 .sub-line, h4 .sub-line, h5 .sub-line, h6 .sub-li
   font-size: .55em;
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 400;
   letter-spacing: .01em;
   border: 0 none transparent;
@@ -11607,168 +10983,103 @@ h1 .sub-line, h2 .sub-line, h3 .sub-line, h4 .sub-line, h5 .sub-line, h6 .sub-li
 }
 
 h1 blockquote, h1 .sub-line {
-  font-size: 0.55172em;
-  line-height: 1.3em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  h1 blockquote, h1 .sub-line {
-    line-height: 1.17em;
-  }
+.colored-paper h1 blockquote, .callout h1 blockquote, .page-message h1 blockquote, .colored-paper h1 .sub-line, .callout h1 .sub-line, .page-message h1 .sub-line {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  h1 blockquote, h1 .sub-line {
-    line-height: 1.105em;
-  }
-}
-
 h1.with-underline blockquote, h1.with-underline .sub-line {
-  font-size: 0.55172em;
-  line-height: 1.3em;
-  margin-top: 0.195em;
-  margin-bottom: 0.13em;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0.225rem;
+  margin-bottom: 0.15rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  h1.with-underline blockquote, h1.with-underline .sub-line {
-    line-height: 1.17em;
-    margin-top: 0.1755em;
-    margin-bottom: 0.117em;
-  }
+.colored-paper h1.with-underline blockquote, .callout h1.with-underline blockquote, .page-message h1.with-underline blockquote, .colored-paper h1.with-underline .sub-line, .callout h1.with-underline .sub-line, .page-message h1.with-underline .sub-line {
+  margin-top: 0.225rem;
+  margin-bottom: 0.15rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  h1.with-underline blockquote, h1.with-underline .sub-line {
-    line-height: 1.105em;
-    margin-top: 0.14625em;
-    margin-bottom: 0.1em;
-  }
-}
-
 h2 blockquote, h2 .sub-line {
-  font-size: 0.6087em;
-  line-height: 1.48571em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  h2 blockquote, h2 .sub-line {
-    line-height: 1.33714em;
-  }
+.colored-paper h2 blockquote, .callout h2 blockquote, .page-message h2 blockquote, .colored-paper h2 .sub-line, .callout h2 .sub-line, .page-message h2 .sub-line {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  h2 blockquote, h2 .sub-line {
-    line-height: 1.26286em;
-  }
-}
-
 h2.with-underline blockquote, h2.with-underline .sub-line {
-  font-size: 0.6087em;
-  line-height: 1.48571em;
-  margin-top: 0.22286em;
-  margin-bottom: 0.14857em;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-top: 0.02812rem;
+  margin-bottom: 0.01875rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  h2.with-underline blockquote, h2.with-underline .sub-line {
-    line-height: 1.33714em;
-    margin-top: 0.20057em;
-    margin-bottom: 0.13371em;
-  }
+.colored-paper h2.with-underline blockquote, .callout h2.with-underline blockquote, .page-message h2.with-underline blockquote, .colored-paper h2.with-underline .sub-line, .callout h2.with-underline .sub-line, .page-message h2.with-underline .sub-line {
+  margin-top: 0.02812rem;
+  margin-bottom: 0.01875rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  h2.with-underline blockquote, h2.with-underline .sub-line {
-    line-height: 1.26286em;
-    margin-top: 0.16714em;
-    margin-bottom: 0.11143em;
-  }
-}
-
 h3 blockquote, h3 .sub-line {
-  font-size: 0.8em;
-  line-height: 1.3em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  h3 blockquote, h3 .sub-line {
-    line-height: 1.17em;
-  }
+.colored-paper h3 blockquote, .callout h3 blockquote, .page-message h3 blockquote, .colored-paper h3 .sub-line, .callout h3 .sub-line, .page-message h3 .sub-line {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  h3 blockquote, h3 .sub-line {
-    line-height: 1.105em;
-  }
-}
-
 h3.with-underline blockquote, h3.with-underline .sub-line {
-  font-size: 0.8em;
-  line-height: 1.3em;
-  margin-top: 0.195em;
-  margin-bottom: 0.13em;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0.225rem;
+  margin-bottom: 0.15rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  h3.with-underline blockquote, h3.with-underline .sub-line {
-    line-height: 1.17em;
-    margin-top: 0.1755em;
-    margin-bottom: 0.117em;
-  }
+.colored-paper h3.with-underline blockquote, .callout h3.with-underline blockquote, .page-message h3.with-underline blockquote, .colored-paper h3.with-underline .sub-line, .callout h3.with-underline .sub-line, .page-message h3.with-underline .sub-line {
+  margin-top: 0.225rem;
+  margin-bottom: 0.15rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  h3.with-underline blockquote, h3.with-underline .sub-line {
-    line-height: 1.105em;
-    margin-top: 0.14625em;
-    margin-bottom: 0.1em;
-  }
-}
-
 h4 blockquote, h4 .sub-line {
-  font-size: 0.77778em;
-  line-height: 1.48571em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  h4 blockquote, h4 .sub-line {
-    line-height: 1.33714em;
-  }
+.colored-paper h4 blockquote, .callout h4 blockquote, .page-message h4 blockquote, .colored-paper h4 .sub-line, .callout h4 .sub-line, .page-message h4 .sub-line {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  h4 blockquote, h4 .sub-line {
-    line-height: 1.26286em;
-  }
-}
-
 h5 blockquote, h5 .sub-line {
-  font-size: 0.8125em;
-  line-height: 1.6em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  h5 blockquote, h5 .sub-line {
-    line-height: 1.44em;
-  }
+.colored-paper h5 blockquote, .callout h5 blockquote, .page-message h5 blockquote, .colored-paper h5 .sub-line, .callout h5 .sub-line, .page-message h5 .sub-line {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  line-height: 1.35;
 }
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  h5 blockquote, h5 .sub-line {
-    line-height: 1.36em;
-  }
-}
-
 h6 blockquote, h6 .sub-line {
-  font-size: 0.8125em;
-  line-height: 1.6em;
-  margin-top: 0em;
-  margin-bottom: 0em;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
 }
-@media only screen and (max-width: 1024px) and (max-height: 480px) {
-  h6 blockquote, h6 .sub-line {
-    line-height: 1.44em;
-  }
-}
-@media only screen and (max-width: 1024px) and (max-height: 320px) {
-  h6 blockquote, h6 .sub-line {
-    line-height: 1.36em;
-  }
+.colored-paper h6 blockquote, .callout h6 blockquote, .page-message h6 blockquote, .colored-paper h6 .sub-line, .callout h6 .sub-line, .page-message h6 .sub-line {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  line-height: 1.35;
 }
 
 .text-highlight-color {
@@ -11846,6 +11157,26 @@ h6 blockquote, h6 .sub-line {
 */
 .always-wrap {
   white-space: normal !important;
+}
+
+.line-height-crushed {
+  line-height: 1.125 !important;
+}
+
+.line-height-tight {
+  line-height: 1.35 !important;
+}
+
+.line-height-normal {
+  line-height: 1.5 !important;
+}
+
+.line-height-loose {
+  line-height: 1.65 !important;
+}
+
+.line-height-airy {
+  line-height: 1.875 !important;
 }
 
 .phone-only {
@@ -12082,7 +11413,7 @@ STATE TRUMPING CODE
   background-color: #de404e;
 }
 
-.error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .nav-list.nav-checklist li.error .fa-holder-dynamic:before, .nav-checklist.panel-selector li.error .fa-holder-dynamic:before, .error.page-message .fa-holder:before {
+.error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .nav-list.nav-checklist li.error .fa-holder-dynamic:before, .nav-checklist.panel-selector li.error .fa-holder-dynamic:before, .error.answer .required-holder i.fa-holder:before, .error.question .required-holder i.fa-holder:before, .error.question-inline .required-holder i.fa-holder:before, d.error.question-grid-base .required-holder i.fa-holder:before, .error.page-message .fa-holder:before {
   content: "";
 }
 
@@ -12098,7 +11429,7 @@ STATE TRUMPING CODE
   background-color: #ee9e3c;
 }
 
-.warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .nav-list.nav-checklist li.warning .fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning .fa-holder-dynamic:before, .warning.page-message .fa-holder:before {
+.warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .nav-list.nav-checklist li.warning .fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning .fa-holder-dynamic:before, .warning.answer .required-holder i.fa-holder:before, .warning.question .required-holder i.fa-holder:before, .warning.question-inline .required-holder i.fa-holder:before, d.warning.question-grid-base .required-holder i.fa-holder:before, .warning.page-message .fa-holder:before {
   content: "";
 }
 
@@ -12114,7 +11445,7 @@ STATE TRUMPING CODE
   background-color: #1de573;
 }
 
-.success .fa-holder-dynamic:before, .success.fa:before, .success > .fa-holder:before, .nav-list.nav-checklist li.success .fa-holder-dynamic:before, .nav-checklist.panel-selector li.success .fa-holder-dynamic:before, .success.page-message .fa-holder:before {
+.success .fa-holder-dynamic:before, .success.fa:before, .success > .fa-holder:before, .nav-list.nav-checklist li.success .fa-holder-dynamic:before, .nav-checklist.panel-selector li.success .fa-holder-dynamic:before, .success.answer .required-holder i.fa-holder:before, .success.question .required-holder i.fa-holder:before, .success.question-inline .required-holder i.fa-holder:before, d.success.question-grid-base .required-holder i.fa-holder:before, .success.page-message .fa-holder:before {
   content: "";
 }
 
@@ -12130,7 +11461,7 @@ STATE TRUMPING CODE
   background-color: #b8b8b8;
 }
 
-.info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder-dynamic:before, .nav-checklist.panel-selector li.info .fa-holder-dynamic:before, .info.page-message .fa-holder:before {
+.info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder-dynamic:before, .nav-checklist.panel-selector li.info .fa-holder-dynamic:before, .info.answer .required-holder i.fa-holder:before, .info.question .required-holder i.fa-holder:before, .info.question-inline .required-holder i.fa-holder:before, d.info.question-grid-base .required-holder i.fa-holder:before, .info.page-message .fa-holder:before {
   content: "";
 }
 
@@ -12146,8 +11477,24 @@ STATE TRUMPING CODE
   background-color: #4bc1e2;
 }
 
-.highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before, .highlighted.page-message .fa-holder:before {
+.highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before, .highlighted.answer .required-holder i.fa-holder:before, .highlighted.question .required-holder i.fa-holder:before, .highlighted.question-inline .required-holder i.fa-holder:before, d.highlighted.question-grid-base .required-holder i.fa-holder:before, .highlighted.page-message .fa-holder:before {
   content: "";
+}
+
+.locked .order-marker.hollow, .locked.order-marker.hollow, .locked.question .input-holder input, .locked.question .input-holder textarea, .locked.question .input-holder select, .locked.question .input-holder .postfix, .locked.question .input-holder .prefix, .locked .close-bar, .locked .bar.close, .locked.inset .bar.close, .info-text.locked, .locked.question .button-group, .locked .order-marker.hollow, .locked.order-marker.hollow, h1.with-underline.locked, h2.with-underline.locked, h3.with-underline.locked, h4.with-underline.locked, h5.with-underline.locked, h6.with-underline.locked {
+  border-color: #bfbfbf;
+}
+
+.locked.fa, .locked .order-marker.inverse, .locked.order-marker.inverse.locked .order-marker.hollow, .locked.order-marker.hollow, .nav-list.nav-checklist li.locked i, .nav-checklist.panel-selector li.locked i, .answer.locked .required-holder, .question.locked .required-holder, .question-inline.locked .required-holder, .question-grid-based.locked .required-holder, .locked.question .label-holder label, .locked.question .input-holder .postfix, .locked.question .input-holder .prefix, .locked.question .input-holder .value, .locked .bar.close .action-btn, .collapsable-panel.locked h1, .collapsable-panel.locked h2, .collapsable-panel.locked h3, .collapsable-panel.locked h4, .collapsable-panel.locked h5, .collapsable-panel.locked h6, .locked .order-marker.inverse, .locked.order-marker.inverse.locked .order-marker.hollow, .locked.order-marker.hollow, h1.locked, h2.locked, h3.locked, h4.locked, h5.locked, h6.locked, p.locked, a.locked, li.locked, blockquote.locked {
+  color: #bfbfbf;
+}
+
+.nav-list.nav-checklist li.locked, .nav-checklist.panel-selector li.locked, .locked.question .message-holder > .locked, .hint .locked, .locked .close-bar .close-button, .locked.inset .bar.close .action-btn, .info-text.locked, .locked-inactive .switch-paddle, .locked-active input:checked ~ .switch-paddle, .locked.callout, .locked.page-message {
+  background-color: #cccccc;
+}
+
+.locked .fa-holder-dynamic:before, .locked.fa:before, .locked > .fa-holder:before, .nav-list.nav-checklist li.locked .fa-holder-dynamic:before, .nav-checklist.panel-selector li.locked .fa-holder-dynamic:before, .locked.answer .required-holder i.fa-holder:before, .locked.question .required-holder i.fa-holder:before, .locked.question-inline .required-holder i.fa-holder:before, d.locked.question-grid-base .required-holder i.fa-holder:before, .locked.page-message .fa-holder:before {
+  content: "";
 }
 
 .disabled .order-marker.hollow, .disabled.order-marker.hollow, .disabled.question .input-holder input, .disabled.question .input-holder textarea, .disabled.question .input-holder select, .disabled.question .input-holder .postfix, .disabled.question .input-holder .prefix, .disabled .close-bar, .disabled .bar.close, .disabled.inset .bar.close, .info-text.disabled, .disabled.question .button-group, .disabled .order-marker.hollow, .disabled.order-marker.hollow, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
@@ -12162,19 +11509,19 @@ STATE TRUMPING CODE
   background-color: #d6d6d6;
 }
 
-.disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before, .disabled.page-message .fa-holder:before {
+.disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before, .disabled.answer .required-holder i.fa-holder:before, .disabled.question .required-holder i.fa-holder:before, .disabled.question-inline .required-holder i.fa-holder:before, d.disabled.question-grid-base .required-holder i.fa-holder:before, .disabled.page-message .fa-holder:before {
   content: "";
 }
 
-.error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .nav-list.nav-checklist li.error .fa-holder-dynamic:before, .nav-checklist.panel-selector li.error .fa-holder-dynamic:before, .error.page-message .fa-holder:before, .warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .nav-list.nav-checklist li.warning .fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning .fa-holder-dynamic:before, .warning.page-message .fa-holder:before, .success .fa-holder-dynamic:before, .success.fa:before, .success > .fa-holder:before, .nav-list.nav-checklist li.success .fa-holder-dynamic:before, .nav-checklist.panel-selector li.success .fa-holder-dynamic:before, .success.page-message .fa-holder:before, .info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder-dynamic:before, .nav-checklist.panel-selector li.info .fa-holder-dynamic:before, .info.page-message .fa-holder:before, .highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before, .highlighted.page-message .fa-holder:before, .disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before, .disabled.page-message .fa-holder:before {
+.error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .nav-list.nav-checklist li.error .fa-holder-dynamic:before, .nav-checklist.panel-selector li.error .fa-holder-dynamic:before, .error.answer .required-holder i.fa-holder:before, .error.question .required-holder i.fa-holder:before, .error.question-inline .required-holder i.fa-holder:before, d.error.question-grid-base .required-holder i.fa-holder:before, .error.page-message .fa-holder:before, .warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .nav-list.nav-checklist li.warning .fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning .fa-holder-dynamic:before, .warning.answer .required-holder i.fa-holder:before, .warning.question .required-holder i.fa-holder:before, .warning.question-inline .required-holder i.fa-holder:before, d.warning.question-grid-base .required-holder i.fa-holder:before, .warning.page-message .fa-holder:before, .success .fa-holder-dynamic:before, .success.fa:before, .success > .fa-holder:before, .nav-list.nav-checklist li.success .fa-holder-dynamic:before, .nav-checklist.panel-selector li.success .fa-holder-dynamic:before, .success.answer .required-holder i.fa-holder:before, .success.question .required-holder i.fa-holder:before, .success.question-inline .required-holder i.fa-holder:before, d.success.question-grid-base .required-holder i.fa-holder:before, .success.page-message .fa-holder:before, .info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder-dynamic:before, .nav-checklist.panel-selector li.info .fa-holder-dynamic:before, .info.answer .required-holder i.fa-holder:before, .info.question .required-holder i.fa-holder:before, .info.question-inline .required-holder i.fa-holder:before, d.info.question-grid-base .required-holder i.fa-holder:before, .info.page-message .fa-holder:before, .highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before, .highlighted.answer .required-holder i.fa-holder:before, .highlighted.question .required-holder i.fa-holder:before, .highlighted.question-inline .required-holder i.fa-holder:before, d.highlighted.question-grid-base .required-holder i.fa-holder:before, .highlighted.page-message .fa-holder:before, .locked .fa-holder-dynamic:before, .locked.fa:before, .locked > .fa-holder:before, .nav-list.nav-checklist li.locked .fa-holder-dynamic:before, .nav-checklist.panel-selector li.locked .fa-holder-dynamic:before, .locked.answer .required-holder i.fa-holder:before, .locked.question .required-holder i.fa-holder:before, .locked.question-inline .required-holder i.fa-holder:before, d.locked.question-grid-base .required-holder i.fa-holder:before, .locked.page-message .fa-holder:before, .disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before, .disabled.answer .required-holder i.fa-holder:before, .disabled.question .required-holder i.fa-holder:before, .disabled.question-inline .required-holder i.fa-holder:before, d.disabled.question-grid-base .required-holder i.fa-holder:before, .disabled.page-message .fa-holder:before {
   font-family: FontAwesome;
 }
 
-.dark-color-text, .warning .order-marker, .warning.order-marker, .info .order-marker, .info.order-marker, .disabled .order-marker, .disabled.order-marker, .message-holder > .warning, .message-holder > .info, .message-holder > .disabled, .hint .warning, .hint .info, .hint .disabled, .warning .close-bar .close-button .fa, .info .close-bar .close-button .fa, .disabled .close-bar .close-button .fa, .info-text.error, .info-text.error .required.fa, .info-text.warning, .info-text.warning .required.fa, .info-text.success, .info-text.success .required.fa, .info-text.info, .info-text.info .required.fa, .info-text.highlighted, .info-text.highlighted .required.fa, .info-text.disabled, .info-text.disabled .required.fa, .warning .order-marker, .warning.order-marker, .info .order-marker, .info.order-marker, .disabled .order-marker, .disabled.order-marker {
+.dark-color-text {
   color: #262626;
 }
 
-.light-color-text, .error .order-marker, .error.order-marker, .success .order-marker, .success.order-marker, .highlighted .order-marker, .highlighted.order-marker, .message-holder > .error, .message-holder > .success, .message-holder > .highlighted, .hint .error, .hint .success, .hint .highlighted, .error .close-bar .close-button .fa, .success .close-bar .close-button .fa, .highlighted .close-bar .close-button .fa, .error .order-marker, .error.order-marker, .success .order-marker, .success.order-marker, .highlighted .order-marker, .highlighted.order-marker {
+.light-color-text, .error .order-marker, .error.order-marker, .warning .order-marker, .warning.order-marker, .success .order-marker, .success.order-marker, .info .order-marker, .info.order-marker, .highlighted .order-marker, .highlighted.order-marker, .locked .order-marker, .locked.order-marker, .disabled .order-marker, .disabled.order-marker, .message-holder > .error, .message-holder > .warning, .message-holder > .success, .message-holder > .info, .message-holder > .highlighted, .message-holder > .locked, .message-holder > .disabled, .hint .error, .hint .warning, .hint .success, .hint .info, .hint .highlighted, .hint .locked, .hint .disabled, .error .close-bar .close-button .fa, .warning .close-bar .close-button .fa, .success .close-bar .close-button .fa, .info .close-bar .close-button .fa, .highlighted .close-bar .close-button .fa, .locked .close-bar .close-button .fa, .disabled .close-bar .close-button .fa, .info-text.error, .info-text.error .required.fa, .info-text.warning, .info-text.warning .required.fa, .info-text.success, .info-text.success .required.fa, .info-text.info, .info-text.info .required.fa, .info-text.highlighted, .info-text.highlighted .required.fa, .info-text.locked, .info-text.locked .required.fa, .info-text.disabled, .info-text.disabled .required.fa, .error .order-marker, .error.order-marker, .warning .order-marker, .warning.order-marker, .success .order-marker, .success.order-marker, .info .order-marker, .info.order-marker, .highlighted .order-marker, .highlighted.order-marker, .locked .order-marker, .locked.order-marker, .disabled .order-marker, .disabled.order-marker {
   color: #fff;
 }
 
@@ -12247,12 +11594,6 @@ select {
   list-style: none;
 }
 
-.render-actions {
-  background-color: #333333;
-  border-left: 1px solid #b3b3b3;
-  background-image: url(../img/cream_pixels.png);
-}
-
 .render.animated.fadeIn {
   padding: 0;
 }
@@ -12284,18 +11625,27 @@ select {
   margin-top: -.5rem;
 }
 
+.render-actions {
+  background-color: #333333;
+  border-left: 1px solid #b3b3b3;
+  background-image: url(../img/cream_pixels.png);
+}
+
 .render-actions a {
-  background-color: #198dae;
-  text-align: center;
-  color: white;
-  width: 33%;
-  padding: .25em 0;
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 700;
   font-size: 14px;
+  background-color: #bfbfbf;
+  text-align: center;
+  color: #333333;
+  width: 33%;
+  padding: 0.375rem 0.25em;
   border: 1px solid #2e454c;
   margin: 6px;
   width: auto;
   border-radius: 6px;
   background-image: none;
+  height: 2.5em;
 }
 .render-actions a:hover {
   background-color: #2e454c;
@@ -12303,14 +11653,16 @@ select {
 }
 
 .render-actions a.disabled, .render-actions a.disabled:hover {
-  background-color: #333333;
-  color: #999999;
-  background-image: url(../img/cream_pixels.png);
-  border-color: #999999;
-  font-family: 'Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Muli','Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
+  background-color: #333333;
+  color: #a6a6a6;
+  background-image: url(../img/cream_pixels.png);
+  border-color: #cccccc;
 }
-.render-actions a.disabled i.fa, .render-actions a.disabled:hover i.fa {
+.render-actions a.disabled cursor:not-allowed
+i.fa, .render-actions a.disabled:hover cursor:not-allowed
+i.fa {
   color: #b3b3b3;
 }
 
@@ -12458,6 +11810,33 @@ div.reveal .close-button {
 
 .render .render-actions a + a {
   margin-top: 0;
+}
+
+#auto-save {
+  display: block;
+  width: 100%;
+  position: fixed;
+  background-color: #00386b;
+  opacity: .85;
+  border-bottom: 2px solid #00386b;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+#auto-save .message {
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-top: 0.5625rem;
+  margin-bottom: 0.5625rem;
+  color: #FFF;
+}
+.colored-paper #auto-save .message, .callout #auto-save .message, .page-message #auto-save .message {
+  margin-top: 0.5625rem;
+  margin-bottom: 0.5625rem;
+  line-height: 1.35;
 }
 
 .row {

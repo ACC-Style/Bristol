@@ -76,18 +76,7 @@
     right: 10%;
 }
 
-// Switch sizes
-.switch.tiny {
-    @include switch-size(rem-calc(10), 3rem, $switch-height-tiny, 1rem, $switch-paddle-offset);
-}
 
-.switch.small {
-    @include switch-size(rem-calc(12), 3.5rem, $switch-height-small, 1.25rem, $switch-paddle-offset);
-}
-
-.switch.large {
-    @include switch-size(rem-calc(16), 5rem, $switch-height-large, 2rem, $switch-paddle-offset);
-}
 
 .switch-active i.fa-holder:before {
     .radio & {
@@ -159,7 +148,7 @@
         color: fontcolor($real-black);
     }
     .switch-inactive {
-        color: color-contrast(rebrand-color($primary-color, 2),grey(80),grey(10));
+        color: acc-color-contrast(rebrand-color($primary-color, 2),grey(80),grey(10));
     }
     .switch-active, .switch-inactive {
         z-index: 100;
@@ -172,7 +161,7 @@
         display: block;
     }
     input:checked + label > .switch-active {
-        color: color-contrast(rebrand-color($primary-color, 2),grey(80),grey(10));
+        color: acc-color-contrast(rebrand-color($primary-color, 2),grey(80),grey(10));
     }
     .switch-paddle, input:checked .switch-paddle {
         background-color: rebrand-color($primary-color, 2);
@@ -232,14 +221,16 @@
     font-weight: inherit;
     display: block;
     width: auto;
-.switch{.switch-active,.switch-inactive{    
-    text-align: center;
-    width: 100%;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-}}
+    .switch{
+        .switch-active,.switch-inactive{    
+            text-align: center;
+            width: 100%;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+        }
+    }
   > .switch{
     display: inline-block;
     float: left;
@@ -275,6 +266,37 @@
    .switch-active, .switch-inactive {
         z-index: 100;
     }
+}
+
+.switch.rotate {
+    .switch-paddle{
+        height: 4rem;
+        width:2rem;
+    }
+
+    .switch-active, .switch-inactive {
+        position: absolute;
+        left: 50%;
+        transform: translatex(-50%);
+    }
+    .switch-active{
+        top:0;
+    }
+    &.small .switch-paddle{
+        height: 3.5rem;
+        width: 1.75rem;
+
+    }
+    &.tiny .switch-paddle{
+        height: 3rem;
+        width: 1.5rem;
+    }
+    input:checked ~ .switch-paddle::after {
+        top: 55%;
+        left: 50%;
+         transform: translatex(-50%);
+    }
+
 }
 
 /**
@@ -360,7 +382,7 @@
 *   <label  class="switch-value" for="radius-checkbox">Checkbox button made with `.radius`</label>
 *   </div>
 *   <div class="switch-input-space column small-6">
-*   <div class="switch checkbox">
+*   <div class="switch checkbox rotate">
 *   <input class="switch-input" id="checkbox-checkbox"  type="checkbox" value="false">
 *   <label class="switch-paddle" for="checkbox-checkbox">
 *   <span class="show-for-sr">Do you like me?</span>

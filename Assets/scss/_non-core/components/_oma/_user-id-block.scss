@@ -29,13 +29,9 @@
 }
 
 
-.user-id-block{
-	margin: 5px 7px 8px;
-	border:1px solid grey(10);
-	padding-top:.15rem;
-	padding-bottom: .25rem;
-	position: relative;
-	background-color:#fff;
+.user-id-block.card{
+	margin: .5rem .375rem .75rem;
+	padding: .5rem .375rem .75rem;
 	.user-pic{
 		width:40px;
 		float:left; 
@@ -62,22 +58,20 @@
 		}
 		.user-name{
 			@include font-slab();
-			font-weight: 700;
-			font-size: ms(2);
+			@include baseline-font(2,0,0);
 			color:fontcolor($black,'loud');
 		
 		}
 		.user-application{
 			@include font-bold();
-			font-size:ms(0);
-			color: $primary-color;
+			@include baseline-font(0,0,0);
+			color:fontcolor($black);
 		}
 
 		.user-application-switch{
 			@include font-light();
-			font-size: ms(-4);
-			line-height: 1.25;
-			display: block;
+			@include baseline-font(-1,0,0);
+			a{color:fontcolor($black,'quite');}
 		}
 	}
 	@include bp(md-down){

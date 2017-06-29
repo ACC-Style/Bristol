@@ -1,179 +1,19 @@
-
     <div class="row">
-        <div class="column small-12">
-            <h1 class="with-underline">
-                Personal Information
-                <div class="sub-line">
-                    All fields denoted with an
-                    <sup>
-                        <i class="fa required">
-                        </i>
-                    </sup>
-                    are required.
-                </div>
-            </h1>
-        </div>
-    </div>
-    <div class="row">
-       {% include snippets/question-select.liquid label="Prefix" option="..Choose" size="small-4 medium-3 large-2" state="required" hint="" %}
-       
-        <div class="question column large-3 medium-5 small-8 required" data-bind="css: { error: firstname.hasError, required: firstname.isRequired }">
-            <div class="label-holder">
-                <label>
-                    <span class="text">
-                        First Name
-                    </span>
-                    <span class="required-holder">
-                        <i class="fa fa-holder-dynamic">
-                        </i>
-                    </span>
-                </label>
-            </div>
-            <div class="input-holder">
-                <div class="input-space">
-                    <input data-bind="value: firstname, disable: true" disabled="" value="Sanjiv" type="text">
-                        <span class="input-lock" data-bind="visible: true">
-                            <i aria-describedby="tooltip-j2q2mq1c1" class="fa fa-lock lock-symbol has-tip" data-selector="tooltip-j2q2mq1c1" data-tooltip="" title="">
-                            </i>
-                        </span>
-                    </input>
-                </div>
-            </div>
-            <div class="message-holder">
-                <small class="" data-bind="css:{ error: firstname.hasError, warning: firstname.hasWarning }">
-                    <i class="fa fa-holder">
-                    </i>
-                    <!-- ko text: firstname.validationMessage -->
-                    <!-- /ko -->
-                </small>
-            </div>
-        </div>
-        <div class="question column large-2 medium-4" data-bind="css: { error: middlename.hasError, required: middlename.isRequired }">
-            <div class="label-holder">
-                <label>
-                    <span class="text swappable large">
-                        <span class="long-text">
-                            Middle Initial
-                        </span>
-                        <span class="short-text">
-                            MI
-                        </span>
-                    </span>
-                    <span class="required-holder">
-                        <i class="fa fa-holder-dynamic">
-                        </i>
-                    </span>
-                </label>
-            </div>
-            <div class="input-holder">
-                <div class="input-space">
-                    <input data-bind="value: middlename, disable: true" disabled="" type="text">
-                        <span class="input-lock" data-bind="visible: true">
-                            <i aria-describedby="tooltip-j2q2mq1c2" class="fa fa-lock lock-symbol has-tip" data-selector="tooltip-j2q2mq1c2" data-tooltip="" title="">
-                            </i>
-                        </span>
-                    </input>
-                </div>
-            </div>
-            <div class="message-holder">
-                <small class="" data-bind="css:{ error: middlename.hasError, warning: middlename.hasWarning }">
-                    <i class="fa fa-holder">
-                    </i>
-                    <!-- ko text: middlename.validationMessage -->
-                    <!-- /ko -->
-                </small>
-            </div>
-        </div>
-        <div class="question column large-3 medium-8 small-8 required" data-bind="css: { error: lastname.hasError, required: lastname.isRequired }">
-            <div class="label-holder">
-                <label>
-                    <span class="text">
-                        Last Name
-                    </span>
-                    <span class="required-holder">
-                        <i class="fa fa-holder-dynamic">
-                        </i>
-                    </span>
-                </label>
-            </div>
-            <div class="input-holder">
-                <div class="input-space">
-                    <input data-bind="value: lastname, disable: true" disabled="" value="Agrawal" type="text">
-                        <span class="input-lock" data-bind="visible: true">
-                            <i aria-describedby="tooltip-j2q2mq1c3" class="fa fa-lock lock-symbol has-tip" data-selector="tooltip-j2q2mq1c3" data-tooltip="" title="">
-                            </i>
-                        </span>
-                    </input>
-                </div>
-            </div>
-            <div class="message-holder">
-                <small class="" data-bind="css:{ error: lastname.hasError, warning: lastname.hasWarning }">
-                    <i class="fa fa-holder">
-                    </i>
-                    <!-- ko text: lastname.validationMessage -->
-                    <!-- /ko -->
-                </small>
-            </div>
-        </div>
-        <div class="question column large-2 medium-4 small-4" data-bind="css: { error: suffix.hasError, required: suffix.isRequired }">
-            <div class="label-holder">
-                <label>
-                    <span class="text">
-                        Suffix
-                    </span>
-                    <span class="required-holder">
-                        <i class="fa fa-holder-dynamic">
-                        </i>
-                    </span>
-                </label>
-            </div>
-            <div class="input-holder">
-                <div class="input-space">
-                    <select data-bind="options: suffixList, optionsText: 'Text', optionsValue: 'Value', optionsCaption: 'Choose...', value: suffix, disable: true" disabled="">
-                        <option value="">
-                            Choose...
-                        </option>
-                        <option value="III">
-                            III
-                        </option>
-                        <option value="JR">
-                            Jr.
-                        </option>
-                        <option value="SR">
-                            Sr.
-                        </option>
-                        <option value="II">
-                            II
-                        </option>
-                        <option value="IV">
-                            IV
-                        </option>
-                    </select>
-                    <span class="input-lock" data-bind="visible: true">
-                        <i aria-describedby="tooltip-j2q2mq1c4" class="fa fa-lock lock-symbol has-tip" data-selector="tooltip-j2q2mq1c4" data-tooltip="" title="">
-                        </i>
-                    </span>
-                </div>
-            </div>
-            <div class="message-holder">
-                <small class="" data-bind="css:{ error: suffix.hasError, warning: suffix.hasWarning }">
-                    <i class="fa fa-holder">
-                    </i>
-                    <!-- ko text: suffix.validationMessage -->
-                    <!-- /ko -->
-                </small>
-            </div>
-        </div>
+       {% include snippets/question-select.liquid label="Prefix" option="..Choose" size="small-4 medium-3 large-2" state="required disabled" hint="" %}
+       {% include snippets/question-text.liquid label="First Name" size="small-8 medium-5 large-3" state="required disabled" hint="" %}
+       {% include snippets/question-text.liquid label="MI" size="large-2 medium-4" state="required disabled" hint="" %}
+        {% include snippets/question-text.liquid label="Last Name" size="large-3 medium-8 small-8" state="required disabled" hint="" %}
+        {% include snippets/question-select.liquid label="Suffix" option="Choose.." size="large-2 medium-4 small-4" state="required disabled" hint="" %}
     </div>
             <div class="row">
-            <div class="question column medium-6 required" data-bind="css: { error: designation.hasError, required: designation.isRequired }">
+            <div class="question column medium-6 required disabled">
                 <div class="label-holder">
                     <label>
                         <span class="text">
                             Credentials/Degrees
                         </span>
                         <span class="required-holder">
-                            <i class="fa fa-holder-dynamic">
+                            <i class="fa fa-holder">
                             </i>
                         </span>
                     </label>
@@ -197,14 +37,14 @@
                     </small>
                 </div>
             </div>
-            <div class="question column medium-6 required" data-bind="css: { error: professionaltypecode.hasError, required: professionaltype.isRequired, warning: professionaltypecode.hasWarning }">
+            <div class="question column medium-6 required disabled" >
                 <div class="label-holder">
                     <label>
                         <span class="text">
                             Professional Type
                         </span>
                         <span class="required-holder">
-                            <i class="fa fa-holder-dynamic">
+                            <i class="fa fa-holder">
                             </i>
                         </span>
                     </label>
@@ -216,7 +56,7 @@
                         </input>
                     </div>
                     <div class="input-space column small-3">
-                        <a onclick="extraQuestions(event)" class="button expanded success" >
+                        <a onclick="extraQuestions(event)" class="button expanded success disabled" >
                             Add/Edit
                         </a>
                     </div>

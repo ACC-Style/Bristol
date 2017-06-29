@@ -11,9 +11,9 @@
         <h2 id="Address">
             Address(es)
             <div class="sub-line">
-                <b>
+                
                     At least one personal address is required.
-                </b>
+               
             </div>
         </h2>
         <div class="repeater" id="repeaterAddress">
@@ -28,7 +28,7 @@
                     <li class="has-tip locked" data-bind="visible: isprimary" title="Locked: Primary Address - Please use edit to change">
                         <i class="fa fa-lock" title="Marked as Primary">
                         </i>
-                        Protected Address
+                        This address can be edited but not deleted
                     </li>
                     <!--ko if: 'home' == 'work' -->
                     <!--/ko-->
@@ -68,13 +68,6 @@
                         </i>
                         <span class="text">
                             mark as Preferred
-                        </span>
-                    </a>
-                    <a class="delete disabled" data-bind="visible: (!isprimary() && !preferredmailing() ),click: function() { $root.deleteCustomSection('address','addressinfo', $data) }" href="javascript:void(0)">
-                        <i class="fa fa-holder">
-                        </i>
-                        <span class="text">
-                            Delete
                         </span>
                     </a>
                 </div>
