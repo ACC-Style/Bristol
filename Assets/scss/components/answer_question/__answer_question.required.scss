@@ -43,7 +43,7 @@
 
 }
 .question {
-	.label-holder, .input-holder,.button-holder, .message-holder, .value-holder, .hint {
+	.label-holder, .input-holder,.message-holder, .value-holder, .hint {
 		@include grid-row($behavior: collapse);
 	}
 }
@@ -104,10 +104,12 @@
 
 
 
+
 .input-holder {
 	@include grid-row(  $behavior: collapse);
-	.input-space,.value-space{ @include grid-column-collapse;}
-	[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color']{
+
+}
+.input-space{[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],button, .button{
 		@include baseline-font(0,0,0,0,$tight);
 		// *default* all inputs are medium sized
 		padding:rem-calc(ms(0)*.5) rem-calc(ms(0)*.5);
@@ -138,13 +140,11 @@
 		padding:$vertical-space *.5 $vertical-space;
 		.disabled &,.locked &{ @extend %disabledinput;}
 	}
-	button,.button{
-		padding:rem-calc(ms(0)*.75) rem-calc(ms(0)*.75);
-		margin: -.25rem 0 0;
-		
-	}
-	
 }
+.input-space,.value-space,.button-space{ @include grid-column-collapse;}
+.button-space{
+	margin: -.5rem 0 -.25rem 0;
+	}
 
 .value-space{
 	// *default* all inputs are medium sized

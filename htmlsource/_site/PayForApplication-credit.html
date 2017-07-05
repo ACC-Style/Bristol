@@ -1,7 +1,7 @@
-<!doctype html>
+<!DOCTYPE doctype html>
 <html class="no-js" lang="en">
-<head>
-  <title>Pay For Application</title>
+    <head>
+      <title>Pay For Application</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/css/styledown.css">
   <link rel="stylesheet" href="assets/css/normalize.min.css">
@@ -12,13 +12,12 @@
    <link rel="stylesheet" href="assets/css/font-awesome.css">
   <link rel="stylesheet" href="assets/css/index.css" id="theme">
 
-</head>
+    </head>
     <body>
-    
-    <div class="mobile-offcanvas-wrapper">
-      <section class="split-layout fill-page-height medium  navOn">
-        <aside id="OMA_Sidebar" class="split-sidebar">
-            
+        <div class="mobile-offcanvas-wrapper">
+            <section class="split-layout fill-page-height medium">
+                <aside class="split-sidebar" id="OMA_Sidebar">
+                    
         <div class="branding row collapse hide-for-small-only">
           <div class="column medium-6"><h2 class="oma logo">American College of Cardiology</h2></div>
           <div class="column medium-6"><h2 class="oma title">Online Membership Application</h2></div>
@@ -129,21 +128,22 @@
         </ul>
     </nav>
 
-        </aside>
-        <article class="split-content">
-             <div class="page">
-               
-                 <div id="backNav" class="section-nav back">
-    <a>
-      <div class="circle">
-        <i class="fa fa-holder"></i>
-      </div>
-      <div class="text">Back to {Previous Page Name}</div>
-    </a>
-  </div>
-              
-                <div class="page-wrapper">
-                <style>
+                </aside>
+                <article class="split-content">
+                    <div class="page">
+                        <div class="section-nav back" id="backNav">
+                            <a>
+                                <div class="circle">
+                                    <i class="fa fa-holder">
+                                    </i>
+                                </div>
+                                <div class="text">
+                                    Back to {Previous Page Name}
+                                </div>
+                            </a>
+                        </div>
+                        <div class="page-wrapper">
+                            <style>
     #btnPayByCard i.fa-holder:before{
         content: "\f00c";
     }
@@ -192,16 +192,16 @@
     </div>
 </div>
 <div class="row section-padding">
-    <div class="column large-6  medium-5">
+    <div class="column large-6">
         <h3 class="no-margin">
             Credit Card Information
         </h3>
-        <div class="callout info">
+        <div class="group-divide">
             <h4>Billing Address</h4>
-            <a href="" class="button expanded">Select a </a>
+            <a href="" class="button expanded" data-open="exampleModal1">Select a primary billing address</a>
 
         </div>
-        <div class="question required" data-bind="css: { error: cardtype.hasError, required: cardtype.isRequired}">
+        <div class="row group-divide">        <div class="question required column" >
             <div class="label-holder">
                 <label for="">
                     <span class="text">
@@ -214,7 +214,7 @@
                 </label>
             </div>
             <div class="input-holder">
-                <div class="switch-input-space column small-6">
+                <div class="switch-input-space column large-6 medium-12">
     <div class="switch  radio tiny">
         <input class="switch-input" id="visa" name="exampleSwitch" type="checkbox"  >
             <label class="switch-paddle" for="visa">
@@ -240,7 +240,7 @@
                 Visa
     </label>
 </div>
-                    <div class="switch-input-space column small-6">
+                    <div class="switch-input-space column large-6 medium-12">
     <div class="switch  radio tiny">
         <input class="switch-input" id="master" name="exampleSwitch" type="checkbox"  >
             <label class="switch-paddle" for="master">
@@ -266,7 +266,7 @@
                 Master Card
     </label>
 </div>
-                    <div class="switch-input-space column small-6">
+                    <div class="switch-input-space column large-6 medium-12">
     <div class="switch  radio tiny">
         <input class="switch-input" id="amex" name="exampleSwitch" type="checkbox"  >
             <label class="switch-paddle" for="amex">
@@ -292,7 +292,7 @@
                 American Express
     </label>
 </div>
-                    <div class="switch-input-space column small-6">
+                    <div class="switch-input-space column large-6 medium-12">
     <div class="switch  radio tiny">
         <input class="switch-input" id="discover" name="exampleSwitch" type="checkbox"  >
             <label class="switch-paddle" for="discover">
@@ -320,7 +320,7 @@
 </div>
             </div>
             <div class="message-holder">
-                <small class="" data-bind="css:{ error: cardtype.hasError }">
+                <small class="" >
                     <i class="fa fa-holder">
                     </i>
                     <!-- ko text: cardtype.validationMessage -->
@@ -328,8 +328,8 @@
                 </small>
             </div>
         </div>
-        <div class="row">
-            <div class="question required column" data-bind="css: { error: cardnumber.hasError, required: cardnumber.isRequired}">
+        
+            <div class="question required column">
                 <div class="label-holder">
                     <label for="">
                         <span class="text">
@@ -355,10 +355,7 @@
                     </small>
                 </div>
             </div>
-        </div>
-        <div class="row">
-
-            <div class="question column small-6 medium-8 large-9 required" data-bind="css: { error: expirationmonth.hasError || expirationyear.hasError, required: expirationmonth.isRequired || expirationyear.isRequired }">
+            <div class="question column small-6 medium-8 large-9 required">
                 <div class="label-holder">
                     <label for="">
                         <span class="text">
@@ -371,7 +368,7 @@
                     </label>
                 </div>
                 <div class="input-holder row">
-                    <div class="input-space column small-4 large-6">
+                    <div class="input-space column small-7 medium-6">
                         <select data-bind="options:montharr, optionsCaption: 'Choose...',value:expirationmonth" id="" name="expirationmonth">
                             <option value="">
                                 Choose...
@@ -417,7 +414,7 @@
                             Month
                         </div>
                     </div>
-                    <div class="input-space column small-8 large-6">
+                    <div class="input-space column small-5 medium-6">
                         <select data-bind="options:yeararr, optionsCaption: 'Choose...',value:expirationyear" id="" name="expirationyear">
                             <option value="">
                                 Choose...
@@ -500,9 +497,10 @@
                 </div>
             </div>
 
+
         </div>
     </div>
-    <div class="column large-5  medium-6">
+    <div class="column large-6">
     <div class="callout card">
      <h5 class="colored-paper disabled">
             Promo or Discount Code
@@ -575,7 +573,6 @@
         </table>
         </div>
 </div>
-        
     </div>
 </div>
 <div class="row ">
@@ -614,61 +611,72 @@
     </div>
 
 </div> 
-<div class="row"></div>
+<div class="row">
+    <div class="reveal" id="exampleModal1" data-reveal>
+  <h1>Awesome. I Have It.</h1>
+  <p class="lead">Your couch. It is mine.</p>
+  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+</div>
 <style>#forwardNav{display:none;}</style>
-              </div>
-              
-                               <div id="forwardNav" class="section-nav forward">
-    <a>
-      <div class="circle">
-        <i class="fa fa-holder"></i>
-      </div>
-      <div class="text">Forward to {Next Page Name}</div>
-    </a>
-  </div>
 
-             </div>
-        </article>
-      </section>
-    </div>
-     <div class="reveal " data-reveal="" id="exampleModal1">
-                <button aria-label="Close modal" class="close-button" data-close="" type="button">
-                    <span aria-hidden="true">
-                        ×
-                    </span>
-                </button>
-           
-            <div class="callout warning text-center"><h1>
-                <i class="warning fa">
-
-                </i>
-                Warning!
-                <div class="sub-line">
-                    Changing Membership Type Mid Application Process might force you to answer some sections again
-                </div>
-            </h1></div>
-            <p >
+                        </div>
+                        <div class="section-nav forward" id="forwardNav">
+                            <a>
+                                <div class="circle">
+                                    <i class="fa fa-holder">
+                                    </i>
+                                </div>
+                                <div class="text">
+                                    Forward to {Next Page Name}
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>
+        <div class="reveal " data-reveal="" id="exampleModal1">
+            <button aria-label="Close modal" class="close-button" data-close="" type="button">
+                <span aria-hidden="true">
+                    ×
+                </span>
+            </button>
+            <div class="callout warning text-center">
+                <h1>
+                    <i class="warning fa">
+                    </i>
+                    Warning!
+                    <div class="sub-line">
+                        Changing Membership Type Mid Application Process might force you to answer some sections again
+                    </div>
+                </h1>
+            </div>
+            <p>
                 The particulars of each membership application are streamlined to ask the minimum requirements hense some sections that overlap between types might ask questions differently.
             </p>
-            
             <div class="row group-divide">
                 <div class="column ">
-                <h6 class="text-center single-line-height">
-                    Do you want to continue and select a new Member Type?
-                </h6>
-                <br>
-                    <div class="button-group small expanded">
-                        <a class="button secondary" href="">
-                            Yes, Continue
-                        </a>
-                        <a class="button" href="">
-                            No, Nevermind
-                        </a>
-                    </div>
+                    <h6 class="text-center single-line-height">
+                        Do you want to continue and select a new Member Type?
+                    </h6>
+                    <br>
+                        <div class="button-group small expanded">
+                            <a class="button secondary" href="">
+                                Yes, Continue
+                            </a>
+                            <a class="button" href="">
+                                No, Nevermind
+                            </a>
+                        </div>
+                    </br>
                 </div>
             </div>
         </div>
-    <footer class="page-footer">
+        <footer class="page-footer">
   <div class="row">
     <a class="logo-holder"href="/">
       <img class="logo" src="Assets/img/oma-01.svg" alt="Home">

@@ -3,6 +3,7 @@ layout: FACC
 title: Pay For Application
 id: submit
 ---
+
 <style>
     #btnPayByCard i.fa-holder:before{
         content: "\f00c";
@@ -12,16 +13,16 @@ id: submit
 {%  include snippets/page-top.liquid title="Pay For Application" level="h1" style="with-underline" message=""%}
 {% include sections/payChoice.liquid  %}
 <div class="row section-padding">
-    <div class="column large-6  medium-5">
+    <div class="column large-6">
         <h3 class="no-margin">
             Credit Card Information
         </h3>
-        <div class="callout info">
+        <div class="group-divide">
             <h4>Billing Address</h4>
-            <a href="" class="button expanded">Select a </a>
+            <a href="" class="button expanded" data-open="exampleModal1">Select a primary billing address</a>
 
         </div>
-        <div class="question required" data-bind="css: { error: cardtype.hasError, required: cardtype.isRequired}">
+        <div class="row group-divide">        <div class="question required column" >
             <div class="label-holder">
                 <label for="">
                     <span class="text">
@@ -34,25 +35,25 @@ id: submit
                 </label>
             </div>
             <div class="input-holder">
-                {% include snippets/switch.liquid state="" shape="radio tiny" id="visa" size="column small-6" label="
+                {% include snippets/switch.liquid state="" shape="radio tiny" id="visa" size="column large-6 medium-12" label="
                 <i class='fa fa-cc-visa'>
                 </i>
                 Visa"  %}
-                    {% include snippets/switch.liquid state="" shape="radio tiny" id="master" size="column small-6" label="
+                    {% include snippets/switch.liquid state="" shape="radio tiny" id="master" size="column large-6 medium-12" label="
                 <i class='fa fa-cc-mastercard'>
                 </i>
                 Master Card"  %}
-                    {% include snippets/switch.liquid state="" shape="radio tiny" id="amex" size="column small-6" label="
+                    {% include snippets/switch.liquid state="" shape="radio tiny" id="amex" size="column large-6 medium-12" label="
                 <i class='fa fa-cc-amex'>
                 </i>
                 American Express"  %}
-                    {% include snippets/switch.liquid state="" shape="radio tiny" id="discover" size="column small-6" label="
+                    {% include snippets/switch.liquid state="" shape="radio tiny" id="discover" size="column large-6 medium-12" label="
                 <i class='fa fa-cc-discover'>
                 </i>
                 Discover"  %}
             </div>
             <div class="message-holder">
-                <small class="" data-bind="css:{ error: cardtype.hasError }">
+                <small class="" >
                     <i class="fa fa-holder">
                     </i>
                     <!-- ko text: cardtype.validationMessage -->
@@ -60,8 +61,8 @@ id: submit
                 </small>
             </div>
         </div>
-        <div class="row">
-            <div class="question required column" data-bind="css: { error: cardnumber.hasError, required: cardnumber.isRequired}">
+        
+            <div class="question required column">
                 <div class="label-holder">
                     <label for="">
                         <span class="text">
@@ -87,10 +88,7 @@ id: submit
                     </small>
                 </div>
             </div>
-        </div>
-        <div class="row">
-
-            <div class="question column small-6 medium-8 large-9 required" data-bind="css: { error: expirationmonth.hasError || expirationyear.hasError, required: expirationmonth.isRequired || expirationyear.isRequired }">
+            <div class="question column small-6 medium-8 large-9 required">
                 <div class="label-holder">
                     <label for="">
                         <span class="text">
@@ -103,7 +101,7 @@ id: submit
                     </label>
                 </div>
                 <div class="input-holder row">
-                    <div class="input-space column small-4 large-6">
+                    <div class="input-space column small-7 medium-6">
                         <select data-bind="options:montharr, optionsCaption: 'Choose...',value:expirationmonth" id="" name="expirationmonth">
                             <option value="">
                                 Choose...
@@ -149,7 +147,7 @@ id: submit
                             Month
                         </div>
                     </div>
-                    <div class="input-space column small-8 large-6">
+                    <div class="input-space column small-5 medium-6">
                         <select data-bind="options:yeararr, optionsCaption: 'Choose...',value:expirationyear" id="" name="expirationyear">
                             <option value="">
                                 Choose...
@@ -232,11 +230,11 @@ id: submit
                 </div>
             </div>
 
+
         </div>
     </div>
-    <div class="column large-5  medium-6">
+    <div class="column large-6">
     {% include elements/promocode.liquid state=""  %}
-        
     </div>
 </div>
 <div class="row ">
@@ -275,5 +273,14 @@ id: submit
     </div>
 
 </div> 
-<div class="row"></div>
+<div class="row">
+    <div class="reveal" id="exampleModal1" data-reveal>
+  <h1>Awesome. I Have It.</h1>
+  <p class="lead">Your couch. It is mine.</p>
+  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+</div>
 <style>#forwardNav{display:none;}</style>
