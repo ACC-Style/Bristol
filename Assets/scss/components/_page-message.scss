@@ -18,41 +18,33 @@
     right: 0;
     color: white;
     padding: .25em; }
-    .close-bar .close-button:hover {
+.close-bar .close-button:hover {
       background-color: $black; }
     .close-bar .close-button .fa {
       color: $white; 
   }
-//Close Bar States
-@each $State in $states{
-	$selector:map-get($State,"Selector");
-	@include setTrump('border-color',map-get($State,'State'),'#{$selector} .close-bar');
-	@include setTrump('background-color',map-get($State,'State'),'#{$selector} .close-bar .close-button');
-	@include setContrastTrump(map-get($State,'Color'),'#{$selector} .close-bar .close-button .fa');
-	#{$selector}{
-		.close-bar:hover,.close-bar{
-			border-color:mix($black,map-get($State,'Color'));
-			.close-button,.close-button:hover{ 
-				background:mix($black,map-get($State,'Color'));
-				.fa{color:$white;}
-			}
-		}
-	}
-
-
-}
 
 
 
 
 .page-message{
-	background-color:rebrand-color(color($product-brand-color,30),2);
-	.fa-holder-dynamic:before{content:$fa-var-asterisk;}
 	@extend .callout;
+	@extend %cast-shadow; 
 	@include grid-row();
+	background-color:rebrand-color(color($product-brand-color,30),2);
 	max-width:100%;
 	position:relative;
-	
+	border-width:4px;
+	margin-bottom:0;
+	.fa-holder-dynamic:before{content:$fa-var-asterisk;}
+	.close-bar{
+		border-top:0px;	
+	}
+	.page-wrapper &{ 
+		border-width:1px;
+		margin-bottom: $vertical-space;
+		.close-bar{border-top:4px;}
+		}
 	.message-container{
 		display:flex;
 		margin:0 1em 0 0;
@@ -65,6 +57,43 @@
 		color:grey(60);
 		font-size:1.5em;
 		padding: 0 1em 0 0;
+	}
+	.close-bar{border-color:rebrand-color(color($product-brand-color,30),2);}
+	.close-bar .close-button{background-color-color:rebrand-color(color($product-brand-color,30),2);}
+}
+
+.page-message-holder{
+	@extend %shadedbackground; 
+	padding:$vertical-space $vertical-space/2;
+	&.inset{
+		@extend %insetshoadowedbox;
+		background-color:grey(60);
+		background: url("../img/crossed_stripes.png");
+	}
+	.page-message{max-width:70em;}
+}
+
+
+//Close Bar States
+@each $State in $states{
+	$selector:map-get($State,"Selector");
+	@include setTrump('border-color',map-get($State,'State'),'#{$selector}.callout .close-bar, #{$selector}.callout');
+	@include setTrump('background-color',map-get($State,'State'),'#{$selector}.callout .close-bar .close-button');
+	@include setContrastTrump(map-get($State,'Color'),'#{$selector}.callout .close-bar .close-button .fa');
+	#{$selector}.page-message.callout:hover{
+		$hover-color:mix($black,map-get($State,'Color'));
+		.close-bar:hover {
+		    border-color: $hover-color;
+		    .close-button{ background-color: $hover-color; }
+		    
+		     }
+		// .close-bar:hover{
+		// 	border-color:mix($black,map-get($State,'Color'));
+		// 	.close-button,.close-button:hover{ 
+		// 		background:mix($black,map-get($State,'Color'));
+		// 		.fa{color:$white;}
+		// 	}
+		// }
 	}
 }
 

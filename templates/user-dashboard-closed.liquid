@@ -2,19 +2,18 @@
 {% block page-name %}
     Dashboard
 {% endblock %}
-{% block content %}
-<div class="seciton-padding">
+{% block  message-holder %}
 <div class="page-message callout info">
   <a class="close-bar">
     <span class="close-button">
-      <i class="fa fa-times" aria-hidden="true"></i>
+      <i class="fa fa-times" aria-hidden="true"></i> close
     </span>
   </a>
   <div class="message-container">
     <div class="icon-holder">
       <span class="fa-stack fa-lg">
         <i class="fa fa-square-o fa-stack-2x"></i>
-        <i class="fa fa-hourglass-end fa-stack-1x"></i>
+        <i class="fa fa-lock fa-stack-1x"></i>
       </span>
     </div>
     <div class="message-holder">
@@ -26,11 +25,21 @@
     </div>
   </div>
 </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="card ghost">
+    <div class="colored-paper info">
+        <h2 class="text-center">
+            Dashboard is currently closed because of no active nomination seasons
+        </h2>
+    </div>
 </div>
 <div class="row">
     <div class="column medium-6">
         <div class="card">
-            <div class="colored-paper info">Keep your info up to date</div>
+            <div class="colored-paper info"><h5>Keep your info up to date</h5></div>
             <div class="section-padding content-padding">
                 <p>Don't forget special acheivements like awards and publications.  Update your digital CV and it will be ready for the next nomination season.
                 </p>
@@ -55,19 +64,6 @@
         </div>
 </div></div>
 </div>
-<div class="card ghost">
-
-   
-        <div class="colored-paper info">
-            <h2 class="text-center">
-                Dashboard is currently closed because of no active nomination seasons
-            </h2>
-            
-        </div>
-
-
-    
-    </div>
 </div>
 {% endblock %}
 {% block active-application %} 

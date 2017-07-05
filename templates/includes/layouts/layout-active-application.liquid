@@ -1,7 +1,9 @@
 {% include "head" %}
 
-    {% include 'sections/time-control'%}
-        {% include 'sections/header-active-application' %}
+<div class="page-message-holder inset">
+    {% block  message-holder %} {% endblock %}
+</div>
+{% include 'sections/header-active-application' %}
 <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
     <div class="paper-page page">
         <div class="page-header clearfix">
@@ -9,10 +11,11 @@
                 {% block page-name %}{% endblock %}
             </h1>
         </div>
-        <div class="row collapse">
-            <div class="column large-3 inset-container">
-                <aside class="inset-area">
-                    <div class="colored-paper" style="background-color: #444;">
+
+        <div class="row page-wrapper" style="max-width: none;">
+            <div class="column large-3">
+                <aside class="card">
+                    <div class="colored-paper">
                         <h2 class="clearfix text-center">
                             Open Committees
                         </h2>
@@ -31,10 +34,10 @@
                         </div>
                     </div>
                     <div class="section-padding">
-                        <ul class="comittee-list">
-                            {% include "elements/comittee-List-item" %}
-                            <li class="committee--list-item">
-                                <div class="committee--data">
+                        <ul class="committee-list">
+                            {% include "elements/committee-List-item" %}
+                            <li class="committee-list-item">
+                                <div class="committee-data">
                                     <div class="committee">
                                         <h2 class="name">
                                             Assembly of Interantional Governors Steering Committee
@@ -78,26 +81,20 @@
                                 </div>
                             </div>
                            {% block selected-committee %}{% endblock %}
-                            {% include "elements/comittee-List-item" %}
-                            {% include "elements/comittee-List-item" %}
-                            {% include "elements/comittee-List-item" %}
-                            {% include "elements/comittee-List-item" %}
+                            {% include "elements/committee-List-item" %}
+                            {% include "elements/committee-List-item" %}
+                            {% include "elements/committee-List-item" %}
+                            {% include "elements/committee-List-item" %}
                         </ul>
                     </div>
-                    <div style="position: static;left: 0;right: 0;bottom: 0;">
                         {% include "elements/card-pagination-bottom" %}
-                    </div>
                 </aside>
             </div>
             <div class="column large-3 inset-container">
-                <div class=" inset-area">
                     {% block active-application %}{% endblock %}
-                </div>
             </div>
             <div class="column large-6">
-                <div class="page-wrapper content-padding">
                     {% block content %}{% endblock %}
-                </div>
             </div>
         </div>
     </div>
@@ -112,4 +109,6 @@
     </button>
 </div>
 {% include 'sections/web-footer' %}
+{% include 'sections/time-control'%}
+
     {% include "scripts" %}

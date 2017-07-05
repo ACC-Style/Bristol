@@ -4610,76 +4610,15 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   color: #FFF;
 }
 
-.error .close-bar:hover, .error .close-bar {
-  border-color: #7b2b32;
-}
-.error .close-bar:hover .close-button, .error .close-bar:hover .close-button:hover, .error .close-bar .close-button, .error .close-bar .close-button:hover {
-  background: #7b2b32;
-}
-.error .close-bar:hover .close-button .fa, .error .close-bar:hover .close-button:hover .fa, .error .close-bar .close-button .fa, .error .close-bar .close-button:hover .fa {
-  color: #FFF;
-}
-
-.warning .close-bar:hover, .warning .close-bar {
-  border-color: #8a5c24;
-}
-.warning .close-bar:hover .close-button, .warning .close-bar:hover .close-button:hover, .warning .close-bar .close-button, .warning .close-bar .close-button:hover {
-  background: #8a5c24;
-}
-.warning .close-bar:hover .close-button .fa, .warning .close-bar:hover .close-button:hover .fa, .warning .close-bar .close-button .fa, .warning .close-bar .close-button:hover .fa {
-  color: #FFF;
-}
-
-.success .close-bar:hover, .success .close-bar {
-  border-color: #247245;
-}
-.success .close-bar:hover .close-button, .success .close-bar:hover .close-button:hover, .success .close-bar .close-button, .success .close-bar .close-button:hover {
-  background: #247245;
-}
-.success .close-bar:hover .close-button .fa, .success .close-bar:hover .close-button:hover .fa, .success .close-bar .close-button .fa, .success .close-bar .close-button:hover .fa {
-  color: #FFF;
-}
-
-.info .close-bar:hover, .info .close-bar {
-  border-color: #6d6d6d;
-}
-.info .close-bar:hover .close-button, .info .close-bar:hover .close-button:hover, .info .close-bar .close-button, .info .close-bar .close-button:hover {
-  background: #6d6d6d;
-}
-.info .close-bar:hover .close-button .fa, .info .close-bar:hover .close-button:hover .fa, .info .close-bar .close-button .fa, .info .close-bar .close-button:hover .fa {
-  color: #FFF;
-}
-
-.highlighted .close-bar:hover, .highlighted .close-bar {
-  border-color: #266071;
-}
-.highlighted .close-bar:hover .close-button, .highlighted .close-bar:hover .close-button:hover, .highlighted .close-bar .close-button, .highlighted .close-bar .close-button:hover {
-  background: #266071;
-}
-.highlighted .close-bar:hover .close-button .fa, .highlighted .close-bar:hover .close-button:hover .fa, .highlighted .close-bar .close-button .fa, .highlighted .close-bar .close-button:hover .fa {
-  color: #FFF;
-}
-
-.disabled .close-bar:hover, .disabled .close-bar {
-  border-color: gray;
-}
-.disabled .close-bar:hover .close-button, .disabled .close-bar:hover .close-button:hover, .disabled .close-bar .close-button, .disabled .close-bar .close-button:hover {
-  background: gray;
-}
-.disabled .close-bar:hover .close-button .fa, .disabled .close-bar:hover .close-button:hover .fa, .disabled .close-bar .close-button .fa, .disabled .close-bar .close-button:hover .fa {
-  color: #FFF;
-}
-
 .page-message {
-  background-color: #198dae;
   max-width: 85.71429rem;
   margin-right: auto;
   margin-left: auto;
+  background-color: #198dae;
   max-width: 100%;
   position: relative;
-}
-.page-message .fa-holder-dynamic:before {
-  content: "";
+  border-width: 4px;
+  margin-bottom: 0;
 }
 .page-message::before, .page-message::after {
   display: table;
@@ -4687,6 +4626,19 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 }
 .page-message::after {
   clear: both;
+}
+.page-message .fa-holder-dynamic:before {
+  content: "";
+}
+.page-message .close-bar {
+  border-top: 0px;
+}
+.page-wrapper .page-message {
+  border-width: 1px;
+  margin-bottom: 1.5rem;
+}
+.page-wrapper .page-message .close-bar {
+  border-top: 4px;
 }
 .page-message .message-container {
   display: flex;
@@ -4698,6 +4650,65 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   color: #666666;
   font-size: 1.5em;
   padding: 0 1em 0 0;
+}
+.page-message .close-bar {
+  border-color: #198dae;
+}
+.page-message .close-bar .close-button {
+  background-color-color: #198dae;
+}
+
+.page-message-holder {
+  padding: 1.5rem 0.75rem;
+}
+.page-message-holder.inset {
+  background-color: #666666;
+  background: url("../img/crossed_stripes.png");
+}
+.page-message-holder .page-message {
+  max-width: 70em;
+}
+
+.error.page-message.callout:hover .close-bar:hover, .error.page-message:hover .close-bar:hover {
+  border-color: #7b2b32;
+}
+.error.page-message.callout:hover .close-bar:hover .close-button, .error.page-message:hover .close-bar:hover .close-button {
+  background-color: #7b2b32;
+}
+
+.warning.page-message.callout:hover .close-bar:hover, .warning.page-message:hover .close-bar:hover {
+  border-color: #8a5c24;
+}
+.warning.page-message.callout:hover .close-bar:hover .close-button, .warning.page-message:hover .close-bar:hover .close-button {
+  background-color: #8a5c24;
+}
+
+.success.page-message.callout:hover .close-bar:hover, .success.page-message:hover .close-bar:hover {
+  border-color: #247245;
+}
+.success.page-message.callout:hover .close-bar:hover .close-button, .success.page-message:hover .close-bar:hover .close-button {
+  background-color: #247245;
+}
+
+.info.page-message.callout:hover .close-bar:hover, .info.page-message:hover .close-bar:hover {
+  border-color: #6d6d6d;
+}
+.info.page-message.callout:hover .close-bar:hover .close-button, .info.page-message:hover .close-bar:hover .close-button {
+  background-color: #6d6d6d;
+}
+
+.highlighted.page-message.callout:hover .close-bar:hover, .highlighted.page-message:hover .close-bar:hover {
+  border-color: #266071;
+}
+.highlighted.page-message.callout:hover .close-bar:hover .close-button, .highlighted.page-message:hover .close-bar:hover .close-button {
+  background-color: #266071;
+}
+
+.disabled.page-message.callout:hover .close-bar:hover, .disabled.page-message:hover .close-bar:hover {
+  border-color: gray;
+}
+.disabled.page-message.callout:hover .close-bar:hover .close-button, .disabled.page-message:hover .close-bar:hover .close-button {
+  background-color: gray;
 }
 
 /**
@@ -9442,41 +9453,41 @@ input:checked + label > .switch-inactive {
   }
 }
 
-.with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .committee--list-item .committee--data .committee {
+.with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
   padding-top: .125rem;
   padding-bottom: .125rem;
 }
 @media only screen and (min-width: 320px) {
-  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .committee--list-item .committee--data .committee {
+  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
     padding-top: .25rem;
     padding-bottom: .25rem;
   }
 }
 @media only screen and (min-width: 767px) {
-  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .committee--list-item .committee--data .committee {
+  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
     padding-top: .5rem;
     padding-bottom: .5rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .committee--list-item .committee--data .committee {
+  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
 }
 
-.content-padding, .content-padding.page-wrapper, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .committee--list-item .committee--data .committee, .inset-area {
+.content-padding, .content-padding.page-wrapper, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
   padding-left: .5rem;
   padding-right: .5rem;
 }
 @media only screen and (min-width: 767px) {
-  .content-padding, .content-padding.page-wrapper, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .committee--list-item .committee--data .committee, .inset-area {
+  .content-padding, .content-padding.page-wrapper, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
     padding-right: .75rem;
     padding-left: .75rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .content-padding, .content-padding.page-wrapper, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .committee--list-item .committee--data .committee, .inset-area {
+  .content-padding, .content-padding.page-wrapper, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
     padding-right: 1rem;
     padding-left: 1rem;
   }
@@ -9594,7 +9605,7 @@ input:checked + label > .switch-inactive {
 *   @example
 *	<div class="page-wrapper" style="border:red 1px solid"><div class="section">Hello this is content </div></div>
 **/
-.with-group-sections, .paper-page {
+.page-message-holder, .with-group-sections, .paper-page {
   background-image: url("../img/billie-holiday-lite.png");
 }
 
@@ -9602,6 +9613,12 @@ input:checked + label > .switch-inactive {
   -webkit-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.page-message-holder.inset {
+  -webkit-box-shadow: inset 0px 0px 13px 2px rgba(0, 0, 0, 0.65);
+  -moz-box-shadow: inset 0px 0px 13px 2px rgba(0, 0, 0, 0.65);
+  box-shadow: inset 0px 0px 13px 2px rgba(0, 0, 0, 0.65);
 }
 
 .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card {
@@ -11872,7 +11889,7 @@ h6 blockquote, h6 .sub-line {
 /*
 STATE TRUMPING CODE
 */
-.error .order-marker.hollow, .error.order-marker.hollow, .error.question .input-holder input, .error.question .input-holder textarea, .error.question .input-holder select, .error.question .input-holder .postfix, .error.question .input-holder .prefix, .error .close-bar, .error .bar.close, .error.inset .bar.close, .error.question .button-group, .error .order-marker.hollow, .error.order-marker.hollow, h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
+.error .order-marker.hollow, .error.order-marker.hollow, .error.question .input-holder input, .error.question .input-holder textarea, .error.question .input-holder select, .error.question .input-holder .postfix, .error.question .input-holder .prefix, .error.callout .close-bar, .error.page-message .close-bar, .error.callout, .error.page-message, .error .bar.close, .error.inset .bar.close, .error.question .button-group, .error .order-marker.hollow, .error.order-marker.hollow, h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
   border-color: #c32231;
 }
 
@@ -11880,15 +11897,15 @@ STATE TRUMPING CODE
   color: #c32231;
 }
 
-.nav-list.nav-checklist li.error, .nav-checklist.panel-selector li.error, .error.question .message-holder > .error, .hint .error, .error .close-bar .close-button, .error.inset .bar.close .action-btn, .error-inactive .switch-paddle, .error-active input:checked ~ .switch-paddle, .error.callout, .error.page-message {
-  background-color: #de404e;
+.nav-list.nav-checklist li.error, .nav-checklist.panel-selector li.error, .error.question .message-holder > .error, .hint .error, .error.callout .close-bar .close-button, .error.page-message .close-bar .close-button, .error.inset .bar.close .action-btn, .error-inactive .switch-paddle, .error-active input:checked ~ .switch-paddle, .error.callout, .error.page-message {
+  background-color: #c32231;
 }
 
 .error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .nav-list.nav-checklist li.error .fa-holder-dynamic:before, .nav-checklist.panel-selector li.error .fa-holder-dynamic:before {
   content: "";
 }
 
-.warning .order-marker.hollow, .warning.order-marker.hollow, .warning.question .input-holder input, .warning.question .input-holder textarea, .warning.question .input-holder select, .warning.question .input-holder .postfix, .warning.question .input-holder .prefix, .warning .close-bar, .warning .bar.close, .warning.inset .bar.close, .warning.question .button-group, .warning .order-marker.hollow, .warning.order-marker.hollow, h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
+.warning .order-marker.hollow, .warning.order-marker.hollow, .warning.question .input-holder input, .warning.question .input-holder textarea, .warning.question .input-holder select, .warning.question .input-holder .postfix, .warning.question .input-holder .prefix, .warning.callout .close-bar, .warning.page-message .close-bar, .warning.callout, .warning.page-message, .warning .bar.close, .warning.inset .bar.close, .warning.question .button-group, .warning .order-marker.hollow, .warning.order-marker.hollow, h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
   border-color: #E08514;
 }
 
@@ -11896,15 +11913,15 @@ STATE TRUMPING CODE
   color: #E08514;
 }
 
-.nav-list.nav-checklist li.warning, .nav-checklist.panel-selector li.warning, .warning.question .message-holder > .warning, .hint .warning, .warning .close-bar .close-button, .warning.inset .bar.close .action-btn, .warning-inactive .switch-paddle, .warning-active input:checked ~ .switch-paddle, .warning.callout, .warning.page-message {
-  background-color: #ee9e3c;
+.nav-list.nav-checklist li.warning, .nav-checklist.panel-selector li.warning, .warning.question .message-holder > .warning, .hint .warning, .warning.callout .close-bar .close-button, .warning.page-message .close-bar .close-button, .warning.inset .bar.close .action-btn, .warning-inactive .switch-paddle, .warning-active input:checked ~ .switch-paddle, .warning.callout, .warning.page-message {
+  background-color: #E08514;
 }
 
 .warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .nav-list.nav-checklist li.warning .fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning .fa-holder-dynamic:before {
   content: "";
 }
 
-.success .order-marker.hollow, .success.order-marker.hollow, .success.question .input-holder input, .success.question .input-holder textarea, .success.question .input-holder select, .success.question .input-holder .postfix, .success.question .input-holder .prefix, .success .close-bar, .success .bar.close, .success.inset .bar.close, .success.question .button-group, .success .order-marker.hollow, .success.order-marker.hollow, h1.with-underline.success, h2.with-underline.success, h3.with-underline.success, h4.with-underline.success, h5.with-underline.success, h6.with-underline.success {
+.success .order-marker.hollow, .success.order-marker.hollow, .success.question .input-holder input, .success.question .input-holder textarea, .success.question .input-holder select, .success.question .input-holder .postfix, .success.question .input-holder .prefix, .success.callout .close-bar, .success.page-message .close-bar, .success.callout, .success.page-message, .success .bar.close, .success.inset .bar.close, .success.question .button-group, .success .order-marker.hollow, .success.order-marker.hollow, h1.with-underline.success, h2.with-underline.success, h3.with-underline.success, h4.with-underline.success, h5.with-underline.success, h6.with-underline.success {
   border-color: #14B057;
 }
 
@@ -11912,15 +11929,15 @@ STATE TRUMPING CODE
   color: #14B057;
 }
 
-.nav-list.nav-checklist li.success, .nav-checklist.panel-selector li.success, .success.question .message-holder > .success, .hint .success, .success .close-bar .close-button, .success.inset .bar.close .action-btn, .success-inactive .switch-paddle, .success-active input:checked ~ .switch-paddle, .success.callout, .success.page-message {
-  background-color: #1de573;
+.nav-list.nav-checklist li.success, .nav-checklist.panel-selector li.success, .success.question .message-holder > .success, .hint .success, .success.callout .close-bar .close-button, .success.page-message .close-bar .close-button, .success.inset .bar.close .action-btn, .success-inactive .switch-paddle, .success-active input:checked ~ .switch-paddle, .success.callout, .success.page-message {
+  background-color: #14B057;
 }
 
 .success .fa-holder-dynamic:before, .success.fa:before, .success > .fa-holder:before, .nav-list.nav-checklist li.success .fa-holder-dynamic:before, .nav-checklist.panel-selector li.success .fa-holder-dynamic:before {
   content: "";
 }
 
-.info .order-marker.hollow, .info.order-marker.hollow, .info.question .input-holder input, .info.question .input-holder textarea, .info.question .input-holder select, .info.question .input-holder .postfix, .info.question .input-holder .prefix, .info .close-bar, .info .bar.close, .info.inset .bar.close, .info.question .button-group, .info .order-marker.hollow, .info.order-marker.hollow, h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
+.info .order-marker.hollow, .info.order-marker.hollow, .info.question .input-holder input, .info.question .input-holder textarea, .info.question .input-holder select, .info.question .input-holder .postfix, .info.question .input-holder .prefix, .info.callout .close-bar, .info.page-message .close-bar, .info.callout, .info.page-message, .info .bar.close, .info.inset .bar.close, .info.question .button-group, .info .order-marker.hollow, .info.order-marker.hollow, h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
   border-color: #a6a6a6;
 }
 
@@ -11928,15 +11945,15 @@ STATE TRUMPING CODE
   color: #a6a6a6;
 }
 
-.nav-list.nav-checklist li.info, .nav-checklist.panel-selector li.info, .info.question .message-holder > .info, .hint .info, .info .close-bar .close-button, .info.inset .bar.close .action-btn, .info-inactive .switch-paddle, .info-active input:checked ~ .switch-paddle, .info.callout, .info.page-message {
-  background-color: #b8b8b8;
+.nav-list.nav-checklist li.info, .nav-checklist.panel-selector li.info, .info.question .message-holder > .info, .hint .info, .info.callout .close-bar .close-button, .info.page-message .close-bar .close-button, .info.inset .bar.close .action-btn, .info-inactive .switch-paddle, .info-active input:checked ~ .switch-paddle, .info.callout, .info.page-message {
+  background-color: #a6a6a6;
 }
 
 .info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder-dynamic:before, .nav-checklist.panel-selector li.info .fa-holder-dynamic:before {
   content: "";
 }
 
-.highlighted .order-marker.hollow, .highlighted.order-marker.hollow, .highlighted.question .input-holder input, .highlighted.question .input-holder textarea, .highlighted.question .input-holder select, .highlighted.question .input-holder .postfix, .highlighted.question .input-holder .prefix, .highlighted .close-bar, .highlighted .bar.close, .highlighted.inset .bar.close, .highlighted.question .button-group, .highlighted .order-marker.hollow, .highlighted.order-marker.hollow, h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
+.highlighted .order-marker.hollow, .highlighted.order-marker.hollow, .highlighted.question .input-holder input, .highlighted.question .input-holder textarea, .highlighted.question .input-holder select, .highlighted.question .input-holder .postfix, .highlighted.question .input-holder .prefix, .highlighted.callout .close-bar, .highlighted.page-message .close-bar, .highlighted.callout, .highlighted.page-message, .highlighted .bar.close, .highlighted.inset .bar.close, .highlighted.question .button-group, .highlighted .order-marker.hollow, .highlighted.order-marker.hollow, h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
   border-color: #198dae;
 }
 
@@ -11944,15 +11961,15 @@ STATE TRUMPING CODE
   color: #198dae;
 }
 
-.nav-list.nav-checklist li.highlighted, .nav-checklist.panel-selector li.highlighted, .highlighted.question .message-holder > .highlighted, .hint .highlighted, .highlighted .close-bar .close-button, .highlighted.inset .bar.close .action-btn, .highlighted-inactive .switch-paddle, .highlighted-active input:checked ~ .switch-paddle, .highlighted.callout, .highlighted.page-message {
-  background-color: #25b6e0;
+.nav-list.nav-checklist li.highlighted, .nav-checklist.panel-selector li.highlighted, .highlighted.question .message-holder > .highlighted, .hint .highlighted, .highlighted.callout .close-bar .close-button, .highlighted.page-message .close-bar .close-button, .highlighted.inset .bar.close .action-btn, .highlighted-inactive .switch-paddle, .highlighted-active input:checked ~ .switch-paddle, .highlighted.callout, .highlighted.page-message {
+  background-color: #198dae;
 }
 
 .highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before {
   content: "";
 }
 
-.disabled .order-marker.hollow, .disabled.order-marker.hollow, .disabled.question .input-holder input, .disabled.question .input-holder textarea, .disabled.question .input-holder select, .disabled.question .input-holder .postfix, .disabled.question .input-holder .prefix, .disabled .close-bar, .disabled .bar.close, .disabled.inset .bar.close, .disabled.question .button-group, .disabled .order-marker.hollow, .disabled.order-marker.hollow, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
+.disabled .order-marker.hollow, .disabled.order-marker.hollow, .disabled.question .input-holder input, .disabled.question .input-holder textarea, .disabled.question .input-holder select, .disabled.question .input-holder .postfix, .disabled.question .input-holder .prefix, .disabled.callout .close-bar, .disabled.page-message .close-bar, .disabled.callout, .disabled.page-message, .disabled .bar.close, .disabled.inset .bar.close, .disabled.question .button-group, .disabled .order-marker.hollow, .disabled.order-marker.hollow, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
   border-color: #cccccc;
 }
 
@@ -11960,8 +11977,8 @@ STATE TRUMPING CODE
   color: #cccccc;
 }
 
-.nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled, .disabled.question .message-holder > .disabled, .hint .disabled, .disabled .close-bar .close-button, .disabled.inset .bar.close .action-btn, .disabled-inactive .switch-paddle, .disabled-active input:checked ~ .switch-paddle, .disabled.callout, .disabled.page-message {
-  background-color: #d6d6d6;
+.nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled, .disabled.question .message-holder > .disabled, .hint .disabled, .disabled.callout .close-bar .close-button, .disabled.page-message .close-bar .close-button, .disabled.inset .bar.close .action-btn, .disabled-inactive .switch-paddle, .disabled-active input:checked ~ .switch-paddle, .disabled.callout, .disabled.page-message {
+  background-color: #cccccc;
 }
 
 .disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before {
@@ -11976,7 +11993,7 @@ STATE TRUMPING CODE
   color: #262626;
 }
 
-.light-color-text, .error .order-marker, .error.order-marker, .warning .order-marker, .warning.order-marker, .success .order-marker, .success.order-marker, .info .order-marker, .info.order-marker, .highlighted .order-marker, .highlighted.order-marker, .disabled .order-marker, .disabled.order-marker, .message-holder > .error, .message-holder > .warning, .message-holder > .success, .message-holder > .info, .message-holder > .highlighted, .message-holder > .disabled, .hint .error, .hint .warning, .hint .success, .hint .info, .hint .highlighted, .hint .disabled, .error .close-bar .close-button .fa, .warning .close-bar .close-button .fa, .success .close-bar .close-button .fa, .info .close-bar .close-button .fa, .highlighted .close-bar .close-button .fa, .disabled .close-bar .close-button .fa, .error .order-marker, .error.order-marker, .warning .order-marker, .warning.order-marker, .success .order-marker, .success.order-marker, .info .order-marker, .info.order-marker, .highlighted .order-marker, .highlighted.order-marker, .disabled .order-marker, .disabled.order-marker {
+.light-color-text, .error .order-marker, .error.order-marker, .warning .order-marker, .warning.order-marker, .success .order-marker, .success.order-marker, .info .order-marker, .info.order-marker, .highlighted .order-marker, .highlighted.order-marker, .disabled .order-marker, .disabled.order-marker, .message-holder > .error, .message-holder > .warning, .message-holder > .success, .message-holder > .info, .message-holder > .highlighted, .message-holder > .disabled, .hint .error, .hint .warning, .hint .success, .hint .info, .hint .highlighted, .hint .disabled, .error.callout .close-bar .close-button .fa, .error.page-message .close-bar .close-button .fa, .warning.callout .close-bar .close-button .fa, .warning.page-message .close-bar .close-button .fa, .success.callout .close-bar .close-button .fa, .success.page-message .close-bar .close-button .fa, .info.callout .close-bar .close-button .fa, .info.page-message .close-bar .close-button .fa, .highlighted.callout .close-bar .close-button .fa, .highlighted.page-message .close-bar .close-button .fa, .disabled.callout .close-bar .close-button .fa, .disabled.page-message .close-bar .close-button .fa, .error .order-marker, .error.order-marker, .warning .order-marker, .warning.order-marker, .success .order-marker, .success.order-marker, .info .order-marker, .info.order-marker, .highlighted .order-marker, .highlighted.order-marker, .disabled .order-marker, .disabled.order-marker {
   color: #fff;
 }
 
@@ -11984,10 +12001,10 @@ STATE TRUMPING CODE
   max-width: 100%;
 }
 
-.comittee-list .committee--list-item, .inset-area > .colored-paper, .inset-area .sticky > .colored-paper, .page-header {
-  -webkit-box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.65);
-  -moz-box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.65);
-  box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.65);
+.page-message, .committee-list .committee-list-item, .inset-area > .colored-paper, .inset-area .sticky > .colored-paper, .page-header {
+  -webkit-box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, 0.75);
 }
 
 .colored-paper .card.ghost h6 a.button {
@@ -12021,6 +12038,7 @@ STATE TRUMPING CODE
 
 .committee-list {
   list-style: none;
+  font-size: 14px;
 }
 .committee-list.ranking-committee {
   padding-top: 0;
@@ -12030,13 +12048,13 @@ STATE TRUMPING CODE
   width: 100%;
   margin-bottom: 0;
 }
-.committee-list.ranking-committee li .committee-rank, .committee-list.ranking-committee li .committee--holder {
+.committee-list.ranking-committee li .committee-rank, .committee-list.ranking-committee li .committee-holder {
   display: table-cell;
 }
-.committee-list.ranking-committee li .committee--holder {
+.committee-list.ranking-committee li .committee-holder {
   padding: .25em .65em .25em .2em;
 }
-.committee-list.ranking-committee li .committee--holder .committee--list-item {
+.committee-list.ranking-committee li .committee-holder .committee-list-item {
   margin-bottom: 0;
 }
 .committee-list.ranking-committee li .committee-rank {
@@ -12079,61 +12097,69 @@ STATE TRUMPING CODE
   background-color: #666666;
 }
 
-.committee--list-item {
+.committee-list {
+  margin: -.5rem;
+  list-style: none;
+}
+.committee-list .committee-list-item {
+  margin-bottom: .45rem;
+}
+
+.committee-list-item {
   background-color: #fff;
   position: relative;
 }
-.committee--list-item .action .fa-stack-1x.fa-ellipsis-v:before {
+.committee-list-item .action .fa-stack-1x.fa-ellipsis-v:before {
   content: "\f142\f142";
 }
-.committee--list-item.selected {
+.committee-list-item.selected {
   background-color: #c9edf7;
 }
-.committee--list-item.selected .committee--data .action {
+.committee-list-item.selected .committee-data .action {
   background-color: #25b6e0;
 }
-.committee--list-item.selected .committee--data .action .fa-stack-2x {
+.committee-list-item.selected .committee-data .action .fa-stack-2x {
   color: #92dbef;
 }
-.committee--list-item.selected .committee--data .action .fa-stack-1x {
+.committee-list-item.selected .committee-data .action .fa-stack-1x {
   color: #25b6e0;
 }
-.committee--list-item.selected.checked {
+.committee-list-item.selected.checked {
   background-color: white;
 }
-.committee--list-item.selected.checked .committee--data .action {
+.committee-list-item.selected.checked .committee-data .action {
   background-color: #498061;
 }
-.committee--list-item.selected.checked .committee--data .action .fa-stack-2x {
+.committee-list-item.selected.checked .committee-data .action .fa-stack-2x {
   color: #1de573;
 }
-.committee--list-item.selected.checked .committee--data .action .fa-stack-1x {
+.committee-list-item.selected.checked .committee-data .action .fa-stack-1x {
   color: #fff;
 }
-.committee--list-item + .committee--list-item {
+.committee-list-item + .committee-list-item {
   margin-top: .25em;
 }
-.committee--list-item .committee--data {
+.committee-list-item .committee-data {
   display: table;
   width: 100%;
 }
-.committee--list-item .committee--data .committee {
+.committee-list-item .committee-data .committee {
   display: table-cell;
   width: 90%;
 }
-.committee--list-item .committee--data .committee .name {
-  font-size: 1.14286rem;
+.committee-list-item .committee-data .committee .name {
+  font-size: 1rem;
   line-height: 1.125;
-  margin-top: 0.10714rem;
-  margin-bottom: 0.10714rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
   margin-top: 0;
 }
-.colored-paper .committee--list-item .committee--data .committee .name, .callout .committee--list-item .committee--data .committee .name, .page-message .committee--list-item .committee--data .committee .name {
-  margin-top: 0.10714rem;
-  margin-bottom: 0.10714rem;
+.colored-paper .committee-list-item .committee-data .committee .name, .callout .committee-list-item .committee-data .committee .name, .page-message .committee-list-item .committee-data .committee .name {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
   line-height: 1.35;
 }
-.committee--list-item .committee--data .flag {
+.committee-list-item .committee-data .flag {
   position: absolute;
   top: .25em;
   right: .25em;
@@ -12142,20 +12168,20 @@ STATE TRUMPING CODE
   border-radius: 50%;
   background-color: grey;
 }
-.committee--list-item .committee--data .flag .marker {
+.committee-list-item .committee-data .flag .marker {
   text-align: center;
   width: 1.5em;
 }
-.committee--list-item .committee--data .flag.nominated {
+.committee-list-item .committee-data .flag.nominated {
   background-color: #7d5891;
 }
-.committee--list-item .committee--data .flag.nominated .marker:before {
+.committee-list-item .committee-data .flag.nominated .marker:before {
   content: "N";
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
   font-weight: 700;
   color: #fff;
 }
-.committee--list-item .committee--data .action {
+.committee-list-item .committee-data .action {
   display: table-cell;
   width: 3em;
   background-image: url(../img/construction-paper.png), url(../img/left-shade.png), url(../img/right-shade.png);
@@ -12165,26 +12191,11 @@ STATE TRUMPING CODE
   text-align: center;
   vertical-align: middle;
 }
-.committee--list-item .committee--data .action .fa-stack-2x {
+.committee-list-item .committee-data .action .fa-stack-2x {
   color: #999999;
 }
-.committee--list-item .committee--data .action .fa-stack-1x {
+.committee-list-item .committee-data .action .fa-stack-1x {
   color: #f2f2f2;
-}
-
-.slots-area {
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.slot {
-  margin-bottom: .5rem;
-  border: 1px solid #b3b3b3;
-}
-
-.slot .committee {
-  padding: 0;
-  margin: 0 1px;
 }
 
 #application td.highlighted {
@@ -12204,14 +12215,6 @@ STATE TRUMPING CODE
   display: block;
   font-size: 11px;
   line-height: 1;
-}
-
-.comittee-list {
-  margin: -.5rem;
-  list-style: none;
-}
-.comittee-list .committee--list-item {
-  margin-bottom: .45rem;
 }
 
 .off-canvas.position-right {
