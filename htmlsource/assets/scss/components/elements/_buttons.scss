@@ -26,7 +26,7 @@
 
 
 .button{
-  @include font-slab();
+  @include font-slab-bold();
   @include button-style( rebrand-color($primary-color,2 ), auto, auto);
   margin-bottom: 0;
   &.radius{
@@ -39,7 +39,8 @@
   	.text{display:none;}
   }
 }
-
+.button.secondary{ 
+  @include button-style( $secondary-color, auto, auto);}
 .button.navigation{ 
 	 @include button-style( $scrub-blue, auto, auto);
 }

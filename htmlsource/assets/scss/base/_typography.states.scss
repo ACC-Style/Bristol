@@ -7,16 +7,13 @@ $required_data:(
 	'file':'_typography.state.scss'
 	);
 @include required-check($required_data...);
-%htmlContentTagsState{
-		font-weight: 900;
-	}
+
 $typography-selectors:"h1","h2","h3","h4","h5","h6","p","a","li","blockquote";	
 $underline-selectors: "h1.with-underline","h2.with-underline", "h3.with-underline", "h4.with-underline", "h5.with-underline", "h6.with-underline";
 @each $State in $states{
 	$state-selector:map-get($State,'Selector');
 	@each $selector in $typography-selectors{
 		@include setTrump('color',map-get($State,'State'),'#{$selector}#{$state-selector}');
-		#{$selector}#{$state-selector}{@extend %htmlContentTagsState;}
 	}
 	@each $selector in $underline-selectors{
 		@include setTrump('border-color',map-get($State,'State'),'#{$selector}#{$state-selector}');

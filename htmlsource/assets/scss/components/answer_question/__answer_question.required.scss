@@ -15,7 +15,7 @@
 	@include bp(lg) {
 		margin-bottom: .5em;
 	}
-	&:disabled, &[disabled] {
+	&:disabled, &[disabled], &.locked {
 		@extend %disabledinput;
 	}
 	input,
@@ -50,17 +50,21 @@
 
 
 
-.label-holder{
+.label-holder label{
+	
 	margin:$vertical-space/4 0;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  position: relative;
-  background-color:transparent;
-  color:fontcolor($black);
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	position: relative;
+	background-color:transparent;
+	color:fontcolor($black);
 	@include bp(md-down){
 	  white-space:normal;
 	}
-	.text{padding-right:1rem;}
+	.text{ 
+		padding-right:1.5rem;
+		@include font-medium;
+	}
 }
 
 
@@ -72,12 +76,18 @@
 	margin-left: -1em;
 	margin-right: -1em;
 	color: grey(80);
-	i.fa-holder-dynamic {
+	i.fa-holder {
 		position: absolute;
 		top: 0;
 		left: 0;
 		font-size: .75em;
 	}
+	.required & {
+	@extend %visible-required-icon;
+	@include fa-holder($fa-var-asterisk, 'dynamic');
+	color: $warning-color;
+}
+
 }
 
 %visible-required-icon {
@@ -85,31 +95,29 @@
 	display: inline-block;
 }
 
-.required .required-holder {
-	@extend %visible-required-icon;
-	@include fa-holder($fa-var-asterisk, 'dynamic');
-	color: $warning-color;
-}
+
 
 
 .input-holder, .value-holder {
 	margin-bottom: 0;
 }
-.input-space,.value-space{ @include grid-column-collapse;}
+
 
 
 .input-holder {
 	@include grid-row(  $behavior: collapse);
+	.input-space,.value-space{ @include grid-column-collapse;}
 	[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],button,.button,{
 		@include baseline-font(0,0,0,0,$tight);
 		// *default* all inputs are medium sized
-		padding:rem-calc(ms(0)*.75) rem-calc(ms(0)*.75);
+		padding:rem-calc(ms(0)*.5) rem-calc(ms(0)*.5);
 		height: rem-calc(ms(0)* 2.5);
 		// *landscape phones* inputs shrink on short screens that are smaller then an Ipad
 		@include bp(md-height-down){
 			padding:rem-calc(ms(0)*.25) rem-calc(ms(0)*.5);
 			height: rem-calc(ms(0)*2);
 		}
+		.disabled &,.locked &{ @extend %disabledinput;}
 
 	}
 	select,option{
@@ -122,49 +130,43 @@
 			padding:rem-calc(ms(0)*.25) rem-calc(ms(0)*.5);
 			height: rem-calc( ms(0) * 2 );
 		}
+		.disabled &,.locked &{ @extend %disabledinput;}
 	}
 	textarea{
-		padding:rem-calc(ms(0)*.75) rem-calc(ms(0)*.75);
+		padding:rem-calc(ms(0)*.5) rem-calc(ms(0)*.5);
 		@include baseline-font($font-level:0);
 		padding:$vertical-space *.5 $vertical-space;
+		.disabled &,.locked &{ @extend %disabledinput;}
 	}
-	.prefix, .postfix, .value {
-		@include baseline-font(0);
-		@include font-bold();
-		padding: .5em;
-		margin-top: 0;
-		color: grey(60);
+	
+}
+
+.value-space{
+	// *default* all inputs are medium sized
+	@include font-bold();
+	@include baseline-font(0,0,0,0,$tight);
+	// *default* all inputs are medium sized
+	line-height:1.5;
+	padding:rem-calc(ms(0) * .5) rem-calc(ms(0) * .5);
+	height: rem-calc(ms(0) * 2.5);
+	color:grey(60);
+	vertical-align:middle;
+	// *landscape phones* inputs shrink on short screens that are smaller then an Ipad
+	@include bp(md-height-down){
+		padding:rem-calc(ms(0) * .25) rem-calc(ms(0) * .5);
+		height: rem-calc(ms(0) * 2);
+	}
+	&.prefix, &.postfix{
 		border: 1px solid transparent;
-	}
-	.prefix, .postfix {
 		background: url("../img/paper-texture.png");
 		border: 1px solid grey(30);
 	}
-}
-
-.input-space-label{
-	@include baseline-font(0,0,0);
-	@include font-bold();
-	color:grey(60);
-	// *default* all inputs are medium sized
-		padding:rem-calc(ms(0)*.75) rem-calc(ms(0)*.75);
-		height: rem-calc(ms(0)* 2.5);
-	// *landscape phones* inputs shrink on short screens that are smaller then an Ipad
-	@include bp(md-down){
-		@include bp(xs-height-down){
-			padding:rem-calc(ms(0)*.35) rem-calc(ms(0)*.5);
-			height: rem-calc(ms(0)* 2.25);
-		}
+	&.prefix{
+		.value{padding-right:.5em; text-align:right;}
+		} 
+	&.postfix{
+		.value{padding-left:.5em; text-align:left;}
 	}
-	// * desktop *
-	@include bp(md){
-		@include bp(md-height){
-			padding:rem-calc(ms(0)*.25) rem-calc(ms(0)*.5);
-			height: rem-calc(ms(0)*2);
-		}
-	}
-	padding-left:1em;
-
 
 }
 
@@ -187,9 +189,11 @@
 }
 
 %disabledinput{
+	background:rgba( grey(30),.99) url(../img/empty_stripe.png);
 	background-color: grey(30);
 	background-image: url(../img/empty_stripe.png);
 	color:fontcolor($black,'quiet');
+	 -webkit-appearance: none;
 }
 
 .answer,.question{
