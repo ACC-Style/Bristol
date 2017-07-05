@@ -20,7 +20,7 @@ id: submit
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec suscipit risus a est laoreet varius. Fusce id lobortis ante. Duis aliquam sodales purus, sit amet auctor elit sollicitudin sed. Cras sit amet magna quam. Suspendisse efficitur quam eget leo sagittis, in varius justo sagittis. Fusce eget eros orci. Aenean vestibulum augue et lectus tristique, quis faucibus leo varius. Suspendisse id accumsan dui, egestas viverra elit. In quis est eu velit auctor tempus. Etiam posuere semper luctus. Suspendisse potenti. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur mollis, nunc sit amet molestie fermentum, nibh ante vehicula nibh, in dapibus orci sapien vitae massa. In sit amet libero posuere, gravida felis sed, blandit ante. Cras quis est congue, sollicitudin magna et, semper purus. In turpis nisi, efficitur eu sodales a, laoreet non elit.</p>
     </div>
     <div class="column large-5  medium-6">
-{% include elements/promocode.liquid state=""  %}
+{% include elements/promocode-open.liquid state=""  %}
     </div>
 </div>
 <div class="row ">
@@ -38,9 +38,10 @@ id: submit
                 </label>
             </div>
             <div class="input-holder row">
-                <div class="input-space small-8 small-centered column">
-                    <input data-bind="value:amountdue" name="amountdue" readonly="true" type="text" value="$778.00 USD"/>
+                <div class="input-space medium-8 column">
+                    <input disabled name="amountdue" readonly="true" type="text" value="$778.00 USD"/>
                 </div>
+                <div class="input-space medium-4 column"><a href="" class="button expanded">I have mailed the check</a></div>
             </div>
             <div class="message-holder">
                 <small class="error">
