@@ -271,3 +271,15 @@ div.reveal{
     color:$white;
   }
 }
+.date-picker-holder .button{
+    @include baseline-font(0,0,0,0,$tight);
+        // *default* all inputs are medium sized
+        padding:rem-calc(ms(0)*.45) rem-calc(ms(0)*.5);
+        height: rem-calc(ms(0)* 2.5);
+        // *landscape phones* inputs shrink on short screens that are smaller then an Ipad
+        @include bp(md-height-down){
+            padding:rem-calc(ms(0)*.25) rem-calc(ms(0)*.5);
+            height: rem-calc(ms(0)*2);
+        }
+        .disabled &,.locked &{ @extend %disabledinput;}
+}
