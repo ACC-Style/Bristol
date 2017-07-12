@@ -1,11 +1,12 @@
 {% extends 'layouts/layout-active-application' %}
 
 {% block message-holder %}
-    <div class="page-message callout success">
+<div class="page-message callout success">
     <a class="close-bar">
         <span class="close-button">
             <i aria-hidden="true" class="fa fa-times">
-            </i> Close
+            </i>
+            Close
         </span>
     </a>
     <div class="message-container">
@@ -38,35 +39,106 @@
 
 {% block content %}
 <div class="card">
-
-
-        <div class="row">
-            <div class="column">
-            <h2 class="with-underline">
-                Nominations
-            </h2>
-            <div class="callout disabled clearfix">
-                <div class="subtle">
-                    you have no pending nominations.
-                    <a class="button secondary float-right" href="user-nominate-member.html">
-                        Nominate a Member
+    <div class="row">
+        <div class="column small-5">
+            {% comment %}
+            <div class="callout">
+                <div class="warning colored-paper">
+                    <div class="row coloumn">
+                        <h4 class="text-center">
+                            No Active Applications
+                        </h4>
+                    </div>
+                </div>
+                <p class="section-padding">
+                    <strong>
+                        Active Applications
+                    </strong>
+                    allow you to express intrest in up to 6 committees during active seasons.  You will have access to interested committees after you have completed and saved the application for this season.
+                </p>
+                <a class="button expanded success" href="application-to-committee.html">
+                    Start Application
+                </a>
+            </div>
+            <br>
+                {% endcomment %}
+                <div class="card ghost">
+                    <div class="colored-paper info" style="display: block; min-height: 75vh;">
+                        <h4 class="text-center">
+                            <i class="fa fa-lock">
+                            </i>
+                            No Active Application
+                            <i class="fa fa-lock">
+                            </i>
+                        </h4>
+                        <p>
+                            This area is disabled because you have not finished your active application.  You must have an active application to unlock the ablity to manage your committees of interest.
+                        </p>
+                        <p class="section-padding">
+                            <b>
+                                Active Applications
+                            </b>
+                            allow you to express intrest in up to 6 committees during active seasons.  You will have access to interested committees after you have completed and saved the application for this season.
+                        </p>
+                        <a class="button expanded success radius" href="application-to-committee.html">
+                            Start Application
+                        </a>
+                    </div>
+                </div>
+            </br>
+        </div>
+        <div class="column small-7">
+            <div class="section-padding content-padding">
+                <div class="">
+                <h2 class="text-center">
+                    Reference Requests
+                </h2>
+            </div>
+            <div class="row">
+                <div class="row">
+                    <div class="column small-4 Number">
+                        0
+                    </div>
+                    <div class="column small-8">
+                    </div>
+                    <a class="Link" href="user-nominate-member.html">
+                        Go To Requests
                     </a>
                 </div>
             </div>
-        </div>
-        </div>
-    <div class="row">
-        <div class="column">
-            <h2 class="with-underline">
-                Reference Requests
-            </h2>
-            <div class="callout disabled clearfix">
-                <div class="subtle">
-                    You have no pending requests.
-                    <a class="button float-right disabled" href="">
-                        Respond to Requests
-                    </a>
+            <div class="row">
+                <div class="column">
+                    <h2 class="text-center">
+                        Nominations
+                    </h2>
                 </div>
+                <div class="column small-6">
+                    <h4 class="with-underline">
+                        You Have Made
+                    </h4>
+                    <div>
+                        <div class="Number">
+                            2
+                        </div>
+                        <a class="Link" href="user-nominate-member.html">
+                            View Details
+                        </a>
+                    </div>
+                </div>
+                <div class="column small-6">
+                    <h4 class="with-underline">
+                        You Have Recieved
+                    </h4>
+                    <div>
+                        <div class="Number">
+                            2
+                        </div>
+                        <a class="Link" href="user-nominate-member.html">
+                            View Details
+                        </a>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
     </div>
@@ -74,23 +146,6 @@
 {% endblock %}
 {% block active-application %} 
 
-    <div class="card content-padding">
-       <div class="warning colored-paper">
-           <div class="row coloumn"> <h4 class="text-center">No Active Applications</h4></div>
-       </div>
-        
-        <p class="section-padding"><strong>Active Applications</strong> allow you to express intrest in up to 6 committees during active seasons.  You will have access to interested committees after you have completed and saved the application for this season. </p>
-        <a href="application-to-committee.html" class="button expanded success">Start Application</a>
-    </div>
-    <br>
-    <div class="card ghost">
-        <div class="colored-paper info">
-            <h4 class="text-center"> <i class="fa fa-lock"></i> Committees of Interest <i class="fa fa-lock"></i> 
-            <div class="sub-line">This area is disabled because you have not finished your active application</div>
-
-            </h4>
-        </div>
-    </div>
+    
 
 {% endblock %}
-

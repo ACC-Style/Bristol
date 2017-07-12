@@ -44,7 +44,7 @@
             .committee-rank,.committee-holder{ display:table-cell;}
             .committee-holder{
                 padding:.25em .65em .25em .2em;
-                .committee-list-item{margin-bottom:0;}
+                .committee-list-item{    margin: 0 -.5rem;}
             }
             .committee-rank{
                 @include baseline-font(6);
@@ -70,12 +70,13 @@
     }
 }
 .committee-list {
-    margin: -.5rem;
+    margin: 0 -1rem;
     list-style: none;
-
+    border-top:$primary-color 2px solid;
+    
     .committee-list-item {
-        margin-bottom: .45rem;
-        @extend %cast-shadow;
+        margin: 0 ;   
+       + .committee-list-item{border-top:$primary-color 1px solid;}  
     }
 }
 
@@ -83,7 +84,8 @@
     background-color: #fff;
     position: relative;
     .action {  
-    .fa-stack-1x.fa-ellipsis-v:before{content: "\f142\f142";}  }
+    .fa-stack-2x.fa-ellipsis-v:before{content: "\f142 \f142"; letter-spacing:2px;}  }
+    .fa-stack-2x.fa-ellipsis-v{color:#ccc;}
     &.selected {
         background-color: color($primary-color, 20);
         .committee-data {
@@ -115,9 +117,7 @@
             }
         }
     }
-    +.committee-list-item {
-        margin-top: .25em;
-    }
+
     .committee-data {
         display: table;
         width:100%;
@@ -155,9 +155,9 @@
         .action {
             display: table-cell;
             width: 3em;
-            background-image: url(../img/construction-paper.png), url(../img/left-shade.png), url(../img/right-shade.png);
-            background-position: top right, left top, top right;
-            background-repeat: repeat,  repeat-y, repeat-y;
+            background-image: url(../img/construction-paper.png), url(../img/left-shade.png);
+            background-position: top right, left top;
+            background-repeat: repeat,  repeat-y;
             background-color: grey(10);
             text-align: center;
             vertical-align: middle;
@@ -292,10 +292,11 @@
 }
 
 .inset-area {
+    min-height: 100vh;
     position: relative;
     margin-left: .5em;
     margin-right: .5em;
-    background-color: grey(25);
+    background-color: grey(10);
     background-image: url(../img/textured_paper.png), url(../img/bottom-shade.png), url(../img/top-shade.png), url(../img/left-shade.png), url(../img/right-shade.png);
     background-position: top right, bottom right, right -1px, top left, top right;
     background-repeat: repeat, repeat-x, repeat-x, repeat-y, repeat-y;
@@ -383,4 +384,11 @@ margin-left: calc(-1rem + 1px);
 .top-bar-left li:hover {
         background: #d9d9d9 url(../img/construction-paper.png) repeat;
 }
+.card{    overflow: visible;}
+.Number{
+    @include baseline-font(10);
+    @include font-slab-bold;
+}
+
+.page-message-holder, .with-group-sections, .paper-page{ background: white url(../img/whisper.png) repeat;}
 // ../img/construction-paper.png

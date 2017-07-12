@@ -1,110 +1,139 @@
 {% include "head" %}
 
-        {% include 'sections/header-active-application' %}
-        <div class="mobile-offcanvas-wrapper stuck-footer" data-bind="page: {id:'sections', role: 'start'}">
-            <div class="paper-page page">
-            <div class="page-header clearfix colored-paper content-padding section-padding " style="background-color: #444;">
-                <h1 class="content-padding section-padding">{% block page-name %}{% endblock %}</h1>
-                 
-                                <div class="switch-input-space" style="position: absolute;width: 300px;text-align: center;top: 18px;right: 0;">
-                                    <div class="switch value-switch switch-4x round">
-                                        <input class="switch-input" id="checkbox-value-switch-round" type="checkbox" value="false">
-                                            <label class="switch-paddle" for="checkbox-value-switch-round">
-                                                <span class="show-for-sr">
-                                                    Do you like me?
-                                                </span>
-                                                <span aria-hidden="true" class="switch-active">
-                                                    All
-                                                </span>
-                                                <span aria-hidden="true" class="switch-inactive">
-                                                    Nominated
-                                                </span>
-                                            </label>
-                                        </input>
+<div class="page-message-holder inset">
+    {% block  message-holder %} {% endblock %}
+</div>
+{% include 'sections/header-active-application' %}
+<div class="mobile-offcanvas-wrapper stuck-footer" data-bind="page: {id:'sections', role: 'start'}">
+    <div class="paper-page page">
+        <div class="page-header clearfix content-padding section-padding ">
+            <h1 class="content-padding section-padding">
+                {% block page-name %}{% endblock %}
+            </h1>
+        </div>
+        <div class="row ">
+            <div class="column large-4 inset-container collapse">
+                <aside class="inset-area ">
+                    {% include "elements/searchbar" %}
+                    <div class="colored-paper clearfix text-center" style="background-color:#ccc;padding: .5em 0 0 0;">
+                        <div class="button-group selectable selectable-switch small">
+                            <a class="button selected" href="">
+                                <i class="fa fa-holder">
+                                </i>
+                                All
+                            </a>
+                            <a class="button " href="">
+                                <i class="fa fa-holder">
+                                </i>
+                                Nominated
+                            </a>
+                            <a class="button " href="">
+                                <i class="fa fa-holder">
+                                </i>
+                                Interested
+                            </a>
+                        </div>
+                    </div>
+                    <div class="section-padding">
+                        <ul class="committee-list">
+                            {% include "elements/committee-list-item-notactive" %}
+                            <li class="committee-list-item selected">
+                                <div class="committee-data">
+                                    <div class="committee">
+                                        <h2 class="name">
+                                            Assembly of Interantional Governors Steering Committee
+                                            <div class="sub-line">
+                                                ACC Guidance Committee
+                                            </div>
+                                        </h2>
+                                        <span class="label secondary">
+                                            Open Positions:
+                                            <b>
+                                                4
+                                            </b>
+                                        </span>
+                                        <span class="label">
+                                            Nominated
+                                            <i class="fa fa-thumbs-up">
+                                            </i>
+                                        </span>
+                                    </div>
+                                    <div class="action">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x">
+                                            </i>
+                                            <i class="fa fa-chevron-right fa-stack-1x">
+                                            </i>
+                                        </span>
                                     </div>
                                 </div>
-                            </div>
-                <div class="row collapse">
-                    <div class="column large-3 inset-container collapse">
-                        <aside class="inset-area ">
 
-                            {% comment %}{% include "elements/searchbar" %}{% endcomment %}
-                           
-                            <div class="section-padding">
-                                    <ul class="committee-list">
+                            </li>
+                            {% include "elements/committee-list-item-notactive" %}
                                         {% include "elements/committee-list-item-notactive" %}
-                                        <li class="committee-list-item selected">
-                                            <div class="committee-data">
-                                                <div class="committee">
-                                                    <h2 class="name">
-                                                        Assembly of Interantional Governors Steering Committee
-                                                        <div class="sub-line">
-                                                            ACC Guidance Committee
-                                                        </div>
-                                                    </h2>
-                                                    <span class="label secondary">
-                                                        Open Positions:
-                                                        <b>
-                                                            4
-                                                        </b>
-                                                    </span>
-                                                    <span class="label">
-                                                        Nominated
-                                                        <i class="fa fa-thumbs-up">
-                                                        </i>
-                                                    </span>
-                                                </div>
-                                                <div class="action">
-                                                    <span class="fa-stack fa-lg" data-toggle="example-dropdown-2">
-                                                        <i class="fa fa-circle fa-stack-2x">
-                                                        </i>
-                                                        <i class="fa fa-ellipsis-h fa-stack-1x">
-                                                        </i>
-                                                    </span>
-                                                </div>
+                            <li class="committee-list-item">
+                                <div class="committee-data">
+                                    <div class="committee">
+                                        <h2 class="name">
+                                            Assembly of Interantional Governors Steering Committee
+                                            <div class="sub-line">
+                                                ACC Guidance Committee
                                             </div>
-                                        </li>
-                                        <div class="dropdown-pane" data-dropdown="" data-hover="true" data-hover-pane="true" id="example-dropdown-2">
-                                            <div class="button-group stacked radius small">
-                                                <a class="button" href="">
-                                                    Mark as Intrested
-                                                </a>
-                                                <a class="button secondary" href="">
-                                                    Nominated A Member
-                                                </a>
-                                            </div>
-                                        </div>
-                                        {% include "elements/committee-list-item-notactive" %}
-                                        {% include "elements/committee-list-item-notactive" %}
-                                        {% include "elements/committee-list-item-notactive" %}
-                                        {% include "elements/committee-list-item-notactive" %}
-                                    </ul>
-                            </div>
-                            <div style="position: static;left: 0;right: 0;bottom: 0;">
-                                {% include "elements/card-pagination-bottom" %}
-                            </div>
-                        </aside>
+                                        </h2>
+                                        <span class="label secondary">
+                                            Open Positions:
+                                            <b>
+                                                4
+                                            </b>
+                                        </span>
+                                        <span class="label success">
+                                            Interested
+                                        </span>
+                                    </div>
+                                    <div class="action">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x">
+                                            </i>
+                                            <i class="fa fa-chevron-right fa-stack-1x">
+                                            </i>
+                                        </span>
+                                    </div>
+                                </div>
+                               
+                            </li>
+                            {% include "elements/committee-list-item-notactive" %}
+                        </ul>
                     </div>
-                    <div class="column large-9">
-                       
-                            {% block content %}{% endblock %}
-                     <div class="footer sticky-button-bar group-divide">
-  <div class="column small-12 section-padding content-padding">
-    <div class="pull-left">
-        <a href="user-dashboard-empty.html" class="button navigation small"><i class="fa fa-arrow-left"></i> Back To Dashboard</a>
-    </div>
-    <div class="pull-right">
-      <a class="secondary button small" href="#">Nominate A Member</a>
-      <a class="button small" href="#">Mark as Interested</a>
-    </div>
-  </div>
-</div>   
+                    <div style="position: static;left: 0;right: 0;bottom: 0;">
+                        {% include "elements/card-pagination-bottom" %}
                     </div>
-
+                </aside>
+            </div>
+            <div class="column large-8">
+                {% block content %}{% endblock %}
+                <div class="footer sticky-button-bar group-divide">
+                    <div class="column small-12 section-padding content-padding">
+                        <div class="pull-left">
+                            <a class="button navigation small" href="user-dashboard-empty.html">
+                                <i class="fa fa-arrow-left">
+                                </i>
+                                Back To Dashboard
+                            </a>
+                        </div>
+                        <div class="pull-right">
+                            <a class="secondary button small" href="user-nominate-member.html">
+                                Nominate A Member
+                            </a>
+                            <a class="button small" href="#">
+                                Mark as Interested
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    {% include 'sections/web-footer' %}
+    </div>
+</div>
+
+{% include 'sections/web-footer' %}
     {% include "scripts" %}
-    </body>
-</html>

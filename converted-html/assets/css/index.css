@@ -12001,7 +12001,7 @@ STATE TRUMPING CODE
   max-width: 100%;
 }
 
-.page-message, .committee-list .committee-list-item, .inset-area > .colored-paper, .inset-area .sticky > .colored-paper, .page-header {
+.page-message, .inset-area > .colored-paper, .inset-area .sticky > .colored-paper, .page-header {
   -webkit-box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, 0.75);
@@ -12055,7 +12055,7 @@ STATE TRUMPING CODE
   padding: .25em .65em .25em .2em;
 }
 .committee-list.ranking-committee li .committee-holder .committee-list-item {
-  margin-bottom: 0;
+  margin: 0 -.5rem;
 }
 .committee-list.ranking-committee li .committee-rank {
   font-size: 2rem;
@@ -12098,19 +12098,27 @@ STATE TRUMPING CODE
 }
 
 .committee-list {
-  margin: -.5rem;
+  margin: 0 -1rem;
   list-style: none;
+  border-top: #198dae 2px solid;
 }
 .committee-list .committee-list-item {
-  margin-bottom: .45rem;
+  margin: 0;
+}
+.committee-list .committee-list-item + .committee-list-item {
+  border-top: #198dae 1px solid;
 }
 
 .committee-list-item {
   background-color: #fff;
   position: relative;
 }
-.committee-list-item .action .fa-stack-1x.fa-ellipsis-v:before {
-  content: "\f142\f142";
+.committee-list-item .action .fa-stack-2x.fa-ellipsis-v:before {
+  content: "\f142 \f142";
+  letter-spacing: 2px;
+}
+.committee-list-item .fa-stack-2x.fa-ellipsis-v {
+  color: #ccc;
 }
 .committee-list-item.selected {
   background-color: #c9edf7;
@@ -12135,9 +12143,6 @@ STATE TRUMPING CODE
 }
 .committee-list-item.selected.checked .committee-data .action .fa-stack-1x {
   color: #fff;
-}
-.committee-list-item + .committee-list-item {
-  margin-top: .25em;
 }
 .committee-list-item .committee-data {
   display: table;
@@ -12184,9 +12189,9 @@ STATE TRUMPING CODE
 .committee-list-item .committee-data .action {
   display: table-cell;
   width: 3em;
-  background-image: url(../img/construction-paper.png), url(../img/left-shade.png), url(../img/right-shade.png);
-  background-position: top right, left top, top right;
-  background-repeat: repeat,  repeat-y, repeat-y;
+  background-image: url(../img/construction-paper.png), url(../img/left-shade.png);
+  background-position: top right, left top;
+  background-repeat: repeat,  repeat-y;
   background-color: #e6e6e6;
   text-align: center;
   vertical-align: middle;
@@ -12319,10 +12324,11 @@ STATE TRUMPING CODE
 }
 
 .inset-area {
+  min-height: 100vh;
   position: relative;
   margin-left: .5em;
   margin-right: .5em;
-  background-color: #bfbfbf;
+  background-color: #e6e6e6;
   background-image: url(../img/textured_paper.png), url(../img/bottom-shade.png), url(../img/top-shade.png), url(../img/left-shade.png), url(../img/right-shade.png);
   background-position: top right, bottom right, right -1px, top left, top right;
   background-repeat: repeat, repeat-x, repeat-x, repeat-y, repeat-y;
@@ -12407,6 +12413,28 @@ STATE TRUMPING CODE
 
 .top-bar-left li:hover {
   background: #d9d9d9 url(../img/construction-paper.png) repeat;
+}
+
+.card {
+  overflow: visible;
+}
+
+.Number {
+  font-size: 3.21429rem;
+  line-height: 1.125;
+  margin-top: 1.19196rem;
+  margin-bottom: 1.19196rem;
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 700;
+}
+.colored-paper .Number, .callout .Number, .page-message .Number {
+  margin-top: 0.44196rem;
+  margin-bottom: 0.44196rem;
+  line-height: 1.125;
+}
+
+.page-message-holder, .with-group-sections, .paper-page {
+  background: white url(../img/whisper.png) repeat;
 }
 
 /*# sourceMappingURL=index.css.map */

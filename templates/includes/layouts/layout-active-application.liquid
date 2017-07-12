@@ -1,5 +1,4 @@
 {% include "head" %}
-
 <div class="page-message-holder inset">
     {% block  message-holder %} {% endblock %}
 </div>
@@ -11,11 +10,10 @@
                 {% block page-name %}{% endblock %}
             </h1>
         </div>
-
-        <div class="row page-wrapper" style="max-width: none;">
-            <div class="column large-3">
-                <aside class="card">
-                    <div class="colored-paper">
+        <div class="row" style="max-width: none;">
+            <div class="column large-4 inset-container collapse">
+                <aside class="inset-area">
+                    <div class="colored-paper info">
                         <h2 class="clearfix text-center">
                             Open Committees
                         </h2>
@@ -25,16 +23,32 @@
                             </i>
                         </a>
                     </div>
-                    {% comment %}{% include "elements/searchbar" %}{% endcomment %}
+                    {% include "elements/searchbar" %}
                     <div class="colored-paper clearfix text-center" style="background-color:#ccc;padding: .5em 0 0 0;">
-                       <div class="button-group  selectable selectable-switch small">
-                            <a href="" class="button  selected"><i class="fa fa-holder"></i>All</a>
-                            <a href="" class="button "><i class="fa fa-holder"></i>Nominated</a>
-                            <a href="" class="button "><i class="fa fa-holder"></i>Interested</a>
+                        <div class="button-group selectable selectable-switch small">
+                            <a class="button selected" href="">
+                                <i class="fa fa-holder">
+                                </i>
+                                All
+                            </a>
+                            <a class="button " href="">
+                                <i class="fa fa-holder">
+                                </i>
+                                Nominated
+                            </a>
+                            <a class="button " href="">
+                                <i class="fa fa-holder">
+                                </i>
+                                Interested
+                            </a>
                         </div>
                     </div>
-                    <div class="section-padding">
+                    <div class="">
                         <ul class="committee-list">
+                            {% include "elements/committee-List-item" %}
+                            {% include "elements/committee-List-item" %}
+                            {% include "elements/committee-List-item" %}
+                            {% include "elements/committee-List-item" %}
                             {% include "elements/committee-List-item" %}
                             <li class="committee-list-item">
                                 <div class="committee-data">
@@ -53,12 +67,26 @@
                                         </span>
                                         <span class="label">
                                             Nominated
-                                            <i class="fa fa-thumbs-up">
-                                            </i>
+                                        </span>
+                                        <span class="label success">
+                                            Interested
                                         </span>
                                     </div>
+                                    <div aria-hidden="true" aria-labelledby="d9658u-dd-anchor" class="dropdown-pane" data-dropdown="9zdd1c-dropdown" data-hover="true" data-hover-pane="true" data-resize="example-dropdown-1" data-yeti-box="example-dropdown-1" id="example-dropdown-1">
+                                        <div class="button-group stacked radius small">
+                                            <a class="button" href="">
+                                                Mark as Intrested
+                                            </a>
+                                            <a aria-controls="comm-modal" aria-haspopup="true" class="button secondary" data-open="comm-modal" tabindex="0">
+                                                Veiw Details
+                                            </a>
+                                            <a class="button secondary" href="user-nominate-member.html">
+                                                Nominated A Member
+                                            </a>
+                                        </div>
+                                    </div>
                                     <div class="action">
-                                        <span class="fa-stack fa-lg" data-toggle="example-dropdown-2">
+                                        <span aria-controls="example-dropdown-1" aria-expanded="false" aria-haspopup="true" class="fa-stack fa-lg" data-is-focus="false" data-toggle="example-dropdown-1" data-yeti-box="example-dropdown-1">
                                             <i class="fa fa-circle fa-stack-2x">
                                             </i>
                                             <i class="fa fa-ellipsis-h fa-stack-1x">
@@ -80,22 +108,22 @@
                                     </a>
                                 </div>
                             </div>
-                           {% block selected-committee %}{% endblock %}
-                            {% include "elements/committee-List-item" %}
-                            {% include "elements/committee-List-item" %}
-                            {% include "elements/committee-List-item" %}
-                            {% include "elements/committee-List-item" %}
+                            {% comment %}{% block selected-committee %}{% endblock %}{% endcomment %}
                         </ul>
                     </div>
-                        {% include "elements/card-pagination-bottom" %}
+                    {% include "elements/card-pagination-bottom" %}
                 </aside>
             </div>
-            <div class="column large-3 inset-container">
-                    {% block active-application %}{% endblock %}
-            </div>
-            <div class="column large-6">
+            <div class="column large-8 ">
+                <div class="page-wrapper content-padding">
                     {% block content %}{% endblock %}
+                </div>
             </div>
+            {% comment %}
+            <div class="column large-6">
+                {% block content %}{% endblock %}
+            </div>
+            {% endcomment %}
         </div>
     </div>
 </div>
