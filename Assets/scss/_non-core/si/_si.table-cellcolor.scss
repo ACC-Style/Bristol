@@ -14,7 +14,7 @@
 		background-color: fontcolor($grey,'light');
 		color:$color;
 		.highlight &{background-color:color($bg,50);}
-		.fa-holder:before{content:$var;}
+		@include fa-holder($var,"container")
 	}
 	tr:nth-child(even) td#{$selector}{
 		background-color: fontcolor($grey,'quiet');

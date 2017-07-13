@@ -1,23 +1,20 @@
 
+// Override Var
 $circle-radius:25px;
 $circle-color:color(rebrand-color($primary-color,3),80);
 $circle-color-hover:color(rebrand-color($primary-color,3),100);
 $circle-darktext:$global-default-dark-text;
 $circle-lighttext:$global-default-light-text;
-
-// Override Var
 $circle-lighttext:#fff;
+
+
+
+
 .section-nav{
 	width:100%;
 	display: block;
 	position: relative;
 	border:0px solid grey(30);
-	.split-content &{
-		margin-left: -1.07143rem; 
-		margin-right: -1.07143rem;
-		padding-left: 1.07143rem; 
-		padding-right: 1.07143rem;
-	}
 	 .with-group-sections &, .paper-page &{
 	 	margin-left:0;
 	 	margin-right:0;
@@ -60,7 +57,11 @@ $circle-lighttext:#fff;
 		background: url('../img/billie-holiday.png') repeat top right,url('../img/top-shade.png') repeat-x top right;
 		margin-top: $circle-radius *1.5;
 		border-top-width: 2px;
-		@include fa-holder($fa-var-chevron-right,'dynamic');
+		position:absolute;
+		bottom:0;
+		right:0;
+		left:0;
+		@include fa-holder($fa-var-chevron-right,'container');
 		.circle{right:$circle-radius/2; bottom: $circle-radius/3;
 			i{margin:($circle-radius - 4px)/2 ($circle-radius+1)/2;}
 		}
@@ -70,7 +71,7 @@ $circle-lighttext:#fff;
 		background:url('../img/billie-holiday.png') repeat top right,url('../img/bottom-shade.png') repeat-x bottom right;
 		margin-bottom: $circle-radius *1.5;
 		border-bottom-width: 2px;
-		@include fa-holder($fa-var-chevron-left,'dynamic');
+		@include fa-holder($fa-var-chevron-left,'container');
 		.text{ padding-left:$circle-radius*3; text-align: left;}
 		.circle{left:$circle-radius/2;top: $circle-radius/3;}
 	}
@@ -121,6 +122,10 @@ $circle-lighttext:#fff;
 	}
 
 }
+
+
+
+
 // .with-group-sections .section-nav.forward .text{padding-right:$circle-radius * 3 - ($base-font-size * 1.07143);}
 // .with-group-sections .section-nav.back .text{padding-left:$circle-radius * 3 - ($base-font-size * 1.07143);}
 /**
@@ -130,7 +135,7 @@ $circle-lighttext:#fff;
 *   @example
 *	<div class="page with-group-sections"><div class="section-nav back">
 *		<a>
-*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="circle"><i class="fa fa-holder"></i></div>
 *			<div class="text"> Back</div>
 *		</a>
 *	</div>
@@ -142,7 +147,7 @@ $circle-lighttext:#fff;
 *	</section>
 *	<div class="section-nav forward">
 *		<a>
-*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="circle"><i class="fa fa-holder"></i></div>
 *			<div class="text"> Forward</div>
 *		</a>
 *	</div></div>
@@ -154,7 +159,7 @@ $circle-lighttext:#fff;
 *   @example
 *	<div class="page"><div class="section-nav back disabled">
 *		<a>
-*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="circle"><i class="fa fa-holder"></i></div>
 *			<div class="text"> Back</div>
 *		</a>
 *	</div>
@@ -166,7 +171,7 @@ $circle-lighttext:#fff;
 *	</section>
 *	<div class="section-nav forward disabled">
 *		<a>
-*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="circle"><i class="fa fa-holder"></i></div>
 *			<div class="text"> Forward</div>
 *		</a>
 *	</div></div>

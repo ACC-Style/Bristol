@@ -1,219 +1,358 @@
+.paper-page.repeater-area {
+  background-color: $success-color;
+  background-image: url(../img/bottom-shade.png), url(../img/top-shade.png), url(../img/cream_pixels_alt.png);
+  background-position: bottom right, right -1px, top right;
+  background-repeat: repeat-x, repeat-x, repeat;
+  margin-bottom: .25rem;
+  &.edit{
+    background-color:grey(20);
+    background-image: url(../img/bottom-shade.png), url(../img/top-shade.png), url(../img/cream_pixels_altdark.png);
+  }
+  .close-button{
 
-$repeater-color: rebrand-color($primary-color,2);
-
-
-.repeater{
-	@include grid-row(12,collapse);
-	.render,.question-group,.repeater-action{
-		@include grid-column(12);
-		@include grid-column-collapse;	
-	}
-
-	&.required > .label-holder .required-holder{
-		@extend %visible-required-icon;
-		@include fa-holder($fa-var-asterisk,'dynamic');
-		color:$warning-color;
-	}
-	.edit,.clear,.delete,.add,.set, .save{
-		font-size: .8rem;
-		line-height: 1rem;
-		padding: .5rem .4rem;
-		text-decoration: none;		
-		height: 1.8rem;
-		.text{text-transform: capitalize;}
-		.fa + .text{padding-left:.25rem;}
-	}
-	.edit,.clear,.delete,.set, .save{
-		color:fontcolor($real-black,'quiet');
-		&:hover{ color:fontcolor($real-black,'loud');
-			.text{text-decoration: underline;}
-		 }
-	}
-	.render,.question-group{
-		padding-left: rem-calc(ms(1));
-		padding-right:rem-calc(ms(1));
-	}
-	.render{
-		position: relative;
-		display: block;
-		border-top: 1px dotted grey(10);
-		border-bottom: 1px dotted grey(10);
-		a.button, button{margin-bottom:0;}
-		+ .render{border-top: 0px none;}
-		.render-holder{@extend %inline-list;margin:0 17rem 0  0; padding:.5rem 0
-			
-
-
-		}
-		.strong{@extend %bold;}
-		.italic{@extend %italic;}
-		.comma-after:after{
-			content:",";
-			padding-left:.25em;
-			display: inline;
-
-		}
-		.render-actions{
-			position: absolute;
-			display: inline-block;
-			height: 2rem;
-			top:0;
-			right:0;
-			padding: .5rem 0;
-			@include bp(md-down){
-				.text{display:none;}
-			}
-		}
-		.starred{color:$success-color;}
-		.break{ border-left: 2px solid grey(30); padding-left: .5rem; margin-left: .25rem;}
-		.error{color:$error-color;}
-		.warning{color:$alert-color;}
-		.edit{}
-		.delete{}
-		.set{}
-
-		@include bp(sm-down){
-			.edit,.delete,.set{ 
-				display: inline-block;
-				float:left;
-			}
-			.render-holder{
-				margin-right: 5rem;
-				font-size: .9rem;
-			}
-
-
-		}
-
-	}
-	.render{
-		max-height: 1000px;
-		-webkit-transition: max-height 0.8s;
-		-moz-transition: max-height 0.8s;
-		transition: max-height 0.8s;
-		overflow: hidden;
-	}
-	.edit-mode--show{display: none;}
-	&.edit-mode{ 
-		.render{max-height: 0;}
-		.edit-mode--show{display:inline; display:initial;}
-		.edit-mode--hide{display:none;}
-	}
-	.question-group{
-		padding-top:1.5em; 
-		padding-bottom:1.85em;
-		border:2px dotted desaturate( color($repeater-color,20), 40% );
-		margin-top:.5em;
-		border-radius:.5em;
-		border-top:2px soliddesaturate( color($repeater-color,80), 40% );
-		border-bottom:2px solid  desaturate( color($repeater-color,80), 40% );
-		background-image: url(../img/empty_diamond.png);
-		background-color: desaturate( color($repeater-color,12), 40% );
-		position: relative;
-		.answer.required .required-holder, .question.required .required-holder{color:$repeater-color;}
-		.required-message{
-			font-size:rem-calc(ms(-1));
-			padding:.25em .5em;
-			position: absolute;
-			top:-2px;
-			right:-2px;
-			background-color: desaturate( color($repeater-color,80), 40% );
-			color:acc-color-contrast(color($repeater-color,80));
-			-webkit-transition: background-color 0.8s;
-			-moz-transition: background-color 0.8s;
-			transition: background-color 0.8s;
-		}
-
-	}
-	&.edit-mode .question-group{
-		border:2px dotted desaturate( color($alert-color,20), 40% );
-		margin-top:.5em;
-		border-radius:.5em;
-		border-top:2px soliddesaturate( color($alert-color,80), 40% );
-		border-bottom:2px solid  desaturate( color($alert-color,80), 40% );
-		background-image: url(../img/empty_diamond.png);
-		background-color: color($warning-color,12);
-		.required-message{background-color: grey(40);}
-	}
-	.repeater-action{
-		position: relative;
-		display:block;
-		width:100%;
-		height:2rem;
-		margin-top:-2rem;
-		.add-new-repeater{
-			display: inline-block;
-			position: relative;
-			text-align: right;
-			float:right;
-			margin-top: -1em;	
-			padding:.5rem;
-			.text{
-				color:$repeater-color;
-				display: inline-block;
-				padding-right: 2rem;
-				font-size: 1rem;
-			}
-		}
-		.save,.clear{
-			font-size: 1rem;
-			padding: .35rem .75rem .45rem;
-			border-radius: 4px;
-			height:auto;
-			border:2px solid rebrand-color($primary-color,2);
-			font-weight: 900;
-		}
-		.save{
-			display: inline-block;
-			position: relative;
-			text-align: right;
-			float:right;
-			background-color:rebrand-color($primary-color,2);
-			color:white;
-			text-decoration: none;
-			margin-right: 1em;
-			padding: .5rem 1.75rem .65rem;
-			font-size: 1.25rem;
-			&:hover{background-color: $success-color;text-decoration: none;}
-
-		}
-		.clear{
-			float:left;
-			background-color: white;
-			border-radius: 4px;
-			margin-left: 1em;
-			border-color: color($repeater-color,80);
-			&:hover{background-color:grey(10);border-color: color($repeater-color,100)}
-			
-
-
-		}
-	}
-}
-.edit-mode.repeater .repeater-action .clear{
-	background-color: grey(60);
-	border-color:grey(70);
-	color:#fff;
-	&:hover{
-		background-color: grey(75);
-		border-color:grey(80);
-		color:#fff;
-	}
+    color: #fff;
+    border: #fff solid 1px;
+    border-radius: 6px;
+    top: -6px;
+    right: -.5em;
+    padding: .35em .75em;
+    margin: 0;
+    &:hover{background-color:rgba(0, 0, 0, .25);}
+  }
+  .colored-paper{    -webkit-box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.65);
+    -moz-box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.65);
+    box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.65);}
 }
 
-.question-group .render{
-	.message-holder{
-		.warning,.error{display:none;
-		&small, &span{margin-bottom: .65rem;}
-		}
-	}
-	&.warning{
-			.message-holder .warning{display: block;}
-	}
-	&.error{
-		.message-holder .error{display: block;}
-	}
+.render {
+  padding: .5em 1em;
+  margin-bottom: .5em;
+  border: 1px solid grey(40);
+  border-radius: 4px;
 }
+
+.render ul {
+  list-style: none;
+}
+
+
+
+.render.animated.fadeIn {
+  padding: 0;
+}
+
+.render ul {
+  margin: 0
+}
+
+.render ul  {
+  padding-top:.5rem;
+  padding-bottom:.4rem;
+  li{
+    padding: 0 1rem;
+    font-size:ms(-1);
+    line-height: ms(0);}
+  .strong{
+    @include font-slab-bold();
+    font-size:ms(2);
+    line-height: ms(4);
+    color:$acc-blue;
+  }
+  .loud{
+  }
+  li.has-tip{margin-bottom:.5rem;}
+  li.has-tip:first-child,li.has-tip+li.has-tip{
+    margin-top: -.5rem;
+  }
+}
+.render-actions {
+  background-color: grey(80);
+  border-left: 1px solid grey(30);
+  background-image:url(../img/cream_pixels.png);
+}
+
+.render-actions a {
+  @include font-slab-bold;
+  font-size: ms(-1);
+  background-color: $secondary-color;
+  text-align: center;
+  color: $black;
+  width: 33%;
+  padding: $vertical-space/4 .25em;
+  border:1px solid mix($primary-color,$black,20%);
+  margin: 6px;
+  width: auto;
+  border-radius: 6px;
+  background-image: none;
+  height: 2.5em;
+	&:hover {
+	background-color: mix($primary-color,$black,20%);
+	color:#fff ;
+ }
+}
+
+
+
+.render-actions a.disabled {
+  &,
+  &:hover {
+    @include font-light();
+    background-color: grey(80);
+    color: grey(35);
+    background-image: url(../img/cream_pixels.png);
+    border-color:grey(20);
+    cursor:not-allowed
+    i.fa {
+      color: grey(30);
+   }
+}
+}
+.render{
+  position:relative;
+  padding:0;
+  .starred.primary, .locked,.added-flag {
+    display: block;
+    background-color: $primary-color;
+    color: white;
+  }
+  .has-tip{padding: .25em 1em;}
+  .has-tip.locked {
+    background-color: grey(20);
+    color: grey(60);
+  }
+  .added-flag{
+    background-color:rgba($success-color,.75);
+    border-radius: 0 0  $global-border-radius $global-border-radius;
+        display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color:$real-black;
+  }
+}
+
+
+//    Flex Rules around render
+.render {
+	display:flex;
+  .render-holder {
+	display:block;
+  flex:2 1 75%;
+  }
+  .render-actions {
+  	display:flex;
+    flex: 0 0 175px;
+  	flex-direction: column ;
+    a {
+    	flex:0 1 auto;
+	    vertical-align: middle;
+
+    }
+ }
+}
+
+
+
+
+
+// $repeater-color: rebrand-color($primary-color,2);
+// .repeater{
+// 	@include grid-row(12,collapse);
+// 	.render,.question-group,.repeater-action{
+// 		@include grid-column(12);
+// 		@include grid-column-collapse;	
+// 	}
+// 	&.required > .label-holder .required-holder{
+// 		@extend %visible-required-icon;
+// 		@include fa-holder($fa-var-asterisk,'containter');
+// 		color:$warning-color;
+// 	}
+// 	.edit,.clear,.delete,.add,.set, .save{
+// 		font-size: .8rem;
+// 		line-height: 1rem;
+// 		padding: .5rem .4rem;
+// 		text-decoration: none;		
+// 		height: 1.8rem;
+// 		.text{text-transform: capitalize;}
+// 		.fa + .text{padding-left:.25rem;}
+// 	}
+// 	.edit,.clear,.delete,.set, .save{
+// 		color:fontcolor($real-black,'quiet');
+// 		&:hover{ color:fontcolor($real-black,'loud');
+// 			.text{text-decoration: underline;}
+// 		 }
+// 	}
+// 	.render,.question-group{
+// 		padding-left: rem-calc(ms(1));
+// 		padding-right:rem-calc(ms(1));
+// 	}
+// 	.render{
+// 		position: relative;
+// 		display: block;
+// 		border-top: 1px dotted grey(10);
+// 		border-bottom: 1px dotted grey(10);
+// 		a.button, button{margin-bottom:0;}
+// 		+ .render{border-top: 0px none;}
+// 		.render-holder{@extend %inline-list;margin:0 17rem 0  0; padding:.5rem 0
+// 		}
+// 		.strong{@extend %bold;}
+// 		.italic{@extend %italic;}
+// 		.comma-after:after{
+// 			content:",";
+// 			padding-left:.25em;
+// 			display: inline;
+// 		}
+// 		.render-actions{
+// 			position: absolute;
+// 			display: inline-block;
+// 			height: 2rem;
+// 			top:0;
+// 			right:0;
+// 			padding: .5rem 0;
+// 			@include bp(md-down){
+// 				.text{display:none;}
+// 			}
+// 		}
+// 		.starred{color:$success-color;}
+// 		.break{ border-left: 2px solid grey(30); padding-left: .5rem; margin-left: .25rem;}
+// 		.error{color:$error-color;}
+// 		.warning{color:$alert-color;}
+// 		.edit{}
+// 		.delete{}
+// 		.set{}
+// 		@include bp(sm-down){
+// 			.edit,.delete,.set{ 
+// 				display: inline-block;
+// 				float:left;
+// 			}
+// 			.render-holder{
+// 				margin-right: 5rem;
+// 				font-size: .9rem;
+// 			}
+// 		}
+// 	}
+// 	.render{
+// 		max-height: 1000px;
+// 		-webkit-transition: max-height 0.8s;
+// 		-moz-transition: max-height 0.8s;
+// 		transition: max-height 0.8s;
+// 		overflow: hidden;
+// 	}
+// 	.edit-mode--show{display: none;}
+// 	&.edit-mode{ 
+// 		.render{max-height: 0;}
+// 		.edit-mode--show{display:inline; display:initial;}
+// 		.edit-mode--hide{display:none;}
+// 	}
+// 	.question-group{
+// 		padding-top:1.5em; 
+// 		padding-bottom:1.85em;
+// 		border:2px dotted desaturate( color($repeater-color,20), 40% );
+// 		margin-top:.5em;
+// 		border-radius:.5em;
+// 		border-top:2px soliddesaturate( color($repeater-color,80), 40% );
+// 		border-bottom:2px solid  desaturate( color($repeater-color,80), 40% );
+// 		background-image: url(../img/empty_diamond.png);
+// 		background-color: desaturate( color($repeater-color,12), 40% );
+// 		position: relative;
+// 		.answer.required .required-holder, .question.required .required-holder{color:$repeater-color;}
+// 		.required-message{
+// 			font-size:rem-calc(ms(-1));
+// 			padding:.25em .5em;
+// 			position: absolute;
+// 			top:-2px;
+// 			right:-2px;
+// 			background-color: desaturate( color($repeater-color,80), 40% );
+// 			color:acc-color-contrast(color($repeater-color,80));
+// 			-webkit-transition: background-color 0.8s;
+// 			-moz-transition: background-color 0.8s;
+// 			transition: background-color 0.8s;
+// 		}
+// 	}
+// 	&.edit-mode .question-group{
+// 		border:2px dotted desaturate( color($alert-color,20), 40% );
+// 		margin-top:.5em;
+// 		border-radius:.5em;
+// 		border-top:2px soliddesaturate( color($alert-color,80), 40% );
+// 		border-bottom:2px solid  desaturate( color($alert-color,80), 40% );
+// 		background-image: url(../img/empty_diamond.png);
+// 		background-color: color($warning-color,12);
+// 		.required-message{background-color: grey(40);}
+// 	}
+// 	.repeater-action{
+// 		position: relative;
+// 		display:block;
+// 		width:100%;
+// 		height:2rem;
+// 		margin-top:-2rem;
+// 		.add-new-repeater{
+// 			display: inline-block;
+// 			position: relative;
+// 			text-align: right;
+// 			float:right;
+// 			margin-top: -1em;	
+// 			padding:.5rem;
+// 			.text{
+// 				color:$repeater-color;
+// 				display: inline-block;
+// 				padding-right: 2rem;
+// 				font-size: 1rem;
+// 			}
+// 		}
+// 		.save,.clear{
+// 			font-size: 1rem;
+// 			padding: .35rem .75rem .45rem;
+// 			border-radius: 4px;
+// 			height:auto;
+// 			border:2px solid rebrand-color($primary-color,2);
+// 			font-weight: 900;
+// 		}
+// 		.save{
+// 			display: inline-block;
+// 			position: relative;
+// 			text-align: right;
+// 			float:right;
+// 			background-color:rebrand-color($primary-color,2);
+// 			color:white;
+// 			text-decoration: none;
+// 			margin-right: 1em;
+// 			padding: .5rem 1.75rem .65rem;
+// 			font-size: 1.25rem;
+// 			&:hover{background-color: $success-color;text-decoration: none;}
+// 		}
+// 		.clear{
+// 			float:left;
+// 			background-color: white;
+// 			border-radius: 4px;
+// 			margin-left: 1em;
+// 			border-color: color($repeater-color,80);
+// 			&:hover{background-color:grey(10);border-color: color($repeater-color,100)}
+// 		}
+// 	}
+// }
+// .edit-mode.repeater .repeater-action .clear{
+// 	background-color: grey(60);
+// 	border-color:grey(70);
+// 	color:#fff;
+// 	&:hover{
+// 		background-color: grey(75);
+// 		border-color:grey(80);
+// 		color:#fff;
+// 	}
+// }
+// .question-group .render{
+// 	.message-holder{
+// 		.warning,.error{display:none;
+// 		&small, &span{margin-bottom: .65rem;}
+// 		}
+// 	}
+// 	&.warning{
+// 			.message-holder .warning{display: block;}
+// 	}
+// 	&.error{
+// 		.message-holder .error{display: block;}
+// 	}
+// }
 
 
 

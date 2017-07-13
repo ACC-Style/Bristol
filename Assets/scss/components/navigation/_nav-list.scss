@@ -5,8 +5,8 @@
 *   @example
 *	<nav class="nav-list">
 *	<ul>
-*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder"></i></a></li>
 *	</ul>
 *	</nav>
 */
@@ -28,7 +28,7 @@ $nav-list-border-selected:color(rebrand-color($primary-color,2),20);
 		.text + .fa, .fa+.text{padding-left: .5em;}
 		@extend %normal;
 		$icon:$fa-var-arrow-circle-right;
-		@include fa-holder($icon,'dynamic');
+		@include fa-holder($icon,'container');
 		padding:.25rem 1rem;
 		&:hover{
 			background-color: grey(10);
@@ -52,39 +52,6 @@ $nav-list-border-selected:color(rebrand-color($primary-color,2),20);
 		list-style-type: none;
 	}
 }
-
-/**
-* Nav List (With Headlines):
-* `.nav-list ul li` - The nav list changes styles depending on the headline tag in front of the nav-list. or simply add the class `large`, `medium`, or `small`  
-* 
-*   @example
-*	<h1>H1 header tag</h1>
-*	<nav class="nav-list">
-*	<ul>
-*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	</ul>
-*	</nav>
-*	<br>
-*	<div>This list has the medium class</div>
-*	<nav class="nav-list medium">
-*	<ul>
-*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	</ul>
-*	</nav>
-*	<br>
-*	<h3>H3 header tag</h3>
-*	<nav class="nav-list">
-*	<ul>
-*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	</ul>
-*	</nav>
-*/
-
-
-
 
 h1+.nav-list,.large.nav-list{
 	border-top:$typography-highlight-color 2px solid;
@@ -115,3 +82,35 @@ h3+.nav-list,.small.nav-list{
 }
 .nav-list.large,.nav-list.medium,.nav-list.small{
 	margin-top:0}
+
+/**
+* Nav List (With Headlines):
+* `.nav-list ul li` - The nav list changes styles depending on the headline tag in front of the nav-list. or simply add the class `large`, `medium`, or `small`  
+* 
+*   @example
+*	<h1>H1 header tag</h1>
+*	<nav class="nav-list">
+*	<ul>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder"></i></a></li>
+*	</ul>
+*	</nav>
+*	<br>
+*	<div>This list has the medium class</div>
+*	<nav class="nav-list medium">
+*	<ul>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder"></i></a></li>
+*	</ul>
+*	</nav>
+*	<br>
+*	<h3>H3 header tag</h3>
+*	<nav class="nav-list">
+*	<ul>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder"></i></a></li>
+*	</ul>
+*	</nav>
+*/
+
+

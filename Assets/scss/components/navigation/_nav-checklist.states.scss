@@ -35,9 +35,8 @@ $required_data:(
 			    	cursor: not-allowed;
 			    }
 			}@else{
-				background-color: color($state-color,20);
 				border-color: color($state-color,35);
-				border-bottom-width: 1;
+				border-bottom-width: 1px;
 				&:hover{
 				background-color: color($state-color,40);
 				}
@@ -46,9 +45,9 @@ $required_data:(
 
 			//@include fa-holder(map-get($State,'Icon'),'dynamic');
 			// i{color:$state-color;}
-			@include setTrump('icon',$state-name,'.nav-list.nav-checklist li#{$state-selector} .fa-holder-dynamic:before');
-			@include setTrump('color',$state-name,'.nav-list.nav-checklist li#{$state-selector} i');
+			@include setTrump('icon',$state-name,'.nav-list.nav-checklist li#{$state-selector} .fa-holder:before');
 			@include setTrump('background-color',$state-name,'.nav-list.nav-checklist li#{$state-selector}');
+			@include setTrump('color',$state-name,'.nav-list.nav-checklist li#{$state-selector} a,.nav-list.nav-checklist li#{$state-selector} i');
 			
 
 			@if $state-name == "disabled"{
@@ -56,15 +55,16 @@ $required_data:(
 				
 			    
 			}@else{
-				color:fontcolor($real-black);
+				
 				&.selected{
-					color:fontcolor(acc-color-contrast($state-color));
-					&:hover{color:fontcolor(acc-color-contrast(color($state-color,20)));}
+					a{ color:fontcolor(acc-color-contrast($state-color));}
+					&:hover{ a{color:fontcolor(acc-color-contrast(color($state-color,20)));} }
 				}
 			}
 		}
 	}
 }
+.nav-checklist .selected i.fa.fa-holder:before{ content: "\f061"; color:$real-black;}
 // DOCUMENTATION OF ELEMENT
 /**
 * Nav List (Checklist w/ States):
@@ -74,21 +74,21 @@ $required_data:(
 *	<nav class="nav-list nav-checklist">
 *	<ul>
 *	<li class="">
-*	<a><span class="text">Nav List Item 1(blank)</span><i class="fa fa-holder-dynamic"></i></a>
+*	<a><span class="text">Nav List Item 1(blank)</span><i class="fa fa-holder"></i></a>
 *	<li  class="selected">
-*	<a><span class="text">Nav List Item 2(selected and warning)</span><i class="fa fa-holder-dynamic"></i></a>
+*	<a><span class="text">Nav List Item 2(selected and warning)</span><i class="fa fa-holder"></i></a>
 *	</li>
 *	<li  class="highlighted">
-*	<a><span class="text">Nav List Item 3(highlighted)</span><i class="fa fa-holder-dynamic"></i></a>
+*	<a><span class="text">Nav List Item 3(highlighted)</span><i class="fa fa-holder"></i></a>
 *	</li>
 *	<li  class="warning">
-*	<a><span class="text">Nav List Item 4(warning)</span><i class="fa fa-holder-dynamic"></i></a>
+*	<a><span class="text">Nav List Item 4(warning)</span><i class="fa fa-holder"></i></a>
 *	</li>
 *	<li class="error">
-*	<a><span class="text">Nav List Item 5(error)</span><i class="fa fa-holder-dynamic"></i></a>
+*	<a><span class="text">Nav List Item 5(error)</span><i class="fa fa-holder"></i></a>
 *	</li >
 *	<li class="disabled">
-*	<a><span class="text">Nav List Item 5(disabled)</span><i class="fa fa-holder-dynamic"></i></a>
+*	<a><span class="text">Nav List Item 5(disabled)</span><i class="fa fa-holder"></i></a>
 *	</li >
 *	</ul>
 *	</nav>

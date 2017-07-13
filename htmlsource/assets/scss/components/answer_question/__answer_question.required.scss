@@ -1,3 +1,7 @@
+select {
+  background-position: right 0rem center;
+}
+
 .answer, .answer-group, .question, .question-group, .question-inline, .question-grid-based {
 	-webkit-transition: margin 1s;
 	/* Safari */
@@ -43,7 +47,7 @@
 
 }
 .question {
-	.label-holder, .input-holder, .message-holder, .value-holder, .hint {
+	.label-holder, .input-holder,.message-holder, .value-holder, .hint {
 		@include grid-row($behavior: collapse);
 	}
 }
@@ -84,7 +88,7 @@
 	}
 	.required & {
 	@extend %visible-required-icon;
-	@include fa-holder($fa-var-asterisk, 'dynamic');
+	@include fa-holder($fa-var-asterisk, 'parent');
 	color: $warning-color;
 }
 
@@ -102,13 +106,32 @@
 	margin-bottom: 0;
 }
 
-
-
 .input-holder {
 	@include grid-row(  $behavior: collapse);
-	.input-space,.value-space{ @include grid-column-collapse;}
-	[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],button,.button,{
+
+}
+.input-space,.value-space,.button-space{ @include grid-column-collapse;}
+.button-space{ margin: -.5rem 0 -.25rem 0; }
+.input-space{
+	position: relative;
+	[type='text'],
+	[type='password'],
+	[type='date'],
+	[type='datetime'],
+	[type='datetime-local'],
+	[type='month'],
+	[type='week'],
+	[type='email'],
+	[type='number'],
+	[type='search'],
+	[type='tel'],
+	[type='time'],
+	[type='url'],
+	[type='color'],
+	button,
+	.button{
 		@include baseline-font(0,0,0,0,$tight);
+		
 		// *default* all inputs are medium sized
 		padding:rem-calc(ms(0)*.5) rem-calc(ms(0)*.5);
 		height: rem-calc(ms(0)* 2.5);
@@ -138,35 +161,37 @@
 		padding:$vertical-space *.5 $vertical-space;
 		.disabled &,.locked &{ @extend %disabledinput;}
 	}
-	
 }
 
+
+
 .value-space{
-	// *default* all inputs are medium sized
 	@include font-bold();
-	@include baseline-font(0,0,0,0,$tight);
-	// *default* all inputs are medium sized
-	line-height:1.5;
+	@include baseline-font(0,0,0);
 	padding:rem-calc(ms(0) * .5) rem-calc(ms(0) * .5);
 	height: rem-calc(ms(0) * 2.5);
 	color:grey(60);
-	vertical-align:middle;
 	// *landscape phones* inputs shrink on short screens that are smaller then an Ipad
 	@include bp(md-height-down){
 		padding:rem-calc(ms(0) * .25) rem-calc(ms(0) * .5);
 		height: rem-calc(ms(0) * 2);
 	}
+	.value{
+			vertical-align:middle;
+			display: inline;
+	 }
 	&.prefix, &.postfix{
 		border: 1px solid transparent;
 		background: url("../img/paper-texture.png");
 		border: 1px solid grey(30);
+		.value{vertical-align: top;}
 	}
-	&.prefix{
-		.value{padding-right:.5em; text-align:right;}
-		} 
-	&.postfix{
-		.value{padding-left:.5em; text-align:left;}
-	}
+	// &.prefix{
+	// 	.value{padding-left:.5em; text-align:right;}
+	// 	} 
+	// &.postfix{
+	// 	.value{padding-right:.5em; text-align:left;}
+	// }
 
 }
 

@@ -196,8 +196,12 @@
 			.dropdown-pane .column  + .column  {border-left:solid grey(15) 1px; padding-left:.5em;padding-right:0em;}}
 	}
 }
-.dropdown-menu-item .fa-holder:before{content: "\f107";}
-.dropdown-menu-item:hover .fa-holder:before{content: "\f0d7";}
+.dropdown-menu-item{
+	@include fa-holder($fa-var-angle-down,"container");
+	&:hover{
+		@include fa-holder($fa-var-chevron-down,"container");
+	}
+}
 .search-bar{
 	line-height:normal;
 	padding: .5em ;

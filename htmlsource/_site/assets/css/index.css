@@ -234,87 +234,114 @@ there are two to three needs for icons icons in containers, icons on icons and t
   text-decoration: none;
 }
 
-.delete > i.fa-holder:before, .delete.fa:before, .cancel > i.fa-holder:before, .cancel.fa:before, .close > i.fa-holder:before, .close.fa:before, .close-reveal-modal > i.fa-holder:before, .close-reveal-modal.fa:before {
+.delete > i.fa-holder:before, .cancel > i.fa-holder:before, .close > i.fa-holder:before {
+  content: "";
+}
+.delete else > i.fa-holder:before, .delete else i.fa-holder:before, .cancel else > i.fa-holder:before, .cancel else i.fa-holder:before, .close else > i.fa-holder:before, .close else i.fa-holder:before {
   content: "";
 }
 
-.validated > i.fa-holder:before, .validated.fa:before, .selected > i.fa-holder:before, .selected.fa:before {
+.validated > i.fa-holder:before, .selected > i.fa-holder:before {
+  content: "";
+}
+.validated else > i.fa-holder:before, .validated else i.fa-holder:before, .selected else > i.fa-holder:before, .selected else i.fa-holder:before {
   content: "";
 }
 
-.data > i.fa-holder:before, .data.fa:before {
+.data > i.fa-holder:before {
+  content: "";
+}
+.data else > i.fa-holder:before, .data else i.fa-holder:before {
   content: "";
 }
 
-.edit > i.fa-holder:before, .edit.fa:before {
+.edit > i.fa-holder:before {
+  content: "";
+}
+.edit else > i.fa-holder:before, .edit else i.fa-holder:before {
   content: "";
 }
 
-.clear > i.fa-holder:before, .clear.fa:before, .refresh > i.fa-holder:before, .refresh.fa:before {
+.clear > i.fa-holder:before, .refresh > i.fa-holder:before {
+  content: "";
+}
+.clear else > i.fa-holder:before, .clear else i.fa-holder:before, .refresh else > i.fa-holder:before, .refresh else i.fa-holder:before {
   content: "";
 }
 
-.starred > i.fa-holder:before, .starred.fa:before {
+.starred > i.fa-holder:before {
+  content: "";
+}
+.starred else > i.fa-holder:before, .starred else i.fa-holder:before {
   content: "";
 }
 
-.add > i.fa-holder:before, .add.fa:before {
+.add > i.fa-holder:before {
+  content: "";
+}
+.add else > i.fa-holder:before, .add else i.fa-holder:before {
   content: "";
 }
 
-.home > i.fa-holder:before, .home.fa:before {
+.home > i.fa-holder:before {
+  content: "";
+}
+.home else > i.fa-holder:before, .home else i.fa-holder:before {
   content: "";
 }
 
-.top > i.fa-holder:before, .top.fa:before {
+.top > i.fa-holder:before {
+  content: "";
+}
+.top else > i.fa-holder:before, .top else i.fa-holder:before {
   content: "";
 }
 
-.fa-check:before {
-  content: "";
+.check > i.fa-holder:before {
+  content: "";
+}
+.check else > i.fa-holder:before, .check else i.fa-holder:before {
+  content: "";
 }
 
-.back > i.fa-holder:before, .back.fa:before {
+.back > i.fa-holder:before {
+  content: "";
+}
+.back else > i.fa-holder:before, .back else i.fa-holder:before {
   content: "";
 }
 
-.set > i.fa-holder:before, .set.fa:before {
+.set > i.fa-holder:before {
+  content: "";
+}
+.set else > i.fa-holder:before, .set else i.fa-holder:before {
   content: "";
 }
 
-.save > i.fa-holder:before, .save.fa:before {
+.save > i.fa-holder:before {
+  content: "";
+}
+.save else > i.fa-holder:before, .save else i.fa-holder:before {
   content: "";
 }
 
-.search > i.fa-holder:before, .search.fa:before {
+.search > i.fa-holder:before {
+  content: "";
+}
+.search else > i.fa-holder:before, .search else i.fa-holder:before {
   content: "";
 }
 
-.fa-check:before {
-  content: "";
+.required > i.fa-holder:before {
+  content: "";
 }
-
-.fa-question-circle:before {
-  content: "";
+.required else > i.fa-holder:before, .required else i.fa-holder:before {
+  content: "";
 }
-
-.fa-arrow-circle-right:before {
-  content: "";
+.required i.fa-holder:before {
+  content: "";
 }
-
-.fa-exclamation-triangle:before {
-  content: "";
-}
-
-.fa-exclamation-circle:before {
-  content: "";
-}
-
-i.fa.fa-question-circle {
-  font-size: 1.35em;
-}
-
-.required .fa-holder-dynamic:before, .required.fa:before, .required > .fa-holder:before {
+.required else > i.fa-holder:before, .required else i.fa-holder:before {
   content: "";
 }
 .required.fa {
@@ -1871,8 +1898,8 @@ button:disabled.secondary, .input-space
 *   @example
 *	<nav class="nav-list">
 *	<ul>
-*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder"></i></a></li>
 *	</ul>
 *	</nav>
 */
@@ -1900,6 +1927,9 @@ button:disabled.secondary, .input-space
 .nav-list li i.fa-holder:before, .panel-selector li i.fa-holder:before {
   content: "";
 }
+.nav-list li else > i.fa-holder:before, .panel-selector li else > i.fa-holder:before, .nav-list li else i.fa-holder:before, .panel-selector li else i.fa-holder:before {
+  content: "";
+}
 .nav-list li:hover, .panel-selector li:hover {
   background-color: #e6e6e6;
 }
@@ -1922,35 +1952,6 @@ button:disabled.secondary, .input-space
   list-style-type: none;
 }
 
-/**
-* Nav List (With Headlines):
-* `.nav-list ul li` - The nav list changes styles depending on the headline tag in front of the nav-list. or simply add the class `large`, `medium`, or `small`  
-* 
-*   @example
-*	<h1>H1 header tag</h1>
-*	<nav class="nav-list">
-*	<ul>
-*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	</ul>
-*	</nav>
-*	<br>
-*	<div>This list has the medium class</div>
-*	<nav class="nav-list medium">
-*	<ul>
-*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	</ul>
-*	</nav>
-*	<br>
-*	<h3>H3 header tag</h3>
-*	<nav class="nav-list">
-*	<ul>
-*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder-dynamic"></i></a></li>
-*	</ul>
-*	</nav>
-*/
 h1 + .nav-list, h1 + .panel-selector, .large.nav-list, .large.panel-selector {
   border-top: #25b6e0 2px solid;
   margin-top: -0.75rem;
@@ -1981,6 +1982,35 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 }
 
 /**
+* Nav List (With Headlines):
+* `.nav-list ul li` - The nav list changes styles depending on the headline tag in front of the nav-list. or simply add the class `large`, `medium`, or `small`  
+* 
+*   @example
+*	<h1>H1 header tag</h1>
+*	<nav class="nav-list">
+*	<ul>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder"></i></a></li>
+*	</ul>
+*	</nav>
+*	<br>
+*	<div>This list has the medium class</div>
+*	<nav class="nav-list medium">
+*	<ul>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder"></i></a></li>
+*	</ul>
+*	</nav>
+*	<br>
+*	<h3>H3 header tag</h3>
+*	<nav class="nav-list">
+*	<ul>
+*	<li><a><span class="text">Nav List Item 1</span><i class="fa fa-holder"></i></a></li>
+*	<li class="selected"><a><span class="text">Nav List Item 2</span><i class="fa fa-holder"></i></a></li>
+*	</ul>
+*	</nav>
+*/
+/**
 * Nav List (Checklist):
 * `.nav-checklist` - add class to the nav to change the .nav-list from forward links to a list with states of `.selected`, `.success`, `.warning`, `.error`
 * 
@@ -1988,12 +2018,12 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *	<nav class="nav-list nav-checklist">
 *	<ul>
 *	<li class="">
-*	<a><span class="text">Nav List Item 1(blank)</span><i class="fa fa-holder-dynamic"></i></a>
+*	<a><span class="text">Nav List Item 1(blank)</span><i class="fa fa-holder"></i></a>
 *	<li  class="selected">
-*	<a><span class="text">Nav List Item 2(selected)</span><i class="fa fa-holder-dynamic"></i></a>
+*	<a><span class="text">Nav List Item 2(selected)</span><i class="fa fa-holder"></i></a>
 *	</li>
 *	<li  class="sucess">
-*	<a><span class="text">Nav List Item 3(sucess)</span><i class="fa fa-holder-dynamic"></i></a>
+*	<a><span class="text">Nav List Item 3(sucess)</span><i class="fa fa-holder"></i></a>
 *	</li>
 *	</ul>
 *	</nav>
@@ -2005,29 +2035,42 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   margin-bottom: 0;
   margin-top: -1px;
   background-image: url(../img/empty_stripe.png);
+  padding: .3em 1em .35em;
 }
 .nav-list.nav-checklist li i.fa-holder:before, .nav-checklist.panel-selector li i.fa-holder:before {
   content: "";
 }
+.nav-list.nav-checklist li else > i.fa-holder:before, .nav-checklist.panel-selector li else > i.fa-holder:before, .nav-list.nav-checklist li else i.fa-holder:before, .nav-checklist.panel-selector li else i.fa-holder:before {
+  content: "";
+}
 .nav-list.nav-checklist li:hover, .nav-checklist.panel-selector li:hover {
-  background-image: none;
+  background-image: url(../img/empty_diamond.png);
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0px;
 }
 .nav-list.nav-checklist li.selected, .nav-checklist.panel-selector li.selected {
-  border-bottom-width: 1px;
-  border-color: #8ef2b9;
+  color: #000;
   background-image: none;
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
   font-weight: 700;
   letter-spacing: .75px;
-  color: #262626;
-}
-.nav-list.nav-checklist li.selected i.fa-holder:before, .nav-checklist.panel-selector li.selected i.fa-holder:before {
-  content: "";
+  border-bottom-width: 1px;
+  border-color: #8ef2b9;
 }
 .nav-list.nav-checklist li.selected i, .nav-checklist.panel-selector li.selected i {
-  color: white;
+  color: #000;
 }
-.nav-list.nav-checklist li.completed i.fa-holder:before, .nav-checklist.panel-selector li.completed i.fa-holder:before {
+.nav-list.nav-checklist li.selected i:before, .nav-checklist.panel-selector li.selected i:before {
+  content: "";
+}
+.nav-list.nav-checklist li.selected i else > i.fa-holder:before, .nav-checklist.panel-selector li.selected i else > i.fa-holder:before, .nav-list.nav-checklist li.selected i else i.fa-holder:before, .nav-checklist.panel-selector li.selected i else i.fa-holder:before {
+  content: "";
+}
+.nav-list.nav-checklist li.completed:before, .nav-checklist.panel-selector li.completed:before {
+  content: "";
+}
+.nav-list.nav-checklist li.completed else > i.fa-holder:before, .nav-checklist.panel-selector li.completed else > i.fa-holder:before, .nav-list.nav-checklist li.completed else i.fa-holder:before, .nav-checklist.panel-selector li.completed else i.fa-holder:before {
   content: "";
 }
 .nav-list.nav-checklist li.completed i, .nav-checklist.panel-selector li.completed i {
@@ -2035,93 +2078,81 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 }
 
 .nav-list.nav-checklist li.error, .nav-checklist.panel-selector li.error {
-  background-color: #f7cfd3;
   border-color: #f0abb2;
-  border-bottom-width: 1;
-  color: #262626;
+  border-bottom-width: 1px;
 }
 .nav-list.nav-checklist li.error:hover, .nav-checklist.panel-selector li.error:hover {
   background-color: #ee9fa7;
 }
-.nav-list.nav-checklist li.error.selected, .nav-checklist.panel-selector li.error.selected {
+.nav-list.nav-checklist li.error.selected a, .nav-checklist.panel-selector li.error.selected a {
   color: white;
 }
-.nav-list.nav-checklist li.error.selected:hover, .nav-checklist.panel-selector li.error.selected:hover {
+.nav-list.nav-checklist li.error.selected:hover a, .nav-checklist.panel-selector li.error.selected:hover a {
   color: #474747;
 }
 .nav-list.nav-checklist li.warning, .nav-checklist.panel-selector li.warning {
-  background-color: #fbe7ce;
   border-color: #f7d5aa;
-  border-bottom-width: 1;
-  color: #262626;
+  border-bottom-width: 1px;
 }
 .nav-list.nav-checklist li.warning:hover, .nav-checklist.panel-selector li.warning:hover {
   background-color: #f6cf9d;
 }
-.nav-list.nav-checklist li.warning.selected, .nav-checklist.panel-selector li.warning.selected {
+.nav-list.nav-checklist li.warning.selected a, .nav-checklist.panel-selector li.warning.selected a {
   color: #474747;
 }
-.nav-list.nav-checklist li.warning.selected:hover, .nav-checklist.panel-selector li.warning.selected:hover {
+.nav-list.nav-checklist li.warning.selected:hover a, .nav-checklist.panel-selector li.warning.selected:hover a {
   color: #474747;
 }
 .nav-list.nav-checklist li.success, .nav-checklist.panel-selector li.success {
-  background-color: #c7f9dc;
   border-color: #9cf4c2;
-  border-bottom-width: 1;
-  color: #262626;
+  border-bottom-width: 1px;
 }
 .nav-list.nav-checklist li.success:hover, .nav-checklist.panel-selector li.success:hover {
   background-color: #8ef2b9;
 }
-.nav-list.nav-checklist li.success.selected, .nav-checklist.panel-selector li.success.selected {
+.nav-list.nav-checklist li.success.selected a, .nav-checklist.panel-selector li.success.selected a {
   color: white;
 }
-.nav-list.nav-checklist li.success.selected:hover, .nav-checklist.panel-selector li.success.selected:hover {
+.nav-list.nav-checklist li.success.selected:hover a, .nav-checklist.panel-selector li.success.selected:hover a {
   color: #474747;
 }
 .nav-list.nav-checklist li.info, .nav-checklist.panel-selector li.info {
-  background-color: #ededed;
   border-color: #e0e0e0;
-  border-bottom-width: 1;
-  color: #262626;
+  border-bottom-width: 1px;
 }
 .nav-list.nav-checklist li.info:hover, .nav-checklist.panel-selector li.info:hover {
   background-color: #dbdbdb;
 }
-.nav-list.nav-checklist li.info.selected, .nav-checklist.panel-selector li.info.selected {
+.nav-list.nav-checklist li.info.selected a, .nav-checklist.panel-selector li.info.selected a {
   color: #474747;
 }
-.nav-list.nav-checklist li.info.selected:hover, .nav-checklist.panel-selector li.info.selected:hover {
+.nav-list.nav-checklist li.info.selected:hover a, .nav-checklist.panel-selector li.info.selected:hover a {
   color: #474747;
 }
 .nav-list.nav-checklist li.highlighted, .nav-checklist.panel-selector li.highlighted {
-  background-color: #d2eff8;
   border-color: #b0e4f3;
-  border-bottom-width: 1;
-  color: #262626;
+  border-bottom-width: 1px;
 }
 .nav-list.nav-checklist li.highlighted:hover, .nav-checklist.panel-selector li.highlighted:hover {
   background-color: #a5e0f1;
 }
-.nav-list.nav-checklist li.highlighted.selected, .nav-checklist.panel-selector li.highlighted.selected {
+.nav-list.nav-checklist li.highlighted.selected a, .nav-checklist.panel-selector li.highlighted.selected a {
   color: white;
 }
-.nav-list.nav-checklist li.highlighted.selected:hover, .nav-checklist.panel-selector li.highlighted.selected:hover {
+.nav-list.nav-checklist li.highlighted.selected:hover a, .nav-checklist.panel-selector li.highlighted.selected:hover a {
   color: #474747;
 }
 .nav-list.nav-checklist li.locked, .nav-checklist.panel-selector li.locked {
-  background-color: #f2f2f2;
   border-color: #e9e9e9;
-  border-bottom-width: 1;
-  color: #262626;
+  border-bottom-width: 1px;
 }
 .nav-list.nav-checklist li.locked:hover, .nav-checklist.panel-selector li.locked:hover {
   background-color: #e6e6e6;
 }
-.nav-list.nav-checklist li.locked.selected, .nav-checklist.panel-selector li.locked.selected {
+.nav-list.nav-checklist li.locked.selected a, .nav-checklist.panel-selector li.locked.selected a {
   color: #474747;
 }
-.nav-list.nav-checklist li.locked.selected:hover, .nav-checklist.panel-selector li.locked.selected:hover {
+.nav-list.nav-checklist li.locked.selected:hover a, .nav-checklist.panel-selector li.locked.selected:hover a {
   color: #474747;
 }
 .nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled, .nav-list.nav-checklist li.disabled:hover, .nav-checklist.panel-selector li.disabled:hover {
@@ -2137,6 +2168,11 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   cursor: not-allowed;
 }
 
+.nav-checklist .selected i.fa.fa-holder:before {
+  content: "\f061";
+  color: #000;
+}
+
 /**
 * Nav List (Checklist w/ States):
 * `.nav-checklist.statename` - add class to the nav to change the list item to reflect the state with `.warning`, `.error`, `.highlighted`...
@@ -2145,21 +2181,21 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *	<nav class="nav-list nav-checklist">
 *	<ul>
 *	<li class="">
-*	<a><span class="text">Nav List Item 1(blank)</span><i class="fa fa-holder-dynamic"></i></a>
+*	<a><span class="text">Nav List Item 1(blank)</span><i class="fa fa-holder"></i></a>
 *	<li  class="selected">
-*	<a><span class="text">Nav List Item 2(selected and warning)</span><i class="fa fa-holder-dynamic"></i></a>
+*	<a><span class="text">Nav List Item 2(selected and warning)</span><i class="fa fa-holder"></i></a>
 *	</li>
 *	<li  class="highlighted">
-*	<a><span class="text">Nav List Item 3(highlighted)</span><i class="fa fa-holder-dynamic"></i></a>
+*	<a><span class="text">Nav List Item 3(highlighted)</span><i class="fa fa-holder"></i></a>
 *	</li>
 *	<li  class="warning">
-*	<a><span class="text">Nav List Item 4(warning)</span><i class="fa fa-holder-dynamic"></i></a>
+*	<a><span class="text">Nav List Item 4(warning)</span><i class="fa fa-holder"></i></a>
 *	</li>
 *	<li class="error">
-*	<a><span class="text">Nav List Item 5(error)</span><i class="fa fa-holder-dynamic"></i></a>
+*	<a><span class="text">Nav List Item 5(error)</span><i class="fa fa-holder"></i></a>
 *	</li >
 *	<li class="disabled">
-*	<a><span class="text">Nav List Item 5(disabled)</span><i class="fa fa-holder-dynamic"></i></a>
+*	<a><span class="text">Nav List Item 5(disabled)</span><i class="fa fa-holder"></i></a>
 *	</li >
 *	</ul>
 *	</nav>
@@ -2169,12 +2205,6 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   display: block;
   position: relative;
   border: 0px solid #b3b3b3;
-}
-.split-content .section-nav {
-  margin-left: -1.07143rem;
-  margin-right: -1.07143rem;
-  padding-left: 1.07143rem;
-  padding-right: 1.07143rem;
 }
 .with-group-sections .section-nav, .paper-page .section-nav {
   margin-left: 0;
@@ -2226,8 +2256,15 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   background: url("../img/billie-holiday.png") repeat top right, url("../img/top-shade.png") repeat-x top right;
   margin-top: 37.5px;
   border-top-width: 2px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 .section-nav.forward i.fa-holder:before {
+  content: "";
+}
+.section-nav.forward else > i.fa-holder:before, .section-nav.forward else i.fa-holder:before {
   content: "";
 }
 .section-nav.forward .circle {
@@ -2247,6 +2284,9 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   border-bottom-width: 2px;
 }
 .section-nav.back i.fa-holder:before {
+  content: "";
+}
+.section-nav.back else > i.fa-holder:before, .section-nav.back else i.fa-holder:before {
   content: "";
 }
 .section-nav.back .text {
@@ -2318,7 +2358,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *   @example
 *	<div class="page with-group-sections"><div class="section-nav back">
 *		<a>
-*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="circle"><i class="fa fa-holder"></i></div>
 *			<div class="text"> Back</div>
 *		</a>
 *	</div>
@@ -2330,7 +2370,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *	</section>
 *	<div class="section-nav forward">
 *		<a>
-*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="circle"><i class="fa fa-holder"></i></div>
 *			<div class="text"> Forward</div>
 *		</a>
 *	</div></div>
@@ -2342,7 +2382,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *   @example
 *	<div class="page"><div class="section-nav back disabled">
 *		<a>
-*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="circle"><i class="fa fa-holder"></i></div>
 *			<div class="text"> Back</div>
 *		</a>
 *	</div>
@@ -2354,11 +2394,15 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *	</section>
 *	<div class="section-nav forward disabled">
 *		<a>
-*			<div class="circle"><i class="fa fa-holder-dynamic"></i></div>
+*			<div class="circle"><i class="fa fa-holder"></i></div>
 *			<div class="text"> Forward</div>
 *		</a>
 *	</div></div>
 */
+select {
+  background-position: right 0rem center;
+}
+
 .answer, .answer-group, .question, .question-group, .question-inline, .question-grid-based {
   -webkit-transition: margin 1s;
   /* Safari */
@@ -2464,7 +2508,10 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 .required .required-holder {
   color: #E08514;
 }
-.required .required-holder i.fa-holder:before {
+.required .required-holder > i.fa-holder:before {
+  content: "";
+}
+.required .required-holder else > i.fa-holder:before, .required .required-holder else i.fa-holder:before {
   content: "";
 }
 
@@ -2490,7 +2537,49 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   clear: both;
 }
 
-.input-space [type='text'], .switch-input-space [type='text'], .input-space [type='password'], .switch-input-space [type='password'], .input-space [type='date'], .switch-input-space [type='date'], .input-space [type='datetime'], .switch-input-space [type='datetime'], .input-space [type='datetime-local'], .switch-input-space [type='datetime-local'], .input-space [type='month'], .switch-input-space [type='month'], .input-space [type='week'], .switch-input-space [type='week'], .input-space [type='email'], .switch-input-space [type='email'], .input-space [type='number'], .switch-input-space [type='number'], .input-space [type='search'], .switch-input-space [type='search'], .input-space [type='tel'], .switch-input-space [type='tel'], .input-space [type='time'], .switch-input-space [type='time'], .input-space [type='url'], .switch-input-space [type='url'], .input-space [type='color'], .switch-input-space [type='color'], .input-space button, .switch-input-space button, .input-space .button, .switch-input-space .button {
+.input-space, .switch-input-space, .value-space, .button-space {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.button-space {
+  margin: -.5rem 0 -.25rem 0;
+}
+
+.input-space, .switch-input-space {
+  position: relative;
+}
+.input-space [type='text'], .switch-input-space [type='text'],
+.input-space [type='password'],
+.switch-input-space [type='password'],
+.input-space [type='date'],
+.switch-input-space [type='date'],
+.input-space [type='datetime'],
+.switch-input-space [type='datetime'],
+.input-space [type='datetime-local'],
+.switch-input-space [type='datetime-local'],
+.input-space [type='month'],
+.switch-input-space [type='month'],
+.input-space [type='week'],
+.switch-input-space [type='week'],
+.input-space [type='email'],
+.switch-input-space [type='email'],
+.input-space [type='number'],
+.switch-input-space [type='number'],
+.input-space [type='search'],
+.switch-input-space [type='search'],
+.input-space [type='tel'],
+.switch-input-space [type='tel'],
+.input-space [type='time'],
+.switch-input-space [type='time'],
+.input-space [type='url'],
+.switch-input-space [type='url'],
+.input-space [type='color'],
+.switch-input-space [type='color'],
+.input-space button,
+.switch-input-space button,
+.input-space .button,
+.switch-input-space .button {
   font-size: 1rem;
   line-height: 1.5;
   margin-top: 0rem;
@@ -2498,13 +2587,133 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   padding: 0.5rem 0.5rem;
   height: 2.5rem;
 }
-.colored-paper .input-space [type='text'], .colored-paper .switch-input-space [type='text'], .callout .input-space [type='text'], .page-message .input-space [type='text'], .callout .switch-input-space [type='text'], .page-message .switch-input-space [type='text'], .colored-paper .input-space [type='password'], .colored-paper .switch-input-space [type='password'], .callout .input-space [type='password'], .page-message .input-space [type='password'], .callout .switch-input-space [type='password'], .page-message .switch-input-space [type='password'], .colored-paper .input-space [type='date'], .colored-paper .switch-input-space [type='date'], .callout .input-space [type='date'], .page-message .input-space [type='date'], .callout .switch-input-space [type='date'], .page-message .switch-input-space [type='date'], .colored-paper .input-space [type='datetime'], .colored-paper .switch-input-space [type='datetime'], .callout .input-space [type='datetime'], .page-message .input-space [type='datetime'], .callout .switch-input-space [type='datetime'], .page-message .switch-input-space [type='datetime'], .colored-paper .input-space [type='datetime-local'], .colored-paper .switch-input-space [type='datetime-local'], .callout .input-space [type='datetime-local'], .page-message .input-space [type='datetime-local'], .callout .switch-input-space [type='datetime-local'], .page-message .switch-input-space [type='datetime-local'], .colored-paper .input-space [type='month'], .colored-paper .switch-input-space [type='month'], .callout .input-space [type='month'], .page-message .input-space [type='month'], .callout .switch-input-space [type='month'], .page-message .switch-input-space [type='month'], .colored-paper .input-space [type='week'], .colored-paper .switch-input-space [type='week'], .callout .input-space [type='week'], .page-message .input-space [type='week'], .callout .switch-input-space [type='week'], .page-message .switch-input-space [type='week'], .colored-paper .input-space [type='email'], .colored-paper .switch-input-space [type='email'], .callout .input-space [type='email'], .page-message .input-space [type='email'], .callout .switch-input-space [type='email'], .page-message .switch-input-space [type='email'], .colored-paper .input-space [type='number'], .colored-paper .switch-input-space [type='number'], .callout .input-space [type='number'], .page-message .input-space [type='number'], .callout .switch-input-space [type='number'], .page-message .switch-input-space [type='number'], .colored-paper .input-space [type='search'], .colored-paper .switch-input-space [type='search'], .callout .input-space [type='search'], .page-message .input-space [type='search'], .callout .switch-input-space [type='search'], .page-message .switch-input-space [type='search'], .colored-paper .input-space [type='tel'], .colored-paper .switch-input-space [type='tel'], .callout .input-space [type='tel'], .page-message .input-space [type='tel'], .callout .switch-input-space [type='tel'], .page-message .switch-input-space [type='tel'], .colored-paper .input-space [type='time'], .colored-paper .switch-input-space [type='time'], .callout .input-space [type='time'], .page-message .input-space [type='time'], .callout .switch-input-space [type='time'], .page-message .switch-input-space [type='time'], .colored-paper .input-space [type='url'], .colored-paper .switch-input-space [type='url'], .callout .input-space [type='url'], .page-message .input-space [type='url'], .callout .switch-input-space [type='url'], .page-message .switch-input-space [type='url'], .colored-paper .input-space [type='color'], .colored-paper .switch-input-space [type='color'], .callout .input-space [type='color'], .page-message .input-space [type='color'], .callout .switch-input-space [type='color'], .page-message .switch-input-space [type='color'], .colored-paper .input-space button, .colored-paper .switch-input-space button, .callout .input-space button, .page-message .input-space button, .callout .switch-input-space button, .page-message .switch-input-space button, .colored-paper .input-space .button, .colored-paper .switch-input-space .button, .callout .input-space .button, .page-message .input-space .button, .callout .switch-input-space .button, .page-message .switch-input-space .button {
+.colored-paper .input-space [type='text'], .colored-paper .switch-input-space [type='text'], .callout .input-space [type='text'], .page-message .input-space [type='text'], .callout .switch-input-space [type='text'], .page-message .switch-input-space [type='text'], .colored-paper
+.input-space [type='password'], .colored-paper
+.switch-input-space [type='password'], .callout
+.input-space [type='password'], .page-message
+.input-space [type='password'], .callout
+.switch-input-space [type='password'], .page-message
+.switch-input-space [type='password'], .colored-paper
+.input-space [type='date'], .colored-paper
+.switch-input-space [type='date'], .callout
+.input-space [type='date'], .page-message
+.input-space [type='date'], .callout
+.switch-input-space [type='date'], .page-message
+.switch-input-space [type='date'], .colored-paper
+.input-space [type='datetime'], .colored-paper
+.switch-input-space [type='datetime'], .callout
+.input-space [type='datetime'], .page-message
+.input-space [type='datetime'], .callout
+.switch-input-space [type='datetime'], .page-message
+.switch-input-space [type='datetime'], .colored-paper
+.input-space [type='datetime-local'], .colored-paper
+.switch-input-space [type='datetime-local'], .callout
+.input-space [type='datetime-local'], .page-message
+.input-space [type='datetime-local'], .callout
+.switch-input-space [type='datetime-local'], .page-message
+.switch-input-space [type='datetime-local'], .colored-paper
+.input-space [type='month'], .colored-paper
+.switch-input-space [type='month'], .callout
+.input-space [type='month'], .page-message
+.input-space [type='month'], .callout
+.switch-input-space [type='month'], .page-message
+.switch-input-space [type='month'], .colored-paper
+.input-space [type='week'], .colored-paper
+.switch-input-space [type='week'], .callout
+.input-space [type='week'], .page-message
+.input-space [type='week'], .callout
+.switch-input-space [type='week'], .page-message
+.switch-input-space [type='week'], .colored-paper
+.input-space [type='email'], .colored-paper
+.switch-input-space [type='email'], .callout
+.input-space [type='email'], .page-message
+.input-space [type='email'], .callout
+.switch-input-space [type='email'], .page-message
+.switch-input-space [type='email'], .colored-paper
+.input-space [type='number'], .colored-paper
+.switch-input-space [type='number'], .callout
+.input-space [type='number'], .page-message
+.input-space [type='number'], .callout
+.switch-input-space [type='number'], .page-message
+.switch-input-space [type='number'], .colored-paper
+.input-space [type='search'], .colored-paper
+.switch-input-space [type='search'], .callout
+.input-space [type='search'], .page-message
+.input-space [type='search'], .callout
+.switch-input-space [type='search'], .page-message
+.switch-input-space [type='search'], .colored-paper
+.input-space [type='tel'], .colored-paper
+.switch-input-space [type='tel'], .callout
+.input-space [type='tel'], .page-message
+.input-space [type='tel'], .callout
+.switch-input-space [type='tel'], .page-message
+.switch-input-space [type='tel'], .colored-paper
+.input-space [type='time'], .colored-paper
+.switch-input-space [type='time'], .callout
+.input-space [type='time'], .page-message
+.input-space [type='time'], .callout
+.switch-input-space [type='time'], .page-message
+.switch-input-space [type='time'], .colored-paper
+.input-space [type='url'], .colored-paper
+.switch-input-space [type='url'], .callout
+.input-space [type='url'], .page-message
+.input-space [type='url'], .callout
+.switch-input-space [type='url'], .page-message
+.switch-input-space [type='url'], .colored-paper
+.input-space [type='color'], .colored-paper
+.switch-input-space [type='color'], .callout
+.input-space [type='color'], .page-message
+.input-space [type='color'], .callout
+.switch-input-space [type='color'], .page-message
+.switch-input-space [type='color'], .colored-paper
+.input-space button, .colored-paper
+.switch-input-space button, .callout
+.input-space button, .page-message
+.input-space button, .callout
+.switch-input-space button, .page-message
+.switch-input-space button, .colored-paper
+.input-space .button, .colored-paper
+.switch-input-space .button, .callout
+.input-space .button, .page-message
+.input-space .button, .callout
+.switch-input-space .button, .page-message
+.switch-input-space .button {
   margin-top: 0rem;
   margin-bottom: 0rem;
   line-height: 1.35;
 }
 @media only screen and (max-height: 768px) {
-  .input-space [type='text'], .switch-input-space [type='text'], .input-space [type='password'], .switch-input-space [type='password'], .input-space [type='date'], .switch-input-space [type='date'], .input-space [type='datetime'], .switch-input-space [type='datetime'], .input-space [type='datetime-local'], .switch-input-space [type='datetime-local'], .input-space [type='month'], .switch-input-space [type='month'], .input-space [type='week'], .switch-input-space [type='week'], .input-space [type='email'], .switch-input-space [type='email'], .input-space [type='number'], .switch-input-space [type='number'], .input-space [type='search'], .switch-input-space [type='search'], .input-space [type='tel'], .switch-input-space [type='tel'], .input-space [type='time'], .switch-input-space [type='time'], .input-space [type='url'], .switch-input-space [type='url'], .input-space [type='color'], .switch-input-space [type='color'], .input-space button, .switch-input-space button, .input-space .button, .switch-input-space .button {
+  .input-space [type='text'], .switch-input-space [type='text'],
+  .input-space [type='password'],
+  .switch-input-space [type='password'],
+  .input-space [type='date'],
+  .switch-input-space [type='date'],
+  .input-space [type='datetime'],
+  .switch-input-space [type='datetime'],
+  .input-space [type='datetime-local'],
+  .switch-input-space [type='datetime-local'],
+  .input-space [type='month'],
+  .switch-input-space [type='month'],
+  .input-space [type='week'],
+  .switch-input-space [type='week'],
+  .input-space [type='email'],
+  .switch-input-space [type='email'],
+  .input-space [type='number'],
+  .switch-input-space [type='number'],
+  .input-space [type='search'],
+  .switch-input-space [type='search'],
+  .input-space [type='tel'],
+  .switch-input-space [type='tel'],
+  .input-space [type='time'],
+  .switch-input-space [type='time'],
+  .input-space [type='url'],
+  .switch-input-space [type='url'],
+  .input-space [type='color'],
+  .switch-input-space [type='color'],
+  .input-space button,
+  .switch-input-space button,
+  .input-space .button,
+  .switch-input-space .button {
     padding: 0.25rem 0.5rem;
     height: 2rem;
   }
@@ -2542,15 +2751,6 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   line-height: 1.35;
 }
 
-.input-space, .switch-input-space, .value-space, .button-space {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.button-space {
-  margin: -.5rem 0 -.25rem 0;
-}
-
 .value-space {
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -2559,11 +2759,9 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   line-height: 1.5;
   margin-top: 0rem;
   margin-bottom: 0rem;
-  line-height: 1.5;
   padding: 0.5rem 0.5rem;
   height: 2.5rem;
   color: #666666;
-  vertical-align: middle;
 }
 .colored-paper .value-space, .callout .value-space, .page-message .value-space {
   margin-top: 0rem;
@@ -2576,18 +2774,17 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
     height: 2rem;
   }
 }
+.value-space .value {
+  vertical-align: middle;
+  display: inline;
+}
 .value-space.prefix, .value-space.postfix {
   border: 1px solid transparent;
   background: url("../img/paper-texture.png");
   border: 1px solid #b3b3b3;
 }
-.value-space.prefix .value {
-  padding-right: .5em;
-  text-align: right;
-}
-.value-space.postfix .value {
-  padding-left: .5em;
-  text-align: left;
+.value-space.prefix .value, .value-space.postfix .value {
+  vertical-align: top;
 }
 
 .message-holder > small, .message-holder > span {
@@ -2623,7 +2820,67 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   line-height: 1.35;
 }
 
-.answer:disabled, .answer[disabled], .answer.locked, .answer-group:disabled, .answer-group[disabled], .answer-group.locked, .question:disabled, .question[disabled], .question.locked, .question-group:disabled, .question-group[disabled], .question-group.locked, .question-inline:disabled, .question-inline[disabled], .question-inline.locked, .question-grid-based:disabled, .question-grid-based[disabled], .question-grid-based.locked, .disabled .input-space [type='text'], .disabled .switch-input-space [type='text'], .locked .input-space [type='text'], .locked .switch-input-space [type='text'], .disabled .input-space [type='password'], .disabled .switch-input-space [type='password'], .locked .input-space [type='password'], .locked .switch-input-space [type='password'], .disabled .input-space [type='date'], .disabled .switch-input-space [type='date'], .locked .input-space [type='date'], .locked .switch-input-space [type='date'], .disabled .input-space [type='datetime'], .disabled .switch-input-space [type='datetime'], .locked .input-space [type='datetime'], .locked .switch-input-space [type='datetime'], .disabled .input-space [type='datetime-local'], .disabled .switch-input-space [type='datetime-local'], .locked .input-space [type='datetime-local'], .locked .switch-input-space [type='datetime-local'], .disabled .input-space [type='month'], .disabled .switch-input-space [type='month'], .locked .input-space [type='month'], .locked .switch-input-space [type='month'], .disabled .input-space [type='week'], .disabled .switch-input-space [type='week'], .locked .input-space [type='week'], .locked .switch-input-space [type='week'], .disabled .input-space [type='email'], .disabled .switch-input-space [type='email'], .locked .input-space [type='email'], .locked .switch-input-space [type='email'], .disabled .input-space [type='number'], .disabled .switch-input-space [type='number'], .locked .input-space [type='number'], .locked .switch-input-space [type='number'], .disabled .input-space [type='search'], .disabled .switch-input-space [type='search'], .locked .input-space [type='search'], .locked .switch-input-space [type='search'], .disabled .input-space [type='tel'], .disabled .switch-input-space [type='tel'], .locked .input-space [type='tel'], .locked .switch-input-space [type='tel'], .disabled .input-space [type='time'], .disabled .switch-input-space [type='time'], .locked .input-space [type='time'], .locked .switch-input-space [type='time'], .disabled .input-space [type='url'], .disabled .switch-input-space [type='url'], .locked .input-space [type='url'], .locked .switch-input-space [type='url'], .disabled .input-space [type='color'], .disabled .switch-input-space [type='color'], .locked .input-space [type='color'], .locked .switch-input-space [type='color'], .disabled .input-space button, .disabled .switch-input-space button, .locked .input-space button, .locked .switch-input-space button, .disabled .input-space .button, .disabled .switch-input-space .button, .locked .input-space .button, .locked .switch-input-space .button, .disabled .input-space select, .disabled .switch-input-space select, .locked .input-space select, .locked .switch-input-space select, .disabled .input-space option, .disabled .switch-input-space option, .locked .input-space option, .locked .switch-input-space option, .disabled .input-space textarea, .disabled .switch-input-space textarea, .locked .input-space textarea, .locked .switch-input-space textarea, .answer .chosen-disabled.chosen-container .chosen-choices, .question .chosen-disabled.chosen-container .chosen-choices, .disabled .date-picker-holder .button, .locked .date-picker-holder .button {
+.answer:disabled, .answer[disabled], .answer.locked, .answer-group:disabled, .answer-group[disabled], .answer-group.locked, .question:disabled, .question[disabled], .question.locked, .question-group:disabled, .question-group[disabled], .question-group.locked, .question-inline:disabled, .question-inline[disabled], .question-inline.locked, .question-grid-based:disabled, .question-grid-based[disabled], .question-grid-based.locked, .disabled .input-space [type='text'], .disabled .switch-input-space [type='text'], .locked .input-space [type='text'], .locked .switch-input-space [type='text'], .disabled
+.input-space [type='password'], .disabled
+.switch-input-space [type='password'], .locked
+.input-space [type='password'], .locked
+.switch-input-space [type='password'], .disabled
+.input-space [type='date'], .disabled
+.switch-input-space [type='date'], .locked
+.input-space [type='date'], .locked
+.switch-input-space [type='date'], .disabled
+.input-space [type='datetime'], .disabled
+.switch-input-space [type='datetime'], .locked
+.input-space [type='datetime'], .locked
+.switch-input-space [type='datetime'], .disabled
+.input-space [type='datetime-local'], .disabled
+.switch-input-space [type='datetime-local'], .locked
+.input-space [type='datetime-local'], .locked
+.switch-input-space [type='datetime-local'], .disabled
+.input-space [type='month'], .disabled
+.switch-input-space [type='month'], .locked
+.input-space [type='month'], .locked
+.switch-input-space [type='month'], .disabled
+.input-space [type='week'], .disabled
+.switch-input-space [type='week'], .locked
+.input-space [type='week'], .locked
+.switch-input-space [type='week'], .disabled
+.input-space [type='email'], .disabled
+.switch-input-space [type='email'], .locked
+.input-space [type='email'], .locked
+.switch-input-space [type='email'], .disabled
+.input-space [type='number'], .disabled
+.switch-input-space [type='number'], .locked
+.input-space [type='number'], .locked
+.switch-input-space [type='number'], .disabled
+.input-space [type='search'], .disabled
+.switch-input-space [type='search'], .locked
+.input-space [type='search'], .locked
+.switch-input-space [type='search'], .disabled
+.input-space [type='tel'], .disabled
+.switch-input-space [type='tel'], .locked
+.input-space [type='tel'], .locked
+.switch-input-space [type='tel'], .disabled
+.input-space [type='time'], .disabled
+.switch-input-space [type='time'], .locked
+.input-space [type='time'], .locked
+.switch-input-space [type='time'], .disabled
+.input-space [type='url'], .disabled
+.switch-input-space [type='url'], .locked
+.input-space [type='url'], .locked
+.switch-input-space [type='url'], .disabled
+.input-space [type='color'], .disabled
+.switch-input-space [type='color'], .locked
+.input-space [type='color'], .locked
+.switch-input-space [type='color'], .disabled
+.input-space button, .disabled
+.switch-input-space button, .locked
+.input-space button, .locked
+.switch-input-space button, .disabled
+.input-space .button, .disabled
+.switch-input-space .button, .locked
+.input-space .button, .locked
+.switch-input-space .button, .disabled .input-space select, .disabled .switch-input-space select, .locked .input-space select, .locked .switch-input-space select, .disabled .input-space option, .disabled .switch-input-space option, .locked .input-space option, .locked .switch-input-space option, .disabled .input-space textarea, .disabled .switch-input-space textarea, .locked .input-space textarea, .locked .switch-input-space textarea, .answer .chosen-disabled.chosen-container .chosen-choices, .question .chosen-disabled.chosen-container .chosen-choices, .disabled .date-picker-holder .button, .locked .date-picker-holder .button {
   background: rgba(179, 179, 179, 0.99) url(../img/empty_stripe.png);
   background-color: #b3b3b3;
   background-image: url(../img/empty_stripe.png);
@@ -2656,7 +2913,35 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 }
 
 .input-space a.button i, .switch-input-space a.button i, .input-space button i, .switch-input-space button i, .input-space .button i, .switch-input-space .button i {
-  margin-right: .2rem;
+  margin-right: 0;
+}
+
+.date-input-holder {
+  max-width: calc(100% - 3rem);
+}
+
+.date-picker-holder {
+  min-width: calc(3rem);
+}
+.date-picker-holder .button {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  line-height: 1;
+  padding: 0.6rem 0.5rem;
+  height: 2.5rem;
+}
+.colored-paper .date-picker-holder .button, .callout .date-picker-holder .button, .page-message .date-picker-holder .button {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  line-height: 1.35;
+}
+@media only screen and (max-height: 768px) {
+  .date-picker-holder .button {
+    padding: 0.3rem 0.5rem;
+    height: 2rem;
+  }
 }
 
 /**
@@ -2765,7 +3050,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *			<label for="">
 *				<span class="text">Question Dropdown Title (Required)</span>
 *				<span class="required-holder">
-*					<i class="fa fa-holder-dynamic"></i>
+*					<i class="fa fa-holder"></i>
 *				</span>
 *			</label>
 *		</div>
@@ -3249,7 +3534,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *             <a class="seq">1234</a>
 *           </span>
 *           <span class="required-holder">
-*             <i class="fa fa-holder-dynamic"></i>
+*             <i class="fa fa-holder"></i>
 *           </span>
 *         </label>
 *         <div class="hint">This is some hint text</div>
@@ -3287,7 +3572,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *             <a class="seq">1234</a>
 *           </span>
 *           <span class="required-holder">
-*             <i class="fa fa-holder-dynamic"></i>
+*             <i class="fa fa-holder"></i>
 *           </span>
 *         </label>
 *         <div class="hint">This is some hint text</div>
@@ -3316,7 +3601,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *             <a class="seq">1234</a>
 *           </span>
 *           <span class="required-holder">
-*             <i class="fa fa-holder-dynamic"></i>
+*             <i class="fa fa-holder"></i>
 *           </span>
 *         </label>
 *         <div class="hint">This is some hint text</div>
@@ -3345,7 +3630,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *             <a class="seq">1234</a>
 *           </span>
 *           <span class="required-holder">
-*             <i class="fa fa-holder-dynamic"></i>
+*             <i class="fa fa-holder"></i>
 *           </span>
 *         </label>
 *         <div class="hint">This is some hint text</div>
@@ -3382,7 +3667,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *              <a class="seq">1234</a>
 *          </span>
 *          <span class="required-holder">
-*              <i class="fa fa-holder-dynamic"></i>
+*              <i class="fa fa-holder"></i>
 *          </span>
 *        </label>
 *      </div>
@@ -3472,7 +3757,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *             <a class="seq">1234</a>
 *           </span>
 *           <span class="required-holder">
-*             <i class="fa fa-holder-dynamic"></i>
+*             <i class="fa fa-holder"></i>
 *           </span>
 *         </label>
 *       </div>
@@ -3490,7 +3775,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *             <a class="seq">1234</a>
 *           </span>
 *           <span class="required-holder">
-*             <i class="fa fa-holder-dynamic"></i>
+*             <i class="fa fa-holder"></i>
 *           </span>
 *         </label>
 *       </div>
@@ -3508,7 +3793,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *             <a class="seq">1234</a>
 *           </span>
 *           <span class="required-holder">
-*             <i class="fa fa-holder-dynamic"></i>
+*             <i class="fa fa-holder"></i>
 *           </span>
 *         </label>
 *       </div>
@@ -3535,7 +3820,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *              <a class="seq">1234</a>
 *          </span>
 *          <span class="required-holder">
-*              <i class="fa fa-holder-dynamic"></i>
+*              <i class="fa fa-holder"></i>
 *          </span>
 *        </label>
 *      </div>
@@ -3600,7 +3885,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *	                Select One
 *	            </span>
 *	            <span class="required-holder">
-*	                <i class="fa fa-holder-dynamic">
+*	                <i class="fa fa-holder">
 *	                </i>
 *	            </span>
 *	        </label>
@@ -3667,6 +3952,356 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *	    </div>
 *	</div>
 **/
+.input-space .input-lock, .switch-input-space .input-lock {
+  font-size: 1rem;
+  line-height: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.57143rem;
+  display: none;
+}
+.input-space .input-lock .lock-symbol, .switch-input-space .input-lock .lock-symbol {
+  color: gray;
+}
+.input-space .input-lock .lock-symbol:hover, .switch-input-space .input-lock .lock-symbol:hover {
+  color: #1faed7;
+}
+.disabled .input-space .input-lock, .disabled .switch-input-space .input-lock {
+  display: block;
+}
+
+.paper-page.repeater-area {
+  background-color: #14B057;
+  background-image: url(../img/bottom-shade.png), url(../img/top-shade.png), url(../img/cream_pixels_alt.png);
+  background-position: bottom right, right -1px, top right;
+  background-repeat: repeat-x, repeat-x, repeat;
+  margin-bottom: .25rem;
+}
+.paper-page.repeater-area.edit {
+  background-color: #cccccc;
+  background-image: url(../img/bottom-shade.png), url(../img/top-shade.png), url(../img/cream_pixels_altdark.png);
+}
+.paper-page.repeater-area .close-button {
+  color: #fff;
+  border: #fff solid 1px;
+  border-radius: 6px;
+  top: -6px;
+  right: -.5em;
+  padding: .35em .75em;
+  margin: 0;
+}
+.paper-page.repeater-area .close-button:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.paper-page.repeater-area .colored-paper {
+  -webkit-box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.65);
+  -moz-box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.65);
+  box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.65);
+}
+
+.render {
+  padding: .5em 1em;
+  margin-bottom: .5em;
+  border: 1px solid #999999;
+  border-radius: 4px;
+}
+.render ul {
+  list-style: none;
+}
+
+.render.animated.fadeIn {
+  padding: 0;
+}
+
+.render ul {
+  margin: 0;
+}
+
+.render ul {
+  padding-top: .5rem;
+  padding-bottom: .4rem;
+}
+.render ul li {
+  padding: 0 1rem;
+  font-size: 14px;
+  line-height: 16px;
+}
+.render ul .strong {
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: .75px;
+  font-size: 20px;
+  line-height: 26px;
+  color: #00386b;
+}
+.render ul li.has-tip {
+  margin-bottom: .5rem;
+}
+.render ul li.has-tip:first-child, .render ul li.has-tip + li.has-tip {
+  margin-top: -.5rem;
+}
+
+.render-actions {
+  background-color: #333333;
+  border-left: 1px solid #b3b3b3;
+  background-image: url(../img/cream_pixels.png);
+}
+
+.render-actions a {
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: .75px;
+  font-size: 14px;
+  background-color: #bfbfbf;
+  text-align: center;
+  color: #333333;
+  width: 33%;
+  padding: 0.375rem 0.25em;
+  border: 1px solid #2e454c;
+  margin: 6px;
+  width: auto;
+  border-radius: 6px;
+  background-image: none;
+  height: 2.5em;
+}
+.render-actions a:hover {
+  background-color: #2e454c;
+  color: #fff;
+}
+
+.render-actions a.disabled, .render-actions a.disabled:hover {
+  font-family: 'Muli','Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  background-color: #333333;
+  color: #a6a6a6;
+  background-image: url(../img/cream_pixels.png);
+  border-color: #cccccc;
+}
+.render-actions a.disabled cursor:not-allowed i.fa, .render-actions a.disabled:hover cursor:not-allowed i.fa {
+  color: #b3b3b3;
+}
+
+.render {
+  position: relative;
+  padding: 0;
+}
+.render .starred.primary, .render .locked, .render .added-flag {
+  display: block;
+  background-color: #198dae;
+  color: white;
+}
+.render .has-tip {
+  padding: .25em 1em;
+}
+.render .has-tip.locked {
+  background-color: #cccccc;
+  color: #666666;
+}
+.render .added-flag {
+  background-color: rgba(20, 176, 87, 0.75);
+  border-radius: 0 0 6px 6px;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: #000;
+}
+
+.render {
+  display: flex;
+}
+.render .render-holder {
+  display: block;
+  flex: 2 1 75%;
+}
+.render .render-actions {
+  display: flex;
+  flex: 0 0 175px;
+  flex-direction: column;
+}
+.render .render-actions a {
+  flex: 0 1 auto;
+  vertical-align: middle;
+}
+.render .render-actions a + a {
+  margin-top: 0;
+}
+
+/**
+* Form Repeater:
+* `.repeater` - This is form elements repeater. This Module is broken into 3 major containers. The `renders` are any previously saved collection of inputs.The `question-group` holds all of the questions that need to be repeated. And the `.repeater-actions` is the buttons to save|submit and cancel the current session of inputs. 
+*  The repeater has a focused mode when editing adding  `.repeater.edit-mode` to the containter will hide the renders at the top and toggle any elements that have been tagged with `.edit-mode--hide` and `.edit-mode--show`.
+* 
+*   @example
+*	<div class="repeater required">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Multi Input Form</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="render">
+*		<div class="render-actions">
+*			<a href="" class="edit"><i class="fa fa-holder"></i><span class="text">edit</span></a>
+*			<a href="" class="delete"><i class="fa fa-holder"></i><span class="text">delete</span></a>
+*		</div>
+*		<ul class="render-holder">
+*			<li class="italic starred"><i class="fa fa-holder"></i> </li>
+*			<li class="bold break">Jeff Morris</li>
+*			<li>jmorris@acc.org</li>
+*			<li class="validated"><i class="fa fa-holder"></i></li>
+*		</ul>
+*		<div class="message-holder">
+*			<small class="warning">
+*				<i class="fa fa-holder"></i>
+*				This is a dynamic render message.
+*			</small>
+*		</div>
+*	</div>
+*		<div class="question-group">
+*			<div class="required-message">All inputs marked with the * are required to submit and save</div>
+*			<h4 class="edit-mode--show warning">Edit Record</h4><h4 class="edit-mode--hide highlighted">Add Record</h4>
+*			<div class="row">
+*	<div class="question required column small-4">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Question (Required)</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="input-holder">
+*			 <div class="input-space column small-6 large-9">
+*				<input type="text"/>
+*			</div>
+*			<div class="column small-6 large-3">
+*				<small class="value">Years</small>
+*			</div>
+*		</div>
+*		<div class="message-holder">
+*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
+*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*				<small class="data"><i class="fa fa-holder"></i> Data message</small>
+*		</div>
+*		<div class="hint">This is some hint text</div>
+*	</div>
+*	<div class="question required column small-4">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Question (Required)</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="input-holder">
+*			 <div class="input-space column small-6 large-9">
+*				<input type="text"/>
+*			</div>
+*			<div class="column small-6 large-3">
+*				<small class="value">Years</small>
+*			</div>
+*		</div>
+*		<div class="message-holder">
+*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
+*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*				<small class="data"><i class="fa fa-holder"></i> Data message</small>
+*		</div>
+*		<div class="hint">This is some hint text</div>
+*	</div>
+*	<div class="question required column small-4">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Question (Required)</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="input-holder">
+*			 <div class="input-space column small-6 large-9">
+*				<input type="text"/>
+*			</div>
+*			<div class="column small-6 large-3">
+*				<small class="value">Years</small>
+*			</div>
+*		</div>
+*		<div class="message-holder">
+*				<small class="error"><i class="fa fa-holder"></i> Error message</small>
+*				<small class="warning"><i class="fa fa-holder"></i> Warning message</small>
+*				<small class="data"><i class="fa fa-holder"></i> Data message</small>
+*		</div>
+*		<div class="hint">This is some hint text</div>
+*	</div>
+*			</div>
+*			<div class="message-holder">
+*				<small class="warning"><i class="fa fa-holder"></i>
+*					This is a dynmic message for the question group.
+*				</small>
+*			</div>
+*		</div>
+*		<div class="repeater-action">
+*			<a href="" class="clear"><i class="fa fa-holder"></i><span class="text">clear</span></a>
+*			<a href="" class="save"><i class="fa fa-holder"></i> <span class="text">save</span></a>
+*		</div>
+*	</div>
+*	<div class="repeater required edit-mode">
+*		<div class="label-holder">
+*			<label for="">
+*				<span class="text">Multi Input Form (Edit)</span>
+*				<span class="required-holder">
+*					<i class="fa fa-holder"></i>
+*				</span>
+*			</label>
+*		</div>
+*		<div class="render">
+*		<div class="render-actions">
+*			<a href="" class="edit"><i class="fa fa-holder"></i><span class="text">edit</span></a>
+*			<a href="" class="delete"><i class="fa fa-holder"></i><span class="text">delete</span></a>
+*		</div>
+*		<ul class="render-holder">
+*			<li class="italic starred"><i class="fa fa-holder"></i> </li>
+*			<li class="bold break">Jeff Morris</li>
+*			<li>jmorris@acc.org</li>
+*			<li class="validated"><i class="fa fa-holder"></i></li>
+*		</ul>
+*		<div class="message-holder">
+*			<small class="warning">
+*				<i class="fa fa-holder"></i>
+*				This is a dynamic render message.
+*			</small>
+*		</div>
+*	</div>
+*		<div class="question-group">
+*			<div class="required-message">All inputs marked with the * are required to submit and save</div>
+*			<h4 class="edit-mode--show warning">Edit Record</h4><h4 class="edit-mode--hide highlighted">Add Record</h4>
+*			<div class="row">
+*	<div class="question required column small-4 outline">
+*		<span class="notation">Question Block</span>
+*	</div>
+*	<div class="question required column small-5 outline">
+*		<span class="notation">Question Block</span>
+*	</div>
+*	<div class="question required column small-3 outline">
+*		<span class="notation">Question Block</span>
+*	</div>
+*			</div>
+*			<div class="message-holder">
+*				<small class="warning"><i class="fa fa-holder"></i>
+*					This is a dynmic message for the question group.
+*				</small>
+*			</div>
+*		</div>
+*		<div class="repeater-action">
+*			<a href="" class="clear"><i class="fa fa-holder"></i><span class="text">clear</span></a>
+*			<a href="" class="save"><i class="fa fa-holder"></i> <span class="text">save</span></a>
+*		</div>
+*	</div>		
+*/
 .close-bar {
   position: absolute;
   width: 100%;
@@ -3798,6 +4433,22 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   font-size: 1.5em;
   padding: 0 1em 0 0;
 }
+.page-message.empty {
+  background: none transparent;
+  border: 0;
+  padding: 0;
+}
+.page-message.empty .icon-holder {
+  font-size: 1em;
+  color: #E08514;
+  padding: 0;
+}
+.page-message.empty .icon-holder .fa-square-o {
+  display: none;
+}
+.page-message.blank .icon-holder {
+  display: none;
+}
 
 /**
 * Callout - Page Messages:
@@ -3812,7 +4463,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *  		<div class="icon-holder">
 *                <span class="fa-stack fa-lg">
 *                    <i class="fa fa-square-o fa-stack-2x"></i>
-*                    <i class="fa fa-holder-dynamic fa-stack-1x"></i>
+*                    <i class="fa fa-holder fa-stack-1x"></i>
 *                </span>
 *		</div>
 *		<div class="message-holder">
@@ -3834,7 +4485,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *  		<div class="icon-holder">
 *                <span class="fa-stack fa-lg">
 *                    <i class="fa fa-square-o fa-stack-2x"></i>
-*                    <i class="fa fa-holder-dynamic fa-stack-1x"></i>
+*                    <i class="fa fa-holder fa-stack-1x"></i>
 *                </span>
 *		</div>
 *		<div class="message-holder">
@@ -4613,19 +5264,19 @@ td.disabled {
 *   @example
 *	<table class="table striped">
 *		<tr class="success">
-*			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
+*			<td class="icon"><i class="fa fa-holder"></i></td>
 *			<td class=""></td>
 *			<td class="">Cell Data in success Row</td>
 *			<td class="">Icon is Dynamic</td>
 *		</tr>
 *		<tr class="warning">
-*			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
+*			<td class="icon"><i class="fa fa-holder"></i></td>
 *			<td class=""></td>
 *			<td class="">Cell Data in Warning Row</td>
 *			<td class="error">I am an error cell</td>
 *		</tr>
 *		<tr class="error">
-*			<td class="icon"><i class="fa fa-holder-dynamic"></i></td>
+*			<td class="icon"><i class="fa fa-holder"></i></td>
 *			<td class="">Icon is Dynamic</td>
 *			<td class="">Cell Data in Error Row</td>
 *			<td class="">Cell Data</td>
@@ -5107,10 +5758,10 @@ li.selected {
   background-color: #14B057;
 }
 .panel-selector .group-title
-li.j-selected > i.fa-holder:before, .panel-selector .group-title
-li.j-selected.fa:before, .panel-selector .group-title
-li.selected > i.fa-holder:before, .panel-selector .group-title
-li.selected.fa:before {
+li.j-selected else > i.fa-holder:before, .panel-selector .group-title
+li.j-selected else i.fa-holder:before, .panel-selector .group-title
+li.selected else > i.fa-holder:before, .panel-selector .group-title
+li.selected else i.fa-holder:before {
   content: "";
 }
 .panel-selector .group-title
@@ -5147,7 +5798,10 @@ li.selected .fa {
 .button-group li.j-selected a.button, .button-group li.selected a.button {
   background-color: #14B057;
 }
-.button-group li.j-selected a.button > i.fa-holder:before, .button-group li.j-selected a.button.fa:before, .button-group li.selected a.button > i.fa-holder:before, .button-group li.selected a.button.fa:before {
+.button-group li.j-selected a.button:before, .button-group li.selected a.button:before {
+  content: "";
+}
+.button-group li.j-selected a.button else > i.fa-holder:before, .button-group li.j-selected a.button else i.fa-holder:before, .button-group li.selected a.button else > i.fa-holder:before, .button-group li.selected a.button else i.fa-holder:before {
   content: "";
 }
 .button-group li.j-selected a.button .text, .button-group li.j-selected a.button .fa, .button-group li.selected a.button .text, .button-group li.selected a.button .fa {
@@ -5714,65 +6368,38 @@ ul.toggle.minimized .selected {
   }
 }
 */
-.info-text {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-top: 0.375rem;
-  margin-bottom: 0.375rem;
-  font-weight: normal;
-  color: #262626;
-  padding: .5rem 1rem .65rem;
-  position: relative;
-  background-image: url(../img/empty_stripe.png);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 5px;
-  border-color: transparent;
-}
-.colored-paper .info-text, .callout .info-text, .page-message .info-text {
-  margin-top: 0.375rem;
-  margin-bottom: 0.375rem;
-  line-height: 1.35;
-}
-.info-text .fa-holder {
-  font-size: 1.4375rem;
-  line-height: 1.35;
-  margin-top: 0.52969rem;
-  margin-bottom: 0.52969rem;
+.required-legend {
+  bottom: 1.5rem;
   position: absolute;
+  right: 1rem;
 }
-.colored-paper .info-text .fa-holder, .callout .info-text .fa-holder, .page-message .info-text .fa-holder {
-  margin-top: 0.52969rem;
-  margin-bottom: 0.52969rem;
-  line-height: 1.125;
+
+#auto-save {
+  display: block;
+  width: 100%;
+  position: fixed;
+  background-color: #00386b;
+  opacity: .85;
+  border-bottom: 2px solid #00386b;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
-.info-text p {
-  margin-bottom: 0;
-  padding-left: 4rem;
-}
-.info-text p br {
-  height: 0;
-  padding: 0;
-  margin: 0;
-}
-.info-text .error, .info-text .warning, .info-text .success, .info-text .info, .info-text .highlighted, .info-text .locked, .info-text .disabled {
+#auto-save .message {
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
   font-weight: 700;
   letter-spacing: .75px;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   line-height: 1.5;
-  margin-top: 0.32813rem;
-  margin-bottom: 0.32813rem;
-  min-height: 23px;
+  margin-top: 0.5625rem;
+  margin-bottom: 0.5625rem;
+  color: #FFF;
 }
-.colored-paper .info-text .error, .callout .info-text .error, .page-message .info-text .error, .colored-paper .info-text .warning, .callout .info-text .warning, .page-message .info-text .warning, .colored-paper .info-text .success, .callout .info-text .success, .page-message .info-text .success, .colored-paper .info-text .info, .callout .info-text .info, .page-message .info-text .info, .colored-paper .info-text .highlighted, .callout .info-text .highlighted, .page-message .info-text .highlighted, .colored-paper .info-text .locked, .callout .info-text .locked, .page-message .info-text .locked, .colored-paper .info-text .disabled, .callout .info-text .disabled, .page-message .info-text .disabled {
-  margin-top: 0.32813rem;
-  margin-bottom: 0.32813rem;
+.colored-paper #auto-save .message, .callout #auto-save .message, .page-message #auto-save .message {
+  margin-top: 0.5625rem;
+  margin-bottom: 0.5625rem;
   line-height: 1.35;
-}
-
-.split-sidebar .nav-list.nav-checklist, .split-sidebar .nav-checklist.panel-selector {
-  background-color: #fff;
 }
 
 /*!
@@ -7008,12 +7635,17 @@ This file is generated by `grunt build`, do not edit it by hand.
   }
 }
 
-.dropdown-menu-item .fa-holder:before {
-  content: "\f107";
+.dropdown-menu-item i.fa-holder:before {
+  content: "";
 }
-
-.dropdown-menu-item:hover .fa-holder:before {
-  content: "\f0d7";
+.dropdown-menu-item else > i.fa-holder:before, .dropdown-menu-item else i.fa-holder:before {
+  content: "";
+}
+.dropdown-menu-item:hover i.fa-holder:before {
+  content: "";
+}
+.dropdown-menu-item:hover else > i.fa-holder:before, .dropdown-menu-item:hover else i.fa-holder:before {
+  content: "";
 }
 
 .search-bar {
@@ -7943,6 +8575,17 @@ input:checked + label > .switch-inactive {
   transform: translatex(-50%);
 }
 
+.question .switch, .question .question-grid-based .switch {
+  margin-top: .25em;
+  margin-bottom: .25em;
+}
+
+label.switch-value {
+  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+}
+
 /**
 * Switch (Foundation Override): 
 * `.switch` - Switches are a more visible and more touchable versions of checkbox and radio buttons. 
@@ -8141,6 +8784,14 @@ input:checked + label > .switch-inactive {
   font-weight: 700;
   letter-spacing: .75px;
   font-size: 18px;
+}
+
+div.reveal {
+  padding-top: 2rem;
+}
+div.reveal .close-button {
+  padding: .25em .5em .25em .5em;
+  top: -6px;
 }
 
 .callout, .page-message {
@@ -9022,41 +9673,41 @@ input:checked + label > .switch-inactive {
   }
 }
 
-.with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .group-section, .card {
+.group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
   padding-top: .125rem;
   padding-bottom: .125rem;
 }
 @media only screen and (min-width: 320px) {
-  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .group-section, .card {
+  .group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
     padding-top: .25rem;
     padding-bottom: .25rem;
   }
 }
 @media only screen and (min-width: 767px) {
-  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .group-section, .card {
+  .group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
     padding-top: .5rem;
     padding-bottom: .5rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .group-section, .card {
+  .group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
 }
 
-.content-padding, .content-padding.page-wrapper, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .group-section, .card {
+.content-padding, .content-padding.page-wrapper, .group-section, .card, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
   padding-left: .5rem;
   padding-right: .5rem;
 }
 @media only screen and (min-width: 767px) {
-  .content-padding, .content-padding.page-wrapper, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .group-section, .card {
+  .content-padding, .content-padding.page-wrapper, .group-section, .card, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
     padding-right: .75rem;
     padding-left: .75rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .content-padding, .content-padding.page-wrapper, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .group-section, .card {
+  .content-padding, .content-padding.page-wrapper, .group-section, .card, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
     padding-right: 1rem;
     padding-left: 1rem;
   }
@@ -9178,13 +9829,13 @@ input:checked + label > .switch-inactive {
   background-image: url("../img/billie-holiday-lite.png");
 }
 
-.with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .group-section, .card, .lifted {
+.group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .lifted {
   -webkit-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
 }
 
-.with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .group-section, .card {
+.group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card {
   border: 1px solid #d9d9d9;
   background-color: white;
 }
@@ -9196,6 +9847,11 @@ input:checked + label > .switch-inactive {
   -webkit-box-shadow: inset 0px 1px 6px 3px rgba(230, 230, 230, 0.2);
   -moz-box-shadow: inset 0px 1px 6px 3px rgba(230, 230, 230, 0.2);
   box-shadow: inset 0px 1px 6px 3px rgba(230, 230, 230, 0.2);
+}
+
+.group-section, .card {
+  width: auto;
+  position: relative;
 }
 
 .with-group-sections.error, .with-group-sections.error .overlap .tabs .selected, .with-group-sections.error .overlap .tabs .is-active, .paper-page.error, .paper-page.error .overlap .tabs .selected, .paper-page.error .overlap .tabs .is-active {
@@ -9387,6 +10043,11 @@ input:checked + label > .switch-inactive {
   vertical-align: bottom;
   padding: .4em;
   background-color: #fff;
+}
+
+.page-wrapper, .page .page-wrapper {
+  max-width: 60em;
+  margin: 0 auto;
 }
 
 .radius.group-section .colored-paper:first-child, .radius.card .colored-paper:first-child, .radius.group-section .colored-paper:last-child, .radius.card .colored-paper:last-child {
@@ -9766,6 +10427,7 @@ input:checked + label > .switch-inactive {
 .split-layout .split-sidebar, .split-layout .split-content {
   margin-bottom: -9998px;
   padding-bottom: 9998px;
+  position: relative;
 }
 .split-layout.fill-page-height .split-content {
   min-height: 100vh;
@@ -11439,119 +12101,119 @@ h6 blockquote, h6 .sub-line {
 /*
 STATE TRUMPING CODE
 */
-.error .order-marker.hollow, .error.order-marker.hollow, .error.question .input-holder input, .error.question .input-holder textarea, .error.question .input-holder select, .error.question .input-holder .postfix, .error.question .input-holder .prefix, .error .close-bar, .error .bar.close, .error.inset .bar.close, .info-text.error, .error.question .button-group, .error .order-marker.hollow, .error.order-marker.hollow, h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
+.error .order-marker.hollow, .error.order-marker.hollow, .error.question .input-holder input, .error.question .input-holder textarea, .error.question .input-holder select, .error.question .input-holder .postfix, .error.question .input-holder .prefix, .error .close-bar, .error .bar.close, .error.inset .bar.close, .error.question .button-group, .error .order-marker.hollow, .error.order-marker.hollow, h1.with-underline.error, h2.with-underline.error, h3.with-underline.error, h4.with-underline.error, h5.with-underline.error, h6.with-underline.error {
   border-color: #c32231;
 }
 
-.error.fa, .error .order-marker.inverse, .error.order-marker.inverse.error .order-marker.hollow, .error.order-marker.hollow, .nav-list.nav-checklist li.error i, .nav-checklist.panel-selector li.error i, .answer.error .required-holder, .question.error .required-holder, .question-inline.error .required-holder, .question-grid-based.error .required-holder, .error.question .label-holder label, .error.question .input-holder .postfix, .error.question .input-holder .prefix, .error.question .input-holder .value, .error .bar.close .action-btn, .collapsable-panel.error h1, .collapsable-panel.error h2, .collapsable-panel.error h3, .collapsable-panel.error h4, .collapsable-panel.error h5, .collapsable-panel.error h6, .error .order-marker.inverse, .error.order-marker.inverse.error .order-marker.hollow, .error.order-marker.hollow, h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
+.error.fa, .error .order-marker.inverse, .error.order-marker.inverse.error .order-marker.hollow, .error.order-marker.hollow, .nav-list.nav-checklist li.error a, .nav-checklist.panel-selector li.error a, .nav-list.nav-checklist li.error i, .nav-checklist.panel-selector li.error i, .answer.error .required-holder, .question.error .required-holder, .question-inline.error .required-holder, .question-grid-based.error .required-holder, .error.question .label-holder label, .error.question .input-holder .postfix, .error.question .input-holder .prefix, .error.question .input-holder .value, .error .bar.close .action-btn, .collapsable-panel.error h1, .collapsable-panel.error h2, .collapsable-panel.error h3, .collapsable-panel.error h4, .collapsable-panel.error h5, .collapsable-panel.error h6, .error .order-marker.inverse, .error.order-marker.inverse.error .order-marker.hollow, .error.order-marker.hollow, h1.error, h2.error, h3.error, h4.error, h5.error, h6.error, p.error, a.error, li.error, blockquote.error {
   color: #c32231;
 }
 
-.nav-list.nav-checklist li.error, .nav-checklist.panel-selector li.error, .error.question .message-holder > .error, .hint .error, .error .close-bar .close-button, .error.inset .bar.close .action-btn, .info-text.error, .error-inactive .switch-paddle, .error-active input:checked ~ .switch-paddle, .error.callout, .error.page-message {
+.nav-list.nav-checklist li.error, .nav-checklist.panel-selector li.error, .error.question .message-holder > .error, .hint .error, .error .close-bar .close-button, .error.inset .bar.close .action-btn, .error-inactive .switch-paddle, .error-active input:checked ~ .switch-paddle, .error.callout, .error.page-message {
   background-color: #de404e;
 }
 
-.error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .nav-list.nav-checklist li.error .fa-holder-dynamic:before, .nav-checklist.panel-selector li.error .fa-holder-dynamic:before, .error.answer .required-holder i.fa-holder:before, .error.question .required-holder i.fa-holder:before, .error.question-inline .required-holder i.fa-holder:before, d.error.question-grid-base .required-holder i.fa-holder:before, .error.page-message .fa-holder:before {
+.error .fa-holder:before, .error.fa:before, .error > .fa-holder:before, .nav-list.nav-checklist li.error .fa-holder:before, .nav-checklist.panel-selector li.error .fa-holder:before, .error.answer .required-holder i.fa-holder:before, .error.question .required-holder i.fa-holder:before, .error.question-inline .required-holder i.fa-holder:before, d.error.question-grid-base .required-holder i.fa-holder:before, .error.page-message .fa-holder:before {
   content: "";
 }
 
-.warning .order-marker.hollow, .warning.order-marker.hollow, .warning.question .input-holder input, .warning.question .input-holder textarea, .warning.question .input-holder select, .warning.question .input-holder .postfix, .warning.question .input-holder .prefix, .warning .close-bar, .warning .bar.close, .warning.inset .bar.close, .info-text.warning, .warning.question .button-group, .warning .order-marker.hollow, .warning.order-marker.hollow, h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
+.warning .order-marker.hollow, .warning.order-marker.hollow, .warning.question .input-holder input, .warning.question .input-holder textarea, .warning.question .input-holder select, .warning.question .input-holder .postfix, .warning.question .input-holder .prefix, .warning .close-bar, .warning .bar.close, .warning.inset .bar.close, .warning.question .button-group, .warning .order-marker.hollow, .warning.order-marker.hollow, h1.with-underline.warning, h2.with-underline.warning, h3.with-underline.warning, h4.with-underline.warning, h5.with-underline.warning, h6.with-underline.warning {
   border-color: #E08514;
 }
 
-.warning.fa, .warning .order-marker.inverse, .warning.order-marker.inverse.warning .order-marker.hollow, .warning.order-marker.hollow, .nav-list.nav-checklist li.warning i, .nav-checklist.panel-selector li.warning i, .answer.warning .required-holder, .question.warning .required-holder, .question-inline.warning .required-holder, .question-grid-based.warning .required-holder, .warning.question .label-holder label, .warning.question .input-holder .postfix, .warning.question .input-holder .prefix, .warning.question .input-holder .value, .warning .bar.close .action-btn, .collapsable-panel.warning h1, .collapsable-panel.warning h2, .collapsable-panel.warning h3, .collapsable-panel.warning h4, .collapsable-panel.warning h5, .collapsable-panel.warning h6, .warning .order-marker.inverse, .warning.order-marker.inverse.warning .order-marker.hollow, .warning.order-marker.hollow, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning {
+.warning.fa, .warning .order-marker.inverse, .warning.order-marker.inverse.warning .order-marker.hollow, .warning.order-marker.hollow, .nav-list.nav-checklist li.warning a, .nav-checklist.panel-selector li.warning a, .nav-list.nav-checklist li.warning i, .nav-checklist.panel-selector li.warning i, .answer.warning .required-holder, .question.warning .required-holder, .question-inline.warning .required-holder, .question-grid-based.warning .required-holder, .warning.question .label-holder label, .warning.question .input-holder .postfix, .warning.question .input-holder .prefix, .warning.question .input-holder .value, .warning .bar.close .action-btn, .collapsable-panel.warning h1, .collapsable-panel.warning h2, .collapsable-panel.warning h3, .collapsable-panel.warning h4, .collapsable-panel.warning h5, .collapsable-panel.warning h6, .warning .order-marker.inverse, .warning.order-marker.inverse.warning .order-marker.hollow, .warning.order-marker.hollow, h1.warning, h2.warning, h3.warning, h4.warning, h5.warning, h6.warning, p.warning, a.warning, li.warning, blockquote.warning {
   color: #E08514;
 }
 
-.nav-list.nav-checklist li.warning, .nav-checklist.panel-selector li.warning, .warning.question .message-holder > .warning, .hint .warning, .warning .close-bar .close-button, .warning.inset .bar.close .action-btn, .info-text.warning, .warning-inactive .switch-paddle, .warning-active input:checked ~ .switch-paddle, .warning.callout, .warning.page-message {
+.nav-list.nav-checklist li.warning, .nav-checklist.panel-selector li.warning, .warning.question .message-holder > .warning, .hint .warning, .warning .close-bar .close-button, .warning.inset .bar.close .action-btn, .warning-inactive .switch-paddle, .warning-active input:checked ~ .switch-paddle, .warning.callout, .warning.page-message {
   background-color: #ee9e3c;
 }
 
-.warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .nav-list.nav-checklist li.warning .fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning .fa-holder-dynamic:before, .warning.answer .required-holder i.fa-holder:before, .warning.question .required-holder i.fa-holder:before, .warning.question-inline .required-holder i.fa-holder:before, d.warning.question-grid-base .required-holder i.fa-holder:before, .warning.page-message .fa-holder:before {
+.warning .fa-holder:before, .warning.fa:before, .warning > .fa-holder:before, .nav-list.nav-checklist li.warning .fa-holder:before, .nav-checklist.panel-selector li.warning .fa-holder:before, .warning.answer .required-holder i.fa-holder:before, .warning.question .required-holder i.fa-holder:before, .warning.question-inline .required-holder i.fa-holder:before, d.warning.question-grid-base .required-holder i.fa-holder:before, .warning.page-message .fa-holder:before {
   content: "";
 }
 
-.success .order-marker.hollow, .success.order-marker.hollow, .success.question .input-holder input, .success.question .input-holder textarea, .success.question .input-holder select, .success.question .input-holder .postfix, .success.question .input-holder .prefix, .success .close-bar, .success .bar.close, .success.inset .bar.close, .info-text.success, .success.question .button-group, .success .order-marker.hollow, .success.order-marker.hollow, h1.with-underline.success, h2.with-underline.success, h3.with-underline.success, h4.with-underline.success, h5.with-underline.success, h6.with-underline.success {
+.success .order-marker.hollow, .success.order-marker.hollow, .success.question .input-holder input, .success.question .input-holder textarea, .success.question .input-holder select, .success.question .input-holder .postfix, .success.question .input-holder .prefix, .success .close-bar, .success .bar.close, .success.inset .bar.close, .success.question .button-group, .success .order-marker.hollow, .success.order-marker.hollow, h1.with-underline.success, h2.with-underline.success, h3.with-underline.success, h4.with-underline.success, h5.with-underline.success, h6.with-underline.success {
   border-color: #14B057;
 }
 
-.success.fa, .success .order-marker.inverse, .success.order-marker.inverse.success .order-marker.hollow, .success.order-marker.hollow, .nav-list.nav-checklist li.success i, .nav-checklist.panel-selector li.success i, .answer.success .required-holder, .question.success .required-holder, .question-inline.success .required-holder, .question-grid-based.success .required-holder, .success.question .label-holder label, .success.question .input-holder .postfix, .success.question .input-holder .prefix, .success.question .input-holder .value, .success .bar.close .action-btn, .collapsable-panel.success h1, .collapsable-panel.success h2, .collapsable-panel.success h3, .collapsable-panel.success h4, .collapsable-panel.success h5, .collapsable-panel.success h6, .success .order-marker.inverse, .success.order-marker.inverse.success .order-marker.hollow, .success.order-marker.hollow, h1.success, h2.success, h3.success, h4.success, h5.success, h6.success, p.success, a.success, li.success, blockquote.success {
+.success.fa, .success .order-marker.inverse, .success.order-marker.inverse.success .order-marker.hollow, .success.order-marker.hollow, .nav-list.nav-checklist li.success a, .nav-checklist.panel-selector li.success a, .nav-list.nav-checklist li.success i, .nav-checklist.panel-selector li.success i, .answer.success .required-holder, .question.success .required-holder, .question-inline.success .required-holder, .question-grid-based.success .required-holder, .success.question .label-holder label, .success.question .input-holder .postfix, .success.question .input-holder .prefix, .success.question .input-holder .value, .success .bar.close .action-btn, .collapsable-panel.success h1, .collapsable-panel.success h2, .collapsable-panel.success h3, .collapsable-panel.success h4, .collapsable-panel.success h5, .collapsable-panel.success h6, .success .order-marker.inverse, .success.order-marker.inverse.success .order-marker.hollow, .success.order-marker.hollow, h1.success, h2.success, h3.success, h4.success, h5.success, h6.success, p.success, a.success, li.success, blockquote.success {
   color: #14B057;
 }
 
-.nav-list.nav-checklist li.success, .nav-checklist.panel-selector li.success, .success.question .message-holder > .success, .hint .success, .success .close-bar .close-button, .success.inset .bar.close .action-btn, .info-text.success, .success-inactive .switch-paddle, .success-active input:checked ~ .switch-paddle, .success.callout, .success.page-message {
+.nav-list.nav-checklist li.success, .nav-checklist.panel-selector li.success, .success.question .message-holder > .success, .hint .success, .success .close-bar .close-button, .success.inset .bar.close .action-btn, .success-inactive .switch-paddle, .success-active input:checked ~ .switch-paddle, .success.callout, .success.page-message {
   background-color: #1de573;
 }
 
-.success .fa-holder-dynamic:before, .success.fa:before, .success > .fa-holder:before, .nav-list.nav-checklist li.success .fa-holder-dynamic:before, .nav-checklist.panel-selector li.success .fa-holder-dynamic:before, .success.answer .required-holder i.fa-holder:before, .success.question .required-holder i.fa-holder:before, .success.question-inline .required-holder i.fa-holder:before, d.success.question-grid-base .required-holder i.fa-holder:before, .success.page-message .fa-holder:before {
+.success .fa-holder:before, .success.fa:before, .success > .fa-holder:before, .nav-list.nav-checklist li.success .fa-holder:before, .nav-checklist.panel-selector li.success .fa-holder:before, .success.answer .required-holder i.fa-holder:before, .success.question .required-holder i.fa-holder:before, .success.question-inline .required-holder i.fa-holder:before, d.success.question-grid-base .required-holder i.fa-holder:before, .success.page-message .fa-holder:before {
   content: "";
 }
 
-.info .order-marker.hollow, .info.order-marker.hollow, .info.question .input-holder input, .info.question .input-holder textarea, .info.question .input-holder select, .info.question .input-holder .postfix, .info.question .input-holder .prefix, .info .close-bar, .info .bar.close, .info.inset .bar.close, .info-text.info, .info.question .button-group, .info .order-marker.hollow, .info.order-marker.hollow, h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
+.info .order-marker.hollow, .info.order-marker.hollow, .info.question .input-holder input, .info.question .input-holder textarea, .info.question .input-holder select, .info.question .input-holder .postfix, .info.question .input-holder .prefix, .info .close-bar, .info .bar.close, .info.inset .bar.close, .info.question .button-group, .info .order-marker.hollow, .info.order-marker.hollow, h1.with-underline.info, h2.with-underline.info, h3.with-underline.info, h4.with-underline.info, h5.with-underline.info, h6.with-underline.info {
   border-color: #a6a6a6;
 }
 
-.info.fa, .info .order-marker.inverse, .info.order-marker.inverse.info .order-marker.hollow, .info.order-marker.hollow, .nav-list.nav-checklist li.info i, .nav-checklist.panel-selector li.info i, .answer.info .required-holder, .question.info .required-holder, .question-inline.info .required-holder, .question-grid-based.info .required-holder, .info.question .label-holder label, .info.question .input-holder .postfix, .info.question .input-holder .prefix, .info.question .input-holder .value, .info .bar.close .action-btn, .collapsable-panel.info h1, .collapsable-panel.info h2, .collapsable-panel.info h3, .collapsable-panel.info h4, .collapsable-panel.info h5, .collapsable-panel.info h6, .info .order-marker.inverse, .info.order-marker.inverse.info .order-marker.hollow, .info.order-marker.hollow, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
+.info.fa, .info .order-marker.inverse, .info.order-marker.inverse.info .order-marker.hollow, .info.order-marker.hollow, .nav-list.nav-checklist li.info a, .nav-checklist.panel-selector li.info a, .nav-list.nav-checklist li.info i, .nav-checklist.panel-selector li.info i, .answer.info .required-holder, .question.info .required-holder, .question-inline.info .required-holder, .question-grid-based.info .required-holder, .info.question .label-holder label, .info.question .input-holder .postfix, .info.question .input-holder .prefix, .info.question .input-holder .value, .info .bar.close .action-btn, .collapsable-panel.info h1, .collapsable-panel.info h2, .collapsable-panel.info h3, .collapsable-panel.info h4, .collapsable-panel.info h5, .collapsable-panel.info h6, .info .order-marker.inverse, .info.order-marker.inverse.info .order-marker.hollow, .info.order-marker.hollow, h1.info, h2.info, h3.info, h4.info, h5.info, h6.info, p.info, a.info, li.info, blockquote.info {
   color: #a6a6a6;
 }
 
-.nav-list.nav-checklist li.info, .nav-checklist.panel-selector li.info, .info.question .message-holder > .info, .hint .info, .info .close-bar .close-button, .info.inset .bar.close .action-btn, .info-text.info, .info-inactive .switch-paddle, .info-active input:checked ~ .switch-paddle, .info.callout, .info.page-message {
+.nav-list.nav-checklist li.info, .nav-checklist.panel-selector li.info, .info.question .message-holder > .info, .hint .info, .info .close-bar .close-button, .info.inset .bar.close .action-btn, .info-inactive .switch-paddle, .info-active input:checked ~ .switch-paddle, .info.callout, .info.page-message {
   background-color: #b8b8b8;
 }
 
-.info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder-dynamic:before, .nav-checklist.panel-selector li.info .fa-holder-dynamic:before, .info.answer .required-holder i.fa-holder:before, .info.question .required-holder i.fa-holder:before, .info.question-inline .required-holder i.fa-holder:before, d.info.question-grid-base .required-holder i.fa-holder:before, .info.page-message .fa-holder:before {
+.info .fa-holder:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder:before, .nav-checklist.panel-selector li.info .fa-holder:before, .info.answer .required-holder i.fa-holder:before, .info.question .required-holder i.fa-holder:before, .info.question-inline .required-holder i.fa-holder:before, d.info.question-grid-base .required-holder i.fa-holder:before, .info.page-message .fa-holder:before {
   content: "";
 }
 
-.highlighted .order-marker.hollow, .highlighted.order-marker.hollow, .highlighted.question .input-holder input, .highlighted.question .input-holder textarea, .highlighted.question .input-holder select, .highlighted.question .input-holder .postfix, .highlighted.question .input-holder .prefix, .highlighted .close-bar, .highlighted .bar.close, .highlighted.inset .bar.close, .info-text.highlighted, .highlighted.question .button-group, .highlighted .order-marker.hollow, .highlighted.order-marker.hollow, h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
+.highlighted .order-marker.hollow, .highlighted.order-marker.hollow, .highlighted.question .input-holder input, .highlighted.question .input-holder textarea, .highlighted.question .input-holder select, .highlighted.question .input-holder .postfix, .highlighted.question .input-holder .prefix, .highlighted .close-bar, .highlighted .bar.close, .highlighted.inset .bar.close, .highlighted.question .button-group, .highlighted .order-marker.hollow, .highlighted.order-marker.hollow, h1.with-underline.highlighted, h2.with-underline.highlighted, h3.with-underline.highlighted, h4.with-underline.highlighted, h5.with-underline.highlighted, h6.with-underline.highlighted {
   border-color: #22AFD7;
 }
 
-.highlighted.fa, .highlighted .order-marker.inverse, .highlighted.order-marker.inverse.highlighted .order-marker.hollow, .highlighted.order-marker.hollow, .nav-list.nav-checklist li.highlighted i, .nav-checklist.panel-selector li.highlighted i, .answer.highlighted .required-holder, .question.highlighted .required-holder, .question-inline.highlighted .required-holder, .question-grid-based.highlighted .required-holder, .highlighted.question .label-holder label, .highlighted.question .input-holder .postfix, .highlighted.question .input-holder .prefix, .highlighted.question .input-holder .value, .highlighted .bar.close .action-btn, .collapsable-panel.highlighted h1, .collapsable-panel.highlighted h2, .collapsable-panel.highlighted h3, .collapsable-panel.highlighted h4, .collapsable-panel.highlighted h5, .collapsable-panel.highlighted h6, .highlighted .order-marker.inverse, .highlighted.order-marker.inverse.highlighted .order-marker.hollow, .highlighted.order-marker.hollow, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
+.highlighted.fa, .highlighted .order-marker.inverse, .highlighted.order-marker.inverse.highlighted .order-marker.hollow, .highlighted.order-marker.hollow, .nav-list.nav-checklist li.highlighted a, .nav-checklist.panel-selector li.highlighted a, .nav-list.nav-checklist li.highlighted i, .nav-checklist.panel-selector li.highlighted i, .answer.highlighted .required-holder, .question.highlighted .required-holder, .question-inline.highlighted .required-holder, .question-grid-based.highlighted .required-holder, .highlighted.question .label-holder label, .highlighted.question .input-holder .postfix, .highlighted.question .input-holder .prefix, .highlighted.question .input-holder .value, .highlighted .bar.close .action-btn, .collapsable-panel.highlighted h1, .collapsable-panel.highlighted h2, .collapsable-panel.highlighted h3, .collapsable-panel.highlighted h4, .collapsable-panel.highlighted h5, .collapsable-panel.highlighted h6, .highlighted .order-marker.inverse, .highlighted.order-marker.inverse.highlighted .order-marker.hollow, .highlighted.order-marker.hollow, h1.highlighted, h2.highlighted, h3.highlighted, h4.highlighted, h5.highlighted, h6.highlighted, p.highlighted, a.highlighted, li.highlighted, blockquote.highlighted {
   color: #22AFD7;
 }
 
-.nav-list.nav-checklist li.highlighted, .nav-checklist.panel-selector li.highlighted, .highlighted.question .message-holder > .highlighted, .hint .highlighted, .highlighted .close-bar .close-button, .highlighted.inset .bar.close .action-btn, .info-text.highlighted, .highlighted-inactive .switch-paddle, .highlighted-active input:checked ~ .switch-paddle, .highlighted.callout, .highlighted.page-message {
+.nav-list.nav-checklist li.highlighted, .nav-checklist.panel-selector li.highlighted, .highlighted.question .message-holder > .highlighted, .hint .highlighted, .highlighted .close-bar .close-button, .highlighted.inset .bar.close .action-btn, .highlighted-inactive .switch-paddle, .highlighted-active input:checked ~ .switch-paddle, .highlighted.callout, .highlighted.page-message {
   background-color: #4bc1e2;
 }
 
-.highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before, .highlighted.answer .required-holder i.fa-holder:before, .highlighted.question .required-holder i.fa-holder:before, .highlighted.question-inline .required-holder i.fa-holder:before, d.highlighted.question-grid-base .required-holder i.fa-holder:before, .highlighted.page-message .fa-holder:before {
+.highlighted .fa-holder:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder:before, .nav-checklist.panel-selector li.highlighted .fa-holder:before, .highlighted.answer .required-holder i.fa-holder:before, .highlighted.question .required-holder i.fa-holder:before, .highlighted.question-inline .required-holder i.fa-holder:before, d.highlighted.question-grid-base .required-holder i.fa-holder:before, .highlighted.page-message .fa-holder:before {
   content: "";
 }
 
-.locked .order-marker.hollow, .locked.order-marker.hollow, .locked.question .input-holder input, .locked.question .input-holder textarea, .locked.question .input-holder select, .locked.question .input-holder .postfix, .locked.question .input-holder .prefix, .locked .close-bar, .locked .bar.close, .locked.inset .bar.close, .info-text.locked, .locked.question .button-group, .locked .order-marker.hollow, .locked.order-marker.hollow, h1.with-underline.locked, h2.with-underline.locked, h3.with-underline.locked, h4.with-underline.locked, h5.with-underline.locked, h6.with-underline.locked {
+.locked .order-marker.hollow, .locked.order-marker.hollow, .locked.question .input-holder input, .locked.question .input-holder textarea, .locked.question .input-holder select, .locked.question .input-holder .postfix, .locked.question .input-holder .prefix, .locked .close-bar, .locked .bar.close, .locked.inset .bar.close, .locked.question .button-group, .locked .order-marker.hollow, .locked.order-marker.hollow, h1.with-underline.locked, h2.with-underline.locked, h3.with-underline.locked, h4.with-underline.locked, h5.with-underline.locked, h6.with-underline.locked {
   border-color: #bfbfbf;
 }
 
-.locked.fa, .locked .order-marker.inverse, .locked.order-marker.inverse.locked .order-marker.hollow, .locked.order-marker.hollow, .nav-list.nav-checklist li.locked i, .nav-checklist.panel-selector li.locked i, .answer.locked .required-holder, .question.locked .required-holder, .question-inline.locked .required-holder, .question-grid-based.locked .required-holder, .locked.question .label-holder label, .locked.question .input-holder .postfix, .locked.question .input-holder .prefix, .locked.question .input-holder .value, .locked .bar.close .action-btn, .collapsable-panel.locked h1, .collapsable-panel.locked h2, .collapsable-panel.locked h3, .collapsable-panel.locked h4, .collapsable-panel.locked h5, .collapsable-panel.locked h6, .locked .order-marker.inverse, .locked.order-marker.inverse.locked .order-marker.hollow, .locked.order-marker.hollow, h1.locked, h2.locked, h3.locked, h4.locked, h5.locked, h6.locked, p.locked, a.locked, li.locked, blockquote.locked {
+.locked.fa, .locked .order-marker.inverse, .locked.order-marker.inverse.locked .order-marker.hollow, .locked.order-marker.hollow, .nav-list.nav-checklist li.locked a, .nav-checklist.panel-selector li.locked a, .nav-list.nav-checklist li.locked i, .nav-checklist.panel-selector li.locked i, .answer.locked .required-holder, .question.locked .required-holder, .question-inline.locked .required-holder, .question-grid-based.locked .required-holder, .locked.question .label-holder label, .locked.question .input-holder .postfix, .locked.question .input-holder .prefix, .locked.question .input-holder .value, .locked .bar.close .action-btn, .collapsable-panel.locked h1, .collapsable-panel.locked h2, .collapsable-panel.locked h3, .collapsable-panel.locked h4, .collapsable-panel.locked h5, .collapsable-panel.locked h6, .locked .order-marker.inverse, .locked.order-marker.inverse.locked .order-marker.hollow, .locked.order-marker.hollow, h1.locked, h2.locked, h3.locked, h4.locked, h5.locked, h6.locked, p.locked, a.locked, li.locked, blockquote.locked {
   color: #bfbfbf;
 }
 
-.nav-list.nav-checklist li.locked, .nav-checklist.panel-selector li.locked, .locked.question .message-holder > .locked, .hint .locked, .locked .close-bar .close-button, .locked.inset .bar.close .action-btn, .info-text.locked, .locked-inactive .switch-paddle, .locked-active input:checked ~ .switch-paddle, .locked.callout, .locked.page-message {
+.nav-list.nav-checklist li.locked, .nav-checklist.panel-selector li.locked, .locked.question .message-holder > .locked, .hint .locked, .locked .close-bar .close-button, .locked.inset .bar.close .action-btn, .locked-inactive .switch-paddle, .locked-active input:checked ~ .switch-paddle, .locked.callout, .locked.page-message {
   background-color: #cccccc;
 }
 
-.locked .fa-holder-dynamic:before, .locked.fa:before, .locked > .fa-holder:before, .nav-list.nav-checklist li.locked .fa-holder-dynamic:before, .nav-checklist.panel-selector li.locked .fa-holder-dynamic:before, .locked.answer .required-holder i.fa-holder:before, .locked.question .required-holder i.fa-holder:before, .locked.question-inline .required-holder i.fa-holder:before, d.locked.question-grid-base .required-holder i.fa-holder:before, .locked.page-message .fa-holder:before {
+.locked .fa-holder:before, .locked.fa:before, .locked > .fa-holder:before, .nav-list.nav-checklist li.locked .fa-holder:before, .nav-checklist.panel-selector li.locked .fa-holder:before, .locked.answer .required-holder i.fa-holder:before, .locked.question .required-holder i.fa-holder:before, .locked.question-inline .required-holder i.fa-holder:before, d.locked.question-grid-base .required-holder i.fa-holder:before, .locked.page-message .fa-holder:before {
   content: "";
 }
 
-.disabled .order-marker.hollow, .disabled.order-marker.hollow, .disabled.question .input-holder input, .disabled.question .input-holder textarea, .disabled.question .input-holder select, .disabled.question .input-holder .postfix, .disabled.question .input-holder .prefix, .disabled .close-bar, .disabled .bar.close, .disabled.inset .bar.close, .info-text.disabled, .disabled.question .button-group, .disabled .order-marker.hollow, .disabled.order-marker.hollow, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
+.disabled .order-marker.hollow, .disabled.order-marker.hollow, .disabled.question .input-holder input, .disabled.question .input-holder textarea, .disabled.question .input-holder select, .disabled.question .input-holder .postfix, .disabled.question .input-holder .prefix, .disabled .close-bar, .disabled .bar.close, .disabled.inset .bar.close, .disabled.question .button-group, .disabled .order-marker.hollow, .disabled.order-marker.hollow, h1.with-underline.disabled, h2.with-underline.disabled, h3.with-underline.disabled, h4.with-underline.disabled, h5.with-underline.disabled, h6.with-underline.disabled {
   border-color: #cccccc;
 }
 
-.disabled.fa, .disabled .order-marker.inverse, .disabled.order-marker.inverse.disabled .order-marker.hollow, .disabled.order-marker.hollow, .nav-list.nav-checklist li.disabled i, .nav-checklist.panel-selector li.disabled i, .answer.disabled .required-holder, .question.disabled .required-holder, .question-inline.disabled .required-holder, .question-grid-based.disabled .required-holder, .disabled.question .label-holder label, .disabled.question .input-holder .postfix, .disabled.question .input-holder .prefix, .disabled.question .input-holder .value, .disabled .bar.close .action-btn, .collapsable-panel.disabled h1, .collapsable-panel.disabled h2, .collapsable-panel.disabled h3, .collapsable-panel.disabled h4, .collapsable-panel.disabled h5, .collapsable-panel.disabled h6, .disabled .order-marker.inverse, .disabled.order-marker.inverse.disabled .order-marker.hollow, .disabled.order-marker.hollow, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
+.disabled.fa, .disabled .order-marker.inverse, .disabled.order-marker.inverse.disabled .order-marker.hollow, .disabled.order-marker.hollow, .nav-list.nav-checklist li.disabled a, .nav-checklist.panel-selector li.disabled a, .nav-list.nav-checklist li.disabled i, .nav-checklist.panel-selector li.disabled i, .answer.disabled .required-holder, .question.disabled .required-holder, .question-inline.disabled .required-holder, .question-grid-based.disabled .required-holder, .disabled.question .label-holder label, .disabled.question .input-holder .postfix, .disabled.question .input-holder .prefix, .disabled.question .input-holder .value, .disabled .bar.close .action-btn, .collapsable-panel.disabled h1, .collapsable-panel.disabled h2, .collapsable-panel.disabled h3, .collapsable-panel.disabled h4, .collapsable-panel.disabled h5, .collapsable-panel.disabled h6, .disabled .order-marker.inverse, .disabled.order-marker.inverse.disabled .order-marker.hollow, .disabled.order-marker.hollow, h1.disabled, h2.disabled, h3.disabled, h4.disabled, h5.disabled, h6.disabled, p.disabled, a.disabled, li.disabled, blockquote.disabled {
   color: #cccccc;
 }
 
-.nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled, .disabled.question .message-holder > .disabled, .hint .disabled, .disabled .close-bar .close-button, .disabled.inset .bar.close .action-btn, .info-text.disabled, .disabled-inactive .switch-paddle, .disabled-active input:checked ~ .switch-paddle, .disabled.callout, .disabled.page-message {
+.nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled, .disabled.question .message-holder > .disabled, .hint .disabled, .disabled .close-bar .close-button, .disabled.inset .bar.close .action-btn, .disabled-inactive .switch-paddle, .disabled-active input:checked ~ .switch-paddle, .disabled.callout, .disabled.page-message {
   background-color: #d6d6d6;
 }
 
-.disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before, .disabled.answer .required-holder i.fa-holder:before, .disabled.question .required-holder i.fa-holder:before, .disabled.question-inline .required-holder i.fa-holder:before, d.disabled.question-grid-base .required-holder i.fa-holder:before, .disabled.page-message .fa-holder:before {
+.disabled .fa-holder:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder:before, .nav-checklist.panel-selector li.disabled .fa-holder:before, .disabled.answer .required-holder i.fa-holder:before, .disabled.question .required-holder i.fa-holder:before, .disabled.question-inline .required-holder i.fa-holder:before, d.disabled.question-grid-base .required-holder i.fa-holder:before, .disabled.page-message .fa-holder:before {
   content: "";
 }
 
-.error .fa-holder-dynamic:before, .error.fa:before, .error > .fa-holder:before, .nav-list.nav-checklist li.error .fa-holder-dynamic:before, .nav-checklist.panel-selector li.error .fa-holder-dynamic:before, .error.answer .required-holder i.fa-holder:before, .error.question .required-holder i.fa-holder:before, .error.question-inline .required-holder i.fa-holder:before, d.error.question-grid-base .required-holder i.fa-holder:before, .error.page-message .fa-holder:before, .warning .fa-holder-dynamic:before, .warning.fa:before, .warning > .fa-holder:before, .nav-list.nav-checklist li.warning .fa-holder-dynamic:before, .nav-checklist.panel-selector li.warning .fa-holder-dynamic:before, .warning.answer .required-holder i.fa-holder:before, .warning.question .required-holder i.fa-holder:before, .warning.question-inline .required-holder i.fa-holder:before, d.warning.question-grid-base .required-holder i.fa-holder:before, .warning.page-message .fa-holder:before, .success .fa-holder-dynamic:before, .success.fa:before, .success > .fa-holder:before, .nav-list.nav-checklist li.success .fa-holder-dynamic:before, .nav-checklist.panel-selector li.success .fa-holder-dynamic:before, .success.answer .required-holder i.fa-holder:before, .success.question .required-holder i.fa-holder:before, .success.question-inline .required-holder i.fa-holder:before, d.success.question-grid-base .required-holder i.fa-holder:before, .success.page-message .fa-holder:before, .info .fa-holder-dynamic:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder-dynamic:before, .nav-checklist.panel-selector li.info .fa-holder-dynamic:before, .info.answer .required-holder i.fa-holder:before, .info.question .required-holder i.fa-holder:before, .info.question-inline .required-holder i.fa-holder:before, d.info.question-grid-base .required-holder i.fa-holder:before, .info.page-message .fa-holder:before, .highlighted .fa-holder-dynamic:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder-dynamic:before, .nav-checklist.panel-selector li.highlighted .fa-holder-dynamic:before, .highlighted.answer .required-holder i.fa-holder:before, .highlighted.question .required-holder i.fa-holder:before, .highlighted.question-inline .required-holder i.fa-holder:before, d.highlighted.question-grid-base .required-holder i.fa-holder:before, .highlighted.page-message .fa-holder:before, .locked .fa-holder-dynamic:before, .locked.fa:before, .locked > .fa-holder:before, .nav-list.nav-checklist li.locked .fa-holder-dynamic:before, .nav-checklist.panel-selector li.locked .fa-holder-dynamic:before, .locked.answer .required-holder i.fa-holder:before, .locked.question .required-holder i.fa-holder:before, .locked.question-inline .required-holder i.fa-holder:before, d.locked.question-grid-base .required-holder i.fa-holder:before, .locked.page-message .fa-holder:before, .disabled .fa-holder-dynamic:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder-dynamic:before, .nav-checklist.panel-selector li.disabled .fa-holder-dynamic:before, .disabled.answer .required-holder i.fa-holder:before, .disabled.question .required-holder i.fa-holder:before, .disabled.question-inline .required-holder i.fa-holder:before, d.disabled.question-grid-base .required-holder i.fa-holder:before, .disabled.page-message .fa-holder:before {
+.error .fa-holder:before, .error.fa:before, .nav-list.nav-checklist li.error .fa-holder:before, .nav-checklist.panel-selector li.error .fa-holder:before, .error.answer .required-holder i.fa-holder:before, .error.question .required-holder i.fa-holder:before, .error.question-inline .required-holder i.fa-holder:before, d.error.question-grid-base .required-holder i.fa-holder:before, .error.page-message .fa-holder:before, .warning .fa-holder:before, .warning.fa:before, .nav-list.nav-checklist li.warning .fa-holder:before, .nav-checklist.panel-selector li.warning .fa-holder:before, .warning.answer .required-holder i.fa-holder:before, .warning.question .required-holder i.fa-holder:before, .warning.question-inline .required-holder i.fa-holder:before, d.warning.question-grid-base .required-holder i.fa-holder:before, .warning.page-message .fa-holder:before, .success .fa-holder:before, .success.fa:before, .nav-list.nav-checklist li.success .fa-holder:before, .nav-checklist.panel-selector li.success .fa-holder:before, .success.answer .required-holder i.fa-holder:before, .success.question .required-holder i.fa-holder:before, .success.question-inline .required-holder i.fa-holder:before, d.success.question-grid-base .required-holder i.fa-holder:before, .success.page-message .fa-holder:before, .info .fa-holder:before, .info.fa:before, .nav-list.nav-checklist li.info .fa-holder:before, .nav-checklist.panel-selector li.info .fa-holder:before, .info.answer .required-holder i.fa-holder:before, .info.question .required-holder i.fa-holder:before, .info.question-inline .required-holder i.fa-holder:before, d.info.question-grid-base .required-holder i.fa-holder:before, .info.page-message .fa-holder:before, .highlighted .fa-holder:before, .highlighted.fa:before, .nav-list.nav-checklist li.highlighted .fa-holder:before, .nav-checklist.panel-selector li.highlighted .fa-holder:before, .highlighted.answer .required-holder i.fa-holder:before, .highlighted.question .required-holder i.fa-holder:before, .highlighted.question-inline .required-holder i.fa-holder:before, d.highlighted.question-grid-base .required-holder i.fa-holder:before, .highlighted.page-message .fa-holder:before, .locked .fa-holder:before, .locked.fa:before, .nav-list.nav-checklist li.locked .fa-holder:before, .nav-checklist.panel-selector li.locked .fa-holder:before, .locked.answer .required-holder i.fa-holder:before, .locked.question .required-holder i.fa-holder:before, .locked.question-inline .required-holder i.fa-holder:before, d.locked.question-grid-base .required-holder i.fa-holder:before, .locked.page-message .fa-holder:before, .disabled .fa-holder:before, .disabled.fa:before, .nav-list.nav-checklist li.disabled .fa-holder:before, .nav-checklist.panel-selector li.disabled .fa-holder:before, .disabled.answer .required-holder i.fa-holder:before, .disabled.question .required-holder i.fa-holder:before, .disabled.question-inline .required-holder i.fa-holder:before, d.disabled.question-grid-base .required-holder i.fa-holder:before, .disabled.page-message .fa-holder:before {
   font-family: FontAwesome;
 }
 
@@ -11559,225 +12221,8 @@ STATE TRUMPING CODE
   color: #262626;
 }
 
-.light-color-text, .error .order-marker, .error.order-marker, .warning .order-marker, .warning.order-marker, .success .order-marker, .success.order-marker, .info .order-marker, .info.order-marker, .highlighted .order-marker, .highlighted.order-marker, .locked .order-marker, .locked.order-marker, .disabled .order-marker, .disabled.order-marker, .message-holder > .error, .message-holder > .warning, .message-holder > .success, .message-holder > .info, .message-holder > .highlighted, .message-holder > .locked, .message-holder > .disabled, .hint .error, .hint .warning, .hint .success, .hint .info, .hint .highlighted, .hint .locked, .hint .disabled, .error .close-bar .close-button .fa, .warning .close-bar .close-button .fa, .success .close-bar .close-button .fa, .info .close-bar .close-button .fa, .highlighted .close-bar .close-button .fa, .locked .close-bar .close-button .fa, .disabled .close-bar .close-button .fa, .info-text.error, .info-text.error .required.fa, .info-text.warning, .info-text.warning .required.fa, .info-text.success, .info-text.success .required.fa, .info-text.info, .info-text.info .required.fa, .info-text.highlighted, .info-text.highlighted .required.fa, .info-text.locked, .info-text.locked .required.fa, .info-text.disabled, .info-text.disabled .required.fa, .error .order-marker, .error.order-marker, .warning .order-marker, .warning.order-marker, .success .order-marker, .success.order-marker, .info .order-marker, .info.order-marker, .highlighted .order-marker, .highlighted.order-marker, .locked .order-marker, .locked.order-marker, .disabled .order-marker, .disabled.order-marker {
+.light-color-text, .error .order-marker, .error.order-marker, .warning .order-marker, .warning.order-marker, .success .order-marker, .success.order-marker, .info .order-marker, .info.order-marker, .highlighted .order-marker, .highlighted.order-marker, .locked .order-marker, .locked.order-marker, .disabled .order-marker, .disabled.order-marker, .message-holder > .error, .message-holder > .warning, .message-holder > .success, .message-holder > .info, .message-holder > .highlighted, .message-holder > .locked, .message-holder > .disabled, .hint .error, .hint .warning, .hint .success, .hint .info, .hint .highlighted, .hint .locked, .hint .disabled, .error .close-bar .close-button .fa, .warning .close-bar .close-button .fa, .success .close-bar .close-button .fa, .info .close-bar .close-button .fa, .highlighted .close-bar .close-button .fa, .locked .close-bar .close-button .fa, .disabled .close-bar .close-button .fa, .error .order-marker, .error.order-marker, .warning .order-marker, .warning.order-marker, .success .order-marker, .success.order-marker, .info .order-marker, .info.order-marker, .highlighted .order-marker, .highlighted.order-marker, .locked .order-marker, .locked.order-marker, .disabled .order-marker, .disabled.order-marker {
   color: #fff;
-}
-
-.page-wrapper, .page .page-wrapper {
-  max-width: 60em;
-  margin: 0 auto;
-}
-
-.input-space, .switch-input-space {
-  position: relative;
-}
-
-select {
-  background-position: right 0rem center;
-}
-
-.input-space .input-lock, .switch-input-space .input-lock,
-.switch-input-space .input-lock {
-  position: absolute;
-  top: -1px;
-  right: 0;
-  padding: .57143rem;
-  font-size: 1em;
-  line-height: 1;
-  color: grey;
-  display: none;
-}
-.disabled .input-space .input-lock, .disabled .switch-input-space .input-lock, .disabled
-.switch-input-space .input-lock {
-  display: block;
-}
-
-.paper-page.repeater-area {
-  background-color: #14B057;
-  background-image: url(../img/bottom-shade.png), url(../img/top-shade.png), url(../img/cream_pixels_alt.png);
-  background-position: bottom right, right -1px, top right;
-  background-repeat: repeat-x, repeat-x, repeat;
-  margin-bottom: .25rem;
-}
-.paper-page.repeater-area.edit {
-  background-color: #cccccc;
-  background-image: url(../img/bottom-shade.png), url(../img/top-shade.png), url(../img/cream_pixels_altdark.png);
-}
-.paper-page.repeater-area .close-button {
-  color: #fff;
-  border: #fff solid 1px;
-  border-radius: 6px;
-  top: -6px;
-  right: -.5em;
-  padding: .35em .75em;
-  margin: 0;
-}
-.paper-page.repeater-area .close-button:hover {
-  background-color: rgba(0, 0, 0, 0.25);
-}
-.paper-page.repeater-area .colored-paper {
-  -webkit-box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.65);
-  -moz-box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.65);
-  box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.65);
-}
-
-.render {
-  padding: .5em 1em;
-  margin-bottom: .5em;
-  border: 1px solid #999999;
-  border-radius: 4px;
-}
-
-.render ul {
-  list-style: none;
-}
-
-.render.animated.fadeIn {
-  padding: 0;
-}
-
-.render ul {
-  margin: 0;
-}
-
-.render ul {
-  padding-top: .5rem;
-  padding-bottom: .4rem;
-}
-.render ul li {
-  padding: 0 1rem;
-  font-size: 14px;
-  line-height: 16px;
-}
-.render ul .strong {
-  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-  font-weight: 700;
-  letter-spacing: .75px;
-  font-size: 20px;
-  line-height: 26px;
-  color: #00386b;
-}
-.render ul li.has-tip {
-  margin-bottom: .5rem;
-}
-.render ul li.has-tip:first-child, .render ul li.has-tip + li.has-tip {
-  margin-top: -.5rem;
-}
-
-.render-actions {
-  background-color: #333333;
-  border-left: 1px solid #b3b3b3;
-  background-image: url(../img/cream_pixels.png);
-}
-
-.render-actions a {
-  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-  font-weight: 700;
-  letter-spacing: .75px;
-  font-size: 14px;
-  background-color: #bfbfbf;
-  text-align: center;
-  color: #333333;
-  width: 33%;
-  padding: 0.375rem 0.25em;
-  border: 1px solid #2e454c;
-  margin: 6px;
-  width: auto;
-  border-radius: 6px;
-  background-image: none;
-  height: 2.5em;
-}
-.render-actions a:hover {
-  background-color: #2e454c;
-  color: #fff;
-}
-
-.render-actions a.disabled, .render-actions a.disabled:hover {
-  font-family: 'Muli','Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  background-color: #333333;
-  color: #a6a6a6;
-  background-image: url(../img/cream_pixels.png);
-  border-color: #cccccc;
-}
-.render-actions a.disabled cursor:not-allowed
-i.fa, .render-actions a.disabled:hover cursor:not-allowed
-i.fa {
-  color: #b3b3b3;
-}
-
-.render {
-  position: relative;
-  padding: 0;
-}
-.render .starred.primary, .render .locked, .render .added-flag {
-  display: block;
-  background-color: #198dae;
-  color: white;
-}
-.render .has-tip {
-  padding: .25em 1em;
-}
-.render .has-tip.locked {
-  background-color: #cccccc;
-  color: #666666;
-}
-.render .added-flag {
-  background-color: rgba(20, 176, 87, 0.75);
-  border-radius: 0 0 6px 6px;
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  color: #000;
-}
-
-.render {
-  display: flex;
-}
-.render .render-holder {
-  display: block;
-  flex: 2 1 75%;
-}
-.render .render-actions {
-  display: flex;
-  flex: 0 0 175px;
-  flex-direction: column;
-}
-.render .render-actions a {
-  flex: 0 1 auto;
-  vertical-align: middle;
-}
-
-.question .switch, .question .question-grid-based .switch {
-  margin-top: .25em;
-  margin-bottom: .25em;
-}
-
-label.switch-value {
-  font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 1em;
-}
-
-.page-message.callout.empty, .page-message.empty {
-  background: none transparent;
-  border: 0;
-  padding: 0;
-}
-
-.page-message.empty .icon-holder {
-  font-size: 1em;
-  color: orange;
-  padding: 0;
-}
-
-.page-message.empty .icon-holder .fa-square-o {
-  display: none;
-}
-
-.page-message.empty.blank .icon-holder {
-  display: none;
 }
 
 .date-input-holder {
@@ -11786,98 +12231,6 @@ label.switch-value {
 
 .date-picker-holder {
   min-width: calc(3rem);
-}
-
-.nav-checklist .selected i.fa.fa-holder-dynamic:before {
-  content: "\f061";
-  color: black;
-}
-
-.group-section, .card {
-  width: auto;
-  position: relative;
-}
-
-.split-content .section-nav {
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 1.07143rem;
-  padding-right: 1.07143rem;
-}
-
-.split-content {
-  padding-bottom: 0 !important;
-  position: relative;
-}
-
-.split-content .section-nav.forward {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-}
-
-h4.no-vertical-margin {
-  margin: 0.35em 0 !important;
-}
-
-.split-content > .page > .page-wrapper {
-  padding: 0;
-}
-
-.split-content > .page {
-  padding-bottom: 5rem;
-}
-
-div.reveal {
-  padding-top: 2rem;
-}
-div.reveal .close-button {
-  padding: .25em .5em .25em .5em;
-  top: -6px;
-}
-
-.nav-list.nav-checklist li, .nav-checklist.panel-selector li {
-  padding: .3em 1em .35em;
-}
-.nav-list.nav-checklist li.error.selected, .nav-checklist.panel-selector li.error.selected, .nav-list.nav-checklist li.error.selected a, .nav-checklist.panel-selector li.error.selected a, .nav-list.nav-checklist .nav-checklist.panel-selector li.error.selected, .nav-checklist.panel-selector .nav-checklist.panel-selector li.error.selected, .nav-list.nav-checklist .nav-checklist.panel-selector li.error.selected a, .nav-checklist.panel-selector .nav-checklist.panel-selector li.error.selected a {
-  color: #fff !important;
-}
-
-#OMA_Sidebar {
-  background-color: #ebebeb;
-}
-
-.render .render-actions a + a {
-  margin-top: 0;
-}
-
-#auto-save {
-  display: block;
-  width: 100%;
-  position: fixed;
-  background-color: #00386b;
-  opacity: .85;
-  border-bottom: 2px solid #00386b;
-  top: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
-}
-#auto-save .message {
-  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
-  font-weight: 700;
-  letter-spacing: .75px;
-  font-size: 1.25rem;
-  line-height: 1.5;
-  margin-top: 0.5625rem;
-  margin-bottom: 0.5625rem;
-  color: #FFF;
-}
-.colored-paper #auto-save .message, .callout #auto-save .message, .page-message #auto-save .message {
-  margin-top: 0.5625rem;
-  margin-bottom: 0.5625rem;
-  line-height: 1.35;
 }
 
 .date-picker-holder .button {

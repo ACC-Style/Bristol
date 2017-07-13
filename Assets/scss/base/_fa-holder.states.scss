@@ -8,18 +8,17 @@ $required_data:(
 	);
 @include required-check($required_data...);
 // End of required check
-@mixin fa-var($var){
-	 .fa-holder-dynamic:before, &.fa:before, >.fa-holder:before{ content: $var;}
 
-}
 
 @each $State in $states{
 	$selector:map-get($State,"Selector");
-	@include setTrump('icon',map-get($State,'State'),'#{$selector} .fa-holder-dynamic:before, #{$selector}.fa:before,#{$selector} >.fa-holder:before');
+	@include setTrump('icon',map-get($State,'State'),'#{$selector} .fa-holder:before, #{$selector}.fa:before,#{$selector} >.fa-holder:before');
 	@include setTrump('color',map-get($State,'State'),'#{$selector}.fa');
 }
 
 .required{
-	@include fa-var($fa-var-asterisk);
+	
+	@include fa-holder($fa-var-asterisk,"parent");
+	@include fa-holder($fa-var-asterisk,"container");
 	&.fa{ color:$warning-color; }
 }
