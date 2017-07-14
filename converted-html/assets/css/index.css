@@ -2067,9 +2067,6 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 .nav-list.nav-checklist li.selected i else > i.fa-holder:before, .nav-checklist.panel-selector li.selected i else > i.fa-holder:before, .nav-list.nav-checklist li.selected i else i.fa-holder:before, .nav-checklist.panel-selector li.selected i else i.fa-holder:before {
   content: "";
 }
-.nav-list.nav-checklist li.completed:before, .nav-checklist.panel-selector li.completed:before {
-  content: "";
-}
 .nav-list.nav-checklist li.completed else > i.fa-holder:before, .nav-checklist.panel-selector li.completed else > i.fa-holder:before, .nav-list.nav-checklist li.completed else i.fa-holder:before, .nav-checklist.panel-selector li.completed else i.fa-holder:before {
   content: "";
 }
@@ -2520,7 +2517,7 @@ select {
   display: inline-block;
 }
 
-.input-holder, .value-holder {
+.input-holder {
   margin-bottom: 0;
 }
 
@@ -4126,6 +4123,21 @@ select {
 }
 .render .render-actions a + a {
   margin-top: 0;
+}
+
+.edit-mode--hide {
+  display: inherit;
+}
+
+.edit-mode--show {
+  display: none;
+}
+
+.edit-mode .edit-mode--show {
+  display: inherit;
+}
+.edit-mode .edit-mode--hide {
+  display: none;
 }
 
 /**
@@ -9632,44 +9644,55 @@ div.reveal .close-button {
   clear: both;
 }
 
-.page .page-wrapper, .content-padding, .content-padding.page-wrapper {
+.page-wrapper, .content-padding, .content-padding.page-wrapper {
   margin: 0 auto;
 }
 
-.page .page-wrapper {
-  max-width: 1200px;
+.page-wrapper {
+  max-width: 60em;
 }
 
-.page .page-wrapper {
+.page-wrapper .page-wrapper, .section-padding {
+  padding-top: 0.75rem;
+  padding-bottom: 1.125rem;
+}
+@media only screen and (min-width: 320px) {
+  .page-wrapper .page-wrapper, .section-padding {
+    padding-top: 1.125rem;
+    padding-bottom: 2.25rem;
+  }
+}
+@media only screen and (min-width: 767px) {
+  .page-wrapper .page-wrapper, .section-padding {
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .page-wrapper .page-wrapper, .section-padding {
+    padding-top: 2.25rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 10000px) {
+  .page-wrapper .page-wrapper {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.page-wrapper {
   padding: 1rem .5rem 1.25rem;
 }
 @media only screen and (min-width: 767px) {
-  .page .page-wrapper {
+  .page-wrapper {
     padding: 1.5rem .75rem 2rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .page .page-wrapper {
+  .page-wrapper {
     padding: 2rem 1rem 3rem;
-  }
-}
-
-.section-padding, .with-group-sections .page-wrapper, .paper-page .page-wrapper {
-  padding: .25rem 0;
-}
-@media only screen and (min-width: 320px) {
-  .section-padding, .with-group-sections .page-wrapper, .paper-page .page-wrapper {
-    padding: .5rem 0;
-  }
-}
-@media only screen and (min-width: 767px) {
-  .section-padding, .with-group-sections .page-wrapper, .paper-page .page-wrapper {
-    padding: .75rem 0;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .section-padding, .with-group-sections .page-wrapper, .paper-page .page-wrapper {
-    padding: 1rem 0;
   }
 }
 
@@ -9710,6 +9733,25 @@ div.reveal .close-button {
   .content-padding, .content-padding.page-wrapper, .group-section, .card, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
     padding-right: 1rem;
     padding-left: 1rem;
+  }
+}
+
+.page-wrapper + .repeater-holder {
+  margin-top: -0.75rem;
+}
+@media only screen and (min-width: 320px) {
+  .page-wrapper + .repeater-holder {
+    margin-top: -1.125rem;
+  }
+}
+@media only screen and (min-width: 767px) {
+  .page-wrapper + .repeater-holder {
+    margin-top: -1.5rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .page-wrapper + .repeater-holder {
+    margin-top: -2.25rem;
   }
 }
 
@@ -9794,7 +9836,7 @@ div.reveal .close-button {
   }
 }
 
-.page .page-wrapper, .content-padding, .content-padding.page-wrapper, .colored-paper {
+.page-wrapper, .content-padding, .content-padding.page-wrapper, .colored-paper {
   -webkit-transition: padding 1s;
   /* Safari */
   transition: padding 1s;
@@ -9803,11 +9845,15 @@ div.reveal .close-button {
   transition: margin 1s;
 }
 
+.page {
+  position: relative;
+}
+
 .section, section {
   width: 100%;
 }
 
-.section-nav.back ~ .page-wrapper {
+.section-nav.back ~ .page-wrapper, .page-wrapper ~ .page-wrapper {
   padding-top: 0;
 }
 
@@ -9823,7 +9869,7 @@ div.reveal .close-button {
 * `page-wrapper` - inside all layout divs the page-wrapper is used to make a unified amount of spacing from the content and the vewport edges.
 * 
 *   @example
-*	<div class="page-wrapper" style="border:red 1px solid"><div class="section">Hello this is content </div></div>
+*   <div class="page-wrapper" style="border:red 1px solid"><div class="section">Hello this is content </div></div>
 **/
 .with-group-sections, .paper-page, .with-group-sections .overlap .tabs .selected, .with-group-sections .overlap .tabs .is-active, .paper-page .overlap .tabs .selected, .paper-page .overlap .tabs .is-active {
   background-image: url("../img/billie-holiday-lite.png");
@@ -10043,11 +10089,6 @@ div.reveal .close-button {
   vertical-align: bottom;
   padding: .4em;
   background-color: #fff;
-}
-
-.page-wrapper, .page .page-wrapper {
-  max-width: 60em;
-  margin: 0 auto;
 }
 
 .radius.group-section .colored-paper:first-child, .radius.card .colored-paper:first-child, .radius.group-section .colored-paper:last-child, .radius.card .colored-paper:last-child {
@@ -10429,10 +10470,8 @@ div.reveal .close-button {
   padding-bottom: 9998px;
   position: relative;
 }
-.split-layout.fill-page-height .split-content {
-  min-height: 100vh;
-  margin-bottom: 0px;
-  padding-bottom: 1em;
+.split-layout.fill-page-height .split-content, .split-layout.fill-page-height .split-sidebar {
+  min-height: 70vh;
 }
 .split-layout .split-sidebar {
   display: none;
@@ -12231,6 +12270,13 @@ STATE TRUMPING CODE
 
 .date-picker-holder {
   min-width: calc(3rem);
+}
+
+.fa-plus.required:before, .fa.required:before {
+  content: "";
+}
+.fa-plus.required else > i.fa-holder:before, .fa-plus.required else i.fa-holder:before, .fa.required else > i.fa-holder:before, .fa.required else i.fa-holder:before {
+  content: "";
 }
 
 .date-picker-holder .button {
