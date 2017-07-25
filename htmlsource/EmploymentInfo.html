@@ -5,37 +5,15 @@ id: emp
 ---
 
 {%  include snippets/page-top.liquid title="Current Employment Information" level="h1" style="with-underline" message="Please fill in with your current employment"%}
-    <div class="row">
-        {% include snippets/question-select.liquid label="Address Type" option="Work" size="small-12 large-4" state="required disabled" hint="" %}
+<div class="row">
+    {% include snippets/question-select.liquid label="Address Type" option="Work" size="small-12 large-4" state="required disabled" hint="" %}
         {% include snippets/question-text.liquid label="Institution Name" size="small-12 large-8" state="required" hint="" %}
-         </div><div class="row">
-        {% include elements/street-address.liquid %}
-        </div><div class="row">
-        {% include elements/country-city-state-zip.liquid %}
-    </div>
-    <div class="row">
-		<div class="question column required">
-			<div class="label-holder">
-			    <label for=""><span class="text">
-			        Please attach verification letter from current training institution.
-			    </span>
-			    <span class="required-holder">
-			        <i class="fa fa-holder">
-			        </i>
-			    </span>
-			    </label>
-			</div>
-			<div class="input-holder">
-			<div class="button-space column small-8 medium-6 large-4">
-				<a href="" class="button expanded">Attach Letter</a>
-			</div>
-			</div>
-			<div class="message-holder">
-			<small class="error column small-6 medium-4 large-2">Error Message</small>
-			</div>
-			<div class="hint"></div>
-			</div>	
-    	</div>
+</div>
+<div class="row">
+    {% include elements/street-address.liquid %}
+</div>
+<div class="row">
+    {% include elements/country-city-state-zip.liquid %}
+</div>
 
-        {% include elements/continue-button-bar.liquid %}   
-
+{% include elements/continue-button-bar.liquid %}

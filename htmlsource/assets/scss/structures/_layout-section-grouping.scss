@@ -18,8 +18,15 @@
     -moz-box-shadow: inset 0px 1px 6px 3px rgba(230, 230, 230, .2);
     box-shadow: inset 0px 1px 6px 3px rgba(230, 230, 230, .2);
 }
-
-.with-group-sections,.paper-page{
+.group-section,.card {
+        width: auto;
+        position: relative;
+        @extend %liftedbox;
+        @extend %content-padding-vertical;
+        @extend %content-padding-horizontal;
+        
+    }       
+.with-group-sections, .paper-page{
     @extend %shadedbackground;
     @if $brand-level < 2{  
         .overlap .tabs .selected,.overlap .tabs .is-active{
@@ -43,7 +50,7 @@
         padding-top:.5rem;
     }
     .page-wrapper {
-        @extend %page-padding-vertical-only; 
+        // @extend %page-padding-vertical; 
         // align sections and rows with in the page
         > .section, > section, > .row {
             @extend %content-padding-horizontal;
@@ -132,7 +139,7 @@
 
    
 }
-.page-wrapper,.page .page-wrapper{max-width:60em;margin:0 auto;}
+
 .group-section .colored-paper:last-child,.card .colored-paper:last-child {
     @extend %content-expanding-margin-bottom;
 }

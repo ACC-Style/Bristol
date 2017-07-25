@@ -1,160 +1,179 @@
-.paper-page.repeater-area {
-  background-color: $success-color;
-  background-image: url(../img/bottom-shade.png), url(../img/top-shade.png), url(../img/cream_pixels_alt.png);
-  background-position: bottom right, right -1px, top right;
-  background-repeat: repeat-x, repeat-x, repeat;
-  margin-bottom: .25rem;
-  &.edit{
-    background-color:grey(20);
-    background-image: url(../img/bottom-shade.png), url(../img/top-shade.png), url(../img/cream_pixels_altdark.png);
-  }
-  .close-button{
+.page-wrapper + .repeater-holder{
+    @extend %page-expanding-margin-top;
+}
 
-    color: #fff;
-    border: #fff solid 1px;
-    border-radius: 6px;
-    top: -6px;
-    right: -.5em;
-    padding: .35em .75em;
-    margin: 0;
-    &:hover{background-color:rgba(0, 0, 0, .25);}
-  }
-  .colored-paper{    -webkit-box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.65);
-    -moz-box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.65);
-    box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.65);}
+.paper-page.repeater-area {
+    background-color: $success-color;
+    background-image: url(../img/bottom-shade.png), url(../img/top-shade.png), url(../img/cream_pixels_alt.png);
+    background-position: bottom right, right -1px, top right;
+    background-repeat: repeat-x, repeat-x, repeat;
+    margin-bottom: .25rem;
+    &.edit {
+        background-color: grey(20);
+        background-image: url(../img/bottom-shade.png), url(../img/top-shade.png), url(../img/cream_pixels_altdark.png);
+    }
+    .close-button {
+        color: #fff;
+        border: #fff solid 1px;
+        border-radius: 6px;
+        top: -6px;
+        right: -.5em;
+        padding: .35em .75em;
+        margin: 0;
+        &:hover {
+            background-color: rgba(0, 0, 0, .25);
+        }
+    }
+    .colored-paper {
+        -webkit-box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.65);
+        -moz-box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.65);
+        box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.65);
+    }
 }
 
 .render {
-  padding: .5em 1em;
-  margin-bottom: .5em;
-  border: 1px solid grey(40);
-  border-radius: 4px;
+    padding: .5em 1em;
+    margin-bottom: .5em;
+    border: 1px solid grey(40);
+    border-radius: 4px;
+    ul {
+        list-style: none;
+    }
 }
-
-.render ul {
-  list-style: none;
-}
-
-
 
 .render.animated.fadeIn {
-  padding: 0;
+    padding: 0;
 }
 
 .render ul {
-  margin: 0
+    margin: 0
 }
 
-.render ul  {
-  padding-top:.5rem;
-  padding-bottom:.4rem;
-  li{
-    padding: 0 1rem;
-    font-size:ms(-1);
-    line-height: ms(0);}
-  .strong{
-    @include font-slab-bold();
-    font-size:ms(2);
-    line-height: ms(4);
-    color:$acc-blue;
-  }
-  .loud{
-  }
-  li.has-tip{margin-bottom:.5rem;}
-  li.has-tip:first-child,li.has-tip+li.has-tip{
-    margin-top: -.5rem;
-  }
+.render ul {
+    padding-top: .5rem;
+    padding-bottom: .4rem;
+    li {
+        padding: 0 1rem;
+        font-size: ms(-1);
+        line-height: ms(0);
+    }
+    .strong {
+        @include font-slab-bold();
+        font-size: ms(2);
+        line-height: ms(4);
+        color: $acc-blue;
+    }
+    .loud {}
+    li.has-tip {
+        margin-bottom: .5rem;
+    }
+    li.has-tip:first-child, li.has-tip+li.has-tip {
+        margin-top: -.5rem;
+    }
 }
+
 .render-actions {
-  background-color: grey(80);
-  border-left: 1px solid grey(30);
-  background-image:url(../img/cream_pixels.png);
+    background-color: grey(80);
+    border-left: 1px solid grey(30);
+    background-image: url(../img/cream_pixels.png);
 }
 
 .render-actions a {
-  @include font-slab-bold;
-  font-size: ms(-1);
-  background-color: $secondary-color;
-  text-align: center;
-  color: $black;
-  width: 33%;
-  padding: $vertical-space/4 .25em;
-  border:1px solid mix($primary-color,$black,20%);
-  margin: 6px;
-  width: auto;
-  border-radius: 6px;
-  background-image: none;
-  height: 2.5em;
-	&:hover {
-	background-color: mix($primary-color,$black,20%);
-	color:#fff ;
- }
+    @include font-slab-bold;
+    font-size: ms(-1);
+    background-color: $secondary-color;
+    text-align: center;
+    color: $black;
+    width: 33%;
+    padding: $vertical-space/4 .25em;
+    border: 1px solid mix($primary-color, $black, 20%);
+    margin: 6px;
+    width: auto;
+    border-radius: 6px;
+    background-image: none;
+    height: 2.5em;
+    &:hover {
+        background-color: mix($primary-color, $black, 20%);
+        color: #fff;
+    }
 }
-
-
 
 .render-actions a.disabled {
-  &,
-  &:hover {
-    @include font-light();
-    background-color: grey(80);
-    color: grey(35);
-    background-image: url(../img/cream_pixels.png);
-    border-color:grey(20);
-    cursor:not-allowed
-    i.fa {
-      color: grey(30);
-   }
-}
-}
-.render{
-  position:relative;
-  padding:0;
-  .starred.primary, .locked,.added-flag {
-    display: block;
-    background-color: $primary-color;
-    color: white;
-  }
-  .has-tip{padding: .25em 1em;}
-  .has-tip.locked {
-    background-color: grey(20);
-    color: grey(60);
-  }
-  .added-flag{
-    background-color:rgba($success-color,.75);
-    border-radius: 0 0  $global-border-radius $global-border-radius;
-        display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    color:$real-black;
-  }
+    &, &:hover {
+        @include font-light();
+        background-color: grey(80);
+        color: grey(35);
+        background-image: url(../img/cream_pixels.png);
+        border-color: grey(20);
+        cursor:not-allowed i.fa {
+            color: grey(30);
+        }
+    }
 }
 
+.render {
+    position: relative;
+    padding: 0;
+    .starred.primary, .locked, .added-flag {
+        display: block;
+        background-color: $primary-color;
+        color: white;
+    }
+    .has-tip {
+        padding: .25em 1em;
+    }
+    .has-tip.locked {
+        background-color: grey(20);
+        color: grey(60);
+    }
+    .added-flag {
+        background-color: rgba($success-color, .75);
+        border-radius: 0 0 $global-border-radius $global-border-radius;
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        color: $real-black;
+    }
+}
 
 //    Flex Rules around render
 .render {
-	display:flex;
-  .render-holder {
-	display:block;
-  flex:2 1 75%;
-  }
-  .render-actions {
-  	display:flex;
-    flex: 0 0 175px;
-  	flex-direction: column ;
-    a {
-    	flex:0 1 auto;
-	    vertical-align: middle;
-
+    display: flex;
+    .render-holder {
+        display: block;
+        flex: 2 1 75%;
     }
- }
+    .render-actions {
+        display: flex;
+        flex: 0 0 175px;
+        flex-direction: column;
+        a {
+            flex: 0 1 auto;
+            vertical-align: middle;
+        }
+        a+a {
+            margin-top: 0;
+        }
+    }
+}
+.edit-mode--hide {
+    display: inherit;
 }
 
+.edit-mode--show {
+    display: none;
+}
 
+.edit-mode {
+    .edit-mode--show {
+        display: inherit;
+    }
 
-
-
+    .edit-mode--hide {
+        display: none;
+    }
+}
 // $repeater-color: rebrand-color($primary-color,2);
 // .repeater{
 // 	@include grid-row(12,collapse);
@@ -354,8 +373,6 @@
 // 	}
 // }
 
-
-
 /**
 * Form Repeater:
 * `.repeater` - This is form elements repeater. This Module is broken into 3 major containers. The `renders` are any previously saved collection of inputs.The `question-group` holds all of the questions that need to be repeated. And the `.repeater-actions` is the buttons to save|submit and cancel the current session of inputs. 
@@ -367,7 +384,7 @@
 *			<label for="">
 *				<span class="text">Multi Input Form</span>
 *				<span class="required-holder">
-*					<i class="fa fa-holder-dynamic"></i>
+*					<i class="fa fa-holder"></i>
 *				</span>
 *			</label>
 *		</div>
@@ -384,7 +401,7 @@
 *		</ul>
 *		<div class="message-holder">
 *			<small class="warning">
-*				<i class="fa fa-holder-dynamic"></i>
+*				<i class="fa fa-holder"></i>
 *				This is a dynamic render message.
 *			</small>
 *		</div>
@@ -398,7 +415,7 @@
 *			<label for="">
 *				<span class="text">Question (Required)</span>
 *				<span class="required-holder">
-*					<i class="fa fa-holder-dynamic"></i>
+*					<i class="fa fa-holder"></i>
 *				</span>
 *			</label>
 *		</div>
@@ -422,7 +439,7 @@
 *			<label for="">
 *				<span class="text">Question (Required)</span>
 *				<span class="required-holder">
-*					<i class="fa fa-holder-dynamic"></i>
+*					<i class="fa fa-holder"></i>
 *				</span>
 *			</label>
 *		</div>
@@ -446,7 +463,7 @@
 *			<label for="">
 *				<span class="text">Question (Required)</span>
 *				<span class="required-holder">
-*					<i class="fa fa-holder-dynamic"></i>
+*					<i class="fa fa-holder"></i>
 *				</span>
 *			</label>
 *		</div>
@@ -482,7 +499,7 @@
 *			<label for="">
 *				<span class="text">Multi Input Form (Edit)</span>
 *				<span class="required-holder">
-*					<i class="fa fa-holder-dynamic"></i>
+*					<i class="fa fa-holder"></i>
 *				</span>
 *			</label>
 *		</div>
@@ -499,7 +516,7 @@
 *		</ul>
 *		<div class="message-holder">
 *			<small class="warning">
-*				<i class="fa fa-holder-dynamic"></i>
+*				<i class="fa fa-holder"></i>
 *				This is a dynamic render message.
 *			</small>
 *		</div>
