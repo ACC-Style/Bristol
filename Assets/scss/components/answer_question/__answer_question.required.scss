@@ -42,7 +42,6 @@ select {
 	 button, 
 	 .button {
 		margin-bottom: 0;
-	   
 	}
 
 }
@@ -131,7 +130,7 @@ select {
 	button,
 	.button{
 		@include baseline-font(0,0,0,0,$tight);
-		
+		line-height: 1;
 		// *default* all inputs are medium sized
 		padding:rem-calc(ms(0)*.5) rem-calc(ms(0)*.5);
 		height: rem-calc(ms(0)* 2.5);
@@ -157,7 +156,7 @@ select {
 	}
 	textarea{
 		padding:rem-calc(ms(0)*.5) rem-calc(ms(0)*.5);
-		@include baseline-font($font-level:0);
+		@include baseline-font(1,0,0);
 		padding:$vertical-space *.5 $vertical-space;
 		.disabled &,.locked &{ @extend %disabledinput;}
 	}

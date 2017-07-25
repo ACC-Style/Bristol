@@ -29,19 +29,20 @@ $h6-spacing:.75rem;
 		
 		}
 	@include bp(lg){
-		@include baseline-font(6);	
+		@include baseline-font(5);	
 	}
 
 }
 .h2{
+	$font-name:"normal";
 	@extend %h2;
-	@include baseline-font(3);
+	@include baseline-font(3,$font-name:$font-name);
 	@include bp(md){
-		@include baseline-font(4);
+		@include baseline-font(4,$font-name:$font-name);
 		
 		}
 	@include bp(lg){
-		@include baseline-font(5);	
+		@include baseline-font(5,$font-name:$font-name);	
 	}
 
 }

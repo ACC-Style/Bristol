@@ -7,9 +7,8 @@ $required_data:(
 	'file':'__fa-holder.states.scss'
 	);
 @include required-check($required_data...);
+
 // End of required check
-
-
 @each $State in $states{
 	$selector:map-get($State,"Selector");
 	@include setTrump('icon',map-get($State,'State'),'#{$selector} .fa-holder:before, #{$selector}.fa:before,#{$selector} >.fa-holder:before');
@@ -17,8 +16,7 @@ $required_data:(
 }
 
 .required{
-	
-	@include fa-holder($fa-var-asterisk,"parent");
-	@include fa-holder($fa-var-asterisk,"container");
-	&.fa{ color:$warning-color; }
+ 	@include fa-holder($fa-var-asterisk,"parent");
+ 	.required-holder{ @include fa-holder( $fa-var-asterisk, "container" ); }
+	&.fa{ color: $warning-color; }
 }

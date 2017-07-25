@@ -338,10 +338,10 @@ there are two to three needs for icons icons in containers, icons on icons and t
 .required else > i.fa-holder:before, .required else i.fa-holder:before {
   content: "";
 }
-.required i.fa-holder:before {
+.required .required-holder i.fa-holder:before {
   content: "";
 }
-.required else > i.fa-holder:before, .required else i.fa-holder:before {
+.required .required-holder else > i.fa-holder:before, .required .required-holder else i.fa-holder:before {
   content: "";
 }
 .required.fa {
@@ -382,7 +382,7 @@ there are two to three needs for icons icons in containers, icons on icons and t
 .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3, .h5, h5, .h6, h6 {
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  letter-spacing: 0px;
+  letter-spacing: -.25px;
 }
 
 .h1, h1, .table th.h1 {
@@ -398,19 +398,6 @@ there are two to three needs for icons icons in containers, icons on icons and t
 }
 @media only screen and (min-width: 767px) {
   .h1, h1, .table th.h1 {
-    font-size: 1.8125rem;
-    line-height: 1.125;
-    margin-top: 1.23047rem;
-    margin-bottom: 1.23047rem;
-  }
-  .colored-paper .h1, .colored-paper h1, .colored-paper .table th.h1, .table .colored-paper th.h1, .callout .h1, .page-message .h1, .callout h1, .page-message h1, .callout .table th.h1, .table .callout th.h1, .page-message .table th.h1, .table .page-message th.h1 {
-    margin-top: 0.48047rem;
-    margin-bottom: 0.48047rem;
-    line-height: 1.125;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .h1, h1, .table th.h1 {
     font-size: 2rem;
     line-height: 1.125;
     margin-top: 1.125rem;
@@ -419,6 +406,19 @@ there are two to three needs for icons icons in containers, icons on icons and t
   .colored-paper .h1, .colored-paper h1, .colored-paper .table th.h1, .table .colored-paper th.h1, .callout .h1, .page-message .h1, .callout h1, .page-message h1, .callout .table th.h1, .table .callout th.h1, .page-message .table th.h1, .table .page-message th.h1 {
     margin-top: 0.375rem;
     margin-bottom: 0.375rem;
+    line-height: 1.125;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .h1, h1, .table th.h1 {
+    font-size: 2.25rem;
+    line-height: 1.125;
+    margin-top: 0.98438rem;
+    margin-bottom: 0.98438rem;
+  }
+  .colored-paper .h1, .colored-paper h1, .colored-paper .table th.h1, .table .colored-paper th.h1, .callout .h1, .page-message .h1, .callout h1, .page-message h1, .callout .table th.h1, .table .callout th.h1, .page-message .table th.h1, .table .page-message th.h1 {
+    margin-top: 0.23438rem;
+    margin-bottom: 0.23438rem;
     line-height: 1.125;
   }
 }
@@ -577,7 +577,7 @@ there are two to three needs for icons icons in containers, icons on icons and t
 p, .nav-list li, .panel-selector li, h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector, .table, .normal {
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  letter-spacing: .01em;
+  letter-spacing: -.25px;
   font-size: 1rem;
   line-height: 1.5;
   margin-top: 0rem;
@@ -592,7 +592,7 @@ p, .nav-list li, .panel-selector li, h3 + .nav-list, h3 + .panel-selector, .smal
 h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-selector li, .bold, b {
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  letter-spacing: 0px;
+  letter-spacing: -.25px;
 }
 
 .table th, .loud {
@@ -612,7 +612,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 strong, .strong {
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  letter-spacing: 0px;
+  letter-spacing: -.25px;
   color: #1faed7;
 }
 
@@ -670,7 +670,7 @@ ul, ol {
 ul li, ol li {
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  letter-spacing: .01em;
+  letter-spacing: -.25px;
   font-size: 0.875rem;
   line-height: 1.5;
   margin-top: 0.01875rem;
@@ -745,7 +745,7 @@ ul li, ol li {
 .font.font-normal {
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  letter-spacing: .01em;
+  letter-spacing: -.25px;
 }
 .font.font-light {
   font-family: 'Muli','Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -2050,7 +2050,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   background-image: url(../img/empty_diamond.png);
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  letter-spacing: 0px;
+  letter-spacing: -.25px;
 }
 .nav-list.nav-checklist li.selected, .nav-checklist.panel-selector li.selected {
   color: #000;
@@ -2584,6 +2584,7 @@ select {
   line-height: 1.5;
   margin-top: 0rem;
   margin-bottom: 0rem;
+  line-height: 1;
   padding: 0.5rem 0.5rem;
   height: 2.5rem;
 }
@@ -2739,22 +2740,22 @@ select {
 }
 .input-space textarea, .switch-input-space textarea {
   padding: 0.5rem 0.5rem;
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.5;
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
   padding: 0.75rem 1.5rem;
 }
 .colored-paper .input-space textarea, .colored-paper .switch-input-space textarea, .callout .input-space textarea, .page-message .input-space textarea, .callout .switch-input-space textarea, .page-message .switch-input-space textarea {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
   line-height: 1.35;
 }
 
 .value-space {
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  letter-spacing: 0px;
+  letter-spacing: -.25px;
   font-size: 1rem;
   line-height: 1.5;
   margin-top: 0rem;
@@ -4579,7 +4580,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   margin-bottom: 0.75rem;
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  letter-spacing: 0px;
+  letter-spacing: -.25px;
   border: 0;
   vertical-align: bottom;
 }
@@ -5746,7 +5747,7 @@ table + div > .collapsable-panel {
   padding: .5em .75em;
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  letter-spacing: 0px;
+  letter-spacing: -.25px;
   background-color: #198dae;
   color: #fff;
 }
@@ -6083,7 +6084,7 @@ ul.toggle.minimized .selected {
 .user-id-block.card .user-info .user-application {
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  letter-spacing: 0px;
+  letter-spacing: -.25px;
   font-size: 1rem;
   line-height: 1.5;
   margin-top: 0rem;
@@ -6138,7 +6139,7 @@ ul.toggle.minimized .selected {
   top: 0;
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  letter-spacing: 0px;
+  letter-spacing: -.25px;
 }
 
 /**
@@ -6391,6 +6392,9 @@ ul.toggle.minimized .selected {
 
 #OMA_Sidebar {
   background-color: #ebebeb;
+}
+#OMA_Sidebar .nav-checklist {
+  background-color: #fff;
 }
 
 #auto-save {
@@ -7514,7 +7518,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   margin: 0;
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  letter-spacing: .01em;
+  letter-spacing: -.25px;
   list-style: none;
 }
 .top-bar-left .submenu, .top-bar-left .submenu.nav-level-1 {
@@ -7690,7 +7694,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   font-size: 16px;
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  letter-spacing: 0px;
+  letter-spacing: -.25px;
 }
 .search-bar .question input {
   background: #e6e6e6;
@@ -8595,8 +8599,12 @@ input:checked + label > .switch-inactive {
 }
 
 .question .switch, .question .question-grid-based .switch {
-  margin-top: .25em;
-  margin-bottom: .25em;
+  margin-top: .125em;
+  margin-bottom: .125em;
+}
+.question .switch-value {
+  padding: .125rem .5rem .125rem 1rem;
+  line-height: 1;
 }
 
 label.switch-value {
@@ -9071,7 +9079,7 @@ div.reveal .close-button {
 .ui-widget {
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  letter-spacing: .01em;
+  letter-spacing: -.25px;
 }
 .ui-widget .ui-widget {
   font-size: 1em;
@@ -9079,7 +9087,7 @@ div.reveal .close-button {
 .ui-widget input, .ui-widget select, .ui-widget textarea {
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  letter-spacing: .01em;
+  letter-spacing: -.25px;
 }
 .ui-widget button {
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
@@ -11260,7 +11268,7 @@ cite {
 .score-bar .text-bold {
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  letter-spacing: 0px;
+  letter-spacing: -.25px;
 }
 .score-bar .text-condensed {
   font-family: 'Roboto Condensed', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -11723,7 +11731,7 @@ h1 .sub-line, h2 .sub-line, h3 .sub-line, h4 .sub-line, h5 .sub-line, h6 .sub-li
   padding: 0;
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  letter-spacing: .01em;
+  letter-spacing: -.25px;
   border: 0 none transparent;
   opacity: .8;
 }
@@ -12144,6 +12152,65 @@ h6 blockquote, h6 .sub-line {
 /**
 * Take me to [top](#top):
 */
+.font-display {
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+.font {
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: -.25px;
+}
+
+.font-slab {
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: .5px;
+}
+
+.font-slab-bold {
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: .75px;
+}
+
+.font-bold {
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -.25px;
+}
+
+.font-light {
+  font-family: 'Muli','Open Sans',  "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+.font-medium {
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0px;
+}
+
+.font-italic {
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.font-italic-bold {
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+/**
+* FONT CLASSES:
+* `font-bold` - These classes allow for quick alterations of how the same font alter the x-hight at the same size. 
+*
+*  @example 
+*    <h1><span class="font-bold">.font-bold</spam><span class="font-slab-bold">.font-slab-bold</spam><span class="font-slab">.font-slab</spam><span class="font-medium">.font-medium</spam><span class="font">.font</spam><span class="font-light">.font-light</spam><span class="font-display">.font-display</spam></h1>
+**/
 /*
 STATE TRUMPING CODE
 */

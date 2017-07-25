@@ -23,9 +23,10 @@ h1,h2,h3,h4,h5,h6,p,td,th{
 }
 
 
-@mixin baseline-font($font-level:0, $margin-top:1, $margin-bottom:1,$parent-level:0,$baseline:$baseline,$line-height:$normal){
-	
-	$font-size: ms($font-level)/ $base-font-size * 1rem; //converted to rem
+@mixin baseline-font($font-level:0, $margin-top:1, $margin-bottom:1,$parent-level:0,$baseline:$baseline,$line-height:$normal,$font-name:"base"){
+	$font-size-adjust:1;
+	@if( $font-name "roboto-slab" ){ $font-size-adjust:1.2; }
+	$font-size: ms($font-level) * $font-size-adjust/ $base-font-size * 1rem; //converted to rem
 	// $ms-ratio-compound: MathPow(1/$ms-ratio, $font-level+1); 
 	// @if($ms-ratio-compound == 0 ){
 	// 	$ms-ratio-compound: 1 ;
