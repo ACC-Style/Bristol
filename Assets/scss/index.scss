@@ -1,6 +1,7 @@
-$grid-column-count:12;
+@import "setup";
+
 /**
-* Bristol 2.7
+* Bristol 2.9
 **/
 
 /**
@@ -10,25 +11,17 @@ $grid-column-count:12;
 *   @example
 *	<a  class="button" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
 */
-$brand-level:2; // Any Number between 0 and 3.   
-$product-brand-color: #198dae;
-$ms-base: 14px;
-$ms-ratio: 1.25;
-$baseline-modifier:1.4;
-body{font-size:$ms-base;}
-@import "base/stylemarkup.styleguide";
+
+html,body, html body{ font-size:$ms-base;}
 @import "base/font-local-include";
-@import "helpers/mixens";
-@import "helpers/flex";
-@import 'base/brandVar';
-@import 'base/_brandVar.styleguide';
-@import "vendor/foundation/foundation-kitchensink";
-@import "vendor/font-awesome/_font-awesome_kitchensink";
-@import "vendor/jquery-ui/jquery-ui-kitchensink";
-@import "base/colors";
-@import "base/colors.styleguide";
 @import "base/fonts";
-@import "helpers/breakpoints";
+// @import "base/stylemarkup.styleguide";
+// @import 'base/_brandVar.styleguide';
+// @import "vendor/foundation/foundation-kitchensink";
+// @import "vendor/font-awesome/_font-awesome_kitchensink";
+// @import "vendor/jquery-ui/jquery-ui-kitchensink";
+// @import "base/colors.styleguide";
+
 
 //base vendor files
 // @import "vendor/font-awesome/font-awesome";
@@ -46,9 +39,7 @@ body{font-size:$ms-base;}
 //@import "vendor/font-awesome/icons";
 @import "base/__states.required";
 
-// modular-scale
-@import "vendor/modular-scale";
-@import "base/modular-scale-typography";
+
 // dynamic usage of font awesome.
 @import "base/fa-holder";
 @import "base/fa-holder.states";
@@ -64,7 +55,7 @@ body{font-size:$ms-base;}
 @import "base/_header-tag_order-marker";
 
 //Components that live inside of Layouts.
-@import "components/elements/buttons";
+@import "components/buttons";
 @import "components/navigation/tabs";
 @import "components/navigation/tabs-primary";
 @import "components/navigation/tabs-overlap";
@@ -79,9 +70,10 @@ body{font-size:$ms-base;}
 @import "components/answer_question/question-grid-based";
 @import "components/answer_question/question-fileupload";
 @import "components/answer_question/question-radiogroup";
+@import "components/answer_question/question-input-lock";
 @import "components/answer_question/form-repeater";
-@import "components/page-message";
 // @import "components/answer_question/answer";
+@import "components/page-message";
 @import "components/table/table";
 @import "components/table/table-striped";
 @import "components/table/table-seperator";
@@ -158,5 +150,7 @@ body{font-size:$ms-base;}
 @import "trumps/utilities";
 @import "trumps/condensable";
 @import "trumps/css3";
+@import "trumps/font-classes";
 @import "base/__states.trump";
+@import "_non-core/oma/shame";
 .row{max-width: 100%;}

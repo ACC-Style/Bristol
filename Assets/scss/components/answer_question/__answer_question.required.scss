@@ -1,8 +1,13 @@
+select {
+    background-position: right center;
+    background-position: calc(100% + 1em) center;
+}
+
 .answer, .answer-group, .question, .question-group, .question-inline, .question-grid-based {
 	-webkit-transition: margin 1s;
 	/* Safari */
 	transition: margin 1s;
-	margin-bottom: .25em;
+	margin-bottom: $vertical-space/4;
 	@include bp(sm-height) {
 		margin-bottom: .5em;
 	}
@@ -15,7 +20,7 @@
 	@include bp(lg) {
 		margin-bottom: .5em;
 	}
-	&:disabled, &[disabled] {
+	&:disabled, &[disabled], &.locked {
 		@extend %disabledinput;
 	}
 	input,
@@ -38,91 +43,32 @@
 	 button, 
 	 .button {
 		margin-bottom: 0;
-	   
 	}
 
 }
-
-
-.input-holder {
-	[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea,button,.button,{
-		font-size:rem-calc( ms(0));
-		line-height:rem-calc( ms(0)*1.25);
-		// *default* all inputs are medium sized
-		padding:rem-calc(ms(0)*.75) rem-calc(ms(0)*.75);
-		height: rem-calc(ms(0)* 2.5);
-		// *landscape phones* inputs shrink on short screens that are smaller then an Ipad
-		@include bp(md-down){
-			@include bp(xs-height-down){
-				padding:rem-calc(ms(0)*.25) rem-calc(ms(0)*.5);
-				height: rem-calc(ms(0)*2);
-			}
-		}
-		// * desktop *
-		@include bp(md){
-			@include bp(md-height){
-			padding:rem-calc(ms(0)*.25) rem-calc(ms(0)*.5);
-			height: rem-calc(ms(0)*2);
-			}
-		}
-
-	}
-	select,option{
-		font-size: 1rem;
-		line-height: 1rem;
-		// *default* all inputs are medium sized
-		height: rem-calc(ms(0)* 2.5);
-		// *landscape phones* inputs shrink on short screens that are smaller then an Ipad
-		@include bp(md-down){
-			@include bp(xs-height-down){
-				height: rem-calc(ms(0)*2.25);
-			}
-			padding: 0 .5rem;
-		}
-		// * desktop *
-		@include bp(md){
-			@include bp(md-height){
-				height: rem-calc(ms(0)*2);
-			}
-			padding: 0 .5rem;
-		}
-	}
-	.prefix, .postfix, .value {
-		@include baseline-font(0);
-		@include font-bold();
-		padding: .5em;
-		margin-top: 0;
-		color: grey(60);
-		border: 1px solid transparent;
-	}
-	.prefix, .postfix {
-		background: url("../img/paper-texture.png");
-		border: 1px solid grey(30);
-	}
-}
-
 .question {
-	.label-holder, .input-holder, .message-holder, .value-holder, .hint {
+	.label-holder, .input-holder,.message-holder, .value-holder, .hint {
 		@include grid-row($behavior: collapse);
 	}
 }
 
 
 
-.label-holder{
-	label, .label,.text{
-	@include font-bold();
-	@include baseline-font(0);
-  }
-  white-space: nowrap;
-  @include baseline-font(0,.5,.25);
-  position: relative;
-  background-color:transparent;
-  color:fontcolor($black);
-	@include bp(sm-down){
+.label-holder label{
+	
+	margin:$vertical-space/4 0;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	position: relative;
+	background-color:transparent;
+	color:fontcolor($black);
+	@include bp(md-down){
 	  white-space:normal;
 	}
-	.text{padding-right:1rem;}
+	.text{ 
+		padding-right:1.5rem;
+		@include font-medium;
+	}
 }
 
 
@@ -134,12 +80,18 @@
 	margin-left: -1em;
 	margin-right: -1em;
 	color: grey(80);
-	i.fa-holder-dynamic {
+	i.fa-holder {
 		position: absolute;
 		top: 0;
 		left: 0;
 		font-size: .75em;
 	}
+	.required & {
+	@extend %visible-required-icon;
+	@include fa-holder($fa-var-asterisk, 'parent');
+	color: $warning-color;
+}
+
 }
 
 %visible-required-icon {
@@ -147,40 +99,99 @@
 	display: inline-block;
 }
 
-.required .required-holder {
-	@extend %visible-required-icon;
-	@include fa-holder($fa-var-asterisk, 'dynamic');
-	color: $warning-color;
-}
 
-.input-holder, .value-holder {
+
+
+.input-holder{
 	margin-bottom: 0;
 }
-.input-holder{@include grid-row(  $behavior: collapse);}
-.input-space,.value-space{ @include grid-column-collapse;}
-.input-space-label{
-	@include baseline-font(0);
-	@include font-bold();
-	color:grey(60);
-	// *default* all inputs are medium sized
-		padding:rem-calc(ms(0)*.75) rem-calc(ms(0)*.75);
+
+.input-holder {
+	@include grid-row(  $behavior: collapse);
+
+}
+.input-space,.value-space,.button-space{ @include grid-column-collapse;}
+.button-space{ margin: -.5rem 0 -.25rem 0; }
+.input-space{
+	position: relative;
+	[type='text'],
+	[type='password'],
+	[type='date'],
+	[type='datetime'],
+	[type='datetime-local'],
+	[type='month'],
+	[type='week'],
+	[type='email'],
+	[type='number'],
+	[type='search'],
+	[type='tel'],
+	[type='time'],
+	[type='url'],
+	[type='color'],
+	button,
+	.button{
+		@include baseline-font(0,0,0,0,$tight);
+		line-height: 1;
+		// *default* all inputs are medium sized
+		padding:rem-calc(ms(0)*.5) rem-calc(ms(0)*.5);
 		height: rem-calc(ms(0)* 2.5);
-	// *landscape phones* inputs shrink on short screens that are smaller then an Ipad
-	@include bp(md-down){
-		@include bp(xs-height-down){
-			padding:rem-calc(ms(0)*.35) rem-calc(ms(0)*.5);
-			height: rem-calc(ms(0)* 2.25);
-		}
-	}
-	// * desktop *
-	@include bp(md){
-		@include bp(md-height){
+		// *landscape phones* inputs shrink on short screens that are smaller then an Ipad
+		@include bp(md-height-down){
 			padding:rem-calc(ms(0)*.25) rem-calc(ms(0)*.5);
 			height: rem-calc(ms(0)*2);
 		}
-	}
-	padding-left:1em;
+		.disabled &,.locked &{ @extend %disabledinput;}
 
+	}
+	select,option{
+		@include baseline-font(0,0,0,0,$tight);
+		line-height: 1;
+		// *default* all inputs are medium sized
+		height: rem-calc(ms(0)* 2.5);
+		// *landscape phones* inputs shrink on short screens that are smaller then an Ipad
+		@include bp(md-height-down){
+			padding:rem-calc(ms(0)*.25) rem-calc(ms(0)*.5);
+			height: rem-calc( ms(0) * 2 );
+		}
+		.disabled &,.locked &{ @extend %disabledinput;}
+	}
+	textarea{
+		padding:rem-calc(ms(0)*.5) rem-calc(ms(0)*.5);
+		@include baseline-font(1,0,0);
+		padding:$vertical-space *.5 $vertical-space;
+		.disabled &,.locked &{ @extend %disabledinput;}
+	}
+}
+
+
+
+.value-space{
+	@include font-bold();
+	@include baseline-font(0,0,0);
+	padding:rem-calc(ms(0) * .5) rem-calc(ms(0) * .5);
+	height: rem-calc(ms(0) * 2.5);
+	color:grey(60);
+	// *landscape phones* inputs shrink on short screens that are smaller then an Ipad
+	@include bp(md-height-down){
+		padding:rem-calc(ms(0) * .25) rem-calc(ms(0) * .5);
+		height: rem-calc(ms(0) * 2);
+	}
+	.value{
+			vertical-align:middle;
+			display: inline;
+	 }
+	&.prefix, &.postfix{
+		border: 1px solid transparent;
+		background: url("../img/paper-texture.png");
+		border: 1px solid grey(30);
+		.value{vertical-align: top;}
+	}
+	// &.prefix{
+	// 	.value{padding-left:.5em; text-align:right;}
+	// 	} 
+	// &.postfix{
+	// 	.value{padding-right:.5em; text-align:left;}
+	// }
 
 }
 
@@ -203,16 +214,15 @@
 }
 
 %disabledinput{
+	background:rgba( grey(30),.99) url(../img/empty_stripe.png);
 	background-color: grey(30);
 	background-image: url(../img/empty_stripe.png);
 	color:fontcolor($black,'quiet');
+	 -webkit-appearance: none;
 }
 
 .answer,.question{
-input, textarea, option{
-
-}
-.chosen-disabled.chosen-container .chosen-choices{@extend %disabledinput;}	
+	.chosen-disabled.chosen-container .chosen-choices{@extend %disabledinput;}	
 }
 
 

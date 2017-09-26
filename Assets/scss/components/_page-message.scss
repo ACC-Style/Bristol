@@ -29,6 +29,8 @@
 	@include setTrump('border-color',map-get($State,'State'),'#{$selector} .close-bar');
 	@include setTrump('background-color',map-get($State,'State'),'#{$selector} .close-bar .close-button');
 	@include setContrastTrump(map-get($State,'Color'),'#{$selector} .close-bar .close-button .fa');
+	@include setTrump('icon',map-get($State,'State'),'#{$selector}.page-message .fa-holder:before');
+	
 	#{$selector}{
 		.close-bar:hover,.close-bar{
 			border-color:mix($black,map-get($State,'Color'));
@@ -47,7 +49,7 @@
 
 .page-message{
 	background-color:rebrand-color(color($product-brand-color,30),2);
-	.fa-holder-dynamic:before{content:$fa-var-asterisk;}
+	.fa-holder:before{content:$fa-var-asterisk;}
 	@extend .callout;
 	@include grid-row();
 	position:relative;
@@ -65,7 +67,20 @@
 		font-size:1.5em;
 		padding: 0 1em 0 0;
 	}
+	&.empty {
+	    background: none transparent;
+	    border: 0;
+	    padding: 0;
+	    .icon-holder {
+		    font-size: 1em;
+		    color:$warning-color;
+		    padding:0;
+		    .fa-square-o { display:none;}
+		}
+	}
+	&.blank .icon-holder{ display:none;}
 }
+
 
 /**
 * Callout - Page Messages:
@@ -80,7 +95,7 @@
 *  		<div class="icon-holder">
 *                <span class="fa-stack fa-lg">
 *                    <i class="fa fa-square-o fa-stack-2x"></i>
-*                    <i class="fa fa-holder-dynamic fa-stack-1x"></i>
+*                    <i class="fa fa-holder fa-stack-1x"></i>
 *                </span>
 *		</div>
 *		<div class="message-holder">
@@ -102,7 +117,7 @@
 *  		<div class="icon-holder">
 *                <span class="fa-stack fa-lg">
 *                    <i class="fa fa-square-o fa-stack-2x"></i>
-*                    <i class="fa fa-holder-dynamic fa-stack-1x"></i>
+*                    <i class="fa fa-holder fa-stack-1x"></i>
 *                </span>
 *		</div>
 *		<div class="message-holder">

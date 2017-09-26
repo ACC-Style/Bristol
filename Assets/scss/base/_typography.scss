@@ -7,9 +7,9 @@ $h3-spacing:.7rem;
 $h4-spacing:.5rem;
 $h5-spacing:.5rem;
 $h6-spacing:.75rem;
-%h1,%h2,%h3,%h4,%h5,%h6{ margin-top:0; clear:both;}
+
+%h1,%h2,%h3,%h4,%h5,%h6{clear:both;}
 %h1{
-letter-spacing: -1px;
 @include font-display();
 }
 %h2{
@@ -24,70 +24,77 @@ letter-spacing: -1px;
 
 .h1{
 	@extend %h1;
-	@include baseline-font(4,1,1,0,$base-line);
+	@include baseline-font(4);
 	@include bp(md){
-		@include baseline-font(5,1,1);
+		@include baseline-font(6);
 		
 		}
 	@include bp(lg){
-		@include baseline-font(6,1,1);	
+		@include baseline-font(7);	
 	}
 
 }
 .h2{
 	@extend %h2;
-	$base-line: 1.1 * $base-font-size;
-	@include baseline-font(3,.75,.25,0,$base-line);
+	@include baseline-font(3);
 	@include bp(md){
-		@include baseline-font(3,.75,.25);
+		@include baseline-font(4);
 		
 		}
 	@include bp(lg){
-		@include baseline-font(4,.75,.25);	
+		@include baseline-font(5);	
 	}
 
 }
 .h3{
 	@extend %h3;
-		$base-line: 1.1 * $base-font-size;
-	@include baseline-font(2,.75,.25,0,$base-line);
+	@include baseline-font(2);
 	@include bp(md){
-		@include baseline-font(2,.25,.75);
+		@include baseline-font(3);
 		}
 	@include bp(lg){
-		@include baseline-font(3,.75,.25);	
+		@include baseline-font(4);	
 	}
 
 }
 .h4{
 	@extend %h4;
-	@include baseline-font(1,.5,.5);
+	@include baseline-font(1);
 	@include bp(md){
-		@include baseline-font(2,.25,.75);
+		@include baseline-font(2);
 	}
 }
-.h5{@extend %h5;@include baseline-font(0); 	
+.h5{
+	@extend %h5;
+	@include baseline-font(0); 	
 	@include bp(md){
 		@include baseline-font(1);
 	}
 }
-.h6{@extend %h6;@include baseline-font(0);}
+.h6{ 
+	@extend %h6; 
+	@include baseline-font(0);
+	@include bp(md){
+		@include baseline-font(1);
+	} 
+}
 
 %normal {
 	@include font; 
-	color:fontcolor($real-black);
-	@include baseline-font(0);
+	@include baseline-font(0,0,0);
 }
 %bold   { @include font-bold; }
 %loud  { color:fontcolor($real-black,'loud');}
-%quiet {color: fontcolor($real-black,'quiet'); }
-%italic {@include font-italic;}
-%strong {@include font-bold;color:fontcolor(rebrand-color($primary-color, 2),"xloud");}
+%quiet { color: fontcolor($real-black,'quiet'); }
+%italic { @include font-italic;}
+%strong { @include font-bold;color:fontcolor(rebrand-color($primary-color, 2),"xloud");}
 
-%emphasis{color: mix(rebrand-color($primary-color, 2),fontcolor($real-black,'loud'));; @include font-italic; font-weight:900;}
+%emphasis{ 
+	color: mix(rebrand-color($primary-color, 2),fontcolor($real-black,'loud'));
+	@include font-italic;
+	font-weight:900;
+}
 %subtle{ @include font-light;color: mix(rebrand-color($primary-color, 2),fontcolor($real-black,'light'));}
-.block-margins { margin: 0 em($base-line) 0; }
-
 %unordered-list { list-style-type: disc; }
 %ordered-list { list-style: decimal; }
 %inline-list{ list-style: none; display:block;margin:0; >li{display:inline-block;margin-left: .25rem;} }
@@ -112,7 +119,6 @@ letter-spacing: -1px;
 h1{
 	
 	@extend .h1;
-	color:fontcolor($black,"xloud");
 }
 h2{
 
@@ -132,25 +138,29 @@ h5{
 }
 h6{
 	@extend .h6;
-	color:fontcolor($black,"quiet");
 }
 p{ 
 	@extend %normal;
-	margin-bottom:.25em;
-	@include bp(sm-height){
-		margin-bottom:.5em;
+	+ p{
+		@include bp(sm-height){
+			margin-top:  .25 * $baseline;
+		}
+		margin-top: .5 * $baseline;
 	}
+	
 
 }
 ul,ol{
-	@extend %normal;
-	margin-bottom:1em;
-	@include bp(sm-height){margin-bottom:.5em;}
-	@include bp(xs-height){margin-bottom:.75em;}
+
+	margin-bottom:  .25 * $baseline;
+	@include bp(xs-height){margin-bottom:  .25 * $baseline;}
+	@include bp(sm-height){margin-bottom:  .5 * $baseline;}
 	li{
-		margin-bottom:.25em;
-		@include bp(sm-height){margin-bottom:.2em;}
-		@include bp(xs-height){margin-bottom:.1em;}
+		@include font; 
+		@include baseline-font(-1,.1,.9);
+		// margin-bottom:.125em;
+		// @include bp(xs-height){margin-bottom:  .25 * $baseline;}
+		// @include bp(sm-height){margin-bottom:  .375 * $baseline;}
 	}
 	}
 

@@ -5,7 +5,46 @@
     margin: 0 auto;
 }
 %page-constraint{
-     max-width: 1200px;
+    max-width: 60em;
+}
+%page-padding-horizontal {
+    padding-right: .25 * 1rem;
+    padding-left: .25 * 1rem;
+    @include bp(sm) {
+        padding-right: .5 * 1rem;
+        padding-left: .5 * 1rem;
+    }
+    @include bp(md) {
+        padding-right: .75 * 1rem;
+        padding-left: .75 * 1rem;
+    }
+    @include bp(lg) {
+        padding-right: 1 * 1rem;
+        padding-left: 1 * 1rem;
+    }
+}
+%page-padding-vertical {
+    padding-top: .25 * $vertical-space;
+    padding-bottom: .5 * $vertical-space;
+    @include bp(sm) {
+        padding-top: .5 * $vertical-space;
+        padding-bottom: .75 * $vertical-space;
+    }
+    @include bp(md) {
+        padding-top: .75 * $vertical-space;
+        padding-bottom: 1 * $vertical-space;
+    }
+    @include bp(lg) {
+        padding-top: 1 * $vertical-space;
+        padding-bottom: 1.5 * $vertical-space;
+    }
+}
+%page-padding-vertical-only {
+    @extend %page-padding-vertical;
+    @media (min-width: 0px) and (max-width:10000px) {
+        padding-right:0;
+        padding-left: 0;
+    }
 }
 %page-padding{
     padding: 1rem .5rem 1.25rem;
@@ -17,31 +56,19 @@
     }
 
 }
-%page-padding-vertical-only{
-    padding: .25rem 0;
-     @include bp(sm){  
-    padding: .5rem 0;
-    } 
-    @include bp(md){  
-    padding: .75rem 0;
-    } 
-    @include bp(lg){
-    padding: 1rem 0;
-    }
 
-}
 
 %content-padding-vertical{
-   padding-top:.125rem;
-   padding-bottom:.125rem;
+   padding-top:.25rem;
+   padding-bottom:.25rem;
     @include bp(sm) {
-        padding-top: .25rem;
-        padding-bottom: .25rem;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
 
     }
     @include bp(md) {
-        padding-top: .5rem;
-        padding-bottom: .5rem;
+        padding-top: .75rem;
+        padding-bottom: .75rem;
     }
     @include bp(lg) {
         padding-top: 1rem;
@@ -49,6 +76,7 @@
     }
 
 }
+
 %content-padding-horizontal{
     padding-left: .5rem; 
     padding-right: .5rem;
@@ -61,25 +89,35 @@
         padding-left:1rem;
     }
 }
+%page-expanding-margin-top {
+    margin-top: -.25 * $vertical-space;
+    @include bp(sm) {
+        margin-top: -.5 * $vertical-space;
+    }
+    @include bp(md) {
+        margin-top: -.75 * $vertical-space;
+    }
+    @include bp(lg) {
+        margin-top: -1 * $vertical-space;
+    }
+}
+
 %content-expanding-margin-top{
-    margin-top: -.2rem;
-    margin-top: calc(-.2rem - 1px);
-    @include bp(sm-height-down){ 
-        margin-top: -.25rem;
-        margin-top: calc(-.25rem - 1px);
+    margin-top: -.25rem;
+    margin-top: calc(-.25rem - 1px);
+    @include bp(sm){ 
+        margin-top: -.5rem;
+        margin-top: calc(-.5rem - 1px);
         } 
     @include bp(md){ 
-        margin-top:-.5rem;
-        margin-top: calc(-.5rem - 1px);
+        margin-top:-.75rem;
+        margin-top: calc(-.75rem - 1px);
         }  
     @include bp(lg){
         margin-top: -1rem;
         margin-top: calc(-1rem - 1px);
      }
-     @include bp(xl){
-        margin-top: -1rem;
-        margin-top: calc(-1rem - 1px);
-     }
+
 }
 %content-expanding-margin-bottom{
     margin-bottom: -.2rem;
@@ -128,17 +166,26 @@
      }
 }
 %spacing-transition{ 
-    -webkit-transition: padding 1s; /* Safari */
+    -webkit-transition: padding 1s;
+    /* Safari */
     transition: padding 1s;
-    -webkit-transition: margin 1s; /* Safari */
+    -webkit-transition: margin 1s;
+    /* Safari */
     transition: margin 1s;
     }
-.page .page-wrapper {
+.page {
+    position: relative;
+    padding-bottom:5rem;
+}
+.page-wrapper {
     @extend %margin-centering;
     @extend %page-constraint;
-    @extend %page-padding;
+    @extend %page-padding-horizontal;
     @extend %spacing-transition;
+}
 
+.page-wrapper .page-wrapper {
+    @extend %page-padding-vertical-only;
 }
 
 .content-padding,.content-padding.page-wrapper {
@@ -151,11 +198,11 @@
 }
 // Exceptions
 
-.section-nav.back ~ .page-wrapper {
+.section-nav.back~.page-wrapper, .page-wrapper~.page-wrapper {
     padding-top: 0;
 }
 .section-padding{
-   @extend  %page-padding-vertical-only;
+  @extend %page-padding-vertical;
 }
 /**
 * page layouts:

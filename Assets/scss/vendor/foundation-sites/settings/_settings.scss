@@ -1,3 +1,4 @@
+// Build June
 //  Foundation for Sites Settings
 //  -----------------------------
 //
@@ -39,8 +40,8 @@
 //  34. Title Bar
 //  35. Tooltip
 //  36. Top Bar
-
-@import 'util/util';
+@import '../../../../../Assets/scss/setup';
+@import '../util/util';
 
 // 1. Global
 // ---------
@@ -49,26 +50,20 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #2199e8,
-  secondary: #777,
-  success: #3adb76,
-  warning: #ffae00,
-  alert: #ec5840,
-$global-font-size: 100% !default;
-$global-lineheight: $baseline-modifier;
-$primary-color: #2199e8 !default;
-$secondary-color: #777 !default;
-$success-color: #3adb76 !default;
-$warning-color: #ffae00 !default;
-$alert-color: #ec5840 !default;
-$light-gray: color($real-black,10);
-$medium-gray: color($real-black,30);
-$dark-gray: color($real-black,60);
-$black: color($real-black,80);
-$white: #FFF;
+  primary: $primary-color,
+  secondary: $secondary-color,
+  success: $success-color,
+  warning: $warning-color,
+  alert: $error-color,
+);
+$light-gray: grey(10);
+$medium-gray: grey(40);
+$dark-gray: grey(70);
+$black: grey(85);
+$white: #fff;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Open Sans', Roboto ,"Helvetica Neue", Helvetica,  Arial, sans-serif;
+$body-font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -77,7 +72,6 @@ $global-weight-bold: bold;
 $global-radius: 0;
 $global-text-direction: ltr;
 $global-flexbox: false;
-$rem-base: 14px;
 $print-transparent-backgrounds: true;
 
 @include add-foundation-colors;
@@ -115,32 +109,32 @@ $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-sizes: (
   small: (
-    'h1': strip-unit(ms-calc(4,$ms-base,$ms-ratio*1)),
-    'h2': strip-unit(ms-calc(3,$ms-base,$ms-ratio*1)),
-    'h3': strip-unit(ms-calc(2,$ms-base,$ms-ratio*1)),
-    'h4': strip-unit(ms-calc(1,$ms-base,$ms-ratio*1)),
-    'h5': strip-unit(ms-calc(0,$ms-base,$ms-ratio*1)),
-    'h6': strip-unit(ms-calc(-1,$ms-base,$ms-ratio*1)),
+    'h1': strip-unit(ms-calc(4,$ms-base,$ms-ratio)),
+    'h2': strip-unit(ms-calc(3,$ms-base,$ms-ratio)),
+    'h3': strip-unit(ms-calc(2,$ms-base,$ms-ratio)),
+    'h4': strip-unit(ms-calc(1,$ms-base,$ms-ratio)),
+    'h5': strip-unit(ms-calc(0,$ms-base,$ms-ratio)),
+    'h6': strip-unit(ms-calc(-1,$ms-base,$ms-ratio)),
   ),
   medium: (
-    'h1': strip-unit(ms-calc(4,$ms-base,$ms-ratio*1.1)),
-    'h2': strip-unit(ms-calc(3,$ms-base,$ms-ratio*1.1)),
-    'h3': strip-unit(ms-calc(2,$ms-base,$ms-ratio*1.1)),
-    'h4': strip-unit(ms-calc(1,$ms-base,$ms-ratio*1.1)),
-    'h5': strip-unit(ms-calc(0,$ms-base,$ms-ratio*1.1)),
-    'h6': strip-unit(ms-calc(-1,$ms-base,$ms-ratio*1.1)),
+    'h1': strip-unit(ms-calc(6,$ms-base,$ms-ratio)),
+    'h2': strip-unit(ms-calc(4,$ms-base,$ms-ratio)),
+    'h3': strip-unit(ms-calc(3,$ms-base,$ms-ratio)),
+    'h4': strip-unit(ms-calc(2,$ms-base,$ms-ratio)),
+    'h5': strip-unit(ms-calc(1,$ms-base,$ms-ratio)),
+    'h6': strip-unit(ms-calc(1,$ms-base,$ms-ratio)),
   ),
     large: (
-    'h1': strip-unit(ms-calc(4,$ms-base,$ms-ratio*1.15)),
-    'h2': strip-unit(ms-calc(3,$ms-base,$ms-ratio*1.15)),
-    'h3': strip-unit(ms-calc(2,$ms-base,$ms-ratio*1.15)),
-    'h4': strip-unit(ms-calc(1,$ms-base,$ms-ratio*1.15)),
-    'h5': strip-unit(ms-calc(0,$ms-base,$ms-ratio*1.15)),
-    'h6': strip-unit(ms-calc(-1,$ms-base,$ms-ratio*1.15)),
+    'h1': strip-unit(ms-calc(7,$ms-base,$ms-ratio)),
+    'h2': strip-unit(ms-calc(5,$ms-base,$ms-ratio)),
+    'h3': strip-unit(ms-calc(3,$ms-base,$ms-ratio)),
+    'h4': strip-unit(ms-calc(2,$ms-base,$ms-ratio)),
+    'h5': strip-unit(ms-calc(1,$ms-base,$ms-ratio)),
+    'h6': strip-unit(ms-calc(1,$ms-base,$ms-ratio)),
   ),
 );
 $header-color: inherit;
-$header-lineheight: $baseline-modifier;
+$header-lineheight: $tight;
 $header-margin-bottom: 0.5rem;
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
@@ -186,8 +180,8 @@ $abbr-underline: 1px dotted $black;
 // ---------------------
 
 $lead-font-size: $global-font-size * 1.25;
-$lead-lineheight: $baseline-modifier;
-$subheader-lineheight: $baseline-modifier;
+$lead-lineheight: 1.6;
+$subheader-lineheight: 1.4;
 $subheader-color: $dark-gray;
 $subheader-font-weight: $global-weight-normal;
 $subheader-margin-top: 0.2rem;
@@ -257,7 +251,7 @@ $button-color: $white;
 $button-color-alt: $black;
 $button-radius: $global-radius;
 $button-sizes: (
-  tiny: rem-calc(strip-unit(ms-calc(-2))),
+  tiny: rem-calc(strip-unit(ms-calc(-1))),
   small: rem-calc(strip-unit(ms-calc(0))),
   default: rem-calc(strip-unit(ms-calc(1))),
   large: rem-calc(strip-unit(ms-calc(2))),
@@ -321,11 +315,11 @@ $dropdown-sizes: (
 // 17. Dropdown Menu
 // -----------------
 
-$dropdownmenu-arrows: true;
-$dropdownmenu-arrow-color: $anchor-color;
-$dropdownmenu-min-width: 200px;
+$dropdownmenu-arrows: false;
+$dropdownmenu-arrow-color: $white;
+$dropdownmenu-min-width: 10px;
 $dropdownmenu-background: $white;
-$dropdownmenu-border: 1px solid $medium-gray;
+$dropdownmenu-border: 1px solid $black;
 
 // 18. Flex Video
 // --------------
@@ -342,8 +336,8 @@ $fieldset-padding: rem-calc(20);
 $fieldset-margin: rem-calc(18 0);
 $legend-padding: rem-calc(0 3);
 $form-spacing: rem-calc(16);
-$helptext-color: #333;
-$helptext-font-size: rem-calc(ms(-1));
+$helptext-color: $black;
+$helptext-font-size: rem-calc(13);
 $helptext-font-style: italic;
 $input-prefix-color: $black;
 $input-prefix-background: $light-gray;
@@ -353,8 +347,8 @@ $form-label-color: $black;
 $form-label-font-size: rem-calc(ms(1));
 $form-label-font-weight: $global-weight-normal;
 $form-label-line-height: 1.8;
-$select-background: #fafafa;
-$select-triangle-color: #333;
+$select-background: $white;
+$select-triangle-color: $dark-gray;
 $select-radius: $global-radius;
 $input-color: $black;
 $input-placeholder-color: $medium-gray;

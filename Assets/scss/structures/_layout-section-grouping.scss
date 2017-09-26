@@ -8,8 +8,6 @@
     border: 1px solid grey(15);
     background-color: white;
     @extend %dropshoadowedbox;
-    
-    
 }
 %ghostbox {
     border: 2px dashed grey(25);
@@ -20,8 +18,15 @@
     -moz-box-shadow: inset 0px 1px 6px 3px rgba(230, 230, 230, .2);
     box-shadow: inset 0px 1px 6px 3px rgba(230, 230, 230, .2);
 }
-
-.with-group-sections,.paper-page{
+.group-section,.card {
+        width: auto;
+        position: relative;
+        @extend %liftedbox;
+        @extend %content-padding-vertical;
+        @extend %content-padding-horizontal;
+        
+    }       
+.with-group-sections, .paper-page{
     @extend %shadedbackground;
     @if $brand-level < 2{  
         .overlap .tabs .selected,.overlap .tabs .is-active{
@@ -37,7 +42,7 @@
         @if $brand-level >= 2{    
             &#{$state-selector} .overlap .tabs .selected,&#{$state-selector} .overlap .tabs .is-active{
                 background:map-get($State,'Color');
-                a{color:color-contrast(map-get($State,'Color'));}
+                a{color:acc-color-contrast(map-get($State,'Color'));}
              }
          }
     }
@@ -45,7 +50,7 @@
         padding-top:.5rem;
     }
     .page-wrapper {
-        @extend %page-padding-vertical-only; 
+        // @extend %page-padding-vertical; 
         // align sections and rows with in the page
         > .section, > section, > .row {
             @extend %content-padding-horizontal;
@@ -81,16 +86,16 @@
     @extend %content-padding-horizontal;
     @extend %content-expanding-margin-horizontal;
     
-    h1,h2,h3,h4,h5,h6,p{color:color-contrast(rebrand-color($primary-color, 1));}
-    &.secondary{h1,h2,h3,h4,h5,h6,p{color: color-contrast( $secondary-color);}}
+    h1,h2,h3,h4,h5,h6,p{color:acc-color-contrast(rebrand-color($primary-color, 1));}
+    &.secondary{h1,h2,h3,h4,h5,h6,p{color: acc-color-contrast( $secondary-color);}}
     background-image: url('../img/construction-paper.png');
     background-color: rebrand-color($primary-color, 1);
     @each $State in $states{
         $state-selector:map-get($State,'Selector'); 
         &#{$state-selector}{
             background-color:map-get($State,'Color');
-            color:color-contrast(map-get($State,'Color'));
-            h1,h2,h3,h4,h5,h6,p,{ color:color-contrast(map-get($State,'Color') );}
+            color:acc-color-contrast(map-get($State,'Color'));
+            h1,h2,h3,h4,h5,h6,p,{ color:acc-color-contrast(map-get($State,'Color') );}
          }
     }
     @each $State in $states{
@@ -134,6 +139,7 @@
 
    
 }
+
 .group-section .colored-paper:last-child,.card .colored-paper:last-child {
     @extend %content-expanding-margin-bottom;
 }

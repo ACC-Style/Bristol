@@ -14,11 +14,10 @@
 	position: relative;
 	overflow: hidden;
 	clear:both;
-	.split-sidebar,.split-content{margin-bottom:-9998px;padding-bottom:9998px;}
-	&.fill-page-height .split-content{
-		min-height: 100vh;
-		margin-bottom:0px;padding-bottom:1em;
-	}
+	.split-sidebar,.split-content{margin-bottom:-9998px;padding-bottom:9998px; position:relative;}
+		&.fill-page-height {.split-content,.split-sidebar{
+					min-height: 70vh;
+				}}
 
 	
 	.split-sidebar{ display:none;	@include grid-column(12 of 12); left: percentage( -10 / $grid-column-count); border:grey(30) solid 0; border-right-width:1px;padding-left: 0 !important;

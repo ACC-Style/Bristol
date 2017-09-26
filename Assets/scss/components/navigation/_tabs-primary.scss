@@ -60,7 +60,7 @@ $primary-tab-lighttext:$global-default-light-text;
 		a{	
 			white-space: normal;
 			padding:.5em .25em;
-			color:color-contrast($primary-tab-background-color,$primary-tab-darktext,$primary-tab-lighttext);
+			color:acc-color-contrast($primary-tab-background-color,$primary-tab-darktext,$primary-tab-lighttext);
 			@include bp(sm){ 
 				white-space: nowrap; 
 
@@ -82,7 +82,7 @@ $primary-tab-lighttext:$global-default-light-text;
 			border-left:0 none;
 			border-top:0 none;
 
-			a{color:color-contrast($success-color,$primary-tab-darktext,$primary-tab-lighttext);}
+			a{color:acc-color-contrast($success-color,$primary-tab-darktext,$primary-tab-lighttext);}
 			&:hover{
 				background-color: $primary-tab-background-color;
 				border-color: $success-color;
@@ -99,7 +99,7 @@ $primary-tab-lighttext:$global-default-light-text;
 			bottom:0;
 
 			a{
-				color:color-contrast($primary-tab-selected-color,$primary-tab-darktext,$primary-tab-lighttext);
+				color:acc-color-contrast($primary-tab-selected-color,$primary-tab-darktext,$primary-tab-lighttext);
 				&:after{
 					content: "";
 					position: absolute;
@@ -118,7 +118,7 @@ $primary-tab-lighttext:$global-default-light-text;
 		}
 		&.selected:hover{
 			background-color:$primary-tab-selected-color;
-			a{color:color-contrast($primary-tab-selected-color,$primary-tab-darktext,$primary-tab-lighttext);}
+			a{color:acc-color-contrast($primary-tab-selected-color,$primary-tab-darktext,$primary-tab-lighttext);}
 		}
 		&.disabled, &.disabled:hover{
 			border-color: grey(30);
@@ -132,7 +132,7 @@ $primary-tab-lighttext:$global-default-light-text;
 		&.icon.selected{
 			background-color: $primary-tab-selected-color;
 			a{
-				color:color-contrast($primary-tab-selected-color,$primary-tab-darktext,$primary-tab-lighttext);
+				color:acc-color-contrast($primary-tab-selected-color,$primary-tab-darktext,$primary-tab-lighttext);
 			}
 		}
 	}

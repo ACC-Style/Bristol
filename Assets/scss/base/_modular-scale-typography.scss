@@ -1,15 +1,17 @@
 $ms-base: 14px !default;
 $ms-ratio: 1.25  !default; //minor 3rd
 $optimal-characters:65;
-$tight:1.3;
+$crushed:1.125;
+$tight:1.35;
 $normal:1.5;
 $loose:1.65;
-$airy:2;
+$airy:1.875;
 
 
 $base-font-size: $ms-base;
 $baseline-modifier:$normal !default;
-$base-line: $baseline-modifier * $base-font-size;
+$baseline: ($baseline-modifier * $base-font-size)/$base-font-size * 1rem ;  // Unitless item * PIXEL Size / Font PIXEL Converted to REM
+$line-height:strip-unit($baseline-modifier);
 
 // parent-level is the ms() of the parent
 h1,h2,h3,h4,h5,h6,p,td,th{
@@ -20,50 +22,119 @@ h1,h2,h3,h4,h5,h6,p,td,th{
 }
 
 
-@mixin baseline-font($font-level, $margin-top:0, $margin-bottom:0,$parent-level:0,$baseline:$base-line){
-
-	$font-size: ms($font-level);
-
-	@if($parent-level > 0){
-
-		$font-size: $font-size/ms($parent-level) * $base-font-size;
-		// @debug $font-size "fontsize";
+@mixin baseline-font($font-level:0, $margin-top:1, $margin-bottom:1,$parent-level:0,$baseline:$baseline,$line-height:$normal){
+	
+	$font-size: ms($font-level) / $base-font-size * 1rem; //converted to rem
+	// $ms-ratio-compound: MathPow(1/$ms-ratio, $font-level+1); 
+	// @if($ms-ratio-compound == 0 ){
+	// 	$ms-ratio-compound: 1 ;
+	// }
+	$line-height: $line-height;
+	@if($line-height == $normal){
+		@if( $font-level > 0){
+			$line-height: $normal;
+		}
+		@if($font-level > 2){
+			$line-height: $tight;
+		}
+		@if($font-level > 4){
+			$line-height: $crushed;
+		}
 	}
-	// @debug $font-size "real - fontsize";
-	$raw-line: strip-unit($font-size) /  strip-unit($baseline);
+	
+	// $line-height: ( ($baseline-modifier - 1) * $ms-ratio-compound) + 1;
+	$raw-line: $font-size * $line-height /  $baseline;
 	$lines:ceil( $raw-line ); 
-	$line-height:  ( $baseline * $lines ) / $font-size * 1em;
-	font-size: $font-size/$base-font-size * 1em;
-	@if($parent-level > 0){
-		$line-height:  ( $baseline * $lines ) / ms($font-level) * 1em;
-		// @debug $font-size "fontsize";
+	@if($font-level > 3){
+		$lines:ceil( $raw-line + 1 ); 
+
 	}
-	line-height: $line-height;
-	margin-top: $margin-top * $line-height/$lines;
-	margin-bottom: $margin-bottom *  $line-height/$lines;
-	@include bp(md-down){
-		@include bp(sm-height-down){ 
-			line-height: clamp($line-height * .9, 1em,10em);
-			@if $margin-top != 0{
-				margin-top: clamp( $margin-top * $line-height/$lines * .9 , .1em, 10em) ;
-			}
-			@if $margin-bottom != 0{			
-			margin-bottom:  clamp( $margin-bottom *  $line-height/$lines * .9, .1em, 10em) ;
-			}
-		}    
-		@include bp(xs-height-down){ 
-			line-height: clamp($line-height * .85, 1em,10em);
-			@if $margin-top != 0{
-				margin-top: clamp( $margin-top * $line-height/$lines * .75 , .1em, 10em) ;
-			}
-			@if $margin-bottom != 0{			
-			margin-bottom:  clamp( $margin-bottom *  $line-height/$lines * .75, .1em, 10em) ;
-			}
-		}  
+	$baseline-space: ($lines * $baseline) - ($raw-line * $baseline);
+	// @debug $ms-ratio-compound "ms-ratio-compound";
+	// @debug $font-size "fontsize";
+	// @debug $baseline "baseline" $baseline-space "Space Needed to Fill Baseline";
+	// @debug $raw-line "Raw Line is Unitless";
+	// @debug $lines "Line is the CEIL of Raw Lines and is Unitless";
+	//  @debug $line-height "Line Height is Unitless";
+	
+	// line-height: $line-height;
+	// $line-height:  ( $baseline * $lines ) / $font-size * 1em;
+	// @if($parent-level > 0){
+	// 	$line-height:  ( $baseline * $lines ) / ms($font-level) * 1em;
+	// 	// @debug $font-size "fontsize";
+	// }
+	font-size: $font-size; 
+	line-height:$line-height;
+	@if($baseline-space == 0rem ){
+		$baseline-space: $baseline ;
 	}
+	
+	// @debug $baseline-space "$baseline-space is Unitless"; 
+	@if($margin-top == 1){
+		margin-top: .5 * $baseline-space; // Unitless * REM /  REM * REM
+	}
+	@else{
+		margin-top: $margin-top * $baseline-space;
+	}
+	@if($margin-bottom == 1){
+
+		margin-bottom: .5 * $baseline-space;
+	}
+	@else{
+		margin-bottom: $margin-bottom * $baseline-space;
+	}
+	
+		.colored-paper &,.callout & {
+			@if( ($baseline-space -  $baseline) > 0 ){
+					$baseline-space:($baseline-space -  $baseline);
+				}@else{
+					$baseline-space:($baseline-space);
+			}
+			@if($margin-top == 1){
+				margin-top: .5 * $baseline-space; // Unitless * REM /  REM * REM
+			}
+			@else{
+				margin-top: $margin-top * $baseline-space;
+			}
+			@if($margin-bottom == 1){
+
+				margin-bottom: .5 * $baseline-space;
+			}
+			@else{
+				margin-bottom: $margin-bottom * $baseline-space;
+			}
+		@if($font-level>2){line-height: $crushed; }@else{line-height: $tight;}
+	}
+	// @debug  'BASELINE CHECK:' ($font-size * $line-height) + ($baseline-space) '= =' $lines * $baseline;
+	// margin-top: $margin-top * $line-height/$lines;
+	// margin-bottom: $margin-bottom *  $line-height/$lines;
+	// @include bp(md-down){
+	// 	@include bp(sm-height-down){ 
+	// 		line-height: clamp($line-height * .9, 1em,10em);
+	// 		@if $margin-top != 0{
+	// 			margin-top: clamp( $margin-top * $line-height/$lines * .9 , .1em, 10em) ;
+	// 		}
+	// 		@if $margin-bottom != 0{			
+	// 		margin-bottom:  clamp( $margin-bottom *  $line-height/$lines * .9, .1em, 10em) ;
+	// 		}
+	// 	}    
+	// 	@include bp(xs-height-down){ 
+	// 		line-height: clamp($line-height * .85, 1em,10em);
+	// 		@if $margin-top != 0{
+	// 			margin-top: clamp( $margin-top * $line-height/$lines * .75 , .1em, 10em) ;
+	// 		}
+	// 		@if $margin-bottom != 0{			
+	// 		margin-bottom:  clamp( $margin-bottom *  $line-height/$lines * .75, .1em, 10em) ;
+	// 		}
+	// 	}  
+	// }
 
 }
-
-@function clamp($value, $min, $max) {
-  @return if($value > $max, $max, if($value < $min, $min, $value));
+/// Clamp `$number` between `$min` and `$max`
+/// @param {Number} $number - Number to clamp
+/// @param {Number} $min - Minimum value
+/// @param {Number} $max - Maximum value
+/// @return {Number}
+@function clamp($number, $min, $max) {
+  @return min(max($number, $min), $max);
 }

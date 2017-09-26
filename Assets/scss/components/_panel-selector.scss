@@ -53,7 +53,7 @@ $panel-selector-color:rebrand-color($success-color,2);
 		padding: .5em .75em;
     	@include font-bold();
 	    background-color:rebrand-color($primary-color, 2);
-	    color: color-contrast(rebrand-color($primary-color, 2));
+	    color: acc-color-contrast(rebrand-color($primary-color, 2));
 	}
 
 	ul{
@@ -77,7 +77,7 @@ $panel-selector-color:rebrand-color($success-color,2);
 			}
 		&.j-selected,&.selected{
 			background-color:$panel-selector-color;
-			@include fa-holder($fa-var-check);
+			@include fa-holder($fa-var-check,"");
 			.text, .fa{color:#fff;}
 		}
 	}

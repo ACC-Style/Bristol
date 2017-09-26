@@ -9,10 +9,10 @@
     &.selectable {
     	margin-right: 0;
         .button {
-            @include button-style($background: grey(30));
+            @include button-style($secondary-color,auto,$black);
             &:hover,&:focus{
                 background-color:grey(60);
-                color:color-contrast(grey(60));
+                color:acc-color-contrast(grey(60));
             }
         }
         i.fa {
@@ -23,10 +23,10 @@
             display: none;
         }
         .selected.button {
-        	 @include button-style(rebrand-color($select-color, 2));
+        	 @include button-style(rebrand-color($select-color, 2),rebrand-color($select-color, 2),acc-color-contrast(rebrand-color($select-color, 2)));
              &:hover, &:focus {
                 background-color: mix(rebrand-color($select-color, 2), $black,80);
-                color:color-contrast(rebrand-color($select-color, 2));
+                color:acc-color-contrast(rebrand-color($select-color, 2));
             }
             i.fa {
                 display: inline-block;
