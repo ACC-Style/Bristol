@@ -40,7 +40,7 @@ module.exports = function(grunt){
 			},
 			pages: {
 			  files: [
-			    { expand: true, flatten: true, src: 'templates/*.liquid', dest: 'converted-html/', ext: '.html' }
+			    { expand: true, flatten: true, src: 'templates/*.liquid', dest: 'docs/', ext: '.html' }
 			  ]
 			}
 		},
@@ -112,7 +112,7 @@ module.exports = function(grunt){
 					expand:true,
 					cwd:'assets/css',
 					src:'**',
-					dest:'converted-html/assets/css'
+					dest:'docs/assets/css'
 				},{
 					expand:true,
 					cwd:'assets/css',
@@ -178,23 +178,23 @@ module.exports = function(grunt){
 					expand:true,
 					cwd:'assets/js',
 					src:'**',
-					dest:'converted-html/assets/js'
+					dest:'docs/assets/js'
 				}
 				,{
 					expand:true,
 					cwd:'assets/css',
 					src:'**',
-					dest:'converted-html/assets/css'
+					dest:'docs/assets/css'
 				},{
 					expand:true,
 					cwd:'assets/img',
 					src:'**',
-					dest:'converted-html/assets/img'
+					dest:'docs/assets/img'
 				},{
 					expand:true,
 					cwd:'assets/fonts',
 					src:'**',
-					dest:'converted-html/assets/fonts'
+					dest:'docs/assets/fonts'
 				},{
 					expand:true,
 					cwd:'assets/js',
@@ -259,7 +259,7 @@ module.exports = function(grunt){
 			}
 	    },
 		clean: {
-			localFolder:["converted-html/**","styleguide/**"],
+			localFolder:["docs/**","styleguide/**"],
 			sassCasheFolder:[".sass-cache/**"],
 			foundationSites:["assets/scss/vendor/foundation-sites/**"],
 			foundationsFile:["assets/scss/vendor/foundation-sites/foundation.scss"],
