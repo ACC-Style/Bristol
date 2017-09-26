@@ -1,0 +1,42 @@
+/**
+* Mobile Header:
+* `.header.pagel` - there is a basic layout of short tabbed header of apps
+* 
+*   @example
+*	<div class="row"><header class="header page">
+*		<a href="#!/content/calculator/" class="logo">
+*			<img  src="assets/img/headerlogo.svg" alt="ACC Statin Intolerance Guidelines">
+*		</a>
+*		<ul class="nav tabs primary">
+*			<li class="icon"><a class="home"><i class="fa fa-holder"></i></a></li>
+*			<li id="calculator-Tab" class="selected"><a href="#!/content/calculator/"  class="condensable small">Eval<span class="condense">uate</span></a></li>
+*			<li id="recommendation-Tab" class=""><a href="#!/content/recommendation/prescribinginfo/"  class="condensable small">Recommend<span class="condense">ation</span></a></li>
+*		</ul>
+*	</header></div>
+*/
+
+
+
+.page.header{
+	padding-top:5em;
+	.logo{position: absolute;top:0;left:0;}
+	.logo img{display: block;margin: .25rem 1rem;}
+	@include bp(md){
+		padding-top: 0;
+		.logo img{
+			position: relative;
+			clear:none;
+			float:left;
+		}
+		.tabs{
+			clear:none;
+			display: block;
+			width:auto;
+			float: right;
+
+			}
+	}
+	@include bp(lg){
+		.logo img{height: 86px;}
+	};
+}

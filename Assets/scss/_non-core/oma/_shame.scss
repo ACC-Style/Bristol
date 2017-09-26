@@ -1,0 +1,80 @@
+
+.date-input-holder{  max-width: calc(100% - 3rem);}
+.date-picker-holder{ min-width: calc(3rem);}
+
+
+.fa-plus.required, .fa.required {
+    @include fa-holder($fa-var-asterisk, 'self');
+}
+
+
+// .split-content{
+//   padding-bottom:0 !important;
+//   position:relative;
+// }
+// .split-content .section-nav {
+//     margin-left: 0;
+//     margin-right: 0;
+//     padding-left: 1.07143rem;
+//     padding-right: 1.07143rem;
+// }
+// .split-content .section-nav.forward{
+//   position:absolute;
+//   bottom:0;
+//   right:0;
+//   left:0;
+// }
+
+// .split-content>.page>.page-wrapper {
+//     padding: 0;
+// }
+// .split-content>.page{
+//   padding-bottom:5rem;
+// }
+// div.reveal{
+//     padding-top:2rem;
+//   .close-button{
+//      padding: .25em .5em .25em .5em;
+//      top: -6px;
+//   }
+// }
+// .nav-list.nav-checklist{
+//   li{ padding: .3em 1em .35em;}
+//   // li.error.selected, .nav-checklist.panel-selector li.error.selected{
+//   //   &, a{
+//   //     color: #fff !important;
+//   //     }
+//   //   }
+// }
+
+// .render .render-actions a + a{margin-top:0}
+
+// #auto-save{
+//   display: block;
+//   width:100%;
+//   position:fixed;
+//   background-color:$acc-blue;
+//   opacity: .85;
+//   border-bottom:2px solid $acc-blue;
+//   top:0;
+//   left:0;
+//   right:0;
+//   text-align: center;
+//   .message{
+//     @include font-slab-bold;
+//     @include baseline-font(2);
+//     color:$white;
+//   }
+// }
+.date-picker-holder .button{
+    @include baseline-font(0,0,0,0,$tight);
+        // *default* all inputs are medium sized
+        padding:rem-calc(ms(0)*.45) rem-calc(ms(0)*.5);
+        height: rem-calc(ms(0)* 2.5);
+        // *landscape phones* inputs shrink on short screens that are smaller then an Ipad
+        @include bp(md-height-down){
+            padding:rem-calc(ms(0)*.25) rem-calc(ms(0)*.5);
+            height: rem-calc(ms(0)*2);
+        }
+        .disabled &,.locked &{ @extend %disabledinput;}
+}
