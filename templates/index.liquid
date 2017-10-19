@@ -1,2 +1,71 @@
-{% extends 'layouts/base-layout' %}
-
+{% extends 'layouts/base-layout' %} {% block content %}
+<div class="colored-paper">
+    <div class="row page-wrapper">
+        <div class="column medium-6 ">
+            <h1>
+			ICD eReports Dashboard
+		</h1>
+        </div>
+        <div class="column medium-3">
+            <div class="question">
+                <div class="label-holder">
+                    <label for="" class="label"><span class="text">Ending Timeframe:</span></label>
+                </div>
+                <div class="input-holder">
+                    <div class="input-space">
+                        <select name="" id="">
+                            <option value="">2016</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column medium-3">
+            <div class="question">
+                <div class="label-holder">
+                    <label for="" class="label"><span class="text">Participant:</span></label>
+                </div>
+                <div class="input-holder">
+                    <div class="input-space">
+                        <select name="" id="">
+                            <option value="">2016</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="content-padding hide-for-small-only">
+        <ul class="nav tabs ">
+            <li class="selected">
+                <a class="h6 no-margin">Performance Measures</a>
+            </li>
+            <li class="  ">
+                <a class="h6 no-margin">Guideline Metrics</a>
+            </li>
+            <li class="">
+                <a class="h6 no-margin">Outcome Metrics</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div class="content-padding page-wrapper">
+    <h1 class="with-underline">Performance Measures</h1>
+    <div class="row">
+        <div class="column medium-6 large-8">
+            <div class="content-padding section-padding">
+                <h3>Executive Summary</h3>
+                <div class="row">
+                    {% include "snippets/data-dualprogressbar-bad"%} {% include "snippets/data-dualprogressbar-good"%} {% include "snippets/data-dualprogressbar-unknown"%}
+                </div>
+            </div>
+        </div>
+        <div class="column medium-6 large-4">
+            {% include "sections/chart" %}
+        </div>
+    </div>
+</div>
+{% endblock %} {% block script %}
+<style>
+</style>
+{% endblock %}

@@ -1,0 +1,101 @@
+
+        <div id="container" style="height:600px; width:100%"></div>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script>
+    (function (H) {
+    H.wrap(H.Tooltip.prototype, 'refresh', function (proceed, point, e) {
+        
+            proceed.call(this, point, e);
+       
+    });
+    H.addEvent(H.Point.prototype, 'click', function (e) {
+        e.point.series.chart.tooltip.refresh(e.point, e);
+    });
+}(Highcharts));
+	Highcharts.chart('container', {
+    chart: {
+        type: 'area',
+        inverted: true
+    },
+    title: {
+        text: '<h3 class="h3">All Metrics</h3>'
+    },
+    colors:["#333333","#f28a26"],
+    subtitle: {
+        style: {
+            position: 'absolute',
+            right: '0px',
+            bottom: '10px'
+        }
+    },
+    legend: {
+        layout: 'horizontal',
+        align: 'right',
+        verticalAlign: 'bottom',
+        floating: false,
+        borderWidth: 1,
+        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+    },
+    xAxis: {
+         title: {
+                text: 'Metric Nubmer'
+         },
+          labels: {
+            formatter: function () {
+                // console.log(this);
+                return this.pos;
+            }
+        },
+        categories:[
+            "Proportion of ICD/CRT-D implant patients with left ventricular systolic dysfunction (LVSD) who were prescribed beta-blocker therapy, as eligible, at discharge",
+            "Proportion of ICD/CRT-D implant patients with a prior MI  who were prescribed beta-blocker therapy, as eligible, at discharge",
+            "Composite: Proportion of ICD/CRT-D implant patients prescribed all discharge medications (ACE-I/ARB and/or beta-blocker) for which they were eligible",
+            "Proportion of ICD/CRT-D patients that fulfill class I, IIa, or IIb guideline indicationse",
+            "Proportion of ICD patients that fulfill class I, IIa, or IIb guideline indications ",
+            "Proportion of CRT-D patients that fulfill class I, IIa, or IIb guideline indications ",
+            "Proportion of ICD/CRT-D implant patients with left ventricular systolic dysfunction (LVSD) who were prescribed beta-blocker therapy, as eligible, at discharge",
+            "Proportion of ICD/CRT-D implant patients with a prior MI  who were prescribed beta-blocker therapy, as eligible, at discharge",
+            "Composite: Proportion of ICD/CRT-D implant patients prescribed all discharge medications (ACE-I/ARB and/or beta-blocker) for which they were eligible",
+            "Proportion of ICD/CRT-D patients that fulfill class I, IIa, or IIb guideline indicationse",
+            "Proportion of ICD patients that fulfill class I, IIa, or IIb guideline indications ",
+            "Proportion of CRT-D patients that fulfill class I, IIa, or IIb guideline indications ",
+                        "Proportion of ICD/CRT-D implant patients with left ventricular systolic dysfunction (LVSD) who were prescribed beta-blocker therapy, as eligible, at discharge",
+            "Proportion of ICD/CRT-D implant patients with a prior MI  who were prescribed beta-blocker therapy, as eligible, at discharge",
+            "Composite: Proportion of ICD/CRT-D implant patients prescribed all discharge medications (ACE-I/ARB and/or beta-blocker) for which they were eligible",
+            "Proportion of ICD/CRT-D patients that fulfill class I, IIa, or IIb guideline indicationse",
+            "Proportion of ICD patients that fulfill class I, IIa, or IIb guideline indications ",
+            "Proportion of CRT-D patients that fulfill class I, IIa, or IIb guideline indications ",
+                        "Proportion of ICD/CRT-D patients that fulfill class I, IIa, or IIb guideline indicationse",
+            "Proportion of ICD patients that fulfill class I, IIa, or IIb guideline indications ",
+            "Proportion of CRT-D patients that fulfill class I, IIa, or IIb guideline indications ",
+        ],
+        min: 1,
+        tickInterval:1
+    },
+    yAxis: {
+        title: {
+            text: 'Metric Value'
+        },
+        labels: {
+            formatter: function () {
+                return this.value;
+            }
+        },
+        min: 0
+    },
+    plotOptions: {
+        area: {
+            fillOpacity: 0.25
+        }
+    },
+    series: [{
+        name: 'My Hospital',
+        data: [54, 90, 82, 94, 0, 0, 54,54, 90, 82, 94, 32, 82, 54,54, 90, 82, 94, 84, 82, 54]
+    }, {
+        name: '50th Percentile',
+        data: [62, 79, 65, 80, 90, 75, 62,62, 65, 65, 80, 46, 75, 62,62, 79, 65, 80, 55, 75, 62]
+    }]
+});
+</script>
