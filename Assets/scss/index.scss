@@ -1,8 +1,10 @@
 @import "setup";
 
+
 /**
 * Bristol 2.9
 **/
+
 
 /**
 * Base Framework:
@@ -12,7 +14,12 @@
 *	<a  class="button" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
 */
 
-html,body, html body{ font-size:$ms-base;}
+html,
+body,
+html body {
+    font-size: $ms-base;
+}
+
 @import "base/font-local-include";
 @import "base/fonts";
 // @import "base/stylemarkup.styleguide";
@@ -21,8 +28,6 @@ html,body, html body{ font-size:$ms-base;}
 // @import "vendor/font-awesome/_font-awesome_kitchensink";
 // @import "vendor/jquery-ui/jquery-ui-kitchensink";
 // @import "base/colors.styleguide";
-
-
 //base vendor files
 // @import "vendor/font-awesome/font-awesome";
 @import "vendor/font-awesome/variables";
@@ -46,7 +51,9 @@ html,body, html body{ font-size:$ms-base;}
 @import 'vendor/foundation-sites/util/util';
 @import "vendor/foundation-sites/settings/override.settings";
 @import "vendor/foundation-sites/foundation";
-.row{max-width: none;}
+.row {
+    max-width: none;
+}
 
 //branding and typography
 @import "base/typography";
@@ -93,17 +100,14 @@ html,body, html body{ font-size:$ms-base;}
 // @import "_non-core/components/_oma/user-id-block";
 // @import "_non-core/components/_oma/member-selection-table";
 // @import "_non-core/structures/_oma/sections";
-
 // // OMA Admin Modules --  !!! requires admin fonts to be included !!
 // @import "_non-core/components/_oma-admin/table-history";
 // @import "_non-core/components/_oma-admin/branding";
 // @import "_non-core/components/_oma-admin/user-id-block";
 // @import "_non-core/components/_oma-admin/admin.collapsable-panel";
-
 // // SI Modules
 // @import "_non-core/components/_si/si.table-cellcolor";
 // @import "_non-core/components/_si/si.recommendationTable";
-
 // // Vendor Overrides and Styles 
 @import "vendor/chosen/chosen";
 @import "vendor/foundation/override.topbar";
@@ -128,7 +132,7 @@ html,body, html body{ font-size:$ms-base;}
 //Structures and Layouts
 @import "structures/layout";
 @import "structures/layout-section-grouping";
-@import "structures/layout-split-off-canvas";  // this style must come before 'lyout-split'
+@import "structures/layout-split-off-canvas"; // this style must come before 'lyout-split'
 @import "structures/layout-split";
 //@import "structures/_oma-admin/override.layout-split";
 @import "structures/mobileApps/layout_header";
@@ -153,19 +157,86 @@ html,body, html body{ font-size:$ms-base;}
 @import "trumps/font-classes";
 @import "base/__states.trump";
 @import "_non-core/oma/shame";
-.row{max-width: 100%;}
+.row {
+    max-width: 100%;
+}
+
 .progress {
     height: .5rem;
     margin-bottom: 0;
-	border-radius:.25em
+    border-radius: .25em;
     background-color: #ccc;
     border: 1px solid white;
 }
 
 .progress.large {
     height: 1.5rem;
-    border-radius:0;
+    border-radius: 0;
+}
+.primary-metric .progress .progress-meter {
+   border:2px solid rgba(black,.3);
+}
+.secondary-metric .progress .progress-meter {
+    background-color:$product-brand-color;
 }
 
-.progress.primary .progress-meter{background-color:#f28a26;}
-.tabs,.page-wrapper{max-width: 1400px;}
+.tabs,
+.page-wrapper {
+    max-width: 1400px;
+}
+
+
+.chart {
+	display:table;
+	width:100%;
+    .input-holder {
+        display: table-row;
+        width: 100%;
+        .input-space {
+            display: table-cell;
+            float: none;
+        }
+        .input-label{font-weight:900;}
+        .value-space {
+            display: table-cell;
+            float: none;
+            text-align: left;
+            @include bp(md){
+            	text-align: right;
+            }
+            .value{display:inline-block;line-height:1;}
+        }
+    }
+}
+.primary-metric {
+	.input-label{
+		font-size: ms(1);
+	}
+	.input-space{
+		vertical-align: bottom;
+	}
+    .value-space {
+        font-size: ms(8);
+        font-weight: 900;
+    
+        color:grey(90);
+       .value{vertical-align: bottom;} 
+    }
+}
+
+.secondary-metric{
+	.input-label{
+		font-size: ms(0);
+		font-weight: 300;
+		color:grey(60);
+		color:$product-brand-color;;
+	}
+    .value-space {
+        font-size: ms(4);
+        font-weight: 400;
+        color:$product-brand-color;
+       
+        vertical-align: top;
+        .value{vertical-align: top;} 
+    }
+}

@@ -1,0 +1,55 @@
+<div class="card">
+    <div class="row">
+        <div class="column large-12 medium-6">
+            <h5>
+                <div class="h2 content-padding float-left strong">{#}</div> Proportion of ICD/CRT-D implant patients with left ventricular systolic dysfunction (LVSD) who were prescribed beta-blocker therapy, as eligible, at discharge</h5>
+        </div>
+        <div class="column large-12 medium-6">
+            <div class="bars">
+                <div id="good-qaurter" style=" height: 300px; margin: 0 auto"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<script>
+    Highcharts.chart('good-qaurter', {
+    title: {
+        text: 'Metric by Quarter'
+    },
+    xAxis: {
+        categories: ['2017q1', '2017q2', '2017q3', '2017q4']
+    },
+    series: [{
+        type: 'column',
+        name: 'Your Hospital',
+        data: [10, 87, 95, 90],
+         zones: [{
+               value: 50,
+               color: '#c32231'
+            }, {
+               value: 70,
+               color: '#ccc'
+            }, {
+               
+               color: '#14B057'
+            }]
+    }, {
+        type: 'spline',
+        name: '50th Percentile',
+        data: [60, 60, 60, 60],
+        color: 'black',
+        marker: {
+            lineWidth: 2,
+            lineColor: 'black',
+            fillColor: 'white'
+        }
+    }]
+});
+
+
+</script>

@@ -18,7 +18,9 @@ h1, h2, h3, h4, h5, h6, p, td, th {
 *   @example
 *	<a  class="button" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
 */
-html, body, html body {
+html,
+body,
+html body {
   font-size: 14px;
 }
 
@@ -11708,20 +11710,88 @@ STATE TRUMPING CODE
 .progress {
   height: .5rem;
   margin-bottom: 0;
+  border-radius: .25em;
   background-color: #ccc;
   border: 1px solid white;
 }
 
 .progress.large {
   height: 1.5rem;
+  border-radius: 0;
 }
 
-.progress.primary .progress-meter {
+.primary-metric .progress .progress-meter {
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.secondary-metric .progress .progress-meter {
   background-color: #f28a26;
 }
 
-.tabs, .page-wrapper {
+.tabs,
+.page-wrapper {
   max-width: 1400px;
+}
+
+.chart {
+  display: table;
+  width: 100%;
+}
+.chart .input-holder {
+  display: table-row;
+  width: 100%;
+}
+.chart .input-holder .input-space, .chart .input-holder .switch-input-space {
+  display: table-cell;
+  float: none;
+}
+.chart .input-holder .input-label {
+  font-weight: 900;
+}
+.chart .input-holder .value-space {
+  display: table-cell;
+  float: none;
+  text-align: left;
+}
+@media only screen and (min-width: 767px) {
+  .chart .input-holder .value-space {
+    text-align: right;
+  }
+}
+.chart .input-holder .value-space .value {
+  display: inline-block;
+  line-height: 1;
+}
+
+.primary-metric .input-label {
+  font-size: 16px;
+}
+.primary-metric .input-space, .primary-metric .switch-input-space {
+  vertical-align: bottom;
+}
+.primary-metric .value-space {
+  font-size: 36px;
+  font-weight: 900;
+  color: #1a1a1a;
+}
+.primary-metric .value-space .value {
+  vertical-align: bottom;
+}
+
+.secondary-metric .input-label {
+  font-size: 14px;
+  font-weight: 300;
+  color: #666666;
+  color: #f28a26;
+}
+.secondary-metric .value-space {
+  font-size: 22px;
+  font-weight: 400;
+  color: #f28a26;
+  vertical-align: top;
+}
+.secondary-metric .value-space .value {
+  vertical-align: top;
 }
 
 /*# sourceMappingURL=index.css.map */

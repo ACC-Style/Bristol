@@ -37,10 +37,10 @@
     </div>
     <nav class="content-padding hide-for-small-only">
         <ul class="nav tabs ">
-            <li class="selected">
+            <li >
                 <a class="h6 no-margin" href="index.html">Executive Summary</a>
             </li>
-            <li>
+            <li class="selected">
                 <a class="h6 no-margin" href="PerformanceMeasures.html">Performance Measures</a>
             </li>
             <li class="  ">
@@ -54,8 +54,8 @@
 </div>
 <div class="content-padding section-padding">
         <nav class=" hide-for-medium button-group stacked radius">
-        <a class="button selected" href="index.html">Executive Summary</a>
-        <a class="button" href="PerformanceMeasures.html">Performance Measures</a>
+        <a class="button " href="index.html">Executive Summary</a>
+        <a class="button  selected" href="PerformanceMeasures.html">Performance Measures</a>
         <a class="button">Guideline Metrics</a>
         <a class="button">Outcome Metrics</a>
     </nav>
@@ -63,23 +63,21 @@
 <div class="content-padding page-wrapper"> 
     
     <div class="row">
-        <div class="column"><h1>Executive Summary</h1></div>
-        <div class="column medium-6 large-8">
-            <div>
-                <h2 class="with-underline">Performance Measures</h2>
-                <div class="row">
-                    {% include "snippets/data-dualprogressbar-bad"%} {% include "snippets/data-dualprogressbar-good"%} {% include "snippets/data-dualprogressbar-unknown"%}
-                </div>
-                <h2 class="with-underline">Guideline Metrics</h2>               <div class="row">
-                    {% include "snippets/data-dualprogressbar-bad"%} {% include "snippets/data-dualprogressbar-good"%} {% include "snippets/data-dualprogressbar-unknown"%}
-                </div>
-                <h2 class="with-underline">Outcome Metrics</h2>               <div class="row">
-                    {% include "snippets/data-dualprogressbar-bad"%} {% include "snippets/data-dualprogressbar-good"%} {% include "snippets/data-dualprogressbar-unknown"%}
-                </div>
-            </div>
+        <div class="column"><h1>Performance Measures</h1></div>
+        <div class="column large-4 medium-6 section-padding">
+
+                {% include "snippets/dataquarters-dualprogressbar-bad"%} 
+
         </div>
-        <div class="column medium-6 large-4">
-            {% include "sections/chart" %}
+         <div class="column large-4 medium-6 section-padding">
+
+                {% include "snippets/dataquarters-dualprogressbar-good"%} 
+
+        </div>
+        <div class="column large-4 medium-6 section-padding">
+
+                {% include "snippets/dataquarters-dualprogressbar-good_2"%} 
+
         </div>
     </div>
 </div>
