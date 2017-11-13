@@ -1,0 +1,52 @@
+{% include "head" %}
+<div class="page-message-holder inset">
+    {% block  message-holder %} {% endblock %}
+</div>
+        {% include 'sections/header-closed-application' %}
+<div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
+    <div class="paper-page page">
+        <div class="page-header clearfix">
+            <h1>
+                {% block page-name %}{% endblock %}
+            </h1>
+        </div>
+        <div class="row" style="max-width: none;">
+            <div class="column large-3">
+                <aside class="card">
+                    <div class="colored-paper" style="background-color: #444;">
+                        <h2 class="clearfix text-center">
+                            Open Committees
+                        </h2>
+                    </div>
+                    {% comment %}{% include "elements/searchbar" %}{% endcomment %}
+                    <div class="colored-paper clearfix text-center " style="background-color:#ccc;padding: .5em 0 0 0;">
+                       <div class="button-group  selectable selectable-switch small disabled">
+                            <a href="" class="button disabled selected"><i class="fa fa-holder"></i>All</a>
+                            <a href="" class="button disabled"><i class="fa fa-holder"></i>Nominated</a>
+                            <a href="" class="button disabled"><i class="fa fa-holder"></i>Interested</a>
+                        </div>
+                    </div>
+                    <div class="section-padding">
+                        <h6 class="text-center">There are currently no open committees because there is not an active nomination season currently. </h6>
+                    </div>
+                    
+                </aside>
+            </div>
+            <div class="column large-9">
+                    {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="reveal large no-padding paper-page page" data-reveal="" id="comm-modal">
+    {% include "sections/committee-overview" %}
+    <button aria-label="Close modal" class="close-button" data-close="" type="button">
+        <span aria-hidden="true">
+            <i class="fa fa-times">
+            </i>
+        </span>
+    </button>
+</div>
+{% include 'sections/web-footer' %}
+    {% include "scripts" %}
+    {% include 'sections/time-control'%}

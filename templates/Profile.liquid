@@ -1,0 +1,230 @@
+{% extends 'layouts/layout' %}
+{% block content %}
+<div class="page paper-page">
+    <div class="">
+        {% include "elements/page-message-missing-data" %}
+    </div>
+    <div class="page-wrapper row">
+        <div class="column">
+            <h1 >
+                <i class="fa fa-user">
+                </i>
+                Digital CV
+                <span class="sub-line">
+                    Your digital CV will be attached to your applications for all opportunities for ACC member involvement.  Please keep this information as up to date as possible to be considered throughout the year.
+                </span>
+            </h1>
+        </div>
+        <div class="column section-padding" id="contactData">
+         
+                <div class="card">
+                    <div class="colored-paper info">
+                        <i class="fa fa-envelope">
+                        </i>
+                        <b class="no-vertical-margin">
+                            Contact Info
+                        </b>
+                         <a class="button secondary float-right tiny close-button" href="">
+                            <i class="fa fa-pencil">
+                            </i>
+                            Edit on ACC.org
+                        </a>
+                    </div>
+                    <div class="section-padding">
+                    <div class="row column group-divide-bottom"><h5>
+                                    Name:
+                                    <span class="subheader">
+                                        Zeta Gamma, FACC
+                                    </span>
+                                </h5></div>
+                        <div class="row">
+                            <div class="column small-12 medium-6">
+                                
+                                <div class="row">
+                                    <div class="column medium-6">
+                                        <h6>
+                                    Title
+                                    <div class="sub-line">Proffessor X</div>
+                                </h6>
+                                </div><div class="column medium-6">
+                                 <h6>
+                                    <span class="hide-for-mall">
+                                    Institution
+                                   </span>
+                                    <div class="sub-line">The Xavier School</div>
+                                </h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column small-12 medium-3">
+                                <h6>
+                                    Email:
+                                    <span class="subheader">
+                                        zgamma@gmail.com
+                                    </span>
+                                </h6>
+                                
+                            </div>
+                            <div class="column small-12 medium-3">
+                                <h6>
+                                    Location
+                                <div class="sub-line">
+                                    Atlanta, GA, USA
+                                </div> 
+                                </h6>
+
+                            </div>
+                        </div>     
+                        </div>
+                    </div>
+                </div>
+            
+            <div class="column section-padding" id="proExperianceData">
+                <div class="card">
+                    <div class="colored-paper info">
+                        <i class="fa fa-envelope">
+                        </i>
+                        <b class="no-vertical-margin">
+                            Professional Experience
+                        </b>
+                    </div>
+                    <div class="section-padding row column">
+                        <div class="question">
+                            <div class="input-holder">
+                                <div class="input-space">
+                                    <textarea cols="30" id="" name="" rows="7">This information is synced between here and any appliation you submit</textarea>
+                                </div>
+                            </div>
+                            <div class="hint">
+                                This information is synced between here and any appliation you submit
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column section-padding" id="publicationsData">
+                <div class="card">
+                    <div class="colored-paper warning">
+                        <i class="fa fa-envelope">
+                        </i>
+                        <b class="no-vertical-margin">
+                            Publications
+                        </b>
+                    </div>
+                    <div class="section-padding row column">
+                        <div class="question warning">
+                            <div class="input-holder">
+                                <div class="input-space">
+                                    <textarea cols="30" id="" name="" rows="7">
+                                    </textarea>
+                                </div>
+                            </div>
+                            <div class="message-holder">
+                                <small class="warning">
+                                    <i class="fa fa-holder">
+                                    </i>
+                                    Missing Data
+                                </small>
+                            </div>
+                            <div class="hint">
+                                This information is synced between here and any appliation you submit
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column section-padding">
+                <div class="card" id="awardsData">
+                    <div class="colored-paper warning">
+                        <i class="fa fa-envelope">
+                        </i>
+                        <b class="no-vertical-margin">
+                            Awards
+                        </b>
+                    </div>
+                    <div class="section-padding row column">
+                        <div class="question warning">
+                            <div class="input-holder">
+                                <div class="input-space">
+                                    <textarea cols="30" id="" name="" rows="7">
+                                    </textarea>
+                                </div>
+                            </div>
+                            <div class="message-holder">
+                                <small class="warning">
+                                    <i class="fa fa-holder">
+                                    </i>
+                                    Missing Data
+                                </small>
+                            </div>
+                            <div class="hint">
+                                This information is synced between here and any appliation you submit
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column section-padding" id="Compentancy">
+                <div class="card">
+                    <div class="colored-paper  warning">
+                        <i class="fa fa-envelope">
+                        </i>
+                        <b class="no-vertical-margin">
+                            Leadership Competency
+                        </b>
+                    </div>
+                    <div class="section-padding row">
+                        <div class="column">
+                            <div class="question warning">
+                                <div class="label-holder">
+                                    <label for="">
+                                        Please select up to three compentencies
+                                    </label>
+                                </div>
+                                <div class="input-holder">
+                                    {% include 'sections/leadership-Comp'%}
+                                </div>
+                                <div class="message-holder"> 
+                                    <small class="warning">Please select no more than three.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row group-divide">
+                        <div class="column">
+                            <div class="question">
+                                <div class="label-holder">
+                                    <label for="">
+                                        Please provide examples of occasions in your profession upon which you utilized these leadership competencies.
+                                    </label>
+                                </div>
+                                <div class="input-holder">
+                                    <div class="input-space">
+                                        <textarea id="" name="" rows="6">
+                                        </textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row section-padding ">
+                <div class="column text-right">
+                    <a class="button secondary" href="">
+                        Cancel
+                    </a>
+                    <a class="button" href="">
+                        Save
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+{% comment %}
+    <img src="output/abstract-q-c-640-480-1.jpg">
+        {% endcomment %}
+    </img>
+</div>

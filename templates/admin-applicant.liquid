@@ -1,0 +1,115 @@
+{% extends 'layouts/admin-layout' %}
+{% block content %}
+<div class="page paper-page">
+<div class="section-nav back">
+    <a href="admin-applications.html">
+      <div class="circle">
+        <i class="fa fa-holder-dynamic"></i>
+      </div>
+      <div class="text">Back</div>
+    </a>
+  </div>
+  <div class="page-wrapper">
+    
+    <div class="row position-relative">
+        <div class="column">
+            <h1>Doctor Dove Special Dark
+            <a href="" class="button secondary float-right"><i class="fa fa-envelope"></i>&nbsp;Email Applicant</a>
+            <div class="sub-line"><small class="label warning">Status: Sent for Revision</small></div>
+            </h1>
+
+        </div>
+    </div>
+  
+{% comment %}<nav class="overlap nav">
+        <ul class="tabs ">
+            <li class="tab-title">
+                <a class="" href="admin-committees-details.html">
+                    Interested Committees
+                </a>
+            </li>
+            <li class="tab-title is-active">
+                <a href="admin-committees.html">
+                    Digital CV
+                </a>
+            </li>
+            <li class="tab-title">
+                <a href="admin-committees.html">
+                    Letter of Refference
+                </a>
+            </li>
+        </ul>
+    </nav>{% endcomment %}
+
+<div class="row">
+    <div class="column medium-6"><div class="card">
+        <div class="colored-paper">
+            <h2>Interested Activities/Committees</h2>
+        </div>
+        <div class="section-padding">
+            <div class="accordion">
+
+    {% include "admin/sections/interested-committee-list" %}
+ 
+</div>
+        </div>
+    </div>
+<div class="row column section-padding"><a href="" class="link">Show Full list of Activites/Committees</a></div>
+    </div>
+    <div class="column medium-6">
+<div class="card">
+    <div class="colored-paper"><h2>Statement of Reference</h2></div>
+    <div class="section-padding"> 
+    <h3>
+           Abe Lincoln, FACC
+           <div class="sub-line">Institution Name: Gettysburg Research</div>
+        </h3>  
+        <p>{% include "elements/lorem" %}</p>    
+    </div>
+</div>
+ <div class="section-padding">
+        <div class="card">
+        <div class="colored-paper">
+            <h2>Digital CV</h2>
+        </div>
+        <div id="Application-Details">
+    <div class="section-padding">
+        <h3>
+            Professional Experiance
+        </h3>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+    </div>
+    <div class="section-padding">
+        <h3>
+            Publications
+        </h3>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+    </div>
+    <div class="section-padding">
+        <h3>
+            Awards
+        </h3>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+    </div>
+</div>
+    </div></div>
+</div>
+   </div>
+   <div class="row group-divide text-right">
+    <div class="button-group">
+        <a href="" class="button alert">Reject</a>
+        <a href="" class="button warning">Send For Revision</a>
+        <a href="" class="button secondary">Save For Later</a>
+        <a href="" class="button success">Reviewed</a>
+    </div>
+   </div>  
+   </div>
+</div>   
+ </div>
+{% endblock %}
