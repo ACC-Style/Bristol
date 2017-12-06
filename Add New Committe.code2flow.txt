@@ -1,0 +1,65 @@
+Add New Committe;
+if(Committee Count is <= 6){
+  Add Committee into Earliest Empty Slot;
+}
+else{
+  Popup Replacement Nav;
+  switch(Choice){
+   case Replace None:return Close;
+   case Replace Selected: Replace Committee; break;
+   case Cancel:return Close; break;
+  }
+}
+return Add Committe & Save;
+Rank Committee;
+if(Committee is last){}else{
+  Collapse Committee's Position;
+  Rerank All Subsquent Committees; 
+  
+}
+if(Rank Position is Occupied)
+{Move Current Committee Down In Rank;}else{
+  Rerank Committee to Lower Rank;
+  Repeat with all Subsquent Occupied Positions;
+}
+
+
+
+---------- AI ----------------------------
+Dashbard;
+switch(){
+  case Open Committees:return Open Committees;
+ case Requests:return Requests;
+ case Profile:return Profile;
+ case Quick View Links:Quick View Link;
+}
+switch(link){
+  case Bookmarks: Committees Filtered By Bookmarks;break;
+  case Nominations: Commitees Filtered By Nomination and Application Group;break;
+  case Requests: Requests Filtered by Application Group;break;
+  case Nominated Collegeues: Collegeues Filtered by Application Group;break;
+}
+return;
+
+Requests;
+if(Want to Respond)
+write response;
+else
+archive request;
+return;
+
+Open Committees;
+switch(action){
+  case Bookmark :returnBookmark;
+  case Nominate:return Nominate a Coluege;
+  case Apply: New Application;
+}
+if(New Application){
+  Add Committee to Empty Committee Selection;
+}else{
+  Committee Selection Flow;
+  Six or More Test;
+  Replacement Pop Up;
+  Add Commmittee to Position;
+  
+}

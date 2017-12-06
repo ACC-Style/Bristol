@@ -10,369 +10,489 @@
 		<link href="assets/css/jquery-ui.css" rel="stylesheet"/>
 		<link href="assets/css/jquery-uistructure.css" rel="stylesheet"/>
 		<link href="assets/css/foundation-sites.css" rel="stylesheet"/>
-		<link href="assets/css/font-awesome.css" rel="stylesheet"/>
 		<link href="assets/css/index.css" id="theme" rel="stylesheet"/>
-
 		<script src="https://use.fontawesome.com/e18aeca4c9.js"></script>
     </head>
     <body>
-   <div class="row">
+<div class="row">
   <header class="header page">
     <a href="index.html" class="logo">
-      <img src="assets/img/headerlogo-comnom.svg" alt="ACC Statin Intolerance Guidelines">
+      <img src="assets/img/headerlogo.svg" alt="ACC Committee Nominations">
     </a>
     <div class="button-group small quicklinks"><a href="" class="nobutton button">FAQ</a><a href="" class="nobutton button">ACC</a><a href="" class="nobutton button">Committee Calendar</a></div>
     <div class="logedin">Doctor Lolly Pop | <a href="" class="link">Log Out</a></div>
 	</header>
-	<div class="top-bar">
-    <div class="hide-for-large" id="mobileMenu">
-        <div class="top-bar-left" onclick="$('#siteMenu .top-bar-left').toggleClass('display-block')">
-            <a class="top-bar-toggle">
-                <i class="fa fa-bars">
-                </i>
-                Menu
-            </a>
+	<div class="siteMenu">
+    <div class="top-bar">
+        <div class="hide-for-large" id="mobileMenu">
+            <div class="top-bar-left" onclick="$('#siteMenu .top-bar-left').toggleClass('display-block')">
+                <a class="top-bar-toggle">
+                    <i class="fa fa-bars">
+                    </i>
+                    Menu
+                </a>
+            </div>
+            <div class="top-bar-right secondary" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+                <a class="top-bar-toggle small condensable">
+                    <i class="fa fa-search">
+                    </i>
+                    <span class="condense">
+                        Committee Search
+                    </span>
+                </a>
+            </div>
+            <div class="top-bar-right title" onclick="$('#siteMenu .top-bar-right.user-nav').toggleClass('display-block')">
+                <a class="top-bar-toggle small condensable">
+                    <i class="fa fa-user">
+                    </i>
+                    <span class="condense">
+                        Digital CV
+                    </span>
+                </a>
+            </div>
         </div>
-        <div class="top-bar-right secondary" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
-            <a class="top-bar-toggle small condensable">
-                <i class="fa fa-search">
-                </i>
-                <span class="condense">
-                    Committee Search
-                </span>
-            </a>
-        </div>
-        <div class="top-bar-right title" onclick="$('#siteMenu .top-bar-right.user-nav').toggleClass('display-block')">
-            <a class="top-bar-toggle small condensable">
-                <i class="fa fa-user">
-                </i>
-                <span class="condense">
-                    Digital CV
-                </span>
-            </a>
-        </div>
-    </div>
-    <div class="stack-for-medium " id="siteMenu">
         <div class="top-bar-left show-for-large">
             <ul class="menu">
-
                 <li>
-                    <a href="user-dashboard-empty.html">
-                        Dashboard
-                    </a>
-                </li>
-                                <li>
-                    <a href="open-committees.html">
-                        Active Application
+                    <a href="user-dashboard.html">
+                       <i class="fa fa-pie-chart"></i> Dashboard
                     </a>
                 </li>
                 <li>
-                    <a href="open-committees.html">
-                        Open Committees
+                    <a href="user-open-requests.html">
+                        Requests <sup>(42)</sup>
                     </a>
                 </li>
-
-                                <li>
-                    <a href="open-requests.html">
-                        Requests
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="top-bar-right secondary show-for-large" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
-            <ul class="menu">
                 <li>
-                    <a class="top-bar-toggle small condensable">
-                        <span class="condense">
-                            Search
-                        </span>
-                        <i class="fa fa-search">
-                        </i>
+                    <a href="user-open-committees.html">
+                        Open Committees <sup>(234)</sup>
                     </a>
                 </li>
             </ul>
         </div>
         <div class="top-bar-right user-nav show-for-large">
-
             <ul class="menu">
-            
                 <li class="title">
-                
-                    <a href="profile.html">
-                      <i class="fa fa-user" aria-hidden="true"></i> Digital CV
-                    </a>
-                
+                    <a href="profile.html"><i class="fa fa-user" aria-hidden="true"></i> Digital CV </a>
                 </li>
                 <li class="">
-                
                     <a href="profile.html">
                       My ACC &nbsp;<i class="fa fa-external-link-square" aria-hidden="true"></i>  
                     </a>
-                
                 </li>
-
             </ul>
         </div>
-        <div class="search-bar">
-            <div class="question">
-                <div class="input-holder">
-                    <div class="input-space  column small-5 medium-4 large-2 ">
-                        <select name="" id="">
-                          <option value="">Open Committees</option>
-                          <option value="">Members to Nominate</option>
-                        </select>
-                    </div>
-                    <div class="input-space column small-6 medium-4 large-8 ">
-                        <input name="" type="text">
-                        </input>
-                    </div>
-                    <div class="input-space column small-1 medium-4 large-2 ">
-                        <button class="button expanded small condensable">
-                             
-                             <span class="condense ">Search</span>
-                             <i class="fa fa-search"></i>
-                        </button>
-                    </div>
+
+    </div>
+    <div class="search-bar">
+        <div class="question">
+            <div class="input-holder">
+                <div class="input-space column small-5 medium-4 large-2 ">
+                    <select name="" id="">
+                        <option value="">Open Committees</option>
+                        <option value="">Members to Nominate</option>
+                    </select>
+                </div>
+                <div class="input-space column small-6 medium-4 large-8 ">
+                    <input name="" type="text">
+                    </input>
+                </div>
+                <div class="input-space column small-1 medium-4 large-2 ">
+                    <button class="button expanded small condensable">
+                        <span class="condense ">Search</span>
+                        <i class="fa fa-search"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 </div>
-    <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
-    
-<div class="page paper-page">
-    <div class="page-wrapper">
-        
-        <div class="row">
-            <div class="column small-12 section-padding">
-                <div class="card"> <div class="colored-paper">
-                        <h1 class="no-vertical-margin">
-                            Welcome Doctor Lolly Pop
-                        </h1>
-                    </div>
-                </div>
-                <div class="card">
-                      <div class="row column"><a id="heroToggle" style="display:none;" href="" onclick="toggleHero(event)" class="link float-right">Open Introduction</a></div>
-                    <div id="hero">
-                        <div class="colored-paper info no-padding">
-                            <h2 class="text-center no-vertical-margin">
-                                Introduction
-                            </h2>
-                        </div>
-                        <div class="section-padding">
-                            <div class="row">
-                                <div class="column small-12 medium-7">
-                                    <div class="callout success">
-                                        <h1>
-                                            Become Part of the Team and Shape the Future of the ACC
-                                        </h1>
-                                        <h4>
-                                            We are a membership driven association and with out the guidance of our committees we wouldn't be the world respected assoication that you know today.
-                                        </h4>
-                                        <p>
-                                            This system is where you can learn and become a part of the committees of the American College of Cardiology.
-                                        </p>
-                                        <div class="text-center section-padding">
-                                            <a class="button" href="open-committees.html">
-                                                Browse Open Commitees
-                                            </a>
-                                            <h2>
-                                                Or
-                                            </h2>
-                                            <a class="button" href="application-to-committee.html">
-                                                Start An Application
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="column small-12 medium-5">
-                                    <div class="row column">
-                                        <div class="callout highlighted">
-                                            <h1>
-                                                Nominate A Member Who Deserves it!
-                                            </h1>
-                                            <p>
-                                                Your college might be the best person to share the guidance and expertise.
-                                            </p>
-                                            <a class="button" href="user-nominate-member.html">
-                                                Nominate a Member
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="row column">
-                                        <div class="callout">
-                                            <h1>
-                                                You know your colleges best.
-                                            </h1>
-                                            <p>
-                                                Potential Committee members are not only judged by their CV's but also statements of reference from there Colleges.  If a college asks for statement of reference please tell us what you think.  Without you we will never know if they would be good fit without your input.
-                                            </p>
-                                            <a class="button" href="">
-                                                Respond to Requests
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                       
-                        <div class="colored-paper info text-center">
-                            <a class="button secondary small radius hollow" href="" style="background-color: white;" onclick="toggleHero(event)">
-                                <i class="fa fa-times">
-                                </i>
-                                Close Introduction
-                            </a>
-                        </div>
+<div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
+    <div class="row column content-padding page-header">
+        <h1>
+            
+    Dashboard
 
-                    </div>
+        </h1>
+    </div>
+    <div class="layer-down">
+        <div class="row page page-wrapper section-padding" >
+            <div class="column large-8 ">
+                <div class=" ">
+                    
+<!--     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Task', 'Hours per Day'],
+      ['Nominated',     11],
+      ['Self Selected',      2],
+      ['Not Used',  2]
+    ]);
+
+    var options = {
+      title: 'Application',
+      pieHole: 0.4,
+      colors: ['#198dae', '#E08514', '#b3b3b3']
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+    chart.draw(data, options);
+  }
+</script>
+<div class="card">
+  <div id="donutchart" style="width: auto; height: 500px;"></div>
+</div> -->
+<h4 class="section-name">
+	Applications to Committees
+</h4>
+<article class="card application">
+	<div class="row">
+		<div class="column large-3">
+			<div class="chart-holder">
+				<img src="Assets/img/active-chart.gif" alt="">
+			</div>
+		</div>
+		<div class="column large-9">
+			<h2 class="application-title">Application Season 2</h2>
+			<h4 class="type">Application Type A, Application Type B</h4>
+			<h5 class="Timefrmae">
+				<strong>Timeframe:</strong>
+				<span class="start"> June 3rd, 2018 </span>
+				&nbsp;-&nbsp;
+				<span class="end"> July 30th, 2018</span>
+			</h5>
+			<ul class="data">
+				<li>
+					<div class="value">213</div>
+					<div class="title">Open Committees</div>
+				</li>
+				<li>
+					<div class="value">23</div>
+					<div class="title">Nominations for Committees</div>
+				</li>	
+				<li>
+					<div class="value">14</div>
+					<div class="title">Colleagues you have nominated for committees</div>
+				</li>	
+				<li>
+					<div class="value">37</div>
+					<div class="title">Active requests for Reference</div>
+				</li>			
+			</ul>
+			<div class="text-right actions">
+				<a href="user-nominate-memberSelection.html" class="button default">Nominate a Colleague</a>
+				<a href="" class="button default">Edit Application</a>
+			</div>
+		</div>
+	</div>
+</article> 
+<!--  A new Application -->
+
+<article class="card application">
+	<div class="row">
+		<div class="column large-3">
+			<div class="chart-holder">
+				<img src="Assets/img/empty-chart.gif" alt="">
+			</div>
+		</div>
+		<div class="column large-9">
+			<h2 class="application-title"><span class="flag">NEW</span>Application Season 2</h2>
+			<h4 class="type">Application Type C</h4>
+			<h5 class="Timefrmae">
+				<strong>Timeframe:</strong>
+				<span class="start"> July 14th, 2018 </span>
+				&nbsp;-&nbsp;
+				<span class="end"> Oct 30th, 2018</span>
+			</h5>
+			<ul class="data">
+				<li>
+					<div class="value">45</div>
+					<div class="title">Open Committees</div>
+				</li>
+				<li>
+					<div class="value">5</div>
+					<div class="title">Nominations for Committees</div>
+				</li>	
+				<li>
+					<div class="value">1</div>
+					<div class="title">Colleagues you have nominated for committees</div>
+				</li>	
+				<li>
+					<div class="value">2</div>
+					<div class="title">Active requests for Reference</div>
+				</li>			
+			</ul>
+			<div class="text-right actions">
+				<a href="user-nominate-memberSelection.html" class="button default">Nominate a Colleague</a>
+				<a href="" class="button">Start Application</a>
+			</div>
+		</div>
+	</div>
+</article> 
+
+                </div>
+            </div>
+            <div class="column large-4 ">
+                 
+<h4 class="section-name text-right with-underline">
+	Quick Look
+</h4>
+<ul class="data">
+	<li>
+		<div class="value">234</div>
+		<div class="title">Open Committees</div>
+	</li>
+	<li>
+		<div class="value">62</div>
+		<div class="title">Bookmarked Committees</div>
+	</li>	
+	<li>
+		<div class="value">42</div>
+		<div class="title">Requests for Reference</div>
+	</li>	
+	<li>
+		<div class="value">34</div>
+		<div class="title">Nominated Colleague</div>
+	</li>			
+</ul>
+<div class="content-padding">
+	<a href="user-nominate-memberSelection.html" class="button expanded default">Nominate a Colleague</a>
+</div>
+<h4 class="section-name text-right with-underline">
+	History
+	<span class="sub-line">all interactions from the last year</span>
+</h4>
+<ul class="data">
+	<li>
+		<div class="value">234</div>
+		<div class="title">Open Committees</div>
+	</li>
+	<li>
+		<div class="value">62</div>
+		<div class="title">Bookmarked Committees</div>
+	</li>	
+	<li>
+		<div class="value">42</div>
+		<div class="title">Requests for Reference</div>
+	</li>	
+	<li>
+		<div class="value">34</div>
+		<div class="title">Nominated Colleague</div>
+	</li>			
+</ul>
+<div clas
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="reveal large no-padding paper-page page " data-reveal=" " id="comm-modal ">
+    <div class="page-wrapper section-padding">
+    <div class="row">
+        <div class="column">
+            <h1 class="">
+                Committee Name
+
+                <span class="sub-line float-right small italic text-right">
+                    <strong>
+                        ACC Guidance Committee
+                    </strong>
+                    <br>
+                        COMMITTEE/90823402934
+                    </br>
+                   <span class="label large">
+                        Nominated
+                        <i class="fa fa-thumbs-up">
+                        </i>
+                    </span>
+                    <span class="label success large">
+                        Interested <i class="fa fa-check-circle fa-2x" aria-hidden="true"></i>
+                    </span>
+                </span>
+            </h1>
+        </div>
+    </div>
+    <div class="row section-padding">
+        <div class="column large-7">
+            <div class="card">
+                <div class="colored-paper info">
+                    <h4>
+                        Roles and Responsibilities:
+                    </h4>
+                </div>
+                <div class="section-padding">
+                    <p>
+                        The Assembly of International Governors Steering Committee is an advisory group of regional representatives that provides guidance on international issues as identified by the ACC or the Assembly of International Governors.
+                    </p>
+                    <h5>
+                        The AIGSC:
+                    </h5>
+                    <ul>
+                        <li>
+                            Supports the ACC/ACCF Board of Trustees by making recommendations for the International Strategy of the ACC.
+                        </li>
+                        <li>
+                            Creates bi-directional communication between ACC International Chapters, ACC Board Standing Committees such as the Membership Committee, and the ACC Board of Trustees.
+                        </li>
+                        <li>
+                            Recommends strategies for continued growth of all ACC member types internationally.
+                        </li>
+                        <li>
+                            Implements and innovates important ACC initiatives including but not limited to ACC International Regional Conferences and educational programs, JACC Journals, and NCDR registries.
+                        </li>
+                        <li>
+                            Leads strategic shift towards increasing engagement with current footprint of ACC International Chapters.
+                        </li>
+                        <li>
+                            Monitors issues in international cardiovascular health and raises important issues to ACC leadership.
+                        </li>
+                        <li>
+                            Establishes annual goals specifying its principal work focus areas for the coming year.
+                        </li>
+                        <li>
+                            Be responsible for holding Chapters in their region responsible for performing Chapter Duties.
+                        </li>
+                        <li>
+                            Administer corrective action to Governors as needed.
+                        </li>
+                    </ul>
+                </div>
+                <div class="colored-paper info">
+                    <h4>
+                        Competency Requirements
+                    </h4>
+                </div>
+                <div class="section-padding">
+                    <p>
+                        Members must be able to anticipate & lead change and demonstrate strategic leadership by working to advise ACC on its international strategy and ensure the ACC achieves its mission to its fullest extent worldwide.
+                    </p>
+                    <p>
+                        Members must also be knowledgeable about the cardiovascular community within their regions and its relevance to the ACC mission and activities.
+                    </p>
                 </div>
             </div>
         </div>
-        <script>
-        	function toggleHero(e){
-        		e.preventDefault();
-        		$("#hero").slideToggle();
-        		$("#heroToggle").slideToggle();
-        	}
-        </script>
-        <div class="row">
-            <div class="column small-12 medium-5 large-4 " style="padding-left: 0;">
-                <div class="slots-area card">
-                    <div class="colored-paper">
-                        <h4 class="text-center no-vertical-margin">
-                            Committees of Interest
-                            <div class="sub-line">
-                                Active Application & Nominations
-                            </div>
-                        </h4>
-                    </div>
-                    <div class="colored-paper info">
-                        <h5 class=" text-center">
-                            Commitees to be Considered for
-                            <div class="sub-line single-line-height">
-                                Rank your committees based on your preference. 1 = Most Preferred
-                            </div>
-                        </h5>
-                    </div>
-                    <div class="slots top-4 section-padding">
-                        <li class="committee-list-item selected checked">
-	<div class="committee-data">
-		<div class="action">
-			<span class="fa-stack fa-lg"">
-			<i class="fa fa-circle fa-stack-2x"></i>
-			<i class="fa fa-check fa-stack-1x"></i>
-			</span>
-		</div>
+        <div class="column large-5">
+            <h4>
+                Available Positions
+            </h4>
+            <div class="ghost card">
+	<h5>
+	Chair <span class="label float-right radius">Open:1</span>
 	
-		<div class="committee">
-			<h2 class="name">NCDR Committee A
-				<div class="sub-line">NCDR Compliance</div>
-			</h2>
-			<span class="label secondary">Open Positions: <b>4</b></span>
-		</div>
-	</div>
-</li>
-						<li class="committee-list-item selected checked">
-	<div class="committee-data">
-		<div class="action">
-			<span class="fa-stack fa-lg"">
-			<i class="fa fa-circle fa-stack-2x"></i>
-			<i class="fa fa-check fa-stack-1x"></i>
-			</span>
-		</div>
-	
-		<div class="committee">
-			<h2 class="name">NCDR Committee A
-				<div class="sub-line">NCDR Compliance</div>
-			</h2>
-			<span class="label secondary">Open Positions: <b>4</b></span>
-		</div>
-	</div>
-</li>
-						<div class="slot empty card ghost">
-	<div class="colored-paper info">
-		<div class="row">
-			<div class="column small-6"><h5>Empty Slot </h5></div>
-			<div class="column small-6"><a href="application-to-committee.html" class="expanded button tiny float-right radius hollow">Add A Committee</a></div>
-		</div>
-	</div>
+	</h5>
 </div>
-						<div class="slot empty card ghost">
-	<div class="colored-paper info">
-		<div class="row">
-			<div class="column small-6"><h5>Empty Slot </h5></div>
-			<div class="column small-6"><a href="application-to-committee.html" class="expanded button tiny float-right radius hollow">Add A Committee</a></div>
-		</div>
-	</div>
+<div class="ghost card">
+	<h5>
+	Member <span class="label float-right radius">Open:3</span>
+	</h5>
 </div>
-                    </div>
-                    <div class="colored-paper info">
-                        <h6 class="text-center no-vertical-margin">
-                            Committees Not To Be Considered For
-                            <div class="sub-line single-line-height">
-                            </div>
-                        </h6>
-                    </div>
-                    <div class="slots section-padding">
-                        <div class="card no-padding slot filled">
-	<a class="" data-open="comm-modal"><img src="assets/img/comnoms/Committee-NotInterested.png" alt=""></a>
-</div>
-
-
-
-
-
-                    </div>
-                    <a class="link">
-                        Hide Full List of Applications & Nominations to Commitees
-                    </a>
+            <h4>
+                Current Members
+            </h4>
+            <div class="card">
+                <table class="table no-margin">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th class="text-right">Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="highlighted">
+      <td>Member Name</td>
+      <td class="text-right">Chair <sup><i class="fa fa-asterisk"></i></sup></td>
+    </tr>
+    <tr>
+      <td>Member Name</td>
+      <td class="text-right">Member </td>
+   </tr>
+   <tr>
+      <td>Member Name</td>
+      <td class="text-right">Member </td>
+   </tr>
+   <tr>
+      <td>Member Name</td>
+      <td class="text-right">Member </td>
+   </tr>
+   <tr class="info">
+      <td>Member Name</td>
+      <td class="text-right">Staff Liason - Primary</td>
+   </tr>
+      <tr class="info">
+      <td>Member Name</td>
+      <td class="text-right">Staff Liason - Secondary</td>
+   </tr>
+  </tbody>
+  <tfoot><tr>
+    <td colspan="2"> <sup><i class="fa fa-asterisk"></i></sup> Planned Retirement this Season</td>
+  </tr></tfoot>
+</table>
+                <div class="colored-paper info">
+                    <h4>
+                        Composition
+                    </h4>
+                </div>
+                <div class="section-padding">
+                    Includes a chair, chair-elect, and 4 regional representatives from the Americas, Europe, Middle East/Africa, and Asia Pacific.
                 </div>
             </div>
-            <div class="column small-12 medium-7 large-8" style="padding-right: 0;">
-                <div class="card">
-                    <div class="row">
-                        <div class="column">
-                            <h2 class="with-underline">
-                                Current Application
-                            </h2>
-                            <div class="callout disabled clearfix">
-	
-		<p>You have no application in progress. <a href="application-to-committee.html" class="button float-right">Start an Application</a></p>
-</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="column">
-                            <h2 class="with-underline">
-                                Reference Requests
-                            </h2>
-                            <div class="callout disabled">
-	<div class="subtle">You have no pending requests.</div>
-</div>
-                        </div>
-                        <div class="column">
-                            <h2 class="with-underline">
-                                Nominations
-                            </h2>
-                            <div class="callout disabled clearfix">
-	<div class="subtle">you have no pending nominations.
-		<a href="" class="button float-right">Nominate a Member</a>
-	</div>
-</div>
-
-                        </div>
-                        
-                    </div>
+            <div class="card">
+                <div class="colored-paper info">
+                    <h4>
+                        Meeting Schedule
+                    </h4>
+                </div>
+                <div class="section-padding">
+                    <p>
+                        The AIG Steering Committee meets in person during the ACC leadership forum, ACC Scientific Sessions, and European Society of Cardiology.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div class="row section-padding">
+        <div class="column ">
+            <div class="card">
+                <div class="colored-paper info">
+                    <h4>
+                        Potential sources of conflicts of interest and suggested methods of adjudication
+                    </h4>
+                </div>
+                <div class="section-padding">
+                    <p>
+                       Potential conflicts of interest should be disclosed to the committee.
+                    </p>
+                </div>
+                <div class="colored-paper info">
+                    <h4>
+                        Regular reporting and communication mechanisms
+                    </h4>
+                </div>
+                <div class="section-padding">
+                    <p>
+                    The committee will convene bi-monthly calls to ensure ongoing engagement with the International Affairs staff.</p><p>
+                    The committee will hold in person meetings with the BOT International Working Group whenever possible during major international meetings and convene teleconferences as necessary.
+                    </p><p>
+                    The committee and BOT International Working Group will work together to ensure that a strategy update is presented to the Board of Trustees twice a year.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-    </div>
-    <footer class="page-footer">
+    <button aria-label="Close modal " class="close-button " data-close=" " type="button ">
+        <span aria-hidden="true ">
+            <i class="fa fa-times ">
+            </i>
+        </span>
+    </button>
+</div>
+<footer class="page-footer">
   <div class="row">
     <a href="/">
       <img class="logo" src="Assets/img/oma-01.svg" alt="Home">
@@ -381,11 +501,12 @@
   <div class="footer-darker">
     <div class="row">
       <div class="columns large-8">
-        <section class="address row">
-          <h3>American College of Cardiology</h3>
+        <section class="address">
           <address>
+          <h4>American College of Cardiology
+            <span class="sub-line">Heart House</span>
+          </h4>
             <!-- http://microformats.org/wiki/hcard -->
-            <h4>Heart House</h4>
             <ul>
               <li>
                 <span class="street-address">2400 N. St. NW</span>
@@ -418,7 +539,7 @@
             </ul>
           </address>
         </section>
-        <section class="social-buttons row">
+        <section class="social-buttons">
           <h4>Stay Connected</h4>
           <ul>
             <li>
@@ -456,7 +577,7 @@
         </section>
       </div>
       <div class="columns large-4">
-        <section class="acc-websites row ">
+        <section class="acc-websites">
           <h4>Powered By the ACC</h4>
           <nav class="nav-list small">
             <ul class="">
@@ -506,7 +627,8 @@
     </div>
   </div>
 </footer>
-    
+
+
 <script type="text/javascript" src="assets/js/jquery.js"></script>
 <script type="text/javascript" src="assets/js/jquery-ui.js"></script>
 <script type="text/javascript" src="assets/js/chosen/chosen.jquery.js"></script>
@@ -517,7 +639,3 @@
 
 
 <script type="text/javascript" src="assets/js/app.js"></script>
-
-
-	</body>
-</html>

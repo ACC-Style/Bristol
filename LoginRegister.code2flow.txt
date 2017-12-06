@@ -1,0 +1,37 @@
+User;
+Commitee Nominations Website;
+if(Logged In){
+   System Check;
+  if(Membershipof the ACC?){
+    System Page;
+    if(Active Season?){
+    return  Dashboard;
+    }else{
+    return  Digital CV;
+    }
+  }else{
+    // This will explain what this system is for. And establish the membership requirements to interact with the system.
+   return Blocker Page;
+  }
+}
+else{
+  Redirect to Federated Login;
+  switch(action){
+    case Log In:
+      Redirect to Com Noms; 
+      if(Membership of the ACC?){
+       System Pages;
+       if(Active Season?){
+         Dashboard;
+       }else{
+         Digital CV;}
+       break;
+      }else{
+        Blocker Page; break;
+      }
+    case Register:
+      Register;
+      Redirect to Com Noms;
+      return Blocker Page;
+  }
+}

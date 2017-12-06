@@ -1,0 +1,25 @@
+{% extends 'layouts/user-with-sidebar' %}
+
+{% block page-name %}
+    Open Committees
+{% endblock %}
+{% block sidebar %}
+<ul class="committee-list">
+	{% include "elements/committee-list-item" %}
+	{% include "elements/committee-list-item" %}
+	{% include "elements/committee-list-item" %}
+	{% include "elements/committee-list-item" %}
+</ul>
+    
+{% endblock %}
+{% block content %}
+    {% include "sections/committee-overview" %}
+{% endblock %}
+
+{% block  message-holder %} 
+	{% include "elements/page-message-deadline" %}
+{% endblock %}
+
+{% comment %}
+
+{% endcomment %}

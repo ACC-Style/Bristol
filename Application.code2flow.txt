@@ -1,0 +1,49 @@
+// Flows Produced at https://code2flow.com/app
+
+Dashboard;
+if(Accepting Applications){
+  if(New Application){
+    Choose Committees;
+    Review Profile;
+    Compencies;
+    Statement of Interest;
+    Request for References;
+    Review;
+    if(review){
+      Save Application;
+      Submit Application;
+      return Exit to Dashboard;
+    }
+    if(Save For Later){
+     return Exit to Dashboard;
+    }if(Edit Section){
+      Edit Application;
+      return Review;
+      // go back through review flow
+    }
+    else(Cancel){
+     Discard Application;
+     return
+     Exit to Dashboard;
+    }
+    
+  }
+  else(Edit Application){
+    Popup Skip Nav;
+    switch(choice){ 
+      case Edit Selected Committee (DEFALUT) :Committee Selection Flow;//View Selection Flow
+      case Profile: 
+      case Statement of Interest:
+      case Requests for Reference: 
+      case Competency: Update Section; 
+    }
+    Save Section;
+    return
+    Update Application;
+    
+  }
+}
+else(Dashboard is Closed) {
+  return
+  Link to Profile;
+}

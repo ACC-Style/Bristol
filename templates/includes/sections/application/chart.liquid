@@ -1,0 +1,25 @@
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Task', 'Hours per Day'],
+      ['Nominated',     11],
+      ['Self Selected',      2],
+      ['Not Used',  2]
+    ]);
+
+    var options = {
+      title: 'Application',
+      pieHole: 0.4,
+      colors: ['#198dae', '#E08514', '#b3b3b3']
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+    chart.draw(data, options);
+  }
+</script>
+<div class="card">
+  <div id="donutchart" style="width: auto; height: 500px;"></div>
+</div>

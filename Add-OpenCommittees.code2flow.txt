@@ -1,0 +1,36 @@
+Open Committees; 
+//The system determines the application from the committee.
+//&nbsp;
+//The system will not allow simultaneous applications with the same committee type.
+//&nbsp;
+//Committees can only belong to a single type.
+Add Committee;
+// The system determines space by in this application are there six attached committees.
+//&nbsp;
+// Unstarted Applications will be treated as 0 and not null;
+
+switch(is there space?){
+  case No: 
+    Replacement Pop Up;
+    Replacement Flow;
+    return Open Committees;
+  case Yes: 
+    Add Committee to Application;
+}
+switch(what is the application status?){
+  case Submitted:
+    Placement Confirmation;
+    Re-Rank Option;
+    Return to Open Committees;
+    break;
+  case Draft:
+    Placement Confirmation;
+    Re-Rank Option;
+    Return to Open Committees;
+    break;
+    case New: Start Application?;
+    if(yes){ Application Flow;}
+    else{
+      Save Draft;
+    }
+}

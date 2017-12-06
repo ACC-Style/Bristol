@@ -1,0 +1,21 @@
+{% include "head" %} {% include 'sections/web-header' %}
+<div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
+    <div class="row column content-padding page-header">
+        <h1>
+            {% block page-name %}{% endblock %}
+        </h1>
+    </div>
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+</div>
+<div class="reveal large no-padding paper-page page " data-reveal=" " id="comm-modal ">
+    {% include "sections/committee-overview " %}
+    <button aria-label="Close modal " class="close-button " data-close=" " type="button ">
+        <span aria-hidden="true ">
+            <i class="fa fa-times ">
+            </i>
+        </span>
+    </button>
+</div>
+{% include 'sections/web-footer' %} {% include "scripts " %}

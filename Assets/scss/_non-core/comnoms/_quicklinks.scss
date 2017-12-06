@@ -1,0 +1,30 @@
+.quicklinks {
+    position: absolute;
+    top: 10px;
+    right: 6px;
+     a.nobutton {
+        font-family: sans-serif;
+        font-weight: normal;
+        color: grey(60);
+        @include font();
+        color: #666666;
+        border-radius: 0;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        &:hover {
+            color: $primary-color;
+            text-decoration: underline;
+            background-color: color($primary-color, 10);
+        }
+        +a.nobutton {
+            border-left: 1px solid grey(20);
+        }
+    }
+}
+
+.logedin {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    @include font-bold();
+}
