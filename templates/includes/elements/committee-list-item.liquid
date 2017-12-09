@@ -1,15 +1,31 @@
-<li class="committee-list-item">
+
+{% for i in (1..5) %}
+
+<li class="committee-list-item {% if i == 2 %}selected{% endif %}">
 	<div class="committee-data">
 		<div class="committee">
 			<h6 class="name">Assembly of Interantional Governors Steering Committee</h6>
 			<small class="ingle-line-height">ACC Guidance Committee</small>
 			<span class="secondary">Open Positions: <b>4</b></span>
 		</div>
-		<div class="action">
-			<span class="fa-stack fa-lg">
+		<div class="action"  data-toggle="dropdown-pane-{{ i }}">
+			<span class="fa-stack fa-lg" >
 			<i class="fa fa-circle fa-stack-2x"></i>
 			<i class="fa fa-ellipsis-h fa-stack-1x"></i>
 			</span>
 		</div>
 	</div>
 </li>
+
+
+
+<div class="dropdown-pane right" id="dropdown-pane-{{ i }}" data-dropdown data-auto-focus="true">
+	<div class="button-grouped stacked">
+		<a href="" class="button secondary expanded">Add to Application</a>
+		<a href="" class="button secondary expanded">Nominate a Colleague</a>
+	</div>
+</div>
+
+
+ 
+{% endfor %}

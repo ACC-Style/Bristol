@@ -8092,7 +8092,7 @@ div.reveal .close-button {
   background-color: #666666;
   color: #fff;
 }
-.button-group.selectable i.fa {
+.button-group.selectable .button > i.fa {
   font-size: 1rem;
   height: 1rem;
   width: 1rem;
@@ -8111,7 +8111,7 @@ div.reveal .close-button {
   background-color: #128f48;
   color: #fff;
 }
-.button-group.selectable .selected.button i.fa {
+.button-group.selectable .selected.button .button > i.fa {
   display: inline-block;
 }
 
@@ -8843,18 +8843,18 @@ div.reveal .close-button {
   border-bottom: 2px solid #666666;
 }
 
-.group-section-pagination-holder {
+.group-section-pagination-holder, .card-pagination-holder {
   max-width: 75rem;
   margin-right: auto;
   margin-left: auto;
 }
-.group-section-pagination-holder::before, .group-section-pagination-holder::after {
+.group-section-pagination-holder::before, .card-pagination-holder::before, .group-section-pagination-holder::after, .card-pagination-holder::after {
   display: table;
   content: ' ';
   flex-basis: 0;
   order: 1;
 }
-.group-section-pagination-holder::after {
+.group-section-pagination-holder::after, .card-pagination-holder::after {
   clear: both;
 }
 
@@ -8919,106 +8919,106 @@ div.reveal .close-button {
   }
 }
 
-.paper-page.repeater-area .page-wrapper, .group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
+.paper-page.repeater-area .page-wrapper, .group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .layer-down .page-wrapper .group-section, .layer-down .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
   padding-top: .25rem;
   padding-bottom: .25rem;
 }
 @media only screen and (min-width: 320px) {
-  .paper-page.repeater-area .page-wrapper, .group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
+  .paper-page.repeater-area .page-wrapper, .group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .layer-down .page-wrapper .group-section, .layer-down .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
     padding-top: .5rem;
     padding-bottom: .5rem;
   }
 }
 @media only screen and (min-width: 767px) {
-  .paper-page.repeater-area .page-wrapper, .group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
+  .paper-page.repeater-area .page-wrapper, .group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .layer-down .page-wrapper .group-section, .layer-down .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
     padding-top: .75rem;
     padding-bottom: .75rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .paper-page.repeater-area .page-wrapper, .group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
+  .paper-page.repeater-area .page-wrapper, .group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .layer-down .page-wrapper .group-section, .layer-down .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
 }
 
-.content-padding, .content-padding.page-wrapper, .group-section, .card, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
+.content-padding, .content-padding.page-wrapper, .group-section, .card, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .layer-down .page-wrapper > .section, .layer-down .page-wrapper > section, .layer-down .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .layer-down .page-wrapper .group-section, .layer-down .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
   padding-left: .5rem;
   padding-right: .5rem;
 }
 @media only screen and (min-width: 767px) {
-  .content-padding, .content-padding.page-wrapper, .group-section, .card, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
+  .content-padding, .content-padding.page-wrapper, .group-section, .card, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .layer-down .page-wrapper > .section, .layer-down .page-wrapper > section, .layer-down .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .layer-down .page-wrapper .group-section, .layer-down .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
     padding-right: .75rem;
     padding-left: .75rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .content-padding, .content-padding.page-wrapper, .group-section, .card, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
+  .content-padding, .content-padding.page-wrapper, .group-section, .card, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .layer-down .page-wrapper > .section, .layer-down .page-wrapper > section, .layer-down .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .layer-down .page-wrapper .group-section, .layer-down .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
     padding-right: 1rem;
     padding-left: 1rem;
   }
 }
 
-.group-section .colored-paper:first-child, .card .colored-paper:first-child, .group-section-pagination-holder.top {
+.group-section .colored-paper:first-child, .card .colored-paper:first-child, .group-section-pagination-holder.top, .card-pagination-holder.top {
   margin-top: -.25rem;
   margin-top: calc(-.25rem - 1px);
 }
 @media only screen and (min-width: 320px) {
-  .group-section .colored-paper:first-child, .card .colored-paper:first-child, .group-section-pagination-holder.top {
+  .group-section .colored-paper:first-child, .card .colored-paper:first-child, .group-section-pagination-holder.top, .card-pagination-holder.top {
     margin-top: -.5rem;
     margin-top: calc(-.5rem - 1px);
   }
 }
 @media only screen and (min-width: 767px) {
-  .group-section .colored-paper:first-child, .card .colored-paper:first-child, .group-section-pagination-holder.top {
+  .group-section .colored-paper:first-child, .card .colored-paper:first-child, .group-section-pagination-holder.top, .card-pagination-holder.top {
     margin-top: -.75rem;
     margin-top: calc(-.75rem - 1px);
   }
 }
 @media only screen and (min-width: 1024px) {
-  .group-section .colored-paper:first-child, .card .colored-paper:first-child, .group-section-pagination-holder.top {
+  .group-section .colored-paper:first-child, .card .colored-paper:first-child, .group-section-pagination-holder.top, .card-pagination-holder.top {
     margin-top: -1rem;
     margin-top: calc(-1rem - 1px);
   }
 }
 
-.colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .card > .group-section-pagination-holder {
+.colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .card > .group-section-pagination-holder, .card > .card-pagination-holder {
   margin-bottom: -.2rem;
   margin-bottom: calc(-.2rem - 2px);
 }
 @media only screen and (max-height: 480px) {
-  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .card > .group-section-pagination-holder {
+  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .card > .group-section-pagination-holder, .card > .card-pagination-holder {
     margin-bottom: -.25rem;
     margin-bottom: calc(-.25rem - 2px);
   }
 }
 @media only screen and (min-width: 767px) {
-  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .card > .group-section-pagination-holder {
+  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .card > .group-section-pagination-holder, .card > .card-pagination-holder {
     margin-bottom: -.5rem;
     margin-bottom: calc(-.5rem - 2px);
   }
 }
 @media only screen and (min-width: 1024px) {
-  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .card > .group-section-pagination-holder {
+  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .card > .group-section-pagination-holder, .card > .card-pagination-holder {
     margin-bottom: -1rem;
     margin-bottom: calc(-1rem - 2px);
   }
 }
 @media only screen and (min-width: 1200px) {
-  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .card > .group-section-pagination-holder {
+  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .card > .group-section-pagination-holder, .card > .card-pagination-holder {
     margin-bottom: -1rem;
     margin-bottom: calc(-1rem - 2px);
   }
 }
 
-.colored-paper, .group-section-pagination-holder, .committee-list.ranking-committee {
+.colored-paper, .group-section-pagination-holder, .card-pagination-holder, .committee-list.ranking-committee {
   margin-left: -.5rem;
   margin-right: -.5rem;
   margin-left: calc(-.5rem - 1px);
   margin-right: calc(-.5rem - 1px);
 }
 @media only screen and (min-width: 767px) {
-  .colored-paper, .group-section-pagination-holder, .committee-list.ranking-committee {
+  .colored-paper, .group-section-pagination-holder, .card-pagination-holder, .committee-list.ranking-committee {
     margin-left: -.75rem;
     margin-right: -.75rem;
     margin-left: calc(-.75rem - 1px);
@@ -9026,7 +9026,7 @@ div.reveal .close-button {
   }
 }
 @media only screen and (min-width: 1024px) {
-  .colored-paper, .group-section-pagination-holder, .committee-list.ranking-committee {
+  .colored-paper, .group-section-pagination-holder, .card-pagination-holder, .committee-list.ranking-committee {
     margin-left: -1rem;
     margin-right: -1rem;
     margin-left: calc(-1rem - 1px);
@@ -9070,22 +9070,22 @@ div.reveal .close-button {
 *   @example
 *	<div class="page-wrapper" style="border:red 1px solid"><div class="section">Hello this is content </div></div>
 **/
-.with-group-sections, .paper-page, .with-group-sections .overlap .tabs .selected, .with-group-sections .overlap .tabs .is-active, .paper-page .overlap .tabs .selected, .paper-page .overlap .tabs .is-active {
+.with-group-sections, .paper-page, .layer-down, .with-group-sections .overlap .tabs .selected, .with-group-sections .overlap .tabs .is-active, .paper-page .overlap .tabs .selected, .paper-page .overlap .tabs .is-active, .layer-down .overlap .tabs .selected, .layer-down .overlap .tabs .is-active {
   background-image: url("../img/billie-holiday-lite.png");
 }
 
-.group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .lifted {
+.group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .layer-down .page-wrapper .group-section, .layer-down .page-wrapper .card, .lifted {
   -webkit-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
 }
 
-.group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card {
+.group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .layer-down .page-wrapper .group-section, .layer-down .page-wrapper .card {
   border: 1px solid #d9d9d9;
   background-color: white;
 }
 
-.with-group-sections .page-wrapper .group-section.ghost, .with-group-sections .page-wrapper .card.ghost, .paper-page .page-wrapper .group-section.ghost, .paper-page .page-wrapper .card.ghost {
+.with-group-sections .page-wrapper .group-section.ghost, .with-group-sections .page-wrapper .card.ghost, .paper-page .page-wrapper .group-section.ghost, .paper-page .page-wrapper .card.ghost, .layer-down .page-wrapper .group-section.ghost, .layer-down .page-wrapper .card.ghost {
   border: 2px dashed #bfbfbf;
   background-color: transparent;
   background-image: url("../img/empty_stripe_grey@2x.png");
@@ -9099,63 +9099,63 @@ div.reveal .close-button {
   position: relative;
 }
 
-.with-group-sections.error, .with-group-sections.error .overlap .tabs .selected, .with-group-sections.error .overlap .tabs .is-active, .paper-page.error, .paper-page.error .overlap .tabs .selected, .paper-page.error .overlap .tabs .is-active {
+.with-group-sections.error, .with-group-sections.error .overlap .tabs .selected, .with-group-sections.error .overlap .tabs .is-active, .paper-page.error, .paper-page.error .overlap .tabs .selected, .paper-page.error .overlap .tabs .is-active, .layer-down.error, .layer-down.error .overlap .tabs .selected, .layer-down.error .overlap .tabs .is-active {
   background-color: #f5c3c8;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.warning, .with-group-sections.warning .overlap .tabs .selected, .with-group-sections.warning .overlap .tabs .is-active, .paper-page.warning, .paper-page.warning .overlap .tabs .selected, .paper-page.warning .overlap .tabs .is-active {
+.with-group-sections.warning, .with-group-sections.warning .overlap .tabs .selected, .with-group-sections.warning .overlap .tabs .is-active, .paper-page.warning, .paper-page.warning .overlap .tabs .selected, .paper-page.warning .overlap .tabs .is-active, .layer-down.warning, .layer-down.warning .overlap .tabs .selected, .layer-down.warning .overlap .tabs .is-active {
   background-color: #fae1c2;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.success, .with-group-sections.success .overlap .tabs .selected, .with-group-sections.success .overlap .tabs .is-active, .paper-page.success, .paper-page.success .overlap .tabs .selected, .paper-page.success .overlap .tabs .is-active {
+.with-group-sections.success, .with-group-sections.success .overlap .tabs .selected, .with-group-sections.success .overlap .tabs .is-active, .paper-page.success, .paper-page.success .overlap .tabs .selected, .paper-page.success .overlap .tabs .is-active, .layer-down.success, .layer-down.success .overlap .tabs .selected, .layer-down.success .overlap .tabs .is-active {
   background-color: #b9f7d3;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.info, .with-group-sections.info .overlap .tabs .selected, .with-group-sections.info .overlap .tabs .is-active, .paper-page.info, .paper-page.info .overlap .tabs .selected, .paper-page.info .overlap .tabs .is-active {
+.with-group-sections.info, .with-group-sections.info .overlap .tabs .selected, .with-group-sections.info .overlap .tabs .is-active, .paper-page.info, .paper-page.info .overlap .tabs .selected, .paper-page.info .overlap .tabs .is-active, .layer-down.info, .layer-down.info .overlap .tabs .selected, .layer-down.info .overlap .tabs .is-active {
   background-color: #e9e9e9;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.highlighted, .with-group-sections.highlighted .overlap .tabs .selected, .with-group-sections.highlighted .overlap .tabs .is-active, .paper-page.highlighted, .paper-page.highlighted .overlap .tabs .selected, .paper-page.highlighted .overlap .tabs .is-active {
+.with-group-sections.highlighted, .with-group-sections.highlighted .overlap .tabs .selected, .with-group-sections.highlighted .overlap .tabs .is-active, .paper-page.highlighted, .paper-page.highlighted .overlap .tabs .selected, .paper-page.highlighted .overlap .tabs .is-active, .layer-down.highlighted, .layer-down.highlighted .overlap .tabs .selected, .layer-down.highlighted .overlap .tabs .is-active {
   background-color: #c7ecf6;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.locked, .with-group-sections.locked .overlap .tabs .selected, .with-group-sections.locked .overlap .tabs .is-active, .paper-page.locked, .paper-page.locked .overlap .tabs .selected, .paper-page.locked .overlap .tabs .is-active {
+.with-group-sections.locked, .with-group-sections.locked .overlap .tabs .selected, .with-group-sections.locked .overlap .tabs .is-active, .paper-page.locked, .paper-page.locked .overlap .tabs .selected, .paper-page.locked .overlap .tabs .is-active, .layer-down.locked, .layer-down.locked .overlap .tabs .selected, .layer-down.locked .overlap .tabs .is-active {
   background-color: #efefef;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.disabled, .with-group-sections.disabled .overlap .tabs .selected, .with-group-sections.disabled .overlap .tabs .is-active, .paper-page.disabled, .paper-page.disabled .overlap .tabs .selected, .paper-page.disabled .overlap .tabs .is-active {
+.with-group-sections.disabled, .with-group-sections.disabled .overlap .tabs .selected, .with-group-sections.disabled .overlap .tabs .is-active, .paper-page.disabled, .paper-page.disabled .overlap .tabs .selected, .paper-page.disabled .overlap .tabs .is-active, .layer-down.disabled, .layer-down.disabled .overlap .tabs .selected, .layer-down.disabled .overlap .tabs .is-active {
   background-color: #f2f2f2;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections .overlap + .page-wrapper, .paper-page .overlap + .page-wrapper {
+.with-group-sections .overlap + .page-wrapper, .paper-page .overlap + .page-wrapper, .layer-down .overlap + .page-wrapper {
   padding-top: .5rem;
 }
-.with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card {
+.with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .layer-down .page-wrapper .group-section, .layer-down .page-wrapper .card {
   width: auto;
   position: relative;
 }
-.with-group-sections .page-wrapper .group-section.ghost, .with-group-sections .page-wrapper .card.ghost, .paper-page .page-wrapper .group-section.ghost, .paper-page .page-wrapper .card.ghost {
+.with-group-sections .page-wrapper .group-section.ghost, .with-group-sections .page-wrapper .card.ghost, .paper-page .page-wrapper .group-section.ghost, .paper-page .page-wrapper .card.ghost, .layer-down .page-wrapper .group-section.ghost, .layer-down .page-wrapper .card.ghost {
   border-radius: 6px;
 }
-.with-group-sections .page-wrapper.error .group-section.ghost, .with-group-sections .page-wrapper.error .card.ghost, .paper-page .page-wrapper.error .group-section.ghost, .paper-page .page-wrapper.error .card.ghost {
+.with-group-sections .page-wrapper.error .group-section.ghost, .with-group-sections .page-wrapper.error .card.ghost, .paper-page .page-wrapper.error .group-section.ghost, .paper-page .page-wrapper.error .card.ghost, .layer-down .page-wrapper.error .group-section.ghost, .layer-down .page-wrapper.error .card.ghost {
   background-color: #e7ced1;
 }
-.with-group-sections .page-wrapper.warning .group-section.ghost, .with-group-sections .page-wrapper.warning .card.ghost, .paper-page .page-wrapper.warning .group-section.ghost, .paper-page .page-wrapper.warning .card.ghost {
+.with-group-sections .page-wrapper.warning .group-section.ghost, .with-group-sections .page-wrapper.warning .card.ghost, .paper-page .page-wrapper.warning .group-section.ghost, .paper-page .page-wrapper.warning .card.ghost, .layer-down .page-wrapper.warning .group-section.ghost, .layer-down .page-wrapper.warning .card.ghost {
   background-color: #eaddce;
 }
-.with-group-sections .page-wrapper.success .group-section.ghost, .with-group-sections .page-wrapper.success .card.ghost, .paper-page .page-wrapper.success .group-section.ghost, .paper-page .page-wrapper.success .card.ghost {
+.with-group-sections .page-wrapper.success .group-section.ghost, .with-group-sections .page-wrapper.success .card.ghost, .paper-page .page-wrapper.success .group-section.ghost, .paper-page .page-wrapper.success .card.ghost, .layer-down .page-wrapper.success .group-section.ghost, .layer-down .page-wrapper.success .card.ghost {
   background-color: #c9e8d6;
 }
-.with-group-sections .page-wrapper.info .group-section.ghost, .with-group-sections .page-wrapper.info .card.ghost, .paper-page .page-wrapper.info .group-section.ghost, .paper-page .page-wrapper.info .card.ghost {
+.with-group-sections .page-wrapper.info .group-section.ghost, .with-group-sections .page-wrapper.info .card.ghost, .paper-page .page-wrapper.info .group-section.ghost, .paper-page .page-wrapper.info .card.ghost, .layer-down .page-wrapper.info .group-section.ghost, .layer-down .page-wrapper.info .card.ghost {
   background-color: #e1e1e1;
 }
-.with-group-sections .page-wrapper.highlighted .group-section.ghost, .with-group-sections .page-wrapper.highlighted .card.ghost, .paper-page .page-wrapper.highlighted .group-section.ghost, .paper-page .page-wrapper.highlighted .card.ghost {
+.with-group-sections .page-wrapper.highlighted .group-section.ghost, .with-group-sections .page-wrapper.highlighted .card.ghost, .paper-page .page-wrapper.highlighted .group-section.ghost, .paper-page .page-wrapper.highlighted .card.ghost, .layer-down .page-wrapper.highlighted .group-section.ghost, .layer-down .page-wrapper.highlighted .card.ghost {
   background-color: #d0e3e8;
 }
-.with-group-sections .page-wrapper.locked .group-section.ghost, .with-group-sections .page-wrapper.locked .card.ghost, .paper-page .page-wrapper.locked .group-section.ghost, .paper-page .page-wrapper.locked .card.ghost {
+.with-group-sections .page-wrapper.locked .group-section.ghost, .with-group-sections .page-wrapper.locked .card.ghost, .paper-page .page-wrapper.locked .group-section.ghost, .paper-page .page-wrapper.locked .card.ghost, .layer-down .page-wrapper.locked .group-section.ghost, .layer-down .page-wrapper.locked .card.ghost {
   background-color: #e4e4e4;
 }
-.with-group-sections .page-wrapper.disabled .group-section.ghost, .with-group-sections .page-wrapper.disabled .card.ghost, .paper-page .page-wrapper.disabled .group-section.ghost, .paper-page .page-wrapper.disabled .card.ghost {
+.with-group-sections .page-wrapper.disabled .group-section.ghost, .with-group-sections .page-wrapper.disabled .card.ghost, .paper-page .page-wrapper.disabled .group-section.ghost, .paper-page .page-wrapper.disabled .card.ghost, .layer-down .page-wrapper.disabled .group-section.ghost, .layer-down .page-wrapper.disabled .card.ghost {
   background-color: #e6e6e6;
 }
 
@@ -10040,6 +10040,9 @@ div.reveal .close-button {
 .footer-darker * {
   color: #fff;
 }
+.footer-darker section {
+  clear: both;
+}
 .footer-darker section + section, .footer-darker .section + .section {
   margin-top: 1rem;
 }
@@ -10054,12 +10057,12 @@ div.reveal .close-button {
 .address li {
   font-size: 1rem;
   line-height: 1.5;
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
 }
 .colored-paper .address li, .callout .address li, .page-message .address li {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
   line-height: 1.35;
 }
 
@@ -10617,48 +10620,49 @@ cite {
 *   </div>
 *  <div class="shrink-waypoint"></div>
 **/
-.group-section-pagination-holder {
+.group-section-pagination-holder, .card-pagination-holder {
   max-width: none;
   background: #198dae url("../img/paper-texture.png");
 }
-.group-section-pagination-holder .pagination {
+.group-section-pagination-holder .pagination, .card-pagination-holder .pagination {
   margin-bottom: 0;
+  margin-top: -2px;
 }
-.group-section-pagination-holder .pagination li {
+.group-section-pagination-holder .pagination li, .card-pagination-holder .pagination li {
   margin: 0 .25rem .25rem;
   vertical-align: top;
 }
-.group-section-pagination-holder .pagination li a {
+.group-section-pagination-holder .pagination li a, .card-pagination-holder .pagination li a {
   color: #fff;
 }
-.group-section-pagination-holder .pagination li.current a, .group-section-pagination-holder .pagination li.current a:hover {
+.group-section-pagination-holder .pagination li.current a, .group-section-pagination-holder .pagination li.current a:hover, .card-pagination-holder .pagination li.current a, .card-pagination-holder .pagination li.current a:hover {
   background-color: white;
   color: #198dae;
 }
-.group-section-pagination-holder .pagination li.arrow, .group-section-pagination-holder .pagination li.action {
+.group-section-pagination-holder .pagination li.arrow, .group-section-pagination-holder .pagination li.action, .card-pagination-holder .pagination li.arrow, .card-pagination-holder .pagination li.action {
   margin: 0;
   padding: .25rem;
   background: #124c5c url("../img/paper-texture.png");
 }
-.group-section-pagination-holder .pagination li.arrow a, .group-section-pagination-holder .pagination li.action a {
+.group-section-pagination-holder .pagination li.arrow a, .group-section-pagination-holder .pagination li.action a, .card-pagination-holder .pagination li.arrow a, .card-pagination-holder .pagination li.action a {
   background: #124c5c url("../img/paper-texture.png");
   color: #fff;
 }
-.group-section-pagination-holder .pagination li.arrow a:hover, .group-section-pagination-holder .pagination li.action a:hover {
+.group-section-pagination-holder .pagination li.arrow a:hover, .group-section-pagination-holder .pagination li.action a:hover, .card-pagination-holder .pagination li.arrow a:hover, .card-pagination-holder .pagination li.action a:hover {
   background-color: #25b6e0;
 }
-.group-section-pagination-holder .pagination li.arrow.disable, .group-section-pagination-holder .pagination li.arrow.disable a, .group-section-pagination-holder .pagination li.arrow.disable a:hover, .group-section-pagination-holder .pagination li.action.disable, .group-section-pagination-holder .pagination li.action.disable a, .group-section-pagination-holder .pagination li.action.disable a:hover {
+.group-section-pagination-holder .pagination li.arrow.disable, .group-section-pagination-holder .pagination li.arrow.disable a, .group-section-pagination-holder .pagination li.arrow.disable a:hover, .group-section-pagination-holder .pagination li.action.disable, .group-section-pagination-holder .pagination li.action.disable a, .group-section-pagination-holder .pagination li.action.disable a:hover, .card-pagination-holder .pagination li.arrow.disable, .card-pagination-holder .pagination li.arrow.disable a, .card-pagination-holder .pagination li.arrow.disable a:hover, .card-pagination-holder .pagination li.action.disable, .card-pagination-holder .pagination li.action.disable a, .card-pagination-holder .pagination li.action.disable a:hover {
   background-color: #73959f;
   color: #666666;
 }
-.group-section-pagination-holder.top {
+.group-section-pagination-holder.top, .card-pagination-holder.top {
   margin-bottom: 1rem;
 }
-.group-section-pagination-holder.top .pagination li {
+.group-section-pagination-holder.top .pagination li, .card-pagination-holder.top .pagination li {
   margin: .25rem .25rem 0;
   vertical-align: bottom;
 }
-.group-section-pagination-holder.top .pagination li.arrow, .group-section-pagination-holder.top .pagination li.action {
+.group-section-pagination-holder.top .pagination li.arrow, .group-section-pagination-holder.top .pagination li.action, .card-pagination-holder.top .pagination li.arrow, .card-pagination-holder.top .pagination li.action {
   margin: 0;
 }
 
@@ -11556,9 +11560,8 @@ STATE TRUMPING CODE
 
 .search-bar {
   line-height: normal;
-  padding: 0.5em;
+  padding: 0.5em 0;
   clear: both;
-  background-color: #bfbfbf;
 }
 .siteMenu .search-bar {
   display: none;

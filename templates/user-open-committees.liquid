@@ -4,14 +4,14 @@
     Open Committees
 {% endblock %}
 {% block sidebar %}
+{% include "elements/search-bar" %}  
+{% include "elements/search-bar-filter" %}    
 <ul class="committee-list">
 	{% include "elements/committee-list-item" %}
-	{% include "elements/committee-list-item" %}
-	{% include "elements/committee-list-item" %}
-	{% include "elements/committee-list-item" %}
 </ul>
-    
+{% include "elements/pagination-bottom" %}    
 {% endblock %}
+
 {% block content %}
     {% include "sections/committee-overview" %}
 {% endblock %}
@@ -19,7 +19,16 @@
 {% block  message-holder %} 
 	{% include "elements/page-message-deadline" %}
 {% endblock %}
+{% block modal %}
+<div class="reveal large no-padding paper-page page " data-reveal=" " id="comm-modal ">
+    {% include "sections/committee-overview " %}
+    <button aria-label="Close modal " class="close-button " data-close=" " type="button ">
+        <span aria-hidden="true ">
+            <i class="fa fa-times ">
+            </i>
+        </span>
+    </button>
+</div>
+{% endblock %}
 
-{% comment %}
 
-{% endcomment %}

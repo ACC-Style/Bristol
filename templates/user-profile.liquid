@@ -1,4 +1,5 @@
-{% extends 'layouts/user-basic' %} {% block content %}
+{% extends 'layouts/user-basic' %}
+{% block content %}
 <div class="page paper-page">
     <div class="">
         {% include "elements/page-message-missing-data" %}
@@ -226,8 +227,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row group-divide">
-                    <div class="column">
+                <div class="row ">
+                    <div class="column group-divide">
                         <div class="question">
                             <div class="label-holder">
                                 <label for="">
@@ -247,7 +248,7 @@
         </div>
         <div class="column section-padding" id="Faculty">
             <div class="card">
-                <div class="colored-paper warning">
+                <div class="colored-paper">
                     <i class="fa fa-envelope">
                     </i>
                     <b class="no-vertical-margin">
@@ -259,21 +260,32 @@
                         <div class="question warning">
                             <div class="label-holder">
                                 <label for="">
-                                    Please select up to three compentencies
+                                    Please select all that you would like to be considered for.
                                 </label>
                             </div>
                             <div class="input-holder">
                                 {% include 'sections/Volunteer-Comp'%}
                             </div>
-                            <div class="message-holder">
-                                <small class="warning">
-                                    Please select no more than three.
-                                </small>
-                            </div>
                         </div>
                     </div>
                 </div>
+                 <div class="row ">
+                    <div class="column group-divide">
+                        <div class="question">
+                            <div class="label-holder">
+                                <label for="">Please add a brief statement of your volunteer interests.
+                                </label>
+                            </div>
+                            <div class="input-holder">
+                                <div class="input-space">
+                                    <textarea id="" name="" rows="6">
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
+        </div>
             <div class="row section-padding ">
                 <div class="column text-right">
                     <a class="button secondary" href="">
@@ -284,9 +296,7 @@
                     </a>
                 </div>
             </div>
-        </div>
     </div>
-    {% endblock %} {% comment %}
-    <img src="output/abstract-q-c-640-480-1.jpg"> {% endcomment %}
-    </img>
+
 </div>
+    {% endblock %}
