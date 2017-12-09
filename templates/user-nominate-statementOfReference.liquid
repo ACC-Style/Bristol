@@ -5,10 +5,19 @@ Nominate a colleague (Page 3 of 4)
     Write a letter of reference for your colleague
 </span>
 {% endblock %}
+
+{% block progress %}
+<div class="progress">
+    <div class="progress-bar" style="width:60%; background:#ff9900;">
+        <div class="progress-value">3 of 4</div>
+    </div>
+</div>
+{% endblock %}
+
 {% block content %}
-<div class="layer-down">
-    <div class="row section-padding">
-        <div class="card page-wrapper">
+
+    <div class="page-wrapper">
+        <div class="card ">
             <div class="colored-paper">
                 <h2>
                     Statement of Reference
@@ -23,17 +32,18 @@ Nominate a colleague (Page 3 of 4)
             </div>
         </div>
     </div>
-</div>
+
 {% endblock %} 
-{% block back-btn %}
-<a class="button navigation float-left" href="user-nominate-committee.html">
-    <i class="fa fa-arrow-left">
-    </i>
-    Back
-</a>
+{% block backbutton %}
+ href="user-nominate-selectCommittee.html"
 {% endblock %}
-{% block forward-btn %}
+
+{% block forwardlink %}
+href="user-nominate-review.html"
+{% endblock %} 
+
+{% block forwardbutton %}
 <a class="button navigation float-right" href="user-nominate-review.html">
-    Next
+    Review
 </a>
 {% endblock %} 

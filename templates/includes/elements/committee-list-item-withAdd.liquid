@@ -1,0 +1,21 @@
+{% assign comNames = "Current Procedural Terminology (CPT) Coding Ad Hoc Committee, Editorial Board of the Journal of Ultrasound in Medicine, Endowment for Education and Research Task Force, Finance Committee, Technical Standards Committee, ,Ultrasound Practice Accreditation Council, Annual Convention Committee, Bioeffects Committee" | split: ", "  %}
+
+
+{% for com in comNames %}
+<li class="committee-list-item">
+	<div class="committee-data">
+		<div class="committee">
+			<h6 class="name">{{ com }}</h6>
+			<small class="ingle-line-height">ACC Guidance Committee</small>
+			<span class="secondary">Open Positions: <b>4</b></span>
+		</div>
+		<div class="action" data-open="maxSelected">
+			<span class="fa-stack fa-lg" >
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-plus fa-stack-1x"></i>
+			</span>
+		</div>
+	</div>
+</li>
+ 
+{% endfor %}

@@ -1,0 +1,27 @@
+{% assign comNames = "Berkshir and Oxfordshire Local Medical Committee, Lincolnshire Local Medical Committee, Nottinghamshire Local Medical Committee, Solihull Local Medical Committee, Somerset Local Medical Committee, Wessex Local Medical Committee" | split: ", "  %}
+
+
+{% for com in comNames %}
+<div class="switch-input-space column">
+    <div class="switch radio tiny">
+        <input class="switch-input" id=" {{com   | remove: ' ' | strip_newlines | downcase }}" name="radio-switch" type="radio">
+            <label class="switch-paddle" for=" {{com   | remove: ' ' | strip_newlines | downcase }}">
+                <span class="show-for-sr">
+                    Do you like me?
+                </span>
+                <span aria-hidden="true" class="switch-active">
+                    <i class="fa fa-holder">
+                    </i>
+                </span>
+                <span aria-hidden="true" class="switch-inactive">
+                    <i class="fa fa-holder">
+                    </i>
+                </span>
+            </label>
+        </input>
+    </div>
+    <label class="switch-value" for=" {{com   | remove: ' ' | strip_newlines | downcase }}">
+        {{ com }}
+    </label>
+</div>
+{% endfor %}

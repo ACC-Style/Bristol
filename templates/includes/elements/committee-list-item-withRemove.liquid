@@ -1,0 +1,27 @@
+{% assign comNames = "Berkshir and Oxfordshire Local Medical Committee, Lincolnshire Local Medical Committee, Nottinghamshire Local Medical Committee, Solihull Local Medical Committee, Somerset Local Medical Committee, Wessex Local Medical Committee" | split: ", "  %}
+
+
+{% for com in comNames %}
+<li class="committee-list-item">
+	<div class="committee-data">
+		<div class="action">
+			<span class="fa-stack fa-lg" >
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-bars fa-stack-1x"></i>
+		</span>
+		</div>
+		<div class="committee">
+			<h6 class="name">{{ com }}</h6>
+			<small class="ingle-line-height">ACC Guidance Committee</small>
+			<span class="secondary">Open Positions: <b>4</b></span>
+		</div>
+		<div class="action">
+			<span class="fa-stack fa-lg" >
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-times fa-stack-1x"></i>
+			</span>
+		</div>
+	</div>
+</li>
+ 
+{% endfor %}

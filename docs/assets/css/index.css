@@ -2004,10 +2004,6 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   background: url("../img/billie-holiday.png") repeat top right, url("../img/top-shade.png") repeat-x top right;
   margin-top: 37.5px;
   border-top-width: 2px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
 }
 .section-nav.forward i.fa-holder:before {
   content: "";
@@ -8994,8 +8990,8 @@ div.reveal .close-button {
 }
 @media only screen and (min-width: 767px) {
   .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .card > .group-section-pagination-holder, .card > .card-pagination-holder {
-    margin-bottom: -.5rem;
-    margin-bottom: calc(-.5rem - 2px);
+    margin-bottom: -.75rem;
+    margin-bottom: calc(-.75rem - 2px);
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -9011,14 +9007,14 @@ div.reveal .close-button {
   }
 }
 
-.colored-paper, .group-section-pagination-holder, .card-pagination-holder, .committee-list.ranking-committee {
+.colored-paper, .group-section-pagination-holder, .card-pagination-holder, .committee-list.ranking-committee, .committee-list {
   margin-left: -.5rem;
   margin-right: -.5rem;
   margin-left: calc(-.5rem - 1px);
   margin-right: calc(-.5rem - 1px);
 }
 @media only screen and (min-width: 767px) {
-  .colored-paper, .group-section-pagination-holder, .card-pagination-holder, .committee-list.ranking-committee {
+  .colored-paper, .group-section-pagination-holder, .card-pagination-holder, .committee-list.ranking-committee, .committee-list {
     margin-left: -.75rem;
     margin-right: -.75rem;
     margin-left: calc(-.75rem - 1px);
@@ -9026,7 +9022,7 @@ div.reveal .close-button {
   }
 }
 @media only screen and (min-width: 1024px) {
-  .colored-paper, .group-section-pagination-holder, .card-pagination-holder, .committee-list.ranking-committee {
+  .colored-paper, .group-section-pagination-holder, .card-pagination-holder, .committee-list.ranking-committee, .committee-list {
     margin-left: -1rem;
     margin-right: -1rem;
     margin-left: calc(-1rem - 1px);
@@ -10627,6 +10623,10 @@ cite {
 .group-section-pagination-holder .pagination, .card-pagination-holder .pagination {
   margin-bottom: 0;
   margin-top: -2px;
+  padding-bottom: .25rem;
+  padding-left: .25rem;
+  padding-right: .25rem;
+  padding-top: 0;
 }
 .group-section-pagination-holder .pagination li, .card-pagination-holder .pagination li {
   margin: 0 .25rem .25rem;
@@ -10657,6 +10657,8 @@ cite {
 }
 .group-section-pagination-holder.top, .card-pagination-holder.top {
   margin-bottom: 1rem;
+  padding-top: .25rem;
+  padding-bottom: 0;
 }
 .group-section-pagination-holder.top .pagination li, .card-pagination-holder.top .pagination li {
   margin: .25rem .25rem 0;
@@ -11081,6 +11083,22 @@ h6 blockquote, h6 .sub-line {
   line-height: 1;
 }
 
+.p-t-0 {
+  padding-top: 0;
+}
+
+.p-b-0 {
+  padding-bottom: 0;
+}
+
+.p-l-0 {
+  padding-left: 0;
+}
+
+.p-r-0 {
+  padding-right: 0;
+}
+
 /**
 * HELPER - Condensable (Condense):
 * `.condensable.large .condense` - This pattern allows for responsive reduction of content.
@@ -11444,7 +11462,7 @@ STATE TRUMPING CODE
 }
 
 .committee-list {
-  margin: 0 -1rem;
+  margin-bottom: 0;
   list-style: none;
   border-top: #198dae 2px solid;
 }

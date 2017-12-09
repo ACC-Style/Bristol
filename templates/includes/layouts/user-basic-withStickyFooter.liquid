@@ -1,39 +1,45 @@
-{% include "head" %}
-{% include 'sections/web-header' %}
+{% include "head" %} {% include 'sections/web-header' %}
 <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
-    <div class="row column content-padding page-header">
+    <div class="colored-paper no-margin">
         <h1>
             {% block page-name %}{% endblock %}
         </h1>
     </div>
-    {% block content %}{% endblock %}
-</div>
-<div class="reveal large no-padding paper-page page " data-reveal=" " id="comm-modal ">
-    {% include "sections/committee-overview " %}
-    <button aria-label="Close modal " class="close-button " data-close=" " type="button ">
-        <span aria-hidden="true ">
-            <i class="fa fa-times ">
-            </i>
-        </span>
-    </button>
+    <div class="row" style="padding: 1rem 1rem .25rem 1rem;">
+        {% block progress %}{% endblock %}
+    </div>
+    <div class="layer-down">
+        <div class="section-nav back">
+            <a {% block backbutton %}{% endblock %}>
+                <div class="circle">
+                    <i class="fa fa-holder"></i>
+                </div>
+                <div class="text">Back</div>
+            </a>
+        </div>
+        {% block content %}{% endblock %}
+        <div class="section-nav forward">
+            <a {% block forwardlink %}{% endblock %}>
+                <div class="circle">
+                    <i class="fa fa-holder"></i>
+                </div>
+                <div class="text">Forward</div>
+            </a>
+        </div>
+    </div>
 </div>
 <div class="footer sticky-button-bar section-padding no-margin">
     <div class="row">
         <div class="column small-12">
-            <div class="button-group float-left no-margin">
-                {% block back-button %}{% endblock %}
-            </div>
             <div class="button-group float-right no-margin">
                 <a class="button nobutton float-right" href="">
                     Cancel
                 </a>
                 <a class="button hollow" href="">
                     Save For Later
-                </a>
-                {% block forward-button %}{% endblock %}
+                </a> {% block forwardbutton %}{% endblock %}
             </div>
         </div>
     </div>
 </div>
-{% include 'sections/web-footer' %}
-{% include "scripts " %}
+{% include 'sections/web-footer' %} {% include "scripts " %}

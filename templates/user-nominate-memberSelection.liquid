@@ -2,13 +2,20 @@
 {% block page-name %}
     Nominate a colleague (Page 1 of 4)
     <div class="sub-line">Find the colleague you want to nominate</div>
+
+{% endblock %}
+{% block progress %}
+    <div class="progress">
+    <div class="progress-bar" style="width:20%; background:#ff9900;">
+        <div class="progress-value">1 of 4</div>
+    </div>
+</div>
 {% endblock %}
 
 
 
 {% block content %}
-
-<div class="layer-down">{% include "sections/select-search-members"  %}</div>
+{% include "sections/select-search-members"  %}
 {% endblock %}
 
 
@@ -16,13 +23,16 @@
 
 
 
-{% block  forward-btn %}
+{% block backbutton %}
+ href="user-dashboard.html"
+{% endblock %}
+
+{% block forwardlink %}
+ href="user-nominate-selectCommittee.html"
+{% endblock %}
+
+{% block  forwardbutton %}
 <a class="button  navigation float-right" href="user-nominate-selectCommittee.html">
-   Next <i class="fa fa-arrow-right"></i> 
-</a>
-{% endblock %}
-{% block back-btn %}
-<a class="button navigation float-left" href="user-dashboard.html">
-    <i class="fa fa-arrow-left"></i> Back to Dashboard
+   Continue <i class="fa fa-arrow-right"></i> 
 </a>
 {% endblock %}
