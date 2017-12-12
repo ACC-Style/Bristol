@@ -1,0 +1,211 @@
+{% extends 'layouts/user-basic-withStickyFooter-Submit' %}
+ {% block page-name %} 
+ Review of Application (Page 4 of 4)
+ <div class="sub-line">Please review your application.</div>
+{% endblock %}
+{% block progress %}
+<div class="progress">
+    <div class="progress-bar" style="width:80%; background:#ff9900;">
+        <div class="progress-value">4 of 4</div>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="content-padding page-wrapper">
+    <div class="card">
+        <div class="colored-paper info group-divide-auto">
+            <h3 class="">
+                Personal Information
+            </h3>
+        </div>
+        <div class="section-padding">
+            <div class="row">
+                <div class="column">
+                    <h5>
+                        Name
+                        <div class="value">
+                            Zeta Gamma, FACC
+                        </div>
+                    </h5>
+                </div>
+            </div>
+            <div class="row group-divide-auto">
+                <div class="column medium-6">
+                    <h5>
+                        Title
+                        <div class="value">
+                            Proffessor X
+                        </div>
+                    </h5>
+                </div>
+                <div class="column medium-6">
+                    <h5>
+                        Institution
+                        <div class="value">
+                            The Xavier School
+                        </div>
+                    </h5>
+                </div>
+            </div>
+            <div class="row group-divide-auto">
+                <div class="column medium-6">
+                    <h5>
+                        Email
+                        <div class="value">
+                            zgamma@gmail.com
+                        </div>
+                    </h5>
+                </div>
+                <div class="column medium-6">
+                    <h5>
+                        Location
+                        <div class="value">
+                            Atlanta, GA, USA
+                        </div>
+                    </h5>
+                </div>
+            </div>
+         <div class="colored-paper info group-divide-auto">
+            <h3 class="">
+                Committees
+            </h3>
+        </div>
+       <div class="row group-divide-auto section-padding">
+                <div class="column">
+                    <ul class="no-bullets data" id="committeeList"><li><span class="drag-handles hide">fa-bars </span><psan class="value ranking">1 - </psan> <span class="title">Current Procedural Terminology (CPT) Coding Ad Hoc Committee</span><i class="italic">(show details)</i></li>
+                    <li><span class="drag-handles hide">fa-bars </span><psan class="value ranking">2 - </psan><span class="title"> Editorial Board of the Journal of Ultrasound in Medicine</span></li>
+                    <li><span class="drag-handles hide">fa-bars </span><psan class="value ranking">3 - </psan><span class="title"> Endowment for Education and Research Task Force</span></li>
+                    <li><span class="drag-handles hide">fa-bars </span><psan class="value ranking">4 - </psan><span class="title"> Empty</span></li>
+                    <li><span class="drag-handles hide">fa-bars </span><psan class="value ranking">5 - </psan><span class="title"> Empty</span></li>
+                    <li><span class="drag-handles hide">fa-bars </span><psan class="value ranking">6 - </psan><span class="title"> Empty</span></li></ul>
+                    <div class="row group-divide">
+                        <div class="column small-6"><a href="" class="float-right button small secondary">Change Selection</a></div>
+                        <div class="column small-6"> <a href="" id="committeeRankButton" class="float-left button small secondary" onclick="toggleRank(event)">Re-Rank Selection</a>
+                             <a href="" id="committeeDoneButton" class="float-left button small primary hide" onclick="toggleRank(event)">Done</a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+               function toggleRank(e){
+                     e.preventDefault();
+                                $('#committeeList').find('.ranking').toggleClass('hide');
+                                $('#committeeList').find('.drag-handles').toggleClass('hide');
+                                $('#committeeRankButton').toggleClass('hide');
+                                $('#committeeDoneButton').toggleClass('hide');
+               }
+            </script>
+        <div class="colored-paper info group-divide-auto">
+            <h3 class="">
+                Digital CV
+            </h3>
+        </div>
+            <div class="row group-divide-auto">
+                <div class="column medium-6">
+                    <h5>Professional Experience <a href="#EDITMODAL" class="link"><i class="fa fa-pencil"></i>&nbsp;Edit</a></h5>
+                    <p>{% include "elements/lorem" %}</p>
+                </div>
+                <div class="column medium-6">
+                    <h5>Publications <a href="#EDITMODAL" class="link"><i class="fa fa-pencil"></i>&nbsp;Edit</a></h5>
+                    <p>{% include "elements/lorem" %}</p>
+                </div>
+            </div>
+            <div class="row group-divide-auto">
+                <div class="column medium-6">
+                    <h5>Awards <a href="#EDITMODAL" class="link"><i class="fa fa-pencil"></i>&nbsp;Edit</a></h5>
+                    <p>{% include "elements/lorem" %}</p>
+                </div>
+                <div class="column medium-6">
+                    <h5>Faculty <a href="#EDITMODAL" class="link"><i class="fa fa-pencil"></i>&nbsp;Edit</a></h5>
+                    <p>{% include "elements/lorem" %}</p>
+                </div>
+            </div>
+
+            <div class="row group-divide-auto">
+                <div class="column medium-6">
+                    <h5>Leadership Competency <a href="#EDITMODAL" class="link"><i class="fa fa-pencil"></i>&nbsp;Edit</a></h5>
+                    <strong>Selected Competency</strong>
+                    <ul class="group-spacing">
+                        <li class="h5 single-line-height">Competency Selection</li>
+                        <li class="h5 single-line-height">Competency Selection</li>
+                        <li class="h5 single-line-height">Competency Selection</li>
+                    </ul>
+                    <p>{% include "elements/lorem" %}</p>
+
+                </div>
+                <div class="column medium-6">
+                    <h5>Volunteer for further ACC engagement <a href="#EDITMODAL" class="link"><i class="fa fa-pencil"></i>&nbsp;Edit</a></h5>
+                    <strong>Selected Volunteer</strong>
+                   <ul class="group-spacing">
+                        <li class="h5 single-line-height">Volunteer Selection</li>
+                        <li class="h5 single-line-height">Volunteer Selection</li>
+                        <li class="h5 single-line-height">Volunteer Selection</li>
+                    </ul>
+                    <p>{% include "elements/lorem" %}</p>
+                </div>
+            </div>
+       <div class="colored-paper info group-divide-auto">
+            <h3 class="">
+                Extras
+            </h3>
+        </div>
+            <div class="row group-divide-auto section-padding">
+                <div class="column">
+                    <h5>Statement of Reference</h5>
+                </div>
+                <h5 class="column medium-6"><span class="value">Dr. Isaiah Gunn, FACC</span></h5>
+                <h5 class="column medium-6"><span class="value">Dr. Marion Rodenberger, FACC.</span></h5>
+            </div>
+            <div class="row group-divide-auto">
+                <div class="column">
+                    <h5>Disclosures
+                    <div class="value"><strong>Up To Date</strong> - <small class="subheader italic">Up to Date till Feb, 28th 2018</small></div>
+                    </h5>
+                </div>
+            </div>
+            <div class="row">
+                 <div class="callout">
+                    <div class="content-padding section-padding">
+                       <div class="switch-input-space">
+                           <div class="switch checkbox">
+                             <input class="switch-input" id="checkbox-checkbox" type="checkbox" value="false">
+                             <label class="switch-paddle" for="checkbox-checkbox">
+                               <span class="show-for-sr">Do you like me?</span>
+                               <span class="switch-active" aria-hidden="true">
+                                 <i class="fa fa-holder"></i>
+                               </span>
+                               <span class="switch-inactive" aria-hidden="true">
+                                 <i class="fa fa-holder"></i>
+                               </span>
+                             </label>
+                           </div>
+                           <label class="switch-value h1" for="checkbox-checkbox">I attest I did not lie</label>
+                         </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block backlink %}
+ href="user-nominate-member.html"
+{% endblock %}
+
+
+{% block forwardlink %}
+ href="user-dashboard.html"
+{% endblock %}
+
+{% block forwardbutton %}
+<a class="button  float-right success" href="user-dashboard.html">
+    Submit
+    <i class="fa fa-check"></i>
+</a>
+{% endblock %}

@@ -1,0 +1,100 @@
+{% extends 'layouts/user-basic-withStickyFooter' %}
+{% block page-name %}
+Application (Page 1 of 4)
+<div class="sub-line">
+    Select up to
+    <b>
+        Six
+    </b>
+    Committees you are interested in.
+</div>
+{% endblock %}
+
+{% block progress %}
+<div class="progress">
+    <div class="progress-bar" style="width:40%; background:#ff9900;">
+        <div class="progress-value">1 of 4</div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+{% block content %}
+<div class="content-padding section-padding">
+    <div class="row">
+        <div class="column medium-4">
+            <aside class="card">
+                {% include "elements/search-bar" %}  
+            {% include "elements/search-bar-filter" %}
+                <ul class="committee-list">
+                    {% include "elements/committee-list-item-withAdd" %}
+                </ul>
+                {% include "elements/pagination-bottom" %}
+            </aside>
+        </div>
+        <div class="column medium-8">
+            <div class="card p-b-0">
+                <div class="colored-paper">
+                    <h2 class="no-margin">
+                        Selected up to 6 committees for yourself,
+                        <div class="sub-line">drag the committees into your chosen ranking from most to least</div>
+                    </h2>
+                </div>
+                <ol class="committee-list" id="sortable">
+                    {% include "elements/committee-list-item-withRemoveAndRank" %}
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="reveal" data-reveal="" id="maxSelected">
+    <button aria-label="Close modal" class="close-button" data-close="" type="button">
+        <span aria-hidden="true">
+            ×
+        </span>
+    </button>
+    <div class="row section-padding row">
+        <h1>
+            You already have the
+            <strong>
+                Maximum
+            </strong>
+            committees selected.
+        </h1>
+        <p class="lead">
+            Which committee would you like to replace? Please select one from below to replace or just cancel.
+        </p>
+        <div class="question group-divide group-divide-bottom">
+            <div class="input-holder">
+                {% include "elements/committee-list-item-withRadioButton" %}
+            </div>
+        </div>
+    </div>
+    <div class="row column text-right">
+        <a class="button secondary" data-close="" href="">
+            Cancel
+        </a>
+        <a class="button disabled" href="">
+            Done
+        </a>
+    </div>
+</div>
+{% endblock %}
+
+{% block backbutton %}
+ href="user-nominate-memberSelection.html"
+{% endblock %}
+
+{% block  forwardlink %}
+ href="user-nominate-statementofreference.html"
+{% endblock %}
+
+{% block  forwardbutton %}
+<a class="button navigation float-right" href="user-nominate-statementofreference.html">
+    Continue
+    <i class="fa fa-arrow-right">
+    </i>
+</a>
+{% endblock %}
