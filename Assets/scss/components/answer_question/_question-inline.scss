@@ -1,7 +1,10 @@
 .question-inline{
 	display: block;
 	margin-bottom: .75rem;
-	.label-holder{padding-top:.5em;padding-bottom: .5em;margin:0;}
+	.label-holder{
+		padding-top:0;padding-bottom: 0;margin:0;
+		label{margin-top:0;margin-bottom:0;}
+	}
 	.label-holder,.input-holder{
 		display: inline-block;
 		width:auto;
@@ -34,10 +37,10 @@
 *  Modify any `.question` with the added class of  `.question-inline`
 * 
 *   @example
-*	<div class="question question-inline">
+*	<div class="question question-inline required">
 *		<div class="label-holder">
 *			<label for="">
-*				<span class="text">Question Dropdown Title (Required)</span>
+*				<span class="text">Question Title (Required)</span>
 *				<span class="required-holder">
 *					<i class="fa fa-holder"></i>
 *				</span>
@@ -47,7 +50,7 @@
 *			 <div class="input-space column small-6 large-9">
 *				<input type="text"/>
 *			</div>
-*			<div class="column small-6 large-3 post-fix">
+*			<div class="column small-6 large-3 value-space postfix">
 *				Years
 *			</div>
 *		</div>

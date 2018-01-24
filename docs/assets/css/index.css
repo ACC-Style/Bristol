@@ -2855,7 +2855,7 @@ select {
   text-overflow: ellipsis;
   position: relative;
   background-color: transparent;
-  color: #525252;
+  color: black;
 }
 @media only screen and (max-width: 1024px) {
   .label-holder label {
@@ -3154,7 +3154,7 @@ select {
 *			<label for="">
 *				<span class="text">Question Dropdown Title (Required)</span>
 *				<span class="required-holder">
-*					<i class="fa fa-holder-dynamic"></i>
+*					<i class="fa fa-holder"></i>
 *				</span>
 *			</label>
 *		</div>
@@ -3162,9 +3162,9 @@ select {
 *			 <div class="input-space column small-6 large-9">
 *				<input type="text"/>
 *			</div>
-*			<div class="column small-6 large-3 value">
-*				Years
-*			</div>
+*           <div class="column small-6 large-3 value-space">
+*               <span class="value">Years</span>
+*           </div>
 *		</div>
 *		<div class="message-holder">
 *				<small class="error"><i class="fa fa-holder"></i> Error message</small>
@@ -3184,7 +3184,7 @@ select {
 *			<label for="">
 *				<span class="text">Question</span>
 *				<span class="required-holder">
-*					<i class="fa fa-holder-dynamic"></i>
+*					<i class="fa fa-holder"></i>
 *				</span>
 *			</label>
 *		</div>
@@ -3192,8 +3192,8 @@ select {
 *			 <div class="input-space column small-6 large-9">
 *				<input type="text"/>
 *			</div>
-*			<div class="column small-6 large-3 value">
-*				Years
+*			<div class="column small-6 large-3 value-space">
+*				<span class="value">Years</span>
 *			</div>
 *		</div>
 *		<div class="message-holder">
@@ -3209,9 +3209,13 @@ select {
   margin-bottom: .75rem;
 }
 .question-inline .label-holder {
-  padding-top: .5em;
-  padding-bottom: .5em;
+  padding-top: 0;
+  padding-bottom: 0;
   margin: 0;
+}
+.question-inline .label-holder label {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .question-inline .label-holder, .question-inline .input-holder {
   display: inline-block;
@@ -3245,10 +3249,10 @@ select {
 *  Modify any `.question` with the added class of  `.question-inline`
 * 
 *   @example
-*	<div class="question question-inline">
+*	<div class="question question-inline required">
 *		<div class="label-holder">
 *			<label for="">
-*				<span class="text">Question Dropdown Title (Required)</span>
+*				<span class="text">Question Title (Required)</span>
 *				<span class="required-holder">
 *					<i class="fa fa-holder"></i>
 *				</span>
@@ -3258,7 +3262,7 @@ select {
 *			 <div class="input-space column small-6 large-9">
 *				<input type="text"/>
 *			</div>
-*			<div class="column small-6 large-3 post-fix">
+*			<div class="column small-6 large-3 value-space postfix">
 *				Years
 *			</div>
 *		</div>
@@ -3270,776 +3274,6 @@ select {
 *		<div class="hint">This is some hint text</div>
 *	</div>
 */
-.question-grid-based {
-  /*.label-holder{padding-left:0 !important;
-  	label{display:table;margin-bottom:0;
-  	.text,.seq,.required-holder{
-  		display: table-cell;
-  		padding:0;
-  	}
-  	.seq,.required-holder{
-  	   
-  		margin-left:0;
-  		margin-right:0;
-  	}
-  	}
-  }*/
-  max-width: 600px;
-}
-.question-grid-based .input-holder input:focus, .question-grid-based .input-holder select:focus {
-  -webkit-box-shadow: inset 0px 0px 2px 2px #198dae;
-  -moz-box-shadow: inset 0px 0px 2px 2px #198dae;
-  box-shadow: inset 0px 0px 2px 2px #198dae;
-}
-.question-grid-based .label-holder .text {
-  white-space: normal;
-}
-.question-grid-based .label-holder .hint, .question-grid-based .label-holder .message-holder, .question-grid-based .input-holder .hint, .question-grid-based .input-holder .message-holder {
-  max-width: 75rem;
-  margin-left: auto;
-  margin-right: auto;
-  clear: both;
-  display: block;
-  margin: 0 0 .3em 0;
-  padding: 0;
-  line-height: 1;
-}
-.question-grid-based .label-holder .hint::before, .question-grid-based .label-holder .hint::after, .question-grid-based .label-holder .message-holder::before, .question-grid-based .label-holder .message-holder::after, .question-grid-based .input-holder .hint::before, .question-grid-based .input-holder .hint::after, .question-grid-based .input-holder .message-holder::before, .question-grid-based .input-holder .message-holder::after {
-  content: ' ';
-  display: table;
-}
-.question-grid-based .label-holder .hint::after, .question-grid-based .label-holder .message-holder::after, .question-grid-based .input-holder .hint::after, .question-grid-based .input-holder .message-holder::after {
-  clear: both;
-}
-.question-grid-based .label-holder, .question-grid-based .input-holder {
-  width: 100%;
-  float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
-  padding-left: 0;
-  padding-right: 0;
-}
-@media screen and (min-width: 40em) {
-  .question-grid-based .label-holder, .question-grid-based .input-holder {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-  }
-}
-.question-grid-based .label-holder:last-child:not(:first-child), .question-grid-based .input-holder:last-child:not(:first-child) {
-  float: right;
-}
-@media only screen and (min-width: 767px) {
-  .question-grid-based .label-holder, .question-grid-based .input-holder {
-    display: inline-block;
-  }
-  .question-grid-based .label-holder {
-    width: 50%;
-    float: left;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
-    padding-left: 0;
-  }
-}
-@media only screen and (min-width: 767px) and (min-width: 40em) {
-  .question-grid-based .label-holder {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-  }
-}
-@media only screen and (min-width: 767px) {
-  .question-grid-based .label-holder:last-child:not(:first-child) {
-    float: right;
-  }
-  .question-grid-based .input-holder {
-    width: 50%;
-    float: left;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-@media only screen and (min-width: 767px) and (min-width: 40em) {
-  .question-grid-based .input-holder {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-  }
-}
-@media only screen and (min-width: 767px) {
-  .question-grid-based .input-holder:last-child:not(:first-child) {
-    float: right;
-  }
-  .question-grid-based.span-2-col .label-holder {
-    width: 25%;
-    float: left;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
-    padding-left: 0;
-  }
-}
-@media only screen and (min-width: 767px) and (min-width: 40em) {
-  .question-grid-based.span-2-col .label-holder {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-  }
-}
-@media only screen and (min-width: 767px) {
-  .question-grid-based.span-2-col .label-holder:last-child:not(:first-child) {
-    float: right;
-  }
-  .question-grid-based.span-2-col .input-holder {
-    width: 75%;
-    float: left;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-@media only screen and (min-width: 767px) and (min-width: 40em) {
-  .question-grid-based.span-2-col .input-holder {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-  }
-}
-@media only screen and (min-width: 767px) {
-  .question-grid-based.span-2-col .input-holder:last-child:not(:first-child) {
-    float: right;
-  }
-  .question-grid-based.span-3-col .label-holder {
-    width: 16.6666666667%;
-    float: left;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
-    padding-left: 0;
-  }
-}
-@media only screen and (min-width: 767px) and (min-width: 40em) {
-  .question-grid-based.span-3-col .label-holder {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-  }
-}
-@media only screen and (min-width: 767px) {
-  .question-grid-based.span-3-col .label-holder:last-child:not(:first-child) {
-    float: right;
-  }
-  .question-grid-based.span-3-col .input-holder {
-    width: 83.3333333333%;
-    float: left;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-@media only screen and (min-width: 767px) and (min-width: 40em) {
-  .question-grid-based.span-3-col .input-holder {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-  }
-}
-@media only screen and (min-width: 767px) {
-  .question-grid-based.span-3-col .input-holder:last-child:not(:first-child) {
-    float: right;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .question-grid-based .label-holder, .question-grid-based .input-holder {
-    display: inline-block;
-  }
-  .question-grid-based .label-holder {
-    width: 50%;
-    float: left;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
-    padding-left: 0;
-  }
-}
-@media only screen and (min-width: 1024px) and (min-width: 40em) {
-  .question-grid-based .label-holder {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .question-grid-based .label-holder:last-child:not(:first-child) {
-    float: right;
-  }
-  .question-grid-based .input-holder {
-    width: 50%;
-    float: left;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-@media only screen and (min-width: 1024px) and (min-width: 40em) {
-  .question-grid-based .input-holder {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .question-grid-based .input-holder:last-child:not(:first-child) {
-    float: right;
-  }
-  .question-grid-based.span-2-col .label-holder {
-    width: 25%;
-    float: left;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
-    padding-left: 0;
-  }
-}
-@media only screen and (min-width: 1024px) and (min-width: 40em) {
-  .question-grid-based.span-2-col .label-holder {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .question-grid-based.span-2-col .label-holder:last-child:not(:first-child) {
-    float: right;
-  }
-  .question-grid-based.span-2-col .input-holder {
-    width: 75%;
-    float: left;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-@media only screen and (min-width: 1024px) and (min-width: 40em) {
-  .question-grid-based.span-2-col .input-holder {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .question-grid-based.span-2-col .input-holder:last-child:not(:first-child) {
-    float: right;
-  }
-  .question-grid-based.span-3-col .label-holder {
-    width: 16.6666666667%;
-    float: left;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
-    padding-left: 0;
-  }
-}
-@media only screen and (min-width: 1024px) and (min-width: 40em) {
-  .question-grid-based.span-3-col .label-holder {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .question-grid-based.span-3-col .label-holder:last-child:not(:first-child) {
-    float: right;
-  }
-  .question-grid-based.span-3-col .input-holder {
-    width: 83.3333333333%;
-    float: left;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-@media only screen and (min-width: 1024px) and (min-width: 40em) {
-  .question-grid-based.span-3-col .input-holder {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .question-grid-based.span-3-col .input-holder:last-child:not(:first-child) {
-    float: right;
-  }
-}
-.question-grid-based.label-position-top .label-holder, .question-grid-based.label-position-top .input-holder {
-  width: 100%;
-  float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
-  padding: 0;
-}
-@media screen and (min-width: 40em) {
-  .question-grid-based.label-position-top .label-holder, .question-grid-based.label-position-top .input-holder {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-  }
-}
-.question-grid-based.label-position-top .label-holder:last-child:not(:first-child), .question-grid-based.label-position-top .input-holder:last-child:not(:first-child) {
-  float: right;
-}
-.question-grid-based.label-position-left .label-holder, .question-grid-based.label-position-left .input-holder {
-  float: left;
-}
-.question-grid-based.label-position-right .label-holder, .question-grid-based.label-position-right .input-holder, .question-grid-based.label-position-right.span-2-col .label-holder, .question-grid-based.label-position-right.span-2-col .input-holder, .question-grid-based.label-position-right.span-3-col .label-holder, .question-grid-based.label-position-right.span-3-col .input-holder {
-  float: right;
-}
-.question-grid-based.label-position-right .label-holder {
-  padding-left: 0;
-}
-.question-grid-based.label-position-right .input-holder {
-  padding-right: 0;
-}
-.question-grid-based.label-position-right.single-switch:after {
-  content: '';
-  display: table;
-  clear: both;
-  float: none;
-}
-.question-grid-based.label-position-right.single-switch .input-holder {
-  margin-right: -7.5em;
-  width: 7em;
-}
-.question-grid-based.label-position-right.single-switch .input-holder .input-space, .question-grid-based.label-position-right.single-switch .input-holder .switch-input-space {
-  padding-right: 0;
-}
-.question-grid-based.label-position-right.single-switch .label-holder {
-  padding-left: 6em;
-  width: 100%;
-}
-.question-grid-based.label-position-right.single-switch.tiny-switches .label-holder {
-  margin-top: .3rem;
-  padding-left: 4rem;
-}
-.question-grid-based.label-position-right.single-switch.small-switches .label-holder {
-  margin-top: .4rem;
-  padding-left: 5rem;
-}
-.question-grid-based.label-position-right.single-switch.large-switches .label-holder {
-  margin-top: .75rem;
-  padding-left: 6.5rem;
-}
-.question-grid-based.indent-1 .input-holder:before, .question-grid-based.indent-2 .input-holder:before, .question-grid-based.indent-3 .input-holder:before {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.question-grid-based.indent-1 .input-holder, .question-grid-based.indent-2 .input-holder, .question-grid-based.indent-3 .input-holder {
-  position: relative;
-}
-.question-grid-based.indent-1 .input-holder:before, .question-grid-based.indent-2 .input-holder:before, .question-grid-based.indent-3 .input-holder:before {
-  color: #cccccc;
-  content: "\f178";
-  letter-spacing: .25em;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: .75em 0;
-}
-.question-grid-based.indent-1 .input-holder {
-  padding-left: 1.5rem;
-}
-.question-grid-based.indent-2 .input-holder {
-  padding-left: 2.5rem;
-}
-.question-grid-based.indent-3 .input-holder {
-  padding-left: 3.5rem;
-}
-.question-grid-based.indent-2 .input-holder:before {
-  content: "\f178\f054";
-}
-.question-grid-based.indent-3 .input-holder:before {
-  content: "\f178\f178\f054";
-}
-
-.seq {
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  margin-top: 0rem;
-  margin-bottom: 0rem;
-  color: #198dae;
-  vertical-align: top;
-  display: inline-block;
-  margin-top: -.75em;
-}
-.colored-paper .seq, .callout .seq, .page-message .seq {
-  margin-top: 0rem;
-  margin-bottom: 0rem;
-  line-height: 1.35;
-}
-.seq:hover {
-  color: #266071;
-  text-decoration: underline;
-}
-
-.question-group.fluid-align {
-  display: table !important;
-  width: 100%;
-}
-.question-group.fluid-align .question-grid-based {
-  display: table-row !important;
-}
-.question-group.fluid-align .question-grid-based .label-holder, .question-group.fluid-align .question-grid-based .input-holder {
-  display: table-cell !important;
-  vertical-align: top;
-  float: none !important;
-}
-.question-group.fluid-align .question-grid-based .label-holder {
-  padding-top: .89rem;
-  padding-right: 0;
-}
-.question-group.fluid-align .question-grid-based .input-holder {
-  min-width: 20%;
-}
-
-.group-1up .input-space .group-2up .input-space, .group-1up .switch-input-space .group-2up .input-space, .group-1up .input-space .group-2up .switch-input-space, .group-1up .switch-input-space .group-2up .switch-input-space, .group-3up .input-space, .group-3up .switch-input-space {
-  width: 100%;
-  float: left;
-}
-.group-1up .input-space .group-2up .input-space:last-child:not(:first-child), .group-1up .switch-input-space .group-2up .input-space:last-child:not(:first-child), .group-1up .input-space .group-2up .switch-input-space:last-child:not(:first-child), .group-1up .switch-input-space .group-2up .switch-input-space:last-child:not(:first-child), .group-3up .input-space:last-child:not(:first-child), .group-3up .switch-input-space:last-child:not(:first-child) {
-  float: right;
-}
-@media only screen and (min-width: 767px) {
-  .group-2up .input-space, .group-2up .switch-input-space, .group-3up .input-space, .group-3up .switch-input-space {
-    width: 50%;
-    float: left;
-  }
-  .group-2up .input-space:last-child:not(:first-child), .group-2up .switch-input-space:last-child:not(:first-child), .group-3up .input-space:last-child:not(:first-child), .group-3up .switch-input-space:last-child:not(:first-child) {
-    float: right;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .group-3up .input-space, .group-3up .switch-input-space {
-    width: 33.3333333333%;
-    float: left;
-  }
-  .group-3up .input-space:last-child:not(:first-child), .group-3up .switch-input-space:last-child:not(:first-child) {
-    float: right;
-  }
-}
-
-/**
-* Questions Grid Based:
-* `.question-grid-based` - This is a variation of the question block used by NCDR. `.label-holder &amp; .input-holder` are used as containters so you can add class grid sizer to the  `split_1of5, split_2of5, split_3of5, split_4of5` to control the size of the label and input space.
-* 
-*   @example
-* <div class="row">
-*   <h5 class="highlighted">Default</h5>
-*   <div class="column small-12 end">
-*     <div class="question-grid-based span-2-col required label-position-left">
-*       <div class="label-holder">
-*         <label for="">
-*           <span class="text">Question Title
-*             <a class="seq">1234</a>
-*           </span>
-*           <span class="required-holder">
-*             <i class="fa fa-holder"></i>
-*           </span>
-*         </label>
-*         <div class="hint">This is some hint text</div>
-*       </div>
-*       <div class="input-holder">
-*         <div class="input-space">
-*           <input type="text">
-*         </div>
-*         <div class="message-holder">
-*           <small class="error">
-*             <i class="fa fa-holder"></i>Error message</small>
-*           <small class="warning">
-*             <i class="fa fa-holder"></i>Warning message</small>
-*           <small class="data">
-*             <i class="fa fa-holder"></i>Data message</small>
-*         </div>
-*         <div class="hint">This is some hint text</div>
-*       </div>
-*     </div>
-*   </div>
-* </div>
-*/
-/**
-* Grid Based Question (Indent Modifier):
-* `.indent-1` - Grid questions can show there relationship to eachother by the use of indent modifiers. Children indent their inputs and mark themselves to show the relationship to the parent.
-* 
-*   @example
-* <div class="row">
-*   <h5 class="highlighted">Default</h5>
-*   <div class="column small-12 last">
-*     <div class="question-grid-based span-2-col required label-position-left indent-1">
-*       <div class="label-holder">
-*         <label for="">
-*           <span class="text">Question Indent 1
-*             <a class="seq">1234</a>
-*           </span>
-*           <span class="required-holder">
-*             <i class="fa fa-holder"></i>
-*           </span>
-*         </label>
-*         <div class="hint">This is some hint text</div>
-*       </div>
-*       <div class="input-holder">
-*         <div class="input-space">
-*           <input type="text">
-*         </div>
-*         <div class="message-holder">
-*           <small class="error">
-*             <i class="fa fa-holder"></i>Error message</small>
-*           <small class="warning">
-*             <i class="fa fa-holder"></i>Warning message</small>
-*           <small class="data">
-*             <i class="fa fa-holder"></i>Data message</small>
-*         </div>
-*         <div class="hint">This is some hint text</div>
-*       </div>
-*     </div>
-*   </div>
-*   <div class="column small-12 last">
-*     <div class="question-grid-based span-2-col required label-position-left indent-2">
-*       <div class="label-holder">
-*         <label for="">
-*           <span class="text">Question Indent 2
-*             <a class="seq">1234</a>
-*           </span>
-*           <span class="required-holder">
-*             <i class="fa fa-holder"></i>
-*           </span>
-*         </label>
-*         <div class="hint">This is some hint text</div>
-*       </div>
-*       <div class="input-holder">
-*         <div class="input-space">
-*           <input type="text">
-*         </div>
-*         <div class="message-holder">
-*           <small class="error">
-*             <i class="fa fa-holder"></i>Error message</small>
-*           <small class="warning">
-*             <i class="fa fa-holder"></i>Warning message</small>
-*           <small class="data">
-*             <i class="fa fa-holder"></i>Data message</small>
-*         </div>
-*         <div class="hint">This is some hint text</div>
-*       </div>
-*     </div>
-*   </div>
-*   <div class="column small-6">
-*     <div class="question-grid-based required label-position-left indent-3">
-*       <div class="label-holder">
-*         <label for="">
-*           <span class="text">Question Indent 3
-*             <a class="seq">1234</a>
-*           </span>
-*           <span class="required-holder">
-*             <i class="fa fa-holder"></i>
-*           </span>
-*         </label>
-*         <div class="hint">This is some hint text</div>
-*       </div>
-*       <div class="input-holder">
-*         <div class="input-space">
-*           <input type="text">
-*         </div>
-*         <div class="message-holder">
-*           <small class="error">
-*             <i class="fa fa-holder"></i>Error message</small>
-*           <small class="warning">
-*             <i class="fa fa-holder"></i>Warning message</small>
-*           <small class="data">
-*             <i class="fa fa-holder"></i>Data message</small>
-*         </div>
-*         <div class="hint">This is some hint text</div>
-*       </div>
-*     </div>
-*   </div><div class="column small-6"></div>
-* </div>
-*/
-/**
-* Repeating Switches Column Modifier:
-* `.group-3up` - special quesitons have repeating inputs like radio buttons ths controls how if the inputs will spread themselves into columns.
-* 
-*   @example
-* <div class="row">
-*    <div class="column small-12">
-*        <div class="question-grid-based required label-position-left span-2-col group-2up">
-*            <div class="label-holder">
-*              <label for="">
-*              <span class="text">Question Indent 3
-*              <a class="seq">1234</a>
-*          </span>
-*          <span class="required-holder">
-*              <i class="fa fa-holder"></i>
-*          </span>
-*        </label>
-*      </div>
-*      <div class="input-holder">
-*         <div class="switch-input-space">
-*           <div class="switch radius">
-*              <input class="switch-input" id="radius-checkbox1" type="checkbox" value="true">
-*              <label class="switch-paddle" for="radius-checkbox1">
-*              <span class="show-for-sr">Do you like me?</span>
-*              <span class="switch-active" aria-hidden="true"><i class="fa fa-check-circle-o"></i></span>
-*              <span class="switch-inactive" aria-hidden="true"><i class="fa fa-times-circle"></i></span>
-*             </label>
-*           </div>
-*           <label class="switch-value" for="radius-checkbox1">Random Label Length</label>
-*         </div>
-*         <div class="switch-input-space">
-*           <div class="switch radius">
-*             <input class="switch-input" id="radius-checkbox2" type="checkbox" value="true">
-*             <label class="switch-paddle" for="radius-checkbox2">
-*              <span class="show-for-sr">Do you like me?</span>
-*              <span class="switch-active" aria-hidden="true"><i class="fa fa-check-circle-o"></i></span>
-*              <span class="switch-inactive" aria-hidden="true"><i class="fa fa-times-circle"></i></span>
-*             </label>
-*           </div>
-*           <label class="switch-value" for="radius-checkbox2">Random Label Length</label>
-*         </div>
-*         <div class="switch-input-space">
-*           <div class="switch radius">
-*             <input class="switch-input" id="radius-checkbox3" type="checkbox" value="true">
-*             <label class="switch-paddle" for="radius-checkbox3">
-*              <span class="show-for-sr">Do you like me?</span>
-*              <span class="switch-active" aria-hidden="true"><i class="fa fa-check-circle-o"></i></span>
-*              <span class="switch-inactive" aria-hidden="true"><i class="fa fa-times-circle"></i></span>
-*             </label>
-*           </div>
-*           <label class="switch-value" for="radius-checkbox3">Random Label Length</label>
-*         </div>
-*         <div class="switch-input-space">
-*           <div class="switch radius">
-*             <input class="switch-input" id="radius-checkbox4" type="checkbox" value="true">
-*             <label class="switch-paddle" for="radius-checkbox4">
-*              <span class="show-for-sr">Do you like me?</span>
-*              <span class="switch-active" aria-hidden="true"><i class="fa fa-check-circle-o"></i></span>
-*              <span class="switch-inactive" aria-hidden="true"><i class="fa fa-times-circle"></i></span>
-*             </label>
-*           </div>
-*           <label class="switch-value" for="radius-checkbox4">Random Label Length</label>
-*         </div>
-*         <div class="switch-input-space">
-*           <div class="switch radius">
-*             <input class="switch-input" id="radius-checkbox5" type="checkbox" value="true">
-*             <label class="switch-paddle" for="radius-checkbox5">
-*              <span class="show-for-sr">Do you like me?</span>
-*              <span class="switch-active" aria-hidden="true"><i class="fa fa-check-circle-o"></i></span>
-*              <span class="switch-inactive" aria-hidden="true"><i class="fa fa-times-circle"></i></span>
-*             </label>
-*           </div>
-*           <label class="switch-value" for="radius-checkbox5">Random Label Length</label>
-*         </div>
-*         <div class="switch-input-space">
-*           <div class="switch radius">
-*             <input class="switch-input" id="radius-checkbox6" type="checkbox" value="true">
-*             <label class="switch-paddle" for="radius-checkbox6">
-*              <span class="show-for-sr">Do you like me?</span>
-*              <span class="switch-active" aria-hidden="true"><i class="fa fa-check-circle-o"></i></span>
-*              <span class="switch-inactive" aria-hidden="true"><i class="fa fa-times-circle"></i></span>
-*             </label>
-*           </div>
-*           <label class="switch-value" for="radius-checkbox6">Random Label Length</label>
-*         </div>
-*      </div>
-*    </div>
-*   </div>
-* </div>
-**/
-/**
-* Fluid Question Grouping:
-* `.question-group.fluid-align` - A containter that will align the labels  to the longest label.
-* 
-*   @example
-*   <h5 class="highlighted">Default</h5>
-* <div class=" question-group fluid-align">
-*     <div class="question-grid-based span-2-col required label-position-left">
-*       <div class="label-holder">
-*         <label for="">
-*           <span class="text">Question Title  that is Longer
-*             <a class="seq">1234</a>
-*           </span>
-*           <span class="required-holder">
-*             <i class="fa fa-holder"></i>
-*           </span>
-*         </label>
-*       </div>
-*       <div class="input-holder">
-*         <div class="input-space">
-*           <input type="text">
-*         </div>
-*         <div class="hint">This is some hint text</div>
-*       </div>
-*     </div>
-*     <div class="question-grid-based span-2-col required label-position-left">
-*       <div class="label-holder">
-*         <label for="">
-*           <span class="text">Title
-*             <a class="seq">1234</a>
-*           </span>
-*           <span class="required-holder">
-*             <i class="fa fa-holder"></i>
-*           </span>
-*         </label>
-*       </div>
-*       <div class="input-holder">
-*         <div class="input-space">
-*           <input type="text">
-*         </div>
-*         <div class="hint">This is some hint text</div>
-*       </div>
-*     </div>
-*     <div class="question-grid-based span-2-col required label-position-left">
-*       <div class="label-holder">
-*         <label for="">
-*           <span class="text">Question Title
-*             <a class="seq">1234</a>
-*           </span>
-*           <span class="required-holder">
-*             <i class="fa fa-holder"></i>
-*           </span>
-*         </label>
-*       </div>
-*       <div class="input-holder">
-*         <div class="input-space">
-*           <input type="text">
-*         </div>
-*         <div class="hint">This is some hint text</div>
-*       </div>
-*     </div>
-* </div>
-*/
-/**
-* Single Switch Modifier:
-* `.label-position-right.single-switch[.tiny-switches,.small-switches,.large-switches]` - Single switches sometimes don't have value labels but use the question labels. The size and alignment of the switches controlled by adding `.tiny-switches`,`.small-switches`,`.large-switches` to the question div.
-* 
-*   @example
-* <div class="row">
-*    <div class="column small-12">
-*        <div class="question-grid-based required single-switch label-position-right small-switches">
-*            <div class="label-holder">
-*              <label for="">
-*              <span class="text">Question Indent 3
-*              <a class="seq">1234</a>
-*          </span>
-*          <span class="required-holder">
-*              <i class="fa fa-holder"></i>
-*          </span>
-*        </label>
-*      </div>
-*      <div class="input-holder">
-*         <div class="switch-input-space">
-*           <div class="switch radius">
-*              <input class="switch-input" id="radius-singleswitch" type="checkbox" value="true">
-*              <label class="switch-paddle" for="radius-singleswitch">
-*              <span class="show-for-sr">Do you like me?</span>
-*              <span class="switch-active" aria-hidden="true"><i class="fa fa-holder"></i></span>
-*              <span class="switch-inactive" aria-hidden="true"><i class="fa fa-holder"></i></span>
-*             </label>
-*           </div>
-*         </div>
-*      </div>
-*    </div>
-*   </div>
-* </div>
-**/
 .file-upload-holder {
   height: 37px;
 }
@@ -8372,13 +7606,13 @@ div.reveal .close-button {
   margin-top: .5em;
   vertical-align: top;
 }
-.switch.large, .question-grid-based.large-switches .switch {
+.switch.large {
   margin-top: .25em;
 }
-.switch.small, .question-grid-based.small-switches .switch {
+.switch.small {
   margin-top: .5em;
 }
-.switch.tiny, .question-grid-based.tiny-switches .switch {
+.switch.tiny {
   margin-top: 1em;
 }
 
@@ -8622,11 +7856,11 @@ input:checked + label > .switch-inactive {
 .switch.rotate .switch-active {
   top: 0;
 }
-.switch.rotate.small .switch-paddle, .question-grid-based.small-switches .rotate.switch .switch-paddle {
+.switch.rotate.small .switch-paddle {
   height: 3.5rem;
   width: 1.75rem;
 }
-.switch.rotate.tiny .switch-paddle, .question-grid-based.tiny-switches .rotate.switch .switch-paddle {
+.switch.rotate.tiny .switch-paddle {
   height: 3rem;
   width: 1.5rem;
 }
