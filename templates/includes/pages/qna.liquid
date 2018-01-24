@@ -1,4 +1,4 @@
-<div id="qna"  data-bind="page: {id:'qna', afterShow: listchange}">
+<div data-bind="page: {id:'qna', afterShow: listChange }">
 	{% include "../sections/qna/qna-intro" %}
 	{% include "../sections/qna/question" %}
 	{% include "../sections/qna/question-states" %}
@@ -16,8 +16,10 @@
           <h5>Override Warning</h5>
           <p>The use of the .question-group.fluid-align will override any sizing on the questions that might have been applied. </p>
         </div>
+{% comment %}
 	<h2>Grouping Repeating Questions</h2>
 	{% include "../sections/qna/form-repeater" %}
 	<h2>Special Inputs</h2>
 	{% include "../sections/qna/question-fileupload" %}
+{% endcomment %}
 </div>

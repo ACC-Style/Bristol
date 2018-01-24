@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6, p, td, th {
 }
 
 /**
-* Bristol 2.9
+* Bristol 3.0
 **/
 /**
 * Base Framework:
@@ -75,7 +75,490 @@ html {
   -webkit-font-smoothing: antialiased;
   -webkit-line-break: after-white-space;
   -webkit-locale: "en";
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/**
+* Style Markup:
+* `edge > outline` -coloring to show invisible containers in the styleguide.
+* 
+*   @example
+*	<style>
+*		.edge,.outline{ border:thin #ccc solid; position: relative; padding:16px 4px 4px;}
+*		.outline{ border:dashed thin red}
+*		.outline .outline{ border:dotted thin blue; display:inline-block;}
+*		.outline .outline .outline{ border:dotted thin green; display:inline-block;}
+*		.notation{font-size:10px; position: absolute; top: 0px;right: 4px;}
+*		.outline .notation{ color:red;}
+*		.outline .outline .notation{ color:blue;}
+*		.outline .outline .outline  .notation{ color:green;}
+*	</style>
+**/
+/**
+* Brand Level:
+* `var $brand-level` - this variable has the ablity to over take the standard acc coloring with a branded product color.  Standard values are:
+*  <ol start="0"><li>Pure ACC Color</li><li>Header Bar and Primaary Nav Selects</li><li>Lines, Selects, and Header Bar</li><li>Full Color OVer Take, Typography, Selects, Header Bar, and Lines</li></ol>
+* 
+*   @example
+*	<table class="table">
+*		<thead>
+*			<tr>
+*				<th>Variable</th>
+*				<th>Color</th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td>$brand-color</td>
+*				<td class="brand-color">&nbsp;</td>
+*			</tr>
+*			<tr>
+*				<td>$product-brand-color</td>
+*				<td class="product-brand-color">&nbsp;</td>
+*			</tr>
+*			<tr>
+*				<td>$primary-color</td>
+*				<td class="primary-color">&nbsp;</td>
+*			</tr>
+*			<tr>
+*				<td>$secondary-color</td>
+*				<td class="secondary-color">&nbsp;</td>
+*			</tr>
+*			<tr>
+*				<td>$tertiary-color</td>
+*				<td class="tertiary-color">&nbsp;</td>
+*			</tr>
+*		</tbody>
+*	</table>
+*/
+/**
+* Zurb Foundation - Kitchen Sink :
+* `kitchensink` - This is a visual representation of UI elements that come from the base framework from ZURB. 
+* This does not includes every single element from Foundation to view a full list go to the documentation. 
+* <a class="button tiny" href="http://foundation.zurb.com/docs" class="">Go to Zurb Foundation Documentation</a>
+* <h5 class="warning">Now Using Zurb Foundation Sites 6</h5>
+* 
+*   @example
+*	<h4 id="alert-boxes">Callout</h4>
+*	<div class="callout">
+*	    <h5>This is a callout.</h5>
+*	    <p>It has an easy to override visual style, and is appropriately subdued.</p>
+*	    <a href="#">It's dangerous to go alone, take this.</a>
+*	</div>
+*	<div class="callout secondary">
+*	    <h5>This is a secondary callout</h5>
+*	    <p>It has an easy to override visual style, and is appropriately subdued.</p>
+*	    <a href="#">It's dangerous to go alone, take this.</a>
+*	</div>
+*	<div class="callout warning">
+*	    <h5>This is a warning callout</h5>
+*	    <p>It has an easy to override visual style, and is appropriately subdued.</p>
+*	    <a href="#">It's dangerous to go alone, take this.</a>
+*	</div>
+*	<div class="callout error">
+*	    <h5>This is an error callout</h5>
+*	    <p>It has an easy to override visual style, and is appropriately subdued.</p>
+*	    <a href="#">It's dangerous to go alone, take this.</a>
+*	</div>
+*	<h4 id="buttons">Breadcrumbs</h4>
+*	<nav aria-label="You are here:" role="navigation">
+*	    <ul class="breadcrumbs">
+*	        <li><a href="#">Home</a></li>
+*	        <li><a href="#">Features</a></li>
+*	        <li class="disabled">Gene Splicing</li>
+*	        <li>
+*	            <span class="show-for-sr">Current: </span> Cloning
+*	        </li>
+*	    </ul>
+*	</nav>
+*	<h4 id="buttons">Buttons</h4>
+*	<div class="row">
+*	    <div class="section-padding">
+*	        <button type="button" class="success button">Save</button>
+*	        <button type="button" class="alert button">Delete</button>
+*	        <button type="button" class="alert button disabled">Disabled</button>
+*	    </div>
+*	    <div class="section-padding"><a class="tiny button" href="#">So Tiny</a>
+*	        <a class="small button" href="#">So Small</a>
+*	        <a class="large button" href="#">So Large</a></div>
+*	    <div class="button-group expanded">
+*	        <a class="button">One</a>
+*	        <a class="button">Two</a>
+*	        <a class="button">Three</a>
+*	    </div>
+*	</div>
+*	<h4>Grid</h4>
+*	<div class="row">
+*	    <div class="column small-12 medium-4 large-3 visible-grid">
+*	        <div class="panel">
+*	            <span class="show-for-small-only">The screen is small and the container div has a class of 'small-12'</span>
+*	            <span class="show-for-medium-only">The screen is medium and the container div has a class of 'medium-4'</span>
+*	            <span class="show-for-large-up">the screen is large and the container div has a class of 'large-3'</span>
+*	        </div>
+*	    </div>
+*	    <div class="column small-6 medium-4 large-3 visible-grid">
+*	        <div class="panel">
+*	            <span class="show-for-small-only">The screen is small and the container div has a class of 'small-6'</span>
+*	            <span class="show-for-medium-only">The screen is medium and the container div has a class of 'medium-4'</span>
+*	            <span class="show-for-large-up">the screen is large and the container div has a class of 'large-3'</span>
+*	        </div>
+*	    </div>
+*	    <div class="column small-6 medium-4 large-3 visible-grid">
+*	        <div class="panel">
+*	            <span class="show-for-small-only">The screen is small and the container div has a class of 'small-6'</span>
+*	            <span class="show-for-medium-only">The screen is medium and the container div has a class of 'medium-4'</span>
+*	            <span class="show-for-large-up">the screen is large and the container div has a class of 'large-3'</span>
+*	        </div>
+*	    </div>
+*	    <div class="column small-12 medium-12 large-3 visible-grid">
+*	        <div class="panel">
+*	            <span class="show-for-small-only">The screen is small and the container div has a class of 'small-12'</span>
+*	            <span class="show-for-medium-only">The screen is medium and the container div has a class of 'medium-12'</span>
+*	            <span class="show-for-large-up">the screen is large and the container div has a class of 'large-3'</span></div>
+*	    </div>
+*	</div>
+*	<div class="row">
+*	    <div class="column small-12 medium-7 large-4 visible-grid">
+*	        <div class="panel">
+*	            <span class="show-for-small-only">The screen is small and the container div has a class of 'small-12'</span>
+*	            <span class="show-for-medium-only">The screen is medium and the container div has a class of 'medium-7'</span>
+*	            <span class="show-for-large-up">the screen is large and the container div has a class of 'large-4'</span>
+*	        </div>
+*	    </div>
+*	    <div class="column small-12 medium-5 large-8 visible-grid">
+*	        <div class="panel">
+*	            <span class="show-for-small-only">The screen is small and the container div has a class of 'small-12'</span>
+*	            <span class="show-for-medium-only">The screen is medium and the container div has a class of 'medium-5'</span>
+*	            <span class="show-for-large-up">the screen is large and the container div has a class of 'large-8'</span>
+*	        </div>
+*	    </div>
+*	</div>
+**/
+.visible-grid > .panel {
+  color: black;
+  border: 1px solid #aaa;
+  background-color: #ccc;
+  padding: 1em;
+  margin-bottom: .5em;
+}
+
+/**
+* Icons from Font Awesome:
+* `fa-xxx` - fully css stylable font icons from Font Awesome. Please read documentation from the font awesome website. 
+* 
+*   @example
+*	<div id="web-application">
+*		<h2 class="page-header">Font Awesome</h2>
+*		<div class="row fontawesome-icon-list">
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/arrows"><i class="fa fa-arrows"></i>&nbsp; arrows</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/arrows-h"><i class="fa fa-arrows-h"></i>&nbsp; arrows-h</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/arrows-v"><i class="fa fa-arrows-v"></i>&nbsp; arrows-v</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/asterisk"><i class="fa fa-asterisk"></i>&nbsp; asterisk</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/at"><i class="fa fa-at"></i>&nbsp; at</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/bookmark"><i class="fa fa-bookmark"></i>&nbsp; bookmark</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/bookmark-o"><i class="fa fa-bookmark-o"></i>&nbsp; bookmark-o</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/briefcase"><i class="fa fa-briefcase"></i>&nbsp; briefcase</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/bug"><i class="fa fa-bug"></i>&nbsp; bug</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/building"><i class="fa fa-building"></i>&nbsp; building</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/calculator"><i class="fa fa-calculator"></i>&nbsp; calculator</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/calendar"><i class="fa fa-calendar"></i>&nbsp; calendar</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/calendar-o"><i class="fa fa-calendar-o"></i>&nbsp; calendar-o</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/camera"><i class="fa fa-camera"></i>&nbsp; camera</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/camera-retro"><i class="fa fa-camera-retro"></i>&nbsp; camera-retro</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-down"><i class="fa fa-caret-square-o-down"></i>&nbsp; caret-square-o-down</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-left"><i class="fa fa-caret-square-o-left"></i>&nbsp; caret-square-o-left</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-right"><i class="fa fa-caret-square-o-right"></i>&nbsp; caret-square-o-right</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/caret-square-o-up"><i class="fa fa-caret-square-o-up"></i>&nbsp; caret-square-o-up</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cart-arrow-down"><i class="fa fa-cart-arrow-down"></i>&nbsp; cart-arrow-down</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check"><i class="fa fa-check"></i>&nbsp; check</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check-circle"><i class="fa fa-check-circle"></i>&nbsp; check-circle</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check-circle-o"><i class="fa fa-check-circle-o"></i>&nbsp; check-circle-o</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check-square"><i class="fa fa-check-square"></i>&nbsp; check-square</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/check-square-o"><i class="fa fa-check-square-o"></i>&nbsp; check-square-o</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/circle"><i class="fa fa-circle"></i>&nbsp; circle</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/circle-o"><i class="fa fa-circle-o"></i>&nbsp; circle-o</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/circle-o-notch"><i class="fa fa-circle-o-notch"></i>&nbsp; circle-o-notch</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/circle-thin"><i class="fa fa-circle-thin"></i>&nbsp; circle-thin</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/clock-o"><i class="fa fa-clock-o"></i>&nbsp; clock-o</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/times"><i class="fa fa-close"></i>&nbsp; close <span class="text-muted">(alias)</span></a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cloud"><i class="fa fa-cloud"></i>&nbsp; cloud</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cloud-download"><i class="fa fa-cloud-download"></i>&nbsp; cloud-download</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cloud-upload"><i class="fa fa-cloud-upload"></i>&nbsp; cloud-upload</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/code"><i class="fa fa-code"></i>&nbsp; code</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/coffee"><i class="fa fa-coffee"></i>&nbsp; coffee</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cog"><i class="fa fa-cog"></i>&nbsp; cog</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/cogs"><i class="fa fa-cogs"></i>&nbsp; cogs</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/comment"><i class="fa fa-comment"></i>&nbsp; comment</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/comment-o"><i class="fa fa-comment-o"></i>&nbsp; comment-o</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/pencil-square-o"><i class="fa fa-edit"></i>&nbsp; edit <span class="text-muted">(alias)</span></a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/envelope"><i class="fa fa-envelope"></i>&nbsp; envelope</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/envelope-o"><i class="fa fa-envelope-o"></i>&nbsp; envelope-o</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/exclamation"><i class="fa fa-exclamation"></i>&nbsp; exclamation</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/exclamation-circle"><i class="fa fa-exclamation-circle"></i>&nbsp; exclamation-circle</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/exclamation-triangle"><i class="fa fa-exclamation-triangle"></i>&nbsp; exclamation-triangle</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/external-link"><i class="fa fa-external-link"></i>&nbsp; external-link</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/wifi"><i class="fa fa-wifi"></i>&nbsp; wifi</a></div>
+*			<div class="column small-6 medium-4 large-3"><a href="http://fortawesome.github.io/Font-Awesome/icon/wrench"><i class="fa fa-wrench"></i>&nbsp; wrench</a></div>
+*			<div class="column small-12"><a href="http://fortawesome.github.io/Font-Awesome/icons/">full list of icons</a></div>
+*		</div>
+*	</div>
+*/
+/**
+* JQUERY UI - Kitchen Sink:
+* `JQUERY UI 1.11.4` - This style is base for more complicated ui elements
+*	<nav class="nav-list small"><ul><li><a href="http://jqueryui.com/accordion/"><span class="text">Accordion</span> <i class="fa fa-holder"></i></a></li><li><a href="http://jqueryui.com/autocomplete/"><span class="text">Autocomplete</span> <i class="fa fa-holder"></i></a></li><li><a href="http://jqueryui.com/datepicker/"><span class="text">Datepicker</span> <i class="fa fa-holder"></i></a></li><li><a href="http://jqueryui.com/progressbar/"><span class="text">Progressbar</span> <i class="fa fa-holder"></i></a></li><li><a href="http://jqueryui.com/slider/"><span class="text">Slider</span> <i class="fa fa-holder"></i></a></li><li><a href="http://jqueryui.com/spinner/"><span class="text">Spinner </span><i class="fa fa-holder"></i></a></li></ul></nav>
+* 
+*   @example
+*	<h5>Accordion</h5>
+*	<div id="accordion">
+*	  <h3>Section 1</h3>
+*	  <div>
+*	    <p>
+*	    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+*	    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+*	    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+*	    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+*	    </p>
+*	  </div>
+*	  <h3>Section 2</h3>
+*	  <div>
+*	    <p>
+*	    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+*	    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+*	    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+*	    suscipit faucibus urna.
+*	    </p>
+*	  </div>
+*	  <h3>Section 3</h3>
+*	  <div>
+*	    <p>
+*	    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+*	    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+*	    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+*	    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+*	    </p>
+*	    <ul>
+*	      <li>List item one</li>
+*	      <li>List item two</li>
+*	      <li>List item three</li>
+*	    </ul>
+*	  </div>
+*	  <h3>Section 4</h3>
+*	  <div>
+*	    <p>
+*	    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+*	    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+*	    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+*	    mauris vel est.
+*	    </p>
+*	    <p>
+*	    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+*	    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+*	    inceptos himenaeos.
+*	    </p>
+*	  </div>
+*	</div>
+*	<div id="accordion2" class="ui-accordion-override">
+*	  <h3>Section 1</h3>
+*	  <div>
+*	    <p>
+*	    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+*	    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+*	    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+*	    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+*	    </p>
+*	  </div>
+*	  <h3>Section 2</h3>
+*	  <div>
+*	    <p>
+*	    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+*	    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+*	    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+*	    suscipit faucibus urna.
+*	    </p>
+*	  </div>
+*	  <h3>Section 3</h3>
+*	  <div>
+*	    <p>
+*	    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+*	    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+*	    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+*	    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+*	    </p>
+*	    <ul>
+*	      <li>List item one</li>
+*	      <li>List item two</li>
+*	      <li>List item three</li>
+*	    </ul>
+*	  </div>
+*	  <h3>Section 4</h3>
+*	  <div>
+*	    <p>
+*	    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+*	    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+*	    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+*	    mauris vel est.
+*	    </p>
+*	    <p>
+*	    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+*	    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+*	    inceptos himenaeos.
+*	    </p>
+*	  </div>
+*	</div>
+*	<h5>Auto Complete</h5>
+*	<div class="question required">
+*	  <div class="label-holder">
+*	    <label for="">
+*	      <span class="text">Auto Complete</span>
+*	      <span class="required-holder">
+*	        <i class="fa fa-holder"></i>
+*	      </span>
+*	    </label>
+*	  </div>
+*	  <div class="input-holder">
+*	    <div class="input-space column small-6 large-9">
+*	      <input type="text" id="tags">
+*	    </div>
+*	    <div class="column small-6 large-3">
+*	      <small class="value">Tags</small>
+*	    </div>
+*	  </div>
+*	   <div class="hint">Code tags like 'ASP'</div>
+*	</div>
+*	<h5>Slider</h5>
+*	<div class="question">
+*		<div class="label-holder">
+*	  		<label for="amount">Donation amount ($50 increments):</label>
+*	 	</div>
+*		<div class="input-holder">
+*	    <div class="input-space column small-9 large-10">
+*	      <div id="slider"></div>
+*	    </div>
+*	    <div class="input-space column small-3 large-2">
+*	      <input type="text" id="amount" readonly>
+*	    </div>			
+*		</div>
+*	</div>
+*	<h5>Datepicker</h5>
+*	<div class="question">
+*		<div class="label-holder">
+*	  		<label for="amount">
+*				 <span class="text">Date</span>
+*	  		</label>
+*	 	</div>
+*		<div class="input-holder">
+*			 <div class="input-space column small-6 large-9">
+*	     		<input type="text" id="datepicker">
+*	   		 </div>
+*		</div>
+*	</div>
+*	<h5>Spinner</h5>
+*	<p>
+*	  <label for="spinner">Select a value:</label>
+*	  <input id="spinner" name="value">
+*	</p>
+*	
+**/
+/**
+* Colors:
+* `ACC's Colors` - The ACC has a set of standard colors which include the +ACC Blue+, +Scrub Colors+, and +Intent Colors+. The colors that change depending the product are the +Scrub Colors+
+* 
+*   @example
+*	<h4>Framework Colors</h4>
+*	<table class="table">
+*		<thead>
+*			<tr>
+*				<th>Color Name</th>
+*				<th>Hex Color</th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td><h3>ACC Blue</h3></td>
+*				<td style="background-color:#00386b;"class="color-block">#00386b</td>
+*			</tr>
+*			<tr>
+*				<td><h3>Product Color</h3></td>
+*				<td style="background-color:#198dae;"class="color-block">#198dae</td>
+*			</tr>
+*			<tr>
+*				<td><h3>Primary Color</h3></td>
+*				<td  style="background-color:#198dae;"class="color-block">#198dae</td>
+*			</tr>
+*			<tr>
+*				<td><h3>Secondary Color</h3></td>
+*				<td style="background-color:#bfbfbf;"class="color-block">#bfbfbf</td>
+*			</tr>
+*			<tr>
+*				<td><h3>Tertiary Color</h3></td>
+*				<td style="background-color:#7d5891;"class="color-block">#7d5891</td>
+*			</tr>
+*			<tr>
+*				<td><h3>Success Color</h3></td>
+*				<td style="background-color:#14B057;"class="color-block">#14B057</td>
+*			</tr>
+*			<tr>
+*				<td><h3>Warning Color</h3></td>
+*				<td style="background-color:#E08514;"class="color-block">#E08514</td>
+*			</tr>
+*			<tr>
+*				<td><h3>Error Color</h3></td>
+*				<td style="background-color:#c32231;"class="color-block">#c32231</td>
+*			</tr>
+*			<tr>
+*				<td><h3>Navigation Color</h3></td>
+*				<td style="background-color:#018adb;"class="color-block">#018adb</td>
+*			</tr>
+*		</tbody>
+*	</table>
+*	<h4>Scrub Colors</h4>
+*	<table class="table">
+*		<thead>
+*			<tr>
+*				<th>Color Name</th>
+*				<th>Hex Color</th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td><h3>Scrub Teal</h3></td>
+*				<td style="background-color:#198dae;"class="color-block">#198dae</td>
+*			</tr>
+*			<tr>
+*				<td><h3>Scrub Green</h3></td>
+*				<td style="background-color:#1abc9c;"class="color-block">#1abc9c</td>
+*			</tr>
+*			<tr>
+*				<td><h3>Scrub Blue</h3></td>
+*				<td style="background-color:#018adb;"class="color-block">#018adb</td>
+*			</tr>
+*			<tr class="seperator info">
+*				<td colspan="2">Less Used Colors for Highlights and Pinstripes</td>
+*			</tr>
+*			<tr>
+*				<td><h3>Scrub Purple</h3></td>
+*				<td  style="background-color:#7d5891;"class="color-block">#7d5891</td>
+*			</tr>
+*			<tr>
+*				<td><h3>Scrub Magenta</h3></td>
+*				<td style="background-color:#b84299;"class="color-block">#b84299</td>
+*			</tr>
+*			<tr>
+*				<td><h3>Scrub Leaf Green</h3></td>
+*				<td style="background-color:#70cd40;"class="color-block">#70cd40</td>
+*			</tr>
+*		</tbody>
+*	</table>
+* 
+*/
+.color-block {
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 18px;
+  color: white;
 }
 
 /* FONT PATH
@@ -301,10 +784,6 @@ there are two to three needs for icons icons in containers, icons on icons and t
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
-.row {
-  max-width: none;
-}
-
 .h1, h1, .table th.h1, .h2, h2, .table th.h2, .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3, .h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .table th.h4, .section-nav .text, .h5, h5, .h6, h6 {
   clear: both;
 }
@@ -335,12 +814,12 @@ there are two to three needs for icons icons in containers, icons on icons and t
 .h1, h1, .table th.h1 {
   font-size: 1.625rem;
   line-height: 1.35;
-  margin-top: 1.15313rem;
-  margin-bottom: 1.15313rem;
+  margin-top: 1.153125rem;
+  margin-bottom: 1.153125rem;
 }
 .colored-paper .h1, .colored-paper h1, .colored-paper .table th.h1, .table .colored-paper th.h1, .callout .h1, .page-message .h1, .callout h1, .page-message h1, .callout .table th.h1, .table .callout th.h1, .page-message .table th.h1, .table .page-message th.h1 {
-  margin-top: 0.40312rem;
-  margin-bottom: 0.40312rem;
+  margin-top: 0.403125rem;
+  margin-bottom: 0.403125rem;
   line-height: 1.125;
 }
 @media only screen and (min-width: 767px) {
@@ -360,12 +839,12 @@ there are two to three needs for icons icons in containers, icons on icons and t
   .h1, h1, .table th.h1 {
     font-size: 2.25rem;
     line-height: 1.125;
-    margin-top: 0.98438rem;
-    margin-bottom: 0.98438rem;
+    margin-top: 0.984375rem;
+    margin-bottom: 0.984375rem;
   }
   .colored-paper .h1, .colored-paper h1, .colored-paper .table th.h1, .table .colored-paper th.h1, .callout .h1, .page-message .h1, .callout h1, .page-message h1, .callout .table th.h1, .table .callout th.h1, .page-message .table th.h1, .table .page-message th.h1 {
-    margin-top: 0.23438rem;
-    margin-bottom: 0.23438rem;
+    margin-top: 0.234375rem;
+    margin-bottom: 0.234375rem;
     line-height: 1.125;
   }
 }
@@ -373,24 +852,24 @@ there are two to three needs for icons icons in containers, icons on icons and t
 .h2, h2, .table th.h2 {
   font-size: 1.4375rem;
   line-height: 1.35;
-  margin-top: 0.52969rem;
-  margin-bottom: 0.52969rem;
+  margin-top: 0.5296875rem;
+  margin-bottom: 0.5296875rem;
 }
 .colored-paper .h2, .colored-paper h2, .colored-paper .table th.h2, .table .colored-paper th.h2, .callout .h2, .page-message .h2, .callout h2, .page-message h2, .callout .table th.h2, .table .callout th.h2, .page-message .table th.h2, .table .page-message th.h2 {
-  margin-top: 0.52969rem;
-  margin-bottom: 0.52969rem;
+  margin-top: 0.5296875rem;
+  margin-bottom: 0.5296875rem;
   line-height: 1.125;
 }
 @media only screen and (min-width: 767px) {
   .h2, h2, .table th.h2 {
     font-size: 1.625rem;
     line-height: 1.35;
-    margin-top: 1.15313rem;
-    margin-bottom: 1.15313rem;
+    margin-top: 1.153125rem;
+    margin-bottom: 1.153125rem;
   }
   .colored-paper .h2, .colored-paper h2, .colored-paper .table th.h2, .table .colored-paper th.h2, .callout .h2, .page-message .h2, .callout h2, .page-message h2, .callout .table th.h2, .table .callout th.h2, .page-message .table th.h2, .table .page-message th.h2 {
-    margin-top: 0.40312rem;
-    margin-bottom: 0.40312rem;
+    margin-top: 0.403125rem;
+    margin-bottom: 0.403125rem;
     line-height: 1.125;
   }
 }
@@ -398,12 +877,12 @@ there are two to three needs for icons icons in containers, icons on icons and t
   .h2, h2, .table th.h2 {
     font-size: 1.8125rem;
     line-height: 1.125;
-    margin-top: 1.23047rem;
-    margin-bottom: 1.23047rem;
+    margin-top: 1.23046875rem;
+    margin-bottom: 1.23046875rem;
   }
   .colored-paper .h2, .colored-paper h2, .colored-paper .table th.h2, .table .colored-paper th.h2, .callout .h2, .page-message .h2, .callout h2, .page-message h2, .callout .table th.h2, .table .callout th.h2, .page-message .table th.h2, .table .page-message th.h2 {
-    margin-top: 0.48047rem;
-    margin-bottom: 0.48047rem;
+    margin-top: 0.48046875rem;
+    margin-bottom: 0.48046875rem;
     line-height: 1.125;
   }
 }
@@ -423,12 +902,12 @@ there are two to three needs for icons icons in containers, icons on icons and t
   .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3 {
     font-size: 1.4375rem;
     line-height: 1.35;
-    margin-top: 0.52969rem;
-    margin-bottom: 0.52969rem;
+    margin-top: 0.5296875rem;
+    margin-bottom: 0.5296875rem;
   }
   .colored-paper .h3, .colored-paper h3, .colored-paper h1 + .nav-list li, h1 + .nav-list .colored-paper li, .colored-paper h1 + .panel-selector li, h1 + .panel-selector .colored-paper li, .colored-paper .large.nav-list li, .large.nav-list .colored-paper li, .colored-paper .large.panel-selector li, .large.panel-selector .colored-paper li, .colored-paper .table th.h3, .table .colored-paper th.h3, .callout .h3, .page-message .h3, .callout h3, .page-message h3, .callout h1 + .nav-list li, h1 + .nav-list .callout li, .page-message h1 + .nav-list li, h1 + .nav-list .page-message li, .callout h1 + .panel-selector li, h1 + .panel-selector .callout li, .page-message h1 + .panel-selector li, h1 + .panel-selector .page-message li, .callout .large.nav-list li, .large.nav-list .callout li, .page-message .large.nav-list li, .large.nav-list .page-message li, .callout .large.panel-selector li, .large.panel-selector .callout li, .page-message .large.panel-selector li, .large.panel-selector .page-message li, .callout .table th.h3, .table .callout th.h3, .page-message .table th.h3, .table .page-message th.h3 {
-    margin-top: 0.52969rem;
-    margin-bottom: 0.52969rem;
+    margin-top: 0.5296875rem;
+    margin-bottom: 0.5296875rem;
     line-height: 1.125;
   }
 }
@@ -436,12 +915,12 @@ there are two to three needs for icons icons in containers, icons on icons and t
   .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3 {
     font-size: 1.625rem;
     line-height: 1.35;
-    margin-top: 1.15313rem;
-    margin-bottom: 1.15313rem;
+    margin-top: 1.153125rem;
+    margin-bottom: 1.153125rem;
   }
   .colored-paper .h3, .colored-paper h3, .colored-paper h1 + .nav-list li, h1 + .nav-list .colored-paper li, .colored-paper h1 + .panel-selector li, h1 + .panel-selector .colored-paper li, .colored-paper .large.nav-list li, .large.nav-list .colored-paper li, .colored-paper .large.panel-selector li, .large.panel-selector .colored-paper li, .colored-paper .table th.h3, .table .colored-paper th.h3, .callout .h3, .page-message .h3, .callout h3, .page-message h3, .callout h1 + .nav-list li, h1 + .nav-list .callout li, .page-message h1 + .nav-list li, h1 + .nav-list .page-message li, .callout h1 + .panel-selector li, h1 + .panel-selector .callout li, .page-message h1 + .panel-selector li, h1 + .panel-selector .page-message li, .callout .large.nav-list li, .large.nav-list .callout li, .page-message .large.nav-list li, .large.nav-list .page-message li, .callout .large.panel-selector li, .large.panel-selector .callout li, .page-message .large.panel-selector li, .large.panel-selector .page-message li, .callout .table th.h3, .table .callout th.h3, .page-message .table th.h3, .table .page-message th.h3 {
-    margin-top: 0.40312rem;
-    margin-bottom: 0.40312rem;
+    margin-top: 0.403125rem;
+    margin-bottom: 0.403125rem;
     line-height: 1.125;
   }
 }
@@ -631,12 +1110,12 @@ ul li, ol li {
 
 /**
 * Fonts:
-* `OpenSans & Roboto Slab` - OpenSans is the major font family used in all digital text accross properties at the ACC. Roboto Slab and Roboto are used in highlighted cases like labels, Primary Navs, and some Header Tags.
+* `Muli & Roboto Slab` - Muli is the base text font family used in all digital text accross properties at the ACC. Roboto Slab and Roboto are used in highlighted cases like labels, Primary Navs, and some Header Tags.
 *
 *   @example
-*	<h2 class="group-divide-bottom font--name small-12">OpenSans<span class="sub-line">font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif;</span></h2>
+*	<h2 class="group-divide-bottom font--name small-12">Muli<span class="sub-line">font-family: 'Muli', 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif;</span></h2>
 *	<div class="font row font-display">
-*	<div class="ms12 column medium-4 small-6 large-3 font--dropcase_2x">Os</div>
+*	<div class="ms12 column medium-4 small-6 large-3 font--dropcase_2x">Mu</div>
 *	<div class="column large-9 medium-8 small-6 font--example">
 *   <h3>Display Fonts & Headers</h3>
 *	<div class="font--lowercase ms6">a b c d e f g h i j k l m n o p q r s t u v w x y z</div>
@@ -651,7 +1130,7 @@ ul li, ol li {
 *	<div class="font row font-slab">
 *	<div class="ms12 column medium-4 small-6 large-3 font--dropcase_2x">Rb</div>
 *	<div class="column large-9 medium-8 small-6 font--example">
-*   <h3>Primary Navigation, Headers & Labels</h3>
+*   <h3 class="font-bold-slab">Primary Navigation, Headers & Labels</h3>
 *	<div class="font--lowercase ms4">a b c d e f g h i j k l m n o p q r s t u v w x y z</div>
 *	<div class="font--uppercase ms4">a b c d e f g h i j k l m n o p q r s t u v w x y z</div>
 *	<div class="font--numbers ms4">0 1 2 3 4 5 6 7 8 9</div>
@@ -660,25 +1139,12 @@ ul li, ol li {
 *	<div class="font--numbers ms2">0 1 2 3 4 5 6 7 8 9</div>
 *	</div>
 *	</div>
-*	<h2 class="group-divide-bottom font--name small-12">Open Sans<span class="sub-line">font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif;</span></h2>
-*	<div class="font row font">
-*	<div class="ms12 column medium-4 small-6 large-3 font--dropcase_2x">Os</div>
-*	<div class="column large-9 medium-8 small-6 font--example">
-*   <h3>Body Copy, Lists & Tables</h3>
-*	<div class="font--lowercase ms1">a b c d e f g h i j k l m n o p q r s t u v w x y z</div>
-*	<div class="font--uppercase ms1">a b c d e f g h i j k l m n o p q r s t u v w x y z</div>
-*	<div class="font--numbers ms1">0 1 2 3 4 5 6 7 8 9</div>
-*	<div class="font--lowercase ms">a b c d e f g h i j k l m n o p q r s t u v w x y z</div>
-*	<div class="font--uppercase ms">a b c d e f g h i j k l m n o p q r s t u v w x y z</div>
-*	<div class="font--numbers ms">0 1 2 3 4 5 6 7 8 9</div>
-*	</div>
-*	</div>
 */
 .font {
   color: #333333;
 }
 .font .font--example {
-  background-image: url(http://basehold.it/i/21);
+  background-image: url(http://basehold.it/i/24);
 }
 .font.font-display {
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -717,12 +1183,12 @@ ul li, ol li {
 .font .ms12 {
   font-size: 3.25rem;
   line-height: 1.125;
-  margin-top: 1.17188rem;
-  margin-bottom: 1.17188rem;
+  margin-top: 1.171875rem;
+  margin-bottom: 1.171875rem;
 }
 .colored-paper .font .ms12, .callout .font .ms12, .page-message .font .ms12 {
-  margin-top: 0.42188rem;
-  margin-bottom: 0.42188rem;
+  margin-top: 0.421875rem;
+  margin-bottom: 0.421875rem;
   line-height: 1.125;
 }
 .font .ms6 {
@@ -739,12 +1205,12 @@ ul li, ol li {
 .font .ms4 {
   font-size: 1.625rem;
   line-height: 1.35;
-  margin-top: 1.15313rem;
-  margin-bottom: 1.15313rem;
+  margin-top: 1.153125rem;
+  margin-bottom: 1.153125rem;
 }
 .colored-paper .font .ms4, .callout .font .ms4, .page-message .font .ms4 {
-  margin-top: 0.40312rem;
-  margin-bottom: 0.40312rem;
+  margin-top: 0.403125rem;
+  margin-bottom: 0.403125rem;
   line-height: 1.125;
 }
 .font .ms2 {
@@ -905,7 +1371,7 @@ ul li, ol li {
 *	</div>
 *	<div class="texture column large-4">
 *		<div class="content-padding">
-*			<h4 class="texture--name">striped Ink</h4>
+*			<h4 class="texture--name">Striped Ink</h4>
 *			<div class="texture--thumb">
 *				<div class="texture--holder" style="background-image:url(Assets/img/empty_stripe@2x.png);background-color:#198dae"></div>
 *			</div>
@@ -918,7 +1384,7 @@ ul li, ol li {
 *	</div><div class="row">
 *        <div class="texture column large-4">
 *          <div class="content-padding">
-*            <h4 class="texture--name">striped Ink <small>Alt Grey</small></h4>
+*            <h4 class="texture--name">Striped Ink <small>Alt Grey</small></h4>
 *            <div class="texture--thumb">
 *              <div class="texture--holder third-width" style="background-image:url(Assets/img/empty_stripe_grey@2x.png);background-color:#dd5aa8;"></div>
 *              <div class="texture--holder third-width" style="background-image:url(Assets/img/empty_stripe@2x.png);background-color:#dd5aa8;"></div>
@@ -938,7 +1404,7 @@ ul li, ol li {
 *        </div>
 *        <div class="texture column large-4">
 *          <div class="content-padding">
-*            <h4 class="texture--name">striped Ink <small>Alt Blue</small></h4>
+*            <h4 class="texture--name">Striped Ink <small>Alt Blue</small></h4>
 *            <div class="texture--thumb">
 *              <div class="texture--holder third-width" style="background-image:url(Assets/img/empty_stripe_blue@2x.png);background-color:#dd5aa8;"></div>
 *              <div class="texture--holder third-width" style="background-image:url(Assets/img/empty_stripe@2x.png);background-color:#dd5aa8;"></div>
@@ -958,7 +1424,7 @@ ul li, ol li {
 *        </div>
 *   	<div class="texture column large-4 end">
 *   		<div class="content-padding">
-*   			<h4 class="texture--name">striped Ink <small>Tight</small></h4>
+*   			<h4 class="texture--name">Striped Ink <small>Tight</small></h4>
 *   			<div class="texture--thumb">
 *   				<div class="texture--holder" style="background-image:url(Assets/img/empty_stripe.png);background-color:#198dae"></div>
 *   			</div>
@@ -1093,15 +1559,13 @@ ul li, ol li {
 
 /**
 * Buttons:
-* `.nobutton .button or .button.disabled` - buttons are a touchable link or action.  There are a lot of features beyond the base version of button. Please look at all the features on <a href="http://foundation.zurb.com/sites/docs/button.html" class="button">Zurb Foundation</a>.  
+* `.nobutton .button or .button.disabled` - buttons are a touchable link or action.  There are a lot of features beyond the base version of button. Please look at all the features on <a href="http://foundation.zurb.com/sites/docs/button.html" class="link">Zurb Foundation</a>.  
 * 
 *   @example
 *   <div class="row">
-*   <a class="button">Button/a>
-*   <a class="nobutton">No Button</a>
-*   <a class="button secondary">Secondary</a>
-*   <a class="button navigation">navigation button&nbsp;<i class="fa fa-arrow-right"></i></a>
-*   <a class="button disabled">disabled button</a>
+*   <a class="button">Button</a>
+*   <a class="button + secondary">Secondary</a>
+*   <a class="button disabled">button + disabled</a>
 *   </div>
 */
 /**
@@ -1110,10 +1574,10 @@ ul li, ol li {
 * 
 *   @example
 *   <div class="row">
-*   <button class="success button"><i class="fa fa-floppy"></i>&nbsp;Save</button>
-*   <button class="error button">error + button</button>
-*   <button class="error button disabled">error + button + disabled</button>
-*   <button class="secondary button hollow">secondary + button + hollow</button>
+*   <button class="success button"><i class="fa fa-holder"></i>&nbsp;button + success</button>
+*   <button class="button hollow">button + hollow</button>
+*	<a class="button navigation">button + navigation&nbsp;<i class="fa fa-arrow-right"></i></a>
+*   <a class="nobutton">nobutton</a>
 *   </div>
 */
 .button {
@@ -1156,19 +1620,7 @@ ul li, ol li {
   color: #FFF;
 }
 
-button[disabled], button[disabled].success, button[disabled].alert, button[disabled].secondary,
-button:disabled,
-button.success:disabled,
-button.alert:disabled,
-button.secondary:disabled,
-.button.disabled,
-.button.disabled.success,
-.button.disabled.alert,
-.button.disabled.secondary,
-.button.disabled:hover,
-.button.disabled.success:hover,
-.button.disabled.alert:hover,
-.button.disabled.secondary:hover {
+button[disabled], button[disabled].success, button[disabled].alert, button[disabled].secondary, button:disabled, button.success:disabled, button.alert:disabled, button.secondary:disabled, .button.disabled, .button.disabled.success, .button.disabled.alert, .button.disabled.secondary, .button.disabled:hover, .button.disabled.success:hover, .button.disabled.alert:hover, .button.disabled.secondary:hover {
   background-color: #b3b3b3;
   background-image: url(../img/empty_diamond.png);
   color: gray !important;
@@ -1177,31 +1629,31 @@ button.secondary:disabled,
   opacity: .6;
 }
 
-.input-space button[disabled], .switch-input-space button[disabled], .input-space button[disabled].success, .switch-input-space button[disabled].success, .input-space button[disabled].alert, .switch-input-space button[disabled].alert, .input-space button[disabled].secondary, .switch-input-space button[disabled].secondary, .input-space
-button:disabled, .switch-input-space
-button:disabled, .input-space
-button:disabled.success, .switch-input-space
-button:disabled.success, .input-space
-button:disabled.alert, .switch-input-space
-button:disabled.alert, .input-space
-button:disabled.secondary, .switch-input-space
-button:disabled.secondary, .input-space
-.button.disabled, .switch-input-space
-.button.disabled, .input-space
-.button.disabled.success, .switch-input-space
-.button.disabled.success, .input-space
-.button.disabled.alert, .switch-input-space
-.button.disabled.alert, .input-space
-.button.disabled.secondary, .switch-input-space
-.button.disabled.secondary, .input-space
-.button.disabled:hover, .switch-input-space
-.button.disabled:hover, .input-space
-.button.disabled:hover.success, .switch-input-space
-.button.disabled:hover.success, .input-space
-.button.disabled:hover.alert, .switch-input-space
-.button.disabled:hover.alert, .input-space
-.button.disabled:hover.secondary, .switch-input-space
-.button.disabled:hover.secondary {
+.input-space button[disabled], .switch-input-space button[disabled], .input-space button[disabled].success, .switch-input-space button[disabled].success, .input-space button[disabled].alert, .switch-input-space button[disabled].alert, .input-space button[disabled].secondary, .switch-input-space button[disabled].secondary,
+.input-space button:disabled,
+.switch-input-space button:disabled,
+.input-space button:disabled.success,
+.switch-input-space button:disabled.success,
+.input-space button:disabled.alert,
+.switch-input-space button:disabled.alert,
+.input-space button:disabled.secondary,
+.switch-input-space button:disabled.secondary,
+.input-space .button.disabled,
+.switch-input-space .button.disabled,
+.input-space .button.disabled.success,
+.switch-input-space .button.disabled.success,
+.input-space .button.disabled.alert,
+.switch-input-space .button.disabled.alert,
+.input-space .button.disabled.secondary,
+.switch-input-space .button.disabled.secondary,
+.input-space .button.disabled:hover,
+.switch-input-space .button.disabled:hover,
+.input-space .button.disabled:hover.success,
+.switch-input-space .button.disabled:hover.success,
+.input-space .button.disabled:hover.alert,
+.switch-input-space .button.disabled:hover.alert,
+.input-space .button.disabled:hover.secondary,
+.switch-input-space .button.disabled:hover.secondary {
   padding-top: 7px;
   padding-bottom: 7px;
 }
@@ -1453,29 +1905,21 @@ button:disabled.secondary, .input-space
 *	</ul></nav>
 */
 .tabs.tabs-primary {
-  border: 0;
-  background: none;
-  margin: 0;
-  flex-wrap: wrap;
-  width: 100%;
-  clear: both;
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex !important;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: stretch;
   align-content: stretch;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  margin-top: 0.09375rem;
-  margin-bottom: 0.09375rem;
-}
-.colored-paper .tabs.tabs-primary, .callout .tabs.tabs-primary, .page-message .tabs.tabs-primary {
-  margin-top: 0.09375rem;
-  margin-bottom: 0.09375rem;
-  line-height: 1.35;
+  font-size: 14px;
+  border: 0;
+  background: none;
+  margin: 0;
+  width: 100%;
+  clear: both;
 }
 .tabs.tabs-primary li {
   -webkit-box-flex: 1 1 auto;
@@ -1499,29 +1943,13 @@ button:disabled.secondary, .input-space
 }
 @media only screen and (min-width: 320px) {
   .tabs.tabs-primary {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
-  }
-  .colored-paper .tabs.tabs-primary, .callout .tabs.tabs-primary, .page-message .tabs.tabs-primary {
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
-    line-height: 1.35;
+    font-size: 16px;
   }
 }
 @media only screen and (min-width: 767px) {
   .tabs.tabs-primary {
     display: block;
-    font-size: 1.125rem;
-    line-height: 1.5;
-    margin-top: 0.65625rem;
-    margin-bottom: 0.65625rem;
-  }
-  .colored-paper .tabs.tabs-primary, .callout .tabs.tabs-primary, .page-message .tabs.tabs-primary {
-    margin-top: 0.65625rem;
-    margin-bottom: 0.65625rem;
-    line-height: 1.35;
+    font-size: 18px;
   }
   .tabs.tabs-primary li a {
     padding: 1em .5em;
@@ -1529,28 +1957,12 @@ button:disabled.secondary, .input-space
 }
 @media only screen and (min-width: 1024px) {
   .tabs.tabs-primary {
-    font-size: 1.25rem;
-    line-height: 1.5;
-    margin-top: 0.5625rem;
-    margin-bottom: 0.5625rem;
-  }
-  .colored-paper .tabs.tabs-primary, .callout .tabs.tabs-primary, .page-message .tabs.tabs-primary {
-    margin-top: 0.5625rem;
-    margin-bottom: 0.5625rem;
-    line-height: 1.35;
+    font-size: 20px;
   }
 }
 @media only screen and (min-width: 1200px) {
   .tabs.tabs-primary {
-    font-size: 1.4375rem;
-    line-height: 1.35;
-    margin-top: 0.52969rem;
-    margin-bottom: 0.52969rem;
-  }
-  .colored-paper .tabs.tabs-primary, .callout .tabs.tabs-primary, .page-message .tabs.tabs-primary {
-    margin-top: 0.52969rem;
-    margin-bottom: 0.52969rem;
-    line-height: 1.125;
+    font-size: 23px;
   }
 }
 .tabs.tabs-primary:after {
@@ -1570,6 +1982,9 @@ button:disabled.secondary, .input-space
   margin: 0;
   display: block;
   float: left;
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: .75px;
 }
 .tabs.tabs-primary li a {
   white-space: normal;
@@ -1653,15 +2068,7 @@ button:disabled.secondary, .input-space
   color: #fff;
 }
 .tabs.tabs-primary.reverse {
-  font-size: 0.875rem;
-  line-height: 1.5;
-  margin-top: 0.09375rem;
-  margin-bottom: 0.09375rem;
-}
-.colored-paper .tabs.tabs-primary.reverse, .callout .tabs.tabs-primary.reverse, .page-message .tabs.tabs-primary.reverse {
-  margin-top: 0.09375rem;
-  margin-bottom: 0.09375rem;
-  line-height: 1.35;
+  font-size: 14px;
 }
 .tabs.tabs-primary.reverse li {
   border-top-width: .45em;
@@ -1686,16 +2093,7 @@ button:disabled.secondary, .input-space
 }
 @media only screen and (min-width: 320px) {
   .tabs.tabs-primary.reverse {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
-    margin: 0;
-  }
-  .colored-paper .tabs.tabs-primary.reverse, .callout .tabs.tabs-primary.reverse, .page-message .tabs.tabs-primary.reverse {
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
-    line-height: 1.35;
+    font-size: 16px;
   }
   .tabs.tabs-primary.reverse li.selected a:after {
     border-top: 8px solid #00386b;
@@ -1703,15 +2101,7 @@ button:disabled.secondary, .input-space
 }
 @media only screen and (min-width: 767px) {
   .tabs.tabs-primary.reverse {
-    font-size: 1.125rem;
-    line-height: 1.5;
-    margin-top: 0.65625rem;
-    margin-bottom: 0.65625rem;
-  }
-  .colored-paper .tabs.tabs-primary.reverse, .callout .tabs.tabs-primary.reverse, .page-message .tabs.tabs-primary.reverse {
-    margin-top: 0.65625rem;
-    margin-bottom: 0.65625rem;
-    line-height: 1.35;
+    font-size: 18px;
   }
 }
 
@@ -1777,52 +2167,52 @@ button:disabled.secondary, .input-space
   border-color: #b9b9b9;
 }
 
-.with-group-sections.error .overlap, .paper-page.error .overlap {
+.paper-page.error .overlap {
   border-bottom-color: #c32231;
 }
-.with-group-sections.error .overlap li.selected, .with-group-sections.error .overlap li.is-active, .with-group-sections.error .overlap .tabs-title.selected, .with-group-sections.error .overlap .tabs-title.is-active, .paper-page.error .overlap li.selected, .paper-page.error .overlap li.is-active, .paper-page.error .overlap .tabs-title.selected, .paper-page.error .overlap .tabs-title.is-active {
+.paper-page.error .overlap li.selected, .paper-page.error .overlap li.is-active, .paper-page.error .overlap .tabs-title.selected, .paper-page.error .overlap .tabs-title.is-active {
   background-color: #c32231;
   border-color: #c32231;
 }
-.with-group-sections.warning .overlap, .paper-page.warning .overlap {
+.paper-page.warning .overlap {
   border-bottom-color: #E08514;
 }
-.with-group-sections.warning .overlap li.selected, .with-group-sections.warning .overlap li.is-active, .with-group-sections.warning .overlap .tabs-title.selected, .with-group-sections.warning .overlap .tabs-title.is-active, .paper-page.warning .overlap li.selected, .paper-page.warning .overlap li.is-active, .paper-page.warning .overlap .tabs-title.selected, .paper-page.warning .overlap .tabs-title.is-active {
+.paper-page.warning .overlap li.selected, .paper-page.warning .overlap li.is-active, .paper-page.warning .overlap .tabs-title.selected, .paper-page.warning .overlap .tabs-title.is-active {
   background-color: #E08514;
   border-color: #E08514;
 }
-.with-group-sections.success .overlap, .paper-page.success .overlap {
+.paper-page.success .overlap {
   border-bottom-color: #14B057;
 }
-.with-group-sections.success .overlap li.selected, .with-group-sections.success .overlap li.is-active, .with-group-sections.success .overlap .tabs-title.selected, .with-group-sections.success .overlap .tabs-title.is-active, .paper-page.success .overlap li.selected, .paper-page.success .overlap li.is-active, .paper-page.success .overlap .tabs-title.selected, .paper-page.success .overlap .tabs-title.is-active {
+.paper-page.success .overlap li.selected, .paper-page.success .overlap li.is-active, .paper-page.success .overlap .tabs-title.selected, .paper-page.success .overlap .tabs-title.is-active {
   background-color: #14B057;
   border-color: #14B057;
 }
-.with-group-sections.info .overlap, .paper-page.info .overlap {
+.paper-page.info .overlap {
   border-bottom-color: #a6a6a6;
 }
-.with-group-sections.info .overlap li.selected, .with-group-sections.info .overlap li.is-active, .with-group-sections.info .overlap .tabs-title.selected, .with-group-sections.info .overlap .tabs-title.is-active, .paper-page.info .overlap li.selected, .paper-page.info .overlap li.is-active, .paper-page.info .overlap .tabs-title.selected, .paper-page.info .overlap .tabs-title.is-active {
+.paper-page.info .overlap li.selected, .paper-page.info .overlap li.is-active, .paper-page.info .overlap .tabs-title.selected, .paper-page.info .overlap .tabs-title.is-active {
   background-color: #a6a6a6;
   border-color: #a6a6a6;
 }
-.with-group-sections.highlighted .overlap, .paper-page.highlighted .overlap {
+.paper-page.highlighted .overlap {
   border-bottom-color: #22AFD7;
 }
-.with-group-sections.highlighted .overlap li.selected, .with-group-sections.highlighted .overlap li.is-active, .with-group-sections.highlighted .overlap .tabs-title.selected, .with-group-sections.highlighted .overlap .tabs-title.is-active, .paper-page.highlighted .overlap li.selected, .paper-page.highlighted .overlap li.is-active, .paper-page.highlighted .overlap .tabs-title.selected, .paper-page.highlighted .overlap .tabs-title.is-active {
+.paper-page.highlighted .overlap li.selected, .paper-page.highlighted .overlap li.is-active, .paper-page.highlighted .overlap .tabs-title.selected, .paper-page.highlighted .overlap .tabs-title.is-active {
   background-color: #22AFD7;
   border-color: #22AFD7;
 }
-.with-group-sections.locked .overlap, .paper-page.locked .overlap {
+.paper-page.locked .overlap {
   border-bottom-color: #bfbfbf;
 }
-.with-group-sections.locked .overlap li.selected, .with-group-sections.locked .overlap li.is-active, .with-group-sections.locked .overlap .tabs-title.selected, .with-group-sections.locked .overlap .tabs-title.is-active, .paper-page.locked .overlap li.selected, .paper-page.locked .overlap li.is-active, .paper-page.locked .overlap .tabs-title.selected, .paper-page.locked .overlap .tabs-title.is-active {
+.paper-page.locked .overlap li.selected, .paper-page.locked .overlap li.is-active, .paper-page.locked .overlap .tabs-title.selected, .paper-page.locked .overlap .tabs-title.is-active {
   background-color: #bfbfbf;
   border-color: #bfbfbf;
 }
-.with-group-sections.disabled .overlap, .paper-page.disabled .overlap {
+.paper-page.disabled .overlap {
   border-bottom-color: #cccccc;
 }
-.with-group-sections.disabled .overlap li.selected, .with-group-sections.disabled .overlap li.is-active, .with-group-sections.disabled .overlap .tabs-title.selected, .with-group-sections.disabled .overlap .tabs-title.is-active, .paper-page.disabled .overlap li.selected, .paper-page.disabled .overlap li.is-active, .paper-page.disabled .overlap .tabs-title.selected, .paper-page.disabled .overlap .tabs-title.is-active {
+.paper-page.disabled .overlap li.selected, .paper-page.disabled .overlap li.is-active, .paper-page.disabled .overlap .tabs-title.selected, .paper-page.disabled .overlap .tabs-title.is-active {
   background-color: #cccccc;
   border-color: #cccccc;
 }
@@ -2149,24 +2539,41 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 *	</ul>
 *	</nav>
 */
+.page {
+  position: relative;
+}
+
 .section-nav {
   width: 100%;
-  display: block;
+  display: flex;
   position: relative;
   border: 0px solid #b3b3b3;
+  height: 37.5px;
 }
-.with-group-sections .section-nav, .paper-page .section-nav {
+.paper-page .section-nav {
   margin-left: 0;
   margin-right: 0;
+}
+.section-nav a {
+  flex: 1 0 auto;
+  width: auto;
+  display: flex;
+}
+.section-nav a.right {
+  flex-direction: row-reverse;
+}
+.section-nav a.right {
+  flex-direction: row;
 }
 .section-nav .text {
   padding-top: 6.25px;
   padding-bottom: 6.25px;
-  -webkit-transition: padding 1.5s;
-  /* Safari */
-  transition: padding 1.5s;
+  flex-wrap: nowrap;
+  flex: 1 0 auto;
 }
 .section-nav .circle {
+  flex-wrap: nowrap;
+  flex: 0 0 50px;
   position: absolute;
   -webkit-transition: all 1.5s;
   /* Safari */
@@ -2174,10 +2581,10 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   overflow: hidden;
   width: 50px;
   height: 50px;
-  background: #25b6e0;
   -moz-border-radius: 25px;
   -webkit-border-radius: 25px;
   border-radius: 25px;
+  padding: 0;
   border: 4px solid #fff;
   -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.61);
   -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.61);
@@ -2186,8 +2593,7 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 .section-nav .circle i {
   font-size: 25px;
   line-height: 1em;
-  margin: 10.5px;
-  color: #fff;
+  margin: 0;
   -webkit-transition: all 1.5s;
   /* Safari */
   transition: all 1.5s;
@@ -2196,11 +2602,17 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   -webkit-transform: translate(0px, 0);
   /* Safari */
   transform: translate(0px, 0);
+  color: #fff;
+  vertical-align: middle;
+  display: table-cell;
+  height: 42px;
+  width: 42px;
+  text-align: center;
 }
 .section-nav .circle i:before {
-  vertical-align: bottom;
+  vertical-align: middle;
 }
-.section-nav.forward {
+.section-nav.bottom {
   border-top-width: 1px;
   background: url("../img/billie-holiday.png") repeat top right, url("../img/top-shade.png") repeat-x top right;
   margin-top: 37.5px;
@@ -2209,45 +2621,53 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   bottom: 0;
   right: 0;
   left: 0;
+  top: auto;
 }
-.section-nav.forward i.fa-holder:before {
-  content: "";
+.section-nav.bottom .circle {
+  bottom: 8.3333333333px;
 }
-.section-nav.forward else > i.fa-holder:before, .section-nav.forward else i.fa-holder:before {
-  content: "";
-}
-.section-nav.forward .circle {
-  right: 12.5px;
-  bottom: 8.33333px;
-}
-.section-nav.forward .circle i {
-  margin: 10.5px 13px;
-}
-.section-nav.forward .text {
-  padding-right: 75px;
-  text-align: right;
-}
-.section-nav.back {
+.section-nav.top {
   background: url("../img/billie-holiday.png") repeat top right, url("../img/bottom-shade.png") repeat-x bottom right;
   margin-bottom: 37.5px;
   border-bottom-width: 2px;
+  bottom: auto;
+  right: 0;
+  left: 0;
+  top: 0;
 }
-.section-nav.back i.fa-holder:before {
+.section-nav.top .circle {
+  top: 8.3333333333px;
+}
+.section-nav .right .navigation i.fa-holder:before {
+  content: "";
+}
+.section-nav .right .navigation else > i.fa-holder:before, .section-nav .right .navigation else i.fa-holder:before {
+  content: "";
+}
+.section-nav .right .circle {
+  right: 12.5px;
+}
+.section-nav .right .circle i {
+  margin: 10.5px 0;
+}
+.section-nav .right .text {
+  padding-right: 75px;
+  text-align: right;
+}
+.section-nav .left .navigation i.fa-holder:before {
   content: "";
 }
-.section-nav.back else > i.fa-holder:before, .section-nav.back else i.fa-holder:before {
+.section-nav .left .navigation else > i.fa-holder:before, .section-nav .left .navigation else i.fa-holder:before {
   content: "";
 }
-.section-nav.back .text {
+.section-nav .left .text {
   padding-left: 75px;
   text-align: left;
 }
-.section-nav.back .circle {
+.section-nav .left .circle {
   left: 12.5px;
-  top: 8.33333px;
 }
 .section-nav:hover .circle {
-  background: #198dae;
   border: 4px solid #fff;
   -webkit-box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.45);
   -moz-box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.45);
@@ -2262,26 +2682,26 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
 .section-nav.disabled .text {
   color: #999999;
 }
-.section-nav.disabled.back .text {
-  padding-left: 1.5rem;
+.section-nav.disabled .left .text {
+  padding-left: 3rem;
 }
-.section-nav.disabled.forward .text {
-  padding-right: 1.5rem;
+.section-nav.disabled .right .text {
+  padding-right: 3rem;
 }
-.section-nav.disabled.back .circle {
+.section-nav.disabled.top .circle {
   top: 28px;
 }
-.section-nav.disabled.back .circle i {
+.section-nav.disabled.top .circle i {
   -ms-transform: translate(-50px, -12.5px);
   /* IE 9 */
   -webkit-transform: translate(-50px, -12.5px);
   /* Safari */
   transform: translate(-50px, -12.5px);
 }
-.section-nav.disabled.forward .circle {
+.section-nav.disabled.bottom .circle {
   bottom: 28px;
 }
-.section-nav.disabled.forward .circle i {
+.section-nav.disabled.bottom .circle i {
   -ms-transform: translate(50px, -12.5px);
   /* IE 9 */
   -webkit-transform: translate(50px, -12.5px);
@@ -2296,57 +2716,66 @@ h3 + .nav-list li, h3 + .panel-selector li, .small.nav-list li, .small.panel-sel
   background-image: url("../img/empty_diamond.png");
   width: 12px;
   height: 12px;
-  border-radius: 6PX;
+  border-radius: 6px;
   border: 2px solid #fff;
+  padding: 0;
 }
 
 /**
-* Circle Section Nav (forward & back):
-* `.section-nav with .forward or .back` - A wizard-like page nav. Alter the position of the circle button by adding  `.forward` or `.back` to the `.section-nav` container.
+* Circle Section Nav:
+* `.section-nav` - A wizard-like page nav that creates floating circle buttons to the top and bottom of the page. Alter the position of the edge of the page with `.top` and `.bottom` and control the left and right position of the circle buttons with `.left` or `right`.  Adding `.navigation` to the circle buttons will turn them blue and add the appropriate arrows. You can always replace with `.fa-holder` with any icon incase you need to use different icons for reason of the application.
 * 
 *   @example
-*	<div class="page with-group-sections"><div class="section-nav back">
-*		<a>
-*			<div class="circle"><i class="fa fa-holder"></i></div>
-*			<div class="text"> Back</div>
-*		</a>
+*	<div class="page paper-page">
+*		<div class="section-nav top">
+*			<a class="left">
+*				<span class="circle button navigation"><i class="fa fa-holder"></i></span>
+*				<span class="text">Back</span>
+*			</a>
+*			<a class="right">
+*				<span class="circle button secondary"><i class="fa fa-times"></i></span>
+*				<span class="text">Cancel</span>
+*			</a>
+*		</div>
+*		<div class="page-wrapper section-padding content-padding">
+*			<section class="card">
+*				<h1 class="with-underline">Page Title </h1>
+*				<p> hello I am some content on this page</p>
+*			</section>
+*		</div>
+*		<div class="section-nav bottom">
+*			<a class="right">
+*				<span class="circle button navigation"><i class="fa fa-holder"></i></span>
+*				<span class="text">Forward</span>
+*			</a>
+*		</div>
 *	</div>
-*	<div class="page-wrapper">
-*	<section class="group-section">
-*		<h1 class="with-underline">Page Title </h1>
-*		<p> hello I am some content on this page</p>
-*	</div>
-*	</section>
-*	<div class="section-nav forward">
-*		<a>
-*			<div class="circle"><i class="fa fa-holder"></i></div>
-*			<div class="text"> Forward</div>
-*		</a>
-*	</div></div>
 */
 /**
 * Circle Section Nav (Disabled):
 * `.section-nav with .disabled` - Adding `.disabled` to the `.section-nav` container with style the circle nav accordingly.
 * 
 *   @example
-*	<div class="page"><div class="section-nav back disabled">
-*		<a>
-*			<div class="circle"><i class="fa fa-holder"></i></div>
-*			<div class="text"> Back</div>
-*		</a>
+*	<div class="page paper-page">
+*		<div class="section-nav top  disabled">
+*			<a class="left">
+*				<span class="circle button navigation"><i class="fa fa-holder"></i></span>
+*				<span class="text">Back</span>
+*			</a>
+*		</div>
+*		<div class="page-wrapper section-padding content-padding">
+*			<section class="card">
+*				<h1 class="with-underline">Page Title (Disabled)</h1>
+*				<p> Somethig on this page has disabled forward navigation</p>
+*			</section>
+*		</div>
+*		<div class="section-nav bottom disabled">
+*			<a class="right">
+*				<span class="circle button navigation"><i class="fa fa-holder"></i></span>
+*				<span class="text">Forward</span>
+*			</a>
+*		</div>
 *	</div>
-*	<div class="page-wrapper">
-*	<section class="group-section">
-*		<h1 class="with-underline">Page Title (Disabled)</h1>
-*		<p> Somethig on this page has disabled forward navigation</p>
-*	</div>
-*	</section>
-*	<div class="section-nav forward disabled">
-*		<a>
-*			<div class="circle"><i class="fa fa-holder"></i></div>
-*			<div class="text"> Forward</div>
-*		</a>
-*	</div></div>
 */
 select {
   background-position: right center;
@@ -2499,37 +2928,7 @@ select {
 .input-space, .switch-input-space {
   position: relative;
 }
-.input-space [type='text'], .switch-input-space [type='text'],
-.input-space [type='password'],
-.switch-input-space [type='password'],
-.input-space [type='date'],
-.switch-input-space [type='date'],
-.input-space [type='datetime'],
-.switch-input-space [type='datetime'],
-.input-space [type='datetime-local'],
-.switch-input-space [type='datetime-local'],
-.input-space [type='month'],
-.switch-input-space [type='month'],
-.input-space [type='week'],
-.switch-input-space [type='week'],
-.input-space [type='email'],
-.switch-input-space [type='email'],
-.input-space [type='number'],
-.switch-input-space [type='number'],
-.input-space [type='search'],
-.switch-input-space [type='search'],
-.input-space [type='tel'],
-.switch-input-space [type='tel'],
-.input-space [type='time'],
-.switch-input-space [type='time'],
-.input-space [type='url'],
-.switch-input-space [type='url'],
-.input-space [type='color'],
-.switch-input-space [type='color'],
-.input-space button,
-.switch-input-space button,
-.input-space .button,
-.switch-input-space .button {
+.input-space [type='text'], .switch-input-space [type='text'], .input-space [type='password'], .switch-input-space [type='password'], .input-space [type='date'], .switch-input-space [type='date'], .input-space [type='datetime'], .switch-input-space [type='datetime'], .input-space [type='datetime-local'], .switch-input-space [type='datetime-local'], .input-space [type='month'], .switch-input-space [type='month'], .input-space [type='week'], .switch-input-space [type='week'], .input-space [type='email'], .switch-input-space [type='email'], .input-space [type='number'], .switch-input-space [type='number'], .input-space [type='search'], .switch-input-space [type='search'], .input-space [type='tel'], .switch-input-space [type='tel'], .input-space [type='time'], .switch-input-space [type='time'], .input-space [type='url'], .switch-input-space [type='url'], .input-space [type='color'], .switch-input-space [type='color'], .input-space button, .switch-input-space button, .input-space .button, .switch-input-space .button {
   font-size: 1rem;
   line-height: 1.5;
   margin-top: 0rem;
@@ -2538,133 +2937,43 @@ select {
   padding: 0.5rem 0.5rem;
   height: 2.5rem;
 }
-.colored-paper .input-space [type='text'], .colored-paper .switch-input-space [type='text'], .callout .input-space [type='text'], .page-message .input-space [type='text'], .callout .switch-input-space [type='text'], .page-message .switch-input-space [type='text'], .colored-paper
-.input-space [type='password'], .colored-paper
-.switch-input-space [type='password'], .callout
-.input-space [type='password'], .page-message
-.input-space [type='password'], .callout
-.switch-input-space [type='password'], .page-message
-.switch-input-space [type='password'], .colored-paper
-.input-space [type='date'], .colored-paper
-.switch-input-space [type='date'], .callout
-.input-space [type='date'], .page-message
-.input-space [type='date'], .callout
-.switch-input-space [type='date'], .page-message
-.switch-input-space [type='date'], .colored-paper
-.input-space [type='datetime'], .colored-paper
-.switch-input-space [type='datetime'], .callout
-.input-space [type='datetime'], .page-message
-.input-space [type='datetime'], .callout
-.switch-input-space [type='datetime'], .page-message
-.switch-input-space [type='datetime'], .colored-paper
-.input-space [type='datetime-local'], .colored-paper
-.switch-input-space [type='datetime-local'], .callout
-.input-space [type='datetime-local'], .page-message
-.input-space [type='datetime-local'], .callout
-.switch-input-space [type='datetime-local'], .page-message
-.switch-input-space [type='datetime-local'], .colored-paper
-.input-space [type='month'], .colored-paper
-.switch-input-space [type='month'], .callout
-.input-space [type='month'], .page-message
-.input-space [type='month'], .callout
-.switch-input-space [type='month'], .page-message
-.switch-input-space [type='month'], .colored-paper
-.input-space [type='week'], .colored-paper
-.switch-input-space [type='week'], .callout
-.input-space [type='week'], .page-message
-.input-space [type='week'], .callout
-.switch-input-space [type='week'], .page-message
-.switch-input-space [type='week'], .colored-paper
-.input-space [type='email'], .colored-paper
-.switch-input-space [type='email'], .callout
-.input-space [type='email'], .page-message
-.input-space [type='email'], .callout
-.switch-input-space [type='email'], .page-message
-.switch-input-space [type='email'], .colored-paper
-.input-space [type='number'], .colored-paper
-.switch-input-space [type='number'], .callout
-.input-space [type='number'], .page-message
-.input-space [type='number'], .callout
-.switch-input-space [type='number'], .page-message
-.switch-input-space [type='number'], .colored-paper
-.input-space [type='search'], .colored-paper
-.switch-input-space [type='search'], .callout
-.input-space [type='search'], .page-message
-.input-space [type='search'], .callout
-.switch-input-space [type='search'], .page-message
-.switch-input-space [type='search'], .colored-paper
-.input-space [type='tel'], .colored-paper
-.switch-input-space [type='tel'], .callout
-.input-space [type='tel'], .page-message
-.input-space [type='tel'], .callout
-.switch-input-space [type='tel'], .page-message
-.switch-input-space [type='tel'], .colored-paper
-.input-space [type='time'], .colored-paper
-.switch-input-space [type='time'], .callout
-.input-space [type='time'], .page-message
-.input-space [type='time'], .callout
-.switch-input-space [type='time'], .page-message
-.switch-input-space [type='time'], .colored-paper
-.input-space [type='url'], .colored-paper
-.switch-input-space [type='url'], .callout
-.input-space [type='url'], .page-message
-.input-space [type='url'], .callout
-.switch-input-space [type='url'], .page-message
-.switch-input-space [type='url'], .colored-paper
-.input-space [type='color'], .colored-paper
-.switch-input-space [type='color'], .callout
-.input-space [type='color'], .page-message
-.input-space [type='color'], .callout
-.switch-input-space [type='color'], .page-message
-.switch-input-space [type='color'], .colored-paper
-.input-space button, .colored-paper
-.switch-input-space button, .callout
-.input-space button, .page-message
-.input-space button, .callout
-.switch-input-space button, .page-message
-.switch-input-space button, .colored-paper
-.input-space .button, .colored-paper
-.switch-input-space .button, .callout
-.input-space .button, .page-message
-.input-space .button, .callout
-.switch-input-space .button, .page-message
-.switch-input-space .button {
+.colored-paper .input-space [type='text'], .colored-paper .switch-input-space [type='text'], .callout .input-space [type='text'], .page-message .input-space [type='text'], .callout .switch-input-space [type='text'], .page-message .switch-input-space [type='text'],
+.colored-paper .input-space [type='password'],
+.colored-paper .switch-input-space [type='password'], .callout .input-space [type='password'], .page-message .input-space [type='password'], .callout .switch-input-space [type='password'], .page-message .switch-input-space [type='password'],
+.colored-paper .input-space [type='date'],
+.colored-paper .switch-input-space [type='date'], .callout .input-space [type='date'], .page-message .input-space [type='date'], .callout .switch-input-space [type='date'], .page-message .switch-input-space [type='date'],
+.colored-paper .input-space [type='datetime'],
+.colored-paper .switch-input-space [type='datetime'], .callout .input-space [type='datetime'], .page-message .input-space [type='datetime'], .callout .switch-input-space [type='datetime'], .page-message .switch-input-space [type='datetime'],
+.colored-paper .input-space [type='datetime-local'],
+.colored-paper .switch-input-space [type='datetime-local'], .callout .input-space [type='datetime-local'], .page-message .input-space [type='datetime-local'], .callout .switch-input-space [type='datetime-local'], .page-message .switch-input-space [type='datetime-local'],
+.colored-paper .input-space [type='month'],
+.colored-paper .switch-input-space [type='month'], .callout .input-space [type='month'], .page-message .input-space [type='month'], .callout .switch-input-space [type='month'], .page-message .switch-input-space [type='month'],
+.colored-paper .input-space [type='week'],
+.colored-paper .switch-input-space [type='week'], .callout .input-space [type='week'], .page-message .input-space [type='week'], .callout .switch-input-space [type='week'], .page-message .switch-input-space [type='week'],
+.colored-paper .input-space [type='email'],
+.colored-paper .switch-input-space [type='email'], .callout .input-space [type='email'], .page-message .input-space [type='email'], .callout .switch-input-space [type='email'], .page-message .switch-input-space [type='email'],
+.colored-paper .input-space [type='number'],
+.colored-paper .switch-input-space [type='number'], .callout .input-space [type='number'], .page-message .input-space [type='number'], .callout .switch-input-space [type='number'], .page-message .switch-input-space [type='number'],
+.colored-paper .input-space [type='search'],
+.colored-paper .switch-input-space [type='search'], .callout .input-space [type='search'], .page-message .input-space [type='search'], .callout .switch-input-space [type='search'], .page-message .switch-input-space [type='search'],
+.colored-paper .input-space [type='tel'],
+.colored-paper .switch-input-space [type='tel'], .callout .input-space [type='tel'], .page-message .input-space [type='tel'], .callout .switch-input-space [type='tel'], .page-message .switch-input-space [type='tel'],
+.colored-paper .input-space [type='time'],
+.colored-paper .switch-input-space [type='time'], .callout .input-space [type='time'], .page-message .input-space [type='time'], .callout .switch-input-space [type='time'], .page-message .switch-input-space [type='time'],
+.colored-paper .input-space [type='url'],
+.colored-paper .switch-input-space [type='url'], .callout .input-space [type='url'], .page-message .input-space [type='url'], .callout .switch-input-space [type='url'], .page-message .switch-input-space [type='url'],
+.colored-paper .input-space [type='color'],
+.colored-paper .switch-input-space [type='color'], .callout .input-space [type='color'], .page-message .input-space [type='color'], .callout .switch-input-space [type='color'], .page-message .switch-input-space [type='color'],
+.colored-paper .input-space button,
+.colored-paper .switch-input-space button, .callout .input-space button, .page-message .input-space button, .callout .switch-input-space button, .page-message .switch-input-space button,
+.colored-paper .input-space .button,
+.colored-paper .switch-input-space .button, .callout .input-space .button, .page-message .input-space .button, .callout .switch-input-space .button, .page-message .switch-input-space .button {
   margin-top: 0rem;
   margin-bottom: 0rem;
   line-height: 1.35;
 }
 @media only screen and (max-height: 768px) {
-  .input-space [type='text'], .switch-input-space [type='text'],
-  .input-space [type='password'],
-  .switch-input-space [type='password'],
-  .input-space [type='date'],
-  .switch-input-space [type='date'],
-  .input-space [type='datetime'],
-  .switch-input-space [type='datetime'],
-  .input-space [type='datetime-local'],
-  .switch-input-space [type='datetime-local'],
-  .input-space [type='month'],
-  .switch-input-space [type='month'],
-  .input-space [type='week'],
-  .switch-input-space [type='week'],
-  .input-space [type='email'],
-  .switch-input-space [type='email'],
-  .input-space [type='number'],
-  .switch-input-space [type='number'],
-  .input-space [type='search'],
-  .switch-input-space [type='search'],
-  .input-space [type='tel'],
-  .switch-input-space [type='tel'],
-  .input-space [type='time'],
-  .switch-input-space [type='time'],
-  .input-space [type='url'],
-  .switch-input-space [type='url'],
-  .input-space [type='color'],
-  .switch-input-space [type='color'],
-  .input-space button,
-  .switch-input-space button,
-  .input-space .button,
-  .switch-input-space .button {
+  .input-space [type='text'], .switch-input-space [type='text'], .input-space [type='password'], .switch-input-space [type='password'], .input-space [type='date'], .switch-input-space [type='date'], .input-space [type='datetime'], .switch-input-space [type='datetime'], .input-space [type='datetime-local'], .switch-input-space [type='datetime-local'], .input-space [type='month'], .switch-input-space [type='month'], .input-space [type='week'], .switch-input-space [type='week'], .input-space [type='email'], .switch-input-space [type='email'], .input-space [type='number'], .switch-input-space [type='number'], .input-space [type='search'], .switch-input-space [type='search'], .input-space [type='tel'], .switch-input-space [type='tel'], .input-space [type='time'], .switch-input-space [type='time'], .input-space [type='url'], .switch-input-space [type='url'], .input-space [type='color'], .switch-input-space [type='color'], .input-space button, .switch-input-space button, .input-space .button, .switch-input-space .button {
     padding: 0.25rem 0.5rem;
     height: 2rem;
   }
@@ -2771,67 +3080,7 @@ select {
   line-height: 1.35;
 }
 
-.answer:disabled, .answer[disabled], .answer.locked, .answer-group:disabled, .answer-group[disabled], .answer-group.locked, .question:disabled, .question[disabled], .question.locked, .question-group:disabled, .question-group[disabled], .question-group.locked, .question-inline:disabled, .question-inline[disabled], .question-inline.locked, .question-grid-based:disabled, .question-grid-based[disabled], .question-grid-based.locked, .disabled .input-space [type='text'], .disabled .switch-input-space [type='text'], .locked .input-space [type='text'], .locked .switch-input-space [type='text'], .disabled
-.input-space [type='password'], .disabled
-.switch-input-space [type='password'], .locked
-.input-space [type='password'], .locked
-.switch-input-space [type='password'], .disabled
-.input-space [type='date'], .disabled
-.switch-input-space [type='date'], .locked
-.input-space [type='date'], .locked
-.switch-input-space [type='date'], .disabled
-.input-space [type='datetime'], .disabled
-.switch-input-space [type='datetime'], .locked
-.input-space [type='datetime'], .locked
-.switch-input-space [type='datetime'], .disabled
-.input-space [type='datetime-local'], .disabled
-.switch-input-space [type='datetime-local'], .locked
-.input-space [type='datetime-local'], .locked
-.switch-input-space [type='datetime-local'], .disabled
-.input-space [type='month'], .disabled
-.switch-input-space [type='month'], .locked
-.input-space [type='month'], .locked
-.switch-input-space [type='month'], .disabled
-.input-space [type='week'], .disabled
-.switch-input-space [type='week'], .locked
-.input-space [type='week'], .locked
-.switch-input-space [type='week'], .disabled
-.input-space [type='email'], .disabled
-.switch-input-space [type='email'], .locked
-.input-space [type='email'], .locked
-.switch-input-space [type='email'], .disabled
-.input-space [type='number'], .disabled
-.switch-input-space [type='number'], .locked
-.input-space [type='number'], .locked
-.switch-input-space [type='number'], .disabled
-.input-space [type='search'], .disabled
-.switch-input-space [type='search'], .locked
-.input-space [type='search'], .locked
-.switch-input-space [type='search'], .disabled
-.input-space [type='tel'], .disabled
-.switch-input-space [type='tel'], .locked
-.input-space [type='tel'], .locked
-.switch-input-space [type='tel'], .disabled
-.input-space [type='time'], .disabled
-.switch-input-space [type='time'], .locked
-.input-space [type='time'], .locked
-.switch-input-space [type='time'], .disabled
-.input-space [type='url'], .disabled
-.switch-input-space [type='url'], .locked
-.input-space [type='url'], .locked
-.switch-input-space [type='url'], .disabled
-.input-space [type='color'], .disabled
-.switch-input-space [type='color'], .locked
-.input-space [type='color'], .locked
-.switch-input-space [type='color'], .disabled
-.input-space button, .disabled
-.switch-input-space button, .locked
-.input-space button, .locked
-.switch-input-space button, .disabled
-.input-space .button, .disabled
-.switch-input-space .button, .locked
-.input-space .button, .locked
-.switch-input-space .button, .disabled .input-space select, .disabled .switch-input-space select, .locked .input-space select, .locked .switch-input-space select, .disabled .input-space option, .disabled .switch-input-space option, .locked .input-space option, .locked .switch-input-space option, .disabled .input-space textarea, .disabled .switch-input-space textarea, .locked .input-space textarea, .locked .switch-input-space textarea, .answer .chosen-disabled.chosen-container .chosen-choices, .question .chosen-disabled.chosen-container .chosen-choices, .disabled .date-picker-holder .button, .locked .date-picker-holder .button {
+.answer:disabled, .answer[disabled], .answer.locked, .answer-group:disabled, .answer-group[disabled], .answer-group.locked, .question:disabled, .question[disabled], .question.locked, .question-group:disabled, .question-group[disabled], .question-group.locked, .question-inline:disabled, .question-inline[disabled], .question-inline.locked, .question-grid-based:disabled, .question-grid-based[disabled], .question-grid-based.locked, .disabled .input-space [type='text'], .disabled .switch-input-space [type='text'], .locked .input-space [type='text'], .locked .switch-input-space [type='text'], .disabled .input-space [type='password'], .disabled .switch-input-space [type='password'], .locked .input-space [type='password'], .locked .switch-input-space [type='password'], .disabled .input-space [type='date'], .disabled .switch-input-space [type='date'], .locked .input-space [type='date'], .locked .switch-input-space [type='date'], .disabled .input-space [type='datetime'], .disabled .switch-input-space [type='datetime'], .locked .input-space [type='datetime'], .locked .switch-input-space [type='datetime'], .disabled .input-space [type='datetime-local'], .disabled .switch-input-space [type='datetime-local'], .locked .input-space [type='datetime-local'], .locked .switch-input-space [type='datetime-local'], .disabled .input-space [type='month'], .disabled .switch-input-space [type='month'], .locked .input-space [type='month'], .locked .switch-input-space [type='month'], .disabled .input-space [type='week'], .disabled .switch-input-space [type='week'], .locked .input-space [type='week'], .locked .switch-input-space [type='week'], .disabled .input-space [type='email'], .disabled .switch-input-space [type='email'], .locked .input-space [type='email'], .locked .switch-input-space [type='email'], .disabled .input-space [type='number'], .disabled .switch-input-space [type='number'], .locked .input-space [type='number'], .locked .switch-input-space [type='number'], .disabled .input-space [type='search'], .disabled .switch-input-space [type='search'], .locked .input-space [type='search'], .locked .switch-input-space [type='search'], .disabled .input-space [type='tel'], .disabled .switch-input-space [type='tel'], .locked .input-space [type='tel'], .locked .switch-input-space [type='tel'], .disabled .input-space [type='time'], .disabled .switch-input-space [type='time'], .locked .input-space [type='time'], .locked .switch-input-space [type='time'], .disabled .input-space [type='url'], .disabled .switch-input-space [type='url'], .locked .input-space [type='url'], .locked .switch-input-space [type='url'], .disabled .input-space [type='color'], .disabled .switch-input-space [type='color'], .locked .input-space [type='color'], .locked .switch-input-space [type='color'], .disabled .input-space button, .disabled .switch-input-space button, .locked .input-space button, .locked .switch-input-space button, .disabled .input-space .button, .disabled .switch-input-space .button, .locked .input-space .button, .locked .switch-input-space .button, .disabled .input-space select, .disabled .switch-input-space select, .locked .input-space select, .locked .switch-input-space select, .disabled .input-space option, .disabled .switch-input-space option, .locked .input-space option, .locked .switch-input-space option, .disabled .input-space textarea, .disabled .switch-input-space textarea, .locked .input-space textarea, .locked .switch-input-space textarea, .answer .chosen-disabled.chosen-container .chosen-choices, .question .chosen-disabled.chosen-container .chosen-choices, .disabled .date-picker-holder .button, .locked .date-picker-holder .button {
   background: rgba(179, 179, 179, 0.99) url(../img/empty_stripe.png);
   background-color: #b3b3b3;
   background-image: url(../img/empty_stripe.png);
@@ -3158,7 +3407,7 @@ select {
     float: right;
   }
   .question-grid-based.span-3-col .label-holder {
-    width: 16.66667%;
+    width: 16.6666666667%;
     float: left;
     padding-left: 0.625rem;
     padding-right: 0.625rem;
@@ -3176,7 +3425,7 @@ select {
     float: right;
   }
   .question-grid-based.span-3-col .input-holder {
-    width: 83.33333%;
+    width: 83.3333333333%;
     float: left;
     padding-left: 0.625rem;
     padding-right: 0.625rem;
@@ -3274,7 +3523,7 @@ select {
     float: right;
   }
   .question-grid-based.span-3-col .label-holder {
-    width: 16.66667%;
+    width: 16.6666666667%;
     float: left;
     padding-left: 0.625rem;
     padding-right: 0.625rem;
@@ -3292,7 +3541,7 @@ select {
     float: right;
   }
   .question-grid-based.span-3-col .input-holder {
-    width: 83.33333%;
+    width: 83.3333333333%;
     float: left;
     padding-left: 0.625rem;
     padding-right: 0.625rem;
@@ -3462,7 +3711,7 @@ select {
 }
 @media only screen and (min-width: 1024px) {
   .group-3up .input-space, .group-3up .switch-input-space {
-    width: 33.33333%;
+    width: 33.3333333333%;
     float: left;
   }
   .group-3up .input-space:last-child:not(:first-child), .group-3up .switch-input-space:last-child:not(:first-child) {
@@ -4297,7 +4546,7 @@ select {
 
 .close-bar .close-button {
   background: #666666;
-  top: 0;
+  top: -1px;
   right: 0;
   color: white;
   padding: .25em;
@@ -4945,7 +5194,7 @@ th.sortable select {
   font-size: 0.92857rem;
   margin: 0 0 0 .5em;
   padding-left: 2em;
-  border: 0 none transparent;
+  border: 0 none rgba(0, 0, 0, 0);
   background-color: #737373;
   height: 100%;
   top: 0;
@@ -6991,19 +7240,19 @@ This file is generated by `grunt build`, do not edit it by hand.
 }
 @media only screen and (min-width: 767px) {
   .stack-for-small .top-bar-left li:hover {
-    border-top: #1abc9c 0.33333em solid;
+    border-top: #1abc9c 0.3333333333em solid;
   }
   .stack-for-small .top-bar-left li:hover a, .stack-for-small .top-bar-left li:hover button {
-    margin-top: -0.33333em;
+    margin-top: -0.3333333333em;
     padding-top: 1em;
   }
 }
 @media only screen and (min-width: 1024px) {
   .stack-for-medium .top-bar-left li:hover {
-    border-top: #1abc9c 0.33333em solid;
+    border-top: #1abc9c 0.3333333333em solid;
   }
   .stack-for-medium .top-bar-left li:hover a, .stack-for-medium .top-bar-left li:hover button {
-    margin-top: -0.33333em;
+    margin-top: -0.3333333333em;
     padding-top: 1em;
   }
 }
@@ -7400,6 +7649,8 @@ This file is generated by `grunt build`, do not edit it by hand.
   margin-left: auto;
   margin-right: auto;
   max-width: none;
+  margin-top: 0.75rem;
+  margin-bottom: 0.375rem;
 }
 .pagination-holder::before, .result-selector-holder::before, .pagination-holder::after, .result-selector-holder::after {
   content: ' ';
@@ -7408,20 +7659,20 @@ This file is generated by `grunt build`, do not edit it by hand.
 .pagination-holder::after, .result-selector-holder::after {
   clear: both;
 }
+.pagination-holder.top, .top.result-selector-holder {
+  margin-top: 0.375rem;
+  margin-bottom: 0.75rem;
+}
+.pagination-holder .pagination, .result-selector-holder .pagination {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
 .pagination li {
   border-radius: 0px 0px 0px 0px;
   color: #666666;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  margin-top: 0.09375rem;
-  margin-bottom: 0.09375rem;
+  font-size: 14px;
   line-height: 1.4rem;
-}
-.colored-paper .pagination li, .callout .pagination li, .page-message .pagination li {
-  margin-top: 0.09375rem;
-  margin-bottom: 0.09375rem;
-  line-height: 1.35;
 }
 .pagination li a {
   line-height: 1.4rem;
@@ -7429,10 +7680,10 @@ This file is generated by `grunt build`, do not edit it by hand.
 .pagination li i {
   margin: 0 .25rem;
 }
-.with-group-sections .pagination li a:hover {
+.paper-page .pagination li a:hover {
   background-color: #cccccc;
 }
-.group-section .pagination li a:hover {
+.card .pagination li a:hover {
   background-color: #e6e6e6;
 }
 .pagination li.current {
@@ -7452,10 +7703,10 @@ This file is generated by `grunt build`, do not edit it by hand.
   background-color: #b3b3b3;
   color: #333333;
 }
-.with-group-sections .pagination li.arrow a, .with-group-sections .pagination li.action a {
+.paper-page .pagination li.arrow a, .paper-page .pagination li.action a {
   background-color: #cccccc;
 }
-.group-section .pagination li.arrow a, .group-section .pagination li.action a {
+.card .pagination li.arrow a, .card .pagination li.action a {
   background-color: #e6e6e6;
 }
 .pagination li.arrow.left, .pagination li.arrow.left:hover, .pagination li.action.left, .pagination li.action.left:hover {
@@ -7470,17 +7721,16 @@ This file is generated by `grunt build`, do not edit it by hand.
   color: gray;
   cursor: not-allowed;
 }
-.with-group-sections .pagination li.disable a, .with-group-sections .pagination li.disable a:hover {
+.paper-page .pagination li.disable a, .paper-page .pagination li.disable a:hover {
   background-color: gray;
 }
-.group-section .pagination li.disable a, .group-section .pagination li.disable a:hover {
+.card .pagination li.disable a, .card .pagination li.disable a:hover {
   background-color: #999999;
 }
 
 .pagination-holder.top, .top.result-selector-holder {
   border-top: 0 none;
   border-bottom: 2px solid #198dae;
-  margin-bottom: 1rem;
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
@@ -7494,7 +7744,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   clear: both;
 }
 .pagination-holder.top .pagination, .top.result-selector-holder .pagination {
-  margin-bottom: 0;
+  margin-bottom: -2px;
 }
 .pagination-holder.top .pagination li.arrow.left, .top.result-selector-holder .pagination li.arrow.left {
   border-radius: 6px 0 0 0;
@@ -7512,77 +7762,274 @@ This file is generated by `grunt build`, do not edit it by hand.
   display: none;
 }
 
-/*  PAGINATION ON CARDS IS in _override.card.pagination.scss */
 /**
 * Pagination:
-* `.pagination-holder .pagination` - Pagination is often used when there is a table or page of results or repeated items. The Container defaultly styles the paginator to be at the bottom of the area of repeated content but render it at the top just add the class '.top' to render the pagination upside down. The paginator has a single modifier to condense the screen size by adding the class `.pagination--compact`.
+* `.pagination-holder .pagination` - Pagination is often used when there is a table or page of results or repeated items. The Container defaultly styles the paginator to be at the bottom of the area of repeated content but render it at the top just add the class `.top` to render the pagination upside down. The paginator has a single modifier to condense the screen size by adding the class `.pagination--compact`.
 * 
 *   @example
-* <div class="pagination-holder top"><ul class="pagination float-right">
-*   <li class="arrow disable left"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*   <li class="current"><a href="">1</a></li>
-*   <li><a href="">2</a></li>
-*   <li><a href="">3</a></li>
-*   <li><a href="">4</a></li>
-*   <li class="arrow right"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-* </ul></div><br>
-*  <div class="page with-group-sections">
-*      <div class="page-wrapper">
-*          <section class="section group-section">
-*              <div class="group-section-pagination-holder top">
-*                  <ul class="pagination pagination--compact float-left">
-*                      <li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*                      <li class="current"><a href="">1</a></li>
-*                      <li><a href="">2</a></li>
-*                      <li><a href="">3</a></li>
-*                      <li><a href="">4</a></li>
-*                      <li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*                  </ul>
-*                  <ul class="pagination float-right">
-*                      <li class="action"><a href=""><i class="fa fa-plus "></i><span class="text">Add</span></a></li>
-*                      <li class="action"><a href=""><i class="fa fa-times "></i><span class="text">Remove</span></a></li>
-*                  </ul>
-*              </div>
-*              <div class="callout">this is some content</div>
-*              <div class="pagination-holder">
-*                  <ul class="pagination pagination--compact float-right">
-*                      <li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*                      <li class="current"><a href="">1</a></li>
-*                      <li><a href="">2</a></li>
-*                      <li><a href="">3</a></li>
-*                      <li><a href="">4</a></li>
-*                      <li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*                  </ul>
-*              </div>
-*              <div class="group-section-pagination-holder">
-*                  <ul class="pagination pagination--compact float-left">
-*                      <li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*                      <li class="current"><a href="">1</a></li>
-*                      <li><a href="">2</a></li>
-*                      <li><a href="">3</a></li>
-*                      <li><a href="">4</a></li>
-*                      <li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*                  </ul>
-*                  <ul class="pagination float-right">
-*                      <li class="action"><a href=""><i class="fa fa-plus "></i><span class="text">Add</span></a></li>
-*                      <li class="action"><a href=""><i class="fa fa-times "></i><span class="text">Remove</span></a></li>
-*                  </ul>
-*              </div>
-*          </section>
-*          <div class="content-padding">
-*              <div class="pagination-holder">
-*                  <ul class="pagination pagination--compact float-left">
-*                      <li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*                      <li class="current"><a href="">1</a></li>
-*                      <li><a href="">2</a></li>
-*                      <li><a href="">3</a></li>
-*                      <li><a href="">4</a></li>
-*                      <li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*                  </ul>
-*              </div>
-*          </div>
-*      </div>
-*  </div>
+*	<div class="paper-page page-wrapper">
+*			<div class="content-padding section-padding">
+*			<div class="">	
+*				<div class="pagination-holder top">
+*					<ul class="pagination float-right">
+*						<li class="arrow disable left">
+*							<a href="">
+*								<i class="fa fa-caret-left ">
+*								</i>
+*								<span class="text">
+*									prev
+*								</span>
+*							</a>
+*						</li>
+*						<li class="current">
+*							<a href="">
+*								1
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								2
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								3
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								4
+*							</a>
+*						</li>
+*						<li class="arrow right">
+*							<a href="">
+*								<span class="text">
+*									next
+*								</span>
+*								<i class="fa fa-caret-right ">
+*								</i>
+*							</a>
+*						</li>
+*					</ul>
+*				</div>
+*			</div>
+*			<section class="section card">
+*				<div class="group-section-pagination-holder top">
+*					<ul class="pagination pagination--compact float-left">
+*						<li class="arrow disable">
+*							<a href="">
+*								<i class="fa fa-caret-left ">
+*								</i>
+*								<span class="text">
+*									prev
+*								</span>
+*							</a>
+*						</li>
+*						<li class="current">
+*							<a href="">
+*								1
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								2
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								3
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								4
+*							</a>
+*						</li>
+*						<li class="arrow">
+*							<a href="">
+*								<span class="text">
+*									next
+*								</span>
+*								<i class="fa fa-caret-right ">
+*								</i>
+*							</a>
+*						</li>
+*					</ul>
+*					<ul class="pagination float-right">
+*						<li class="action">
+*							<a href="">
+*								<i class="fa fa-plus ">
+*								</i>
+*								<span class="text">
+*									Add
+*								</span>
+*							</a>
+*						</li>
+*						<li class="action">
+*							<a href="">
+*								<i class="fa fa-times ">
+*								</i>
+*								<span class="text">
+*									Remove
+*								</span>
+*							</a>
+*						</li>
+*					</ul>
+*				</div>
+*				<div class="callout">
+*					this is some content
+*				</div>
+*				<div class="pagination-holder">
+*					<ul class="pagination pagination--compact float-right">
+*						<li class="arrow disable">
+*							<a href="">
+*								<i class="fa fa-caret-left ">
+*								</i>
+*								<span class="text">
+*									prev
+*								</span>
+*							</a>
+*						</li>
+*						<li class="current">
+*							<a href="">
+*								1
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								2
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								3
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								4
+*							</a>
+*						</li>
+*						<li class="arrow">
+*							<a href="">
+*								<span class="text">
+*									next
+*								</span>
+*								<i class="fa fa-caret-right ">
+*								</i>
+*							</a>
+*						</li>
+*					</ul>
+*				</div>
+*				<div class="group-section-pagination-holder">
+*					<ul class="pagination pagination--compact float-left">
+*						<li class="arrow disable">
+*							<a href="">
+*								<i class="fa fa-caret-left ">
+*								</i>
+*								<span class="text">
+*									prev
+*								</span>
+*							</a>
+*						</li>
+*						<li class="current">
+*							<a href="">
+*								1
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								2
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								3
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								4
+*							</a>
+*						</li>
+*						<li class="arrow">
+*							<a href="">
+*								<span class="text">
+*									next
+*								</span>
+*								<i class="fa fa-caret-right ">
+*								</i>
+*							</a>
+*						</li>
+*					</ul>
+*					<ul class="pagination float-right">
+*						<li class="action">
+*							<a href="">
+*								<i class="fa fa-plus ">
+*								</i>
+*								<span class="text">
+*									Add
+*								</span>
+*							</a>
+*						</li>
+*						<li class="action">
+*							<a href="">
+*								<i class="fa fa-times ">
+*								</i>
+*								<span class="text">
+*									Remove
+*								</span>
+*							</a>
+*						</li>
+*					</ul>
+*				</div>
+*			</section>
+*			<div class="">
+*				<div class="pagination-holder">
+*					<ul class="pagination pagination--compact float-left">
+*						<li class="arrow disable">
+*							<a href="">
+*								<i class="fa fa-caret-left ">
+*								</i>
+*								<span class="text">
+*									prev
+*								</span>
+*							</a>
+*						</li>
+*						<li class="current">
+*							<a href="">
+*								1
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								2
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								3
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								4
+*							</a>
+*						</li>
+*						<li class="arrow">
+*							<a href="">
+*								<span class="text">
+*									next
+*								</span>
+*								<i class="fa fa-caret-right ">
+*								</i>
+*							</a>
+*						</li>
+*					</ul>
+*				</div>
+*			</div>
+*			</div>
+*	</div>
 */
 .pagination.result-selector li.label, .pagination.result-selector li.value {
   color: #525252;
@@ -7606,36 +8053,134 @@ This file is generated by `grunt build`, do not edit it by hand.
 *   @example
 *	<div class="pagination-holder top">
 *		<ul class="pagination result-selector float-left">
-*			<li class="label">Show</li>
-*			<li class="current"><a href="">10</a></li>
-*			<li><a href="">20</a></li>
-*			<li><a href="">50</a></li>
-*			<li class="value">Results</li>
+*			<li class="label">
+*				Show
+*			</li>
+*			<li class="current">
+*				<a href="">
+*					10
+*				</a>
+*			</li>
+*			<li>
+*				<a href="">
+*					20
+*				</a>
+*			</li>
+*			<li>
+*				<a href="">
+*					50
+*				</a>
+*			</li>
+*			<li class="value">
+*				Results
+*			</li>
 *		</ul>
-*	<ul class="pagination float-right">
-*		<li class="arrow unavailable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*		<li class="current"><a href="">1</a></li>
-*		<li><a href="">2</a></li>
-*		<li><a href="">3</a></li>
-*		<li><a href="">4</a></li>
-*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*	</ul></div><br>
+*		<ul class="pagination float-right">
+*			<li class="arrow unavailable">
+*				<a href="">
+*					<i class="fa fa-caret-left ">
+*					</i>
+*					<span class="text">
+*						prev
+*					</span>
+*				</a>
+*			</li>
+*			<li class="current">
+*				<a href="">
+*					1
+*				</a>
+*			</li>
+*			<li>
+*				<a href="">
+*					2
+*				</a>
+*			</li>
+*			<li>
+*				<a href="">
+*					3
+*				</a>
+*			</li>
+*			<li>
+*				<a href="">
+*					4
+*				</a>
+*			</li>
+*			<li class="arrow">
+*				<a href="">
+*					<span class="text">
+*						next
+*					</span>
+*					<i class="fa fa-caret-right ">
+*					</i>
+*				</a>
+*			</li>
+*		</ul>
+*	</div>
 *	<div class="pagination-holder bottom">
 *		<ul class="pagination result-selector float-left">
-*			<li class="label">Show</li>
-*			<li class="current"><a href="">10</a></li>
-*			<li><a href="">20</a></li>
-*			<li><a href="">50</a></li>
-*			<li class="value">Results</li>
+*			<li class="label">
+*				Show
+*			</li>
+*			<li class="current">
+*				<a href="">
+*					10
+*				</a>
+*			</li>
+*			<li>
+*				<a href="">
+*					20
+*				</a>
+*			</li>
+*			<li>
+*				<a href="">
+*					50
+*				</a>
+*			</li>
+*			<li class="value">
+*				Results
+*			</li>
 *		</ul>
-*	<ul class="pagination float-right">
-*		<li class="arrow unavailable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*		<li class="current"><a href="">1</a></li>
-*		<li><a href="">2</a></li>
-*		<li><a href="">3</a></li>
-*		<li><a href="">4</a></li>
-*		<li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*	</ul></div>
+*		<ul class="pagination float-right">
+*			<li class="arrow unavailable">
+*				<a href="">
+*					<i class="fa fa-caret-left ">
+*					</i>
+*					<span class="text">
+*						prev
+*					</span>
+*				</a>
+*			</li>
+*			<li class="current">
+*				<a href="">
+*					1
+*				</a>
+*			</li>
+*			<li>
+*				<a href="">
+*					2
+*				</a>
+*			</li>
+*			<li>
+*				<a href="">
+*					3
+*				</a>
+*			</li>
+*			<li>
+*				<a href="">
+*					4
+*				</a>
+*			</li>
+*			<li class="arrow">
+*				<a href="">
+*					<span class="text">
+*						next
+*					</span>
+*					<i class="fa fa-caret-right ">
+*					</i>
+*				</a>
+*			</li>
+*		</ul>
+*	</div>
 *
 */
 /**
@@ -9092,8 +9637,8 @@ div.reveal .close-button {
 .ui-accordion-override .ui-accordion-header {
   font-size: 1.4375rem;
   line-height: 1.35;
-  margin-top: 0.79453rem;
-  margin-bottom: 0.26484rem;
+  margin-top: 0.79453125rem;
+  margin-bottom: 0.26484375rem;
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
   font-weight: 400;
   letter-spacing: .5px;
@@ -9105,8 +9650,8 @@ div.reveal .close-button {
   margin-bottom: 0;
 }
 .colored-paper .ui-accordion-override .ui-accordion-header, .callout .ui-accordion-override .ui-accordion-header, .page-message .ui-accordion-override .ui-accordion-header {
-  margin-top: 0.79453rem;
-  margin-bottom: 0.26484rem;
+  margin-top: 0.79453125rem;
+  margin-bottom: 0.26484375rem;
   line-height: 1.125;
 }
 .ui-accordion-override .ui-accordion-header:hover {
@@ -9213,95 +9758,95 @@ div.reveal .close-button {
   }
 }
 
-.paper-page.repeater-area .page-wrapper, .group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+.paper-page.repeater-area .page-wrapper, .card, .paper-page .page-wrapper .card, .colored-paper {
   padding-top: .25rem;
   padding-bottom: .25rem;
 }
 @media only screen and (min-width: 320px) {
-  .paper-page.repeater-area .page-wrapper, .group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+  .paper-page.repeater-area .page-wrapper, .card, .paper-page .page-wrapper .card, .colored-paper {
     padding-top: .5rem;
     padding-bottom: .5rem;
   }
 }
 @media only screen and (min-width: 767px) {
-  .paper-page.repeater-area .page-wrapper, .group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+  .paper-page.repeater-area .page-wrapper, .card, .paper-page .page-wrapper .card, .colored-paper {
     padding-top: .75rem;
     padding-bottom: .75rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .paper-page.repeater-area .page-wrapper, .group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+  .paper-page.repeater-area .page-wrapper, .card, .paper-page .page-wrapper .card, .colored-paper {
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
 }
 
-.content-padding, .content-padding.page-wrapper, .group-section, .card, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+.content-padding, .content-padding.page-wrapper, .card, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .paper-page .page-wrapper .card, .colored-paper {
   padding-left: .5rem;
   padding-right: .5rem;
 }
 @media only screen and (min-width: 767px) {
-  .content-padding, .content-padding.page-wrapper, .group-section, .card, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+  .content-padding, .content-padding.page-wrapper, .card, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .paper-page .page-wrapper .card, .colored-paper {
     padding-right: .75rem;
     padding-left: .75rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .content-padding, .content-padding.page-wrapper, .group-section, .card, .with-group-sections .page-wrapper > .section, .with-group-sections .page-wrapper > section, .with-group-sections .page-wrapper > .row, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .colored-paper {
+  .content-padding, .content-padding.page-wrapper, .card, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .paper-page .page-wrapper .card, .colored-paper {
     padding-right: 1rem;
     padding-left: 1rem;
   }
 }
 
-.group-section .colored-paper:first-child, .card .colored-paper:first-child, .group-section-pagination-holder.top {
+.card .colored-paper:first-child, .group-section-pagination-holder.top {
   margin-top: -.25rem;
   margin-top: calc(-.25rem - 1px);
 }
 @media only screen and (min-width: 320px) {
-  .group-section .colored-paper:first-child, .card .colored-paper:first-child, .group-section-pagination-holder.top {
+  .card .colored-paper:first-child, .group-section-pagination-holder.top {
     margin-top: -.5rem;
     margin-top: calc(-.5rem - 1px);
   }
 }
 @media only screen and (min-width: 767px) {
-  .group-section .colored-paper:first-child, .card .colored-paper:first-child, .group-section-pagination-holder.top {
+  .card .colored-paper:first-child, .group-section-pagination-holder.top {
     margin-top: -.75rem;
     margin-top: calc(-.75rem - 1px);
   }
 }
 @media only screen and (min-width: 1024px) {
-  .group-section .colored-paper:first-child, .card .colored-paper:first-child, .group-section-pagination-holder.top {
+  .card .colored-paper:first-child, .group-section-pagination-holder.top {
     margin-top: -1rem;
     margin-top: calc(-1rem - 1px);
   }
 }
 
-.colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .card > .group-section-pagination-holder {
+.colored-paper .tabs, .card .colored-paper:last-child, .card > .group-section-pagination-holder {
   margin-bottom: -.2rem;
-  margin-bottom: calc(-.2rem - 2px);
+  margin-bottom: calc(-.2rem - 5px);
 }
 @media only screen and (max-height: 480px) {
-  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .card > .group-section-pagination-holder {
+  .colored-paper .tabs, .card .colored-paper:last-child, .card > .group-section-pagination-holder {
     margin-bottom: -.25rem;
-    margin-bottom: calc(-.25rem - 2px);
+    margin-bottom: calc(-.25rem - 5px);
   }
 }
 @media only screen and (min-width: 767px) {
-  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .card > .group-section-pagination-holder {
+  .colored-paper .tabs, .card .colored-paper:last-child, .card > .group-section-pagination-holder {
     margin-bottom: -.5rem;
-    margin-bottom: calc(-.5rem - 2px);
+    margin-bottom: calc(-.5rem - 5px);
   }
 }
 @media only screen and (min-width: 1024px) {
-  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .card > .group-section-pagination-holder {
+  .colored-paper .tabs, .card .colored-paper:last-child, .card > .group-section-pagination-holder {
     margin-bottom: -1rem;
-    margin-bottom: calc(-1rem - 2px);
+    margin-bottom: calc(-1rem - 5px);
   }
 }
 @media only screen and (min-width: 1200px) {
-  .colored-paper .tabs, .group-section .colored-paper:last-child, .card .colored-paper:last-child, .card > .group-section-pagination-holder {
+  .colored-paper .tabs, .card .colored-paper:last-child, .card > .group-section-pagination-holder {
     margin-bottom: -1rem;
-    margin-bottom: calc(-1rem - 2px);
+    margin-bottom: calc(-1rem - 5px);
   }
 }
 
@@ -9339,7 +9884,7 @@ div.reveal .close-button {
 
 .page {
   position: relative;
-  padding-bottom: 5rem;
+  padding-bottom: 1.5rem;
 }
 
 .section, section {
@@ -9364,22 +9909,22 @@ div.reveal .close-button {
 *   @example
 *	<div class="page-wrapper" style="border:red 1px solid"><div class="section">Hello this is content </div></div>
 **/
-.with-group-sections, .paper-page, .with-group-sections .overlap .tabs .selected, .with-group-sections .overlap .tabs .is-active, .paper-page .overlap .tabs .selected, .paper-page .overlap .tabs .is-active {
+.paper-page, .paper-page .overlap .tabs .selected, .paper-page .overlap .tabs .is-active {
   background-image: url("../img/billie-holiday-lite.png");
 }
 
-.group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card, .lifted {
+.card, .paper-page .page-wrapper .card, .lifted {
   -webkit-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
 }
 
-.group-section, .card, .with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card {
+.card, .paper-page .page-wrapper .card {
   border: 1px solid #d9d9d9;
   background-color: white;
 }
 
-.with-group-sections .page-wrapper .group-section.ghost, .with-group-sections .page-wrapper .card.ghost, .paper-page .page-wrapper .group-section.ghost, .paper-page .page-wrapper .card.ghost {
+.paper-page .page-wrapper .card.ghost {
   border: 2px dashed #bfbfbf;
   background-color: transparent;
   background-image: url("../img/empty_stripe_grey@2x.png");
@@ -9388,68 +9933,72 @@ div.reveal .close-button {
   box-shadow: inset 0px 1px 6px 3px rgba(230, 230, 230, 0.2);
 }
 
-.group-section, .card {
+.card {
   width: auto;
   position: relative;
+  margin-top: 0.75rem;
 }
 
-.with-group-sections.error, .with-group-sections.error .overlap .tabs .selected, .with-group-sections.error .overlap .tabs .is-active, .paper-page.error, .paper-page.error .overlap .tabs .selected, .paper-page.error .overlap .tabs .is-active {
+.paper-page.error, .paper-page.error .overlap .tabs .selected, .paper-page.error .overlap .tabs .is-active {
   background-color: #f5c3c8;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.warning, .with-group-sections.warning .overlap .tabs .selected, .with-group-sections.warning .overlap .tabs .is-active, .paper-page.warning, .paper-page.warning .overlap .tabs .selected, .paper-page.warning .overlap .tabs .is-active {
+.paper-page.warning, .paper-page.warning .overlap .tabs .selected, .paper-page.warning .overlap .tabs .is-active {
   background-color: #fae1c2;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.success, .with-group-sections.success .overlap .tabs .selected, .with-group-sections.success .overlap .tabs .is-active, .paper-page.success, .paper-page.success .overlap .tabs .selected, .paper-page.success .overlap .tabs .is-active {
+.paper-page.success, .paper-page.success .overlap .tabs .selected, .paper-page.success .overlap .tabs .is-active {
   background-color: #b9f7d3;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.info, .with-group-sections.info .overlap .tabs .selected, .with-group-sections.info .overlap .tabs .is-active, .paper-page.info, .paper-page.info .overlap .tabs .selected, .paper-page.info .overlap .tabs .is-active {
+.paper-page.info, .paper-page.info .overlap .tabs .selected, .paper-page.info .overlap .tabs .is-active {
   background-color: #e9e9e9;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.highlighted, .with-group-sections.highlighted .overlap .tabs .selected, .with-group-sections.highlighted .overlap .tabs .is-active, .paper-page.highlighted, .paper-page.highlighted .overlap .tabs .selected, .paper-page.highlighted .overlap .tabs .is-active {
+.paper-page.highlighted, .paper-page.highlighted .overlap .tabs .selected, .paper-page.highlighted .overlap .tabs .is-active {
   background-color: #c7ecf6;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.locked, .with-group-sections.locked .overlap .tabs .selected, .with-group-sections.locked .overlap .tabs .is-active, .paper-page.locked, .paper-page.locked .overlap .tabs .selected, .paper-page.locked .overlap .tabs .is-active {
+.paper-page.locked, .paper-page.locked .overlap .tabs .selected, .paper-page.locked .overlap .tabs .is-active {
   background-color: #efefef;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections.disabled, .with-group-sections.disabled .overlap .tabs .selected, .with-group-sections.disabled .overlap .tabs .is-active, .paper-page.disabled, .paper-page.disabled .overlap .tabs .selected, .paper-page.disabled .overlap .tabs .is-active {
+.paper-page.disabled, .paper-page.disabled .overlap .tabs .selected, .paper-page.disabled .overlap .tabs .is-active {
   background-color: #f2f2f2;
   background-image: url("../img/billie-holiday-speck.png");
 }
-.with-group-sections .overlap + .page-wrapper, .paper-page .overlap + .page-wrapper {
+.paper-page .overlap + .page-wrapper {
   padding-top: .5rem;
 }
-.with-group-sections .page-wrapper .group-section, .with-group-sections .page-wrapper .card, .paper-page .page-wrapper .group-section, .paper-page .page-wrapper .card {
+.paper-page .page-wrapper {
+  padding-top: 1px;
+}
+.paper-page .page-wrapper .card {
   width: auto;
   position: relative;
 }
-.with-group-sections .page-wrapper .group-section.ghost, .with-group-sections .page-wrapper .card.ghost, .paper-page .page-wrapper .group-section.ghost, .paper-page .page-wrapper .card.ghost {
+.paper-page .page-wrapper .card.ghost {
   border-radius: 6px;
 }
-.with-group-sections .page-wrapper.error .group-section.ghost, .with-group-sections .page-wrapper.error .card.ghost, .paper-page .page-wrapper.error .group-section.ghost, .paper-page .page-wrapper.error .card.ghost {
+.paper-page .page-wrapper.error .card.ghost {
   background-color: #e7ced1;
 }
-.with-group-sections .page-wrapper.warning .group-section.ghost, .with-group-sections .page-wrapper.warning .card.ghost, .paper-page .page-wrapper.warning .group-section.ghost, .paper-page .page-wrapper.warning .card.ghost {
+.paper-page .page-wrapper.warning .card.ghost {
   background-color: #eaddce;
 }
-.with-group-sections .page-wrapper.success .group-section.ghost, .with-group-sections .page-wrapper.success .card.ghost, .paper-page .page-wrapper.success .group-section.ghost, .paper-page .page-wrapper.success .card.ghost {
+.paper-page .page-wrapper.success .card.ghost {
   background-color: #c9e8d6;
 }
-.with-group-sections .page-wrapper.info .group-section.ghost, .with-group-sections .page-wrapper.info .card.ghost, .paper-page .page-wrapper.info .group-section.ghost, .paper-page .page-wrapper.info .card.ghost {
+.paper-page .page-wrapper.info .card.ghost {
   background-color: #e1e1e1;
 }
-.with-group-sections .page-wrapper.highlighted .group-section.ghost, .with-group-sections .page-wrapper.highlighted .card.ghost, .paper-page .page-wrapper.highlighted .group-section.ghost, .paper-page .page-wrapper.highlighted .card.ghost {
+.paper-page .page-wrapper.highlighted .card.ghost {
   background-color: #d0e3e8;
 }
-.with-group-sections .page-wrapper.locked .group-section.ghost, .with-group-sections .page-wrapper.locked .card.ghost, .paper-page .page-wrapper.locked .group-section.ghost, .paper-page .page-wrapper.locked .card.ghost {
+.paper-page .page-wrapper.locked .card.ghost {
   background-color: #e4e4e4;
 }
-.with-group-sections .page-wrapper.disabled .group-section.ghost, .with-group-sections .page-wrapper.disabled .card.ghost, .paper-page .page-wrapper.disabled .group-section.ghost, .paper-page .page-wrapper.disabled .card.ghost {
+.paper-page .page-wrapper.disabled .card.ghost {
   background-color: #e6e6e6;
 }
 
@@ -9554,7 +10103,7 @@ div.reveal .close-button {
 .colored-paper.disabled .tabs li:hover {
   background-color: #ededed;
 }
-.card.ghost .colored-paper, .colored-paper .group-section.ghost {
+.colored-paper .card.ghost {
   background-image: url("../img/construction_paper_grey.png");
   border-radius: 7.5px !important;
   margin: 0 !important;
@@ -9584,41 +10133,54 @@ div.reveal .close-button {
   background-color: #fff;
 }
 
-.radius.group-section .colored-paper:first-child, .radius.card .colored-paper:first-child, .radius.group-section .colored-paper:last-child, .radius.card .colored-paper:last-child {
+.radius.card .colored-paper:first-child,
+.radius.card .colored-paper:last-child {
   border-radius: 6px;
 }
 
-.radius-bottom.group-section .colored-paper:last-child, .radius-bottom.card .colored-paper:last-child {
+.radius-bottom.card .colored-paper:last-child {
   border-radius: 0 0 6px 6px;
 }
 
-.radius-top.group-section .colored-paper:first-child, .radius-top.card .colored-paper:first-child {
+.radius-top.card .colored-paper:first-child {
   border-radius: 6px 6px 0 0;
 }
 
 /**
 * Paper Cards:
-* `.page.paper-page .page-wrapper .card` - by default pages are white but when the need arises to have grouped section 'cards' are introduced and the background area becomes a layer of soft off white construction paper. If the need arises to highlight a collection of cards add `.highlighted` to the `.page.with-group-sections` and the product color will bleed into the construction paper.
+* `.page.paper-page .page-wrapper .card` - by default pages are white. You can modify pages by adding paper-page to add a soft background texture of off-white-construction paper. You can further modify the page with `.highlighted`, `.warning`, `.error` to add color to the background paper texture.
 * 
 *   @example
-*   <div class="page paper-page">
-*    <div class="page-wrapper content-padding">
-*    <section class="section card"><h1>Hello</h1> <p>This is content  that is showing up in a section group</p></section>
-*    </div>
-*    </div>
-*   <div class="page paper-page error">
-*    <div class="page-wrapper content-padding">
-*       <section class="section card">
-*           <h1>.Page.Paper-Page.Error</h1>
-*       </section>
-*    </div></div>
-*   <div class="page paper-page highlighted">
-*    <div class="page-wrapper content-padding">
-*       <section class="section card">
-*           <h1>.Page.Paper-Page.Highlighted</h1>
-*       </section>
-*    </div>
-*    </div>
+*	<div class="page paper-page">
+*		<div class="page-wrapper">
+*			<section class="section card">
+*				<h1>
+*					Hello
+*				</h1>
+*				<p>
+*					This is content  that is showing up in a section group
+*				</p>
+*			</section>
+*		</div>
+*	</div>
+*	<div class="page paper-page error">
+*		<div class="page-wrapper">
+*			<section class="section card">
+*				<h1>
+*					.Page.Paper-Page.Error
+*				</h1>
+*			</section>
+*		</div>
+*	</div>
+*	<div class="page paper-page highlighted">
+*		<div class="page-wrapper">
+*			<section class="section card">
+*				<h1>
+*					.Page.Paper-Page.Highlighted
+*				</h1>
+*			</section>
+*		</div>
+*	</div>
 *
 **/
 /**
@@ -9626,17 +10188,30 @@ div.reveal .close-button {
 * `card.ghost` - Ghosted cards are used as holder for an upcoming or locked section. When you want to show a section that will become editable or expanded but don't want it to pop in ghost is a good design pattern to use.
 * 
 *   @example
-*   <div class="page paper-page">
-*    <div class="page-wrapper content-padding">
-*    <section class="section card"><h1>Hello I am a ghost</h1> <p>This is content  that is showing up in a section group</p></section>
-*    </div>
-*    </div>
-*   <div class="page paper-page error">
-*    <div class="page-wrapper content-padding">
-*       <section class="section card ghost"><div class="error colored-paper">Colored Paper is Effected by Ghosting</div>
-*           <h1>.Page.Paper-Page.Error .Card.Ghost</h1>
-*       </section>
-*    </div></div>
+*	<div class="page paper-page">
+*		<div class="page-wrapper content-padding">
+*			<section class="section card ghost">
+*				<h1>
+*					Hello I am a ghost
+*				</h1>
+*				<p>
+*					This is content  that is showing up in a section group
+*				</p>
+*			</section>
+*		</div>
+*	</div>
+*	<div class="page paper-page error">
+*		<div class="page-wrapper content-padding">
+*			<section class="section card ghost">
+*				<div class="error colored-paper">
+*					Colored Paper is Effected by Ghosting
+*				</div>
+*				<h1>
+*					.Page.Paper-Page.Error .Card.Ghost
+*				</h1>
+*			</section>
+*		</div>
+*	</div>
 *
 **/
 /**
@@ -9770,29 +10345,43 @@ div.reveal .close-button {
 * `.card.radius` - Using the Utility Class of radius you can round the corners of cards.  Just add "radius" "radius-top" "radius-bottom"
 * 
 *   @example
-*   <div class="page with-group-sections">
-*    <div class="page-wrapper content-padding">
-*        <div class="row">
-*            <div class="medium-4 columns">
-*                <div class="card radius-top">
-*                    <div class="colored-paper"><h3 class="text-center">radius-top</h3></div>
-*                      <p>colored paper also gets the rounded corners set by the card</p>
-*                </div>
-*            </div>
-*            <div class="medium-4 columns">
-*                <div class="card radius">
-*                    <h3 class="text-center">radius</h3>
-*                </div>
-*            </div>
-*            <div class="medium-4 columns">
-*                <div class="card radius-bottom">
-*                    <h3 class="text-center">radius-bottom</h3>
-*                    <div class="colored-paper"><h3 class="text-center">colored paper</h3></div>
-*                </div>
-*            </div>
-*        </div>
-*    </div>
-*    </div>
+*	<div class="page paper-page">
+*		<div class="page-wrapper content-padding">
+*			<div class="row">
+*				<div class="medium-4 column">
+*					<div class="card radius-top">
+*						<div class="colored-paper">
+*							<h4 class="text-center">
+*								colored paper
+*							</h4>
+*						</div>
+*						<h3 class="text-center">
+*							class='radius-top'
+*						</h3>
+*					</div>
+*				</div>
+*				<div class="medium-4 column">
+*					<div class="card radius">
+*						<h3 class="text-center">
+*							radius
+*						</h3>
+*					</div>
+*				</div>
+*				<div class="medium-4 column">
+*					<div class="card radius-bottom">
+*						<h3 class="text-center">
+*							class='radius-bottom'
+*						</h3>
+*						<div class="colored-paper">
+*							<h4 class="text-center">
+*								colored paper
+*							</h4>
+*						</div>
+*					</div>
+*				</div>
+*			</div>
+*		</div>
+*	</div>
 *
 **/
 /**
@@ -9871,14 +10460,14 @@ div.reveal .close-button {
   overflow: visible;
 }
 .mobile-offcanvas-wrapper .split-layout.navOn {
-  -webkit-transform: translateX(83.33333%);
-  transform: translateX(83.33333%);
-  transform: translate3d(83.33333%, 0, 0);
-  -webkit-transform: translate3d(83.33333%, 0, 0);
+  -webkit-transform: translateX(83.3333333333%);
+  transform: translateX(83.3333333333%);
+  transform: translate3d(83.3333333333%, 0, 0);
+  -webkit-transform: translate3d(83.3333333333%, 0, 0);
 }
 .mobile-offcanvas-wrapper .split-layout .split-sidebar {
   display: block;
-  width: 83.33333%;
+  width: 83.3333333333%;
   float: left;
   padding-left: 0.625rem;
   padding-right: 0.625rem;
@@ -9895,14 +10484,14 @@ div.reveal .close-button {
   float: right;
 }
 .mobile-offcanvas-wrapper .split-layout.reverse.navOn {
-  -webkit-transform: translateX(-83.33333%);
-  transform: translateX(-83.33333%);
-  transform: translate3d(-83.33333%, 0, 0);
-  -webkit-transform: translate3d(-83.33333%, 0, 0);
+  -webkit-transform: translateX(-83.3333333333%);
+  transform: translateX(-83.3333333333%);
+  transform: translate3d(-83.3333333333%, 0, 0);
+  -webkit-transform: translate3d(-83.3333333333%, 0, 0);
 }
 .mobile-offcanvas-wrapper .split-layout.reverse .split-sidebar {
   position: absolute;
-  right: -83.33333%;
+  right: -83.3333333333%;
   left: auto;
 }
 .mobile-offcanvas-wrapper .split-layout.small, .mobile-offcanvas-wrapper .split-layout.small.navOn {
@@ -9972,7 +10561,7 @@ div.reveal .close-button {
   float: left;
   padding-left: 0.625rem;
   padding-right: 0.625rem;
-  left: -83.33333%;
+  left: -83.3333333333%;
   border: #b3b3b3 solid 0;
   border-right-width: 1px;
   padding-left: 0 !important;
@@ -10019,7 +10608,7 @@ div.reveal .close-button {
 }
 .split-layout.small .split-sidebar {
   display: block;
-  width: 41.66667%;
+  width: 41.6666666667%;
   float: left;
   padding-left: 0.625rem;
   padding-right: 0.625rem;
@@ -10037,7 +10626,7 @@ div.reveal .close-button {
 }
 .split-layout.small .split-content {
   display: block;
-  width: 58.33333%;
+  width: 58.3333333333%;
   float: left;
   padding-left: 0.625rem;
   padding-right: 0.625rem;
@@ -10059,7 +10648,7 @@ div.reveal .close-button {
     left: 0;
     right: 0;
     display: block;
-    width: 33.33333%;
+    width: 33.3333333333%;
     float: left;
     padding-left: 0.625rem;
     padding-right: 0.625rem;
@@ -10079,7 +10668,7 @@ div.reveal .close-button {
   }
   .split-layout.medium .split-content, .split-layout.small .split-content {
     display: block;
-    width: 66.66667%;
+    width: 66.6666666667%;
     float: left;
     padding-left: 0.625rem;
     padding-right: 0.625rem;
@@ -10211,12 +10800,78 @@ div.reveal .close-button {
 *	</section>
 *	</div>
 */
+.mobile-header {
+  border-bottom: #00386b 6px solid;
+  padding: 0;
+  background-color: #fff;
+  display: block;
+  clear: both;
+  width: 100%;
+  position: relative;
+}
+.mobile-header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.mobile-header .logo {
+  left: 0;
+  top: 0;
+  display: none;
+  text-align: right;
+  clear: none;
+  float: left;
+  vertical-align: middle;
+}
+@media only screen and (min-width: 767px) {
+  .mobile-header .logo {
+    display: inline-block;
+  }
+}
+.mobile-header .logo img {
+  height: 60px;
+}
+@media only screen and (min-width: 1024px) {
+  .mobile-header .logo img {
+    height: 70px;
+    margin: 10px 10px 0 0;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .mobile-header .logo img {
+    height: 85px;
+    margin: 10px 10px 0 0;
+  }
+}
+.mobile-header .tabs {
+  margin-top: 0;
+  margin-bottom: 0;
+  clear: none;
+}
+@media only screen and (min-width: 767px) {
+  .mobile-header .tabs {
+    float: right;
+    width: auto;
+    height: 70px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .mobile-header .tabs {
+    height: 80px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .mobile-header .tabs {
+    height: 95px;
+  }
+}
+
 /**
 * Mobile Header:
-* `.header.pagel` - there is a basic layout of short tabbed header of apps
+* `.moible-header` - there is a basic layout of short tabbed header of apps
 * 
 *   @example
-*	<div class="row"><header class="header page">
+*	<div class="row"><header class="mobile-header">
 *		<a href="#!/content/calculator/" class="logo">
 *			<img  src="assets/img/headerlogo.svg" alt="ACC Statin Intolerance Guidelines">
 *		</a>
@@ -10227,67 +10882,87 @@ div.reveal .close-button {
 *		</ul>
 *	</header></div>
 */
-.page.header {
-  border-bottom: #00386b 6px solid;
-  padding: 0;
-  background-color: #fff;
-  display: block;
-  clear: both;
-  width: 100%;
-  position: relative;
+.mobile-footer {
+  border-top: #00386b 4px solid;
+  background: url("../img/crossed_stripes.png");
 }
-.page.header:after {
+.mobile-footer:after {
   content: "";
   display: table;
   clear: both;
 }
-.page.header .logo {
-  left: 0;
-  top: 0;
-  display: none;
-  text-align: right;
-  clear: none;
-  float: left;
-  vertical-align: middle;
+.mobile-footer .tabs {
+  float: right;
+  width: auto;
 }
-@media only screen and (min-width: 767px) {
-  .page.header .logo {
+.mobile-footer .logo img {
+  margin: .25rem 1rem;
+  display: none;
+}
+.mobile-footer .tabs.primary li.selected {
+  border-top-color: #00386b;
+}
+.mobile-footer .tabs.primary li.selected a:after {
+  border-top-color: #00386b;
+}
+@media only screen and (max-width: 767px) {
+  .mobile-footer {
+    text-align: right;
+  }
+  .mobile-footer .logo img {
+    display: block;
+    width: 320px;
+  }
+  .mobile-footer .tabs {
+    width: 100%;
+    margin: 0;
+  }
+  .mobile-footer .logo {
+    display: block;
+    border-bottom: #00386b 4px solid;
+  }
+  .mobile-footer .logo:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .mobile-footer .logo img {
+    max-width: 95%;
+    margin: .25rem 2.5%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .mobile-footer .tabs {
+    font-weight: 500;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .mobile-footer {
+    text-align: center;
+  }
+  .mobile-footer .tabs.tabs-primary.reverse {
+    float: none;
     display: inline-block;
   }
-}
-.page.header .logo img {
-  height: 60px;
-}
-@media only screen and (min-width: 1024px) {
-  .page.header .logo img {
-    height: 70px;
-    margin: 10px 10px 0 0;
+  .mobile-footer .tabs.tabs-primary.reverse li {
+    float: none;
+    display: inline-block;
   }
-}
-@media only screen and (min-width: 1200px) {
-  .page.header .logo img {
-    height: 85px;
-    margin: 10px 10px 0 0;
+  .mobile-footer .tabs.tabs-primary.reverse, .mobile-footer .tabs.tabs-primary.reverse li {
+    background-color: transparent;
+    border: 0;
   }
-}
-.page.header .tabs {
-  clear: none;
-}
-@media only screen and (min-width: 767px) {
-  .page.header .tabs {
-    float: right;
-    width: auto;
-    height: 70px;
+  .mobile-footer .tabs.tabs-primary.reverse a, .mobile-footer .tabs.tabs-primary.reverse li a {
+    color: #fff;
   }
-}
-@media only screen and (min-width: 1024px) {
-  .page.header .tabs {
-    height: 80px;
+  .mobile-footer .tabs.tabs-primary.reverse a:after, .mobile-footer .tabs.tabs-primary.reverse li a:after {
+    top: auto;
+    bottom: -1px;
+    border-width: 0px 8px;
+    border-bottom: 10px solid #fff;
   }
-}
-@media only screen and (min-width: 1200px) {
-  .page.header .tabs {
-    height: 95px;
+  .mobile-footer .tabs.tabs-primary.reverse a:hover, .mobile-footer .tabs.tabs-primary.reverse li a:hover {
+    text-decoration: underline;
   }
 }
 
@@ -10296,7 +10971,7 @@ div.reveal .close-button {
 * `.footer.page` - there is a basic layout of short tabbed footer for mobile apps
 * 
 *   @example
-*	<footer class="page footer">
+*	<footer class="mobile-footer">
 *		<a href="#!/content/home/" class="logo" >
 *			<img style="border:none 0; " src="assets/img/footerlogo.svg" alt="ACC Statin Intolerance Guidelines">
 *		</a>
@@ -10322,90 +10997,6 @@ div.reveal .close-button {
 *		</ul>
 *	</footer>
 */
-.page.footer {
-  border-top: #00386b 4px solid;
-  background: url("../img/crossed_stripes.png");
-}
-.page.footer:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.page.footer .tabs {
-  float: right;
-  width: auto;
-}
-.page.footer .logo img {
-  margin: .25rem 1rem;
-  display: none;
-}
-.page.footer .tabs.primary li.selected {
-  border-top-color: #00386b;
-}
-.page.footer .tabs.primary li.selected a:after {
-  border-top-color: #00386b;
-}
-@media only screen and (max-width: 767px) {
-  .page.footer {
-    text-align: right;
-  }
-  .page.footer .logo img {
-    display: block;
-    width: 320px;
-  }
-  .page.footer .tabs {
-    width: 100%;
-    margin: 0;
-  }
-  .page.footer .logo {
-    display: block;
-    border-bottom: #00386b 4px solid;
-  }
-  .page.footer .logo:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  .page.footer .logo img {
-    max-width: 95%;
-    margin: .25rem 2.5%;
-  }
-}
-@media only screen and (max-width: 1024px) {
-  .page.footer .tabs {
-    font-weight: 500;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .page.footer {
-    text-align: center;
-  }
-  .page.footer .tabs.tabs-primary.reverse {
-    float: none;
-    display: inline-block;
-  }
-  .page.footer .tabs.tabs-primary.reverse li {
-    float: none;
-    display: inline-block;
-  }
-  .page.footer .tabs.tabs-primary.reverse, .page.footer .tabs.tabs-primary.reverse li {
-    background-color: transparent;
-    border: 0;
-  }
-  .page.footer .tabs.tabs-primary.reverse a, .page.footer .tabs.tabs-primary.reverse li a {
-    color: #fff;
-  }
-  .page.footer .tabs.tabs-primary.reverse a:after, .page.footer .tabs.tabs-primary.reverse li a:after {
-    top: auto;
-    bottom: -1px;
-    border-width: 0px 8px;
-    border-bottom: 10px solid #fff;
-  }
-  .page.footer .tabs.tabs-primary.reverse a:hover, .page.footer .tabs.tabs-primary.reverse li a:hover {
-    text-decoration: underline;
-  }
-}
-
 .page-footer {
   border-top: #666666 4px solid;
   background-color: #bfbfbf;
@@ -11024,7 +11615,7 @@ cite {
 *
 *   @example
 *   <div class="data-display">
-*       <header class="header page">
+*       <header class="mobile-header">
 *           <a href="#!/content/calculator/" class="logo"><img src="assets/img/headerlogo.svg"  alt="ACC Statin Intolerance Guidelines"></a>
 *           <ul class="nav tabs tabs-primary condensable condensable-word small">
 *               <li class="icon"><a class="home">  <i class="fa fa-holder"></i></a></li>
@@ -11060,6 +11651,9 @@ cite {
 }
 .group-section-pagination-holder .pagination li a {
   color: #fff;
+}
+.group-section-pagination-holder .pagination li a:hover {
+  color: #198dae;
 }
 .group-section-pagination-holder .pagination li.current a, .group-section-pagination-holder .pagination li.current a:hover {
   background-color: white;
@@ -11250,11 +11844,11 @@ h2 blockquote, h2 .sub-line {
 h2.with-underline blockquote, h2.with-underline .sub-line {
   font-size: 0.875rem;
   line-height: 1.5;
-  margin-top: 0.02812rem;
+  margin-top: 0.028125rem;
   margin-bottom: 0.01875rem;
 }
 .colored-paper h2.with-underline blockquote, .callout h2.with-underline blockquote, .page-message h2.with-underline blockquote, .colored-paper h2.with-underline .sub-line, .callout h2.with-underline .sub-line, .page-message h2.with-underline .sub-line {
-  margin-top: 0.02812rem;
+  margin-top: 0.028125rem;
   margin-bottom: 0.01875rem;
   line-height: 1.35;
 }
@@ -11683,11 +12277,11 @@ h6 blockquote, h6 .sub-line {
 }
 
 /**
-* FONT CLASSES:
-* `font-bold` - These classes allow for quick alterations of how the same font alter the x-hight at the same size. 
-*
-*  @example 
-*    <h1><span class="font-bold">.font-bold</spam><span class="font-slab-bold">.font-slab-bold</spam><span class="font-slab">.font-slab</spam><span class="font-medium">.font-medium</spam><span class="font">.font</spam><span class="font-light">.font-light</spam><span class="font-display">.font-display</spam></h1>
+* Font Classes:
+* `font-xxx` - These classes allow for quick overrides to the font that is being displayed. This is helpful when dealing with formated content areas that are non-basic like contact ares, addresses, question and answer where display control is not driven by the semantic html usage. This control at a DOM level reduces the need to write new styles.  
+* 
+*   @example
+*	<h1><span class="font-bold">.font-bold</spam><span class="font-slab-bold">.font-slab-bold</spam><span class="font-slab">.font-slab</spam><span class="font-medium">.font-medium</spam><span class="font">.font</spam><span class="font-light">.font-light</spam><span class="font-display">.font-display</spam></h1>
 **/
 /*
 STATE TRUMPING CODE
@@ -11701,7 +12295,7 @@ STATE TRUMPING CODE
 }
 
 .nav-list.nav-checklist li.error, .nav-checklist.panel-selector li.error, .error.question .message-holder > .error, .hint .error, .error .close-bar .close-button, .error.inset .bar.close .action-btn, .error-inactive .switch-paddle, .error-active input:checked ~ .switch-paddle, .error.callout, .error.page-message {
-  background-color: #de404e;
+  background-color: #c32231;
 }
 
 .error .fa-holder:before, .error.fa:before, .error > .fa-holder:before, .nav-list.nav-checklist li.error .fa-holder:before, .nav-checklist.panel-selector li.error .fa-holder:before, .error.answer .required-holder i.fa-holder:before, .error.question .required-holder i.fa-holder:before, .error.question-inline .required-holder i.fa-holder:before, d.error.question-grid-base .required-holder i.fa-holder:before, .error.page-message .fa-holder:before {
@@ -11717,7 +12311,7 @@ STATE TRUMPING CODE
 }
 
 .nav-list.nav-checklist li.warning, .nav-checklist.panel-selector li.warning, .warning.question .message-holder > .warning, .hint .warning, .warning .close-bar .close-button, .warning.inset .bar.close .action-btn, .warning-inactive .switch-paddle, .warning-active input:checked ~ .switch-paddle, .warning.callout, .warning.page-message {
-  background-color: #ee9e3c;
+  background-color: #E08514;
 }
 
 .warning .fa-holder:before, .warning.fa:before, .warning > .fa-holder:before, .nav-list.nav-checklist li.warning .fa-holder:before, .nav-checklist.panel-selector li.warning .fa-holder:before, .warning.answer .required-holder i.fa-holder:before, .warning.question .required-holder i.fa-holder:before, .warning.question-inline .required-holder i.fa-holder:before, d.warning.question-grid-base .required-holder i.fa-holder:before, .warning.page-message .fa-holder:before {
@@ -11733,7 +12327,7 @@ STATE TRUMPING CODE
 }
 
 .nav-list.nav-checklist li.success, .nav-checklist.panel-selector li.success, .success.question .message-holder > .success, .hint .success, .success .close-bar .close-button, .success.inset .bar.close .action-btn, .success-inactive .switch-paddle, .success-active input:checked ~ .switch-paddle, .success.callout, .success.page-message {
-  background-color: #1de573;
+  background-color: #14B057;
 }
 
 .success .fa-holder:before, .success.fa:before, .success > .fa-holder:before, .nav-list.nav-checklist li.success .fa-holder:before, .nav-checklist.panel-selector li.success .fa-holder:before, .success.answer .required-holder i.fa-holder:before, .success.question .required-holder i.fa-holder:before, .success.question-inline .required-holder i.fa-holder:before, d.success.question-grid-base .required-holder i.fa-holder:before, .success.page-message .fa-holder:before {
@@ -11749,7 +12343,7 @@ STATE TRUMPING CODE
 }
 
 .nav-list.nav-checklist li.info, .nav-checklist.panel-selector li.info, .info.question .message-holder > .info, .hint .info, .info .close-bar .close-button, .info.inset .bar.close .action-btn, .info-inactive .switch-paddle, .info-active input:checked ~ .switch-paddle, .info.callout, .info.page-message {
-  background-color: #b8b8b8;
+  background-color: #a6a6a6;
 }
 
 .info .fa-holder:before, .info.fa:before, .info > .fa-holder:before, .nav-list.nav-checklist li.info .fa-holder:before, .nav-checklist.panel-selector li.info .fa-holder:before, .info.answer .required-holder i.fa-holder:before, .info.question .required-holder i.fa-holder:before, .info.question-inline .required-holder i.fa-holder:before, d.info.question-grid-base .required-holder i.fa-holder:before, .info.page-message .fa-holder:before {
@@ -11765,7 +12359,7 @@ STATE TRUMPING CODE
 }
 
 .nav-list.nav-checklist li.highlighted, .nav-checklist.panel-selector li.highlighted, .highlighted.question .message-holder > .highlighted, .hint .highlighted, .highlighted .close-bar .close-button, .highlighted.inset .bar.close .action-btn, .highlighted-inactive .switch-paddle, .highlighted-active input:checked ~ .switch-paddle, .highlighted.callout, .highlighted.page-message {
-  background-color: #4bc1e2;
+  background-color: #22AFD7;
 }
 
 .highlighted .fa-holder:before, .highlighted.fa:before, .highlighted > .fa-holder:before, .nav-list.nav-checklist li.highlighted .fa-holder:before, .nav-checklist.panel-selector li.highlighted .fa-holder:before, .highlighted.answer .required-holder i.fa-holder:before, .highlighted.question .required-holder i.fa-holder:before, .highlighted.question-inline .required-holder i.fa-holder:before, d.highlighted.question-grid-base .required-holder i.fa-holder:before, .highlighted.page-message .fa-holder:before {
@@ -11781,7 +12375,7 @@ STATE TRUMPING CODE
 }
 
 .nav-list.nav-checklist li.locked, .nav-checklist.panel-selector li.locked, .locked.question .message-holder > .locked, .hint .locked, .locked .close-bar .close-button, .locked.inset .bar.close .action-btn, .locked-inactive .switch-paddle, .locked-active input:checked ~ .switch-paddle, .locked.callout, .locked.page-message {
-  background-color: #cccccc;
+  background-color: #bfbfbf;
 }
 
 .locked .fa-holder:before, .locked.fa:before, .locked > .fa-holder:before, .nav-list.nav-checklist li.locked .fa-holder:before, .nav-checklist.panel-selector li.locked .fa-holder:before, .locked.answer .required-holder i.fa-holder:before, .locked.question .required-holder i.fa-holder:before, .locked.question-inline .required-holder i.fa-holder:before, d.locked.question-grid-base .required-holder i.fa-holder:before, .locked.page-message .fa-holder:before {
@@ -11797,7 +12391,7 @@ STATE TRUMPING CODE
 }
 
 .nav-list.nav-checklist li.disabled, .nav-checklist.panel-selector li.disabled, .disabled.question .message-holder > .disabled, .hint .disabled, .disabled .close-bar .close-button, .disabled.inset .bar.close .action-btn, .disabled-inactive .switch-paddle, .disabled-active input:checked ~ .switch-paddle, .disabled.callout, .disabled.page-message {
-  background-color: #d6d6d6;
+  background-color: #cccccc;
 }
 
 .disabled .fa-holder:before, .disabled.fa:before, .disabled > .fa-holder:before, .nav-list.nav-checklist li.disabled .fa-holder:before, .nav-checklist.panel-selector li.disabled .fa-holder:before, .disabled.answer .required-holder i.fa-holder:before, .disabled.question .required-holder i.fa-holder:before, .disabled.question-inline .required-holder i.fa-holder:before, d.disabled.question-grid-base .required-holder i.fa-holder:before, .disabled.page-message .fa-holder:before {

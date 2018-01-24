@@ -1,38 +1,6 @@
-$(document).foundation();
-
-
 $(function() {
-  $( "#accordion" ).accordion();
-  $( "#accordion2" ).accordion();
-  $("#chosen").chosen({width: "100%"});
-   $("#chosenSingle").chosen({width: "100%"});
+  $(document).foundation();
 
-// to render html in an auto complete you must extend it. 
-// https://api.jqueryui.com/autocomplete/#method-_renderItem
-
-
-var availableTags = [
-  "<span class='headline'>ActionScript</span><span class='description'>code language</span><span>normal text</span>",
-  "<span class='headline'>AppleScript</span><span class='description'>code language</span><span>normal text</span>",
-  "<span class='headline'>Asp</span><span class='description'>code language</span><span>normal text</span>",
-  "<span class='headline'>BASIC</span><span class='description'>code language</span><span>normal text</span>",
-  "<span class='headline'>Clojure</span><span class='description'>code language</span><span>normal text</span>",
-  "<span class='headline'>COBOL</span><span class='description'>code language</span><span>normal text</span>",
-  "<span class='headline'>ColdFusion</span><span class='description'>code language</span><span>normal text</span>",
-  "<span class='headline'>Erlang</span><span class='description'>code language</span><span>normal text</span>",
-  "<span class='headline'>Fortran</span><span class='description'>code language</span><span>normal text</span>",
-  "<span class='headline'>Groovy</span><span class='description'>code language</span><span>normal text</span>",
-  "<span class='headline'>Haskell</span><span class='description'>code language</span><span>normal text</span>",
-  "<span class='headline'>Java</span><span class='description'>code language</span><span>normal text</span>",
-  "<span class='headline'>JavaScript</span><span class='description'>code language</span><span>normal text</span>",
-  "<span class='headline'>Lisp</span><span class='description'>code language</span><span>normal text</span>",
-  "<span class='headline'>Perl</span><span class='description'>code language</span><span>normal text</span>",
-  "<span class='headline'>PHP</span><span class='description'>code language</span><span>normal text</span>",
-  "<span class='headline'>Python</span><span class='description'>code language</span><span>normal text</span>",
-  "<span class='headline'>Ruby</span><span class='description'>code language</span><span>normal text</span>",
-  "<span class='headline'>Scala</span><span class='description'>code language</span><span>normal text</span>",
-  "<span class='headline'>Scheme</span><span class='description'>code language</span>"
-];
 
 });
   $(function() {
@@ -179,15 +147,7 @@ var availableTags = [
 
  
 
- var panelScrollTop = function(data, event){
-    var offset = $(event.currentTarget).parent().parent().offset().top -50;
-    var winOffset = $(window).scrollTop(); 
-    var newScroll = ( offset <= winOffset)? offset : 0;
-    $(window).scrollTop(newScroll);
-    };
-  var pageScrollTop = function(data, event){
-    $(window).scrollTop(0);
-    } 
+
   var panelVisibleToggle = function(data,event){
     var target = data + ' .collapsable-panel';
     $(target).toggle();
@@ -211,56 +171,3 @@ var availableTags = [
   };
 
 
- var PanelSelectorKO = function(){
-      var self = this;
-      self.repeatedItems  = [
-          {name:'Freckle', selected: ko.observable(false)},
-          {name:'Beanstalk', selected: ko.observable(false)},
-          {name:'DropBox', selected: ko.observable(false)},
-          {name:'Postmark', selected: ko.observable(false)}
-      ];
-          self.repeatedItems2  = [
-          {name:'IOS', selected: ko.observable(false)},
-          {name:'Window Mobile', selected: ko.observable(false)},
-          {name:'Andriod', selected: ko.observable(false)},
-          {name:'RIM', selected: ko.observable(false)}
-      ];
-      self.hasAPI = ko.observableArray([]);
-      self.hasFreePlan = ko.observableArray([]);
-  };
-  var appmodel = new PanelSelectorKO();
- // ko.applyBindings(appmodel);
-
-
-    function makeSticky() {
-      var myWindow = $( window ),
-        myHeader = $( ".data-display" );
-
-      myWindow.scroll( function() {
-        if ( myWindow.scrollTop() == 0 ) {
-          myHeader.removeClass( "sticky-nav" );
-        } else {
-          myHeader.addClass( "sticky-nav" );
-        }
-      } );
-    }
-    $( function() {
-      // makeSticky();
-       
-      var sticky = new Waypoint.Sticky({
-        element: $('.data-display')[0]
-      });
-          
-      var waypoint = new Waypoint({
-        element: $(".shrink-waypoint"),
-        handler: function(direction) {
-         if(direction=="down"){
-          $( ".data-display" ).addClass( "shrink" );
-             }else{
-          $( ".data-display" ).removeClass( "shrink" );
-
-         };
-         console.log(direction);
-        }
-      });
-});

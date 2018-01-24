@@ -7,17 +7,17 @@ $primary-tab-darktext:$global-default-dark-text;
 $primary-tab-lighttext:$global-default-light-text;
 
 .tabs.tabs-primary{
-	border:0;
-	background:none;
-	margin:0;
-	flex-wrap:wrap;
-	width:100%;
-	clear:both;
 	@include acc-flexbox();
+	flex-wrap:wrap;
 	flex-direction:row;
 	align-items:stretch;
 	align-content: stretch;
-	@include baseline-font(-1);
+	font-size:ms(-1);
+	border:0;
+	background:none;
+	margin:0;
+	width:100%;
+	clear:both;
 	li {	
 		@include acc-flex(1 1 auto);
 		a{padding: .55em .25em .75em;
@@ -26,18 +26,18 @@ $primary-tab-lighttext:$global-default-light-text;
 		&.icon{@include acc-flex(0 0 2em);}
 	}
 	@include bp(sm){
-		@include baseline-font(0);
+		font-size: ms(0);
 	}
 	@include bp(md){
 		display: block;
-		@include baseline-font(1);
+		font-size:ms(1);
 		li a{padding:1em .5em;}
 	}
 	@include bp(lg){
-		@include baseline-font(2);
+		font-size:ms(2);
 	}
 	@include bp(xl){
-		@include baseline-font(3);
+		font-size:ms(3);
 
 	}
 	&:after {
@@ -57,6 +57,7 @@ $primary-tab-lighttext:$global-default-light-text;
 		margin:0;
 		display: block;
 		float:left;	
+		@include font-slab-bold();
 		a{	
 			white-space: normal;
 			padding:.5em .25em;
@@ -139,8 +140,7 @@ $primary-tab-lighttext:$global-default-light-text;
 
 
 	&.reverse{
-		@include baseline-font(-1);
-		
+		font-size: ms(-1);	
 		li{
 			border-top-width:.45em;
 			border-bottom-width:1px; 
@@ -165,12 +165,12 @@ $primary-tab-lighttext:$global-default-light-text;
 				}
 		}
 		@include bp(sm){
-			@include baseline-font(0);
-			margin: 0;
+			font-size: ms(0);
+			
 			li.selected a:after{border-top: 8px solid  $primary-tab-Selected-tick-color;}
 		}
 		@include bp(md){
-			@include baseline-font(1);			
+			font-size: ms(1);			
 		}
 
 	}

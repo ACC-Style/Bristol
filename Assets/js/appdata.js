@@ -1,1 +1,1 @@
-var data = {}
+var appdata = {}

@@ -1,179 +1,386 @@
 $required-SCSS_pagination:true;
 $pagination-color:rebrand-color($primary-color, 2);
 .pagination-holder {
-    border-top: 2px solid $pagination-color;
-    @include grid-row();
-    max-width: none;
+	border-top: 2px solid $pagination-color;
+	@include grid-row();
+	max-width: none;
+	margin-top:$vertical-space * .5;
+	margin-bottom:$vertical-space * .25;
+	&.top{
+		margin-top:$vertical-space * .25;
+		margin-bottom:$vertical-space * .5;
+	}
+	.pagination {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 }
 
 .pagination li {
-    border-radius: 0px 0px 0px 0px;
-    color: fontcolor($black, 'quiet');
-    @include baseline-font(-1);
-    line-height: 1.4rem;
-    a {
-        line-height: 1.4rem;
-    }
-    i {
-        margin: 0 .25rem;
-    }
-    a:hover {
-        .with-group-sections & {
-            background-color: grey(20);
-        }
-        .group-section & {
-            background-color: grey(10);
-        }
-    }
-    &.current {
-        padding: 0;
-        a {
-            &, &:hover {
-                background-color: $pagination-color;
-                color: acc-color-contrast($pagination-color);
-            }
-        }
-    }
-    &.arrow, &.action {
-        background-color: grey(10);
-        color: fontcolor($black);
-        font-weight: 700;
-        margin-bottom: 0;
-        a {
-            &:hover {
-                background-color: grey(30);
-                color: fontcolor($black, 'loud');
-            }
-            .with-group-sections & {
-                background-color: grey(20);
-            }
-            .group-section & {
-                background-color: grey(10);
-            }
-        }
-        &.left, &.left:hover {
-            border-radius: 0px 0px 0px $global-border-radius;
-        }
-        &.right, &.left:hover {
-            border-radius: 0px 0px $global-border-radius 0px;
-        }
-    }
-    &.disable a, &.disable a:hover {
-        border-color: grey(40);
-        background: url("../img/empty_diamond.png") repeat;
-        color: grey(50);
-        cursor: not-allowed;
-        .with-group-sections & {
-            background-color: grey(50);
-        }
-        .group-section & {
-            background-color: grey(40);
-        }
-    }
+	border-radius: 0px 0px 0px 0px;
+	color: fontcolor($black, 'quiet');
+	font-size:ms(-1);
+	line-height: 1.4rem;
+	a {
+		line-height: 1.4rem;
+	}
+	i {
+		margin: 0 .25rem;
+	}
+	a:hover {
+		.paper-page &{
+			background-color: grey(20);
+		}
+		.card & {
+			background-color: grey(10);
+		}
+	}
+	&.current {
+		padding: 0;
+		a {
+			&, &:hover {
+				background-color: $pagination-color;
+				color: acc-color-contrast($pagination-color);
+			}
+		}
+	}
+	&.arrow, &.action {
+		background-color: grey(10);
+		color: fontcolor($black);
+		font-weight: 700;
+		margin-bottom: 0;
+		a {
+			&:hover {
+				background-color: grey(30);
+				color: fontcolor($black, 'loud');
+			}
+			.paper-page &{
+				background-color: grey(20);
+			}
+			.card & {
+				background-color: grey(10);
+			}
+		}
+		&.left, &.left:hover {
+			border-radius: 0px 0px 0px $global-border-radius;
+		}
+		&.right, &.left:hover {
+			border-radius: 0px 0px $global-border-radius 0px;
+		}
+	}
+	&.disable a, &.disable a:hover {
+		border-color: grey(40);
+		background: url("../img/empty_diamond.png") repeat;
+		color: grey(50);
+		cursor: not-allowed;
+		.paper-page &{
+			background-color: grey(50);
+		}
+		.card & {
+			background-color: grey(40);
+		}
+	}
 }
 
 .pagination-holder.top {
-    border-top: 0 none;
-    border-bottom: 2px solid $pagination-color;
-    margin-bottom: 1rem;
-    @include grid-row();
-    max-width: none;
-    .pagination {
-        margin-bottom: 0;
-    }
-    .pagination li.arrow {
-        &.left {
-            border-radius: $global-border-radius 0 0 0;
-        }
-        &.right {
-            border-radius: 0 $global-border-radius 0 0;
-        }
-    }
+	border-top: 0 none;
+	border-bottom: 2px solid $pagination-color;
+	@include grid-row();
+	max-width: none;
+	.pagination {
+		margin-bottom: -2px;
+	}
+	.pagination li.arrow {
+		&.left {
+			border-radius: $global-border-radius 0 0 0;
+		}
+		&.right {
+			border-radius: 0 $global-border-radius 0 0;
+		}
+	}
 }
 
 @include bp(md-down) {
-    .pagination a > .text {
-        display: none;
-    }
+	.pagination a > .text {
+		display: none;
+	}
 }
 
 .pagination--compact a > .text {
-    display: none;
+	display: none;
 }
 
-/*  PAGINATION ON CARDS IS in _override.card.pagination.scss */
+
 
 
 /**
 * Pagination:
-* `.pagination-holder .pagination` - Pagination is often used when there is a table or page of results or repeated items. The Container defaultly styles the paginator to be at the bottom of the area of repeated content but render it at the top just add the class '.top' to render the pagination upside down. The paginator has a single modifier to condense the screen size by adding the class `.pagination--compact`.
+* `.pagination-holder .pagination` - Pagination is often used when there is a table or page of results or repeated items. The Container defaultly styles the paginator to be at the bottom of the area of repeated content but render it at the top just add the class `.top` to render the pagination upside down. The paginator has a single modifier to condense the screen size by adding the class `.pagination--compact`.
 * 
 *   @example
-* <div class="pagination-holder top"><ul class="pagination float-right">
-*   <li class="arrow disable left"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*   <li class="current"><a href="">1</a></li>
-*   <li><a href="">2</a></li>
-*   <li><a href="">3</a></li>
-*   <li><a href="">4</a></li>
-*   <li class="arrow right"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-* </ul></div><br>
-*  <div class="page with-group-sections">
-*      <div class="page-wrapper">
-*          <section class="section group-section">
-*              <div class="group-section-pagination-holder top">
-*                  <ul class="pagination pagination--compact float-left">
-*                      <li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*                      <li class="current"><a href="">1</a></li>
-*                      <li><a href="">2</a></li>
-*                      <li><a href="">3</a></li>
-*                      <li><a href="">4</a></li>
-*                      <li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*                  </ul>
-*                  <ul class="pagination float-right">
-*                      <li class="action"><a href=""><i class="fa fa-plus "></i><span class="text">Add</span></a></li>
-*                      <li class="action"><a href=""><i class="fa fa-times "></i><span class="text">Remove</span></a></li>
-*                  </ul>
-*              </div>
-*              <div class="callout">this is some content</div>
-*              <div class="pagination-holder">
-*                  <ul class="pagination pagination--compact float-right">
-*                      <li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*                      <li class="current"><a href="">1</a></li>
-*                      <li><a href="">2</a></li>
-*                      <li><a href="">3</a></li>
-*                      <li><a href="">4</a></li>
-*                      <li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*                  </ul>
-*              </div>
-*              <div class="group-section-pagination-holder">
-*                  <ul class="pagination pagination--compact float-left">
-*                      <li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*                      <li class="current"><a href="">1</a></li>
-*                      <li><a href="">2</a></li>
-*                      <li><a href="">3</a></li>
-*                      <li><a href="">4</a></li>
-*                      <li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*                  </ul>
-*                  <ul class="pagination float-right">
-*                      <li class="action"><a href=""><i class="fa fa-plus "></i><span class="text">Add</span></a></li>
-*                      <li class="action"><a href=""><i class="fa fa-times "></i><span class="text">Remove</span></a></li>
-*                  </ul>
-*              </div>
-*          </section>
-*          <div class="content-padding">
-*              <div class="pagination-holder">
-*                  <ul class="pagination pagination--compact float-left">
-*                      <li class="arrow disable"><a href=""><i class="fa fa-caret-left "></i><span class="text">prev</span></a></li>
-*                      <li class="current"><a href="">1</a></li>
-*                      <li><a href="">2</a></li>
-*                      <li><a href="">3</a></li>
-*                      <li><a href="">4</a></li>
-*                      <li class="arrow"><a href=""><span class="text">next</span><i class="fa fa-caret-right "></i></a></li>
-*                  </ul>
-*              </div>
-*          </div>
-*      </div>
-*  </div>
+*	<div class="paper-page page-wrapper">
+*			<div class="content-padding section-padding">
+*			<div class="">	
+*				<div class="pagination-holder top">
+*					<ul class="pagination float-right">
+*						<li class="arrow disable left">
+*							<a href="">
+*								<i class="fa fa-caret-left ">
+*								</i>
+*								<span class="text">
+*									prev
+*								</span>
+*							</a>
+*						</li>
+*						<li class="current">
+*							<a href="">
+*								1
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								2
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								3
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								4
+*							</a>
+*						</li>
+*						<li class="arrow right">
+*							<a href="">
+*								<span class="text">
+*									next
+*								</span>
+*								<i class="fa fa-caret-right ">
+*								</i>
+*							</a>
+*						</li>
+*					</ul>
+*				</div>
+*			</div>
+*			<section class="section card">
+*				<div class="group-section-pagination-holder top">
+*					<ul class="pagination pagination--compact float-left">
+*						<li class="arrow disable">
+*							<a href="">
+*								<i class="fa fa-caret-left ">
+*								</i>
+*								<span class="text">
+*									prev
+*								</span>
+*							</a>
+*						</li>
+*						<li class="current">
+*							<a href="">
+*								1
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								2
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								3
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								4
+*							</a>
+*						</li>
+*						<li class="arrow">
+*							<a href="">
+*								<span class="text">
+*									next
+*								</span>
+*								<i class="fa fa-caret-right ">
+*								</i>
+*							</a>
+*						</li>
+*					</ul>
+*					<ul class="pagination float-right">
+*						<li class="action">
+*							<a href="">
+*								<i class="fa fa-plus ">
+*								</i>
+*								<span class="text">
+*									Add
+*								</span>
+*							</a>
+*						</li>
+*						<li class="action">
+*							<a href="">
+*								<i class="fa fa-times ">
+*								</i>
+*								<span class="text">
+*									Remove
+*								</span>
+*							</a>
+*						</li>
+*					</ul>
+*				</div>
+*				<div class="callout">
+*					this is some content
+*				</div>
+*				<div class="pagination-holder">
+*					<ul class="pagination pagination--compact float-right">
+*						<li class="arrow disable">
+*							<a href="">
+*								<i class="fa fa-caret-left ">
+*								</i>
+*								<span class="text">
+*									prev
+*								</span>
+*							</a>
+*						</li>
+*						<li class="current">
+*							<a href="">
+*								1
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								2
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								3
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								4
+*							</a>
+*						</li>
+*						<li class="arrow">
+*							<a href="">
+*								<span class="text">
+*									next
+*								</span>
+*								<i class="fa fa-caret-right ">
+*								</i>
+*							</a>
+*						</li>
+*					</ul>
+*				</div>
+*				<div class="group-section-pagination-holder">
+*					<ul class="pagination pagination--compact float-left">
+*						<li class="arrow disable">
+*							<a href="">
+*								<i class="fa fa-caret-left ">
+*								</i>
+*								<span class="text">
+*									prev
+*								</span>
+*							</a>
+*						</li>
+*						<li class="current">
+*							<a href="">
+*								1
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								2
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								3
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								4
+*							</a>
+*						</li>
+*						<li class="arrow">
+*							<a href="">
+*								<span class="text">
+*									next
+*								</span>
+*								<i class="fa fa-caret-right ">
+*								</i>
+*							</a>
+*						</li>
+*					</ul>
+*					<ul class="pagination float-right">
+*						<li class="action">
+*							<a href="">
+*								<i class="fa fa-plus ">
+*								</i>
+*								<span class="text">
+*									Add
+*								</span>
+*							</a>
+*						</li>
+*						<li class="action">
+*							<a href="">
+*								<i class="fa fa-times ">
+*								</i>
+*								<span class="text">
+*									Remove
+*								</span>
+*							</a>
+*						</li>
+*					</ul>
+*				</div>
+*			</section>
+*			<div class="">
+*				<div class="pagination-holder">
+*					<ul class="pagination pagination--compact float-left">
+*						<li class="arrow disable">
+*							<a href="">
+*								<i class="fa fa-caret-left ">
+*								</i>
+*								<span class="text">
+*									prev
+*								</span>
+*							</a>
+*						</li>
+*						<li class="current">
+*							<a href="">
+*								1
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								2
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								3
+*							</a>
+*						</li>
+*						<li>
+*							<a href="">
+*								4
+*							</a>
+*						</li>
+*						<li class="arrow">
+*							<a href="">
+*								<span class="text">
+*									next
+*								</span>
+*								<i class="fa fa-caret-right ">
+*								</i>
+*							</a>
+*						</li>
+*					</ul>
+*				</div>
+*			</div>
+*			</div>
+*	</div>
 */
 
 

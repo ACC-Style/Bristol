@@ -1,5 +1,5 @@
 module.exports = function(grunt){
-
+	require("load-grunt-tasks")(grunt); // npm install --save-dev load-grunt-tasks
 	//Project Config
 	grunt.initConfig({
 		 connect:{
@@ -14,21 +14,21 @@ module.exports = function(grunt){
 					}
 				}
 			},
-    		cssmin: {
-			  options: {
-			    shorthandCompacting: false,
-			    roundingPrecision: -1
-			  },
-			  target: {
-			    files: [{
-			      expand: true,
-			      cwd: 'assets/css',
-			      src: ['*.css', '!*.min.css'],
-			      dest: 'assets/css',
-			      ext: '.min.css'
-			    }]
-			  }
-			},	
+		cssmin: {
+		  options: {
+		    shorthandCompacting: false,
+		    roundingPrecision: -1
+		  },
+		  target: {
+		    files: [{
+		      expand: true,
+		      cwd: 'assets/css',
+		      src: ['*.css', '!*.min.css'],
+		      dest: 'assets/css',
+		      ext: '.min.css'
+		    }]
+		  }
+		},	
 		 bower: {
 		    install: {
 		       //just run 'grunt bower:install' and you'll see files from your Bower packages in lib directory
@@ -59,7 +59,6 @@ module.exports = function(grunt){
 				}]
 			},
 			vendor:{
-
 				files:[{
 					expand: true,
 					cwd: './assets/scss/vendor',
@@ -87,10 +86,10 @@ module.exports = function(grunt){
 
 		        js: [
 		        	'../bower_components/jquery/dist/jquery.js',
-		        	'assets/js/selectonic.js',
-		        	'assets/js/chosen/chosen.jquery.js',
-		        	'assets/js/jquery-ui.js',
-		        	'assets/js/knockout.js',
+		        	'../bower_components/selectonic/dist/selectonic.js',
+		        	'../bower_components/chosen/chosen.jquery.js',
+		        	'../bower_components/jquery-ui/jquery-ui.js',
+		        	'../bower_components/knockout/dist/knockout.js',
 					'../bower_components/waypoints/lib/jquery.waypoints.js',
 					'../bower_components/waypoints/lib/shortcuts/sticky.js',
 					'../bower_components/foundation-sites/dist/foundation.js',
@@ -111,66 +110,73 @@ module.exports = function(grunt){
 				{
 					expand:true,
 					cwd:'assets/css',
-					src:'**',
+					src:['**','!**.map'],
 					dest:'docs/assets/css'
 				},{
 					expand:true,
 					cwd:'assets/css',
-					src:'**',
+					src:['**','!**.map'],
 					dest:'styleguide/assets/css'
 				}
 				]},
 			BOWER:{
-			files:[
-				{
-				  expand:true,
-				  cwd:'bower_components/jquery/dist',
-				  src:['**.js','**.map'],
-				  dest:'assets/js'
-				},
-				{
-				  expand:true,
-				  cwd:'bower_components/foundation-sites/dist',
-				  src:['**.js','**.map'],
-				  dest:'assets/js'
-				},
-				{
-				  expand:true,
-				  cwd:'bower_components/foundation-sites/scss',
-				  src:['**'],
-				  dest:'assets/scss/vendor/foundation-sites'
-				},
-				{
-				  expand:true,
-				  cwd:'bower_components/knockout/dist',
-				  src:['**.js','**.map'],
-				  dest:'assets/js'
-				},
-				{
-				  expand:true,
-				  cwd:'bower_components/waypoints/lib',
-				  src:['**.js','**.map'],
-				  dest:'assets/js'
-				},
-				{
-				  expand:true,
-				  cwd:'bower_components/pagerjs/dist',
-				  src:['**.js','**.map'],
-				  dest:'assets/js'
-				},
-				{
-				  expand:true,
-				  cwd:'bower_components/foundation-sites/dist',
-				  src:['**.css','**.map'],
-				  dest:'assets/css'
-				},
-				{
-				  expand:true,
-				  cwd:'bower_components/animate.css',
-				  src:['**.css','**.map'],
-				  dest:'assets/css'
-				}
-			]
+				files:[
+					{
+					  expand:true,
+					  cwd:'bower_components/jquery/dist',
+					  src:['**.js','**.map'],
+					  dest:'assets/js'
+					},
+					{
+					  expand:true,
+					  cwd:'bower_components/foundation-sites/dist',
+					  src:['**.js','**.map'],
+					  dest:'assets/js'
+					},
+					{
+					  expand:true,
+					  cwd:'bower_components/foundation-sites/scss',
+					  src:['**'],
+					  dest:'assets/scss/vendor/foundation-sites'
+					},
+					{
+					  expand:true,
+					  cwd:'bower_components/knockout/dist',
+					  src:['**.js','**.map'],
+					  dest:'assets/js'
+					},
+					{
+					  expand:true,
+					  cwd:'bower_components/waypoints/lib',
+					  src:['**.js','**.map'],
+					  dest:'assets/js'
+					},
+					{
+					  expand:true,
+					  cwd:'bower_components/pagerjs/dist',
+					  src:['**.js','**.map'],
+					  dest:'assets/js'
+					},
+					{
+					  expand:true,
+					  cwd:'bower_components/foundation-sites/dist',
+					  src:['**.css','**.map'],
+					  dest:'assets/css'
+					},
+					{
+					  expand:true,
+					  cwd:'bower_components/animate.css',
+					  src:['**.css','**.map'],
+					  dest:'assets/css'
+					}
+				]
+			},
+			BOWEROVERRIDES:{
+				files:[{
+					  expand:true,
+					  src:['Assets/scss/vendor/foundation/_settings.scss'],
+					  dest:'Assets/scss/vendor/foundation-sites/settings/_settings.scss'
+					}]
 			},
 			INTERNAL:{
 				files:[
@@ -183,7 +189,7 @@ module.exports = function(grunt){
 				,{
 					expand:true,
 					cwd:'assets/css',
-					src:'**',
+					src:['**','!**.map'],
 					dest:'docs/assets/css'
 				},{
 					expand:true,
@@ -204,7 +210,7 @@ module.exports = function(grunt){
 				,{
 					expand:true,
 					cwd:'assets/css',
-					src:'**',
+					src:['**','!**.map'],
 					dest:'styleguide/assets/css'
 				},{
 					expand:true,
@@ -251,7 +257,7 @@ module.exports = function(grunt){
 			},
 			scss: {
 			files: [ 'assets/scss/*.scss','assets/scss/**'],
-			tasks: [ 'sass:dist','cssmin','copy:STYLES']
+			tasks: [ 'sass:dist','cssmin','styledown:base','copy:STYLES']
 			},
 			index:{
 			files: [ 'assets/scss/index.scss'],
@@ -260,43 +266,32 @@ module.exports = function(grunt){
 	    },
 		clean: {
 			localFolder:["docs/**","styleguide/**"],
-			sassCasheFolder:[".sass-cache/**"],
-			foundationSites:["assets/scss/vendor/foundation-sites/**"],
-			foundationsFile:["assets/scss/vendor/foundation-sites/foundation.scss"],
-		},
-		 "babel": {
+			foundationSites:["assets/scss/vendor/foundation-sites/**"]		},
+	 "babel": {
 		    options: {
 		      sourceMap: true
 		    },
 		    dist: {
 		      files: {
-		        "dist/app.js": "src/app.js"
+		        "Assets/js/foundation.min.js": "docs/assests/js/foundation.min.js"
 		      }
 		    }
 		  }
 	});
 	// These plugins provide necessary tasks.
-	grunt.loadNpmTasks('grunt-contrib-connect');
-	grunt.loadNpmTasks('grunt-contrib-copy');	
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-liquid');
-	grunt.loadNpmTasks('grunt-styledown');
-	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-bower-task');
-	grunt.loadNpmTasks('grunt-bower-task');
+
+
 
 	// Default task.
 	grunt.registerTask('BRISTOL', [
 		'bower',
 		'clean:foundationSites',
 	    'copy:BOWER',
+	    'copy:BOWEROVERRIDES'
 		
 	]);
 	grunt.registerTask('build', [
 		'clean:localFolder',
-		'clean:sassCasheFolder',
 		'copy:FOUNDATIONSETTINGS',
 		'sass:vendor',
 		'sass:dist',
@@ -310,8 +305,7 @@ module.exports = function(grunt){
 	grunt.registerTask('buildsass', [
 		'sass:vendor',
 		'sass:dist',
-		'copy:INTERNAL',
-		'watch'
+		'cssmin'
 		
 	]);
 	grunt.registerTask('serve', [
