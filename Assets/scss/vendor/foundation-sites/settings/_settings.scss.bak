@@ -83,13 +83,12 @@ $print-transparent-backgrounds: true;
 // --------------
 
 $breakpoints: (
-  small: $bp-xsm,
-  medium: $bp-md,
-  large: $bp-lg,
-  xlarge: $bp-xl,
-  xxlarge: $bp-xxl,
+  small: 0,
+  medium: 640px,
+  large: 1024px,
+  xlarge: 1200px,
+  xxlarge: 1440px,
 );
-$print-breakpoint: large;
 $breakpoint-classes: (small medium large);
 
 // 3. The Grid
@@ -113,29 +112,29 @@ $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-sizes: (
   small: (
-    'h1': ('font-size': strip-unit(ms-calc(4,$ms-base,$ms-ratio-sm))),
-    'h2': ('font-size': strip-unit(ms-calc(3,$ms-base,$ms-ratio-sm))),
-    'h3': ('font-size': strip-unit(ms-calc(2,$ms-base,$ms-ratio-sm))),
-    'h4': ('font-size': strip-unit(ms-calc(1,$ms-base,$ms-ratio-sm))),
-    'h5': ('font-size': strip-unit(ms-calc(0,$ms-base,$ms-ratio-sm))),
-    'h6': ('font-size': strip-unit(ms-calc(0,$ms-base,$ms-ratio-sm))),
+    'h1': strip-unit(ms-calc(4,$ms-base,$ms-ratio*1)),
+    'h2': strip-unit(ms-calc(3,$ms-base,$ms-ratio*1)),
+    'h3': strip-unit(ms-calc(2,$ms-base,$ms-ratio*1)),
+    'h4': strip-unit(ms-calc(1,$ms-base,$ms-ratio*1)),
+    'h5': strip-unit(ms-calc(0,$ms-base,$ms-ratio*1)),
+    'h6': strip-unit(ms-calc(-1,$ms-base,$ms-ratio*1)),
   ),
   medium: (
-    'h1': ('font-size': strip-unit(ms-calc(3,$ms-base,$ms-ratio-md))),
-    'h2': ('font-size': strip-unit(ms-calc(2,$ms-base,$ms-ratio-md))),
-    'h3': ('font-size': strip-unit(ms-calc(1,$ms-base,$ms-ratio-md))),
-    'h4': ('font-size': strip-unit(ms-calc(0,$ms-base,$ms-ratio-md))),
-    'h5': ('font-size': strip-unit(ms-calc(-1,$ms-base,$ms-ratio-md))),
-    'h6': ('font-size': strip-unit(ms-calc(-1,$ms-base,$ms-ratio-md))),
-  ),  
-  large: (
-    'h1': ('font-size': strip-unit(ms-calc(3,$ms-base,$ms-ratio-md))),
-    'h2': ('font-size': strip-unit(ms-calc(2,$ms-base,$ms-ratio-md))),
-    'h3': ('font-size': strip-unit(ms-calc(1,$ms-base,$ms-ratio-md))),
-    'h4': ('font-size': strip-unit(ms-calc(0,$ms-base,$ms-ratio-md))),
-    'h5': ('font-size': strip-unit(ms-calc(-1,$ms-base,$ms-ratio-md))),
-    'h6': ('font-size': strip-unit(ms-calc(-1,$ms-base,$ms-ratio-md))),
-  )
+    'h1': strip-unit(ms-calc(4,$ms-base,$ms-ratio*1.1)),
+    'h2': strip-unit(ms-calc(3,$ms-base,$ms-ratio*1.1)),
+    'h3': strip-unit(ms-calc(2,$ms-base,$ms-ratio*1.1)),
+    'h4': strip-unit(ms-calc(1,$ms-base,$ms-ratio*1.1)),
+    'h5': strip-unit(ms-calc(0,$ms-base,$ms-ratio*1.1)),
+    'h6': strip-unit(ms-calc(-1,$ms-base,$ms-ratio*1.1)),
+  ),
+    large: (
+    'h1': strip-unit(ms-calc(4,$ms-base,$ms-ratio*1.15)),
+    'h2': strip-unit(ms-calc(3,$ms-base,$ms-ratio*1.15)),
+    'h3': strip-unit(ms-calc(2,$ms-base,$ms-ratio*1.15)),
+    'h4': strip-unit(ms-calc(1,$ms-base,$ms-ratio*1.15)),
+    'h5': strip-unit(ms-calc(0,$ms-base,$ms-ratio*1.15)),
+    'h6': strip-unit(ms-calc(-1,$ms-base,$ms-ratio*1.15)),
+  ),
 );
 $header-color: inherit;
 $header-lineheight: $baseline-modifier;

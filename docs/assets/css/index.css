@@ -579,47 +579,27 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.fa-rotate-90 {
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
+/* makes the font 33% larger relative to the icon container */
+.fa-lg {
+  font-size: 1.3333333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
 }
 
-.fa-rotate-180 {
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
+.fa-2x {
+  font-size: 2em;
 }
 
-.fa-rotate-270 {
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
-  -webkit-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  transform: rotate(270deg);
+.fa-3x {
+  font-size: 3em;
 }
 
-.fa-flip-horizontal {
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
-  -webkit-transform: scale(-1, 1);
-  -ms-transform: scale(-1, 1);
-  transform: scale(-1, 1);
+.fa-4x {
+  font-size: 4em;
 }
 
-.fa-flip-vertical {
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
-  -webkit-transform: scale(1, -1);
-  -ms-transform: scale(1, -1);
-  transform: scale(1, -1);
-}
-
-:root .fa-rotate-90,
-:root .fa-rotate-180,
-:root .fa-rotate-270,
-:root .fa-flip-horizontal,
-:root .fa-flip-vertical {
-  filter: none;
+.fa-5x {
+  font-size: 5em;
 }
 
 .fa-stack {
@@ -784,220 +764,31 @@ there are two to three needs for icons icons in containers, icons on icons and t
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
-.h1, h1, .table th.h1, .h2, h2, .table th.h2, .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3, .h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .table th.h4, .section-nav .text, .h5, h5, .h6, h6 {
+.h1, .table th.h1, .h2, .table th.h2, .h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3, .h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .table th.h4, .section-nav .text, .h5, .h6 {
   clear: both;
 }
 
-.h1, h1, .table th.h1 {
+.h1, .table th.h1 {
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
 
-.h2, h2, .table th.h2 {
+.h2, .table th.h2 {
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
   font-weight: 400;
   letter-spacing: .5px;
 }
 
-.h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .table th.h4, .section-nav .text {
+.h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .table th.h4, .section-nav .text {
   font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
   font-weight: 700;
   letter-spacing: .75px;
 }
 
-.h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3, .h5, h5, .h6, h6 {
+.h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3, .h5, .h6 {
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 700;
   letter-spacing: -.25px;
-}
-
-.h1, h1, .table th.h1 {
-  font-size: 1.625rem;
-  line-height: 1.35;
-  margin-top: 1.153125rem;
-  margin-bottom: 1.153125rem;
-}
-.colored-paper .h1, .colored-paper h1, .colored-paper .table th.h1, .table .colored-paper th.h1, .callout .h1, .page-message .h1, .callout h1, .page-message h1, .callout .table th.h1, .table .callout th.h1, .page-message .table th.h1, .table .page-message th.h1 {
-  margin-top: 0.403125rem;
-  margin-bottom: 0.403125rem;
-  line-height: 1.125;
-}
-@media only screen and (min-width: 767px) {
-  .h1, h1, .table th.h1 {
-    font-size: 2rem;
-    line-height: 1.125;
-    margin-top: 1.125rem;
-    margin-bottom: 1.125rem;
-  }
-  .colored-paper .h1, .colored-paper h1, .colored-paper .table th.h1, .table .colored-paper th.h1, .callout .h1, .page-message .h1, .callout h1, .page-message h1, .callout .table th.h1, .table .callout th.h1, .page-message .table th.h1, .table .page-message th.h1 {
-    margin-top: 0.375rem;
-    margin-bottom: 0.375rem;
-    line-height: 1.125;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .h1, h1, .table th.h1 {
-    font-size: 2.25rem;
-    line-height: 1.125;
-    margin-top: 0.984375rem;
-    margin-bottom: 0.984375rem;
-  }
-  .colored-paper .h1, .colored-paper h1, .colored-paper .table th.h1, .table .colored-paper th.h1, .callout .h1, .page-message .h1, .callout h1, .page-message h1, .callout .table th.h1, .table .callout th.h1, .page-message .table th.h1, .table .page-message th.h1 {
-    margin-top: 0.234375rem;
-    margin-bottom: 0.234375rem;
-    line-height: 1.125;
-  }
-}
-
-.h2, h2, .table th.h2 {
-  font-size: 1.4375rem;
-  line-height: 1.35;
-  margin-top: 0.5296875rem;
-  margin-bottom: 0.5296875rem;
-}
-.colored-paper .h2, .colored-paper h2, .colored-paper .table th.h2, .table .colored-paper th.h2, .callout .h2, .page-message .h2, .callout h2, .page-message h2, .callout .table th.h2, .table .callout th.h2, .page-message .table th.h2, .table .page-message th.h2 {
-  margin-top: 0.5296875rem;
-  margin-bottom: 0.5296875rem;
-  line-height: 1.125;
-}
-@media only screen and (min-width: 767px) {
-  .h2, h2, .table th.h2 {
-    font-size: 1.625rem;
-    line-height: 1.35;
-    margin-top: 1.153125rem;
-    margin-bottom: 1.153125rem;
-  }
-  .colored-paper .h2, .colored-paper h2, .colored-paper .table th.h2, .table .colored-paper th.h2, .callout .h2, .page-message .h2, .callout h2, .page-message h2, .callout .table th.h2, .table .callout th.h2, .page-message .table th.h2, .table .page-message th.h2 {
-    margin-top: 0.403125rem;
-    margin-bottom: 0.403125rem;
-    line-height: 1.125;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .h2, h2, .table th.h2 {
-    font-size: 1.8125rem;
-    line-height: 1.125;
-    margin-top: 1.23046875rem;
-    margin-bottom: 1.23046875rem;
-  }
-  .colored-paper .h2, .colored-paper h2, .colored-paper .table th.h2, .table .colored-paper th.h2, .callout .h2, .page-message .h2, .callout h2, .page-message h2, .callout .table th.h2, .table .callout th.h2, .page-message .table th.h2, .table .page-message th.h2 {
-    margin-top: 0.48046875rem;
-    margin-bottom: 0.48046875rem;
-    line-height: 1.125;
-  }
-}
-
-.h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3 {
-  font-size: 1.25rem;
-  line-height: 1.5;
-  margin-top: 0.5625rem;
-  margin-bottom: 0.5625rem;
-}
-.colored-paper .h3, .colored-paper h3, .colored-paper h1 + .nav-list li, h1 + .nav-list .colored-paper li, .colored-paper h1 + .panel-selector li, h1 + .panel-selector .colored-paper li, .colored-paper .large.nav-list li, .large.nav-list .colored-paper li, .colored-paper .large.panel-selector li, .large.panel-selector .colored-paper li, .colored-paper .table th.h3, .table .colored-paper th.h3, .callout .h3, .page-message .h3, .callout h3, .page-message h3, .callout h1 + .nav-list li, h1 + .nav-list .callout li, .page-message h1 + .nav-list li, h1 + .nav-list .page-message li, .callout h1 + .panel-selector li, h1 + .panel-selector .callout li, .page-message h1 + .panel-selector li, h1 + .panel-selector .page-message li, .callout .large.nav-list li, .large.nav-list .callout li, .page-message .large.nav-list li, .large.nav-list .page-message li, .callout .large.panel-selector li, .large.panel-selector .callout li, .page-message .large.panel-selector li, .large.panel-selector .page-message li, .callout .table th.h3, .table .callout th.h3, .page-message .table th.h3, .table .page-message th.h3 {
-  margin-top: 0.5625rem;
-  margin-bottom: 0.5625rem;
-  line-height: 1.35;
-}
-@media only screen and (min-width: 767px) {
-  .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3 {
-    font-size: 1.4375rem;
-    line-height: 1.35;
-    margin-top: 0.5296875rem;
-    margin-bottom: 0.5296875rem;
-  }
-  .colored-paper .h3, .colored-paper h3, .colored-paper h1 + .nav-list li, h1 + .nav-list .colored-paper li, .colored-paper h1 + .panel-selector li, h1 + .panel-selector .colored-paper li, .colored-paper .large.nav-list li, .large.nav-list .colored-paper li, .colored-paper .large.panel-selector li, .large.panel-selector .colored-paper li, .colored-paper .table th.h3, .table .colored-paper th.h3, .callout .h3, .page-message .h3, .callout h3, .page-message h3, .callout h1 + .nav-list li, h1 + .nav-list .callout li, .page-message h1 + .nav-list li, h1 + .nav-list .page-message li, .callout h1 + .panel-selector li, h1 + .panel-selector .callout li, .page-message h1 + .panel-selector li, h1 + .panel-selector .page-message li, .callout .large.nav-list li, .large.nav-list .callout li, .page-message .large.nav-list li, .large.nav-list .page-message li, .callout .large.panel-selector li, .large.panel-selector .callout li, .page-message .large.panel-selector li, .large.panel-selector .page-message li, .callout .table th.h3, .table .callout th.h3, .page-message .table th.h3, .table .page-message th.h3 {
-    margin-top: 0.5296875rem;
-    margin-bottom: 0.5296875rem;
-    line-height: 1.125;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .h3, h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3 {
-    font-size: 1.625rem;
-    line-height: 1.35;
-    margin-top: 1.153125rem;
-    margin-bottom: 1.153125rem;
-  }
-  .colored-paper .h3, .colored-paper h3, .colored-paper h1 + .nav-list li, h1 + .nav-list .colored-paper li, .colored-paper h1 + .panel-selector li, h1 + .panel-selector .colored-paper li, .colored-paper .large.nav-list li, .large.nav-list .colored-paper li, .colored-paper .large.panel-selector li, .large.panel-selector .colored-paper li, .colored-paper .table th.h3, .table .colored-paper th.h3, .callout .h3, .page-message .h3, .callout h3, .page-message h3, .callout h1 + .nav-list li, h1 + .nav-list .callout li, .page-message h1 + .nav-list li, h1 + .nav-list .page-message li, .callout h1 + .panel-selector li, h1 + .panel-selector .callout li, .page-message h1 + .panel-selector li, h1 + .panel-selector .page-message li, .callout .large.nav-list li, .large.nav-list .callout li, .page-message .large.nav-list li, .large.nav-list .page-message li, .callout .large.panel-selector li, .large.panel-selector .callout li, .page-message .large.panel-selector li, .large.panel-selector .page-message li, .callout .table th.h3, .table .callout th.h3, .page-message .table th.h3, .table .page-message th.h3 {
-    margin-top: 0.403125rem;
-    margin-bottom: 0.403125rem;
-    line-height: 1.125;
-  }
-}
-
-.h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .table th.h4 {
-  font-size: 1.125rem;
-  line-height: 1.5;
-  margin-top: 0.65625rem;
-  margin-bottom: 0.65625rem;
-}
-.colored-paper .h4, .colored-paper h4, .colored-paper h2 + .nav-list li, h2 + .nav-list .colored-paper li, .colored-paper h2 + .panel-selector li, h2 + .panel-selector .colored-paper li, .colored-paper .medium.nav-list li, .medium.nav-list .colored-paper li, .colored-paper .medium.panel-selector li, .medium.panel-selector .colored-paper li, .colored-paper .table th.h4, .table .colored-paper th.h4, .callout .h4, .page-message .h4, .callout h4, .page-message h4, .callout h2 + .nav-list li, h2 + .nav-list .callout li, .page-message h2 + .nav-list li, h2 + .nav-list .page-message li, .callout h2 + .panel-selector li, h2 + .panel-selector .callout li, .page-message h2 + .panel-selector li, h2 + .panel-selector .page-message li, .callout .medium.nav-list li, .medium.nav-list .callout li, .page-message .medium.nav-list li, .medium.nav-list .page-message li, .callout .medium.panel-selector li, .medium.panel-selector .callout li, .page-message .medium.panel-selector li, .medium.panel-selector .page-message li, .callout .table th.h4, .table .callout th.h4, .page-message .table th.h4, .table .page-message th.h4 {
-  margin-top: 0.65625rem;
-  margin-bottom: 0.65625rem;
-  line-height: 1.35;
-}
-@media only screen and (min-width: 767px) {
-  .h4, h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .table th.h4 {
-    font-size: 1.25rem;
-    line-height: 1.5;
-    margin-top: 0.5625rem;
-    margin-bottom: 0.5625rem;
-  }
-  .colored-paper .h4, .colored-paper h4, .colored-paper h2 + .nav-list li, h2 + .nav-list .colored-paper li, .colored-paper h2 + .panel-selector li, h2 + .panel-selector .colored-paper li, .colored-paper .medium.nav-list li, .medium.nav-list .colored-paper li, .colored-paper .medium.panel-selector li, .medium.panel-selector .colored-paper li, .colored-paper .table th.h4, .table .colored-paper th.h4, .callout .h4, .page-message .h4, .callout h4, .page-message h4, .callout h2 + .nav-list li, h2 + .nav-list .callout li, .page-message h2 + .nav-list li, h2 + .nav-list .page-message li, .callout h2 + .panel-selector li, h2 + .panel-selector .callout li, .page-message h2 + .panel-selector li, h2 + .panel-selector .page-message li, .callout .medium.nav-list li, .medium.nav-list .callout li, .page-message .medium.nav-list li, .medium.nav-list .page-message li, .callout .medium.panel-selector li, .medium.panel-selector .callout li, .page-message .medium.panel-selector li, .medium.panel-selector .page-message li, .callout .table th.h4, .table .callout th.h4, .page-message .table th.h4, .table .page-message th.h4 {
-    margin-top: 0.5625rem;
-    margin-bottom: 0.5625rem;
-    line-height: 1.35;
-  }
-}
-
-.h5, h5 {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-.colored-paper .h5, .colored-paper h5, .callout .h5, .page-message .h5, .callout h5, .page-message h5 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-  line-height: 1.35;
-}
-@media only screen and (min-width: 767px) {
-  .h5, h5 {
-    font-size: 1.125rem;
-    line-height: 1.5;
-    margin-top: 0.65625rem;
-    margin-bottom: 0.65625rem;
-  }
-  .colored-paper .h5, .colored-paper h5, .callout .h5, .page-message .h5, .callout h5, .page-message h5 {
-    margin-top: 0.65625rem;
-    margin-bottom: 0.65625rem;
-    line-height: 1.35;
-  }
-}
-
-.h6, h6 {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-.colored-paper .h6, .colored-paper h6, .callout .h6, .page-message .h6, .callout h6, .page-message h6 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-  line-height: 1.35;
-}
-@media only screen and (min-width: 767px) {
-  .h6, h6 {
-    font-size: 1.125rem;
-    line-height: 1.5;
-    margin-top: 0.65625rem;
-    margin-bottom: 0.65625rem;
-  }
-  .colored-paper .h6, .colored-paper h6, .callout .h6, .page-message .h6, .callout h6, .page-message h6 {
-    margin-top: 0.65625rem;
-    margin-bottom: 0.65625rem;
-    line-height: 1.35;
-  }
 }
 
 p, .nav-list li, .panel-selector li, h3 + .nav-list, h3 + .panel-selector, .small.nav-list, .small.panel-selector, .table, .normal {
@@ -5045,6 +4836,126 @@ ul.toggle.minimized .selected {
   margin: -3px;
 }
 
+.quicklinks {
+  position: absolute;
+  top: 10px;
+  right: 6px;
+}
+.quicklinks a.nobutton {
+  font-family: sans-serif;
+  font-weight: normal;
+  color: #666666;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: -.25px;
+  color: #666666;
+  border-radius: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.quicklinks a.nobutton:hover {
+  color: #198dae;
+  text-decoration: underline;
+  background-color: #e4f6fb;
+}
+.quicklinks a.nobutton + a.nobutton {
+  border-left: 1px solid #cccccc;
+}
+
+.logedin {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -.25px;
+}
+
+.comment-holder {
+  padding: 1.25em;
+  margin: 0 -.5em -.5em;
+  background: #fff;
+}
+.comment-holder .lite {
+  display: block;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.off-canvas.position-right {
+  border-left: 1px solid #666666;
+}
+
+.off-canvas .paper-page {
+  background-image: url(../img/cream_pixels_altdark.png);
+}
+
+.circle-button {
+  position: absolute;
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  background: #25b6e0;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
+  border: 4px solid #fff;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.61);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.61);
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.61);
+}
+.circle-button i {
+  font-size: 25px;
+  line-height: 1em;
+  margin: -.1em -.25em;
+  color: #fff;
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+  -ms-transform: translate(0px, 0);
+  -webkit-transform: translate(0px, 0);
+  transform: translate(0px, 0);
+}
+
+#comment-toggle {
+  right: 30px;
+  top: -10px;
+  z-index: 3000;
+}
+
+#committee-toggle {
+  left: 10px;
+  top: 20px;
+  z-index: 3000;
+}
+
+#member-toggle {
+  left: 10px;
+  top: 20px;
+  z-index: 3000;
+}
+
+.is-open + .off-canvas-content #member-toggle i.fa:before, .is-open + .off-canvas-content #committee-toggle i.fa:before {
+  content: "\f060";
+}
+
+.is-open + .off-canvas-content #comment-toggle i.fa:before {
+  content: "\f061";
+}
+
+.tabs {
+  max-width: 98%;
+}
+
+table.application td.highlighted {
+  border-right: 0px none;
+  border-left: 0px none;
+}
+table.application td.highlighted .link.black {
+  color: #333333;
+}
+
 /*!
 Chosen, a Select Box Enhancer for jQuery and Prototype
 by Patrick Filler for Harvest, http://getharvest.com
@@ -8636,41 +8547,41 @@ div.reveal .close-button {
   }
 }
 
-.card, .paper-page .page-wrapper .card, .colored-paper {
+.card, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
   padding-top: .25rem;
   padding-bottom: .25rem;
 }
 @media only screen and (min-width: 320px) {
-  .card, .paper-page .page-wrapper .card, .colored-paper {
+  .card, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
     padding-top: .5rem;
     padding-bottom: .5rem;
   }
 }
 @media only screen and (min-width: 767px) {
-  .card, .paper-page .page-wrapper .card, .colored-paper {
+  .card, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
     padding-top: .75rem;
     padding-bottom: .75rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .card, .paper-page .page-wrapper .card, .colored-paper {
+  .card, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
 }
 
-.content-padding, .content-padding.page-wrapper, .card, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .paper-page .page-wrapper .card, .colored-paper {
+.content-padding, .content-padding.page-wrapper, .card, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
   padding-left: .5rem;
   padding-right: .5rem;
 }
 @media only screen and (min-width: 767px) {
-  .content-padding, .content-padding.page-wrapper, .card, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .paper-page .page-wrapper .card, .colored-paper {
+  .content-padding, .content-padding.page-wrapper, .card, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
     padding-right: .75rem;
     padding-left: .75rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .content-padding, .content-padding.page-wrapper, .card, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .paper-page .page-wrapper .card, .colored-paper {
+  .content-padding, .content-padding.page-wrapper, .card, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
     padding-right: 1rem;
     padding-left: 1rem;
   }
@@ -8728,14 +8639,14 @@ div.reveal .close-button {
   }
 }
 
-.colored-paper, .group-section-pagination-holder {
+.colored-paper, .group-section-pagination-holder, .committee-list.ranking-committee, .committee-list {
   margin-left: -.5rem;
   margin-right: -.5rem;
   margin-left: calc(-.5rem - 1px);
   margin-right: calc(-.5rem - 1px);
 }
 @media only screen and (min-width: 767px) {
-  .colored-paper, .group-section-pagination-holder {
+  .colored-paper, .group-section-pagination-holder, .committee-list.ranking-committee, .committee-list {
     margin-left: -.75rem;
     margin-right: -.75rem;
     margin-left: calc(-.75rem - 1px);
@@ -8743,7 +8654,7 @@ div.reveal .close-button {
   }
 }
 @media only screen and (min-width: 1024px) {
-  .colored-paper, .group-section-pagination-holder {
+  .colored-paper, .group-section-pagination-holder, .committee-list.ranking-committee, .committee-list {
     margin-left: -1rem;
     margin-right: -1rem;
     margin-left: calc(-1rem - 1px);
@@ -9875,6 +9786,65 @@ div.reveal .close-button {
 *		</ul>
 *	</footer>
 */
+/**
+* Mobile Header:
+* `.header.pagel` - there is a basic layout of short tabbed header of apps
+* 
+*   @example
+*	<div class="row"><header class="header page">
+*		<a href="#!/content/calculator/" class="logo">
+*			<img  src="assets/img/headerlogo.svg" alt="ACC Statin Intolerance Guidelines">
+*		</a>
+*		<ul class="nav tabs tabs-primary">
+*			<li class="icon tab-title"><a class="home"><i class="fa fa-holder"></i></a></li>
+*			<li id="calculator-Tab" class="selected tab-title"><a href="#!/content/calculator/"  class="condensable condensable-word small">Eval<span class="condense">uate</span></a></li>
+*			<li id="recommendation-Tab" class=" tab-title"><a href="#!/content/recommendation/prescribinginfo/"  class="condensable condensable-word small">Recommend<span class="condense">ation</span></a></li>
+*		</ul>
+*	</header></div>
+*/
+.page.header {
+  padding: 0;
+  background-color: #fff;
+  display: block;
+  clear: both;
+  width: 100%;
+  position: relative;
+}
+.page.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.page.header .logo {
+  left: 0;
+  top: 0;
+  display: none;
+  text-align: right;
+  clear: none;
+  float: left;
+  vertical-align: middle;
+}
+@media only screen and (min-width: 767px) {
+  .page.header .logo {
+    display: inline-block;
+  }
+}
+.page.header .logo img {
+  height: 60px;
+}
+@media only screen and (min-width: 1024px) {
+  .page.header .logo img {
+    height: 70px;
+    margin: 10px 10px 0 0;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .page.header .logo img {
+    height: 85px;
+    margin: 12px 0px 10px 15px;
+  }
+}
+
 .page-footer {
   border-top: #666666 4px solid;
   background-color: #bfbfbf;
@@ -10979,6 +10949,22 @@ h6 blockquote, h6 .sub-line {
   line-height: 1;
 }
 
+.p-t-0 {
+  padding-top: 0;
+}
+
+.p-b-0 {
+  padding-bottom: 0;
+}
+
+.p-l-0 {
+  padding-left: 0;
+}
+
+.p-r-0 {
+  padding-right: 0;
+}
+
 /**
 * HELPER - Condensable (Condense):
 * `.condensable.large .condense` - This pattern allows for responsive reduction of content.
@@ -11288,39 +11274,540 @@ STATE TRUMPING CODE
   color: #fff;
 }
 
-.date-input-holder {
-  max-width: calc(100% - 3rem);
+.inset-area > .colored-paper, .inset-area .sticky > .colored-paper {
+  -webkit-box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, 0.75);
 }
 
-.date-picker-holder {
-  min-width: calc(3rem);
+.colored-paper .card.ghost h6 a.button {
+  maring-top: -.5rem;
 }
 
-.fa-plus.required:before, .fa.required:before {
-  content: "";
-}
-.fa-plus.required else > i.fa-holder:before, .fa-plus.required else i.fa-holder:before, .fa.required else > i.fa-holder:before, .fa.required else i.fa-holder:before {
-  content: "";
+.card.ghost + .card.ghost {
+  margin-top: .25rem;
 }
 
-.date-picker-holder .button {
+.single-line-height {
+  line-height: 1 !important;
+}
+
+.colored-paper .subheader {
+  color: #fff;
+}
+
+.colored-paper.empty {
+  background: transparent none;
+}
+
+.footer.sticky-button-bar {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.slot + .slot {
+  margin-top: .35rem;
+}
+
+.committee-list {
+  list-style: none;
+  font-size: 16px;
+}
+.committee-list.ranking-committee {
+  padding-top: 0;
+}
+.committee-list.ranking-committee li {
+  display: table;
+  width: 100%;
+  margin-bottom: 0;
+}
+.committee-list.ranking-committee li .committee-rank, .committee-list.ranking-committee li .committee-holder {
+  display: table-cell;
+}
+.committee-list.ranking-committee li .committee-holder {
+  padding: .25em .65em .25em .2em;
+}
+.committee-list.ranking-committee li .committee-holder .committee-list-item {
+  margin: 0 -.5rem;
+}
+
+.committee-list {
+  margin-bottom: 0;
+  list-style: none;
+  border-top: #198dae 2px solid;
+}
+.committee-list .committee-list-item {
+  margin: 0;
+}
+.committee-list .committee-list-item + .committee-list-item {
+  border-top: #198dae 1px solid;
+}
+
+.committee-list-item {
+  background-color: #fff;
+  position: relative;
+}
+.committee-list-item .action .fa-stack-2x.fa-ellipsis-v:before {
+  content: "\f142 \f142";
+  letter-spacing: 2px;
+}
+.committee-list-item .fa-stack-2x.fa-ellipsis-v {
+  color: #ccc;
+}
+.committee-list-item.selected {
+  background-color: #c9edf7;
+}
+.committee-list-item.selected .committee-data .action {
+  background-color: #25b6e0;
+}
+.committee-list-item.selected .committee-data .action .fa-stack-2x {
+  color: #92dbef;
+}
+.committee-list-item.selected .committee-data .action .fa-stack-1x {
+  color: #25b6e0;
+}
+.committee-list-item.selected.checked {
+  background-color: white;
+}
+.committee-list-item.selected.checked .committee-data .action {
+  background-color: #498061;
+}
+.committee-list-item.selected.checked .committee-data .action .fa-stack-2x {
+  color: #1de573;
+}
+.committee-list-item.selected.checked .committee-data .action .fa-stack-1x {
+  color: #fff;
+}
+.committee-list-item .committee-data {
+  display: table;
+  width: 100%;
+}
+.committee-list-item .committee-data .committee {
+  display: table-cell;
+  width: 90%;
+}
+.committee-list-item .committee-data .committee .name {
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.125;
   margin-top: 0rem;
   margin-bottom: 0rem;
-  padding: 0.45rem 0.5rem;
-  height: 2.5rem;
+  margin-top: 0;
 }
-.colored-paper .date-picker-holder .button, .callout .date-picker-holder .button, .page-message .date-picker-holder .button {
+.colored-paper .committee-list-item .committee-data .committee .name, .callout .committee-list-item .committee-data .committee .name, .page-message .committee-list-item .committee-data .committee .name {
   margin-top: 0rem;
   margin-bottom: 0rem;
   line-height: 1.35;
 }
-@media only screen and (max-height: 768px) {
-  .date-picker-holder .button {
-    padding: 0.25rem 0.5rem;
-    height: 2rem;
+.committee-list-item .committee-data .flag {
+  position: absolute;
+  top: .25em;
+  right: .25em;
+  height: 1.5em;
+  width: 1.5em;
+  border-radius: 50%;
+  background-color: grey;
+}
+.committee-list-item .committee-data .flag .marker {
+  text-align: center;
+  width: 1.5em;
+}
+.committee-list-item .committee-data .flag.nominated {
+  background-color: #7d5891;
+}
+.committee-list-item .committee-data .flag.nominated .marker:before {
+  content: "N";
+  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: .75px;
+  color: #fff;
+}
+.committee-list-item .committee-data .action {
+  display: table-cell;
+  width: 3em;
+  background-image: url(../img/construction-paper.png), url(../img/left-shade.png);
+  background-position: top right, left top;
+  background-repeat: repeat,  repeat-y;
+  background-color: #e6e6e6;
+  text-align: center;
+  vertical-align: middle;
+}
+.committee-list-item .committee-data .action .fa-stack-2x {
+  color: #999999;
+}
+.committee-list-item .committee-data .action .fa-stack-1x {
+  color: #f2f2f2;
+}
+
+@media only screen and (max-width: 1024px) {
+  #mobile-menu {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
   }
+
+  #siteMenu ul li {
+    width: 100%;
+    clear: both;
+    display: block;
+  }
+
+  .top-bar + .top-bar .top-bar-left, .top-bar + .top-bar .top-bar-rith {
+    clar: both;
+    width: 100%;
+  }
+
+  #siteMenu #mobile-menu .top-bar {
+    flex-direction: row;
+  }
+  #siteMenu #mobile-menu .top-bar .top-bar-left, #siteMenu #mobile-menu .top-bar .top-bar-right {
+    flex: 1 1 2em;
+    width: auto;
+  }
+  #siteMenu #mobile-menu .top-bar .top-bar-left {
+    float: left;
+  }
+  #siteMenu #mobile-menu .top-bar .top-bar-right {
+    float: right;
+  }
+}
+.top-bar + .top-bar {
+  border-top: 0;
+}
+
+.header.page + #siteMenu {
+  margin-top: -6px;
+  clear: both;
+}
+
+.search-bar {
+  line-height: normal;
+  padding: 0.5em 0;
+  clear: both;
+}
+.siteMenu .search-bar {
+  display: none;
+}
+.search-bar .question {
+  margin: 0;
+}
+.search-bar .question select, .search-bar .question input, .search-bar .question .button, .search-bar .question button {
+  border: 1px solid #b3b3b3;
+}
+.search-bar .question select, .search-bar .question option {
+  background: gray;
+  border-radius: 6px 0 0 6px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -.25px;
+}
+.search-bar .question input {
+  background: #e6e6e6;
+}
+.search-bar .question .button, .search-bar .question button {
+  border-radius: 0 6px 6px 0;
+  background-color: gray;
+  vertical-align: text-top;
+  padding: 0;
+}
+
+.top-bar input, .search-bar input {
+  max-width: 100%;
+}
+
+.layer-down {
+  background-image: url(../img/textured_paper.png), url(../img/bottom-shade.png), url(../img/top-shade.png), url(../img/left-shade.png), url(../img/right-shade.png);
+  background-position: top right, bottom right, right -1px, top left, top right;
+  background-repeat: repeat, repeat-x, repeat-x, repeat-y, repeat-y;
+}
+.layer-down .section-name {
+  color: #666666;
+  font-size: 18px;
+  margin: .75em .75em .25em;
+}
+.layer-down .section-name.with-underline {
+  border-bottom: 2px solid #018adb;
+}
+
+.inset-area {
+  min-height: 100vh;
+  position: relative;
+  margin-left: .5em;
+  margin-right: .5em;
+  background-color: #e6e6e6;
+  background-image: url(../img/textured_paper.png), url(../img/bottom-shade.png), url(../img/top-shade.png), url(../img/left-shade.png), url(../img/right-shade.png);
+  background-position: top right, bottom right, right -1px, top left, top right;
+  background-repeat: repeat, repeat-x, repeat-x, repeat-y, repeat-y;
+  margin-bottom: -3000px;
+  padding-bottom: 3000px;
+  border-left: 1px solid #666666;
+  border-right: 1px solid #666666;
+}
+.inset-area > .colored-paper, .inset-area .sticky > .colored-paper {
+  background-image: url(../img/construction-paper.png), url(../img/left-shade.png), url(../img/right-shade.png), url(../img/top-shade.png);
+  background-position: top right, top left, top right, top right;
+  background-repeat: repeat, repeat-y, repeat-y, repeat-x;
+  border-left: 1px solid #666666;
+  border-right: 1px solid #666666;
+}
+.inset-area .sticky > .colored-paper {
+  margin-left: calc(-1rem + 1px);
+  margin-right: calc(-1rem + 1px);
+  border: 0;
+}
+.collapse.inset-container .inset-area {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.button.success, .label.success {
+  color: #fff;
+}
+
+.dropdown-pane {
+  padding: 0;
+}
+
+.dropdown-pane .button-group {
+  margin: 0;
+}
+
+.button.hollow.reverse {
+  color: #fff;
+  border-color: #fff;
+}
+.button.hollow.reverse:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.page-header h1 {
+  font-size: 20px;
+  line-height: 1;
+  margin: .5em 0 .35em;
+  vertical-align: middle;
+}
+
+.interest-menu {
+  display: flex;
+}
+.interest-menu .button {
+  flex: 1 0 auto;
+}
+
+.selectable.selectable-switch {
+  background: #8c8c8c;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: all 0.25s ease-out;
+  border-radius: 6px;
+  color: inherit;
+  font-weight: inherit;
+  border: 2px solid #b3b3b3;
+  background-image: url(../img/billie-holiday.png);
+  box-sizing: content-box;
+}
+.selectable.selectable-switch a.button {
+  margin: .2em;
+  padding: .3em;
+  background: transparent none;
+  color: #666666;
+}
+.selectable.selectable-switch a.button.selected {
+  background-color: white;
+  border-radius: 4px;
+  color: #000;
+}
+
+.top-bar-left li:hover {
+  background: #b3b3b3;
+}
+
+.card {
+  overflow: visible;
+}
+
+.page-message-holder, .with-group-sections, .paper-page {
+  background: white url(../img/whisper.png) repeat;
+}
+
+.application {
+  padding: 1rem 1.5rem;
+}
+.application + .application {
+  margin-top: 1.3rem;
+}
+.application .application-title {
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+.application .type {
+  font-size: 18px;
+  font-weight: 300;
+  color: #018adb;
+  margin-bottom: 0;
+}
+.application .timeframe {
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 0;
+}
+.application .timeframe strong {
+  font-weight: 900;
+  color: #333333;
+}
+.application .actions {
+  padding: 1rem 0 .5rem 0;
+  text-align: right;
+}
+.application .flag {
+  background-color: #E08514;
+  border-radius: 6px;
+  color: white;
+  padding: 1px 1rem;
+  font-size: 16px;
+  margin-right: .75rem;
+  vertical-align: text-bottom;
+  line-height: 1.5;
+  display: inline-block;
+}
+
+.data {
+  margin: 0;
+  padding: .5rem 0;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+.application .data {
+  border-top: #018adb 2px solid;
+  border-bottom: #018adb 2px solid;
+}
+.data li {
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  margin: .5rem 0;
+  cursor: pointer;
+}
+.data li:hover .title {
+  text-decoration: underline;
+  color: #000;
+}
+.data .value, .data .title {
+  display: inline-block;
+  vertical-align: bottom;
+  height: 18px;
+  line-height: 1;
+}
+.data .value {
+  font-size: 18px;
+  font-weight: 900;
+  color: #018adb;
+  text-align: right;
+  flex: 0 0 3em;
+  line-height: 1em;
+}
+.data .title {
+  flex: 1 1 auto;
+  line-height: 1.33em;
+  font-size: 16px;
+  padding-left: .5rem;
+}
+
+.progress {
+  padding: .125rem;
+}
+.progress, .progress .progress-bar {
+  height: 2.25rem;
+  border-radius: 20px;
+}
+.progress .progress-bar {
+  height: 2rem;
+  vertical-align: middle;
+  box-shadow: none;
+  position: relative;
+  -webkit-animation: animate-positive 2s;
+  animation: animate-positive 2s;
+}
+.progress .progress-value {
+  min-width: 5rem;
+  height: 2.25rem;
+  border-radius: 20px 0 0 20px;
+  background-color: #e6e6e6;
+  display: inline-block;
+  padding: 0 1rem;
+  vertical-align: middle;
+  line-height: 2.25rem;
+  font-size: 15px;
+  margin: -.125rem;
+  font-weight: 900;
+  position: relative;
+}
+.progress .progress-value:after {
+  content: "";
+  display: block;
+  border-color: transparent transparent transparent #e6e6e6;
+  border-style: solid;
+  border-width: 1.125rem 0 1.125rem 1rem;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  right: -1rem;
+}
+
+@-webkit-keyframes animate-positive {
+  0% {
+    width: 0;
+  }
+}
+@keyframes animate-positive {
+  0% {
+    width: 0;
+  }
+}
+h5 {
+  font-weight: bold;
+  color: gray;
+}
+h5 .value {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 300;
+}
+
+.card .group-spacing {
+  margin: 0.375rem 0 0.75rem;
+}
+.card .section-padding {
+  padding: 0.75rem 0 1.5rem;
+}
+.card .section-padding:last-child {
+  padding-bottom: 0;
+}
+
+.colored-paper.group-divide-auto > h3 {
+  margin: 0;
+  line-height: 1.1;
+}
+.colored-paper.group-divide-auto, .colored-paper.group-divide-auto + .group-divide-auto {
+  border-top: 0;
+}
+
+.drag-handles {
+  letter-spacing: .1em;
+  background-color: #cccccc;
+  padding: .5em .5em;
+  vertical-align: baseline;
+  display: inline-block;
+  line-height: 1;
+  height: 2em;
+  cursor: n-resize;
+  color: #333333;
 }
 
 .row {
