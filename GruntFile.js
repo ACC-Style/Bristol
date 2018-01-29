@@ -132,6 +132,11 @@ module.exports = function(grunt){
 					  cwd:'bower_components/foundation-sites/dist',
 					  src:['**.js','**.map'],
 					  dest:'assets/js'
+					},{
+					  expand:true,
+					  cwd:'bower_components/foundation-sites/_vendor',
+					  src:['**'],
+					  dest:'assets/scss/vendor/_vendor'
 					},
 					{
 					  expand:true,
@@ -173,10 +178,11 @@ module.exports = function(grunt){
 			},
 			BOWEROVERRIDES:{
 				files:[{
-					  expand:true,
-					  src:['Assets/scss/vendor/foundation/_settings.scss'],
-					  dest:'Assets/scss/vendor/foundation-sites/settings/_settings.scss'
-					}]
+					expand:true,
+					cwd:'assets/scss/vendor/foundation',
+					src:['_settings.scss'],
+					dest:'assets/scss/vendor/foundation-sites/settings'
+				}]
 			},
 			INTERNAL:{
 				files:[
@@ -257,7 +263,7 @@ module.exports = function(grunt){
 			},
 			scss: {
 			files: [ 'assets/scss/*.scss','assets/scss/**'],
-			tasks: [ 'sass:dist','cssmin','styledown:base','copy:STYLES']
+			tasks: [ 'sass:dist','sass:vendor','cssmin','styledown:base','copy:STYLES']
 			},
 			index:{
 			files: [ 'assets/scss/index.scss'],
@@ -292,7 +298,6 @@ module.exports = function(grunt){
 	]);
 	grunt.registerTask('build', [
 		'clean:localFolder',
-		'copy:FOUNDATIONSETTINGS',
 		'sass:vendor',
 		'sass:dist',
 		'copy:INTERNAL',
