@@ -50,38 +50,39 @@
 	.overlap + .page-wrapper{
 		padding-top:.5rem;
 	}
-	.page-wrapper {
-		padding-top:1px;
-		// @extend %page-padding-vertical; 
-		// align sections and rows with in the page
-		> .section, > section, > .row {
-			@extend %content-padding-horizontal;
-		}
-		.card {
-			width: auto;
-			position: relative;
-			@extend %liftedbox;
-			@extend %content-padding-vertical;
-			@extend %content-padding-horizontal;
-			
-		}
-		.card.ghost{
-			@extend %ghostbox;
-			border-radius: $global-border-radius;
-			
-
-		}
-		@each $State in $states{
-				 $state-selector:map-get($State,'Selector');
-				 &#{$state-selector}{
-					.card.ghost{
-						background-color:mix(color(map-get($State,'Color'), 25),grey(15));
-					}
-				 }
-			}
-	}
+	
 }
+.page-wrapper {
+    padding-top: 1px;
+    // @extend %page-padding-vertical;
+    // align sections and rows with in the page
+    > .section, > section, > .row {
+        @extend %content-padding-horizontal;
+    }
 
+    .card {
+        width: auto;
+        position: relative;
+        @extend %liftedbox;
+        @extend %content-padding-vertical;
+        @extend %content-padding-horizontal;
+    }
+
+    .card.ghost {
+        @extend %ghostbox;
+        border-radius: $global-border-radius;
+    }
+
+    @each $State in $states {
+        $state-selector: map-get($State,'Selector');
+
+        &#{$state-selector} {
+            .card.ghost {
+                background-color: mix(color(map-get($State,'Color'), 25),grey(15));
+            }
+        }
+    }
+}
 .colored-paper{  
 	@extend %spacing-transition;
 	@extend %content-padding-vertical;
