@@ -13,44 +13,86 @@
 
 </head>
 	<body>
-    <div class="row">
+    
+<div class="row">
   <header class="header page">
+  	<div class="row">
+  		<div class="column medium-6">
     <a href="index.html" class="logo">
-      <img src="assets/img/headerlogo.svg" alt="ACC Statin Intolerance Guidelines">
+      <img src="assets/img/headerlogo.svg" height="50" alt="ACC Statin Intolerance Guidelines">
     </a>
-    <div class="logedin">Admin: Optimus Prime | <a href="" class="link">Log Out</a></div>
-	</header>
-	<div class="top-bar">
-    <div class="hide-for-large" id="mobileMenu">
-        <div class="top-bar-left" onclick="$('#siteMenu .top-bar-left').toggleClass('display-block')">
-            <a class="top-bar-toggle">
-                <i class="fa fa-bars">
-                </i>
-                Menu
-            </a>
-        </div>
-        <div class="top-bar-right secondary" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
-            <a class="top-bar-toggle small condensable">
-                <i class="fa fa-search">
-                </i>
-                <span class="condense">
-                    Application Search
-                </span>
-            </a>
-        </div>
-        <div class="top-bar-right title" onclick="$('#siteMenu .top-bar-right.user-nav').toggleClass('display-block')">
-            <a class="top-bar-toggle small condensable">
-                <i class="fa fa-gear">
-                </i>
-                <span class="condense">
-                    Settings
-                </span>
-            </a>
+  			
+  		</div>
+  		<div class="column medium-6">
+    <div class="row">
+    <div class="column">
+        <div class="content-padding section-padding">
+            <nav class="nav-utility">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-users.html">
+                            <i aria-hidden="true" class="fa fa-user">
+                            </i>
+                            Users
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-questions.html">
+                            <i aria-hidden="true" class="fa fa-question-circle">
+                            </i>
+                            Questions
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-messages.html">
+                            <i aria-hidden="true" class="fa fa-comment">
+                            </i>
+                            Messaging
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-com-management.html">
+                            <i aria-hidden="true" class="fa fa-users">
+                            </i>
+                            Committees
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Logout
+                            <i class="fa fa-sign-out"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
-    <div class="stack-for-medium " id="siteMenu">
+</div>
+
+    <div class="row">
+    	<div class="column">
+    		<div class="content-padding section-padding">
+    			<div class="text-right">Optimus Prime | <em>Global Admin</em></div>
+    		</div>
+    	</div>
+    </div>
+  			
+  		</div>
+  	</div>
+	</header>
+<div class="top-bar">
+    <div class="stack-for-medium" id="siteMenu">
         <div class="top-bar-left show-for-large">
-            <ul class="menu">
+            <ul class="menu dropdown" data-dropdown-menu>
+                <li>
+                    <a href="admin-applications.html">
+                        <b>Season:</b> ACC Guidance
+                    </a>
+                    <ul class="menu">
+                        <li><a href="">NCDR</a></li>
+                    </ul>
+                </li>
+
                 <li>
                     <a href="admin-applications.html">
                         Applications
@@ -59,11 +101,6 @@
                 <li>
                     <a href="admin-committees-dashboard.html">
                         Committees
-                    </a>
-                </li>
-                <li>
-                    <a href="admin-proposed.html">
-                        Proposed
                     </a>
                 </li>
                 <li>
@@ -86,40 +123,7 @@
                 </li>
             </ul>
         </div>
-        <div class="top-bar-right user-nav show-for-large">
-            <ul class="menu">
-                <li class="title">
-                
-                    <a href="admin-blank.html">
-                      <i class="fa fa-gear" aria-hidden="true"></i> Settings
-                    </a>
-                
-                </li>
-                <li>
-                    <a href="admin-messages.html">
-                      <i class="fa fa-comment" aria-hidden="true"></i>  Messaging
-                    </a>
-                </li>
-                <li>
-                    <a href="admin-questions.html">
-                       <i class="fa fa-question-circle" aria-hidden="true"></i>
-                       Questions
-                    </a>
-                </li>
-                <li>
-                    <a href="admin-com-management.html">
-                    <i class="fa fa-question-circle" aria-hidden="true"></i>
-                       
-                       Committees
-                    </a>
-                </li>
-                <li>
-                    <a href="admin-users.html">
-                       <i class="fa fa-user" aria-hidden="true"></i> Users 
-                    </a>
-                </li>
-            </ul>
-        </div>
+
         <div class="search-bar">
             <div class="question">
                 <div class="input-holder">
@@ -145,42 +149,52 @@
         </div>
     </div>
 </div>
-
+	
 </div>
     <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
     
 <div class="page paper-page">
-<div class="section-nav back">
-    <a href="admin-applications.html">
-      <div class="circle">
-        <i class="fa fa-holder-dynamic"></i>
-      </div>
-      <div class="text">Back</div>
-    </a>
-  </div>
-  <div class="page-wrapper">
-    
-    <div class="row position-relative">
-        <div class="column">
-            <h1>Doctor Dove Special Dark
-            <a href="" class="button secondary float-right"><i class="fa fa-envelope"></i>&nbsp;Email Applicant</a>
-            <div class="sub-line"><small class="label warning">Status: Sent for Revision</small></div>
-            </h1>
-
-        </div>
+    <div class="section-nav back">
+        <a href="admin-applications.html">
+            <div class="circle">
+                <i class="fa fa-holder-dynamic">
+                </i>
+            </div>
+            <div class="text">
+                Back
+            </div>
+        </a>
     </div>
-  
-
-
-<div class="row">
-    <div class="column medium-6"><div class="card">
-        <div class="colored-paper">
-            <h2>Interested Activities/Committees</h2>
+    <div class="page-wrapper">
+        <div class="row position-relative">
+            <div class="column">
+                <h1>
+                    Doctor Dove Special Dark
+                    <a class="button secondary float-right" href="">
+                        <i class="fa fa-envelope">
+                        </i>
+                        Email Applicant
+                    </a>
+                    <div class="sub-line">
+                        <small class="label warning">
+                            Status: Sent for Revision
+                        </small>
+                    </div>
+                </h1>
+            </div>
         </div>
-        <div class="section-padding">
-            <div class="accordion">
-
-      <div class="selected">
+        
+        <div class="row">
+            <div class="column medium-6">
+                <div class="card">
+                    <div class="colored-paper">
+                        <h2>
+                            Interested Activities/Committees
+                        </h2>
+                    </div>
+                    <div class="section-padding">
+                        <div class="accordion">
+                              <div class="selected">
 <h4 class="toggle" data-bind="click:panelShow">
     <div class="row column">
         <i class="fa fa-holder">
@@ -355,68 +369,102 @@
 <div class="collapsable-panel ">
 </div></div>
 
- 
-</div>
+                            <h3>
+                                Disclosures
+                            </h3>
+                            <span class="label success radius">
+                                <i class="fa fa-check">
+                                </i>
+                                Up to date
+                            </span>
+                            <a href="">
+                                <i class="fa fa-file">
+                                </i>
+                                View Disclosures
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row column section-padding">
+                    <a class="link" href="">
+                        Show Full list of Activites/Committees
+                    </a>
+                </div>
+            </div>
+            <div class="column medium-6">
+                <div class="card">
+                    <div class="colored-paper">
+                        <h2>
+                            Statement of Reference
+                        </h2>
+                    </div>
+                    <div class="section-padding">
+                        <h3>
+                            Abe Lincoln, FACC
+                            <div class="sub-line">
+                                Institution Name: Gettysburg Research
+                            </div>
+                        </h3>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </p>
+                    </div>
+                </div>
+                <div class="section-padding">
+                    <div class="card">
+                        <div class="colored-paper">
+                            <h2>
+                                Digital CV
+                            </h2>
+                        </div>
+                        <div id="Application-Details">
+                            <div class="section-padding">
+                                <h3>
+                                    Professional Experiance
+                                </h3>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                </p>
+                            </div>
+                            <div class="section-padding">
+                                <h3>
+                                    Publications
+                                </h3>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                </p>
+                            </div>
+                            <div class="section-padding">
+                                <h3>
+                                    Awards
+                                </h3>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row group-divide text-right">
+            <div class="button-group">
+                <a class="button alert" href="">
+                    Reject
+                </a>
+                <a class="button warning" href="">
+                    Send For Revision
+                </a>
+                <a class="button secondary" href="">
+                    Save For Later
+                </a>
+                <a class="button success" href="">
+                    Reviewed
+                </a>
+            </div>
         </div>
     </div>
-<div class="row column section-padding"><a href="" class="link">Show Full list of Activites/Committees</a></div>
-    </div>
-    <div class="column medium-6">
-<div class="card">
-    <div class="colored-paper"><h2>Statement of Reference</h2></div>
-    <div class="section-padding"> 
-    <h3>
-           Abe Lincoln, FACC
-           <div class="sub-line">Institution Name: Gettysburg Research</div>
-        </h3>  
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>    
-    </div>
 </div>
- <div class="section-padding">
-        <div class="card">
-        <div class="colored-paper">
-            <h2>Digital CV</h2>
-        </div>
-        <div id="Application-Details">
-    <div class="section-padding">
-        <h3>
-            Professional Experiance
-        </h3>
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-    </div>
-    <div class="section-padding">
-        <h3>
-            Publications
-        </h3>
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-    </div>
-    <div class="section-padding">
-        <h3>
-            Awards
-        </h3>
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-    </div>
-</div>
-    </div></div>
-</div>
-   </div>
-   <div class="row group-divide text-right">
-    <div class="button-group">
-        <a href="" class="button alert">Reject</a>
-        <a href="" class="button warning">Send For Revision</a>
-        <a href="" class="button secondary">Save For Later</a>
-        <a href="" class="button success">Reviewed</a>
-    </div>
-   </div>  
-   </div>
-</div>   
- </div>
 
     </div>
     <footer class="page-footer">

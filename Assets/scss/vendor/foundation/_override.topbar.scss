@@ -36,12 +36,12 @@
 .top-bar-right{
 	padding-right: .5em;
 	background-color: $primary-color;
-	li:hover{
+	li:hover:not(.menu-text){
 			background-color:mix($primary-color,$black);
 		}
 	&.secondary{
 		background-color:$secondary-color;
-		li:hover{
+		li:hover:not(.menu-text){
 				background-color:mix($secondary-color,$black);
 			}
 	}
@@ -49,7 +49,7 @@
 
 .top-bar-left{
 	padding-left:.5em;
-	li:hover{
+	li:hover:not(.menu-text){
 		background-color: white;
 				
 		a,button{
@@ -77,19 +77,23 @@
 		
 	}
 	.submenu{
+		background-color:grey(20);
 		margin: 0;
 		@include font();
 		&, &.nav-level-1{ font-size: ms(0);}
 		&.nav-level-2{ font-size:ms(-1);}
-		
-		li > a{ 
+		li.menuitem{
+			width:100%;
+			display:block;
+		}
+		.menuitem > a{ 
 			color:rebrand-color($primary-color, 2); 
 			width:100%; 
 			display:inline-block; 
 		    line-height: 1.5;
 		    padding: 0;}
 			list-style: none;
-		li{
+		.menuitem{
 			padding:.25em .75em;
 			&:hover{
 				background-color:rebrand-color($scrub-green, 2);

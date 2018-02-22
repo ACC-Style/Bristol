@@ -90,44 +90,86 @@
                 </div>
                 
                 <div class="off-canvas-content" data-off-canvas-content="">
-                    <div class="row">
+                    
+<div class="row">
   <header class="header page">
+  	<div class="row">
+  		<div class="column medium-6">
     <a href="index.html" class="logo">
-      <img src="assets/img/headerlogo.svg" alt="ACC Statin Intolerance Guidelines">
+      <img src="assets/img/headerlogo.svg" height="50" alt="ACC Statin Intolerance Guidelines">
     </a>
-    <div class="logedin">Admin: Optimus Prime | <a href="" class="link">Log Out</a></div>
-	</header>
-	<div class="top-bar">
-    <div class="hide-for-large" id="mobileMenu">
-        <div class="top-bar-left" onclick="$('#siteMenu .top-bar-left').toggleClass('display-block')">
-            <a class="top-bar-toggle">
-                <i class="fa fa-bars">
-                </i>
-                Menu
-            </a>
-        </div>
-        <div class="top-bar-right secondary" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
-            <a class="top-bar-toggle small condensable">
-                <i class="fa fa-search">
-                </i>
-                <span class="condense">
-                    Application Search
-                </span>
-            </a>
-        </div>
-        <div class="top-bar-right title" onclick="$('#siteMenu .top-bar-right.user-nav').toggleClass('display-block')">
-            <a class="top-bar-toggle small condensable">
-                <i class="fa fa-gear">
-                </i>
-                <span class="condense">
-                    Settings
-                </span>
-            </a>
+  			
+  		</div>
+  		<div class="column medium-6">
+    <div class="row">
+    <div class="column">
+        <div class="content-padding section-padding">
+            <nav class="nav-utility">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-users.html">
+                            <i aria-hidden="true" class="fa fa-user">
+                            </i>
+                            Users
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-questions.html">
+                            <i aria-hidden="true" class="fa fa-question-circle">
+                            </i>
+                            Questions
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-messages.html">
+                            <i aria-hidden="true" class="fa fa-comment">
+                            </i>
+                            Messaging
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-com-management.html">
+                            <i aria-hidden="true" class="fa fa-users">
+                            </i>
+                            Committees
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Logout
+                            <i class="fa fa-sign-out"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
-    <div class="stack-for-medium " id="siteMenu">
+</div>
+
+    <div class="row">
+    	<div class="column">
+    		<div class="content-padding section-padding">
+    			<div class="text-right">Optimus Prime | <em>Global Admin</em></div>
+    		</div>
+    	</div>
+    </div>
+  			
+  		</div>
+  	</div>
+	</header>
+<div class="top-bar">
+    <div class="stack-for-medium" id="siteMenu">
         <div class="top-bar-left show-for-large">
-            <ul class="menu">
+            <ul class="menu dropdown" data-dropdown-menu>
+                <li>
+                    <a href="admin-applications.html">
+                        <b>Season:</b> ACC Guidance
+                    </a>
+                    <ul class="menu">
+                        <li><a href="">NCDR</a></li>
+                    </ul>
+                </li>
+
                 <li>
                     <a href="admin-applications.html">
                         Applications
@@ -136,11 +178,6 @@
                 <li>
                     <a href="admin-committees-dashboard.html">
                         Committees
-                    </a>
-                </li>
-                <li>
-                    <a href="admin-proposed.html">
-                        Proposed
                     </a>
                 </li>
                 <li>
@@ -163,40 +200,7 @@
                 </li>
             </ul>
         </div>
-        <div class="top-bar-right user-nav show-for-large">
-            <ul class="menu">
-                <li class="title">
-                
-                    <a href="admin-blank.html">
-                      <i class="fa fa-gear" aria-hidden="true"></i> Settings
-                    </a>
-                
-                </li>
-                <li>
-                    <a href="admin-messages.html">
-                      <i class="fa fa-comment" aria-hidden="true"></i>  Messaging
-                    </a>
-                </li>
-                <li>
-                    <a href="admin-questions.html">
-                       <i class="fa fa-question-circle" aria-hidden="true"></i>
-                       Questions
-                    </a>
-                </li>
-                <li>
-                    <a href="admin-com-management.html">
-                    <i class="fa fa-question-circle" aria-hidden="true"></i>
-                       
-                       Committees
-                    </a>
-                </li>
-                <li>
-                    <a href="admin-users.html">
-                       <i class="fa fa-user" aria-hidden="true"></i> Users 
-                    </a>
-                </li>
-            </ul>
-        </div>
+
         <div class="search-bar">
             <div class="question">
                 <div class="input-holder">
@@ -222,7 +226,7 @@
         </div>
     </div>
 </div>
-
+	
 </div>
                    
                     <div class="paper-page page">
@@ -258,234 +262,258 @@
         </li>
         <li class="tab-title is-active">
             <a href="admin-committees-list.html">
-                Current Nominees
+                Nominees
             </a>
         </li>
         <li class="tab-title disabled">
-            <a href="admin-committees.html">
+            <a href="admin-committees-appointed.html">
                 Appointment
             </a>
         </li>
     </ul>
 </nav>
-
-
-    <section class="off-canvas-wrapper page paper-page no-padding" >
-        <aside class="off-canvas-absolute position-left" data-off-canvas="" id="offCanvasLeftSplit">
-
-                <div class="colored-paper no-margin ">
-                    <h4 class="no-vertical-margin single-line-height">
-                        Elegible
-                    </h4>
-                </div>
-                <div class="section-padding">
-                    <nav class="nav nav-list">
-                        <ul>
-                            <li><a href="admin-committees-list.html"><i class="fa fa-arrow-left"></i><span class="text">All Nominees</span></a></li>
-                            <li class="selected">
-                                <a href="">
-                                    <span class="text">
-                                        <span class="name">
-                                            Doctor Beta
-                                        </span>
-                                        <span>
-                                            FACC
-                                        </span>
-                                    </span>
-                                    <i class="fa fa-arrow-right">
-                                    </i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-	<span class="text">
-		<span class="name">Doctor Reeces</span>
-		<span>FACC</span>
-	</span>
-	<i class="fa fa-arrow-right"></i>
-</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="content-padding">
-                        <a class="small expanded secondary button" href="">
-                            Nominate Member Not In List
-                        </a>
-                    </div>
-                </div>
-                <div class="colored-paper no-margin warning">
-                    <h4 class="no-vertical-margin single-line-height">
-                        <i class="fa fa-question-circle">
-                        </i>
-                        Unknown Elegiblity
-                    </h4>
-                </div>
-                <div class="section-padding">
-                    <nav class="nav nav-list">
-                        <ul>
-                            <li>
-                                <a href="">
-	<span class="text">
-		<span class="name">Doctor Reeces</span>
-		<span>FACC</span>
-	</span>
-	<i class="fa fa-arrow-right"></i>
-</a>
-                            </li>
-                            <li>
-                                <a href="">
-	<span class="text">
-		<span class="name">Doctor Reeces</span>
-		<span>FACC</span>
-	</span>
-	<i class="fa fa-arrow-right"></i>
-</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="colored-paper no-margin disabled">
-                    <h4 class="no-vertical-margin single-line-height">
-                        Inelegible
-                    </h4>
-                </div>
-                <div class="section-padding content-padding">
-                    <a class="link" href="">
-                        view inelegible members
+<section class="off-canvas-wrapper page paper-page no-padding">
+        <div class="colored-paper" style="background-image: none;">
+        <nav class="row content-padding">
+            <ul class="breadcrumbs no-margin">
+                <li class="">
+                    <a style="color:white;">
+                        Overview
                     </a>
-                </div>
-
-        </aside>
-        <article class="off-canvas-content"  data-off-canvas-content style="padding-left: 40px;">
-            <div class="page-wrapper content-padding" style="max-width: 100%">
-                <div class="row column">
-                    <div class="card">
-                        <div class="colored-paper">
-                            <h2 class="single-line-height no-vertical-margin">
-                                <span class="float-right">
-                                    <select id="" name="">
-                                        <option default="" value="">
-                                            Elegible
-                                        </option>
-                                        <option value="">
-                                            InElegible
-                                        </option>
-                                        <option value="">
-                                            Unknown
-                                        </option>
-                                    </select>
+                </li>
+                <li class=" disabled ">
+                    <a style="color:white;">
+                        Details
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <aside class="off-canvas-absolute position-left" data-off-canvas="" id="offCanvasLeftSplit">
+        <div class="colored-paper disabled no-margin">
+            <a class="button expanded" href="admin-committees-list.html">
+                <i class="fa fa-arrow-circle-left">
+                </i>
+                <span class="text">
+                    Back to Overview
+                </span>
+            </a> 
+            <a class="button expanded success" style="margin-top:2px;" href="admin-committees-list.html">
+                <i class="fa fa-plus-circle">
+                </i>
+                <span class="text">
+                    Add A Member to List
+                </span>
+            </a>  
+        </div>
+        <div class="colored-paper no-margin ">
+            <h4 class="no-vertical-margin single-line-height">
+                Elegible
+            </h4>
+        </div>
+        <div class="section-padding">
+            <nav class="nav nav-list">
+                <ul>
+                    <li class="selected">
+                        <a href="">
+                            <span class="text">
+                                <span class="name">
+                                    Doctor Beta
                                 </span>
-                                Doctor Beta, FACC
-                                <small class="subheader">
-                                    ( Average Rating: 2.4
-                                    <i class="fa fa-star">
-                                    </i>
-                                    )
-                                </small>
-                                <span class="sub-line">
-                                    email@email.com
+                                <span>
+                                    FACC
                                 </span>
-                            </h2>
-                        </div>
-                        <div class="row section-padding">
-                            <div class="column medium-6">
-                                <div class="section-padding content-padding callout highlighted">
-                                    <h3>
-                                        Statement of Interest
-                                    </h3>
-                                    <p>
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                                    </p>
-                                </div>
-                                <div class="section-padding content-padding callout info">
-                                    <h3>
-                                        Competency
-                                    </h3>
-                                    <div class="row">
-                                        <div class="column">
-                                            <ul class="compency-list">
-                                                <li>
-                                                    Exhibits Influential Leadership
-                                                </li>
-                                                <li>
-                                                    Demonstrates Strategic Leadership
-                                                </li>
-                                                <li>
-                                                    Maintains Organizational Awareness & Stewardship
-                                                </li>
-                                            </ul>
-                                            <p>
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="secion-padding content-padding">
-                                    <h3>
-                                        Committee Ranking
-                                    </h3>
-                                    <nav class="nav nav-list nav-checklist">
-                                        <ul>
-                                            <li class="selected">
-                                                <b>
-                                                    1
-                                                </b>
-                                                Committee ABC
+                            </span>
+                            <i class="fa fa-check">
+                            </i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+	<span class="text">
+		<span class="name">Doctor Reeces</span>
+		<span>FACC</span>
+	</span>
+	<i class="fa fa-arrow-right"></i>
+</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="colored-paper no-margin warning">
+            <h4 class="no-vertical-margin single-line-height">
+                <i class="fa fa-question-circle">
+                </i>
+                Unknown Elegiblity
+            </h4>
+        </div>
+        <div class="section-padding">
+            <nav class="nav nav-list">
+                <ul>
+                    <li>
+                        <a href="">
+	<span class="text">
+		<span class="name">Doctor Reeces</span>
+		<span>FACC</span>
+	</span>
+	<i class="fa fa-arrow-right"></i>
+</a>
+                    </li>
+                    <li>
+                        <a href="">
+	<span class="text">
+		<span class="name">Doctor Reeces</span>
+		<span>FACC</span>
+	</span>
+	<i class="fa fa-arrow-right"></i>
+</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="colored-paper no-margin disabled">
+            <h4 class="no-vertical-margin single-line-height">
+                Inelegible
+            </h4>
+        </div>
+        <div class="section-padding content-padding">
+            <a class="link" href="">
+                view inelegible members
+            </a>
+        </div>
+    </aside>
+    <article class="off-canvas-content" data-off-canvas-content="" style="padding-left: 40px; position: relative;">
+        <div class="page-wrapper content-padding" style="max-width: 100%">
+            <div class="row column">
+                <div class="card">
+                    <div class="colored-paper">
+                        <h2 class="single-line-height no-vertical-margin">
+                            <span class="float-right">
+                                <select id="" name="">
+                                    <option default="" value="">
+                                        Elegible
+                                    </option>
+                                    <option value="">
+                                        InElegible
+                                    </option>
+                                    <option value="">
+                                        Unknown
+                                    </option><option value="">
+                                        Appoint
+                                    </option>
+                                </select>
+                            </span>
+                            Doctor Beta, FACC
+                            <small class="subheader">
+                                ( Average Rating: 2.4
+                                <i class="fa fa-star">
+                                </i>
+                                )
+                            </small>
+                            <span class="sub-line">
+                                email@email.com
+                            </span>
+                        </h2>
+                    </div>
+                    <div class="row section-padding">
+                        <div class="column medium-6">
+                            <div class="section-padding content-padding callout highlighted">
+                                <h3>
+                                    Statement of Interest
+                                </h3>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                </p>
+                            </div>
+                            <div class="section-padding content-padding callout info">
+                                <h3>
+                                    Competency
+                                </h3>
+                                <div class="row">
+                                    <div class="column">
+                                        <ul class="compency-list">
+                                            <li>
+                                                Exhibits Influential Leadership
                                             </li>
-                                            <li class="disabled">
-                                                <b>
-                                                    2
-                                                </b>
-                                                ~Committee Outside Perview ~
+                                            <li>
+                                                Demonstrates Strategic Leadership
                                             </li>
-                                            <li class="">
-                                                <b>
-                                                    3
-                                                </b>
-                                                Committee FGH
-                                            </li>
-                                            <li class="">
-                                                <b>
-                                                    4
-                                                </b>
-                                                Committee XYZ
+                                            <li>
+                                                Maintains Organizational Awareness & Stewardship
                                             </li>
                                         </ul>
-                                    </nav>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="column medium-6">
-                                <div class="seciton-padding callout">
-                                    <h2>
-                                        Comment
-                                    </h2>
-                                    <div class="colored-paper disabled row">
-                                        <div class="switch-input-space column small-12 no-padding">
-                                            <label class="switch-value" for="checkbox-value-switch-round" style="width:1%;">
-                                                Attach Comment To
-                                            </label>
-                                            <div class="switch value-switch switch-4x radius" style="width:2%;">
-                                                <input class="switch-input" id="checkbox-value-switch-round" type="checkbox" value="false">
-                                                    <label class="switch-paddle" for="checkbox-value-switch-round">
-                                                        <span class="show-for-sr">
-                                                            Do you like me?
-                                                        </span>
-                                                        <span aria-hidden="true" class="switch-active">
-                                                            Global
-                                                        </span>
-                                                        <span aria-hidden="true" class="switch-inactive">
-                                                            Committee
-                                                        </span>
-                                                    </label>
-                                                </input>
-                                            </div>
+                            <div class="secion-padding content-padding">
+                                <h3>
+                                    Committee Ranking
+                                </h3>
+                                <nav class="nav nav-list nav-checklist">
+                                    <ul>
+                                        <li class="selected">
+                                            <b>
+                                                1
+                                            </b>
+                                            Committee ABC
+                                        </li>
+                                        <li class="disabled">
+                                            <b>
+                                                2
+                                            </b>
+                                            ~Committee Outside Perview ~
+                                        </li>
+                                        <li class="">
+                                            <b>
+                                                3
+                                            </b>
+                                            Committee FGH
+                                        </li>
+                                        <li class="">
+                                            <b>
+                                                4
+                                            </b>
+                                            Committee XYZ
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="column medium-6">
+                            <div class="seciton-padding callout">
+                                <h2>
+                                    Comment
+                                </h2>
+                                <div class="colored-paper disabled row">
+                                    <div class="switch-input-space column small-12 no-padding">
+                                        <label class="switch-value" for="checkbox-value-switch-round" style="width:1%;">
+                                            Attach Comment To
+                                        </label>
+                                        <div class="switch value-switch switch-4x radius" style="width:2%;">
+                                            <input class="switch-input" id="checkbox-value-switch-round" type="checkbox" value="false">
+                                                <label class="switch-paddle" for="checkbox-value-switch-round">
+                                                    <span class="show-for-sr">
+                                                        Do you like me?
+                                                    </span>
+                                                    <span aria-hidden="true" class="switch-active">
+                                                        Global
+                                                    </span>
+                                                    <span aria-hidden="true" class="switch-inactive">
+                                                        Committee
+                                                    </span>
+                                                </label>
+                                            </input>
                                         </div>
                                     </div>
-                                    <div class="group-divide-bottom section-padding disabled">
-                                        <h3>
-                                            Rating
-                                        </h3>
-                                        <div class="star-rating text-center tiny expanded button-group">
+                                </div>
+                                <div class="group-divide-bottom section-padding disabled">
+                                    <h3>
+                                        Rating
+                                    </h3>
+                                    <div class="star-rating text-center tiny expanded button-group">
     <a href="" class="button"><i class="fa fa-star"></i></a>
     <a href="" class="button secondary"><i class="fa fa-star-o"></i></a>
     <a href="" class="button secondary"><i class="fa fa-star-o"></i></a>
@@ -494,81 +522,81 @@
     
 </div>
 <a href="" class="button secondary expanded hollow radius tiny"><i class="fa fa-question-circle" aria-hidden="true"></i> Not Sure</a>
-                                    </div>
-                                    <div class="group-divide-bottom section-padding row column">
-                                        <div class="switch-input-space column small-12">
-                                            <div class="switch info-active success-inactive switch-2x">
-                                                <input class="switch-input" id="active-inactive" name="exampleSwitch" type="checkbox">
-                                                    <label class="switch-paddle" for="active-inactive">
-                                                        <span class="show-for-sr">
-                                                            Do you like me?
-                                                        </span>
-                                                        <span aria-hidden="true" class="switch-active">
-                                                            No
-                                                        </span>
-                                                        <span aria-hidden="true" class="switch-inactive">
-                                                            Yes
-                                                        </span>
-                                                    </label>
-                                                </input>
-                                            </div>
-                                            <label class="switch-value" for="active-inactive">
-                                                Chair Pick
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="section-padding row column">
-                                        <textarea id="" name="" rows="5" style="margin-bottom: 0">
-                                        </textarea>
-                                    </div>
-                                    <a class="button float-right" href="">
-                                        Add Comment
-                                    </a>
                                 </div>
+                                <div class="group-divide-bottom section-padding row column">
+                                    <div class="switch-input-space column small-12">
+                                        <div class="switch info-active success-inactive switch-2x">
+                                            <input class="switch-input" id="active-inactive" name="exampleSwitch" type="checkbox">
+                                                <label class="switch-paddle" for="active-inactive">
+                                                    <span class="show-for-sr">
+                                                        Do you like me?
+                                                    </span>
+                                                    <span aria-hidden="true" class="switch-active">
+                                                        No
+                                                    </span>
+                                                    <span aria-hidden="true" class="switch-inactive">
+                                                        Yes
+                                                    </span>
+                                                </label>
+                                            </input>
+                                        </div>
+                                        <label class="switch-value" for="active-inactive">
+                                            Chair Pick
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="section-padding row column">
+                                    <textarea id="" name="" rows="5" style="margin-bottom: 0">
+                                    </textarea>
+                                </div>
+                                <a class="button float-right" href="">
+                                    Add Comment
+                                </a>
                             </div>
                         </div>
-                        <div class="colored-paper info">
-                            <nav>
-                                <ul class="nav tabs">
-                                    <li class=" selected ">
-                                        <a>
-                                            Applicaiton
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            Appointments
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            Chapter
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            Committees
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            Sections
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            Attendance
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="row">
-                            <div class="columns large-6">
-                                <h2 class="with-underline show-for-large">
-                                    Application Details
-                                </h2>
-                                <div id="Application-Details">
+                    </div>
+                    <div class="colored-paper info">
+                        <nav>
+                            <ul class="nav tabs">
+                                <li class=" selected ">
+                                    <a>
+                                        Applicaiton
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Appointments
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Chapter
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Committees
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Sections
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Attendance
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="row">
+                        <div class="columns large-6">
+                            <h2 class="with-underline show-for-large">
+                                Application Details
+                            </h2>
+                            <div id="Application-Details">
     <div class="section-padding">
         <h3>
             Professional Experiance
@@ -594,32 +622,35 @@
         </p>
     </div>
 </div>
-                                <h3>
-                                    Disclosures
-                                </h3>
-                                <span class="label success radius">
-                                    <i class="fa fa-check">
+                            <h3>
+                                Disclosures
+                            </h3>
+                            <span class="label success radius">
+                                <i class="fa fa-check">
+                                </i>
+                                Up to date
+                            </span>
+                            <a href="">
+                                <i class="fa fa-file">
+                                </i>
+                                View Disclosures
+                            </a>
+                        </div>
+                        <div class="columns large-6 show-for-large">
+                            <h2 class="with-underline show-for-large">
+                                Comments & Ratings
+                                <div class="float-right">
+                                    2.4
+                                    <i class="fa fa-star">
                                     </i>
-                                    Up to date
-                                </span>
-                                <a href="">
-                                    <i class="fa fa-file">
-                                    </i>
-                                    View Disclosures
-                                </a>
-                            </div>
-                            <div class="columns large-6 show-for-large">
-                                <h2 class="with-underline show-for-large">
-                                    Comments & Ratings
-                                    <div class="float-right">
-                                        2.4
-                                        <i class="fa fa-star">
-                                        </i>
-                                    </div>
-                                </h2>
-                                <div id="Comments">
+                                </div>
+                            </h2>
+                            <div id="Comments">
     <div class="callout">
-        <h3>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        </p>
+        <h5 class="text-right">
             Reviewer Name A
             <span class="sub-line">
                 <div class="star-rating">
@@ -638,13 +669,13 @@
     </i>
 </div>
             </span>
-        </h3>
+        </h5>
+    </div>
+    <div class="callout">
         <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
         </p>
-    </div>
-        <div class="callout">
-        <h3>
+        <h5 class="text-right">
             Reviewer Name B
             <span class="sub-line">
                 <div class="star-rating">
@@ -663,13 +694,13 @@
     </i>
 </div>
             </span>
-        </h3>
+        </h5>
+    </div>
+    <div class="callout warning">
         <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
         </p>
-    </div>
-        <div class="callout warning">
-        <h3>
+        <h5 class="text-right">
             Reviewer Name C
             <span class="sub-line">
                 <div class="star-rating">
@@ -688,13 +719,13 @@
     </i>
 </div>
             </span>
-        </h3>
+        </h5>
+    </div>
+    <div class="callout highlighted">
         <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
         </p>
-    </div>
-        <div class="callout highlighted">
-        <h3>
+        <h5 class="text-right">
             Reviewer Name A
             <span class="sub-line">
                 <div class="star-rating">
@@ -713,26 +744,20 @@
     </i>
 </div>
             </span>
-        </h3>
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        </p>
+        </h5>
     </div>
-   
 </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <button class="button warning small circle-button" data-toggle="offCanvasLeftSplit" id="member-toggle" type="button" aria-expanded="false" aria-controls="offCanvasLeftSplit">
-                        <i class="fa fa-users" style="color:white">
-                        </i>
-                    </button>
-        </article>
-
-    </section>
-</div>
+        </div>
+        <button aria-controls="offCanvasLeftSplit" aria-expanded="false" class="button warning small circle-button" data-toggle="offCanvasLeftSplit" id="member-toggle" type="button">
+            <i class="fa fa-bars" style="color:white">
+            </i>
+        </button>
+    </article>
+</section>
 
                         </div>
                     </div>
