@@ -14,7 +14,8 @@ $required_data:(
 	$sepstate-color-base:$color;
 	$sepstate-color:scale-color($sepstate-color-base,$lightness:15%);
 	$sepstate-darkcolor:scale-color($sepstate-color,$lightness:-10%);
-	$sepstate-lightcolor:scale-color($sepstate-color,$lightness:10%);
+	$sepstate-bordercolor:scale-color($sepstate-color,$lightness:-30%);
+	$sepstate-lightcolor:scale-color($sepstate-color,$lightness:50%);
 	.table tr#{$selector}.seperator td, .table tr#{$selector}.seperator:nth-child(even) td:nth-child(odd){
 
 		background-color: $sepstate-color;
@@ -23,9 +24,10 @@ $required_data:(
 		/* these will reset other properties, like background-position, but it does know what you mean */
 		background: $sepstate-color;
 		background: linear-gradient(to left ,$sepstate-lightcolor  ,$sepstate-darkcolor);
-		border-top:$sepstate-darkcolor 1px solid;
-		border-bottom:$sepstate-darkcolor 2px solid; 
+		border-top:$sepstate-bordercolor 1px solid !important;
+		border-bottom:$sepstate-bordercolor 2px solid !important; 
 		color:acc-color-contrast($sepstate-color);
+		a{color:acc-color-contrast($sepstate-lightcolor);}
 	}
 
 }
