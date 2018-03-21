@@ -1,22 +1,25 @@
-.header.page + .top-bar{margin-top:-6px;}
+
 .top-bar, .top-bar ul{background-color: transparent;}
 .top-bar {
+	border-top:4px solid $acc-blue;
 	position: relative;
 	z-index: 1002;
 	padding: 0;
-	background-color: rebrand-color($acc-blue,3);
+	background-color: grey(60);
 	@include font-slab;
 	color:$white;
 	
 	&, .menu > li{
 		line-height: 2em;
 		font-size: ms(0);
+		margin-bottom:0;
+		margin-top:0;
 		@include bp(md){
 			line-height: 2.75em;
 			font-size: ms(-1);
 		}
 		@include bp(lg){font-size:ms(0);}
-		@include bp(xl){font-size: ms(1);}
+		@include bp(xl){font-size: ms(0);}
 		> a,> button{
 		 	display:block;
 		 	width:auto;
@@ -108,7 +111,7 @@
 }
 .menu > li{
 	display: block;
-	width:100%;
+	width:auto;
 	.dropdown-pane{
 		width:100%;
 		max-width:100vh;
@@ -143,7 +146,7 @@
 	}
 
 }
-#siteMenu{
+.siteMenu{
 	i.fa{margin-top:-4px}
 	.top-bar-left,.top-bar-right{
 		width:100%;
@@ -196,43 +199,8 @@
 			.dropdown-pane .column  + .column  {border-left:solid grey(15) 1px; padding-left:.5em;padding-right:0em;}}
 	}
 }
-.dropdown-menu-item{
-	@include fa-holder($fa-var-angle-down,"container");
-	&:hover{
-		@include fa-holder($fa-var-chevron-down,"container");
-	}
-}
-.search-bar{
-	line-height:normal;
-	padding: .5em ;
-    clear: both;
-    background-color:$secondary-color;
-    .top-bar &{display:none;}
-    .question{margin:0;
-    	select,input,.button,button{
-    		border: 1px solid grey(30);
-    	}
-    	select,option{    
-    		background: grey(50);
-		    border-radius: 6px 0 0 6px;
-		    color:#fff;
-		    font-weight: bold;
-		    font-size: ms(0);
-		    @include font-bold();
-		}
-		input{
-			background: grey(10);
-		}
-		.button, button{
-			border-radius: 0 6px 6px 0;
-			background-color: grey(50);
-			vertical-align: text-top;
-			padding: 0;
-		}
-
-    }
-}
-.top-bar input, .search-bar input{max-width:100%;}
+.dropdown-menu-item .fa-holder:before{content: "\f107";}
+.dropdown-menu-item:hover .fa-holder:before{content: "\f0d7";}
 
 
 
@@ -243,14 +211,14 @@
 *   @example
 *	<div class="top-bar">
 *	    <div class="hide-for-large" id="mobileMenu">
-*	        <div class="top-bar-left" onclick="$('#siteMenu .top-bar-left').toggleClass('display-block')">
+*	        <div class="top-bar-left" onclick="$('.siteMenu .top-bar-left').toggleClass('display-block')">
 *	            <a class="top-bar-toggle">
 *	                <i class="fa fa-bars">
 *	                </i>
 *	                Menu
 *	            </a>
 *	        </div>
-*	        <div class="top-bar-right secondary" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+*	        <div class="top-bar-right secondary" onclick="$('.siteMenu .search-bar').toggleClass('display-block')">
 *	            <a class="top-bar-toggle small condensable">
 *	                <span class="condense">
 *	                    Search
@@ -259,7 +227,7 @@
 *	                </i>
 *	            </a>
 *	        </div>
-*	        <div class="top-bar-right " onclick="$('#siteMenu .top-bar-right.user-nav').toggleClass('display-block')">
+*	        <div class="top-bar-right " onclick="$('.siteMenu .top-bar-right.user-nav').toggleClass('display-block')">
 *	            <a class="top-bar-toggle small condensable">
 *	                <span class="condense">
 *	                    Profile
@@ -377,7 +345,7 @@
 *	                </li>
 *	            </ul>
 *	        </div>
-*	        <div class="top-bar-right secondary show-for-large" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+*	        <div class="top-bar-right secondary show-for-large" onclick="$('.siteMenu .search-bar').toggleClass('display-block')">
 *	            <ul class="menu">
 *	                <li>
 *	                    <a class="top-bar-toggle small condensable">
