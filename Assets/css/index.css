@@ -602,6 +602,74 @@ html {
   font-size: 5em;
 }
 
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear;
+}
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+.fa-rotate-90 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1, -1);
+}
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical {
+  filter: none;
+}
+
 .fa-stack {
   position: relative;
   display: inline-block;
@@ -1688,6 +1756,138 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
 *		<li class="tabs-title disabled"><a >Disabled</a></li>
 *	</ul></nav>
 */
+/**
+* Utility Nav at the top of the page. These are nav items are highly specialized and have been cherry picked out of site tree structure to give them global importance.
+*
+* @structure  Utility Nav 
+* @section Nav > Utility
+* @modifiers 
+*  .mobile - decorates the nav to look like mobile
+* @markup 
+*  <nav class="nav-utility">
+*      <ul class="nav">
+*        <li class="nav-item">
+*          <a class="nav-link active" href="#">@{lipsum:1:words}</a>
+*        </li>
+*        <li class="nav-item">
+*          <a class="nav-link" href="#">@{lipsum:1:words}</a>
+*        </li>
+*        <li class="nav-item">
+*          <a class="nav-link" href="#">@{lipsum:1:words}</a>
+*        </li>
+*      </ul>
+*  </nav>
+*/
+.nav-utility, .nav-utility ul, .nav, .nav ul, .navbar-nav, .navbar-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-utility li, .nav-utility ul li, .nav li, .nav ul li, .navbar-nav li, .navbar-nav ul li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-utility > li > a:focus, .nav-utility > li > a:hover, .nav > li > a:focus, .nav > li > a:hover, .navbar-nav > li > a:focus, .navbar-nav > li > a:hover {
+  background-color: transparent;
+}
+
+.nav-utility {
+  background-color: #b3b3b3;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: -.25px;
+  font-size: 19px;
+}
+.nav-utility .nav, .nav-utility .nav-item, .nav-utility .nav-link {
+  display: block;
+  width: 100%;
+  position: relative;
+  float: none;
+  clear: both;
+  text-align: left;
+}
+.nav-utility .nav-link {
+  color: #333333;
+}
+.nav-utility .nav-item {
+  text-align: center;
+  white-space: nowrap;
+}
+.nav-utility .nav-item + .nav-item {
+  border-top: #FFF dotted 1px;
+}
+@media only screen and (min-width: 640px) {
+  .nav-utility {
+    float: right;
+    font-weight: 400;
+    background-color: #fff;
+  }
+  .nav-utility .nav, .nav-utility .nav-item {
+    display: inline-block;
+    width: auto;
+    position: relative;
+    text-align: center;
+    clear: none;
+  }
+  .nav-utility .nav:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .nav-utility .nav-item {
+    float: left;
+  }
+  .nav-utility .nav-link {
+    display: inline-block;
+    clear: none;
+    width: auto;
+  }
+  .nav-utility .nav-item + .nav-item {
+    border: 0px none transparent;
+  }
+  .nav-utility .nav-item:after {
+    display: inline-block;
+    padding-right: 1em;
+    content: '|';
+    color: #198dae;
+  }
+  .nav-utility .nav-item:last-child:after {
+    content: '';
+    padding-left: 0;
+    display: none;
+  }
+  .nav-utility .nav-link {
+    color: #333333;
+    padding-left: 0;
+  }
+  .nav-utility .nav-link:hover {
+    text-decoration: underline;
+  }
+  .nav-utility .nav-item:last-child .nav-link {
+    padding-right: 0em;
+  }
+}
+.nav-utility.mobile {
+  font-weight: 400;
+  background-color: #b3b3b3;
+}
+.nav-utility.mobile .nav, .nav-utility.mobile .nav-item, .nav-utility.mobile .nav-link {
+  display: block;
+  width: 100%;
+  position: relative;
+  float: none;
+  clear: both;
+  text-align: left;
+}
+.nav-utility.mobile .nav-item {
+  width: auto;
+}
+.nav-utility.mobile .nav-item:after {
+  padding-left: 0;
+  content: '';
+}
+
 .tabs.tabs-primary {
   display: -webkit-box;
   display: -moz-box;
@@ -3679,84 +3879,105 @@ table a.button, table button, table .inline-list, table .nobutton {
 .table tr.error.seperator td, .table tr.error.seperator:nth-child(even) td:nth-child(odd) {
   background-color: #dc3443;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #df4856, #d02434);
+  background-image: linear-gradient(to left, #ed99a1, #d02434);
   /* these will reset other properties, like background-position, but it does know what you mean */
   background: #dc3443;
-  background: linear-gradient(to left, #df4856, #d02434);
-  border-top: #d02434 1px solid;
-  border-bottom: #d02434 2px solid;
+  background: linear-gradient(to left, #ed99a1, #d02434);
+  border-top: #a21c29 1px solid !important;
+  border-bottom: #a21c29 2px solid !important;
   color: #fff;
+}
+.table tr.error.seperator td a, .table tr.error.seperator:nth-child(even) td:nth-child(odd) a {
+  color: #262626;
 }
 
 .table tr.warning.seperator td, .table tr.warning.seperator:nth-child(even) td:nth-child(odd) {
   background-color: #ec982f;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #eea244, #ea8b15);
+  background-image: linear-gradient(to left, #f6cc97, #ea8b15);
   /* these will reset other properties, like background-position, but it does know what you mean */
   background: #ec982f;
-  background: linear-gradient(to left, #eea244, #ea8b15);
-  border-top: #ea8b15 1px solid;
-  border-bottom: #ea8b15 2px solid;
+  background: linear-gradient(to left, #f6cc97, #ea8b15);
+  border-top: #b66c10 1px solid !important;
+  border-bottom: #b66c10 2px solid !important;
+  color: #262626;
+}
+.table tr.warning.seperator td a, .table tr.warning.seperator:nth-child(even) td:nth-child(odd) a {
   color: #262626;
 }
 
 .table tr.success.seperator td, .table tr.success.seperator:nth-child(even) td:nth-child(odd) {
   background-color: #19da6c;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #27e679, #16c461);
+  background-image: linear-gradient(to left, #87f1b5, #16c461);
   /* these will reset other properties, like background-position, but it does know what you mean */
   background: #19da6c;
-  background: linear-gradient(to left, #27e679, #16c461);
-  border-top: #16c461 1px solid;
-  border-bottom: #16c461 2px solid;
+  background: linear-gradient(to left, #87f1b5, #16c461);
+  border-top: #11994c 1px solid !important;
+  border-bottom: #11994c 2px solid !important;
+  color: #262626;
+}
+.table tr.success.seperator td a, .table tr.success.seperator:nth-child(even) td:nth-child(odd) a {
   color: #262626;
 }
 
 .table tr.info.seperator td, .table tr.info.seperator:nth-child(even) td:nth-child(odd) {
   background-color: #b3b3b3;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #bbbbbb, #a1a1a1);
+  background-image: linear-gradient(to left, #d9d9d9, #a1a1a1);
   /* these will reset other properties, like background-position, but it does know what you mean */
   background: #b3b3b3;
-  background: linear-gradient(to left, #bbbbbb, #a1a1a1);
-  border-top: #a1a1a1 1px solid;
-  border-bottom: #a1a1a1 2px solid;
+  background: linear-gradient(to left, #d9d9d9, #a1a1a1);
+  border-top: #7d7d7d 1px solid !important;
+  border-bottom: #7d7d7d 2px solid !important;
+  color: #262626;
+}
+.table tr.info.seperator td a, .table tr.info.seperator:nth-child(even) td:nth-child(odd) a {
   color: #262626;
 }
 
 .table tr.highlighted.seperator td, .table tr.highlighted.seperator:nth-child(even) td:nth-child(odd) {
   background-color: #3fbde1;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #53c4e4, #27b5dd);
+  background-image: linear-gradient(to left, #9fdef0, #27b5dd);
   /* these will reset other properties, like background-position, but it does know what you mean */
   background: #3fbde1;
-  background: linear-gradient(to left, #53c4e4, #27b5dd);
-  border-top: #27b5dd 1px solid;
-  border-bottom: #27b5dd 2px solid;
+  background: linear-gradient(to left, #9fdef0, #27b5dd);
+  border-top: #1c8eae 1px solid !important;
+  border-bottom: #1c8eae 2px solid !important;
+  color: #262626;
+}
+.table tr.highlighted.seperator td a, .table tr.highlighted.seperator:nth-child(even) td:nth-child(odd) a {
   color: #262626;
 }
 
 .table tr.locked.seperator td, .table tr.locked.seperator:nth-child(even) td:nth-child(odd) {
   background-color: #c9c9c9;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #cecece, #b5b5b5);
+  background-image: linear-gradient(to left, #e4e4e4, #b5b5b5);
   /* these will reset other properties, like background-position, but it does know what you mean */
   background: #c9c9c9;
-  background: linear-gradient(to left, #cecece, #b5b5b5);
-  border-top: #b5b5b5 1px solid;
-  border-bottom: #b5b5b5 2px solid;
+  background: linear-gradient(to left, #e4e4e4, #b5b5b5);
+  border-top: #8d8d8d 1px solid !important;
+  border-bottom: #8d8d8d 2px solid !important;
+  color: #262626;
+}
+.table tr.locked.seperator td a, .table tr.locked.seperator:nth-child(even) td:nth-child(odd) a {
   color: #262626;
 }
 
 .table tr.disabled.seperator td, .table tr.disabled.seperator:nth-child(even) td:nth-child(odd) {
   background-color: #d4d4d4;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #d8d8d8, #bebebe);
+  background-image: linear-gradient(to left, #e9e9e9, #bebebe);
   /* these will reset other properties, like background-position, but it does know what you mean */
   background: #d4d4d4;
-  background: linear-gradient(to left, #d8d8d8, #bebebe);
-  border-top: #bebebe 1px solid;
-  border-bottom: #bebebe 2px solid;
+  background: linear-gradient(to left, #e9e9e9, #bebebe);
+  border-top: #949494 1px solid !important;
+  border-bottom: #949494 2px solid !important;
+  color: #262626;
+}
+.table tr.disabled.seperator td a, .table tr.disabled.seperator:nth-child(even) td:nth-child(odd) a {
   color: #262626;
 }
 
@@ -4955,7 +5176,8 @@ table.application td.highlighted {
   border-right: 0px none;
   border-left: 0px none;
 }
-table.application td.highlighted .link.black {
+
+table.application .link.black {
   color: #333333;
 }
 
@@ -8553,41 +8775,41 @@ div.reveal .close-button {
   }
 }
 
-.card, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
+.card, .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
   padding-top: .25rem;
   padding-bottom: .25rem;
 }
 @media only screen and (min-width: 320px) {
-  .card, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
+  .card, .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
     padding-top: .5rem;
     padding-bottom: .5rem;
   }
 }
 @media only screen and (min-width: 640px) {
-  .card, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
+  .card, .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
     padding-top: .75rem;
     padding-bottom: .75rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .card, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
+  .card, .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
 }
 
-.content-padding, .content-padding.page-wrapper, .card, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
+.content-padding, .content-padding.page-wrapper, .card, .page-wrapper > .section, .page-wrapper > section, .page-wrapper > .row, .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
   padding-left: .5rem;
   padding-right: .5rem;
 }
 @media only screen and (min-width: 640px) {
-  .content-padding, .content-padding.page-wrapper, .card, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
+  .content-padding, .content-padding.page-wrapper, .card, .page-wrapper > .section, .page-wrapper > section, .page-wrapper > .row, .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
     padding-right: .75rem;
     padding-left: .75rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .content-padding, .content-padding.page-wrapper, .card, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
+  .content-padding, .content-padding.page-wrapper, .card, .page-wrapper > .section, .page-wrapper > section, .page-wrapper > .row, .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
     padding-right: 1rem;
     padding-left: 1rem;
   }
@@ -8708,18 +8930,18 @@ div.reveal .close-button {
   background-image: url("../img/billie-holiday-lite.png");
 }
 
-.card, .paper-page .page-wrapper .card, .lifted {
+.card, .page-wrapper .card, .lifted {
   -webkit-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
 }
 
-.card, .paper-page .page-wrapper .card {
+.card, .page-wrapper .card {
   border: 1px solid #d9d9d9;
   background-color: white;
 }
 
-.paper-page .page-wrapper .card.ghost {
+.page-wrapper .card.ghost {
   border: 2px dashed #bfbfbf;
   background-color: transparent;
   background-image: url("../img/empty_stripe_grey@2x.png");
@@ -8765,35 +8987,36 @@ div.reveal .close-button {
 .paper-page .overlap + .page-wrapper {
   padding-top: .5rem;
 }
-.paper-page .page-wrapper {
+
+.page-wrapper {
   padding-top: 1px;
 }
-.paper-page .page-wrapper .card {
+.page-wrapper .card {
   width: auto;
   position: relative;
 }
-.paper-page .page-wrapper .card.ghost {
+.page-wrapper .card.ghost {
   border-radius: 6px;
 }
-.paper-page .page-wrapper.error .card.ghost {
+.page-wrapper.error .card.ghost {
   background-color: #e7ced1;
 }
-.paper-page .page-wrapper.warning .card.ghost {
+.page-wrapper.warning .card.ghost {
   background-color: #eaddce;
 }
-.paper-page .page-wrapper.success .card.ghost {
+.page-wrapper.success .card.ghost {
   background-color: #c9e8d6;
 }
-.paper-page .page-wrapper.info .card.ghost {
+.page-wrapper.info .card.ghost {
   background-color: #e1e1e1;
 }
-.paper-page .page-wrapper.highlighted .card.ghost {
+.page-wrapper.highlighted .card.ghost {
   background-color: #d0e3e8;
 }
-.paper-page .page-wrapper.locked .card.ghost {
+.page-wrapper.locked .card.ghost {
   background-color: #e4e4e4;
 }
-.paper-page .page-wrapper.disabled .card.ghost {
+.page-wrapper.disabled .card.ghost {
   background-color: #e6e6e6;
 }
 

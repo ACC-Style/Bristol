@@ -1,0 +1,67 @@
+{% extends 'layouts/admin-layout' %}
+{% block content %}
+
+<div class="page paper-page">
+	<div class="page-wrapper " >
+		{% comment %}
+			<div class="row">
+				<div class="column small-12">
+					{% include "elements/page-message-deadline" %}
+				</div>
+			</div>
+			<div class="row section-padding">
+				<div class="column small-12">
+					{% include "elements/page-message-missing-data" %}
+				</div>
+			</div>
+		{% endcomment %}
+		<div class="row">
+			<div class="column">
+				<h1>Applications (Post Selection) <a href="admin-applications-filtered.html" class="button small secondary float-right">Filter</a></h1>
+
+			</div>
+		</div>
+		<div class="row">
+			<div class="card">
+				{% include 'admin/elements/admin-table-searchbar' %}
+				<table id="application" class="table banded desaturate">
+					{% include "admin/elements/app-thead_post-selected" %}
+					<tbody id="Proposed">
+						<tr class="seperator info">
+							<td colspan="10">Proposed <a href="" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
+						</tr>{% include 'admin/elements/application-rows' %}
+					</tbody>
+					<tbody id="Draft">
+						<tr class="seperator disabled">
+							<td colspan="10">Started/Draft <a href="	" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
+						</tr>{% include 'admin/elements/application-rows' %}
+					</tbody>
+					<tbody id="Reviewed">	
+						<tr class="seperator success">
+							<td colspan="10">Approved <a href="	" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
+						</tr>{% include 'admin/elements/application-rows' %}
+					</tbody>
+					<tbody id="Declined">
+						<tr class="seperator error">
+							<td colspan="10">Declined <a href="	" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
+						</tr>{% include 'admin/elements/application-rows' %}						
+					</tbody>
+					<tbody id="NotSelected">
+						<tr class="seperator disabled">
+							<td colspan="10">Not Selected <a href="	" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
+						</tr>						
+						{% include 'admin/elements/application-rows' %}
+					</tbody>
+				</table>
+				{% include "elements/card-pagination-bottom"%}
+			</div>
+		</div>
+	</div>
+</div>
+<style>
+table .dates .submitted ,table .dates .modified,table .dates .reviewed {
+    display: none;
+}</style>
+{% endblock %}
+
+{% comment %}<img src="output/abstract-q-c-640-480-1.jpg">{% endcomment %}

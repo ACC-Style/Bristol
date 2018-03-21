@@ -1,0 +1,274 @@
+{% extends 'layouts/admin-committee-layout' %}
+{% block content %}
+<div class="row ">
+    <div class="column section-padding">
+        <h1 class="no-vertical-margin">
+            Committee Name ABC
+        </h1>
+    </div>
+</div>
+<nav class="overlap nav no-vertical-margin">
+    <ul class="tabs ">
+        <li class="tab-title">
+            <a class="home" href="admin-committees-details.html">
+                <i class="fa fa-holder">
+                </i>
+                Committee Details
+            </a>
+        </li>
+        <li class="tab-title is-active">
+            <a href="admin-committees-list.html">
+                Nominees Overview
+            </a>
+        </li>
+
+        <li class="tab-title disabled">
+            <a href="admin-committees-appointed.html">
+                Appointment
+            </a>
+        </li>
+    </ul>
+</nav>
+{% comment %}
+<div class="page-wrapper">
+    <div class="row column ">
+        <h2 class="">
+            Current Nominees
+            <div class="float-right button-group tiny no-vertical-margin">
+                <a class=" secondary button" href="">
+                    Report
+                </a>
+            </div>
+        </h2>
+    </div>
+</div>
+{% endcomment %}
+<section class="page no-padding">
+    <div class="colored-paper" style="background-image: none;">
+        <nav class="row content-padding">
+            <ul class="breadcrumbs no-margin">
+                <li class="">
+                    <a style="color:white;">
+                        Overview
+                    </a>
+                </li>
+                <li class=" disabled ">
+                    <a style="color:white;">
+                        Details
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <article>
+        <div class="page-wrapper content-padding" style="max-width: 100%">
+            <div class="row column">
+                <h1>Overview</h1>
+                <div class="card">
+                    <table class="table striped">
+                        <thead>
+                            <tr>
+                                <th class="text-center" title="chair pick">
+                                    <i class="fa fa-thumbs-up fa-fw">
+                                    </i>
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th class="text-center">
+                                    Preference
+                                </th>
+                                <th class="text-center">
+                                    Rating Average
+                                </th>
+                                <th class="text-center">
+                                    Comments
+                                </th>
+                                <th class="text-center">
+                                    Committee Participation
+                                </th>
+                                <th>
+                                    Set Status
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="seperator highlighted">
+                                <td colspan="7">
+                                    Elegible
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                    <i class="fa fa-thumbs-up fa-fw">
+                                    </i>
+                                </td>
+                                <td>
+                                    <a class="list" href="admin-committees.html">
+                                        Doctor Alpha, FACC
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    1 of 1
+                                </td>
+                                <td class="text-center">
+                                    2.4
+                                    <i class="fa fa-star">
+                                    </i>
+                                </td>
+                                <td class="text-center">
+                                    4
+                                </td>
+                                <td class="text-center">
+                                    Cur(1) | Prev(2)
+                                </td>
+                                <td class="text-center">
+                                    <select class="no-vertical-margin" id="" name="">
+                                        <option default="" value="">
+                                            Elegible
+                                        </option>
+                                        <option value="">
+                                            InElegible
+                                        </option>
+                                        <option value="">
+                                            Unknown
+                                        </option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                </td>
+                                <td>
+                                    <a class="list" href="admin-committees.html">
+                                        Doctor Beta, FACC
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    1 of 1
+                                </td>
+                                <td class="text-center">
+                                    1.2
+                                    <i class="fa fa-star">
+                                    </i>
+                                </td>
+                                <td class="text-center">
+                                    4
+                                </td>
+                                <td class="text-center">
+                                    Cur(1) | Prev(2)
+                                </td>
+                                <td class="text-center">
+                                    <select class="no-vertical-margin" id="" name="">
+                                        <option default="" value="">
+                                            Elegible
+                                        </option>
+                                        <option value="">
+                                            InElegible
+                                        </option>
+                                        <option value="">
+                                            Unknown
+                                        </option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="seperator warning">
+                                <td colspan="7">
+                                    Unknown Elegible
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                </td>
+                                <td>
+                                    <a class="list" href="admin-committees.html">
+                                        Doctor Unknown, FACC
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    4 of 4
+                                </td>
+                                <td class="text-center">
+                                    ~
+                                </td>
+                                <td class="text-center">
+                                    0
+                                </td>
+                                <td class="text-center">
+                                    Cur(0) | Prev(0)
+                                </td>
+                                <td class="text-center">
+                                    <select class="no-vertical-margin" id="" name="">
+                                        <option value="">
+                                            Select One
+                                        </option>
+                                        <option value="InElegible">
+                                            InElegible
+                                        </option>
+                                        <option default="" value="">
+                                            Elegible
+                                        </option>
+                                        <option value="">
+                                            Unknown
+                                        </option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="seperator info">
+                                <td colspan="7">
+                                    Unknown Elegible
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">
+                                </td>
+                                <td>
+                                    <a class="list" href="admin-committees.html">
+                                        Doctor Gama, FACC
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    4 of 4
+                                </td>
+                                <td class="text-center">
+                                    ~
+                                </td>
+                                <td class="text-center">
+                                    1
+                                </td>
+                                <td class="text-center">
+                                    Cur(0) | Prev(0)
+                                </td>
+                                <td class="text-center">
+                                    <select class="no-vertical-margin" id="" name="">
+                                        <option value="InElegible">
+                                            InElegible
+                                        </option>
+                                        <option default="" value="">
+                                            Elegible
+                                        </option>
+                                        <option value="">
+                                            Unknown
+                                        </option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="7">
+                                        Unknonwn or Unset Nominees will not be viewable by committee members to leave comments on.
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
+{% endblock %}
+
+{% comment %}
+<img src="output/abstract-q-c-640-480-1.jpg"/>
+{% endcomment %}

@@ -1,0 +1,47 @@
+{% extends 'layouts/admin-layout' %}
+{% block content %}
+<div class="page paper-page">
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="column">
+                <h1>
+                    Application Questions
+                </h1>
+            </div>
+        </div>
+        <nav class="nav overlap" style="margin-bottom: 0;">
+            <ul class="tabs">
+                <li class="tab-title">
+                    <a href="admin-questions.html">
+                        Global Questions
+                    </a>
+                </li>
+                <li class="tab-title selected">
+                    <a href="admin-questions-CV.html">
+                        Digital CV Questions
+                    </a>
+                </li>
+                <li class="tab-title">
+                    <a href="admin-questions-type.html">
+                        Type Questions
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="colored-paper">
+            <div class="row">
+                <div class="column">
+                    <h2>
+                        Digital CV Questions
+                    </h2>
+                </div>
+            </div>
+        </div>
+        {% include "admin/elements/question-manage-generic" %}
+		{% include "admin/elements/question-manage-generic" %}
+		{% include "admin/elements/question-manage-generic" %}
+		{% include "admin/elements/question-manage-generic" %}
+		{% include "admin/elements/question-manage-competency" %}
+    </div>
+</div>
+{% endblock %}
