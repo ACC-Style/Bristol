@@ -1,0 +1,146 @@
+/**
+* Utility Nav at the top of the page. These are nav items are highly specialized and have been cherry picked out of site tree structure to give them global importance.
+*
+* @structure  Utility Nav 
+* @section Nav > Utility
+* @modifiers 
+*  .mobile - decorates the nav to look like mobile
+* @markup 
+*  <nav class="nav-utility">
+*      <ul class="nav">
+*        <li class="nav-item">
+*          <a class="nav-link active" href="#">@{lipsum:1:words}</a>
+*        </li>
+*        <li class="nav-item">
+*          <a class="nav-link" href="#">@{lipsum:1:words}</a>
+*        </li>
+*        <li class="nav-item">
+*          <a class="nav-link" href="#">@{lipsum:1:words}</a>
+*        </li>
+*      </ul>
+*  </nav>
+*/
+%nav-basic,.nav,.navbar-nav{
+// Un-Style ul, ol for nav use
+&, ul{  
+    list-style: none;
+    margin:0;
+    padding:0;}
+    li, ul li {
+        list-style-type: none;
+        margin:0;
+        padding:0;
+    }
+    >li>a:focus, >li>a:hover{
+        background-color: transparent;
+    }
+}
+
+
+@mixin nav-mobile-basic(){
+    .nav,.nav-item,.nav-link{
+        display: block;
+        width:100%;
+        position:relative;
+        float:none;
+        clear:both;
+        text-align:left;
+    }
+    .nav{
+        
+    }
+    .nav-item{}
+    .nav-link{}
+
+}
+@mixin nav-inline-block-basic{
+.nav,.nav-item{display:inline-block; width:auto; position: relative;text-align:center;clear:none;}
+.nav:after{content:"";display:table;clear:both;}
+.nav-item{float:left;}
+.nav-link{display:inline-block;clear:none;width:auto;}
+
+}
+@mixin nav-flex-row-basic(){
+    >.nav{
+        display:flex;
+        flex-direction: row;
+        flex-wrap:nowrap;
+        align-items:stretch;
+        align-content:strech;
+
+    }
+    >.nav>.nav-item{
+        display: block;
+        width:unset;
+        flex:1 1 auto;
+    }
+    .nav-link{
+        width:unset;
+    }
+
+}
+
+.nav-utility{
+    @extend %nav-basic;
+    @include nav-mobile-basic;
+    
+   .nav{} 
+    // Phone Mode
+    background-color:grey(30);
+    @include font();
+    font-size: ms(1);
+    .nav-link{
+        color: $black
+    }
+    .nav-item{
+        text-align: center;
+        white-space: nowrap;
+    
+    }
+    .nav-item + .nav-item{
+        border-top:$white dotted 1px;
+    }
+   
+    // Tablet Up Mode
+    @include bp(md){
+        @include nav-inline-block-basic;
+        float:right;
+
+        font-weight: 400;
+        background-color:#fff;
+         .nav-item + .nav-item{border:0px none transparent;}
+         // pipes between nav items
+        .nav-item:after{
+            display:inline-block;
+            padding-right: 1em;
+            content: '|';
+            color: $scrub-teal;
+            }
+        .nav-item:last-child:after{
+                content: '';
+                padding-left:0;
+                display: none;
+            }
+        .nav-link{
+            color:grey(80);
+            padding-left:0;
+            &:hover{
+                text-decoration:underline;
+            }
+        }
+        .nav-item:last-child{.nav-link{padding-right:0em;}}
+    }
+    // Phone Decrative Override
+    &.mobile{
+        @include nav-mobile-basic();
+        font-weight: 400;
+        background-color:grey(30);
+        .nav-item{
+            width:auto;          
+        }
+        .nav-item + .nav-item{}
+        .nav-link{}
+        .nav-item:after{ padding-left:0; content: '';}
+    }
+}
+
