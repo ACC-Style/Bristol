@@ -17,7 +17,7 @@
 		{% endcomment %}
 		<div class="row">
 			<div class="column">
-				<h1>Applications <a href="admin-applications-filtered.html" class="button small secondary float-right">Filter</a></h1>
+				<h1>Applications (Post Selection) <a href="admin-applications-filtered.html" class="button small secondary float-right">Filter</a></h1>
 
 			</div>
 		</div>
@@ -25,30 +25,30 @@
 			<div class="card">
 				{% include 'admin/elements/admin-table-searchbar' %}
 				<table id="application" class="table banded desaturate">
-					{% include "admin/elements/app-thead" %}
+					{% include "admin/elements/app-thead_post-selected" %}
+					<tbody id="Proposed">
+						<tr class="seperator info">
+							<td colspan="10">Proposed <a href="" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
+						</tr>{% include 'admin/elements/application-rows' %}
+					</tbody>
 					<tbody id="Draft">
 						<tr class="seperator disabled">
 							<td colspan="10">Started/Draft <a href="	" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
 						</tr>{% include 'admin/elements/application-rows' %}
 					</tbody>
-					<tbody id="Revisions">
-						<tr class="seperator disabled">
-							<td colspan="10">Pending Revision <a href="	" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
-						</tr>{% include 'admin/elements/application-rows' %}						
-					</tbody>
-					<tbody id="Submitted">
-						<tr class="seperator highlighted">
-							<td colspan="10">Submitted <a href="" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
-						</tr>{% include 'admin/elements/application-rows' %}
-					</tbody>
 					<tbody id="Reviewed">	
 						<tr class="seperator success">
-							<td colspan="10">Reviewed <a href="	" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
+							<td colspan="10">Approved <a href="	" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
 						</tr>{% include 'admin/elements/application-rows' %}
 					</tbody>
-					<tbody id="Rejected">
+					<tbody id="Declined">
 						<tr class="seperator error">
-							<td colspan="10">Rejected <a href="	" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
+							<td colspan="10">Declined <a href="	" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
+						</tr>{% include 'admin/elements/application-rows' %}						
+					</tbody>
+					<tbody id="NotSelected">
+						<tr class="seperator disabled">
+							<td colspan="10">Not Selected <a href="	" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
 						</tr>						
 						{% include 'admin/elements/application-rows' %}
 					</tbody>
@@ -59,17 +59,9 @@
 	</div>
 </div>
 <style>
-#Draft .dates .submitted,
-table .dates .modified,
-table .dates .admin,
-table .dates .reviewed {
+table .dates .submitted ,table .dates .modified,table .dates .reviewed {
     display: none;
-}
-#Revisions .dates .modified {display: inline-block;}
-#Reviewed .dates .reviewed {display: inline-block;}
-#Rejected .dates .admin {display: inline-block;}
-
-</style>
+}</style>
 {% endblock %}
 
 {% comment %}<img src="output/abstract-q-c-640-480-1.jpg">{% endcomment %}

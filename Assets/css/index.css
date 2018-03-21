@@ -5117,196 +5117,6 @@ table a.button, table button, table .inline-list, table .nobutton {
 *		</tfoot>
 *	</table>
 */
-.table tr.seperator td, .table tr.seperator:nth-child(even) td:nth-child(odd) {
-  padding-top: 2.2px;
-  padding-top: 0.1375rem;
-  padding-bottom: 2.2px;
-  padding-bottom: 0.1375rem;
-  /* can be treated like a fallback */
-  background-color: #1faed7;
-  /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #2fbae1, #1c9dc1);
-  /* these will reset other properties, like background-position, but it does know what you mean */
-  background: #1faed7;
-  background: linear-gradient(to left, #2fbae1, #1c9dc1);
-  border-top: #1c9dc1 1px solid;
-  border-bottom: #1c9dc1 2px solid;
-  color: #fff;
-  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-style: italic;
-  font-size: .75rem;
-}
-
-/**
-* Tables Row(Seperator):
-* ` .seperator` - Table with the class`.striped`.
-* 
-*   @example
-*	<table class="table striped">
-*		<thead>
-*			<tr>
-*				<th>table header</th>
-*				<th>table header</th>
-*				<th>table header</th>
-*			</tr>
-*		</thead>
-*		<tbody>
-*			<tr>
-*				<td> row 1  cell A</td>
-*				<td> row 1  cell B</td>
-*				<td> row 1  cell C</td>
-*			</tr>
-*			<tr class="seperator">
-*				<td colspan='3'> Separator</td>
-*			</tr>
-*		</tbody>
-*		<tfoot>
-*			<tr>
-*				<td colspan="3">footer cell</td>
-*			</tr>
-*		</tfoot>
-*	</table>
-*/
-.table tr.error.seperator td, .table tr.error.seperator:nth-child(even) td:nth-child(odd) {
-  background-color: #dc3443;
-  /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #df4856, #d02434);
-  /* these will reset other properties, like background-position, but it does know what you mean */
-  background: #dc3443;
-  background: linear-gradient(to left, #df4856, #d02434);
-  border-top: #d02434 1px solid;
-  border-bottom: #d02434 2px solid;
-  color: #fff;
-}
-
-.table tr.warning.seperator td, .table tr.warning.seperator:nth-child(even) td:nth-child(odd) {
-  background-color: #ec982f;
-  /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #eea244, #ea8b15);
-  /* these will reset other properties, like background-position, but it does know what you mean */
-  background: #ec982f;
-  background: linear-gradient(to left, #eea244, #ea8b15);
-  border-top: #ea8b15 1px solid;
-  border-bottom: #ea8b15 2px solid;
-  color: #262626;
-}
-
-.table tr.success.seperator td, .table tr.success.seperator:nth-child(even) td:nth-child(odd) {
-  background-color: #19da6c;
-  /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #27e679, #16c461);
-  /* these will reset other properties, like background-position, but it does know what you mean */
-  background: #19da6c;
-  background: linear-gradient(to left, #27e679, #16c461);
-  border-top: #16c461 1px solid;
-  border-bottom: #16c461 2px solid;
-  color: #262626;
-}
-
-.table tr.info.seperator td, .table tr.info.seperator:nth-child(even) td:nth-child(odd) {
-  background-color: #b3b3b3;
-  /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #bbbbbb, #a1a1a1);
-  /* these will reset other properties, like background-position, but it does know what you mean */
-  background: #b3b3b3;
-  background: linear-gradient(to left, #bbbbbb, #a1a1a1);
-  border-top: #a1a1a1 1px solid;
-  border-bottom: #a1a1a1 2px solid;
-  color: #262626;
-}
-
-.table tr.highlighted.seperator td, .table tr.highlighted.seperator:nth-child(even) td:nth-child(odd) {
-  background-color: #1faed7;
-  /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #2fbae1, #1c9dc1);
-  /* these will reset other properties, like background-position, but it does know what you mean */
-  background: #1faed7;
-  background: linear-gradient(to left, #2fbae1, #1c9dc1);
-  border-top: #1c9dc1 1px solid;
-  border-bottom: #1c9dc1 2px solid;
-  color: #fff;
-}
-
-.table tr.disabled.seperator td, .table tr.disabled.seperator:nth-child(even) td:nth-child(odd) {
-  background-color: #d4d4d4;
-  /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #d8d8d8, #bebebe);
-  /* these will reset other properties, like background-position, but it does know what you mean */
-  background: #d4d4d4;
-  background: linear-gradient(to left, #d8d8d8, #bebebe);
-  border-top: #bebebe 1px solid;
-  border-bottom: #bebebe 2px solid;
-  color: #262626;
-}
-
-/**
-* Tables Row(Seperator + State):
-* ` .seperator.error` - An Error State on a table sep.
-* 
-*   @example
-*	<table class="table striped">
-*		<thead>
-*			<tr>
-*				<th>table header</th>
-*				<th>table header</th>
-*				<th>table header</th>
-*			</tr>
-*		</thead>
-*		<tbody>
-*			<tr>
-*				<td> row 1  cell A</td>
-*				<td> row 1  cell B</td>
-*				<td> row 1  cell C</td>
-*			</tr>
-*			<tr class="seperator info">
-*				<td colspan='3'> Separator With Info</td>
-*			</tr>
-*			<tr>
-*				<td> row 1  cell A</td>
-*				<td> row 1  cell B</td>
-*				<td> row 1  cell C</td>
-*			</tr>
-*			<tr class="seperator success">
-*				<td colspan='3'> Separator With success</td>
-*			</tr>
-*			<tr>
-*				<td> row 1  cell A</td>
-*				<td> row 1  cell B</td>
-*				<td> row 1  cell C</td>
-*			</tr>
-*			<tr class="seperator error">
-*				<td colspan='3'> Separator With Error</td>
-*			</tr>
-*			<tr>
-*				<td> row 1  cell A</td>
-*				<td> row 1  cell B</td>
-*				<td> row 1  cell C</td>
-*			</tr>
-*			<tr class="seperator warning">
-*				<td colspan='3'> Separator With warning</td>
-*			</tr>
-*			<tr>
-*				<td> row 1  cell A</td>
-*				<td> row 1  cell B</td>
-*				<td> row 1  cell C</td>
-*			</tr>
-*			<tr class="seperator disabled">
-*				<td colspan='3'> Separator With disabled</td>
-*			</tr>
-*			<tr>
-*				<td> row 1  cell A</td>
-*				<td> row 1  cell B</td>
-*				<td> row 1  cell C</td>
-*			</tr>
-*		</tbody>
-*		<tfoot>
-*			<tr>
-*				<td colspan="3">footer cell</td>
-*			</tr>
-*		</tfoot>
-*	</table>
-*/
 .table thead tr:last-child th.sortable {
   border-bottom: none 0;
 }
@@ -5634,6 +5444,214 @@ td.disabled {
 *			<td class="">Cell Data in Error Row</td>
 *			<td class="">Cell Data</td>
 *		</tr>
+*	</table>
+*/
+.table tr.seperator td, .table tr.seperator:nth-child(even) td:nth-child(odd) {
+  padding-top: 2.2px;
+  padding-top: 0.1375rem;
+  padding-bottom: 2.2px;
+  padding-bottom: 0.1375rem;
+  /* can be treated like a fallback */
+  background-color: #1faed7;
+  /* will be "on top", if browser supports it */
+  background-image: linear-gradient(to left, #8bd8ee, #1c9dc1);
+  /* these will reset other properties, like background-position, but it does know what you mean */
+  background: #1faed7;
+  background: linear-gradient(to left, #8bd8ee, #1c9dc1);
+  border-top: #1c9dc1 1px solid;
+  border-bottom: #1c9dc1 2px solid;
+  color: #fff;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: .75rem;
+}
+
+/**
+* Tables Row(Seperator):
+* ` .seperator` - Table with the class`.striped`.
+* 
+*   @example
+*	<table class="table striped">
+*		<thead>
+*			<tr>
+*				<th>table header</th>
+*				<th>table header</th>
+*				<th>table header</th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr class="seperator">
+*				<td colspan='3'> Separator</td>
+*			</tr>
+*		</tbody>
+*		<tfoot>
+*			<tr>
+*				<td colspan="3">footer cell</td>
+*			</tr>
+*		</tfoot>
+*	</table>
+*/
+.table tr.error.seperator td, .table tr.error.seperator:nth-child(even) td:nth-child(odd) {
+  background-color: #dc3443;
+  /* will be "on top", if browser supports it */
+  background-image: linear-gradient(to left, #ed99a1, #d02434);
+  /* these will reset other properties, like background-position, but it does know what you mean */
+  background: #dc3443;
+  background: linear-gradient(to left, #ed99a1, #d02434);
+  border-top: #a21c29 1px solid !important;
+  border-bottom: #a21c29 2px solid !important;
+  color: #fff;
+}
+.table tr.error.seperator td a, .table tr.error.seperator:nth-child(even) td:nth-child(odd) a {
+  color: #262626;
+}
+
+.table tr.warning.seperator td, .table tr.warning.seperator:nth-child(even) td:nth-child(odd) {
+  background-color: #ec982f;
+  /* will be "on top", if browser supports it */
+  background-image: linear-gradient(to left, #f6cc97, #ea8b15);
+  /* these will reset other properties, like background-position, but it does know what you mean */
+  background: #ec982f;
+  background: linear-gradient(to left, #f6cc97, #ea8b15);
+  border-top: #b66c10 1px solid !important;
+  border-bottom: #b66c10 2px solid !important;
+  color: #262626;
+}
+.table tr.warning.seperator td a, .table tr.warning.seperator:nth-child(even) td:nth-child(odd) a {
+  color: #262626;
+}
+
+.table tr.success.seperator td, .table tr.success.seperator:nth-child(even) td:nth-child(odd) {
+  background-color: #19da6c;
+  /* will be "on top", if browser supports it */
+  background-image: linear-gradient(to left, #87f1b5, #16c461);
+  /* these will reset other properties, like background-position, but it does know what you mean */
+  background: #19da6c;
+  background: linear-gradient(to left, #87f1b5, #16c461);
+  border-top: #11994c 1px solid !important;
+  border-bottom: #11994c 2px solid !important;
+  color: #262626;
+}
+.table tr.success.seperator td a, .table tr.success.seperator:nth-child(even) td:nth-child(odd) a {
+  color: #262626;
+}
+
+.table tr.info.seperator td, .table tr.info.seperator:nth-child(even) td:nth-child(odd) {
+  background-color: #b3b3b3;
+  /* will be "on top", if browser supports it */
+  background-image: linear-gradient(to left, #d9d9d9, #a1a1a1);
+  /* these will reset other properties, like background-position, but it does know what you mean */
+  background: #b3b3b3;
+  background: linear-gradient(to left, #d9d9d9, #a1a1a1);
+  border-top: #7d7d7d 1px solid !important;
+  border-bottom: #7d7d7d 2px solid !important;
+  color: #262626;
+}
+.table tr.info.seperator td a, .table tr.info.seperator:nth-child(even) td:nth-child(odd) a {
+  color: #262626;
+}
+
+.table tr.highlighted.seperator td, .table tr.highlighted.seperator:nth-child(even) td:nth-child(odd) {
+  background-color: #1faed7;
+  /* will be "on top", if browser supports it */
+  background-image: linear-gradient(to left, #8bd8ee, #1c9dc1);
+  /* these will reset other properties, like background-position, but it does know what you mean */
+  background: #1faed7;
+  background: linear-gradient(to left, #8bd8ee, #1c9dc1);
+  border-top: #167a96 1px solid !important;
+  border-bottom: #167a96 2px solid !important;
+  color: #fff;
+}
+.table tr.highlighted.seperator td a, .table tr.highlighted.seperator:nth-child(even) td:nth-child(odd) a {
+  color: #262626;
+}
+
+.table tr.disabled.seperator td, .table tr.disabled.seperator:nth-child(even) td:nth-child(odd) {
+  background-color: #d4d4d4;
+  /* will be "on top", if browser supports it */
+  background-image: linear-gradient(to left, #e9e9e9, #bebebe);
+  /* these will reset other properties, like background-position, but it does know what you mean */
+  background: #d4d4d4;
+  background: linear-gradient(to left, #e9e9e9, #bebebe);
+  border-top: #949494 1px solid !important;
+  border-bottom: #949494 2px solid !important;
+  color: #262626;
+}
+.table tr.disabled.seperator td a, .table tr.disabled.seperator:nth-child(even) td:nth-child(odd) a {
+  color: #262626;
+}
+
+/**
+* Tables Row(Seperator + State):
+* ` .seperator.error` - An Error State on a table sep.
+* 
+*   @example
+*	<table class="table striped">
+*		<thead>
+*			<tr>
+*				<th>table header</th>
+*				<th>table header</th>
+*				<th>table header</th>
+*			</tr>
+*		</thead>
+*		<tbody>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr class="seperator info">
+*				<td colspan='3'> Separator With Info</td>
+*			</tr>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr class="seperator success">
+*				<td colspan='3'> Separator With success</td>
+*			</tr>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr class="seperator error">
+*				<td colspan='3'> Separator With Error</td>
+*			</tr>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr class="seperator warning">
+*				<td colspan='3'> Separator With warning</td>
+*			</tr>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*			<tr class="seperator disabled">
+*				<td colspan='3'> Separator With disabled</td>
+*			</tr>
+*			<tr>
+*				<td> row 1  cell A</td>
+*				<td> row 1  cell B</td>
+*				<td> row 1  cell C</td>
+*			</tr>
+*		</tbody>
+*		<tfoot>
+*			<tr>
+*				<td colspan="3">footer cell</td>
+*			</tr>
+*		</tfoot>
 *	</table>
 */
 .bar {
