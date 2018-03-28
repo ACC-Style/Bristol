@@ -1,0 +1,31 @@
+.search-bar{
+    line-height:normal;
+    padding: .5em 0 ;
+    clear: both;
+
+    .siteMenu &{display:none;}
+    .question{margin:0;
+        select,input,.button,button{
+            border: 1px solid grey(30);
+        }
+        select,option{    
+            background: grey(50);
+            border-radius: 6px 0 0 6px;
+            color:#fff;
+            font-weight: bold;
+            font-size: ms(0);
+            @include font-bold();
+        }
+        input{
+            background: grey(10);
+        }
+        .button, button{
+            border-radius: 0 6px 6px 0;
+            background-color: grey(50);
+            vertical-align: text-top;
+            padding: 0;
+        }
+
+    }
+}
+.top-bar input, .search-bar input{max-width:100%;}

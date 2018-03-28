@@ -1,44 +1,35 @@
-<!DOCTYPE doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>
         <title>
             COM NOMS ADMIN
         </title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-            <link href="assets/css/styledown.css" rel="stylesheet"/>
-                <link href="assets/css/normalize.min.css" rel="stylesheet"/>
-                    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
-                        <link href="assets/css/jquery-uistructure.css" rel="stylesheet"/>
-                            <link href="assets/css/foundation-sites.css" rel="stylesheet"/>
-                                <link href="assets/css/font-awesome.css" rel="stylesheet"/>
-                                    <link href="assets/css/index.css" id="theme" rel="stylesheet"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-uistructure.css" rel="stylesheet"/>
+    <link href="assets/css/foundation-sites.css" rel="stylesheet"/>
+    <link href="assets/css/font-awesome.css" rel="stylesheet"/>
+    <link href="assets/css/index.css" id="theme" rel="stylesheet"/>
   
     </head>
     <body>
         <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
             <div class="off-canvas-wrapper">
-                <div class="off-canvas position-right" data-off-canvas="" id="offCanvasRightSplit2">
-                    <div class="paper-page page content-padding">
-                        <div class="close-bar" data-close="">
-                            <button aria-label="Close menu" class="close-button" type="button">
-                                <span aria-hidden="true">
-                                    <i class="fa fa-times">
-                                    </i>
-                                    close
-                                </span>
-                            </button>
-                        </div>
-                        <div class="colored-paper empty">
+                <div class="off-canvas position-right" data-off-canvas id="offCanvasRightSplit2">
+                    <div class="paper-page page relative-position">
+                        <div class="content-padding">
+                            <div class="colored-paper empty">
                             <h2>
-                                Notes
+                            Notes
                             </h2>
                             <textarea cols="30" id="" name="" rows="5">
                             </textarea>
                             <a class="button expanded add tiny radius" href="">
-                                <i class="fa fa-holder">
-                                </i>
-                                Add Note
+                            <i class="fa fa-holder">
+                            </i>
+                            Add Note
                             </a>
+
                         </div>
                         <ul class="no-bullet comment-holder section-padding">
                             <li class="group-divide-bottom">
@@ -86,29 +77,33 @@
                                 </cite>
                             </li>
                         </ul>
+                        </div>
+
                     </div>
                 </div>
-                {% comment %}    end of off canvass area {% endcomment %}
-                <div class="off-canvas-content" data-off-canvas-content="">
+                <!-- end of off canvass area  -->
+                <div class="off-canvas-content" data-off-canvas-content>
                     {% include 'admin/sections/header' %}
-                   
-                    <div class="paper-page page">
-                        <div class="section-nav back">
-                            <a href="admin-committees-dashboard.html">
-                                <div class="circle">
-                                    <i class="fa fa-holder-dynamic">
-                                    </i>
-                                </div>
-                                <div class="text">
-                                    Back to Committee Dashboard
-                                </div>
-                            </a>
-                        </div>
-                        <div class="page-wrapper" style="position: relative;">
-                           <button class="button success small circle-button" data-toggle="offCanvasRightSplit2" id="comment-toggle" type="button"> <i class="fa fa-comment" style="color:white"></i></button>
-                            {% block content %}{% endblock %}
-                        </div>
+                    <div class="section-nav top">
+                        <a class="left" href="admin-committees-dashboard.html">
+                            <span class="circle button navigation">
+                                <i class="fa fa-holder"></i>
+                            </span>
+                            <span class="text">
+                                Back to Committee Dashboard
+                            </span>
+                        </a>
+                        <button class="right off-canvas-toggle" id="comment-toggle" data-toggle="offCanvasRightSplit2" id="comment-toggle"> 
+                            <span class="circle button success">
+                                 <i class="fa fa-comment"></i>
+                            </span>
+                            <span class="text">
+                                notes
+                            </span>
+                        </button>
                     </div>
+                    {% block content %}{% endblock %}
+
                 </div>
             </div>
         </div>
