@@ -95,6 +95,7 @@
     .nav-item{
         text-align: center;
         white-space: nowrap;
+        &:hover{background-color: grey(20);}
     
     }
     .nav-item + .nav-item{
@@ -102,7 +103,7 @@
     }
    
     // Tablet Up Mode
-    @include bp(md){
+    @include bp(lg){
         @include nav-inline-block-basic;
         float:right;
 
@@ -125,7 +126,9 @@
             color:grey(80);
             padding-left:0;
             &:hover{
-                text-decoration:underline;
+                color: $primary-color;
+                text-decoration: underline;
+                background-color: color($primary-color, 10);
             }
         }
         .nav-item:last-child{.nav-link{padding-right:0em;}}

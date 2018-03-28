@@ -56,7 +56,22 @@
     }
 
 }
-
+%section-padding-vertical {
+    padding-top: .125 * $vertical-space;
+    padding-bottom: .125 * $vertical-space;
+    @include bp(sm) {
+        padding-top: .125 * $vertical-space;
+        padding-bottom: .125 * $vertical-space;
+    }
+    @include bp(md) {
+        padding-top: .25 * $vertical-space;
+        padding-bottom: .25 * $vertical-space;
+    }
+    @include bp(lg) {
+        padding-top: .325 * $vertical-space;
+        padding-bottom: .325 * $vertical-space;
+    }
+}
 
 %content-padding-vertical{
    padding-top:.25rem;
@@ -182,6 +197,7 @@
     @extend %page-constraint;
     @extend %page-padding-horizontal;
     @extend %spacing-transition;
+   @extend  %page-padding-vertical;
 }
 
 .page-wrapper .page-wrapper {
@@ -202,7 +218,7 @@
     padding-top: 0;
 }
 .section-padding{
-  @extend %page-padding-vertical;
+  @extend %content-padding-vertical;
 }
 /**
 * page layouts:
