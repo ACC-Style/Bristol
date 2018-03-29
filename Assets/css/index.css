@@ -602,6 +602,74 @@ html {
   font-size: 5em;
 }
 
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear;
+}
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+.fa-rotate-90 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1, -1);
+}
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical {
+  filter: none;
+}
+
 .fa-stack {
   position: relative;
   display: inline-block;
@@ -764,6 +832,10 @@ there are two to three needs for icons icons in containers, icons on icons and t
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
+.row {
+  max-width: 100%;
+}
+
 .h1, .table th.h1, .h2, .table th.h2, .h3, h1 + .nav-list li, h1 + .panel-selector li, .large.nav-list li, .large.panel-selector li, .table th.h3, .h4, h2 + .nav-list li, h2 + .panel-selector li, .medium.nav-list li, .medium.panel-selector li, .table th.h4, .section-nav .text, .h5, .h6 {
   clear: both;
 }
@@ -1401,6 +1473,15 @@ ul li, ol li {
   color: #FFF;
 }
 
+.button.default {
+  background-color: #b3b3b3;
+  color: #333333;
+}
+.button.default:hover, .button.default:focus {
+  background-color: #8f8f8f;
+  color: #333333;
+}
+
 button[disabled], button[disabled].success, button[disabled].alert, button[disabled].secondary, button:disabled, button.success:disabled, button.alert:disabled, button.secondary:disabled, .button.disabled, .button.disabled.success, .button.disabled.alert, .button.disabled.secondary, .button.disabled:hover, .button.disabled.success:hover, .button.disabled.alert:hover, .button.disabled.secondary:hover {
   background-color: #b3b3b3;
   background-image: url(../img/empty_diamond.png);
@@ -1688,6 +1769,143 @@ button[disabled], button[disabled].success, button[disabled].alert, button[disab
 *		<li class="tabs-title disabled"><a >Disabled</a></li>
 *	</ul></nav>
 */
+/**
+* Utility Nav at the top of the page. These are nav items are highly specialized and have been cherry picked out of site tree structure to give them global importance.
+*
+* @structure  Utility Nav 
+* @section Nav > Utility
+* @modifiers 
+*  .mobile - decorates the nav to look like mobile
+* @markup 
+*  <nav class="nav-utility">
+*      <ul class="nav">
+*        <li class="nav-item">
+*          <a class="nav-link active" href="#">@{lipsum:1:words}</a>
+*        </li>
+*        <li class="nav-item">
+*          <a class="nav-link" href="#">@{lipsum:1:words}</a>
+*        </li>
+*        <li class="nav-item">
+*          <a class="nav-link" href="#">@{lipsum:1:words}</a>
+*        </li>
+*      </ul>
+*  </nav>
+*/
+.nav-utility, .nav-utility ul, .nav, .nav ul, .navbar-nav, .navbar-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-utility li, .nav-utility ul li, .nav li, .nav ul li, .navbar-nav li, .navbar-nav ul li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-utility > li > a:focus, .nav-utility > li > a:hover, .nav > li > a:focus, .nav > li > a:hover, .navbar-nav > li > a:focus, .navbar-nav > li > a:hover {
+  background-color: transparent;
+}
+
+.nav-utility {
+  background-color: #b3b3b3;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: -.25px;
+  font-size: 19px;
+}
+.nav-utility .nav, .nav-utility .nav-item, .nav-utility .nav-link {
+  display: block;
+  width: 100%;
+  position: relative;
+  float: none;
+  clear: both;
+  text-align: left;
+}
+.nav-utility .nav-link {
+  color: #333333;
+}
+.nav-utility .nav-item {
+  text-align: center;
+  white-space: nowrap;
+}
+.nav-utility .nav-item:hover {
+  background-color: #cccccc;
+}
+.nav-utility .nav-item + .nav-item {
+  border-top: #FFF dotted 1px;
+}
+@media only screen and (min-width: 1024px) {
+  .nav-utility {
+    float: right;
+    font-weight: 400;
+    background-color: #fff;
+  }
+  .nav-utility .nav, .nav-utility .nav-item {
+    display: inline-block;
+    width: auto;
+    position: relative;
+    text-align: center;
+    clear: none;
+  }
+  .nav-utility .nav:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .nav-utility .nav-item {
+    float: left;
+  }
+  .nav-utility .nav-link {
+    display: inline-block;
+    clear: none;
+    width: auto;
+  }
+  .nav-utility .nav-item + .nav-item {
+    border: 0px none transparent;
+  }
+  .nav-utility .nav-item:after {
+    display: inline-block;
+    padding-right: 1em;
+    content: '|';
+    color: #198dae;
+  }
+  .nav-utility .nav-item:last-child:after {
+    content: '';
+    padding-left: 0;
+    display: none;
+  }
+  .nav-utility .nav-link {
+    color: #333333;
+    padding-left: 0;
+  }
+  .nav-utility .nav-link:hover {
+    color: #198dae;
+    text-decoration: underline;
+    background-color: #e4f6fb;
+  }
+  .nav-utility .nav-item:last-child .nav-link {
+    padding-right: 0em;
+  }
+}
+.nav-utility.mobile {
+  font-weight: 400;
+  background-color: #b3b3b3;
+}
+.nav-utility.mobile .nav, .nav-utility.mobile .nav-item, .nav-utility.mobile .nav-link {
+  display: block;
+  width: 100%;
+  position: relative;
+  float: none;
+  clear: both;
+  text-align: left;
+}
+.nav-utility.mobile .nav-item {
+  width: auto;
+}
+.nav-utility.mobile .nav-item:after {
+  padding-left: 0;
+  content: '';
+}
+
 .tabs.tabs-primary {
   display: -webkit-box;
   display: -moz-box;
@@ -3425,6 +3643,7 @@ table a.button, table button, table .inline-list, table .nobutton {
   border: 0;
   margin-bottom: 1rem;
   font-size: 1rem;
+  text-align: left;
 }
 .table tr + tr td, .table tr + tr th {
   border-top: #e6e6e6 1px solid;
@@ -3436,7 +3655,6 @@ table a.button, table button, table .inline-list, table .nobutton {
   background-color: transparent;
 }
 .table td, .table th {
-  text-align: left;
   padding: .25rem;
 }
 .table td .color-highlighted, .table th .color-highlighted {
@@ -3679,84 +3897,105 @@ table a.button, table button, table .inline-list, table .nobutton {
 .table tr.error.seperator td, .table tr.error.seperator:nth-child(even) td:nth-child(odd) {
   background-color: #dc3443;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #df4856, #d02434);
+  background-image: linear-gradient(to left, #ed99a1, #d02434);
   /* these will reset other properties, like background-position, but it does know what you mean */
   background: #dc3443;
-  background: linear-gradient(to left, #df4856, #d02434);
-  border-top: #d02434 1px solid;
-  border-bottom: #d02434 2px solid;
+  background: linear-gradient(to left, #ed99a1, #d02434);
+  border-top: #a21c29 1px solid !important;
+  border-bottom: #a21c29 2px solid !important;
   color: #fff;
+}
+.table tr.error.seperator td a, .table tr.error.seperator:nth-child(even) td:nth-child(odd) a {
+  color: #262626;
 }
 
 .table tr.warning.seperator td, .table tr.warning.seperator:nth-child(even) td:nth-child(odd) {
   background-color: #ec982f;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #eea244, #ea8b15);
+  background-image: linear-gradient(to left, #f6cc97, #ea8b15);
   /* these will reset other properties, like background-position, but it does know what you mean */
   background: #ec982f;
-  background: linear-gradient(to left, #eea244, #ea8b15);
-  border-top: #ea8b15 1px solid;
-  border-bottom: #ea8b15 2px solid;
+  background: linear-gradient(to left, #f6cc97, #ea8b15);
+  border-top: #b66c10 1px solid !important;
+  border-bottom: #b66c10 2px solid !important;
+  color: #262626;
+}
+.table tr.warning.seperator td a, .table tr.warning.seperator:nth-child(even) td:nth-child(odd) a {
   color: #262626;
 }
 
 .table tr.success.seperator td, .table tr.success.seperator:nth-child(even) td:nth-child(odd) {
   background-color: #19da6c;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #27e679, #16c461);
+  background-image: linear-gradient(to left, #87f1b5, #16c461);
   /* these will reset other properties, like background-position, but it does know what you mean */
   background: #19da6c;
-  background: linear-gradient(to left, #27e679, #16c461);
-  border-top: #16c461 1px solid;
-  border-bottom: #16c461 2px solid;
+  background: linear-gradient(to left, #87f1b5, #16c461);
+  border-top: #11994c 1px solid !important;
+  border-bottom: #11994c 2px solid !important;
+  color: #262626;
+}
+.table tr.success.seperator td a, .table tr.success.seperator:nth-child(even) td:nth-child(odd) a {
   color: #262626;
 }
 
 .table tr.info.seperator td, .table tr.info.seperator:nth-child(even) td:nth-child(odd) {
   background-color: #b3b3b3;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #bbbbbb, #a1a1a1);
+  background-image: linear-gradient(to left, #d9d9d9, #a1a1a1);
   /* these will reset other properties, like background-position, but it does know what you mean */
   background: #b3b3b3;
-  background: linear-gradient(to left, #bbbbbb, #a1a1a1);
-  border-top: #a1a1a1 1px solid;
-  border-bottom: #a1a1a1 2px solid;
+  background: linear-gradient(to left, #d9d9d9, #a1a1a1);
+  border-top: #7d7d7d 1px solid !important;
+  border-bottom: #7d7d7d 2px solid !important;
+  color: #262626;
+}
+.table tr.info.seperator td a, .table tr.info.seperator:nth-child(even) td:nth-child(odd) a {
   color: #262626;
 }
 
 .table tr.highlighted.seperator td, .table tr.highlighted.seperator:nth-child(even) td:nth-child(odd) {
   background-color: #3fbde1;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #53c4e4, #27b5dd);
+  background-image: linear-gradient(to left, #9fdef0, #27b5dd);
   /* these will reset other properties, like background-position, but it does know what you mean */
   background: #3fbde1;
-  background: linear-gradient(to left, #53c4e4, #27b5dd);
-  border-top: #27b5dd 1px solid;
-  border-bottom: #27b5dd 2px solid;
+  background: linear-gradient(to left, #9fdef0, #27b5dd);
+  border-top: #1c8eae 1px solid !important;
+  border-bottom: #1c8eae 2px solid !important;
+  color: #262626;
+}
+.table tr.highlighted.seperator td a, .table tr.highlighted.seperator:nth-child(even) td:nth-child(odd) a {
   color: #262626;
 }
 
 .table tr.locked.seperator td, .table tr.locked.seperator:nth-child(even) td:nth-child(odd) {
   background-color: #c9c9c9;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #cecece, #b5b5b5);
+  background-image: linear-gradient(to left, #e4e4e4, #b5b5b5);
   /* these will reset other properties, like background-position, but it does know what you mean */
   background: #c9c9c9;
-  background: linear-gradient(to left, #cecece, #b5b5b5);
-  border-top: #b5b5b5 1px solid;
-  border-bottom: #b5b5b5 2px solid;
+  background: linear-gradient(to left, #e4e4e4, #b5b5b5);
+  border-top: #8d8d8d 1px solid !important;
+  border-bottom: #8d8d8d 2px solid !important;
+  color: #262626;
+}
+.table tr.locked.seperator td a, .table tr.locked.seperator:nth-child(even) td:nth-child(odd) a {
   color: #262626;
 }
 
 .table tr.disabled.seperator td, .table tr.disabled.seperator:nth-child(even) td:nth-child(odd) {
   background-color: #d4d4d4;
   /* will be "on top", if browser supports it */
-  background-image: linear-gradient(to left, #d8d8d8, #bebebe);
+  background-image: linear-gradient(to left, #e9e9e9, #bebebe);
   /* these will reset other properties, like background-position, but it does know what you mean */
   background: #d4d4d4;
-  background: linear-gradient(to left, #d8d8d8, #bebebe);
-  border-top: #bebebe 1px solid;
-  border-bottom: #bebebe 2px solid;
+  background: linear-gradient(to left, #e9e9e9, #bebebe);
+  border-top: #949494 1px solid !important;
+  border-bottom: #949494 2px solid !important;
+  color: #262626;
+}
+.table tr.disabled.seperator td a, .table tr.disabled.seperator:nth-child(even) td:nth-child(odd) a {
   color: #262626;
 }
 
@@ -4874,6 +5113,42 @@ ul.toggle.minimized .selected {
   font-weight: bold;
 }
 
+.search-bar {
+  line-height: normal;
+  padding: 0.5em 0;
+  clear: both;
+}
+.siteMenu .search-bar {
+  display: none;
+}
+.search-bar .question {
+  margin: 0;
+}
+.search-bar .question select, .search-bar .question input, .search-bar .question .button, .search-bar .question button {
+  border: 1px solid #b3b3b3;
+}
+.search-bar .question select, .search-bar .question option {
+  background: gray;
+  border-radius: 6px 0 0 6px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  font-weight: bold;
+}
+.search-bar .question input {
+  background: #e6e6e6;
+}
+.search-bar .question .button, .search-bar .question button {
+  border-radius: 0 6px 6px 0;
+  background-color: gray;
+  vertical-align: text-top;
+  padding: 0;
+}
+
+.top-bar input, .search-bar input {
+  max-width: 100%;
+}
+
 .comment-holder {
   padding: 1.25em;
   margin: 0 -.5em -.5em;
@@ -4921,30 +5196,12 @@ ul.toggle.minimized .selected {
   transform: translate(0px, 0);
 }
 
-#comment-toggle {
-  right: 30px;
-  top: -10px;
-  z-index: 3000;
-}
-
-#committee-toggle {
-  left: 10px;
-  top: 20px;
-  z-index: 3000;
-}
-
-#member-toggle {
-  left: 10px;
-  top: 20px;
-  z-index: 3000;
-}
-
-.is-open + .off-canvas-content #member-toggle i.fa:before, .is-open + .off-canvas-content #committee-toggle i.fa:before {
-  content: "\f060";
-}
-
-.is-open + .off-canvas-content #comment-toggle i.fa:before {
+.off-canvas-content.is-open-right .off-canvas-toggle i.fa:before {
   content: "\f061";
+}
+
+.off-canvas-content.is-open-left .off-canvas-toggle i.fa:before {
+  content: "\f060";
 }
 
 .tabs {
@@ -4955,7 +5212,8 @@ table.application td.highlighted {
   border-right: 0px none;
   border-left: 0px none;
 }
-table.application td.highlighted .link.black {
+
+table.application .link.black {
   color: #333333;
 }
 
@@ -5951,27 +6209,30 @@ This file is generated by `grunt build`, do not edit it by hand.
 *  </select>
 *   <a class="link" href="https://harvesthq.github.io/chosen/">documentation here</a>
 */
-.header.page + .top-bar {
-  margin-top: -6px;
-}
-
-.top-bar, .top-bar ul {
-  background-color: transparent;
-}
-
 .top-bar {
   position: relative;
   z-index: 1002;
   padding: 0;
-  background-color: #00386b;
-  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  background-color: #666666;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  letter-spacing: .5px;
+  letter-spacing: -.25px;
   color: #FFF;
+}
+.top-bar a, .top-bar button {
+  color: white;
+}
+.top-bar .title {
+  background-color: #4d4d4d;
+}
+.top-bar ul {
+  background-color: transparent;
 }
 .top-bar, .top-bar .menu > li {
   line-height: 2em;
   font-size: 16px;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 @media only screen and (min-width: 640px) {
   .top-bar, .top-bar .menu > li {
@@ -5986,15 +6247,15 @@ This file is generated by `grunt build`, do not edit it by hand.
 }
 @media only screen and (min-width: 1440px) {
   .top-bar, .top-bar .menu > li {
-    font-size: 19px;
+    font-size: 16px;
   }
 }
 .top-bar > a, .top-bar > button, .top-bar .menu > li > a, .top-bar .menu > li > button {
   display: block;
   width: auto;
-  font-family: 'Roboto Slab', "Times New Roman",  'Lucida Bright', Georgia, serif;
+  font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  letter-spacing: .5px;
+  letter-spacing: -.25px;
   padding: .5em 1em .5em;
 }
 @media only screen and (min-width: 640px) {
@@ -6007,8 +6268,11 @@ This file is generated by `grunt build`, do not edit it by hand.
   padding: .25em .5em;
 }
 
+.top-bar-right, .top-bar-left {
+  padding: 0;
+}
+
 .top-bar-right {
-  padding-right: .5em;
   background-color: #198dae;
 }
 .top-bar-right li:hover {
@@ -6021,417 +6285,219 @@ This file is generated by `grunt build`, do not edit it by hand.
   background-color: #797979;
 }
 
-.top-bar-left {
-  padding-left: .5em;
-}
 .top-bar-left li:hover {
-  background-color: white;
+  background-color: #cccccc;
 }
 .top-bar-left li:hover a, .top-bar-left li:hover button {
   color: #333333;
 }
 @media only screen and (min-width: 640px) {
-  .stack-for-small .top-bar-left li:hover {
-    border-top: #1abc9c 0.3157894737em solid;
-  }
   .stack-for-small .top-bar-left li:hover a, .stack-for-small .top-bar-left li:hover button {
     margin-top: -0.3157894737em;
     padding-top: 1em;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .stack-for-medium .top-bar-left li:hover {
-    border-top: #1abc9c 0.3157894737em solid;
-  }
   .stack-for-medium .top-bar-left li:hover a, .stack-for-medium .top-bar-left li:hover button {
     margin-top: -0.3157894737em;
     padding-top: 1em;
   }
 }
-.top-bar-left .submenu {
+
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+  border-color: #fff transparent transparent;
+}
+
+.submenu {
+  background: gray;
   margin: 0;
   font-family: 'Muli','Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 400;
   letter-spacing: -.25px;
   list-style: none;
 }
-.top-bar-left .submenu, .top-bar-left .submenu.nav-level-1 {
+.submenu, .submenu.nav-level-1 {
   font-size: 16px;
 }
-.top-bar-left .submenu.nav-level-2 {
+.submenu.nav-level-2 {
   font-size: 13px;
 }
-.top-bar-left .submenu li > a {
+.submenu li > a {
   color: #198dae;
   width: 100%;
   display: inline-block;
   line-height: 1.5;
   padding: 0;
 }
-.top-bar-left .submenu li {
-  padding: .25em .75em;
-}
-.top-bar-left .submenu li:hover {
+.submenu li:hover {
   background-color: #1abc9c;
   border-top: none 0;
   padding-top: .25em;
 }
-.top-bar-left .submenu li:hover > a {
+.submenu li:hover > a {
   color: #FFF;
 }
-.top-bar-left .submenu li.parent {
+.submenu li.parent {
   padding: 0;
 }
-.top-bar-left .submenu li.parent:hover {
+.submenu li.parent:hover {
   background-color: transparent;
 }
-.top-bar-left .submenu.nav-level-2 li {
+.submenu.nav-level-2 li {
   padding: .25em .75em .25em 2em;
 }
 
-.menu > li {
+.stacked-for-small .menu > li, .stacked-for-medium .menu > li, .stacked-for-large .menu > li {
   display: block;
   width: 100%;
 }
-.menu > li .dropdown-pane {
-  width: 100%;
-  max-width: 100vh;
-}
 @media only screen and (min-width: 320px) {
-  .stack-for-small .menu > li {
+  .stacked-for-small .menu > li {
     display: table-cell;
     width: auto;
   }
 }
-@media only screen and (max-width: 640px) {
-  .stack-for-small .menu > li .dropdown-pane {
-    top: 0 !important;
-    left: 0 !important;
-    display: block;
-  }
-  .stack-for-small .menu > li .dropdown-pane.is-open {
-    position: relative;
-  }
-}
 @media only screen and (min-width: 1024px) {
-  .stack-for-medium .menu > li {
+  .stacked-for-medium .menu > li {
     display: table-cell;
     width: auto;
   }
 }
-@media only screen and (max-width: 1440px) {
-  .stack-for-medium .menu > li .dropdown-pane {
-    top: 0 !important;
-    left: 0 !important;
-    display: block;
-  }
-  .stack-for-medium .menu > li .dropdown-pane.is-open {
-    position: relative;
-  }
-}
-
-#siteMenu i.fa {
-  margin-top: -4px;
-}
-#siteMenu .top-bar-left, #siteMenu .top-bar-right {
-  width: 100%;
-  padding: 0;
-}
-@media only screen and (min-width: 1024px) {
-  #siteMenu .top-bar-left, #siteMenu .top-bar-right {
+@media only screen and (min-width: 1440px) {
+  .stacked-for-large .menu > li {
+    display: table-cell;
     width: auto;
   }
 }
 
-.top-bar a, .top-bar button {
-  color: white;
-}
-.top-bar .title {
-  background-color: #666666;
-}
-.top-bar .dropdown-pane {
-  margin-top: 1px;
-  padding: 0;
-  padding: .5em 0 .75em;
-  border: 0 none transparent;
-}
-.top-bar .dropdown-pane .double-column {
-  width: 80em;
-}
-.top-bar .dropdown-pane > .row {
-  margin: 0 .5em;
-}
-.top-bar .dropdown-pane .column {
-  padding-left: 0em;
-  padding-right: .5em;
+.stacked-for-small .menu > li + li, .stacked-for-medium .menu > li + li, .stacked-for-large .menu > li + li {
+  border-top: #FFF dotted 1px;
 }
 @media only screen and (min-width: 320px) {
-  .top-bar.stack-for-small .top-bar .dropdown-pane {
-    width: 40em;
-    max-width: 75vw;
-    border: 1px solid #666666;
-    padding: .5em 0 .75em;
+  .stacked-for-small .menu > li + li {
+    border-top: 0 transparent none;
   }
-  .top-bar.stack-for-small .top-bar .dropdown-pane .column + .column {
-    border-left: solid #d9d9d9 1px;
-    padding-left: .5em;
-    padding-right: 0em;
+}
+@media only screen and (min-width: 640px) {
+  .stacked-for-medium .menu > li + li {
+    border-top: 0 transparent none;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .top-bar.stack-for-medium .top-bar .dropdown-pane {
-    width: 40em;
-    max-width: 75vw;
-    border: 1px solid #666666;
-    padding: .5em 0 .75em;
-  }
-  .top-bar.stack-for-medium .top-bar .dropdown-pane .column + .column {
-    border-left: solid #d9d9d9 1px;
-    padding-left: .5em;
-    padding-right: 0em;
+  .stacked-for-large .menu > li + li {
+    border-top: 0 transparent none;
   }
 }
 
-.dropdown-menu-item i.fa-holder:before {
-  content: "";
+.submenu {
+  width: 100%;
 }
-.dropdown-menu-item else > i.fa-holder:before, .dropdown-menu-item else i.fa-holder:before {
-  content: "";
+.submenu li {
+  display: block;
+  width: 100%;
+  background-color: #b3b3b3;
 }
-.dropdown-menu-item:hover i.fa-holder:before {
-  content: "";
-}
-.dropdown-menu-item:hover else > i.fa-holder:before, .dropdown-menu-item:hover else i.fa-holder:before {
-  content: "";
-}
-
-.search-bar {
-  line-height: normal;
-  padding: 0.5em;
-  clear: both;
-  background-color: #bfbfbf;
-}
-.top-bar .search-bar {
-  display: none;
-}
-.search-bar .question {
-  margin: 0;
-}
-.search-bar .question select, .search-bar .question input, .search-bar .question .button, .search-bar .question button {
-  border: 1px solid #b3b3b3;
-}
-.search-bar .question select, .search-bar .question option {
-  background: gray;
-  border-radius: 6px 0 0 6px;
-  color: #fff;
-  font-weight: bold;
-  font-size: 16px;
-  font-weight: bold;
-}
-.search-bar .question input {
-  background: #e6e6e6;
-}
-.search-bar .question .button, .search-bar .question button {
-  border-radius: 0 6px 6px 0;
-  background-color: gray;
-  vertical-align: text-top;
-  padding: 0;
-}
-
-.top-bar input, .search-bar input {
-  max-width: 100%;
+.submenu a {
+  color: #333333;
 }
 
 /**
 * Top Bar:
-* `.top-bar` - This is "ACC Style" website headers.  These should be used on any product that has multi pages and navigation beyond 1 to 2 tabs
+* `.top-bar` - This is modern website main nav.  These should be used on any product that has multi pages and navigation beyond 1 to 2 tabs
 * 
 *   @example
-*	<div class="top-bar">
-*	    <div class="hide-for-large" id="mobileMenu">
-*	        <div class="top-bar-left" onclick="$('#siteMenu .top-bar-left').toggleClass('display-block')">
-*	            <a class="top-bar-toggle">
-*	                <i class="fa fa-bars">
-*	                </i>
-*	                Menu
-*	            </a>
-*	        </div>
-*	        <div class="top-bar-right secondary" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
-*	            <a class="top-bar-toggle small condensable">
-*	                <span class="condense">
-*	                    Search
-*	                </span>
-*	                <i class="fa fa-search">
-*	                </i>
-*	            </a>
-*	        </div>
-*	        <div class="top-bar-right " onclick="$('#siteMenu .top-bar-right.user-nav').toggleClass('display-block')">
-*	            <a class="top-bar-toggle small condensable">
-*	                <span class="condense">
-*	                    Profile
-*	                </span>
-*	                <i class="fa fa-user">
-*	                </i>
-*	            </a>
-*	        </div>
-*	    </div>
-*	    <div class="stack-for-medium " id="siteMenu">
-*	        <div class="top-bar-left show-for-large">
-*	            <ul class="menu">
-*	                <li class="dropdown-menu-item">
-*	                    <button data-toggle="example-dropdown" type="button">
-*	                        <i aria-hidden="true" class="fa fa-holder">
-*	                        </i>
-*	                        Toggle Dropdown
-*	                    </button>
-*	                    <div class="dropdown-pane double-column" data-dropdown="" data-hover="true" data-hover-pane="true" id="example-dropdown">
-*	                        <div class="row collapse">
-*	                            <div class="column medium-6">
-*	                                <ul class="submenu nav-level-1">
-*	                                    <li>
-*	                                        <a href="">
-*	                                            Menu item
-*	                                        </a>
-*	                                    </li>
-*	                                    <li>
-*	                                        <a href="">
-*	                                            Menu item
-*	                                        </a>
-*	                                    </li>
-*	                                    <li>
-*	                                        <a href="">
-*	                                            Menu item
-*	                                        </a>
-*	                                    </li>
-*	                                    <li class="parent">
-*	                                        <ul class="submenu nav-level-2">
-*	                                            <li>
-*	                                                <a href="">
-*	                                                    Secondary Menu item
-*	                                                </a>
-*	                                            </li>
-*	                                            <li>
-*	                                                <a href="">
-*	                                                    Secondary Menu item
-*	                                                </a>
-*	                                            </li>
-*	                                            <li>
-*	                                                <a href="">
-*	                                                    Secondary Menu item
-*	                                                </a>
-*	                                            </li>
-*	                                            <li>
-*	                                                <a href="">
-*	                                                    Secondary Menu item
-*	                                                </a>
-*	                                            </li>
-*	                                            <li>
-*	                                                <a href="">
-*	                                                    Secondary Menu item
-*	                                                </a>
-*	                                            </li>
-*	                                        </ul>
-*	                                    </li>
-*	                                    <li>
-*	                                        <a href="">
-*	                                            Menu item
-*	                                        </a>
-*	                                    </li>
-*	                                </ul>
-*	                            </div>
-*	                            <div class="column medium-6">
-*	                                <ul class="submenu nav-level-1">
-*	                                    <li>
-*	                                        <a href="">
-*	                                            Menu item
-*	                                        </a>
-*	                                    </li>
-*	                                    <li>
-*	                                        <a href="">
-*	                                            Menu item
-*	                                        </a>
-*	                                    </li>
-*	                                    <li>
-*	                                        <a href="">
-*	                                            Menu item
-*	                                        </a>
-*	                                    </li>
-*	                                    <li>
-*	                                        <a href="">
-*	                                            Menu item
-*	                                        </a>
-*	                                    </li>
-*	                                    <li>
-*	                                        <a href="">
-*	                                            Menu item
-*	                                        </a>
-*	                                    </li>
-*	                                </ul>
-*	                            </div>
-*	                        </div>
-*	                    </div>
-*	                </li>
-*	                <li>
-*	                    <a href="#">
-*	                        Two
-*	                    </a>
-*	                </li>
-*	                <li>
-*	                    <a href="#">
-*	                        Three
-*	                    </a>
-*	                </li>
-*	            </ul>
-*	        </div>
-*	        <div class="top-bar-right secondary show-for-large" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
-*	            <ul class="menu">
-*	                <li>
-*	                    <a class="top-bar-toggle small condensable">
-*	                        <span class="condense">
-*	                            Search
-*	                        </span>
-*	                        <i class="fa fa-search">
-*	                        </i>
-*	                    </a>
-*	                </li>
-*	            </ul>
-*	        </div>
-*	        <div class="top-bar-right user-nav show-for-large">
-*	            <ul class="menu">
-*	                <li>
-*	                    <a href="">
-*	                        Drop Down
-*	                    </a>
-*	                </li>
-*	                <li>
-*	                    <a href="#">
-*	                        Two
-*	                    </a>
-*	                </li>
-*	                <li>
-*	                    <a href="#">
-*	                        Three
-*	                    </a>
-*	                </li>
-*	            </ul>
-*	        </div>
-*	        <div class="search-bar">
-*	            <div class="question">
-*	                <div class="input-holder">
-*	                    <div class="input-space column small-6 medium-9 large-10 ">
-*	                        <input name="" type="text">
-*	                        </input>
-*	                    </div>
-*	                    <div class="input-space column small-6 medium-3 large-2 ">
-*	                        <button class="button expanded">
-*	                            Search
-*	                        </button>
-*	                    </div>
-*	                </div>
-*	            </div>
-*	        </div>
-*	    </div>
-*	</div>
+*	<div class="siteMenu" id="siteMenu">
+*     <div class="top-bar hide-for-large" id="mobileMenu">
+*         <div class="top-bar-left" onclick="$('#siteMenu .top-bar-left').toggleClass('display-block')">
+*             <a class="top-bar-toggle">
+*                 <i class="fa fa-bars">
+*                 </i>
+*                 Menu
+*             </a>
+*         </div>
+*         <div class="top-bar-right secondary" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+*             <a class="top-bar-toggle small ">
+*                 <i class="fa fa-search">
+*                 </i>
+*                 <span class="condense">
+*                      Search
+*                 </span>
+*             </a>
+*         </div>
+*         <div class="top-bar-right user-nav title" onclick="$('#siteMenu .top-bar-right.user-nav').toggleClass('display-block')">
+*             <a class="top-bar-toggle small ">
+*                 <i class="fa fa-user">
+*                 </i>
+*                 <span class="condense">
+*                     User
+*                 </span>
+*             </a>
+*         </div>
+*     </div>
+*         <div class="top-bar">
+*             <div class="top-bar-left show-for-large">
+*                 <ul class="dropdown menu" data-dropdown-menu>
+*                      <li class="has-submenu">
+*                         <a href="admin-seasons.html">
+*                             <b>Season:</b> ACC Guidance
+*                         </a>
+*                         <ul class="submenu menu vertical" data-submenu style="display:none;">
+*                             <li><a href="">NCDR</a></li>
+*                         </ul>
+*                     </li>
+*                     <li>
+*                         <a href="admin-applications.html">
+*                             Applications
+*                         </a>
+*                     </li>
+*                     <li>
+*                         <a href="admin-committees-dashboard.html">
+*                             Committees
+*                         </a>
+*                     </li>
+*                     <li>
+*                         <a href="admin-reports.html">
+*                             Reports
+*                         </a>
+*                     </li>
+*                 </ul>
+*             </div>
+*             <div class="top-bar-right user-nav show-for-large" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+*                 <ul class="menu">
+*                      <li>
+*                         <a class="top-bar-toggle small condensable">
+*                             <span class="condense">
+*                                 Search
+*                             </span>
+*                             <i class="fa fa-search">
+*                             </i>
+*                         </a>
+*                     </li>
+*                 </ul>
+*             </div>
+*         </div>
+*         <div class="search-bar">
+*             <div class="question">
+*                 <div class="input-holder">
+*                     <div class="input-space column small-5 medium-3 large-2 ">
+*                         <select name="" id="">
+*                             <option value="">Open Committees</option>
+*                             <option value="">Members to Nominate</option>
+*                         </select>
+*                     </div>
+*                     <div class="input-space column small-6 medium-5 large-8 ">
+*                         <input name="" type="text">
+*                     </div>
+*                     <div class="input-space column small-1 medium-4 large-2 ">
+*                         <button class="button expanded small condensable">
+*                             <span class="condense ">Search</span>
+*                             <i class="fa fa-search"></i>
+*                         </button>
+*                     </div>
+*                 </div>
+*             </div>
+*         </div>
+*     </div>
 **/
 .pagination-holder, .result-selector-holder {
   border-top: 2px solid #198dae;
@@ -8523,24 +8589,24 @@ div.reveal .close-button {
   }
 }
 
-.page-wrapper .page-wrapper, .section-padding {
+.page-wrapper .page-wrapper, .page-wrapper {
   padding-top: 0.375rem;
   padding-bottom: 0.75rem;
 }
 @media only screen and (min-width: 320px) {
-  .page-wrapper .page-wrapper, .section-padding {
+  .page-wrapper .page-wrapper, .page-wrapper {
     padding-top: 0.75rem;
     padding-bottom: 1.125rem;
   }
 }
 @media only screen and (min-width: 640px) {
-  .page-wrapper .page-wrapper, .section-padding {
+  .page-wrapper .page-wrapper, .page-wrapper {
     padding-top: 1.125rem;
     padding-bottom: 1.5rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .page-wrapper .page-wrapper, .section-padding {
+  .page-wrapper .page-wrapper, .page-wrapper {
     padding-top: 1.5rem;
     padding-bottom: 2.25rem;
   }
@@ -8553,41 +8619,41 @@ div.reveal .close-button {
   }
 }
 
-.card, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
+.section-padding, .card, .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
   padding-top: .25rem;
   padding-bottom: .25rem;
 }
 @media only screen and (min-width: 320px) {
-  .card, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
+  .section-padding, .card, .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
     padding-top: .5rem;
     padding-bottom: .5rem;
   }
 }
 @media only screen and (min-width: 640px) {
-  .card, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
+  .section-padding, .card, .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
     padding-top: .75rem;
     padding-bottom: .75rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .card, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
+  .section-padding, .card, .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee {
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
 }
 
-.content-padding, .content-padding.page-wrapper, .card, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
+.content-padding, .content-padding.page-wrapper, .card, .page-wrapper > .section, .page-wrapper > section, .page-wrapper > .row, .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
   padding-left: .5rem;
   padding-right: .5rem;
 }
 @media only screen and (min-width: 640px) {
-  .content-padding, .content-padding.page-wrapper, .card, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
+  .content-padding, .content-padding.page-wrapper, .card, .page-wrapper > .section, .page-wrapper > section, .page-wrapper > .row, .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
     padding-right: .75rem;
     padding-left: .75rem;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .content-padding, .content-padding.page-wrapper, .card, .paper-page .page-wrapper > .section, .paper-page .page-wrapper > section, .paper-page .page-wrapper > .row, .paper-page .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
+  .content-padding, .content-padding.page-wrapper, .card, .page-wrapper > .section, .page-wrapper > section, .page-wrapper > .row, .page-wrapper .card, .colored-paper, .committee-list-item .committee-data .committee, .inset-area {
     padding-right: 1rem;
     padding-left: 1rem;
   }
@@ -8708,18 +8774,18 @@ div.reveal .close-button {
   background-image: url("../img/billie-holiday-lite.png");
 }
 
-.card, .paper-page .page-wrapper .card, .lifted {
+.card, .page-wrapper .card, .lifted {
   -webkit-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.2);
 }
 
-.card, .paper-page .page-wrapper .card {
+.card, .page-wrapper .card {
   border: 1px solid #d9d9d9;
   background-color: white;
 }
 
-.paper-page .page-wrapper .card.ghost {
+.page-wrapper .card.ghost {
   border: 2px dashed #bfbfbf;
   background-color: transparent;
   background-image: url("../img/empty_stripe_grey@2x.png");
@@ -8765,35 +8831,33 @@ div.reveal .close-button {
 .paper-page .overlap + .page-wrapper {
   padding-top: .5rem;
 }
-.paper-page .page-wrapper {
-  padding-top: 1px;
-}
-.paper-page .page-wrapper .card {
+
+.page-wrapper .card {
   width: auto;
   position: relative;
 }
-.paper-page .page-wrapper .card.ghost {
+.page-wrapper .card.ghost {
   border-radius: 6px;
 }
-.paper-page .page-wrapper.error .card.ghost {
+.page-wrapper.error .card.ghost {
   background-color: #e7ced1;
 }
-.paper-page .page-wrapper.warning .card.ghost {
+.page-wrapper.warning .card.ghost {
   background-color: #eaddce;
 }
-.paper-page .page-wrapper.success .card.ghost {
+.page-wrapper.success .card.ghost {
   background-color: #c9e8d6;
 }
-.paper-page .page-wrapper.info .card.ghost {
+.page-wrapper.info .card.ghost {
   background-color: #e1e1e1;
 }
-.paper-page .page-wrapper.highlighted .card.ghost {
+.page-wrapper.highlighted .card.ghost {
   background-color: #d0e3e8;
 }
-.paper-page .page-wrapper.locked .card.ghost {
+.page-wrapper.locked .card.ghost {
   background-color: #e4e4e4;
 }
-.paper-page .page-wrapper.disabled .card.ghost {
+.page-wrapper.disabled .card.ghost {
   background-color: #e6e6e6;
 }
 
@@ -11874,10 +11938,6 @@ h5 .value {
   height: 2em;
   cursor: n-resize;
   color: #333333;
-}
-
-.row {
-  max-width: 100%;
 }
 
 /*# sourceMappingURL=index.css.map */
