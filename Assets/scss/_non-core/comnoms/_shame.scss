@@ -11,7 +11,7 @@
 }
 
 .colored-paper .card.ghost h6 a.button {
-    maring-top: -.5rem;
+    margin-top: -.5rem;
 }
 
 .card.ghost+.card.ghost {
@@ -55,7 +55,6 @@
         }
     }
 }
-
 .committee-list {
 @extend %content-expanding-margin-horizontal;
 margin-bottom:0;
@@ -94,12 +93,14 @@ margin-bottom:0;
         .committee-data {
             .action {
                 background-color:mix($success-color,grey(60),35);
+
                 .fa-stack-2x {
                     color: color($success-color, 80);
                 }
                 .fa-stack-1x {
                     color: #fff;
-                }                
+                }
+                
             }
         }
     }
@@ -172,37 +173,7 @@ margin-bottom:0;
 }
 .top-bar + .top-bar{border-top:0;}
 .header.page + #siteMenu{margin-top:-6px; clear:both;}
-.search-bar{
-    line-height:normal;
-    padding: .5em 0 ;
-    clear: both;
 
-    .siteMenu &{display:none;}
-    .question{margin:0;
-        select,input,.button,button{
-            border: 1px solid grey(30);
-        }
-        select,option{    
-            background: grey(50);
-            border-radius: 6px 0 0 6px;
-            color:#fff;
-            font-weight: bold;
-            font-size: ms(0);
-            @include font-bold();
-        }
-        input{
-            background: grey(10);
-        }
-        .button, button{
-            border-radius: 0 6px 6px 0;
-            background-color: grey(50);
-            vertical-align: text-top;
-            padding: 0;
-        }
-
-    }
-}
-.top-bar input, .search-bar input{max-width:100%;}
 
 .layer-down{
     background-image: url(../img/textured_paper.png), url(../img/bottom-shade.png), url(../img/top-shade.png), url(../img/left-shade.png), url(../img/right-shade.png);
@@ -486,4 +457,40 @@ letter-spacing: .1em;
     height: 2em;
     cursor: n-resize;
     color:grey(80);
+}
+
+li.is-submenu-item.is-dropdown-submenu-item {
+    display:block;
+    border-bottom:1px solid lightgrey;
+}
+li.is-submenu-item.is-dropdown-submenu-item a{
+   color:white;
+}
+li.is-submenu-item.is-dropdown-submenu-item:hover {
+   background-color:lightgrey;
+}
+li.is-submenu-item.is-dropdown-submenu-item:hover a{
+   color: black;
+}
+.top-bar .title:hover {
+    background-color: #4d4d4d;
+}
+.top-bar .title:hover >a {
+    color: white;
+}
+
+.dropdown.menu > li.is-dropdown-submenu-parent > a:after{display: none}
+.dropdown.menu > li.is-dropdown-submenu-parent > a:before{
+	  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+	content: "\f054";
+	width:1.75em;
+	text-align: center;
+}
+.dropdown.menu > li.is-dropdown-submenu-parent.is-active > a:before{
+	content: "\f078";
 }
