@@ -11,9 +11,7 @@
 
 </head>
 	<body>
-    
-<div class="row">
-  <header class="header page">
+      <header class="header page">
   	<div class="row">
   		<div class="column large-6">
     <a href="index.html" class="logo">
@@ -27,6 +25,13 @@
         <div class="content-padding section-padding">
             <nav class="nav-utility">
                 <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-seasons.html">
+                            <i aria-hidden="true" class="fa fa-calendar">
+                            </i>
+                            Seasons
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="admin-users.html">
                             <i aria-hidden="true" class="fa fa-user">
@@ -56,6 +61,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="admin-notes.html">
+                           <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                           All Notes
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">
                             Logout
                             <i class="fa fa-sign-out"></i>
@@ -66,7 +77,6 @@
         </div>
     </div>
 </div>
-
         <div class="row">
         	<div class="column">
         		<div class="content-padding section-padding">
@@ -87,7 +97,7 @@
             </a>
         </div>
         <div class="top-bar-right user-nav secondary" onclick="$('#siteMenu .nav-utility').toggleClass('display-block')">
-            <a class="top-bar-toggle small ">
+            <a class="top-bar-toggle">
                 <i class="fa fa-gear">
                 </i>
                 <span class="condense">
@@ -95,8 +105,11 @@
                 </span>
             </a>
         </div>
+        <div class="top-bar-right user-nav secondary" data-toggle="offCanvasRightSplit2">
+           <a class="top-bar-toggle"  ><i class="fa fa-plus"></i> Add Note</a>
+        </div>
         <div class="top-bar-right" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
-            <a class="top-bar-toggle small ">
+            <a class="top-bar-toggle">
                 <i class="fa fa-search">
                 </i>
                 <span class="condense">
@@ -114,7 +127,7 @@
                     </a>
                     <ul class="menu vertical">
                         <li><a href="">NCDR</a></li>
-                        <li><a href="">New Season</a></li>
+                        <li><a href=""><i class="fa fa-plus"></i> New Season</a></li>
                     </ul>
                 </li>
                 <li>
@@ -134,9 +147,14 @@
                 </li>
             </ul>
         </div>
-        <div class="top-bar-right user-nav show-for-large"  onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+        <div class="top-bar-right secondary show-for-large" >
             <ul class="menu">
-                 <li>
+                <li class=""  data-toggle="offCanvasRightSplit2"><a><i class="fa fa-plus"></i> Add Note</a></li>
+            </ul>
+        </div>
+        <div class="top-bar-right show-for-large"  onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+            <ul class="menu">
+                <li>
                     <a class="top-bar-toggle small condensable">
                         <span class="condense">
                             Search
@@ -171,77 +189,79 @@
         </div>
     </div> 
     <nav class="nav-utility hide">
-        <ul class="nav menu">
-            <li class="nav-item">
-                <a class="nav-link" href="admin-users.html">
-                    <i aria-hidden="true" class="fa fa-user">
-                    </i>
-                    Users
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="admin-questions.html">
-                    <i aria-hidden="true" class="fa fa-question-circle">
-                    </i>
-                    Questions
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="admin-messages.html">
-                    <i aria-hidden="true" class="fa fa-comment">
-                    </i>
-                    Messaging
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="admin-com-management.html">
-                    <i aria-hidden="true" class="fa fa-users">
-                    </i>
-                    Committees
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    Logout
-                    <i class="fa fa-sign-out"></i>
-                </a>
-            </li>
+       <ul class="nav menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-seasons.html">
+                            <i aria-hidden="true" class="fa fa-calendar">
+                            </i>
+                            Seasons
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-users.html">
+                            <i aria-hidden="true" class="fa fa-user">
+                            </i>
+                            Users
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-questions.html">
+                            <i aria-hidden="true" class="fa fa-question-circle">
+                            </i>
+                            Questions
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-messages.html">
+                            <i aria-hidden="true" class="fa fa-comment">
+                            </i>
+                            Messaging
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-com-management.html">
+                            <i aria-hidden="true" class="fa fa-users">
+                            </i>
+                            Committees
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-notes.html">
+                           <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                           All Notes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Logout
+                            <i class="fa fa-sign-out"></i>
+                        </a>
+                    </li>
         </ul>
     </nav>
 </div>
 	
-</div>
+
     <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
     
-<div class="page paper-page">
-    <div class="page-wrapper">
+    <div class="page-header section-padding">
         <div class="row">
             <div class="column">
-                <h1>
-                    Application Questions
+                <h1> <i class="fa fa-question-circle" aria-hidden="true"></i>
+                Questions Manager <span class="seperator"> \ </span><span>Type Questions</small>
                 </h1>
-            </div>
-        </div>
-        <nav class="nav overlap" style="margin-bottom: 0;">
-            <ul class="tabs">
-                <li class="tab-title">
-                    <a href="admin-questions.html">
-                        Global Questions
+                <div class="section-padding">
+                    <a class="button tiny radius hollow" href="admin-questions.html">Global Questions</a>
+                    <a class="button tiny radius hollow " href="admin-questions-CV.html">  Digital CV Questions
                     </a>
-                </li>
-                <li class="tab-title">
-                    <a href="admin-questions-CV.html">
-                        Digital CV Questions
-                    </a>
-                </li>
-                <li class="tab-title selected">
-                    <a href="admin-questions-type.html">
+                    <a class="button tiny radius" href="admin-questions-type.html">
                         Type Questions
                     </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="colored-paper">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="colored-paper">
             <div class="row">
                 <div class="column small-12 medium-5">
                     <h2>
@@ -260,6 +280,7 @@
                 </div>
             </div>
         </div>
+    <div class="page-wrapper layer-down"> 
         <div class="row section-padding">
             <div class="column">
                 <div class="page-message callout highlighted lifted" style="max-width:100%;">
@@ -270,19 +291,15 @@
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-square-o fa-stack-2x">
                                 </i>
-                                <i class="fa fa-holder-dynamic fa-stack-1x">
+                                <i class="fa fa-holder fa-stack-1x">
                                 </i>
                             </span>
                         </div>
                         <div class="message-holder" style="flex: 2 0 auto;">
                             <h4>
-                                You currently don't have any additional questions for this Committee Type
+                                You currently don't have a Committee Type selected
                             </h4>
-                            <a class="button expanded" href="">
-                                <i class="fa fa-plus">
-                                </i>
-                                Add Question Type
-                            </a>
+
                         </div>
                     </div>
                 </div>
@@ -292,9 +309,9 @@
             <div class="column small-12">
                 <div class="card">
                     <div class="colored-paper success">
-                        <h3>
+                        <h2 class="no-vertical-margin">
                             Adding Question
-                        </h3>
+                        </h2>
                     </div>
                     <div class="row">
                         <div class="question column medium-4">
@@ -389,7 +406,7 @@
                         <div class="question column medium-8">
                             <div class="label-holder">
                                 <span class="text">
-                                    Label Text
+                                    Question Text
                                 </span>
                                 <span class="required-holder">
                                     <i class="fa fa-holder-dynamic">
@@ -428,7 +445,7 @@
             <div class="column">
                 <div class="card">
                     <div class="colored-paper info">
-                        <h4>
+                        <h4  class="no-vertical-margin">
                             Chocolate Chips: Checkbox
                         </h4>
                     </div>
@@ -498,7 +515,7 @@
                                 <div class="question column small-12">
                                     <div class="label-holder">
                                         <span class="text">
-                                            Label
+                                            Question Text
                                         </span>
                                         <span class="required-holder">
                                             <i class="fa fa-holder-dynamic">
@@ -647,7 +664,7 @@
             <div class="column">
                 <div class="card">
                     <div class="colored-paper info">
-                        <h3>
+                        <h3  class="no-vertical-margin">
                             Lemon Drop: Textarea
                         </h3>
                     </div>
@@ -716,7 +733,7 @@
                             <div class="question column medium-6">
                                 <div class="label-holder">
                                     <span class="text">
-                                        Label Text
+                                        Question Text
                                     </span>
                                     <span class="required-holder">
                                         <i class="fa fa-holder-dynamic">
@@ -753,7 +770,7 @@
             </div>
         </div>
     </div>
-</div>
+
 
     </div>
     <footer class="page-footer">

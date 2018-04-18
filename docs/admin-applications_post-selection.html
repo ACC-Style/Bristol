@@ -11,9 +11,7 @@
 
 </head>
 	<body>
-    
-<div class="row">
-  <header class="header page">
+      <header class="header page">
   	<div class="row">
   		<div class="column large-6">
     <a href="index.html" class="logo">
@@ -27,6 +25,13 @@
         <div class="content-padding section-padding">
             <nav class="nav-utility">
                 <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-seasons.html">
+                            <i aria-hidden="true" class="fa fa-calendar">
+                            </i>
+                            Seasons
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="admin-users.html">
                             <i aria-hidden="true" class="fa fa-user">
@@ -56,6 +61,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="admin-notes.html">
+                           <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                           All Notes
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">
                             Logout
                             <i class="fa fa-sign-out"></i>
@@ -66,7 +77,6 @@
         </div>
     </div>
 </div>
-
         <div class="row">
         	<div class="column">
         		<div class="content-padding section-padding">
@@ -87,7 +97,7 @@
             </a>
         </div>
         <div class="top-bar-right user-nav secondary" onclick="$('#siteMenu .nav-utility').toggleClass('display-block')">
-            <a class="top-bar-toggle small ">
+            <a class="top-bar-toggle">
                 <i class="fa fa-gear">
                 </i>
                 <span class="condense">
@@ -95,8 +105,11 @@
                 </span>
             </a>
         </div>
+        <div class="top-bar-right user-nav secondary" data-toggle="offCanvasRightSplit2">
+           <a class="top-bar-toggle"  ><i class="fa fa-plus"></i> Add Note</a>
+        </div>
         <div class="top-bar-right" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
-            <a class="top-bar-toggle small ">
+            <a class="top-bar-toggle">
                 <i class="fa fa-search">
                 </i>
                 <span class="condense">
@@ -114,7 +127,7 @@
                     </a>
                     <ul class="menu vertical">
                         <li><a href="">NCDR</a></li>
-                        <li><a href="">New Season</a></li>
+                        <li><a href=""><i class="fa fa-plus"></i> New Season</a></li>
                     </ul>
                 </li>
                 <li>
@@ -134,9 +147,14 @@
                 </li>
             </ul>
         </div>
-        <div class="top-bar-right user-nav show-for-large"  onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+        <div class="top-bar-right secondary show-for-large" >
             <ul class="menu">
-                 <li>
+                <li class=""  data-toggle="offCanvasRightSplit2"><a><i class="fa fa-plus"></i> Add Note</a></li>
+            </ul>
+        </div>
+        <div class="top-bar-right show-for-large"  onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+            <ul class="menu">
+                <li>
                     <a class="top-bar-toggle small condensable">
                         <span class="condense">
                             Search
@@ -171,46 +189,59 @@
         </div>
     </div> 
     <nav class="nav-utility hide">
-        <ul class="nav menu">
-            <li class="nav-item">
-                <a class="nav-link" href="admin-users.html">
-                    <i aria-hidden="true" class="fa fa-user">
-                    </i>
-                    Users
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="admin-questions.html">
-                    <i aria-hidden="true" class="fa fa-question-circle">
-                    </i>
-                    Questions
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="admin-messages.html">
-                    <i aria-hidden="true" class="fa fa-comment">
-                    </i>
-                    Messaging
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="admin-com-management.html">
-                    <i aria-hidden="true" class="fa fa-users">
-                    </i>
-                    Committees
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    Logout
-                    <i class="fa fa-sign-out"></i>
-                </a>
-            </li>
+       <ul class="nav menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-seasons.html">
+                            <i aria-hidden="true" class="fa fa-calendar">
+                            </i>
+                            Seasons
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-users.html">
+                            <i aria-hidden="true" class="fa fa-user">
+                            </i>
+                            Users
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-questions.html">
+                            <i aria-hidden="true" class="fa fa-question-circle">
+                            </i>
+                            Questions
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-messages.html">
+                            <i aria-hidden="true" class="fa fa-comment">
+                            </i>
+                            Messaging
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-com-management.html">
+                            <i aria-hidden="true" class="fa fa-users">
+                            </i>
+                            Committees
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-notes.html">
+                           <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                           All Notes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Logout
+                            <i class="fa fa-sign-out"></i>
+                        </a>
+                    </li>
         </ul>
     </nav>
 </div>
 	
-</div>
+
     <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
     
 
@@ -280,7 +311,7 @@
 	<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 	<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 		<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
-	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-gear"></i>&nbsp;<i class="fa fa-angle-down"></i></a></td>
+	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-envelope"></i></a></td>
 </tr>
 <tr>
 	<td class="name"><a class="h5" href="admin-applicant.html">Dr. Pepper, FACC</a>
@@ -299,7 +330,7 @@
 	<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 		<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 	<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
-	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-gear"></i>&nbsp;<i class="fa fa-angle-down"></i></a></td>
+	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-envelope"></i></a></td>
 </tr>
 <tr>
 	<td class="name"><a class="h5" href="admin-applicant.html">Dr. Whatchamacallit, MD </a>
@@ -318,7 +349,7 @@
 		<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 	<td class="content text-center "></td>
 	<td class="content text-center "></td>
-	<td class="action text-right"> <a href="" class="button disabled secondary tiny radius"><i class="fa fa-gear"></i>&nbsp;<i class="fa fa-angle-down"></i></a></td>
+	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-envelope"></i></a></td>
 </tr>
 					</tbody>
 					<tbody id="Draft">
@@ -341,7 +372,7 @@
 	<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 	<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 		<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
-	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-gear"></i>&nbsp;<i class="fa fa-angle-down"></i></a></td>
+	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-envelope"></i></a></td>
 </tr>
 <tr>
 	<td class="name"><a class="h5" href="admin-applicant.html">Dr. Pepper, FACC</a>
@@ -360,7 +391,7 @@
 	<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 		<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 	<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
-	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-gear"></i>&nbsp;<i class="fa fa-angle-down"></i></a></td>
+	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-envelope"></i></a></td>
 </tr>
 <tr>
 	<td class="name"><a class="h5" href="admin-applicant.html">Dr. Whatchamacallit, MD </a>
@@ -379,7 +410,7 @@
 		<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 	<td class="content text-center "></td>
 	<td class="content text-center "></td>
-	<td class="action text-right"> <a href="" class="button disabled secondary tiny radius"><i class="fa fa-gear"></i>&nbsp;<i class="fa fa-angle-down"></i></a></td>
+	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-envelope"></i></a></td>
 </tr>
 					</tbody>
 					<tbody id="Reviewed">	
@@ -402,7 +433,7 @@
 	<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 	<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 		<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
-	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-gear"></i>&nbsp;<i class="fa fa-angle-down"></i></a></td>
+	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-envelope"></i></a></td>
 </tr>
 <tr>
 	<td class="name"><a class="h5" href="admin-applicant.html">Dr. Pepper, FACC</a>
@@ -421,7 +452,7 @@
 	<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 		<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 	<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
-	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-gear"></i>&nbsp;<i class="fa fa-angle-down"></i></a></td>
+	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-envelope"></i></a></td>
 </tr>
 <tr>
 	<td class="name"><a class="h5" href="admin-applicant.html">Dr. Whatchamacallit, MD </a>
@@ -440,7 +471,7 @@
 		<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 	<td class="content text-center "></td>
 	<td class="content text-center "></td>
-	<td class="action text-right"> <a href="" class="button disabled secondary tiny radius"><i class="fa fa-gear"></i>&nbsp;<i class="fa fa-angle-down"></i></a></td>
+	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-envelope"></i></a></td>
 </tr>
 					</tbody>
 					<tbody id="Declined">
@@ -463,7 +494,7 @@
 	<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 	<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 		<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
-	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-gear"></i>&nbsp;<i class="fa fa-angle-down"></i></a></td>
+	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-envelope"></i></a></td>
 </tr>
 <tr>
 	<td class="name"><a class="h5" href="admin-applicant.html">Dr. Pepper, FACC</a>
@@ -482,7 +513,7 @@
 	<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 		<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 	<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
-	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-gear"></i>&nbsp;<i class="fa fa-angle-down"></i></a></td>
+	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-envelope"></i></a></td>
 </tr>
 <tr>
 	<td class="name"><a class="h5" href="admin-applicant.html">Dr. Whatchamacallit, MD </a>
@@ -501,7 +532,7 @@
 		<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 	<td class="content text-center "></td>
 	<td class="content text-center "></td>
-	<td class="action text-right"> <a href="" class="button disabled secondary tiny radius"><i class="fa fa-gear"></i>&nbsp;<i class="fa fa-angle-down"></i></a></td>
+	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-envelope"></i></a></td>
 </tr>						
 					</tbody>
 					<tbody id="NotSelected">
@@ -525,7 +556,7 @@
 	<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 	<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 		<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
-	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-gear"></i>&nbsp;<i class="fa fa-angle-down"></i></a></td>
+	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-envelope"></i></a></td>
 </tr>
 <tr>
 	<td class="name"><a class="h5" href="admin-applicant.html">Dr. Pepper, FACC</a>
@@ -544,7 +575,7 @@
 	<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 		<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 	<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
-	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-gear"></i>&nbsp;<i class="fa fa-angle-down"></i></a></td>
+	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-envelope"></i></a></td>
 </tr>
 <tr>
 	<td class="name"><a class="h5" href="admin-applicant.html">Dr. Whatchamacallit, MD </a>
@@ -563,7 +594,7 @@
 		<td class="content text-center highlighted"><i class="fa fa-check"></i></td>
 	<td class="content text-center "></td>
 	<td class="content text-center "></td>
-	<td class="action text-right"> <a href="" class="button disabled secondary tiny radius"><i class="fa fa-gear"></i>&nbsp;<i class="fa fa-angle-down"></i></a></td>
+	<td class="action text-right"> <a href="" class="button secondary tiny radius"><i class="fa fa-envelope"></i></a></td>
 </tr>
 					</tbody>
 				</table>

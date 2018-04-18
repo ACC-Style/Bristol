@@ -1,27 +1,29 @@
 {% extends 'layouts/admin-layout' %}
 {% block content %}
-<div class="page paper-page">
-    <div class="section-nav back">
-        <a href="admin-applications.html">
-            <div class="circle">
-                <i class="fa fa-holder-dynamic">
-                </i>
-            </div>
-            <div class="text">
-                Back
-            </div>
-        </a>
-    </div>
-    <div class="page-wrapper">
-        <div class="row position-relative">
+
+ <div class="section-nav top">
+    <a class="left" href="admin-applications.html">
+      <span class="circle button navigation">
+        <i class="fa fa-holder"></i>
+      </span>
+      <span class="text">Back</span>
+    </a>
+  </div>
+<div class="page-header">
+      <div class="row position-relative">
             <div class="column">
                 <h1>
                     Doctor Dove Special Dark
+                                    <div class="float-right no-vertical-margin">
+                                        <a class="button warning" href="">
+                    Send For Revision
+                </a>
                     <a class="button secondary float-right" href="">
                         <i class="fa fa-envelope">
                         </i>
                         Email Applicant
                     </a>
+                                    </div>
                     <div class="sub-line">
                         <small class="label warning">
                             Status: Sent for Revision
@@ -30,58 +32,30 @@
                 </h1>
             </div>
         </div>
-        {% comment %}
-        <nav class="overlap nav">
-            <ul class="tabs ">
-                <li class="tab-title">
-                    <a class="" href="admin-committees-details.html">
-                        Interested Committees
-                    </a>
-                </li>
-                <li class="tab-title is-active">
-                    <a href="admin-committees.html">
-                        Digital CV
-                    </a>
-                </li>
-                <li class="tab-title">
-                    <a href="admin-committees.html">
-                        Letter of Refference
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        {% endcomment %}
+</div><div class="page no-padding">
+    <div class="page-wrapper layer-down">
         <div class="row">
             <div class="column medium-6">
                 <div class="card">
                     <div class="colored-paper">
                         <h2>
                             Interested Activities/Committees
+                            <div class="float-right no-vertical-margin">
+                                <a class="button alert" href="">
+                   Reject  All
+                </a>
+                                <a class="button success" href="">
+                    Approve All
+                </a>
+                            </div>
                         </h2>
                     </div>
                     <div class="section-padding">
                         <div class="accordion">
                             {% include "admin/sections/interested-committee-list" %}
-                            <h3>
-                                Disclosures
-                            </h3>
-                            <span class="label success radius">
-                                <i class="fa fa-check">
-                                </i>
-                                Up to date
-                            </span>
-                            <a href="">
-                                <i class="fa fa-file">
-                                </i>
-                                View Disclosures
-                            </a>
+                            
                         </div>
                     </div>
-                </div>
-                <div class="row column section-padding">
-                    <a class="link" href="">
-                        Show Full list of Activites/Committees
-                    </a>
                 </div>
             </div>
             <div class="column medium-6">
@@ -135,27 +109,37 @@
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                                 </p>
                             </div>
+                            <h3>
+                                Disclosures
+                            </h3>
+                            <span class="label success radius">
+                                <i class="fa fa-check">
+                                </i>
+                                Up to date
+                            </span>
+                            <a href="">
+                                <i class="fa fa-file">
+                                </i>
+                                View Disclosures
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row group-divide text-right">
-            <div class="button-group">
-                <a class="button alert" href="">
-                    Reject
-                </a>
-                <a class="button warning" href="">
-                    Send For Revision
-                </a>
+        
+    </div>
+</div>
+<div class="page-header section-padding content-padding">
+            <div class="button-group float-right">
+                
+
                 <a class="button secondary" href="">
-                    Save For Later
+                    Close
                 </a>
                 <a class="button success" href="">
                     Reviewed
                 </a>
             </div>
         </div>
-    </div>
-</div>
 {% endblock %}

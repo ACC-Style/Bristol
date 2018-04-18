@@ -1,17 +1,25 @@
-{% extends 'layouts/admin-layout' %}
+{% extends 'layouts/admin-committee-layout' %}
 {% block content %}
-
-<div class="page paper-page">
-	<div class="page-wrapper" >
-		<div class="row">
+<div class="page-header">
+		<div class="row section-padding">
 			<div class="column">
-				<h1>Applications <a href="admin-applications-filtered.html" class="button small secondary float-right">Filter</a>
-				</h1>
-
+				<h1>Applications</h1>
 			</div>
 		</div>
+</div>
+<div class="">
+	<div class="page-wrapper layer-down" >
+
 		<div class="row">
 			<div class="card">
+				<div class="colored-paper">
+					<h2 class="no-vertical-margin">Reviewable Applications
+						<div class="float-right button-group tiny no-vertical-margin">
+							<a href="" class="secondary button">Filter</a>
+							<a href="" class=" secondary button">Report</a>
+						</div>
+					</h2 >
+				</div>
 				{% include 'admin/elements/admin-table-searchbar' %}
 				<table id="application" class="table banded desaturate">
 					{% include "admin/elements/app-thead" %}

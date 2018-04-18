@@ -55,8 +55,10 @@
 		}
 	&.secondary{
 		background-color:$secondary-color;
+		a{color:$black;}
 		li:hover{
 				background-color:mix($secondary-color,$black);
+				a{color:white;}
 			}
 	}
 }
@@ -92,7 +94,7 @@
 .dropdown.menu > li.is-dropdown-submenu-parent > a::after{
 	border-color:#fff transparent transparent;
 }
-	.submenu{
+.topbar	.submenu{
 		background:grey(50);
 		margin: 0;
 		@include font();
@@ -103,16 +105,13 @@
 			color:rebrand-color($primary-color, 2); 
 			width:100%; 
 			display:inline-block; 
-		    line-height: 1.5;
+		    line-height: 1.25;
 		    padding: 0;
 		}
 			list-style: none;
 		li{
 			// padding:.25em .75em;
 			&:hover{
-				background-color:rebrand-color($scrub-green, 2);
-				border-top:none 0;
-				padding-top:.25em; 
 				> a{color:$white;} 
 			}
 			&.parent{padding:0;}
@@ -120,7 +119,6 @@
 				background-color:transparent;
 			}
 		}
-		&.nav-level-2 li{ padding:.25em .75em .25em 2em;}
 	}
 
 

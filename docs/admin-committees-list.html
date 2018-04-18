@@ -83,9 +83,7 @@
                 </div>
                 <!-- end of off canvass area  -->
                 <div class="off-canvas-content" data-off-canvas-content>
-                    
-<div class="row">
-  <header class="header page">
+                      <header class="header page">
   	<div class="row">
   		<div class="column large-6">
     <a href="index.html" class="logo">
@@ -99,6 +97,13 @@
         <div class="content-padding section-padding">
             <nav class="nav-utility">
                 <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-seasons.html">
+                            <i aria-hidden="true" class="fa fa-calendar">
+                            </i>
+                            Seasons
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="admin-users.html">
                             <i aria-hidden="true" class="fa fa-user">
@@ -128,6 +133,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="admin-notes.html">
+                           <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                           All Notes
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">
                             Logout
                             <i class="fa fa-sign-out"></i>
@@ -138,7 +149,6 @@
         </div>
     </div>
 </div>
-
         <div class="row">
         	<div class="column">
         		<div class="content-padding section-padding">
@@ -159,7 +169,7 @@
             </a>
         </div>
         <div class="top-bar-right user-nav secondary" onclick="$('#siteMenu .nav-utility').toggleClass('display-block')">
-            <a class="top-bar-toggle small ">
+            <a class="top-bar-toggle">
                 <i class="fa fa-gear">
                 </i>
                 <span class="condense">
@@ -167,8 +177,11 @@
                 </span>
             </a>
         </div>
+        <div class="top-bar-right user-nav secondary" data-toggle="offCanvasRightSplit2">
+           <a class="top-bar-toggle"  ><i class="fa fa-plus"></i> Add Note</a>
+        </div>
         <div class="top-bar-right" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
-            <a class="top-bar-toggle small ">
+            <a class="top-bar-toggle">
                 <i class="fa fa-search">
                 </i>
                 <span class="condense">
@@ -186,7 +199,7 @@
                     </a>
                     <ul class="menu vertical">
                         <li><a href="">NCDR</a></li>
-                        <li><a href="">New Season</a></li>
+                        <li><a href=""><i class="fa fa-plus"></i> New Season</a></li>
                     </ul>
                 </li>
                 <li>
@@ -206,9 +219,14 @@
                 </li>
             </ul>
         </div>
-        <div class="top-bar-right user-nav show-for-large"  onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+        <div class="top-bar-right secondary show-for-large" >
             <ul class="menu">
-                 <li>
+                <li class=""  data-toggle="offCanvasRightSplit2"><a><i class="fa fa-plus"></i> Add Note</a></li>
+            </ul>
+        </div>
+        <div class="top-bar-right show-for-large"  onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+            <ul class="menu">
+                <li>
                     <a class="top-bar-toggle small condensable">
                         <span class="condense">
                             Search
@@ -243,318 +261,313 @@
         </div>
     </div> 
     <nav class="nav-utility hide">
-        <ul class="nav menu">
-            <li class="nav-item">
-                <a class="nav-link" href="admin-users.html">
-                    <i aria-hidden="true" class="fa fa-user">
-                    </i>
-                    Users
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="admin-questions.html">
-                    <i aria-hidden="true" class="fa fa-question-circle">
-                    </i>
-                    Questions
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="admin-messages.html">
-                    <i aria-hidden="true" class="fa fa-comment">
-                    </i>
-                    Messaging
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="admin-com-management.html">
-                    <i aria-hidden="true" class="fa fa-users">
-                    </i>
-                    Committees
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    Logout
-                    <i class="fa fa-sign-out"></i>
-                </a>
-            </li>
+       <ul class="nav menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-seasons.html">
+                            <i aria-hidden="true" class="fa fa-calendar">
+                            </i>
+                            Seasons
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-users.html">
+                            <i aria-hidden="true" class="fa fa-user">
+                            </i>
+                            Users
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-questions.html">
+                            <i aria-hidden="true" class="fa fa-question-circle">
+                            </i>
+                            Questions
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-messages.html">
+                            <i aria-hidden="true" class="fa fa-comment">
+                            </i>
+                            Messaging
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-com-management.html">
+                            <i aria-hidden="true" class="fa fa-users">
+                            </i>
+                            Committees
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-notes.html">
+                           <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                           All Notes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Logout
+                            <i class="fa fa-sign-out"></i>
+                        </a>
+                    </li>
         </ul>
     </nav>
 </div>
 	
-</div>
-                    <div class="section-nav top">
-                        <a class="left" href="admin-committees-dashboard.html">
-                            <span class="circle button navigation">
-                                <i class="fa fa-holder"></i>
-                            </span>
-                            <span class="text">
-                                Back to Committee Dashboard
-                            </span>
-                        </a>
-                        <button class="right off-canvas-toggle" id="comment-toggle" data-toggle="offCanvasRightSplit2" id="comment-toggle"> 
-                            <span class="circle button success">
-                                 <i class="fa fa-comment"></i>
-                            </span>
-                            <span class="text">
-                                notes
-                            </span>
-                        </button>
-                    </div>
+
                     
-<div class="row ">
-    <div class="column section-padding">
-        <h1 class="no-vertical-margin">
-            Committee Name ABC
+<div class="row page-header section-padding">
+    <div class="column">
+        <h1 class="">
+           <a href="admin-committees-dashboard.html"><i class="fa fa-th-list" aria-hidden="true"></i></a> <i class="fa fa-angle-right" aria-hidden="true"></i> Name ABC <i class="fa fa-angle-right" aria-hidden="true"></i> Applicant List
+           
         </h1>
+        <div class="">
+            <a class="button tiny radius" href="admin-committees-list.html">Applicant List</a>
+            <a class="button tiny radius hollow" href="admin-committees-details.html">Committee Details</a>
+            <a class="button tiny radius hollow disabled" href="admin-committees-appointed.html"><i class="fa fa-lock"></i> Appointment Day</a>
+        </div>
     </div>
 </div>
-<nav class="overlap nav no-vertical-margin">
-    <ul class="tabs ">
-        <li class="tab-title">
-            <a class="home" href="admin-committees-details.html">
-                <i class="fa fa-holder">
-                </i>
-                Committee Details
-            </a>
-        </li>
-        <li class="tab-title is-active">
-            <a href="admin-committees-list.html">
-                Nominees Overview
-            </a>
-        </li>
-
-        <li class="tab-title disabled">
-            <a href="admin-committees-appointed.html">
-                Appointment
-            </a>
-        </li>
-    </ul>
-</nav>
-
-<section class="page no-padding">
-    <div class="colored-paper" style="background-image: none;">
-        <nav class="row content-padding">
-            <ul class="breadcrumbs no-margin">
-                <li class="">
-                    <a style="color:white;">
-                        Overview
-                    </a>
-                </li>
-                <li class=" disabled ">
-                    <a style="color:white;">
-                        Details
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-    <article>
-        <div class="page-wrapper content-padding" style="max-width: 100%">
-            <div class="row column">
-                <h1>Overview</h1>
-                <div class="card">
-                    <table class="table striped">
-                        <thead>
-                            <tr>
-                                <th class="text-center" title="chair pick">
-                                    <i class="fa fa-thumbs-up fa-fw">
-                                    </i>
-                                </th>
-                                <th>
-                                    Name
-                                </th>
-                                <th class="text-center">
-                                    Preference
-                                </th>
-                                <th class="text-center">
-                                    Rating Average
-                                </th>
-                                <th class="text-center">
-                                    Comments
-                                </th>
-                                <th class="text-center">
-                                    Committee Participation
-                                </th>
-                                <th>
-                                    Set Status
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="seperator highlighted">
-                                <td colspan="7">
-                                    Elegible
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">
-                                    <i class="fa fa-thumbs-up fa-fw">
-                                    </i>
-                                </td>
-                                <td>
-                                    <a class="list" href="admin-committees.html">
-                                        Doctor Alpha, FACC
-                                    </a>
-                                </td>
-                                <td class="text-center">
-                                    1 of 1
-                                </td>
-                                <td class="text-center">
-                                    2.4
-                                    <i class="fa fa-star">
-                                    </i>
-                                </td>
-                                <td class="text-center">
-                                    4
-                                </td>
-                                <td class="text-center">
-                                    Cur(1) | Prev(2)
-                                </td>
-                                <td class="text-center">
-                                    <select class="no-vertical-margin" id="" name="">
-                                        <option default="" value="">
-                                            Elegible
-                                        </option>
-                                        <option value="">
-                                            InElegible
-                                        </option>
-                                        <option value="">
-                                            Unknown
-                                        </option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">
-                                </td>
-                                <td>
-                                    <a class="list" href="admin-committees.html">
-                                        Doctor Beta, FACC
-                                    </a>
-                                </td>
-                                <td class="text-center">
-                                    1 of 1
-                                </td>
-                                <td class="text-center">
-                                    1.2
-                                    <i class="fa fa-star">
-                                    </i>
-                                </td>
-                                <td class="text-center">
-                                    4
-                                </td>
-                                <td class="text-center">
-                                    Cur(1) | Prev(2)
-                                </td>
-                                <td class="text-center">
-                                    <select class="no-vertical-margin" id="" name="">
-                                        <option default="" value="">
-                                            Elegible
-                                        </option>
-                                        <option value="">
-                                            InElegible
-                                        </option>
-                                        <option value="">
-                                            Unknown
-                                        </option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr class="seperator warning">
-                                <td colspan="7">
-                                    Unknown Elegible
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">
-                                </td>
-                                <td>
-                                    <a class="list" href="admin-committees.html">
-                                        Doctor Unknown, FACC
-                                    </a>
-                                </td>
-                                <td class="text-center">
-                                    4 of 4
-                                </td>
-                                <td class="text-center">
-                                    ~
-                                </td>
-                                <td class="text-center">
-                                    0
-                                </td>
-                                <td class="text-center">
-                                    Cur(0) | Prev(0)
-                                </td>
-                                <td class="text-center">
-                                    <select class="no-vertical-margin" id="" name="">
-                                        <option value="">
-                                            Select One
-                                        </option>
-                                        <option value="InElegible">
-                                            InElegible
-                                        </option>
-                                        <option default="" value="">
-                                            Elegible
-                                        </option>
-                                        <option value="">
-                                            Unknown
-                                        </option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr class="seperator info">
-                                <td colspan="7">
-                                    Unknown Elegible
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">
-                                </td>
-                                <td>
-                                    <a class="list" href="admin-committees.html">
-                                        Doctor Gama, FACC
-                                    </a>
-                                </td>
-                                <td class="text-center">
-                                    4 of 4
-                                </td>
-                                <td class="text-center">
-                                    ~
-                                </td>
-                                <td class="text-center">
-                                    1
-                                </td>
-                                <td class="text-center">
-                                    Cur(0) | Prev(0)
-                                </td>
-                                <td class="text-center">
-                                    <select class="no-vertical-margin" id="" name="">
-                                        <option value="InElegible">
-                                            InElegible
-                                        </option>
-                                        <option default="" value="">
-                                            Elegible
-                                        </option>
-                                        <option value="">
-                                            Unknown
-                                        </option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="7">
-                                        Unknonwn or Unset Nominees will not be viewable by committee members to leave comments on.
-                                    </td>
-                                </tr>
-                            </tfoot>
-                        </tbody>
-                    </table>
+<section class="">
+    <div class="page-wrapper layer-down content-padding">
+        <div class="row column">
+            
+            <div class="card">
+                <div class="colored-paper">
+                    <h2 class="no-vertical-margin">Applicant List 
+                        <div class="float-right button-group tiny no-vertical-margin"><a href="" class="secondary button">Filter</a><a href="" class=" secondary button">Report</a></div>
+                    </h2>
                 </div>
+                <div class="section-padding">
+                    <table class="table striped">
+                    <thead>
+                        <tr>
+                            <th class="text-center" title="chair pick">
+                                <i class="fa fa-thumbs-up fa-fw">
+                                </i>
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th class="text-center">
+                                Preference
+                            </th>
+                            <th class="text-center">
+                                Rating Average
+                            </th>
+                            <th class="text-center">
+                                Comments
+                            </th>
+                            <th class="text-center">
+                                Committee Participation
+                            </th>
+                            <th>
+                                Set Status
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="seperator highlighted">
+                            <td colspan="7">
+                                Elegible
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <i class="fa fa-thumbs-up fa-fw">
+                                </i>
+                            </td>
+                            <td>
+                                <a class="list" href="admin-committees.html">
+                                    Doctor Alpha, FACC
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                1 of 1
+                            </td>
+                            <td class="text-center">
+                                2.4
+                                <i class="fa fa-star">
+                                </i>
+                            </td>
+                            <td class="text-center">
+                                4
+                            </td>
+                            <td class="text-center">
+                                Cur(1) | Prev(2)
+                            </td>
+                            <td class="text-center">
+                                <select class="no-vertical-margin" id="" name="">
+                                    <option default="" value="">
+                                        Elegible
+                                    </option>
+                                    <option value="">
+                                        InElegible
+                                    </option>
+                                    <option value="">
+                                        Unknown
+                                    </option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                            </td>
+                            <td>
+                                <a class="list" href="admin-committees.html">
+                                    Doctor Beta, FACC
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                1 of 1
+                            </td>
+                            <td class="text-center">
+                                1.2
+                                <i class="fa fa-star">
+                                </i>
+                            </td>
+                            <td class="text-center">
+                                4
+                            </td>
+                            <td class="text-center">
+                                Cur(1) | Prev(2)
+                            </td>
+                            <td class="text-center">
+                                <select class="no-vertical-margin" id="" name="">
+                                    <option default="" value="">
+                                        Elegible
+                                    </option>
+                                    <option value="">
+                                        InElegible
+                                    </option>
+                                    <option value="">
+                                        Unknown
+                                    </option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="seperator warning">
+                            <td colspan="7">
+                                Unknown Elegible
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                            </td>
+                            <td>
+                                <a class="list" href="admin-committees.html">
+                                    Doctor Unknown, FACC
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                4 of 4
+                            </td>
+                            <td class="text-center">
+                                ~
+                            </td>
+                            <td class="text-center">
+                                0
+                            </td>
+                            <td class="text-center">
+                                Cur(0) | Prev(0)
+                            </td>
+                            <td class="text-center">
+                                <select class="no-vertical-margin" id="" name="">
+                                    <option value="">
+                                        Select One
+                                    </option>
+                                    <option value="InElegible">
+                                        InElegible
+                                    </option>
+                                    <option default="" value="">
+                                        Elegible
+                                    </option>
+                                    <option value="">
+                                        Unknown
+                                    </option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="seperator error">
+                            <td colspan="7">
+                               In Elegible
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                            </td>
+                            <td>
+                                <a class="list" href="admin-committees.html">
+                                    Doctor Gama, FACC
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                4 of 4
+                            </td>
+                            <td class="text-center">
+                                ~
+                            </td>
+                            <td class="text-center">
+                                1
+                            </td>
+                            <td class="text-center">
+                                Cur(0) | Prev(0)
+                            </td>
+                            <td class="text-center">
+                                <select class="no-vertical-margin" id="" name="">
+                                    <option value="InElegible">
+                                        InElegible
+                                    </option>
+                                    <option default="" value="">
+                                        Elegible
+                                    </option>
+                                    <option value="">
+                                        Unknown
+                                    </option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tfoot>
+                            <tr>
+                                <td colspan="7">
+                                    Unknonwn or Unset Nominees will not be viewable by committee members to leave comments on.
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </tbody>
+                </table>
+                </div>
+                <div class="group-section-pagination-holder">
+  <ul class="pagination float-right pagination--compact">
+    <li class="arrow disable left">
+      <a href="">
+        <i class="fa fa-caret-left "></i>
+        <span class="text">prev</span>
+      </a>
+    </li>
+    <li class="current">
+      <a href="">1</a>
+    </li>
+    <li>
+      <a href="">2</a>
+    </li>
+    <li>
+      <a href="">3</a>
+    </li>
+    <li>
+      <a href="">4</a>
+    </li>
+    <li class="arrow right">
+      <a href="">
+        <span class="text">next</span>
+        <i class="fa fa-caret-right "></i>
+      </a>
+    </li>
+  </ul>
+</div>
             </div>
         </div>
-    </article>
+    </div>
 </section>
 
 
@@ -695,7 +708,7 @@
     </div>
   </div>
 </footer>
-        <script src="assets/js/vendor/jquery.js"></script>
+            <script src="assets/js/vendor/jquery.js"></script>
     <script src="assets/js/vendor/what-input.js"></script>
     <script src="assets/js/vendor/foundation.js"></script>
     <script src="assets/js/app.js"></script>

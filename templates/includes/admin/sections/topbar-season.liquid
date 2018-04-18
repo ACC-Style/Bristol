@@ -8,7 +8,7 @@
             </a>
         </div>
         <div class="top-bar-right user-nav secondary" onclick="$('#siteMenu .nav-utility').toggleClass('display-block')">
-            <a class="top-bar-toggle small ">
+            <a class="top-bar-toggle">
                 <i class="fa fa-gear">
                 </i>
                 <span class="condense">
@@ -16,8 +16,11 @@
                 </span>
             </a>
         </div>
+        <div class="top-bar-right user-nav secondary" data-toggle="offCanvasRightSplit2">
+           <a class="top-bar-toggle"  ><i class="fa fa-plus"></i> Add Note</a>
+        </div>
         <div class="top-bar-right" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
-            <a class="top-bar-toggle small ">
+            <a class="top-bar-toggle">
                 <i class="fa fa-search">
                 </i>
                 <span class="condense">
@@ -35,7 +38,7 @@
                     </a>
                     <ul class="menu vertical">
                         <li><a href="">NCDR</a></li>
-                        <li><a href="">New Season</a></li>
+                        <li><a href=""><i class="fa fa-plus"></i> New Season</a></li>
                     </ul>
                 </li>
                 <li>
@@ -55,9 +58,14 @@
                 </li>
             </ul>
         </div>
-        <div class="top-bar-right user-nav show-for-large"  onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+        <div class="top-bar-right secondary show-for-large" >
             <ul class="menu">
-                 <li>
+                <li class=""  data-toggle="offCanvasRightSplit2"><a><i class="fa fa-plus"></i> Add Note</a></li>
+            </ul>
+        </div>
+        <div class="top-bar-right show-for-large"  onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+            <ul class="menu">
+                <li>
                     <a class="top-bar-toggle small condensable">
                         <span class="condense">
                             Search
@@ -92,41 +100,54 @@
         </div>
     </div> 
     <nav class="nav-utility hide">
-        <ul class="nav menu">
-            <li class="nav-item">
-                <a class="nav-link" href="admin-users.html">
-                    <i aria-hidden="true" class="fa fa-user">
-                    </i>
-                    Users
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="admin-questions.html">
-                    <i aria-hidden="true" class="fa fa-question-circle">
-                    </i>
-                    Questions
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="admin-messages.html">
-                    <i aria-hidden="true" class="fa fa-comment">
-                    </i>
-                    Messaging
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="admin-com-management.html">
-                    <i aria-hidden="true" class="fa fa-users">
-                    </i>
-                    Committees
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    Logout
-                    <i class="fa fa-sign-out"></i>
-                </a>
-            </li>
+       <ul class="nav menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-seasons.html">
+                            <i aria-hidden="true" class="fa fa-calendar">
+                            </i>
+                            Seasons
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-users.html">
+                            <i aria-hidden="true" class="fa fa-user">
+                            </i>
+                            Users
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-questions.html">
+                            <i aria-hidden="true" class="fa fa-question-circle">
+                            </i>
+                            Questions
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-messages.html">
+                            <i aria-hidden="true" class="fa fa-comment">
+                            </i>
+                            Messaging
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-com-management.html">
+                            <i aria-hidden="true" class="fa fa-users">
+                            </i>
+                            Committees
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-notes.html">
+                           <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                           All Notes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Logout
+                            <i class="fa fa-sign-out"></i>
+                        </a>
+                    </li>
         </ul>
     </nav>
 </div>

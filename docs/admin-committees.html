@@ -83,9 +83,7 @@
                 </div>
                 <!-- end of off canvass area  -->
                 <div class="off-canvas-content" data-off-canvas-content>
-                    
-<div class="row">
-  <header class="header page">
+                      <header class="header page">
   	<div class="row">
   		<div class="column large-6">
     <a href="index.html" class="logo">
@@ -99,6 +97,13 @@
         <div class="content-padding section-padding">
             <nav class="nav-utility">
                 <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-seasons.html">
+                            <i aria-hidden="true" class="fa fa-calendar">
+                            </i>
+                            Seasons
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="admin-users.html">
                             <i aria-hidden="true" class="fa fa-user">
@@ -128,6 +133,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="admin-notes.html">
+                           <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                           All Notes
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">
                             Logout
                             <i class="fa fa-sign-out"></i>
@@ -138,7 +149,6 @@
         </div>
     </div>
 </div>
-
         <div class="row">
         	<div class="column">
         		<div class="content-padding section-padding">
@@ -159,7 +169,7 @@
             </a>
         </div>
         <div class="top-bar-right user-nav secondary" onclick="$('#siteMenu .nav-utility').toggleClass('display-block')">
-            <a class="top-bar-toggle small ">
+            <a class="top-bar-toggle">
                 <i class="fa fa-gear">
                 </i>
                 <span class="condense">
@@ -167,8 +177,11 @@
                 </span>
             </a>
         </div>
+        <div class="top-bar-right user-nav secondary" data-toggle="offCanvasRightSplit2">
+           <a class="top-bar-toggle"  ><i class="fa fa-plus"></i> Add Note</a>
+        </div>
         <div class="top-bar-right" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
-            <a class="top-bar-toggle small ">
+            <a class="top-bar-toggle">
                 <i class="fa fa-search">
                 </i>
                 <span class="condense">
@@ -186,7 +199,7 @@
                     </a>
                     <ul class="menu vertical">
                         <li><a href="">NCDR</a></li>
-                        <li><a href="">New Season</a></li>
+                        <li><a href=""><i class="fa fa-plus"></i> New Season</a></li>
                     </ul>
                 </li>
                 <li>
@@ -206,9 +219,14 @@
                 </li>
             </ul>
         </div>
-        <div class="top-bar-right user-nav show-for-large"  onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+        <div class="top-bar-right secondary show-for-large" >
             <ul class="menu">
-                 <li>
+                <li class=""  data-toggle="offCanvasRightSplit2"><a><i class="fa fa-plus"></i> Add Note</a></li>
+            </ul>
+        </div>
+        <div class="top-bar-right show-for-large"  onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+            <ul class="menu">
+                <li>
                     <a class="top-bar-toggle small condensable">
                         <span class="condense">
                             Search
@@ -243,134 +261,83 @@
         </div>
     </div> 
     <nav class="nav-utility hide">
-        <ul class="nav menu">
-            <li class="nav-item">
-                <a class="nav-link" href="admin-users.html">
-                    <i aria-hidden="true" class="fa fa-user">
-                    </i>
-                    Users
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="admin-questions.html">
-                    <i aria-hidden="true" class="fa fa-question-circle">
-                    </i>
-                    Questions
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="admin-messages.html">
-                    <i aria-hidden="true" class="fa fa-comment">
-                    </i>
-                    Messaging
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="admin-com-management.html">
-                    <i aria-hidden="true" class="fa fa-users">
-                    </i>
-                    Committees
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    Logout
-                    <i class="fa fa-sign-out"></i>
-                </a>
-            </li>
+       <ul class="nav menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-seasons.html">
+                            <i aria-hidden="true" class="fa fa-calendar">
+                            </i>
+                            Seasons
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-users.html">
+                            <i aria-hidden="true" class="fa fa-user">
+                            </i>
+                            Users
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-questions.html">
+                            <i aria-hidden="true" class="fa fa-question-circle">
+                            </i>
+                            Questions
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-messages.html">
+                            <i aria-hidden="true" class="fa fa-comment">
+                            </i>
+                            Messaging
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-com-management.html">
+                            <i aria-hidden="true" class="fa fa-users">
+                            </i>
+                            Committees
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-notes.html">
+                           <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                           All Notes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Logout
+                            <i class="fa fa-sign-out"></i>
+                        </a>
+                    </li>
         </ul>
     </nav>
 </div>
 	
-</div>
-                    <div class="section-nav top">
-                        <a class="left" href="admin-committees-dashboard.html">
-                            <span class="circle button navigation">
-                                <i class="fa fa-holder"></i>
-                            </span>
-                            <span class="text">
-                                Back to Committee Dashboard
-                            </span>
-                        </a>
-                        <button class="right off-canvas-toggle" id="comment-toggle" data-toggle="offCanvasRightSplit2" id="comment-toggle"> 
-                            <span class="circle button success">
-                                 <i class="fa fa-comment"></i>
-                            </span>
-                            <span class="text">
-                                notes
-                            </span>
-                        </button>
-                    </div>
+
                     
-<div class="row ">
-    <div class="column section-padding">
-        <h1 class="no-vertical-margin">
-            Committee Name ABC
+<div class="row page-header section-padding">
+    <div class="column">
+        <h1 >
+           <a href="admin-committees-dashboard.html"><i class="fa fa-th-list" aria-hidden="true"></i></a> <i class="fa fa-angle-right" aria-hidden="true"></i> <a href="admin-committees-list.html" class="link">Commitee Name ABC</a> <i class="fa fa-angle-right" aria-hidden="true"></i> <a href="admin-committees-list.html" class="link">Applicant List</a>
+           <i class="fa fa-angle-right" aria-hidden="true"></i> Applicant Name
+           
         </h1>
+        <div>
+            <a class="button tiny radius hollow" href="admin-committees-list.html">Applicant List</a>
+            <a class="button tiny radius " href="http://localhost:8000/docs/admin-committees.html">Applicant Details</a>
+        </div>
     </div>
 </div>
-<nav class="overlap nav no-vertical-margin">
-    <ul class="tabs ">
-        <li class="tab-title">
-            <a class="home" href="admin-committees-details.html">
-                <i class="fa fa-holder">
-                </i>
-                Committee Details
-            </a>
-        </li>
-        <li class="tab-title is-active">
-            <a href="admin-committees-list.html">
-                Nominees
-            </a>
-        </li>
-        <li class="tab-title disabled">
-            <a href="admin-committees-appointed.html">
-                Appointment
-            </a>
-        </li>
-    </ul>
-</nav>
-<section class="off-canvas-wrapper page paper-page no-padding">
-        <div class="colored-paper" style="background-image: none;">
-        <nav class="row content-padding">
-            <ul class="breadcrumbs no-margin">
-                <li class="">
-                    <a style="color:white;">
-                        Overview
-                    </a>
-                </li>
-                <li class=" disabled ">
-                    <a style="color:white;">
-                        Details
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-    <aside class="off-canvas-absolute position-left" data-off-canvas="" id="offCanvasLeftSplit">
-        <div class="colored-paper disabled no-margin">
-            <a class="button expanded" href="admin-committees-list.html">
-                <i class="fa fa-arrow-circle-left">
-                </i>
-                <span class="text">
-                    Back to Overview
-                </span>
-            </a> 
-            <a class="button expanded success" style="margin-top:2px;" href="admin-committees-list.html">
-                <i class="fa fa-plus-circle">
-                </i>
-                <span class="text">
-                    Add A Member to List
-                </span>
-            </a>  
-        </div>
+
+<section class="row collapse">
+    <aside class="column small-hidden medium-4 large-3">
         <div class="colored-paper no-margin ">
             <h4 class="no-vertical-margin single-line-height">
                 Elegible
             </h4>
         </div>
-        <div class="section-padding">
-            <nav class="nav nav-list">
+        <div class="">
+            <nav class="nav-list">
                 <ul>
                     <li class="selected">
                         <a href="">
@@ -382,7 +349,7 @@
                                     FACC
                                 </span>
                             </span>
-                            <i class="fa fa-check">
+                            <i class="fa fa-arrow-circle-right">
                             </i>
                         </a>
                     </li>
@@ -392,7 +359,7 @@
 		<span class="name">Doctor Reeces</span>
 		<span>FACC</span>
 	</span>
-	<i class="fa fa-arrow-right"></i>
+	<i class="fa fa-arrow-circle-o-right"></i>
 </a>
                     </li>
                 </ul>
@@ -402,11 +369,11 @@
             <h4 class="no-vertical-margin single-line-height">
                 <i class="fa fa-question-circle">
                 </i>
-                Unknown Elegiblity
+                Unset Elegility
             </h4>
         </div>
-        <div class="section-padding">
-            <nav class="nav nav-list">
+        <div class="">
+            <nav class="nav-list">
                 <ul>
                     <li>
                         <a href="">
@@ -414,7 +381,7 @@
 		<span class="name">Doctor Reeces</span>
 		<span>FACC</span>
 	</span>
-	<i class="fa fa-arrow-right"></i>
+	<i class="fa fa-arrow-circle-o-right"></i>
 </a>
                     </li>
                     <li>
@@ -423,30 +390,29 @@
 		<span class="name">Doctor Reeces</span>
 		<span>FACC</span>
 	</span>
-	<i class="fa fa-arrow-right"></i>
+	<i class="fa fa-arrow-circle-o-right"></i>
 </a>
                     </li>
                 </ul>
             </nav>
         </div>
-        <div class="colored-paper no-margin disabled">
-            <h4 class="no-vertical-margin single-line-height">
-                Inelegible
-            </h4>
-        </div>
-        <div class="section-padding content-padding">
+        <div class="content-padding text-right">
             <a class="link" href="">
-                view inelegible members
+             <i class="fa fa-eye"></i>   show inelegible members
             </a>
         </div>
     </aside>
-    <article class="off-canvas-content" data-off-canvas-content="" style="padding-left: 40px; position: relative;">
+    <article class="layer-down column medium-8 large-9">
         <div class="page-wrapper content-padding" style="max-width: 100%">
             <div class="row column">
                 <div class="card">
                     <div class="colored-paper">
                         <h2 class="single-line-height no-vertical-margin">
                             <span class="float-right">
+                                <a href="" class="button success small hide-for-large">Add Comment</a>
+                            </span>
+                            <span class="float-right">
+                                
                                 <select id="" name="">
                                     <option default="" value="">
                                         Elegible
@@ -474,8 +440,8 @@
                         </h2>
                     </div>
                     <div class="row section-padding">
-                        <div class="column medium-6">
-                            <div class="section-padding content-padding callout highlighted">
+                        <div class="column large-6">
+                            <div class="callout highlighted">
                                 <h3>
                                     Statement of Interest
                                 </h3>
@@ -483,7 +449,7 @@
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                                 </p>
                             </div>
-                            <div class="section-padding content-padding callout info">
+                            <div class="callout info">
                                 <h3>
                                     Competency
                                 </h3>
@@ -510,7 +476,7 @@
                                 <h3>
                                     Committee Ranking
                                 </h3>
-                                <nav class="nav nav-list nav-checklist">
+                                <nav class="nav-list nav-checklist">
                                     <ul>
                                         <li class="selected">
                                             <b>
@@ -540,7 +506,7 @@
                                 </nav>
                             </div>
                         </div>
-                        <div class="column medium-6">
+                        <div class="column large-6">
                             <div class="seciton-padding callout">
                                 <h2>
                                     Comment
@@ -557,10 +523,10 @@
                                                         Do you like me?
                                                     </span>
                                                     <span aria-hidden="true" class="switch-active">
-                                                        Global
+                                                        Committee
                                                     </span>
                                                     <span aria-hidden="true" class="switch-inactive">
-                                                        Committee
+                                                        Global
                                                     </span>
                                                 </label>
                                             </input>
@@ -579,7 +545,7 @@
     <a href="" class="button secondary"><i class="fa fa-star-o"></i></a>
     
 </div>
-<a href="" class="button secondary expanded hollow radius tiny"><i class="fa fa-question-circle" aria-hidden="true"></i> Not Sure</a>
+<a href="" class="button expanded hollow radius tiny"><i class="fa fa-question-circle" aria-hidden="true"></i> Not Sure</a>
                                 </div>
                                 <div class="group-divide-bottom section-padding row column">
                                     <div class="switch-input-space column small-12">
@@ -955,7 +921,7 @@
     </div>
   </div>
 </footer>
-        <script src="assets/js/vendor/jquery.js"></script>
+            <script src="assets/js/vendor/jquery.js"></script>
     <script src="assets/js/vendor/what-input.js"></script>
     <script src="assets/js/vendor/foundation.js"></script>
     <script src="assets/js/app.js"></script>

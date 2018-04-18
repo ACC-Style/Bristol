@@ -1,87 +1,37 @@
 {% extends 'layouts/admin-committee-layout' %}
 {% block content %}
-<div class="row ">
+<div class="row page-header section-padding">
     <div class="column">
-        <h1 class="no-vertical-margin">
-            Committee Name ABC
+        <h1>
+           <a href="admin-committees-dashboard.html"><i class="fa fa-th-list" aria-hidden="true"></i></a> <i class="fa fa-angle-right" aria-hidden="true"></i> Name ABC <i class="fa fa-angle-right" aria-hidden="true"></i> Appointment Day
         </h1>
+        <div>
+            <a class="button tiny radius hollow" href="admin-committees-list.html">Applicant List</a>
+            <a class="button tiny radius hollow" href="admin-committees-details.html">Committee Details</a>
+            <a class="button tiny radius" href="admin-committees-appointed.html">Appointment Day</a>
+        </div>
     </div>
 </div>
-<nav class="overlap nav">
-    <ul class="tabs ">
-        <li class="tab-title">
-            <a class="home " href="admin-committees-details.html">
-                <i class="fa fa-holder">
-                </i>
-                Committee Details
-            </a>
-        </li>
-        <li class="tab-title">
-            <a href="admin-committees-list.html">
-                Nominees
-            </a>
-        </li>
-        <li class="tab-title is-active">
-            <a href="admin-committees-appointed.html">
-                Appointment
-            </a>
-        </li>
-    </ul>
-</nav>
-<div class="content page-wrapper">
-    <div class="page-wrapper">
+<div class="">
+    <div class="page-wrapper layer-down">
         <div class="row section-padding">
-            <div class="row column">
-                <h1>
-                    Appointments
-                    <div class="float-right button-group small">
-                        <a class="button hollow" href="">
-                            Group Actions
-                        </a>
-                        <a class="secondary button" href="">
-                            Email Selected
-                        </a>
-                        <a class="secondary button" href="">
-                            Write to Personify
-                        </a>
-                        <a class=" secondary button" href="">
-                            Report
-                        </a>
-                    </div>
-                </h1>
-            </div>
-            <div class="row column">
+            <div class="column">
                 <div class="card">
                     <div class="colored-paper">
-                        <nav>
-                            <ul class="nav tabs">
-                                <li class="selected">
-                                    <a>
-                                        All
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a>
-                                        Proposed
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a>
-                                        Contacted
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a>
-                                        Approved
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a>
-                                        Declined
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
+                         <h2 class="no-vertical-margin">
+                            All Appointments
+                            <div class="float-right">
+                                <a class="secondary button tiny" href="">
+                                    Email Selected
+                                </a>
+                                <a class="secondary button tiny" href="">
+                                    Write to Personify
+                                </a>
+                                <a class=" secondary button tiny" href="">
+                                    Report
+                                </a>
+                            </div>
+                        </h2>
                     </div>
                     <div class="section-padding">
                         <table class="table banded">

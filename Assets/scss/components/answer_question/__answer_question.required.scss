@@ -1,6 +1,7 @@
 select {
     background-position: right center;
     background-position: calc(100% + 1em) center;
+    background-image:none;
 }
 
 .answer, .answer-group, .question, .question-group, .question-inline, .question-grid-based {
@@ -49,6 +50,7 @@ select {
 .question {
 	.label-holder, .input-holder,.message-holder, .value-holder, .hint {
 		@include grid-row($behavior: collapse);
+		max-width: 100%;
 	}
 }
 

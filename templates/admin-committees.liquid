@@ -1,74 +1,28 @@
 {% extends 'layouts/admin-committee-layout' %}
 {% block content %}
-<div class="row ">
-    <div class="column section-padding">
-        <h1 class="no-vertical-margin">
-            Committee Name ABC
+<div class="row page-header section-padding">
+    <div class="column">
+        <h1 >
+           <a href="admin-committees-dashboard.html"><i class="fa fa-th-list" aria-hidden="true"></i></a> <i class="fa fa-angle-right" aria-hidden="true"></i> <a href="admin-committees-list.html" class="link">Commitee Name ABC</a> <i class="fa fa-angle-right" aria-hidden="true"></i> <a href="admin-committees-list.html" class="link">Applicant List</a>
+           <i class="fa fa-angle-right" aria-hidden="true"></i> Applicant Name
+           
         </h1>
+        <div>
+            <a class="button tiny radius hollow" href="admin-committees-list.html">Applicant List</a>
+            <a class="button tiny radius " href="http://localhost:8000/docs/admin-committees.html">Applicant Details</a>
+        </div>
     </div>
 </div>
-<nav class="overlap nav no-vertical-margin">
-    <ul class="tabs ">
-        <li class="tab-title">
-            <a class="home" href="admin-committees-details.html">
-                <i class="fa fa-holder">
-                </i>
-                Committee Details
-            </a>
-        </li>
-        <li class="tab-title is-active">
-            <a href="admin-committees-list.html">
-                Nominees
-            </a>
-        </li>
-        <li class="tab-title disabled">
-            <a href="admin-committees-appointed.html">
-                Appointment
-            </a>
-        </li>
-    </ul>
-</nav>
-<section class="off-canvas-wrapper page paper-page no-padding">
-        <div class="colored-paper" style="background-image: none;">
-        <nav class="row content-padding">
-            <ul class="breadcrumbs no-margin">
-                <li class="">
-                    <a style="color:white;">
-                        Overview
-                    </a>
-                </li>
-                <li class=" disabled ">
-                    <a style="color:white;">
-                        Details
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-    <aside class="off-canvas-absolute position-left" data-off-canvas="" id="offCanvasLeftSplit">
-        <div class="colored-paper disabled no-margin">
-            <a class="button expanded" href="admin-committees-list.html">
-                <i class="fa fa-arrow-circle-left">
-                </i>
-                <span class="text">
-                    Back to Overview
-                </span>
-            </a> 
-            <a class="button expanded success" style="margin-top:2px;" href="admin-committees-list.html">
-                <i class="fa fa-plus-circle">
-                </i>
-                <span class="text">
-                    Add A Member to List
-                </span>
-            </a>  
-        </div>
+
+<section class="row collapse">
+    <aside class="column small-hidden medium-4 large-3">
         <div class="colored-paper no-margin ">
             <h4 class="no-vertical-margin single-line-height">
                 Elegible
             </h4>
         </div>
-        <div class="section-padding">
-            <nav class="nav nav-list">
+        <div class="">
+            <nav class="nav-list">
                 <ul>
                     <li class="selected">
                         <a href="">
@@ -80,7 +34,7 @@
                                     FACC
                                 </span>
                             </span>
-                            <i class="fa fa-check">
+                            <i class="fa fa-arrow-circle-right">
                             </i>
                         </a>
                     </li>
@@ -94,11 +48,11 @@
             <h4 class="no-vertical-margin single-line-height">
                 <i class="fa fa-question-circle">
                 </i>
-                Unknown Elegiblity
+                Unset Elegility
             </h4>
         </div>
-        <div class="section-padding">
-            <nav class="nav nav-list">
+        <div class="">
+            <nav class="nav-list">
                 <ul>
                     <li>
                         {% include 'elements/nominee' %}
@@ -109,24 +63,23 @@
                 </ul>
             </nav>
         </div>
-        <div class="colored-paper no-margin disabled">
-            <h4 class="no-vertical-margin single-line-height">
-                Inelegible
-            </h4>
-        </div>
-        <div class="section-padding content-padding">
+        <div class="content-padding text-right">
             <a class="link" href="">
-                view inelegible members
+             <i class="fa fa-eye"></i>   show inelegible members
             </a>
         </div>
     </aside>
-    <article class="off-canvas-content" data-off-canvas-content="" style="padding-left: 40px; position: relative;">
+    <article class="layer-down column medium-8 large-9">
         <div class="page-wrapper content-padding" style="max-width: 100%">
             <div class="row column">
                 <div class="card">
                     <div class="colored-paper">
                         <h2 class="single-line-height no-vertical-margin">
                             <span class="float-right">
+                                <a href="" class="button success small hide-for-large">Add Comment</a>
+                            </span>
+                            <span class="float-right">
+                                
                                 <select id="" name="">
                                     <option default="" value="">
                                         Elegible
@@ -154,8 +107,8 @@
                         </h2>
                     </div>
                     <div class="row section-padding">
-                        <div class="column medium-6">
-                            <div class="section-padding content-padding callout highlighted">
+                        <div class="column large-6">
+                            <div class="callout highlighted">
                                 <h3>
                                     Statement of Interest
                                 </h3>
@@ -163,7 +116,7 @@
                                     {% include 'elements/lorem' %}
                                 </p>
                             </div>
-                            <div class="section-padding content-padding callout info">
+                            <div class="callout info">
                                 <h3>
                                     Competency
                                 </h3>
@@ -190,7 +143,7 @@
                                 <h3>
                                     Committee Ranking
                                 </h3>
-                                <nav class="nav nav-list nav-checklist">
+                                <nav class="nav-list nav-checklist">
                                     <ul>
                                         <li class="selected">
                                             <b>
@@ -220,7 +173,7 @@
                                 </nav>
                             </div>
                         </div>
-                        <div class="column medium-6">
+                        <div class="column large-6">
                             <div class="seciton-padding callout">
                                 <h2>
                                     Comment
@@ -237,10 +190,10 @@
                                                         Do you like me?
                                                     </span>
                                                     <span aria-hidden="true" class="switch-active">
-                                                        Global
+                                                        Committee
                                                     </span>
                                                     <span aria-hidden="true" class="switch-inactive">
-                                                        Committee
+                                                        Global
                                                     </span>
                                                 </label>
                                             </input>

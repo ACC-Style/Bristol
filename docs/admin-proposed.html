@@ -11,9 +11,7 @@
 
 </head>
 	<body>
-    
-<div class="row">
-  <header class="header page">
+      <header class="header page">
   	<div class="row">
   		<div class="column large-6">
     <a href="index.html" class="logo">
@@ -27,6 +25,13 @@
         <div class="content-padding section-padding">
             <nav class="nav-utility">
                 <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-seasons.html">
+                            <i aria-hidden="true" class="fa fa-calendar">
+                            </i>
+                            Seasons
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="admin-users.html">
                             <i aria-hidden="true" class="fa fa-user">
@@ -56,6 +61,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="admin-notes.html">
+                           <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                           All Notes
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">
                             Logout
                             <i class="fa fa-sign-out"></i>
@@ -66,7 +77,6 @@
         </div>
     </div>
 </div>
-
         <div class="row">
         	<div class="column">
         		<div class="content-padding section-padding">
@@ -87,7 +97,7 @@
             </a>
         </div>
         <div class="top-bar-right user-nav secondary" onclick="$('#siteMenu .nav-utility').toggleClass('display-block')">
-            <a class="top-bar-toggle small ">
+            <a class="top-bar-toggle">
                 <i class="fa fa-gear">
                 </i>
                 <span class="condense">
@@ -95,8 +105,11 @@
                 </span>
             </a>
         </div>
+        <div class="top-bar-right user-nav secondary" data-toggle="offCanvasRightSplit2">
+           <a class="top-bar-toggle"  ><i class="fa fa-plus"></i> Add Note</a>
+        </div>
         <div class="top-bar-right" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
-            <a class="top-bar-toggle small ">
+            <a class="top-bar-toggle">
                 <i class="fa fa-search">
                 </i>
                 <span class="condense">
@@ -114,7 +127,7 @@
                     </a>
                     <ul class="menu vertical">
                         <li><a href="">NCDR</a></li>
-                        <li><a href="">New Season</a></li>
+                        <li><a href=""><i class="fa fa-plus"></i> New Season</a></li>
                     </ul>
                 </li>
                 <li>
@@ -134,9 +147,14 @@
                 </li>
             </ul>
         </div>
-        <div class="top-bar-right user-nav show-for-large"  onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+        <div class="top-bar-right secondary show-for-large" >
             <ul class="menu">
-                 <li>
+                <li class=""  data-toggle="offCanvasRightSplit2"><a><i class="fa fa-plus"></i> Add Note</a></li>
+            </ul>
+        </div>
+        <div class="top-bar-right show-for-large"  onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+            <ul class="menu">
+                <li>
                     <a class="top-bar-toggle small condensable">
                         <span class="condense">
                             Search
@@ -171,180 +189,197 @@
         </div>
     </div> 
     <nav class="nav-utility hide">
-        <ul class="nav menu">
-            <li class="nav-item">
-                <a class="nav-link" href="admin-users.html">
-                    <i aria-hidden="true" class="fa fa-user">
-                    </i>
-                    Users
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="admin-questions.html">
-                    <i aria-hidden="true" class="fa fa-question-circle">
-                    </i>
-                    Questions
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="admin-messages.html">
-                    <i aria-hidden="true" class="fa fa-comment">
-                    </i>
-                    Messaging
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="admin-com-management.html">
-                    <i aria-hidden="true" class="fa fa-users">
-                    </i>
-                    Committees
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    Logout
-                    <i class="fa fa-sign-out"></i>
-                </a>
-            </li>
+       <ul class="nav menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-seasons.html">
+                            <i aria-hidden="true" class="fa fa-calendar">
+                            </i>
+                            Seasons
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-users.html">
+                            <i aria-hidden="true" class="fa fa-user">
+                            </i>
+                            Users
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-questions.html">
+                            <i aria-hidden="true" class="fa fa-question-circle">
+                            </i>
+                            Questions
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-messages.html">
+                            <i aria-hidden="true" class="fa fa-comment">
+                            </i>
+                            Messaging
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-com-management.html">
+                            <i aria-hidden="true" class="fa fa-users">
+                            </i>
+                            Committees
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-notes.html">
+                           <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                           All Notes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Logout
+                            <i class="fa fa-sign-out"></i>
+                        </a>
+                    </li>
         </ul>
     </nav>
 </div>
 	
-</div>
+
     <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
     
-<div class="page paper-page">
-<div class="page-wrapper">
-
-<div class="row column"><h1>Proposed Nominees 
-<div class="float-right button-group small">
-<a href="" class="button hollow">Group Actions</a>
-	<a href="" class="secondary button">Email Selected</a>
-	<a href="" class="secondary button">Write to Personify</a>
-	<a href="" class=" secondary button">Report</a>
-</div></h1></div>
-<div class="row column">
-	<div class="card">
-		<div class="colored-paper">
-        <nav>
-          <ul class="nav tabs">
-            <li class="selected">
-              <a>All</a>
-            </li>
-            <li class="">
-              <a>Proposed</a>
-            </li>
-            <li class="">
-              <a>Contacted</a>
-            </li>
-            <li class="">
-              <a>Approved</a>
-            </li>
-            <li class="">
-              <a>Declined</a>
-            </li>
-          </ul>
-        </nav>
+      <div class="page-header section-padding">
+            <div class="row ">
+                  <div class="column">
+                        <h1>Applications: Post Appointment Day</h1>
+                  </div>
+                  <div class="column">
+                        <a class="button tiny radius ">All</a>
+                        <a class="button tiny radius hollow ">Proposed</a>
+                        <a class="button tiny radius hollow">Contacted</a>
+                        <a class="button tiny radius hollow">Approved</a>
+                        <a class="button tiny radius hollow">Declined</a>
+                        <a class="button tiny radius hollow">Not Selected</a>
+                  </div>
+            </div>
       </div>
-      <div class="section-padding">
-      	<table class="table banded">
-      		<thead>
-      			<tr>
-      				<th><i class="fa fa-check"></i></th>
-      				<th>Name</th>
-      				<th>Committee Name/ID</th>
-      				<th>Status </th>
-      				<th class="text-right">Actions</th>
-      			</tr>
-      		</thead>
-      		<tbody><tr class="seperator info">
-      				<td colspan="6">Proposed <a href="&#9;" style="color:#fff" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
-      			</tr>
-      			<tr>
-      				<td><i class="fa fa-square-o"></i></td>
-      				<td>Philippus Ehud</td>
-      				<td>Centeral Data | 000234212342</td>
-      				<td><i title="propesed" class="fa fa-plus"></i> &nbsp;10/20/2017</td>
-      				<td class="text-right"><div class="tiny">
-      					<a href="" class="link secondary tiny"><i class="fa fa-envelope"></i> Request</a>
-      					&nbsp;|&nbsp;
-      					<a href="" class="link secondary tiny"><i class="fa fa-check"></i> Approve</a>
-      					&nbsp;|&nbsp;
-      					<a href="" class="link secondary tiny"><i class="fa fa-times"></i> Decline</a>
-      				</div></td>
-      			</tr>
-      			<tr class="seperator">
-      				<td colspan="6">Contacted <a href="&#9;" style="color:#fff" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
-      			</tr>
-      			<tr>
-      				<td><i class="fa fa-square-o"></i></td>
-      				<td>Philippus Ehud</td>
-      				<td>Centeral Data | 000234212342</td>
-      				<td><i title="emailed again" class="fa fa-reply-all fa-flip-horizontal"></i>  &nbsp;10/20/2017</td>
-      				<td class="text-right"><div class="tiny">
-      					<a href="" class="link secondary tiny"><i class="fa fa-envelope"></i> Request</a>
-      					&nbsp;|&nbsp;
-      					<a href="" class="link secondary tiny"><i class="fa fa-check"></i> Approve</a>
-      					&nbsp;|&nbsp;
-      					<a href="" class="link secondary tiny"><i class="fa fa-times"></i> Decline</a>
-      				</div></td>
-      			</tr>
-      			<tr>
-      				<td><i class="fa fa-square-o"></i></td>
-      				<td>Lucius Zakchaios</td>
-      				<td>WIC | 000234212342</td>
-      				<td><i title="emailed again" class="fa fa-reply-all fa-flip-horizontal"></i> &nbsp;10/25/2017</td>
-      				<td class="text-right"><div class="tiny">
-      					<a href="" class="link secondary tiny"><i class="fa fa-envelope"></i> Request</a>
-      					&nbsp;|&nbsp;
-      					<a href="" class="link secondary tiny"><i class="fa fa-check"></i> Approve</a>
-      					&nbsp;|&nbsp;
-      					<a href="" class="link secondary tiny"><i class="fa fa-times"></i> Decline</a>
-      				</div></td>
-      			</tr>
-      			<tr>
-      				<td><i class="fa fa-square-o"></i></td>
-      				<td>Hevel Ethan</td>
-      				<td>Guidelines | 000234212342</td>
-      				<td><i title="emailed" class="fa fa-reply fa-flip-horizontal"></i> &nbsp;5/2/2016</td>
-      				<td class="text-right"><div class="tiny">
-      					<a href="" class="link secondary tiny"><i class="fa fa-envelope"></i> Request</a>
-      					&nbsp;|&nbsp;
-      					<a href="" class="link secondary tiny"><i class="fa fa-check"></i> Approve</a>
-      					&nbsp;|&nbsp;
-      					<a href="" class="link secondary tiny"><i class="fa fa-times"></i> Decline</a>
-      				</div></td>
-      			</tr>
-      			<tr class="seperator success">
-      				<td colspan="6">Approved <a href="&#9;" style="color:#333" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
-      			</tr>
-      			<tr>
-      				<td><i class="fa fa-square-o"></i></td>
-      				<td>Timotheus Joshua</td>
-      				<td>Centeral Data | 000234212342</td>
-      				<td><i title="Approved via email" class="fa fa-envelope"></i> &nbsp;5/2/2016</td>
-
-      				<td class="text-right"><div class="tiny">
-      					<a href="" class="link secondary tiny"><i class="fa fa-undo"></i>&nbsp;Remove Decision</a>
-      					<a href="" class="link secondary tiny"><i class="fa fa-pencil-square-o"></i> Write to Personify</a>
-      				</div></td>
-      			</tr>
-      			<tr class="seperator error">
-      				<td colspan="6">Declined <a href="&#9;" style="color:#fff" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
-      			</tr>
-      			<tr>
-      				<td><i class="fa fa-square-o"></i></td>
-      				<td>Peretz Zerah</td>
-      				<td>Centeral Data | 000234212342</td>
-      				<td><i title="Declined via System" class="fa fa-laptop"></i> &nbsp;5/2/2016</td>
-      				<td class="text-right"><div class="tiny">
-      					<a href="" class="link secondary tiny"><i class="fa fa-undo"></i>&nbsp;Remove Decision</a>
-      				</div></td>
-      			</tr>
-      		</tbody>
-      	</table>
-      </div>
-      	<div class="group-section-pagination-holder">
+      <div class="">
+            <div class="page-wrapper layer-down">
+                  <div class="row column">
+                        <div class="card">
+                          <div class="colored-paper">
+                               <h2 class="no-vertical-margin">
+                                  All
+                                  <div class="float-right">
+                                      
+                                  <div class="button-group small no-vertical-margin">
+                                       <a class="secondary button" href="">
+                                          Email Selected
+                                      </a>
+                                      <a class="secondary button" href="">
+                                          Write to Personify
+                                      </a>
+                                      <a class=" secondary button" href="">
+                                          Report
+                                      </a>
+                                  </div>
+                                  </div>
+                              </h2>
+                          </div>
+                        <div class="section-padding">
+                              <table class="table banded">
+                                    <thead>
+                                          <tr>
+                                                <th><i class="fa fa-check"></i></th>
+                                                <th>Name</th>
+                                                <th>Committee Name/ID</th>
+                                                <th>Status </th>
+                                                <th class="text-right">Actions</th>
+                                          </tr>
+                                    </thead>
+                                    <tbody><tr class="seperator info">
+                                          <td colspan="6">Proposed <a href="&#9;" style="color:#fff" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                          <td><i class="fa fa-square-o"></i></td>
+                                          <td>Philippus Ehud</td>
+                                          <td>Centeral Data | 000234212342</td>
+                                          <td><i title="propesed" class="fa fa-plus"></i> &nbsp;10/20/2017</td>
+                                          <td class="text-right"><div class="tiny">
+                                                <a href="" class="link secondary tiny"><i class="fa fa-envelope"></i> Request</a>
+                                                &nbsp;|&nbsp;
+                                                <a href="" class="link secondary tiny"><i class="fa fa-check"></i> Approve</a>
+                                                &nbsp;|&nbsp;
+                                                <a href="" class="link secondary tiny"><i class="fa fa-times"></i> Decline</a>
+                                          </div></td>
+                                    </tr>
+                                    <tr class="seperator">
+                                          <td colspan="6">Contacted <a href="&#9;" style="color:#fff" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                          <td><i class="fa fa-square-o"></i></td>
+                                          <td>Philippus Ehud</td>
+                                          <td>Centeral Data | 000234212342</td>
+                                          <td><i title="emailed again" class="fa fa-reply-all fa-flip-horizontal"></i>  &nbsp;10/20/2017</td>
+                                          <td class="text-right"><div class="tiny">
+                                                <a href="" class="link secondary tiny"><i class="fa fa-envelope"></i> Request</a>
+                                                &nbsp;|&nbsp;
+                                                <a href="" class="link secondary tiny"><i class="fa fa-check"></i> Approve</a>
+                                                &nbsp;|&nbsp;
+                                                <a href="" class="link secondary tiny"><i class="fa fa-times"></i> Decline</a>
+                                          </div></td>
+                                    </tr>
+                                    <tr>
+                                          <td><i class="fa fa-square-o"></i></td>
+                                          <td>Lucius Zakchaios</td>
+                                          <td>WIC | 000234212342</td>
+                                          <td><i title="emailed again" class="fa fa-reply-all fa-flip-horizontal"></i> &nbsp;10/25/2017</td>
+                                          <td class="text-right"><div class="tiny">
+                                                <a href="" class="link secondary tiny"><i class="fa fa-envelope"></i> Request</a>
+                                                &nbsp;|&nbsp;
+                                                <a href="" class="link secondary tiny"><i class="fa fa-check"></i> Approve</a>
+                                                &nbsp;|&nbsp;
+                                                <a href="" class="link secondary tiny"><i class="fa fa-times"></i> Decline</a>
+                                          </div></td>
+                                    </tr>
+                                    <tr>
+                                          <td><i class="fa fa-square-o"></i></td>
+                                          <td>Hevel Ethan</td>
+                                          <td>Guidelines | 000234212342</td>
+                                          <td><i title="emailed" class="fa fa-reply fa-flip-horizontal"></i> &nbsp;5/2/2016</td>
+                                          <td class="text-right"><div class="tiny">
+                                                <a href="" class="link secondary tiny"><i class="fa fa-envelope"></i> Request</a>
+                                                &nbsp;|&nbsp;
+                                                <a href="" class="link secondary tiny"><i class="fa fa-check"></i> Approve</a>
+                                                &nbsp;|&nbsp;
+                                                <a href="" class="link secondary tiny"><i class="fa fa-times"></i> Decline</a>
+                                          </div></td>
+                                    </tr>
+                                    <tr class="seperator success">
+                                          <td colspan="6">Approved <a href="&#9;" style="color:#333" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                          <td><i class="fa fa-square-o"></i></td>
+                                          <td>Timotheus Joshua</td>
+                                          <td>Centeral Data | 000234212342</td>
+                                          <td><i title="Approved via email" class="fa fa-envelope"></i> &nbsp;5/2/2016</td>
+                                          <td class="text-right"><div class="tiny">
+                                                <a href="" class="link secondary tiny"><i class="fa fa-undo"></i>&nbsp;Remove Decision</a>
+                                                <a href="" class="link secondary tiny"><i class="fa fa-pencil-square-o"></i> Write to Personify</a>
+                                          </div></td>
+                                    </tr>
+                                    <tr class="seperator error">
+                                          <td colspan="6">Declined <a href="&#9;" style="color:#fff" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                          <td><i class="fa fa-square-o"></i></td>
+                                          <td>Peretz Zerah</td>
+                                          <td>Centeral Data | 000234212342</td>
+                                          <td><i title="Declined via System" class="fa fa-laptop"></i> &nbsp;5/2/2016</td>
+                                          <td class="text-right"><div class="tiny">
+                                                <a href="" class="link secondary tiny"><i class="fa fa-undo"></i>&nbsp;Remove Decision</a>
+                                          </div></td>
+                                    </tr>
+                              </tbody>
+                        </table>
+                  </div>
+                  <div class="group-section-pagination-holder">
   <ul class="pagination float-right pagination--compact">
     <li class="arrow disable left">
       <a href="">
@@ -372,11 +407,8 @@
     </li>
   </ul>
 </div>
-	</div>
-</div>
-
-
-</div>   
+            </div>
+      </div>
 </div>
 
     </div>

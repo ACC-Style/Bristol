@@ -83,9 +83,7 @@
                 </div>
                 <!-- end of off canvass area  -->
                 <div class="off-canvas-content" data-off-canvas-content>
-                    
-<div class="row">
-  <header class="header page">
+                      <header class="header page">
   	<div class="row">
   		<div class="column large-6">
     <a href="index.html" class="logo">
@@ -99,6 +97,13 @@
         <div class="content-padding section-padding">
             <nav class="nav-utility">
                 <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-seasons.html">
+                            <i aria-hidden="true" class="fa fa-calendar">
+                            </i>
+                            Seasons
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="admin-users.html">
                             <i aria-hidden="true" class="fa fa-user">
@@ -128,6 +133,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="admin-notes.html">
+                           <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                           All Notes
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">
                             Logout
                             <i class="fa fa-sign-out"></i>
@@ -138,7 +149,6 @@
         </div>
     </div>
 </div>
-
         <div class="row">
         	<div class="column">
         		<div class="content-padding section-padding">
@@ -159,7 +169,7 @@
             </a>
         </div>
         <div class="top-bar-right user-nav secondary" onclick="$('#siteMenu .nav-utility').toggleClass('display-block')">
-            <a class="top-bar-toggle small ">
+            <a class="top-bar-toggle">
                 <i class="fa fa-gear">
                 </i>
                 <span class="condense">
@@ -167,8 +177,11 @@
                 </span>
             </a>
         </div>
+        <div class="top-bar-right user-nav secondary" data-toggle="offCanvasRightSplit2">
+           <a class="top-bar-toggle"  ><i class="fa fa-plus"></i> Add Note</a>
+        </div>
         <div class="top-bar-right" onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
-            <a class="top-bar-toggle small ">
+            <a class="top-bar-toggle">
                 <i class="fa fa-search">
                 </i>
                 <span class="condense">
@@ -186,7 +199,7 @@
                     </a>
                     <ul class="menu vertical">
                         <li><a href="">NCDR</a></li>
-                        <li><a href="">New Season</a></li>
+                        <li><a href=""><i class="fa fa-plus"></i> New Season</a></li>
                     </ul>
                 </li>
                 <li>
@@ -206,9 +219,14 @@
                 </li>
             </ul>
         </div>
-        <div class="top-bar-right user-nav show-for-large"  onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+        <div class="top-bar-right secondary show-for-large" >
             <ul class="menu">
-                 <li>
+                <li class=""  data-toggle="offCanvasRightSplit2"><a><i class="fa fa-plus"></i> Add Note</a></li>
+            </ul>
+        </div>
+        <div class="top-bar-right show-for-large"  onclick="$('#siteMenu .search-bar').toggleClass('display-block')">
+            <ul class="menu">
+                <li>
                     <a class="top-bar-toggle small condensable">
                         <span class="condense">
                             Search
@@ -243,147 +261,92 @@
         </div>
     </div> 
     <nav class="nav-utility hide">
-        <ul class="nav menu">
-            <li class="nav-item">
-                <a class="nav-link" href="admin-users.html">
-                    <i aria-hidden="true" class="fa fa-user">
-                    </i>
-                    Users
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="admin-questions.html">
-                    <i aria-hidden="true" class="fa fa-question-circle">
-                    </i>
-                    Questions
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="admin-messages.html">
-                    <i aria-hidden="true" class="fa fa-comment">
-                    </i>
-                    Messaging
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="admin-com-management.html">
-                    <i aria-hidden="true" class="fa fa-users">
-                    </i>
-                    Committees
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    Logout
-                    <i class="fa fa-sign-out"></i>
-                </a>
-            </li>
+       <ul class="nav menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-seasons.html">
+                            <i aria-hidden="true" class="fa fa-calendar">
+                            </i>
+                            Seasons
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-users.html">
+                            <i aria-hidden="true" class="fa fa-user">
+                            </i>
+                            Users
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-questions.html">
+                            <i aria-hidden="true" class="fa fa-question-circle">
+                            </i>
+                            Questions
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-messages.html">
+                            <i aria-hidden="true" class="fa fa-comment">
+                            </i>
+                            Messaging
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-com-management.html">
+                            <i aria-hidden="true" class="fa fa-users">
+                            </i>
+                            Committees
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-notes.html">
+                           <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                           All Notes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Logout
+                            <i class="fa fa-sign-out"></i>
+                        </a>
+                    </li>
         </ul>
     </nav>
 </div>
 	
-</div>
-                    <div class="section-nav top">
-                        <a class="left" href="admin-committees-dashboard.html">
-                            <span class="circle button navigation">
-                                <i class="fa fa-holder"></i>
-                            </span>
-                            <span class="text">
-                                Back to Committee Dashboard
-                            </span>
-                        </a>
-                        <button class="right off-canvas-toggle" id="comment-toggle" data-toggle="offCanvasRightSplit2" id="comment-toggle"> 
-                            <span class="circle button success">
-                                 <i class="fa fa-comment"></i>
-                            </span>
-                            <span class="text">
-                                notes
-                            </span>
-                        </button>
-                    </div>
+
                     
-<div class="row ">
+<div class="row page-header section-padding">
     <div class="column">
-        <h1 class="no-vertical-margin">
-            Committee Name ABC
+        <h1>
+           <a href="admin-committees-dashboard.html"><i class="fa fa-th-list" aria-hidden="true"></i></a> <i class="fa fa-angle-right" aria-hidden="true"></i> Name ABC <i class="fa fa-angle-right" aria-hidden="true"></i> Appointment Day
         </h1>
+        <div>
+            <a class="button tiny radius hollow" href="admin-committees-list.html">Applicant List</a>
+            <a class="button tiny radius hollow" href="admin-committees-details.html">Committee Details</a>
+            <a class="button tiny radius" href="admin-committees-appointed.html">Appointment Day</a>
+        </div>
     </div>
 </div>
-<nav class="overlap nav">
-    <ul class="tabs ">
-        <li class="tab-title">
-            <a class="home " href="admin-committees-details.html">
-                <i class="fa fa-holder">
-                </i>
-                Committee Details
-            </a>
-        </li>
-        <li class="tab-title">
-            <a href="admin-committees-list.html">
-                Nominees
-            </a>
-        </li>
-        <li class="tab-title is-active">
-            <a href="admin-committees-appointed.html">
-                Appointment
-            </a>
-        </li>
-    </ul>
-</nav>
-<div class="content page-wrapper">
-    <div class="page-wrapper">
+<div class="">
+    <div class="page-wrapper layer-down">
         <div class="row section-padding">
-            <div class="row column">
-                <h1>
-                    Appointments
-                    <div class="float-right button-group small">
-                        <a class="button hollow" href="">
-                            Group Actions
-                        </a>
-                        <a class="secondary button" href="">
-                            Email Selected
-                        </a>
-                        <a class="secondary button" href="">
-                            Write to Personify
-                        </a>
-                        <a class=" secondary button" href="">
-                            Report
-                        </a>
-                    </div>
-                </h1>
-            </div>
-            <div class="row column">
+            <div class="column">
                 <div class="card">
                     <div class="colored-paper">
-                        <nav>
-                            <ul class="nav tabs">
-                                <li class="selected">
-                                    <a>
-                                        All
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a>
-                                        Proposed
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a>
-                                        Contacted
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a>
-                                        Approved
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a>
-                                        Declined
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
+                         <h2 class="no-vertical-margin">
+                            All Appointments
+                            <div class="float-right">
+                                <a class="secondary button tiny" href="">
+                                    Email Selected
+                                </a>
+                                <a class="secondary button tiny" href="">
+                                    Write to Personify
+                                </a>
+                                <a class=" secondary button tiny" href="">
+                                    Report
+                                </a>
+                            </div>
+                        </h2>
                     </div>
                     <div class="section-padding">
                         <table class="table banded">
@@ -831,7 +794,7 @@
     </div>
   </div>
 </footer>
-        <script src="assets/js/vendor/jquery.js"></script>
+            <script src="assets/js/vendor/jquery.js"></script>
     <script src="assets/js/vendor/what-input.js"></script>
     <script src="assets/js/vendor/foundation.js"></script>
     <script src="assets/js/app.js"></script>

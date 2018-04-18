@@ -1,35 +1,40 @@
-{% extends 'layouts/admin-layout' %}
+{% extends 'layouts/admin-committee-layout' %}
 {% block content %}
+<div class="row page-header">
+    <div class="column section-padding">
+<h1><i class="fa fa-th-list" aria-hidden="true"></i> Dashboard</h1>
+    </div>
+</div>
+<div class="">
+	<div class="page-wrapper layer-down">
 
-<div class="page paper-page">
-	<div class="page-wrapper">
-		{% comment %}
-			<div class="row">
-				<div class="column small-12">
-					{% include "elements/page-message-deadline" %}
-				</div>
-			</div>
-			<div class="row section-padding">
-				<div class="column small-12">
-					{% include "elements/page-message-missing-data" %}
-				</div>
-			</div>
-		{% endcomment %}
-		<div class="row">
-			<h1>Committee Dashboard &amp; Queue <div class="float-right button-group tiny"><a href="" class="secondary button">Filter</a><a href="" class=" secondary button">Report</a></div></h1>
-		</div>
 		<div class="row">
 			<div class="card">
-			{% include 'admin/elements/admin-table-searchbar' %}
+				<div class="colored-paper"><h2 class="no-vertical-margin">Active Committes <div class="float-right button-group tiny no-vertical-margin"><a href="" class="secondary button">Filter</a><a href="" class=" secondary button">Report</a></div></h2></div>
+			<div class="section-padding">
+				{% include 'admin/elements/admin-table-searchbar' %}
 			{% include 'admin/elements/committee-queue' %}
+
+			</div>
 			{% include "elements/card-pagination-bottom"%}
 			</div>
 		</div>
 		<div class="row section-padding">
+			<a href="" class="tiny button hollow float-right">Show/Hide all in-active committees</a>
+		</div>
+				<div class="row">
+			<div class="card">
+				<div class="colored-paper disabled"><h3 class="no-vertical-margin">In-Active Committes</h3></div>
+			<div class="section-padding">
+				{% include 'admin/elements/committee-inactive-queue' %}
+			</div>
+			{% include "elements/card-pagination-bottom"%}
+			</div>
 		</div>
 		
 	</div>
 </div>
+<style>
+	#member-toggle{ display:none; }
+</style>
 {% endblock %}
-
-{% comment %}<img src="output/abstract-q-c-640-480-1.jpg">{% endcomment %}

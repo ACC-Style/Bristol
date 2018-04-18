@@ -1,37 +1,26 @@
 {% extends 'layouts/admin-layout' %}
 {% block content %}
-<div class="page paper-page">
-    <div class="section-nav back">
-        <a href="admin-com-management.html">
-            <div class="circle">
-                <i class="fa fa-holder-dynamic">
-                </i>
-            </div>
-            <div class="text">
-                Back Committee List
-            </div>
-        </a>
+
+
+<div class="row page-header">
+    <div class="column section-padding">
+        <h1 class="no-vertical-margin">
+           <a href="admin-com-management.html"><i class="fa fa-list" aria-hidden="true"></i> Committee Management </a> <i class="fa fa-angle-right" aria-hidden="true"></i> Alphabet 
+        </h1>
     </div>
-    <div class="page-wrapper">
+</div>
+<div class="">
+    <div class="page-wrapper layer-down">
         <div class="row">
-            <div class="column small-6 large-8">
-                <h1 class="single-line-height">
-                    Committee: Alphabet
-                </h1>
-            </div>
-            <div class="column small-6 large-4">
-                <div class="text-right">
-                    <div class="switch-input-space float-right">
-                        <label class="switch-value" for="checkbox-checkbox" style="padding: .25em .75em;">
-                            show this committee in
-                            <br/>
-                            application searches
-                        </label>
-                        <div class="switch tiny rotate checkbox">
+            <div class="column small-12 medium-4 large-3">
+                <h4>Committee Status</h4>
+                <div class="card ghost">
+                    <div class="switch-input-space no-vertical-margin">
+                        <div class="switch tiny rotate checkbox success-active">
                             <input checked="" class="switch-input" id="checkbox-checkbox" type="checkbox" value="true">
                                 <label class="switch-paddle" for="checkbox-checkbox">
                                     <span class="show-for-sr">
-                                        Do you like me?
+                                        Active
                                     </span>
                                     <span aria-hidden="true" class="switch-active">
                                         <i class="fa fa-holder">
@@ -44,12 +33,11 @@
                                 </label>
                             </input>
                         </div>
-                    </div>
+                        <label class="switch-value" for="checkbox-checkbox">
+                            Accepting Applications
+                        </label>
+                   </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="column small-12 medium-4 large-3">
                 <h4>
                     Available Positions
                 </h4>
@@ -59,7 +47,6 @@
                 </h4>
                 <div class="card">
                     {% include "sections/current-members" %}
-                    <a href="admin-commmittee-active-users.html" class="small button secondary expanded">Active Member Management</a>
                 </div>
             </div>
             <div class="column small-12 medium-8 large-9">

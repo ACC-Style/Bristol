@@ -10,29 +10,47 @@ $circle-lighttext:#fff;
 .page{position:relative;}
 
 .section-nav{
+	+ .page-wrapper{padding-top: $circle-radius * 1.5;padding-bottom: $circle-radius * 1.5;}
+	+ .page-header{padding-top: $circle-radius * 1.5;}
 	width:100%;
 	display: flex;
 	position: relative;
 	border:0px solid grey(30);
 	height:$circle-radius*1.5;
+	justify-content:space-between;
+			background: url('../img/billie-holiday.png') repeat top right,url('../img/bottom-shade.png') repeat-x bottom right,url('../img/top-shade.png') repeat-x top right;
+
 	.paper-page &{
 	 	margin-left:0;
 	 	margin-right:0;
 	}
-	a{
+	>div{
 		flex:1 0 auto;
-		width: auto;
-		display:flex;
+			width: auto;
+			display:flex;
+			position: relative;
 		&.right{ flex-direction:row-reverse;}	
-		&.right{ flex-direction:row;}
+		&.left{ flex-direction:row;}
+		>a{
+			flex:0 0 auto;
+			width: auto;
+			display:flex;
+			position: relative;
+		}
 	}
 	.text{
 		@extend %h4; 
-		padding-top:$circle-radius * .25; 
+		padding-top:$circle-radius * .5; 
 		padding-bottom:$circle-radius * .25;
 		flex-wrap: nowrap;
 		flex: 1 0 auto;
     }
+    &.top .text{
+    	padding-top:$circle-radius * .5; 
+		padding-bottom:$circle-radius * .25;}
+    &.bottom .text{
+    	padding-top:$circle-radius * .25; 
+		padding-bottom:$circle-radius * .5;}
 	.circle{
 		 flex-wrap: nowrap;
 		 flex:0 0 50px;
@@ -52,31 +70,30 @@ $circle-lighttext:#fff;
 		box-shadow: 		2px 2px 5px 0px rgba(0,0,0,0.61);
 
 		i{
-			font-size: $circle-radius;
-			line-height:1em;
-			margin:0;
-			-webkit-transition: all 1.5s; /* Safari */
-			transition: all 1.5s;
-			-ms-transform: translate(0px, 0); /* IE 9 */
-			-webkit-transform: translate(0px, 0); /* Safari */
-			transform: translate(0px, 0);
-			color:acc-color-contrast($circle-color,$circle-darktext,$circle-lighttext);
-			vertical-align: middle;
-			display: table-cell;
-			height: 42px;
-			width: 42px;
-			text-align: center;
+		    font-size: $circle-radius;
+		    line-height: $circle-radius*2 - 8px;// width of the border
+		    margin: 0;
+		    -webkit-transition: all 1.5s;
+		    transition: all 1.5s;
+		    -ms-transform: translate(0px, 0);
+		    -webkit-transform: translate(0px, 0);
+		    transform: translate(0px, 0);
+		    color: #fff;
+		    display: inline;
+		    height: $circle-radius*2;
+		    width: $circle-radius*2;
+		    text-align: center;
+		    vertical-align: middle;
+		    box-sizing: border-box;
 		 	&:before{vertical-align: middle;}
 		}
 
 	}
 	&.bottom{
 		border-top-width: 1px;
-		background: url('../img/billie-holiday.png') repeat top right,url('../img/top-shade.png') repeat-x top right;
-		margin-top: $circle-radius *1.5;
 		border-top-width: 2px;
-		position:absolute;
-		bottom:0;
+		position:static;
+		bottom:-1.5rem;
 		right:0;
 		left:0;
 		top:auto;
@@ -85,8 +102,6 @@ $circle-lighttext:#fff;
 
 	}
 	&.top{
-		background:url('../img/billie-holiday.png') repeat top right,url('../img/bottom-shade.png') repeat-x bottom right;
-		margin-bottom: $circle-radius *1.5;
 		border-bottom-width: 2px;
 		bottom:auto;
 		right:0;
@@ -124,7 +139,7 @@ $circle-lighttext:#fff;
 		.left .text{padding-left:3rem;}
 		.right .text{padding-right:3rem;}
 		&.top .circle{
-			top:$circle-radius + 3px;
+			top:$circle-radius + 5px;
 			i{
 			-ms-transform: translate(-50px, -($circle-radius/2)); /* IE 9 */
 		    -webkit-transform: translate(-50px, -($circle-radius/2)); /* Safari */
@@ -133,7 +148,7 @@ $circle-lighttext:#fff;
 			}
 		}
 		&.bottom .circle{
-			bottom:$circle-radius + 3px;
+			bottom:$circle-radius + 5px;
 			i{
 			-ms-transform: translate(50px, -($circle-radius/2)); /* IE 9 */
 		    -webkit-transform: translate(50px, -($circle-radius/2)); /* Safari */
@@ -172,26 +187,32 @@ $circle-lighttext:#fff;
 *   @example
 *	<div class="page paper-page">
 *		<div class="section-nav top">
-*			<a class="left">
+*			<div class="left"><a>
 *				<span class="circle button navigation"><i class="fa fa-holder"></i></span>
 *				<span class="text">Back</span>
-*			</a>
-*			<a class="right">
+*			</a></div>
+*			<div class="right">
+*				<a>
 *				<span class="circle button secondary"><i class="fa fa-times"></i></span>
 *				<span class="text">Cancel</span>
 *			</a>
+*				<a>
+*				<span class="circle button success"><i class="fa fa-times"></i></span>
+*				<span class="text">Save</span>
+*			</a>
+*       </div>
 *		</div>
-*		<div class="page-wrapper section-padding content-padding">
+*		<div class="page-wrapper">
 *			<section class="card">
 *				<h1 class="with-underline">Page Title </h1>
 *				<p> hello I am some content on this page</p>
 *			</section>
 *		</div>
 *		<div class="section-nav bottom">
-*			<a class="right">
+*			<div class="right"><a class="right">
 *				<span class="circle button navigation"><i class="fa fa-holder"></i></span>
 *				<span class="text">Forward</span>
-*			</a>
+*			</a></div>
 *		</div>
 *	</div>
 */
@@ -200,24 +221,24 @@ $circle-lighttext:#fff;
 * `.section-nav with .disabled` - Adding `.disabled` to the `.section-nav` container with style the circle nav accordingly.
 * 
 *   @example
-*	<div class="page paper-page">
+*	<div class="page">
 *		<div class="section-nav top  disabled">
-*			<a class="left">
+*			<div class="left"><a>
 *				<span class="circle button navigation"><i class="fa fa-holder"></i></span>
 *				<span class="text">Back</span>
-*			</a>
+*			</a></div>
 *		</div>
-*		<div class="page-wrapper section-padding content-padding">
-*			<section class="card">
+*		<div class="page-wrapper">
+*			<section class="">
 *				<h1 class="with-underline">Page Title (Disabled)</h1>
 *				<p> Somethig on this page has disabled forward navigation</p>
 *			</section>
 *		</div>
 *		<div class="section-nav bottom disabled">
-*			<a class="right">
+*			<div class="right"><a>
 *				<span class="circle button navigation"><i class="fa fa-holder"></i></span>
 *				<span class="text">Forward</span>
-*			</a>
+*			</a></div>
 *		</div>
 *	</div>
 */
