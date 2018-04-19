@@ -1,0 +1,151 @@
+<div class="reveal" id="new-season-warning" data-reveal>
+	 <button class="close-button" data-close aria-label="close reveal" type="button"> <span aria-hidden="true"><i class="fa fa-times"></i></span></button>
+    <h1>Create New Season</h1>
+    <p class="lead">Fill in the information bellow to create a new season. <br><span class="label warning">All values are required.</span></p>
+    <div class="group-divide row">
+         <div class="question required warning column">
+            <div class="label-holder">
+                <label for="">
+                    <span class="text">Sesaon Name</span>
+                    <span class="required-holder"><i class="fa fa-holder"></i></span>
+                </label>
+            </div>
+            <div class="input-holder">
+                <div class="input-space column">
+                    <input type="text" value="ACC Nomination Season"/>
+                </div>
+            </div>
+            <div class="message-holder">
+                <small class="warning"><i class="fa fa-holder"></i> This season name is not unique.  The repeat of this name might be confusing to users.</small>
+            </div>
+            <div class="hint">This label will be seen by Members</div>
+        </div>
+        <div class="question required column">
+            <div class="input-holder">
+                 <div class="column small-1 large-1 value-space prefix">
+                    <span class="value">ID</span>
+                </div>
+                <div class="input-space column small-5 large-8">
+                    <input type="text" value="2018-1235431" disabled="" />
+                </div>
+                <div class="column small-6 large-3 value-space postfix">
+                    <span class="value">Year + GUID</span>
+                </div>
+            </div>
+        </div>
+        <div class="question required column small-6 error">
+            <div class="label-holder">
+                <label for="">
+                    <span class="text">Start Date &amp Time</span>
+                    <span class="required-holder"><i class="fa fa-holder"></i></span>
+                </label>
+            </div>
+            <div class="input-holder">
+                <div class="input-space column">
+                    <input type="text" value="date and time picker"/>
+                </div>
+            </div>
+            <div class="message-holder">
+                <small class="error">Start Date must be in the future</small>
+            </div>
+            <div class="hint">When members will be asked for applications</div>
+        </div>
+        <div class="question required error column small-6">
+            <div class="label-holder">
+                <label for="">
+                    <span class="text">Close Date &amp; Time</span>
+                    <span class="required-holder"><i class="fa fa-holder"></i></span>
+                </label>
+            </div>
+            <div class="input-holder">
+                <div class="input-space column">
+                    <input type="text" value="Date and Time Picker"/>
+                </div>
+            </div>
+            <div class="message-holder">
+                <small class="error"><i class="fa fa-holder"></i>You can not close the season before it opens.</small>
+            </div>
+            <div class="hint">When the season will close for applications</div>
+        </div>
+        <div class="question required warning column">
+            <div class="label-holder">
+                <label for="">
+                    <span class="text">Appointment Day <i class="fa fa-question">The day the system will shift into appointment mode.</i></span>
+                    <span class="required-holder"><i class="fa fa-holder"></i></span>
+                </label>
+            </div>
+            <div class="input-holder">
+                <div class="input-space column">
+                    <input type="text" value="Date Picker"/>
+                </div>
+            </div>
+            <div class="message-holder">
+                <small class="warning"><i class="fa fa-holder"></i>Appointment Day must be at lease one day after Close Date.</small>
+            </div>
+            <div class="hint">Appointment Day will start midnight <em>12:00 AM EST</em></div>
+        </div>
+        <div class="question required warning column">
+            <div class="label-holder">
+                <label for="">
+                    <span class="text">Included Committee Types</span>
+                    <span class="required-holder"><i class="fa fa-holder"></i></span>
+                </label>
+            </div>
+            <div class="input-holder">
+                <div class="switch-input-space column">
+                  <div class="switch checkbox tiny">
+                    <input class="switch-input" id="yes-no-checkbox-1" type="checkbox" name="checkbox-switch">
+                    <label class="switch-paddle" for="yes-no-checkbox-1">
+                      <span class="show-for-sr">ACCF</span>
+                      <span class="switch-active" aria-hidden="true">
+                        <i class="fa fa-check-circle-o"></i>
+                      </span>
+                      <span class="switch-inactive" aria-hidden="true">
+                        <i class="fa fa-times-circle"></i>
+                      </span>
+                    </label>
+                  </div>
+                  <label class="switch-value" for="yes-no-checkbox-1">ACCF</label>
+                </div>
+                <div class="switch-input-space column">
+                  <div class="switch checkbox tiny">
+                    <input class="switch-input" id="yes-no-checkbox-2" type="checkbox" name="checkbox-switch">
+                    <label class="switch-paddle" for="yes-no-checkbox-2">
+                      <span class="show-for-sr">NCDR</span>
+                      <span class="switch-active" aria-hidden="true">
+                        <i class="fa fa-check-circle-o"></i>
+                      </span>
+                      <span class="switch-inactive" aria-hidden="true">
+                        <i class="fa fa-times-circle"></i>
+                      </span>
+                    </label>
+                  </div>
+                  <label class="switch-value" for="yes-no-checkbox-2">NCDR</label>
+                </div>
+                <div class="switch-input-space column">
+                  <div class="switch checkbox tiny">
+                    <input class="switch-input" id="yes-no-checkbox-3" type="checkbox" name="checkbox-switch">
+                    <label class="switch-paddle" for="yes-no-checkbox-3">
+                      <span class="show-for-sr">ACRED</span>
+                      <span class="switch-active" aria-hidden="true">
+                        <i class="fa fa-check-circle-o"></i>
+                      </span>
+                      <span class="switch-inactive" aria-hidden="true">
+                        <i class="fa fa-times-circle"></i>
+                      </span>
+                    </label>
+                  </div>
+                  <label class="switch-value" for="yes-no-checkbox-3">ACRED</label>
+                </div>
+
+            </div>
+            <div class="hint">Committees types may not be active in two different sesons that overlap.</div>
+        </div>	
+    </div>
+        <div class="row group-divide">
+        	<div class="float-right">
+        		<a href="" class="button secondary">cancel</a>
+        		<a href="" class="button">Save</a>
+        	</div>
+        </div>	
+</div>

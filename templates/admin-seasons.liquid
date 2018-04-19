@@ -1,36 +1,128 @@
 {% extends 'layouts/admin-layout' %}
 {% block content %}
-
-<div class="page paper-page">
-	<div class="page-wrapper" >
-		<div class="row">
+<div class="page-header section-padding">
+	<div class="row">
 			<div class="column">
-				<h1>Seasons <a href="admin-applications-filtered.html" class="button small secondary float-right">Filter</a>
+				<h1><i class="fa fa-calendar"></i> Managae Seasons <a data-open="new-season-warning" aria-controls="new-season" aria-haspopup="true" tabindex="0" class="button float-right success radius no-vertical-margin tiny"><i class="fa fa-plus"></i> New Season</a>
 				</h1>
 			</div>
 		</div>
+	</div>
+<div class="">
+	<div class="page-wrapper layer-down" >
+
 		<div class="row">
-			<div class="card">
-				<div class="section-padding">
-					<nav class="nav-list" >
-						<ul>
-							<li>
-								<h2>ACC Guidance Committees</h2>
-								<a href="" class="link">Archive</a>
-							</li>
-							<li>
-								<h2>ACC Guidance Committees</h2>
-							</li>
-							<li class="button hollow expanded">
-								<h2><i class="fa fa-plus"></i>  Create New</h2>
-							</li>
-						</ul>
-					</nav>
+			<div class="column">
+				<div class="card">
+					<div class="colored-paper">
+						<h2>
+							Active Season <a href="admin-applications-filtered.html" class="button small secondary float-right">Filter</a>
+						</h2>
+					</div>
+					<div class="page-message callout warning no-margin" style="max-width: 100%; display: none;" data-bind="visible:showerrormsg;">
+						<div class="message-container">
+							<div class="icon-holder">
+								<span class="fa-stack fa-lg">
+									<i class="fa fa-square-o fa-stack-2x"></i>
+									<i class="fa fa-holder fa-stack-1x"></i>
+								</span>
+							</div>
+							<div class="message-holder">
+								<h7><span data-bind="text:errortext">Please select all fields</span></h7>
+							</div>
+						</div>
+					</div>
+					<div class="row column section-padding">
+						<table class="table banded">
+							<thead>
+								<tr>
+									<th>
+										Season Name
+										<small class="sub-line">
+											Season ID
+										</small>
+									</th>
+									<th>
+										Committee Types
+									</th>
+									<th>
+										Start Date
+									</th>
+									<th>
+										Clsoe Date
+									</th>
+									<th>
+										Appointment Date
+									</th>
+									<th class="text-right">
+										Action
+									</th>
+								</tr>
+							</thead>
+							<tbody data-bind="foreach: vm.nominationperiodlist">
+								<tr>
+									<td data-bind="text:AppointmentYear"><h5><a href="	" class="link dark-color-text">Season Name ABC</a> <br/><small class="sub-line">2018-123Adr</small></h5></td>
+									<td data-bind="text:vm.getcommitteetypename(CommitteeTypeId())">NCDR Major Operating System</td>
+									<td data-bind="text:vm.formatdate(StartDate())">04/18/2018</td>
+									<td data-bind="text:vm.formatdate(EndDate())">04/20/2018</td>
+									<td data-bind="text:vm.formathours(EndDate())">2:59 AM</td>
+									<td class="text-right"><a href="javascript:void(0);" data-open="edit-season" class="edit link"><i class="fa fa-holder"></i> Edit</a>
+									<a href="" data-open="are-you-sure" class="link"><i class="fa fa-times"></i> Archive</a></td>
+								</tr>
+							
+								<tr>
+									<td data-bind="text:AppointmentYear"><h5><a href="	" class="link dark-color-text">Season Name ABC</a> <br/><small class="sub-line">2018-123Adr</small></h5></td>
+									<td data-bind="text:vm.getcommitteetypename(CommitteeTypeId())">ACC Major Operating System</td>
+									<td data-bind="text:vm.formatdate(StartDate())">04/18/2018</td>
+									<td data-bind="text:vm.formatdate(EndDate())">04/18/2018</td>
+									<td data-bind="text:vm.formathours(EndDate())">12:59 PM</td>
+									<td class="text-right"><a href="javascript:void(0);" data-open="edit-season" class="edit link"><i class="fa fa-holder"></i> Edit</a>
+									<a href="" data-open="are-you-sure" class="link"><i class="fa fa-times"></i> Archive</a></td>
+								</tr>
+							
+								<tr>
+									<td data-bind="text:AppointmentYear"><h5><a href="	" class="link dark-color-text">Season Name ABC</a> <br/><small class="sub-line">2018-123Adr</small></h5></td>
+									<td data-bind="text:vm.getcommitteetypename(CommitteeTypeId())">ACC Major Operating System</td>
+									<td data-bind="text:vm.formatdate(StartDate())">04/17/2018</td>
+									<td data-bind="text:vm.formatdate(EndDate())">04/21/2018</td>
+									<td data-bind="text:vm.formathours(EndDate())">10:30 AM</td>
+									<td class="text-right"><a href="javascript:void(0);" data-open="edit-season" class="edit link"><i class="fa fa-holder"></i> Edit</a>
+									<a href="" data-open="are-you-sure" class="link"><i class="fa fa-times"></i> Archive</a></td>
+								</tr>
+							
+								<tr>
+									<td data-bind="text:AppointmentYear"><h5><a href="	" class="link dark-color-text">Season Name ABC</a> <br/><small class="sub-line">2018-123Adr</small></h5></td>
+									<td data-bind="text:vm.getcommitteetypename(CommitteeTypeId())">ACC Major Operating System</td>
+									<td data-bind="text:vm.formatdate(StartDate())">04/17/2018</td>
+									<td data-bind="text:vm.formatdate(EndDate())">04/21/2018</td>
+									<td data-bind="text:vm.formathours(EndDate())">1:00 AM</td>
+									<td class="text-right"><a href="javascript:void(0);" data-open="edit-season" class="edit link"><i class="fa fa-holder"></i> Edit</a>
+									<a href="" data-open="are-you-sure" class="link"><i class="fa fa-times"></i> Archive</a></td>
+								</tr>
+
+							
+								<tr>
+									<td data-bind="text:AppointmentYear"><h5><a href="	" class="link dark-color-text">Season Name ABC</a> <br/><small class="sub-line">2018-123Adr</small></h5></td>
+									<td data-bind="text:vm.getcommitteetypename(CommitteeTypeId())">ACC Major Operating System</td>
+									<td data-bind="text:vm.formatdate(StartDate())">04/12/2018</td>
+									<td data-bind="text:vm.formatdate(EndDate())">07/26/2018</td>
+									<td data-bind="text:vm.formathours(EndDate())">6:30 PM</td>
+									<td class="text-right"><a href="javascript:void(0);" data-open="edit-season" class="edit link"><i class="fa fa-holder"></i> Edit</a>
+										<a href="" data-open="are-you-sure" class="link"><i class="fa fa-times"></i> Archive</a></td>
+								</tr>
+							</tbody>
+						</table>
+					 
+					</div>
+					{% include "elements/card-pagination-bottom" %}
 				</div>
-				{% include "elements/card-pagination-bottom"%}
+					<div class="row section-padding">
+			<a href="" class="tiny button hollow float-right">Show/Hide all archived Seasons</a>
+		</div>
 			</div>
 		</div>
 	</div>
 </div>
-
+	{% include "elements/edit-season" %}
+	{% include "elements/new-season-warning" %}
 {% endblock %}

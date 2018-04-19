@@ -1,17 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
-<head>
-  <title>COM NOMS ADMIN</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/jquery-ui.css">
-  <link rel="stylesheet" href="assets/css/jquery-uistructure.css">
-  <link rel="stylesheet" href="assets/css/foundation-sites.css">
-   <link rel="stylesheet" href="assets/css/font-awesome.css">
-  <link rel="stylesheet" href="assets/css/index.css" id="theme">
+    <head>
+        <title>
+            COM NOMS ADMIN
+        </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-uistructure.css" rel="stylesheet"/>
+    <link href="assets/css/foundation-sites.css" rel="stylesheet"/>
+    <link href="assets/css/font-awesome.css" rel="stylesheet"/>
+    <link href="assets/css/index.css" id="theme" rel="stylesheet"/>
+  
+    </head>
+    <body>
+        <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
+            <div class="off-canvas-wrapper">
+                <div class="off-canvas position-right" data-off-canvas id="offCanvasRightSplit2">
+                    <div class="paper-page page relative-position">
+                        <div class="content-padding">
+                            <div class="colored-paper empty">
+                            <h2>
+                            Notes
+                            </h2>
+                            <textarea cols="30" id="" name="" rows="5">
+                            </textarea>
+                            <a class="button expanded add tiny radius" href="">
+                            <i class="fa fa-holder">
+                            </i>
+                            Add Note
+                            </a>
 
-</head>
-	<body>
-      <header class="header page">
+                        </div>
+                        <ul class="no-bullet comment-holder section-padding">
+                            <li class="group-divide-bottom">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                <cite class="text-right">
+                                    <strong>
+                                        Nicole Homes
+                                    </strong>
+                                    <span class="lite">
+                                        Jan 1st 2017 | 12:53 PM
+                                    </span>
+                                </cite>
+                            </li>
+                            <li class="group-divide-bottom">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                <cite class="text-right">
+                                    <strong>
+                                        Marthea Williams
+                                    </strong>
+                                    <span class="lite">
+                                        Jan 1st 2017 | 12:50 PM
+                                    </span>
+                                </cite>
+                            </li>
+                            <li class="group-divide-bottom">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                <cite class="text-right">
+                                    <strong>
+                                        Nicole Homes
+                                    </strong>
+                                    <span class="lite">
+                                        Jan 1st 2017 | 12:42 PM
+                                    </span>
+                                </cite>
+                            </li>
+                            <li class="group-divide-bottom">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                <cite class="text-right">
+                                    <strong>
+                                        Nicole Homes
+                                    </strong>
+                                    <span class="lite">
+                                        Jan 1st 2017 | 12:39 PM
+                                    </span>
+                                </cite>
+                            </li>
+                        </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- end of off canvass area  -->
+                <div class="off-canvas-content" data-off-canvas-content>
+                      <header class="header page">
   	<div class="row">
   		<div class="column large-6">
     <a href="index.html" class="logo">
@@ -126,8 +198,11 @@
                         <b>Season:</b> ACC Guidance
                     </a>
                     <ul class="menu vertical">
-                        <li><a href="">NCDR</a></li>
-                        <li><a href=""><i class="fa fa-plus"></i> New Season</a></li>
+                        <li><a href="">2018 Nomination Season: Global</a></li>
+                        <li><a href="">2018 Nomination  Season: ACCF</a></li>
+                        <li><a href="">2018 Nomination  Season: NCDR</a></li>
+                        <li><a href="">2018 Annual Meeting</a></li>
+                        <li><a data-open="new-season"><i class="fa fa-plus"></i> New Season</a></li>
                     </ul>
                 </li>
                 <li>
@@ -242,8 +317,7 @@
 </div>
 	
 
-    <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
-    
+                    
 
 <div class="page paper-page">
 	<div class="page-wrapper " >
@@ -690,8 +764,172 @@
 
 </style>
 
+
+                </div>
+            </div>
+        </div>
+        <div class="reveal" id="are-you-sure" data-reveal>
+	 <button class="close-button" data-close aria-label="Close reveal" type="button"> <span aria-hidden="true"><i class="fa fa-times"></i></span></button>
+    <h1>Are You Sure?</h1>
+    <p class="lead">Doing X Will have Y Effect. Do you want to do X?</p>
+    <div class="row group-divide">
+    	<div class="float-right">
+    		<a href="" class="button secondary">No</a>
+    		<a href="" class="button">Yes</a>
+    	</div>
+    </div>	
+</div>
+        <div class="reveal" id="new-season" data-reveal>
+	 <button class="close-button" data-close aria-label="Close reveal" type="button"> <span aria-hidden="true"><i class="fa fa-times"></i></span></button>
+    <h1>Create New Season</h1>
+    <p class="lead">Fill in the information bellow to create a new season</p>
+    <div class="group-divide row">
+         <div class="question required column">
+            <div class="label-holder">
+                <label for="">
+                    <span class="text">Sesaon Name</span>
+                    <span class="required-holder"><i class="fa fa-holder"></i></span>
+                </label>
+            </div>
+            <div class="input-holder">
+                <div class="input-space column">
+                    <input type="text"/>
+                </div>
+            </div>
+            <div class="message-holder">
+                <small class="warning"><i class="fa fa-holder"></i>You are repeating this name. This might be confusing for members.</small>
+            </div>
+            <div class="hint">This label will be seen by Members</div>
+        </div>
+        <div class="question required column">
+            <div class="input-holder">
+                 <div class="column small-1 large-1 value-space prefix">
+                    <span class="value">ID</span>
+                </div>
+                <div class="input-space column small-5 large-8">
+                    <input type="text" value="2018-1235431" disabled="" />
+                </div>
+                <div class="column small-6 large-3 value-space postfix">
+                    <span class="value">Year + GUID</span>
+                </div>
+            </div>
+        </div>
+        <div class="question required column small-6">
+            <div class="label-holder">
+                <label for="">
+                    <span class="text">Start Date &amp Time</span>
+                    <span class="required-holder"><i class="fa fa-holder"></i></span>
+                </label>
+            </div>
+            <div class="input-holder">
+                <div class="input-space column">
+                    <input type="text" value="date and time picker"/>
+                </div>
+            </div>
+            <div class="message-holder">
+            </div>
+            <div class="hint">When members will be asked for applications</div>
+        </div>
+        <div class="question required  column small-6">
+            <div class="label-holder">
+                <label for="">
+                    <span class="text">Close Date &amp; Time</span>
+                    <span class="required-holder"><i class="fa fa-holder"></i></span>
+                </label>
+            </div>
+            <div class="input-holder">
+                <div class="input-space column">
+                    <input type="text" value="Date and Time Picker"/>
+                </div>
+            </div>
+            <div class="message-holder">
+                <small class="warning"><i class="fa fa-holder"></i>You can not close the season before it opens.</small>
+            </div>
+            <div class="hint">When the season will close for applications</div>
+        </div>
+        <div class="question required  column">
+            <div class="label-holder">
+                <label for="">
+                    <span class="text">Appointment Day <i class="fa fa-question">The day the system will shift into appointment mode.</i></span>
+                    <span class="required-holder"><i class="fa fa-holder"></i></span>
+                </label>
+            </div>
+            <div class="input-holder">
+                <div class="input-space column">
+                    <input type="text" value="Date Picker"/>
+                </div>
+            </div>
+            <div class="message-holder">
+                <small class="warning"><i class="fa fa-holder"></i>Appointment Day must be at lease one day after Close Date.</small>
+            </div>
+            <div class="hint">Appointment Day will start midnight <em>12:00 AM EST</em></div>
+        </div>
+        <div class="question required  column">
+            <div class="label-holder">
+                <label for="">
+                    <span class="text">Included Committee Types</span>
+                    <span class="required-holder"><i class="fa fa-holder"></i></span>
+                </label>
+            </div>
+            <div class="input-holder">
+                <div class="switch-input-space column">
+                  <div class="switch checkbox tiny">
+                    <input class="switch-input" id="yes-no-checkbox-1" type="checkbox" name="checkbox-switch">
+                    <label class="switch-paddle" for="yes-no-checkbox-1">
+                      <span class="show-for-sr">ACCF</span>
+                      <span class="switch-active" aria-hidden="true">
+                        <i class="fa fa-check-circle-o"></i>
+                      </span>
+                      <span class="switch-inactive" aria-hidden="true">
+                        <i class="fa fa-times-circle"></i>
+                      </span>
+                    </label>
+                  </div>
+                  <label class="switch-value" for="yes-no-checkbox-1">ACCF</label>
+                </div>
+                <div class="switch-input-space column">
+                  <div class="switch checkbox tiny">
+                    <input class="switch-input" id="yes-no-checkbox-2" type="checkbox" name="checkbox-switch">
+                    <label class="switch-paddle" for="yes-no-checkbox-2">
+                      <span class="show-for-sr">NCDR</span>
+                      <span class="switch-active" aria-hidden="true">
+                        <i class="fa fa-check-circle-o"></i>
+                      </span>
+                      <span class="switch-inactive" aria-hidden="true">
+                        <i class="fa fa-times-circle"></i>
+                      </span>
+                    </label>
+                  </div>
+                  <label class="switch-value" for="yes-no-checkbox-2">NCDR</label>
+                </div>
+                <div class="switch-input-space column">
+                  <div class="switch checkbox tiny">
+                    <input class="switch-input" id="yes-no-checkbox-3" type="checkbox" name="checkbox-switch">
+                    <label class="switch-paddle" for="yes-no-checkbox-3">
+                      <span class="show-for-sr">ACRED</span>
+                      <span class="switch-active" aria-hidden="true">
+                        <i class="fa fa-check-circle-o"></i>
+                      </span>
+                      <span class="switch-inactive" aria-hidden="true">
+                        <i class="fa fa-times-circle"></i>
+                      </span>
+                    </label>
+                  </div>
+                  <label class="switch-value" for="yes-no-checkbox-3">ACRED</label>
+                </div>
+
+            </div>
+            <div class="hint">Committees types may not be active in two different sesons that overlap.</div>
+        </div>	
     </div>
-    <footer class="page-footer">
+        <div class="row group-divide">
+        	<div class="float-right">
+        		<a href="" class="button secondary">cancel</a>
+        		<a href="" class="button">Save</a>
+        	</div>
+        </div>	
+</div>
+        <footer class="page-footer">
   <div class="row">
     <a href="/">
       <img class="logo" src="Assets/img/oma-01.svg" alt="Home">
@@ -825,16 +1063,16 @@
     </div>
   </div>
 </footer>
-        <script src="assets/js/vendor/jquery.js"></script>
+            <script src="assets/js/vendor/jquery.js"></script>
     <script src="assets/js/vendor/what-input.js"></script>
     <script src="assets/js/vendor/foundation.js"></script>
     <script src="assets/js/app.js"></script>
 
 
-    <style>
-      .page-wrapper {
+        <style>
+            .page-wrapper {
         max-width: 100% !important;
       }
-    </style>
-	</body>
+        </style>
+    </body>
 </html>

@@ -1,26 +1,102 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
-<head>
-  <title>COM NOMS ADMIN</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/jquery-ui.css">
-  <link rel="stylesheet" href="assets/css/jquery-uistructure.css">
-  <link rel="stylesheet" href="assets/css/foundation-sites.css">
-   <link rel="stylesheet" href="assets/css/font-awesome.css">
-  <link rel="stylesheet" href="assets/css/index.css" id="theme">
+    <head>
+        <title>
+            COM NOMS ADMIN
+        </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-uistructure.css" rel="stylesheet"/>
+    <link href="assets/css/foundation-sites.css" rel="stylesheet"/>
+    <link href="assets/css/font-awesome.css" rel="stylesheet"/>
+    <link href="assets/css/index.css" id="theme" rel="stylesheet"/>
+  
+    </head>
+    <body>
+        <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
+            <div class="off-canvas-wrapper">
+                <div class="off-canvas position-right" data-off-canvas id="offCanvasRightSplit2">
+                    <div class="paper-page page relative-position">
+                        <div class="content-padding">
+                            <div class="colored-paper empty">
+                            <h2>
+                            Notes
+                            </h2>
+                            <textarea cols="30" id="" name="" rows="5">
+                            </textarea>
+                            <a class="button expanded add tiny radius" href="">
+                            <i class="fa fa-holder">
+                            </i>
+                            Add Note
+                            </a>
 
-</head>
-	<body>
-    {% include 'admin/sections/header' %}
-    <div class="mobile-offcanvas-wrapper" data-bind="page: {id:'sections', role: 'start'}">
-    {% block content %}{% endblock %}
-    </div>
-    {% include 'sections/web-footer' %}
-    {% include "scripts" %}
-    <style>
-      .page-wrapper {
+                        </div>
+                        <ul class="no-bullet comment-holder section-padding">
+                            <li class="group-divide-bottom">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                <cite class="text-right">
+                                    <strong>
+                                        Nicole Homes
+                                    </strong>
+                                    <span class="lite">
+                                        Jan 1st 2017 | 12:53 PM
+                                    </span>
+                                </cite>
+                            </li>
+                            <li class="group-divide-bottom">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                <cite class="text-right">
+                                    <strong>
+                                        Marthea Williams
+                                    </strong>
+                                    <span class="lite">
+                                        Jan 1st 2017 | 12:50 PM
+                                    </span>
+                                </cite>
+                            </li>
+                            <li class="group-divide-bottom">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                <cite class="text-right">
+                                    <strong>
+                                        Nicole Homes
+                                    </strong>
+                                    <span class="lite">
+                                        Jan 1st 2017 | 12:42 PM
+                                    </span>
+                                </cite>
+                            </li>
+                            <li class="group-divide-bottom">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                <cite class="text-right">
+                                    <strong>
+                                        Nicole Homes
+                                    </strong>
+                                    <span class="lite">
+                                        Jan 1st 2017 | 12:39 PM
+                                    </span>
+                                </cite>
+                            </li>
+                        </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- end of off canvass area  -->
+                <div class="off-canvas-content" data-off-canvas-content>
+                    {% include 'admin/sections/header' %}
+                    {% block content %}{% endblock %}
+
+                </div>
+            </div>
+        </div>
+        {% include 'elements/are-you-sure' %}
+        {% include 'elements/new-season' %}
+        {% include 'sections/web-footer' %}
+        {% include "scripts" %}
+        <style>
+            .page-wrapper {
         max-width: 100% !important;
       }
-    </style>
-	</body>
+        </style>
+    </body>
 </html>
