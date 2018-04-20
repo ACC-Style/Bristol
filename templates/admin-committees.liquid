@@ -1,8 +1,7 @@
-{% extends 'layouts/admin-committee-layout' %}
-{% block content %}
+{% extends 'layouts/admin-committee-layout' %} {% block content %}
 <div class="row page-header section-padding">
     <div class="column">
-        <h1 >
+        <h1>
            <a href="admin-committees-dashboard.html"><i class="fa fa-th-list" aria-hidden="true"></i></a> <i class="fa fa-angle-right" aria-hidden="true"></i> <a href="admin-committees-list.html" class="link">Commitee Name ABC</a> <i class="fa fa-angle-right" aria-hidden="true"></i> <a href="admin-committees-list.html" class="link">Applicant List</a>
            <i class="fa fa-angle-right" aria-hidden="true"></i> Applicant Name
            
@@ -13,7 +12,6 @@
         </div>
     </div>
 </div>
-
 <section class="row collapse">
     <aside class="column small-hidden medium-4 large-3">
         <div class="colored-paper no-margin ">
@@ -28,7 +26,7 @@
                         <a href="">
                             <span class="text">
                                 <span class="name">
-                                    Doctor Beta
+                                    <i class="fa fa-thumb-up"></i> Doctor Beta
                                 </span>
                                 <span>
                                     FACC
@@ -70,14 +68,12 @@
         </div>
     </aside>
     <article class="layer-down column medium-8 large-9">
-        <div class="page-wrapper content-padding" style="max-width: 100%">
+        <div class="page-wrapper content-padding">
             <div class="row column">
                 <div class="card">
                     <div class="colored-paper">
-                        <h2 class="single-line-height no-vertical-margin">
-                            <span class="float-right">
-                                <a href="" class="button success small hide-for-large">Add Comment</a>
-                            </span>
+                        <h1 class="single-line-height no-vertical-margin">
+
                             <span class="float-right">
                                 
                                 <select id="" name="">
@@ -94,21 +90,15 @@
                                     </option>
                                 </select>
                             </span>
+                           <i class="fa fa-thumbs-up"></i>
                             Doctor Beta, FACC
-                            <small class="subheader">
-                                ( Average Rating: 2.4
-                                <i class="fa fa-star">
-                                </i>
-                                )
-                            </small>
-                            <span class="sub-line">
-                                email@email.com
+                             <span class="sub-line">Average Rating: 2.4  <i class="fa fa-star"> | Comments: 4 <i class="fa fa-comment"></i></i> | <i class="fa fa-envelope"></i> email@email.com
                             </span>
                         </h2>
                     </div>
                     <div class="row section-padding">
                         <div class="column large-6">
-                            <div class="callout highlighted">
+                            <div class="section-padding group-divide-auto">
                                 <h3>
                                     Statement of Interest
                                 </h3>
@@ -116,7 +106,7 @@
                                     {% include 'elements/lorem' %}
                                 </p>
                             </div>
-                            <div class="callout info">
+                            <div class="section-padding group-divide-auto">
                                 <h3>
                                     Competency
                                 </h3>
@@ -139,7 +129,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="secion-padding content-padding">
+                            <div class="secion-padding group-divide-auto">
                                 <h3>
                                     Committee Ranking
                                 </h3>
@@ -148,94 +138,30 @@
                                         <li class="selected">
                                             <b>
                                                 1
-                                            </b>
-                                            Committee ABC
+                                            </b> Committee ABC
                                         </li>
                                         <li class="disabled">
                                             <b>
                                                 2
-                                            </b>
-                                            ~Committee Outside Perview ~
+                                            </b> ~Committee Outside Perview ~
                                         </li>
                                         <li class="">
                                             <b>
                                                 3
-                                            </b>
-                                            Committee FGH
+                                            </b> Committee FGH
                                         </li>
                                         <li class="">
                                             <b>
                                                 4
-                                            </b>
-                                            Committee XYZ
+                                            </b> Committee XYZ
                                         </li>
                                     </ul>
                                 </nav>
                             </div>
                         </div>
                         <div class="column large-6">
-                            <div class="seciton-padding callout">
-                                <h2>
-                                    Comment
-                                </h2>
-                                <div class="colored-paper disabled row">
-                                    <div class="switch-input-space column small-12 no-padding">
-                                        <label class="switch-value" for="checkbox-value-switch-round" style="width:1%;">
-                                            Attach Comment To
-                                        </label>
-                                        <div class="switch value-switch switch-4x radius" style="width:2%;">
-                                            <input class="switch-input" id="checkbox-value-switch-round" type="checkbox" value="false">
-                                                <label class="switch-paddle" for="checkbox-value-switch-round">
-                                                    <span class="show-for-sr">
-                                                        Do you like me?
-                                                    </span>
-                                                    <span aria-hidden="true" class="switch-active">
-                                                        Committee
-                                                    </span>
-                                                    <span aria-hidden="true" class="switch-inactive">
-                                                        Global
-                                                    </span>
-                                                </label>
-                                            </input>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="group-divide-bottom section-padding disabled">
-                                    <h3>
-                                        Rating
-                                    </h3>
-                                    {% include 'elements/stars-buttons'%}
-                                </div>
-                                <div class="group-divide-bottom section-padding row column">
-                                    <div class="switch-input-space column small-12">
-                                        <div class="switch info-active success-inactive switch-2x">
-                                            <input class="switch-input" id="active-inactive" name="exampleSwitch" type="checkbox">
-                                                <label class="switch-paddle" for="active-inactive">
-                                                    <span class="show-for-sr">
-                                                        Do you like me?
-                                                    </span>
-                                                    <span aria-hidden="true" class="switch-active">
-                                                        No
-                                                    </span>
-                                                    <span aria-hidden="true" class="switch-inactive">
-                                                        Yes
-                                                    </span>
-                                                </label>
-                                            </input>
-                                        </div>
-                                        <label class="switch-value" for="active-inactive">
-                                            Chair Pick
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="section-padding row column">
-                                    <textarea id="" name="" rows="5" style="margin-bottom: 0">
-                                    </textarea>
-                                </div>
-                                <a class="button float-right" href="">
-                                    Add Comment
-                                </a>
-                            </div>
+                            {% include "elements/comment-rate" %}
+                            {% include "admin/sections/com/application-comments"%}
                         </div>
                     </div>
                     <div class="colored-paper info">
@@ -275,11 +201,10 @@
                         </nav>
                     </div>
                     <div class="row">
-                        <div class="columns large-6">
+                        <div class="columns">
                             <h2 class="with-underline show-for-large">
                                 Application Details
-                            </h2>
-                            {% include "admin/sections/com/application-details"%}
+                            </h2> {% include "admin/sections/com/application-details"%}
                             <h3>
                                 Disclosures
                             </h3>
@@ -294,17 +219,7 @@
                                 View Disclosures
                             </a>
                         </div>
-                        <div class="columns large-6 show-for-large">
-                            <h2 class="with-underline show-for-large">
-                                Comments & Ratings
-                                <div class="float-right">
-                                    2.4
-                                    <i class="fa fa-star">
-                                    </i>
-                                </div>
-                            </h2>
-                            {% include "admin/sections/com/application-comments"%}
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -315,5 +230,6 @@
         </button>
     </article>
 </section>
-{% endblock %}
+{% include "elements/comments-on-user" %}
 
+{% endblock %}
