@@ -1,0 +1,63 @@
+/// Colors set out for all apps at the acc
+/// $acc-blue, $scrub-green, $scrub-teal outlined in sapien color guidelines
+/// $black is used for all text gives a softness and warmth to all designs
+/// $real-black is 100% black used for grey conversions
+/// @group configuration
+/// @access static
+/// @type color
+$acc-blue:#00386b;
+$scrub-teal:#198dae;
+$scrub-blue:#018adb;
+$scrub-green:#1abc9c;
+$scrub-purple:#7d5891;
+$black:#111;
+$real-black:#000;
+$error-red:#c32231;
+$warning-orange:#E08514;//d07600
+$success-green:#14B057;
+$scrub-magenta:#b84299;
+$scrub-leafgreen:#70cd40;
+
+@function grey($value){
+	// $grey:scale-color($real-black,$lightness:shift($value));
+	// @return $grey;
+	$grey:color($real-black,$value);
+	@return $grey;
+}
+@function color($color,$value){
+	$newColor:scale-color($color,$lightness:shift($value));
+	@return $newColor;
+
+}
+
+/// shift()
+/// @group helper
+/// @access private
+/// @required number value 1-100
+/// @returns percentage from -100% to 100%
+@function shift($value){
+	$shift:100% - percentage($value / 100);
+	@return $shift;
+}
+
+@mixin build_color($label,$style) {
+	.#{$label}-acc-blue{ 			#{$style}:$acc-blue;}
+	.#{$label}-scrub-teal{ 			#{$style}:$scrub-teal;}
+	.#{$label}-scrub-blue{ 			#{$style}:$scrub-blue;}
+	.#{$label}-scrub-green{ 		#{$style}:$scrub-green;}
+	.#{$label}-scrub-purple{ 		#{$style}:$scrub-purple;}
+	.#{$label}-error-red{ 			#{$style}:$error-red;}
+	.#{$label}-warning-orange{ 		#{$style}:$warning-orange;}
+	.#{$label}-black{ 				#{$style}:$black;}
+	.#{$label}-white{ 				#{$style}:white;}
+ }
+
+.bg-color-transition{
+  -webkit-transition: background-color 1s ease-out;
+  -moz-transition: background-color 1s ease-out;
+  -o-transition: background-color 1s ease-out;
+  transition: background-color 1s ease-out;
+}
+
+@include build_color("bgc","background-color");
+

@@ -1,0 +1,46 @@
+@mixin border_steps($label,$value-label,$style,$value) {
+	.#{$label}#{$value-label}{
+		#{$style}-width:unquote($value);
+	}
+		.#{$label}-t#{$value-label}{
+		#{$style}-top-width:unquote($value);
+	}
+		.#{$label}-b#{$value-label}{
+		#{$style}-bottom-width:unquote($value);
+	}
+		.#{$label}-r#{$value-label}{
+		#{$style}-right-width:unquote($value);
+	}
+		.#{$label}-l#{$value-label}{
+		#{$style}-left-width:unquote($value);
+	}
+ }
+
+
+@mixin radius_steps($label,$value-label,$style,$value) {
+	.#{$label}#{$value-label}{
+		#{$style}-radius:unquote($value);
+	}
+		.#{$label}-tr#{$value-label}{
+		#{$style}-top-right-radius:unquote($value);
+	}
+		.#{$label}-tl#{$value-label}{
+		#{$style}-top-left-radius:unquote($value);
+	}
+		.#{$label}-br#{$value-label}{
+		#{$style}-bottom-right-radius:unquote($value);
+	}
+		.#{$label}-bl#{$value-label}{
+		#{$style}-top-right-radius:unquote($value);
+	}
+ }
+
+
+@include border_steps("bw","_0","border","0");
+@include border_steps("bw","_1","border","1px");
+@include border_steps("bw","_2","border","2px");
+@include radius_steps("br","_0","border","0");
+@include radius_steps("br","_radius","border","5px");
+@include radius_steps("br","_round","border","9999px");
+@include radius_steps("br","_circle","border","100%");
+@include build_color("bc","background-color");

@@ -1,0 +1,90 @@
+// Panels
+
+@mixin panel-variant($border, $heading-text-color, $heading-bg-color, $heading-border) {
+  border-color: $border;
+
+  & > .panel-heading {
+    color: $heading-text-color;
+    background-color: $heading-bg-color;
+    border-color: $heading-border;
+
+    + .panel-collapse > .panel-body {
+      border-top-color: $border;
+    }
+    .badge {
+      color: $heading-bg-color;
+      background-color: $heading-text-color;
+    }
+  }
+  & > .panel-footer {
+    + .panel-collapse > .panel-body {
+      border-bottom-color: $border;
+    }
+  }
+}
+
+
+//
+// Panels
+// --------------------------------------------------
+
+$panel-default-border:					grey(30);
+$panel-default-text:					grey(80);
+$panel-default-heading-bg:				grey(10);
+
+$panel-primary-border:					color($scrub-teal , 100);
+$panel-primary-text:					white;
+$panel-primary-heading-bg:				color($scrub-teal , 100);
+
+$panel-success-border:					color($scrub-green , 100);
+$panel-success-text:					white;
+$panel-success-heading-bg:				color($scrub-green , 100);
+
+$panel-warning-border:					color($warning-orange , 100);
+$panel-warning-text:					white;
+$panel-warning-heading-bg:				color($warning-orange , 100);
+
+$panel-danger-border:					color($error-red , 100);
+$panel-danger-text:						white;
+$panel-danger-heading-bg:				color($error-red , 100);
+
+$panel-info-border:					grey(70);
+$panel-info-text:					grey(0);
+$panel-info-heading-bg:				grey(65);
+
+// Contextual variations
+.panel-default {
+  @include panel-variant($panel-default-border, $panel-default-text, $panel-default-heading-bg, $panel-default-border);
+}
+.panel-primary {
+  @include panel-variant($panel-primary-border, $panel-primary-text, $panel-primary-heading-bg, $panel-primary-border);
+}
+.panel-success {
+  @include panel-variant($panel-success-border, $panel-success-text, $panel-success-heading-bg, $panel-success-border);
+}
+.panel-info {
+  @include panel-variant($panel-info-border, $panel-info-text, $panel-info-heading-bg, $panel-info-border);
+}
+.panel-warning {
+  @include panel-variant($panel-warning-border, $panel-warning-text, $panel-warning-heading-bg, $panel-warning-border);
+}
+.panel-danger {
+  @include panel-variant($panel-danger-border, $panel-danger-text, $panel-danger-heading-bg, $panel-danger-border);
+}
+
+
+#acc-login-container{
+	.panel-primary{border-color:color($scrub-teal,120);}
+	.panel-primary > .panel-heading{
+		border-color:color($scrub-teal,120);
+		background-color:color($scrub-teal,120);
+		label{
+			@extend .fs_1;
+			@extend .fw-r;
+			@extend .ff-serif;
+			@extend .p-l_025;
+		}
+	}
+
+
+}

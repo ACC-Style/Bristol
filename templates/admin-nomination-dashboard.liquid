@@ -1,0 +1,136 @@
+{% extends 'layouts/admin-layout' %}
+{% block content %}
+
+ 
+<div class="page-header">
+      <div class="row position-relative section-padding">
+            <div class="column">
+                <h1>
+                    Nominations
+                </h1>
+            </div>
+        </div>
+</div>
+<div class="page no-padding">
+    <div class="page-wrapper layer-down">
+        <div class="card">
+            <div class="colored-paper">
+                    <h2 class="no-vertical-margin">
+                        Review Nominations
+                        <div class="float-right button-group tiny no-vertical-margin">
+                            <a href="" class="secondary button">Filter</a>
+                            <a href="" class="secondary button">Report</a>
+                        </div>
+                    </h2>
+                </div>
+                {% include 'admin/elements/admin-table-searchbar' %}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nominee</th>
+                            <th>Nominator</th>
+                            <th>Date</th>
+                            <th class="highlighted">Letter</th>
+                            <th><span class="left">Committees</span><span class="lite pull-right">Applied</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="va-top"><h5>Doctor Pepper <div class="sub-line">FACC (Member Type)</div></h5></td>
+                            <td class="va-top"><h5>Doctor Watchmacallit <div class="sub-line">FACC</div></h5></td>
+                            <td class="va-top">05/04/2018</td>
+                            <td class="va-top highlighted text-center"><a data-open="LetterEdit"><i class="fa fa-file-text"></i> Open</a></td>
+                            <td class="no-padding">
+                                <nav class="nav-list nav-checklist nav-checklist">
+                                    <ol class="lsp-i no-margin">
+                                        <li class="">
+                                            <a class="d-i" href="admin-committee-manage-single.html"><span class="text">Committee ABC</span> <span class="label success pull-right text-center radius" title="Applied To"><i class="fa fa-check"></i></span></a>
+                                        </li>
+                                        <li class="">
+                                             <a class="d-i" href="admin-committee-manage-single.html"><span class="text">Committee EDF</span></a> 
+                                        </li>
+                                        <li class="">
+                                            <a class="d-i" href="admin-committee-manage-single.html"><span class="text">Committee FGH</span></a>
+                                        </li>
+                                        <li class="">
+                                           <a class="d-i" href="admin-committee-manage-single.html"> <span class="text">Committee XYZ</span></a>
+                                        </li>
+                                    </ol>
+                                </nav>   
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="va-top"><h5>Doctor Pepper <div class="sub-line">FACC (Member Type)</div></h5></td>
+                            <td class="va-top"><h5>Doctor Watchmacallit <div class="sub-line">FACC</div></h5></td>
+                            <td class="va-top">05/04/2018</td>
+                            <td class="va-top highlighted text-center"><a data-open="LetterEdit"><i class="fa fa-file-text"></i> Open
+                                
+                            </a></td>
+                            <td class="no-padding">    <nav class="nav-list nav-checklist">
+                                    <ol class="lsp-i no-margin">
+                                        <li class="">
+                                            <a class="d-i" href="admin-committee-manage-single.html"><span class="text">Committee ABC</span> </a>
+                                        </li>
+                                        <li class="">
+                                             <a class="d-i" href="admin-committee-manage-single.html"><span class="text">Committee EDF</span></a> 
+                                        </li>
+                                        <li class="">
+                                            <a class="d-i" href="admin-committee-manage-single.html"><span class="text">Committee FGH</span> <span class="label success pull-right text-center radius" title="Applied To"><i class="fa fa-check"></i></span></a>
+                                        </li>
+                                        <li class="">
+                                           <a class="d-i" href="admin-committee-manage-single.html"> <span class="text">Committee XYZ</span> <span class="label success pull-right text-center radius" title="Applied To"><i class="fa fa-check"></i></span></a>
+                                        </li>
+                                    </ol>
+                                </nav>    </td>
+                        </tr>
+                        <tr>
+                            <td class="va-top"><h5>Doctor Pepper <div class="sub-line">FACC (Member Type)</div></h5></td>
+                            <td class="va-top"><h5>Doctor Watchmacallit <div class="sub-line">FACC</div></h5></td>
+                            <td class="va-top">05/04/2018</td>
+                            <td class="va-top highlighted text-center"><a data-open="LetterEdit"><i class="fa fa-file-text"></i> Open</a></td>
+                            <td class="no-padding">    <nav class="nav-list nav-checklist">
+                                    <ol class="lsp-i no-margin">
+                                        <li class="">
+                                            <a class="d-i" href="admin-committee-manage-single.html"><span class="text">Committee ABC</span> <span class="label success pull-right text-center radius" title="Applied To"><i class="fa fa-check"></i></span></a>
+                                        </li>
+                                        <li class="">
+                                             <a class="d-i" href="admin-committee-manage-single.html"><span class="text">Committee EDF</span></a> 
+                                        </li>
+                                        <li class="">
+                                            <a class="d-i" href="admin-committee-manage-single.html"><span class="text">Committee FGH</span></a>
+                                        </li>
+                                        <li class="">
+                                           <a class="d-i" href="admin-committee-manage-single.html"> <span class="text">Committee XYZ</span></a>
+                                        </li>
+                                    </ol>
+                                </nav>    </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+    </div>
+</div>
+
+<style>
+    .va-top{vertical-align: top !important;}
+    .d-i {display:inline !important;}
+    .lsp-i{list-style-position: inside;}
+</style>
+
+<div class="reveal large" id="LetterEdit" data-reveal>
+     <button class="close-button" data-close aria-label="Close reveal" type="button"> <span aria-hidden="true"><i class="fa fa-times"></i></span></button>
+    <h1>Letter of Recommendation</h1>
+    <div class="row column">
+        <textarea name="" id="" cols="30" rows="10">This is the text of the letter</textarea>
+    </div>
+        <div class="row group-divide">
+            <div class="float-right">
+                <a href="" class="button secondary">cancel</a>
+                <a href="" class="button">Save</a>
+            </div>
+        </div>  
+</div>
+
+{% endblock %}

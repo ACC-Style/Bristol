@@ -1,0 +1,81 @@
+// definers
+@import "alc/colors.scss";
+@import "alc/breakpoints";
+@import "alc/font-styles";
+@import "alc/spacing";
+@import "alc/border";
+
+#acc-login-container{
+	@import "alc/panel";
+	@import "alc/alert";
+	@import "alc/input";
+	font-size: 16px;
+	// Content block reset
+	.main-content-padding, #forgot-password, #forgot-username, #reset-password, #security-questions, #login-duplicate-check, #pre-registration, #site-registration, #user-agreement {
+    	padding: 0em;
+	}
+	.acc-login-content, .footer{
+		padding-top:1em;
+		padding-bottom:1em;
+		margin:0 auto;
+		max-width: 724px; 
+	}
+	.acc-login-content{
+		padding-top:2em;
+	}
+	#separator hr{
+		border-top: $acc-blue 1.5em solid;
+	}
+	h1{ @extend .fs_6; @extend .fw-m;  @extend .fc-acc-blue; @extend .m-b_025;}
+	h2{ @extend .fs_5; @extend .fw-m; @extend .fc-scrub-teal;}
+	h3{ @extend .fs_4; @extend .fc-scrub-teal;}
+	h4{ @extend .fs_3;}
+	h5{ @extend .fs_2;}
+	h6{ @extend .fs_1;}
+	p{ 
+		@extend .fs_0; @extend .lh-normal;
+		&.lead{
+			@extend .fs_1;
+			 @extend .lh-loose;
+		}
+
+	}
+	small{ @extend .fs-1;}
+	.tiny-text{@extend .fs-2;}
+	.btn{ 
+		@extend .fs_1;
+		@extend .p-r_2;
+		@extend .p-l_2; 
+	}
+	.btn-primary{
+	 	color: #fff;
+	 	border:sold 1px grey(30);
+	 	background-color: $scrub-teal;
+	 	letter-spacing: 1px;
+	 	@extend .bg-color-transition;
+	 	&:hover{
+	 		background-color: mix($scrub-teal,$black,25);
+	 	}
+	 	&[disabled="disabled"]{
+	 		background-color: grey(10) !important; color: grey(30) !important; border-color: grey(30) !important;
+	 	}
+	 	}
+	.btn-xl{
+		width:100%;
+		padding:1em;
+	}	
+
+	.footer{
+		@extend .fs_1;
+		ul{ 
+			list-style: none;
+			@extend .lh-tight;
+		}
+	}
+	
+
+}
+	
+// the modal renders out side of the id.
+	@import "alc/professional-type";
+

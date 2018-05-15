@@ -1,0 +1,31 @@
+#ProfessionalType{
+	.panel{
+		border-radius: 0;
+		margin:0;
+	}
+	.panel-body{
+		padding:0;	
+		ul{
+			list-style-type: none;
+			list-style: none;
+			margin:0;
+		}
+		ul li{
+			@extend .fs_0;
+			@extend .p_05;
+			padding-top:.25em;
+			padding-bottom:.25em;
+		    cursor: pointer;
+			&:hover{
+				@extend .fw-b;
+				color:#000;
+				background-color: mix($scrub-teal, #fff);
+			}	
+			&.selected{
+				background-color: $scrub-green;
+				color: #fff;
+			}
+		}
+	}
+	@import "panel";
+}

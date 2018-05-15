@@ -1,0 +1,49 @@
+#ProfessionalTypeName + button,input[type="text"],input[type="password"],input[type="email"],select,option,#FirstName,#LastName, .fake-input{
+	width: 100%;
+	@extend .fs_1;
+	@extend .p_01;
+	@extend .p-l_05;
+	@extend .p-r_05;
+	@extend .lh-loose;
+}
+
+#ProfessionalTypeName,#ProfessionalTypeName + button{ display: inline-block; float:left; }
+#ProfessionalTypeName{ width:60%; }
+#ProfessionalTypeName + button{ width:40%; }
+.input-description, .field-validation-valid, .field-validation-error {
+	@extend .p_05;
+	@extend .fs-1;
+	@extend .p-t_01;
+	@extend .p-b_01;
+	@extend .lh-crushed;
+}
+.field-validation-valid{
+	display: none;
+}
+.form-group.has-error{
+	.editor-label label{
+		color:$error-red;
+	}
+	.editor-field{
+		input,select{
+			border-color: $error-red;
+		}
+		.field-validation-error{
+			border: 1px solid $error-red;
+			background-color: $error-red;
+			color: white;
+			width:100%;
+			display: block;
+		
+		}
+	}
+}
+
+.user-agreement.has-error{
+	@extend .br_radius;
+	border:1px solid $error-red;
+	@extend .p_1;
+	@extend .p-r_2;
+	@extend .p-l_2;
+	background-color: mix($error-red, white, 20%);
+}

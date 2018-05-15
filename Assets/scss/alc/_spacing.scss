@@ -1,0 +1,34 @@
+@mixin build_steps($label,$value-label,$style,$value) {
+	.#{$label}#{$value-label}{
+		#{$style}:unquote($value);
+	}
+		.#{$label}-t#{$value-label}{
+		#{$style}-top:unquote($value);
+	}
+		.#{$label}-b#{$value-label}{
+		#{$style}-bottom:unquote($value);
+	}
+		.#{$label}-r#{$value-label}{
+		#{$style}-right:unquote($value);
+	}
+		.#{$label}-l#{$value-label}{
+		#{$style}-left:unquote($value);
+	}
+ }
+
+@include build_steps("p","_0","padding","0");
+@include build_steps("p","_1px","padding","1px");
+@include build_steps("p","_01","padding",".1em");
+@include build_steps("p","_025","padding",".25em");
+@include build_steps("p","_05","padding",".5em");
+@include build_steps("p","_1","padding","1em");
+@include build_steps("p","_2","padding","2em");
+
+
+@include build_steps("m","_0","margin","0");
+@include build_steps("m","_1px","margin","1px");
+@include build_steps("m","_01","margin",".1em");
+@include build_steps("m","_025","margin",".25em");
+@include build_steps("m","_05","margin",".5em");
+@include build_steps("m","_1","margin","1em");
+@include build_steps("m","_2","margin","2em");
