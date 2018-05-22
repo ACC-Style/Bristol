@@ -249,6 +249,26 @@ module.exports = function(grunt){
 				]
 			}
 		},
+		postcss: {
+    options: {
+      map: true, // inline sourcemaps
+
+      // or
+      map: {
+          inline: false, // save all sourcemaps as separate files...
+          annotation: 'assets/css/maps/' // ...to the specified directory
+      },
+
+      processors: [
+        require('pixrem')(), // add fallbacks for rem units
+        require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
+        require('cssnano')() // minify the result
+      ]
+    },
+    dist: {
+      src: 'assets/css/*.css'
+    }
+  },
 	    watch: {
 	    	options: {
 			      livereload: true,
@@ -265,11 +285,11 @@ module.exports = function(grunt){
 			},
 			scss: {
 			files: [ 'assets/scss/*.scss','assets/scss/**'],
-			tasks: [ 'sass:dist','sass:vendor','cssmin','styledown:base','copy:STYLES']
+			tasks: [ 'sass:dist','sass:vendor','postcss','styledown:base','copy:STYLES']
 			},
 			index:{
 			files: [ 'assets/scss/index.scss'],
-			tasks: [ 'sass:vendor','sass:dist','cssmin','styledown:base','copy:INTERNAL']	
+			tasks: [ 'sass:vendor','sass:dist','postcss','styledown:base','copy:INTERNAL']	
 			}
 	    },
 		clean: {
@@ -302,6 +322,7 @@ module.exports = function(grunt){
 		'clean:localFolder',
 		'sass:vendor',
 		'sass:dist',
+		'postcss',
 		'copy:INTERNAL',
 		'styledown',
 	    'liquid',
