@@ -6,6 +6,7 @@
 @import "alc/border";
 
 #acc-login-container{
+	@extend .ff-sans;
 	@import "alc/panel";
 	@import "alc/alert";
 	@import "alc/input";
@@ -24,7 +25,7 @@
 		padding-top:2em;
 	}
 	#separator hr{
-		border-top: $acc-blue 1.5em solid;
+		border-top: $acc-blue .2em solid;
 	}
 	h1{ @extend .fs_6; @extend .fw-m;  @extend .fc-acc-blue; @extend .m-b_025;}
 	h2{ @extend .fs_5; @extend .fw-m; @extend .fc-scrub-teal;}
@@ -54,7 +55,7 @@
 	 	letter-spacing: 1px;
 	 	@extend .bg-color-transition;
 	 	&:hover{
-	 		background-color: mix($scrub-teal,$black,25);
+	 		background-color: mix($scrub-teal,$black,75);
 	 	}
 	 	&[disabled="disabled"]{
 	 		background-color: grey(10) !important; color: grey(30) !important; border-color: grey(30) !important;

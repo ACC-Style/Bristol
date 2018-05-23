@@ -4,7 +4,8 @@
 	@extend .p_01;
 	@extend .p-l_05;
 	@extend .p-r_05;
-	@extend .lh-loose;
+	line-height:1.6 !important;
+	height:1.85em  !important;
 }
 
 #ProfessionalTypeName,#ProfessionalTypeName + button{ display: inline-block; float:left; }
@@ -34,6 +35,12 @@
 			color: white;
 			width:100%;
 			display: block;
+			a{ color:whte; font-weight:bold; 
+				&:hover{
+					text-decoration:underline;
+					color:white;
+					}
+				}
 		
 		}
 	}
@@ -49,21 +56,31 @@
 
 }
 
-	.input-button-container {
-	    display:flex;
-		 .btn,  input{
-		    flex:0 1 auto;
-		    padding: .1em .5em;
-		}
-	.has-error  {
-		.btn, input{
-			border-color:$error-red;
-			color:$error-red}
-		}
-		.btn.btn-success{
-			color:white;
-			background-color:$error-red;
-		}
+.input-button-container {
+    display:flex;
+	 .btn,  input{
+	    flex:0 1 auto;
+	    padding: .1em .5em;
+	    border-color:rgb(168,168,168);
 	}
+
+}
+.has-error .input-button-container{
+	.btn, input{
+		border-color:$error-red;
+		border-radius:0;
+		margin-left:0;
+		margin-right:0;
+	}
+	.btn{color:$error-red; }
+	.btn.bw-l_0{border-left-width:0 !important;}
+	input.bw-r_0{border-width-right: 0 !important;}
+
+	.btn.btn-success, .btn.btn-primary{
+		color:white;																													
+		background-color:$error-red;
+		border-color:$error-red;
+	}
+}
 
  
