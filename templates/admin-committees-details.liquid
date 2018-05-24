@@ -5,15 +5,19 @@
         <h1 >
            <a href="admin-committees-dashboard.html"><i class="fa fa-th-list" aria-hidden="true"></i></a> <i class="fa fa-angle-right" aria-hidden="true"></i> Name ABC <i class="fa fa-angle-right" aria-hidden="true"></i> Details
            <div class="float-right button-group small radius no-vertical-margin">
-                <a class="button  secondary" href="admin-committee-manage-single.html">
-                   <i class="fa fa-pencil"></i> Edit Details
-                </a>
+
             </div>
         </h1>
-        <div>
-            <a class="button tiny radius hollow" href="admin-committees-list.html">Applicant List</a>
-            <a class="button tiny radius" href="admin-committees-details.html">Committee Details</a>
-            <a class="button tiny radius hollow" href="admin-committees-appointed.html">Appointment Management</a>
+        <div class="row column">
+            <div class="button-group float-left tiny">
+                <a class="button tiny radius hollow" href="admin-committees-list.html">Applicant List</a>
+                <a class="button tiny radius" href="admin-committees-details.html">Committee Details</a>
+                <a class="button tiny radius hollow" href="admin-committees-appointed.html">Appointment Management</a>
+            </div>
+            <div class="button-group float-right tiny">
+                <a class="button  secondary" href="admin-committee-manage-single.html"> <i class="fa fa-pencil"></i> Edit Details</a>
+                <a href="" class="button success"><i class="fa fa-plus"></i> Add Applicant</a>
+            </div>
         </div>
     </div>
 </div>
@@ -121,6 +125,12 @@
                     Available Positions
                 </h4>
                 {% include "elements/open-position" %}
+                 <h4>
+                    Proposed Members <div class="sub-line">{{ !! shows only after apointment days starts !! }} </div>
+                </h4>
+                <div class="card">
+                    {% include "sections/proposed-members" %}                    
+                </div>
                 <h4>
                     Current Members
                 </h4>

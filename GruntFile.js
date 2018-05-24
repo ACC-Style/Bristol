@@ -45,7 +45,6 @@ module.exports = function(grunt){
 			}
 		},
 		sass:{
-
 			dist:{
 				options: {                       // Target options
 			        style: 'expanded',
@@ -285,11 +284,11 @@ module.exports = function(grunt){
 			},
 			scss: {
 			files: [ 'assets/scss/*.scss','assets/scss/**'],
-			tasks: [ 'sass:dist','sass:vendor','postcss','styledown:base','copy:STYLES']
+			tasks: [ 'sass:dist','sass:vendor','postcss','styledown:base','copy:INTERNAL','copy:STYLES']
 			},
 			index:{
 			files: [ 'assets/scss/index.scss'],
-			tasks: [ 'sass:vendor','sass:dist','postcss','styledown:base','copy:INTERNAL']	
+			tasks: [ 'sass:vendor','sass:dist','postcss','styledown:base','copy:INTERNAL','copy:STYLES']	
 			}
 	    },
 		clean: {
