@@ -107,7 +107,33 @@
 			 &:hover{ background-color: color(map-get($State,'Color'), 35);}
 		 }
 	}
-	.card.ghost{
+    &.grey-10, &.off-white{
+        background-color:grey(10);
+        
+    }
+    &.grey-20, &.soft-grey{
+        background-color:grey(20);
+        
+            
+    }
+    &.grey-30, &.light-grey{
+        background-color:grey(30);
+        
+            
+    } 
+    &.grey-60, &.grey{
+        background-color:grey(60);
+          h1, h2, h3, h4, h5, h6, p, &{
+                color: $white;
+          }
+            
+    }
+    &.grey-10, &.grey-20, &.grey-30, &.grey-60, &.off-white, &.soft-grey, &.light-grey{
+         h1, h2, h3, h4, h5, h6, p, &{
+                color: $black;
+            }
+    }
+	.card.ghost &{
 		background-image: url('../img/construction_paper_grey.png');
 		border-radius:$global-border-radius * 1.25 !important;
 		margin:0 !important;

@@ -5,16 +5,24 @@
         <h1>
            <a href="admin-committees-dashboard.html"><i class="fa fa-th-list" aria-hidden="true"></i></a> <i class="fa fa-angle-right" aria-hidden="true"></i> Name ABC <i class="fa fa-angle-right" aria-hidden="true"></i> Appointment Management
         </h1>
-        <div>
-            <a class="button tiny radius hollow" href="admin-committees-list.html">Applicant List</a>
-            <a class="button tiny radius hollow" href="admin-committees-details.html">Committee Details</a>
-            <a class="button tiny radius" href="admin-committees-appointed.html">Appointment Management</a>
+        <div class="row column">
+        <div class="row column">
+            <div class="float-left">
+                <a class="button small radius hollow" href="admin-committees-list.html">Applicant List</a>
+                <a class="button small radius hollow" href="admin-committees-details.html">Committee Details</a>
+                 <a class="button small radius hollow" href="admin-appointment-day.html">Appointment Day</a>
+                <a class="button small radius" href="admin-committees-appointed.html">Appointment Management</a>
+            </div>
+            <div class="float-right">
+                <a href="" class="button radius small success"><i class="fa fa-plus"></i> Add Applicant</a>
+            </div>
+        </div>
         </div>
     </div>
 </div>
 <div class="">
-    <div class="page-wrapper layer-down">
-        <div class="row section-padding">
+    <div class="layer-down">
+        <div class="row">
             <div class="column">
                 <div class="card">
                     <div class="colored-paper">
@@ -33,6 +41,15 @@
                             </div>
                         </h2>
                     </div>
+                    <div class="colored-paper grey-20 p-t-05em p-b-05em">
+                                <div class="">
+                                    <a href="" class="button hollow round tiny">Proposed</a>
+                                    <a href="" class="button tiny round ">Contacted</a>
+                                    <a href="" class="button hollow round tiny">Approved</a>
+                                    <a href="" class="button hollow round tiny">Declined</a>
+                                    <a href="" class="button hollow round tiny">All</a>
+                                </div>
+                            </div>
                     <div class="section-padding">
                         <table class="table banded">
                             <thead>
@@ -56,23 +73,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="seperator info">
-                                    <td colspan="6">
-                                        Proposed
-                                        <a class="float-right" href="   " style="color:#fff">
-                                            hide section
-                                            <i class="fa fa-eye">
-                                            </i>
-                                        </a>
-                                    </td>
-                                </tr>
                                 <tr>
                                     <td>
                                         <i class="fa fa-square-o">
                                         </i>
                                     </td>
                                     <td>
-                                        Philippus Ehud
+                                       <h5 class="no-margin"> Philippus Ehud <span class="sub-line highlighted small">Contacted</span></h5>
                                     </td>
                                     <td>
                                         Alternate | 3 years <a href="" class="link edit"><i class="fa fa-pencil"></i> Edit</a>
@@ -104,23 +111,14 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr class="seperator">
-                                    <td colspan="6">
-                                        Contacted
-                                        <a class="float-right" href="   " style="color:#fff">
-                                            hide section
-                                            <i class="fa fa-eye">
-                                            </i>
-                                        </a>
-                                    </td>
-                                </tr>
                                 <tr>
                                     <td>
                                         <i class="fa fa-square-o">
                                         </i>
                                     </td>
                                     <td>
-                                        Philippus Ehud
+                                       <h5 class="no-margin"> Sally Mikes <span class="sub-line highlighted small">Contacted</span></h5>
+                                    </td>
                                     </td>
                                     <td>
                                         Alternate | 3 years <a href="" class="link edit"><i class="fa fa-pencil"></i> Edit</a>
@@ -158,7 +156,9 @@
                                         </i>
                                     </td>
                                     <td>
-                                        Lucius Zakchaios
+                                      <h5 class="no-margin">Lucius Zakchaios<span class="sub-line highlighted small">Contacted</span></h5>
+                                    
+
                                     </td>
                                     <td>
                                         Chair | 3 years  <a href="" class="link edit"><i class="fa fa-pencil"></i> Edit</a>
@@ -196,7 +196,7 @@
                                         </i>
                                     </td>
                                     <td>
-                                        Hevel Ethan
+                                      <h5 class="no-margin">Hevel Ethan<span class="sub-line highlighted small">Contacted</span></h5>
                                     </td>
                                     <td>
                                         Member | 1 year  <a href="" class="link edit"><i class="fa fa-pencil"></i> Edit</a>
@@ -228,23 +228,13 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr class="seperator success">
-                                    <td colspan="6">
-                                        Approved
-                                        <a class="float-right" href="   " style="color:#333">
-                                            hide section
-                                            <i class="fa fa-eye">
-                                            </i>
-                                        </a>
-                                    </td>
-                                </tr>
                                 <tr>
                                     <td>
                                         <i class="fa fa-square-o">
                                         </i>
                                     </td>
                                     <td>
-                                        Timotheus Joshua
+                                         <h5 class="no-margin">Timotheus Joshua<span class="sub-line highlighted small">Contacted</span></h5>
                                     </td>
                                     <td>
                                         Alternate | 3 years <a href="" class="link edit"><i class="fa fa-pencil"></i> Edit</a>
@@ -257,50 +247,21 @@
                                     <td class="text-right">
                                         <div class="tiny">
                                             <a class="link secondary tiny" href="">
-                                                <i class="fa fa-undo">
+                                                <i class="fa fa-envelope">
                                                 </i>
-                                                Remove Decision
+                                                Request
                                             </a>
+                                            |
                                             <a class="link secondary tiny" href="">
-                                                <i class="fa fa-pencil-square-o">
+                                                <i class="fa fa-check">
                                                 </i>
-                                                Write to Personify
+                                                Approve
                                             </a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="seperator error">
-                                    <td colspan="6">
-                                        Declined
-                                        <a class="float-right" href="   " style="color:#fff">
-                                            hide section
-                                            <i class="fa fa-eye">
-                                            </i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <i class="fa fa-square-o">
-                                        </i>
-                                    </td>
-                                    <td>
-                                        Peretz Zerah
-                                    </td>
-                                    <td>
-                                        Member | 3 years <a href="" class="link edit"><i class="fa fa-pencil"></i> Edit</a>
-                                    </td>
-                                    <td>
-                                        <i class="fa fa-laptop" title="Declined via System">
-                                        </i>
-                                        5/2/2016
-                                    </td>
-                                    <td class="text-right">
-                                        <div class="tiny">
+                                            |
                                             <a class="link secondary tiny" href="">
-                                                <i class="fa fa-undo">
+                                                <i class="fa fa-times">
                                                 </i>
-                                                Remove Decision
+                                                Decline
                                             </a>
                                         </div>
                                     </td>
@@ -312,11 +273,11 @@
                 </div>
             </div>
         </div>
-        <div class="row section-padding">
-            <a href="" class="tiny button hollow float-right">Show/Hide Non Picked Members</a>
+        <div class="row column section-padding p-t-0">
+            <a href="" class="tiny button hollow float-right"><i class="fa fa-eye"></i> Members Not Picked</a> <a href="" class="tiny button hollow float-right"><i class="fa fa-eye"></i> Ineligble Members</a>
         </div>
-                <div class="row section-padding">
-            <a href="" class="tiny button hollow float-right">Show/Hide Ineligble Members</a>
+                <div class="row column">
+            
         </div>
     </div>
     {% endblock %}

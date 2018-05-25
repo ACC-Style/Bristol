@@ -12,62 +12,9 @@
         </div>
     </div>
 </div>
-<section class="row collapse">
-    <aside class="column small-hidden medium-4 large-3">
-        <div class="colored-paper no-margin ">
-            <h4 class="no-vertical-margin single-line-height">
-                Elegible
-            </h4>
-        </div>
-        <div class="">
-            <nav class="nav-list">
-                <ul>
-                    <li class="selected">
-                        <a href="">
-                            <span class="text">
-                                <span class="name">
-                                    <i class="fa fa-thumb-up"></i> Doctor Beta
-                                </span>
-                                <span>
-                                    FACC
-                                </span>
-                            </span>
-                            <i class="fa fa-arrow-circle-right">
-                            </i>
-                        </a>
-                    </li>
-                    <li>
-                        {% include 'elements/nominee' %}
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div class="colored-paper no-margin warning">
-            <h4 class="no-vertical-margin single-line-height">
-                <i class="fa fa-question-circle">
-                </i>
-                Unset Elegility
-            </h4>
-        </div>
-        <div class="">
-            <nav class="nav-list">
-                <ul>
-                    <li>
-                        {% include 'elements/nominee' %}
-                    </li>
-                    <li>
-                        {% include 'elements/nominee' %}
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div class="content-padding text-right">
-            <a class="link" href="">
-             <i class="fa fa-eye"></i>   show inelegible members
-            </a>
-        </div>
-    </aside>
-    <article class="layer-down column medium-8 large-9">
+<section class="row ">
+
+    <article class="layer-down column ">
         <div class="page-wrapper content-padding">
             <div class="row column">
                 <div class="card">
@@ -76,7 +23,7 @@
 
                             <span class="float-right">
                                 
-                                <select id="" name="">
+                                <select id="" name="" class="no-margin">
                                     <option default="" value="">
                                         Elegible
                                     </option>
@@ -92,12 +39,13 @@
                             </span>
                            <i class="fa fa-thumbs-up"></i>
                             Doctor Beta, FACC
-                             <span class="sub-line">Average Rating: 2.4  <i class="fa fa-star"> | Comments: 4 <i class="fa fa-comment"></i></i> | <i class="fa fa-envelope"></i> email@email.com
+                             <span class="sub-line"><b>NOMINATED</b> | Average Rating: 2.4  <i class="fa fa-star"> | Comments: 4 <i class="fa fa-comment"></i></i> | <i class="fa fa-envelope"></i> email@email.com
                             </span>
                         </h2>
                     </div>
                     <div class="row section-padding">
-                        <div class="column large-6">
+                        <div class="column large-4">
+
                             <div class="section-padding group-divide-auto">
                                 <h3>
                                     Statement of Interest
@@ -129,9 +77,34 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="secion-padding group-divide-auto">
+
+                        </div>
+                        <div class="column large-4">
+                                                        <div class="section-padding group-divide-auto">
                                 <h3>
-                                    Committee Ranking
+                                    Letter of Reccomendation
+                                </h3>
+                                <div class="">
+                                    <h5>
+                                        Collegue Name <small class="subhead">Fellow</small>
+                                    </h5>
+                                    <p>{% include 'elements/lorem-short' %} {% include 'elements/lorem-short' %} {% include 'elements/lorem-short' %}</p>
+                                </div>
+                            </div>
+                            <div class="section-padding group-divide-auto">
+                                <h3>
+                                    Nominations
+                                </h3>
+                                <div class="call-out">
+                                <h5>
+                                        Collegue Name <small class="subhead">Fellow</small> <a href="" class="link sub-line">Letter of Recommendation</a>
+                                </h5>
+                                
+                            </div>
+                            </div>
+                             <div class="secion-padding group-divide-auto">
+                                <h3>
+                                    Committee Prefference Ranking
                                 </h3>
                                 <nav class="nav-list nav-checklist">
                                     <ul>
@@ -159,9 +132,12 @@
                                 </nav>
                             </div>
                         </div>
-                        <div class="column large-6">
+                        <div class="column large-4">
                             {% include "elements/comment-rate" %}
-                            {% include "admin/sections/com/application-comments"%}
+                            <div class="row text-center">
+                                <a href="" class="hollow button tiny">View Comments (3)</a>
+                            </div>
+                            {% comment %}{% include "admin/sections/com/application-comments"%}{% endcomment %}
                         </div>
                     </div>
                     <div class="colored-paper info">
@@ -200,7 +176,7 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="row">
+                    <div class="row section-padding">
                         <div class="columns">
                             <h2 class="with-underline show-for-large">
                                 Application Details

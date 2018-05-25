@@ -120,71 +120,7 @@ module.exports = function(grunt){
 					dest:'styleguide/assets/css'
 				}
 				]},
-			BOWER:{
-				files:[
-					{
-					  expand:true,
-					  cwd:'bower_components/jquery/dist',
-					  src:['**.js','**.map'],
-					  dest:'assets/js'
-					},
-					{
-					  expand:true,
-					  cwd:'bower_components/foundation-sites/dist',
-					  src:['**.js','**.map'],
-					  dest:'assets/js'
-					},{
-					  expand:true,
-					  cwd:'bower_components/foundation-sites/_vendor',
-					  src:['**'],
-					  dest:'assets/scss/vendor/_vendor'
-					},
-					{
-					  expand:true,
-					  cwd:'bower_components/foundation-sites/scss',
-					  src:['**'],
-					  dest:'assets/scss/vendor/foundation-sites'
-					},
-					{
-					  expand:true,
-					  cwd:'bower_components/knockout/dist',
-					  src:['**.js','**.map'],
-					  dest:'assets/js'
-					},
-					{
-					  expand:true,
-					  cwd:'bower_components/waypoints/lib',
-					  src:['**.js','**.map'],
-					  dest:'assets/js'
-					},
-					{
-					  expand:true,
-					  cwd:'bower_components/pagerjs/dist',
-					  src:['**.js','**.map'],
-					  dest:'assets/js'
-					},
-					{
-					  expand:true,
-					  cwd:'bower_components/foundation-sites/dist',
-					  src:['**.css','**.map'],
-					  dest:'assets/css'
-					},
-					{
-					  expand:true,
-					  cwd:'bower_components/animate.css',
-					  src:['**.css','**.map'],
-					  dest:'assets/css'
-					}
-				]
-			},
-			BOWEROVERRIDES:{
-				files:[{
-					expand:true,
-					cwd:'assets/scss/vendor/foundation',
-					src:['_settings.scss'],
-					dest:'assets/scss/vendor/foundation-sites/settings'
-				}]
-			},
+			
 			INTERNAL:{
 				files:[
 				{
@@ -238,36 +174,34 @@ module.exports = function(grunt){
 				]
 			},
 			FOUNDATIONSETTINGS:{
-			files:[
-				{
-				  expand:true,
-				  cwd:'assets/scss/vendor/foundation',
-				  src:['_override.settings.scss'],
-				  dest:'assets/scss/vendor/foundation-sites/settings'
-				},
-				]
+				files:[
+					{
+					  expand:true,
+					  cwd:'assets/scss/vendor/foundation',
+					  src:['_override.settings.scss'],
+					  dest:'assets/scss/vendor/foundation-sites/settings'
+					}
+					]
 			}
 		},
 		postcss: {
-    options: {
-      map: true, // inline sourcemaps
-
-      // or
-      map: {
-          inline: false, // save all sourcemaps as separate files...
-          annotation: 'assets/css/maps/' // ...to the specified directory
-      },
-
-      processors: [
-        require('pixrem')(), // add fallbacks for rem units
-        require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
-        require('cssnano')() // minify the result
-      ]
-    },
-    dist: {
-      src: 'assets/css/*.css'
-    }
-  },
+		    options: {
+		      map: true, // inline sourcemaps
+		      // or
+		      map: {
+		          inline: false, // save all sourcemaps as separate files...
+		          annotation: 'assets/css/maps/' // ...to the specified directory
+		      },
+		      processors: [
+				require('pixrem')(), // add fallbacks for rem units
+				require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
+				require('cssnano')() // minify the result
+		      ]
+		    },
+		    dist: {
+		      src: 'assets/css/*.css'
+		    }
+		  },
 	    watch: {
 	    	options: {
 			      livereload: true,

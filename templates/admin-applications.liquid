@@ -21,19 +21,30 @@
 					</h2 >
 				</div>
 				{% include 'admin/elements/admin-table-searchbar' %}
+				<div class="colored-paper grey-20 p-t-05em p-b-05em"  style="margin-bottom:.5em;">
+                    <div class="">
+                        <a href="" class="button hollow round tiny">Started/Draft</a>
+                        <a href="" class="button tiny round ">Pending Revision</a>
+                        <a href="" class="button hollow round tiny">Submitted</a>
+                        <a href="" class="button hollow round tiny">Reviewed</a>
+                        <a href="" class="button hollow round tiny">Submitted</a>
+                        <a href="" class="button hollow round tiny">All</a>
+                    </div>
+                </div>
 				<table id="application" class="table banded desaturate">
 					{% include "admin/elements/app-thead" %}
-					<tbody id="Draft">
+					{% comment %}<tbody id="Draft">
 						<tr class="seperator disabled">
 							<td colspan="10">Started/Draft <a href="	" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
 						</tr>{% include 'admin/elements/application-rows' %}
-					</tbody>
+					</tbody>{% endcomment %}
 					<tbody id="Revisions">
-						<tr class="seperator disabled">
+						{% comment %}<tr class="seperator disabled">
 							<td colspan="10">Pending Revision <a href="	" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
-						</tr>{% include 'admin/elements/application-rows' %}						
+						</tr>{% endcomment %}
+						{% include 'admin/elements/application-rows' %}						
 					</tbody>
-					<tbody id="Submitted">
+					{% comment %}<tbody id="Submitted">
 						<tr class="seperator highlighted">
 							<td colspan="10">Submitted <a href="" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
 						</tr>{% include 'admin/elements/application-rows' %}
@@ -48,7 +59,7 @@
 							<td colspan="10">Rejected <a href="	" class="float-right">hide section <i class="fa fa-eye"></i></a></td>
 						</tr>						
 						{% include 'admin/elements/application-rows' %}
-					</tbody>
+					</tbody>{% endcomment %}
 				</table>
 				{% include "elements/card-pagination-bottom"%}
 			</div>
