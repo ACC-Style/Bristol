@@ -48,7 +48,8 @@ module.exports = function(grunt){
 
 			dist:{
 				options: {                       // Target options
-			        style: 'expanded'
+			        style: 'expanded',
+			        noCache: true
 			      },			
 				files:[{
 					expand: true,
@@ -61,6 +62,7 @@ module.exports = function(grunt){
 			vendor:{
 				files:[{
 					expand: true,
+					noCache: true,
 					cwd: './assets/scss/vendor',
 					src: ['**.scss','*/**.scss','*/**.**.scss','/jquery-ui/jquery-ui.structure.scss','/foundation-sites/vendor/*.scss','/jquery-ui/*'],
 					dest: './assets/css',
