@@ -23,9 +23,7 @@
 }
 
 .colored-paper {
-    h1, h2, h3, h4, h5, h6 {
-    }
-
+     h1,  h2,  h3,  h4,  h5,  h6 {}
     .subheader {
         color: #fff;
     }
@@ -71,7 +69,6 @@
         }
     }
 }
-
 .committee-list {
     @extend %content-expanding-margin-horizontal;
     margin-bottom: 0;
@@ -104,15 +101,12 @@
 
     &.selected {
         background-color: color($primary-color, 20);
-
         .committee-data {
             .action {
                 background-color: color($primary-color, 80);
-
                 .fa-stack-2x {
                     color: color($primary-color, 40);
                 }
-
                 .fa-stack-1x {
                     color: color($primary-color, 80);
                 }
@@ -122,7 +116,6 @@
 
     &.selected.checked {
         background-color: white;
-
         .committee-data {
             .action {
                 background-color: mix($success-color,grey(60),35);
@@ -140,20 +133,17 @@
 
     .committee-data {
         display: table;
-        width: 100%;
-
+        width:100%;
         .committee {
             @extend %content-padding-horizontal;
             @extend %content-padding-vertical;
             display: table-cell;
             width: 90%;
-
             .name {
                 @include baseline-font(0,0,0,0,$baseline,$crushed);
                 margin-top: 0;
             }
         }
-
         .flag {
             position: absolute;
             top: .25em;
@@ -162,15 +152,12 @@
             width: 1.5em;
             border-radius: 50%;
             background-color: grey;
-
             .marker {
                 text-align: center;
                 width: 1.5em;
             }
-
             &.nominated {
                 background-color: $scrub-purple;
-
                 .marker:before {
                     content: "N";
                     @include font-slab-bold;
@@ -178,21 +165,18 @@
                 }
             }
         }
-
         .action {
             display: table-cell;
             width: 3em;
             background-image: url(../img/construction-paper.png), url(../img/left-shade.png);
             background-position: top right, left top;
-            background-repeat: repeat, repeat-y;
+            background-repeat: repeat,  repeat-y;
             background-color: grey(10);
             text-align: center;
             vertical-align: middle;
-
             .fa-stack-2x {
                 color: grey(40);
             }
-
             .fa-stack-1x {
                 color: grey(5);
             }
@@ -250,20 +234,17 @@
 }
 
 
-
-.layer-down {
+.layer-down{
     background-image: url(../img/textured_paper.png), url(../img/bottom-shade.png), url(../img/top-shade.png), url(../img/left-shade.png), url(../img/right-shade.png);
     background-position: top right, bottom right, right -1px, top left, top right;
     background-repeat: repeat, repeat-x, repeat-x, repeat-y, repeat-y;
-
-    .section-name {
-        color: grey(60);
+   .section-name{
+        color:grey(60);
         font-size: ms(1);
         margin: .75em .75em .25em;
-
-        &.with-underline {
-            border-bottom: 2px solid $scrub-blue
-        }
+    &.with-underline{
+        border-bottom:2px solid $scrub-blue
+    }
     }
 }
 
@@ -281,7 +262,6 @@
     padding-bottom: 3000px;
     border-left: 1px solid grey(60);
     border-right: 1px solid grey(60);
-
     > .colored-paper, .sticky > .colored-paper {
         @extend %cast-shadow;
         background-image: url(../img/construction-paper.png), url(../img/left-shade.png), url(../img/right-shade.png), url(../img/top-shade.png);
@@ -365,13 +345,8 @@
         }
     }
 }
-
 .top-bar-left li:hover {
-    background: grey(30);
-}
-
-.card {
-    overflow: visible;
+        background: grey(30);
 }
 .card{ overflow: visible;}
 
@@ -380,21 +355,16 @@
     background: white url(../img/whisper.png) repeat;
 }
 // ../img/construction-paper.png
-//
-.application {
-    padding: 1rem 1.5rem;
-
-    + .application {
-        margin-top: 1.3rem;
-    }
-
-    .chart-holder {
-    }
-
-    .application-title {
+// 
+.application{
+    padding:1rem 1.5rem;
+    +.application{margin-top:1.3rem;}
+    .chart-holder{}
+   .application-title{
         font-size: ms(2);
         font-weight: normal;
-        margin-bottom: 0;
+        margin-bottom:0;
+
     }
 
     .type {
@@ -552,31 +522,13 @@ h5 {
         font-size: ms(1);
         line-height: 1;
         font-weight: 300;
+       
     }
 }
 
-.card {
-    .group-spacing {
-        margin: $vertical-space/4 0 $vertical-space/2;
-    }
-
-    .section-padding {
-        padding: $vertical-space/2 0 $vertical-space;
-    }
-
-    .section-padding:last-child {
-        padding-bottom: 0;
-    }
-}
-
-.colored-paper.group-divide-auto {
-    > h3 {
-        margin: 0;
-        line-height: 1.1;
-    }
-
-    &, + .group-divide-auto {
-        border-top: 0;
+.card{
+    .group-spacing{
+         margin: $vertical-space/4 0 $vertical-space/2;
     }
     .section-padding{ padding: $vertical-space/2 0 $vertical-space;}
     .section-padding:last-child{padding-bottom:0;}
@@ -585,9 +537,8 @@ h5 {
     > h3{margin:0;line-height:1.1;}
     &, +.group-divide-auto{border-top:0;}
 }
-
-.drag-handles {
-    letter-spacing: .1em;
+.drag-handles{
+letter-spacing: .1em;
     background-color: grey(20);
     padding: .5em .5em;
     vertical-align: baseline;
